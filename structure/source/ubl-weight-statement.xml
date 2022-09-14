@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WeightStatement
+xmlns="urn:oasis:names:specification:ubl:schema:xsd:WeightStatement-2"
+xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+>
+	<?DocumentTerm WeightStatement?>
+	<?Property key="sch:prefix" PEPPOL-T122?>
+	<?Property key="sch:identifier" T122-basic?>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:weight_statement:1</cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:weight_statement:1</cbc:ProfileID>
+
+	<cbc:ID>
+		GOA294107
+		<?Name Document identifier ?>
+		<?Description T6329. Unique identity identifying the weight statement. ?>
+		<?Cardinality 1..1?>
+	</cbc:ID>
+
+	<cbc:IssueDate>
+		2016-11-03
+		<?Name Weight statement issue date ?>
+		<?Description T6325 ?>
+	</cbc:IssueDate>
+	<cbc:IssueTime>
+		09:30:00
+		<?Name Weight statement issue time ?>
+		<?Description T6325 ?>
+	</cbc:IssueTime>
+	<cbc:WeightStatementTypeCode>
+		01
+		<?Name Weight statement type code ?>
+		<?Description T6328. 01 = Outbound delivery 02 = Inbound delivery?>
+	</cbc:WeightStatementTypeCode>
+	<cac:SenderParty>
+		<?Name Sender information ?>
+		<?Description The party sending this weight statement (e.g. Weighing Station, Shipper, Freight Forwarder, Carrier, ...).?>
+		<cbc:EndpointID schemeID="0088">
+			7300010000001
+			<?Name Sender electronic address ?>
+			<?schemeID-usage Mandatory?>
+			<?schemeID-CodeList eas?>
+		</cbc:EndpointID>
+		<cac:PartyIdentification>
+			<cbc:ID schemeID="0088">
+				7300010000001
+				<?Name Sender identity ?>
+				<?schemeID-usage Mandatory?>
+				<?schemeID-CodeList ICD?>
+			</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>
+				Weighing Solutions AB
+				<?Name Sender name ?>
+			</cbc:Name>
+		</cac:PartyName>
+	</cac:SenderParty>
+	<cac:ReceiverParty>
+		<?Name Receiver information ?>
+		<?Description The party receiving this weight statement (e.g. Carrier, Terminal Operator, ...).?>
+		<cbc:EndpointID schemeID="0088">
+			9994567987654
+			<?Name Receiver electronic address ?>
+			<?schemeID-usage Mandatory?>
+			<?schemeID-CodeList eas?>
+		</cbc:EndpointID>
+		<cac:PartyIdentification>
+			<cbc:ID schemeID="0088">
+				9994567987654
+				<?Name Receiver identity ?>
+				<?schemeID-usage Mandatory?>
+				<?schemeID-CodeList ICD?>
+			</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>
+				Transport Management Solutions AB
+				<?Name Receiver name ?>
+			</cbc:Name>
+		</cac:PartyName>
+	</cac:ReceiverParty>
+	<cac:WeighingParty>
+		<?Name Weighing party information ?>
+		<?Description The party executing the weight measure (e.g. Weighing Station).?>
+		<?Cardinality 1..1?>
+		<cac:PartyIdentification>
+			<?Cardinality 0..1?>
+			<cbc:ID schemeID="0088">
+				5790000435951
+				<?Name Weighing party identity ?>
+				<?schemeID-usage Mandatory?>
+				<?schemeID-CodeList ICD?>
+			</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>
+				Gravel Pit Ltd.
+				<?Name Weighing party name ?>
+				<?Description T5001 ?>
+			</cbc:Name>
+		</cac:PartyName>
+		<cac:PhysicalLocation>
+			<cbc:Description>
+				Townsend pit
+				<?Name Location name ?>
+				<?Description T5005 ?>
+				<?Cardinality 0..1?>
+			</cbc:Description>
+			<cbc:Description>
+				0114-40-019-a
+				<?Name Location identity ?>
+				<?Description T6755 ?>
+				<?Cardinality 0..1?>
+			</cbc:Description>
+		</cac:PhysicalLocation>
+	</cac:WeighingParty>
+	<cac:ShipperParty>
+		<?Name Shipper information ?>
+		<?Description The party transporting or shipping the items.?>
+		<?Cardinality 0..1?>
+		<cac:PartyIdentification>
+			<?Cardinality 0..1?>
+			<cbc:ID schemeID="0088">
+				5790000435951
+				<?Name Shipper identity ?>
+				<?Description T3208/T6001 ?>
+				<?schemeID-usage Mandatory?>
+				<?schemeID-CodeList ICD?>
+			</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>
+				Tony's Trucks and Transport
+				<?Name Shipper name ?>
+				<?Description T5001 ?>
+			</cbc:Name>
+		</cac:PartyName>
+	</cac:ShipperParty>
+	<cac:Shipment>
+		<?Cardinality 1..1?>
+		<cbc:ID>
+			NA
+			<?Name Shipment identity ?>
+			<?Description Use NA if no specific shipment ID is available ?>
+		</cbc:ID>
+		<cac:GoodsItem>
+			<?Cardinality 1..n?>
+			<cbc:ID>
+				1
+				<?Name Line item identifier?>
+				<?Description Identifies the Line Item assigned by the weighing partner, the identifier must be unique within the order?>
+			</cbc:ID>
+			<cbc:GrossWeightMeasure unitCode="TNE">
+				16.8
+				<?Name Gross weight ?>
+				<?Description T6122 (when T6714="AAD"). Weight (mass) of goods including packing but excluding the carrier's equipment.?>
+				<?Cardinality 0..1?>
+				<?unitCode-usage Mandatory?>
+			</cbc:GrossWeightMeasure>
+			<cbc:NetWeightMeasure unitCode="TNE">
+				16.2
+				<?Name Net weight ?>
+				<?Description T6122 (when T6714="AAA"). Weight of goods including any packaging that normally going with the goods.?>
+				<?Cardinality 0..1?>
+				<?unitCode-usage Mandatory?>
+			</cbc:NetWeightMeasure>
+			<cbc:NetNetWeightMeasure unitCode="TNE">
+				16.1
+				<?Name Net net weight ?>
+				<?Description T6122 (when T6714="AAF"). Weight (mass) of goods without any packaging.?>
+				<?Cardinality 0..1?>
+				<?unitCode-usage Mandatory?>
+			</cbc:NetNetWeightMeasure>
+			<cbc:GrossVolumeMeasure unitCode="TNE">
+				16.1
+				<?Name Gross volume ?>
+				<?Description T6122 (when T6714="AAW"). The volume unadjusted for factors such as temperature or gravity.?>
+				<?Cardinality 0..1?>
+				<?unitCode-usage Mandatory?>
+			</cbc:GrossVolumeMeasure>
+			<cbc:NetVolumeMeasure unitCode="TNE">
+				16.1
+				<?Name Net volume ?>
+				<?Description T6122 (when T6714="AAX"). The volume after adjustment for factors such as temperature or gravity.?>
+				<?Cardinality 0..1?>
+				<?unitCode-usage Mandatory?>
+			</cbc:NetVolumeMeasure>
+			<cac:Item>
+				<cbc:Name>
+					Sortering 0/2 mm krossat bergmaterial    CE-märkt enligt system 2+ för användning till asfalt.
+					<?Name Item description ?>
+					<?Description T6226. Description of weighed item ?>
+				</cbc:Name>
+				<cac:BuyersItemIdentification>
+					<cbc:ID>
+						KO2001030300
+						<?Name Buyers item identification ?>
+						<?Description T0172 (when T6317="BP"). ?>
+					</cbc:ID>
+					<?Cardinality 0..1?>
+				</cac:BuyersItemIdentification>
+				<cac:SellersItemIdentification>
+					<cbc:ID>
+						17589683
+						<?Name Sellers item identification ?>
+						<?Description T0172 (when T6317="SA"). ?>
+					</cbc:ID>
+					<?Cardinality 0..1?>
+				</cac:SellersItemIdentification>
+				<cac:StandardItemIdentification>
+					<cbc:ID schemeID="0160">
+						1234567891234
+						<?Name Standard item identification ?>
+						<?Description T0172 (when T6317<>"SA"/"BP"). Only one Standard Item Number can be used per line. ?>
+						<?schemeID-usage Mandatory?>
+					</cbc:ID>
+					<?Cardinality 0..1?>
+				</cac:StandardItemIdentification>
+				<?Cardinality 0..1?>
+			</cac:Item>
+		</cac:GoodsItem>
+	</cac:Shipment>
+</WeightStatement>

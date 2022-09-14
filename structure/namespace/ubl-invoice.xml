@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Namespace xmlns="urn:fdc:difi.no:2017:vefa:structure:Namespace-1">
+	<Identifier prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2</Identifier>
+	<Version>2.1</Version>
+	<Include prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Include>
+	<Include prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Include>
+	<Include prefix="ext">urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2</Include>
+	<Element name="Invoice">
+		<Ref card="0..1">ext:UBLExtensions</Ref>
+		<Ref card="0..1">cbc:UBLVersionID</Ref>
+		<Ref card="0..1">cbc:CustomizationID</Ref>
+		<Ref card="0..1">cbc:ProfileID</Ref>
+		<Ref card="0..1">cbc:ProfileExecutionID</Ref>
+		<Ref card="1..1">cbc:ID</Ref>
+		<Ref card="0..1">cbc:CopyIndicator</Ref>
+		<Ref card="0..1">cbc:UUID</Ref>
+		<Ref card="1..1">cbc:IssueDate</Ref>
+		<Ref card="0..1">cbc:IssueTime</Ref>
+		<Ref card="0..1">cbc:DueDate</Ref>
+		<Ref card="0..1">cbc:InvoiceTypeCode</Ref>
+		<Ref card="0..n">cbc:Note</Ref>
+		<Ref card="0..1">cac:TaxPointDate</Ref>
+		<Ref card="0..1">cac:DocumentCurrencyCode</Ref>
+		<Ref card="1..1">cac:TaxCurrencyCode</Ref>
+		<Ref card="0..1">cac:PricingCurrencyCode</Ref>
+		<Ref card="0..1">cac:PaymentCurrencyCode</Ref>
+		<Ref card="0..1">cac:PaymentAlternativeCurrencyCode</Ref>
+		<Ref card="0..1">cac:AccountingCostCode</Ref>
+		<Ref card="0..1">cac:AccountingCost</Ref>
+		<Ref card="0..1">cac:LineCountNumeric</Ref>
+		<Ref card="0..1">cac:BuyerReference</Ref>
+		<Ref card="0..n">cac:InvoicePeriod</Ref>
+		<Ref card="0..1">cac:OrderReference</Ref>
+		<Ref card="0..n">cac:BillingReference</Ref>
+		<Ref card="0..n">cac:DespatchDocumentReference</Ref>
+		<Ref card="0..n">cac:ReceiptDocumentReference</Ref>
+		<Ref card="0..n">cac:StatementDocumentReference</Ref>
+		<Ref card="0..n">cac:OriginatorDocumentReference</Ref>
+		<Ref card="0..n">cac:ContractDocumentReference</Ref>
+		<Ref card="0..n">cac:AdditionalDocumentReference</Ref>
+		<Ref card="0..n">cac:ProjectReference</Ref>
+		<Ref card="0..n">cac:Signature</Ref>
+		<Ref card="1..1">cac:AccountingSupplierParty</Ref>
+		<Ref card="1..1">cac:AccountingCustomerParty</Ref>
+		<Ref card="0..1">cac:PayeeParty</Ref>
+		<Ref card="0..1">cac:BuyerCustomerParty</Ref>
+		<Ref card="0..1">cac:SellerSupplierParty</Ref>
+		<Ref card="0..1">cac:TaxRepresentativeParty</Ref>
+		<Ref card="0..n">cac:Delivery</Ref>
+		<Ref card="0..1">cac:DeliveryTerms</Ref>
+		<Ref card="0..n">cac:PaymentMeans</Ref>
+		<Ref card="0..n">cac:PaymentTerms</Ref>
+		<Ref card="0..n">cac:PrepaidPayment</Ref>
+		<Ref card="0..n">cac:AllowanceCharge</Ref>
+		<Ref card="0..1">cac:TaxExchangeRate</Ref>
+		<Ref card="0..1">cac:PricingExchangeRate</Ref>
+		<Ref card="0..1">cac:PaymentExchangeRate</Ref>
+		<Ref card="0..1">cac:PaymentAlternativeExchangeRate</Ref>
+		<Ref card="0..n">cac:TaxTotal</Ref>
+		<Ref card="0..n">cac:WithholdingTaxTotal</Ref>
+		<Ref card="1..1">cac:LegalMonetaryTotal</Ref>
+		<Ref card="1..n">cac:InvoiceLine</Ref>
+
+	</Element>
+</Namespace>

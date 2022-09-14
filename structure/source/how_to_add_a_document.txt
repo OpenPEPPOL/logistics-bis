@@ -1,0 +1,32 @@
+add the exampel file to the /source/ directory. 
+Make sure that the DocumentTerm and properties processing instruction are included
+e.g.
+<?DocumentTerm DespatchAdvice?>
+<?Property key="sch:prefix" PEPPOL-T16?>
+<?Property key="sch:identifier" T16-basic?>
+
+add resource to project.xml this file sets the menu on the first page
+
+e.g.
+	<Resource>
+		<Type>Structure-1</Type>
+		<Path>structure/syntax/ubl-order-agreement.xml</Path>
+		<Title>Peppol Message Level Response</Title>
+	</Resource>
+
+add transformation code to build.sh by copining and paste an old one.
+the following parameters must be changed
+
+Source file to the mapping
+ -s:/src/structure/source/ubl-order-agreement.xml 
+ Output file
+ -o:/src/structure/syntax/ubl-order-agreement.xml 
+ Peppol document url, note no /tree/
+ UblDocBaseUrl=https://docs.peppol.eu/poacc/upgrade-3/syntax/OrderAgreement/ 
+
+ UblXmlReferenceFile=ubl-order-agreement.xml
+
+
+E.g
+# Order agreement
+docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-order-agreement.xml -xsl:/src/tools/UBLInstance-To-StructureXML.xsl -o:/src/structure/syntax/ubl-order-agreement.xml UblBaseUrl=https://raw.githubusercontent.com/OpenPEPPOL/poacc-upgrade-3/master/structure/syntax/ UblDocBaseUrl=https://docs.peppol.eu/poacc/upgrade-3/syntax/OrderAgreement/ UblXmlReferenceFile=ubl-order-agreement.xml -ext:on --allow-external-functions:on

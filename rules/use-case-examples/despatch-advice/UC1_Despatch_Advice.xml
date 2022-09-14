@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+                Content:
+                This file contains a Example Orderkvitto in UBL Despatch Adivce.
+                In this case, no electronic purchase order has been sent from the supplier
+			
+-->
+<DespatchAdvice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
+ xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+  <cbc:CustomizationID>urn:fdc:peppol.eu:poacc:trns:despatch_advice:3</cbc:CustomizationID>
+  <cbc:ProfileID>urn:fdc:peppol.eu:poacc:bis:despatch_advice:3</cbc:ProfileID>
+  <cbc:ID>434135</cbc:ID>
+  <!-- Unikt id från leverantör BEAst orderkvittonummer -->
+  <cbc:IssueDate>2020-12-21</cbc:IssueDate>
+  <cbc:IssueTime>13:14:34</cbc:IssueTime>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>1</cbc:ID>
+    <cbc:DocumentType>BEAST:Version</cbc:DocumentType>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>02</cbc:ID>
+    <cbc:DocumentType>BEAST:Status</cbc:DocumentType>
+  </cac:AdditionalDocumentReference>
+  <cac:AdditionalDocumentReference>
+    <cbc:ID>9071010</cbc:ID>
+    <cbc:DocumentType>BEAST:ProjectNumber</cbc:DocumentType>
+  </cac:AdditionalDocumentReference>
+  <cac:DespatchSupplierParty>
+    <!-- Mandatory-->
+    <cac:Party>
+      <cbc:EndpointID schemeID="0007">5560614330</cbc:EndpointID>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="0007">5560614330</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyLegalEntity>
+        <!-- Mandatory-->
+        <cbc:RegistrationName>Peab AB</cbc:RegistrationName>
+      </cac:PartyLegalEntity>
+    </cac:Party>
+  </cac:DespatchSupplierParty>
+  <cac:DeliveryCustomerParty>
+    <!-- Mandatory-->
+    <cac:Party>
+      <cbc:EndpointID schemeID="0007">2021006297</cbc:EndpointID>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="0007">2021006297</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyLegalEntity>
+        <!-- Mandatory-->
+        <cbc:RegistrationName>Trafikverket</cbc:RegistrationName>
+      </cac:PartyLegalEntity>
+    </cac:Party>
+  </cac:DeliveryCustomerParty>
+  <cac:Shipment>
+    <cbc:ID>1</cbc:ID>
+    <!-- Mandatory Fraktsedelsnummer kan mappas till detta fält-->
+    <cac:Consignment>
+      <cbc:ID>1</cbc:ID>
+      <cbc:Information>LRX093</cbc:Information>
+    </cac:Consignment>
+    <cac:Delivery>
+      <cac:EstimatedDeliveryPeriod>
+        <cbc:StartDate>2020-11-23</cbc:StartDate>
+        <cbc:StartTime>13:12:44</cbc:StartTime>
+        <cbc:EndDate>2020-11-23</cbc:EndDate>
+        <cbc:EndTime>13:12:44</cbc:EndTime>
+      </cac:EstimatedDeliveryPeriod>
+    </cac:Delivery>
+  </cac:Shipment>
+  <cac:DespatchLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:Note>Inkört 0,70 8/16 0,18 brunn 25-26 schakt</cbc:Note>
+    <cbc:DeliveredQuantity unitCode="HUR">8</cbc:DeliveredQuantity>
+    <cac:OrderLineReference>
+      <!-- Mandatory -->
+      <cbc:LineID>NA</cbc:LineID>
+      <cac:OrderReference>
+        <cbc:ID>NA</cbc:ID>
+      </cac:OrderReference>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Name>Lastbil 4-axlig</cbc:Name>
+      <cac:SellersItemIdentification>
+        <cbc:ID>1001000107</cbc:ID>
+      </cac:SellersItemIdentification>
+    </cac:Item>
+  </cac:DespatchLine>
+  <cac:DespatchLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:DeliveredQuantity unitCode="TNE">15</cbc:DeliveredQuantity>
+    <cac:OrderLineReference>
+      <!-- Mandatory -->
+      <cbc:LineID>NA</cbc:LineID>
+      <cac:OrderReference>
+        <cbc:ID>NA</cbc:ID>
+      </cac:OrderReference>
+    </cac:OrderLineReference>
+    <cac:Item>
+      <cbc:Name>Ballast 8/16</cbc:Name>
+      <cac:BuyersItemIdentification>
+        <cbc:ID>B989522</cbc:ID>
+      </cac:BuyersItemIdentification>
+      <cac:SellersItemIdentification>
+        <cbc:ID>1001000107</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID schemeID="160">K08016kCE</cbc:ID>
+      </cac:StandardItemIdentification>
+    </cac:Item>
+  </cac:DespatchLine>
+</DespatchAdvice>

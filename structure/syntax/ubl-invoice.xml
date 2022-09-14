@@ -1,0 +1,1033 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+   <Term>ubl-invoice</Term>
+   <Namespace prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:Invoice-2</Namespace>
+   <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
+   <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
+   <Document>
+      <Term>ubl:Invoice</Term>
+      <Element>
+         <Term>cbc:CustomizationID</Term>
+         <Value type="EXAMPLE">urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0</Value>
+      </Element>
+      <Element>
+         <Term>cbc:ProfileID</Term>
+         <Value type="EXAMPLE">urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</Value>
+      </Element>
+      <Element>
+         <Term>cbc:ID</Term>
+         <Value type="EXAMPLE">9742025</Value>
+      </Element>
+      <Element>
+         <Term>cbc:IssueDate</Term>
+         <Value type="EXAMPLE">2020-10-31</Value>
+      </Element>
+      <Element>
+         <Term>cbc:DueDate</Term>
+         <Value type="EXAMPLE">2020-12-05</Value>
+      </Element>
+      <Element>
+         <Term>cbc:InvoiceTypeCode</Term>
+         <Reference type="BUSINESS_TERM">BT-24</Reference>
+         <Reference type="RULE">PEPPOL-EN16931-R004</Reference>
+         <Value type="EXAMPLE">380</Value>
+      </Element>
+      <Element>
+         <Term>cbc:Note</Term>
+         <Value type="EXAMPLE">FAKTURASAMMANSTÄLLNING Kostnadsslag 43790 Summa 409.20</Value>
+      </Element>
+      <Element>
+         <Term>cbc:TaxPointDate</Term>
+         <Value type="EXAMPLE">2021-11-07</Value>
+      </Element>
+      <Element>
+         <Term>cbc:DocumentCurrencyCode</Term>
+         <Value type="EXAMPLE">SEK</Value>
+      </Element>
+      <Element>
+         <Term>cbc:TaxCurrencyCode</Term>
+         <Value type="EXAMPLE">SEK</Value>
+      </Element>
+      <Element>
+         <Term>cbc:AccountingCost</Term>
+         <Value type="EXAMPLE">4415</Value>
+      </Element>
+      <Element>
+         <Term>cbc:BuyerReference</Term>
+         <Value type="EXAMPLE">9876986-1-5544</Value>
+      </Element>
+      <Element>
+         <Term>cac:InvoicePeriod</Term>
+         <Description>BEAst: Also used to describe invoice period for rental items. Can also be used on line level if needed.
+Peppol: </Description>
+         <Element>
+            <Term>cbc:StartDate</Term>
+            <Value type="EXAMPLE">2020-10-31</Value>
+         </Element>
+         <Element>
+            <Term>cbc:EndDate</Term>
+            <Value type="EXAMPLE">2020-12-05</Value>
+         </Element>
+         <Element>
+            <Term>cbc:DescriptionCode</Term>
+            <Value type="EXAMPLE">35</Value>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:OrderReference</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Value type="EXAMPLE">98776</Value>
+         </Element>
+         <Element>
+            <Term>cbc:SalesOrderID</Term>
+            <Value type="EXAMPLE">112233</Value>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:BillingReference</Term>
+         <Element>
+            <Term>cac:InvoiceDocumentReference</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">9742024</Value>
+            </Element>
+            <Element>
+               <Term>cbc:IssueDate</Term>
+               <Value type="EXAMPLE">2021-10-15</Value>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:DespatchDocumentReference</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Value type="EXAMPLE">desp100</Value>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:ReceiptDocumentReference</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Value type="EXAMPLE">rec100</Value>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:OriginatorDocumentReference</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Value type="EXAMPLE">PPID-123</Value>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:ContractDocumentReference</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Value type="EXAMPLE">7987093</Value>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:AdditionalDocumentReference</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Value type="EXAMPLE">60231136</Value>
+            <Attribute usage="Optional">
+               <Term>schemeID</Term>
+               <Value type="EXAMPLE">AAG</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:DocumentTypeCode</Term>
+            <Value type="EXAMPLE">130</Value>
+         </Element>
+         <Element>
+            <Term>cbc:DocumentDescription</Term>
+            <Value type="EXAMPLE">Leverantörens referens till faktureringsobjekt</Value>
+         </Element>
+         <Element>
+            <Term>cac:Attachment</Term>
+            <Element>
+               <Term>cbc:EmbeddedDocumentBinaryObject</Term>
+               <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>
+               <Attribute usage="Optional">
+                  <Term>mimeCode</Term>
+                  <Value type="EXAMPLE">text/csv</Value>
+               </Attribute>
+               <Attribute usage="Optional">
+                  <Term>filename</Term>
+                  <Value type="EXAMPLE">fakturareferens.csv</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cac:ExternalReference</Term>
+               <Element>
+                  <Term>cbc:URI</Term>
+                  <Value type="EXAMPLE">http://www.example.com/index.html</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:ProjectReference</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Value type="EXAMPLE">9876986</Value>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:AccountingSupplierParty</Term>
+         <Element>
+            <Term>cac:Party</Term>
+            <Element>
+               <Term>cbc:EndpointID</Term>
+               <Value type="EXAMPLE">5561043539</Value>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Value type="EXAMPLE">0007</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cac:PartyIdentification</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">7365561043532</Value>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Value type="EXAMPLE">0088</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PartyName</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Value type="EXAMPLE">Cramo</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PostalAddress</Term>
+               <Element>
+                  <Term>cbc:StreetName</Term>
+                  <Value type="EXAMPLE">Rosenborgsgatan 12</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:AdditionalStreetName</Term>
+                  <Description>BEAst: Department 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Department A</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CityName</Term>
+                  <Value type="EXAMPLE">Solna</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:PostalZone</Term>
+                  <Value type="EXAMPLE">16904</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CountrySubentity</Term>
+                  <Value type="EXAMPLE">Uppland</Value>
+               </Element>
+               <Element>
+                  <Term>cac:AddressLine</Term>
+                  <Element>
+                     <Term>cbc:Line</Term>
+                     <Description>BEAst: Used for grid coordinates or building details 
+Peppol: </Description>
+                     <Value type="EXAMPLE">Byggnad 3</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Country</Term>
+                  <Element>
+                     <Term>cbc:IdentificationCode</Term>
+                     <Value type="EXAMPLE">SE</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PartyTaxScheme</Term>
+               <Element>
+                  <Term>cbc:CompanyID</Term>
+                  <Value type="EXAMPLE">SE556104353901</Value>
+               </Element>
+               <Element>
+                  <Term>cac:TaxScheme</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">VAT</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PartyLegalEntity</Term>
+               <Element>
+                  <Term>cbc:RegistrationName</Term>
+                  <Value type="EXAMPLE">CRAMO AB</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CompanyID</Term>
+                  <Value type="EXAMPLE">5561043539</Value>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Value type="EXAMPLE">0007</Value>
+                  </Attribute>
+               </Element>
+               <Element>
+                  <Term>cbc:CompanyLegalForm</Term>
+                  <Value type="EXAMPLE">Säte: Sollentuna</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:Contact</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Value type="EXAMPLE">WICKSEL,NILSSON,DAHL</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Telephone</Term>
+                  <Value type="EXAMPLE">0856470730</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:ElectronicMail</Term>
+                  <Value type="EXAMPLE">example@cramo.se</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:AccountingCustomerParty</Term>
+         <Element>
+            <Term>cac:Party</Term>
+            <Element>
+               <Term>cbc:EndpointID</Term>
+               <Value type="EXAMPLE">7300009058334</Value>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Value type="EXAMPLE">0088</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cac:PartyIdentification</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">5560608837</Value>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Value type="EXAMPLE">0007</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PartyName</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Value type="EXAMPLE">JM</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PostalAddress</Term>
+               <Element>
+                  <Term>cbc:StreetName</Term>
+                  <Value type="EXAMPLE">Gatuadress nummer</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:AdditionalStreetName</Term>
+                  <Description>BEAst: Department 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Department X</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CityName</Term>
+                  <Value type="EXAMPLE">STOCKHOLM</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:PostalZone</Term>
+                  <Value type="EXAMPLE">16982</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CountrySubentity</Term>
+                  <Value type="EXAMPLE">Uppland</Value>
+               </Element>
+               <Element>
+                  <Term>cac:AddressLine</Term>
+                  <Element>
+                     <Term>cbc:Line</Term>
+                     <Description>BEAst: Used for grid coordinates or building details 
+Peppol: </Description>
+                     <Value type="EXAMPLE">Main building</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Country</Term>
+                  <Element>
+                     <Term>cbc:IdentificationCode</Term>
+                     <Value type="EXAMPLE">SE</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PartyTaxScheme</Term>
+               <Element>
+                  <Term>cbc:CompanyID</Term>
+                  <Value type="EXAMPLE">SE556060883701</Value>
+               </Element>
+               <Element>
+                  <Term>cac:TaxScheme</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">VAT</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PartyLegalEntity</Term>
+               <Element>
+                  <Term>cbc:RegistrationName</Term>
+                  <Value type="EXAMPLE">JM ENTREPRENAD FÖRSÄKRING</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CompanyID</Term>
+                  <Value type="EXAMPLE">5560608837</Value>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Value type="EXAMPLE">0007</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:Contact</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Value type="EXAMPLE">SKURUSUNDSVÄGEN / HÖGVALLAVÄGEN</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Telephone</Term>
+                  <Value type="EXAMPLE">08-111 111</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:ElectronicMail</Term>
+                  <Value type="EXAMPLE">exempel@jm.se</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:PayeeParty</Term>
+         <Element>
+            <Term>cac:PartyIdentification</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">7365561043532</Value>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Value type="EXAMPLE">0088</Value>
+               </Attribute>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PartyName</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">Payment recipient</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PartyLegalEntity</Term>
+            <Element>
+               <Term>cbc:CompanyID</Term>
+               <Value type="EXAMPLE">XXXXXXXXXXX</Value>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Value type="EXAMPLE">0007</Value>
+               </Attribute>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:TaxRepresentativeParty</Term>
+         <Element>
+            <Term>cac:PartyName</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">Tax representative name</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PostalAddress</Term>
+            <Element>
+               <Term>cbc:StreetName</Term>
+               <Value type="EXAMPLE">Skattegatan 3</Value>
+            </Element>
+            <Element>
+               <Term>cbc:AdditionalStreetName</Term>
+               <Description>BEAst: Department 
+Peppol: </Description>
+               <Value type="EXAMPLE">Tax department</Value>
+            </Element>
+            <Element>
+               <Term>cbc:CityName</Term>
+               <Value type="EXAMPLE">STOCKHOLM</Value>
+            </Element>
+            <Element>
+               <Term>cbc:PostalZone</Term>
+               <Value type="EXAMPLE">16000</Value>
+            </Element>
+            <Element>
+               <Term>cbc:CountrySubentity</Term>
+               <Value type="EXAMPLE">Uppland</Value>
+            </Element>
+            <Element>
+               <Term>cac:AddressLine</Term>
+               <Element>
+                  <Term>cbc:Line</Term>
+                  <Description>BEAst: Used for grid coordinates or building details 
+Peppol: </Description>
+                  <Value type="EXAMPLE">vån 5</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:Country</Term>
+               <Element>
+                  <Term>cbc:IdentificationCode</Term>
+                  <Value type="EXAMPLE">SE</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PartyTaxScheme</Term>
+            <Element>
+               <Term>cbc:CompanyID</Term>
+               <Value type="EXAMPLE">SE556104353901</Value>
+            </Element>
+            <Element>
+               <Term>cac:TaxScheme</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">VAT</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:Delivery</Term>
+         <Element>
+            <Term>cbc:ActualDeliveryDate</Term>
+            <Value type="EXAMPLE">2021-09-16</Value>
+         </Element>
+         <Element>
+            <Term>cac:DeliveryLocation</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">7300009058334</Value>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Value type="EXAMPLE">0088</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cac:Address</Term>
+               <Element>
+                  <Term>cbc:StreetName</Term>
+                  <Value type="EXAMPLE">Storgatan 162</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:AdditionalStreetName</Term>
+                  <Description>BEAst: Department </Description>
+                  <Value type="EXAMPLE">Inköp</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CityName</Term>
+                  <Value type="EXAMPLE">Stockholm</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:PostalZone</Term>
+                  <Value type="EXAMPLE">115 34</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CountrySubentity</Term>
+                  <Value type="EXAMPLE">Uppland</Value>
+               </Element>
+               <Element>
+                  <Term>cac:AddressLine</Term>
+                  <Element>
+                     <Term>cbc:Line</Term>
+                     <Description>BEAst: Used for grid coordinates or building details 
+Peppol: </Description>
+                     <Value type="EXAMPLE">Hus 1</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Country</Term>
+                  <Element>
+                     <Term>cbc:IdentificationCode</Term>
+                     <Value type="EXAMPLE">SE</Value>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:DeliveryParty</Term>
+            <Element>
+               <Term>cac:PartyName</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Value type="EXAMPLE">Goods reception employee 1</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:PaymentMeans</Term>
+         <Element>
+            <Term>cbc:PaymentMeansCode</Term>
+            <Value type="EXAMPLE">31</Value>
+         </Element>
+         <Element>
+            <Term>cbc:PaymentID</Term>
+            <Value type="EXAMPLE">7697699</Value>
+         </Element>
+         <Element>
+            <Term>cac:CardAccount</Term>
+            <Element>
+               <Term>cbc:PrimaryAccountNumberID</Term>
+               <Value type="EXAMPLE">1234</Value>
+            </Element>
+            <Element>
+               <Term>cbc:NetworkID</Term>
+               <Value type="EXAMPLE">VISA</Value>
+            </Element>
+            <Element>
+               <Term>cbc:HolderName</Term>
+               <Value type="EXAMPLE">Kalle Kula</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PayeeFinancialAccount</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">SE1750000000055651055010</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">Payment Account</Value>
+            </Element>
+            <Element>
+               <Term>cac:FinancialInstitutionBranch</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">ESSESESS</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PaymentMandate</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">123545</Value>
+            </Element>
+            <Element>
+               <Term>cac:PayerFinancialAccount</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">123123123123</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:PaymentTerms</Term>
+         <Element>
+            <Term>cbc:Note</Term>
+            <Value type="EXAMPLE">30 dagar efter mottagen faktura</Value>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:AllowanceCharge</Term>
+         <Element>
+            <Term>cbc:ChargeIndicator</Term>
+            <Value type="EXAMPLE">true</Value>
+         </Element>
+         <Element>
+            <Term>cbc:AllowanceChargeReasonCode</Term>
+            <Value type="EXAMPLE">CAP</Value>
+         </Element>
+         <Element>
+            <Term>cbc:AllowanceChargeReason</Term>
+            <Value type="EXAMPLE">Försäkring</Value>
+         </Element>
+         <Element>
+            <Term>cbc:MultiplierFactorNumeric</Term>
+            <Value type="EXAMPLE">3</Value>
+         </Element>
+         <Element>
+            <Term>cbc:Amount</Term>
+            <Value type="EXAMPLE">5</Value>
+            <Attribute usage="Optional">
+               <Term>currencyID</Term>
+               <Value type="EXAMPLE">SEK</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:BaseAmount</Term>
+            <Value type="EXAMPLE">10</Value>
+            <Attribute usage="Optional">
+               <Term>currencyID</Term>
+               <Value type="EXAMPLE">SEK</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cac:TaxCategory</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">E</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Percent</Term>
+               <Value type="EXAMPLE">0.00</Value>
+            </Element>
+            <Element>
+               <Term>cac:TaxScheme</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">VAT</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:TaxTotal</Term>
+         <Element>
+            <Term>cbc:TaxAmount</Term>
+            <Value type="EXAMPLE">45.00</Value>
+            <Attribute usage="Optional">
+               <Term>currencyID</Term>
+               <Value type="EXAMPLE">SEK</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cac:TaxSubtotal</Term>
+            <Element>
+               <Term>cbc:TaxableAmount</Term>
+               <Value type="EXAMPLE">180.00</Value>
+               <Attribute usage="Optional">
+                  <Term>currencyID</Term>
+                  <Value type="EXAMPLE">SEK</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:TaxAmount</Term>
+               <Value type="EXAMPLE">45.00</Value>
+               <Attribute usage="Optional">
+                  <Term>currencyID</Term>
+                  <Value type="EXAMPLE">SEK</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cac:TaxCategory</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">S</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Percent</Term>
+                  <Value type="EXAMPLE">25.00</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:TaxExemptionReasonCode</Term>
+               </Element>
+               <Element>
+                  <Term>cbc:TaxExemptionReason</Term>
+                  <Value type="EXAMPLE">Momslagen ej tillämplig</Value>
+               </Element>
+               <Element>
+                  <Term>cac:TaxScheme</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">VAT</Value>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:LegalMonetaryTotal</Term>
+         <Element>
+            <Term>cbc:LineExtensionAmount</Term>
+            <Value type="EXAMPLE">180.00</Value>
+            <Attribute usage="Optional">
+               <Term>currencyID</Term>
+               <Value type="EXAMPLE">SEK</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:TaxExclusiveAmount</Term>
+            <Value type="EXAMPLE">180.00</Value>
+            <Attribute usage="Optional">
+               <Term>currencyID</Term>
+               <Value type="EXAMPLE">SEK</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:TaxInclusiveAmount</Term>
+            <Value type="EXAMPLE">225.00</Value>
+            <Attribute usage="Optional">
+               <Term>currencyID</Term>
+               <Value type="EXAMPLE">SEK</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:AllowanceTotalAmount</Term>
+            <Value type="EXAMPLE">20.00</Value>
+            <Attribute usage="Optional">
+               <Term>currencyID</Term>
+               <Value type="EXAMPLE">SEK</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:ChargeTotalAmount</Term>
+            <Value type="EXAMPLE">5</Value>
+            <Attribute usage="Optional">
+               <Term>currencyID</Term>
+               <Value type="EXAMPLE">SEK</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:PrepaidAmount</Term>
+            <Value type="EXAMPLE">50.00</Value>
+            <Attribute usage="Optional">
+               <Term>currencyID</Term>
+               <Value type="EXAMPLE">SEK</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:PayableRoundingAmount</Term>
+            <Value type="EXAMPLE">0.00</Value>
+            <Attribute usage="Optional">
+               <Term>currencyID</Term>
+               <Value type="EXAMPLE">SEK</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:PayableAmount</Term>
+            <Value type="EXAMPLE">180.00</Value>
+            <Attribute usage="Optional">
+               <Term>currencyID</Term>
+               <Value type="EXAMPLE">SEK</Value>
+            </Attribute>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:InvoiceLine</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Value type="EXAMPLE">1</Value>
+         </Element>
+         <Element>
+            <Term>cbc:Note</Term>
+            <Value type="EXAMPLE">Prismatris: 100/10 *20 = 200 - 20 = 180;Vår ref WICKSEL,NILSSON,DAHL 08-56470730</Value>
+         </Element>
+         <Element>
+            <Term>cbc:InvoicedQuantity</Term>
+            <Name>Invoice Quantity</Name>
+            <Description>BEAst: The quantity of items (goods or services) that is charged in the Invoice line. BEAst: For rental invoices this is the number of days to invoice.</Description>
+            <Value type="EXAMPLE">20.00</Value>
+            <Attribute usage="Optional">
+               <Term>unitCode</Term>
+               <Value type="EXAMPLE">H87</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:LineExtensionAmount</Term>
+            <Value type="EXAMPLE">180.00</Value>
+            <Attribute usage="Optional">
+               <Term>currencyID</Term>
+               <Value type="EXAMPLE">SEK</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:AccountingCost</Term>
+            <Description>BEAst: Can be used for natural account or code string
+Peppol: </Description>
+            <Value type="EXAMPLE">4415</Value>
+         </Element>
+         <Element>
+            <Term>cac:InvoicePeriod</Term>
+            <Name>Invoice Line Period</Name>
+            <Description>BEAst: Also used to describe invoice period for rental items. Can also be used on header level.
+Peppol: </Description>
+            <Element>
+               <Term>cbc:StartDate</Term>
+               <Value type="EXAMPLE">2020-10-01</Value>
+            </Element>
+            <Element>
+               <Term>cbc:EndDate</Term>
+               <Value type="EXAMPLE">2020-10-31</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:OrderLineReference</Term>
+            <Description>BEAst: Purchase order line referens.
+Peppol: </Description>
+            <Element>
+               <Term>cbc:LineID</Term>
+               <Value type="EXAMPLE">1</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:DocumentReference</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Name>Document Reference ID</Name>
+               <Description>BEAst: schemeID="SE" serial number,"VN" Sales order id </Description>
+               <Value type="EXAMPLE">1571078</Value>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Value type="EXAMPLE">SE</Value>
+               </Attribute>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:AllowanceCharge</Term>
+            <Element>
+               <Term>cbc:ChargeIndicator</Term>
+               <Value type="EXAMPLE">false</Value>
+            </Element>
+            <Element>
+               <Term>cbc:AllowanceChargeReason</Term>
+               <Value type="EXAMPLE">Prisrabatt enligt avtal</Value>
+            </Element>
+            <Element>
+               <Term>cbc:MultiplierFactorNumeric</Term>
+               <Value type="EXAMPLE">10</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Amount</Term>
+               <Value type="EXAMPLE">20.00</Value>
+               <Attribute usage="Optional">
+                  <Term>currencyID</Term>
+                  <Value type="EXAMPLE">SEK</Value>
+               </Attribute>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:Item</Term>
+            <Element>
+               <Term>cbc:Description</Term>
+               <Value type="EXAMPLE">Superbra ventilationsslang i finfin plåt</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">Ventilationsslang diameter 82mm</Value>
+            </Element>
+            <Element>
+               <Term>cac:BuyersItemIdentification</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">43790</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:SellersItemIdentification</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">9371212</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:StandardItemIdentification</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">7391272164648</Value>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Value type="EXAMPLE">0160</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:OriginCountry</Term>
+               <Element>
+                  <Term>cbc:IdentificationCode</Term>
+                  <Value type="EXAMPLE">CN</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:CommodityClassification</Term>
+               <Element>
+                  <Term>cbc:ItemClassificationCode</Term>
+                  <Value type="EXAMPLE">698679864</Value>
+                  <Attribute usage="Optional">
+                     <Term>listID</Term>
+                     <Value type="EXAMPLE">SN</Value>
+                  </Attribute>
+                  <Attribute usage="Optional">
+                     <Term>listVersionID</Term>
+                     <Value type="EXAMPLE">1</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:ClassifiedTaxCategory</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">S</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Percent</Term>
+                  <Value type="EXAMPLE">25.00</Value>
+               </Element>
+               <Element>
+                  <Term>cac:TaxScheme</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">VAT</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:AdditionalItemProperty</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">100</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Value type="EXAMPLE">BEAst:RentalDeliveryStatus</Value>
+               </Element>
+            </Element>
+            <Element cardinality="0..n">
+               <Term>cac:ItemInstance</Term>
+               <Name>Item instance information</Name>
+               <Description>BEAst: This element is not to be used. Added for describing a potential change. RFC 4994 submitted to Open Peppol by BEAst</Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:SerialID</Term>
+                  <Name>Item serial numbers</Name>
+                  <Description>BEAst: Serial numbers for items in the invoice line</Description>
+                  <Value type="EXAMPLE">646466423866</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:Price</Term>
+            <Element>
+               <Term>cbc:PriceAmount</Term>
+               <Value type="EXAMPLE">100</Value>
+               <Attribute usage="Optional">
+                  <Term>currencyID</Term>
+                  <Value type="EXAMPLE">SEK</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:BaseQuantity</Term>
+               <Name>Base Quantity</Name>
+               <Value type="EXAMPLE">1</Value>
+               <Attribute usage="Optional">
+                  <Term>unitCode</Term>
+                  <Value type="EXAMPLE">EA</Value>
+               </Attribute>
+            </Element>
+         </Element>
+      </Element>
+   </Document>
+</Structure>

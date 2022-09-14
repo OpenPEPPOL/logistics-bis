@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ubl:Invoice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+    xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2">
+	<?Rules type="schematron">../../rules/sch/PEPPOL-EN16931-UBL.sch?>
+	<?Rules type="schematron">../../rules/sch/CEN-EN16931-UBL.sch?>
+  <?DocumentTerm Invoice?>
+	<cbc:CustomizationID>
+    urn:cen.eu:en16931:2017#compliant#urn:fdc:peppol.eu:2017:poacc:billing:3.0
+  </cbc:CustomizationID>
+
+  <cbc:ProfileID>
+    urn:fdc:peppol.eu:2017:poacc:billing:01:1.0
+  </cbc:ProfileID>
+  <cbc:ID>9742025</cbc:ID>
+  <cbc:IssueDate>2020-10-31</cbc:IssueDate>
+  <cbc:DueDate>2020-12-05</cbc:DueDate>
+  <cbc:InvoiceTypeCode>380
+  <?BusinessTerm BT-24?>
+</cbc:InvoiceTypeCode>
+  <cbc:Note>
+    FAKTURASAMMANSTÄLLNING
+    Kostnadsslag 43790     Summa 409.20
+  </cbc:Note>
+  <cbc:TaxPointDate>2021-11-07</cbc:TaxPointDate>
+  <cbc:DocumentCurrencyCode>SEK</cbc:DocumentCurrencyCode>
+  <cbc:TaxCurrencyCode>SEK</cbc:TaxCurrencyCode>
+	<cbc:AccountingCost>
+		4415<?DescriptionAddFirst Can be used for natural account or code string?>
+	</cbc:AccountingCost>
+  <cbc:BuyerReference>Byggare Bob</cbc:BuyerReference>
+	<cac:InvoicePeriod>
+		<?DescriptionAddFirst Also used to describe invoice period for rental items. Can also be used on line level if needed.?> 
+		<cbc:StartDate>2020-10-31</cbc:StartDate>
+		<cbc:EndDate>2020-12-05</cbc:EndDate>
+		<cbc:DescriptionCode>35</cbc:DescriptionCode>
+	</cac:InvoicePeriod>
+	<cac:OrderReference>
+		<cbc:ID>98776</cbc:ID>
+		<cbc:SalesOrderID>112233</cbc:SalesOrderID>
+	</cac:OrderReference>
+	<cac:BillingReference>
+		<cac:InvoiceDocumentReference>
+			<cbc:ID>9742024</cbc:ID>
+			<cbc:IssueDate>2021-10-15</cbc:IssueDate>
+		</cac:InvoiceDocumentReference>
+	</cac:BillingReference>
+	<cac:DespatchDocumentReference>
+		<cbc:ID>desp100</cbc:ID>
+	</cac:DespatchDocumentReference>
+	<cac:ReceiptDocumentReference>
+		<cbc:ID>rec100</cbc:ID>
+	</cac:ReceiptDocumentReference>
+	<cac:OriginatorDocumentReference>
+		<cbc:ID>PPID-123</cbc:ID>		
+	</cac:OriginatorDocumentReference>
+    <cac:ContractDocumentReference>
+        <cbc:ID>7987093</cbc:ID>
+    </cac:ContractDocumentReference>
+    <cac:AdditionalDocumentReference>
+        <cbc:ID schemeID="AAG">60231136</cbc:ID>
+		<cbc:DocumentTypeCode>130</cbc:DocumentTypeCode>
+		<cac:Attachment>
+			<cbc:EmbeddedDocumentBinaryObject mimeCode="text/csv" filename="fakturareferens.csv">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+			<cac:ExternalReference>
+				<cbc:URI>http://www.example.com/index.html</cbc:URI>
+			</cac:ExternalReference>
+		</cac:Attachment>
+    </cac:AdditionalDocumentReference>
+  <cac:ProjectReference>
+    <cbc:ID>9876986</cbc:ID>
+  </cac:ProjectReference>
+
+  <cac:AccountingSupplierParty>
+    <cac:Party>
+      <cbc:EndpointID schemeID="0007">5561043539</cbc:EndpointID>
+      <cac:PartyIdentification>
+		  
+        <cbc:ID schemeID="0088">7365561043532</cbc:ID>  
+      </cac:PartyIdentification>
+	<cac:PartyName>
+			  <cbc:Name>Cramo</cbc:Name>
+		  </cac:PartyName>
+      <cac:PostalAddress>
+        <cbc:StreetName>Rosenborgsgatan 12</cbc:StreetName>
+		<cbc:AdditionalStreetName>
+		  Department A
+		  <?DescriptionAddFirst Department ?>
+    	</cbc:AdditionalStreetName>
+        <cbc:CityName>Solna</cbc:CityName>
+        <cbc:PostalZone>16904</cbc:PostalZone>
+		<cbc:CountrySubentity>Uppland</cbc:CountrySubentity>
+		<cac:AddressLine>
+			<cbc:Line>
+				Byggnad 3
+				<?DescriptionAddFirst Used for grid coordinates or building details ?>
+			</cbc:Line>
+		</cac:AddressLine>
+		<cac:Country>
+          <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>SE556104353901</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>CRAMO AB</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="0007">5561043539</cbc:CompanyID>
+        <cbc:CompanyLegalForm>Säte: Sollentuna</cbc:CompanyLegalForm>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>WICKSEL,NILSSON,DAHL</cbc:Name>
+        <cbc:Telephone>0856470730</cbc:Telephone>
+		<cbc:ElectronicMail>example@cramo.se</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cac:Party>
+      <cbc:EndpointID schemeID="0088">7300009058334</cbc:EndpointID>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="0007">5560608837</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+		  <cbc:Name>JM</cbc:Name>
+	  </cac:PartyName>
+      <cac:PostalAddress>
+		<cbc:StreetName>Gatuadress nummer</cbc:StreetName>
+		<cbc:AdditionalStreetName>
+		  Department X
+		  <?DescriptionAddFirst Department ?>
+		</cbc:AdditionalStreetName>
+        <cbc:CityName>STOCKHOLM</cbc:CityName>
+        <cbc:PostalZone>16982</cbc:PostalZone>
+		<cbc:CountrySubentity>Uppland</cbc:CountrySubentity>
+		<cac:AddressLine>
+		  <cbc:Line>
+			  Main building
+			  <?DescriptionAddFirst Used for grid coordinates or building details ?>
+		  </cbc:Line>
+		</cac:AddressLine>
+        <cac:Country>
+          <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+        <cbc:CompanyID>SE556060883701</cbc:CompanyID>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>JM ENTREPRENAD FÖRSÄKRING</cbc:RegistrationName>
+        <cbc:CompanyID schemeID="0007">5560608837</cbc:CompanyID>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>SKURUSUNDSVÄGEN / HÖGVALLAVÄGEN</cbc:Name>
+		<cbc:Telephone>08-111 111</cbc:Telephone>
+		<cbc:ElectronicMail>exempel@jm.se</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:PayeeParty>
+	  <cac:PartyIdentification>
+		  <cbc:ID schemeID="0088">7365561043532</cbc:ID>
+	  </cac:PartyIdentification>
+	  <cac:PartyName>
+		  <cbc:Name>Payment recipient</cbc:Name>
+	  </cac:PartyName>
+	  <cac:PartyLegalEntity>
+		  <cbc:CompanyID schemeID="0007">XXXXXXXXXXX</cbc:CompanyID>
+	  </cac:PartyLegalEntity>
+  </cac:PayeeParty>
+	<cac:TaxRepresentativeParty>
+		<cac:PartyName>
+			<cbc:Name>Tax representative name</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+		    <cbc:StreetName>Skattegatan 3</cbc:StreetName>
+		    <cbc:AdditionalStreetName>
+		    Tax department
+		    <?DescriptionAddFirst Department ?>
+		    </cbc:AdditionalStreetName>
+            <cbc:CityName>STOCKHOLM</cbc:CityName>
+            <cbc:PostalZone>16000</cbc:PostalZone>
+		    <cbc:CountrySubentity>Uppland</cbc:CountrySubentity>
+		    <cac:AddressLine>
+	    	  <cbc:Line>
+			  vån 5
+			  <?DescriptionAddFirst Used for grid coordinates or building details ?>
+		      </cbc:Line>
+		    </cac:AddressLine>
+            <cac:Country>
+                <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+            </cac:Country>
+        </cac:PostalAddress>
+		<cac:PartyTaxScheme>
+			<cbc:CompanyID>SE556104353901</cbc:CompanyID>
+			<cac:TaxScheme>
+				<cbc:ID>VAT</cbc:ID>
+			</cac:TaxScheme>
+		</cac:PartyTaxScheme>
+	</cac:TaxRepresentativeParty>
+  <cac:Delivery>
+	  <cbc:ActualDeliveryDate>2021-09-16</cbc:ActualDeliveryDate>
+    <cac:DeliveryLocation>
+      <cbc:ID schemeID="0088">7300009058334</cbc:ID>
+      <cac:Address>
+        <cbc:StreetName>Storgatan 162</cbc:StreetName>
+        <cbc:AdditionalStreetName>
+          <?Description Department ?>
+          Inköp
+        </cbc:AdditionalStreetName>
+        <cbc:CityName>Stockholm</cbc:CityName>
+        <cbc:PostalZone>115 34</cbc:PostalZone>
+		<cbc:CountrySubentity>Uppland</cbc:CountrySubentity>
+		<cac:AddressLine>
+		  <cbc:Line>
+			  Hus 1
+			  <?DescriptionAddFirst Used for grid coordinates or building details ?>
+		  </cbc:Line>
+		</cac:AddressLine>
+        <cac:Country>
+          <cbc:IdentificationCode>SE</cbc:IdentificationCode>
+        </cac:Country>
+      </cac:Address>
+    </cac:DeliveryLocation>
+	  <cac:DeliveryParty>
+		  <cac:PartyName>
+			  <cbc:Name>Goods reception employee 1</cbc:Name>
+		  </cac:PartyName>
+	  </cac:DeliveryParty>
+  </cac:Delivery>
+
+  <cac:PaymentMeans>
+    <cbc:PaymentMeansCode>31</cbc:PaymentMeansCode>
+    <cbc:PaymentID>7697699</cbc:PaymentID>
+	  <cac:CardAccount>
+		  <cbc:PrimaryAccountNumberID>1234</cbc:PrimaryAccountNumberID>
+		  <cbc:NetworkID>VISA</cbc:NetworkID>
+		  <cbc:HolderName>Kalle Kula</cbc:HolderName>
+	  </cac:CardAccount>
+	  <cac:PayeeFinancialAccount>
+        <cbc:ID>SE1750000000055651055010</cbc:ID>
+		<cbc:Name>Payment Account</cbc:Name>
+        <cac:FinancialInstitutionBranch>
+          <cbc:ID>ESSESESS</cbc:ID>
+        </cac:FinancialInstitutionBranch>
+      </cac:PayeeFinancialAccount>
+	  <cac:PaymentMandate>
+		  <cbc:ID>123545</cbc:ID>
+		  <cac:PayerFinancialAccount>
+			  <cbc:ID>123123123123</cbc:ID>
+		  </cac:PayerFinancialAccount>
+	  </cac:PaymentMandate>
+  </cac:PaymentMeans>
+	
+  <cac:PaymentTerms>
+    <cbc:Note>30 dagar efter mottagen faktura</cbc:Note>
+  </cac:PaymentTerms>
+  <cac:AllowanceCharge>
+    <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+	  <cbc:AllowanceChargeReasonCode>CAP</cbc:AllowanceChargeReasonCode>
+    <cbc:AllowanceChargeReason>Försäkring</cbc:AllowanceChargeReason>
+	  <cbc:MultiplierFactorNumeric>3</cbc:MultiplierFactorNumeric>
+    <cbc:Amount currencyID="SEK">5</cbc:Amount>
+	<cbc:BaseAmount currencyID="SEK">10</cbc:BaseAmount>
+    <cac:TaxCategory>
+      <cbc:ID>E</cbc:ID>
+      <cbc:Percent>0.00</cbc:Percent>
+      <cac:TaxScheme>
+        <cbc:ID>VAT</cbc:ID>
+      </cac:TaxScheme>
+    </cac:TaxCategory>
+  </cac:AllowanceCharge>
+	
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="SEK">45.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="SEK">180.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="SEK">45.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>25.00</cbc:Percent>
+		  <cbc:TaxExemptionReasonCode></cbc:TaxExemptionReasonCode>
+		  <cbc:TaxExemptionReason>Momslagen ej tillämplig</cbc:TaxExemptionReason>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="SEK">180.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="SEK">180.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="SEK">225.00</cbc:TaxInclusiveAmount>
+	<cbc:AllowanceTotalAmount currencyID="SEK">20.00</cbc:AllowanceTotalAmount>
+    <cbc:ChargeTotalAmount currencyID="SEK">5</cbc:ChargeTotalAmount>
+	<cbc:PrepaidAmount currencyID="SEK">50.00</cbc:PrepaidAmount>
+    <cbc:PayableRoundingAmount currencyID="SEK">0.00</cbc:PayableRoundingAmount>
+    <cbc:PayableAmount currencyID="SEK">180.00</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:Note>Note from supplier
+    </cbc:Note>
+    <cbc:InvoicedQuantity unitCode="H87">
+      <?Name Invoice Quantity?>
+      <?DescriptionAddFirst DeliveredQuantity (T6706) For rental invoices this is [number of days to invoice] x [quantity of the articles rented].?>
+      20.00
+    </cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="SEK">180.00</cbc:LineExtensionAmount>
+    <cbc:AccountingCost>4415<?DescriptionAddFirst Can be used for natural account or code string?></cbc:AccountingCost>
+    <cac:InvoicePeriod>
+      <?Name Invoice Line Period?>
+		<?DescriptionAddFirst Also used to describe invoice period for rental items. Can also be used on header level.?>
+		<cbc:StartDate>2020-10-01</cbc:StartDate>
+      <cbc:EndDate>2020-10-31</cbc:EndDate>
+    </cac:InvoicePeriod>
+	  <cac:OrderLineReference>
+		
+		<cbc:LineID>
+			<?DescriptionAddFirst T3322 ReferenceToOrderLine. Purchase order line referens.?>1</cbc:LineID>
+	  </cac:OrderLineReference>
+    <cac:DocumentReference>
+      <cbc:ID schemeID="SE">
+        <?Name Document Reference ID?>
+        <?Description MaterialTicketNumber (T6329) @schemeID="WM"; FreightForwarderReferensNumber (T6127) @schemeID="AHY"; OrderReceiptReference (T6386) @schemeID="AAK"; Serial number schemeID="SE"; Sales order id schemeID="VN" ?>
+		  1571078
+	  </cbc:ID>
+		<cbc:DocumentTypeCode>130</cbc:DocumentTypeCode>
+    </cac:DocumentReference>
+    <cac:AllowanceCharge>
+      <cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+      <cbc:AllowanceChargeReason>Prisrabatt enligt avtal</cbc:AllowanceChargeReason>
+      <cbc:MultiplierFactorNumeric>10</cbc:MultiplierFactorNumeric>
+      <cbc:Amount currencyID="SEK">20.00</cbc:Amount>
+    </cac:AllowanceCharge>
+    <cac:Item>
+		<cbc:Description>Superbra ventilationsslang i finfin plåt</cbc:Description>
+      <cbc:Name>Ventilationsslang diameter 82mm</cbc:Name>
+      <cac:BuyersItemIdentification>
+        <cbc:ID>43790</cbc:ID>
+      </cac:BuyersItemIdentification>
+      <cac:SellersItemIdentification>
+        <cbc:ID>9371212</cbc:ID>
+      </cac:SellersItemIdentification>
+		<cac:StandardItemIdentification><cbc:ID schemeID="0160">7391272164648</cbc:ID></cac:StandardItemIdentification>
+		<cac:OriginCountry><cbc:IdentificationCode>CN</cbc:IdentificationCode></cac:OriginCountry>
+		<cac:CommodityClassification><cbc:ItemClassificationCode listID="SN" listVersionID="1">698679864</cbc:ItemClassificationCode></cac:CommodityClassification>
+      <cac:ClassifiedTaxCategory>
+        <cbc:ID>S</cbc:ID>
+        <cbc:Percent>25.00</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>VAT</cbc:ID>
+        </cac:TaxScheme>
+      </cac:ClassifiedTaxCategory>
+		<cac:AdditionalItemProperty>
+			<?DescriptionAddFirst ?>
+			<cbc:Name>
+				<?DescriptionAddFirst BEAst:RentalDeliveryStatus (T6505); BEAst:BuyersContact (T6709); BEAst:DeliveryPeriodStartDate (T2051); BEAst:RentalTimeQuantity Time for which an article is to be debited for. (T6478); BEAst:RentalTimeQuantityUOM Unit of measure for RentalTimeQuantity;  BEAst:RentalQuantityValue To be used to describe the quantity delivered in a rental case.; BEAst:RentalQuantityValueUOM Unit of measure for DeliveredQuantity (T6706); BEAst:SiteID; BEAst:PriceMatrix; BEAst:SuppliersContact (T0113)?> BEAst:RentalDeliveryStatus</cbc:Name>
+			<cbc:Value>
+				<?DescriptionAddFirst ?>
+				100
+			</cbc:Value>
+		</cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="SEK">100</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="EA">
+        <?Name Base Quantity?>
+        1
+      </cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+</ubl:Invoice>

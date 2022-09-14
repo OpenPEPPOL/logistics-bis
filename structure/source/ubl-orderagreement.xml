@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+                Content:
+                This file contains a Full BIS3 PEPPOL UBL Order Agreement
+
+                Errors:
+                None
+                
+                Warnings:
+                None
+				
+-->
+<ubl:OrderResponse xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2"
+			   xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			   xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	<?DocumentTerm OrderAgreement?>
+	<?Property key="sch:prefix" PEPPOL-T110?>
+	<?Property key="sch:identifier" T110-basic?>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:poacc:trns:order_agreement:3</cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:poacc:bis:order_agreement:3
+	</cbc:ProfileID>
+	
+	<cbc:ID>0263bf48-9a55-4d15-adf5-2c2921036d1c
+	  	<?DescriptionAddFirst Order Response Number (T3345). ?>
+	</cbc:ID>
+	<cbc:SalesOrderID>101-111
+	  	<?DescriptionAddFirst Vendor Order Number (T6099). ?>
+	</cbc:SalesOrderID>
+	<cbc:IssueDate>2013-07-01
+	  	<?DescriptionAddFirst Document Date and Time (T6325). ?>
+	</cbc:IssueDate>
+	<cbc:IssueTime>06:10:10
+		<?DescriptionAddFirst Document Date and Time (T6325). ?>
+	</cbc:IssueTime>
+	<cbc:Note>We have a new phone number 33 44 55
+		<?DescriptionAddFirst Transportation Information (T6008). ?>
+	</cbc:Note>
+	<cbc:DocumentCurrencyCode>EUR
+		<?CodeList ISO4217?>
+		<?DescriptionAddFirst Order Currency (T6018). ?>
+	</cbc:DocumentCurrencyCode>
+	<cbc:CustomerReference>ABC-123
+		<?DescriptionAddFirst Project Number (T6004). ?>
+	</cbc:CustomerReference>
+	
+	<cac:OrderReference>
+		<cbc:ID>NA
+			<?DescriptionAddFirst Not used by BEAst version 3.1. ?>
+		</cbc:ID>
+	</cac:OrderReference>
+	
+	<cac:OriginatorDocumentReference>
+		<cbc:ID>123456
+			<?DescriptionAddFirst Ultimate Customer Order Number (T6221). ?>
+		</cbc:ID>
+	</cac:OriginatorDocumentReference>
+	
+	<cac:AdditionalDocumentReference>
+		<cbc:ID>147852
+			<?DescriptionAddFirst Document Name (T6484), Offer Number (T6010), Freight Forwarder Reference Number (T6127) or Drawing Number (T6222). The DocumentType describes which of them. ?>
+		</cbc:ID>
+		<cbc:DocumentType>BEAST:OfferNumber
+			<?DescriptionAddFirst Document Type External (T6473), "BEAST:OfferNumber", "BEAST:FreightForwarderReferenceNumber" or "BEAST:DrawingNumber". ?>
+		</cbc:DocumentType>
+		<cac:Attachment>
+			<cbc:EmbeddedDocumentBinaryObject mimeCode="image/tiff" filename="hours-spend.csv">UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi
+				<?DescriptionAddFirst Embedded document binary object (T6475). filename contains Embedded document file name (T6476). ?>
+				<?mimeCode-usage Mandatory?>
+				<?mimeCode-CodeList MimeCode?>
+				<?filename-usage Mandatory?>
+			</cbc:EmbeddedDocumentBinaryObject>
+			<cac:ExternalReference>
+				<cbc:URI>http://www.example.com/index.html
+					<?DescriptionAddFirst Link to Related Document (T6187). ?>
+				</cbc:URI>
+			</cac:ExternalReference>
+		</cac:Attachment>
+	</cac:AdditionalDocumentReference>
+	
+	<cac:Contract>
+		<cbc:ID>CON-12345
+			<?DescriptionAddFirst Reference to Agreement or Contract (T0007). ?>
+		</cbc:ID>
+	</cac:Contract>
+	
+	
+	<cac:SellerSupplierParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="0088">7598000000128
+				<?schemeID-usage Mandatory?>
+				<?schemeID-CodeList eas?>
+			</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="0184">DK12345678
+					<?DescriptionAddFirst Supplier (T0009). schemeID tells what type of identity that is used. ?>
+					<?schemeID-usage Mandatory?>
+					<?schemeID-CodeList ICD?>
+				</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PostalAddress>
+				<cbc:StreetName>Storgt. 12
+					<?DescriptionAddFirst Street Name (T5003). ?>
+				</cbc:StreetName>
+				<cbc:AdditionalStreetName>Department A
+					<?DescriptionAddFirst Used for Department (T5002). ?>
+				</cbc:AdditionalStreetName>
+				<cbc:CityName>Oslo
+					<?DescriptionAddFirst City Name (T5005). ?>
+				</cbc:CityName>
+				<cbc:PostalZone>0585
+					<?DescriptionAddFirst Postal code (T6117). ?>
+				</cbc:PostalZone>
+				<cbc:CountrySubentity>Region</cbc:CountrySubentity>
+				<cac:AddressLine>
+					<cbc:Line>Address Line 3
+						<?DescriptionAddFirst Used for any other additional address information like Building (T5004). ?>
+					</cbc:Line>
+				</cac:AddressLine>
+				<cac:Country>
+					<cbc:IdentificationCode>NO
+						<?DescriptionAddFirst Country Code (T5007). ?>
+					</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>The Supplier AB
+					<?DescriptionAddFirst Party Name (T5001). ?>
+				</cbc:RegistrationName>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Name>John Doe
+					<?DescriptionAddFirst Name (T5012). ?>
+				</cbc:Name>
+				<cbc:Telephone>11223344
+					<?DescriptionAddFirst Phone Number (T5010). ?>
+				</cbc:Telephone>
+				<cbc:ElectronicMail>jd@supplier.com
+					<?DescriptionAddFirst Email Address (T5011). ?>
+				</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:SellerSupplierParty>
+	
+	
+	<cac:BuyerCustomerParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="0088">7590000012347
+				<?schemeID-usage Mandatory?>
+				<?schemeID-CodeList eas?>
+			</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="0184">DK55412777
+					<?DescriptionAddFirst Buyer (T0008). schemeID describes the type of identity that is used. ?>
+					<?schemeID-usage Mandatory?>
+					<?schemeID-CodeList ICD?>
+				</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PostalAddress>
+				<cbc:StreetName>Sinsenveien 40
+					<?DescriptionAddFirst Street Name (T5003). ?>
+				</cbc:StreetName>
+				<cbc:AdditionalStreetName>Department B
+					<?DescriptionAddFirst Department (T5002). ?>
+				</cbc:AdditionalStreetName>
+				<cbc:CityName>Oslo
+					<?DescriptionAddFirst City Name (T5005). ?>
+				</cbc:CityName>
+				<cbc:PostalZone>0501
+					<?DescriptionAddFirst Postal code (T6117). ?>
+				</cbc:PostalZone>
+				<cbc:CountrySubentity>Region</cbc:CountrySubentity>
+				<cac:AddressLine>
+					<cbc:Line>Address Line 3
+						<?DescriptionAddFirst Used for any other additional address information like Building (T5004). ?>
+					</cbc:Line>
+				</cac:AddressLine>
+				<cac:Country>
+					<cbc:IdentificationCode>NO
+						<?DescriptionAddFirst Country code (T5007). ?>
+					</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>City Hospital
+					<?DescriptionAddFirst Party Name (T5001). ?>
+				</cbc:RegistrationName>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+		<cac:DeliveryContact>
+			<cbc:Name>Peter Petersen
+				<?DescriptionAddFirst Name (T5012). ?>
+			</cbc:Name>
+			<cbc:Telephone>22334455
+				<?DescriptionAddFirst Phone Number (T5010). ?>
+			</cbc:Telephone>
+			<cbc:ElectronicMail>pp@hospital.no
+				<?DescriptionAddFirst Email Address (T5011). ?>
+			</cbc:ElectronicMail>
+		</cac:DeliveryContact>
+	</cac:BuyerCustomerParty>
+	
+	
+	<cac:OriginatorCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="0184">DK55412777
+					<?DescriptionAddFirst Ultimate Customer (T6223). schemeID describes the type of identity that is used. ?>
+					<?schemeID-usage Mandatory?>
+					<?schemeID-CodeList ICD?>
+				</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Helseavdeling
+					<?DescriptionAddFirst Party Name (T5001). ?>
+				</cbc:Name>
+			</cac:PartyName>
+		</cac:Party>
+	</cac:OriginatorCustomerParty>
+	
+	
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="0184">DK55412777
+					<?DescriptionAddFirst Invoicee (T0085). schemeID describes the type of identity that is used. ?>
+					<?schemeID-usage Mandatory?>
+					<?schemeID-CodeList ICD?>
+				</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Accounting
+					<?DescriptionAddFirst Party Name (T5001). ?>
+				</cbc:Name>
+			</cac:PartyName>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+
+	<cac:Delivery>
+		<cac:PromisedDeliveryPeriod>
+			<cbc:StartDate>2022-02-10
+				<?DescriptionAddFirst Delivery Period Start Date (T6319). ?>
+			</cbc:StartDate>
+			<cbc:StartTime>09:30:00
+				<?DescriptionAddFirst Delivery Period Start Time (T6734). ?>
+			</cbc:StartTime>
+			<cbc:EndDate>2022-02-10
+				<?DescriptionAddFirst Delivery Period End Date (T6320). ?>
+			</cbc:EndDate>
+			<cbc:EndTime>09:40:00
+				<?DescriptionAddFirst Delivery Period End Time (T735). ?>
+			</cbc:EndTime>
+		</cac:PromisedDeliveryPeriod>
+		<cac:DeliveryParty>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="0184">DK55412777
+					<?DescriptionAddFirst Delivery Party (T0037). schemeID describes the type of identity that is used. ?>
+					<?schemeID-usage Mandatory?>
+					<?schemeID-CodeList ICD?>
+				</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Delivery party name
+					<?DescriptionAddFirst Party name (T5001). ?>
+				</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Delivery Party Street name
+					<?DescriptionAddFirst Street name (T5003). ?>
+				</cbc:StreetName>
+				<cbc:AdditionalStreetName>Department A
+					<?DescriptionAddFirst Used for Department (T5002). ?>
+				</cbc:AdditionalStreetName>
+				<cbc:CityName>Delivery Party City name
+					<?DescriptionAddFirst City name (T5005). ?>
+				</cbc:CityName>
+				<cbc:PostalZone>12345
+					<?DescriptionAddFirst Postal Code (T6117). ?>
+				</cbc:PostalZone>
+				<cbc:CountrySubentity>code</cbc:CountrySubentity>
+				<cac:AddressLine>
+					<cbc:Line>Place
+						<?DescriptionAddFirst Used for any other additional address information like Building (T5004) or Delivery Place Location (T6015). ?>
+					</cbc:Line>
+				</cac:AddressLine>
+				<cac:Country>
+					<cbc:IdentificationCode>SE
+						<?DescriptionAddFirst Country Code (T5007). ?>
+					</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+		</cac:DeliveryParty>
+	</cac:Delivery>
+
+
+	<cac:DeliveryTerms>
+		<cbc:ID>CPT
+			<?DescriptionAddFirst Terms of Delivery (T6710). ?>
+		</cbc:ID>
+		<cbc:SpecialTerms>Z60
+			<?DescriptionAddFirst Unloading Instruction Code (T6343). ?>
+		</cbc:SpecialTerms>
+		<cac:DeliveryLocation>
+			<cbc:ID>Stockholm
+				<?DescriptionAddFirst Delivery place Terms (T6020). ?>
+			</cbc:ID>
+			<cac:Address>
+				<cbc:StreetName>Vasagatan 12
+					<?DescriptionAddFirst Consignee, Street name (T5003). ?>
+				</cbc:StreetName>
+				<cbc:AdditionalStreetName>Additional address</cbc:AdditionalStreetName>
+				<cbc:CityName>Stockholm
+					<?DescriptionAddFirst Consignee, City name (T5005). ?>
+				</cbc:CityName>
+				<cbc:PostalZone>12345
+					<?DescriptionAddFirst Postal Code (T6117). ?>
+				</cbc:PostalZone>
+				<cbc:CountrySubentity>Address</cbc:CountrySubentity>
+				<cac:AddressLine>
+					<cbc:Line>
+						<?DescriptionAddFirst Not used in BEAst version 3.1. ?>
+					</cbc:Line>
+				</cac:AddressLine>
+				<cac:Country>
+					<cbc:IdentificationCode>SE
+						<?DescriptionAddFirst Country Code (T5007). ?>
+					</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:Address>
+		</cac:DeliveryLocation>
+	</cac:DeliveryTerms>
+	
+		
+	<cac:AllowanceCharge>
+		<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+		<cbc:AllowanceChargeReasonCode>95
+			<?DescriptionAddFirst Special service description code (T6719). ?>
+		</cbc:AllowanceChargeReasonCode>
+		<cbc:AllowanceChargeReason>Discount
+			<?DescriptionAddFirst Special service description (T6111). ?>
+		</cbc:AllowanceChargeReason>
+		<cbc:MultiplierFactorNumeric>10
+			<?DescriptionAddFirst Percentage (T6228). ?>
+		</cbc:MultiplierFactorNumeric>
+		<cbc:Amount currencyID="EUR">3.25
+			<?currencyID-usage Mandatory?>
+			<?currencyID-CodeList ISO4217?>
+
+			<?DescriptionAddFirst Amount (T6230). currencyID is the same as DocumentCurrency (T6018). ?>
+		</cbc:Amount>
+		<cbc:BaseAmount currencyID="EUR">32.50
+			<?currencyID-usage Mandatory?>
+			<?currencyID-CodeList ISO4217?>
+		
+			<?DescriptionAddFirst Base Amount (T6229). currencyID is the same as DocumentCurrency (T6018). ?>
+		</cbc:BaseAmount>
+		<cac:TaxCategory>
+			<cbc:ID>S</cbc:ID>
+			<cbc:Percent>25</cbc:Percent>
+			<cac:TaxScheme>
+				<cbc:ID>VAT</cbc:ID>
+			</cac:TaxScheme>
+		</cac:TaxCategory>
+	</cac:AllowanceCharge>
+	
+	
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="EUR">7.81
+			<?currencyID-usage Mandatory?>
+			<?currencyID-CodeList ISO4217?>
+			
+		</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="EUR">31.25
+				<?currencyID-usage Mandatory?>
+				<?currencyID-CodeList ISO4217?>
+				
+			</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="EUR">7.81
+				<?currencyID-usage Mandatory?>
+				<?currencyID-CodeList ISO4217?>
+				
+			</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>25</cbc:Percent>
+				<cbc:TaxExemptionReason>Text</cbc:TaxExemptionReason>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	
+	
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="EUR">32.5
+			<?currencyID-usage Mandatory?>
+			<?currencyID-CodeList ISO4217?>
+			
+		</cbc:LineExtensionAmount>
+		<cbc:TaxExclusiveAmount currencyID="EUR">31.25
+			<?currencyID-usage Mandatory?>
+			<?currencyID-CodeList ISO4217?>
+			
+		</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">39.06
+			<?currencyID-usage Mandatory?>
+			<?currencyID-CodeList ISO4217?>
+		
+		</cbc:TaxInclusiveAmount>
+		<cbc:AllowanceTotalAmount currencyID="EUR">3.25
+			<?currencyID-usage Mandatory?>
+			<?currencyID-CodeList ISO4217?>
+			
+		</cbc:AllowanceTotalAmount>
+		<cbc:ChargeTotalAmount currencyID="EUR">2.00
+			<?currencyID-usage Mandatory?>
+			<?currencyID-CodeList ISO4217?>
+			
+		</cbc:ChargeTotalAmount>
+		<cbc:PrepaidAmount currencyID="EUR">10.00
+			<?currencyID-usage Mandatory?>
+			<?currencyID-CodeList ISO4217?>
+			
+		</cbc:PrepaidAmount>
+		<cbc:PayableRoundingAmount currencyID="EUR">0.94
+			<?currencyID-usage Mandatory?>
+			<?currencyID-CodeList ISO4217?>
+	
+		</cbc:PayableRoundingAmount>
+		<cbc:PayableAmount currencyID="EUR">30.00
+			<?currencyID-usage Mandatory?>
+			<?currencyID-CodeList ISO4217?>
+			
+		</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	
+	
+	<cac:OrderLine>
+		<cac:LineItem>
+			<cbc:ID>1
+				<?DescriptionAddFirst Line Number (T0051). ?>
+			</cbc:ID>
+			<cbc:Note>Order line note text
+				<?DescriptionAddFirst Line Item Information (T6031). ?>
+			</cbc:Note>
+			<cbc:Quantity unitCode="C62">15
+				<?DescriptionAddFirst Ordered Quantity (T0039). unitCode is Measure Unit NeB Type (T6706) ?>
+				<?unitCode-usage Mandatory?>
+				<?unitCode-CodeList UNECERec20?>
+				
+			</cbc:Quantity>
+			<cbc:LineExtensionAmount currencyID="EUR">22.50
+				<?currencyID-usage Mandatory?>
+				<?currencyID-CodeList ISO4217?>
+				
+				<?DescriptionAddFirst Line Item Net Amount (T6234). currencyID is the same as DocumentCurrency (T6018). ?>
+			</cbc:LineExtensionAmount>
+			
+			
+			<cac:Delivery>
+				<cbc:Quantity unitCode="C62">15.00
+					<?unitCode-usage Mandatory?>
+					<?unitCode-CodeList UNECERec20?>
+					
+					<?DescriptionAddFirst Quantity to be Delivered (T3240). unitCode is Measure Unit NeB Type (T6706). ?>
+				</cbc:Quantity>
+				<cac:PromisedDeliveryPeriod>
+					<cbc:StartDate>2018-08-10
+						<?DescriptionAddFirst Delivery Period Start Date (T6319). ?>
+					</cbc:StartDate>
+					<cbc:StartTime>12:00:00
+						<?DescriptionAddFirst Delivery Period Start Time (T6734). ?>
+					</cbc:StartTime>
+					<cbc:EndDate>2018-08-12
+						<?DescriptionAddFirst Delivery Period End Date (T6320). ?>
+					</cbc:EndDate>
+					<cbc:EndTime>12:00:00
+						<?DescriptionAddFirst Delivery Period End Time (T6735). ?>
+					</cbc:EndTime>
+				</cac:PromisedDeliveryPeriod>
+			</cac:Delivery>
+			
+			
+			<cac:Price>
+				<cbc:PriceAmount currencyID="EUR">1.50
+					<?currencyID-usage Mandatory?>
+					<?currencyID-CodeList ISO4217?>
+					
+					<?DescriptionAddFirst Price Amount (T6235). currencyID is the same as DocumentCurrency (T6018). ?>
+				</cbc:PriceAmount>
+				<cbc:BaseQuantity unitCode="C62">1
+					<?unitCode-usage Mandatory?>
+					<?unitCode-CodeList UNECERec20?>
+				
+					<?DescriptionAddFirst Price Unit Basis Quantity (T6722). unitCode is Measure Unit NeB Type (T6706), ?>
+				</cbc:BaseQuantity>
+				<cbc:PriceType>AAA
+					<?DescriptionAddFirst Price Code (T6025). ?>
+				</cbc:PriceType>
+				<cac:AllowanceCharge>
+					<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+					<cbc:Amount currencyID="EUR">0.20
+						<?currencyID-usage Mandatory?>
+						<?currencyID-CodeList ISO4217?>
+					
+						<?DescriptionAddFirst Amount (T6230). currencyID is the same as DocumentCurrency (T6018). ?>
+					</cbc:Amount>
+					<cbc:BaseAmount currencyID="EUR">1.70
+						<?currencyID-usage Mandatory?>
+						<?currencyID-CodeList ISO4217?>
+					
+						<?DescriptionAddFirst Base Amount (T6229). currencyID is the same as DocumentCurrency (T6018). ?>
+					</cbc:BaseAmount>
+				</cac:AllowanceCharge>
+			</cac:Price>
+			
+			
+			<cac:Item>
+				<cbc:Description>Brown sauce - long description
+					<?DescriptionAddFirst Product Information (T6037). ?>
+				</cbc:Description>
+				<cbc:Name>Brown sauce
+					<?DescriptionAddFirst Article Description (T6226). ?>
+				</cbc:Name>
+				<cac:BuyersItemIdentification>
+					<cbc:ID>BN-33
+						<?DescriptionAddFirst Buyer's Part Article Number (T6022). ?>
+					</cbc:ID>
+				</cac:BuyersItemIdentification>
+				<cac:SellersItemIdentification>
+					<cbc:ID>SN-33
+						<?DescriptionAddFirst Supplier's Article Number (T0172). ?>
+					</cbc:ID>
+				</cac:SellersItemIdentification>
+				<cac:StandardItemIdentification>
+					<cbc:ID schemeID="0160">7400000001234
+						<?DescriptionAddFirst Global Trade Item Number (T0154) or RSK Article Number Sweden (T6023). All other item number standards used within BEAst can not be used here until the organisation behind the standard decides to be a part of the codelist "ISO 6523 ICD". These are: NOBB Article Number (T6027), RT Article Number (T6460), TUN Article Number (T6028), Finfo/Vilma Article Number (T6029), Norwegian RSK Article Number (T6024), Norwegian E-number (T6026), E-number (T0260) and SGTIN (T6461). ?>
+						<?schemeID-usage Mandatory?>
+						<?schemeID-CodeList ICD?>
+						
+					</cbc:ID>
+				</cac:StandardItemIdentification>
+				
+				
+				<cac:ItemSpecificationDocumentReference>
+					<cbc:ID>147852
+						<?DescriptionAddFirst Document Name (T6484). ?>
+					</cbc:ID>
+					<cbc:DocumentType>Timesheet
+						<?DescriptionAddFirst Document Type External (T6473). ?>
+					</cbc:DocumentType>
+					<cac:Attachment>
+						<cbc:EmbeddedDocumentBinaryObject mimeCode="image/tiff" filename="hours-spend.csv">UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi
+							<?mimeCode-usage Mandatory?>
+							<?mimeCode-CodeList MimeCode?>
+							
+							<?filename-usage Mandatory?>
+							
+							<?DescriptionAddFirst Embedded Document Binary Object (T6475). filename contains Embedded Document File Name (T6476). ?>
+						</cbc:EmbeddedDocumentBinaryObject>
+						<cac:ExternalReference>
+							<cbc:URI>http://www.example.com/index.html
+								<?DescriptionAddFirst Link to Related Document (T6187). ?>
+							</cbc:URI>
+						</cac:ExternalReference>
+					</cac:Attachment>
+				</cac:ItemSpecificationDocumentReference>
+				
+				<cac:CommodityClassification>
+					<cbc:ItemClassificationCode listID="ZZZ" listVersionID="BEAST" name="IdentityTypeCode">12345678
+						<?listID-CodeList UNCL7143?>
+						
+						<?name-usage Mandatory?>
+						<?DescriptionAddFirst SBMI Number (T0172:01), SÅ Number (T0172:02), Concrete Number (T0172:04), Waste Number (T0172:07), Fuel Number (T0172:08), Product Type GUID (T6441), Identity Type Code (T6440), Product Type Description (T6442), Customer's Reference Number (T6005), Seller's OrderLine Number (T6462), Offer Number (T6010), OfferLine Number (T6459) or GUID OfferLine (T6486). listID is always "ZZZ" and name describes what is in Item Classification Code. Possible values are: "SBMINumber", "SÅNumber", "ConcreteNumber", "WasteNumber", "FuelNumber", "IdentityTypeCode", "ProductTypeGUID", "ProductTypeDescription", "CustomersReferenceNumber", "SellersOrderLineNumber", "OfferNumber", "OfferLineNumber" and "GUIDOfferLine". ?>
+					</cbc:ItemClassificationCode> 
+				</cac:CommodityClassification>
+				
+				
+				<cac:TransactionConditions>
+					<cbc:ActionCode>CT
+						<?DescriptionAddFirst Price Type Code (T6720). In Peppol "CT" is the only valid code, so it can be used only when the Price Type Code is "CT". ?>
+					</cbc:ActionCode>
+				</cac:TransactionConditions>
+				
+				
+				<cac:ClassifiedTaxCategory>
+					<cbc:ID>S
+						<?DescriptionAddFirst Tax Category NeB Type (T6708). ?>
+					</cbc:ID>
+					<cbc:Percent>25
+						<?DescriptionAddFirst VAT Rate (T0027). ?>
+					</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:ID>VAT
+							<?DescriptionAddFirst Tax Base Type NeB (T6707). ?>
+						</cbc:ID>
+					</cac:TaxScheme>
+				</cac:ClassifiedTaxCategory>
+				
+				<cac:AdditionalItemProperty>
+					<cbc:Name>Length
+						<?DescriptionAddFirst Property Name (T6446). ?>
+					</cbc:Name>
+					<cbc:NameCode listID="NN">test
+						<?listID-usage Mandatory?>
+						<?DescriptionAddFirst Property ID (T6444). listID is Property ID Type (T6443). ?>
+					</cbc:NameCode>
+					<cbc:Value>30 mm
+						<?DescriptionAddFirst Property Value (T6452). ?>
+					</cbc:Value>
+					<cbc:ValueQuantity unitCode="MMT">30
+						<?unitCode-usage Mandatory?>
+						<?unitCode-CodeList UNECERec20?>
+						
+						<?DescriptionAddFirst Property Compare Code (T6457). unitCode is Measure Unit NeB Type (T6706). ?>
+					</cbc:ValueQuantity>
+					<cbc:ValueQualifier>Z3
+						<?DescriptionAddFirst Property Value ID (T6450). ?>
+					</cbc:ValueQualifier>
+				</cac:AdditionalItemProperty>
+				
+				
+				<cac:Certificate>
+					<cbc:ID>EU EcoLabel
+						<?DescriptionAddFirst Certificate Number (T6413). ?>
+					</cbc:ID>
+					<cbc:CertificateTypeCode>NA
+						<?DescriptionAddFirst The UBL structure used requires this element. Use the value NA. ?>
+					</cbc:CertificateTypeCode>
+					<cbc:CertificateType>FSC
+						<?DescriptionAddFirst Type of Certificate (T6412). ?>
+					</cbc:CertificateType>
+					<cbc:Remarks>48% Certified
+						<?DescriptionAddFirst Percentage Certified (T6414). ?>
+					</cbc:Remarks>
+					<cac:IssuerParty>
+						<cac:PartyName>
+							<cbc:Name>NA
+								<?DescriptionAddFirst The UBL structure used requires this element. Use the value NA. ?>
+							</cbc:Name>
+						</cac:PartyName>
+					</cac:IssuerParty>
+					<cac:DocumentReference>
+						<cbc:ID>http://www.label.eu/test/
+							<?DescriptionAddFirst Not used in BEAst 3.1. ?>
+						</cbc:ID>
+					</cac:DocumentReference>
+				</cac:Certificate>
+			</cac:Item>
+		</cac:LineItem>
+	</cac:OrderLine>
+</ubl:OrderResponse>

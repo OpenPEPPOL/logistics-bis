@@ -1,0 +1,1610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+   <Term>AdvancedDespatchAdvice</Term>
+   <Property key="sch:prefix">PEPPOL-T120</Property>
+   <Property key="sch:identifier">T120-basic</Property>
+   <Namespace prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2</Namespace>
+   <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
+   <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
+   <Document>
+      <Term>ubl:DespatchAdvice</Term>
+      <Element>
+         <Term>cbc:CustomizationID</Term>
+         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1</Value>
+      </Element>
+      <Element>
+         <Term>cbc:ProfileID</Term>
+         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1</Value>
+      </Element>
+      <Element>
+         <Term>cbc:ID</Term>
+         <Description>BEAst: T0125/T6338, Despatch Advice Number
+Peppol: </Description>
+         <Value type="EXAMPLE">5658999</Value>
+      </Element>
+      <Element>
+         <Term>cbc:IssueDate</Term>
+         <Description>BEAst: T6325, Document Date/Time. 
+Peppol: </Description>
+         <Value type="EXAMPLE">2021-09-10</Value>
+      </Element>
+      <Element>
+         <Term>cbc:IssueTime</Term>
+         <Description>BEAst: T6325, Document Date/Time. 
+Peppol: </Description>
+         <Value type="EXAMPLE">12:00:00</Value>
+      </Element>
+      <Element>
+         <Term>cbc:Note</Term>
+         <Description>BEAst: Used for Vehicle identity number (T6100) 
+Peppol: </Description>
+         <Value type="EXAMPLE">ABC123</Value>
+      </Element>
+      <Element>
+         <Term>cac:OrderReference</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Description>BEAst: T3309/T6335, Order Number/Call Off Reference. Attribute schemeID can be used to send project number or buyer reference if buyer order number is missing, i.e. electronic order has not been sent.
+			Default is order number so if schemeID is missing the number in the element is order number as per Peppol global BIS.
+			ProjectRefereces is used for project number only.
+			BuyerReference is used for the buyer reference if no buyer order number exists, i.e. in construction often code string (kodsträng). 
+Peppol: </Description>
+            <Value type="EXAMPLE">AEG012345</Value>
+            <Attribute usage="Optional">
+               <Term>schemeID</Term>
+               <Description>BEAst: ProjectReference and BuyerReference can be used as values for the schemeID attribute</Description>
+               <Value type="EXAMPLE">ProjectReference</Value>
+            </Attribute>
+         </Element>
+      </Element>
+      <Element cardinality="0..n">
+         <Term>cac:AdditionalDocumentReference</Term>
+         <Name>Additional document reference </Name>
+         <Description>BEAst: Added by BEAst. Used for additional BEAst information on header level. </Description>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Name>Identity of the reference. </Name>
+            <Description>BEAst: Added by BEAst. The reference number of the added information. Can be the Project Number (T6004), Customer's Reference Number (T6005), Seller's Order Number (T6099), Final Customer's Order Number (T6221), Drawing Number (T6222), Delivery Part (T6340), Freight Payer's Customer Number (T6463) or Document Name (T6484) depending on DocumentType. </Description>
+            <Value type="EXAMPLE">Proj_A1</Value>
+         </Element>
+         <Element>
+            <Term>cbc:DocumentType</Term>
+            <Name>Document Type Code. </Name>
+            <Description>BEAst: Added by BEAst. The type of reference. "BEAST:FreightPayersCustomerNumber" (T6463), "BEAST:ProjectNumber" (T6004), "BEAST:SellersOrderNumber" (T6099), "BEAST:FinalCustomersOrderNumber" (T6221), "BEAST:DeliveryPart" (T6340), "BEAST:DrawingNumber" (T6222), "BEAST:CustomersReferenceNumber" (T6005), Any other document type (T6473). </Description>
+            <Value type="EXAMPLE">BEAST:ProjectNumber</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:Attachment</Term>
+            <Name>Attachment. </Name>
+            <Description>BEAst: Added by BEAst. Group to describe an attached document. An attachment can refer to an external document or be included with the document being exchanged. </Description>
+            <Element cardinality="0..1">
+               <Term>cbc:EmbeddedDocumentBinaryObject</Term>
+               <Name>Embedded Binary object. </Name>
+               <Description>BEAst: Added by BEAst. The referenced document can here be inserted as a binary object (T6475). filename refers to T6476. </Description>
+               <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>
+               <Attribute usage="Optional">
+                  <Term>mimeCode</Term>
+                  <Reference type="CODE_LIST">MimeCode</Reference>
+                  <Value type="EXAMPLE">application/pdf</Value>
+               </Attribute>
+               <Attribute usage="Optional">
+                  <Term>filename</Term>
+                  <Value type="EXAMPLE">Hours-spent.pdf</Value>
+               </Attribute>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:ExternalReference</Term>
+               <Name>External Reference. </Name>
+               <Description>BEAst: Added by BEAst. A reference to an attached document that is external to the document(s) being exchanged. </Description>
+               <Element>
+                  <Term>cbc:URI</Term>
+                  <Name>Address to internet resource. </Name>
+                  <Description>BEAst: Added by BEAst. The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource (T6187). </Description>
+                  <Value type="EXAMPLE">www.beast.se</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+      <Element cardinality="0..n">
+         <Term>cac:Signature</Term>
+         <Name>Signature </Name>
+         <Description>BEAst: Added by BEAst. To attach signatures to this document. </Description>
+         <Element cardinality="1..1">
+            <Term>cbc:ID</Term>
+            <Name>Signature ID. </Name>
+            <Description>BEAst: Added by BEAst. Used to specify the role of the signing person (T3788). Can be Sender, Carrier, Receiver. </Description>
+            <Value type="EXAMPLE">Sender</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:SignatoryParty</Term>
+            <Name>Signatory Party </Name>
+            <Description>BEAst: Added by BEAst. Describes the party that is signing. </Description>
+            <Element cardinality="0..1">
+               <Term>cac:Contact</Term>
+               <Name>Signature Person </Name>
+               <Description>BEAst: Added by BEAst.  </Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:ID</Term>
+                  <Name>ID of signature person, ID06 card number or similar </Name>
+                  <Description>BEAst: Added by BEAst (T6091).  </Description>
+                  <Value type="EXAMPLE">12345</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:Name</Term>
+                  <Name>Name of the signing person. </Name>
+                  <Description>BEAst: Added by BEAst. Name of the signing person (T5012). </Description>
+                  <Value type="EXAMPLE">Anders Johansson</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:DigitalSignatureAttachment</Term>
+            <Name>Digital Signature Attachment </Name>
+            <Description>BEAst: Added by BEAst. To include the actual signature. </Description>
+            <Element>
+               <Term>cbc:EmbeddedDocumentBinaryObject</Term>
+               <Name>Embedded Binary object. </Name>
+               <Description>BEAst: Added by BEAst. The referenced document can here be inserted as a binary object (T6475). filename refers to T6476. </Description>
+               <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>
+               <Attribute usage="Optional">
+                  <Term>mimeCode</Term>
+                  <Reference type="CODE_LIST">MimeCode</Reference>
+                  <Value type="EXAMPLE">application/pdf</Value>
+               </Attribute>
+               <Attribute usage="Optional">
+                  <Term>filename</Term>
+                  <Value type="EXAMPLE">Hours-spent.pdf</Value>
+               </Attribute>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:DespatchSupplierParty</Term>
+         <Description>BEAst: This party defines the company that provides the goods or the service. It also defines the sender of the Despatch Advice. The real Ship-from Address must be provided in the Despatch Address when the Despatch Advice describes a movement. 
+Peppol: </Description>
+         <Element>
+            <Term>cac:Party</Term>
+            <Element>
+               <Term>cbc:EndpointID</Term>
+               <Value type="EXAMPLE">7300010000001</Value>
+               <Attribute usage="Mandatory">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">eas</Reference>
+                  <Value type="EXAMPLE">0088</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cac:PartyIdentification</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Description>BEAst: Shipper (T0129) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">7300010000001</Value>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Reference type="CODE_LIST">ICD</Reference>
+                     <Value type="EXAMPLE">0088</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PostalAddress</Term>
+               <Element>
+                  <Term>cbc:StreetName</Term>
+                  <Description>BEAst: Street Name (T5003) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Busy Street</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:AdditionalStreetName</Term>
+                  <Description>BEAst: Used for Department (T5002). 
+Peppol: </Description>
+                  <Value type="EXAMPLE">way 1</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CityName</Term>
+                  <Description>BEAst: City Name (T5005) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Farthing</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:PostalZone</Term>
+                  <Description>BEAst: Postal Code (T6117) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">AA99 1BB</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CountrySubentity</Term>
+                  <Value type="EXAMPLE">Heremouthshire</Value>
+               </Element>
+               <Element>
+                  <Term>cac:AddressLine</Term>
+                  <Element>
+                     <Term>cbc:Line</Term>
+                     <Description>BEAst: Used for any other additional address information like Building (T5004). 
+Peppol: </Description>
+                     <Value type="EXAMPLE">The Roundabout</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Country</Term>
+                  <Element>
+                     <Term>cbc:IdentificationCode</Term>
+                     <Description>BEAst: Country Code (T5007) 
+Peppol: </Description>
+                     <Value type="EXAMPLE">GB</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PartyLegalEntity</Term>
+               <Element>
+                  <Term>cbc:RegistrationName</Term>
+                  <Description>BEAst: Party Name (T5001) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Consortial</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:Contact</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Description>BEAst: Name (T5012) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Mrs Bouquet</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Telephone</Term>
+                  <Description>BEAst: Phone Number (T5010) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">0158 1233714</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:ElectronicMail</Term>
+                  <Description>BEAst: Email Address (T5011) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">bouquet@fpconsortial.co.uk</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:DeliveryCustomerParty</Term>
+         <Description>BEAst: This party defines the company that receives the goods or the service. It also defines the receiver of the Despatch Advice. The real Ship-to Address must be provided in the Delivery Location if the Despatch Advice describes a movement. If the Despatch address describes a service provided at a specific location, the Delivery Location contains this location. 
+Peppol: </Description>
+         <Element>
+            <Term>cac:Party</Term>
+            <Element>
+               <Term>cbc:EndpointID</Term>
+               <Value type="EXAMPLE">5798000000124</Value>
+               <Attribute usage="Mandatory">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">eas</Reference>
+                  <Value type="EXAMPLE">0088</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cac:PartyIdentification</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Description>BEAst: Consignee (T0036) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">5790000435951</Value>
+                  <Attribute usage="Mandatory">
+                     <Term>schemeID</Term>
+                     <Reference type="CODE_LIST">ICD</Reference>
+                     <Value type="EXAMPLE">0088</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PostalAddress</Term>
+               <Element>
+                  <Term>cbc:StreetName</Term>
+                  <Description>BEAst: Street Name (T5003) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Avon Way</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:AdditionalStreetName</Term>
+                  <Description>BEAst: Used for Department (T5002). 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Big projects</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CityName</Term>
+                  <Description>BEAst: City Name (T5005) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Bridgtow</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:PostalZone</Term>
+                  <Description>BEAst: Postal Code (T6117) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">ZZ99 1ZZ</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CountrySubentity</Term>
+                  <Value type="EXAMPLE">Avon</Value>
+               </Element>
+               <Element>
+                  <Term>cac:AddressLine</Term>
+                  <Element>
+                     <Term>cbc:Line</Term>
+                     <Description>BEAst: Used for any other additional address information like Building (T5004). 
+Peppol: </Description>
+                     <Value type="EXAMPLE">3rd Floor, Room 5</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Country</Term>
+                  <Element>
+                     <Term>cbc:IdentificationCode</Term>
+                     <Description>BEAst: Country Code (T5007) 
+Peppol: </Description>
+                     <Value type="EXAMPLE">GB</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PartyLegalEntity</Term>
+               <Element>
+                  <Term>cbc:RegistrationName</Term>
+                  <Description>BEAst: Party Name (T5001) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">IYT Corporation</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:DeliveryContact</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Description>BEAst: Name (T5012) 
+Peppol: </Description>
+               <Value type="EXAMPLE">Mr Fred Churchill</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Telephone</Term>
+               <Description>BEAst: Phone Number (T5010) 
+Peppol: </Description>
+               <Value type="EXAMPLE">0127 2653214</Value>
+            </Element>
+            <Element>
+               <Term>cbc:ElectronicMail</Term>
+               <Description>BEAst: Email address (T5011) 
+Peppol: </Description>
+               <Value type="EXAMPLE">fred@iytcorporation.gov.uk</Value>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:BuyerCustomerParty</Term>
+         <Element>
+            <Term>cac:Party</Term>
+            <Element>
+               <Term>cac:PartyIdentification</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Description>BEAst: Buyer (T0008) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">5790000435951</Value>
+                  <Attribute usage="Mandatory">
+                     <Term>schemeID</Term>
+                     <Reference type="CODE_LIST">ICD</Reference>
+                     <Value type="EXAMPLE">0088</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PartyName</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Description>BEAst: Party Name (T5001) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">IYT Corporation</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PostalAddress</Term>
+               <Element>
+                  <Term>cbc:StreetName</Term>
+                  <Description>BEAst: Street Name (T5003) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Avon Way</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:AdditionalStreetName</Term>
+                  <Description>BEAst: Used for Department (T5002). 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Purchasing</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CityName</Term>
+                  <Description>BEAst: City Name (T5005) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Bridgtow</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:PostalZone</Term>
+                  <Description>BEAst: Postal Code (T6117) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">ZZ99 1ZZ</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CountrySubentity</Term>
+                  <Value type="EXAMPLE">Avon</Value>
+               </Element>
+               <Element>
+                  <Term>cac:AddressLine</Term>
+                  <Element>
+                     <Term>cbc:Line</Term>
+                     <Description>BEAst: Used for any other additional address information like Building (T5004). 
+Peppol: </Description>
+                     <Value type="EXAMPLE">3rd Floor, Room 5</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Country</Term>
+                  <Element>
+                     <Term>cbc:IdentificationCode</Term>
+                     <Description>BEAst: Country Code (T5007) 
+Peppol: </Description>
+                     <Value type="EXAMPLE">GB</Value>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:SellerSupplierParty</Term>
+         <Element>
+            <Term>cac:Party</Term>
+            <Element>
+               <Term>cac:PartyIdentification</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Description>BEAst: Supplier (T0009) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">5790000435951</Value>
+                  <Attribute usage="Mandatory">
+                     <Term>schemeID</Term>
+                     <Reference type="CODE_LIST">ICD</Reference>
+                     <Value type="EXAMPLE">0088</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PartyName</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Description>BEAst: Party Name (T5001) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">IYT Corporation</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PostalAddress</Term>
+               <Element>
+                  <Term>cbc:StreetName</Term>
+                  <Description>BEAst: Street Name (T5003) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Avon Way</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:AdditionalStreetName</Term>
+                  <Description>BEAst: Used for Department (T5002). 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Sales</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CityName</Term>
+                  <Description>BEAst: City Name (T5005) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Bridgtow</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:PostalZone</Term>
+                  <Description>BEAst: Postal Code (T6117) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">ZZ99 1ZZ</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CountrySubentity</Term>
+                  <Value type="EXAMPLE">Avon</Value>
+               </Element>
+               <Element>
+                  <Term>cac:AddressLine</Term>
+                  <Element>
+                     <Term>cbc:Line</Term>
+                     <Description>BEAst: Used for any other additional address information like Building (T5004). 
+Peppol: </Description>
+                     <Value type="EXAMPLE">3rd Floor, Room 5</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Country</Term>
+                  <Element>
+                     <Term>cbc:IdentificationCode</Term>
+                     <Description>BEAst: Country Code (T5007) 
+Peppol: </Description>
+                     <Value type="EXAMPLE">GB</Value>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:OriginatorCustomerParty</Term>
+         <Description>BEAst: For 3PL shipments, this party defines the final receiver of the goods. When the Despatch Advice is used as the Transport Document, this party defines the final receiver of the Despatch Advice. 
+Peppol: </Description>
+         <Element>
+            <Term>cac:Party</Term>
+            <Element>
+               <Term>cac:PartyIdentification</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Description>BEAst: Ultimate Customer ID (T6001 or T6223).  
+Peppol: </Description>
+                  <Value type="EXAMPLE">5790000435951</Value>
+                  <Attribute usage="Mandatory">
+                     <Term>schemeID</Term>
+                     <Reference type="CODE_LIST">ICD</Reference>
+                     <Value type="EXAMPLE">0088</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PartyName</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Description>BEAst: Ultimate Customer name (T5001).  
+Peppol: </Description>
+                  <Value type="EXAMPLE">IYT Corporation</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PostalAddress</Term>
+               <Element>
+                  <Term>cbc:StreetName</Term>
+                  <Description>BEAst: Street Name (T5003).  
+Peppol: </Description>
+                  <Value type="EXAMPLE">Avon Way</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:AdditionalStreetName</Term>
+                  <Description>BEAst: Not used in BEAst version 3.1.  
+Peppol: </Description>
+                  <Value type="EXAMPLE">way 2</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CityName</Term>
+                  <Description>BEAst: City name (T5005).  
+Peppol: </Description>
+                  <Value type="EXAMPLE">Bridgtow</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:PostalZone</Term>
+                  <Description>BEAst: Postal code (T6117).  
+Peppol: </Description>
+                  <Value type="EXAMPLE">ZZ99 1ZZ</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CountrySubentity</Term>
+                  <Description>BEAst: Not used in BEAst version 3.1.  
+Peppol: </Description>
+                  <Value type="EXAMPLE">Avon</Value>
+               </Element>
+               <Element>
+                  <Term>cac:AddressLine</Term>
+                  <Element>
+                     <Term>cbc:Line</Term>
+                     <Description>BEAst: Not used in BEAst version 3.1.  
+Peppol: </Description>
+                     <Value type="EXAMPLE">3rd Floor, Room 5</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Country</Term>
+                  <Element>
+                     <Term>cbc:IdentificationCode</Term>
+                     <Description>BEAst: Country code (T5007).  
+Peppol: </Description>
+                     <Value type="EXAMPLE">GB</Value>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:Shipment</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Description>BEAst: T6127, Freight forwarder's referens number 
+Peppol: </Description>
+            <Value type="EXAMPLE">1</Value>
+         </Element>
+         <Element>
+            <Term>cbc:Information</Term>
+            <Description>BEAst: Used by BEAst for Supplier Remark (T6038). 
+Peppol: </Description>
+            <Value type="EXAMPLE">text</Value>
+         </Element>
+         <Element>
+            <Term>cbc:GrossWeightMeasure</Term>
+            <Description>BEAst: Total Gross Weight (T6472) 
+Peppol: </Description>
+            <Value type="EXAMPLE">1</Value>
+            <Attribute usage="Optional">
+               <Term>unitCode</Term>
+               <Value type="EXAMPLE">KGM</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:GrossVolumeMeasure</Term>
+            <Description>BEAst: Total Gross Volume (T6494) 
+Peppol: </Description>
+            <Value type="EXAMPLE">1</Value>
+            <Attribute usage="Optional">
+               <Term>unitCode</Term>
+               <Value type="EXAMPLE">MTQ</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:TotalTransportHandlingUnitQuantity</Term>
+            <Description>BEAst: Not used in BEAst version 3.1 
+Peppol: </Description>
+            <Value type="EXAMPLE">3</Value>
+         </Element>
+         <Element>
+            <Term>cac:Consignment</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Description>BEAst: Use a dummy value since this element is mandatory. 
+Peppol: </Description>
+               <Value type="EXAMPLE">NA</Value>
+            </Element>
+            <Element cardinality="0..n">
+               <Term>cbc:CarrierServiceInstructions</Term>
+               <Name>Carrier Service Instructions. </Name>
+               <Description>BEAst: Added by BEAst. Code to specify additional service from the transport company (T6466) where unique codes per transport company will be used, or for Unloading instructions, code (T6343). The Unloading Instruction Codes are as follows: Z50=Semitrailer removable roof, Z51=Truck, Z52=Truck with tail lift, Z53=Truck with crane max 4 m, Z54=Truck with crane 4-9 m, Z55=Truck with crane more than 9 m, Z56=Forklift, Z57=Semitrailer, Z58=Short term storage, Z59=Porterage, Z60=Carry-in service, Z61=Standard transport, Z62=Loaded on truck, Z63=Indoor storage, Z64=Outdoor storage, Z65=Package maximum weigh, ZZ=Mutually agreed. </Description>
+               <Value type="EXAMPLE">12345</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Information</Term>
+               <Description>BEAst: Used for Transport Information (T6008). 
+Peppol: </Description>
+               <Value type="EXAMPLE">text</Value>
+            </Element>
+            <Element>
+               <Term>cac:CarrierParty</Term>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyIdentification</Term>
+                  <Name>Party Identification. </Name>
+                  <Description>BEAst: Added by BEAst. This party defines the company providing the transport service </Description>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Name>The Identity of the Carrier Party. </Name>
+                     <Description>BEAst: Added by BEAst. Identifies the Carrier party (T3208). </Description>
+                     <Value type="EXAMPLE">5790000435951</Value>
+                     <Attribute usage="Mandatory">
+                        <Term>schemeID</Term>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0088</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:PartyName</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Description>BEAst: Party Name (T5001) 
+Peppol: </Description>
+                     <Value type="EXAMPLE">Name</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Person</Term>
+                  <Description>BEAst: Not used in BEAst version 3.1. 
+Peppol: </Description>
+                  <Element>
+                     <Term>cac:IdentityDocumentReference</Term>
+                     <Element>
+                        <Term>cbc:ID</Term>
+                        <Value type="EXAMPLE">1234</Value>
+                     </Element>
+                     <Element>
+                        <Term>cbc:DocumentType</Term>
+                        <Value type="EXAMPLE">Inv</Value>
+                     </Element>
+                  </Element>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:OriginalDespatchTransportationService</Term>
+               <Name>Original Despatch Transportation Service. </Name>
+               <Description>BEAst: Added by BEAst. Used to specify Fuel consumption and Environmental Emission. </Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:TransportServiceCode</Term>
+                  <Name>Tranport Service Code. </Name>
+                  <Description>BEAst: Added by BEAst. Use "FuelReport" since this element is mandatory. </Description>
+                  <Value type="EXAMPLE">FuelReport</Value>
+               </Element>
+               <Element cardinality="0..n">
+                  <Term>cac:TransportEquipment</Term>
+                  <Name>Transport Equipment. </Name>
+                  <Description>BEAst: Added by BEAst. Used to specify fuel consumption. To be repeated for all fuel types used. </Description>
+                  <Element cardinality="0..1">
+                     <Term>cbc:TransportEquipmentTypeCode</Term>
+                     <Name>Tranport Equipment Type Code. </Name>
+                     <Description>BEAst: Added by BEAst. Product Group Name (T0012). </Description>
+                     <Value type="EXAMPLE">Diesel</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:Description</Term>
+                     <Name>Description. </Name>
+                     <Description>BEAst: Added by BEAst. Fuel description (T6226). </Description>
+                     <Value type="EXAMPLE">Forrest diesel mix</Value>
+                  </Element>
+                  <Element cardinality="0..n">
+                     <Term>cac:MeasurementDimension</Term>
+                     <Name>Fuel measurements. </Name>
+                     <Description>BEAst: Added by BEAst. Used to specify information about the fuel and fuel consumption. </Description>
+                     <Element cardinality="1..1">
+                        <Term>cbc:AttributeID</Term>
+                        <Name>Attribute ID. </Name>
+                        <Description>BEAst: Added by BEAst. To define the type of measurement. EnergyContent = T6428, ConversionFactor = T6429, FuelConsumption = T6374, DrivingDistance = T6380, DrivingTime = T6381, FuelMeasurementMethod = T6728, EngineType = T6379, RenewableFuel = T6382. </Description>
+                        <Value type="EXAMPLE">FuelConsumption</Value>
+                     </Element>
+                     <Element cardinality="0..1">
+                        <Term>cbc:Measure</Term>
+                        <Name>Measure. </Name>
+                        <Description>BEAst: Added by BEAst. The measured value. Used for EnergyContent, ConversionFactor, FuelConsumption, DrivingDistance, DrivingTime and RenewableFuel. unitCode refers to T6706. </Description>
+                        <Value type="EXAMPLE">123</Value>
+                        <Attribute usage="Optional">
+                           <Term>unitCode</Term>
+                           <Reference type="CODE_LIST">UNECERec20</Reference>
+                           <Value type="EXAMPLE">KGM</Value>
+                        </Attribute>
+                     </Element>
+                     <Element cardinality="0..1">
+                        <Term>cbc:Description</Term>
+                        <Name>Attribute value. </Name>
+                        <Description>BEAst: Added by BEAst. Description of the attribute when there is no value to measure. Used for FuelMeasurementMethod and EngineType. Possible values are for FuelMeasurementMethod: "AutomaticMeasurement", "StandardEstimate", "ManualMeasurement" and for EngineType: "Euro2", "Euro3", "Euro4", "Euro5", "Euro6", "EuroStep2", "EuroStep3A", "EuroStep3B", "EuroStep4". </Description>
+                        <Value type="EXAMPLE">StandardEstimate</Value>
+                     </Element>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cac:ProviderParty</Term>
+                     <Name>Provider party. </Name>
+                     <Description>BEAst: Added by BEAst. To define the fuel supplier. </Description>
+                     <Element cardinality="0..1">
+                        <Term>cac:PartyIdentification</Term>
+                        <Name>Party Identification. </Name>
+                        <Description>BEAst: Added by BEAst. To identify the fuel supplier. </Description>
+                        <Element cardinality="0..1">
+                           <Term>cbc:ID</Term>
+                           <Name>Identity of the fuel supplier. </Name>
+                           <Description>BEAst: Added by BEAst. The fuel supplier (T6001). </Description>
+                           <Value type="EXAMPLE">7300010000001</Value>
+                           <Attribute usage="Mandatory">
+                              <Term>schemeID</Term>
+                              <Reference type="CODE_LIST">ICD</Reference>
+                              <Value type="EXAMPLE">0088</Value>
+                           </Attribute>
+                        </Element>
+                     </Element>
+                     <Element cardinality="0..1">
+                        <Term>cac:PartyName</Term>
+                        <Name>Party Name. </Name>
+                        <Description>BEAst: Added by BEAst. The name of the fuel supplier (T6427). </Description>
+                        <Element cardinality="0..1">
+                           <Term>cbc:Name</Term>
+                           <Name>Name of the fuel supplier. </Name>
+                           <Description>BEAst: Added by BEAst. The fuel supplier. </Description>
+                           <Value type="EXAMPLE">Preem</Value>
+                        </Element>
+                     </Element>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cac:GoodsItem</Term>
+                     <Name>Goods Item. </Name>
+                     <Description>BEAst: Added by BEAst. Used to specify the type of fuel. </Description>
+                     <Element cardinality="0..1">
+                        <Term>cac:Item</Term>
+                        <Name>Item. </Name>
+                        <Description>BEAst: Added by BEAst. Used to specify the type of fuel. </Description>
+                        <Element cardinality="0..1">
+                           <Term>cac:SellersItemIdentification</Term>
+                           <Name>Seller's Item Identification. </Name>
+                           <Description>BEAst: Added by BEAst. Used to specify the type of fuel. </Description>
+                           <Element cardinality="1..1">
+                              <Term>cbc:ID</Term>
+                              <Name>Supplier's identity of the fuel. </Name>
+                              <Description>BEAst: Added by BEAst. The fuel article number (T0172). </Description>
+                              <Value type="EXAMPLE">123</Value>
+                           </Element>
+                        </Element>
+                        <Element cardinality="0..1">
+                           <Term>cac:StandardItemIdentification</Term>
+                           <Name>Standard Item Identification. </Name>
+                           <Description>BEAst: Added by BEAst. Only one Standard Item Number can be used. Specify the type of standard in schemeID. </Description>
+                           <Element cardinality="1..1">
+                              <Term>cbc:ID</Term>
+                              <Name>Standard article identity of the fuel. </Name>
+                              <Description>BEAst: Added by BEAst. The fuel article number (T0172). The schemeID refers to the Article Number Type (T6317). </Description>
+                              <Value type="EXAMPLE">1234567891234</Value>
+                              <Attribute usage="Mandatory">
+                                 <Term>schemeID</Term>
+                                 <Reference type="CODE_LIST">ICD</Reference>
+                                 <Value type="EXAMPLE">0160</Value>
+                              </Attribute>
+                           </Element>
+                        </Element>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element cardinality="0..n">
+                  <Term>cac:EnvironmentalEmission</Term>
+                  <Name>Environmental Emission. </Name>
+                  <Description>BEAst: Added by BEAst. To report the emissions. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:EnvironmentalEmissionTypeCode</Term>
+                     <Name>Environmental Emission Type Code. </Name>
+                     <Description>BEAst: Added by BEAst. Defines the type of emission reported. Values: "CO2" (Carbon Dioxide), NOX (Nitrogen oxide), PM (Particulate Matter), HC (Hydro Carbon). </Description>
+                     <Value type="EXAMPLE">CO2</Value>
+                  </Element>
+                  <Element cardinality="1..1">
+                     <Term>cbc:ValueMeasure</Term>
+                     <Name>Value of Measurement. </Name>
+                     <Description>BEAst: Added by BEAst. The value of the emission. Refers  to Carbon Dioxide (T6375)/Nitrogen Oxide (T6376)/Particulate Matter (T6377)/Hydro Carbon (T6378). </Description>
+                     <Value type="EXAMPLE">10</Value>
+                     <Attribute usage="Optional">
+                        <Term>unitCode</Term>
+                        <Reference type="CODE_LIST">UNECERec20</Reference>
+                        <Value type="EXAMPLE">MGM</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:ShipmentStage</Term>
+            <Name>Shipment Stage. </Name>
+            <Description>BEAst: Added by BEAst. Used for Transport mode. </Description>
+            <Element cardinality="1..1">
+               <Term>cbc:TransportModeCode</Term>
+               <Name>Transport Mode Code. </Name>
+               <Description>BEAst: Added by BEAst. Transport Mode Code, T6131. Use UNECE Recommendation 19. (1 = Maritime transport (This code should be used whenever the transport vehicle completes any part of its journey by sea.), 2 = Rail transport, 3 = Road transport, 4 = Air transport, 5 = Mail, 6 = Multimodal transport, 7 = Fixed transport installations, 8 = Inland water transport, 9 = Mode unknown.) </Description>
+               <Value type="EXAMPLE">3</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:Delivery</Term>
+            <Element>
+               <Term>cbc:TrackingID</Term>
+               <Description>BEAst: Tracking URL (T6737) 
+Peppol: </Description>
+               <Value type="EXAMPLE">456789</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:DeliveryLocation</Term>
+               <Name>Delivery Location. </Name>
+               <Description>BEAst: Added by BEAst. The Delivery Location is used to define the Ship-to when the Delivery Customer Party is not . When the Despatch Advice describes a movement, the Delivery Location should always be included. When the Despatch Advice describes a service given at a location, the Delivery Location describes this location. </Description>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Name>Identity of the Delivery Location. </Name>
+                  <Description>BEAst: Added by BEAst. Identifies the Delivery Location (T0036). </Description>
+                  <Value type="EXAMPLE">5790000435951</Value>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Reference type="CODE_LIST">ICD</Reference>
+                     <Value type="EXAMPLE">0088</Value>
+                  </Attribute>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:Name</Term>
+                  <Name>Name of the Consignee. </Name>
+                  <Description>BEAst: Added by BEAst. The name of the Consignee (T5001). </Description>
+                  <Value type="EXAMPLE">Name</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:Address</Term>
+                  <Name>Postal Address of Consignee. </Name>
+                  <Description>BEAst: Added by BEAst. Postal Address. </Description>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StreetName</Term>
+                     <Name>Street Name for Consignee. </Name>
+                     <Description>BEAst: Added by BEAst. Street name (T5003). </Description>
+                     <Value type="EXAMPLE">Avon Way</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:AdditionalStreetName</Term>
+                     <Name>Additional Street Name for Consignee. </Name>
+                     <Description>BEAst: Added by BEAst. Used for Department (T5002). </Description>
+                     <Value type="EXAMPLE">Purchasing</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CityName</Term>
+                     <Name>City Name for Consignee. </Name>
+                     <Description>BEAst: Added by BEAst. Name of city (T5005). </Description>
+                     <Value type="EXAMPLE">Bridgtow</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:PostalZone</Term>
+                     <Name>Postal Zone for Consignee. </Name>
+                     <Description>BEAst: Added by BEAst. Zip-code (T6117). </Description>
+                     <Value type="EXAMPLE">ZZ99 1ZZ</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CountrySubentity</Term>
+                     <Name>Country SubEntity for Consignee. </Name>
+                     <Description>BEAst: Added by BEAst. Country Sub-entity. </Description>
+                     <Value type="EXAMPLE">Avon</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cac:AddressLine</Term>
+                     <Name>Address Line for Consignee. </Name>
+                     <Description>BEAst: Added by BEAst. </Description>
+                     <Element cardinality="0..1">
+                        <Term>cbc:Line</Term>
+                        <Name>Address Line for Consignee. </Name>
+                        <Description>BEAst: Added by BEAst. Used for any other additional address information like Building (T5004). </Description>
+                        <Value type="EXAMPLE">3rd Floor, Room 5</Value>
+                     </Element>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cac:Country</Term>
+                     <Name>Country for Consignee. </Name>
+                     <Description>BEAst: Added by BEAst. Country. </Description>
+                     <Element cardinality="0..1">
+                        <Term>cbc:IdentificationCode</Term>
+                        <Name>Country Code for Consignee. </Name>
+                        <Description>BEAst: Added by BEAst. Country code (T5007). </Description>
+                        <Reference type="CODE_LIST">ISO3166</Reference>
+                        <Value type="EXAMPLE">GB</Value>
+                     </Element>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cac:LocationCoordinate</Term>
+                     <Name>Location Coordinate </Name>
+                     <Description>BEAst: Added by BEAst. To specify the coordinates. </Description>
+                     <Element cardinality="1..1">
+                        <Term>cbc:CoordinateSystemCode</Term>
+                        <Name>Coordinate System Code. </Name>
+                        <Description>BEAst: Added by BEAst. Always "WGS 84 Web Mercator" by definition. </Description>
+                        <Value type="EXAMPLE">WGS84</Value>
+                     </Element>
+                     <Element cardinality="1..1">
+                        <Term>cbc:LatitudeDegreesMeasure</Term>
+                        <Name>Latitude Degrees Measure. </Name>
+                        <Description>BEAst: Added by BEAst. The X coordinate (T6324). Use degrees with decimals. </Description>
+                        <Value type="EXAMPLE">59.331660358041425</Value>
+                        <Attribute usage="Mandatory">
+                           <Term>unitCode</Term>
+                           <Reference type="RULE">PEPPOL-T16-B11002</Reference>
+                           <Reference type="CODE_LIST">UNECERec20</Reference>
+                           <Value type="EXAMPLE">DD</Value>
+                        </Attribute>
+                     </Element>
+                     <Element cardinality="1..1">
+                        <Term>cbc:LongitudeDegreesMeasure</Term>
+                        <Name>Longitude Degrees Measure. </Name>
+                        <Description>BEAst: Added by BEAst. The Y coordinate (T6325). Use degrees with decimals. </Description>
+                        <Value type="EXAMPLE">18.063363084988005</Value>
+                        <Attribute usage="Mandatory">
+                           <Term>unitCode</Term>
+                           <Reference type="RULE">PEPPOL-T16-B11002</Reference>
+                           <Reference type="CODE_LIST">UNECERec20</Reference>
+                           <Value type="EXAMPLE">DD</Value>
+                        </Attribute>
+                     </Element>
+                     <Element cardinality="0..1">
+                        <Term>cbc:AltitudeMeasure</Term>
+                        <Name>Altitude Measure. </Name>
+                        <Description>BEAst: Added by BEAst. The Z coordinate (T6424). </Description>
+                        <Value type="EXAMPLE">12.5</Value>
+                        <Attribute usage="Mandatory">
+                           <Term>unitCode</Term>
+                           <Reference type="RULE">PEPPOL-T16-B11002</Reference>
+                           <Reference type="CODE_LIST">UNECERec20</Reference>
+                           <Value type="EXAMPLE">MTR</Value>
+                        </Attribute>
+                     </Element>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:EstimatedDeliveryPeriod</Term>
+               <Element>
+                  <Term>cbc:StartDate</Term>
+                  <Description>BEAst: Unloading Date and Time (T6372)/Delivery Period Start Date (T6319) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">2021-09-25</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:StartTime</Term>
+                  <Description>BEAst: Unloading Date and Time (T6372)/Delivery Period Start Time (T6734) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">12:00:00</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:EndDate</Term>
+                  <Description>BEAst: Delivery Period End Date (T6320) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">2021-09-27</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:EndTime</Term>
+                  <Description>BEAst: Delivery Period End Time (T6735) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">12:00:00</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:Despatch</Term>
+               <Element>
+                  <Term>cbc:ActualDespatchDate</Term>
+                  <Description>BEAst: Loading Date and Time (T6371)/Despatch Date and Time (T6242) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">2021-09-25</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:ActualDespatchTime</Term>
+                  <Description>BEAst: Loading Date and Time (T6371)/Despatch Date and Time (T6242) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">13:00:00</Value>
+               </Element>
+               <Element>
+                  <Term>cac:DespatchAddress</Term>
+                  <Description>BEAst: The Despatch Address is used to define the Ship-from when the Despatch Supplier Party is not. When the Despatch Advice describes a movement, the Despatch Address should be included. 
+Peppol: </Description>
+                  <Element>
+                     <Term>cbc:StreetName</Term>
+                     <Description>BEAst: Street Name (T5003).  
+Peppol: </Description>
+                     <Value type="EXAMPLE">Avon Way</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:AdditionalStreetName</Term>
+                     <Description>BEAst: Used for Department (T5002).  
+Peppol: </Description>
+                     <Value type="EXAMPLE">way 2</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:CityName</Term>
+                     <Description>BEAst: City Name (T5005).  
+Peppol: </Description>
+                     <Value type="EXAMPLE">Bridgtow</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:PostalZone</Term>
+                     <Description>BEAst: Postal Code (T6117).  
+Peppol: </Description>
+                     <Value type="EXAMPLE">ZZ99 1ZZ</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:CountrySubentity</Term>
+                     <Value type="EXAMPLE">Avon</Value>
+                  </Element>
+                  <Element>
+                     <Term>cac:AddressLine</Term>
+                     <Element>
+                        <Term>cbc:Line</Term>
+                        <Description>BEAst: Used for any other additional address information like Building (T5004).  
+Peppol: </Description>
+                        <Value type="EXAMPLE">3rd Floor, Room 5</Value>
+                     </Element>
+                  </Element>
+                  <Element>
+                     <Term>cac:Country</Term>
+                     <Element>
+                        <Term>cbc:IdentificationCode</Term>
+                        <Description>BEAst: Country Code (T5007).  
+Peppol: </Description>
+                        <Value type="EXAMPLE">GB</Value>
+                     </Element>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cac:LocationCoordinate</Term>
+                     <Name>Location Coordinate </Name>
+                     <Description>BEAst: Added by BEAst. To specify the coordinates. </Description>
+                     <Element cardinality="1..1">
+                        <Term>cbc:CoordinateSystemCode</Term>
+                        <Name>Coordinate System Code. </Name>
+                        <Description>BEAst: Added by BEAst. Always "WGS84" by definition. </Description>
+                        <Value type="EXAMPLE">WGS84</Value>
+                     </Element>
+                     <Element cardinality="1..1">
+                        <Term>cbc:LatitudeDegreesMeasure</Term>
+                        <Name>Latitude Degrees Measure. </Name>
+                        <Description>BEAst: Added by BEAst. The X coordinate (T6323). Use degrees with decimals. </Description>
+                        <Value type="EXAMPLE">59.33169866504851</Value>
+                        <Attribute usage="Mandatory">
+                           <Term>unitCode</Term>
+                           <Reference type="RULE">PEPPOL-T16-B11002</Reference>
+                           <Reference type="CODE_LIST">UNECERec20</Reference>
+                           <Value type="EXAMPLE">DD</Value>
+                        </Attribute>
+                     </Element>
+                     <Element cardinality="1..1">
+                        <Term>cbc:LongitudeDegreesMeasure</Term>
+                        <Name>Longitude Degrees Measure. </Name>
+                        <Description>BEAst: Added by BEAst. The Y coordinate (T6324). Use degrees with decimals. </Description>
+                        <Value type="EXAMPLE">18.063330898492403</Value>
+                        <Attribute usage="Mandatory">
+                           <Term>unitCode</Term>
+                           <Reference type="RULE">PEPPOL-T16-B11002</Reference>
+                           <Reference type="CODE_LIST">UNECERec20</Reference>
+                           <Value type="EXAMPLE">DD</Value>
+                        </Attribute>
+                     </Element>
+                     <Element cardinality="0..1">
+                        <Term>cbc:AltitudeMeasure</Term>
+                        <Name>Altitude Measure. </Name>
+                        <Description>BEAst: Added by BEAst. The Z coordinate (T6424). </Description>
+                        <Value type="EXAMPLE">12.5</Value>
+                        <Attribute usage="Mandatory">
+                           <Term>unitCode</Term>
+                           <Reference type="RULE">PEPPOL-T16-B11002</Reference>
+                           <Reference type="CODE_LIST">UNECERec20</Reference>
+                           <Value type="EXAMPLE">MTR</Value>
+                        </Attribute>
+                     </Element>
+                  </Element>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:DeliveryTerms</Term>
+               <Name>Delivery Terms. </Name>
+               <Description>BEAst: Added by BEAst.  </Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:ID</Term>
+                  <Name>Delivery Terms. </Name>
+                  <Description>BEAst: Added by BEAst. Delivery Terms code (T6710). </Description>
+                  <Value type="EXAMPLE">EXW</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:DeliveryLocation</Term>
+                  <Name>Delivery Terms Location. </Name>
+                  <Description>BEAst: Added by BEAst.  </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:ID</Term>
+                     <Name>Delivery Terms Location. </Name>
+                     <Description>BEAst: Added by BEAst. Delivery Terms Location (T6020). The location to which the delivery terms refer. Used to qualify the delivery terms e.g. "Terms of delivery are FOB Rotterdam" </Description>
+                     <Value type="EXAMPLE">Kalmar</Value>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+         <Element cardinality="0..n">
+            <Term>cac:TransportHandlingUnit</Term>
+            <Name>Transport Handling Unit. </Name>
+            <Description>BEAst: Added by BEAst. Used to specify how the goods is packed. </Description>
+            <Element cardinality="1..1">
+               <Term>cbc:ID</Term>
+               <Name>ID. </Name>
+               <Description>BEAst: Added by BEAst. The SSCC identification code of this Transport Handling Unit (T0138). </Description>
+               <Value type="EXAMPLE">11111222222222</Value>
+            </Element>
+            <Element cardinality="1..1">
+               <Term>cbc:TransportHandlingUnitTypeCode</Term>
+               <Name>Transport Handling Unit Type Code. </Name>
+               <Description>BEAst: Added by BEAst. Type of Transport Handling Unit (T6119). Use UN/ECE Recommendation 21 with addition of the codes used by "Retursystem Byggpall". </Description>
+               <Reference type="RULE">PEPPOL-T16-B11002</Reference>
+               <Reference type="CODE_LIST">UNECERec20</Reference>
+               <Value type="EXAMPLE">AG</Value>
+            </Element>
+            <Element cardinality="0..n">
+               <Term>cac:MeasurementDimension</Term>
+               <Name>Measurement Dimension. </Name>
+               <Description>BEAst: Added by BEAst. Used to specify any measurement of the Transport Handling Unit. </Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:AttributeID</Term>
+                  <Name>Measurement Attribute ID. </Name>
+                  <Description>BEAst: Added by BEAst. To describe the type of measurement (T6714). Use UNCL 6313 subset. </Description>
+                  <Reference type="CODE_LIST">UNCL6313-T16</Reference>
+                  <Value type="EXAMPLE">AAB</Value>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cbc:Measure</Term>
+                  <Name>Measure. </Name>
+                  <Description>BEAst: Added by BEAst. For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21. subset. </Description>
+                  <Value type="EXAMPLE">123</Value>
+                  <Attribute usage="Optional">
+                     <Term>unitCode</Term>
+                     <Reference type="CODE_LIST">UNECERec20</Reference>
+                     <Value type="EXAMPLE">KGM</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+      <Element>
+         <Term>cac:DespatchLine</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Description>BEAst: Line Number (T0051) 
+Peppol: </Description>
+            <Value type="EXAMPLE">1</Value>
+         </Element>
+         <Element>
+            <Term>cbc:Note</Term>
+            <Description>BEAst: Transportation Information (T6008) 
+Peppol: </Description>
+            <Value type="EXAMPLE">Mrs Green agreed to waive charge</Value>
+         </Element>
+         <Element>
+            <Term>cbc:DeliveredQuantity</Term>
+            <Description>BEAst: Delivered Quantity (T0070)/Despatched Quantity (T0131). unitCode refers to T6706 
+Peppol: </Description>
+            <Value type="EXAMPLE">10</Value>
+            <Attribute usage="Optional">
+               <Term>unitCode</Term>
+               <Value type="EXAMPLE">C62</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:OutstandingQuantity</Term>
+            <Description>BEAst: Backordered Quantity (T0059). unitCode refers to T6706 
+Peppol: </Description>
+            <Value type="EXAMPLE">2</Value>
+            <Attribute usage="Optional">
+               <Term>unitCode</Term>
+               <Value type="EXAMPLE">C62</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:OutstandingReason</Term>
+            <Description>BEAst: Change Reason Description (T6220) 
+Peppol: </Description>
+            <Value type="EXAMPLE">text</Value>
+         </Element>
+         <Element>
+            <Term>cac:OrderLineReference</Term>
+            <Element>
+               <Term>cbc:LineID</Term>
+               <Description>BEAst: Calloff Line Reference (T6336)/Reference to Order Line (T3322) 
+Peppol: </Description>
+               <Value type="EXAMPLE">1</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:SalesOrderLineID</Term>
+               <Name>Sales Order Line number. </Name>
+               <Description>BEAst: Added by BEAst. Reference to the sellers orderline number (T6462). </Description>
+               <Value type="EXAMPLE">10</Value>
+            </Element>
+            <Element>
+               <Term>cac:OrderReference</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Description>BEAst: Order Number (T3309) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">AEG012345</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element cardinality="0..n">
+            <Term>cac:DocumentReference</Term>
+            <Name>Document Reference. </Name>
+            <Description>BEAst: Added by BEAst. Used for sending additional references at line level. </Description>
+            <Element cardinality="1..1">
+               <Term>cbc:ID</Term>
+               <Name>Document ID. </Name>
+               <Description>BEAst: Added by BEAst. ID of the referenced document or item: Reference to Delivery Note (T0063), Customer's Reference Number (T6005), Offer Number (T6010), Vendor's Order Number (T6099), Ultimate Customer's Order Number (T6221), Drawing Number (T6222), Material Ticket Number (T6329), Material Ticket Reference (T6337), Delivery Unit (T6340), Reference to Web (T6373), Ultimate Customer's Order Line Number (T6458), Offer Line Number (T6466) or Document Name (T6484). </Description>
+               <Value type="EXAMPLE">Test</Value>
+            </Element>
+            <Element cardinality="1..1">
+               <Term>cbc:DocumentType</Term>
+               <Name>DocumentTypeCode </Name>
+               <Description>BEAst: Added by BEAst. Identifies the type of document or item. ("BEAST:ReferenceToDeliveryNote", "BEAST:CustomersReferenceNumber", "BEAST:OfferNumber", "BEAST:VendorsOrderNumber", "BEAST:EndCustomersOrderNumber", "BEAST:DrawingNumber", "BEAST:MaterialTicketNumber", "BEAST:MaterialTicketReference", "BEAST:DeliveryUnit", "BEAST:ReferenceToWeb", "BEAST:EndCustomersOrderLineNumber", "BEAST:OfferLineNumber", any other type of document or item). </Description>
+               <Value type="EXAMPLE">BEAST:EndCustomersOrderNumber</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:Attachment</Term>
+               <Name>Attachment. </Name>
+               <Description>BEAst: Added by BEAst. Group to describe an attached document. An attachment can refer to an external document or be included with the document being exchanged. </Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:EmbeddedDocumentBinaryObject</Term>
+                  <Name>Embedded Binary object. </Name>
+                  <Description>BEAst: Added by BEAst. The referenced document can here be inserted as a binary object (T6475). filename refers to T6476. </Description>
+                  <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>
+                  <Attribute usage="Optional">
+                     <Term>mimeCode</Term>
+                     <Reference type="CODE_LIST">MimeCode</Reference>
+                     <Value type="EXAMPLE">application/pdf</Value>
+                  </Attribute>
+                  <Attribute usage="Optional">
+                     <Term>filename</Term>
+                     <Value type="EXAMPLE">Hours-spent.pdf</Value>
+                  </Attribute>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:ExternalReference</Term>
+                  <Name>External Reference. </Name>
+                  <Description>BEAst: Added by BEAst. A reference to an attached document that is external to the document(s) being exchanged. </Description>
+                  <Element>
+                     <Term>cbc:URI</Term>
+                     <Name>Address to internet resource. </Name>
+                     <Description>BEAst: Added by BEAst. The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource (T6187). </Description>
+                     <Value type="EXAMPLE">www.beast.se</Value>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:Item</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Description>BEAst: Article Description (T6226) 
+Peppol: </Description>
+               <Value type="EXAMPLE">beeswax</Value>
+            </Element>
+            <Element>
+               <Term>cac:BuyersItemIdentification</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Description>BEAst: Buyer's Part Article Number (T6022)/Article Number (T0172) when T6317="BP"/Littera (T6417). 
+Peppol: </Description>
+                  <Value type="EXAMPLE">6578489</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:SellersItemIdentification</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Description>BEAst: Supplier's Article Number (T0172) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">17589683</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:StandardItemIdentification</Term>
+               <Description>BEAst: Only one Standard Item Number can be used per line. 
+Peppol: </Description>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Description>BEAst: Global Trade Item Number (T0154), E Number (T0260), RSK Article Number Sweden (T6023), RSK Article Number Norway (T6024), E Number Norwegian (T6026), NOBB Article Number (T6027), TUN Article Number (T6028), Finfo/Vilma Article Number (T6029), GTIN for Consumer Unit (T6225), RT Article Number (T6460) or SGTIN (T6461). 
+Peppol: </Description>
+                  <Value type="EXAMPLE">1234567891234</Value>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Value type="EXAMPLE">0160</Value>
+                  </Attribute>
+               </Element>
+               <Element>
+                  <Term>cbc:ExtendedID</Term>
+                  <Value type="EXAMPLE">22114455</Value>
+               </Element>
+            </Element>
+            <Element cardinality="0..n">
+               <Term>cac:CommodityClassification</Term>
+               <Name>Commodity Classification. </Name>
+               <Description>BEAst: Added by BEAst. To classify when an item number is not sufficient. </Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:ItemClassificationCode</Term>
+                  <Name>Item Classification code. </Name>
+                  <Description>BEAst: Added by BEAst. Used to classify the material when the item number is not sufficient (T6466), to inform about the source of classification standard (T6467). ListID must always be "ZZZ" and ListVersionID always "BEAST". Name will specify which of them it is. Possible names are: "ReferenceToArticleClass", "SourceToClassification", "SBMINumber", "SÅNumber", "ConcreteNumber",	"WasteNumber", "FuelNumber". </Description>
+                  <Value type="EXAMPLE">Code</Value>
+                  <Attribute usage="Optional">
+                     <Term>listID</Term>
+                     <Reference type="CODE_LIST">UNCL7143</Reference>
+                     <Value type="EXAMPLE">ZZZ</Value>
+                  </Attribute>
+                  <Attribute usage="Optional">
+                     <Term>listVersionID</Term>
+                     <Value type="EXAMPLE">BEAST</Value>
+                  </Attribute>
+                  <Attribute usage="Optional">
+                     <Term>name</Term>
+                     <Value type="EXAMPLE">SourceToClassification</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:HazardousItem</Term>
+               <Element>
+                  <Term>cbc:UNDGCode</Term>
+                  <Description>BEAst: Dangerous Goods Code (T0169) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">ADR</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:HazardClassID</Term>
+                  <Description>BEAst: Dangerous Goods, Hazard Code (T0263) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Code</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:AdditionalItemProperty</Term>
+               <Description>BEAst: This group is also in BEAst used for ConfigurationValue (T6369), GUID Identifier (T6408), Treatment code (T6468), Alternative Vehicle Type (T6339), NeC additional information about Asphalt and Concrete, Price information and Rental additional information.  
+Peppol: </Description>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Description>BEAst: Product Group Code (T0011), Property Name (T6446), Product Type Description (T6442).  
+Peppol: </Description>
+                  <Value type="EXAMPLE">Colour</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:NameCode</Term>
+                  <Description>BEAst: "ConfigurationValue", "GUIDIdentifier", "TreatmentCode", "AlternativeVehicleType", "Price" or "Rental". Property ID NeC (T6469), Property ID Type (T6443), Identity Type Code (T6440). listID refers to Property ID (T6444) but is always "BEAST" when NameCode is any of the fix values defined here. 
+Peppol: </Description>
+                  <Value type="EXAMPLE">ConfigurationValue</Value>
+                  <Attribute usage="Optional">
+                     <Term>listID</Term>
+                     <Value type="EXAMPLE">BEAST</Value>
+                  </Attribute>
+               </Element>
+               <Element>
+                  <Term>cbc:Value</Term>
+                  <Description>BEAst: Price Amount (T6235), Alternative Vehicle Type (T6339), Configuration Value (T6369), GUID Identifier (T6408), Property Class ID (T6441), Property Value (T6452), Treatment Code (T6468), Rental Indicator (T6477) or Article Property (T6470). The Rental Indicator (T6477) is changed from "True"/"False" to "Rental"/"Purchase". 
+Peppol: </Description>
+                  <Value type="EXAMPLE">Blue</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:ValueQuantity</Term>
+                  <Description>BEAst: Property Compare Code (T6457), Price Unit Basis Quantity (T6722). unitCode refers to Measure Unit NeB Type (T6706). 
+Peppol: </Description>
+                  <Value type="EXAMPLE">15.00</Value>
+                  <Attribute usage="Optional">
+                     <Term>unitCode</Term>
+                     <Value type="EXAMPLE">C62</Value>
+                  </Attribute>
+               </Element>
+               <Element>
+                  <Term>cbc:ValueQualifier</Term>
+                  <Description>BEAst: Property Value ID (T6450), Price Specification Code (T6721). 
+Peppol: </Description>
+                  <Value type="EXAMPLE">descr</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:ItemInstance</Term>
+               <Element>
+                  <Term>cbc:ManufactureDate</Term>
+                  <Description>BEAst: Production or Manufacture Date (T0262) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">2021-01-01</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:BestBeforeDate</Term>
+                  <Description>BEAst: Best Before Date (T3276) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">2021-12-01</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:SerialID</Term>
+                  <Description>BEAst: Serial Number (T3236) 
+Peppol: </Description>
+                  <Value type="EXAMPLE">4558784</Value>
+               </Element>
+               <Element>
+                  <Term>cac:LotIdentification</Term>
+                  <Element>
+                     <Term>cbc:LotNumberID</Term>
+                     <Description>BEAst: Batch Number (T0132). 
+Peppol: </Description>
+                     <Value type="EXAMPLE">546378239</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:ExpiryDate</Term>
+                     <Value type="EXAMPLE">2023-01-01</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element cardinality="0..n">
+               <Term>cac:Certificate</Term>
+               <Name>Certificate. </Name>
+               <Description>BEAst: Added by BEAst. Used for referring to the Certificate for Wooden products. </Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:ID</Term>
+                  <Name>Identity of the Certificate . </Name>
+                  <Description>BEAst: Added by BEAst. Certificate Number (T6413). </Description>
+                  <Value type="EXAMPLE">6655223</Value>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cbc:CertificateTypeCode</Term>
+                  <Name>Certificate Type Code . </Name>
+                  <Description>BEAst: Added by BEAst. The UBL structure used requires this element. Use the value NA. </Description>
+                  <Value type="EXAMPLE">NA</Value>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cbc:CertificateType</Term>
+                  <Name>Certificate Type . </Name>
+                  <Description>BEAst: Added by BEAst. Identifies the type of Certificate (T6412). </Description>
+                  <Value type="EXAMPLE">FSC</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:Remarks</Term>
+                  <Name>Remarks. </Name>
+                  <Description>BEAst: Added by BEAst. Used to inform about how much is certified, in percent (T6414). </Description>
+                  <Value type="EXAMPLE">48% Certified.</Value>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cac:IssuerParty</Term>
+                  <Name>Issuer Party </Name>
+                  <Description>BEAst: Added by BEAst. The authorized organization that issued this certificate, the provider of the certificate. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cac:PartyName</Term>
+                     <Name>Party Name </Name>
+                     <Description>BEAst: Added by BEAst. The name of the party issuing the certificate. </Description>
+                     <Element cardinality="1..1">
+                        <Term>cbc:Name</Term>
+                        <Name>Party Name. </Name>
+                        <Description>BEAst: Added by BEAst. The UBL structure used requires this element. Use the value NA. </Description>
+                        <Value type="EXAMPLE">NA</Value>
+                     </Element>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:Shipment</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">NA</Value>
+            </Element>
+            <Element>
+               <Term>cac:TransportHandlingUnit</Term>
+               <Description>BEAst: This group is used when it is possible to describe the content of the Transport Handilng Units. If that is not the case, the Transport Handling Units should instead be listed at header level, under Shipment. 
+Peppol: </Description>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Description>BEAst: The SSCC identification code of this Transport Handling Unit (T0138). 
+Peppol: </Description>
+                  <Value type="EXAMPLE">5454</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:TransportHandlingUnitTypeCode</Term>
+                  <Description>BEAst: Type of Transport Handling Unit (T6119). Use UN/ECE Recommendation 21 with addition of the codes used by "Retursystem Byggpall". 
+Peppol: </Description>
+                  <Value type="EXAMPLE">4H</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:HazardousRiskIndicator</Term>
+                  <Value type="EXAMPLE">false</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:ShippingMarks</Term>
+                  <Value type="EXAMPLE">text</Value>
+               </Element>
+               <Element>
+                  <Term>cac:MeasurementDimension</Term>
+                  <Element>
+                     <Term>cbc:AttributeID</Term>
+                     <Description>BEAst: To describe the type of measurement (T6714). Use UNCL 6313 subset. 
+Peppol: </Description>
+                     <Value type="EXAMPLE">AAW</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Measure</Term>
+                     <Description>BEAst: For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21. subset. 
+Peppol: </Description>
+                     <Value type="EXAMPLE">1</Value>
+                     <Attribute usage="Optional">
+                        <Term>unitCode</Term>
+                        <Value type="EXAMPLE">C62</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Package</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Description>BEAst: Unique identity of the package (T0138). 
+Peppol: </Description>
+                     <Value type="EXAMPLE">1267</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:PackagingTypeCode</Term>
+                     <Description>BEAst: Type of Package (T6119). Use UN/ECE Recommendation 21 with addition of the codes used by "Retursystem Byggpall". 
+Peppol: </Description>
+                     <Value type="EXAMPLE">BX</Value>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+   </Document>
+</Structure>
