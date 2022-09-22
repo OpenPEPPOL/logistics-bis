@@ -320,13 +320,13 @@
 			<xsl:choose>
 				<xsl:when test="./processing-instruction('Description')">
 					<Description>
-						<xsl:text>BEAst: </xsl:text>
+						<xsl:text>Logistics: </xsl:text>
 						<xsl:value-of select="./processing-instruction('Description')"/>
 					</Description>
 				</xsl:when>
 				<xsl:when test="./processing-instruction('DescriptionAddFirst')">
 					<Description>
-						<xsl:text>BEAst: </xsl:text>
+						<xsl:text>Logistics: </xsl:text>
 						<xsl:value-of select="./processing-instruction('DescriptionAddFirst')"/>
 						<xsl:text>&#xa;Peppol: </xsl:text>
 						<xsl:value-of select="$varUblElement/nsPep:Element/nsPep:Description"/>
@@ -336,7 +336,7 @@
 					<Description>
 						<xsl:text>Peppol: </xsl:text>
 						<xsl:value-of select="$varUblElement/nsPep:Element/nsPep:Description"/>
-						<xsl:text>&#xa;BEAst: </xsl:text>
+						<xsl:text>&#xa;Logistics: </xsl:text>
 						<xsl:value-of select="./processing-instruction('DescriptionAddLast')"/>
 					</Description>
 				</xsl:when>
@@ -520,13 +520,13 @@
 					<xsl:choose>
 						<xsl:when test="../processing-instruction()[name() = $varAttrInstrDescription]">
 							<Description>
-								<xsl:text>BEAst: </xsl:text>
+								<xsl:text>Logistics: </xsl:text>
 								<xsl:value-of select="../processing-instruction()[name() = $varAttrInstrDescription]"/>
 							</Description>
 						</xsl:when>
 						<xsl:when test="../processing-instruction()[name() = $varAttrInstrDescriptionAddFirst]">
 							<Description>
-								<xsl:text>BEAst: </xsl:text>
+								<xsl:text>Logistics: </xsl:text>
 								<xsl:value-of select="../processing-instruction()[name() = $varAttrInstrDescriptionAddFirst]"/>
 								<xsl:text>&#xa;Peppol: </xsl:text>
 								<xsl:value-of select="$varUblElementAttribute/nsPep:Description"/>
@@ -536,7 +536,7 @@
 							<Description>
 								<xsl:text>Peppol: </xsl:text>
 								<xsl:value-of select="$varUblElementAttribute/nsPep:Description"/>
-								<xsl:text>&#xa;BEAst: </xsl:text>
+								<xsl:text>&#xa;Logistics: </xsl:text>
 								<xsl:value-of select="../processing-instruction()[name() = $varAttrInstrDescriptionAddLast]"/>
 							</Description>
 						</xsl:when>
