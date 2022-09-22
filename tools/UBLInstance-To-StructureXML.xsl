@@ -495,11 +495,11 @@
 								<xsl:value-of select="$varUblElementAttribute/@usage"/>
 							</xsl:attribute>
 						</xsl:when>
-						<xsl:otherwise>
+						<!--xsl:otherwise>
 							<xsl:attribute name="usage">
 								<xsl:value-of select="'Optional'"/>
 							</xsl:attribute>
-						</xsl:otherwise>
+						</xsl:otherwise-->
 					</xsl:choose>
 					<Term>
 						<xsl:value-of  select="fn:name(.)"/>
