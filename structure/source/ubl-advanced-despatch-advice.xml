@@ -317,6 +317,9 @@
 		<cbc:ID>1
 			<?DescriptionAddFirst T6127, Freight forwarder's referens number ?>
 		</cbc:ID>
+		<cbc:HandlingCode>EBM
+			<?DescriptionAddFirst Added by Logistics. The handling required for this shipment, expressed as a code..?>
+		</cbc:HandlingCode>
 		<cbc:Information>text
 			<?DescriptionAddFirst Used by BEAst for Supplier Remark (T6038). ?>
 		</cbc:Information>
@@ -329,13 +332,12 @@
 		<cbc:TotalTransportHandlingUnitQuantity>3
 			<?DescriptionAddFirst Not used in BEAst version 3.1 ?>
 		</cbc:TotalTransportHandlingUnitQuantity>
-		<cbc:SpecialInstructions>Op with care
-			<?DescriptionAddFirst Added by Logistics. Special instructions relating to this shipment.?>
-		</cbc:SpecialInstructions>
-		<cbc:DeliveryInstructions>Remember to turn on the power of the container</cbc:DeliveryInstructions>
+		<cbc:DeclaredStatisticsValueAmount currencyCode="SEK">34000.45
+			<?DescriptionAddFirst Added by Logistics. The total declared value for customs purposes of those goods in this shipment that are subject to the same customs procedure and have the same tariff/statistical heading, country information, and duty regime.?>
+		</cbc:DeclaredStatisticsValueAmount>
 		<cac:Consignment>
 			<cbc:ID>NA
-				<?DescriptionAddFirst Use a dummy value since this element is mandatory. ?>
+				<?DescriptionAddFirst Use a dummy value since this element is mandatory. ?>				
 			</cbc:ID>
 			<cbc:ConsigneeAssignedID>2345343444
 					<?DescriptionAddFirst Added by Logistics. An identifier for this consignment, assigned by the consignee.?>
@@ -504,6 +506,41 @@
 				</cac:EnvironmentalEmission>
 			</cac:OriginalDespatchTransportationService>
 		</cac:Consignment>
+		<cac:GoodsItem>
+				<?Name Goods Item. ?>
+				<?Description Added by Logistics. A Goods item contained in the shiphip that is not carried in a transporthandling unit. Used for Bulk transport only.?>
+				<?Cardinality 0..n?>
+				<cbc:ID>2452344
+					<?Description Added by Logistics. An identifier for this goods item. Must match the Despatch line where the item is described ?>
+				</cbc:ID>
+				<cbc:SequenceNumberID>1
+					<?Description Added by Logistics. A sequence number differentiating a specific goods item within a consignment. ?>
+				</cbc:SequenceNumberID>
+				<cbc:HazardousRiskIndicator>false
+					<?Description Added by Logistics. An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+				</cbc:HazardousRiskIndicator>
+				<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
+					<?Description Added by Logistics. The total declared value for customs purposes of the goods item. ?>
+				</cbc:DeclaredStatisticsValueAmount>
+				<cbc:FreeOnBoardValueAmount currencyID="EUR">23446
+					<?Description Added by Logistics. The monetary amount that has to be or has been paid as calculated under the applicable trade delivery. ?>
+				</cbc:FreeOnBoardValueAmount>
+				<cbc:ValueAmount currencyID="EUR">23044.78
+					<?Description Added by Logistics. The amount on which a duty, tax, or fee will be assessed. ?>
+				</cbc:ValueAmount>
+				<cbc:GrossWeightMeasure unitCode="KGM">34.670
+					<?Description Added by Logistics. The weight of this goods item, including packing and packaging but excluding the carrier's equipment. ?>
+				</cbc:GrossWeightMeasure>
+				<cbc:NetWeightMeasure unitCode="KGM">34.670
+					<?Description Added by Logistics. The weight of this goods item, excluding packing but including packaging that normally accompanies the goods. ?>
+				</cbc:NetWeightMeasure>
+				<cbc:Quantity unitCode="EA">6
+					<?Description Added by Logistics. he number of units making up this goods item. ?>
+				</cbc:Quantity>
+				<cbc:TraceId schmeId="urn:epc:sgid">345699634527
+					<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
+				</cbc:TraceId>
+			</cac:GoodsItem>
 		<cac:ShipmentStage>
 			<?Name Shipment Stage. ?>
 			<?Description Added by BEAst. Used for Transport mode. ?>
@@ -827,23 +864,6 @@
 				<cbc:TraceID>1431234563452434
 					<?Description Added by Logistics.  An identifier for use in tracing this piece of transport equipment, such as the EPC number used in RFID. ?>
 				</cbc:TraceID>
-				<cac:MeasurementDimension>
-					<?Name Measurement Dimension. ?>
-					<?Description Added by BEAst. Used to specify any measurement of this Transport Equipment. ?>
-					<?Cardinality 0..n?>
-					<cbc:AttributeID>LN
-						<?Name Measurement Attribute ID. ?>
-						<?CodeList UNCL6313?>
-						<?Description Added by BEAst. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
-						<?Cardinality 1..1?>
-					</cbc:AttributeID>
-					<cbc:Measure unitCode="KGM">123
-						<?Name Measure. ?>
-						<?unitCode-CodeList UNECERec20?>
-						<?Description Added by BEAst. For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
-						<?Cardinality 1..1?>
-					</cbc:Measure>
-				</cac:MeasurementDimension>
 			</cac:TransportEquipment>
 			<cac:MeasurementDimension>
 				<?Name Measurement Dimension. ?>
@@ -881,7 +901,7 @@
 				<cbc:Measure unitCode="CEL">-21</cbc:Measure>
 			</cac:MaximumTemperature>
 			<cac:GoodsItem>
-				<?Name Measure. ?>
+				<?Name Goods Item. ?>
 				<?Description Added by Logistics. A Goods item contained in the transporthandling unit.?>
 				<?Cardinality 0..n?>
 				<cbc:ID>2452344
@@ -942,9 +962,145 @@
 				<cbc:TraceID>23452346545556
 				<?Description Added by Logistics. An identifier for use in tracing this package, such as the EPC number used in RFID. If Quantity is used it must identify them all ?>
 				</cbc:TraceID>
+								<cac:ContainedPackage>
+					<?Name Containing Package ?>
+					<?Description Added by Logistics. A package contained in the Transport Handling Unit.?>
+					<?Cardinality 0..n?>
+					<cbc:ID>3453
+					<?Description Added by Logistics. The Id if the package.?>
+					</cbc:ID>
+					<cbc:Quantity>5
+					<?Description Added by Logistics. The quantity of packages for this package type. Use only if the TraceId for all packages are the same. ?>
+					</cbc:Quantity>
+					<cbc:ReturnableMaterialIndicator>true
+					<?Description Added by Logistics. An indicator that the packaging material is returnable (true) or not (false). ?>
+					</cbc:ReturnableMaterialIndicator>
+					<cbc:PackageLevelCode>2
+					<?Description Added by Logistics. A code signifying a level of packaging. Mus ?>
+					<?CodeList clm67075?>
+					</cbc:PackageLevelCode>
+					<cbc:PackagingTypeCode>
+						<?Description Added by Logistics. A code signifying a level of packaging. ?>
+						<?CodeList UNECE_rec21?>
+					</cbc:PackagingTypeCode>
+					<cbc:PackingMaterial>Carbon box
+					<?Description Added by Logistics. Text describing the packaging material. ?>
+					</cbc:PackingMaterial>
+					<cbc:TraceID>23452346545556
+					<?Description Added by Logistics. An identifier for use in tracing this package, such as the EPC number used in RFID. If Quantity is used it must identify them all ?>
+					</cbc:TraceID>
+										<cac:ContainedPackage>
+						<?Name Containing Package ?>
+						<?Description Added by Logistics. A package contained in the Transport Handling Unit.?>
+						<?Cardinality 0..n?>
+						<cbc:ID>3453
+						<?Description Added by Logistics. The Id if the package.?>
+						</cbc:ID>
+						<cbc:Quantity>5
+						<?Description Added by Logistics. The quantity of packages for this package type. Use only if the TraceId for all packages are the same. ?>
+						</cbc:Quantity>
+						<cbc:ReturnableMaterialIndicator>true
+						<?Description Added by Logistics. An indicator that the packaging material is returnable (true) or not (false). ?>
+						</cbc:ReturnableMaterialIndicator>
+						<cbc:PackageLevelCode>2
+						<?Description Added by Logistics. A code signifying a level of packaging. Mus ?>
+						<?CodeList clm67075?>
+						</cbc:PackageLevelCode>
+						<cbc:PackagingTypeCode>
+							<?Description Added by Logistics. A code signifying a level of packaging. ?>
+							<?CodeList UNECE_rec21?>
+						</cbc:PackagingTypeCode>
+						<cbc:PackingMaterial>Carbon box
+						<?Description Added by Logistics. Text describing the packaging material. ?>
+						</cbc:PackingMaterial>
+						<cbc:TraceID>23452346545556
+						<?Description Added by Logistics. An identifier for use in tracing this package, such as the EPC number used in RFID. If Quantity is used it must identify them all ?>
+						</cbc:TraceID>
+						<cac:GoodsItem>
+							<?Name Goods Item. ?>
+							<?Description Added by Logistics. A Goods item contained in the package.?>
+							<?Cardinality 0..n?>
+							<cbc:ID>2452344
+								<?Description Added by Logistics. An identifier for this goods item. ?>
+							</cbc:ID>
+							<cbc:SequenceNumberID>1
+								<?Description Added by Logistics. A sequence number differentiating a specific goods item within a consignment. ?>
+							</cbc:SequenceNumberID>
+							<cbc:HazardousRiskIndicator>false
+								<?Description Added by Logistics. An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+							</cbc:HazardousRiskIndicator>
+							<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
+								<?Description Added by Logistics. The total declared value for customs purposes of the goods item. ?>
+							</cbc:DeclaredStatisticsValueAmount>
+							<cbc:FreeOnBoardValueAmount currencyID="EUR">23446
+								<?Description Added by Logistics. The monetary amount that has to be or has been paid as calculated under the applicable trade delivery. ?>
+							</cbc:FreeOnBoardValueAmount>
+							<cbc:ValueAmount currencyID="EUR">23044.78
+								<?Description Added by Logistics. The amount on which a duty, tax, or fee will be assessed. ?>
+							</cbc:ValueAmount>
+						</cac:GoodsItem>
+						<cac:MeasurementDimension>
+							<?Name Measurement Dimension. ?>
+							<?Description Added by Logistics. Used to specify any measurement of this Package ?>
+							<?Cardinality 0..n?>
+							<cbc:AttributeID>LN
+								<?Name Measurement Attribute ID. ?>
+								<?CodeList UNCL6313?>
+								<?Description Added by BEAst. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
+								<?Cardinality 1..1?>
+							</cbc:AttributeID>
+									<cbc:Measure unitCode="KGM">123
+								<?Name Measure. ?>
+								<?unitCode-CodeList UNECERec20?>
+								<?Description Added by BEAst. For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
+								<?Cardinality 1..1?>
+							</cbc:Measure>
+						</cac:MeasurementDimension>
+					</cac:ContainedPackage>
+					<cac:GoodsItem>
+						<?Name Goods Item. ?>
+						<?Description Added by Logistics. A Goods item contained in the transporthandling unit.?>
+						<?Cardinality 0..n?>
+						<cbc:ID>2452344
+						<?Description Added by Logistics. An identifier for this goods item. ?>
+					</cbc:ID>
+						<cbc:SequenceNumberID>1
+						<?Description Added by Logistics. A sequence number differentiating a specific goods item within a consignment. ?>
+					</cbc:SequenceNumberID>
+						<cbc:HazardousRiskIndicator>false
+						<?Description Added by Logistics. An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+					</cbc:HazardousRiskIndicator>
+						<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
+						<?Description Added by Logistics. The total declared value for customs purposes of the goods item. ?>
+					</cbc:DeclaredStatisticsValueAmount>
+						<cbc:FreeOnBoardValueAmount currencyID="EUR">23446
+						<?Description Added by Logistics. The monetary amount that has to be or has been paid as calculated under the applicable trade delivery. ?>
+					</cbc:FreeOnBoardValueAmount>
+						<cbc:ValueAmount currencyID="EUR">23044.78
+						<?Description Added by Logistics. The amount on which a duty, tax, or fee will be assessed. ?>
+					</cbc:ValueAmount>
+					</cac:GoodsItem>
+					<cac:MeasurementDimension>
+							<?Name Measurement Dimension. ?>
+							<?Description Added by Logistics. Used to specify any measurement of this Package ?>
+							<?Cardinality 0..n?>
+							<cbc:AttributeID>LN
+								<?Name Measurement Attribute ID. ?>
+								<?CodeList UNCL6313?>
+								<?Description Added by BEAst. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
+								<?Cardinality 1..1?>
+							</cbc:AttributeID>
+									<cbc:Measure unitCode="KGM">123
+								<?Name Measure. ?>
+								<?unitCode-CodeList UNECERec20?>
+								<?Description Added by BEAst. For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
+								<?Cardinality 1..1?>
+							</cbc:Measure>
+						</cac:MeasurementDimension>
+				</cac:ContainedPackage>
 				<cac:GoodsItem>
-					<?Name Measure. ?>
-					<?Description Added by Logistics. A Goods item contained in the transporthandling unit.?>
+					<?Name Goods Item ?>
+					<?Description Added by Logistics. A Goods item contained in the package.?>
 					<?Cardinality 0..n?>
 					<cbc:ID>2452344
 					<?Description Added by Logistics. An identifier for this goods item. Must match the Despatch line where the item is described ?>
@@ -977,108 +1133,7 @@
 						<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 					</cbc:TraceId>
 				</cac:GoodsItem>
-				<cac:ContainedPackage>
-					<?Name Containing Package ?>
-					<?Description Added by Logistics. A package contained in the Transport Handling Unit.?>
-					<?Cardinality 0..n?>
-					<cbc:ID>3453
-					<?Description Added by Logistics. The Id if the package.?>
-					</cbc:ID>
-					<cbc:Quantity>5
-					<?Description Added by Logistics. The quantity of packages for this package type. Use only if the TraceId for all packages are the same. ?>
-					</cbc:Quantity>
-					<cbc:ReturnableMaterialIndicator>true
-					<?Description Added by Logistics. An indicator that the packaging material is returnable (true) or not (false). ?>
-					</cbc:ReturnableMaterialIndicator>
-					<cbc:PackageLevelCode>2
-					<?Description Added by Logistics. A code signifying a level of packaging. Mus ?>
-					<?CodeList clm67075?>
-					</cbc:PackageLevelCode>
-					<cbc:PackagingTypeCode>
-						<?Description Added by Logistics. A code signifying a level of packaging. ?>
-						<?CodeList UNECE_rec21?>
-					</cbc:PackagingTypeCode>
-					<cbc:PackingMaterial>Carbon box
-					<?Description Added by Logistics. Text describing the packaging material. ?>
-					</cbc:PackingMaterial>
-					<cbc:TraceID>23452346545556
-					<?Description Added by Logistics. An identifier for use in tracing this package, such as the EPC number used in RFID. If Quantity is used it must identify them all ?>
-					</cbc:TraceID>
-					<cac:GoodsItem>
-						<?Name Measure. ?>
-						<?Description Added by Logistics. A Goods item contained in the transporthandling unit.?>
-						<?Cardinality 0..n?>
-						<cbc:ID>2452344
-						<?Description Added by Logistics. An identifier for this goods item. ?>
-					</cbc:ID>
-						<cbc:SequenceNumberID>1
-						<?Description Added by Logistics. A sequence number differentiating a specific goods item within a consignment. ?>
-					</cbc:SequenceNumberID>
-						<cbc:HazardousRiskIndicator>false
-						<?Description Added by Logistics. An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
-					</cbc:HazardousRiskIndicator>
-						<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
-						<?Description Added by Logistics. The total declared value for customs purposes of the goods item. ?>
-					</cbc:DeclaredStatisticsValueAmount>
-						<cbc:FreeOnBoardValueAmount currencyID="EUR">23446
-						<?Description Added by Logistics. The monetary amount that has to be or has been paid as calculated under the applicable trade delivery. ?>
-					</cbc:FreeOnBoardValueAmount>
-						<cbc:ValueAmount currencyID="EUR">23044.78
-						<?Description Added by Logistics. The amount on which a duty, tax, or fee will be assessed. ?>
-					</cbc:ValueAmount>
-					</cac:GoodsItem>
-					<cac:ContainedPackage>
-						<?Name Containing Package ?>
-						<?Description Added by Logistics. A package contained in the Transport Handling Unit.?>
-						<?Cardinality 0..n?>
-						<cbc:ID>3453
-						<?Description Added by Logistics. The Id if the package.?>
-						</cbc:ID>
-							<cbc:Quantity>5
-						<?Description Added by Logistics. The quantity of packages for this package type. Use only if the TraceId for all packages are the same. ?>
-						</cbc:Quantity>
-							<cbc:ReturnableMaterialIndicator>true
-						<?Description Added by Logistics. An indicator that the packaging material is returnable (true) or not (false). ?>
-						</cbc:ReturnableMaterialIndicator>
-							<cbc:PackageLevelCode>2
-						<?Description Added by Logistics. A code signifying a level of packaging. Mus ?>
-						<?CodeList clm67075?>
-						</cbc:PackageLevelCode>
-							<cbc:PackagingTypeCode>
-								<?Description Added by Logistics. A code signifying a level of packaging. ?>
-								<?CodeList UNECE_rec21?>
-							</cbc:PackagingTypeCode>
-							<cbc:PackingMaterial>Carbon box
-						<?Description Added by Logistics. Text describing the packaging material. ?>
-						</cbc:PackingMaterial>
-							<cbc:TraceID>23452346545556
-						<?Description Added by Logistics. An identifier for use in tracing this package, such as the EPC number used in RFID. If Quantity is used it must identify them all ?>
-						</cbc:TraceID>
-						<cac:GoodsItem>
-							<?Name Measure. ?>
-							<?Description Added by Logistics. A Goods item contained in the transporthandling unit.?>
-							<?Cardinality 0..n?>
-							<cbc:ID>2452344
-								<?Description Added by Logistics. An identifier for this goods item. ?>
-							</cbc:ID>
-							<cbc:SequenceNumberID>1
-								<?Description Added by Logistics. A sequence number differentiating a specific goods item within a consignment. ?>
-							</cbc:SequenceNumberID>
-									<cbc:HazardousRiskIndicator>false
-								<?Description Added by Logistics. An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
-							</cbc:HazardousRiskIndicator>
-									<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
-								<?Description Added by Logistics. The total declared value for customs purposes of the goods item. ?>
-							</cbc:DeclaredStatisticsValueAmount>
-									<cbc:FreeOnBoardValueAmount currencyID="EUR">23446
-								<?Description Added by Logistics. The monetary amount that has to be or has been paid as calculated under the applicable trade delivery. ?>
-							</cbc:FreeOnBoardValueAmount>
-									<cbc:ValueAmount currencyID="EUR">23044.78
-								<?Description Added by Logistics. The amount on which a duty, tax, or fee will be assessed. ?>
-							</cbc:ValueAmount>
-						</cac:GoodsItem>
-					</cac:ContainedPackage>
-				</cac:ContainedPackage>
+
 			</cac:Package>
 		</cac:TransportHandlingUnit>
 	</cac:Shipment>
