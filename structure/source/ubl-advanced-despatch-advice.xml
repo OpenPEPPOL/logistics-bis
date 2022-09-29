@@ -782,11 +782,11 @@
 			</cbc:TransportHandlingUnitTypeCode>
 			<cbc:HandlingCode>CCC
 				<?Description Added by Logistics. The handling for this transporthandling unit expressed as a code ?>
-				<?Cardinality 1..0?>
+				<?Cardinality 0..1?>
 			</cbc:HandlingCode>
 			<cbc:HandlingInstructions>To be set vertical
 				<?Description Added by Logistics. The handling for this transporthandling unit expressed as a text ?>
-				<?Cardinality 1..0?>
+				<?Cardinality 0..1?>
 			</cbc:HandlingInstructions>
 			<cbc:HazardousRiskIndicator>false
 				<?Description Added by Logistics. An indicator that the materials contained in this transport handling unit are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
@@ -1075,29 +1075,29 @@
 							<?Description Added by Logistics. An identifier for this goods item. Refering to the Despatch Line ?>
 							<?Cardinality 1..1?>
 						</cbc:ID>
-							<cbc:HazardousRiskIndicator>false
-								<?Description Added by Logistics. An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
-								<?Cardinality 0..1?>
+						<cbc:HazardousRiskIndicator>false
+							<?Description Added by Logistics. An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+							<?Cardinality 0..1?>
 						</cbc:HazardousRiskIndicator>
-							<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
-								<?Description Added by Logistics. The total declared value for customs purposes of the goods item. ?>
-								<?Cardinality 0..1?>
-							</cbc:DeclaredStatisticsValueAmount>
-							<cbc:GrossWeightMeasure unitCode="KGM">
-								<?Description Added by Logistics. The weight of this goods item, including packing and packaging but excluding the carrier's equipment. ?>
-								<?Cardinality 0..1?>
-							</cbc:GrossWeightMeasure>
-							<cbc:GrossVolumeMeasure unitCode="MTQ">
-								<?Description Added by Logistics. he volume of this goods item, normally calculated by multiplying its maximum length, width, and height. ?>
-								<?Cardinality 0..1?>
-							</cbc:GrossVolumeMeasure>
-							<cbc:Quantity unitCode="EA">6
-								<?Description Added by Logistics. he number of units making up this goods item. ?>
-								<?Cardinality 0..1?>
+						<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
+							<?Description Added by Logistics. The total declared value for customs purposes of the goods item. ?>
+							<?Cardinality 0..1?>
+						</cbc:DeclaredStatisticsValueAmount>
+						<cbc:GrossWeightMeasure unitCode="KGM">
+							<?Description Added by Logistics. The weight of this goods item, including packing and packaging but excluding the carrier's equipment. ?>
+							<?Cardinality 0..1?>
+						</cbc:GrossWeightMeasure>
+						<cbc:GrossVolumeMeasure unitCode="MTQ">
+							<?Description Added by Logistics. he volume of this goods item, normally calculated by multiplying its maximum length, width, and height. ?>
+							<?Cardinality 0..1?>
+						</cbc:GrossVolumeMeasure>
+						<cbc:Quantity unitCode="EA">6
+							<?Description Added by Logistics. he number of units making up this goods item. ?>
+							<?Cardinality 0..1?>
 						</cbc:Quantity>
-							<cbc:TraceId schmeId="urn:epc:sgid">345699634527
-								<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
-								<?Cardinality 0..1?>
+						<cbc:TraceId schmeId="urn:epc:sgid">345699634527
+							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
+							<?Cardinality 0..1?>
 						</cbc:TraceId>
 					</cac:GoodsItem>
 					<cac:MeasurementDimension>
