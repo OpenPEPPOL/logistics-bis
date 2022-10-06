@@ -31,13 +31,14 @@
 		<?DescriptionAddFirst Used for Transport Information (T6008). ?>
 	</cbc:Note>
 	<cac:OrderReference>
-		<cbc:ID schemeID="ProjectReference">AEG012345
+		<cbc:ID schemeID="ProjectReference">AEG012345		
 			<?DescriptionAddFirst T3309/T6335, Order Number/Call Off Reference. Attribute schemeID can be used to send Project Number (T6004) or Customers' Reference (T6005).
 			Default is Order Number so if schemeID is missing the number in the element is Order Number as per Peppol global BIS.
 			ProjectRefereces is used for Project Number only.
 			CustomersReferenceNumber is used for the Customer's Reference. 
 			The group OrderReference can be repeated. ?>
 			<?schemeID-Description ProjectReference and CustomersReferenceNumber can be used as values for the schemeID attribute?>
+			<?schemeID-usage Optional?>			
 		</cbc:ID>
 	</cac:OrderReference>
 	<cac:AdditionalDocumentReference>
@@ -134,7 +135,7 @@
 		<?DescriptionAddFirst This party defines the company that receives the goods or the service. It also defines the receiver of the Despatch Advice. The real Ship-to Address must be provided in the Delivery Location if the Despatch Advice describes a movement. If the Despatch address describes a service provided at a specific location, the Delivery Location contains this location. ?>
 		<cac:Party>
 			<cbc:EndpointID schemeID="0088">5798000000124
-				<?schemeID-usage Mandatory?>
+				<?schemeID-usage Optional?>
 				<?schemeID-CodeList eas?>
 			</cbc:EndpointID>
 			<cac:PartyIdentification>
@@ -192,7 +193,7 @@
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">5790000435951
 					<?DescriptionAddFirst Buyer (T0008) ?>
-					<?schemeID-usage Mandatory?>
+					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
@@ -233,7 +234,7 @@
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">5790000435951
 					<?DescriptionAddFirst Supplier (T0009) ?>
-					<?schemeID-usage Mandatory?>
+					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
@@ -275,7 +276,7 @@
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">5790000435951
 					<?DescriptionAddFirst Ultimate Customer ID (T6001 or T6223).  ?>
-					<?schemeID-usage Mandatory?>
+					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
@@ -483,7 +484,7 @@
 									<?Name Standard article identity of the fuel. ?>
 									<?Description Added by BEAst. The fuel article number (T0172). The schemeID refers to the Article Number Type (T6317). ?>
 									<?Cardinality 1..1?>
-									<?schemeID-usage Mandatory?>
+									<?schemeID-usage Optional?>
 									<?schemeID-CodeList ICD?>
 								</cbc:ID>
 							</cac:StandardItemIdentification>
@@ -498,6 +499,7 @@
 						<?Name Environmental Emission Type Code. ?>
 						<?Description Added by BEAst. Defines the type of emission reported. Values: "CO2" (Carbon Dioxide), NOX (Nitrogen oxide), PM (Particulate Matter), HC (Hydro Carbon). ?>
 						<?Cardinality 1..1?>
+						<?listID-usage Optional?>
 					</cbc:EnvironmentalEmissionTypeCode>
 					<cbc:ValueMeasure unitCode="MGM">10
 						<?Name Value of Measurement. ?>
