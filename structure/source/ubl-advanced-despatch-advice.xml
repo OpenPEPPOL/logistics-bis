@@ -135,13 +135,10 @@
 		<?DescriptionAddFirst This party defines the company that receives the goods or the service. It also defines the receiver of the Despatch Advice. The real Ship-to Address must be provided in the Delivery Location if the Despatch Advice describes a movement. If the Despatch address describes a service provided at a specific location, the Delivery Location contains this location. ?>
 		<cac:Party>
 			<cbc:EndpointID schemeID="0088">5798000000124
-				<?schemeID-usage Optional?>
-				<?schemeID-CodeList eas?>
 			</cbc:EndpointID>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">5790000435951
-					<?DescriptionAddFirst Consignee (T0036) ?>
-					<?schemeID-usage Mandatory?>
+					<?DescriptionAddFirst Consignee (T0036) ?>					
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
@@ -483,8 +480,7 @@
 								<cbc:ID schemeID="0160">1234567891234
 									<?Name Standard article identity of the fuel. ?>
 									<?Description Added by BEAst. The fuel article number (T0172). The schemeID refers to the Article Number Type (T6317). ?>
-									<?Cardinality 1..1?>
-									<?schemeID-usage Optional?>
+									<?Cardinality 1..1?>									
 									<?schemeID-CodeList ICD?>
 								</cbc:ID>
 							</cac:StandardItemIdentification>
@@ -495,11 +491,12 @@
 					<?Name Environmental Emission. ?>
 					<?Description Added by BEAst. To report the emissions. ?>
 					<?Cardinality 0..n?>
-					<cbc:EnvironmentalEmissionTypeCode listID="UN785">CO2
+					<cbc:EnvironmentalEmissionTypeCode listID="UN785" name="co2">CO2
 						<?Name Environmental Emission Type Code. ?>
 						<?Description Added by BEAst. Defines the type of emission reported. Values: "CO2" (Carbon Dioxide), NOX (Nitrogen oxide), PM (Particulate Matter), HC (Hydro Carbon). ?>
 						<?Cardinality 1..1?>
 						<?listID-usage Optional?>
+						<?name-usage Optional?>
 					</cbc:EnvironmentalEmissionTypeCode>
 					<cbc:ValueMeasure unitCode="MGM">10
 						<?Name Value of Measurement. ?>
@@ -822,7 +819,7 @@
 			</cbc:ShippingMarks>
 			<cac:TransportEquipment>
 				<?Name Transport Equipment. ?>
-				<?Description Added by Logistics. Used to specify Transport Equipment details associated with the Transport Hansling Unit. ?>
+				<?Description Added by Logistics. Used to specify Transport Equipment details associated with the Transport Handling Unit. ?>
 				<?Cardinality 0..n?>
 				<cbc:ID>34563444
 					<?Description Added by Logistics. An id for the transport equipment e.g. a container number. ?>
@@ -855,9 +852,10 @@
 					<?Description Added by Logistics. An indicator that this piece of transport equipment can supply power (true) or not (false). ?>
 					<?Cardinality 0..1?>
 				</cbc:PowerIndicator>
-				<cbc:TraceID>1431234563452434
+				<cbc:TraceID schemeID="sgtin">1431234563452434
 					<?Description Added by Logistics.  An identifier for use in tracing this piece of transport equipment, such as the EPC number used in RFID. ?>
 					<?Cardinality 0..1?>
+					<?schemeID-usage Optional?>
 				</cbc:TraceID>
 			</cac:TransportEquipment>
 			<cac:MeasurementDimension>
@@ -915,9 +913,10 @@
 							<?Description Added by Logistics. he number of units making up this goods item. ?>
 							<?Cardinality 1..1?>
 					</cbc:Quantity>
-				<cbc:TraceId schmeId="urn:epc:sgid">345699634527
+				<cbc:TraceId schemeID="sgtin">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
+							<?schemeID-usage Optional?>
 					</cbc:TraceId>
 				<cac:MeasurementDimension>
 					<?Name Measurement Dimension. ?>
@@ -942,7 +941,7 @@
 				<?Description Added by Logistics. A package contained in the Transport Handling Unit.?>
 				<?Cardinality 0..n?>
 				<cbc:ID>3453
-				<?Description Added by Logistics. The Id if the package.?>
+				<?Description Added by Logistics. The Id if the package for internal reference.?>
 				<?Cardinality 0..1?>
 				</cbc:ID>				
 				<cbc:ReturnableMaterialIndicator>true
@@ -958,16 +957,17 @@
 				<?Description Added by Logistics. Text describing the packaging material. ?>
 				<?Cardinality 0..1?>
 				</cbc:PackingMaterial>
-				<cbc:TraceID>23452346545556
-				<?Description Added by Logistics. An identifier for use in tracing this package, such as the EPC number used in RFID. If Quantity is used it must identify them all ?>
-				<?Cardinality 0..1?>
+				<cbc:TraceID schemeID="sgtin">23452346545556
+					<?Description Added by Logistics. An identifier for use in tracing this package, such as the EPC number used in RFID. If Quantity is used it must identify them all ?>
+					<?Cardinality 0..1?>
+					<?schemeID-usage Optional?>
 				</cbc:TraceID>
 				<cac:ContainedPackage>
 					<?Name Containing Package ?>
 					<?Description Added by Logistics. A package contained in the Transport Handling Unit.?>
 					<?Cardinality 0..n?>
 					<cbc:ID>3453
-					<?Description Added by Logistics. The Id if the package.?>
+					<?Description Added by Logistics. The Id if the package for internal reference.?>
 					<?Cardinality 0..1?>
 					</cbc:ID>					
 					<cbc:ReturnableMaterialIndicator>true
@@ -983,16 +983,17 @@
 					<?Description Added by Logistics. Text describing the packaging material. ?>
 					<?Cardinality 0..1?>
 					</cbc:PackingMaterial>
-					<cbc:TraceID>23452346545556
-					<?Description Added by Logistics. An identifier for use in tracing this package, such as the EPC number used in RFID. If Quantity is used it must identify them all ?>
-					<?Cardinality 0..1?>
+					<cbc:TraceID schemeID="sgtin">23452346545556
+						<?Description Added by Logistics. An identifier for use in tracing this package, such as the EPC number used in RFID. If Quantity is used it must identify them all ?>
+						<?Cardinality 0..1?>
+						<?schemeID-usage Optional?>
 					</cbc:TraceID>
 					<cac:ContainedPackage>
 						<?Name Containing Package ?>
 						<?Description Added by Logistics. A package contained in the Transport Handling Unit.?>
 						<?Cardinality 0..n?>
 						<cbc:ID>3453
-						<?Description Added by Logistics. The Id if the package.?>
+						<?Description Added by Logistics. The Id if the package for internal reference.?>
 						<?Cardinality 0..1?>
 						</cbc:ID>						
 						<cbc:ReturnableMaterialIndicator>true
@@ -1031,9 +1032,10 @@
 									<?Description Added by Logistics. he number of units making up this goods item. ?>
 									<?Cardinality 1..1?>
 							</cbc:Quantity>
-							<cbc:TraceId schmeId="urn:epc:sgid">345699634527
+							<cbc:TraceId schmeID="urn:epc:sgid">345699634527
 									<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 									<?Cardinality 0..1?>
+									<?schemeID-usage Optional?>
 							</cbc:TraceId>
 							<cac:MeasurementDimension>
 								<?Name Measurement Dimension. ?>
@@ -1091,9 +1093,10 @@
 							<?Description Added by Logistics. he number of units making up this goods item. ?>
 							<?Cardinality 1..1?>
 						</cbc:Quantity>
-						<cbc:TraceId schmeId="urn:epc:sgid">345699634527
+						<cbc:TraceId schmeID="urn:epc:sgid">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
+							<?schemeID-usage Optional?>
 						</cbc:TraceId>
 						<cac:MeasurementDimension>
 							<?Name Measurement Dimension. ?>
@@ -1154,6 +1157,7 @@
 					<cbc:TraceId schmeId="urn:epc:sgid">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
+							<?schemeID-usage Optional?>
 					</cbc:TraceId>
 					<cac:MeasurementDimension>
 						<?Name Measurement Dimension. ?>
@@ -1309,31 +1313,46 @@
 			<cac:ManufacturerParty>
 				<?Description Added by Logistics. The manufacturer of this item. ?>
 				<?Cardinality 0..1?>
+				<cac:PartyIdentification>
+					<cbc:ID schemeID="0088">5790000435951
+					<?Description Id for the manufacturer party (T6001 or T6223).  ?>
+					<?schemeID-usage Optional?>
+					<?schemeID-CodeList ICD?>
+					</cbc:ID>
+				</cac:PartyIdentification>
 				<cac:PartyName>
 				<?Cardinality 0..1?>
-				<cbc:Name>IYT Corporation
-					<?DescriptionAddFirst Party Name (T5001) ?>
-				</cbc:Name>
-			</cac:PartyName>
+					<cbc:Name>IYT Corporation
+						<?DescriptionAddFirst Party Name (T5001) ?>
+					</cbc:Name>
+				</cac:PartyName>
 				<cac:PostalAddress>
 				<?Description Added by Logistics. The address for the manufacturer. ?>
 				<?Cardinality 0..1?>
 					<cbc:StreetName>Busy Street
-						<?DescriptionAddFirst Street Name (T5003) ?>
+						<?Description Street Name (T5003) ?>
+						<?Cardinality 0..1?>
 					</cbc:StreetName>
 					<cbc:AdditionalStreetName>way 1
-						<?DescriptionAddFirst Used for Department (T5002). ?>
+						<?Description Used for Department (T5002). ?>
+						<?Cardinality 0..1?>
 					</cbc:AdditionalStreetName>
 					<cbc:CityName>Farthing
-						<?DescriptionAddFirst City Name (T5005) ?>
+						<?Description City Name (T5005) ?>
+						<?Cardinality 0..1?>
 					</cbc:CityName>
 					<cbc:PostalZone>AA99 1BB
-						<?DescriptionAddFirst Postal Code (T6117) ?>
+						<?Description Postal Code (T6117) ?>
+						<?Cardinality 0..1?>
 					</cbc:PostalZone>
-					<cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
+					<cbc:CountrySubentity>Heremouthshire
+						<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
+						<?Cardinality 0..1?>
+					</cbc:CountrySubentity>
 					<cac:AddressLine>
 						<cbc:Line>The Roundabout
-							<?DescriptionAddFirst Used for any other additional address information like Building (T5004). ?>
+							<?Description Used for any other additional address information like Building (T5004). ?>
+							<?Cardinality 0..1?>
 						</cbc:Line>
 					</cac:AddressLine>
 					<cac:Country>
@@ -1341,7 +1360,14 @@
 							<?DescriptionAddFirst Country Code (T5007) ?>
 						</cbc:IdentificationCode>
 					</cac:Country>
-				</cac:PostalAddress>
+				</cac:PostalAddress>				
+				<cac:PartyLegalEntity>
+					<?Description Country Code (T5007) ?>
+					<?Cardinality 0..1?>
+					<cbc:RegistrationName>Consortial
+						<?DescriptionAddFirst Party Name (T5001) ?>
+					</cbc:RegistrationName>
+				</cac:PartyLegalEntity>				
 			</cac:ManufacturerParty>
 			<cac:ItemInstance>
 				<cbc:ManufactureDate>2021-01-01
@@ -1423,7 +1449,7 @@
 				</cac:MeasurementDimension>
 				<cac:Package>
 					<cbc:ID>1267
-						<?DescriptionAddFirst Unique identity of the package (T0138). ?>
+						<?DescriptionAddFirst Unique identity of the package for internal reference (T0138). ?>
 					</cbc:ID>
 					<cbc:PackagingTypeCode>BX
 						<?DescriptionAddFirst Type of Package (T6119). Use UN/ECE Recommendation 21 with addition of the codes used by "Retursystem Byggpall". ?>
