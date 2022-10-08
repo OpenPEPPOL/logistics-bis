@@ -79,7 +79,6 @@
 		<?DescriptionAddFirst This party defines the company that provides the goods or the service. It also defines the sender of the Despatch Advice. The real Ship-from Address must be provided in the Despatch Address when the Despatch Advice describes a movement. ?>
 		<cac:Party>
 			<cbc:EndpointID schemeID="0088">7300010000001
-				<?schemeID-usage Mandatory?>
 				<?schemeID-CodeList eas?>
 			</cbc:EndpointID>
 			<cac:PartyIdentification>
@@ -135,6 +134,7 @@
 		<?DescriptionAddFirst This party defines the company that receives the goods or the service. It also defines the receiver of the Despatch Advice. The real Ship-to Address must be provided in the Delivery Location if the Despatch Advice describes a movement. If the Despatch address describes a service provided at a specific location, the Delivery Location contains this location. ?>
 		<cac:Party>
 			<cbc:EndpointID schemeID="0088">5798000000124
+			<?schemeID-CodeList eas?>
 			</cbc:EndpointID>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">5790000435951
@@ -189,8 +189,7 @@
 		<cac:Party>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">5790000435951
-					<?DescriptionAddFirst Buyer (T0008) ?>
-					<?schemeID-usage Optional?>
+					<?DescriptionAddFirst Buyer (T0008)
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
@@ -231,7 +230,6 @@
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">5790000435951
 					<?DescriptionAddFirst Supplier (T0009) ?>
-					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
@@ -273,7 +271,6 @@
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">5790000435951
 					<?DescriptionAddFirst Ultimate Customer ID (T6001 or T6223).  ?>
-					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
@@ -327,9 +324,10 @@
 		<cbc:TotalTransportHandlingUnitQuantity>3
 			<?DescriptionAddFirst Not used in BEAst version 3.1 ?>
 		</cbc:TotalTransportHandlingUnitQuantity>
-		<cbc:DeclaredStatisticsValueAmount currencyCode="SEK">34000.45
+		<cbc:DeclaredStatisticsValueAmount currencyID="SEK">34000.45
 			<?DescriptionAddFirst Added by Logistics. The total declared value for customs purposes of those goods in this shipment that are subject to the same customs procedure and have the same tariff/statistical heading, country information, and duty regime.?>
 			<?Cardinality 0..1?>
+			<?currencyID-CodeList ISO4217?>
 		</cbc:DeclaredStatisticsValueAmount>
 		<cac:Consignment>
 			<cbc:ID>NA
@@ -558,9 +556,6 @@
 			</cac:TransportMeans>
 		</cac:ShipmentStage>
 		<cac:Delivery>
-			<cbc:TrackingID>456789
-				<?DescriptionAddFirst Tracking URL (T6737) ?>
-			</cbc:TrackingID>
 			<cbc:ActualDeliveryDate>2022-10-03
 				<?Name Actural Delivery Date?>
 				<?Description Added by Logistics. The actual date of delivery.?>
@@ -570,7 +565,11 @@
 				<?Name Actural Delivery Time?>
 				<?Description Added by Logistics. The actual time of delivery. Requires that actual delivery date os defined.?>
 				<?Cardinality 0..1?>		
-			</cbc:ActualDeliveryTime>			
+			</cbc:ActualDeliveryTime>
+			<cbc:TrackingID>
+				456789
+				<?DescriptionAddFirst Tracking URL (T6737) ?>
+			</cbc:TrackingID>
 			<cac:DeliveryLocation>
 				<?Name Delivery Location. ?>
 				<?Description Added by BEAst. The Delivery Location is used to define the Ship-to when the Delivery Customer Party is not . When the Despatch Advice describes a movement, the Delivery Location should always be included. When the Despatch Advice describes a service given at a location, the Delivery Location describes this location. ?>
@@ -879,6 +878,7 @@
 				<?Name Maximum Temperature. ?>
 				<?Description Added by Logistics. Used to specify the minimal temperature for the transport handling unit under the transport. ?>
 				<?Cardinality 0..1?>
+				<cbc:AttributeID>Mandatory, but what is it used for?</cbc:AttributeID>
 				<cbc:Measure unitCode="CEL">-21
 				<?Description Added by Logistics. The value of the minimal temperature measurement. ?>
 				<?Cardinality 1..1?>	
@@ -888,6 +888,7 @@
 				<?Name Maximum Temperature. ?>
 				<?Description Added by Logistics. Used to specify the maximum temperature for the transport handling unit under the transport. ?>
 				<?Cardinality 0..1?>
+				<cbc:AttributeID>Mandatory, but what is it used for?</cbc:AttributeID>
 				<cbc:Measure unitCode="CEL">-21
 				<?Description Added by Logistics. The value of the maximum temperature measurement. ?>
 				<?Cardinality 1..1?>	
@@ -912,12 +913,13 @@
 				<cbc:Quantity unitCode="EA">6
 							<?Description Added by Logistics. he number of units making up this goods item. ?>
 							<?Cardinality 1..1?>
+					<?unitCode-CodeList UNECERec20?>
 					</cbc:Quantity>
-				<cbc:TraceId schemeID="sgtin">345699634527
+				<cbc:TraceID schemeID="sgtin">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
-					</cbc:TraceId>
+					</cbc:TraceID>
 				<cac:MeasurementDimension>
 					<?Name Measurement Dimension. ?>
 					<?Description Added by Logistics Used to specify any measurement of the Goods Item. ?>
@@ -1032,11 +1034,11 @@
 									<?Description Added by Logistics. he number of units making up this goods item. ?>
 									<?Cardinality 1..1?>
 							</cbc:Quantity>
-							<cbc:TraceId schmeID="urn:epc:sgid">345699634527
+							<cbc:TraceID schemeID="urn:epc:sgid">345699634527
 									<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 									<?Cardinality 0..1?>
 									<?schemeID-usage Optional?>
-							</cbc:TraceId>
+							</cbc:TraceID>
 							<cac:MeasurementDimension>
 								<?Name Measurement Dimension. ?>
 								<?Description Added by Logistics Used to specify any measurement of the Goods Item. ?>
@@ -1093,11 +1095,11 @@
 							<?Description Added by Logistics. he number of units making up this goods item. ?>
 							<?Cardinality 1..1?>
 						</cbc:Quantity>
-						<cbc:TraceId schmeID="urn:epc:sgid">345699634527
+						<cbc:TraceID schemeID="urn:epc:sgid">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
-						</cbc:TraceId>
+						</cbc:TraceID>
 						<cac:MeasurementDimension>
 							<?Name Measurement Dimension. ?>
 							<?Description Added by Logistics Used to specify any measurement of the Goods Item. ?>
@@ -1154,11 +1156,11 @@
 							<?Description Added by Logistics. he number of units making up this goods item. ?>
 							<?Cardinality 0..1?>
 					</cbc:Quantity>
-					<cbc:TraceId schmeId="urn:epc:sgid">345699634527
+					<cbc:TraceID schemeID="urn:epc:sgid">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
-					</cbc:TraceId>
+					</cbc:TraceID>
 					<cac:MeasurementDimension>
 						<?Name Measurement Dimension. ?>
 						<?Description Added by Logistics Used to specify any measurement of the Goods Item. ?>
