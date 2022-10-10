@@ -317,9 +317,12 @@
 		</cbc:Information>
 		<cbc:GrossWeightMeasure unitCode="KGM">1
 			<?DescriptionAddFirst Total Gross Weight (T6472) ?>
+			<?unitCode-CodeList UNECERec20?>
+		
 		</cbc:GrossWeightMeasure>
 		<cbc:GrossVolumeMeasure unitCode="MTQ">1
 			<?DescriptionAddFirst Total Gross Volume (T6494) ?>
+		<?unitCode-CodeList UNECERec20?>
 		</cbc:GrossVolumeMeasure>
 		<cbc:TotalTransportHandlingUnitQuantity>3
 			<?DescriptionAddFirst Not used in BEAst version 3.1 ?>
@@ -557,12 +560,12 @@
 		</cac:ShipmentStage>
 		<cac:Delivery>
 			<cbc:ActualDeliveryDate>2022-10-03
-				<?Name Actural Delivery Date?>
+				<?Name Actual Delivery Date?>
 				<?Description Added by Logistics. The actual date of delivery.?>
 				<?Cardinality 0..1?>				
 			</cbc:ActualDeliveryDate>
 			<cbc:ActualDeliveryTime>12:56:00.45+02:00
-				<?Name Actural Delivery Time?>
+				<?Name Actual Delivery Time?>
 				<?Description Added by Logistics. The actual time of delivery. Requires that actual delivery date os defined.?>
 				<?Cardinality 0..1?>		
 			</cbc:ActualDeliveryTime>
@@ -648,7 +651,6 @@
 							<?Name Latitude Degrees Measure. ?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
-							<?unitCode-Rule PEPPOL-T16-B11002?>
 							<?Description Added by BEAst. The X coordinate (T6324). Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
 						</cbc:LatitudeDegreesMeasure>
@@ -656,7 +658,6 @@
 							<?Name Longitude Degrees Measure. ?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
-							<?unitCode-Rule PEPPOL-T16-B11002?>
 							<?Description Added by BEAst. The Y coordinate (T6325). Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
 						</cbc:LongitudeDegreesMeasure>
@@ -666,7 +667,6 @@
 							<?Cardinality 0..1?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
-							<?unitCode-Rule PEPPOL-T16-B11002?>
 						</cbc:AltitudeMeasure>
 					</cac:LocationCoordinate>
 				</cac:Address>
@@ -738,7 +738,6 @@
 							<?Cardinality 1..1?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
-							<?unitCode-Rule PEPPOL-T16-B11002?>
 						</cbc:LatitudeDegreesMeasure>
 						<cbc:LongitudeDegreesMeasure unitCode="DD">18.063330898492403
 							<?Name Longitude Degrees Measure. ?>
@@ -746,7 +745,6 @@
 							<?Cardinality 1..1?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
-							<?unitCode-Rule PEPPOL-T16-B11002?>
 						</cbc:LongitudeDegreesMeasure>
 						<cbc:AltitudeMeasure unitCode="MTR">12.5
 							<?Name Altitude Measure. ?>
@@ -754,7 +752,6 @@
 							<?Cardinality 0..1?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
-							<?unitCode-Rule PEPPOL-T16-B11002?>
 						</cbc:AltitudeMeasure>
 					</cac:LocationCoordinate>
 				</cac:DespatchAddress>
@@ -880,6 +877,7 @@
 				<?Cardinality 0..1?>
 				<cbc:AttributeID>Mandatory, but what is it used for?</cbc:AttributeID>
 				<cbc:Measure unitCode="CEL">-21
+				<?unitCode-CodeList UNECERec20?>
 				<?Description Added by Logistics. The value of the minimal temperature measurement. ?>
 				<?Cardinality 1..1?>	
 				</cbc:Measure>
@@ -890,6 +888,7 @@
 				<?Cardinality 0..1?>
 				<cbc:AttributeID>Mandatory, but what is it used for?</cbc:AttributeID>
 				<cbc:Measure unitCode="CEL">-21
+				<?unitCode-CodeList UNECERec20?>
 				<?Description Added by Logistics. The value of the maximum temperature measurement. ?>
 				<?Cardinality 1..1?>	
 				</cbc:Measure>
@@ -1094,6 +1093,7 @@
 						<cbc:Quantity unitCode="EA">6
 							<?Description Added by Logistics. he number of units making up this goods item. ?>
 							<?Cardinality 1..1?>
+							<?unitCode-CodeList UNECERec20?>
 						</cbc:Quantity>
 						<cbc:TraceID schemeID="urn:epc:sgid">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
@@ -1155,6 +1155,7 @@
 					<cbc:Quantity unitCode="EA">6
 							<?Description Added by Logistics. he number of units making up this goods item. ?>
 							<?Cardinality 0..1?>
+							<?unitCode-CodeList UNECERec20?>
 					</cbc:Quantity>
 					<cbc:TraceID schemeID="urn:epc:sgid">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
