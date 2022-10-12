@@ -79,6 +79,7 @@
 		<?DescriptionAddFirst This party defines the company that provides the goods or the service. It also defines the sender of the Despatch Advice. The real Ship-from Address must be provided in the Despatch Address when the Despatch Advice describes a movement. ?>
 		<cac:Party>
 			<cbc:EndpointID schemeID="0088">7300010000001
+				<?schemeID-usage Mandatory?>
 				<?schemeID-CodeList eas?>
 			</cbc:EndpointID>
 			<cac:PartyIdentification>
@@ -134,7 +135,6 @@
 		<?DescriptionAddFirst This party defines the company that receives the goods or the service. It also defines the receiver of the Despatch Advice. The real Ship-to Address must be provided in the Delivery Location if the Despatch Advice describes a movement. If the Despatch address describes a service provided at a specific location, the Delivery Location contains this location. ?>
 		<cac:Party>
 			<cbc:EndpointID schemeID="0088">5798000000124
-			<?schemeID-CodeList eas?>
 			</cbc:EndpointID>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">5790000435951
@@ -189,7 +189,8 @@
 		<cac:Party>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">5790000435951
-					<?DescriptionAddFirst Buyer (T0008)
+					<?DescriptionAddFirst Buyer (T0008) ?>
+					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
@@ -230,6 +231,7 @@
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">5790000435951
 					<?DescriptionAddFirst Supplier (T0009) ?>
+					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
@@ -271,6 +273,7 @@
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">5790000435951
 					<?DescriptionAddFirst Ultimate Customer ID (T6001 or T6223).  ?>
+					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
@@ -317,12 +320,9 @@
 		</cbc:Information>
 		<cbc:GrossWeightMeasure unitCode="KGM">1
 			<?DescriptionAddFirst Total Gross Weight (T6472) ?>
-			<?unitCode-CodeList UNECERec20?>
-		
 		</cbc:GrossWeightMeasure>
 		<cbc:GrossVolumeMeasure unitCode="MTQ">1
 			<?DescriptionAddFirst Total Gross Volume (T6494) ?>
-		<?unitCode-CodeList UNECERec20?>
 		</cbc:GrossVolumeMeasure>
 		<cbc:TotalTransportHandlingUnitQuantity>3
 			<?DescriptionAddFirst Not used in BEAst version 3.1 ?>
@@ -330,16 +330,11 @@
 		<cbc:DeclaredStatisticsValueAmount currencyID="SEK">34000.45
 			<?DescriptionAddFirst Added by Logistics. The total declared value for customs purposes of those goods in this shipment that are subject to the same customs procedure and have the same tariff/statistical heading, country information, and duty regime.?>
 			<?Cardinality 0..1?>
-			<?currencyID-CodeList ISO4217?>
 		</cbc:DeclaredStatisticsValueAmount>
 		<cac:Consignment>
 			<cbc:ID>NA
 				<?DescriptionAddFirst Use a dummy value since this element is mandatory. ?>				
-			</cbc:ID>
-			<cbc:ConsigneeAssignedID>2345343444
-					<?DescriptionAddFirst Added by Logistics. An identifier for this consignment, assigned by the consignee.?>
-					<?Cardinality 0..1?>
-			</cbc:ConsigneeAssignedID>
+			</cbc:ID>			
 			<cbc:HazardousRiskIndicator>false
 			<?DescriptionAddFirst Added by Losticst.An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).?>
 			<?Cardinality 0..1?>
@@ -510,34 +505,19 @@
 		</cac:Consignment>
 		<cac:ShipmentStage>
 			<?Name Shipment Stage. ?>
-			<?Description Added by BEAst. Used for Transport mode. ?>
-			<?Cardinality 0..n?>
+			<?Description Added by Logistics. The shipment stage for the last mile of the delivery ?>
+			<?Cardinality 0..1?>
 			<cbc:TransportModeCode>3			
 				<?Name Transport Mode Code. ?>
 				<?Description Added by BEAst. Transport Mode Code, T6131. Use UNECE Recommendation 19. (1 = Maritime transport (This code should be used whenever the transport vehicle completes any part of its journey by sea.), 2 = Rail transport, 3 = Road transport, 4 = Air transport, 5 = Mail, 6 = Multimodal transport, 7 = Fixed transport installations, 8 = Inland water transport, 9 = Mode unknown.) ?>
 				<?Cardinality 1..1?>
 			</cbc:TransportModeCode>
-			<cbc:PreCarriageIndicator>true
-				 <?Description Added by Logistics. An indicator that this stage takes place before the main carriage of the shipment (true) or not (false). Mandatory when there are more than one shipmentstage. ?>
-				 <?Cardinality 0..1?>
-			</cbc:PreCarriageIndicator>
-			<cbc:OnCarriageIndicator>false
-			 <?Description Added by Logistics. An indicator that this stage takes place after the main carriage of the shipment (true) or not (false). Mandatory when there are more than one shipmentstage.?>
-			 <?Cardinality 0..1?>
-			</cbc:OnCarriageIndicator>
+			
 			<cac:TransportMeans>
 				<?Name Transport Means.?>
 				<?Description Added by Logistics. The means of transport used in this shipment stage.?>
 				<?Cardinality 0..1?>
-				<cac:AirTransport>
-					<?Name Air Transport.?>
-					<?Description Added by Logistics. Description of an aircraft. Use only if Transport mode code is set to air transport?>
-					<?Cardinality 0..1?>
-					<cbc:AircraftID>POJ23423567T
-					<?Description Added by Logistics. The Aircraft Id?>
-					<?Cardinality 1..1?>
-					</cbc:AircraftID>
-				</cac:AirTransport>
+				
 				<cac:RoadTransport>
 					<?Name Road Transport.?>
 					<?Description Added by Logistics. Description of a truck or a vehicle transporting the goods. Use only if Transport mode code is set to road transport?>
@@ -559,20 +539,19 @@
 			</cac:TransportMeans>
 		</cac:ShipmentStage>
 		<cac:Delivery>
+			<cbc:TrackingID>456789
+				<?DescriptionAddFirst Tracking URL (T6737) ?>
+			</cbc:TrackingID>
 			<cbc:ActualDeliveryDate>2022-10-03
-				<?Name Actual Delivery Date?>
+				<?Name Actural Delivery Date?>
 				<?Description Added by Logistics. The actual date of delivery.?>
 				<?Cardinality 0..1?>				
 			</cbc:ActualDeliveryDate>
 			<cbc:ActualDeliveryTime>12:56:00.45+02:00
-				<?Name Actual Delivery Time?>
+				<?Name Actural Delivery Time?>
 				<?Description Added by Logistics. The actual time of delivery. Requires that actual delivery date os defined.?>
 				<?Cardinality 0..1?>		
-			</cbc:ActualDeliveryTime>
-			<cbc:TrackingID>
-				456789
-				<?DescriptionAddFirst Tracking URL (T6737) ?>
-			</cbc:TrackingID>
+			</cbc:ActualDeliveryTime>			
 			<cac:DeliveryLocation>
 				<?Name Delivery Location. ?>
 				<?Description Added by BEAst. The Delivery Location is used to define the Ship-to when the Delivery Customer Party is not . When the Despatch Advice describes a movement, the Delivery Location should always be included. When the Despatch Advice describes a service given at a location, the Delivery Location describes this location. ?>
@@ -651,6 +630,7 @@
 							<?Name Latitude Degrees Measure. ?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
+							<?unitCode-Rule PEPPOL-T16-B11002?>
 							<?Description Added by BEAst. The X coordinate (T6324). Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
 						</cbc:LatitudeDegreesMeasure>
@@ -658,6 +638,7 @@
 							<?Name Longitude Degrees Measure. ?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
+							<?unitCode-Rule PEPPOL-T16-B11002?>
 							<?Description Added by BEAst. The Y coordinate (T6325). Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
 						</cbc:LongitudeDegreesMeasure>
@@ -667,6 +648,7 @@
 							<?Cardinality 0..1?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
+							<?unitCode-Rule PEPPOL-T16-B11002?>
 						</cbc:AltitudeMeasure>
 					</cac:LocationCoordinate>
 				</cac:Address>
@@ -738,6 +720,7 @@
 							<?Cardinality 1..1?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
+							<?unitCode-Rule PEPPOL-T16-B11002?>
 						</cbc:LatitudeDegreesMeasure>
 						<cbc:LongitudeDegreesMeasure unitCode="DD">18.063330898492403
 							<?Name Longitude Degrees Measure. ?>
@@ -745,6 +728,7 @@
 							<?Cardinality 1..1?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
+							<?unitCode-Rule PEPPOL-T16-B11002?>
 						</cbc:LongitudeDegreesMeasure>
 						<cbc:AltitudeMeasure unitCode="MTR">12.5
 							<?Name Altitude Measure. ?>
@@ -752,6 +736,7 @@
 							<?Cardinality 0..1?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
+							<?unitCode-Rule PEPPOL-T16-B11002?>
 						</cbc:AltitudeMeasure>
 					</cac:LocationCoordinate>
 				</cac:DespatchAddress>
@@ -804,13 +789,9 @@
 			<cbc:HazardousRiskIndicator>false
 				<?Description Added by Logistics. An indicator that the materials contained in this transport handling unit are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 				<?Cardinality 0..1?>
-			</cbc:HazardousRiskIndicator>
-			<cbc:TotalPackageQuantity>5
-				<?Description Added by Logistics. The total number of packages in this transport handling unit. The does not contain the packages inside a package. ?>
-				<?Cardinality 0..1?>
-			</cbc:TotalPackageQuantity>
+			</cbc:HazardousRiskIndicator>			
 			<cbc:ShippingMarks>Keep dry
-				<?Description Added by Logistics. ext describing damage associated with this transport handling unit. ?>
+				<?Description Added by Logistics. Free-form description of the marks and numbers on this transport handling unit. ?>
 				<?Cardinality 0..1?>
 			</cbc:ShippingMarks>
 			<cac:TransportEquipment>
@@ -818,24 +799,14 @@
 				<?Description Added by Logistics. Used to specify Transport Equipment details associated with the Transport Handling Unit. ?>
 				<?Cardinality 0..n?>
 				<cbc:ID>34563444
-					<?Description Added by Logistics. An id for the transport equipment e.g. a container number. ?>
+					<?Description Added by Logistics. An id for the physical transport equipment e.g. a container number. ?>
 					<?Cardinality 1..1?>
 				</cbc:ID>
 				<cbc:TransportEquipmentTypeCode>AM
 					<?Description Added by Logistics. An code specifying the type of equipment. ?>
 					<?CodeList UNCL8153?>
 					<?Cardinality 1..1?>
-				</cbc:TransportEquipmentTypeCode>
-				<cbc:SizeTypeCode>15
-					<?Description Added by Logistics. A code signifying the size and type of this piece of piece of transport equipment. When the piece of transport equipment is a shipping container, it is recommended to use ContainerSizeTypeCode for validation. ?>
-					<?CodeList UNCL8155?>
-					<?Cardinality 0..1?>
-				</cbc:SizeTypeCode>
-				<cbc:FullnessIndicationCode>3
-					<?Description Added by Logistics. A code signifying whether this piece of transport equipment is full, partially full, or empty. ?>
-					<?CodeList clm68169?>
-					<?Cardinality 0..1?>
-				</cbc:FullnessIndicationCode>
+				</cbc:TransportEquipmentTypeCode>								
 				<cbc:RefrigerationOnIndicator>true
 					<?Description Added by Logistics. An indicator that this piece of transport equipment's refrigeration is on (true) or off (false). ?>
 					<?Cardinality 0..1?>
@@ -875,9 +846,13 @@
 				<?Name Maximum Temperature. ?>
 				<?Description Added by Logistics. Used to specify the minimal temperature for the transport handling unit under the transport. ?>
 				<?Cardinality 0..1?>
-				<cbc:AttributeID>Mandatory, but what is it used for?</cbc:AttributeID>
+				<cbc:AttributeID>TC
+					<?Name Measurement Attribute ID. ?>
+					<?CodeList UNCL6313?>
+					<?Description Added by Logistics. To describe the type of messure that in this context is the minimal temperature. ?>
+					<?Cardinality 1..1?>
+				</cbc:AttributeID>
 				<cbc:Measure unitCode="CEL">-21
-				<?unitCode-CodeList UNECERec20?>
 				<?Description Added by Logistics. The value of the minimal temperature measurement. ?>
 				<?Cardinality 1..1?>	
 				</cbc:Measure>
@@ -886,9 +861,13 @@
 				<?Name Maximum Temperature. ?>
 				<?Description Added by Logistics. Used to specify the maximum temperature for the transport handling unit under the transport. ?>
 				<?Cardinality 0..1?>
-				<cbc:AttributeID>Mandatory, but what is it used for?</cbc:AttributeID>
+				<cbc:AttributeID>TC
+					<?Name Measurement Attribute ID. ?>
+					<?CodeList UNCL6313?>
+					<?Description Added by Logistics. To describe the type of messure that in this context is the maximal temperature. ?>
+					<?Cardinality 1..1?>
+				</cbc:AttributeID>
 				<cbc:Measure unitCode="CEL">-21
-				<?unitCode-CodeList UNECERec20?>
 				<?Description Added by Logistics. The value of the maximum temperature measurement. ?>
 				<?Cardinality 1..1?>	
 				</cbc:Measure>
@@ -912,13 +891,12 @@
 				<cbc:Quantity unitCode="EA">6
 							<?Description Added by Logistics. he number of units making up this goods item. ?>
 							<?Cardinality 1..1?>
-					<?unitCode-CodeList UNECERec20?>
 					</cbc:Quantity>
-				<cbc:TraceID schemeID="sgtin">345699634527
+				<cbc:TraceId schemeID="sgtin">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
-					</cbc:TraceID>
+					</cbc:TraceId>
 				<cac:MeasurementDimension>
 					<?Name Measurement Dimension. ?>
 					<?Description Added by Logistics Used to specify any measurement of the Goods Item. ?>
@@ -1033,11 +1011,11 @@
 									<?Description Added by Logistics. he number of units making up this goods item. ?>
 									<?Cardinality 1..1?>
 							</cbc:Quantity>
-							<cbc:TraceID schemeID="urn:epc:sgid">345699634527
+							<cbc:TraceId schmeID="urn:epc:sgid">345699634527
 									<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 									<?Cardinality 0..1?>
 									<?schemeID-usage Optional?>
-							</cbc:TraceID>
+							</cbc:TraceId>
 							<cac:MeasurementDimension>
 								<?Name Measurement Dimension. ?>
 								<?Description Added by Logistics Used to specify any measurement of the Goods Item. ?>
@@ -1093,13 +1071,12 @@
 						<cbc:Quantity unitCode="EA">6
 							<?Description Added by Logistics. he number of units making up this goods item. ?>
 							<?Cardinality 1..1?>
-							<?unitCode-CodeList UNECERec20?>
 						</cbc:Quantity>
-						<cbc:TraceID schemeID="urn:epc:sgid">345699634527
+						<cbc:TraceId schmeID="urn:epc:sgid">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
-						</cbc:TraceID>
+						</cbc:TraceId>
 						<cac:MeasurementDimension>
 							<?Name Measurement Dimension. ?>
 							<?Description Added by Logistics Used to specify any measurement of the Goods Item. ?>
@@ -1155,13 +1132,12 @@
 					<cbc:Quantity unitCode="EA">6
 							<?Description Added by Logistics. he number of units making up this goods item. ?>
 							<?Cardinality 0..1?>
-							<?unitCode-CodeList UNECERec20?>
 					</cbc:Quantity>
-					<cbc:TraceID schemeID="urn:epc:sgid">345699634527
+					<cbc:TraceId schmeId="urn:epc:sgid">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
-					</cbc:TraceID>
+					</cbc:TraceId>
 					<cac:MeasurementDimension>
 						<?Name Measurement Dimension. ?>
 						<?Description Added by Logistics Used to specify any measurement of the Goods Item. ?>
@@ -1431,6 +1407,7 @@
 			</cac:Certificate>
 		</cac:Item>
 		<cac:Shipment>
+			<?Description Added by Logistics. Not used in advanced despatch advice. ?>
 			<cbc:ID>NA</cbc:ID>
 			<cac:TransportHandlingUnit>
 				<?DescriptionAddFirst This group is used when it is possible to describe the content of the Transport Handilng Units. If that is not the case, the Transport Handling Units should instead be listed at header level, under Shipment. ?>
