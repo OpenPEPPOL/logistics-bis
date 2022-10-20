@@ -49,9 +49,16 @@
 			<?Name Identity of the reference. ?>
 			<?Description Added by BEAst. The reference number of the added information. Can be the Seller's Order Number (T6099), Final Customer's Order Number (T6221), Drawing Number (T6222), Delivery Part (T6340), Freight Payer's Customer Number (T6463) or Document Name (T6484) depending on DocumentType. ?>
 		</cbc:ID>
-		<cbc:DocumentType>BEAST:FreightPayersCustomerNumber
+		<cbc:DocumentTypeCode listID="DocumentTypeCode">BEAST:FreightPayersCustomerNumber
 			<?Name Document Type Code. ?>
 			<?Description Added by BEAst. The type of reference. "BEAST:FreightPayersCustomerNumber" (T6463), "BEAST:SellersOrderNumber" (T6099), "BEAST:FinalCustomersOrderNumber" (T6221), "BEAST:DeliveryPart" (T6340), "BEAST:DrawingNumber" (T6222) or Any other document type (T6473). ?>
+			<?Cardinality 0..1?>
+			<?listID-usage Mandatory?>
+		</cbc:DocumentTypeCode>
+		<cbc:DocumentType>BEAST:FreightPayersCustomerNumber
+			<?Name Document Type . ?>
+			<?Description Added by Logistics. The type of reference that cannot be specified by a code ?>
+			<?Cardinality 0..1?>
 		</cbc:DocumentType>
 		<cac:Attachment>
 			<?Name Attachment. ?>
@@ -340,14 +347,13 @@
 			<?Cardinality 0..1?>
 			</cbc:HazardousRiskIndicator>
 			<cbc:CarrierServiceInstructions>12345
-				<?Description Added by BEAst. Code to specify additional service from the transport company (T6466) where unique codes per transport company will be used, or for Unloading instructions, code (T6343). The Unloading Instruction Codes are as follows: Z50=Semitrailer removable roof, Z51=Truck, Z52=Truck with tail lift, Z53=Truck with crane max 4 m, Z54=Truck with crane 4-9 m, Z55=Truck with crane more than 9 m, Z56=Forklift, Z57=Semitrailer, Z58=Short term storage, Z59=Porterage, Z60=Carry-in service, Z61=Standard transport, Z62=Loaded on truck, Z63=Indoor storage, Z64=Outdoor storage, Z65=Package maximum weigh, ZZ=Mutually agreed. ?>
+				<?Description Added by BEAst. Code to specify additional service from the transport company (T6466) where unique codes per transport company will be used, or for Unloading instructions, code (T6343). The Unloading Instruction Codes are as follows: Z50=Semitrailer removable roof, Z51=Truck, Z52=Truck with tail lift, Z53=Truck with crane max 4 m, Z54=Truck with crane 4-9 m, Z55=Truck with crane more than 9 m, Z56=Forklift, Z57=Semitrailer, Z58=Short term storage, Z59=Porterage, Z60=Carry-in service, Z61=Standard transport, Z62=Loaded on truck, Z63=Indoor storage, Z64=Outdoor storage, Z65=Package maximum weigh, ZZ=Mutually agreed. The element has been replaced with the handling code ?>
 				<?Cardinality 0..n?>
 				<?Name Carrier Service Instructions. ?>
 			</cbc:CarrierServiceInstructions>
 			<cbc:HandlingCode>EBM
 				<?DescriptionAddFirst Added by Logistics. The handling required for this shipment, expressed as a code..?>
 				<?Cardinality 0..1?>
-				<?CodeList HandlingCode?>
 			</cbc:HandlingCode>
 			<cbc:HandlingInstructions>Keep the Container Carefully Closed
 				<?DescriptionAddFirst Added by Logistics The handling required for this consignment, expressed as text.?>
@@ -524,7 +530,7 @@
 					<?Description Added by Logistics. Description of a truck or a vehicle transporting the goods. Use only if Transport mode code is set to road transport?>
 					<?Cardinality 0..1?>
 					<cbc:LicensePlateID>DF10958
-						<?Description Added by Logistics. The licence plate identifying the vehicle?>
+						<?Description Added by Logistics. The licence plate(s) identifying the vehicle seperated by semicolon if there are more than one?>
 						<?Cardinality 1..1?>
 					</cbc:LicensePlateID>
 				</cac:RoadTransport>
@@ -657,6 +663,7 @@
 			<cac:EstimatedDeliveryPeriod>
 				<cbc:StartDate>2021-09-25
 					<?DescriptionAddFirst Unloading Date and Time (T6372)/Delivery Period Start Date (T6319) ?>
+					<?Cardinality 1..1?>
 				</cbc:StartDate>
 				<cbc:StartTime>12:00:00
 					<?DescriptionAddFirst Unloading Date and Time (T6372)/Delivery Period Start Time (T6734) ?>
@@ -747,10 +754,15 @@
 				<?Description Added by BEAst.  ?>
 				<?Name Delivery Terms. ?>
 				<cbc:ID>EXW
-					<?Name Delivery Terms. ?>
-					<?Description Added by BEAst. Delivery Terms code (T6710). ?>
-					<?Cardinality 1..1?>
+					<?Name Delivery Terms ?>
+					<?Description Added by BEAst. Delivery Terms code (Inco terms) (T6710). ?>
+					<?Cardinality 0..1?>
 				</cbc:ID>
+				<cbc:SpecialTerms>
+					<?Name Special Terms. ?>
+					<?Description Added by Logistics. Special delivery terms that exceeds the inco terms. ?>
+					<?Cardinality 0..1?>
+				</cbc:SpecialTerms>
 				<cac:DeliveryLocation>
 					<?Name Delivery Terms Location. ?>
 					<?Description Added by BEAst.  ?>
