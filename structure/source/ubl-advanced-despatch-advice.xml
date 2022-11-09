@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--
                 Content:
                 This file contains a Full BIS3 PEPPOL UBL Despatch Adivce.
@@ -347,7 +347,7 @@
 			<?Cardinality 0..1?>
 			</cbc:HazardousRiskIndicator>
 			<cbc:CarrierServiceInstructions>12345
-				<?Description Added by BEAst. Code to specify additional service from the transport company (T6466) where unique codes per transport company will be used, or for Unloading instructions, code (T6343). The Unloading Instruction Codes are as follows: Z50=Semitrailer removable roof, Z51=Truck, Z52=Truck with tail lift, Z53=Truck with crane max 4 m, Z54=Truck with crane 4-9 m, Z55=Truck with crane more than 9 m, Z56=Forklift, Z57=Semitrailer, Z58=Short term storage, Z59=Porterage, Z60=Carry-in service, Z61=Standard transport, Z62=Loaded on truck, Z63=Indoor storage, Z64=Outdoor storage, Z65=Package maximum weigh, ZZ=Mutually agreed. The element has been replaced with the handling code ?>
+				<?Description Added by BEAst. Code to specify additional service from the transport company (T6466) where unique codes per transport company will be used, or for Unloading instructions, code (T6343). The Unloading Instruction Codes are as follows: Z50=Semitrailer removable roof, Z51=Truck, Z52=Truck with tail lift, Z53=Truck with crane max 4 m, Z54=Truck with crane 4-9 m, Z55=Truck with crane more than 9 m, Z56=Forklift, Z57=Semitrailer, Z58=Short term storage, Z59=Porterage, Z60=Carry-in service, Z61=Standard transport, Z62=Loaded on truck, Z63=Indoor storage, Z64=Outdoor storage, Z65=Package maximum weigh, ZZ=Mutually agreed. This element has been replaced with the handling code.  ?>
 				<?Cardinality 0..n?>
 				<?Name Carrier Service Instructions. ?>
 			</cbc:CarrierServiceInstructions>
@@ -831,12 +831,7 @@
 				<cbc:PowerIndicator>true
 					<?Description Added by Logistics. An indicator that this piece of transport equipment can supply power (true) or not (false). ?>
 					<?Cardinality 0..1?>
-				</cbc:PowerIndicator>
-				<cbc:TraceID schemeID="sgtin">1431234563452434
-					<?Description Added by Logistics.  An identifier for use in tracing this piece of transport equipment, such as the EPC number used in RFID. ?>
-					<?Cardinality 0..1?>
-					<?schemeID-usage Optional?>
-				</cbc:TraceID>
+				</cbc:PowerIndicator>				
 			</cac:TransportEquipment>
 			<cac:MeasurementDimension>
 				<?Name Measurement Dimension. ?>
@@ -933,7 +928,7 @@
 				<?Description Added by Logistics. A package contained in the Transport Handling Unit.?>
 				<?Cardinality 0..n?>
 				<cbc:ID>3453
-				<?Description Added by Logistics. The Id if the package for internal reference.?>
+				<?Description Added by Logistics. The Id of the package for instance a SSCC.?>
 				<?Cardinality 0..1?>
 				</cbc:ID>				
 				<cbc:ReturnableMaterialIndicator>true
@@ -948,18 +943,13 @@
 				<cbc:PackingMaterial>Carbon box
 				<?Description Added by Logistics. Text describing the packaging material. ?>
 				<?Cardinality 0..1?>
-				</cbc:PackingMaterial>
-				<cbc:TraceID schemeID="sgtin">23452346545556
-					<?Description Added by Logistics. An identifier for use in tracing this package, such as the EPC number used in RFID. If Quantity is used it must identify them all ?>
-					<?Cardinality 0..1?>
-					<?schemeID-usage Optional?>
-				</cbc:TraceID>
+				</cbc:PackingMaterial>				
 				<cac:ContainedPackage>
 					<?Name Containing Package ?>
 					<?Description Added by Logistics. A package contained in the Transport Handling Unit.?>
 					<?Cardinality 0..n?>
 					<cbc:ID>3453
-					<?Description Added by Logistics. The Id if the package for internal reference.?>
+					<?Description Added by Logistics. The Id of the package for instance a SSCC.?>
 					<?Cardinality 0..1?>
 					</cbc:ID>					
 					<cbc:ReturnableMaterialIndicator>true
@@ -974,18 +964,13 @@
 					<cbc:PackingMaterial>Carbon box
 					<?Description Added by Logistics. Text describing the packaging material. ?>
 					<?Cardinality 0..1?>
-					</cbc:PackingMaterial>
-					<cbc:TraceID schemeID="sgtin">23452346545556
-						<?Description Added by Logistics. An identifier for use in tracing this package, such as the EPC number used in RFID. If Quantity is used it must identify them all ?>
-						<?Cardinality 0..1?>
-						<?schemeID-usage Optional?>
-					</cbc:TraceID>
+					</cbc:PackingMaterial>					
 					<cac:ContainedPackage>
 						<?Name Containing Package ?>
 						<?Description Added by Logistics. A package contained in the Transport Handling Unit.?>
 						<?Cardinality 0..n?>
 						<cbc:ID>3453
-						<?Description Added by Logistics. The Id if the package for internal reference.?>
+						<?Description Added by Logistics. The Id of the package for instance a SSCC.?>
 						<?Cardinality 0..1?>
 						</cbc:ID>						
 						<cbc:ReturnableMaterialIndicator>true
@@ -1000,10 +985,7 @@
 						<cbc:PackingMaterial>Carbon box
 						<?Description Added by Logistics. Text describing the packaging material. ?>
 						<?Cardinality 0..1?>
-						</cbc:PackingMaterial>
-						<cbc:TraceID>23452346545556
-						<?Description Added by Logistics. An identifier for use in tracing this package, such as the EPC number used in RFID. If Quantity is used it must identify them all ?>
-						</cbc:TraceID>
+						</cbc:PackingMaterial>						
 						<cac:GoodsItem>
 							<?Name Goods Item. ?>
 							<?Description Added by Logistics. A Goods item contained in the package.?>
@@ -1212,11 +1194,17 @@
 				<?Description Added by BEAst. ID of the referenced document or item: Reference to Delivery Note (T0063), Customer's Reference Number (T6005), Offer Number (T6010), Vendor's Order Number (T6099), Ultimate Customer's Order Number (T6221), Drawing Number (T6222), Material Ticket Number (T6329), Material Ticket Reference (T6337), Delivery Unit (T6340), Reference to Web (T6373), Ultimate Customer's Order Line Number (T6458), Offer Line Number (T6466) or Document Name (T6484). ?>
 				<?Cardinality 1..1?>
 			</cbc:ID>
-			<cbc:DocumentType>BEAST:EndCustomersOrderNumber
+			<cbc:DocumentTypeCode>BEAST:EndCustomersOrderNumber
 				<?Name DocumentTypeCode ?>
-				<?Description Added by BEAst. Identifies the type of document or item. ("BEAST:ReferenceToDeliveryNote", "BEAST:CustomersReferenceNumber", "BEAST:OfferNumber", "BEAST:VendorsOrderNumber", "BEAST:EndCustomersOrderNumber", "BEAST:DrawingNumber", "BEAST:MaterialTicketNumber", "BEAST:MaterialTicketReference", "BEAST:DeliveryUnit", "BEAST:ReferenceToWeb", "BEAST:EndCustomersOrderLineNumber", "BEAST:OfferLineNumber", any other type of document or item). ?>
+				<?Description Added by Logistics. Identifies the type of document or item. ("BEAST:ReferenceToDeliveryNote", "BEAST:CustomersReferenceNumber", "BEAST:OfferNumber", "BEAST:VendorsOrderNumber", "BEAST:EndCustomersOrderNumber", "BEAST:DrawingNumber", "BEAST:MaterialTicketNumber", "BEAST:MaterialTicketReference", "BEAST:DeliveryUnit", "BEAST:ReferenceToWeb", "BEAST:EndCustomersOrderLineNumber", "BEAST:OfferLineNumber", any other type of document or item). ?>
 				<?Cardinality 1..1?>
-			</cbc:DocumentType>
+                <?listID-usage Mandatory?>
+			</cbc:DocumentTypeCode>
+            <cbc:DocumentType>Letter Of Credit                
+                <?Name Document Type . ?>
+                <?Description Added by Logistics. The type of reference that cannot be specified by a code ?>
+                <?Cardinality 0..1?>
+            </cbc:DocumentType>
 			<cac:Attachment>
 				<?Name Attachment. ?>
 				<?Cardinality 0..1?>
@@ -1418,37 +1406,6 @@
 					</cac:PartyName>
 				</cac:IssuerParty>
 			</cac:Certificate>
-		</cac:Item>
-		<cac:Shipment>
-			<?Description Added by Logistics. Not used in advanced despatch advice. ?>
-			<cbc:ID>NA</cbc:ID>
-			<cac:TransportHandlingUnit>
-				<?DescriptionAddFirst This group is used when it is possible to describe the content of the Transport Handilng Units. If that is not the case, the Transport Handling Units should instead be listed at header level, under Shipment. ?>
-				<cbc:ID>5454
-					<?DescriptionAddFirst The SSCC identification code of this Transport Handling Unit (T0138). ?>
-				</cbc:ID>
-				<cbc:TransportHandlingUnitTypeCode>4H
-					<?DescriptionAddFirst Type of Transport Handling Unit (T6119). Use UN/ECE Recommendation 21 with addition of the codes used by "Retursystem Byggpall". ?>
-				</cbc:TransportHandlingUnitTypeCode>
-				<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-				<cbc:ShippingMarks>text</cbc:ShippingMarks>
-				<cac:MeasurementDimension>
-					<cbc:AttributeID>AAW
-						<?DescriptionAddFirst To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
-					</cbc:AttributeID>
-					<cbc:Measure unitCode="C62">1
-						<?DescriptionAddFirst For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21. subset. ?>
-					</cbc:Measure>
-				</cac:MeasurementDimension>
-				<cac:Package>
-					<cbc:ID>1267
-						<?DescriptionAddFirst Unique identity of the package for internal reference (T0138). ?>
-					</cbc:ID>
-					<cbc:PackagingTypeCode>BX
-						<?DescriptionAddFirst Type of Package (T6119). Use UN/ECE Recommendation 21 with addition of the codes used by "Retursystem Byggpall". ?>
-					</cbc:PackagingTypeCode>
-				</cac:Package>
-			</cac:TransportHandlingUnit>
-		</cac:Shipment>
+		</cac:Item>		
 	</cac:DespatchLine>
 </ubl:DespatchAdvice>
