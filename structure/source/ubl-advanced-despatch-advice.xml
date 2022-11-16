@@ -37,22 +37,21 @@
 			ProjectRefereces is used for Project Number only.
 			CustomersReferenceNumber is used for the Customer's Reference. 
 			The group OrderReference can be repeated. ?>
-			
 		</cbc:ID>
 	</cac:OrderReference>
 	<cac:AdditionalDocumentReference>
 		<?Name Additional document reference ?>
-		<?Description Added by BEAst. Used for additional BEAst information on header level. ?>
+		<?Description Added by Logistics. Reference to additional documents relevant for this Despatch advice. Can be used for additional BEAst information on header level. ?>
 		<?Cardinality 0..n?>
 		<cbc:ID>7648779
 			<?Name Identity of the reference. ?>
-			<?Description Added by BEAst. The reference number of the added information. Can be the Seller's Order Number (T6099), Final Customer's Order Number (T6221), Drawing Number (T6222), Delivery Part (T6340), Freight Payer's Customer Number (T6463) or Document Name (T6484) depending on DocumentType. ?>
+			<?Description Added by Logistics. The reference number of added document?>
 		</cbc:ID>
-		<cbc:DocumentTypeCode listID="UNCL1001">BEAST:FreightPayersCustomerNumber
+		<cbc:DocumentTypeCode>380
 			<?Name Document Type Code. ?>
-			<?Description Added by BEAst. The type of reference. "BEAST:FreightPayersCustomerNumber" (T6463), "BEAST:SellersOrderNumber" (T6099), "BEAST:FinalCustomersOrderNumber" (T6221), "BEAST:DeliveryPart" (T6340), "BEAST:DrawingNumber" (T6222) or Any other document type (T6473). ?>
+			<?Description Added by Logistics. The type of reference. Must me part of UNCL1001 ?>
 			<?Cardinality 0..1?>
-			<?listID-usage Mandatory?>
+			<?CodeList UNCL1001?>
 		</cbc:DocumentTypeCode>
 		<cbc:DocumentType>BEAST:FreightPayersCustomerNumber
 			<?Name Document Type . ?>
@@ -507,8 +506,9 @@
 			<?Cardinality 0..1?>
 			<cbc:TransportModeCode>3			
 				<?Name Transport Mode Code. ?>
-				<?Description Added by BEAst. Transport Mode Code, T6131. Use UNECE Recommendation 19. (1 = Maritime transport (This code should be used whenever the transport vehicle completes any part of its journey by sea.), 2 = Rail transport, 3 = Road transport, 4 = Air transport, 5 = Mail, 6 = Multimodal transport, 7 = Fixed transport installations, 8 = Inland water transport, 9 = Mode unknown.) ?>
+				<?Description Added by Logistics. Must be a value in UNECERec19.) ?>
 				<?Cardinality 1..1?>
+				<?Codelist TransportModeCode?>
 			</cbc:TransportModeCode>
 			<cac:TransportMeans>
 				<?Name Transport Means.?>
@@ -852,7 +852,7 @@
 					<?Cardinality 0..n?>
 					<cbc:AttributeID>LN
 					<?Name Measurement Attribute ID. ?>
-					<?CodeList UNCL6313?>
+					<?CodeList UNCL6313-T120?>
 					<?Description Added by BEAst. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
 					<?Cardinality 1..1?>
 					</cbc:AttributeID>
@@ -870,7 +870,7 @@
 				<?Cardinality 0..n?>
 				<cbc:AttributeID>LN
 					<?Name Measurement Attribute ID. ?>
-					<?CodeList UNCL6313?>
+					<?CodeList UNCL6313-T120?>
 					<?Description Added by BEAst. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
@@ -887,7 +887,7 @@
 				<?Cardinality 0..1?>
 				<cbc:AttributeID>TC
 					<?Name Measurement Attribute ID. ?>
-					<?CodeList UNCL6313?>
+					<?CodeList UNCL6313-T120?>
 					<?Description Added by Logistics. To describe the type of messure that in this context is the minimal temperature. ?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
@@ -902,7 +902,7 @@
 				<?Cardinality 0..1?>
 				<cbc:AttributeID>TC
 					<?Name Measurement Attribute ID. ?>
-					<?CodeList UNCL6313?>
+					<?CodeList UNCL6313-T120?>
 					<?Description Added by Logistics. To describe the type of messure that in this context is the maximal temperature. ?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
@@ -942,7 +942,7 @@
 					<?Cardinality 0..n?>
 					<cbc:AttributeID>AAB
 							<?Name Measurement Attribute ID. ?>
-							<?CodeList UNCL6313?>
+							<?CodeList UNCL6313-T120?>
 							<?Description Added by Logistics. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
 							<?Cardinality 1..1?>
 						</cbc:AttributeID>
@@ -1051,7 +1051,7 @@
 								<?Cardinality 0..n?>
 								<cbc:AttributeID>AAB
 									<?Name Measurement Attribute ID. ?>
-									<?CodeList UNCL6313?>
+									<?CodeList UNCL6313-T120?>
 									<?Description Added by Logistics. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
 									<?Cardinality 1..1?>
 								</cbc:AttributeID>
@@ -1069,7 +1069,7 @@
 							<?Cardinality 0..n?>
 							<cbc:AttributeID>LN
 								<?Name Measurement Attribute ID. ?>
-								<?CodeList UNCL6313?>
+								<?CodeList UNCL6313-T120?>
 								<?Description Added by BEAst. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
 								<?Cardinality 1..1?>
 							</cbc:AttributeID>
@@ -1112,7 +1112,7 @@
 							<?Cardinality 0..n?>
 							<cbc:AttributeID>AAB
 								<?Name Measurement Attribute ID. ?>
-								<?CodeList UNCL6313?>
+								<?CodeList UNCL6313-T120?>
 								<?Description Added by Logistics. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
 								<?Cardinality 1..1?>
 							</cbc:AttributeID>
@@ -1130,7 +1130,7 @@
 						<?Cardinality 0..n?>
 						<cbc:AttributeID>LN
 								<?Name Measurement Attribute ID. ?>
-								<?CodeList UNCL6313?>
+								<?CodeList UNCL6313-T120?>
 								<?Description Added by BEAst. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
 								<?Cardinality 1..1?>
 							</cbc:AttributeID>
@@ -1173,7 +1173,7 @@
 						<?Cardinality 0..n?>
 						<cbc:AttributeID>AAB
 							<?Name Measurement Attribute ID. ?>
-							<?CodeList UNCL6313?>
+							<?CodeList UNCL6313-T120?>
 							<?Description Added by Logistics. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
 							<?Cardinality 1..1?>
 						</cbc:AttributeID>
@@ -1235,7 +1235,7 @@
 			</cbc:ID>
 			<cbc:DocumentTypeCode listID="UNCL1001">BEAST:EndCustomersOrderNumber
 				<?Name DocumentTypeCode ?>
-				<?Description Added by Logistics. Identifies the type of document or item. ("BEAST:ReferenceToDeliveryNote", "BEAST:CustomersReferenceNumber", "BEAST:OfferNumber", "BEAST:VendorsOrderNumber", "BEAST:EndCustomersOrderNumber", "BEAST:DrawingNumber", "BEAST:MaterialTicketNumber", "BEAST:MaterialTicketReference", "BEAST:DeliveryUnit", "BEAST:ReferenceToWeb", "BEAST:EndCustomersOrderLineNumber", "BEAST:OfferLineNumber", any other type of document or item). ?>
+				<?Description Added by Logistics. Identifies the type of document or item. ?>
 				<?Cardinality 1..1?>
                 <?listID-usage Mandatory?>
 			</cbc:DocumentTypeCode>
