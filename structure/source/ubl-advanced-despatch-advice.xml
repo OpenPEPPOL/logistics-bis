@@ -30,6 +30,11 @@
 	<cbc:Note>Text
 		<?DescriptionAddFirst Used for Transport Information (T6008). ?>
 	</cbc:Note>
+	<cbc:DespatchAdviceTypeCode>
+		<?Description Added by Logistics. A code signifying the type of the Despatch Advice.?>
+		<?Cardinality 0..1?>
+		<?CodeList DespatchAdviceType?>
+	</cbc:DespatchAdviceTypeCode>
 	<cac:OrderReference>
 		<cbc:ID>AEG012345		
 			<?DescriptionAddFirst T3309/T6335, Order Number/Call Off Reference. Attribute schemeID can be used to send Project Number (T6004) or Customers' Reference (T6005).
@@ -369,7 +374,7 @@
 						<?DescriptionAddFirst Party Name (T5001) ?>
 					</cbc:Name>
 				</cac:PartyName>
-				<cac:Person>					
+				<cac:Person>
 					<cac:IdentityDocumentReference>
 						<cbc:ID>45642323</cbc:ID>
 						<cbc:DocumentType>DriverLicence</cbc:DocumentType>
@@ -565,7 +570,7 @@
 				<?Description Added by Logistics. The actual date of delivery.?>
 				<?Cardinality 0..1?>				
 			</cbc:ActualDeliveryDate>
-			<cbc:ActualDeliveryTime>12:56:00.45+02:00
+			<cbc:ActualDeliveryTime>12:56:00
 				<?Name Actural Delivery Time?>
 				<?Description Added by Logistics. The actual time of delivery. Requires that actual delivery date os defined.?>
 				<?Cardinality 0..1?>		
@@ -713,7 +718,7 @@
 					</cbc:PostalZone>
 					<cbc:CountrySubentity>Avon</cbc:CountrySubentity>
 					<cac:AddressLine>
-					<?Name Address Line for the despatch ?>
+						<?Name Address Line for the despatch ?>
 						<?Cardinality 0..1?>
 						<?Description Added by Logistics. ?>
 						<cbc:Line>3rd Floor, Room 5
@@ -935,23 +940,6 @@
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
 					</cbc:TraceId>
-				<cac:MeasurementDimension>
-					<?Name Measurement Dimension. ?>
-					<?Description Added by Logistics Used to specify any measurement of the Goods Item. ?>
-					<?Cardinality 0..n?>
-					<cbc:AttributeID>AAB
-							<?Name Measurement Attribute ID. ?>
-							<?CodeList UNCL6313-T120?>
-							<?Description Added by Logistics. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
-							<?Cardinality 1..1?>
-						</cbc:AttributeID>
-					<cbc:Measure unitCode="KGM">123
-							<?Name Measure. ?>
-							<?unitCode-CodeList UNECERec20?>
-							<?Description Added by Logistics. For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
-							<?Cardinality 1..1?>
-						</cbc:Measure>
-				</cac:MeasurementDimension>
 			</cac:GoodsItem>
 			<cac:Package>
 				<?Name Containing Package ?>
@@ -1044,8 +1032,6 @@
 									<?Cardinality 0..1?>
 									<?schemeID-usage Optional?>
 							</cbc:TraceId>
-							
-							
 						</cac:GoodsItem>
 						<cac:MeasurementDimension>
 							<?Name Measurement Dimension. ?>
@@ -1089,7 +1075,7 @@
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
-						</cbc:TraceId>						
+						</cbc:TraceId>
 					</cac:GoodsItem>
 					<cac:MeasurementDimension>
 						<?Name Measurement Dimension. ?>
@@ -1133,7 +1119,7 @@
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
-					</cbc:TraceId>					
+					</cbc:TraceId>
 				</cac:GoodsItem>
 			</cac:Package>
 		</cac:TransportHandlingUnit>
@@ -1171,7 +1157,7 @@
 					<?Name Sales Order number. ?>
 					<?Cardinality 0..1?>
 					<?Description Added by Logistics. Reference to the sellers order number. ?>
-				</cbc:SalesOrderID> 
+				</cbc:SalesOrderID>
 			</cac:OrderReference>
 		</cac:OrderLineReference>
 		<cac:DocumentReference>
@@ -1230,14 +1216,14 @@
 					<?DescriptionAddFirst Supplier's Article Number (T0172) ?>
 				</cbc:ID>
 			</cac:SellersItemIdentification>
-			<cac:ManufacturersItemIdentification >
+			<cac:ManufacturersItemIdentification>
 				<?Name Manufacturers Item Identification. ?>
 				<?Description Added by Logistics. Identifying information for this item, assigned by the manufacturer. ?>
 				<?Cardinality 0..1?>
 				<cbc:ID>17589683
 					<?DescriptionAddFirst Manufactores's Article Number (T0172) ?>
 				</cbc:ID>
-			</cac:ManufacturersItemIdentification >
+			</cac:ManufacturersItemIdentification>
 			<cac:StandardItemIdentification>
 				<?DescriptionAddFirst Only one Standard Item Number can be used per line. ?>
 				<cbc:ID schemeID="0160">1234567891234
@@ -1267,7 +1253,6 @@
 				</cbc:HazardClassID>
 			</cac:HazardousItem>
 			<cac:AdditionalItemProperty>
-				
 				<cbc:Name>Rigidity
 					<?DescriptionAddFirst Product Group Code (T0011), Property Name (T6446), Product Type Description (T6442). When the NameCode is used, the name can be set to "NA" since it is mandatory to have. ?>
 				</cbc:Name>
