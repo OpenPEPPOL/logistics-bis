@@ -105,88 +105,79 @@
 					<cbc:Name>CarrierPart</cbc:Name>
 				</cac:PartyName>
 			</cac:CarrierParty>
-			
-				<cac:OriginalDespatchTransportationService>
-					<cbc:TransportServiceCode>ROAD</cbc:TransportServiceCode>
-					<!-- tag::fuel[] -->
-					<cac:TransportEquipment>
-						<cbc:TransportEquipmentTypeCode>Diesel</cbc:TransportEquipmentTypeCode>
-						<cbc:Information>ACP Diesel 50 max 7% RME</cbc:Information>
-						<cbc:Description>Euro 4</cbc:Description>
-						<cac:MeasurementDimension>
-							<cbc:AttributeID schemeAgencyName="BEAst">EnergyContent</cbc:AttributeID>
-							<cbc:Measure unitCode="XY">32</cbc:Measure>
-						</cac:MeasurementDimension>
-						<cac:MeasurementDimension>
-							<cbc:AttributeID>CONVERSION_FACTOR</cbc:AttributeID>
-							<cbc:Measure unitCode="ZX">27</cbc:Measure>
-							<cbc:Description>ConversionFactor</cbc:Description>
-						</cac:MeasurementDimension>
-						<cac:MeasurementDimension>
-							<cbc:AttributeID>FUEL_CONSUMPTION</cbc:AttributeID>
-							<cbc:Measure unitCode="LTR">15</cbc:Measure>
-							<cbc:Description>FuelConsumption</cbc:Description>
-						</cac:MeasurementDimension>
-						<cac:MeasurementDimension>
-							<cbc:AttributeID>DRIVING_DISTANCE</cbc:AttributeID>
-							<cbc:Measure unitCode="KMT">86</cbc:Measure>
-							<cbc:Description>DrivingDistance</cbc:Description>
-						</cac:MeasurementDimension>
-						<cac:MeasurementDimension>
-							<cbc:AttributeID>DRIVING_TIME</cbc:AttributeID>
-							<cbc:Measure unitCode="HUR">7.3</cbc:Measure>
-							<cbc:Description>DrivingTime</cbc:Description>
-						</cac:MeasurementDimension>
-						<cac:MeasurementDimension>
-							<cbc:AttributeID>FUEL_MEASUREMENT_BASIS</cbc:AttributeID>
-							<cbc:Measure unitCode="KMT">10</cbc:Measure>
-							<cbc:Description>FuelMeasurementBasis</cbc:Description>
-						</cac:MeasurementDimension>
-						<cac:MeasurementDimension>
-							<cbc:AttributeID>FUEL_MEASUREMENT_FREQUENCY</cbc:AttributeID>
-							<cbc:Measure unitCode="DAY">1</cbc:Measure>
-							<cbc:Description>FuelMeasurementFrequency</cbc:Description>
-						</cac:MeasurementDimension>
-						<cac:ProviderParty>
-							<cbc:IndustryClassificationCode>FUEL</cbc:IndustryClassificationCode>
-							<cac:PartyIdentification>
-								<cbc:ID schemeID="0007">5560726977</cbc:ID>
-							</cac:PartyIdentification>
-							<cac:PartyName>
-								<cbc:Name>Preem AB</cbc:Name>
-							</cac:PartyName>
-						</cac:ProviderParty>
-					</cac:TransportEquipment>
-					<!-- end::fuel[] -->
-					<!-- tag::environmentalemission[] -->
-					<cac:EnvironmentalEmission>
-						<cbc:EnvironmentalEmissionTypeCode>CO2</cbc:EnvironmentalEmissionTypeCode>
-						<cbc:ValueMeasure unitCode="MGM">2.8</cbc:ValueMeasure>
-						<cbc:Description>CarbonDioxide</cbc:Description>
-					</cac:EnvironmentalEmission>
-					<cac:EnvironmentalEmission>
-						<cbc:EnvironmentalEmissionTypeCode>NOx</cbc:EnvironmentalEmissionTypeCode>
-						<cbc:ValueMeasure unitCode="MGM">6</cbc:ValueMeasure>
-						<cbc:Description>NitrogenOxide</cbc:Description>
-					</cac:EnvironmentalEmission>
-					<cac:EnvironmentalEmission>
-						<cbc:EnvironmentalEmissionTypeCode>CH4</cbc:EnvironmentalEmissionTypeCode>
-						<cbc:ValueMeasure unitCode="MGM">0.6</cbc:ValueMeasure>
-						<cbc:Description>HydroCarbon</cbc:Description>
-					</cac:EnvironmentalEmission>
-					<cac:EnvironmentalEmission>
-						<cbc:EnvironmentalEmissionTypeCode>CPM</cbc:EnvironmentalEmissionTypeCode>
-						<cbc:ValueMeasure unitCode="MGM">0.07</cbc:ValueMeasure>
-						<cbc:Description>ParticulateMatter</cbc:Description>
-					</cac:EnvironmentalEmission>
-					<cac:EnvironmentalEmission>
-						<cbc:EnvironmentalEmissionTypeCode>REN</cbc:EnvironmentalEmissionTypeCode>
-						<cbc:ValueMeasure unitCode="P1">100.00</cbc:ValueMeasure>
-						<cbc:Description>RenewableFuel</cbc:Description>
-					</cac:EnvironmentalEmission>
-					<!-- end::environmentalemission[] -->
-				</cac:OriginalDespatchTransportationService>
-			
+
+			<cac:OriginalDespatchTransportationService>
+				<cbc:TransportServiceCode>ROAD</cbc:TransportServiceCode>
+				<!-- tag::fuel[] -->
+				<cac:TransportEquipment>
+					<cbc:TransportEquipmentTypeCode>Diesel</cbc:TransportEquipmentTypeCode>
+					<cbc:Description>ACP Diesel 50 max 7% RME</cbc:Description>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>FuelConsumption</cbc:AttributeID>
+						<cbc:Measure unitCode="LTR">15</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>EnergyContent</cbc:AttributeID>
+						<cbc:Measure unitCode="E14">32</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>ConversionFactor</cbc:AttributeID>
+						<cbc:Measure unitCode="EA">27</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>DrivingDistance</cbc:AttributeID>
+						<cbc:Measure unitCode="KMT">86</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>DrivingTime</cbc:AttributeID>
+						<cbc:Measure unitCode="HUR">7.3</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>RenewableFuel</cbc:AttributeID>
+						<cbc:Measure unitCode="P1">100.00</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>FuelMeasurementMethod</cbc:AttributeID>
+						<cbc:Description>AutomaticMeasurement</cbc:Description>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>EngineType</cbc:AttributeID>
+						<cbc:Description>EURO4</cbc:Description>
+					</cac:MeasurementDimension>
+					<cac:ProviderParty>
+						<cac:PartyIdentification>
+							<cbc:ID schemeID="0007">5560726977</cbc:ID>
+						</cac:PartyIdentification>
+						<cac:PartyName>
+							<cbc:Name>Preem AB</cbc:Name>
+						</cac:PartyName>
+					</cac:ProviderParty>
+				</cac:TransportEquipment>
+				<!-- end::fuel[] -->
+				<!-- tag::environmentalemission[] -->
+				<cac:EnvironmentalEmission>
+					<cbc:EnvironmentalEmissionTypeCode>CO2</cbc:EnvironmentalEmissionTypeCode>
+					<cbc:ValueMeasure unitCode="MGM">2.8</cbc:ValueMeasure>
+				</cac:EnvironmentalEmission>
+
+				<cac:EnvironmentalEmission>
+					<cbc:EnvironmentalEmissionTypeCode>HC</cbc:EnvironmentalEmissionTypeCode>
+					<cbc:ValueMeasure unitCode="KGM">0.6</cbc:ValueMeasure>
+				</cac:EnvironmentalEmission>
+
+				<cac:EnvironmentalEmission>
+					<cbc:EnvironmentalEmissionTypeCode>NOX</cbc:EnvironmentalEmissionTypeCode>
+					<cbc:ValueMeasure unitCode="KGM">6</cbc:ValueMeasure>
+				</cac:EnvironmentalEmission>
+
+				<cac:EnvironmentalEmission>
+					<cbc:EnvironmentalEmissionTypeCode>PM</cbc:EnvironmentalEmissionTypeCode>
+					<cbc:ValueMeasure unitCode="GRM">0.07</cbc:ValueMeasure>
+				</cac:EnvironmentalEmission>
+
+				<!-- end::environmentalemission[] -->
+			</cac:OriginalDespatchTransportationService>
+
 		</cac:Consignment>
 		<cac:Delivery>
 			<cac:EstimatedDeliveryPeriod>
@@ -236,13 +227,58 @@
 			</cac:OrderReference>
 		</cac:OrderLineReference>
 		<cac:Item>
-			<cbc:Name>Item456</cbc:Name>
+			<cbc:Name>GIPSSKIVA NORMAL VÄDERPLASTAD 2700x900x13</cbc:Name>
+			<cac:BuyersItemIdentification>
+				<cbc:ID>9870202</cbc:ID>
+				<!-- Litera number or similar, used for the buyer reference -->
+			</cac:BuyersItemIdentification>
 			<cac:SellersItemIdentification>
-				<cbc:ID>010140403</cbc:ID>
+				<cbc:ID>900206705</cbc:ID>
 			</cac:SellersItemIdentification>
 			<cac:StandardItemIdentification>
-				<cbc:ID schemeID="0160">7622204117051</cbc:ID>
+				<cbc:ID schemeID="0160">7318936539543</cbc:ID>
+				<!-- 0160 = GTIN, full list https://docs.peppol.eu/poacc/upgrade-3/codelist/ICD/ -->
 			</cac:StandardItemIdentification>
+			<!-- tag::epd[] -->
+			<cac:AdditionalItemProperty>
+				<cbc:Name>EPD Dataset ID</cbc:Name>
+				<cbc:NameCode listID="BEAST:4.0">EPDDataSetID</cbc:NameCode>
+				<cbc:Value>165f8554-00cd-43ad-aeb7-ba769854554a</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>EPD Dataset URL</cbc:Name>
+				<cbc:NameCode listID="BEAST:4.0">EPDDataSetURL</cbc:NameCode>
+				<cbc:Value>https://epdnorway.lca-data.com/datasetdetail/process.xhtml?uuid=165f8554-00cd-43ad-aeb7-ba769854554a&amp;version=00.01.000&amp;stock=PUBLIC</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>EPD PDF URL</cbc:Name>
+				<cbc:NameCode listID="BEAST:4.0">EPDPDFURL</cbc:NameCode>
+				<cbc:Value>https://portal.environdec.com/api/api/v1/EPDLibrary/Files/07e17ba1-cf00-48e5-9cf1-d8bd90a468f8/Data</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>GWP GHG A1-3 EPD total value for line</cbc:Name>
+				<cbc:NameCode listID="BEAst:4.0">GWP-GHG_A1-3_EPD</cbc:NameCode>
+				<cbc:Value>NA</cbc:Value>
+				<cbc:ValueQuantity unitCode="KGM">124</cbc:ValueQuantity>
+			</cac:AdditionalItemProperty>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Resource ID</cbc:Name>
+				<cbc:NameCode listID="Boverket">ResourceID</cbc:NameCode>
+				<cbc:Value>6000000020</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Resource ID</cbc:Name>
+				<cbc:NameCode listID="Trafikverket">ResourceID</cbc:NameCode>
+				<cbc:Value>123456789</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<!-- end::epd[] -->
+			<!-- tag::price[] -->
+			<cac:AdditionalItemProperty>
+				<cbc:Name>NA</cbc:Name>
+				<cbc:NameCode listID="BEAST:4.0">Price</cbc:NameCode>
+				<cbc:Value>119</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<!-- end::price[] -->
 		</cac:Item>
 		<cac:Shipment>
 			<cbc:ID>NA</cbc:ID>
