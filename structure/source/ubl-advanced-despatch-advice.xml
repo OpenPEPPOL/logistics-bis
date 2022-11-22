@@ -27,14 +27,14 @@
 	<cbc:IssueTime>12:00:00
 		<?DescriptionAddFirst T6325, Document Date/Time. ?>
 	</cbc:IssueTime>
-	<cbc:Note>Text
-		<?DescriptionAddFirst Used for Transport Information (T6008). ?>
-	</cbc:Note>
 	<cbc:DespatchAdviceTypeCode>
 		<?Description Added by Logistics. A code signifying the type of the Despatch Advice.?>
 		<?Cardinality 0..1?>
 		<?CodeList DespatchAdviceType?>
 	</cbc:DespatchAdviceTypeCode>
+	<cbc:Note>Text
+		<?DescriptionAddFirst Used for Transport Information (T6008). ?>
+	</cbc:Note>
 	<cac:OrderReference>
 		<cbc:ID>AEG012345		
 			<?DescriptionAddFirst T3309/T6335, Order Number/Call Off Reference. Attribute schemeID can be used to send Project Number (T6004) or Customers' Reference (T6005).
@@ -563,9 +563,6 @@
 			</cac:TransportMeans>
 		</cac:ShipmentStage>
 		<cac:Delivery>
-			<cbc:TrackingID>456789
-				<?DescriptionAddFirst Tracking URL (T6737) ?>
-			</cbc:TrackingID>
 			<cbc:ActualDeliveryDate>2022-10-03
 				<?Name Actural Delivery Date?>
 				<?Description Added by Logistics. The actual date of delivery.?>
@@ -576,6 +573,10 @@
 				<?Description Added by Logistics. The actual time of delivery. Requires that actual delivery date os defined.?>
 				<?Cardinality 0..1?>		
 			</cbc:ActualDeliveryTime>
+			<cbc:TrackingID>
+				456789
+				<?DescriptionAddFirst Tracking URL (T6737) ?>
+			</cbc:TrackingID>
 			<cac:DeliveryLocation>
 				<?Name Delivery Location. ?>
 				<?Description Added by Logistics. The Delivery Location is used to define the Ship-to when the Delivery Customer Party is not . When the Despatch Advice describes a movement, the Delivery Location should always be included. When the Despatch Advice describes a service given at a location, the Delivery Location describes this location. ?>
@@ -936,11 +937,11 @@
 							<?Description Added by Logistics. he number of units making up this goods item. ?>
 							<?Cardinality 1..1?>
 					</cbc:Quantity>
-				<cbc:TraceId schemeID="sgtin">345699634527
+				<cbc:TraceID schemeID="sgtin">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
-					</cbc:TraceId>
+					</cbc:TraceID>
 			</cac:GoodsItem>
 			<cac:Package>
 				<?Name Containing Package ?>
@@ -957,7 +958,7 @@
 				</cbc:ReturnableMaterialIndicator>
 				<cbc:PackagingTypeCode>
 					<?Description Added by Logistics. A code signifying a level of packaging. ?>
-					<?CodeList UNECE_rec21?>
+					<?CodeList UNECERec21?>
 					<?Cardinality 1..1?>
 				</cbc:PackagingTypeCode>
 				<cbc:PackingMaterial>Carbon box
@@ -979,7 +980,7 @@
 					</cbc:ReturnableMaterialIndicator>
 					<cbc:PackagingTypeCode>
 						<?Description Added by Logistics. A code signifying a level of packaging. ?>
-						<?CodeList UNECE_rec21?>
+						<?CodeList UNECERec21?>
 						<?Cardinality 1..1?>
 					</cbc:PackagingTypeCode>
 					<cbc:PackingMaterial>Carbon box
@@ -1001,7 +1002,7 @@
 						</cbc:ReturnableMaterialIndicator>
 						<cbc:PackagingTypeCode>
 							<?Description Added by Logistics. A code signifying a level of packaging. ?>
-							<?CodeList UNECE_rec21?>
+							<?CodeList UNECERec21?>
 							<?Cardinality 1..1?>
 						</cbc:PackagingTypeCode>
 						<cbc:PackingMaterial>Carbon box
@@ -1028,11 +1029,11 @@
 									<?Description Added by Logistics. he number of units making up this goods item. ?>
 									<?Cardinality 1..1?>
 							</cbc:Quantity>
-							<cbc:TraceId schemeID="urn:epc:sgid">345699634527
+							<cbc:TraceID schemeID="urn:epc:sgid">345699634527
 									<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 									<?Cardinality 0..1?>
 									<?schemeID-usage Optional?>
-							</cbc:TraceId>
+							</cbc:TraceID>
 						</cac:GoodsItem>
 						<cac:MeasurementDimension>
 							<?Name Measurement Dimension. ?>
@@ -1072,11 +1073,11 @@
 							<?Description Added by Logistics. he number of units making up this goods item. ?>
 							<?Cardinality 1..1?>
 						</cbc:Quantity>
-						<cbc:TraceId schmeID="urn:epc:sgid">345699634527
+						<cbc:TraceID schemeID="urn:epc:sgid">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
-						</cbc:TraceId>
+						</cbc:TraceID>
 					</cac:GoodsItem>
 					<cac:MeasurementDimension>
 						<?Name Measurement Dimension. ?>
@@ -1116,11 +1117,11 @@
 							<?Description Added by Logistics. he number of units making up this goods item. ?>
 							<?Cardinality 1..1?>
 					</cbc:Quantity>
-					<cbc:TraceId schmeId="urn:epc:sgid">345699634527
+					<cbc:TraceID schemeID="urn:epc:sgid">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
-					</cbc:TraceId>
+					</cbc:TraceID>
 				</cac:GoodsItem>
 			</cac:Package>
 		</cac:TransportHandlingUnit>
