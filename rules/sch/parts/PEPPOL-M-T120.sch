@@ -23,6 +23,12 @@
 			test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)"
 			flag="fatal">A despatch advice originator customer party SHALL contain the name or an identifier</assert>
 	</rule>
+
+	<rule context="cac:EstimatedDeliveryPeriod">
+		<assert id="PEPPOL-T120-R012"
+			test="(cbc:StartDate) &gt; (cbc:EndDate)"
+			flag="fatal">Start date must be earlier or equal to end date</assert>
+	</rule>
 	
 	<rule context="cac:DespatchLine">
 		<assert id="PEPPOL-T120-R003"
