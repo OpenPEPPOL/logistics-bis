@@ -16,9 +16,8 @@
 	<?DocumentTerm DespatchAdviceResponse?>
 	<?Property key="sch:prefix" PEPPOL-T121?>
 	<?Property key="sch:identifier" T121-basic?>
-	<cbc:CustomizationID>
-		urn:fdc:peppol.eu:logistics:trns:despatch_advice_response:1
-		<?DescriptionAddFirst Used by BEAst as the Order Receipt Response message. ?>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:despatch_advice_response:1
+		
 	</cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_response:1</cbc:ProfileID>
 	
@@ -39,12 +38,14 @@
 			<?schemeID-CodeList eas?>
 			</cbc:EndpointID>
 			<cac:PartyIdentification>
+				<?Cardinality 0..1?>
 				<cbc:ID schemeID="0088">5790000435951
 					<?DescriptionAddFirst Consignee (T0036) ?>					
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PostalAddress>
+				<?Cardinality 0..1?>
 				<cbc:StreetName>Avon Way
 					<?DescriptionAddFirst Street Name (T5003) ?>
 				</cbc:StreetName>
@@ -70,6 +71,7 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
+				<?Cardinality 0..1?>
 				<cbc:RegistrationName>IYT Corporation
 					<?DescriptionAddFirst Party Name (T5001) ?>
 				</cbc:RegistrationName>
@@ -82,12 +84,14 @@
 				<?schemeID-CodeList eas?>
 		</cbc:EndpointID>		
 			<cac:PartyIdentification>
+			<?Cardinality 0..1?>
 				<cbc:ID schemeID="0088">7300010000001
 					<?DescriptionAddFirst Shipper (T0129) ?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PostalAddress>
+				<?Cardinality 0..1?>
 				<cbc:StreetName>Busy Street
 					<?DescriptionAddFirst Street Name (T5003) ?>
 				</cbc:StreetName>
@@ -113,11 +117,13 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
+				<?Cardinality 0..1?>
 				<cbc:RegistrationName>Consortial
 					<?DescriptionAddFirst Party Name (T5001) ?>
 				</cbc:RegistrationName>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
+				<?Cardinality 0..1?>
 				<cbc:Name>Mrs Bouquet
 					<?DescriptionAddFirst Name (T5012) ?>
 				</cbc:Name>
@@ -133,7 +139,8 @@
 	<cac:DocumentResponse>
 		<cac:Response>
 			<cbc:ResponseCode>RE
-			  <?DescriptionAddFirst T6407, Order receipt response status. "AP" corresponds to BEAst's "OK" and "RE" to BEAst's "NOK". ?>
+			  <?Description A code signifying the type of response?>
+			  <?Codelist UNCL4343?>
 			</cbc:ResponseCode>
 			<cbc:Description>Rejected due to validation error.
 			  <?DescriptionAddFirst T6036, Customer remarks. ?>
@@ -149,12 +156,11 @@
 			  <?Codelise UNCL1001_T121?>
 			</cbc:DocumentTypeCode>
 			<cbc:VersionID>2
-			  <?DescriptionAddFirst Not used by older versions of BEAst. ?>
+			  <?Description An identifier for the current version of the referenced document. ?>
 			</cbc:VersionID>
 		</cac:DocumentReference>
 		
-		<cac:LineResponse>
-			<?DescriptionAddFirst The line level is not used by older versions of BEAst. ?>
+		<cac:LineResponse>			
 			<cac:LineReference>
 				<?Description. Added by logistics. Refers to the depatch or receiptadvice line?>
 				<cbc:LineID>/Catalogue/cac:CatalogueLine[3]/cac:Item[1]/cac:ClassifiedTaxCategory[1]/cbc:ID[1]</cbc:LineID>
