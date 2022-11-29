@@ -201,6 +201,66 @@
 
 			</cac:Despatch>
 		</cac:Delivery>
+
+		<!-- tag::transporthandling[] -->
+		<cac:TransportHandlingUnit>
+			<cbc:ID>11111222222222</cbc:ID>
+			<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+			<cbc:HandlingCode>CCC</cbc:HandlingCode>
+			<cbc:HandlingInstruction>To be set vertical</cbc:HandlingInstruction>
+			<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+			<cbc:ShippingMarks>Text</cbc:ShippingMarks>
+			<cac:MeasurementDimension>
+				<cbc:AttributeID>AAB</cbc:AttributeID>
+				<cbc:Measure unitCode="KGM">123</cbc:Measure>
+			</cac:MeasurementDimension>
+			<cac:MeasurementDimension>
+				<cbc:AttributeID>AAW</cbc:AttributeID>
+				<cbc:Measure unitCode="MTQ">3.55</cbc:Measure>
+			</cac:MeasurementDimension>
+			<cbc:MinimumTemperature>-40</cbc:MinimumTemperature>
+			<cbc:MaximumTemperature>-10</cbc:MaximumTemperature>
+		</cac:TransportHandlingUnit>
+		<!-- end::transporthandling[] -->
+
+		<cac:TransportHandlingUnit>
+			<cbc:ID>11111222222222</cbc:ID>
+			<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+			<cbc:HandlingCode>CCC</cbc:HandlingCode>
+			<cbc:HandlingInstruction>To be set vertical</cbc:HandlingInstruction>
+			<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+			<cbc:ShippingMarks>Text</cbc:ShippingMarks>
+			
+			<!-- tag::transportequipment[] -->
+			<cac:TransportEquipment>
+				<cbc:ID>7677766555</cbc:ID>
+				<cbc:TransportEquipmentTypeCode>20</cbc:TransportEquipmentTypeCode>
+				<cbc:RefrigerationOnIndicator>true</cbc:RefrigerationOnIndicator>
+				<cbc:Description>A 20 foot refrigerated container that is not actively controlling temperature of the product.</cbc:Description>
+				<cbc:PowerIndicator>true</cbc:PowerIndicator>
+				<cac:MeasurementDimension>
+					<cbc:AttributeID>LN</cbc:AttributeID>
+					<cbc:Measure unitCode="FOT">20</cbc:Measure>
+				</cac:MeasurementDimension>
+				<cac:MeasurementDimension>
+					<cbc:AttributeID>WD</cbc:AttributeID>
+					<cbc:Measure unitCode="FOT">10</cbc:Measure>
+				</cac:MeasurementDimension>
+			</cac:TransportEquipment>
+			<!-- end::transportequipment[] -->
+			
+			<cac:MeasurementDimension>
+				<cbc:AttributeID>AAB</cbc:AttributeID>
+				<cbc:Measure unitCode="KGM">123</cbc:Measure>
+			</cac:MeasurementDimension>
+			<cac:MeasurementDimension>
+				<cbc:AttributeID>AAW</cbc:AttributeID>
+				<cbc:Measure unitCode="MTQ">3.55</cbc:Measure>
+			</cac:MeasurementDimension>
+			<cbc:MinimumTemperature>-40</cbc:MinimumTemperature>
+			<cbc:MaximumTemperature>-10</cbc:MaximumTemperature>
+		</cac:TransportHandlingUnit>
+		
 	</cac:Shipment>
 	
 	<cac:DespatchLine>
