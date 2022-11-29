@@ -113,9 +113,9 @@
 		<cbc:GrossVolumeMeasure unitCode="MTQ">27</cbc:GrossVolumeMeasure>
 		<cac:Consignment>
 			<cbc:ID>12345</cbc:ID>
-			<!-- tag::vehicleid[] -->
+
 			<cbc:Information>ABC123</cbc:Information>
-			<!-- end::vehicleid[] -->
+
 			<!-- tag::carrier[] -->
 			<cac:CarrierParty>
 				<cac:PartyIdentification>
@@ -127,6 +127,18 @@
 			</cac:CarrierParty>
 			<!-- end::carrier[] -->
 		</cac:Consignment>
+
+		<!-- tag::vehicleid[] -->
+		<cac:ShipmentStage>
+			<cbc:TransportModeCode>3</cbc:TransportModeCode>
+			<cac:TransportMeans>
+				<cac:RoadTransport>
+					<cbc:LicensePlateID>ABC123</cbc:LicensePlateID>
+				</cac:RoadTransport>
+			</cac:TransportMeans>
+		</cac:ShipmentStage>
+		<!-- end::vehicleid[] -->
+		
 		<cac:Delivery>
 			<!-- tag::deliverylocation[] -->
 			<cac:DeliveryLocation>
@@ -190,6 +202,7 @@
 		</cac:Delivery>
 	</cac:Shipment>
 	<!-- end::shipment[] -->
+	
 	<cac:DespatchLine>
 		<cbc:ID>1</cbc:ID>
 		<!-- tag::quantity1[] -->
