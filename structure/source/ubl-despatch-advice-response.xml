@@ -16,9 +16,8 @@
 	<?DocumentTerm DespatchAdviceResponse?>
 	<?Property key="sch:prefix" PEPPOL-T121?>
 	<?Property key="sch:identifier" T121-basic?>
-	<cbc:CustomizationID>
-		urn:fdc:peppol.eu:logistics:trns:despatch_advice_response:1
-		<?DescriptionAddFirst Used by BEAst as the Order Receipt Response message. ?>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:despatch_advice_response:1
+		
 	</cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_response:1</cbc:ProfileID>
 	
@@ -33,23 +32,115 @@
 	</cbc:IssueTime>
 	
 	<cac:SenderParty>
-		<cbc:EndpointID schemeID="0088">7300010000001
-		  <?DescriptionAddFirst T0008, Buyer. ?>
+		<cbc:EndpointID schemeID="0088">5798000000124
+			<?DescriptionAddFirst T0008, Buyer. ?>
 			<?schemeID-usage Mandatory?>
 			<?schemeID-CodeList eas?>
-		</cbc:EndpointID>
+			</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<?Cardinality 0..1?>
+				<cbc:ID schemeID="0088">5790000435951
+					<?DescriptionAddFirst Consignee (T0036) ?>					
+					<?schemeID-CodeList ICD?>
+				</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PostalAddress>
+				<?Cardinality 0..1?>
+				<cbc:StreetName>Avon Way
+					<?DescriptionAddFirst Street Name (T5003) ?>
+				</cbc:StreetName>
+				<cbc:AdditionalStreetName>Big projects
+					<?DescriptionAddFirst Used for Department (T5002). ?>
+				</cbc:AdditionalStreetName>
+				<cbc:CityName>Bridgtow
+					<?DescriptionAddFirst City Name (T5005) ?>
+				</cbc:CityName>
+				<cbc:PostalZone>ZZ99 1ZZ
+					<?DescriptionAddFirst Postal Code (T6117) ?>
+				</cbc:PostalZone>
+				<cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+				<cac:AddressLine>
+					<cbc:Line>3rd Floor, Room 5
+						<?DescriptionAddFirst Used for any other additional address information like Building (T5004). ?>
+					</cbc:Line>
+				</cac:AddressLine>
+				<cac:Country>
+					<cbc:IdentificationCode>GB
+						<?DescriptionAddFirst Country Code (T5007) ?>
+					</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<?Cardinality 0..1?>
+				<cbc:RegistrationName>IYT Corporation
+					<?DescriptionAddFirst Party Name (T5001) ?>
+				</cbc:RegistrationName>
+			</cac:PartyLegalEntity>		
 	</cac:SenderParty>
 	
 	<cac:ReceiverParty>
 		<cbc:EndpointID schemeID="0088">7315458756328
-		  <?DescriptionAddFirst T0009, Supplier. ?>
-		</cbc:EndpointID>
+		  <?schemeID-usage Mandatory?>
+				<?schemeID-CodeList eas?>
+		</cbc:EndpointID>		
+			<cac:PartyIdentification>
+			<?Cardinality 0..1?>
+				<cbc:ID schemeID="0088">7300010000001
+					<?DescriptionAddFirst Shipper (T0129) ?>
+					<?schemeID-CodeList ICD?>
+				</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PostalAddress>
+				<?Cardinality 0..1?>
+				<cbc:StreetName>Busy Street
+					<?DescriptionAddFirst Street Name (T5003) ?>
+				</cbc:StreetName>
+				<cbc:AdditionalStreetName>way 1
+					<?DescriptionAddFirst Used for Department (T5002). ?>
+				</cbc:AdditionalStreetName>
+				<cbc:CityName>Farthing
+					<?DescriptionAddFirst City Name (T5005) ?>
+				</cbc:CityName>
+				<cbc:PostalZone>AA99 1BB
+					<?DescriptionAddFirst Postal Code (T6117) ?>
+				</cbc:PostalZone>
+				<cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
+				<cac:AddressLine>
+					<cbc:Line>The Roundabout
+						<?DescriptionAddFirst Used for any other additional address information like Building (T5004). ?>
+					</cbc:Line>
+				</cac:AddressLine>
+				<cac:Country>
+					<cbc:IdentificationCode>GB
+						<?DescriptionAddFirst Country Code (T5007) ?>
+					</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<?Cardinality 0..1?>
+				<cbc:RegistrationName>Consortial
+					<?DescriptionAddFirst Party Name (T5001) ?>
+				</cbc:RegistrationName>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<?Cardinality 0..1?>
+				<cbc:Name>Mrs Bouquet
+					<?DescriptionAddFirst Name (T5012) ?>
+				</cbc:Name>
+				<cbc:Telephone>0158 1233714
+					<?DescriptionAddFirst Phone Number (T5010) ?>
+				</cbc:Telephone>
+				<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
+					<?DescriptionAddFirst Email Address (T5011) ?>
+				</cbc:ElectronicMail>
+			</cac:Contact>
 	</cac:ReceiverParty>
 	
 	<cac:DocumentResponse>
 		<cac:Response>
 			<cbc:ResponseCode>RE
-			  <?DescriptionAddFirst T6407, Order receipt response status. "AP" corresponds to BEAst's "OK" and "RE" to BEAst's "NOK". ?>
+			  <?Description A code signifying the type of response?>
+			  <?Codelist UNCL4343_T121?>
 			</cbc:ResponseCode>
 			<cbc:Description>Rejected due to validation error.
 			  <?DescriptionAddFirst T6036, Customer remarks. ?>
@@ -57,20 +148,21 @@
 		</cac:Response>
 
 		<cac:DocumentReference>
-			<cbc:ID>EnvelopeID-12456789
-			  <?DescriptionAddFirst T6386, Order receipt reference. ?>
+			<cbc:ID>12456789
+			  <?DescriptionAddFirst T6386, the id of the Despatch- or Receipt advice sent. ?>
 			</cbc:ID>
 			<cbc:DocumentTypeCode>351
-			  <?DescriptionAddFirst Has no reference to older BEAst standards. Used to inform that this MLR is a Order Receipt Response, "351" should always be used. ?>
+			  <?DescriptionAddFirst Specifies if it is a reference to a Despatch or a Receipt advice. ?>
+			  <?Codelise UNCL1001_T121?>
 			</cbc:DocumentTypeCode>
 			<cbc:VersionID>2
-			  <?DescriptionAddFirst Not used by older versions of BEAst. ?>
+			  <?Description An identifier for the current version of the referenced document. ?>
 			</cbc:VersionID>
 		</cac:DocumentReference>
 		
-		<cac:LineResponse>
-			<?DescriptionAddFirst The line level is not used by older versions of BEAst. ?>
+		<cac:LineResponse>			
 			<cac:LineReference>
+				<?Description. Added by logistics. Refers to the depatch or receiptadvice line?>
 				<cbc:LineID>/Catalogue/cac:CatalogueLine[3]/cac:Item[1]/cac:ClassifiedTaxCategory[1]/cbc:ID[1]</cbc:LineID>
 			</cac:LineReference>
 			<cac:Response>
