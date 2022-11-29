@@ -260,6 +260,41 @@
 			<cbc:MinimumTemperature>-40</cbc:MinimumTemperature>
 			<cbc:MaximumTemperature>-10</cbc:MaximumTemperature>
 		</cac:TransportHandlingUnit>
+
+		<cac:TransportHandlingUnit>
+			<cbc:ID>11111222222222</cbc:ID>
+			<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+			<cbc:HandlingCode>CCC</cbc:HandlingCode>
+			<cbc:HandlingInstruction>To be set vertical</cbc:HandlingInstruction>
+			<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+			<cbc:ShippingMarks>Text</cbc:ShippingMarks>
+
+			<cac:MeasurementDimension>
+				<cbc:AttributeID>AAB</cbc:AttributeID>
+				<cbc:Measure unitCode="KGM">123</cbc:Measure>
+			</cac:MeasurementDimension>
+			<cac:MeasurementDimension>
+				<cbc:AttributeID>AAW</cbc:AttributeID>
+				<cbc:Measure unitCode="MTQ">3.55</cbc:Measure>
+			</cac:MeasurementDimension>
+			<cbc:MinimumTemperature>-40</cbc:MinimumTemperature>
+			<cbc:MaximumTemperature>-10</cbc:MaximumTemperature>
+
+			<!-- tag::goodsitemTHU[] -->
+			<cac:GoodsItem>
+				
+				<?Reference to the Despatch line number - DespatchLine/ID?>
+				<cbc:ID>4</cbc:ID>
+				<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+				<cbc:DeclaredStatisticsValueAmount currencyID="USD">10</cbc:DeclaredStatisticsValueAmount>
+
+				<?Quantity of the item on the referred despatch line packed in this THU.?>
+				<cbc:Quantity unitCode="EA">84</cbc:Quantity>
+				<cbc:TraceID schemeID="SGTIN">345699634527</cbc:TraceID>
+			</cac:GoodsItem>
+			<!-- end::goodsitemTHU[] -->
+
+		</cac:TransportHandlingUnit>
 		
 	</cac:Shipment>
 	
