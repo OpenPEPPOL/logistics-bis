@@ -20,6 +20,21 @@
 		<cbc:ID schemeID="CustomersReferenceNumber">P12345:X32:1001</cbc:ID>
 	</cac:OrderReference>
 	<!-- end::ref-order[] -->
+
+	<!-- tag::referenceheader-->
+	<cac:AdditionalDocumentReference>
+		<cbc:ID>7648779</cbc:ID>
+		<cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+		<cbc:DocumentType>BEAST:FreightPayersCustomerNumber</cbc:DocumentType>
+		<cac:Attachment>
+			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+			<cac:ExternalReference>
+				<cbc:URI>www.beast.se</cbc:URI>
+			</cac:ExternalReference>
+		</cac:Attachment>
+	</cac:AdditionalDocumentReference>
+	<!-- end::referenceheader-->
+	
 	<!-- tag::despatchsupplier[] -->
 	<cac:DespatchSupplierParty>
 		<cac:Party>
@@ -434,6 +449,21 @@
 			</cac:OrderReference>
 		</cac:OrderLineReference>
 		<!-- end::ref-orderline1[] -->
+
+		<!-- tag::referenceline-->
+		<cac:DocumentReference>
+			<cbc:ID>7648779</cbc:ID>
+			<cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+			<cbc:DocumentType>Letter Of Credit</cbc:DocumentType>
+			<cac:Attachment>
+				<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+				<cac:ExternalReference>
+					<cbc:URI>www.beast.se</cbc:URI>
+				</cac:ExternalReference>
+			</cac:Attachment>
+		</cac:AdditionalDocumentReference>
+		<!-- end::referenceline-->
+
 		<!-- tag::item[] -->
 		<cac:Item>
 			<cbc:Name>Item123</cbc:Name>
