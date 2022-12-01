@@ -34,7 +34,7 @@
 		</cac:Attachment>
 	</cac:AdditionalDocumentReference>
 	<!-- end::referenceheader[] -->
-	
+
 	<!-- tag::despatchsupplier[] -->
 	<cac:DespatchSupplierParty>
 		<cac:Party>
@@ -126,7 +126,7 @@
 		<cbc:Information>Free text information relating to the Shipment</cbc:Information>
 		<cbc:GrossWeightMeasure unitCode="KGM">23</cbc:GrossWeightMeasure>
 		<cbc:GrossVolumeMeasure unitCode="MTQ">27</cbc:GrossVolumeMeasure>
-	<!-- end::shipment[] -->
+		<!-- end::shipment[] -->
 		<cac:Consignment>
 			<cbc:ID>12345</cbc:ID>
 
@@ -154,7 +154,7 @@
 			</cac:TransportMeans>
 		</cac:ShipmentStage>
 		<!-- end::vehicleid[] -->
-		
+
 		<cac:Delivery>
 			<!-- tag::deliverylocation[] -->
 			<cac:DeliveryLocation>
@@ -181,7 +181,7 @@
 				</cac:Address>
 			</cac:DeliveryLocation>
 			<!-- end::deliverylocation[] -->
-			
+
 			<cac:EstimatedDeliveryPeriod>
 				<cbc:StartDate>2013-03-15</cbc:StartDate>
 				<cbc:StartTime>08:00:00</cbc:StartTime>
@@ -222,7 +222,7 @@
 			<cbc:ID>11111222222222</cbc:ID>
 			<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
 			<cbc:HandlingCode>CCC</cbc:HandlingCode>
-			<cbc:HandlingInstruction>To be set vertical</cbc:HandlingInstruction>
+			<cbc:HandlingInstructions>To be set vertical</cbc:HandlingInstructions>
 			<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
 			<cbc:ShippingMarks>Text</cbc:ShippingMarks>
 			<cac:MeasurementDimension>
@@ -233,8 +233,14 @@
 				<cbc:AttributeID>AAW</cbc:AttributeID>
 				<cbc:Measure unitCode="MTQ">3.55</cbc:Measure>
 			</cac:MeasurementDimension>
-			<cbc:MinimumTemperature>-40</cbc:MinimumTemperature>
-			<cbc:MaximumTemperature>-10</cbc:MaximumTemperature>
+			<cac:MinimumTemperature>
+				<cbc:AttributeID>TC</cbc:AttributeID>
+				<cbc:Measure unitCode="CEL">-40</cbc:Measure>
+			</cac:MinimumTemperature>
+			<cac:MaximumTemperature>
+				<cbc:AttributeID>TC</cbc:AttributeID>
+				<cbc:Measure unitCode="CEL">-10</cbc:Measure>
+			</cac:MaximumTemperature>
 		</cac:TransportHandlingUnit>
 		<!-- end::transporthandling[] -->
 
@@ -242,10 +248,10 @@
 			<cbc:ID>11111222222222</cbc:ID>
 			<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
 			<cbc:HandlingCode>CCC</cbc:HandlingCode>
-			<cbc:HandlingInstruction>To be set vertical</cbc:HandlingInstruction>
+			<cbc:HandlingInstructions>To be set vertical</cbc:HandlingInstructions>
 			<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
 			<cbc:ShippingMarks>Text</cbc:ShippingMarks>
-			
+
 			<!-- tag::transportequipment[] -->
 			<cac:TransportEquipment>
 				<cbc:ID>7677766555</cbc:ID>
@@ -263,7 +269,7 @@
 				</cac:MeasurementDimension>
 			</cac:TransportEquipment>
 			<!-- end::transportequipment[] -->
-			
+
 			<cac:MeasurementDimension>
 				<cbc:AttributeID>AAB</cbc:AttributeID>
 				<cbc:Measure unitCode="KGM">123</cbc:Measure>
@@ -272,15 +278,21 @@
 				<cbc:AttributeID>AAW</cbc:AttributeID>
 				<cbc:Measure unitCode="MTQ">3.55</cbc:Measure>
 			</cac:MeasurementDimension>
-			<cbc:MinimumTemperature>-40</cbc:MinimumTemperature>
-			<cbc:MaximumTemperature>-10</cbc:MaximumTemperature>
+			<cac:MinimumTemperature>
+				<cbc:AttributeID>TC</cbc:AttributeID>
+				<cbc:Measure unitCode="CEL">-40</cbc:Measure>
+			</cac:MinimumTemperature>
+			<cac:MaximumTemperature>
+				<cbc:AttributeID>TC</cbc:AttributeID>
+				<cbc:Measure unitCode="CEL">-10</cbc:Measure>
+			</cac:MaximumTemperature>
 		</cac:TransportHandlingUnit>
 
 		<cac:TransportHandlingUnit>
 			<cbc:ID>11111222222222</cbc:ID>
 			<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
 			<cbc:HandlingCode>CCC</cbc:HandlingCode>
-			<cbc:HandlingInstruction>To be set vertical</cbc:HandlingInstruction>
+			<cbc:HandlingInstructions>To be set vertical</cbc:HandlingInstructions>
 			<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
 			<cbc:ShippingMarks>Text</cbc:ShippingMarks>
 
@@ -292,8 +304,14 @@
 				<cbc:AttributeID>AAW</cbc:AttributeID>
 				<cbc:Measure unitCode="MTQ">3.55</cbc:Measure>
 			</cac:MeasurementDimension>
-			<cbc:MinimumTemperature>-40</cbc:MinimumTemperature>
-			<cbc:MaximumTemperature>-10</cbc:MaximumTemperature>
+			<cac:MinimumTemperature>
+				<cbc:AttributeID>TC</cbc:AttributeID>
+				<cbc:Measure unitCode="CEL">-40</cbc:Measure>
+			</cac:MinimumTemperature>
+			<cac:MaximumTemperature>
+				<cbc:AttributeID>TC</cbc:AttributeID>
+				<cbc:Measure unitCode="CEL">-10</cbc:Measure>
+			</cac:MaximumTemperature>
 
 			<!-- tag::goodsitemTHU[] -->
 			<cac:GoodsItem>
@@ -323,7 +341,7 @@
 				</cac:GoodsItem>
 				<cac:MeasurementDimension>
 					<cbc:AttributeID>LN</cbc:AttributeID>
-					<Measure unitCode="MMT">400</Measure>
+					<cbc:Measure unitCode="MMT">400</cbc:Measure>
 				</cac:MeasurementDimension>
 			</cac:Package>
 			<!-- end::packageTHU[] -->
@@ -333,7 +351,7 @@
 				<cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
 				<cbc:PackagingTypeCode>4H</cbc:PackagingTypeCode>
 				<cbc:PackingMaterial>Carbon box</cbc:PackingMaterial>
-				
+
 				<!-- tag::containedpackage[] -->
 				<cac:ContainedPackage>
 					<cbc:ID>3454</cbc:ID>
@@ -348,93 +366,99 @@
 					</cac:GoodsItem>
 					<cac:MeasurementDimension>
 						<cbc:AttributeID>LN</cbc:AttributeID>
-						<Measure unitCode="MMT">400</Measure>
+						<cbc:Measure unitCode="MMT">400</cbc:Measure>
 					</cac:MeasurementDimension>
 				</cac:ContainedPackage>
 				<!-- end::containedpackage[] -->
-				
+
 				<cac:GoodsItem>
 					<!--Insert information about items packed in this package here.-->
 				</cac:GoodsItem>
 
 			</cac:Package>
 		</cac:TransportHandlingUnit>
-		
-			<!-- tag::fullstructure[] -->
-			<!-- Start of Transport Handling Unit. -->
-			<cac:TransportHandlingUnit>
-				<cbc:ID>11111222222222</cbc:ID>
-				<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
-				<cbc:HandlingCode>CCC</cbc:HandlingCode>
-				<cbc:HandlingInstruction>To be set vertical</cbc:HandlingInstruction>
+
+		<!-- tag::fullstructure[] -->
+		<!-- Start of Transport Handling Unit. -->
+		<cac:TransportHandlingUnit>
+			<cbc:ID>11111222222222</cbc:ID>
+			<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+			<cbc:HandlingCode>CCC</cbc:HandlingCode>
+			<cbc:HandlingInstructions>To be set vertical</cbc:HandlingInstructions>
+			<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+			<cbc:ShippingMarks>Text</cbc:ShippingMarks>
+			<!-- Here we can have a reference to a container (TransportEquipment). -->
+			<cac:MeasurementDimension>
+				<cbc:AttributeID>AAB</cbc:AttributeID>
+				<cbc:Measure unitCode="KGM">123</cbc:Measure>
+			</cac:MeasurementDimension>
+			<cac:MeasurementDimension>
+				<cbc:AttributeID>AAW</cbc:AttributeID>
+				<cbc:Measure unitCode="MTQ">3.55</cbc:Measure>
+			</cac:MeasurementDimension>
+			<cac:MinimumTemperature>
+				<cbc:AttributeID>TC</cbc:AttributeID>
+				<cbc:Measure unitCode="CEL">-40</cbc:Measure>
+			</cac:MinimumTemperature>
+			<cac:MaximumTemperature>
+				<cbc:AttributeID>TC</cbc:AttributeID>
+				<cbc:Measure unitCode="CEL">-10</cbc:Measure>
+			</cac:MaximumTemperature>
+			<cac:GoodsItem>
+				<!--Reference to the Despatch line number - DespatchLine/ID-->
+				<cbc:ID>4</cbc:ID>
 				<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-				<cbc:ShippingMarks>Text</cbc:ShippingMarks>
-				<!-- Here we can have a reference to a container (TransportEquipment). -->
-				<cac:MeasurementDimension>
-					<cbc:AttributeID>AAB</cbc:AttributeID>
-					<cbc:Measure unitCode="KGM">123</cbc:Measure>
-				</cac:MeasurementDimension>
-				<cac:MeasurementDimension>
-					<cbc:AttributeID>AAW</cbc:AttributeID>
-					<cbc:Measure unitCode="MTQ">3.55</cbc:Measure>
-				</cac:MeasurementDimension>
-				<cbc:MinimumTemperature>-40</cbc:MinimumTemperature>
-				<cbc:MaximumTemperature>-10</cbc:MaximumTemperature>
-				<cac:GoodsItem>
-					<!--Reference to the Despatch line number - DespatchLine/ID-->
-					<cbc:ID>4</cbc:ID>
-					<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-					<cbc:DeclaredStatisticsValueAmount currencyID="USD">10</cbc:DeclaredStatisticsValueAmount>
-					<!--Quantity of the item on the referred despatch line packed in this THU.-->
-					<cbc:Quantity unitCode="EA">84</cbc:Quantity>
-					<cbc:TraceID schemeID="SGTIN">345699634527</cbc:TraceID>
-				</cac:GoodsItem>
-				<!-- Start of second level - package on THU. -->
-				<cac:Package>
-					<cbc:ID>3453</cbc:ID>
-					<cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+				<cbc:DeclaredStatisticsValueAmount currencyID="USD">10</cbc:DeclaredStatisticsValueAmount>
+				<!--Quantity of the item on the referred despatch line packed in this THU.-->
+				<cbc:Quantity unitCode="EA">84</cbc:Quantity>
+				<cbc:TraceID schemeID="SGTIN">345699634527</cbc:TraceID>
+			</cac:GoodsItem>
+			<!-- Start of second level - package on THU. -->
+			<cac:Package>
+				<cbc:ID>3453</cbc:ID>
+				<cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
+				<cbc:PackagingTypeCode>4H</cbc:PackagingTypeCode>
+				<cbc:PackingMaterial>Carbon box</cbc:PackingMaterial>
+				<!-- Start of third level - package in package on THU. -->
+				<cac:ContainedPackage>
+					<cbc:ID>3454</cbc:ID>
 					<cbc:PackagingTypeCode>4H</cbc:PackagingTypeCode>
-					<cbc:PackingMaterial>Carbon box</cbc:PackingMaterial>
-					<!-- Start of third level - package in package on THU. -->
+					<!-- Start of fourth level - package in package in package on THU. -->
 					<cac:ContainedPackage>
-						<cbc:ID>3454</cbc:ID>
+						<cbc:ID>3455</cbc:ID>
 						<cbc:PackagingTypeCode>4H</cbc:PackagingTypeCode>
-							<!-- Start of fourth level - package in package in package on THU. -->
-						<cac:ContainedPackage>
-							<cbc:ID>3455</cbc:ID>
-							<cbc:PackagingTypeCode>4H</cbc:PackagingTypeCode>
-							<cac:GoodsItem>
-								<cbc:ID>1</cbc:ID>
-								<cbc:Quantity unitCode="EA">12</cbc:Quantity>
-							</cac:GoodsItem>
-							<cac:GoodsItem>
-								<cbc:ID>5</cbc:ID>
-								<cbc:Quantity unitCode="EA">80</cbc:Quantity>
-							</cac:GoodsItem>
-							<cac:MeasurementDimension>
-								<cbc:AttributeID>LN</cbc:AttributeID>
-								<Measure unitCode="MMT">400</Measure>
-							</cac:MeasurementDimension>
-						</cac:ContainedPackage>
-						<!-- End of fourth level - package in package in package on THU. -->
 						<cac:GoodsItem>
-							<cbc:ID>3</cbc:ID>
-							<cbc:Quantity unitCode="EA">40</cbc:Quantity>
+							<cbc:ID>1</cbc:ID>
+							<cbc:Quantity unitCode="EA">12</cbc:Quantity>
 						</cac:GoodsItem>
-						</cac:ContainedPackage>
-						<!-- End of third level - package in package on THU. -->
 						<cac:GoodsItem>
-							<cbc:ID>2</cbc:ID>
-							<cbc:Quantity unitCode="EA">72</cbc:Quantity>
+							<cbc:ID>5</cbc:ID>
+							<cbc:Quantity unitCode="EA">80</cbc:Quantity>
 						</cac:GoodsItem>
-				</cac:Package>
-				<!-- End of second level - package on THU. -->
+						<cac:MeasurementDimension>
+							<cbc:AttributeID>LN</cbc:AttributeID>
+							<cbc:Measure unitCode="MMT">400</cbc:Measure>
+						</cac:MeasurementDimension>
+					</cac:ContainedPackage>
+					<!-- End of fourth level - package in package in package on THU. -->
+					<cac:GoodsItem>
+						<cbc:ID>3</cbc:ID>
+						<cbc:Quantity unitCode="EA">40</cbc:Quantity>
+					</cac:GoodsItem>
+				</cac:ContainedPackage>
+				<!-- End of third level - package in package on THU. -->
+				<cac:GoodsItem>
+					<cbc:ID>2</cbc:ID>
+					<cbc:Quantity unitCode="EA">72</cbc:Quantity>
+				</cac:GoodsItem>
+			</cac:Package>
+			<!-- End of second level - package on THU. -->
 		</cac:TransportHandlingUnit>
-			<!-- End of Transport Handling Unit. -->
-			<!-- end::fullstructure[] -->
-		
+		<!-- End of Transport Handling Unit. -->
+		<!-- end::fullstructure[] -->
+
 	</cac:Shipment>
-	
+
 	<cac:DespatchLine>
 		<cbc:ID>1</cbc:ID>
 		<!-- tag::quantity1[] -->
@@ -539,7 +563,7 @@
 			<cac:StandardItemIdentification>
 				<cbc:ID schemeID="0160">7622204117051</cbc:ID>
 			</cac:StandardItemIdentification>
-			<!-- tag::itemproperty[] -->	
+			<!-- tag::itemproperty[] -->
 			<cac:AdditionalItemProperty>
 				<cbc:Name>NPLId</cbc:Name>
 				<cbc:Value>20300709400050</cbc:Value>
@@ -553,8 +577,8 @@
 				</cac:LotIdentification>
 			</cac:ItemInstance>
 			<!-- end::lotid[] -->
-			
+
 		</cac:Item>
-		
+
 	</cac:DespatchLine>
 </DespatchAdvice>
