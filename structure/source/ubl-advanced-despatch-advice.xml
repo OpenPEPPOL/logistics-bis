@@ -30,7 +30,7 @@
 	<cbc:DespatchAdviceTypeCode>
 		<?Description Added by Logistics. A code signifying the type of the Despatch Advice.?>
 		<?Cardinality 0..1?>
-		<?CodeList DespatchAdviceType?>
+		<?CodeList DespatchAdviceTypeCode?>
 	</cbc:DespatchAdviceTypeCode>
 	<cbc:Note>Text
 		<?DescriptionAddFirst Used for Transport Information (T6008). ?>
@@ -513,7 +513,7 @@
 				<?Name Transport Mode Code. ?>
 				<?Description Added by Logistics. Must be a value in UNECERec19.) ?>
 				<?Cardinality 1..1?>
-				<?Codelist TransportModeCode?>
+				<?Codelist UNECERec19?>
 			</cbc:TransportModeCode>
 			<cac:TransportMeans>
 				<?Name Transport Means.?>
@@ -1123,6 +1123,23 @@
 							<?schemeID-usage Optional?>
 					</cbc:TraceID>
 				</cac:GoodsItem>
+				<cac:MeasurementDimension>
+					<?Name Measurement Dimension. ?>
+					<?Description Added by Logistics. Used to specify any measurement of this Package ?>
+					<?Cardinality 0..n?>
+					<cbc:AttributeID>LN
+						<?Name Measurement Attribute ID. ?>
+						<?CodeList UNCL6313-T120?>
+						<?Description Added by Logistics. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
+						<?Cardinality 1..1?>
+					</cbc:AttributeID>
+					<cbc:Measure unitCode="MTR">123
+						<?Name Measure. ?>
+						<?unitCode-CodeList UNECERec20?>
+						<?Description Added by Logistics. For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
+						<?Cardinality 1..1?>
+					</cbc:Measure>
+				</cac:MeasurementDimension>
 			</cac:Package>
 		</cac:TransportHandlingUnit>
 	</cac:Shipment>
