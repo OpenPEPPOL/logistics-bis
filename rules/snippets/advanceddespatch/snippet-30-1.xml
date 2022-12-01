@@ -21,16 +21,43 @@
 	<!-- end::ref-order[] -->
 
 	<!-- tag::referenceheader[] -->
+	<!-- Attached invoice -->
 	<cac:AdditionalDocumentReference>
 		<cbc:ID>7648779</cbc:ID>
 		<cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
-		<cbc:DocumentType>BEAST:FreightPayersCustomerNumber</cbc:DocumentType>
 		<cac:Attachment>
-			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Invoice_7648779.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
 			<cac:ExternalReference>
 				<cbc:URI>www.beast.se</cbc:URI>
 			</cac:ExternalReference>
 		</cac:Attachment>
+	</cac:AdditionalDocumentReference>
+	
+	<!-- Attached drawing -->
+	<cac:AdditionalDocumentReference>
+		<cbc:ID>67654</cbc:ID>
+		<cbc:DocumentTypeCode>174</cbc:DocumentTypeCode>
+		<cac:Attachment>
+			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Drawing_67654.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+		</cac:Attachment>
+	</cac:AdditionalDocumentReference>
+
+	<!-- Reference to drawing -->
+	<cac:AdditionalDocumentReference>
+		<cbc:ID>334421</cbc:ID>
+		<cbc:DocumentTypeCode>174</cbc:DocumentTypeCode>
+	</cac:AdditionalDocumentReference>
+	
+	<!-- Reference to project -->
+	<cac:AdditionalDocumentReference>
+		<cbc:ID>P-7678</cbc:ID>
+		<cbc:DocumentType>BEAST:ProjectReference</cbc:DocumentType>
+	</cac:AdditionalDocumentReference>
+
+	<!-- Reference to accounting information -->
+	<cac:AdditionalDocumentReference>
+		<cbc:ID>P-7678:776:1287</cbc:ID>
+		<cbc:DocumentType>BEAST:AccountingCost</cbc:DocumentType>
 	</cac:AdditionalDocumentReference>
 	<!-- end::referenceheader[] -->
 
@@ -52,6 +79,7 @@
 		</cac:Party>
 	</cac:DespatchSupplierParty>
 	<!-- end::despatchsupplier[] -->
+	
 	<!-- tag::deliverycustomer[] -->
 	<cac:DeliveryCustomerParty>
 		<cac:Party>
@@ -83,6 +111,7 @@
 		</cac:DeliveryContact>
 	</cac:DeliveryCustomerParty>
 	<!-- end::deliverycustomer[] -->
+	
 	<!-- tag::buyer[] -->
 	<cac:BuyerCustomerParty>
 		<cac:Party>
@@ -95,6 +124,7 @@
 		</cac:Party>
 	</cac:BuyerCustomerParty>
 	<!-- end::buyer[] -->
+	
 	<!-- tag::seller[] -->
 	<cac:SellerSupplierParty>
 		<cac:Party>
@@ -107,6 +137,7 @@
 		</cac:Party>
 	</cac:SellerSupplierParty>
 	<!-- end::seller[] -->
+	
 	<!-- tag::originator[] -->
 	<cac:OriginatorCustomerParty>
 		<cac:Party>
@@ -119,6 +150,7 @@
 		</cac:Party>
 	</cac:OriginatorCustomerParty>
 	<!-- end::originator[] -->
+	
 	<!-- tag::shipment[] -->
 	<cac:Shipment>
 		<cbc:ID>NA</cbc:ID>
@@ -126,9 +158,9 @@
 		<cbc:GrossWeightMeasure unitCode="KGM">23</cbc:GrossWeightMeasure>
 		<cbc:GrossVolumeMeasure unitCode="MTQ">27</cbc:GrossVolumeMeasure>
 		<!-- end::shipment[] -->
+		
 		<cac:Consignment>
 			<cbc:ID>12345</cbc:ID>
-
 			<cbc:Information>ABC123</cbc:Information>
 
 			<!-- tag::carrier[] -->
@@ -141,6 +173,7 @@
 				</cac:PartyName>
 			</cac:CarrierParty>
 			<!-- end::carrier[] -->
+			
 		</cac:Consignment>
 
 		<!-- tag::vehicleid[] -->
@@ -474,17 +507,30 @@
 		<!-- end::ref-orderline1[] -->
 
 		<!-- tag::referenceline[] -->
+		<!-- Attached test report -->
 		<cac:DocumentReference>
-			<cbc:ID>7648779</cbc:ID>
-			<cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
-			<cbc:DocumentType>Letter Of Credit</cbc:DocumentType>
+			<cbc:ID>6675</cbc:ID>
+			<cbc:DocumentTypeCode>4</cbc:DocumentTypeCode>
 			<cac:Attachment>
-				<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+				<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="TestReport_6675.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
 				<cac:ExternalReference>
 					<cbc:URI>www.beast.se</cbc:URI>
 				</cac:ExternalReference>
 			</cac:Attachment>
 		</cac:DocumentReference>
+
+		<!-- Material Ticket -->
+		<cac:DocumentReference>
+			<cbc:ID>98987</cbc:ID>
+			<cbc:DocumentType>BEAST:MaterialTicketNumber</cbc:DocumentType>
+		</cac:DocumentReference>
+
+		<!-- Material Ticket Reference -->
+		<cac:DocumentReference>
+			<cbc:ID>98987</cbc:ID>
+			<cbc:DocumentType>BEAST:MaterialTicketReference</cbc:DocumentType>
+		</cac:DocumentReference>
+		
 		<!-- end::referenceline[] -->
 
 		<!-- tag::item[] -->
@@ -504,14 +550,17 @@
 			</cac:StandardItemIdentification>
 		</cac:Item>
 		<!-- end::item[] -->
+		
 	</cac:DespatchLine>
 	<cac:DespatchLine>
 		<cbc:ID>2</cbc:ID>
+		
 		<!-- tag::quantity2[] -->
 		<cbc:DeliveredQuantity unitCode="EA">6</cbc:DeliveredQuantity>
 		<cbc:OutstandingQuantity unitCode="EA">0</cbc:OutstandingQuantity>
 		<cbc:OutstandingReason>Out of stock</cbc:OutstandingReason>
 		<!-- end::quantity2[] -->
+		
 		<!-- tag::ref-orderline2[] -->
 		<cac:OrderLineReference>
 			<cbc:LineID>NA</cbc:LineID>
@@ -520,6 +569,7 @@
 			</cac:OrderReference>
 		</cac:OrderLineReference>
 		<!-- end::ref-orderline2[] -->
+		
 		<cac:Item>
 			<cbc:Name>Item456</cbc:Name>
 			<cac:SellersItemIdentification>
@@ -541,6 +591,7 @@
 				<cbc:HazardClassID>2.3</cbc:HazardClassID>
 			</cac:HazardousItem>
 			<!-- end::hazardous[] -->
+			
 			<!-- tag::serialid[] -->
 			<cac:ItemInstance>
 				<cbc:SerialID>OR250RHZ444</cbc:SerialID>
@@ -552,15 +603,18 @@
 				<cbc:SerialID>OR250RHZ4446</cbc:SerialID>
 			</cac:ItemInstance>
 			<!-- end::serialid[] -->
+			
 		</cac:Item>
 	</cac:DespatchLine>
 	<cac:DespatchLine>
 		<cbc:ID>3</cbc:ID>
+		
 		<!-- tag::quantity3[] -->
 		<cbc:DeliveredQuantity unitCode="EA">6</cbc:DeliveredQuantity>
 		<cbc:OutstandingQuantity unitCode="EA">3</cbc:OutstandingQuantity>
 		<cbc:OutstandingReason>Production error</cbc:OutstandingReason>
 		<!-- end::quantity3[] -->
+		
 		<cac:OrderLineReference>
 			<cbc:LineID>NA</cbc:LineID>
 			<cac:OrderReference>
@@ -591,6 +645,14 @@
 				<cbc:ValueQuantity unitCode="C62">10.00</cbc:ValueQuantity>
 				<cbc:ValueQualifier>CON</cbc:ValueQualifier>
 			</cac:AdditionalItemProperty>
+
+			<!-- The item is rented, not purchased. -->
+			<cac:AdditionalItemProperty>
+				<cbc:Name>NA</cbc:Name>
+				<cbc:NameCode listID="BEAST:4.0">Rental</cbc:NameCode>
+				<cbc:Value>true</cbc:Value>
+			</cac:AdditionalItemProperty>
+			
 			<!-- end::itemproperty[] -->
 			
 			<!-- tag::lotid[] -->
