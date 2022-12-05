@@ -1,16 +1,16 @@
-[[use-case-2---simple-despatch-with-outstanding-quantity.]]
-== Use case 2 - Simple Despatch with outstanding quantity.
+[[use-case-2-Transport-of-goods]]
+== Use case 2 – Service, transport of goods
 
-This use case is a simple Despatch where there are no transport handling units, but an outstanding quantity on line level.
-There are various examples on use of the outstanding quantity and outstanding reason There are four parties (legal entities) in this use case.
-
+This is a simple use case based on the recommended requirements for a Despatch Advice regarding a delivery of services between two locations.
 [cols="1,5",options="header",]
 |====
 |*Use Case number* |2
-|*Use Case Name* |Simple Despatch with outstanding quantity
-|*Use Case Description* |This use case is a simple Despatch where there are no transport handling units, but an outstanding quantity on line level.
-There are various examples on use of the outstanding quantity and the outstanding reason.
-There are four parties (legal entities) in this use case.
+|*Use Case Name* |Transport of goods, just the service
+|*Use Case Description* a|
+Describes a complete process whereby a Despatch party generates a Despatch Advice based on information about the service provided between two locations, e.g. transport of goods or snow plowing.
+
+The Despatch Advice enables the service provider to give detailed information about the service provided between the specified locations once the service has been delivered. Which enables a Buyer to reconcile, or confirm, the services provided against the order.
+
 |*Parties involved* a|
 Buyer (In UBL: BuyerCustomerParty)
 
@@ -18,43 +18,41 @@ Seller (In UBL: SellerSupplierParty)
 
 Despatch party (In UBL: DespatchSupplierParty) (Different legal entity than the Seller in this use case)
 
-Consignee party (In UBL: DeliveryCustomerParty) (Different legal entity than the Buyer in this use case)
+Consignee party (In UBL: DeliveryCustomerParty) (Different legal entity than the Buyer in this use case) Originating party (In UBL: OriginatorCustomerParty)
+
+|*Pre conditions* a|
+Services are delivered before Despatch Advice is sent. 
+
+|*Post conditions* a|
+Despatch advice is received by the receiver of the services.
 
 |*Assumptions* a|
-1.  The Seller has received one order from the Buyer with
-a.  5 lines (5 different items)
-b.   To be delivered at one delivery address
-c.  At the same time.
-2.  The Seller has accepted the order without changes.
-3.  The Seller can’t deliver the complete order as accepted.
-4.  The first line contains the ordered quantity
-5.  The second line contains a delivery of 6 of 10 ordered items.
-The remaining 4 items will be delivered in another Despatch.
-6.  The third line contains a delivery of 6 of 10 ordered items.
-The remaining 4 items will not be delivered.
-7.  The fourth line contains a delivery of 6 of 10 items.
-3 items will be delivered in another Despatch and 1 item will not be delivered.
-8.  The fifth line contains a delivery of 12 of 10 ordered items.
+. The Seller has received one order from the Buyer with one (1) article to be provided between two locations, e.g transport of goods between locations A and B. 
+. The Seller has accepted the order without changes.
+. The Despatch party delivers the complete order as accepted
+
 
 |*The flow* a|
-1.  The Seller collects the ordered items
-2.  The Seller loads the articles in boxes
-3.  The Despatch party creates a Despatch advice message
-4.  The Despatch party sends Despatch advice message to the Customer
-5.  The Consignee party receives the Despatch advice message
-6.  The Consignee party uses the content in Despatch advice message for registration receipt.
-a.  Five Despatch lines with different articles, but a part of the articles related to line 2-5 is either outstanding or can’t be delivered at all. (No handling units in the message)
+. The Seller arange delivery of agreed services.
+. The Despatch party deliver agreed services.
+. The Despatch party sends Despatch advice message to the Consignee
+. The Consignee party receives the Despatch advice message
+. The Consignee party uses the content in the Despatch advice message for confirmation of delivery.
+
 
 |*Result* a|
-1.  The Despatch advice message helped the Consignee party to prepare receipt
-a.  At the right time
-b.  At the right place (address)
-2.  The Despatch advice message helped the Consignee party in the process of register receipt to identify the
-a.  Order
-b.  The order lines
-c.  The items
-d.  The delivered quantity
-e.  The outstanding quantity to be delivered at a later time
-f.  The outstanding quantity which will never be delivered
+. The Despatch advice message helped the Consignee party to confirm delivery.
+.. At the right time
+.. At the right location
+..(At the correct price)
 
+. The Despatch advice message helped the Consignee party in the process of confirming delvery to identify the
+.. Order
+.. The order lines
+.. The articles
+.. The delivered quantity of services
+
+
+|*XML example file* a|
+See Appendix A for a sample file illustrating Use Case 5.
 |====
