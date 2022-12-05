@@ -320,11 +320,11 @@
 			<xsl:choose>
 				<xsl:when test="./processing-instruction('Description')">
 					<Description>
-						<xsl:text>Logistics: </xsl:text>
+						<!--xsl:text>Logistics: </xsl:text-->
 						<xsl:value-of select="./processing-instruction('Description')"/>
 					</Description>
 				</xsl:when>
-				<xsl:when test="./processing-instruction('DescriptionAddFirst')">
+				<!--xsl:when test="./processing-instruction('DescriptionAddFirst')">
 					<Description>
 						<xsl:text>Logistics: </xsl:text>
 						<xsl:value-of select="./processing-instruction('DescriptionAddFirst')"/>
@@ -339,10 +339,10 @@
 						<xsl:text>&#xa;Logistics: </xsl:text>
 						<xsl:value-of select="./processing-instruction('DescriptionAddLast')"/>
 					</Description>
-				</xsl:when>
+				</xsl:when-->
 				<xsl:when test="$varUblElement/nsPep:Element/nsPep:Description != ''">
 					<Description>
-						<xsl:text>Peppol: </xsl:text>
+						<!--xsl:text>Peppol: </xsl:text-->
 						<xsl:value-of select="$varUblElement/nsPep:Element/nsPep:Description"/>
 					</Description>
 				</xsl:when>
