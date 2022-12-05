@@ -36,7 +36,7 @@
 		<?DescriptionAddFirst Used for Transport Information (T6008). ?>
 	</cbc:Note>
 	<cac:OrderReference>
-		<cbc:ID>AEG012345		
+		<cbc:ID>AEG0123456		
 			<?DescriptionAddFirst T3309/T6335, Order Number/Call Off Reference. Attribute schemeID can be used to send Project Number (T6004) or Customers' Reference (T6005).
 			Default is Order Number so if schemeID is missing the number in the element is Order Number as per Peppol global BIS.
 			ProjectRefereces is used for Project Number only.
@@ -513,18 +513,18 @@
 				<?Name Transport Mode Code. ?>
 				<?Description Added by Logistics. Must be a value in UNECERec19.) ?>
 				<?Cardinality 1..1?>
-				<?Codelist UNECERec19?>
+				<?CodeList UNECERec19?>
 			</cbc:TransportModeCode>
+			<cbc:TransportMeansTypeCode>
+				<?Name Transport Means Type Code.?>
+				<?Description Added by Logistics. The means of transport used in this shipment stage.?>
+				<?Cardinality 0..1?>
+				<?CodeList UNECERec28?>
+			</cbc:TransportMeansTypeCode>
 			<cac:TransportMeans>
 				<?Name Transport Means.?>
 				<?Description Added by Logistics. A code signifying the type of this means of transport (truck, vessel, etc.) used in this shipment stage.?>
 				<?Cardinality 0..1?>
-				<cbc:TransportMeansTypeCode>
-				<?Name Transport MeansType Code.?>
-				<?Description Added by Logistics. The means of transport used in this shipment stage.?>
-				<?Cardinality 0..1?>
-				<?Codelist UNECERec28?>
-				</cbc:TransportMeansTypeCode>
 				<cac:AirTransport>
 					<?Name AirTransport.?>
 					<?Description Added by Logistics. An aircraft used in this shipment stage.?>
@@ -899,7 +899,7 @@
 				<?Cardinality 0..1?>
 				<cbc:AttributeID>TC
 					<?Name Measurement Attribute ID. ?>
-					<?CodeList UNCL6313-T120?>
+					<?CodeList UNCL6313?>
 					<?Description Added by Logistics. To describe the type of messure that in this context is the minimal temperature. ?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
@@ -914,7 +914,7 @@
 				<?Cardinality 0..1?>
 				<cbc:AttributeID>TC
 					<?Name Measurement Attribute ID. ?>
-					<?CodeList UNCL6313-T120?>
+					<?CodeList UNCL6313?>
 					<?Description Added by Logistics. To describe the type of messure that in this context is the maximal temperature. ?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
@@ -1198,7 +1198,7 @@
 				<?Name DocumentTypeCode ?>
 				<?Description Added by Logistics. Identifies the type of document or item. ?>
 				<?Cardinality 0..1?>
-                <?Codelist UNCL1001?>
+                <?CodeList UNCL1001?>
 			</cbc:DocumentTypeCode>
 			<cbc:DocumentType>Letter Of Credit                
                 <?Name Document Type . ?>
@@ -1271,7 +1271,7 @@
 			<cac:HazardousItem>
 				<cbc:UNDGCode>ADR
 					<?DescriptionAddFirst Dangerous Goods Code (T0169) ?>
-					<?Codelist UNCL8273?>
+					<?CodeList UNCL8273?>
 				</cbc:UNDGCode>
 				<cbc:HazardClassID>Code
 					<?DescriptionAddFirst Dangerous Goods, Hazard Code (T0263) ?>
