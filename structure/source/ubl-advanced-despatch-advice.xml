@@ -94,6 +94,7 @@
 			</cbc:EndpointID>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">7300010000001
+					<?schemeID-Name Scheme identifier?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
@@ -223,16 +224,16 @@
 			<cac:PostalAddress>
 				<cbc:StreetName>Avon Way</cbc:StreetName>
 				<cbc:AdditionalStreetName>way 2
-					<?DescriptionAddFirst Not used in Logistics version 3.1.  ?>
+					<?DescriptionAddFirst Not used in Logistics version 3.1. ?>
 				</cbc:AdditionalStreetName>
 				<cbc:CityName>Bridgtow</cbc:CityName>
 				<cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
 				<cbc:CountrySubentity>Avon
-					<?DescriptionAddFirst Not used in Logistics version 3.1.  ?>
+					<?DescriptionAddFirst Not used in Logistics version 3.1. ?>
 				</cbc:CountrySubentity>
 				<cac:AddressLine>
 					<cbc:Line>3rd Floor, Room 5
-						<?DescriptionAddFirst Not used in Logistics version 3.1.  ?>
+						<?DescriptionAddFirst Not used in Logistics version 3.1. ?>
 					</cbc:Line>
 				</cac:AddressLine>
 				<cac:Country>
@@ -272,10 +273,12 @@
 				<?Cardinality 0..1?>
 			</cbc:HazardousRiskIndicator>
 			<cbc:HandlingCode>EBM
+				<?Name Handling code ?>
 				<?Description Added by Logistics. The handling required for this shipment, expressed as a code..?>
 				<?Cardinality 0..1?>
 			</cbc:HandlingCode>
 			<cbc:HandlingInstructions>Keep the Container Carefully Closed
+				<?Name Handling instructions ?>
 				<?Description Added by Logistics The handling required for this consignment, expressed as text.?>
 				<?Cardinality 0..1?>
 			</cbc:HandlingInstructions>
@@ -406,20 +409,20 @@
 					</cac:GoodsItem>
 				</cac:TransportEquipment>
 				<cac:EnvironmentalEmission>
-					<?Name Environmental Emission ?>
+					<?Name Environmental emission ?>
 					<?Description Added by Logistics. To report the emissions. ?>
 					<?Cardinality 0..n?>
 					<cbc:EnvironmentalEmissionTypeCode listID="UN785" name="Carbon Dioxide">CO2
-						<?Name Environmental Emission Type Code ?>
+						<?Name Environmental emission type code ?>
 						<?Description Added by Logistics. Defines the type of emission reported. Values: "CO2" (Carbon Dioxide), NOX (Nitrogen Oxide), PM (Particulate Matter), HC (Hydro Carbon). ?>
 						<?Cardinality 1..1?>
 						<?listID-usage Optional?>
 						<?name-usage Optional?>
 					</cbc:EnvironmentalEmissionTypeCode>
 					<cbc:ValueMeasure unitCode="MGM">10
-						<?Name Value of Measurement ?>
+						<?Name Value of measurement ?>
 						<?unitCode-CodeList UNECERec20?>
-						<?Description Added by Logistics. The value of the emission. Refers  to Carbon Dioxide (T6375)/Nitrogen Oxide (T6376)/Particulate Matter (T6377)/Hydro Carbon (T6378). ?>
+						<?Description Added by Logistics. The value of the emission. Refers to Carbon Dioxide (T6375)/Nitrogen Oxide (T6376)/Particulate Matter (T6377)/Hydro Carbon (T6378). ?>
 						<?Cardinality 1..1?>
 					</cbc:ValueMeasure>
 				</cac:EnvironmentalEmission>
@@ -430,60 +433,64 @@
 			<?Description Added by Logistics. The shipment stage for the last mile of the delivery ?>
 			<?Cardinality 0..1?>
 			<cbc:TransportModeCode>3			
-				<?Name Transport Mode Code ?>
-				<?Description Added by Logistics. Must be a value in UNECERec19.) ?>
+				<?Name Transport mode code ?>
+				<?Description Added by Logistics. Must be a value in UNECERec19. ?>
 				<?Cardinality 1..1?>
 				<?CodeList UNECERec19?>
 			</cbc:TransportModeCode>
 			<cbc:TransportMeansTypeCode>
-				<?Name Transport Means Type Code ?>
+				<?Name Transport means type code ?>
 				<?Description Added by Logistics. The means of transport used in this shipment stage.?>
 				<?Cardinality 0..1?>
 				<?CodeList UNECERec28?>
 			</cbc:TransportMeansTypeCode>
 			<cac:TransportMeans>
-				<?Name Transport Means ?>
+				<?Name Transport means ?>
 				<?Description Added by Logistics. A code signifying the type of this means of transport (truck, vessel, etc.) used in this shipment stage.?>
 				<?Cardinality 0..1?>
 				<cac:AirTransport>
-					<?Name AirTransport ?>
+					<?Name Air transport ?>
 					<?Description Added by Logistics. An aircraft used in this shipment stage.?>
 					<?Cardinality 0..1?>
 					<cbc:AircraftID>
-						<?Name AirTransport identifier ?>
+						<?Name Air transport identifier ?>
 						<?Description Added by Logistics. An identifer for a specific aircraft.?>
 						<?Cardinality 1..1?>
 					</cbc:AircraftID>
 				</cac:AirTransport>
 				<cac:RoadTransport>
-					<?Name Road Transport ?>
+					<?Name Road transport ?>
 					<?Description Added by Logistics. Description of a truck or a vehicle transporting the goods. Use only if Transport mode code is set to road transport?>
 					<?Cardinality 0..1?>
 					<cbc:LicensePlateID>DF10958
+						<?Name License plate identifier transport ?>
 						<?Description Added by Logistics. The licence plate(s) identifying the vehicle seperated by semicolon if there are more than one?>
 						<?Cardinality 1..1?>
 					</cbc:LicensePlateID>
 				</cac:RoadTransport>
 				<cac:RailTransport>
-					<?Name RailTransport ?>
+					<?Name Rail transport ?>
 					<?Description Added by Logistics. Equipment used for rail transport in this shipment stage.?>
 					<?Cardinality 0..1?>
 					<cbc:TrainID>
+						<?Name Train identifier ?>
 						<?Description Added by Logistics. An identifier for the train used as the means of transport.?>
 						<?Cardinality 1..1?>
 					</cbc:TrainID>
 					<cbc:RailCarID>
+						<?Name Rail car identifier ?>
 						<?Description Added by Logistics. An identifier for the rail car on the train used as the means of transport..?>
 						<?Cardinality 0..1?>
 					</cbc:RailCarID>
 				</cac:RailTransport>
 				<cac:MaritimeTransport>
 					<?Name Maritime Transport ?>
-					<?Description Added by Logistics. Description of a truck or a vehicle transporting the goods. Use only if Transport mode code is set to maritime transport?>
+					<?Description Added by Logistics. Description of a truck or a vehicle transporting the goods. Use only if TransportModeCode is set to maritime transport. ?>
 					<?Cardinality 0..1?>
 					<cbc:VesselID>wrt34663
-					  <?Description Added by Logistics. The registred identifier of the vessel?>
-					  <?Cardinality 1..1?>
+						<?Name Vessel identifier ?>
+						<?Description Added by Logistics. The registred identifier of the vessel?>
+						<?Cardinality 1..1?>
 					</cbc:VesselID>
 				</cac:MaritimeTransport>
 			</cac:TransportMeans>
@@ -673,7 +680,7 @@
 			</cac:Despatch>
 			<cac:DeliveryTerms>
 				<?Cardinality 0..1?>
-				<?Description Added by Logistics.  ?>
+				<?Description Added by Logistics. ?>
 				<?Name Delivery terms ?>
 				<cbc:ID>EXW
 					<?Name Delivery terms ?>
@@ -687,7 +694,7 @@
 				</cbc:SpecialTerms>
 				<cac:DeliveryLocation>
 					<?Name Delivery terms location ?>
-					<?Description Added by Logistics.  ?>
+					<?Description Added by Logistics. ?>
 					<?Cardinality 0..1?>
 					<cbc:ID>Kalmar
 						<?Name Delivery terms location ?>
@@ -1109,13 +1116,13 @@
 				<?Name DocumentTypeCode ?>
 				<?Description Added by Logistics. Identifies the type of document or item. ?>
 				<?Cardinality 0..1?>
-                <?CodeList UNCL1001?>
+				<?CodeList UNCL1001?>
 			</cbc:DocumentTypeCode>
-			<cbc:DocumentType>Letter Of Credit                
-                <?Name Document Type ?>
-                <?Description Added by Logistics. The type of reference that cannot be specified by a code ?>
-                <?Cardinality 0..1?>
-            </cbc:DocumentType>
+			<cbc:DocumentType>Letter Of Credit 
+				<?Name Document Type ?>
+				<?Description Added by Logistics. The type of reference that cannot be specified by a code ?>
+				<?Cardinality 0..1?>
+			</cbc:DocumentType>
 			<cac:Attachment>
 				<?Name Attachment ?>
 				<?Cardinality 0..1?>
@@ -1212,7 +1219,7 @@
 				<cac:PartyIdentification>
 					<?Name Party identification ?>
 					<cbc:ID schemeID="0088">5790000435951
-					<?Description Id for the manufacturer party (T6001 or T6223).  ?>
+					<?Description Id for the manufacturer party (T6001 or T6223). ?>
 					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 					</cbc:ID>
