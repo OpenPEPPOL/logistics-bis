@@ -255,6 +255,8 @@
 			<?Name Declared statistics value amount ?>
 			<?Description The total declared value for customs purposes of those goods in this shipment that are subject to the same customs procedure and have the same tariff/statistical heading, country information, and duty regime.?>
 			<?Cardinality 0..1?>
+			<?currencyID-Name Currency identifier ?>
+			<?currencyID-Description Currency identifier.?>
 		</cbc:DeclaredStatisticsValueAmount>
 		<cac:Consignment>
 			<cbc:ID>NA
@@ -332,9 +334,11 @@
 						</cbc:AttributeID>
 						<cbc:Measure unitCode="KGM">123
 							<?Name Measure ?>
-							<?unitCode-CodeList UNECERec20?>
 							<?Description The measured value. Used for EnergyContent, ConversionFactor, FuelConsumption, DrivingDistance, DrivingTime and RenewableFuel. unitCode refers to T6706. ?>
 							<?Cardinality 0..1?>
+							<?unitCode-Name Measure unit of measure ?>
+							<?unitCode-Description The unit of measure that applies to measure. ?>
+							<?unitCode-CodeList UNECERec20?>
 						</cbc:Measure>
 						<cbc:Description>StandardEstimate
 							<?Name Attribute value ?>
@@ -838,29 +842,32 @@
 				<?Description A Goods item contained in the package.?>
 				<?Cardinality 0..n?>
 				<cbc:ID>2452344
-							<?Description An identifier for this goods item. Refering to the Despatch Line ?>
-							<?Cardinality 1..1?>
-					</cbc:ID>
+					<?Description An identifier for this goods item. Refering to the Despatch Line ?>
+					<?Cardinality 1..1?>
+				</cbc:ID>
 				<cbc:HazardousRiskIndicator>false
-							<?Name Hazardous risk indicator ?>
-							<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
-							<?Cardinality 0..1?>
-					</cbc:HazardousRiskIndicator>
+					<?Name Hazardous risk indicator ?>
+					<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+					<?Cardinality 0..1?>
+				</cbc:HazardousRiskIndicator>
 				<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
-							<?Name Declared statistics value amount ?>
-							<?Description The total declared value for customs purposes of the goods item. ?>
-							<?Cardinality 0..1?>
-					</cbc:DeclaredStatisticsValueAmount>
+					<?Name Declared statistics value amount ?>
+					<?Description The total declared value for customs purposes of the goods item. ?>
+					<?Cardinality 0..1?>
+					<?currencyID-Name Currency identifier ?>
+					<?currencyID-Description Currency identifier.?>
+				</cbc:DeclaredStatisticsValueAmount>
 				<cbc:Quantity unitCode="EA">6
-							<?Description he number of units making up this goods item. ?>
-							<?Cardinality 1..1?>
-					</cbc:Quantity>
+					<?Description The number of units making up this goods item. ?>
+					<?Cardinality 1..1?>
+				</cbc:Quantity>
 				<cbc:TraceID schemeID="sgtin">345699634527
-							<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
-							<?Cardinality 0..1?>
-							<?schemeID-Name Scheme identifier?>
-							<?schemeID-usage Optional?>
-					</cbc:TraceID>
+					<?Name Trace identifier ?>
+					<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
+					<?Cardinality 0..1?>
+					<?schemeID-Name Scheme identifier?>
+					<?schemeID-usage Optional?>
+				</cbc:TraceID>
 			</cac:GoodsItem>
 			<cac:Package>
 				<?Name Containing package ?>
@@ -935,28 +942,31 @@
 							<?Description A Goods item contained in the package.?>
 							<?Cardinality 0..n?>
 							<cbc:ID>2452344
-									<?Description An identifier for this goods item. Refering to the Despatch Line ?>
-									<?Cardinality 1..1?>
+								<?Description An identifier for this goods item. Refering to the Despatch Line ?>
+								<?Cardinality 1..1?>
 							</cbc:ID>
 							<cbc:HazardousRiskIndicator>false
-									<?Name Hazardous risk indicator ?>
-									<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
-									<?Cardinality 0..1?>
+								<?Name Hazardous risk indicator ?>
+								<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+								<?Cardinality 0..1?>
 							</cbc:HazardousRiskIndicator>
 							<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
-									<?Name Declared statistics value amount ?>
-									<?Description The total declared value for customs purposes of the goods item. ?>
-									<?Cardinality 0..1?>
+								<?Name Declared statistics value amount ?>
+								<?Description The total declared value for customs purposes of the goods item. ?>
+								<?Cardinality 0..1?>
+								<?currencyID-Name Currency identifier ?>
+								<?currencyID-Description Currency identifier.?>
 							</cbc:DeclaredStatisticsValueAmount>
 							<cbc:Quantity unitCode="EA">6
-									<?Description he number of units making up this goods item. ?>
-									<?Cardinality 1..1?>
+								<?Description The number of units making up this goods item. ?>
+								<?Cardinality 1..1?>
 							</cbc:Quantity>
 							<cbc:TraceID schemeID="urn:epc:sgid">345699634527
-									<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
-									<?Cardinality 0..1?>
-									<?schemeID-Name Scheme identifier?>
-									<?schemeID-usage Optional?>
+								<?Name Trace identifier ?>
+								<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
+								<?Cardinality 0..1?>
+								<?schemeID-Name Scheme identifier?>
+								<?schemeID-usage Optional?>
 							</cbc:TraceID>
 						</cac:GoodsItem>
 						<cac:MeasurementDimension>
@@ -994,12 +1004,15 @@
 							<?Name Declared statistics value amount ?>
 							<?Description The total declared value for customs purposes of the goods item. ?>
 							<?Cardinality 0..1?>
+							<?currencyID-Name Currency identifier ?>
+							<?currencyID-Description Currency identifier.?>
 						</cbc:DeclaredStatisticsValueAmount>
 						<cbc:Quantity unitCode="EA">6
-							<?Description he number of units making up this goods item. ?>
+							<?Description The number of units making up this goods item. ?>
 							<?Cardinality 1..1?>
 						</cbc:Quantity>
 						<cbc:TraceID schemeID="urn:epc:sgid">345699634527
+							<?Name Trace identifier ?>
 							<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
 							<?schemeID-Name Scheme identifier?>
@@ -1029,28 +1042,31 @@
 					<?Description A Goods item contained in the package.?>
 					<?Cardinality 0..n?>
 					<cbc:ID>2452344
-							<?Description An identifier for this goods item. Refering to the Despatch Line ?>
-							<?Cardinality 1..1?>
+						<?Description An identifier for this goods item. Refering to the Despatch Line ?>
+						<?Cardinality 1..1?>
 					</cbc:ID>
 					<cbc:HazardousRiskIndicator>false
-							<?Name Hazardous risk indicator ?>
-							<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
-							<?Cardinality 0..1?>
+						<?Name Hazardous risk indicator ?>
+						<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+						<?Cardinality 0..1?>
 					</cbc:HazardousRiskIndicator>
 					<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
 						<?Name Declared statistics value amount ?>
 						<?Description The total declared value for customs purposes of the goods item. ?>
 						<?Cardinality 0..1?>
+						<?currencyID-Name Currency identifier ?>
+						<?currencyID-Description Currency identifier.?>
 					</cbc:DeclaredStatisticsValueAmount>
 					<cbc:Quantity unitCode="EA">6
-							<?Description he number of units making up this goods item. ?>
-							<?Cardinality 1..1?>
+						<?Description The number of units making up this goods item. ?>
+						<?Cardinality 1..1?>
 					</cbc:Quantity>
 					<cbc:TraceID schemeID="urn:epc:sgid">345699634527
-							<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
-							<?Cardinality 0..1?>
-							<?schemeID-Name Scheme identifier?>
-							<?schemeID-usage Optional?>
+						<?Name Trace identifier ?>
+						<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
+						<?Cardinality 0..1?>
+						<?schemeID-Name Scheme identifier?>
+						<?schemeID-usage Optional?>
 					</cbc:TraceID>
 				</cac:GoodsItem>
 				<cac:MeasurementDimension>
@@ -1065,9 +1081,11 @@
 					</cbc:AttributeID>
 					<cbc:Measure unitCode="MTR">123
 						<?Name Measure ?>
-						<?unitCode-CodeList UNECERec20?>
 						<?Description For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
 						<?Cardinality 1..1?>
+						<?unitCode-CodeList UNECERec20?>
+						<?unitCode-Name Measure unit of measure ?>
+						<?unitCode-Description The unit of measure that applies to measure. ?>
 					</cbc:Measure>
 				</cac:MeasurementDimension>
 			</cac:Package>
@@ -1358,9 +1376,11 @@
 				</cbc:AttributeID>
 				<cbc:Measure unitCode="MTR">123
 					<?Name Measure ?>
-					<?unitCode-CodeList UNECERec20?>
 					<?Description For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
 					<?Cardinality 1..1?>
+					<?unitCode-CodeList UNECERec20?>
+					<?unitCode-Name Measure unit of measure ?>
+					<?unitCode-Description The unit of measure that applies to measure. ?>
 				</cbc:Measure>
 			</cac:Dimension>
 		</cac:Item>
