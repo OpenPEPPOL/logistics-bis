@@ -28,12 +28,13 @@
 		<?DescriptionAddFirst T6325, Document Date/Time. ?>
 	</cbc:IssueTime>
 	<cbc:DespatchAdviceTypeCode>
+		<?Name Despatch advice type code ?>
 		<?Description A code signifying the type of the Despatch Advice.?>
 		<?Cardinality 0..1?>
 		<?CodeList DespatchAdviceTypeCode?>
 	</cbc:DespatchAdviceTypeCode>
 	<cbc:Note>Text
-		<?Description textual note for the dispatch as whole. Used for Transport Information (T6008). ?>
+		<?Description A textual note for the dispatch as whole. Used for Transport Information. ?>
 	</cbc:Note>
 	<cac:OrderReference>
 		<cbc:ID>AEG0123456		
@@ -86,7 +87,7 @@
 		</cac:Attachment>
 	</cac:AdditionalDocumentReference>
 	<cac:DespatchSupplierParty>
-		<?DescriptionAddFirst This party defines the company that provides the goods or the service. It also defines the sender of the Despatch Advice. The real Ship-from Address must be provided in the Despatch Address when the Despatch Advice describes a movement. ?>
+		<?DescriptionAddFirst This party defines the company that provides the goods or the service. It also defines the sender of the DespatchAdvice. The real Ship-from Address must be provided in the Despatch Address when the Despatch Advice describes a movement. ?>
 		<cac:Party>
 			<cbc:EndpointID schemeID="0088">7300010000001
 				<?schemeID-usage Mandatory?>
@@ -240,7 +241,7 @@
 	</cac:OriginatorCustomerParty>
 	<cac:Shipment>
 		<cbc:ID>1
-			<?DescriptionAddFirst T6127, Freight forwarder's referens number ?>
+			<?Description Identifies a shipment. Freight forwarder's reference number. ?>
 		</cbc:ID>
 		<cbc:Information>text
 			<?DescriptionAddFirst Used by Logistics for Supplier Remark (T6038). ?>
@@ -575,25 +576,31 @@
 							<?Cardinality 1..1?>
 						</cbc:CoordinateSystemCode>
 						<cbc:LatitudeDegreesMeasure unitCode="DD">59.331660358041425
-							<?Name Latitude degrees measure ?>
-							<?unitCode-usage Mandatory?>
-							<?unitCode-CodeList UNECERec20?>
-							<?unitCode-Rule PEPPOL-T16-B11002?>
+							<?Name Latitude degrees ?>
 							<?Description The X coordinate (T6324). Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
-						</cbc:LatitudeDegreesMeasure>
-						<cbc:LongitudeDegreesMeasure unitCode="DD">18.063363084988005
-							<?Name Longitude degrees measure ?>
+							<?unitCode-Name Latitude degrees unit of measure ?>
+							<?unitCode-Description The unit of measure that applies to the latitude degrees. ?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
 							<?unitCode-Rule PEPPOL-T16-B11002?>
+						</cbc:LatitudeDegreesMeasure>
+						<cbc:LongitudeDegreesMeasure unitCode="DD">18.063363084988005
+							<?Name Longitude degrees ?>
 							<?Description The Y coordinate (T6325). Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
+							<?unitCode-Name Longitude degrees unit of measure ?>
+							<?unitCode-Description The unit of measure that applies to the longitude degrees. ?>
+							<?unitCode-usage Mandatory?>
+							<?unitCode-CodeList UNECERec20?>
+							<?unitCode-Rule PEPPOL-T16-B11002?>
 						</cbc:LongitudeDegreesMeasure>
 						<cbc:AltitudeMeasure unitCode="MTR">12.5
-							<?Name Altitude measure ?>
+							<?Name Altitude ?>
 							<?Description The Z coordinate (T6424). ?>
 							<?Cardinality 0..1?>
+							<?unitCode-Name Altitude unit of measure ?>
+							<?unitCode-Description The unit of measure that applies to altitude. ?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
 							<?unitCode-Rule PEPPOL-T16-B11002?>
@@ -642,28 +649,34 @@
 							<?Cardinality 1..1?>
 						</cbc:CoordinateSystemCode>
 						<cbc:LatitudeDegreesMeasure unitCode="DD">59.33169866504851
-							<?Name Latitude degrees measure ?>
+							<?Name Latitude degrees ?>
 							<?Description The X coordinate (T6323). Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
 							<?unitCode-Rule PEPPOL-T16-B11002?>
+							<?unitCode-Name Latitude degrees unit of measure ?>
+							<?unitCode-Description The unit of measure that applies to the latitude degrees. ?>
 						</cbc:LatitudeDegreesMeasure>
 						<cbc:LongitudeDegreesMeasure unitCode="DD">18.063330898492403
-							<?Name Longitude degrees measure ?>
+							<?Name Longitude degrees  ?>
 							<?Description The Y coordinate (T6324). Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
 							<?unitCode-Rule PEPPOL-T16-B11002?>
+							<?unitCode-Name Longitude degrees unit of measure ?>
+							<?unitCode-Description The unit of measure that applies to the longitude degrees. ?>
 						</cbc:LongitudeDegreesMeasure>
 						<cbc:AltitudeMeasure unitCode="MTR">12.5
-							<?Name Altitude measure ?>
+							<?Name Altitude ?>
 							<?Description The Z coordinate (T6424). ?>
 							<?Cardinality 0..1?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
 							<?unitCode-Rule PEPPOL-T16-B11002?>
+							<?unitCode-Name Altitude unit of measure ?>
+							<?unitCode-Description The unit of measure that applies to altitude. ?>
 						</cbc:AltitudeMeasure>
 					</cac:LocationCoordinate>
 				</cac:DespatchAddress>
@@ -1117,9 +1130,13 @@
 				<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">
 					aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==
 					<?Name Embedded binary object ?>
-					<?mimeCode-CodeList MimeCode?>
 					<?Cardinality 0..1?>
 					<?Description The referenced document can here be inserted as a binary object (T6475). filename refers to T6476. ?>
+					<?mimeCode-Name Attached document Mime code ?>
+					<?mimeCode-Description The mime code of the attached document. ?>
+					<?mimeCode-CodeList MimeCode?>
+					<?filename-Name Attached document filename ?>
+					<?filename-Description The file name of the attached document. ?>
 				</cbc:EmbeddedDocumentBinaryObject>
 				<cac:ExternalReference>
 					<?Name External reference ?>
@@ -1273,7 +1290,8 @@
 					<?Name Party name ?>
 					<?Cardinality 0..1?>
 					<cbc:RegistrationName>Consortial
-						<?Description Party Name (T5001) ?>
+						<?Name Manufacturer party name ?>
+						<?Description The name of the manufacturing party. ?>
 					</cbc:RegistrationName>
 				</cac:PartyLegalEntity>
 			</cac:ManufacturerParty>
