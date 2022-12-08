@@ -28,12 +28,12 @@
 		<?DescriptionAddFirst T6325, Document Date/Time. ?>
 	</cbc:IssueTime>
 	<cbc:DespatchAdviceTypeCode>
-		<?Description Added by Logistics. A code signifying the type of the Despatch Advice.?>
+		<?Description A code signifying the type of the Despatch Advice.?>
 		<?Cardinality 0..1?>
 		<?CodeList DespatchAdviceTypeCode?>
 	</cbc:DespatchAdviceTypeCode>
 	<cbc:Note>Text
-		<?DescriptionAddFirst Used for Transport Information (T6008). ?>
+		<?Description textual note for the dispatch as whole. Used for Transport Information (T6008). ?>
 	</cbc:Note>
 	<cac:OrderReference>
 		<cbc:ID>AEG0123456		
@@ -46,41 +46,41 @@
 	</cac:OrderReference>
 	<cac:AdditionalDocumentReference>
 		<?Name Additional document reference ?>
-		<?Description Added by Logistics. Reference to additional documents relevant for this Despatch advice. Can be used for additional BEAst information on header level. ?>
+		<?Description Reference to additional documents relevant for this Despatch advice. Can be used for additional BEAst information on header level. ?>
 		<?Cardinality 0..n?>
 		<cbc:ID>7648779
 			<?Name Identity of the reference ?>
-			<?Description Added by Logistics. The reference number of added document?>
+			<?Description The reference number of added document?>
 		</cbc:ID>
 		<cbc:DocumentTypeCode>380
-			<?Name Document Type Code ?>
-			<?Description Added by Logistics. The type of reference. Must me part of UNCL1001 ?>
+			<?Name Document type code ?>
+			<?Description The type of reference. Must me part of UNCL1001 ?>
 			<?Cardinality 0..1?>
 			<?CodeList UNCL1001?>
 		</cbc:DocumentTypeCode>
 		<cbc:DocumentType>BEAST:FreightPayersCustomerNumber
-			<?Name Document Type ?>
-			<?Description Added by Logistics. The type of reference that cannot be specified by a code ?>
+			<?Name Document type ?>
+			<?Description The type of reference that cannot be specified by a code ?>
 			<?Cardinality 0..1?>
 		</cbc:DocumentType>
 		<cac:Attachment>
 			<?Name Attachment ?>
 			<?Cardinality 0..1?>
-			<?Description Added by Logistics. Group to describe an attached document. An attachment can refer to an external document or be included with the document being exchanged. ?>
+			<?Description Group to describe an attached document. An attachment can refer to an external document or be included with the document being exchanged. ?>
 			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">
 				aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==
-				<?Name Embedded Binary object ?>
+				<?Name Embedded binary object ?>
 				<?Cardinality 0..1?>
 				<?mimeCode-CodeList MimeCode?>
-				<?Description Added by Logistics. The referenced document can here be inserted as a binary object (T6475). filename refers to T6476. ?>
+				<?Description The referenced document can here be inserted as a binary object (T6475). filename refers to T6476. ?>
 			</cbc:EmbeddedDocumentBinaryObject>
 			<cac:ExternalReference>
-				<?Name External Reference ?>
-				<?Description Added by Logistics. A reference to an attached document that is external to the document(s) being exchanged. ?>
+				<?Name External reference ?>
+				<?Description A reference to an attached document that is external to the document(s) being exchanged. ?>
 				<?Cardinality 0..1?>
 				<cbc:URI>www.beast.se
 					<?Name Address to internet resource ?>
-					<?Description Added by Logistics. The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource (T6187). ?>
+					<?Description The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource (T6187). ?>
 				</cbc:URI>
 			</cac:ExternalReference>
 		</cac:Attachment>
@@ -104,10 +104,7 @@
 				<cbc:PostalZone>AA99 1BB</cbc:PostalZone>
 				<cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
 				<cac:AddressLine>
-					<cbc:Line>The Roundabout
-						<?Name Address line 3 ?>
-						<?DescriptionAddFirst An additional address line in an address that can be used to give further details supplementing the main line. ?>
-					</cbc:Line>
+					<cbc:Line>The Roundabout</cbc:Line>
 				</cac:AddressLine>
 				<cac:Country>
 					<cbc:IdentificationCode>GB</cbc:IdentificationCode>
@@ -209,7 +206,7 @@
 		</cac:Party>
 	</cac:SellerSupplierParty>
 	<cac:OriginatorCustomerParty>
-		<?DescriptionAddFirst For 3PL shipments, this party defines the final receiver of the goods. ?>
+		<?Description For 3PL shipments, this party defines the final receiver of the goods. ?>
 		<cac:Party>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">5790000435951
@@ -248,18 +245,14 @@
 		<cbc:Information>text
 			<?DescriptionAddFirst Used by Logistics for Supplier Remark (T6038). ?>
 		</cbc:Information>
-		<cbc:GrossWeightMeasure unitCode="KGM">1
-			<?DescriptionAddFirst Total Gross Weight (T6472) ?>
-		</cbc:GrossWeightMeasure>
-		<cbc:GrossVolumeMeasure unitCode="MTQ">1
-			<?DescriptionAddFirst Total Gross Volume (T6494) ?>
-		</cbc:GrossVolumeMeasure>
+		<cbc:GrossWeightMeasure unitCode="KGM">1</cbc:GrossWeightMeasure>
+		<cbc:GrossVolumeMeasure unitCode="MTQ">1</cbc:GrossVolumeMeasure>
 		<cbc:TotalTransportHandlingUnitQuantity>3
-			<?DescriptionAddFirst Not used in Logistics version 3.1 ?>
+			<?Description Not used in Logistics version 3.1 ?>
 		</cbc:TotalTransportHandlingUnitQuantity>
 		<cbc:DeclaredStatisticsValueAmount currencyID="SEK">34000.45
 			<?Name Declared statistics value amount ?>
-			<?Description Added by Logistics. The total declared value for customs purposes of those goods in this shipment that are subject to the same customs procedure and have the same tariff/statistical heading, country information, and duty regime.?>
+			<?Description The total declared value for customs purposes of those goods in this shipment that are subject to the same customs procedure and have the same tariff/statistical heading, country information, and duty regime.?>
 			<?Cardinality 0..1?>
 		</cbc:DeclaredStatisticsValueAmount>
 		<cac:Consignment>
@@ -267,28 +260,28 @@
 				<?DescriptionAddFirst Use a dummy value since this element is mandatory. ?>				
 			</cbc:ID>
 			<cbc:HazardousRiskIndicator>false
-				<?Name Hazardous Risk Indicator ?>
-				<?DescriptionAddFirst Added by Losticst. An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).?>
+				<?Name Hazardous risk indicator ?>
+				<?Description An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).?>
 				<?Cardinality 0..1?>
 			</cbc:HazardousRiskIndicator>
 			<cbc:HandlingCode>EBM
 				<?Name Handling code ?>
-				<?Description Added by Logistics. The handling required for this shipment, expressed as a code..?>
+				<?Description The handling required for this shipment, expressed as a code..?>
 				<?Cardinality 0..1?>
 			</cbc:HandlingCode>
 			<cbc:HandlingInstructions>Keep the Container Carefully Closed
 				<?Name Handling instructions ?>
-				<?Description Added by Logistics The handling required for this consignment, expressed as text.?>
+				<?Description The handling required for this consignment, expressed as text.?>
 				<?Cardinality 0..1?>
 			</cbc:HandlingInstructions>
 			<cac:CarrierParty>
 				<cac:PartyIdentification>
-					<?Name Party Identification ?>
-					<?Description Added by Logistics. This party defines the company providing the transport service ?>
+					<?Name Party identification ?>
+					<?Description This party defines the company providing the transport service ?>
 					<?Cardinality 0..1?>
 					<cbc:ID schemeID="0088">5790000435951
 						<?Name Carrying party identifier ?>
-						<?Description Added by Logistics. Identifies the Carrier party (T3208). ?>
+						<?Description Identifies the Carrier party (T3208). ?>
 						<?schemeID-usage Optional?>
 						<?schemeID-CodeList ICD?>
 					</cbc:ID>
@@ -304,61 +297,61 @@
 				</cac:Person>
 			</cac:CarrierParty>
 			<cac:OriginalDespatchTransportationService>
-				<?Name Original Despatch Transportation Service ?>
-				<?Description Added by Logistics. Used to specify Fuel consumption and Environmental Emission. ?>
+				<?Name Original despatch transportation service ?>
+				<?Description Used to specify Fuel consumption and Environmental Emission. ?>
 				<?Cardinality 0..1?>
 				<cbc:TransportServiceCode>FuelReport
-					<?Name Tranport Service Code ?>
-					<?Description Added by Logistics. Use "FuelReport" since this element is mandatory. ?>
+					<?Name Tranport service code ?>
+					<?Description Use "FuelReport" since this element is mandatory. ?>
 					<?Cardinality 1..1?>
 				</cbc:TransportServiceCode>
 				<cac:TransportEquipment>
-					<?Name Transport Equipment ?>
-					<?Description Added by Logistics. Used to specify fuel consumption. To be repeated for all fuel types used. ?>
+					<?Name Transport equipment ?>
+					<?Description Used to specify fuel consumption. To be repeated for all fuel types used. ?>
 					<?Cardinality 0..n?>
 					<cbc:TransportEquipmentTypeCode>Diesel
-						<?Name Tranport Equipment Type Code ?>
-						<?Description Added by Logistics. Product Group Name (T0012). ?>
+						<?Name Tranport equipment type code ?>
+						<?Description Product Group Name (T0012). ?>
 						<?Cardinality 0..1?>
 						<?CodeList UNCL8053?>
 					</cbc:TransportEquipmentTypeCode>
 					<cbc:Description>Forrest diesel mix
 						<?Name Description ?>
-						<?Description Added by Logistics. Fuel description (T6226). ?>
+						<?Description Fuel description (T6226). ?>
 						<?Cardinality 0..1?>
 					</cbc:Description>
 					<cac:MeasurementDimension>
 						<?Name Fuel measurements ?>
-						<?Description Added by Logistics. Used to specify information about the fuel and fuel consumption. ?>
+						<?Description Used to specify information about the fuel and fuel consumption. ?>
 						<?Cardinality 0..n?>
 						<cbc:AttributeID>FuelConsumption
-							<?Name Attribute ID ?>
-							<?Description Added by Logistics. To define the type of measurement. EnergyContent = T6428, ConversionFactor = T6429, FuelConsumption = T6374, DrivingDistance = T6380, DrivingTime = T6381, FuelMeasurementMethod = T6728, EngineType = T6379, RenewableFuel = T6382. ?>
+							<?Name Attribute identifier ?>
+							<?Description To define the type of measurement. EnergyContent = T6428, ConversionFactor = T6429, FuelConsumption = T6374, DrivingDistance = T6380, DrivingTime = T6381, FuelMeasurementMethod = T6728, EngineType = T6379, RenewableFuel = T6382. ?>
 							<?Cardinality 1..1?>
 						</cbc:AttributeID>
 						<cbc:Measure unitCode="KGM">123
 							<?Name Measure ?>
 							<?unitCode-CodeList UNECERec20?>
-							<?Description Added by Logistics. The measured value. Used for EnergyContent, ConversionFactor, FuelConsumption, DrivingDistance, DrivingTime and RenewableFuel. unitCode refers to T6706. ?>
+							<?Description The measured value. Used for EnergyContent, ConversionFactor, FuelConsumption, DrivingDistance, DrivingTime and RenewableFuel. unitCode refers to T6706. ?>
 							<?Cardinality 0..1?>
 						</cbc:Measure>
 						<cbc:Description>StandardEstimate
 							<?Name Attribute value ?>
-							<?Description Added by Logistics. Description of the attribute when there is no value to measure. Used for FuelMeasurementMethod and EngineType. Possible values are for FuelMeasurementMethod: "AutomaticMeasurement", "StandardEstimate", "ManualMeasurement" and for EngineType: "Euro2", "Euro3", "Euro4", "Euro5", "Euro6", "EuroStep2", "EuroStep3A", "EuroStep3B", "EuroStep4". ?>
+							<?Description Description of the attribute when there is no value to measure. Used for FuelMeasurementMethod and EngineType. Possible values are for FuelMeasurementMethod: "AutomaticMeasurement", "StandardEstimate", "ManualMeasurement" and for EngineType: "Euro2", "Euro3", "Euro4", "Euro5", "Euro6", "EuroStep2", "EuroStep3A", "EuroStep3B", "EuroStep4". ?>
 							<?Cardinality 0..1?>
 						</cbc:Description>
 					</cac:MeasurementDimension>
 					<cac:ProviderParty>
 						<?Name Provider party ?>
-						<?Description Added by Logistics. To define the fuel supplier. ?>
+						<?Description To define the fuel supplier. ?>
 						<?Cardinality 0..1?>
 						<cac:PartyIdentification>
-							<?Name Party Identification ?>
-							<?Description Added by Logistics. To identify the fuel supplier. ?>
+							<?Name Party identification ?>
+							<?Description To identify the fuel supplier. ?>
 							<?Cardinality 0..1?>
 							<cbc:ID schemeID="0088">7300010000001
 								<?Name Identity of the fuel supplier ?>
-								<?Description Added by Logistics. The fuel supplier (T6001). ?>
+								<?Description The fuel supplier (T6001). ?>
 								<?Cardinality 0..1?>
 								<?schemeID-Name Scheme identifier?>
 								<?schemeID-usage Optional?>
@@ -366,41 +359,41 @@
 							</cbc:ID>
 						</cac:PartyIdentification>
 						<cac:PartyName>
-							<?Name Party Name ?>
-							<?Description Added by Logistics. The name of the fuel supplier (T6427). ?>
+							<?Name Party name ?>
+							<?Description The name of the fuel supplier (T6427). ?>
 							<?Cardinality 0..1?>
 							<cbc:Name>Preem
 								<?Name Name of the fuel supplier ?>
-								<?Description Added by Logistics. The fuel supplier. ?>
+								<?Description The fuel supplier. ?>
 								<?Cardinality 0..1?>
 							</cbc:Name>
 						</cac:PartyName>
 					</cac:ProviderParty>
 					<cac:GoodsItem>
-						<?Name Goods Item ?>
-						<?Description Added by Logistics. Used to specify the type of fuel. ?>
+						<?Name Goods item ?>
+						<?Description Used to specify the type of fuel. ?>
 						<?Cardinality 0..1?>
 						<cac:Item>
 							<?Name Item ?>
-							<?Description Added by Logistics. Used to specify the type of fuel. ?>
+							<?Description Used to specify the type of fuel. ?>
 							<?Cardinality 0..1?>
 							<cac:SellersItemIdentification>
-								<?Name Seller's Item Identification ?>
-								<?Description Added by Logistics. Used to specify the type of fuel. ?>
+								<?Name Seller's item identification ?>
+								<?Description Used to specify the type of fuel. ?>
 								<?Cardinality 0..1?>
 								<cbc:ID>123
 									<?Name Supplier's identity of the fuel ?>
-									<?Description Added by Logistics. The fuel article number (T0172). ?>
+									<?Description The fuel article number (T0172). ?>
 									<?Cardinality 1..1?>
 								</cbc:ID>
 							</cac:SellersItemIdentification>
 							<cac:StandardItemIdentification>
-								<?Name Standard Item Identification ?>
-								<?Description Added by Logistics. Only one Standard Item Number can be used. Specify the type of standard in schemeID. ?>
+								<?Name Standard item identification ?>
+								<?Description Only one Standard Item Number can be used. Specify the type of standard in schemeID. ?>
 								<?Cardinality 0..1?>
 								<cbc:ID schemeID="0160">1234567891234
 									<?Name Standard article identity of the fuel ?>
-									<?Description Added by Logistics. The fuel article number (T0172). The schemeID refers to the Article Number Type (T6317). ?>
+									<?Description The fuel article number (T0172). The schemeID refers to the Article Number Type (T6317). ?>
 									<?Cardinality 1..1?>
 									<?schemeID-Name Scheme identifier?>									
 									<?schemeID-CodeList ICD?>
@@ -411,11 +404,11 @@
 				</cac:TransportEquipment>
 				<cac:EnvironmentalEmission>
 					<?Name Environmental emission ?>
-					<?Description Added by Logistics. To report the emissions. ?>
+					<?Description To report the emissions. ?>
 					<?Cardinality 0..n?>
 					<cbc:EnvironmentalEmissionTypeCode listID="UN785" name="Carbon Dioxide">CO2
 						<?Name Environmental emission type code ?>
-						<?Description Added by Logistics. Defines the type of emission reported. Values: "CO2" (Carbon Dioxide), NOX (Nitrogen Oxide), PM (Particulate Matter), HC (Hydro Carbon). ?>
+						<?Description Defines the type of emission reported. Values: "CO2" (Carbon Dioxide), NOX (Nitrogen Oxide), PM (Particulate Matter), HC (Hydro Carbon). ?>
 						<?Cardinality 1..1?>
 						<?listID-usage Optional?>
 						<?name-usage Optional?>
@@ -423,74 +416,74 @@
 					<cbc:ValueMeasure unitCode="MGM">10
 						<?Name Value of measurement ?>
 						<?unitCode-CodeList UNECERec20?>
-						<?Description Added by Logistics. The value of the emission. Refers to Carbon Dioxide (T6375)/Nitrogen Oxide (T6376)/Particulate Matter (T6377)/Hydro Carbon (T6378). ?>
+						<?Description The value of the emission. Refers to Carbon Dioxide (T6375)/Nitrogen Oxide (T6376)/Particulate Matter (T6377)/Hydro Carbon (T6378). ?>
 						<?Cardinality 1..1?>
 					</cbc:ValueMeasure>
 				</cac:EnvironmentalEmission>
 			</cac:OriginalDespatchTransportationService>
 		</cac:Consignment>
 		<cac:ShipmentStage>
-			<?Name Shipment Stage ?>
-			<?Description Added by Logistics. The shipment stage for the last mile of the delivery ?>
+			<?Name Shipment stage ?>
+			<?Description The shipment stage for the last mile of the delivery ?>
 			<?Cardinality 0..1?>
 			<cbc:TransportModeCode>3			
 				<?Name Transport mode code ?>
-				<?Description Added by Logistics. Must be a value in UNECERec19. ?>
+				<?Description Must be a value in UNECERec19. ?>
 				<?Cardinality 1..1?>
 				<?CodeList UNECERec19?>
 			</cbc:TransportModeCode>
 			<cbc:TransportMeansTypeCode>
 				<?Name Transport means type code ?>
-				<?Description Added by Logistics. The means of transport used in this shipment stage.?>
+				<?Description The means of transport used in this shipment stage.?>
 				<?Cardinality 0..1?>
 				<?CodeList UNECERec28?>
 			</cbc:TransportMeansTypeCode>
 			<cac:TransportMeans>
 				<?Name Transport means ?>
-				<?Description Added by Logistics. A code signifying the type of this means of transport (truck, vessel, etc.) used in this shipment stage.?>
+				<?Description A code signifying the type of this means of transport (truck, vessel, etc.) used in this shipment stage.?>
 				<?Cardinality 0..1?>
 				<cac:AirTransport>
 					<?Name Air transport ?>
-					<?Description Added by Logistics. An aircraft used in this shipment stage.?>
+					<?Description An aircraft used in this shipment stage.?>
 					<?Cardinality 0..1?>
 					<cbc:AircraftID>
 						<?Name Air transport identifier ?>
-						<?Description Added by Logistics. An identifer for a specific aircraft.?>
+						<?Description An identifer for a specific aircraft.?>
 						<?Cardinality 1..1?>
 					</cbc:AircraftID>
 				</cac:AirTransport>
 				<cac:RoadTransport>
 					<?Name Road transport ?>
-					<?Description Added by Logistics. Description of a truck or a vehicle transporting the goods. Use only if Transport mode code is set to road transport?>
+					<?Description Description of a truck or a vehicle transporting the goods. Use only if Transport mode code is set to road transport?>
 					<?Cardinality 0..1?>
 					<cbc:LicensePlateID>DF10958
 						<?Name License plate identifier transport ?>
-						<?Description Added by Logistics. The licence plate(s) identifying the vehicle seperated by semicolon if there are more than one?>
+						<?Description The licence plate(s) identifying the vehicle seperated by semicolon if there are more than one?>
 						<?Cardinality 1..1?>
 					</cbc:LicensePlateID>
 				</cac:RoadTransport>
 				<cac:RailTransport>
 					<?Name Rail transport ?>
-					<?Description Added by Logistics. Equipment used for rail transport in this shipment stage.?>
+					<?Description Equipment used for rail transport in this shipment stage.?>
 					<?Cardinality 0..1?>
 					<cbc:TrainID>
 						<?Name Train identifier ?>
-						<?Description Added by Logistics. An identifier for the train used as the means of transport.?>
+						<?Description An identifier for the train used as the means of transport.?>
 						<?Cardinality 1..1?>
 					</cbc:TrainID>
 					<cbc:RailCarID>
 						<?Name Rail car identifier ?>
-						<?Description Added by Logistics. An identifier for the rail car on the train used as the means of transport..?>
+						<?Description An identifier for the rail car on the train used as the means of transport..?>
 						<?Cardinality 0..1?>
 					</cbc:RailCarID>
 				</cac:RailTransport>
 				<cac:MaritimeTransport>
-					<?Name Maritime Transport ?>
-					<?Description Added by Logistics. Description of a truck or a vehicle transporting the goods. Use only if TransportModeCode is set to maritime transport. ?>
+					<?Name Maritime transport ?>
+					<?Description Description of a truck or a vehicle transporting the goods. Use only if TransportModeCode is set to maritime transport. ?>
 					<?Cardinality 0..1?>
 					<cbc:VesselID>wrt34663
 						<?Name Vessel identifier ?>
-						<?Description Added by Logistics. The registred identifier of the vessel?>
+						<?Description The registred identifier of the vessel?>
 						<?Cardinality 1..1?>
 					</cbc:VesselID>
 				</cac:MaritimeTransport>
@@ -498,113 +491,108 @@
 		</cac:ShipmentStage>
 		<cac:Delivery>
 			<cbc:ActualDeliveryDate>2022-10-03
-				<?Name Actual Delivery Date ?>
-				<?Description Added by Logistics. The actual date of delivery.?>
+				<?Name Actual delivery date ?>
+				<?Description The actual date of delivery.?>
 				<?Cardinality 0..1?>				
 			</cbc:ActualDeliveryDate>
 			<cbc:ActualDeliveryTime>12:56:00
-				<?Name Actual Delivery Time ?>
-				<?Description Added by Logistics. The actual time of delivery. Requires that actual delivery date os defined.?>
+				<?Name Actual delivery time ?>
+				<?Description The actual time of delivery. Requires that actual delivery date os defined.?>
 				<?Cardinality 0..1?>		
 			</cbc:ActualDeliveryTime>
-			<cbc:TrackingID>
-				456789
-				<?DescriptionAddFirst Tracking URL (T6737) ?>
-			</cbc:TrackingID>
+			<cbc:TrackingID>456789</cbc:TrackingID>
 			<cac:DeliveryLocation>
-				<?Name Delivery Location ?>
-				<?Description Added by Logistics. The Delivery Location is used to define the Ship-to when the Delivery Customer Party is not . When the Despatch Advice describes a movement, the Delivery Location should always be included. When the Despatch Advice describes a service given at a location, the Delivery Location describes this location. ?>
+				<?Name Delivery location ?>
+				<?Description The Delivery Location is used to define the Ship-to when the Delivery Customer Party is not . When the Despatch Advice describes a movement, the Delivery Location should always be included. When the Despatch Advice describes a service given at a location, the Delivery Location describes this location. ?>
 				<?Cardinality 0..1?>
 				<cbc:ID schemeID="0088">5790000435951
-					<?Name Identity of the Delivery Location ?>
-					<?Description Added by Logistics. Identifies the Delivery Location (T0036). ?>
+					<?Name Identity of the delivery location ?>
+					<?Description Identifies the Delivery Location (T0036). ?>
 					<?schemeID-Name Scheme identifier?>
 					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 				<cbc:Name>Name
-					<?Name Name of the Consignee ?>
-					<?Description Added by Logistics. The name of the Consignee (T5001). ?>
+					<?Name Name of the consignee ?>
+					<?Description The name of the Consignee (T5001). ?>
 					<?Cardinality 0..1?>
 				</cbc:Name>
 				<cac:Address>
-					<?Name Postal Address of Consignee ?>
-					<?Description Added by Logistics. Postal Address. ?>
+					<?Name Postal address of consignee ?>
+					<?Description Postal Address. ?>
 					<?Cardinality 0..1?>
 					<cbc:StreetName>Avon Way
-						<?Name Street Name for Consignee ?>
+						<?Name Address line 1 ?>
 						<?Cardinality 0..1?>
-						<?Description Added by Logistics. Street name (T5003). ?>
+						<?Description The main address line in a postal address usually the street name and number. ?>
 					</cbc:StreetName>
 					<cbc:AdditionalStreetName>Purchasing
-						<?Name Additional Street Name for Consignee ?>
+						<?Name Address line 2 ?>
 						<?Cardinality 0..1?>
-						<?Description Added by Logistics. Used for Department (T5002). ?>
+						<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
 					</cbc:AdditionalStreetName>
 					<cbc:CityName>Bridgtow
-						<?Name City Name for Consignee ?>
+						<?Name City ?>
 						<?Cardinality 0..1?>
-						<?Description Added by Logistics. Name of city (T5005). ?>
+						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
 					</cbc:CityName>
 					<cbc:PostalZone>ZZ99 1ZZ
-						<?Name Postal Zone for Consignee ?>
+						<?Name Post code ?>
 						<?Cardinality 0..1?>
-						<?Description Added by Logistics. Zip-code (T6117). ?>
+						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
 					</cbc:PostalZone>
 					<cbc:CountrySubentity>Avon
-						<?Name Country SubEntity for Consignee ?>
+						<?Name Country subdivision ?>
 						<?Cardinality 0..1?>
-						<?Description Added by Logistics. Country Sub-entity. ?>
+						<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
 					</cbc:CountrySubentity>
 					<cac:AddressLine>
-						<?Name Address Line for delivery location ?>
+						<?Name Address line ?>
 						<?Cardinality 0..1?>
-						<?Description Added by Logistics. ?>
 						<cbc:Line>3rd Floor, Room 5
-							<?Name Address Line for Consignee ?>
+							<?Name Address line 3 ?>
 							<?Cardinality 0..1?>
-							<?Description Added by Logistics. Used for any other additional address information like Building (T5004). ?>
+							<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
 						</cbc:Line>
 					</cac:AddressLine>
 					<cac:Country>
 						<?Name Country ?>
 						<?Cardinality 0..1?>
-						<?Description Added by Logistics. Country. ?>
 						<cbc:IdentificationCode>GB
 							<?Name Country code ?>
 							<?Cardinality 0..1?>
 							<?CodeList ISO3166?>
-							<?Description Added by Logistics. Country code (T5007). ?>
+							<?Description A code that identifies the country.The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 						</cbc:IdentificationCode>
 					</cac:Country>
 					<cac:LocationCoordinate>
-						<?Name Location Coordinate ?>
-						<?Description Added by Logistics. To specify the coordinates. ?>
+						<?Name Location coordinate ?>
+						<?Description To specify the coordinates. ?>
 						<?Cardinality 0..1?>
 						<cbc:CoordinateSystemCode>EPSG:3857
-							<?Name Coordinate System Code ?>
-							<?Description Added by Logistics. Always "EPSG:3857" by definition. ?>
+							<?Name Coordinate system code ?>
+							<?Description Always "EPSG:3857" by definition. ?>
 							<?Cardinality 1..1?>
 						</cbc:CoordinateSystemCode>
 						<cbc:LatitudeDegreesMeasure unitCode="DD">59.331660358041425
-							<?Name Latitude Degrees Measure ?>
+							<?Name Latitude degrees measure ?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
 							<?unitCode-Rule PEPPOL-T16-B11002?>
-							<?Description Added by Logistics. The X coordinate (T6324). Use degrees with decimals. ?>
+							<?Description The X coordinate (T6324). Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
 						</cbc:LatitudeDegreesMeasure>
 						<cbc:LongitudeDegreesMeasure unitCode="DD">18.063363084988005
-							<?Name Longitude Degrees Measure ?>
+							<?Name Longitude degrees measure ?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
 							<?unitCode-Rule PEPPOL-T16-B11002?>
-							<?Description Added by Logistics. The Y coordinate (T6325). Use degrees with decimals. ?>
+							<?Description The Y coordinate (T6325). Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
 						</cbc:LongitudeDegreesMeasure>
 						<cbc:AltitudeMeasure unitCode="MTR">12.5
-							<?Name Altitude Measure ?>
-							<?Description Added by Logistics. The Z coordinate (T6424). ?>
+							<?Name Altitude measure ?>
+							<?Description The Z coordinate (T6424). ?>
 							<?Cardinality 0..1?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
@@ -646,16 +634,16 @@
 					</cac:Country>
 					<cac:LocationCoordinate>
 						<?Name Location coordinate ?>
-						<?Description Added by Logistics. To specify the coordinates. ?>
+						<?Description To specify the coordinates. ?>
 						<?Cardinality 0..1?>
 						<cbc:CoordinateSystemCode>EPSG:3857
 							<?Name Coordinate system code ?>
-							<?Description Added by Logistics. Always "EPSG:3857" by definition. ?>
+							<?Description Always "EPSG:3857" by definition. ?>
 							<?Cardinality 1..1?>
 						</cbc:CoordinateSystemCode>
 						<cbc:LatitudeDegreesMeasure unitCode="DD">59.33169866504851
 							<?Name Latitude degrees measure ?>
-							<?Description Added by Logistics. The X coordinate (T6323). Use degrees with decimals. ?>
+							<?Description The X coordinate (T6323). Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
@@ -663,7 +651,7 @@
 						</cbc:LatitudeDegreesMeasure>
 						<cbc:LongitudeDegreesMeasure unitCode="DD">18.063330898492403
 							<?Name Longitude degrees measure ?>
-							<?Description Added by Logistics. The Y coordinate (T6324). Use degrees with decimals. ?>
+							<?Description The Y coordinate (T6324). Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
@@ -671,7 +659,7 @@
 						</cbc:LongitudeDegreesMeasure>
 						<cbc:AltitudeMeasure unitCode="MTR">12.5
 							<?Name Altitude measure ?>
-							<?Description Added by Logistics. The Z coordinate (T6424). ?>
+							<?Description The Z coordinate (T6424). ?>
 							<?Cardinality 0..1?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
@@ -682,25 +670,25 @@
 			</cac:Despatch>
 			<cac:DeliveryTerms>
 				<?Cardinality 0..1?>
-				<?Description Added by Logistics. ?>
+				<?Description ?>
 				<?Name Delivery terms ?>
 				<cbc:ID>EXW
 					<?Name Delivery terms ?>
-					<?Description Added by Logistics. Delivery Terms code (Inco terms) (T6710). ?>
+					<?Description Delivery Terms code (Inco terms) (T6710). ?>
 					<?Cardinality 0..1?>
 				</cbc:ID>
 				<cbc:SpecialTerms>EQN-06
 					<?Name Special terms ?>
-					<?Description Added by Logistics. Special delivery terms that exceeds the inco terms. ?>
+					<?Description Special delivery terms that exceeds the inco terms. ?>
 					<?Cardinality 0..1?>
 				</cbc:SpecialTerms>
 				<cac:DeliveryLocation>
 					<?Name Delivery terms location ?>
-					<?Description Added by Logistics. ?>
+					<?Description ?>
 					<?Cardinality 0..1?>
 					<cbc:ID>Kalmar
 						<?Name Delivery terms location ?>
-						<?Description Added by Logistics. Delivery Terms Location (T6020). The location to which the delivery terms refer. Used to qualify the delivery terms e.g. "Terms of delivery are FOB Rotterdam" ?>
+						<?Description Delivery Terms Location (T6020). The location to which the delivery terms refer. Used to qualify the delivery terms e.g. "Terms of delivery are FOB Rotterdam" ?>
 						<?Cardinality 1..1?>
 					</cbc:ID>
 				</cac:DeliveryLocation>
@@ -708,365 +696,364 @@
 		</cac:Delivery>
 		<cac:TransportHandlingUnit>
 			<?Name Transport handling unit ?>
-			<?Description Added by Logistics. Used to specify how the goods is packed. ?>
+			<?Description Used to specify how the goods is packed. ?>
 			<?Cardinality 0..n?>
 			<cbc:ID>11111222222222
-				<?Name ID ?>
-				<?Description Added by Logistics. The SSCC identification code of this Transport Handling Unit (T0138). ?>
+				<?Description The SSCC identification code of this Transport Handling Unit (T0138). ?>
 				<?Cardinality 1..1?>
 				<?schemeID-usage Optional?>
 			</cbc:ID>
 			<cbc:TransportHandlingUnitTypeCode>AG
-				<?Name Transport handling unit type code ?>
-				<?Description Added by Logistics. Type of Transport Handling Unit (T6119). Use UN/ECE Recommendation 21 with addition of the codes used by "Retursystem Byggpall". ?>
+				<?Name Handling unit type code ?>
+				<?Description Type of Transport Handling Unit (T6119). Use UN/ECE Recommendation 21 with addition of the codes used by "Retursystem Byggpall". ?>
 				<?Rule PEPPOL-T16-B11002?>
 				<?CodeList UNECERec20?>
 				<?Cardinality 1..1?>
 			</cbc:TransportHandlingUnitTypeCode>
 			<cbc:HandlingCode>CCC
 				<?Name Handling Code ?>
-				<?Description Added by Logistics. The handling for this transporthandling unit expressed as a code ?>
+				<?Description The handling for this transporthandling unit expressed as a code ?>
 				<?Cardinality 0..1?>
 			</cbc:HandlingCode>
 			<cbc:HandlingInstructions>To be set vertical
-				<?Name Handling Instructions ?>
-				<?Description Added by Logistics. The handling for this transporthandling unit expressed as a text ?>
+				<?Name Handling instructions ?>
+				<?Description The handling for this transporthandling unit expressed as a text ?>
 				<?Cardinality 0..1?>
 			</cbc:HandlingInstructions>
 			<cbc:HazardousRiskIndicator>false
 				<?Name Handling unit hazardous indicator ?>
-				<?Description Added by Logistics. An indicator that the materials contained in this transport handling unit are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+				<?Description An indicator that the materials contained in this transport handling unit are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 				<?Cardinality 0..1?>
 			</cbc:HazardousRiskIndicator>
 			<cbc:ShippingMarks>Keep dry
-				<?Name Shipping Marks ?>
-				<?Description Added by Logistics. Free-form description of the marks and numbers on this transport handling unit. ?>
+				<?Name Shipping marks ?>
+				<?Description Free-form description of the marks and numbers on this transport handling unit. ?>
 				<?Cardinality 0..1?>
 			</cbc:ShippingMarks>
 			<cac:TransportEquipment>
-				<?Name Transport Equipment ?>
-				<?Description Added by Logistics. Used to specify Transport Equipment details associated with the Transport Handling Unit. ?>
+				<?Name Transport equipment ?>
+				<?Description Used to specify Transport Equipment details associated with the Transport Handling Unit. ?>
 				<?Cardinality 0..n?>
 				<cbc:ID>34563444
-					<?Description Added by Logistics. An id for the physical transport equipment e.g. a container number. ?>
+					<?Description An id for the physical transport equipment e.g. a container number. ?>
 					<?Cardinality 1..1?>
 				</cbc:ID>
 				<cbc:TransportEquipmentTypeCode>AM
-					<?Description Added by Logistics. An code specifying the type of equipment. ?>
+					<?Description An code specifying the type of equipment. ?>
 					<?CodeList UNCL8053?>
 					<?Cardinality 0..1?>
 				</cbc:TransportEquipmentTypeCode>
 				<cbc:RefrigerationOnIndicator>true
-					<?Description Added by Logistics. An indicator that this piece of transport equipment's refrigeration is on (true) or off (false). ?>
+					<?Description An indicator that this piece of transport equipment's refrigeration is on (true) or off (false). ?>
 					<?Cardinality 0..1?>
 				</cbc:RefrigerationOnIndicator>
 				<cbc:Description>A 20 foot refrigerated container that is not actively controlling temperature of the product.
-					<?Description Added by Logistics. A textual description of the transport equipment. ?>
+					<?Description A textual description of the transport equipment. ?>
 					<?Cardinality 0..1?>
 				</cbc:Description>
 				<cbc:PowerIndicator>true
-					<?Description Added by Logistics. An indicator that this piece of transport equipment can supply power (true) or not (false). ?>
+					<?Description An indicator that this piece of transport equipment can supply power (true) or not (false). ?>
 					<?Cardinality 0..1?>
 				</cbc:PowerIndicator>
 				<cac:MeasurementDimension>
-					<?Name Measurement Dimension ?>
-					<?Description Added by Logistics. Used to specify any measurement of the Transport Equipment. ?>
+					<?Name Measurement dimension ?>
+					<?Description Used to specify any measurement of the Transport Equipment. ?>
 					<?Cardinality 0..n?>
 					<cbc:AttributeID>LN
-						<?Name Measurement Attribute ID ?>
+						<?Name Attribute identifier ?>
 						<?CodeList UNCL6313-T120?>
-						<?Description Added by Logistics. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
+						<?Description To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
 						<?Cardinality 1..1?>
 					</cbc:AttributeID>
 					<cbc:Measure unitCode="MTR">123
 						<?Name Measure ?>
 						<?unitCode-CodeList UNECERec20?>
-						<?Description Added by Logistics. For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
+						<?Description For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
 						<?Cardinality 1..1?>
 					</cbc:Measure>
 				</cac:MeasurementDimension>
 			</cac:TransportEquipment>
 			<cac:MeasurementDimension>
-				<?Name Measurement Dimension ?>
-				<?Description Added by Logistics. Used to specify any measurement of the Transport Handling Unit. ?>
+				<?Name Measurement dimension ?>
+				<?Description Used to specify any measurement of the Transport Handling Unit. ?>
 				<?Cardinality 0..n?>
 				<cbc:AttributeID>LN
-					<?Name Measurement Attribute ID ?>
+					<?Name Attribute identifier ?>
 					<?CodeList UNCL6313-T120?>
-					<?Description Added by Logistics. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
+					<?Description To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
 				<cbc:Measure unitCode="MTR">123
 					<?Name Measure ?>
 					<?unitCode-CodeList UNECERec20?>
-					<?Description Added by Logistics. For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
+					<?Description For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
 					<?Cardinality 1..1?>
 				</cbc:Measure>
 			</cac:MeasurementDimension>
 			<cac:MinimumTemperature>
-				<?Name Minimum Temperature ?>
-				<?Description Added by Logistics. Used to specify the minimal temperature for the transport handling unit under the transport. ?>
+				<?Name Minimum temperature ?>
+				<?Description Used to specify the minimal temperature for the transport handling unit under the transport. ?>
 				<?Cardinality 0..1?>
 				<cbc:AttributeID>TC
-					<?Name Measurement Attribute ID ?>
+					<?Name Attribute identifier ?>
 					<?CodeList UNCL6313?>
-					<?Description Added by Logistics. To describe the type of messure that in this context is the minimal temperature. ?>
+					<?Description To describe the type of messure that in this context is the minimal temperature. ?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
 				<cbc:Measure unitCode="CEL">-21
-				<?Description Added by Logistics. The value of the minimal temperature measurement. ?>
+				<?Description The value of the minimal temperature measurement. ?>
 				<?Cardinality 1..1?>	
 				</cbc:Measure>
 			</cac:MinimumTemperature>
 			<cac:MaximumTemperature>
-				<?Name Maximum Temperature ?>
-				<?Description Added by Logistics. Used to specify the maximum temperature for the transport handling unit under the transport. ?>
+				<?Name Maximum temperature ?>
+				<?Description Used to specify the maximum temperature for the transport handling unit under the transport. ?>
 				<?Cardinality 0..1?>
 				<cbc:AttributeID>TC
-					<?Name Measurement Attribute ID ?>
+					<?Name Attribute identifier ?>
 					<?CodeList UNCL6313?>
-					<?Description Added by Logistics. To describe the type of messure that in this context is the maximal temperature. ?>
+					<?Description To describe the type of messure that in this context is the maximal temperature. ?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
 				<cbc:Measure unitCode="CEL">-21
-				<?Description Added by Logistics. The value of the maximum temperature measurement. ?>
+				<?Description The value of the maximum temperature measurement. ?>
 				<?Cardinality 1..1?>	
 				</cbc:Measure>
 			</cac:MaximumTemperature>
 			<cac:GoodsItem>
-				<?Name Goods Item ?>
-				<?Description Added by Logistics. A Goods item contained in the package.?>
+				<?Name Goods item ?>
+				<?Description A Goods item contained in the package.?>
 				<?Cardinality 0..n?>
 				<cbc:ID>2452344
-							<?Description Added by Logistics. An identifier for this goods item. Refering to the Despatch Line ?>
+							<?Description An identifier for this goods item. Refering to the Despatch Line ?>
 							<?Cardinality 1..1?>
 					</cbc:ID>
 				<cbc:HazardousRiskIndicator>false
-							<?Name Hazardous Risk Indicator ?>
-							<?Description Added by Logistics. An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+							<?Name Hazardous risk indicator ?>
+							<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 							<?Cardinality 0..1?>
 					</cbc:HazardousRiskIndicator>
 				<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
 							<?Name Declared statistics value amount ?>
-							<?Description Added by Logistics. The total declared value for customs purposes of the goods item. ?>
+							<?Description The total declared value for customs purposes of the goods item. ?>
 							<?Cardinality 0..1?>
 					</cbc:DeclaredStatisticsValueAmount>
 				<cbc:Quantity unitCode="EA">6
-							<?Description Added by Logistics. he number of units making up this goods item. ?>
+							<?Description he number of units making up this goods item. ?>
 							<?Cardinality 1..1?>
 					</cbc:Quantity>
 				<cbc:TraceID schemeID="sgtin">345699634527
-							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
+							<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
 							<?schemeID-Name Scheme identifier?>
 							<?schemeID-usage Optional?>
 					</cbc:TraceID>
 			</cac:GoodsItem>
 			<cac:Package>
-				<?Name Containing Package ?>
-				<?Description Added by Logistics. A package contained in the Transport Handling Unit.?>
+				<?Name Containing package ?>
+				<?Description A package contained in the Transport Handling Unit.?>
 				<?Cardinality 0..n?>
 				<cbc:ID>3453
-					<?Description Added by Logistics. The Id of the package for instance a SSCC.?>
+					<?Description The Id of the package for instance a SSCC.?>
 					<?Cardinality 0..1?>
 					<?schemeID-usage Optional?>
 				</cbc:ID>
 				<cbc:ReturnableMaterialIndicator>true
-					<?Name Returnable Material Indicator ?>
-					<?Description Added by Logistics. An indicator that the packaging material is returnable (true) or not (false). ?>
+					<?Name Returnable material indicator ?>
+					<?Description An indicator that the packaging material is returnable (true) or not (false). ?>
 					<?Cardinality 0..1?>
 				</cbc:ReturnableMaterialIndicator>
 				<cbc:PackagingTypeCode>
-					<?Name Packaging Type Code ?>
-					<?Description Added by Logistics. A code signifying a level of packaging. ?>
+					<?Name Packaging type code ?>
+					<?Description A code signifying a level of packaging. ?>
 					<?CodeList UNECERec21?>
 					<?Cardinality 1..1?>
 				</cbc:PackagingTypeCode>
 				<cbc:PackingMaterial>Carbon box
-				<?Description Added by Logistics. Text describing the packaging material. ?>
+				<?Description Text describing the packaging material. ?>
 				<?Cardinality 0..1?>
 				</cbc:PackingMaterial>
 				<cac:ContainedPackage>
-					<?Name Containing Package ?>
-					<?Description Added by Logistics. A package contained in the Transport Handling Unit.?>
+					<?Name Containing package ?>
+					<?Description A package contained in the Transport Handling Unit.?>
 					<?Cardinality 0..n?>
 					<cbc:ID>3453
-					<?Description Added by Logistics. The Id of the package for instance a SSCC.?>
+					<?Description The Id of the package for instance a SSCC.?>
 					<?Cardinality 0..1?>
 					<?schemeID-usage Optional?>
 					</cbc:ID>
 					<cbc:ReturnableMaterialIndicator>true
-					<?Description Added by Logistics. An indicator that the packaging material is returnable (true) or not (false). ?>
+					<?Description An indicator that the packaging material is returnable (true) or not (false). ?>
 					<?Cardinality 0..1?>
 					</cbc:ReturnableMaterialIndicator>
 					<cbc:PackagingTypeCode>
-						<?Description Added by Logistics. A code signifying a level of packaging. ?>
+						<?Description A code signifying a level of packaging. ?>
 						<?CodeList UNECERec21?>
 						<?Cardinality 1..1?>
 					</cbc:PackagingTypeCode>
 					<cbc:PackingMaterial>Carbon box
-					<?Description Added by Logistics. Text describing the packaging material. ?>
+					<?Description Text describing the packaging material. ?>
 					<?Cardinality 0..1?>
 					</cbc:PackingMaterial>
 					<cac:ContainedPackage>
-						<?Name Containing Package ?>
-						<?Description Added by Logistics. A package contained in the Transport Handling Unit.?>
+						<?Name Containing package ?>
+						<?Description A package contained in the Transport Handling Unit.?>
 						<?Cardinality 0..n?>
 						<cbc:ID>3453
-							<?Description Added by Logistics. The Id of the package for instance a SSCC.?>
+							<?Description The Id of the package for instance a SSCC.?>
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
 						</cbc:ID>
 						<cbc:ReturnableMaterialIndicator>true
-							<?Description Added by Logistics. An indicator that the packaging material is returnable (true) or not (false). ?>
+							<?Description An indicator that the packaging material is returnable (true) or not (false). ?>
 							<?Cardinality 0..1?>
 						</cbc:ReturnableMaterialIndicator>
 						<cbc:PackagingTypeCode>
-							<?Description Added by Logistics. A code signifying a level of packaging. ?>
+							<?Description A code signifying a level of packaging. ?>
 							<?CodeList UNECERec21?>
 							<?Cardinality 1..1?>
 						</cbc:PackagingTypeCode>
 						<cbc:PackingMaterial>Carbon box
-							<?Description Added by Logistics. Text describing the packaging material. ?>
+							<?Description Text describing the packaging material. ?>
 							<?Cardinality 0..1?>
 						</cbc:PackingMaterial>
 						<cac:GoodsItem>
-							<?Name Goods Item ?>
-							<?Description Added by Logistics. A Goods item contained in the package.?>
+							<?Name Goods item ?>
+							<?Description A Goods item contained in the package.?>
 							<?Cardinality 0..n?>
 							<cbc:ID>2452344
-									<?Description Added by Logistics. An identifier for this goods item. Refering to the Despatch Line ?>
+									<?Description An identifier for this goods item. Refering to the Despatch Line ?>
 									<?Cardinality 1..1?>
 							</cbc:ID>
 							<cbc:HazardousRiskIndicator>false
-									<?Name Hazardous Risk Indicator ?>
-									<?Description Added by Logistics. An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+									<?Name Hazardous risk indicator ?>
+									<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 									<?Cardinality 0..1?>
 							</cbc:HazardousRiskIndicator>
 							<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
 									<?Name Declared statistics value amount ?>
-									<?Description Added by Logistics. The total declared value for customs purposes of the goods item. ?>
+									<?Description The total declared value for customs purposes of the goods item. ?>
 									<?Cardinality 0..1?>
 							</cbc:DeclaredStatisticsValueAmount>
 							<cbc:Quantity unitCode="EA">6
-									<?Description Added by Logistics. he number of units making up this goods item. ?>
+									<?Description he number of units making up this goods item. ?>
 									<?Cardinality 1..1?>
 							</cbc:Quantity>
 							<cbc:TraceID schemeID="urn:epc:sgid">345699634527
-									<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
+									<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 									<?Cardinality 0..1?>
 									<?schemeID-Name Scheme identifier?>
 									<?schemeID-usage Optional?>
 							</cbc:TraceID>
 						</cac:GoodsItem>
 						<cac:MeasurementDimension>
-							<?Name Measurement Dimension ?>
-							<?Description Added by Logistics. Used to specify any measurement of this Package ?>
+							<?Name Measurement dimension ?>
+							<?Description Used to specify any measurement of this Package ?>
 							<?Cardinality 0..n?>
 							<cbc:AttributeID>LN
-								<?Name Measurement Attribute ID ?>
+								<?Name Attribute identifier ?>
 								<?CodeList UNCL6313-T120?>
-								<?Description Added by Logistics. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
+								<?Description To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
 								<?Cardinality 1..1?>
 							</cbc:AttributeID>
 							<cbc:Measure unitCode="MTR">123
 								<?Name Measure ?>
 								<?unitCode-CodeList UNECERec20?>
-								<?Description Added by Logistics. For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
+								<?Description For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
 								<?Cardinality 1..1?>
 							</cbc:Measure>
 						</cac:MeasurementDimension>
 					</cac:ContainedPackage>
 					<cac:GoodsItem>
-						<?Name Goods Item ?>
-						<?Description Added by Logistics. A Goods item contained in the package.?>
+						<?Name Goods item ?>
+						<?Description A Goods item contained in the package.?>
 						<?Cardinality 0..n?>
 						<cbc:ID>2452344
-							<?Description Added by Logistics. An identifier for this goods item. Refering to the Despatch Line ?>
+							<?Description An identifier for this goods item. Refering to the Despatch Line ?>
 							<?Cardinality 1..1?>
 						</cbc:ID>
 						<cbc:HazardousRiskIndicator>false
-							<?Name Hazardous Risk Indicator ?>
-							<?Description Added by Logistics. An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+							<?Name Hazardous risk indicator ?>
+							<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 							<?Cardinality 0..1?>
 						</cbc:HazardousRiskIndicator>
 						<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
 							<?Name Declared statistics value amount ?>
-							<?Description Added by Logistics. The total declared value for customs purposes of the goods item. ?>
+							<?Description The total declared value for customs purposes of the goods item. ?>
 							<?Cardinality 0..1?>
 						</cbc:DeclaredStatisticsValueAmount>
 						<cbc:Quantity unitCode="EA">6
-							<?Description Added by Logistics. he number of units making up this goods item. ?>
+							<?Description he number of units making up this goods item. ?>
 							<?Cardinality 1..1?>
 						</cbc:Quantity>
 						<cbc:TraceID schemeID="urn:epc:sgid">345699634527
-							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
+							<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
 							<?schemeID-Name Scheme identifier?>
 							<?schemeID-usage Optional?>
 						</cbc:TraceID>
 					</cac:GoodsItem>
 					<cac:MeasurementDimension>
-						<?Name Measurement Dimension ?>
-						<?Description Added by Logistics. Used to specify any measurement of this Package ?>
+						<?Name Measurement dimension ?>
+						<?Description Used to specify any measurement of this Package ?>
 						<?Cardinality 0..n?>
 						<cbc:AttributeID>LN
-								<?Name Measurement Attribute ID ?>
+								<?Name Attribute identifier ?>
 								<?CodeList UNCL6313-T120?>
-								<?Description Added by Logistics. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
+								<?Description To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
 								<?Cardinality 1..1?>
 							</cbc:AttributeID>
 						<cbc:Measure unitCode="KGM">123
 								<?Name Measure ?>
 								<?unitCode-CodeList UNECERec20?>
-								<?Description Added by Logistics. For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
+								<?Description For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
 								<?Cardinality 1..1?>
 							</cbc:Measure>
 					</cac:MeasurementDimension>
 				</cac:ContainedPackage>
 				<cac:GoodsItem>
-					<?Name Goods Item ?>
-					<?Description Added by Logistics. A Goods item contained in the package.?>
+					<?Name Goods item ?>
+					<?Description A Goods item contained in the package.?>
 					<?Cardinality 0..n?>
 					<cbc:ID>2452344
-							<?Description Added by Logistics. An identifier for this goods item. Refering to the Despatch Line ?>
+							<?Description An identifier for this goods item. Refering to the Despatch Line ?>
 							<?Cardinality 1..1?>
 					</cbc:ID>
 					<cbc:HazardousRiskIndicator>false
-							<?Name Hazardous Risk Indicator ?>
-							<?Description Added by Logistics. An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+							<?Name Hazardous risk indicator ?>
+							<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 							<?Cardinality 0..1?>
 					</cbc:HazardousRiskIndicator>
 					<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
 						<?Name Declared statistics value amount ?>
-						<?Description Added by Logistics. The total declared value for customs purposes of the goods item. ?>
+						<?Description The total declared value for customs purposes of the goods item. ?>
 						<?Cardinality 0..1?>
 					</cbc:DeclaredStatisticsValueAmount>
 					<cbc:Quantity unitCode="EA">6
-							<?Description Added by Logistics. he number of units making up this goods item. ?>
+							<?Description he number of units making up this goods item. ?>
 							<?Cardinality 1..1?>
 					</cbc:Quantity>
 					<cbc:TraceID schemeID="urn:epc:sgid">345699634527
-							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
+							<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
 							<?schemeID-Name Scheme identifier?>
 							<?schemeID-usage Optional?>
 					</cbc:TraceID>
 				</cac:GoodsItem>
 				<cac:MeasurementDimension>
-					<?Name Measurement Dimension ?>
-					<?Description Added by Logistics. Used to specify any measurement of this Package ?>
+					<?Name Measurement dimension ?>
+					<?Description Used to specify any measurement of this Package ?>
 					<?Cardinality 0..n?>
 					<cbc:AttributeID>LN
-						<?Name Measurement Attribute ID ?>
+						<?Name Attribute identifier ?>
 						<?CodeList UNCL6313-T120?>
-						<?Description Added by Logistics. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
+						<?Description To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
 						<?Cardinality 1..1?>
 					</cbc:AttributeID>
 					<cbc:Measure unitCode="MTR">123
 						<?Name Measure ?>
 						<?unitCode-CodeList UNECERec20?>
-						<?Description Added by Logistics. For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
+						<?Description For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
 						<?Cardinality 1..1?>
 					</cbc:Measure>
 				</cac:MeasurementDimension>
@@ -1074,79 +1061,73 @@
 		</cac:TransportHandlingUnit>
 	</cac:Shipment>
 	<cac:DespatchLine>
-		<cbc:ID>1
-			<?DescriptionAddFirst Line Number (T0051) ?>
-		</cbc:ID>
-		<cbc:Note>Mrs Green agreed to waive charge
-			<?DescriptionAddFirst Transportation Information (T6008) ?>
-		</cbc:Note>
+		<cbc:ID>1</cbc:ID>
+		<cbc:Note>Mrs Green agreed to waive charge</cbc:Note>
 		<cbc:DeliveredQuantity unitCode="C62">10
 			<?DescriptionAddFirst Delivered Quantity (T0070)/Despatched Quantity (T0131). unitCode refers to T6706 ?>
 		</cbc:DeliveredQuantity>
 		<cbc:OutstandingQuantity unitCode="C62">2
 			<?DescriptionAddFirst Backordered Quantity (T0059). unitCode refers to T6706 ?>
 		</cbc:OutstandingQuantity>
-		<cbc:OutstandingReason>text
-			<?DescriptionAddFirst Change Reason Description (T6220) ?>
-		</cbc:OutstandingReason>
+		<cbc:OutstandingReason>Text</cbc:OutstandingReason>
 		<cac:OrderLineReference>
 			<cbc:LineID>1
 				<?DescriptionAddFirst Calloff Line Reference (T6336)/Reference to Order Line (T3322) ?>
 			</cbc:LineID>
 			<cbc:SalesOrderLineID>10
-				<?Name Sales Order Line number ?>
+				<?Name Sales order line number ?>
 				<?Cardinality 0..1?>
-				<?Description Added by Logistics. Reference to the sellers orderline number (T6462). ?>
+				<?Description Reference to the sellers orderline number (T6462). ?>
 			</cbc:SalesOrderLineID>
 			<cac:OrderReference>
 				<cbc:ID>AEG012345
 					<?DescriptionAddFirst Order Number (T3309) ?>
 				</cbc:ID>
 				<cbc:SalesOrderID>
-					<?Name Sales Order number ?>
+					<?Name Sales order number ?>
 					<?Cardinality 0..1?>
-					<?Description Added by Logistics. Reference to the sellers order number. ?>
+					<?Description Reference to the sellers order number. ?>
 				</cbc:SalesOrderID>
 			</cac:OrderReference>
 		</cac:OrderLineReference>
 		<cac:DocumentReference>
-			<?Name Document Reference ?>
-			<?Description Added by Logistics. Used for sending additional references at line level. ?>
+			<?Name Document reference ?>
+			<?Description Used for sending additional references at line level. ?>
 			<?Cardinality 0..n?>
 			<cbc:ID>Test
-				<?Name Document ID ?>
-				<?Description Added by Logistics. ID of the referenced document or item.?>
+				<?Name Document identifier ?>
+				<?Description ID of the referenced document or item.?>
 				<?Cardinality 1..1?>
 			</cbc:ID>
 			<cbc:DocumentTypeCode>380
-				<?Name DocumentTypeCode ?>
-				<?Description Added by Logistics. Identifies the type of document or item. ?>
+				<?Name Document type code ?>
+				<?Description Identifies the type of document or item. ?>
 				<?Cardinality 0..1?>
 				<?CodeList UNCL1001?>
 			</cbc:DocumentTypeCode>
 			<cbc:DocumentType>Letter Of Credit 
-				<?Name Document Type ?>
-				<?Description Added by Logistics. The type of reference that cannot be specified by a code ?>
+				<?Name Document type ?>
+				<?Description The type of reference that cannot be specified by a code ?>
 				<?Cardinality 0..1?>
 			</cbc:DocumentType>
 			<cac:Attachment>
 				<?Name Attachment ?>
 				<?Cardinality 0..1?>
-				<?Description Added by Logistics. Group to describe an attached document. An attachment can refer to an external document or be included with the document being exchanged. ?>
+				<?Description Group to describe an attached document. An attachment can refer to an external document or be included with the document being exchanged. ?>
 				<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">
 					aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==
-					<?Name Embedded Binary object ?>
+					<?Name Embedded binary object ?>
 					<?mimeCode-CodeList MimeCode?>
 					<?Cardinality 0..1?>
-					<?Description Added by Logistics. The referenced document can here be inserted as a binary object (T6475). filename refers to T6476. ?>
+					<?Description The referenced document can here be inserted as a binary object (T6475). filename refers to T6476. ?>
 				</cbc:EmbeddedDocumentBinaryObject>
 				<cac:ExternalReference>
-					<?Name External Reference ?>
-					<?Description Added by Logistics. A reference to an attached document that is external to the document(s) being exchanged. ?>
+					<?Name External reference ?>
+					<?Description A reference to an attached document that is external to the document(s) being exchanged. ?>
 					<?Cardinality 0..1?>
 					<cbc:URI>www.beast.se
 						<?Name Address to internet resource ?>
-						<?Description Added by Logistics. The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource (T6187). ?>
+						<?Description The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource (T6187). ?>
 					</cbc:URI>
 				</cac:ExternalReference>
 			</cac:Attachment>
@@ -1166,11 +1147,11 @@
 				</cbc:ID>
 			</cac:SellersItemIdentification>
 			<cac:ManufacturersItemIdentification>
-				<?Name Manufacturers Item Identification ?>
-				<?Description Added by Logistics. Identifying information for this item, assigned by the manufacturer. ?>
+				<?Name Manufacturers item identification ?>
+				<?Description Identifying information for this item, assigned by the manufacturer. ?>
 				<?Cardinality 0..1?>
 				<cbc:ID>17589683
-					<?Name Manufacturers Item identifier ?>
+					<?Name Manufacturers item identifier ?>
 					<?Description Manufactores's Article Number (T0172) ?>
 				</cbc:ID>
 			</cac:ManufacturersItemIdentification>
@@ -1183,11 +1164,11 @@
 				<cbc:ExtendedID>22114455</cbc:ExtendedID>
 			</cac:StandardItemIdentification>
 			<cac:CommodityClassification>
-				<?Name Commodity Classification ?>
-				<?Description Added by Logistics. To classify when an item number is not sufficient. ?>
+				<?Name Commodity classification ?>
+				<?Description To classify when an item number is not sufficient. ?>
 				<?Cardinality 0..n?>
 				<cbc:ItemClassificationCode listID="ZZZ" listVersionID="BEAST:4.0" name="SBMI">SBMI Number
-					<?Name Item Classification code ?>
+					<?Name Item classification code ?>
 					<?listID-CodeList UNCL7143?>
 					<?listID-usage Mandatory?>
 					<?listID-Description The identification scheme identifier of the Item classification identifier. ?>
@@ -1223,7 +1204,7 @@
 			</cac:AdditionalItemProperty>
 			<cac:ManufacturerParty>
 				<?Name Manufacturer party ?>
-				<?Description Added by Logistics. The manufacturer of this item. ?>
+				<?Description The manufacturer of this item. ?>
 				<?Cardinality 0..1?>
 				<cac:PartyIdentification>
 					<?Name Party identification ?>
@@ -1245,7 +1226,7 @@
 				</cac:PartyName>
 				<cac:PostalAddress>
 					<?Name Postal address ?>
-					<?Description Added by Logistics. The address for the manufacturer. ?>
+					<?Description The address for the manufacturer. ?>
 					<?Cardinality 0..1?>
 					<cbc:StreetName>Busy Street
 						<?Name Address line 1 ?>
@@ -1273,7 +1254,7 @@
 						<?Cardinality 0..1?>
 					</cbc:CountrySubentity>
 					<cac:AddressLine>
-						<?Name Address Line?>
+						<?Name Address line ?>
 						<?Cardinality 0..1?>
 						<cbc:Line>The Roundabout
 							<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
@@ -1283,7 +1264,7 @@
 					<cac:Country>
 						<?Name Country ?>
 						<cbc:IdentificationCode>GB
-							<?Name Country code?>
+							<?Name Country code ?>
 							<?Description A code that identifies the country.The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 						</cbc:IdentificationCode>
 					</cac:Country>
@@ -1309,39 +1290,39 @@
 			</cac:ItemInstance>
 			<cac:Certificate>
 				<?Name Certificate ?>
-				<?Description Added by Logistics. Used for referring to the Certificate for Wooden products. ?>
+				<?Description Used for referring to the Certificate for Wooden products. ?>
 				<?Cardinality 0..n?>
 				<cbc:ID>6655223
-					<?Name Identity of the Certificate ?>
-					<?Description Added by Logistics. Certificate Number (T6413). ?>
+					<?Name Identity of the certificate ?>
+					<?Description Certificate Number (T6413). ?>
 					<?Cardinality 1..1?>
 				</cbc:ID>
 				<cbc:CertificateTypeCode>NA
-					<?Name Certificate Type Code ?>
-					<?Description Added by Logistics. Code that specifies the Certificate type (T6412) expressed as a code. Use the value NA if not applicabel. ?>
+					<?Name Certificate type code ?>
+					<?Description Code that specifies the Certificate type (T6412) expressed as a code. Use the value NA if not applicabel. ?>
 					<?Cardinality 1..1?>
 				</cbc:CertificateTypeCode>
 				<cbc:CertificateType>FSC
-					<?Name Certificate Type ?>
-					<?Description Added by Logistics. Identifies the type of Certificate (T6412). ?>
+					<?Name Certificate type ?>
+					<?Description Identifies the type of Certificate (T6412). ?>
 					<?Cardinality 1..1?>
 				</cbc:CertificateType>
 				<cbc:Remarks>48% Certified.
 					<?Name Remarks ?>
-					<?Description Added by Logistics. Used to inform about how much is certified, in percent (T6414). ?>
+					<?Description Used to inform about how much is certified, in percent (T6414). ?>
 					<?Cardinality 0..1?>
 				</cbc:Remarks>
 				<cac:IssuerParty>
-					<?Name Issuer Party ?>
-					<?Description Added by Logistics. The authorized organization that issued this certificate, the provider of the certificate. ?>
+					<?Name Issuer party ?>
+					<?Description The authorized organization that issued this certificate, the provider of the certificate. ?>
 					<?Cardinality 1..1?>
 					<cac:PartyName>
-						<?Name Party Name ?>
-						<?Description Added by Logistics. The name of the party issuing the certificate. ?>
+						<?Name Party name ?>
+						<?Description The name of the party issuing the certificate. ?>
 						<?Cardinality 1..1?>
 						<cbc:Name>NA
-							<?Name Party Name ?>
-							<?Description Added by Logistics. The UBL structure used requires this element. Use the value NA if not applicable. ?>
+							<?Name Party name ?>
+							<?Description The UBL structure used requires this element. Use the value NA if not applicable. ?>
 							<?Cardinality 1..1?>
 						</cbc:Name>
 					</cac:PartyName>
@@ -1349,18 +1330,18 @@
 			</cac:Certificate>
 			<cac:Dimension>
 				<?Name Measurement Dimension ?>
-				<?Description Added by Logistics. Used to specify any dimension of the Item. ?>
+				<?Description Used to specify any dimension of the Item. ?>
 				<?Cardinality 0..n?>
 				<cbc:AttributeID>LN
-					<?Name Measurement Attribute ID ?>
+					<?Name Attribute identifier ?>
 					<?CodeList UNCL6313?>
-					<?Description Added by Logistics. To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
+					<?Description To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
 				<cbc:Measure unitCode="MTR">123
 					<?Name Measure ?>
 					<?unitCode-CodeList UNECERec20?>
-					<?Description Added by Logistics. For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
+					<?Description For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
 					<?Cardinality 1..1?>
 				</cbc:Measure>
 			</cac:Dimension>
