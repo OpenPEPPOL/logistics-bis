@@ -338,7 +338,8 @@
 			<?DescriptionAddFirst Not used in Logistics version 3.1 ?>
 		</cbc:TotalTransportHandlingUnitQuantity>
 		<cbc:DeclaredStatisticsValueAmount currencyID="SEK">34000.45
-			<?DescriptionAddFirst Added by Logistics. The total declared value for customs purposes of those goods in this shipment that are subject to the same customs procedure and have the same tariff/statistical heading, country information, and duty regime.?>
+			<?Name Declared statistics value amount ?>
+			<?Description Added by Logistics. The total declared value for customs purposes of those goods in this shipment that are subject to the same customs procedure and have the same tariff/statistical heading, country information, and duty regime.?>
 			<?Cardinality 0..1?>
 		</cbc:DeclaredStatisticsValueAmount>
 		<cac:Consignment>
@@ -643,7 +644,7 @@
 						<?Cardinality 0..1?>
 						<?Description Added by Logistics. Country. ?>
 						<cbc:IdentificationCode>GB
-							<?Name Country Code for Consignee ?>
+							<?Name Country code ?>
 							<?Cardinality 0..1?>
 							<?CodeList ISO3166?>
 							<?Description Added by Logistics. Country code (T5007). ?>
@@ -736,6 +737,7 @@
 					</cac:AddressLine>
 					<cac:Country>
 						<cbc:IdentificationCode>GB
+							<?Name Country code ?>
 							<?DescriptionAddFirst Country Code (T5007).  ?>
 						</cbc:IdentificationCode>
 					</cac:Country>
@@ -829,6 +831,7 @@
 				<?Cardinality 0..1?>
 			</cbc:HandlingInstructions>
 			<cbc:HazardousRiskIndicator>false
+				<?Name Handling unit hazardous indicator ?>
 				<?Description Added by Logistics. An indicator that the materials contained in this transport handling unit are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 				<?Cardinality 0..1?>
 			</cbc:HazardousRiskIndicator>
@@ -941,6 +944,7 @@
 							<?Cardinality 0..1?>
 					</cbc:HazardousRiskIndicator>
 				<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
+							<?Name Declared statistics value amount ?>
 							<?Description Added by Logistics. The total declared value for customs purposes of the goods item. ?>
 							<?Cardinality 0..1?>
 					</cbc:DeclaredStatisticsValueAmount>
@@ -1036,6 +1040,7 @@
 									<?Cardinality 0..1?>
 							</cbc:HazardousRiskIndicator>
 							<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
+									<?Name Declared statistics value amount ?>
 									<?Description Added by Logistics. The total declared value for customs purposes of the goods item. ?>
 									<?Cardinality 0..1?>
 							</cbc:DeclaredStatisticsValueAmount>
@@ -1081,6 +1086,7 @@
 							<?Cardinality 0..1?>
 						</cbc:HazardousRiskIndicator>
 						<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
+							<?Name Declared statistics value amount ?>
 							<?Description Added by Logistics. The total declared value for customs purposes of the goods item. ?>
 							<?Cardinality 0..1?>
 						</cbc:DeclaredStatisticsValueAmount>
@@ -1126,6 +1132,7 @@
 							<?Cardinality 0..1?>
 					</cbc:HazardousRiskIndicator>
 					<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
+						<?Name Declared statistics value amount ?>
 						<?Description Added by Logistics. The total declared value for customs purposes of the goods item. ?>
 						<?Cardinality 0..1?>
 					</cbc:DeclaredStatisticsValueAmount>
@@ -1309,6 +1316,7 @@
 				<?Description Added by Logistics. The manufacturer of this item. ?>
 				<?Cardinality 0..1?>
 				<cac:PartyIdentification>
+					<?Name Party identification ?>
 					<cbc:ID schemeID="0088">5790000435951
 					<?Description Id for the manufacturer party (T6001 or T6223).  ?>
 					<?schemeID-usage Optional?>
@@ -1316,47 +1324,55 @@
 					</cbc:ID>
 				</cac:PartyIdentification>
 				<cac:PartyName>
+					<?Name Party name ?>
 					<?Cardinality 0..1?>
 					<cbc:Name>IYT Corporation
-						<?DescriptionAddFirst Party Name (T5001) ?>
+						<?Name 	Manufacturer party name ?>
+						<?Description Party Name (T5001) ?>
 					</cbc:Name>
 				</cac:PartyName>
 				<cac:PostalAddress>
+					<?Name Postal address ?>
 					<?Description Added by Logistics. The address for the manufacturer. ?>
 					<?Cardinality 0..1?>
 					<cbc:StreetName>Busy Street
-						<?Description Street Name (T5003) ?>
+						<?Name Address line 1 ?>
+						<?Description The main address line in a postal address usually the street name and number. ?>
 						<?Cardinality 0..1?>
 					</cbc:StreetName>
 					<cbc:AdditionalStreetName>way 1
-						<?Description Used for Department (T5002). ?>
+						<?Name Address line 2 ?>
+						<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
 						<?Cardinality 0..1?>
 					</cbc:AdditionalStreetName>
 					<cbc:CityName>Farthing
-						<?Description City Name (T5005) ?>
+						<?Name City ?>
+						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 					<cbc:PostalZone>AA99 1BB
-						<?Description Postal Code (T6117) ?>
+						<?Name Post code ?>
+						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
 						<?Cardinality 0..1?>
 					</cbc:PostalZone>
 					<cbc:CountrySubentity>Heremouthshire
+						<?Name Country subdivision ?>
 						<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
 						<?Cardinality 0..1?>
 					</cbc:CountrySubentity>
 					<cac:AddressLine>
-						<?Name Address Line for Manufaturer party ?>
+						<?Name Address Line?>
 						<?Cardinality 0..1?>
-						<?Description Added by Logistics. ?>
 						<cbc:Line>The Roundabout
-							<?Description Used for any other additional address information like Building (T5004). ?>
+							<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
 							<?Cardinality 1..1?>
 						</cbc:Line>
 					</cac:AddressLine>
 					<cac:Country>
 						<?Name Country ?>
 						<cbc:IdentificationCode>GB
-							<?DescriptionAddFirst Country Code (T5007) ?>
+							<?Name Country code?>
+							<?Description A code that identifies the country.The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 						</cbc:IdentificationCode>
 					</cac:Country>
 				</cac:PostalAddress>
