@@ -94,7 +94,6 @@
 			</cbc:EndpointID>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">7300010000001
-					<?schemeID-Name Scheme identifier?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
@@ -361,6 +360,7 @@
 								<?Name Identity of the fuel supplier ?>
 								<?Description Added by Logistics. The fuel supplier (T6001). ?>
 								<?Cardinality 0..1?>
+								<?schemeID-Name Scheme identifier?>
 								<?schemeID-usage Optional?>
 								<?schemeID-CodeList ICD?>
 							</cbc:ID>
@@ -401,7 +401,8 @@
 								<cbc:ID schemeID="0160">1234567891234
 									<?Name Standard article identity of the fuel ?>
 									<?Description Added by Logistics. The fuel article number (T0172). The schemeID refers to the Article Number Type (T6317). ?>
-									<?Cardinality 1..1?>									
+									<?Cardinality 1..1?>
+									<?schemeID-Name Scheme identifier?>									
 									<?schemeID-CodeList ICD?>
 								</cbc:ID>
 							</cac:StandardItemIdentification>
@@ -517,6 +518,7 @@
 				<cbc:ID schemeID="0088">5790000435951
 					<?Name Identity of the Delivery Location ?>
 					<?Description Added by Logistics. Identifies the Delivery Location (T0036). ?>
+					<?schemeID-Name Scheme identifier?>
 					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
@@ -856,6 +858,7 @@
 				<cbc:TraceID schemeID="sgtin">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
+							<?schemeID-Name Scheme identifier?>
 							<?schemeID-usage Optional?>
 					</cbc:TraceID>
 			</cac:GoodsItem>
@@ -952,6 +955,7 @@
 							<cbc:TraceID schemeID="urn:epc:sgid">345699634527
 									<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 									<?Cardinality 0..1?>
+									<?schemeID-Name Scheme identifier?>
 									<?schemeID-usage Optional?>
 							</cbc:TraceID>
 						</cac:GoodsItem>
@@ -998,6 +1002,7 @@
 						<cbc:TraceID schemeID="urn:epc:sgid">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
+							<?schemeID-Name Scheme identifier?>
 							<?schemeID-usage Optional?>
 						</cbc:TraceID>
 					</cac:GoodsItem>
@@ -1044,6 +1049,7 @@
 					<cbc:TraceID schemeID="urn:epc:sgid">345699634527
 							<?Description Added by Logistics. An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 							<?Cardinality 0..1?>
+							<?schemeID-Name Scheme identifier?>
 							<?schemeID-usage Optional?>
 					</cbc:TraceID>
 				</cac:GoodsItem>
@@ -1164,13 +1170,15 @@
 				<?Description Added by Logistics. Identifying information for this item, assigned by the manufacturer. ?>
 				<?Cardinality 0..1?>
 				<cbc:ID>17589683
-					<?DescriptionAddFirst Manufactores's Article Number (T0172) ?>
+					<?Name Manufacturers Item identifier ?>
+					<?Description Manufactores's Article Number (T0172) ?>
 				</cbc:ID>
 			</cac:ManufacturersItemIdentification>
 			<cac:StandardItemIdentification>
-				<?DescriptionAddFirst Only one Standard Item Number can be used per line. ?>
+				<?Description Only one StandardItemIdentification can be used per line. ?>
 				<cbc:ID schemeID="0160">1234567891234
-					<?DescriptionAddFirst Global Trade Item Number (T0154) or other standardized identification like RSK Article Number Sweden (T6023).?>
+					<?DescriptionAddFirst Global Trade Item Number (T0154) or other tandardized identification like RSK Article Number Sweden (T6023).?>
+					<?schemeID-Name Scheme identifier?>
 				</cbc:ID>
 				<cbc:ExtendedID>22114455</cbc:ExtendedID>
 			</cac:StandardItemIdentification>
@@ -1214,14 +1222,17 @@
 				</cbc:ValueQualifier>
 			</cac:AdditionalItemProperty>
 			<cac:ManufacturerParty>
+				<?Name Manufacturer party ?>
 				<?Description Added by Logistics. The manufacturer of this item. ?>
 				<?Cardinality 0..1?>
 				<cac:PartyIdentification>
 					<?Name Party identification ?>
 					<cbc:ID schemeID="0088">5790000435951
-					<?Description Id for the manufacturer party (T6001 or T6223). ?>
-					<?schemeID-usage Optional?>
-					<?schemeID-CodeList ICD?>
+						<?Name Manufacturer party identifier ?>
+						<?Description Id for the manufacturer party (T6001 or T6223). ?>
+						<?schemeID-Name Scheme identifier?>
+						<?schemeID-usage Optional?>
+						<?schemeID-CodeList ICD?>
 					</cbc:ID>
 				</cac:PartyIdentification>
 				<cac:PartyName>
@@ -1278,27 +1289,21 @@
 					</cac:Country>
 				</cac:PostalAddress>
 				<cac:PartyLegalEntity>
-					<?Description Country Code (T5007) ?>
+					<?Name Party name ?>
 					<?Cardinality 0..1?>
 					<cbc:RegistrationName>Consortial
-						<?DescriptionAddFirst Party Name (T5001) ?>
+						<?Description Party Name (T5001) ?>
 					</cbc:RegistrationName>
 				</cac:PartyLegalEntity>
 			</cac:ManufacturerParty>
 			<cac:ItemInstance>
-				<cbc:ManufactureDate>2021-01-01
-					<?DescriptionAddFirst Production or Manufacture Date (T0262) ?>
-				</cbc:ManufactureDate>
-				<cbc:BestBeforeDate>2021-12-01
-					<?DescriptionAddFirst Best Before Date (T3276) ?>
-				</cbc:BestBeforeDate>
+				<cbc:ManufactureDate>2021-01-01</cbc:ManufactureDate>
+				<cbc:BestBeforeDate>2021-12-01</cbc:BestBeforeDate>
 				<cbc:SerialID>4558784
 					<?DescriptionAddFirst Serial Number (T3236) or SGTIN (T6461)?>
 				</cbc:SerialID>
 				<cac:LotIdentification>
-					<cbc:LotNumberID>546378239
-						<?DescriptionAddFirst Batch Number (T0132). ?>
-					</cbc:LotNumberID>
+					<cbc:LotNumberID>546378239</cbc:LotNumberID>
 					<cbc:ExpiryDate>2023-01-01</cbc:ExpiryDate>
 				</cac:LotIdentification>
 			</cac:ItemInstance>
