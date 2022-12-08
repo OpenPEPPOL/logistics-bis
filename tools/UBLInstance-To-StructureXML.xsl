@@ -320,10 +320,12 @@
 			<xsl:choose>
 				<xsl:when test="./processing-instruction('Description')">
 					<Description>
+						<!-- Removed this part for Logistics domain -->
 						<!--xsl:text>Logistics: </xsl:text-->
 						<xsl:value-of select="./processing-instruction('Description')"/>
 					</Description>
 				</xsl:when>
+				<!-- Removed this part for Logistics domain -->
 				<!--xsl:when test="./processing-instruction('DescriptionAddFirst')">
 					<Description>
 						<xsl:text>Logistics: </xsl:text>
@@ -342,6 +344,7 @@
 				</xsl:when-->
 				<xsl:when test="$varUblElement/nsPep:Element/nsPep:Description != ''">
 					<Description>
+						<!-- Removed this part for Logistics domain -->
 						<!--xsl:text>Peppol: </xsl:text-->
 						<xsl:value-of select="$varUblElement/nsPep:Element/nsPep:Description"/>
 					</Description>
