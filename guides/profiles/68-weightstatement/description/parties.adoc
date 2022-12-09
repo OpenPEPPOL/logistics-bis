@@ -4,68 +4,47 @@
 The following parties/roles may be specified in the message.
 The same actor may play more than one role depending on the handling routine.
 
-[[despatch-party-despatchsupplierparty]]
-== Despatch party (DespatchSupplierParty)
-The Despatch Party is the person or organization who provides (despatch) the goods or services. The role is carried out by the supplier or on behalf of the supplier. (Despatch Party is sometimes known as the Consignor). The Despatch Party is mandatory information in the Despatch Advice message.
-Defines the company that provides the goods or the service. It also defines the sender of the Despatch Advice. The real Ship-from Address must be provided in the Despatch Address when the Despatch Advice describes a movement.
+[[sender-party]]
+== Sender (SenderParty)
+The Sender is the party who sendes the weighing statement (e.g. Weighing Station, Shipper, Freight Forwarder, Carrier, ...).
 
 Example:
 [source, xml, indent=0]
 ----
-include::{snippet-dir}/snippet-30-1.xml[tags=despatchsupplier]
+include::{snippet-dir}/snippet-1.xml[tags=sender-party]
 ----
 
-[[consignee-deliverycustomerparty]]
-== Consignee (DeliveryCustomerParty)
+[[receiver-party]]
+== Receiver (ReceiverParty)
 
-The Consignee is the person or organization to which the products will be shipped and who is taking possession.
-The role is carried out by the customer or on behalf of the customer.
-The Consignee is mandatory information in the Despatch Advice message.
+The Receiver is the party receiving this weight statement (e.g. Carrier, Terminal Operator, ...). 
 
 Example:
 [source, xml, indent=0]
 ----
-include::{snippet-dir}/snippet-30-1.xml[tags=deliverycustomer]
+include::{snippet-dir}/snippet-1.xml[tags=receiver-party]
 ----
 
-[[buyer-buyercustomerparty]]
-== Buyer (BuyerCustomerParty)
+[[weighing-party]]
+== Weighing party (WeighingParty)
 
-The buyer is the legal person or organization who buys or purchases the goods or services.
-The role is carried out by the customer or on behalf of the customer.
+The Weighing party is the party executing the weight measure (e.g. Weighing Station).
 
-The Buyer is optional information in the Despatch Advice message.
+The Weighing party  is optional information in the Weight statement.
 
 Example:
 [source, xml, indent=0]
 ----
-include::{snippet-dir}/snippet-30-1.xml[tags=buyer]
+include::{snippet-dir}/snippet-1.xml[tags=weighing-party]
 ----
 
+[[shipper-party]]
+== Shipper (ShipperParty)
 
-[[seller-sellersupplierparty]]
-== Seller (SellerSupplierParty)
-
-The seller is the legal person or organization who sells goods or services to the customer.
-The role is carried out by the supplier or on behalf of the supplier.
-The Seller is optional information in the Despatch Advice message.
+The party playing the role of the Shipper (BCO, FF or NVOCC) who is responsible for the VGM (e.g. according the SOLAS Convention).
 
 Example:
 [source, xml, indent=0]
 ----
-include::{snippet-dir}/snippet-30-1.xml[tags=seller]
-----
-
-
-[[originating-party-originatorcustomerparty]]
-== Originating party (OriginatorCustomerParty)
-
-The party who will eventually receive and consume the goods and on whose behalf the buyer makes the purchase.
-The Originator Party is optional information in the Despatch Advice message. For 3PL shipments, this party defines the final receiver of the goods.
-
-Example:
-
-[source, xml, indent=0]
-----
-include::{snippet-dir}/snippet-30-1.xml[tags=originator]
+include::{snippet-dir}/snippet-1.xml[tags=shipper-party]
 ----
