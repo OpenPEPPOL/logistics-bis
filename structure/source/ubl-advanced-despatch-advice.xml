@@ -98,6 +98,16 @@
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
+			<cac:PartyName>
+				<?Name Party Name. ?>
+				<?Description Added by Logistics. The name of the Despatch Supplier Party. ?>
+				<?Cardinality 0..1?>
+				<cbc:Name>Sender inc.
+					<?Name Name of the fuel supplier. ?>
+					<?Description Added by Logistics. The Despatch Supplier. ?>
+					<?Cardinality 1..1?>
+				</cbc:Name>
+			</cac:PartyName>
 			<cac:PostalAddress>
 				<cbc:StreetName>Busy Street
 					<?DescriptionAddFirst Street Name (T5003) ?>
@@ -123,10 +133,51 @@
 					</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<?Name Party Tax Scheme. ?>
+				<?Description Added by Logistics. The tax information about the Despatch Party. ?>
+				<?Cardinality 0..1?>
+				<cbc:CompanyID>
+					<?Name Company ID. ?>
+					<?Description Added by Logistics. The Despatch Party Value Added Tax identifer. ?>
+					<?Cardinality 1..1?>
+				</cbc:CompanyID>
+				<cac:TaxScheme>
+					<?Name Tax Scheme. ?>
+					<?Cardinality 1..1?>
+					<cbc:ID>VAT
+						<?Description Added by Logistics. Mandatory element. E.g. "VAT" or "GST". ?>
+						<?Cardinality 1..1?>
+					</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>Consortial
 					<?DescriptionAddFirst Party Name (T5001) ?>
+					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
+				<cbc:CompanyID>
+					<?Name Despatch supplier parties legal registration name. ?>
+					<?Description Added by Logistics. The official name of the party as registered with the relevant fiscal authority. ?>
+					<?Cardinality 0..1?>
+				</cbc:CompanyID>
+				<cac:RegistrationAddress>
+					<?Name Legal address. ?>
+					<?Cardinality 1..1?>
+					<cbc:CityName>
+						<?Name City name. ?>
+						<?Description Added by Logistics. The name of the city. ?>
+						<?Cardinality 0..1?>
+					</cbc:CityName>
+					<cac:Country>
+						<?Name Contry. ?>
+						<?Description Added by Logistics. The residens country for the despatch party. ?>						
+						<?Cardinality 1..1?>
+						<cbc:IdentificationCode>
+							<?DescriptionAddFirst Country Code (T5007) ?>
+						</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:Name>Mrs Bouquet
@@ -152,6 +203,16 @@
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
+			<cac:PartyName>
+				<?Name Party Name. ?>
+				<?Description Added by Logistics. The name of the Delivery Customer Party. ?>
+				<?Cardinality 0..1?>
+				<cbc:Name>Sender inc.
+					<?Name Name of the fuel supplier. ?>
+					<?Description Added by Logistics. The Despatch Supplier. ?>
+					<?Cardinality 1..1?>
+				</cbc:Name>
+			</cac:PartyName>
 			<cac:PostalAddress>
 				<cbc:StreetName>Avon Way
 					<?DescriptionAddFirst Street Name (T5003) ?>
@@ -177,11 +238,63 @@
 					</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
+			<cac:PartyTaxScheme>
+				<?Name Party Tax Scheme. ?>
+				<?Description Added by Logistics. The tax information about the Delivery Party. ?>
+				<?Cardinality 0..1?>
+				<cbc:CompanyID>
+					<?Name Company ID. ?>
+					<?Description Added by Logistics. The Delivery Party Value Added Tax identifer. ?>
+					<?Cardinality 1..1?>
+				</cbc:CompanyID>
+				<cac:TaxScheme>
+					<?Name Tax Scheme. ?>
+					<?Cardinality 1..1?>
+					<cbc:ID>VAT
+						<?Description Added by Logistics. Mandatory element. E.g. "VAT" or "GST". ?>
+						<?Cardinality 1..1?>
+					</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
-				<cbc:RegistrationName>IYT Corporation
+				<cbc:RegistrationName>Consortial
 					<?DescriptionAddFirst Party Name (T5001) ?>
+					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
+				<cbc:CompanyID>
+					<?Name Delivery customers parties legal registration name. ?>
+					<?Description Added by Logistics. The official name of the party as registered with the relevant fiscal authority. ?>
+					<?Cardinality 0..1?>
+				</cbc:CompanyID>
+				<cac:RegistrationAddress>
+					<?Name Legal address. ?>
+					<?Cardinality 1..1?>
+					<cbc:CityName>
+						<?Name City name. ?>
+						<?Description Added by Logistics. The name of the city. ?>
+						<?Cardinality 0..1?>
+					</cbc:CityName>
+					<cac:Country>
+						<?Name Contry. ?>
+						<?Description Added by Logistics. The residens country for the delivery customer party. ?>						
+						<?Cardinality 1..1?>
+						<cbc:IdentificationCode>
+							<?DescriptionAddFirst Country Code (T5007) ?>
+						</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Name>Mrs Bouquet
+					<?DescriptionAddFirst Name (T5012) ?>
+				</cbc:Name>
+				<cbc:Telephone>0158 1233714
+					<?DescriptionAddFirst Phone Number (T5010) ?>
+				</cbc:Telephone>
+				<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
+					<?DescriptionAddFirst Email Address (T5011) ?>
+				</cbc:ElectronicMail>
+			</cac:Contact>
 		</cac:Party>
 		<cac:DeliveryContact>
 			<cbc:Name>Mr Fred Churchill
