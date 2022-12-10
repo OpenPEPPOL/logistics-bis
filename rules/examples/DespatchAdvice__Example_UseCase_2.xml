@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
                 Content:
-                This file contains an Example for Use-case no 1 in UBL Despatch Adivce.
+                This file contains an Example for Use-case no 2 in UBL Despatch Adivce.
 			
 -->
 <DespatchAdvice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -54,12 +54,12 @@
 	
 	<cac:DeliveryCustomerParty>
 		<cac:Party>
-			<cbc:EndpointID schemeID="0007">5560339086</cbc:EndpointID>
+			<cbc:EndpointID schemeID="0007">5561122334</cbc:EndpointID>
 			<cac:PartyIdentification>
-				<cbc:ID schemeID="0007">5560339086</cbc:ID>
+				<cbc:ID schemeID="0007">5561122334</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PostalAddress>
-				<cbc:StreetName>Warfvinges väg 25</cbc:StreetName>
+				<cbc:StreetName>Industrivägen 51</cbc:StreetName>
 				<cbc:CityName>Stockholm</cbc:CityName>
 				<cbc:PostalZone>112 74</cbc:PostalZone>
 				<cac:Country>
@@ -67,7 +67,7 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
-				<cbc:RegistrationName>Skanska Sverige AB</cbc:RegistrationName>
+				<cbc:RegistrationName>DHL Warehouse no 641</cbc:RegistrationName>
 			</cac:PartyLegalEntity>
 		</cac:Party>
 		<cac:DeliveryContact>
@@ -114,13 +114,66 @@
 			</cac:PostalAddress>
 		</cac:Party>
 	</cac:SellerSupplierParty>
-	
+
+	<cac:OriginatorCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="0007">5560339086</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Skanska Sverige AB</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Hammarbyvägen 3</cbc:StreetName>
+				<cbc:CityName>Stockholm</cbc:CityName>
+				<cbc:PostalZone>123 45</cbc:PostalZone>
+				<cac:AddressLine>
+					<cbc:Line>3rd Floor, Room 5</cbc:Line>
+				</cac:AddressLine>
+				<cac:Country>
+					<cbc:IdentificationCode>SE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+		</cac:Party>
+	</cac:OriginatorCustomerParty>
+
+
 	<cac:Shipment>
-		<cbc:ID>NA</cbc:ID>
+		<cbc:ID>1212343445</cbc:ID>
 		<cbc:GrossWeightMeasure unitCode="KGM">2460</cbc:GrossWeightMeasure>
 		<cbc:GrossVolumeMeasure unitCode="MTQ">3.05</cbc:GrossVolumeMeasure>
+		
+		<cac:Consignment>
+			<cbc:ID>NA</cbc:ID>
+			<cac:CarrierParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeID="0088">5790000435951</cbc:ID>
+				</cac:PartyIdentification>
+				<cac:PartyName>
+					<cbc:Name>DHL</cbc:Name>
+				</cac:PartyName>
+				<cac:Person>
+					<cac:IdentityDocumentReference>
+						<cbc:ID>1234</cbc:ID>
+						<cbc:DocumentType>Inv</cbc:DocumentType>
+					</cac:IdentityDocumentReference>
+				</cac:Person>
+		</cac:CarrierParty>
+		</cac:Consignment>
+		
+		<cac:ShipmentStage>
+			<cbc:TransportModeCode>3</cbc:TransportModeCode>
+			<cbc:TransportMeansTypeCode>320</cbc:TransportMeansTypeCode>
+			<cac:TransportMeans>
+				<cac:RoadTransport>
+					<cbc:LicensePlateID>ABC123</cbc:LicensePlateID>
+				</cac:RoadTransport>
+			</cac:TransportMeans>
+		</cac:ShipmentStage>
+
 
 		<cac:Delivery>
+			<cbc:TrackingID>435465</cbc:TrackingID>
 			<cac:DeliveryLocation>
 				<cbc:ID schemeID="0088">5790000435951</cbc:ID>
 				<cbc:Name>Skanska Sverige AB</cbc:Name>
@@ -137,7 +190,16 @@
 				</cac:Address>
 			</cac:DeliveryLocation>
 			
+			<cac:EstimatedDeliveryPeriod>
+				<cbc:StartDate>2021-09-25</cbc:StartDate>
+				<cbc:StartTime>12:00:00</cbc:StartTime>
+				<cbc:EndDate>2021-09-27</cbc:EndDate>
+				<cbc:EndTime>12:00:00</cbc:EndTime>
+			</cac:EstimatedDeliveryPeriod>
+
 			<cac:Despatch>
+				<cbc:ActualDespatchDate>2021-09-25</cbc:ActualDespatchDate>
+				<cbc:ActualDespatchTime>13:00:00</cbc:ActualDespatchTime>
 
 				<cac:DespatchAddress>
 					<cbc:StreetName>Bällstavägen 102</cbc:StreetName>
@@ -148,6 +210,13 @@
 					</cac:Country>
 				</cac:DespatchAddress>
 			</cac:Despatch>
+			
+			<cac:DeliveryTerms>
+				<cbc:ID>EXW</cbc:ID>
+				<cac:DeliveryLocation>
+					<cbc:ID>Stockholm</cbc:ID>
+				</cac:DeliveryLocation>
+			</cac:DeliveryTerms>
 
 		</cac:Delivery>
 
@@ -320,6 +389,10 @@
 				<cbc:NameCode listID="BEAST:4.0">ResourceID</cbc:NameCode>
 				<cbc:Value>6000000020</cbc:Value>
 			</cac:AdditionalItemProperty>
+			<cac:Dimension>
+				<cbc:AttributeID>AAF</cbc:AttributeID> 
+				<cbc:Measure unitCode="KGM">4.0</cbc:Measure>
+			</cac:Dimension>
 		</cac:Item>
 	</cac:DespatchLine>
 	
