@@ -1,15 +1,13 @@
 [[use-case-8-waste-treatment]]
-== Use case 8 – Despatch Advice for waste treatment
+== Use case 8 – Despatch Advice for waste treatment service
 
-This is a simple use case based on the recommended requirements for a Despatch Advice regarding a delivery of services between two locations.
+This use case covers waste treatment services or similar services where the buyer brings the material to the supplier and leaves it there.
 [cols="1,5",options="header",]
 |====
 |*Use Case number* |8
-|*Use Case Name* |Despatch Advice for waste treatment
+|*Use Case Name* |Despatch Advice for waste treatment service
 |*Use Case Description* a|
-Describes a complete process whereby a Despatch party generates a Despatch Advice based on information about the service provided between two locations, e.g. transport of goods or snow plowing.
-
-The Despatch Advice enables the service provider to give detailed information about the service provided between the specified locations once the service has been delivered. Which enables a Buyer to reconcile, or confirm, the services provided against the order.
+The Despatch Advice enables the service provider (seller) to give detailed information about the service provided and the location where the material has been treated. In some cases the service provider can report the location where the material has been collected. Which enables a Buyer to reconcile, or confirm, the services provided against the order.
 
 |*Parties involved* a|
 Buyer (In UBL: BuyerCustomerParty)
@@ -21,19 +19,19 @@ Despatch party (In UBL: DespatchSupplierParty) (Different legal entity than the 
 Consignee party (In UBL: DeliveryCustomerParty) (Different legal entity than the Buyer in this use case) Originating party (In UBL: OriginatorCustomerParty)
 
 |*Pre conditions* a|
-Services are delivered before Despatch Advice is sent. 
+Material is delivered to the seller and the services are delivered before Despatch Advice is sent. 
 
 |*Post conditions* a|
 Despatch advice is received by the receiver of the services.
 
 |*Assumptions* a|
-. The Seller has received one order from the Buyer with one (1) article to be provided between two locations, e.g transport of goods between locations A and B. 
+. The Seller has received one order from the Buyer with one (1) line for the serices to be provided.
 . The Seller has accepted the order without changes.
-. The Despatch party delivers the complete order as accepted
+. The Despatch party delivers the services specified in the order. 
 
 
 |*The flow* a|
-. The Seller arange delivery of agreed services.
+. The Buyer arrange delivery of material to the seller either by the sellers transport service or other carrier services.
 . The Despatch party deliver agreed services.
 . The Despatch party sends Despatch advice message to the Consignee
 . The Consignee party receives the Despatch advice message
@@ -54,5 +52,5 @@ Despatch advice is received by the receiver of the services.
 
 
 |*XML example file* a|
-See Appendix A for a sample file illustrating Use Case 5.
+See :examples-zip: for a sample file illustrating Use Case 8.
 |====
