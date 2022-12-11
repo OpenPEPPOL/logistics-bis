@@ -1,11 +1,11 @@
 [[use-case-5-services-between-two-locations-with-vehicle]]
-== Use case 5 – Despatch Advice for services between two locations, with vehicle
+== Use case 5 – Despatch Advice for services between two locations, including a vehicle.
 
-This is a simple use case based on the recommended requirements for a Despatch Advice regarding a delivery of services between two locations.
+This is a use case based on the recommended requirements for a Despatch Advice regarding a delivery of services between two locations.
 [cols="1,5",options="header",]
 |====
 |*Use Case number* |5
-|*Use Case Name* |Despatch Advice for services between two locations, with vehicle that should be billed or reported in some way
+|*Use Case Name* |Despatch Advice for services between two locations, including a vehicle.
 |*Use Case Description* a|
 Describes a complete process whereby a Despatch party generates a Despatch Advice based on information about the service provided between two locations, e.g. transport of goods or snow plowing.
 
@@ -16,9 +16,14 @@ Buyer (In UBL: BuyerCustomerParty)
 
 Seller (In UBL: SellerSupplierParty)
 
-Despatch party (In UBL: DespatchSupplierParty) (Different legal entity than the Seller in this use case)
+Despatch party (In UBL: DespatchSupplierParty) (Same legal entity as the Seller in this use case)
 
-Consignee party (In UBL: DeliveryCustomerParty) (Different legal entity than the Buyer in this use case) Originating party (In UBL: OriginatorCustomerParty)
+Consignee party (In UBL: DeliveryCustomerParty) (Same legal entity as the Buyer in this use case) 
+
+|*Locations involved* a|
+Ship-from (In UBL: DespatchAddress) (Defines the starting point of the service.)
+
+Ship-to (In UBL: DeliveryLocation) (Defines the destination of the service.)
 
 |*Pre conditions* a|
 Services are delivered before Despatch Advice is sent. 
@@ -37,16 +42,16 @@ Despatch advice is received by the receiver of the services.
 . The Despatch party deliver agreed services.
 . The Despatch party sends Despatch advice message to the Consignee
 . The Consignee party receives the Despatch advice message
-. The Consignee party uses the content in the Despatch advice message for confirmation of delivery.
+. The Consignee party uses the content in the Despatch advice message to verify the delivery.
 
 
 |*Result* a|
-. The Despatch advice message helped the Consignee party to confirm delivery.
+. The Despatch advice message helped the Consignee party to verify the delivery.
 .. At the right time
 .. At the right location
-..(At the correct price)
+.. At the correct price
 
-. The Despatch advice message helped the Consignee party in the process of confirming delvery to identify the
+. The Despatch advice message helped the Consignee party in the process of verifying the delvery of the service to identify the
 .. Order
 .. The order lines
 .. The articles
