@@ -8,8 +8,8 @@
  xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
  xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
  xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-	<cbc:CustomizationID>urn:fdc:peppol.eu:poacc:trns:despatch_advice:3</cbc:CustomizationID>
-	<cbc:ProfileID>urn:fdc:peppol.eu:poacc:bis:despatch_advice:3</cbc:ProfileID>
+ <cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1</cbc:CustomizationID>
+ <cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1</cbc:ProfileID>
 	<cbc:ID>
 		<?Description Unique id from the sender ?>43413589
 	</cbc:ID>
@@ -17,17 +17,15 @@
 	<cbc:IssueDate>2020-12-21</cbc:IssueDate>
 	<cbc:IssueTime>13:14:34</cbc:IssueTime>
 	<cbc:Note>Some note about the delivery</cbc:Note>
-	<cac:OrderReference>
-		<!-- Attribute schemeID is used to send project number or buyer reference if buyer order number is missing, i.e. electronic order has not been sent. 
-		Default is order number so if schemeID is missing the number in the element is order number as per Peppol global BIS.
-		ProjectRefereces is used for project number only.
-		BuyerReference is used for the buyer reference if no buyer order number exists, i.e. in construction often code string (kodsträng) -->
+	<cac:AdditionalDocumentReference>
 		<cbc:ID schemeID="ProjectReference">9876986</cbc:ID>
-	</cac:OrderReference>
-	<cac:OrderReference>
-		<cbc:ID schemeID="AccountingCost">9876986-1-5544</cbc:ID>
-	</cac:OrderReference>
-
+		<cbc:ID>9876986</cbc:ID>
+		<cbc:DocumentType>ProjectReference</cbc:DocumentType>
+	</cac:AdditionalDocumentReference>
+	<cac:AdditionalDocumentReference>
+		<cbc:ID>9876986-1-5544</cbc:ID>
+		<cbc:DocumentType>AccountingCost</cbc:DocumentType>
+	</cac:AdditionalDocumentReference>
 	<cac:DespatchSupplierParty>
 		<!-- Mandatory, the party that despatcheds the goods or provides service -->
 		<cac:Party>
