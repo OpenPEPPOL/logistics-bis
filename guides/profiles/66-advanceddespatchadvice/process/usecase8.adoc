@@ -1,13 +1,14 @@
-[[use-case-8-waste-treatment]]
-== Use case 8 – Despatch Advice for waste treatment
+[[use-case-8-transport-of-bulk-goods]]
+== Use case 8 – Despatch Advice for transport of bulk goods (service only)
 
-This is a simple use case based on the recommended requirements for a Despatch Advice regarding a delivery of services between two locations.
+The use case covers transport of bulk goods and other types of transports that needs a weight statement and are not packaged. e.g. gravel, oil, milk, soil and waste. 
+Note that the use case only covers the transprotation service, if the despach advice also covers material, additional information needs to be added from the relevant use cases.
 [cols="1,5",options="header",]
 |====
 |*Use Case number* |8
-|*Use Case Name* |Despatch Advice for waste treatment
+|*Use Case Name* |Despatch Advice for transport of bulk goods (service only)
 |*Use Case Description* a|
-Describes a complete process whereby a Despatch party generates a Despatch Advice based on information about the service provided between two locations, e.g. transport of goods or snow plowing.
+Describes a complete process whereby a Despatch party (the service provider) generates a Despatch Advice based on information about the service provided of bulk goods transport between two locations.
 
 The Despatch Advice enables the service provider to give detailed information about the service provided between the specified locations once the service has been delivered. Which enables a Buyer to reconcile, or confirm, the services provided against the order.
 
@@ -16,10 +17,6 @@ Buyer (In UBL: BuyerCustomerParty)
 
 Seller (In UBL: SellerSupplierParty)
 
-Despatch party (In UBL: DespatchSupplierParty) (Different legal entity than the Seller in this use case)
-
-Consignee party (In UBL: DeliveryCustomerParty) (Different legal entity than the Buyer in this use case) Originating party (In UBL: OriginatorCustomerParty)
-
 |*Pre conditions* a|
 Services are delivered before Despatch Advice is sent. 
 
@@ -27,26 +24,26 @@ Services are delivered before Despatch Advice is sent.
 Despatch advice is received by the receiver of the services.
 
 |*Assumptions* a|
-. The Seller has received one order from the Buyer with one (1) article to be provided between two locations, e.g transport of goods between locations A and B. 
-. The Seller has accepted the order without changes.
+. The Seller has received one order from the Buyer with one (1) line describing the service to be provided between two locations, e.g transport of goods between locations A and B. 
+. The Seller (transporter) has accepted the order without changes.
 . The Despatch party delivers the complete order as accepted
 
 
 |*The flow* a|
 . The Seller arange delivery of agreed services.
-. The Despatch party deliver agreed services.
-. The Despatch party sends Despatch advice message to the Consignee
-. The Consignee party receives the Despatch advice message
-. The Consignee party uses the content in the Despatch advice message for confirmation of delivery.
+. The Seller party deliver agreed services.
+. The Seller party sends Despatch advice message to the Buyer
+. The Buyer party receives the Despatch advice message
+. The Buyer party uses the content in the Despatch advice message for confirmation of delivery.
 
 
 |*Result* a|
-. The Despatch advice message helped the Consignee party to confirm delivery.
+. The Despatch advice message helped the Buyer party to confirm the serivce delivered.
 .. At the right time
 .. At the right location
 ..(At the correct price)
 
-. The Despatch advice message helped the Consignee party in the process of confirming delvery to identify the
+. The Despatch advice message helped the Buyer party in the process of confirming delvery to identify the
 .. Order
 .. The order lines
 .. The articles
@@ -54,5 +51,5 @@ Despatch advice is received by the receiver of the services.
 
 
 |*XML example file* a|
-See Appendix A for a sample file illustrating Use Case 5.
+See {examples-zip} for a sample file illustrating Use Case 8.
 |====

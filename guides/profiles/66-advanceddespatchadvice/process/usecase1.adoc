@@ -1,58 +1,63 @@
 [[use-case-1-goods]]
-== Use case 1 – Despatch Advice for goods (not bulk goods)
+== Use case 1 – Despatch Advice for goods (not bulk goods) where the Receiver is responsible for transportation.
 
-This is a simple use case based on the recommended requirements for a Despatch Advice regarding a delivery of services between two locations.
+This use case is based on the recommended requirements for a Despatch Advice that informs the Consignee that goods is ready to be picked up.
 [cols="1,5",options="header",]
 |====
 |*Use Case number* |1
-|*Use Case Name* |Despatch Advice for goods (not bulk goods)
+|*Use Case Name* |Despatch Advice for goods (not bulk goods) where the Receiver is responsible for transportation.
 |*Use Case Description* a|
-Describes a complete process whereby a Despatch party generates a Despatch Advice based on information about the service provided between two locations, e.g. transport of goods or snow plowing.
+Describes a complete process whereby a Despatch party generates a Despatch Advice containing information about the goods that is ready to be picked up. 
+It always contains Items and Quantities but can also include a list of Transport Handling Units and a full description of how the goods is packed.
+It also can contain information about Environmental data (EPD) and Dangerous Goods.
 
-The Despatch Advice enables the service provider to give detailed information about the service provided between the specified locations once the service has been delivered. Which enables a Buyer to reconcile, or confirm, the services provided against the order.
+The Despatch Advice enables the goods provider to give full information about the goods that is ready to be picked up. 
+This enables the Receiver to plan the pick-up and to reconcile the shipment with the order and manage any difference.
 
 |*Parties involved* a|
-Buyer (In UBL: BuyerCustomerParty)
+Buyer (In UBL: BuyerCustomerParty) 
 
 Seller (In UBL: SellerSupplierParty)
 
-Despatch party (In UBL: DespatchSupplierParty) (Different legal entity than the Seller in this use case)
+Despatch party (In UBL: DespatchSupplierParty) (Same legal entity as the Seller in this use case)
 
-Consignee party (In UBL: DeliveryCustomerParty) (Different legal entity than the Buyer in this use case) Originating party (In UBL: OriginatorCustomerParty)
+Consignee party (In UBL: DeliveryCustomerParty) (Same legal entity as the Buyer, but different address in this use case).
 
 |*Pre conditions* a|
-Services are delivered before Despatch Advice is sent. 
+Despatch Advice is sent when goods is ready to be picked up. 
+Supplier is not responsible for transportation. 
 
 |*Post conditions* a|
-Despatch advice is received by the receiver of the services.
+Despatch advice is received by the receiver of the goods.
 
 |*Assumptions* a|
-. The Seller has received one order from the Buyer with one (1) article to be provided between two locations, e.g transport of goods between locations A and B. 
+. The Seller has received one order from the Buyer with one (1) article to be picked up by the Customer at the Supplier's site on a specific date.
 . The Seller has accepted the order without changes.
 . The Despatch party delivers the complete order as accepted
 
 
 |*The flow* a|
-. The Seller arange delivery of agreed services.
-. The Despatch party deliver agreed services.
+. The Despatch party picks and packs the ordered quantity of the item.
 . The Despatch party sends Despatch advice message to the Consignee
 . The Consignee party receives the Despatch advice message
-. The Consignee party uses the content in the Despatch advice message for confirmation of delivery.
+. The Consignee party uses the content in the Despatch advice message to check it against the order, and to plan the pick-up of the goods.
+. The goods is picked up by the Carrier Party contracted by the Consignee party to pick the goods up.
+. The goods is delivered to the Consignee party.
 
 
 |*Result* a|
-. The Despatch advice message helped the Consignee party to confirm delivery.
+. The Despatch advice message helped the Consignee party to plan the pick-up and to confirm delivery.
 .. At the right time
 .. At the right location
-..(At the correct price)
+.. At the correct transportation price
 
 . The Despatch advice message helped the Consignee party in the process of confirming delvery to identify the
 .. Order
 .. The order lines
 .. The articles
-.. The delivered quantity of services
+.. The delivered quantity of goods
 
 
 |*XML example file* a|
-See Appendix A for a sample file illustrating Use Case 5.
+See {examples-zip} for a sample file illustrating Use Case 1.
 |====
