@@ -27,9 +27,9 @@
 	<cbc:IssueTime>12:00:00
 		<?DescriptionAddFirst T6325, Document Date/Time. ?>
 	</cbc:IssueTime>
-	<cbc:DespatchAdviceTypeCode>
+	<cbc:DespatchAdviceTypeCode>1
 		<?Name Despatch advice type code ?>
-		<?Description A code signifying the type of the Despatch Advice.?>
+		<?Description A code signifying the type of the Despatch Advice. Default is Advice of despatch of goods (1)?>
 		<?Cardinality 0..1?>
 		<?CodeList DespatchAdviceTypeCode?>
 	</cbc:DespatchAdviceTypeCode>
@@ -125,10 +125,10 @@
 				<?Name Party Tax Scheme. ?>
 				<?Description Added by Logistics. The tax information about the Despatch Party. ?>
 				<?Cardinality 0..1?>
-				<cbc:CompanyID>
+				<cbc:CompanyID>GB325456788
 					<?Name Company ID. ?>
 					<?Description Added by Logistics. The Despatch Party Value Added Tax identifer. ?>
-					<?Cardinality 1..1?>
+					<?Cardinality 1..1?>					
 				</cbc:CompanyID>
 				<cac:TaxScheme>
 					<?Name Tax Scheme. ?>
@@ -144,15 +144,17 @@
 					<?DescriptionAddFirst Party Name (T5001) ?>
 					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
-				<cbc:CompanyID>
+				<cbc:CompanyID schemeID="0089">SC234567
 					<?Name Despatch supplier parties legal registration name. ?>
 					<?Description Added by Logistics. The official name of the party as registered with the relevant fiscal authority. ?>
 					<?Cardinality 0..1?>
+					<?schemeID-Usage optional?>
+					<?schemeID-CodeList ICD?>
 				</cbc:CompanyID>
 				<cac:RegistrationAddress>
 					<?Name Legal address. ?>
 					<?Cardinality 1..1?>
-					<cbc:CityName>
+					<cbc:CityName>Farthing
 						<?Name City name. ?>
 						<?Description Added by Logistics. The name of the city. ?>
 						<?Cardinality 0..1?>
@@ -161,7 +163,7 @@
 						<?Name Contry. ?>
 						<?Description Added by Logistics. The residens country for the despatch party. ?>						
 						<?Cardinality 1..1?>
-						<cbc:IdentificationCode>
+						<cbc:IdentificationCode>UK
 							<?DescriptionAddFirst Country Code (T5007) ?>
 						</cbc:IdentificationCode>
 					</cac:Country>
@@ -196,7 +198,7 @@
 			<cac:PostalAddress>
 				<cbc:StreetName>Avon Way</cbc:StreetName>
 				<cbc:AdditionalStreetName>Big projects</cbc:AdditionalStreetName>
-				<cbc:CityName>Bridgtow</cbc:CityName>
+				<cbc:CityName>Bridgtown</cbc:CityName>
 				<cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
 				<cbc:CountrySubentity>Avon</cbc:CountrySubentity>
 				<cac:AddressLine>
@@ -211,7 +213,7 @@
 				<?Name Party Tax Scheme. ?>
 				<?Description Added by Logistics. The tax information about the Delivery Party. ?>
 				<?Cardinality 0..1?>
-				<cbc:CompanyID>
+				<cbc:CompanyID>GB523859989
 					<?Name Company ID. ?>
 					<?Description Added by Logistics. The Delivery Party Value Added Tax identifer. ?>
 					<?Cardinality 1..1?>
@@ -226,19 +228,21 @@
 				</cac:TaxScheme>
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
-				<cbc:RegistrationName>Consortial
+				<cbc:RegistrationName>Sender inc.
 					<?DescriptionAddFirst Party Name (T5001) ?>
 					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
-				<cbc:CompanyID>
+				<cbc:CompanyID schemeID="0089">GB523859989
 					<?Name Delivery customers parties legal registration name. ?>
 					<?Description Added by Logistics. The official name of the party as registered with the relevant fiscal authority. ?>
 					<?Cardinality 0..1?>
+					<?schemeID-Usage optional?>
+					<?schemeID-CodeList ICD?>
 				</cbc:CompanyID>
 				<cac:RegistrationAddress>
 					<?Name Legal address. ?>
 					<?Cardinality 1..1?>
-					<cbc:CityName>
+					<cbc:CityName>Bridgtown
 						<?Name City name. ?>
 						<?Description Added by Logistics. The name of the city. ?>
 						<?Cardinality 0..1?>
@@ -247,7 +251,7 @@
 						<?Name Contry. ?>
 						<?Description Added by Logistics. The residens country for the delivery customer party. ?>						
 						<?Cardinality 1..1?>
-						<cbc:IdentificationCode>
+						<cbc:IdentificationCode>UK
 							<?DescriptionAddFirst Country Code (T5007) ?>
 						</cbc:IdentificationCode>
 					</cac:Country>
@@ -363,8 +367,12 @@
 		<cbc:Information>text
 			<?DescriptionAddFirst Used by Logistics for Supplier Remark (T6038). ?>
 		</cbc:Information>
-		<cbc:GrossWeightMeasure unitCode="KGM">1</cbc:GrossWeightMeasure>
-		<cbc:GrossVolumeMeasure unitCode="MTQ">1</cbc:GrossVolumeMeasure>
+		<cbc:GrossWeightMeasure unitCode="KGM">1030
+		<?DescriptionAddFirst Added by Logistics. The gross weight of the despatch as a whole. Must be equal the the weight specified for the included transport handling unites if this is specified?>
+		</cbc:GrossWeightMeasure>
+		<cbc:GrossVolumeMeasure unitCode="MTQ">1.456
+		<?DescriptionAddFirst Added by Logistics. The gross volumen of the despatch as a whole. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
+		</cbc:GrossVolumeMeasure>
 		<cbc:TotalTransportHandlingUnitQuantity>3
 			<?Description Not used in Logistics version 3.1 ?>
 		</cbc:TotalTransportHandlingUnitQuantity>
@@ -374,6 +382,7 @@
 			<?Cardinality 0..1?>
 			<?currencyID-Name Currency identifier ?>
 			<?currencyID-Description Currency identifier.?>
+			<?currencyID-CodeList ISO4217_2015?>
 		</cbc:DeclaredStatisticsValueAmount>
 		<cac:Consignment>
 			<cbc:ID>NA
@@ -384,10 +393,11 @@
 				<?Description An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).?>
 				<?Cardinality 0..1?>
 			</cbc:HazardousRiskIndicator>
-			<cbc:HandlingCode>EBM
+			<cbc:HandlingCode listID = "TRED4079">EBM
 				<?Name Handling code ?>
-				<?Description The handling required for this shipment, expressed as a code..?>
+				<?Description The handling required for this shipment, expressed as a code. Use TRED4079, BeastHandlingCode or an another code id as listID.?>
 				<?Cardinality 0..1?>
+				<?listID-usage Optional?>
 			</cbc:HandlingCode>
 			<cbc:HandlingInstructions>Keep the Container Carefully Closed
 				<?Name Handling instructions ?>
@@ -431,9 +441,8 @@
 					<?Cardinality 0..n?>
 					<cbc:TransportEquipmentTypeCode>Diesel
 						<?Name Tranport equipment type code ?>
-						<?Description Product Group Name (T0012). ?>
-						<?Cardinality 0..1?>
-						<?CodeList UNCL8053?>
+						<?Description Product Group Name (T0012). Used to specify the type of fuel. ?>
+						<?Cardinality 0..1?>						
 					</cbc:TransportEquipmentTypeCode>
 					<cbc:Description>Forrest diesel mix
 						<?Name Description ?>
@@ -554,7 +563,7 @@
 				<?Cardinality 1..1?>
 				<?CodeList UNECERec19?>
 			</cbc:TransportModeCode>
-			<cbc:TransportMeansTypeCode>
+			<cbc:TransportMeansTypeCode>31
 				<?Name Transport means type code ?>
 				<?Description The means of transport used in this shipment stage.?>
 				<?Cardinality 0..1?>
@@ -568,7 +577,7 @@
 					<?Name Air transport ?>
 					<?Description An aircraft used in this shipment stage.?>
 					<?Cardinality 0..1?>
-					<cbc:AircraftID>
+					<cbc:AircraftID>JA8088
 						<?Name Air transport identifier ?>
 						<?Description An identifer for a specific aircraft.?>
 						<?Cardinality 1..1?>
@@ -588,12 +597,12 @@
 					<?Name Rail transport ?>
 					<?Description Equipment used for rail transport in this shipment stage.?>
 					<?Cardinality 0..1?>
-					<cbc:TrainID>
+					<cbc:TrainID>12014
 						<?Name Train identifier ?>
 						<?Description An identifier for the train used as the means of transport.?>
 						<?Cardinality 1..1?>
 					</cbc:TrainID>
-					<cbc:RailCarID>
+					<cbc:RailCarID>50 63 20-33 801-5
 						<?Name Rail car identifier ?>
 						<?Description An identifier for the rail car on the train used as the means of transport..?>
 						<?Cardinality 0..1?>
@@ -841,7 +850,7 @@
 				<?Name Handling unit type code ?>
 				<?Description Type of Transport Handling Unit (T6119). Use UN/ECE Recommendation 21 with addition of the codes used by "Retursystem Byggpall". ?>
 				<?Rule PEPPOL-T16-B11002?>
-				<?CodeList UNECERec20?>
+				<?CodeList UNECERec21?>
 				<?Cardinality 1..1?>
 			</cbc:TransportHandlingUnitTypeCode>
 			<cbc:HandlingCode>CCC
@@ -866,17 +875,22 @@
 			</cbc:ShippingMarks>
 			<cac:TransportEquipment>
 				<?Name Transport equipment ?>
-				<?Description Used to specify Transport Equipment details associated with the Transport Handling Unit. ?>
+				<?Description Used to specify Transport Equipment details associated with this Transport Handling Unit. ?>
 				<?Cardinality 0..n?>
 				<cbc:ID>34563444
 					<?Description An id for the physical transport equipment e.g. a container number. ?>
 					<?Cardinality 1..1?>
 				</cbc:ID>
-				<cbc:TransportEquipmentTypeCode>AM
+				<cbc:TransportEquipmentTypeCode>CN
 					<?Description An code specifying the type of equipment. ?>
 					<?CodeList UNCL8053?>
 					<?Cardinality 0..1?>
 				</cbc:TransportEquipmentTypeCode>
+				<cbc:SizeTypeCode>10
+					<?Description Added by Logistics.A code signifying the size and type of this piece of piece of transport equipment. When the piece of transport equipment is a shipping container, it is recommended to use ContainerSizeTypeCode for validation. ?>
+					<?CodeList TRED8155?>
+					<?Cardinality 0..1?>
+				</cbc:SizeTypeCode>				
 				<cbc:RefrigerationOnIndicator>true
 					<?Description An indicator that this piece of transport equipment's refrigeration is on (true) or off (false). ?>
 					<?Cardinality 0..1?>
@@ -888,24 +902,7 @@
 				<cbc:PowerIndicator>true
 					<?Description An indicator that this piece of transport equipment can supply power (true) or not (false). ?>
 					<?Cardinality 0..1?>
-				</cbc:PowerIndicator>
-				<cac:MeasurementDimension>
-					<?Name Measurement dimension ?>
-					<?Description Used to specify any measurement of the Transport Equipment. ?>
-					<?Cardinality 0..n?>
-					<cbc:AttributeID>LN
-						<?Name Attribute identifier ?>
-						<?CodeList UNCL6313-T120?>
-						<?Description To describe the type of measurement (T6714). Use UNCL 6313 subset. ?>
-						<?Cardinality 1..1?>
-					</cbc:AttributeID>
-					<cbc:Measure unitCode="MTR">123
-						<?Name Measure ?>
-						<?unitCode-CodeList UNECERec20?>
-						<?Description For the measure (T6122) and Measure of Unit Code (T6706). Use UN/ECE Recommendation 20 and 21.subset.?>
-						<?Cardinality 1..1?>
-					</cbc:Measure>
-				</cac:MeasurementDimension>
+				</cbc:PowerIndicator>				
 			</cac:TransportEquipment>
 			<cac:MeasurementDimension>
 				<?Name Measurement dimension ?>
@@ -973,6 +970,7 @@
 					<?Cardinality 0..1?>
 					<?currencyID-Name Currency identifier ?>
 					<?currencyID-Description Currency identifier.?>
+					<?currencyID-CodeList ISO4217_2015?>
 				</cbc:DeclaredStatisticsValueAmount>
 				<cbc:Quantity unitCode="EA">6
 					<?Description The number of units making up this goods item. ?>
@@ -1023,12 +1021,12 @@
 					<?Description An indicator that the packaging material is returnable (true) or not (false). ?>
 					<?Cardinality 0..1?>
 					</cbc:ReturnableMaterialIndicator>
-					<cbc:PackagingTypeCode>
+					<cbc:PackagingTypeCode>OB
 						<?Description A code signifying a level of packaging. ?>
 						<?CodeList UNECERec21?>
 						<?Cardinality 1..1?>
 					</cbc:PackagingTypeCode>
-					<cbc:PackingMaterial>Carbon box
+					<cbc:PackingMaterial>Wood
 					<?Description Text describing the packaging material. ?>
 					<?Cardinality 0..1?>
 					</cbc:PackingMaterial>
@@ -1045,12 +1043,12 @@
 							<?Description An indicator that the packaging material is returnable (true) or not (false). ?>
 							<?Cardinality 0..1?>
 						</cbc:ReturnableMaterialIndicator>
-						<cbc:PackagingTypeCode>
+						<cbc:PackagingTypeCode>OB
 							<?Description A code signifying a level of packaging. ?>
 							<?CodeList UNECERec21?>
 							<?Cardinality 1..1?>
 						</cbc:PackagingTypeCode>
-						<cbc:PackingMaterial>Carbon box
+						<cbc:PackingMaterial>Wood
 							<?Description Text describing the packaging material. ?>
 							<?Cardinality 0..1?>
 						</cbc:PackingMaterial>
@@ -1073,6 +1071,7 @@
 								<?Cardinality 0..1?>
 								<?currencyID-Name Currency identifier ?>
 								<?currencyID-Description Currency identifier.?>
+								<?currencyID-CodeList ISO4217_2015?>
 							</cbc:DeclaredStatisticsValueAmount>
 							<cbc:Quantity unitCode="EA">6
 								<?Description The number of units making up this goods item. ?>
@@ -1123,6 +1122,7 @@
 							<?Cardinality 0..1?>
 							<?currencyID-Name Currency identifier ?>
 							<?currencyID-Description Currency identifier.?>
+							<?currencyID-CodeList ISO4217_2015?>
 						</cbc:DeclaredStatisticsValueAmount>
 						<cbc:Quantity unitCode="EA">6
 							<?Description The number of units making up this goods item. ?>
@@ -1173,6 +1173,7 @@
 						<?Cardinality 0..1?>
 						<?currencyID-Name Currency identifier ?>
 						<?currencyID-Description Currency identifier.?>
+						<?currencyID-CodeList ISO4217_2015?>
 					</cbc:DeclaredStatisticsValueAmount>
 					<cbc:Quantity unitCode="EA">6
 						<?Description The number of units making up this goods item. ?>
@@ -1231,7 +1232,7 @@
 				<cbc:ID>AEG012345
 					<?DescriptionAddFirst Order Number (T3309) ?>
 				</cbc:ID>
-				<cbc:SalesOrderID>
+				<cbc:SalesOrderID>5678985
 					<?Name Sales order number ?>
 					<?Cardinality 0..1?>
 					<?Description Reference to the sellers order number. ?>
