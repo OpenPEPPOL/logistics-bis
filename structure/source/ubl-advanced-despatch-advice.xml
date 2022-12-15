@@ -95,7 +95,7 @@
 				<?Description The name of the Despatch Supplier Party. ?>
 				<?Cardinality 0..1?>
 				<cbc:Name>Sender inc.
-					<?Name Name of the fuel supplier. ?>
+					<?Name Name of the fuel supplier ?>
 					<?Description The Despatch Supplier. ?>
 					<?Cardinality 1..1?>
 				</cbc:Name>
@@ -137,9 +137,11 @@
 					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="0089">SC234567
-					<?Name Despatch supplier parties legal registration name. ?>
+					<?Name Despatch supplier parties legal registration name ?>
 					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 					<?Cardinality 0..1?>
+					<?schemeID-Name Scheme identifier ?>
+					<?schemeID-Description The identification scheme identifier of the despatch supplier legal registration identifier ?>
 					<?schemeID-Usage optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:CompanyID>
@@ -147,7 +149,7 @@
 					<?Name Legal address ?>
 					<?Cardinality 1..1?>
 					<cbc:CityName>Farthing
-						<?Name City name. ?>
+						<?Name City name ?>
 						<?Description The name of the city. ?>
 						<?Cardinality 0..1?>
 					</cbc:CityName>
@@ -183,7 +185,7 @@
 				<?Description The name of the Delivery Customer Party. ?>
 				<?Cardinality 0..1?>
 				<cbc:Name>Sender inc.
-					<?Name Name of the fuel supplier. ?>
+					<?Name Name of the fuel supplier ?>
 					<?Description The Despatch Supplier. ?>
 					<?Cardinality 1..1?>
 				</cbc:Name>
@@ -226,17 +228,19 @@
 					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="0089">GB523859989
-					<?Name Delivery customers parties legal registration name. ?>
+					<?Name Delivery customers parties legal registration name ?>
 					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 					<?Cardinality 0..1?>
 					<?schemeID-Usage optional?>
 					<?schemeID-CodeList ICD?>
+					<?schemeID-Name Scheme identifier ?>
+					<?schemeID-Description The identification scheme identifier of the despatch customer legal registration identifier ?>
 				</cbc:CompanyID>
 				<cac:RegistrationAddress>
 					<?Name Legal address ?>
 					<?Cardinality 1..1?>
 					<cbc:CityName>Bridgtown
-						<?Name City name. ?>
+						<?Name City name ?>
 						<?Description The name of the city. ?>
 						<?Cardinality 0..1?>
 					</cbc:CityName>
@@ -1398,6 +1402,7 @@
 						<?Name Address line ?>
 						<?Cardinality 0..1?>
 						<cbc:Line>The Roundabout
+							<?Name Address line 3 ?>
 							<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
 							<?Cardinality 1..1?>
 						</cbc:Line>
