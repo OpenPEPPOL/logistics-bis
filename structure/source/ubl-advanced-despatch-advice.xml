@@ -153,7 +153,7 @@
 				</cbc:CompanyID>
 				<cac:RegistrationAddress>
 					<?Name Legal address. ?>
-					<?Cardinality 1..1?>
+					<?Cardinality 0..1?>
 					<cbc:CityName>Farthing
 						<?Name City name. ?>
 						<?Description Added by Logistics. The name of the city. ?>
@@ -170,9 +170,24 @@
 				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
-				<cbc:Name>Mrs Bouquet</cbc:Name>
-				<cbc:Telephone>0158 1233714</cbc:Telephone>
-				<cbc:ElectronicMail>bouquet@fpconsortial.co.uk</cbc:ElectronicMail>
+				<?Name Contact. ?>
+				<?Description Added by Logistics. The contact of the Despatch supplier party. ?>
+				<?Cardinality 0..1?>
+				<cbc:Name>Mrs Bouquet
+				<?Name Contact name. ?>
+				<?Description Added by Logistics. The contact name. ?>					
+				<?Cardinality 0..1?>
+				</cbc:Name>
+				<cbc:Telephone>0158 1233714
+				<?Name Telephone. ?>
+				<?Description Added by Logistics. The phone number of the contact. ?>	
+				<?Cardinality 0..1?>
+				</cbc:Telephone>
+				<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
+				<?Name Telephone. ?>
+				<?Description Added by Logistics. The electronic mail of the contact. ?>
+				<?Cardinality 0..1?>
+				</cbc:ElectronicMail>
 			</cac:Contact>
 		</cac:Party>
 	</cac:DespatchSupplierParty>
@@ -241,7 +256,7 @@
 				</cbc:CompanyID>
 				<cac:RegistrationAddress>
 					<?Name Legal address. ?>
-					<?Cardinality 1..1?>
+					<?Cardinality 0..1?>
 					<cbc:CityName>Bridgtown
 						<?Name City name. ?>
 						<?Description Added by Logistics. The name of the city. ?>
@@ -257,15 +272,25 @@
 					</cac:Country>
 				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
+			
 			<cac:Contact>
+				<?Name Contact. ?>
+				<?Description Added by Logistics. The contact of the Delivery customer party. ?>
+				<?Cardinality 0..1?>
 				<cbc:Name>Mrs Bouquet
-					<?DescriptionAddFirst Name (T5012) ?>
+				<?Name Contact name. ?>
+				<?Description Added by Logistics. The contact name. ?>					
+				<?Cardinality 0..1?>
 				</cbc:Name>
 				<cbc:Telephone>0158 1233714
-					<?DescriptionAddFirst Phone Number (T5010) ?>
+				<?Name Telephone. ?>
+				<?Description Added by Logistics. The phone number of the contact. ?>	
+				<?Cardinality 0..1?>
 				</cbc:Telephone>
 				<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
-					<?DescriptionAddFirst Email Address (T5011) ?>
+				<?Name Telephone. ?>
+				<?Description Added by Logistics. The electronic mail of the contact. ?>
+				<?Cardinality 0..1?>
 				</cbc:ElectronicMail>
 			</cac:Contact>
 		</cac:Party>
