@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>    
+<?xml version="1.0" encoding="UTF-8"?>    
 	<pattern xmlns="http://purl.oclc.org/dsdl/schematron">
 		<rule context="cbc:CustomizationID">
 			<assert id="PEPPOL-T120-R011" test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1')" flag="fatal">Specification identifier SHALL start with the value 'urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1'.</assert>
@@ -13,10 +13,10 @@
 			<assert id="PEPPOL-T120-R010" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A despatch advice originator customer party SHALL contain the name or an identifier</assert>
 		</rule>
 		<rule context="cac:EstimatedDeliveryPeriod">
-			<assert id="PEPPOL-T120-R012" test="translate(cbc:StartDate,'-','') &lt;= translate(cbc:EndDate,'-','')" flag="fatal">Start date must be earlier or equal to end date</assert>
-			<assert id="PEPPOL-T120-R013" test="(cbc:StartTime) and (cbc:StartDate)" flag="fatal">Starttime cannot be specified without StartDate</assert>
-			<assert id="PEPPOL-T120-R014" test="(cbc:StartTime) and (cbc:EndTime)" flag="fatal">Starttime cannot be specified without EndTime</assert>
-			<assert id="PEPPOL-T120-R015" test="not(cbc:StartTime) or translate(cbc:StartDate,'-','') &gt; translate(cbc:EndDate,'-','') or translate(cbc:StartTime,':','') &lt; translate(cbc:EndTime,':','')" flag="fatal">StartTime must be before EndTime</assert>
+			<assert id="PEPPOL-T120-R012" test="not(cbc:EndDate) or translate(cbc:StartDate,'-','') &lt;= translate(cbc:EndDate,'-','')" flag="fatal">Start date must be earlier or equal to end date</assert>
+			<assert id="PEPPOL-T120-R013" test="not(cbc:StartTime) or (cbc:StartTime) and (cbc:StartDate)" flag="fatal">Starttime cannot be specified without StartDate</assert>
+			<assert id="PEPPOL-T120-R014" test="not(cbc:StartTime) or (cbc:StartTime) and (cbc:EndTime)" flag="fatal">Starttime cannot be specified without EndTime</assert>
+			<assert id="PEPPOL-T120-R015" test="not(cbc:StartTime) or not(cbc:EndTime) or translate(cbc:StartDate,'-','') &gt; translate(cbc:EndDate,'-','') or translate(cbc:StartTime,':','') &lt; translate(cbc:EndTime,':','')" flag="fatal">StartTime must be before EndTime</assert>
 		</rule>
 		<rule context="cac:Shipment">
 			<assert id="Peppol-T120-R016" test="not(cbc:TotalTransportHandlingUnitQuantity) or (cbc:TotalTransportHandlingUnitQuantity) &gt;= 0" flag="fatal">Total transport handling unit quantity SHALL not be negative</assert>
