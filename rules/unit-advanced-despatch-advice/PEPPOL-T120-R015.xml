@@ -1,68 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0"
-	configuration="peppolbis-T120-base-1.1">
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T120-base-1.1">
 	<assert>
 		<description>Verify DespatchAdvice start and end times are correct</description>
 		<scope>PEPPOL-T120-R015</scope>
 	</assert>
-	
-<test id="1">
-	<assert>
-		<success>PEPPOL-T120-R015</success>
-	</assert>
-	<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-		xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
-		xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
-		<cac:Shipment>
-			<cac:Delivery>
-				<cac:EstimatedDeliveryPeriod>
-					<cbc:StartDate>2021-09-25</cbc:StartDate>
-					<cbc:StartTime>12:00:00</cbc:StartTime>
-					<cbc:EndDate>2021-09-27</cbc:EndDate>
-					<cbc:EndTime>12:00:00</cbc:EndTime>
-				</cac:EstimatedDeliveryPeriod>
-			</cac:Delivery>
-		</cac:Shipment>
-	</DespatchAdvice>
-</test>
+
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T120-R015</success>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cac:Delivery>
+					<cac:EstimatedDeliveryPeriod>
+						<cbc:StartDate>2021-09-25</cbc:StartDate>
+					</cac:EstimatedDeliveryPeriod>
+				</cac:Delivery>
+			</cac:Shipment>
+		</DespatchAdvice>
+	</test>
 
 	<test id="2">
 		<assert>
 			<success>PEPPOL-T120-R015</success>
 		</assert>
-		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
-				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
-				xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
-				<cac:Shipment>
-					<cac:Delivery>
-						<cac:EstimatedDeliveryPeriod>
-							<cbc:StartDate>2021-09-25</cbc:StartDate>
-							<cbc:StartTime>12:00:00</cbc:StartTime>
-							<cbc:EndDate>2021-09-27</cbc:EndDate>
-							<cbc:EndTime>11:00:00</cbc:EndTime>
-						</cac:EstimatedDeliveryPeriod>
-					</cac:Delivery>
-				</cac:Shipment>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cac:Delivery>
+					<cac:EstimatedDeliveryPeriod>
+						<cbc:StartDate>2021-09-25</cbc:StartDate>
+						<cbc:StartTime>12:00:00</cbc:StartTime>
+					</cac:EstimatedDeliveryPeriod>
+				</cac:Delivery>
+			</cac:Shipment>
 		</DespatchAdvice>
 	</test>
-	
+
 	<test id="3">
 		<assert>
 			<success>PEPPOL-T120-R015</success>
 		</assert>
-		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
-				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
-				xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
-				<cac:Shipment>
-					<cac:Delivery>
-						<cac:EstimatedDeliveryPeriod>
-							<cbc:StartDate>2021-09-25</cbc:StartDate>
-							<cbc:StartTime>12:00:00</cbc:StartTime>
-							<cbc:EndDate>2021-09-25</cbc:EndDate>
-							<cbc:EndTime>12:00:00</cbc:EndTime>
-						</cac:EstimatedDeliveryPeriod>
-					</cac:Delivery>
-				</cac:Shipment>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cac:Delivery>
+					<cac:EstimatedDeliveryPeriod>
+						<cbc:StartDate>2021-09-25</cbc:StartDate>
+						<cbc:StartTime>12:00:00</cbc:StartTime>
+						<cbc:EndDate>2021-09-27</cbc:EndDate>
+						<cbc:EndTime>12:00:00</cbc:EndTime>
+					</cac:EstimatedDeliveryPeriod>
+				</cac:Delivery>
+			</cac:Shipment>
 		</DespatchAdvice>
 	</test>
 
@@ -70,78 +64,99 @@
 		<assert>
 			<success>PEPPOL-T120-R015</success>
 		</assert>
-		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
-				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
-				xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
-				<cac:Shipment>
-					<cac:Delivery>
-						<cac:EstimatedDeliveryPeriod>
-							<cbc:StartDate>2021-09-25</cbc:StartDate>
-							<cbc:StartTime>12:00:00</cbc:StartTime>
-							<cbc:EndDate>2021-09-25</cbc:EndDate>
-							<cbc:EndTime>12:00:01</cbc:EndTime>
-						</cac:EstimatedDeliveryPeriod>
-					</cac:Delivery>
-				</cac:Shipment>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cac:Delivery>
+					<cac:EstimatedDeliveryPeriod>
+						<cbc:StartDate>2021-09-25</cbc:StartDate>
+						<cbc:StartTime>12:00:00</cbc:StartTime>
+						<cbc:EndDate>2021-09-27</cbc:EndDate>
+						<cbc:EndTime>11:00:00</cbc:EndTime>
+					</cac:EstimatedDeliveryPeriod>
+				</cac:Delivery>
+			</cac:Shipment>
 		</DespatchAdvice>
 	</test>
-	
+
 	<test id="5">
 		<assert>
-			<error><PEPPOL-T120-R015></PEPPOL-T120-R015></error>
+			<success>PEPPOL-T120-R015</success>
 		</assert>
-		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
-				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
-				xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
-				<test id="3">
-					<assert>
-						<success>PEPPOL-T120-R015</success>
-					</assert>
-					<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
-							xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
-							xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
-							<cac:Shipment>
-								<cac:Delivery>
-									<cac:EstimatedDeliveryPeriod>
-										<cbc:StartDate>2021-09-25</cbc:StartDate>
-										<cbc:StartTime>12:00:00</cbc:StartTime>
-										<cbc:EndDate>2021-09-24</cbc:EndDate>
-										<cbc:EndTime>12:00:00</cbc:EndTime>
-									</cac:EstimatedDeliveryPeriod>
-								</cac:Delivery>
-							</cac:Shipment>
-					</DespatchAdvice>
-				</test>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cac:Delivery>
+					<cac:EstimatedDeliveryPeriod>
+						<cbc:StartDate>2021-09-25</cbc:StartDate>
+						<cbc:StartTime>12:00:00</cbc:StartTime>
+						<cbc:EndDate>2021-09-25</cbc:EndDate>
+						<cbc:EndTime>12:00:00</cbc:EndTime>
+					</cac:EstimatedDeliveryPeriod>
+				</cac:Delivery>
+			</cac:Shipment>
 		</DespatchAdvice>
 	</test>
 
 	<test id="6">
 		<assert>
-			<error><PEPPOL-T120-R015></PEPPOL-T120-R015></error>
+			<success>PEPPOL-T120-R015</success>
 		</assert>
-		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
-				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
-				xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
-				<test id="3">
-					<assert>
-						<success>PEPPOL-T120-R015</success>
-					</assert>
-					<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
-							xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" 
-							xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
-							<cac:Shipment>
-								<cac:Delivery>
-									<cac:EstimatedDeliveryPeriod>
-										<cbc:StartDate>2021-09-25</cbc:StartDate>
-										<cbc:StartTime>12:00:00</cbc:StartTime>
-										<cbc:EndDate>2021-09-25</cbc:EndDate>
-										<cbc:EndTime>11:00:00</cbc:EndTime>
-									</cac:EstimatedDeliveryPeriod>
-								</cac:Delivery>
-							</cac:Shipment>
-					</DespatchAdvice>
-				</test>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cac:Delivery>
+					<cac:EstimatedDeliveryPeriod>
+						<cbc:StartDate>2021-09-25</cbc:StartDate>
+						<cbc:StartTime>12:00:00</cbc:StartTime>
+						<cbc:EndDate>2021-09-25</cbc:EndDate>
+						<cbc:EndTime>12:00:01</cbc:EndTime>
+					</cac:EstimatedDeliveryPeriod>
+				</cac:Delivery>
+			</cac:Shipment>
 		</DespatchAdvice>
 	</test>
 
+	<test id="7">
+		<assert>
+			<error number="1">PEPPOL-T120-R015</error>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cac:Delivery>
+					<cac:EstimatedDeliveryPeriod>
+						<cbc:StartDate>2021-09-26</cbc:StartDate>
+						<cbc:StartTime>12:00:00</cbc:StartTime>
+						<cbc:EndDate>2021-09-25</cbc:EndDate>
+						<cbc:EndTime>13:00:00</cbc:EndTime>
+					</cac:EstimatedDeliveryPeriod>
+				</cac:Delivery>
+			</cac:Shipment>
+		</DespatchAdvice>
+	</test>
+
+	<test id="8">
+		<assert>
+			<error number="2">PEPPOL-T120-R015</error>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cac:Delivery>
+					<cac:EstimatedDeliveryPeriod>
+						<cbc:StartDate>2021-09-25</cbc:StartDate>
+						<cbc:StartTime>12:00:00</cbc:StartTime>
+						<cbc:EndDate>2021-09-25</cbc:EndDate>
+						<cbc:EndTime>11:00:00</cbc:EndTime>
+					</cac:EstimatedDeliveryPeriod>
+				</cac:Delivery>
+			</cac:Shipment>
+		</DespatchAdvice>
+	</test>
 </testSet>
