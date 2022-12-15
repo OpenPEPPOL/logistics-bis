@@ -13,31 +13,31 @@
 			<assert id="PEPPOL-T120-R010" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A despatch advice originator customer party SHALL contain the name or an identifier</assert>
 		</rule>
 		<rule context="cac:EstimatedDeliveryPeriod">
-			<assert id="PEPPOL-T120-R012" test="translate(cbc:StartDate,'-','') &lt;= translate(cbc:EndDate,'-','')" flag="fatal">Start date must be earlier or equal to end date</assert>
-			<assert id="PEPPOL-T120-R013" test="(cbc:StartTime) and (cbc:StartDate)" flag="fatal">Starttime cannot be specified without StartDate</assert>
-			<assert id="PEPPOL-T120-R014" test="(cbc:StartTime) and (cbc:EndTime)" flag="fatal">Starttime cannot be specified without EndTime</assert>
-			<assert id="PEPPOL-T120-R015" test="not(cbc:StartTime) or translate(cbc:StartDate,'-','') &gt; translate(cbc:EndDate,'-','') or translate(cbc:StartTime,':','') &lt; translate(cbc:EndTime,':','')" flag="fatal">StartTime must be before EndTime</assert>
+			<assert id="PEPPOL-T120-R012" test="not(cbc:EndDate) or translate(cbc:StartDate,'-','') &lt;= translate(cbc:EndDate,'-','')" flag="fatal">Start date must be earlier or equal to end date</assert>
+			<assert id="PEPPOL-T120-R013" test="not(cbc:StartTime) or (cbc:StartTime) and (cbc:StartDate)" flag="fatal">Starttime cannot be specified without StartDate</assert>
+			<assert id="PEPPOL-T120-R014" test="not(cbc:StartTime) or (cbc:StartTime) and (cbc:EndTime)" flag="fatal">Starttime cannot be specified without EndTime</assert>
+			<assert id="PEPPOL-T120-R015" test="not(cbc:StartTime) or not(cbc:EndTime) or translate(cbc:StartDate,'-','') &gt; translate(cbc:EndDate,'-','') or translate(cbc:StartTime,':','') &lt; translate(cbc:EndTime,':','')" flag="fatal">StartTime must be before EndTime</assert>
 		</rule>
 		<rule context="cac:Shipment">
 			<assert id="Peppol-T120-R016" test="not(cbc:TotalTransportHandlingUnitQuantity) or (cbc:TotalTransportHandlingUnitQuantity) &gt;= 0" flag="fatal">Total transport handling unit quantity SHALL not be negative</assert>
-			<assert id="Peppol-T120-R017" test="not(cbc:TotalTransportHandlingUnitQuantity) or (cbc:TotalTransportHandlingUnitQuantity) = count(cac:TransportHandlingUnit)" flag="fatal">Total transport handling unit quantity SHALL match the numbers of the transport handling units specified</assert>
-			<assert id="Peppol-T120-R018" test="not(cbc:GrossWeightMeasure) or (cbc:GrossWeightMeasure) = sum(cac:TransportHandlingUnit/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure)" flag="fatal">Total transport handling unit Grossweight measure SHALL match the grossweight of the transport handling units specified</assert>
-			<assert id="Peppol-T120-R019" test="not(cbc:GrossVolumenMeasure) or (cbc:GrossVolumenMeasure) &gt;= sum(cac:TransportHandlingUnit/cac:MeasurementDimension[cbc:AttributeID = 'AAW']/cbc:Measure)" flag="fatal">Total transport handling unit Grossweight measure SHALL greater or equal to the gross volumen of the transport handling units specified</assert>
+			<assert id="Peppol-T120-R017" test="not(cbc:TotalTransportHandlingUnitQuantity) or (cbc:TotalTransportHandlingUnitQuantity) = count(cac:TransportHandlingUnit)" flag="warning">Total transport handling unit quantity SHALL match the numbers of the transport handling units specified</assert>
+			<assert id="Peppol-T120-R018" test="not(cbc:GrossWeightMeasure) or (cbc:GrossWeightMeasure) = sum(cac:TransportHandlingUnit/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure)" flag="warning">Total transport handling unit Grossweight measure SHALL match the grossweight of the transport handling units specified</assert>
+			<assert id="Peppol-T120-R019" test="not(cbc:GrossVolumenMeasure) or (cbc:GrossVolumenMeasure) &gt;= sum(cac:TransportHandlingUnit/cac:MeasurementDimension[cbc:AttributeID = 'AAW']/cbc:Measure)" flag="warning">Total transport handling unit Grossweight measure SHALL greater or equal to the gross volumen of the transport handling units specified</assert>
 		</rule>
 		
 		<rule context="cac:TransportHandlingUnit">
 			<assert id="Peppol-T120-R020" test="not(cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) 
 												or not(cac:Package/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure|cac:GoodsItem/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) 
 												or (cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) = sum(cac:Package/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) + sum(cac:GoodsItem/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure)" 
-			flag="fatal">Total transport handling unit Grossweight measure SHALL match the grossweight of packages specified</assert>
+			flag="warning">Total transport handling unit Grossweight measure SHALL match the grossweight of packages specified</assert>
 			
 			<assert id="Peppol-T120-R021" test="not(cac:MeasurementDimension[cbc:AttributeID = 'AAW']/cbc:Measure) 
 												or not (cac:Package/cac:MeasurementDimension[cbc:AttributeID = 'AAW']/cbc:Measure) 
-												or (cac:MeasurementDimension[cbc:AttributeID = 'AAW']/cbc:Measure) &gt;= sum(cac:Package/cac:MeasurementDimension[cbc:AttributeID = 'AAW']/cbc:Measure)" flag="fatal">Total transport handling unit Gross volumen measure SHALL be less or equal to the gross Volumen of packages specified</assert>
+												or (cac:MeasurementDimension[cbc:AttributeID = 'AAW']/cbc:Measure) &gt;= sum(cac:Package/cac:MeasurementDimension[cbc:AttributeID = 'AAW']/cbc:Measure)" flag="warning">Total transport handling unit Gross volumen measure SHALL be less or equal to the gross Volumen of packages specified</assert>
 		</rule>
 		
 		<rule context="cac:Package">
-			<assert id="Peppol-T120-R022" test="not(cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) or (cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) = sum(cac:ContainingPackage/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) + sum(cac:GoodsItem/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure)" flag="fatal">Grossweight of Package measure SHALL match the grossweight of containing packages and goods items specified if the weight of these is defined</assert>
+			<assert id="Peppol-T120-R022" test="not(cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) or (cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) = sum(cac:ContainingPackage/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) + sum(cac:GoodsItem/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure)" flag="warning">Grossweight of Package measure SHALL match the grossweight of containing packages and goods items specified if the weight of these is defined</assert>
 		</rule>
 		
 		<rule context="cac:DespatchLine">
