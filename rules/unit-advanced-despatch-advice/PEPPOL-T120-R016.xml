@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T120-base-1.1">
 	<assert>
-		<description>Verify DespatchAdvice start and end times are correct</description>
+		<description>Verify DespatchAdvice Total transport handling unit quantity SHALL not be negative</description>
 		<scope>PEPPOL-T120-R016</scope>
 	</assert>
 
@@ -47,7 +47,7 @@
 	
 	<test id="4">
 		<assert>
-			<error number="2">PEPPOL-T120-R016</error>
+			<error>PEPPOL-T120-R016</error>
 		</assert>
 		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
