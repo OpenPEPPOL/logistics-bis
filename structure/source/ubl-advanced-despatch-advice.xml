@@ -485,7 +485,7 @@
 							<?Description The measured value. Used for EnergyContent, ConversionFactor, FuelConsumption, DrivingDistance, DrivingTime and RenewableFuel. unitCode refers to T6706. ?>
 							<?Cardinality 0..1?>
 							<?unitCode-Name Measure unit of measure ?>
-							<?unitCode-Description The unit of measure that applies to measure. ?>
+							<?unitCode-Description The unit of measure that applies to the measure. ?>
 							<?unitCode-CodeList UNECERec20?>
 						</cbc:Measure>
 						<cbc:Description>StandardEstimate
@@ -1145,9 +1145,11 @@
 							</cbc:AttributeID>
 							<cbc:Measure unitCode="MTR">123
 								<?Name Measure ?>
-								<?unitCode-CodeList UNECERec20?>
-								<?Description For the measure and Measure of Unit Code. Use UN/ECE Recommendation 20 and 21.subset.?>
+								<?Description For the measure.?>
 								<?Cardinality 1..1?>
+								<?unitCode-Name Measure unit of measure ?>
+								<?unitCode-Description The unit of measure that applies to the measure. ?>
+								<?unitCode-CodeList UNECERec20?>
 							</cbc:Measure>
 						</cac:MeasurementDimension>
 					</cac:ContainedPackage>
@@ -1195,14 +1197,16 @@
 						<cbc:AttributeID>LN
 								<?Name Attribute identifier ?>
 								<?CodeList UNCL6313-T120?>
-								<?Description To describe the type of measurement. Use UNCL 6313 subset. ?>
+								<?Description To describe the type of measurement. ?>
 								<?Cardinality 1..1?>
 							</cbc:AttributeID>
 						<cbc:Measure unitCode="KGM">123
 								<?Name Measure ?>
-								<?unitCode-CodeList UNECERec20?>
-								<?Description For the measure and Measure of Unit Code. Use UN/ECE Recommendation 20 and 21.subset.?>
+								<?Description For the measure. ?>
 								<?Cardinality 1..1?>
+								<?unitCode-Name Measure unit of measure ?>
+								<?unitCode-Description The unit of measure that applies to the measure. ?>
+								<?unitCode-CodeList UNECERec20?>
 							</cbc:Measure>
 					</cac:MeasurementDimension>
 				</cac:ContainedPackage>
@@ -1255,11 +1259,11 @@
 					</cbc:AttributeID>
 					<cbc:Measure unitCode="MTR">123
 						<?Name Measure ?>
-						<?Description For the measure and Measure of Unit Code. Use UN/ECE Recommendation 20 and 21.subset.?>
+						<?Description For the measure.?>
 						<?Cardinality 1..1?>
 						<?unitCode-CodeList UNECERec20?>
 						<?unitCode-Name Measure unit of measure ?>
-						<?unitCode-Description The unit of measure that applies to measure. ?>
+						<?unitCode-Description The unit of measure that applies to the measure. ?>
 					</cbc:Measure>
 				</cac:MeasurementDimension>
 			</cac:Package>
@@ -1527,7 +1531,7 @@
 					<?Cardinality 1..1?>
 					<?unitCode-CodeList UNECERec20?>
 					<?unitCode-Name Measure unit of measure ?>
-					<?unitCode-Description The unit of measure that applies to measure. ?>
+					<?unitCode-Description The unit of measure that applies to the measure. ?>
 				</cbc:Measure>
 			</cac:Dimension>
 		</cac:Item>
