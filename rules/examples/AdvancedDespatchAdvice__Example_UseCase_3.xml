@@ -6,7 +6,7 @@
 -->
 <DespatchAdvice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
- xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+ xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:actual-2"
  xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 	
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1</cbc:CustomizationID>
@@ -123,7 +123,7 @@
 	<cac:Shipment>
 		<cbc:ID>NA</cbc:ID>
 		<cac:Delivery>
-			<cbc:ActualDeliveryDate>2020-12-21</cbc:ActualDeliveryDate>
+
 			<cac:DeliveryLocation>
 				<cbc:ID schemeID="0088">5790000435951</cbc:ID>
 				<cbc:Name>Skanska Sverige AB</cbc:Name>
@@ -136,6 +136,11 @@
 					</cac:Country>
 				</cac:Address>
 			</cac:DeliveryLocation>
+
+			<cac:EstimatedDeliveryPeriod>
+				<cbc:StartDate>2020-12-21</cbc:StartDate>
+			</cac:EstimatedDeliveryPeriod>
+			
 		</cac:Delivery>
 	</cac:Shipment>
 	
