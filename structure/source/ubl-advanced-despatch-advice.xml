@@ -419,6 +419,8 @@
 				<?Name Handling code ?>
 				<?Description The handling required for this shipment, expressed as a code. Use TRED4079, BeastHandlingCode or an another code id as listID.?>
 				<?Cardinality 0..1?>
+				<?listID-Name Identifier for codelist for handling code ?>
+				<?listID-Description An identifier for the codelist used for the handling code ?>
 				<?listID-usage Optional?>
 			</cbc:HandlingCode>
 			<cbc:HandlingInstructions>Keep the Container Carefully Closed
@@ -485,7 +487,7 @@
 							<?Description The measured value. Used for EnergyContent, ConversionFactor, FuelConsumption, DrivingDistance, DrivingTime and RenewableFuel. unitCode refers to T6706. ?>
 							<?Cardinality 0..1?>
 							<?unitCode-Name Measure unit of measure ?>
-							<?unitCode-Description The unit of measure that applies to measure. ?>
+							<?unitCode-Description The unit of measure that applies to the measure. ?>
 							<?unitCode-CodeList UNECERec20?>
 						</cbc:Measure>
 						<cbc:Description>StandardEstimate
@@ -563,14 +565,19 @@
 						<?Name Environmental emission type code ?>
 						<?Description Defines the type of emission reported. Values: "CO2" (Carbon Dioxide), NOX (Nitrogen Oxide), PM (Particulate Matter), HC (Hydro Carbon). ?>
 						<?Cardinality 1..1?>
+						<?listID-Name Identifier for codelist for environmental emissions type ?>
+						<?listID-Description An identifier for the codelist used for the environmental emission type code ?>
 						<?listID-usage Optional?>
+						<?name-Name Name of environmental emissions type?>
 						<?name-usage Optional?>
 					</cbc:EnvironmentalEmissionTypeCode>
 					<cbc:ValueMeasure unitCode="MGM">10
 						<?Name Value of measurement ?>
-						<?unitCode-CodeList UNECERec20?>
 						<?Description The value of the emission. Refers to Carbon Dioxide/Nitrogen Oxide/Particulate Matter/Hydro Carbon. ?>
 						<?Cardinality 1..1?>
+						<?unitCode-Name Measure unit of measure ?>
+						<?unitCode-Description The unit of measure that applies to measure. ?>
+						<?unitCode-CodeList UNECERec20?>
 					</cbc:ValueMeasure>
 				</cac:EnvironmentalEmission>
 			</cac:OriginalDespatchTransportationService>
@@ -715,7 +722,7 @@
 							<?Name Country code ?>
 							<?Cardinality 0..1?>
 							<?CodeList ISO3166?>
-							<?Description A code that identifies the country.The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 						</cbc:IdentificationCode>
 					</cac:Country>
 					<cac:LocationCoordinate>
@@ -860,6 +867,7 @@
 			<?Description Used to specify how the goods is packed. ?>
 			<?Cardinality 0..n?>
 			<cbc:ID>11111222222222
+				<?Name Identifier transport handling unit ?>
 				<?Description The SSCC identification code of this Transport Handling Unit. ?>
 				<?Cardinality 1..1?>
 				<?schemeID-usage Optional?>
@@ -896,28 +904,34 @@
 				<?Description Used to specify Transport Equipment details associated with this Transport Handling Unit. ?>
 				<?Cardinality 0..n?>
 				<cbc:ID>34563444
+					<?Name Identifier transport equipment ?>
 					<?Description An id for the physical transport equipment e.g. a container number. ?>
 					<?Cardinality 1..1?>
 				</cbc:ID>
 				<cbc:TransportEquipmentTypeCode>CN
+					<?Name Tranport equipment type code ?>
 					<?Description An code specifying the type of equipment. ?>
 					<?CodeList UNCL8053?>
 					<?Cardinality 0..1?>
 				</cbc:TransportEquipmentTypeCode>
 				<cbc:SizeTypeCode>10
+					<?Name Size type code ?>
 					<?Description A code signifying the size and type of this piece of piece of transport equipment. When the piece of transport equipment is a shipping container, it is recommended to use ContainerSizeTypeCode for validation. ?>
 					<?CodeList TRED8155?>
 					<?Cardinality 0..1?>
 				</cbc:SizeTypeCode>				
 				<cbc:RefrigerationOnIndicator>true
+					<?Name Indicator refrigeration transport equipment ?>
 					<?Description An indicator that this piece of transport equipment's refrigeration is on (true) or off (false). ?>
 					<?Cardinality 0..1?>
 				</cbc:RefrigerationOnIndicator>
 				<cbc:Description>A 20 foot refrigerated container that is not actively controlling temperature of the product.
+					<?Name Description transport equipment ?>
 					<?Description A textual description of the transport equipment. ?>
 					<?Cardinality 0..1?>
 				</cbc:Description>
 				<cbc:PowerIndicator>true
+					<?Name Power indicator transport equipment ?>
 					<?Description An indicator that this piece of transport equipment can supply power (true) or not (false). ?>
 					<?Cardinality 0..1?>
 				</cbc:PowerIndicator>				
@@ -1012,10 +1026,11 @@
 				</cbc:TraceID>
 			</cac:GoodsItem>
 			<cac:Package>
-				<?Name Containing package ?>
+				<?Name Package information ?>
 				<?Description A package contained in the Transport Handling Unit.?>
 				<?Cardinality 0..n?>
 				<cbc:ID>3453
+					<?Name Package identifier ?>
 					<?Description The Id of the package for instance a SSCC.?>
 					<?Cardinality 0..1?>
 					<?schemeID-usage Optional?>
@@ -1032,50 +1047,59 @@
 					<?Cardinality 1..1?>
 				</cbc:PackagingTypeCode>
 				<cbc:PackingMaterial>Carbon box
-				<?Description Text describing the packaging material. ?>
-				<?Cardinality 0..1?>
+					<?Name Packing material ?>
+					<?Description Text describing the packaging material. ?>
+					<?Cardinality 0..1?>
 				</cbc:PackingMaterial>
 				<cac:ContainedPackage>
-					<?Name Containing package ?>
+					<?Name Contained package ?>
 					<?Description A package contained in the Transport Handling Unit.?>
 					<?Cardinality 0..n?>
 					<cbc:ID>3453
-					<?Description The Id of the package for instance a SSCC.?>
-					<?Cardinality 0..1?>
-					<?schemeID-usage Optional?>
+						<?Name Identifier contained package ?>
+						<?Description The Id of the package for instance a SSCC.?>
+						<?Cardinality 0..1?>
+						<?schemeID-usage Optional?>
 					</cbc:ID>
 					<cbc:ReturnableMaterialIndicator>true
-					<?Description An indicator that the packaging material is returnable (true) or not (false). ?>
-					<?Cardinality 0..1?>
+						<?Name Returnable material indicator ?>
+						<?Description An indicator that the packaging material is returnable (true) or not (false). ?>
+						<?Cardinality 0..1?>
 					</cbc:ReturnableMaterialIndicator>
 					<cbc:PackagingTypeCode>OB
+						<?Name Packaging type code ?> 
 						<?Description A code signifying a level of packaging. ?>
 						<?CodeList UNECERec21?>
 						<?Cardinality 1..1?>
 					</cbc:PackagingTypeCode>
 					<cbc:PackingMaterial>Wood
-					<?Description Text describing the packaging material. ?>
-					<?Cardinality 0..1?>
+						<?Name Packing material ?>
+						<?Description Text describing the packaging material. ?>
+						<?Cardinality 0..1?>
 					</cbc:PackingMaterial>
 					<cac:ContainedPackage>
-						<?Name Containing package ?>
+						<?Name Contained package ?>
 						<?Description A package contained in the Transport Handling Unit.?>
 						<?Cardinality 0..n?>
 						<cbc:ID>3453
+							<?Name Identifier contained package ?>
 							<?Description The Id of the package for instance a SSCC.?>
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
 						</cbc:ID>
 						<cbc:ReturnableMaterialIndicator>true
+							<?Name Returnable material indicator ?>
 							<?Description An indicator that the packaging material is returnable (true) or not (false). ?>
 							<?Cardinality 0..1?>
 						</cbc:ReturnableMaterialIndicator>
 						<cbc:PackagingTypeCode>OB
+							<?Name Packaging type code ?> 
 							<?Description A code signifying a level of packaging. ?>
 							<?CodeList UNECERec21?>
 							<?Cardinality 1..1?>
 						</cbc:PackagingTypeCode>
 						<cbc:PackingMaterial>Wood
+							<?Name Packing material ?>
 							<?Description Text describing the packaging material. ?>
 							<?Cardinality 0..1?>
 						</cbc:PackingMaterial>
@@ -1128,9 +1152,11 @@
 							</cbc:AttributeID>
 							<cbc:Measure unitCode="MTR">123
 								<?Name Measure ?>
-								<?unitCode-CodeList UNECERec20?>
-								<?Description For the measure and Measure of Unit Code. Use UN/ECE Recommendation 20 and 21.subset.?>
+								<?Description For the measure.?>
 								<?Cardinality 1..1?>
+								<?unitCode-Name Measure unit of measure ?>
+								<?unitCode-Description The unit of measure that applies to the measure. ?>
+								<?unitCode-CodeList UNECERec20?>
 							</cbc:Measure>
 						</cac:MeasurementDimension>
 					</cac:ContainedPackage>
@@ -1178,14 +1204,16 @@
 						<cbc:AttributeID>LN
 								<?Name Attribute identifier ?>
 								<?CodeList UNCL6313-T120?>
-								<?Description To describe the type of measurement. Use UNCL 6313 subset. ?>
+								<?Description To describe the type of measurement. ?>
 								<?Cardinality 1..1?>
 							</cbc:AttributeID>
 						<cbc:Measure unitCode="KGM">123
 								<?Name Measure ?>
-								<?unitCode-CodeList UNECERec20?>
-								<?Description For the measure and Measure of Unit Code. Use UN/ECE Recommendation 20 and 21.subset.?>
+								<?Description For the measure. ?>
 								<?Cardinality 1..1?>
+								<?unitCode-Name Measure unit of measure ?>
+								<?unitCode-Description The unit of measure that applies to the measure. ?>
+								<?unitCode-CodeList UNECERec20?>
 							</cbc:Measure>
 					</cac:MeasurementDimension>
 				</cac:ContainedPackage>
@@ -1238,11 +1266,11 @@
 					</cbc:AttributeID>
 					<cbc:Measure unitCode="MTR">123
 						<?Name Measure ?>
-						<?Description For the measure and Measure of Unit Code. Use UN/ECE Recommendation 20 and 21.subset.?>
+						<?Description For the measure.?>
 						<?Cardinality 1..1?>
 						<?unitCode-CodeList UNECERec20?>
 						<?unitCode-Name Measure unit of measure ?>
-						<?unitCode-Description The unit of measure that applies to measure. ?>
+						<?unitCode-Description The unit of measure that applies to the measure. ?>
 					</cbc:Measure>
 				</cac:MeasurementDimension>
 			</cac:Package>
@@ -1432,7 +1460,7 @@
 						<?Name Country ?>
 						<cbc:IdentificationCode>GB
 							<?Name Country code ?>
-							<?Description A code that identifies the country.The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 						</cbc:IdentificationCode>
 					</cac:Country>
 				</cac:PostalAddress>
@@ -1510,7 +1538,7 @@
 					<?Cardinality 1..1?>
 					<?unitCode-CodeList UNECERec20?>
 					<?unitCode-Name Measure unit of measure ?>
-					<?unitCode-Description The unit of measure that applies to measure. ?>
+					<?unitCode-Description The unit of measure that applies to the measure. ?>
 				</cbc:Measure>
 			</cac:Dimension>
 		</cac:Item>
