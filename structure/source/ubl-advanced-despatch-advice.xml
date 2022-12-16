@@ -1019,10 +1019,11 @@
 				</cbc:TraceID>
 			</cac:GoodsItem>
 			<cac:Package>
-				<?Name Containing package ?>
+				<?Name Package information ?>
 				<?Description A package contained in the Transport Handling Unit.?>
 				<?Cardinality 0..n?>
 				<cbc:ID>3453
+					<?Name Package identifier ?>
 					<?Description The Id of the package for instance a SSCC.?>
 					<?Cardinality 0..1?>
 					<?schemeID-usage Optional?>
@@ -1039,50 +1040,59 @@
 					<?Cardinality 1..1?>
 				</cbc:PackagingTypeCode>
 				<cbc:PackingMaterial>Carbon box
-				<?Description Text describing the packaging material. ?>
-				<?Cardinality 0..1?>
+					<?Name Packing material ?>
+					<?Description Text describing the packaging material. ?>
+					<?Cardinality 0..1?>
 				</cbc:PackingMaterial>
 				<cac:ContainedPackage>
-					<?Name Containing package ?>
+					<?Name Contained package ?>
 					<?Description A package contained in the Transport Handling Unit.?>
 					<?Cardinality 0..n?>
 					<cbc:ID>3453
-					<?Description The Id of the package for instance a SSCC.?>
-					<?Cardinality 0..1?>
-					<?schemeID-usage Optional?>
+						<?Name Identifier contained package ?>
+						<?Description The Id of the package for instance a SSCC.?>
+						<?Cardinality 0..1?>
+						<?schemeID-usage Optional?>
 					</cbc:ID>
 					<cbc:ReturnableMaterialIndicator>true
-					<?Description An indicator that the packaging material is returnable (true) or not (false). ?>
-					<?Cardinality 0..1?>
+						<?Name Returnable material indicator ?>
+						<?Description An indicator that the packaging material is returnable (true) or not (false). ?>
+						<?Cardinality 0..1?>
 					</cbc:ReturnableMaterialIndicator>
 					<cbc:PackagingTypeCode>OB
+						<?Name Packaging type code ?> 
 						<?Description A code signifying a level of packaging. ?>
 						<?CodeList UNECERec21?>
 						<?Cardinality 1..1?>
 					</cbc:PackagingTypeCode>
 					<cbc:PackingMaterial>Wood
-					<?Description Text describing the packaging material. ?>
-					<?Cardinality 0..1?>
+						<?Name Packing material ?>
+						<?Description Text describing the packaging material. ?>
+						<?Cardinality 0..1?>
 					</cbc:PackingMaterial>
 					<cac:ContainedPackage>
-						<?Name Containing package ?>
+						<?Name Contained package ?>
 						<?Description A package contained in the Transport Handling Unit.?>
 						<?Cardinality 0..n?>
 						<cbc:ID>3453
+							<?Name Identifier contained package ?>
 							<?Description The Id of the package for instance a SSCC.?>
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
 						</cbc:ID>
 						<cbc:ReturnableMaterialIndicator>true
+							<?Name Returnable material indicator ?>
 							<?Description An indicator that the packaging material is returnable (true) or not (false). ?>
 							<?Cardinality 0..1?>
 						</cbc:ReturnableMaterialIndicator>
 						<cbc:PackagingTypeCode>OB
+							<?Name Packaging type code ?> 
 							<?Description A code signifying a level of packaging. ?>
 							<?CodeList UNECERec21?>
 							<?Cardinality 1..1?>
 						</cbc:PackagingTypeCode>
 						<cbc:PackingMaterial>Wood
+							<?Name Packing material ?>
 							<?Description Text describing the packaging material. ?>
 							<?Cardinality 0..1?>
 						</cbc:PackingMaterial>
