@@ -419,6 +419,8 @@
 				<?Name Handling code ?>
 				<?Description The handling required for this shipment, expressed as a code. Use TRED4079, BeastHandlingCode or an another code id as listID.?>
 				<?Cardinality 0..1?>
+				<?listID-Name Identifier for codelist for handling code ?>
+				<?listID-Description An identifier for the codelist used for the handling code ?>
 				<?listID-usage Optional?>
 			</cbc:HandlingCode>
 			<cbc:HandlingInstructions>Keep the Container Carefully Closed
@@ -563,14 +565,19 @@
 						<?Name Environmental emission type code ?>
 						<?Description Defines the type of emission reported. Values: "CO2" (Carbon Dioxide), NOX (Nitrogen Oxide), PM (Particulate Matter), HC (Hydro Carbon). ?>
 						<?Cardinality 1..1?>
+						<?listID-Name Identifier for codelist for environmental emissions type ?>
+						<?listID-Description An identifier for the codelist used for the environmental emission type code ?>
 						<?listID-usage Optional?>
+						<?name-Name Name of environmental emissions type?>
 						<?name-usage Optional?>
 					</cbc:EnvironmentalEmissionTypeCode>
 					<cbc:ValueMeasure unitCode="MGM">10
 						<?Name Value of measurement ?>
-						<?unitCode-CodeList UNECERec20?>
 						<?Description The value of the emission. Refers to Carbon Dioxide/Nitrogen Oxide/Particulate Matter/Hydro Carbon. ?>
 						<?Cardinality 1..1?>
+						<?unitCode-Name Measure unit of measure ?>
+						<?unitCode-Description The unit of measure that applies to measure. ?>
+						<?unitCode-CodeList UNECERec20?>
 					</cbc:ValueMeasure>
 				</cac:EnvironmentalEmission>
 			</cac:OriginalDespatchTransportationService>
