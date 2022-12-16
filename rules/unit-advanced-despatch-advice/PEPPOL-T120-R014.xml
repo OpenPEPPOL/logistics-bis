@@ -44,6 +44,23 @@
 		</DespatchAdvice>
 	</test>
 
+	<test id="3">
+		<assert>
+			<success>PEPPOL-T120-R014</success>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cac:Delivery>
+					<cac:EstimatedDeliveryPeriod>
+						<cbc:StartDate>2021-09-2</cbc:StartDate>
+						<cbc:StartTime>12:00:00</cbc:StartTime>
+					</cac:EstimatedDeliveryPeriod>
+				</cac:Delivery>
+			</cac:Shipment>
+		</DespatchAdvice>
+	</test>
 	<test id="7">
 		<assert>
 			<error number="1">PEPPOL-T120-R014</error>
