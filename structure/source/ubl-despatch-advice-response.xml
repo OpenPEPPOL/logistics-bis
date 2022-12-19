@@ -87,7 +87,7 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
-				<?Name Party Name ?>
+				<?Name Party name ?>
 				<?Cardinality 0..1?>
 				<cbc:RegistrationName>IYT Corporation
 					<?Name Sender party name ?>
@@ -101,54 +101,76 @@
 				<?schemeID-CodeList eas?>
 		</cbc:EndpointID>		
 			<cac:PartyIdentification>
+			<?Name Party identification ?>
 			<?Cardinality 0..1?>
 				<cbc:ID schemeID="0088">7300010000001
-					<?DescriptionAddFirst Shipper (T0129) ?>
+					<?Name Receiver party identifier ?>
+					<?Description Shipper (T0129) ?>
+					<?schemeID-Name Scheme identifier ?>
+					<?schemeID-Description Scheme identifier for party identification. ?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PostalAddress>
+				<?Name Postal address ?>
 				<?Cardinality 0..1?>
 				<cbc:StreetName>Busy Street
-					<?DescriptionAddFirst Street Name (T5003) ?>
+					<?Name Address line 1 ?>
+					<?Description The main address line in a postal address usually the street name and number. ?>
 				</cbc:StreetName>
 				<cbc:AdditionalStreetName>way 1
-					<?DescriptionAddFirst Used for Department (T5002). ?>
+					<?Name Address line 2 ?>
+					<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
 				</cbc:AdditionalStreetName>
 				<cbc:CityName>Farthing
-					<?DescriptionAddFirst City Name (T5005) ?>
+					<?Name City ?>
+					<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
 				</cbc:CityName>
 				<cbc:PostalZone>AA99 1BB
-					<?DescriptionAddFirst Postal Code (T6117) ?>
+					<?Name Post code ?>
+					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
 				</cbc:PostalZone>
-				<cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
+				<cbc:CountrySubentity>Heremouthshire
+					<?Name Country subdivision ?>
+					<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
+				</cbc:CountrySubentity>
 				<cac:AddressLine>
+					<?Name Address line ?>
 					<cbc:Line>The Roundabout
-						<?DescriptionAddFirst Used for any other additional address information like Building (T5004). ?>
+						<?Name Address line 3 ?>
+						<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
 					</cbc:Line>
 				</cac:AddressLine>
 				<cac:Country>
+					<?Name Country ?>
 					<cbc:IdentificationCode>GB
-						<?DescriptionAddFirst Country Code (T5007) ?>
+						<?Name Country code ?>
+						<?Description A code that identifies the country.The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
+				<?Name Party name ?>
 				<?Cardinality 0..1?>
 				<cbc:RegistrationName>Consortial
-					<?DescriptionAddFirst Party Name (T5001) ?>
+					<?Name Receiver party name ?>
+					<?Description The name of the receiver party. ?>
 				</cbc:RegistrationName>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
+				<?Name Contact ?>
 				<?Cardinality 0..1?>
 				<cbc:Name>Mrs Bouquet
-					<?DescriptionAddFirst Name (T5012) ?>
+					<?Name Contact name ?>
+					<?Description The contact name. ?>
 				</cbc:Name>
 				<cbc:Telephone>0158 1233714
-					<?DescriptionAddFirst Phone Number (T5010) ?>
+					<?Name Telephone ?>
+					<?Description The phone number of the contact. ?>
 				</cbc:Telephone>
 				<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
-					<?DescriptionAddFirst Email Address (T5011) ?>
+					<?Name Contact email address ?>
+					<?Description The electronic mail of the contact. ?>
 				</cbc:ElectronicMail>
 			</cac:Contact>
 	</cac:ReceiverParty>
