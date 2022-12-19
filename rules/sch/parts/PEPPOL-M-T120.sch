@@ -26,19 +26,8 @@
 		<assert id="Peppol-T120-R019" test="not(cbc:GrossVolumenMeasure) or number(cbc:GrossVolumenMeasure) &gt;= sum(cac:TransportHandlingUnit/cac:MeasurementDimension[cbc:AttributeID = 'AAW']/cbc:Measure)" flag="warning">Shipment gross volume measure SHALL greater or equal of the transport handling units specified</assert>
 	</rule>
 	
-	<rule context="cac:TransportHandlingUnit">
-		<assert id="Peppol-T120-R020" test="not(cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) 
-			or not(cac:Package/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure|cac:GoodsItem/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) 
-			or (cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) = sum(cac:Package/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) + sum(cac:GoodsItem/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure)" 
-			flag="warning">Total transport handling unit Grossweight measure SHALL match the grossweight of packages specified</assert>
-		
-		<assert id="Peppol-T120-R021" test="not(cac:MeasurementDimension[cbc:AttributeID = 'AAW']/cbc:Measure) 
-			or not (cac:Package/cac:MeasurementDimension[cbc:AttributeID = 'AAW']/cbc:Measure) 
-			or (cac:MeasurementDimension[cbc:AttributeID = 'AAW']/cbc:Measure) &gt;= sum(cac:Package/cac:MeasurementDimension[cbc:AttributeID = 'AAW']/cbc:Measure)" flag="warning">Total transport handling unit Gross volumen measure SHALL be less or equal to the gross Volumen of packages specified</assert>
-	</rule>
-	
-	<rule context="cac:Package">
-		<assert id="Peppol-T120-R022" test="not(cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) or (cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) = sum(cac:ContainingPackage/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) + sum(cac:GoodsItem/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure)" flag="warning">Grossweight of Package measure SHALL match the grossweight of containing packages and goods items specified if the weight of these is defined</assert>
+	<rule context="cac:GoodsItem">
+		<assert id="Peppol-T120-R016" test="/ubl:DespatchAdvice/cac:DespatchLine[cbc:ID = valueof(./cbc:ID)]" flag="fatal">Despatch line must exists as the </assert>
 	</rule>
 	
 	<rule context="cac:DespatchLine">

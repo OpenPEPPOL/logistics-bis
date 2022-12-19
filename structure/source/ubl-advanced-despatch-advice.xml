@@ -25,6 +25,12 @@
 	<cbc:IssueTime>12:00:00
 		<?Description The time when the advanced despatch advice is issued. Format = "hh:mm:ss". ?>
 	</cbc:IssueTime>
+	<cbc:DocumentStatusCode>Original
+		<?Name Despatch advice status code ?>
+		<?Description A code signifying the status of the Despatch Advice. Default is Original (9)?>
+		<?Cardinality 0..1?>
+		<?CodeList DocumentStatusCode?>
+	</cbc:DocumentStatusCode>
 	<cbc:DespatchAdviceTypeCode>1
 		<?Name Despatch advice type code ?>
 		<?Description A code signifying the type of the Despatch Advice. Default is Advice of despatch of goods (1)?>
@@ -422,6 +428,8 @@
 				<?listID-Name Identifier for codelist for handling code ?>
 				<?listID-Description An identifier for the codelist used for the handling code ?>
 				<?listID-usage Optional?>
+				<?listID Tred4079?>
+				<?listID HandlingCode?>
 			</cbc:HandlingCode>
 			<cbc:HandlingInstructions>Keep the Container Carefully Closed
 				<?Name Handling instructions ?>
@@ -649,17 +657,7 @@
 				</cac:MaritimeTransport>
 			</cac:TransportMeans>
 		</cac:ShipmentStage>
-		<cac:Delivery>
-			<cbc:ActualDeliveryDate>2022-10-03
-				<?Name Actual delivery date ?>
-				<?Description The actual date of delivery.?>
-				<?Cardinality 0..1?>				
-			</cbc:ActualDeliveryDate>
-			<cbc:ActualDeliveryTime>12:56:00
-				<?Name Actual delivery time ?>
-				<?Description The actual time of delivery. Requires that actual delivery date os defined.?>
-				<?Cardinality 0..1?>		
-			</cbc:ActualDeliveryTime>
+		<cac:Delivery>			
 			<cbc:TrackingID>456789</cbc:TrackingID>
 			<cac:DeliveryLocation>
 				<?Name Delivery location ?>
