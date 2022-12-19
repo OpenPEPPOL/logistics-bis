@@ -85,9 +85,23 @@
 			</cac:Shipment>
 		</DespatchAdvice>
 	</test>
-	
-	
+
 	<test id="4">
+		<assert>
+			<success>PEPPOL-T120-R019</success>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cbc:ID>A123</cbc:ID>
+				<cbc:GrossVolumenMeasure unitCode="MTQ">1030</cbc:GrossVolumenMeasure>
+			</cac:Shipment>
+		</DespatchAdvice>
+	</test>
+	
+	
+	<test id="5">
 		<assert>
 			<error>PEPPOL-T120-R019</error>
 		</assert>
@@ -117,7 +131,7 @@
 		</DespatchAdvice>
 	</test>
 
-	<test id="5">
+	<test id="6">
 		<assert>
 			<error>PEPPOL-T120-R019</error>
 		</assert>
