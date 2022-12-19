@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T120-base-1.1">
+	<assert>
+		<description>Shipment gross volume measure SHALL greater or equal of the transport handling units specified</description>
+		<scope>PEPPOL-T120-R020</scope>
+	</assert>
+	
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T120-R020</success>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cbc:ID>A123</cbc:ID>
+				<cac:TransportHandlingUnit>	
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+						 
+				</cac:TransportHandlingUnit>
+			</cac:Shipment>
+		</DespatchAdvice>
+	</test>
+	
+	<test id="2">
+		<assert>
+			<success>PEPPOL-T120-R020</success>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cbc:ID>A123</cbc:ID>
+				<cbc:GrossVolumenMeasure unitCode="MTQ">2060</cbc:GrossVolumenMeasure>
+				<cac:TransportHandlingUnit>	
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+							 
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>	
+					<cbc:ID>12346</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+							 
+				</cac:TransportHandlingUnit>
+			</cac:Shipment>
+		</DespatchAdvice>
+	</test>
+	
+	<test id="3">
+		<assert>
+			<success>PEPPOL-T120-R020</success>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cbc:ID>A123</cbc:ID>
+				<cac:TransportHandlingUnit>	
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+							 
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>	
+					<cbc:ID>12346</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+							 
+				</cac:TransportHandlingUnit>
+			</cac:Shipment>
+		</DespatchAdvice>
+	</test>
+
+
+	
+	
+	<test id="5">
+		<assert>
+			<error>PEPPOL-T120-R020</error>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cbc:ID>A123</cbc:ID>
+				<cbc:GrossVolumenMeasure unitCode="MTQ">1030</cbc:GrossVolumenMeasure>
+				<cac:TransportHandlingUnit>	
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+							 
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>	
+					<cbc:ID>12346</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+						 
+				</cac:TransportHandlingUnit>
+			</cac:Shipment>
+		</DespatchAdvice>
+	</test>
+
+	<test id="6">
+		<assert>
+			<error>PEPPOL-T120-R020</error>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cbc:ID>A123</cbc:ID>
+				<cbc:GrossVolumenMeasure unitCode="MTQ">1029</cbc:GrossVolumenMeasure>
+				<cac:TransportHandlingUnit>	
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+						 
+				</cac:TransportHandlingUnit>
+			</cac:Shipment>
+		</DespatchAdvice>
+	</test>
+</testSet>
