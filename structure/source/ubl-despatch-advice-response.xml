@@ -38,46 +38,63 @@
 			<?schemeID-CodeList eas?>
 			</cbc:EndpointID>
 			<cac:PartyIdentification>
+				<?Name Party identification ?>
 				<?Cardinality 0..1?>
 				<cbc:ID schemeID="0088">5790000435951
-					<?DescriptionAddFirst Consignee (T0036) ?>					
+					<?Name Sender party identifier ?>
+					<?Description Consignee (T0036) ?>
+					<?schemeID-Name Scheme identifier ?>
+					<?schemeID-Description Scheme identifier for party identification ?>					
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PostalAddress>
+				<?Name Postal address ?>
 				<?Cardinality 0..1?>
 				<cbc:StreetName>Avon Way
-					<?DescriptionAddFirst Street Name (T5003) ?>
+					<?Name Address line 1 ?>
+					<?Description The main address line in a postal address usually the street name and number. ?>
 				</cbc:StreetName>
 				<cbc:AdditionalStreetName>Big projects
-					<?DescriptionAddFirst Used for Department (T5002). ?>
+					<?Name Address line 2 ?>
+					<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
 				</cbc:AdditionalStreetName>
 				<cbc:CityName>Bridgtow
-					<?DescriptionAddFirst City Name (T5005) ?>
+					<?Name City ?>
+					<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
 				</cbc:CityName>
 				<cbc:PostalZone>ZZ99 1ZZ
-					<?DescriptionAddFirst Postal Code (T6117) ?>
+					<?Name Post code ?>
+					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
 				</cbc:PostalZone>
-				<cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+				<cbc:CountrySubentity>Avon
+					<?Name Country subdivision ?>
+					<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
+				</cbc:CountrySubentity>
 				<cac:AddressLine>
+					<?Name Address Line ?>
 					<cbc:Line>3rd Floor, Room 5
-						<?DescriptionAddFirst Used for any other additional address information like Building (T5004). ?>
+						<?Name Address line 3 ?>
+						<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
 					</cbc:Line>
 				</cac:AddressLine>
 				<cac:Country>
+					<?Name Country ?>
 					<cbc:IdentificationCode>GB
-						<?DescriptionAddFirst Country Code (T5007) ?>
+						<?Name Country code ?>
+						<?Description A code that identifies the country.The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
+				<?Name Party Name ?>
 				<?Cardinality 0..1?>
 				<cbc:RegistrationName>IYT Corporation
-					<?DescriptionAddFirst Party Name (T5001) ?>
+					<?Name Sender party name ?>
+					<?Description The name of the sender party. ?>
 				</cbc:RegistrationName>
 			</cac:PartyLegalEntity>		
 	</cac:SenderParty>
-	
 	<cac:ReceiverParty>
 		<cbc:EndpointID schemeID="0088">7315458756328
 		  <?schemeID-usage Mandatory?>
