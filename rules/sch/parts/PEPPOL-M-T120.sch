@@ -25,9 +25,14 @@
 		<assert id="Peppol-T120-R018" test="not(cbc:GrossWeightMeasure) or not(cac:TransportHandlingUnit/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure) or number(cbc:GrossWeightMeasure) = sum(cac:TransportHandlingUnit/cac:MeasurementDimension[cbc:AttributeID = 'AAB']/cbc:Measure)" flag="warning">Shipment  gross weight measure SHALL match the gross weight of the transport handling units specified</assert>
 		<assert id="Peppol-T120-R019" test="not(cbc:GrossVolumenMeasure) or number(cbc:GrossVolumenMeasure) &gt;= sum(cac:TransportHandlingUnit/cac:MeasurementDimension[cbc:AttributeID = 'AAW']/cbc:Measure)" flag="warning">Shipment gross volume measure SHALL greater or equal of the transport handling units specified</assert>
 	</rule>
+
+	<!--rule context="cac:GoodsItem">
+		<assert id="Peppol-T120-R020" test="(cbc:ID)/ubl:DespatchAdvice/cac:DespatchLine[cbc:ID = value-of(./cbc:ID)]" flag="fatal">Despatch line must exists as the </assert>
+	</rule-->
 	
 	<rule context="cac:GoodsItem">
-		<assert id="Peppol-T120-R020" test="(cbc:ID)/ubl:DespatchAdvice/cac:DespatchLine[cbc:ID = value-of(./cbc:ID)]" flag="fatal">Despatch line must exists as the </assert>
+		<let name="itemId" value="cbc:ID"/>
+		<assert id="Peppol-T120-R020" test="/ubl:DespatchAdvice/cac:DespatchLine[cbc:ID = $itemId] != ''" flag="fatal">Despatch line must exists as the </assert>
 	</rule>
 	
 	<rule context="cac:DespatchLine">
