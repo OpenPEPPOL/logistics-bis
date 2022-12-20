@@ -16,7 +16,7 @@
 		<assert id="PEPPOL-T120-R012" test="not(cbc:EndDate) or translate(cbc:StartDate,'-','') &lt;= translate(cbc:EndDate,'-','')" flag="fatal">Start date must be earlier or equal to end date</assert>
 		<assert id="PEPPOL-T120-R013" test="not(cbc:EndTime) or (cbc:EndTime) and (cbc:StartTime)" flag="fatal">EndTime cannot be specified without StartTime</assert>
 		<assert id="PEPPOL-T120-R014" test="not(cbc:EndTime) or (cbc:EndTime) and (cbc:EndDate)" flag="fatal">EndTime cannot be specified without EndDate</assert>
-	    <!--assert id="PEPPOL-T120-R015" test="not(cbc:StartTime) or not(cbc:EndTime) or translate(cbc:StartDate,'-','') &gt; translate(cbc:EndDate,'-','') or translate(cbc:StartTime,':','') &lt; translate(cbc:EndTime,':','')" flag="fatal">StartTime must be before EndTime</assert-->
+	    <assert id="PEPPOL-T120-R015" test="not(cbc:StartTime) or not(cbc:EndTime) or translate(cbc:StartDate,'-','') &gt; translate(cbc:EndDate,'-','') or translate(cbc:StartTime,':','') &lt; translate(cbc:EndTime,':','')" flag="fatal">StartTime must be before EndTime</assert>
 		<assert id="PEPPOL-T120-R015" test="not(cbc:StartDate) or not(cbc:StartTime) or not(cbc:EndDate) or not(cbc:EndTime) or dateTime((cbc:EndDate),(cbc:EndTime)) &gt;= dateTime((cbc:StartDate),(cbc:StartTime)) " flag="fatal">StartTime must be before EndTime</assert>
 	</rule>
 	<rule context="cac:Shipment">
