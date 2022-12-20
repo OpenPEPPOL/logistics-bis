@@ -32,7 +32,7 @@
 	
 	<rule context="cac:GoodsItem">
 		<let name="itemId" value="cbc:ID"/>
-		<assert id="Peppol-T120-R020" test="/ubl:DespatchAdvice/cac:DespatchLine[cbc:ID = xs:value-of($itemId)] != ''" flag="fatal">Despatch line must exists as the </assert>
+		<assert id="Peppol-T120-R020" test="//cac:DespatchLine[cbc:ID = $itemId] != ''" flag="fatal">Despatch line must exists as the </assert>
 	</rule>
 	
 	<rule context="cac:DespatchLine">
