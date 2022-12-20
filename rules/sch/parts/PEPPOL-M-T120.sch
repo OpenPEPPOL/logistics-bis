@@ -27,7 +27,7 @@
 	</rule>
 	
 	<rule context="cac:GoodsItem">
-		<assert id="Peppol-T120-R020" test="(cbc:ID) = /ubl:DespatchAdvice/cac:DespatchLine/cbc:ID" flag="fatal">Despatch line must exists as the </assert>
+		<assert id="Peppol-T120-R020" test="(cbc:ID)/ubl:DespatchAdvice/cac:DespatchLine[cbc:ID = value-of(./cbc:ID)]" flag="fatal">Despatch line must exists as the </assert>
 	</rule>
 	
 	<rule context="cac:DespatchLine">
