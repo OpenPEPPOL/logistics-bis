@@ -25,6 +25,12 @@
 	<cbc:IssueTime>12:00:00
 		<?Description The time when the advanced despatch advice is issued. Format = "hh:mm:ss". ?>
 	</cbc:IssueTime>
+	<cbc:DocumentStatusCode>Original
+		<?Name Despatch advice status code ?>
+		<?Description A code signifying the status of the Despatch Advice. Default is Original (9)?>
+		<?Cardinality 0..1?>
+		<?CodeList DocumentStatusCode?>
+	</cbc:DocumentStatusCode>
 	<cbc:DespatchAdviceTypeCode>1
 		<?Name Despatch advice type code ?>
 		<?Description A code signifying the type of the Despatch Advice. Default is Advice of despatch of goods (1)?>
@@ -91,7 +97,7 @@
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
-				<?Name Party Name. ?>
+				<?Name Party Name ?>
 				<?Description The name of the Despatch Supplier Party. ?>
 				<?Cardinality 0..1?>
 				<cbc:Name>Sender inc.
@@ -118,7 +124,7 @@
 				<?Description The tax information about the Despatch Party. ?>
 				<?Cardinality 0..1?>
 				<cbc:CompanyID>GB325456788
-					<?Name Company ID. ?>
+					<?Name Company ID ?>
 					<?Description The Despatch Party Value Added Tax identifer. ?>
 					<?Cardinality 1..1?>					
 				</cbc:CompanyID>
@@ -165,23 +171,23 @@
 				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
-				<?Name Contact. ?>
-				<?Description Added by Logistics. The contact of the Despatch supplier party. ?>
+				<?Name Contact ?>
+				<?Description The contact of the Despatch supplier party. ?>
 				<?Cardinality 0..1?>
 				<cbc:Name>Mrs Bouquet
-				<?Name Contact name. ?>
-				<?Description Added by Logistics. The contact name. ?>					
-				<?Cardinality 0..1?>
+					<?Name Contact name ?>
+					<?Description The contact name. ?>					
+					<?Cardinality 0..1?>
 				</cbc:Name>
 				<cbc:Telephone>0158 1233714
-				<?Name Telephone. ?>
-				<?Description Added by Logistics. The phone number of the contact. ?>	
-				<?Cardinality 0..1?>
+					<?Name Contact email telephone ?>
+					<?Description The phone number of the contact. ?>	
+					<?Cardinality 0..1?>
 				</cbc:Telephone>
 				<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
-				<?Name Telephone. ?>
-				<?Description Added by Logistics. The electronic mail of the contact. ?>
-				<?Cardinality 0..1?>
+					<?Name Contact email address ?>
+					<?Description The electronic mail of the contact. ?>
+					<?Cardinality 0..1?>
 				</cbc:ElectronicMail>
 			</cac:Contact>
 		</cac:Party>
@@ -196,7 +202,7 @@
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
-				<?Name Party Name ?>
+				<?Name Party name ?>
 				<?Description The name of the Delivery Customer Party. ?>
 				<?Cardinality 0..1?>
 				<cbc:Name>Sender inc.
@@ -224,7 +230,7 @@
 				<?Description The tax information about the Delivery Party. ?>
 				<?Cardinality 0..1?>
 				<cbc:CompanyID>GB523859989
-					<?Name Company ID. ?>
+					<?Name Company ID ?>
 					<?Description The Delivery Party Value Added Tax identifer. ?>
 					<?Cardinality 1..1?>
 				</cbc:CompanyID>
@@ -252,7 +258,7 @@
 					<?schemeID-Description The identification scheme identifier of the despatch customer legal registration identifier ?>
 				</cbc:CompanyID>
 				<cac:RegistrationAddress>
-					<?Name Legal address. ?>
+					<?Name Legal address ?>
 					<?Cardinality 0..1?>
 					<cbc:CityName>Bridgtown
 						<?Name City name ?>
@@ -271,23 +277,23 @@
 			</cac:PartyLegalEntity>
 			
 			<cac:Contact>
-				<?Name Contact person name. ?>
-				<?Description Added by Logistics. The contact of the Delivery customer party. ?>
+				<?Name Contact person name ?>
+				<?Description The contact of the Delivery customer party. ?>
 				<?Cardinality 0..1?>
 				<cbc:Name>Mrs Bouquet
-				<?Name Contact name. ?>
-				<?Description Added by Logistics. The contact name. ?>					
-				<?Cardinality 0..1?>
+					<?Name Contact name ?>
+					<?Description The contact name. ?>					
+					<?Cardinality 0..1?>
 				</cbc:Name>
 				<cbc:Telephone>0158 1233714
-				<?Name Contact telephone number. ?>
-				<?Description Added by Logistics. The phone number of the contact. ?>	
-				<?Cardinality 0..1?>
+					<?Name Contact telephone number ?>
+					<?Description The phone number of the contact. ?>	
+					<?Cardinality 0..1?>
 				</cbc:Telephone>
 				<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
-				<?Name Contact email address. ?>
-				<?Description Added by Logistics. The electronic mail of the contact. ?>
-				<?Cardinality 0..1?>
+					<?Name Contact email address ?>
+					<?Description The electronic mail of the contact. ?>
+					<?Cardinality 0..1?>
 				</cbc:ElectronicMail>
 			</cac:Contact>
 		</cac:Party>
@@ -422,6 +428,8 @@
 				<?listID-Name Identifier for codelist for handling code ?>
 				<?listID-Description An identifier for the codelist used for the handling code ?>
 				<?listID-usage Optional?>
+				<?listID Tred4079?>
+				<?listID HandlingCode?>
 			</cbc:HandlingCode>
 			<cbc:HandlingInstructions>Keep the Container Carefully Closed
 				<?Name Handling instructions ?>
@@ -649,17 +657,7 @@
 				</cac:MaritimeTransport>
 			</cac:TransportMeans>
 		</cac:ShipmentStage>
-		<cac:Delivery>
-			<cbc:ActualDeliveryDate>2022-10-03
-				<?Name Actual delivery date ?>
-				<?Description The actual date of delivery.?>
-				<?Cardinality 0..1?>				
-			</cbc:ActualDeliveryDate>
-			<cbc:ActualDeliveryTime>12:56:00
-				<?Name Actual delivery time ?>
-				<?Description The actual time of delivery. Requires that actual delivery date os defined.?>
-				<?Cardinality 0..1?>		
-			</cbc:ActualDeliveryTime>
+		<cac:Delivery>			
 			<cbc:TrackingID>456789</cbc:TrackingID>
 			<cac:DeliveryLocation>
 				<?Name Delivery location ?>
@@ -965,10 +963,10 @@
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
 				<cbc:Measure unitCode="CEL">-21
-				<?Name Measure ?>
-				<?Description The value of the minimal temperature measurement. ?>
-				<?Cardinality 1..1?>
-				<?unitCode-Name Measure unit of measure ?>	
+					<?Name Measure ?>
+					<?Description The value of the minimal temperature measurement. ?>
+					<?Cardinality 1..1?>
+					<?unitCode-Name Measure unit of measure ?>	
 				</cbc:Measure>
 			</cac:MinimumTemperature>
 			<cac:MaximumTemperature>
@@ -982,10 +980,10 @@
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
 				<cbc:Measure unitCode="CEL">-21
-				<?Name Measure ?>
-				<?Description The value of the maximum temperature measurement. ?>
-				<?Cardinality 1..1?>
-				<?unitCode-Name Measure unit of measure ?>	
+					<?Name Measure ?>
+					<?Description The value of the maximum temperature measurement. ?>
+					<?Cardinality 1..1?>
+					<?unitCode-Name Measure unit of measure ?>	
 				</cbc:Measure>
 			</cac:MaximumTemperature>
 			<cac:GoodsItem>
