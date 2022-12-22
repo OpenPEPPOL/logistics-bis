@@ -28,7 +28,7 @@
 	
 	<rule context="cac:GoodsItem">
 		<let name="itemId" value="cbc:ID"/>
-		<assert id="Peppol-T120-R020" test="//cac:DespatchLine[cbc:ID = $itemId] != ''" flag="fatal">Each Goods Item ID should have a corresponding Despatch Advice Line ID</assert>
+		<assert id="PEPPOL-T120-R020" test="//cac:DespatchLine[cbc:ID = $itemId] != ''" flag="fatal">Each Goods Item ID should have a corresponding Despatch Advice Line ID</assert>
 	</rule>
 	
 	<rule context="cac:DespatchLine">
