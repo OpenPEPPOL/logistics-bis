@@ -1272,7 +1272,10 @@
 	<cac:DespatchLine>
 		<cbc:ID>1</cbc:ID>
 		<cbc:Note>Mrs Green agreed to waive charge</cbc:Note>
-		<cbc:DeliveredQuantity unitCode="C62">10</cbc:DeliveredQuantity>
+		<cbc:DeliveredQuantity unitCode="C62">10
+			<?Rule PEPPOL-T120-R005?>
+			<?Rule PEPPOL-T120-R006?>
+		</cbc:DeliveredQuantity>
 		<cbc:OutstandingQuantity unitCode="C62">2</cbc:OutstandingQuantity>
 		<cbc:OutstandingReason>Text</cbc:OutstandingReason>
 		<cac:OrderLineReference>
@@ -1338,7 +1341,9 @@
 			</cac:Attachment>
 		</cac:DocumentReference>
 		<cac:Item>
-			<cbc:Name>Beeswax</cbc:Name>
+			<cbc:Name>Beeswax
+				<?Rule PEPPOL-T120-R004?>
+			</cbc:Name>
 			<cac:BuyersItemIdentification>
 				<cbc:ID>6578489</cbc:ID>
 			</cac:BuyersItemIdentification>
