@@ -27,7 +27,7 @@
 	<cbc:IssueTime>12:00:00
 		<?Description The time when the advanced despatch advice is issued. Format = "hh:mm:ss". ?>
 	</cbc:IssueTime>
-	<cbc:DocumentStatusCode>Original
+	<cbc:DocumentStatusCode>9
 		<?Name Despatch advice status code ?>
 		<?Description A code signifying the status of the Despatch Advice. Default is Original (9)?>
 		<?Cardinality 0..1?>
@@ -414,7 +414,7 @@
 			<?Rule PEPPOL-T120-R019?>
 			<?Description The gross volumen of the despatch as a whole. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
 		</cbc:GrossVolumeMeasure>
-		<cbc:TotalTransportHandlingUnitQuantity>3
+		<cbc:TotalTransportHandlingUnitQuantity>1
 			<?Rule PEPPOL-T120-R016?>
 			<?Rule PEPPOL-T120-R017?>
 		</cbc:TotalTransportHandlingUnitQuantity>
@@ -436,7 +436,7 @@
 				<?Description An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).?>
 				<?Cardinality 0..1?>
 			</cbc:HazardousRiskIndicator>
-			<cbc:HandlingCode listID="TRED4079">EBM
+			<cbc:HandlingCode listID="TRED4079">1
 				<?Name Handling code ?>
 				<?Description The handling required for this shipment, expressed as a code. Use TRED4079, BeastHandlingCode or an another code id as listID.?>
 				<?Cardinality 0..1?>
@@ -1016,7 +1016,7 @@
 				<?Name Goods item ?>
 				<?Description A Goods item contained in the package.?>
 				<?Cardinality 0..n?>
-				<cbc:ID>2452344
+				<cbc:ID>10
 					<?Name Identifiser goods item ?>
 					<?Rule PEPPOL-T120-R020?>
 					<?Description An identifier for this goods item. Refering to the Despatch Line ?>
@@ -1066,7 +1066,7 @@
 					<?Description An indicator that the packaging material is returnable (true) or not (false). ?>
 					<?Cardinality 0..1?>
 				</cbc:ReturnableMaterialIndicator>
-				<cbc:PackagingTypeCode>
+				<cbc:PackagingTypeCode>CT
 					<?Name Packaging type code ?>
 					<?Description A code signifying a level of packaging. ?>
 					<?CodeList UNECERec21?>
@@ -1133,7 +1133,7 @@
 							<?Name Goods item ?>
 							<?Description A Goods item contained in the package.?>
 							<?Cardinality 0..n?>
-							<cbc:ID>2452344
+							<cbc:ID>10
 								<?Name Identifiser goods item ?>
 								<?Rule PEPPOL-T120-R020?>
 								<?Description An identifier for this goods item. Refering to the Despatch Line ?>
@@ -1192,7 +1192,7 @@
 						<?Name Goods item ?>
 						<?Description A Goods item contained in the package.?>
 						<?Cardinality 0..n?>
-						<cbc:ID>2452344
+						<cbc:ID>10
 							<?Name Identifiser goods item ?>
 							<?Rule PEPPOL-T120-R020?>
 							<?Description An identifier for this goods item. Refering to the Despatch Line ?>
@@ -1251,7 +1251,7 @@
 					<?Name Goods item ?>
 					<?Description A Goods item contained in the package.?>
 					<?Cardinality 0..n?>
-					<cbc:ID>2452344
+					<cbc:ID>10
 						<?Name Identifiser goods item ?>
 						<?Rule PEPPOL-T120-R020?>
 						<?Description An identifier for this goods item. Refering to the Despatch Line ?>
@@ -1309,7 +1309,7 @@
 		</cac:TransportHandlingUnit>
 	</cac:Shipment>
 	<cac:DespatchLine>
-		<cbc:ID>1</cbc:ID>
+		<cbc:ID>10</cbc:ID>
 		<cbc:Note>Mrs Green agreed to waive charge</cbc:Note>
 		<cbc:DeliveredQuantity unitCode="C62">10
 			<?Rule PEPPOL-T120-R005?>
