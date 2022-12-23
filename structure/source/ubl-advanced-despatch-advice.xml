@@ -14,7 +14,9 @@
 	<?DocumentTerm AdvancedDespatchAdvice?>
 	<?Property key="sch:prefix" PEPPOL-T120?>
 	<?Property key="sch:identifier" T120-basic?>
-	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1</cbc:CustomizationID>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1
+		<?Rule PEPPOL-T120-R011?>
+	</cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1
 		<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Advanced Despatch Advice. One profile is used when the receiver of the Despatch Advice is expected to return a response message, the other is used when no response message is used. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1" and "urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_response:1" ?>
 	</cbc:ProfileID>
@@ -307,12 +309,15 @@
 		<cac:Party>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">5790000435951
+					<?Rule PEPPOL-T120-R008?>
 					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
-				<cbc:Name>IYT Corporation</cbc:Name>
+				<cbc:Name>IYT Corporation
+					<?Rule PEPPOL-T120-R008?>
+				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<cbc:StreetName>Avon Way</cbc:StreetName>
@@ -333,12 +338,15 @@
 		<cac:Party>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">5790000435951
+					<?Rule PEPPOL-T120-R009?>
 					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
-				<cbc:Name>IYT Corporation</cbc:Name>
+				<cbc:Name>IYT Corporation
+					<?Rule PEPPOL-T120-R009?>
+				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<cbc:StreetName>Avon Way</cbc:StreetName>
@@ -360,12 +368,15 @@
 		<cac:Party>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088">5790000435951
+					<?Rule PEPPOL-T120-R010?>
 					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
-				<cbc:Name>IYT Corporation</cbc:Name>
+				<cbc:Name>IYT Corporation
+					<?Rule PEPPOL-T120-R010?>
+				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<cbc:StreetName>Avon Way</cbc:StreetName>
@@ -396,18 +407,22 @@
 			<?DescriptionAddFirst Used by Logistics for Supplier Remark. ?>
 		</cbc:Information>
 		<cbc:GrossWeightMeasure unitCode="KGM">1030
-		<?Description The gross weight of the despatch as a whole. Must be equal the the weight specified for the included transport handling unites if this is specified?>
+			<?Description The gross weight of the despatch as a whole. Must be equal the the weight specified for the included transport handling unites if this is specified?>
+			<?Rule PEPPOL-T120-R018?>
 		</cbc:GrossWeightMeasure>
 		<cbc:GrossVolumeMeasure unitCode="MTQ">1.456
-		<?Description The gross volumen of the despatch as a whole. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
+			<?Rule PEPPOL-T120-R019?>
+			<?Description The gross volumen of the despatch as a whole. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
 		</cbc:GrossVolumeMeasure>
 		<cbc:TotalTransportHandlingUnitQuantity>3
 			<?Rule PEPPOL-T120-R016?>
+			<?Rule PEPPOL-T120-R017?>
 		</cbc:TotalTransportHandlingUnitQuantity>
 		<cbc:DeclaredStatisticsValueAmount currencyID="SEK">34000.45
 			<?Name Declared statistics value amount ?>
 			<?Description The total declared value for customs purposes of those goods in this shipment that are subject to the same customs procedure and have the same tariff/statistical heading, country information, and duty regime.?>
 			<?Cardinality 0..1?>
+			<?Rule PEPPOL-T120-R021?>
 			<?currencyID-Name Currency identifier ?>
 			<?currencyID-Description Currency identifier.?>
 			<?currencyID-CodeList ISO4217?>
@@ -766,11 +781,24 @@
 			</cac:DeliveryLocation>
 			<cac:EstimatedDeliveryPeriod>
 				<cbc:StartDate>2021-09-25
+					<?Rule PEPPOL-T120-R012?>
+					<?Rule PEPPOL-T120-R015?>
 					<?Cardinality 1..1?>
 				</cbc:StartDate>
-				<cbc:StartTime>12:00:00</cbc:StartTime>
-				<cbc:EndDate>2021-09-27</cbc:EndDate>
-				<cbc:EndTime>12:00:00</cbc:EndTime>
+				<cbc:StartTime>12:00:00
+					<?Rule PEPPOL-T120-R013?>
+					<?Rule PEPPOL-T120-R015?>
+				</cbc:StartTime>
+				<cbc:EndDate>2021-09-27
+					<?Rule PEPPOL-T120-R012?>
+					<?Rule PEPPOL-T120-R014?>
+					<?Rule PEPPOL-T120-R015?>
+				</cbc:EndDate>
+				<cbc:EndTime>12:00:00
+					<?Rule PEPPOL-T120-R013?>
+					<?Rule PEPPOL-T120-R014?>
+					<?Rule PEPPOL-T120-R015?>
+				</cbc:EndTime>
 			</cac:EstimatedDeliveryPeriod>
 			<cac:Despatch>
 				<cbc:ActualDespatchDate>2021-09-25</cbc:ActualDespatchDate>
@@ -857,6 +885,7 @@
 			</cac:DeliveryTerms>
 		</cac:Delivery>
 		<cac:TransportHandlingUnit>
+			<?Rule PEPPOL-T120-R017?>
 			<?Name Transport handling unit ?>
 			<?Description Used to specify how the goods is packed. ?>
 			<?Cardinality 0..n?>
@@ -941,10 +970,12 @@
 				</cbc:AttributeID>
 				<cbc:Measure unitCode="MTR">123
 					<?Name Measure ?>
-					<?unitCode-CodeList UNECERec20?>
+					<?Rule PEPPOL-T120-R018?>
+					<?Rule PEPPOL-T120-R019?>
 					<?Description For the measure. Use UN/ECE Recommendation 20 and 21.subset.?>
 					<?Cardinality 1..1?>
 					<?unitCode-Name Measure unit of measure ?>
+					<?unitCode-CodeList UNECERec20?>
 				</cbc:Measure>
 			</cac:MeasurementDimension>
 			<cac:MinimumTemperature>
@@ -987,6 +1018,7 @@
 				<?Cardinality 0..n?>
 				<cbc:ID>2452344
 					<?Name Identifiser goods item ?>
+					<?Rule PEPPOL-T120-R020?>
 					<?Description An identifier for this goods item. Refering to the Despatch Line ?>
 					<?Cardinality 1..1?>
 				</cbc:ID>
@@ -999,6 +1031,7 @@
 					<?Name Declared statistics value amount ?>
 					<?Description The total declared value for customs purposes of the goods item. ?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T120-R021?>
 					<?currencyID-Name Currency identifier ?>
 					<?currencyID-Description Currency identifier.?>
 					<?currencyID-CodeList ISO4217?>
@@ -1102,6 +1135,7 @@
 							<?Cardinality 0..n?>
 							<cbc:ID>2452344
 								<?Name Identifiser goods item ?>
+								<?Rule PEPPOL-T120-R020?>
 								<?Description An identifier for this goods item. Refering to the Despatch Line ?>
 								<?Cardinality 1..1?>
 							</cbc:ID>
@@ -1114,6 +1148,7 @@
 								<?Name Declared statistics value amount ?>
 								<?Description The total declared value for customs purposes of the goods item. ?>
 								<?Cardinality 0..1?>
+								<?Rule PEPPOL-T120-R021?>
 								<?currencyID-Name Currency identifier ?>
 								<?currencyID-Description Currency identifier.?>
 								<?currencyID-CodeList ISO4217?>
@@ -1159,6 +1194,7 @@
 						<?Cardinality 0..n?>
 						<cbc:ID>2452344
 							<?Name Identifiser goods item ?>
+							<?Rule PEPPOL-T120-R020?>
 							<?Description An identifier for this goods item. Refering to the Despatch Line ?>
 							<?Cardinality 1..1?>
 						</cbc:ID>
@@ -1171,6 +1207,7 @@
 							<?Name Declared statistics value amount ?>
 							<?Description The total declared value for customs purposes of the goods item. ?>
 							<?Cardinality 0..1?>
+							<?Rule PEPPOL-T120-R021?>
 							<?currencyID-Name Currency identifier ?>
 							<?currencyID-Description Currency identifier.?>
 							<?currencyID-CodeList ISO4217?>
@@ -1216,6 +1253,7 @@
 					<?Cardinality 0..n?>
 					<cbc:ID>2452344
 						<?Name Identifiser goods item ?>
+						<?Rule PEPPOL-T120-R020?>
 						<?Description An identifier for this goods item. Refering to the Despatch Line ?>
 						<?Cardinality 1..1?>
 					</cbc:ID>
@@ -1228,6 +1266,7 @@
 						<?Name Declared statistics value amount ?>
 						<?Description The total declared value for customs purposes of the goods item. ?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T120-R021?>
 						<?currencyID-Name Currency identifier ?>
 						<?currencyID-Description Currency identifier.?>
 						<?currencyID-CodeList ISO4217?>
@@ -1276,7 +1315,9 @@
 			<?Rule PEPPOL-T120-R005?>
 			<?Rule PEPPOL-T120-R006?>
 		</cbc:DeliveredQuantity>
-		<cbc:OutstandingQuantity unitCode="C62">2</cbc:OutstandingQuantity>
+		<cbc:OutstandingQuantity unitCode="C62">2
+			<?Rule PEPPOL-T120-R007?>
+		</cbc:OutstandingQuantity>
 		<cbc:OutstandingReason>Text</cbc:OutstandingReason>
 		<cac:OrderLineReference>
 			<cbc:LineID>1</cbc:LineID>
