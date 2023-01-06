@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>    
+<?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron">
 	<rule context="cbc:CustomizationID">
 		<assert id="PEPPOL-T120-R011" test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1')" flag="fatal">Specification identifier SHALL start with the value 'urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1'.</assert>
@@ -25,12 +25,10 @@
 		<assert id="PEPPOL-T120-R019" test="not(cbc:GrossVolumeMeasure) or number(cbc:GrossVolumeMeasure) &gt;= sum(cac:TransportHandlingUnit/cac:MeasurementDimension[cbc:AttributeID = 'AAW']/cbc:Measure)" flag="warning">Shipment gross volume measure SHALL greater or equal of the transport handling units specified</assert>
 		<assert id="PEPPOL-T120-R021" test="not(cbc:DeclaredStatisticsValueAmount) or not(//cac:GoodsItem/cbc:DeclaredStatisticsValueAmount) or number(cbc:DeclaredStatisticsValueAmount) = sum(//cac:GoodsItem/cbc:DeclaredStatisticsValueAmount)" flag="warning">Declared for statistics value amount on shipment level SHALL be equal of the sum of the declared for statistic amount for the goods item specified</assert>
 	</rule>
-	
 	<rule context="cac:Shipment/cac:GoodsItem | cac:Package/cac:GoodsItem | cac:ContainedPackage/cac:GoodsItem ">
 		<let name="itemId" value="cbc:ID"/>
-		<assert id="PEPPOL-T120-R020" test="//cac:DespatchLine[cbc:ID = $itemId] != ''" flag="fatal">Each Goods Item ID should have a corresponding Despatch Advice Line ID</assert>
+		<assert id="PEPPOL-T120-R020" test="//cac:DespatchLine[cbc:ID = $itemId]" flag="fatal">Each Goods Item ID should have a corresponding Despatch Advice Line ID</assert>
 	</rule>
-	
 	<rule context="cac:DespatchLine">
 		<assert id="PEPPOL-T120-R003" test="(cac:Item/cac:StandardItemIdentification/cbc:ID) or  (cac:Item/cac:SellersItemIdentification/cbc:ID)" flag="fatal">Each item in a Despatch Advice line SHALL be identifiable by either "item sellers identifier" or "item standard identifier"</assert>
 		<assert id="PEPPOL-T120-R004" test="(cac:Item/cbc:Name)" flag="fatal">Each Despatch Advice SHALL contain the item name</assert>
