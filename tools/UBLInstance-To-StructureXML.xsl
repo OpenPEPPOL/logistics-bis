@@ -392,7 +392,7 @@
 					</xsl:for-each>
 				</xsl:otherwise>
 			</xsl:choose>
-			<!--xsl:choose>
+			<xsl:choose>
 				<xsl:when test="./processing-instruction('Rule')">
 					<xsl:for-each select="./processing-instruction('Rule')">
 						<Reference type="RULE">
@@ -407,7 +407,7 @@
 						</Reference>
 					</xsl:for-each>
 				</xsl:otherwise>
-			</xsl:choose-->
+			</xsl:choose>
 			<xsl:choose>
 				<xsl:when test="./processing-instruction('CodeList')">
 					<xsl:for-each select="./processing-instruction('CodeList')">
