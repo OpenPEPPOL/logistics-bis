@@ -30,6 +30,9 @@
 	<cbc:IssueTime>12:00:00
 	  <?Description Document date time. ?>
 	</cbc:IssueTime>
+	<cbc:VersionID>1.0		
+		<?Description Identifies the current version of this document ?>
+	</cbc:VersionID>
 	
 	<cac:SenderParty>
 		<cbc:EndpointID schemeID="0088">5798000000124
@@ -92,7 +95,28 @@
 					<?Name Sender party name ?>
 					<?Description The name of the sender party. ?>
 				</cbc:RegistrationName>
-			</cac:PartyLegalEntity>		
+			</cac:PartyLegalEntity>	
+			
+			<cac:Contact>
+				<?Name Contact person name ?>
+				<?Description The contact of the sender party. ?>
+				<?Cardinality 0..1?>
+				<cbc:Name>Mrs Bouquet
+										<?Name Contact name ?>
+					<?Description The contact name. ?>
+					<?Cardinality 0..1?>
+				</cbc:Name>
+				<cbc:Telephone>0158 1233714
+										<?Name Contact telephone number ?>
+					<?Description The phone number of the contact. ?>
+					<?Cardinality 0..1?>
+				</cbc:Telephone>
+				<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
+										<?Name Contact email address ?>
+					<?Description The electronic mail of the contact. ?>
+					<?Cardinality 0..1?>
+				</cbc:ElectronicMail>
+			</cac:Contact>	
 	</cac:SenderParty>
 	<cac:ReceiverParty>
 		<cbc:EndpointID schemeID="0088">7315458756328
@@ -195,19 +219,6 @@
 			  <?Description An identifier for the current version of the referenced document. ?>
 			</cbc:VersionID>
 		</cac:DocumentReference>
-		
-		<cac:LineResponse>			
-			<cac:LineReference>
-				<?Description. Added by logistics. Refers to the depatch or receiptadvice line?>
-				<cbc:LineID>/Catalogue/cac:CatalogueLine[3]/cac:Item[1]/cac:ClassifiedTaxCategory[1]/cbc:ID[1]</cbc:LineID>
-			</cac:LineReference>
-			<cac:Response>
-				<cbc:ResponseCode>RE</cbc:ResponseCode>
-				<cbc:Description>Validation gives error [CL-T77-R002]- Tax categories MUST be coded using UN/ECE 5305 code list </cbc:Description>
-				<cac:Status>
-					<cbc:StatusReasonCode>BV</cbc:StatusReasonCode>
-				</cac:Status>
-			</cac:Response>
-		</cac:LineResponse>
+				
 	</cac:DocumentResponse>
 </ApplicationResponse>
