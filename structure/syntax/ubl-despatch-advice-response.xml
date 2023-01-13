@@ -39,29 +39,7 @@
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir71-001</Reference>
          <Value type="EXAMPLE">ID123</Value>
-      </Element>
-	     <Element>
-         <Term>cbc:IssueDate</Term>
-         <Name>Response issue date</Name>
-         <Description>Document date time. </Description>
-         <DataType>Date</DataType>
-         <Reference type="BUSINESS_TERM">tir71-002</Reference>
-         <Value type="EXAMPLE">2016-08-15</Value>
-      </Element>
-	     <Element cardinality="0..1">
-         <Term>cbc:IssueTime</Term>
-         <Name>Response issue time</Name>
-         <Description>Document date time. </Description>
-         <DataType>Time</DataType>
-         <Reference type="BUSINESS_TERM">tir71-003</Reference>
-         <Value type="EXAMPLE">12:00:00</Value>
-      </Element>
-	     <Element>
-         <Term>cbc:VersionID</Term>
-         <Description>Identifies the current version of this document </Description>
-         <Value type="EXAMPLE">1.0</Value>
-      </Element>
-	
+      </Element>	
 	     <Element>
          <Term>cac:SenderParty</Term>
          <Name>Sender information</Name>
@@ -352,6 +330,18 @@
                <Reference type="BUSINESS_TERM">tir71-018</Reference>
                <Value type="EXAMPLE">12456789</Value>
             </Element>
+            <Element>
+               <Term>cbc:IssueDate</Term>
+               <Name>Issue date </Name>
+               <Description>Document date time. </Description>
+               <Value type="EXAMPLE">2016-08-15</Value>
+            </Element>
+            <Element>
+               <Term>cbc:IssueTime</Term>
+               <Name>Issue time </Name>
+               <Description>Document date time. </Description>
+               <Value type="EXAMPLE">12:00:00</Value>
+            </Element>
             <Element cardinality="0..1">
                <Term>cbc:DocumentTypeCode</Term>
                <Name>Document type code</Name>
@@ -360,14 +350,6 @@
                <Reference type="BUSINESS_TERM">tir71-020</Reference>
                <Reference type="CODE_LIST">UNCL1001</Reference>
                <Value type="EXAMPLE">351</Value>
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:VersionID</Term>
-               <Name>Document version identifier</Name>
-               <Description>An identifier for the current version of the referenced document. </Description>
-               <DataType>Identifier</DataType>
-               <Reference type="BUSINESS_TERM">tir71-019</Reference>
-               <Value type="EXAMPLE">2</Value>
             </Element>
          </Element>
       </Element>
