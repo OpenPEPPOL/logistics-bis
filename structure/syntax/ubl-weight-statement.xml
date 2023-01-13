@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+   <Term>WeightStatement</Term>
+   <Property key="sch:prefix">PEPPOL-T122</Property>
+   <Property key="sch:identifier">T122-basic</Property>
+   <Namespace prefix="">urn:oasis:names:specification:ubl:schema:xsd:WeightStatement-2</Namespace>
+   <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
+   <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
+   <Document>
+      <Term>WeightStatement</Term>
+	
+	
+	
+	     <Element>
+         <Term>cbc:CustomizationID</Term>
+         <Name>Specification identification</Name>
+         <Description>Identifies the specification of content and rules that apply to the
+				transaction.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir16-002</Reference>
+         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:weight_statement:1</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:ProfileID</Term>
+         <Name>Business process type identifier</Name>
+         <Description>Identifies the BII profile or business process context in which the
+				transaction appears.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir16-001</Reference>
+         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:weight_statement:1</Value>
+      </Element>
+
+	     <Element cardinality="1..1">
+         <Term>cbc:ID</Term>
+         <Name>Document identifier </Name>
+         <Description>T6329. Unique identity identifying the weight statement. </Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir16-003</Reference>
+         <Value type="EXAMPLE">GOA294107</Value>
+      </Element>
+
+	     <Element>
+         <Term>cbc:IssueDate</Term>
+         <Name>Weight statement issue date </Name>
+         <Description>T6325 </Description>
+         <DataType>Date</DataType>
+         <Reference type="BUSINESS_TERM">tir16-004</Reference>
+         <Value type="EXAMPLE">2016-11-03</Value>
+      </Element>
+	     <Element cardinality="0..1">
+         <Term>cbc:IssueTime</Term>
+         <Name>Weight statement issue time </Name>
+         <Description>T6325 </Description>
+         <DataType>Time</DataType>
+         <Reference type="BUSINESS_TERM">tir16-005</Reference>
+         <Value type="EXAMPLE">09:30:00</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:WeightStatementTypeCode</Term>
+         <Name>Weight statement type code </Name>
+         <Description>T6328. 01 = Outbound delivery 02 = Inbound delivery</Description>
+         <Value type="EXAMPLE">01</Value>
+      </Element>
+	     <Element>
+         <Term>cac:SenderParty</Term>
+         <Name>Sender information </Name>
+         <Description>The party sending this weight statement (e.g. Weighing Station, Shipper, Freight Forwarder, Carrier, ...).</Description>
+         <Element>
+            <Term>cbc:EndpointID</Term>
+            <Name>Sender electronic address </Name>
+            <Value type="EXAMPLE">7300010000001</Value>
+            <Attribute usage="Mandatory">
+               <Term>schemeID</Term>
+               <Reference type="CODE_LIST">eas</Reference>
+               <Value type="EXAMPLE">0088</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cac:PartyIdentification</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Name>Sender identity </Name>
+               <Value type="EXAMPLE">7300010000001</Value>
+               <Attribute usage="Mandatory">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0088</Value>
+               </Attribute>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PartyName</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Name>Sender name </Name>
+               <Value type="EXAMPLE">Weighing Solutions AB</Value>
+            </Element>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:ReceiverParty</Term>
+         <Name>Receiver information </Name>
+         <Description>The party receiving this weight statement (e.g. Carrier, Terminal Operator, ...).</Description>
+         <Element>
+            <Term>cbc:EndpointID</Term>
+            <Name>Receiver electronic address </Name>
+            <Value type="EXAMPLE">9994567987654</Value>
+            <Attribute usage="Mandatory">
+               <Term>schemeID</Term>
+               <Reference type="CODE_LIST">eas</Reference>
+               <Value type="EXAMPLE">0088</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cac:PartyIdentification</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Name>Receiver identity </Name>
+               <Value type="EXAMPLE">9994567987654</Value>
+               <Attribute usage="Mandatory">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0088</Value>
+               </Attribute>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PartyName</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Name>Receiver name </Name>
+               <Value type="EXAMPLE">Transport Management Solutions AB</Value>
+            </Element>
+         </Element>
+      </Element>
+	     <Element cardinality="1..1">
+         <Term>cac:WeighingParty</Term>
+         <Name>Weighing party information </Name>
+         <Description>The party executing the weight measure (e.g. Weighing Station).</Description>
+         <Element cardinality="0..1">
+            <Term>cac:PartyIdentification</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Name>Weighing party identity </Name>
+               <Value type="EXAMPLE">5790000435951</Value>
+               <Attribute usage="Mandatory">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0088</Value>
+               </Attribute>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PartyName</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Name>Weighing party name </Name>
+               <Description>T5001 </Description>
+               <Value type="EXAMPLE">Gravel Pit Ltd.</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PhysicalLocation</Term>
+            <Element cardinality="0..1">
+               <Term>cbc:Description</Term>
+               <Name>Location name </Name>
+               <Description>T5005 </Description>
+               <Value type="EXAMPLE">Townsend pit</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:Description</Term>
+               <Name>Location identity </Name>
+               <Description>T6755 </Description>
+               <Value type="EXAMPLE">0114-40-019-a</Value>
+            </Element>
+         </Element>
+      </Element>
+	     <Element cardinality="0..1">
+         <Term>cac:ShipperParty</Term>
+         <Name>Shipper information </Name>
+         <Description>The party transporting or shipping the items.</Description>
+         <Element cardinality="0..1">
+            <Term>cac:PartyIdentification</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Name>Shipper identity </Name>
+               <Description>T3208/T6001 </Description>
+               <Value type="EXAMPLE">5790000435951</Value>
+               <Attribute usage="Mandatory">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0088</Value>
+               </Attribute>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PartyName</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Name>Shipper name </Name>
+               <Description>T5001 </Description>
+               <Value type="EXAMPLE">Tony's Trucks and Transport</Value>
+            </Element>
+         </Element>
+      </Element>
+	     <Element cardinality="1..1">
+         <Term>cac:Shipment</Term>
+         <Name>Shipment information</Name>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Name>Shipment identity </Name>
+            <Description>Use NA if no specific shipment ID is available </Description>
+            <Reference type="BUSINESS_TERM">tir16-038</Reference>
+            <Value type="EXAMPLE">NA</Value>
+         </Element>
+         <Element cardinality="1..n">
+            <Term>cac:GoodsItem</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Name>Line item identifier</Name>
+               <Description>Identifies the Line Item assigned by the weighing partner, the identifier must be unique within the order</Description>
+               <Value type="EXAMPLE">1</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:GrossWeightMeasure</Term>
+               <Name>Gross weight </Name>
+               <Description>T6122 (when T6714="AAD"). Weight (mass) of goods including packing but excluding the carrier's equipment.</Description>
+               <Value type="EXAMPLE">16.8</Value>
+               <Attribute usage="Mandatory">
+                  <Term>unitCode</Term>
+                  <Value type="EXAMPLE">TNE</Value>
+               </Attribute>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:NetWeightMeasure</Term>
+               <Name>Net weight </Name>
+               <Description>T6122 (when T6714="AAA"). Weight of goods including any packaging that normally going with the goods.</Description>
+               <Value type="EXAMPLE">16.2</Value>
+               <Attribute usage="Mandatory">
+                  <Term>unitCode</Term>
+                  <Value type="EXAMPLE">TNE</Value>
+               </Attribute>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:NetNetWeightMeasure</Term>
+               <Name>Net net weight </Name>
+               <Description>T6122 (when T6714="AAF"). Weight (mass) of goods without any packaging.</Description>
+               <Value type="EXAMPLE">16.1</Value>
+               <Attribute usage="Mandatory">
+                  <Term>unitCode</Term>
+                  <Value type="EXAMPLE">TNE</Value>
+               </Attribute>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:GrossVolumeMeasure</Term>
+               <Name>Gross volume </Name>
+               <Description>T6122 (when T6714="AAW"). The volume unadjusted for factors such as temperature or gravity.</Description>
+               <Value type="EXAMPLE">16.1</Value>
+               <Attribute usage="Mandatory">
+                  <Term>unitCode</Term>
+                  <Value type="EXAMPLE">TNE</Value>
+               </Attribute>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:NetVolumeMeasure</Term>
+               <Name>Net volume </Name>
+               <Description>T6122 (when T6714="AAX"). The volume after adjustment for factors such as temperature or gravity.</Description>
+               <Value type="EXAMPLE">16.1</Value>
+               <Attribute usage="Mandatory">
+                  <Term>unitCode</Term>
+                  <Value type="EXAMPLE">TNE</Value>
+               </Attribute>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:Item</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Name>Item description </Name>
+                  <Description>T6226. Description of weighed item </Description>
+                  <Value type="EXAMPLE">Sortering 0/2 mm krossat bergmaterial CE-märkt enligt system 2+ för användning till asfalt.</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:BuyersItemIdentification</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Name>Buyers item identification </Name>
+                     <Description>T0172 (when T6317="BP"). </Description>
+                     <Value type="EXAMPLE">KO2001030300</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:SellersItemIdentification</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Name>Sellers item identification </Name>
+                     <Description>T0172 (when T6317="SA"). </Description>
+                     <Value type="EXAMPLE">17589683</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:StandardItemIdentification</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Name>Standard item identification </Name>
+                     <Description>T0172 (when T6317&lt;&gt;"SA"/"BP"). Only one Standard Item Number can be used per line. </Description>
+                     <Value type="EXAMPLE">1234567891234</Value>
+                     <Attribute usage="Mandatory">
+                        <Term>schemeID</Term>
+                        <Value type="EXAMPLE">0160</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+   </Document>
+</Structure>

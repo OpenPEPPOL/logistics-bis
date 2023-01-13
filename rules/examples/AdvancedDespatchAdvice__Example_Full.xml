@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><!--
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
 					Content:
 					This file contains a full example of an Advanced Despatch Advice.
 					
@@ -364,7 +365,7 @@
 				<cbc:Measure unitCode="CEL">-21</cbc:Measure>
 			</cac:MaximumTemperature>
 			<cac:GoodsItem>
-				<cbc:ID>10</cbc:ID>
+				<cbc:ID>1</cbc:ID>
 				<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
 				<cbc:DeclaredStatisticsValueAmount currencyID="EUR">600.06</cbc:DeclaredStatisticsValueAmount>
 				<cbc:Quantity unitCode="EA">6</cbc:Quantity>
@@ -386,7 +387,7 @@
 						<cbc:PackagingTypeCode>OB</cbc:PackagingTypeCode>
 						<cbc:PackingMaterial>Wood</cbc:PackingMaterial>
 						<cac:GoodsItem>
-							<cbc:ID>10</cbc:ID>
+							<cbc:ID>2</cbc:ID>
 							<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
 							<cbc:DeclaredStatisticsValueAmount currencyID="EUR">600.06</cbc:DeclaredStatisticsValueAmount>
 							<cbc:Quantity unitCode="EA">6</cbc:Quantity>
@@ -398,7 +399,7 @@
 						</cac:MeasurementDimension>
 					</cac:ContainedPackage>
 					<cac:GoodsItem>
-						<cbc:ID>10</cbc:ID>
+						<cbc:ID>1</cbc:ID>
 						<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
 						<cbc:DeclaredStatisticsValueAmount currencyID="EUR">600.06</cbc:DeclaredStatisticsValueAmount>
 						<cbc:Quantity unitCode="EA">6</cbc:Quantity>
@@ -410,7 +411,7 @@
 					</cac:MeasurementDimension>
 				</cac:ContainedPackage>
 				<cac:GoodsItem>
-					<cbc:ID>10</cbc:ID>
+					<cbc:ID>1</cbc:ID>
 					<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
 					<cbc:DeclaredStatisticsValueAmount currencyID="EUR">600.06</cbc:DeclaredStatisticsValueAmount>
 					<cbc:Quantity unitCode="EA">6</cbc:Quantity>
@@ -424,7 +425,113 @@
 		</cac:TransportHandlingUnit>
 	</cac:Shipment>
 	<cac:DespatchLine>
-		<cbc:ID>10</cbc:ID>
+
+		<cbc:ID>1</cbc:ID>
+		<cbc:Note>MrsGreen agreed to waive charge</cbc:Note>
+		<cbc:DeliveredQuantity unitCode="C62">10</cbc:DeliveredQuantity>
+		<cbc:OutstandingQuantity unitCode="C62">2</cbc:OutstandingQuantity>
+		<cbc:OutstandingReason>Text</cbc:OutstandingReason>
+		<cac:OrderLineReference>
+			<cbc:LineID>1</cbc:LineID>
+			<cbc:SalesOrderLineID>10</cbc:SalesOrderLineID>
+			<cac:OrderReference>
+				<cbc:ID>AEG012345</cbc:ID>
+				<cbc:SalesOrderID>5678985</cbc:SalesOrderID>
+			</cac:OrderReference>
+		</cac:OrderLineReference>
+		<cac:DocumentReference>
+			<cbc:ID>Test</cbc:ID>
+			<cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+			<cbc:DocumentType>LetterOf Credit</cbc:DocumentType>
+			<cac:Attachment>
+				<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf"> aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+				<cac:ExternalReference>
+					<cbc:URI>www.beast.se</cbc:URI>
+				</cac:ExternalReference>
+			</cac:Attachment>
+		</cac:DocumentReference>
+		<cac:Item>
+			<cbc:Name>Beeswax</cbc:Name>
+			<cac:BuyersItemIdentification>
+				<cbc:ID>6578489</cbc:ID>
+			</cac:BuyersItemIdentification>
+			<cac:SellersItemIdentification>
+				<cbc:ID>17589683</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:ManufacturersItemIdentification>
+				<cbc:ID>17589683</cbc:ID>
+			</cac:ManufacturersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="0160">1234567891234</cbc:ID>
+				<cbc:ExtendedID>22114455</cbc:ExtendedID>
+			</cac:StandardItemIdentification>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="ZZZ" listVersionID="BEAST:4.0" name="SBMI">SBMINumber</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:HazardousItem>
+				<cbc:UNDGCode>ADR</cbc:UNDGCode>
+				<cbc:HazardClassID>Code</cbc:HazardClassID>
+			</cac:HazardousItem>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Rigidity</cbc:Name>
+				<cbc:NameCode listID="BEAST:4.0">ConfigurationValue</cbc:NameCode>
+				<cbc:Value>Blue</cbc:Value>
+				<cbc:ValueQuantity unitCode="C62">15.00</cbc:ValueQuantity>
+				<cbc:ValueQualifier>descr</cbc:ValueQualifier>
+			</cac:AdditionalItemProperty>
+			<cac:ManufacturerParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeID="0088">5790000435951</cbc:ID>
+				</cac:PartyIdentification>
+				<cac:PartyName>
+					<cbc:Name>IYTCorporation</cbc:Name>
+				</cac:PartyName>
+				<cac:PostalAddress>
+					<cbc:StreetName>BusyStreet</cbc:StreetName>
+					<cbc:AdditionalStreetName>way1</cbc:AdditionalStreetName>
+					<cbc:CityName>Farthing</cbc:CityName>
+					<cbc:PostalZone>AA991BB</cbc:PostalZone>
+					<cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
+					<cac:AddressLine>
+						<cbc:Line>TheRoundabout</cbc:Line>
+					</cac:AddressLine>
+					<cac:Country>
+						<cbc:IdentificationCode>GB</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:PostalAddress>
+				<cac:PartyLegalEntity>
+					<cbc:RegistrationName>Consortial</cbc:RegistrationName>
+				</cac:PartyLegalEntity>
+			</cac:ManufacturerParty>
+			<cac:ItemInstance>
+				<cbc:ManufactureDate>2021-01-01</cbc:ManufactureDate>
+				<cbc:BestBeforeDate>2021-12-01</cbc:BestBeforeDate>
+				<cbc:SerialID>4558784</cbc:SerialID>
+				<cac:LotIdentification>
+					<cbc:LotNumberID>546378239</cbc:LotNumberID>
+					<cbc:ExpiryDate>2023-01-01</cbc:ExpiryDate>
+				</cac:LotIdentification>
+			</cac:ItemInstance>
+			<cac:Certificate>
+				<cbc:ID>6655223</cbc:ID>
+				<cbc:CertificateTypeCode>NA</cbc:CertificateTypeCode>
+				<cbc:CertificateType>FSC</cbc:CertificateType>
+				<cbc:Remarks>48%Certified.</cbc:Remarks>
+				<cac:IssuerParty>
+					<cac:PartyName>
+						<cbc:Name>NA</cbc:Name>
+					</cac:PartyName>
+				</cac:IssuerParty>
+			</cac:Certificate>
+			<cac:Dimension>
+				<cbc:AttributeID>LN</cbc:AttributeID>
+				<cbc:Measure unitCode="MTR">123</cbc:Measure>
+			</cac:Dimension>
+		</cac:Item>
+	</cac:DespatchLine>
+	<cac:DespatchLine>
+
+		<cbc:ID>2</cbc:ID>
 		<cbc:Note>MrsGreen agreed to waive charge</cbc:Note>
 		<cbc:DeliveredQuantity unitCode="C62">10</cbc:DeliveredQuantity>
 		<cbc:OutstandingQuantity unitCode="C62">2</cbc:OutstandingQuantity>

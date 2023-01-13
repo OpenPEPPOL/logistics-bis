@@ -25,7 +25,7 @@
 		<assert id="PEPPOL-T120-R019" test="not(cbc:GrossVolumeMeasure) or number(cbc:GrossVolumeMeasure) &gt;= sum(cac:TransportHandlingUnit/cac:MeasurementDimension[cbc:AttributeID = 'AAW']/cbc:Measure)" flag="warning">Shipment gross volume measure SHALL greater or equal of the transport handling units specified</assert>
 		<assert id="PEPPOL-T120-R021" test="not(cbc:DeclaredStatisticsValueAmount) or not(//cac:GoodsItem/cbc:DeclaredStatisticsValueAmount) or number(cbc:DeclaredStatisticsValueAmount) = sum(//cac:GoodsItem/cbc:DeclaredStatisticsValueAmount)" flag="warning">Declared for statistics value amount on shipment level SHALL be equal of the sum of the declared for statistic amount for the goods item specified</assert>
 	</rule>
-	<rule context="cac:Shipment/cac:GoodsItem | cac:Package/cac:GoodsItem | cac:ContainedPackage/cac:GoodsItem ">
+	<rule context="cac:TransportHandlingUnit/cac:GoodsItem | cac:Package/cac:GoodsItem | cac:ContainedPackage/cac:GoodsItem">
 		<let name="itemId" value="cbc:ID"/>
 		<assert id="PEPPOL-T120-R020" test="//cac:DespatchLine[cbc:ID = $itemId]" flag="fatal">Each Goods Item ID should have a corresponding Despatch Advice Line ID</assert>
 	</rule>

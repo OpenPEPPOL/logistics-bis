@@ -4,8 +4,9 @@
 		<description>Each Goods Item ID should have a corresponding Despatch Advice Line ID</description>
 		<scope>PEPPOL-T120-R020</scope>
 	</assert>
-	
-	<!-- One goods item, one DespatchLine-->
+
+	<!-- cac:TransportHandlingUnit/cac:GoodsItem -->
+	<!-- One goods item, one DespatchLine -->
 	<test id="1">
 		<assert>
 			<success>PEPPOL-T120-R020</success>
@@ -296,6 +297,211 @@
 					</cac:SellersItemIdentification>
 				</cac:Item>
 			</cac:DespatchLine>
+		</DespatchAdvice>
+	</test>
+	<!-- cac:Package/cac:GoodsItem -->
+	<!-- Two goods item, two DespatchLine refering to one each -->
+	<test id="7">
+		<assert>
+			<success>PEPPOL-T120-R020</success>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cbc:ID>A123</cbc:ID>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:Package>
+					<cac:GoodsItem>
+						<cbc:ID>10</cbc:ID>
+					</cac:GoodsItem>
+					<cac:GoodsItem>
+						<cbc:ID>20</cbc:ID>
+					</cac:GoodsItem>
+					</cac:Package>
+				</cac:TransportHandlingUnit>
+			</cac:Shipment>
+			<cac:DespatchLine>
+				<cbc:ID>10</cbc:ID>
+				<cac:OrderLineReference>
+					<cbc:LineID>NA</cbc:LineID>
+				</cac:OrderLineReference>
+				<cac:Item>
+					<cbc:Name>Some article 2</cbc:Name>
+				</cac:Item>
+			</cac:DespatchLine>
+			<cac:DespatchLine>
+				<cbc:ID>20</cbc:ID>
+				<cac:OrderLineReference>
+					<cbc:LineID>NA</cbc:LineID>
+				</cac:OrderLineReference>
+				<cac:Item>
+					<cbc:Name>Some article</cbc:Name>
+				</cac:Item>
+			</cac:DespatchLine>
+		</DespatchAdvice>
+	</test>
+	<!-- Two goods item, two DespatchLine. One refering to a wrong id -->
+	<test id="8">
+		<assert>
+			<error>PEPPOL-T120-R020</error>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+
+			<cac:Shipment>
+				<cbc:ID>A123</cbc:ID>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:Package>
+					<cac:GoodsItem>
+						<cbc:ID>1</cbc:ID>
+						<cbc:Quantity unitCode="EA">1</cbc:Quantity>
+					</cac:GoodsItem>
+					<cac:GoodsItem>
+						<cbc:ID>20</cbc:ID>
+						<cbc:Quantity unitCode="EA">1</cbc:Quantity>
+					</cac:GoodsItem>
+					</cac:Package>
+				</cac:TransportHandlingUnit>
+			</cac:Shipment>
+			<cac:DespatchLine>
+				<cbc:ID>10</cbc:ID>
+				<cbc:DeliveredQuantity unitCode="EA">576</cbc:DeliveredQuantity>
+				<cac:OrderLineReference>
+					<cbc:LineID>NA</cbc:LineID>
+				</cac:OrderLineReference>
+				<cac:Item>
+					<cbc:Name>Some article 2</cbc:Name>
+					<cac:SellersItemIdentification>
+						<cbc:ID>900206705</cbc:ID>
+					</cac:SellersItemIdentification>
+				</cac:Item>
+			</cac:DespatchLine>
+			<cac:DespatchLine>
+				<cbc:ID>20</cbc:ID>
+				<cbc:DeliveredQuantity unitCode="EA">576</cbc:DeliveredQuantity>
+				<cac:OrderLineReference>
+					<cbc:LineID>NA</cbc:LineID>
+				</cac:OrderLineReference>
+				<cac:Item>
+					<cbc:Name>Some article</cbc:Name>
+					<cac:SellersItemIdentification>
+						<cbc:ID>90020670</cbc:ID>
+					</cac:SellersItemIdentification>
+				</cac:Item>
+			</cac:DespatchLine>
+
+
+		</DespatchAdvice>
+	</test>
+
+	<!-- cac:ContainedPackage/cac:GoodsItem -->
+	<!-- Two goods item, two DespatchLine refering to one each -->
+	<test id="9">
+		<assert>
+			<success>PEPPOL-T120-R020</success>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cbc:ID>A123</cbc:ID>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:Package>
+						<cac:ContainedPackage>
+						<cac:GoodsItem>
+							<cbc:ID>10</cbc:ID>
+						</cac:GoodsItem>
+						<cac:GoodsItem>
+							<cbc:ID>20</cbc:ID>
+						</cac:GoodsItem>
+						</cac:ContainedPackage>
+					</cac:Package>
+				</cac:TransportHandlingUnit>
+			</cac:Shipment>
+			<cac:DespatchLine>
+				<cbc:ID>10</cbc:ID>
+				<cac:OrderLineReference>
+					<cbc:LineID>NA</cbc:LineID>
+				</cac:OrderLineReference>
+				<cac:Item>
+					<cbc:Name>Some article 2</cbc:Name>
+				</cac:Item>
+			</cac:DespatchLine>
+			<cac:DespatchLine>
+				<cbc:ID>20</cbc:ID>
+				<cac:OrderLineReference>
+					<cbc:LineID>NA</cbc:LineID>
+				</cac:OrderLineReference>
+				<cac:Item>
+					<cbc:Name>Some article</cbc:Name>
+				</cac:Item>
+			</cac:DespatchLine>
+		</DespatchAdvice>
+	</test>
+	<!-- Two goods item, two DespatchLine. One refering to a wrong id -->
+	<test id="10">
+		<assert>
+			<error>PEPPOL-T120-R020</error>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+
+			<cac:Shipment>
+				<cbc:ID>A123</cbc:ID>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:Package>
+						<cac:ContainedPackage>
+						<cac:GoodsItem>
+							<cbc:ID>1</cbc:ID>
+							<cbc:Quantity unitCode="EA">1</cbc:Quantity>
+						</cac:GoodsItem>
+						<cac:GoodsItem>
+							<cbc:ID>20</cbc:ID>
+							<cbc:Quantity unitCode="EA">1</cbc:Quantity>
+						</cac:GoodsItem>
+						</cac:ContainedPackage>
+					</cac:Package>
+				</cac:TransportHandlingUnit>
+			</cac:Shipment>
+			<cac:DespatchLine>
+				<cbc:ID>10</cbc:ID>
+				<cbc:DeliveredQuantity unitCode="EA">576</cbc:DeliveredQuantity>
+				<cac:OrderLineReference>
+					<cbc:LineID>NA</cbc:LineID>
+				</cac:OrderLineReference>
+				<cac:Item>
+					<cbc:Name>Some article 2</cbc:Name>
+					<cac:SellersItemIdentification>
+						<cbc:ID>900206705</cbc:ID>
+					</cac:SellersItemIdentification>
+				</cac:Item>
+			</cac:DespatchLine>
+			<cac:DespatchLine>
+				<cbc:ID>20</cbc:ID>
+				<cbc:DeliveredQuantity unitCode="EA">576</cbc:DeliveredQuantity>
+				<cac:OrderLineReference>
+					<cbc:LineID>NA</cbc:LineID>
+				</cac:OrderLineReference>
+				<cac:Item>
+					<cbc:Name>Some article</cbc:Name>
+					<cac:SellersItemIdentification>
+						<cbc:ID>90020670</cbc:ID>
+					</cac:SellersItemIdentification>
+				</cac:Item>
+			</cac:DespatchLine>
+
+
 		</DespatchAdvice>
 	</test>
 </testSet>
