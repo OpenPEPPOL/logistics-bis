@@ -77,6 +77,17 @@
             </Element>
          </Element>
          <Element cardinality="0..1">
+            <Term>cac:PartyName</Term>
+            <Name>Party name </Name>
+            <Description>The name of the Sender Party. </Description>
+            <Element cardinality="1..1">
+               <Term>cbc:Name</Term>
+               <Name>Name of the sender party </Name>
+               <Description>The name of the sender oif the document. </Description>
+               <Value type="EXAMPLE">Sender inc.</Value>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
             <Term>cac:PostalAddress</Term>
             <Name>Postal address </Name>
             <Element>
@@ -132,12 +143,45 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cac:PartyLegalEntity</Term>
-            <Name>Party name </Name>
+            <Name>Registration name </Name>
             <Element>
                <Term>cbc:RegistrationName</Term>
-               <Name>Sender party name </Name>
-               <Description>The name of the sender party. </Description>
+               <Name>Party name </Name>
+               <Description>The name of the party legal entity for the sender party. </Description>
                <Value type="EXAMPLE">IYT Corporation</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:CompanyID</Term>
+               <Name>Sender customers parties legal registration name </Name>
+               <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
+               <Value type="EXAMPLE">GB523859989</Value>
+               <Attribute>
+                  <Term>schemeID</Term>
+                  <Name>Scheme identifier </Name>
+                  <Description>Logistics: The identification scheme identifier of the despatch customer legal registration identifier </Description>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0089</Value>
+               </Attribute>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:RegistrationAddress</Term>
+               <Name>Legal address </Name>
+               <Element cardinality="0..1">
+                  <Term>cbc:CityName</Term>
+                  <Name>City name </Name>
+                  <Description>The name of the city. </Description>
+                  <Value type="EXAMPLE">Bridgtown</Value>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cac:Country</Term>
+                  <Name>Contry </Name>
+                  <Description>The residens country for the delivery customer party. </Description>
+                  <Element>
+                     <Term>cbc:IdentificationCode</Term>
+                     <Name>Contry code </Name>
+                     <Value type="EXAMPLE">UK</Value>
+                  </Element>
+               </Element>
             </Element>
          </Element>
          <Element cardinality="0..1">
@@ -190,7 +234,7 @@
             <Element>
                <Term>cbc:ID</Term>
                <Name>Receiver party identifier </Name>
-               <Description>Shipper (T0129) </Description>
+               <Description>Identification of the Receiver (consignee) </Description>
                <Value type="EXAMPLE">7300010000001</Value>
                <Attribute>
                   <Term>schemeID</Term>
@@ -199,6 +243,17 @@
                   <Reference type="CODE_LIST">ICD</Reference>
                   <Value type="EXAMPLE">0088</Value>
                </Attribute>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PartyName</Term>
+            <Name>Party name </Name>
+            <Description>The name of the Receiver Party. </Description>
+            <Element cardinality="1..1">
+               <Term>cbc:Name</Term>
+               <Name>Name of the fuel supplier </Name>
+               <Description>The name of the receiver. </Description>
+               <Value type="EXAMPLE">Receiver inc.</Value>
             </Element>
          </Element>
          <Element cardinality="0..1">
@@ -260,9 +315,42 @@
             <Name>Party name </Name>
             <Element>
                <Term>cbc:RegistrationName</Term>
-               <Name>Receiver party name </Name>
-               <Description>The name of the receiver party. </Description>
+               <Name>Receiver party registration name </Name>
+               <Description>The registration name of the receiver party. </Description>
                <Value type="EXAMPLE">Consortial</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:CompanyID</Term>
+               <Name>Reveiver parties legal registration ID </Name>
+               <Description>The official ID of the party as registered with the relevant fiscal authority. </Description>
+               <Value type="EXAMPLE">GB523859989</Value>
+               <Attribute>
+                  <Term>schemeID</Term>
+                  <Name>Scheme identifier </Name>
+                  <Description>Logistics: The identification scheme identifier of the despatch customer legal registration identifier </Description>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0089</Value>
+               </Attribute>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:RegistrationAddress</Term>
+               <Name>Legal address </Name>
+               <Element cardinality="0..1">
+                  <Term>cbc:CityName</Term>
+                  <Name>City name </Name>
+                  <Description>The name of the city. </Description>
+                  <Value type="EXAMPLE">Bridgtown</Value>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cac:Country</Term>
+                  <Name>Contry </Name>
+                  <Description>The residens country for the delivery customer party. </Description>
+                  <Element>
+                     <Term>cbc:IdentificationCode</Term>
+                     <Name>Contry code </Name>
+                     <Value type="EXAMPLE">UK</Value>
+                  </Element>
+               </Element>
             </Element>
          </Element>
          <Element cardinality="0..1">
