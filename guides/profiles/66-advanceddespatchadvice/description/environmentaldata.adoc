@@ -87,11 +87,21 @@ include::{snippet-dir}/snippet-30-4.xml[tags=environmentalemission]
 == Product Climate Data
 
 To be able to calculate product climate data the related CO2 value is needed and the weight of products are needed. 
-The net weight per despatch line is one recommended way to provide the weight information to the customer.
-(insert code related to line weight)
+The net weight per item is the recommended way to provide the weight information to the customer.
+Example:
+
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-30-1.xml[tags=itemnetweight]
+----
 
 In some cases the authority has specific requirements carbon accounting in regards to where the products are beeing used. This requiremnent can be fulfilled by the use of Buyers item identification.
-(insert code related to Buyers item identification)
+Example:
+
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-30-1.xml[tags=buyersitemidentification]
+----
 
 [[generic-product-climate-data]]
 === Generic Product Climate Data
@@ -101,15 +111,15 @@ Below you will find two examples from Swedish authorities that provides generic 
 [cols="1,1,1,3",options="header",stripes=even]
 |====
 |Name |NameCode |listID |Definition
-|Resource ID |ResourceID |Boverket | Resource ID according to the Swedish National Board of Housing, Building and Planning (Boverket)
-|Resource ID |ResourceID |Trafikverket | Resource ID according to the Swedish Transport Administration (Trafikverket)
+|Boverket Resource ID |ResourceID |Boverket | Resource ID according to the Swedish National Board of Housing, Building and Planning (Boverket)
+|Trafikverket Resource ID |ResourceID |Trafikverket | Resource ID according to the Swedish Transport Administration (Trafikverket)
 |====
 
 Example:
 
 [source, xml, indent=0]
 ----
-include::{snippet-dir}/snippet-30-4.xml[tags=epd]
+include::{snippet-dir}/snippet-30-4.xml[tags=genericproductclimatedata]
 ----
 [[epd]]
 ===  Environmental Product Declaration (EPD) 
@@ -117,16 +127,22 @@ include::{snippet-dir}/snippet-30-4.xml[tags=epd]
 Environmental Product Declaration (EPD) provides specific CO2 data related to the product.
 EPD:s are related to despatch line but since it is environmental related information it is presented in this section.
 
-The table below describes the definitions of the EPD related properties:s.
+The table below describes the definitions of the EPD related properties.
 
 [cols="1,1,1,3",options="header",stripes=even]
 |====
 |Name |NameCode |listID |Definition
+|Program Operator |ProgramOperator |BEAST:4.0 |The name of the program operator that has published the EPD
+|EPD Number |EPDNumber |BEAST:4.0 |The number of the published EDP
+|EPD PDF URL |EPDPDFURL |BEAST:4.0 |URL to the human readable version of a EPD, for verification purposes
+|EPD PDF Product name |EPDPDFProductName |BEAST:4.0 |The product name specified for an individual dataset in the PDF EPD
+|GWP GHG A1-3 EPD line value |GWP-GHG_A1-3_EPD |BEAST:4.0 |Global warming potential green house gases for process A1-3 100 EPD total value for line
 |EPD Dataset ID |EPDDatasetID |BEAST:4.0 |The EPD dataset id gives the digital reference to a produkt type in the EDP
 |EPD Dataset URL |EPDDataSetURL |BEAST:4.0 |URL to grab the machine readable digital information from the program operator
-|EPD PDF URL |EPDPDFURL |BEAST:4.0 |URL to the human readable version of a EPD, for verification purposes
-|GWP GHG A1-3 EPD line value |GWP-GHG_A1-3_EPD |BEAST:4.0 |Global warming potential green house gases for process A1-3 100 EPD total value for line
 |====
+
+The last properties are only used when the EPD is machine readable.
+EPD PDF Product name is not needed if the EPD is machine readable.
 
 Example:
 

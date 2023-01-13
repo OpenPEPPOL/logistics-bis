@@ -531,9 +531,11 @@
 		<!-- tag::item[] -->
 		<cac:Item>
 			<cbc:Name>Item123</cbc:Name>
+			<!-- tag::buyersitemidentification[] -->
 			<cac:BuyersItemIdentification>
 				<cbc:ID>123321</cbc:ID>
 			</cac:BuyersItemIdentification>
+			<!-- end::buyersitemidentification[] -->
 			<cac:SellersItemIdentification>
 				<cbc:ID>010120401</cbc:ID>
 			</cac:SellersItemIdentification>
@@ -543,8 +545,16 @@
 			<cac:StandardItemIdentification>
 				<cbc:ID schemeID="0160">7611104117056</cbc:ID>
 			</cac:StandardItemIdentification>
+			<!-- tag::itemnetweight[] -->
+			<cac:Dimension>
+				<cbc:AttributeID>AAF</cbc:AttributeID>
+				<cbc:Measure unitCode="MKG">12.3</cbc:Measure>
+			</cac:Dimension>
+			<!-- end::itemnetweight[] -->
+			
 		</cac:Item>
 		<!-- end::item[] -->
+
 		
 	</cac:DespatchLine>
 	<cac:DespatchLine>
@@ -659,6 +669,73 @@
 			<!-- end::lotid[] -->
 
 		</cac:Item>
+
+	</cac:DespatchLine>
+
+	<cac:DespatchLine>
+		<cbc:ID>4</cbc:ID>
+
+		<cbc:DeliveredQuantity unitCode="EA">6</cbc:DeliveredQuantity>
+		<cbc:OutstandingQuantity unitCode="EA">4</cbc:OutstandingQuantity>
+		<cbc:OutstandingReason>Backorder</cbc:OutstandingReason>
+
+		<cac:OrderLineReference>
+			<cbc:LineID>5</cbc:LineID>
+			<cac:OrderReference>
+				<cbc:ID>934234-12</cbc:ID>
+			</cac:OrderReference>
+		</cac:OrderLineReference>
+
+		<!-- Attached test report -->
+		<cac:DocumentReference>
+			<cbc:ID>6675</cbc:ID>
+			<cbc:DocumentTypeCode>4</cbc:DocumentTypeCode>
+			<cac:Attachment>
+				<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="TestReport_6675.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+				<cac:ExternalReference>
+					<cbc:URI>www.beast.se</cbc:URI>
+				</cac:ExternalReference>
+			</cac:Attachment>
+		</cac:DocumentReference>
+
+		<!-- Material Ticket (weight certificate) -->
+		<cac:DocumentReference>
+			<cbc:ID>98987</cbc:ID>
+			<cbc:DocumentTypeCode>14</cbc:DocumentTypeCode>
+		</cac:DocumentReference>
+
+		<!-- Material Ticket Reference (weight list) -->
+		<cac:DocumentReference>
+			<cbc:ID>98987</cbc:ID>
+			<cbc:DocumentTypeCode>15</cbc:DocumentTypeCode>
+		</cac:DocumentReference>
+
+		<cac:Item>
+			<cbc:Name>Item123</cbc:Name>
+			<!-- tag::buyersitemidentification[] -->
+			<cac:BuyersItemIdentification>
+				<cbc:ID>123321</cbc:ID>
+			</cac:BuyersItemIdentification>
+			<!-- end::buyersitemidentification[] -->
+			<cac:SellersItemIdentification>
+				<cbc:ID>010120401</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:ManufacturersItemIdentification>
+				<cbc:ID>010120401</cbc:ID>
+			</cac:ManufacturersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="0160">7611104117056</cbc:ID>
+			</cac:StandardItemIdentification>
+			<!-- tag::itemnetweight[] -->
+			<cac:Dimension>
+				<cbc:AttributeID>AAF</cbc:AttributeID>
+				<cbc:Measure unitCode="MKG">12.3</cbc:Measure>
+			</cac:Dimension>
+			<!-- end::itemnetweight[] -->
+
+		</cac:Item>
+
+
 
 	</cac:DespatchLine>
 </DespatchAdvice>
