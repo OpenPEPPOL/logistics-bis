@@ -23,17 +23,7 @@
 	
 	<cbc:ID>ID123
 	  <?DescriptionOrder receipt response ID. ?>
-	</cbc:ID>
-	<cbc:IssueDate>2016-08-15
-	  <?Description Document date time. ?>
-	</cbc:IssueDate>
-	<cbc:IssueTime>12:00:00
-	  <?Description Document date time. ?>
-	</cbc:IssueTime>
-	<cbc:VersionID>1.0		
-		<?Description Identifies the current version of this document ?>
-	</cbc:VersionID>
-	
+	</cbc:ID>	
 	<cac:SenderParty>
 		<cbc:EndpointID schemeID="0088">5798000000124
 			<?schemeID-usage Mandatory?>
@@ -211,13 +201,18 @@
 			<cbc:ID>12456789
 			  <?Description The id of the Despatch- or Receipt advice sent. ?>
 			</cbc:ID>
+			<cbc:IssueDate>2016-08-15
+				<?Name Issue date ?>
+	  			<?Description Document date time. ?>
+			</cbc:IssueDate>
+			<cbc:IssueTime>12:00:00
+				<?Name Issue time ?>
+	  			<?Description Document date time. ?>
+			</cbc:IssueTime>
 			<cbc:DocumentTypeCode>351
 			  <?Description Specifies if it is a reference to a Despatch or a Receipt advice. ?>
 			  <?Codelise UNCL1001_T121?>
 			</cbc:DocumentTypeCode>
-			<cbc:VersionID>2
-			  <?Description An identifier for the current version of the referenced document. ?>
-			</cbc:VersionID>
 		</cac:DocumentReference>
 				
 	</cac:DocumentResponse>
