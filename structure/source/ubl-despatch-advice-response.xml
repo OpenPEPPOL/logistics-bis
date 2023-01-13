@@ -50,6 +50,16 @@
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
+			<cac:PartyName>
+				<?Name Party name ?>
+				<?Description The name of the Sender Party. ?>
+				<?Cardinality 0..1?>
+				<cbc:Name>Sender inc.
+					<?Name Name of the sender party ?>
+					<?Description The name of the sender oif the document. ?>
+					<?Cardinality 1..1?>
+				</cbc:Name>
+			</cac:PartyName>
 			<cac:PostalAddress>
 				<?Name Postal address ?>
 				<?Cardinality 0..1?>
@@ -89,12 +99,38 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
-				<?Name Party name ?>
+				<?Name Registration name ?>
 				<?Cardinality 0..1?>
 				<cbc:RegistrationName>IYT Corporation
-					<?Name Sender party name ?>
-					<?Description The name of the sender party. ?>
+					<?Name Party name ?>
+					<?Description The name of the party legal entity for the sender party. ?>
 				</cbc:RegistrationName>
+				<cbc:CompanyID schemeID="0089">GB523859989
+					<?Name Sender customers parties legal registration name ?>
+					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
+					<?Cardinality 0..1?>
+					<?schemeID-Usage optional?>
+					<?schemeID-CodeList ICD?>
+					<?schemeID-Name Scheme identifier ?>
+					<?schemeID-Description The identification scheme identifier of the despatch customer legal registration identifier ?>
+				</cbc:CompanyID>
+				<cac:RegistrationAddress>
+					<?Name Legal address ?>
+					<?Cardinality 0..1?>
+					<cbc:CityName>Bridgtown
+												<?Name City name ?>
+						<?Description The name of the city. ?>
+						<?Cardinality 0..1?>
+					</cbc:CityName>
+					<cac:Country>
+						<?Name Contry ?>
+						<?Description The residens country for the delivery customer party. ?>
+						<?Cardinality 1..1?>
+						<cbc:IdentificationCode>UK
+														<?Name Contry code ?>
+						</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>	
 			
 			<cac:Contact>
@@ -128,12 +164,22 @@
 			<?Cardinality 0..1?>
 				<cbc:ID schemeID="0088">7300010000001
 					<?Name Receiver party identifier ?>
-					<?Description Shipper (T0129) ?>
+					<?Description Identification of the Receiver (consignee) ?>
 					<?schemeID-Name Scheme identifier ?>
 					<?schemeID-Description Scheme identifier for party identification. ?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
+			<cac:PartyName>
+				<?Name Party name ?>
+				<?Description The name of the Receiver Party. ?>
+				<?Cardinality 0..1?>
+				<cbc:Name>Receiver inc.
+					<?Name Name of the fuel supplier ?>
+					<?Description The name of the receiver. ?>
+					<?Cardinality 1..1?>
+				</cbc:Name>
+			</cac:PartyName>
 			<cac:PostalAddress>
 				<?Name Postal address ?>
 				<?Cardinality 0..1?>
@@ -176,9 +222,35 @@
 				<?Name Party name ?>
 				<?Cardinality 0..1?>
 				<cbc:RegistrationName>Consortial
-					<?Name Receiver party name ?>
-					<?Description The name of the receiver party. ?>
+					<?Name Receiver party registration name ?>
+					<?Description The registration name of the receiver party. ?>
 				</cbc:RegistrationName>
+				<cbc:CompanyID schemeID="0089">GB523859989
+					<?Name Reveiver parties legal registration ID ?>
+					<?Description The official ID of the party as registered with the relevant fiscal authority. ?>
+					<?Cardinality 0..1?>
+					<?schemeID-Usage optional?>
+					<?schemeID-CodeList ICD?>
+					<?schemeID-Name Scheme identifier ?>
+					<?schemeID-Description The identification scheme identifier of the despatch customer legal registration identifier ?>
+				</cbc:CompanyID>
+				<cac:RegistrationAddress>
+					<?Name Legal address ?>
+					<?Cardinality 0..1?>
+					<cbc:CityName>Bridgtown
+						<?Name City name ?>
+						<?Description The name of the city. ?>
+						<?Cardinality 0..1?>
+					</cbc:CityName>
+					<cac:Country>
+						<?Name Contry ?>
+						<?Description The residens country for the delivery customer party. ?>
+						<?Cardinality 1..1?>
+						<cbc:IdentificationCode>UK
+							<?Name Contry code ?>
+						</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<?Name Contact ?>
@@ -214,10 +286,7 @@
 			<cbc:DocumentTypeCode>351
 			  <?Description Specifies if it is a reference to a Despatch or a Receipt advice. ?>
 			  <?Codelise UNCL1001_T121?>
-			</cbc:DocumentTypeCode>
-			<cbc:VersionID>2
-			  <?Description An identifier for the current version of the referenced document. ?>
-			</cbc:VersionID>
+			</cbc:DocumentTypeCode>			
 		</cac:DocumentReference>
 				
 	</cac:DocumentResponse>
