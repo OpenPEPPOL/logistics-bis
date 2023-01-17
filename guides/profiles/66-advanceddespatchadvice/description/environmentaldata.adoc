@@ -86,7 +86,7 @@ include::{snippet-dir}/snippet-30-4.xml[tags=environmentalemission]
 [[product-climate-data]]
 == Product Climate Data
 
-To be able to calculate product climate data the related CO~2~ value is needed and the weight of products are needed. 
+To be able to calculate product climate data the related CO~2~ value and the weight of products are needed. 
 The net weight per item is the recommended way to provide the weight information to the customer.
 Example:
 
@@ -95,7 +95,7 @@ Example:
 include::{snippet-dir}/snippet-30-1.xml[tags=itemnetweight]
 ----
 
-In some cases the authority has specific requirements carbon accounting in regards to where the products are beeing used. This requiremnent can be fulfilled by the use of Buyers item identification.
+In some cases, the authority has specific requirements carbon accounting in regards to where the products are beeing used. This requirement can be fulfilled by the use of Buyers item identification.
 Example:
 
 [source, xml, indent=0]
@@ -106,8 +106,8 @@ include::{snippet-dir}/snippet-30-1.xml[tags=buyersitemidentification]
 [[generic-product-climate-data]]
 === Generic Product Climate Data
 
-The generic product climate data is often provide from an authority and are related to a product category codes such as UNSPSC or similar.
-Below you will find two examples from Swedish authorities that provides generic product climate data.
+Generic product climate data is often provided from an authority and are related to a product category codes such as UNSPSC or similar.
+Below you will find two examples from Swedish authorities that provide generic product climate data.
 [cols="1,1,1,3",options="header",stripes=even]
 |====
 |Name |NameCode |listID |Definition
@@ -132,17 +132,21 @@ The table below describes the definitions of the EPD related properties.
 [cols="1,1,1,3",options="header",stripes=even]
 |====
 |Name |NameCode |listID |Definition
-|Program Operator |ProgramOperator |BEAST:4.0 |The name of the program operator that has published the EPD
-|EPD Number |EPDNumber |BEAST:4.0 |The number of the published EDP
-|EPD HR URL |EPDHRURL |BEAST:4.0 |URL to the human readable version of a EPD, for verification purposes
-|EPD Product name |EPDProductName |BEAST:4.0 |The product name relating to an individual dataset in the EPD
-|GWP GHG A1-3 EPD line value |GWP-GHG_A1-3_EPD |BEAST:4.0 |Global warming potential green house gases for process A1-3 100 EPD total value for line
 |EPD Dataset ID |EPDDatasetID |BEAST:4.0 |The EPD dataset id gives the digital reference to a produkt type in the EDP
 |EPD Dataset URL |EPDDataSetURL |BEAST:4.0 |URL to grab the machine readable digital information from the program operator
+|Program Operator |ProgramOperator |BEAST:4.0 |The name of the program operator that has published the EPD
+|EPD Number |EPDNumber |BEAST:4.0 |The number of the published EDP
+|EPD Product name |EPDProductName |BEAST:4.0 |The product name relating to an EPD
+|EPD HR URL |EPDHRURL |BEAST:4.0 |URL to the human readable version of an EPD, for verification purposes
+|EPD Product Name Data Set |EPDProductNameDataSet |BEAST:4.0 |The product name relating to a individual dataset in the EPD
+|GWP GHG A1-3 EPD line value |GWP-GHG_A1-3_EPD |BEAST:4.0 |Global warming potential green house gases for process A1-3 100 EPD total value for line
 |====
 
-The last properties are only used when the EPD is machine readable.
-EPD PDF Product name is not needed if the EPD is machine readable.
+The first two (EPD Dataset ID and URL) are used when the EPD is machine readable.  
+The next four (Programme operator, EPD name, EPD nr and HR URL) are used when the EPD is not machine readable 
+The last (EPD Product name dataset) is needed when the non-machine readable EPD has more than one data set   
+If the EPD is only accessible as a PDF see section 6.7
+
 
 Example:
 
