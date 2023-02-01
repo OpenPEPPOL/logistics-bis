@@ -523,7 +523,7 @@
 					<xsl:choose>
 						<xsl:when test="../processing-instruction()[name() = $varAttrInstrDescription]">
 							<Description>
-								<xsl:text>Logistics: </xsl:text>
+								<!--xsl:text>Logistics: </xsl:text-->
 								<xsl:value-of select="../processing-instruction()[name() = $varAttrInstrDescription]"/>
 							</Description>
 						</xsl:when>
@@ -545,7 +545,6 @@
 						</xsl:when>
 						<xsl:when test="$varUblElementAttribute/nsPep:Description != ''">
 							<Description>
-								<xsl:text>Peppol: </xsl:text>
 								<xsl:value-of select="$varUblElementAttribute/nsPep:Description"/>
 							</Description>
 						</xsl:when>

@@ -402,7 +402,7 @@
 						<?Description Identifies a shipment. Freight forwarders reference number. ?>
 		</cbc:ID>
 		<cbc:Information>text
-						<?DescriptionAddFirst Used by Logistics for Supplier Remark. ?>
+						<?Description Used by Logistics for Supplier Remark. ?>
 		</cbc:Information>
 		<cbc:GrossWeightMeasure unitCode="KGM">1030
 						<?Description The gross weight of the despatch as a whole. Must be equal the the weight specified for the included transport handling unites if this is specified?>
@@ -427,7 +427,7 @@
 		</cbc:DeclaredStatisticsValueAmount>
 		<cac:Consignment>
 			<cbc:ID>NA
-								<?DescriptionAddFirst Use a dummy value since this element is mandatory. ?>
+								<?Description Use a dummy value since this element is mandatory. ?>
 			</cbc:ID>
 			<cbc:HazardousRiskIndicator>false
 								<?Name Hazardous risk indicator ?>
@@ -982,7 +982,7 @@
 				<?Cardinality 0..1?>
 				<cbc:AttributeID>TC
 										<?Name Attribute identifier ?>
-					<?CodeList UNCL6313?>
+					<?CodeList UNCL6313-T120?>
 					<?Description To describe the type of messure that in this context is the minimal temperature. ?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
@@ -999,7 +999,7 @@
 				<?Cardinality 0..1?>
 				<cbc:AttributeID>TC
 										<?Name Attribute identifier ?>
-					<?CodeList UNCL6313?>
+					<?CodeList UNCL6313-T120?>
 					<?Description To describe the type of messure that in this context is the maximal temperature. ?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
@@ -1412,7 +1412,7 @@
 				<?Name Commodity classification ?>
 				<?Description To classify when an item number is not sufficient. ?>
 				<?Cardinality 0..n?>
-				<cbc:ItemClassificationCode listID="ZZZ" listVersionID="BEAST:4.0" name="SBMI">SBMI Number
+				<cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">KO2012140200
 										<?Name Item classification code ?>
 					<?listID-CodeList UNCL7143?>
 					<?listID-usage Mandatory?>
@@ -1422,16 +1422,27 @@
 			</cac:CommodityClassification>
 			<cac:HazardousItem>
 				<cbc:UNDGCode>ADR
-										<?CodeList UNCL8273?>
+				<?CodeList UNCL8273?>
 				</cbc:UNDGCode>
 				<cbc:HazardClassID>Code</cbc:HazardClassID>
 			</cac:HazardousItem>
 			<cac:AdditionalItemProperty>
+				<cbc:ID schemeID="ISO22057" schemeVersionID="2022">
+					77e416eb-a363-4258-a04e-171d843a6460
+					<?Description ID of the property if assigned by an Agency?>
+					<?Cardinality 0..1?>
+				</cbc:ID>
+				<?schemeID-Name Scheme identifier?>
+				<?schemeID-usage Optional?>
+				<?schemeVersionID-Name Scheme version identifier?>
+				<?schemeVersionID-usage Optional?>
 				<cbc:Name>Rigidity</cbc:Name>
-				<cbc:NameCode listID="BEAST:4.0">ConfigurationValue
-										<?listID-usage Mandatory?>
+				<cbc:NameCode listID="IPNC">EPDNumber
+					<?listID-usage Mandatory?>
+					<?listID-Name Name code list id.?>
+					<?listID-Description An identifier for the code list used for the Name code, this is bilaterally agreed?>
 				</cbc:NameCode>
-				<cbc:Value>Blue</cbc:Value>
+				<cbc:Value>NEPD-1717-700-SE</cbc:Value>
 				<cbc:ValueQuantity unitCode="C62">15.00</cbc:ValueQuantity>
 				<cbc:ValueQualifier>descr</cbc:ValueQualifier>
 			</cac:AdditionalItemProperty>
@@ -1442,7 +1453,7 @@
 				<cac:PartyIdentification>
 					<?Name Party identification ?>
 					<cbc:ID schemeID="0088">5790000435951
-												<?Name Manufacturer party identifier ?>
+						<?Name Manufacturer party identifier ?>
 						<?Description Identifies the manufacturer party.?>
 						<?schemeID-Name Scheme identifier?>
 						<?schemeID-usage Optional?>
@@ -1567,7 +1578,7 @@
 				<?Cardinality 0..n?>
 				<cbc:AttributeID>LN
 										<?Name Attribute identifier ?>
-					<?CodeList UNCL6313?>
+					<?CodeList UNCL6313-T120?>
 					<?Description To describe the type of measurement.?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
