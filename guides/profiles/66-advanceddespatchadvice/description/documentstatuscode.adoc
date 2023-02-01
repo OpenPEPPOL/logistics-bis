@@ -1,0 +1,24 @@
+[[documentstatuscode]]
+= Document Status Code
+
+== Orginal
+Document status code 9 is used to notify the receiver of the Despatch Advice that this is the orginal Despatch Advice, there could be updates to the Despatch Advice.
+
+== Replace
+Document status code 5 is used to replace a previous sent Despatch Advice.
+The Despatch Advice can be sent multiple times if needed for the specific business scenario. One scenario can be if not all information exist when the Despatch Advice is sent the first time, i.e. the Consignee needs the Despatch Advice before the delivery to be able to use the quanities and other information to receive the goods or services but all information might not be provided in the first version of the Despatch Advice that the Consignee needs to fully document the receival of the goods. One example of this is the standard EN206 to define what the Consignee needs to document an delivery of concrete, the despach advice is needed before the delivery to be able to check the quality and quantity but actual delivery date and time is needed for the complete documentation.
+If multiple replacements is sent, the sender needs to provide Issue time so the receiver can identify the lastest version of the Despach Advice. 
+Updates should not be sent if the corrensponding goods or services has been invoiced.
+
+== Cancellation
+Document status code 1 is used to notify the receiver of the Despatch Advice that the Despatch Advice should be ignored and deleted from the receiving system. The status code is sent if the Despatch Advice is sent in error and the receiver of the message was not intended to receive the information.
+
+== Final transmission
+Document status code 22 is used to notify the receiver that there will be no further updates of this Despach Advice.
+
+Example:
+
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-30-1.xml[tags=documentstatuscode]
+----
