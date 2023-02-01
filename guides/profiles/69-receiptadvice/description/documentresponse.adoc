@@ -1,0 +1,15 @@
+[[document-response]]
+= Document response
+
+Used to provide information about the status of the response with a status code and a description.
+Legal values for status code according to Application Response type code (UNCL4343 Subset):
+
+* AB = Message acknowledgement (before delivery of goods)
+* AP = Accepted (after delivery of goods)
+* RE = Rejected
+
+.Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=docresponse]
+----
