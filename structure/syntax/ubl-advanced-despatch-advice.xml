@@ -130,14 +130,14 @@
                <Attribute>
                   <Term>mimeCode</Term>
                   <Name>Attached document Mime code</Name>
-                  <Description>Peppol: The mime code of the attached document.</Description>
+                  <Description>The mime code of the attached document.</Description>
                   <Reference type="CODE_LIST">MimeCode</Reference>
                   <Value type="EXAMPLE">application/pdf</Value>
                </Attribute>
                <Attribute>
                   <Term>filename</Term>
                   <Name>Attached document filename</Name>
-                  <Description>Peppol: The file name of the attached document</Description>
+                  <Description>The file name of the attached document</Description>
                   <Value type="EXAMPLE">Hours-spent.pdf</Value>
                </Attribute>
             </Element>
@@ -173,7 +173,7 @@
                <Attribute usage="Mandatory">
                   <Term>schemeID</Term>
                   <Name>Scheme identifier</Name>
-                  <Description>Peppol: Scheme identifier for electronic address</Description>
+                  <Description>Scheme identifier for electronic address</Description>
                   <Reference type="CODE_LIST">eas</Reference>
                   <Value type="EXAMPLE">0088</Value>
                </Attribute>
@@ -191,7 +191,7 @@
                   <Attribute usage="optional">
                      <Term>schemeID</Term>
                      <Name>Scheme identifier</Name>
-                     <Description>Peppol: Scheme identifier for party identification</Description>
+                     <Description>Scheme identifier for party identification</Description>
                      <Reference type="CODE_LIST">ICD</Reference>
                      <Value type="EXAMPLE">0088</Value>
                   </Attribute>
@@ -330,7 +330,7 @@
                   <Attribute>
                      <Term>schemeID</Term>
                      <Name>Scheme identifier </Name>
-                     <Description>Logistics: The identification scheme identifier of the despatch supplier legal registration identifier </Description>
+                     <Description>The identification scheme identifier of the despatch supplier legal registration identifier </Description>
                      <Reference type="CODE_LIST">ICD</Reference>
                      <Value type="EXAMPLE">0089</Value>
                   </Attribute>
@@ -405,7 +405,7 @@
                <Attribute>
                   <Term>schemeID</Term>
                   <Name>Scheme identifier</Name>
-                  <Description>Peppol: Scheme identifier for electronic address</Description>
+                  <Description>Scheme identifier for electronic address</Description>
                   <Reference type="CODE_LIST">eas</Reference>
                   <Value type="EXAMPLE">0088</Value>
                </Attribute>
@@ -423,7 +423,7 @@
                   <Attribute usage="optional">
                      <Term>schemeID</Term>
                      <Name>Scheme identifier</Name>
-                     <Description>Peppol: Scheme identifier for party identification</Description>
+                     <Description>Scheme identifier for party identification</Description>
                      <Reference type="CODE_LIST">ICD</Reference>
                      <Value type="EXAMPLE">0088</Value>
                   </Attribute>
@@ -562,7 +562,7 @@
                   <Attribute>
                      <Term>schemeID</Term>
                      <Name>Scheme identifier </Name>
-                     <Description>Logistics: The identification scheme identifier of the despatch customer legal registration identifier </Description>
+                     <Description>The identification scheme identifier of the despatch customer legal registration identifier </Description>
                      <Reference type="CODE_LIST">ICD</Reference>
                      <Value type="EXAMPLE">0089</Value>
                   </Attribute>
@@ -666,7 +666,7 @@
                   <Attribute usage="Optional">
                      <Term>schemeID</Term>
                      <Name>Scheme identifier</Name>
-                     <Description>Peppol: Scheme identifier for party identification</Description>
+                     <Description>Scheme identifier for party identification</Description>
                      <Reference type="CODE_LIST">ICD</Reference>
                      <Value type="EXAMPLE">0088</Value>
                   </Attribute>
@@ -792,7 +792,7 @@
                   <Attribute usage="Optional">
                      <Term>schemeID</Term>
                      <Name>Scheme identifier</Name>
-                     <Description>Peppol: Scheme identifier for party identification</Description>
+                     <Description>Scheme identifier for party identification</Description>
                      <Reference type="CODE_LIST">ICD</Reference>
                      <Value type="EXAMPLE">0088</Value>
                   </Attribute>
@@ -915,7 +915,7 @@
                   <Attribute usage="Optional">
                      <Term>schemeID</Term>
                      <Name>Scheme identifier</Name>
-                     <Description>Peppol: Scheme identifier for party identification</Description>
+                     <Description>Scheme identifier for party identification</Description>
                      <Reference type="CODE_LIST">ICD</Reference>
                      <Value type="EXAMPLE">0088</Value>
                   </Attribute>
@@ -1030,9 +1030,7 @@
          <Element cardinality="0..n">
             <Term>cbc:Information</Term>
             <Name>Shipment description</Name>
-            <Description>Free-form text applying to a shipment. This element may contain notes
-					or any other similar information that is not contained explicitly in another
-					structure.</Description>
+            <Description>Used by Logistics for Supplier Remark. </Description>
             <Reference type="BUSINESS_TERM">tir16-039</Reference>
             <Value type="EXAMPLE">text</Value>
          </Element>
@@ -1046,7 +1044,7 @@
             <Attribute>
                <Term>unitCode</Term>
                <Name>Shipment quantity unit of measure</Name>
-               <Description>Peppol: The unit of measure that applies to the shipment
+               <Description>The unit of measure that applies to the shipment
 						quantity.</Description>
                <DataType>Code</DataType>
                <Reference type="CODE_LIST">UNECERec20</Reference>
@@ -1063,7 +1061,7 @@
             <Attribute>
                <Term>unitCode</Term>
                <Name>Shipment volume unit of measure</Name>
-               <Description>Peppol: The unit of measure that applies to the shipment
+               <Description>The unit of measure that applies to the shipment
 						volume.</Description>
                <DataType>Code</DataType>
                <Reference type="CODE_LIST">UNECERec20</Reference>
@@ -1087,7 +1085,7 @@
             <Attribute>
                <Term>currencyID</Term>
                <Name>Currency identifier </Name>
-               <Description>Logistics: Currency identifier.</Description>
+               <Description>Currency identifier.</Description>
                <Reference type="CODE_LIST">ISO4217</Reference>
                <Value type="EXAMPLE">SEK</Value>
             </Attribute>
@@ -1098,8 +1096,7 @@
             <Element>
                <Term>cbc:ID</Term>
                <Name>Consignment identifier</Name>
-               <Description>An association to Consignment covering the shipment. Unique number
-						assigned to goods, both for import and export.</Description>
+               <Description>Use a dummy value since this element is mandatory. </Description>
                <Reference type="BUSINESS_TERM">tir16-040</Reference>
                <Value type="EXAMPLE">NA</Value>
             </Element>
@@ -1119,7 +1116,7 @@
                <Attribute usage="Optional">
                   <Term>listID</Term>
                   <Name>Identifier for codelist for handling code </Name>
-                  <Description>Logistics: An identifier for the codelist used for the handling code </Description>
+                  <Description>An identifier for the codelist used for the handling code </Description>
                   <Value type="EXAMPLE">TRED4079</Value>
                </Attribute>
             </Element>
@@ -1146,7 +1143,7 @@
                      <Attribute usage="Optional">
                         <Term>schemeID</Term>
                         <Name>Scheme identifier</Name>
-                        <Description>Peppol: Scheme identifier for party identification</Description>
+                        <Description>Scheme identifier for party identification</Description>
                         <Reference type="CODE_LIST">ICD</Reference>
                         <Value type="EXAMPLE">0088</Value>
                      </Attribute>
@@ -1232,7 +1229,7 @@
                         <Attribute>
                            <Term>unitCode</Term>
                            <Name>Measure unit of measure </Name>
-                           <Description>Logistics: The unit of measure that applies to the measure. </Description>
+                           <Description>The unit of measure that applies to the measure. </Description>
                            <Reference type="CODE_LIST">UNECERec20</Reference>
                            <Value type="EXAMPLE">KGM</Value>
                         </Attribute>
@@ -1328,7 +1325,7 @@
                      <Attribute usage="Optional">
                         <Term>listID</Term>
                         <Name>Identifier for codelist for environmental emissions type </Name>
-                        <Description>Logistics: An identifier for the codelist used for the environmental emission type code </Description>
+                        <Description>An identifier for the codelist used for the environmental emission type code </Description>
                         <Value type="EXAMPLE">UN785</Value>
                      </Attribute>
                      <Attribute usage="Optional">
@@ -1345,7 +1342,7 @@
                      <Attribute>
                         <Term>unitCode</Term>
                         <Name>Measure unit of measure </Name>
-                        <Description>Logistics: The unit of measure that applies to measure. </Description>
+                        <Description>The unit of measure that applies to measure. </Description>
                         <Reference type="CODE_LIST">UNECERec20</Reference>
                         <Value type="EXAMPLE">MGM</Value>
                      </Attribute>
@@ -1534,7 +1531,7 @@
                         <Attribute usage="Mandatory">
                            <Term>unitCode</Term>
                            <Name>Latitude degrees unit of measure </Name>
-                           <Description>Logistics: The unit of measure that applies to the latitude degrees. </Description>
+                           <Description>The unit of measure that applies to the latitude degrees. </Description>
                            <Reference type="CODE_LIST">UNECERec20</Reference>
                            <Value type="EXAMPLE">DD</Value>
                         </Attribute>
@@ -1547,7 +1544,7 @@
                         <Attribute usage="Mandatory">
                            <Term>unitCode</Term>
                            <Name>Longitude degrees unit of measure </Name>
-                           <Description>Logistics: The unit of measure that applies to the longitude degrees. </Description>
+                           <Description>The unit of measure that applies to the longitude degrees. </Description>
                            <Reference type="CODE_LIST">UNECERec20</Reference>
                            <Value type="EXAMPLE">DD</Value>
                         </Attribute>
@@ -1560,7 +1557,7 @@
                         <Attribute usage="Mandatory">
                            <Term>unitCode</Term>
                            <Name>Altitude unit of measure </Name>
-                           <Description>Logistics: The unit of measure that applies to altitude. </Description>
+                           <Description>The unit of measure that applies to altitude. </Description>
                            <Reference type="CODE_LIST">UNECERec20</Reference>
                            <Value type="EXAMPLE">MTR</Value>
                         </Attribute>
@@ -1730,7 +1727,7 @@
                         <Attribute usage="Mandatory">
                            <Term>unitCode</Term>
                            <Name>Latitude degrees unit of measure </Name>
-                           <Description>Logistics: The unit of measure that applies to the latitude degrees. </Description>
+                           <Description>The unit of measure that applies to the latitude degrees. </Description>
                            <Reference type="CODE_LIST">UNECERec20</Reference>
                            <Value type="EXAMPLE">DD</Value>
                         </Attribute>
@@ -1743,7 +1740,7 @@
                         <Attribute usage="Mandatory">
                            <Term>unitCode</Term>
                            <Name>Longitude degrees unit of measure </Name>
-                           <Description>Logistics: The unit of measure that applies to the longitude degrees. </Description>
+                           <Description>The unit of measure that applies to the longitude degrees. </Description>
                            <Reference type="CODE_LIST">UNECERec20</Reference>
                            <Value type="EXAMPLE">DD</Value>
                         </Attribute>
@@ -1756,7 +1753,7 @@
                         <Attribute usage="Mandatory">
                            <Term>unitCode</Term>
                            <Name>Altitude unit of measure </Name>
-                           <Description>Logistics: The unit of measure that applies to altitude. </Description>
+                           <Description>The unit of measure that applies to altitude. </Description>
                            <Reference type="CODE_LIST">UNECERec20</Reference>
                            <Value type="EXAMPLE">MTR</Value>
                         </Attribute>
@@ -1912,7 +1909,7 @@
                   <Term>cbc:AttributeID</Term>
                   <Name>Attribute identifier </Name>
                   <Description>To describe the type of messure that in this context is the minimal temperature. </Description>
-                  <Reference type="CODE_LIST">UNCL6313</Reference>
+                  <Reference type="CODE_LIST">UNCL6313-T120</Reference>
                   <Value type="EXAMPLE">TC</Value>
                </Element>
                <Element cardinality="1..1">
@@ -1935,7 +1932,7 @@
                   <Term>cbc:AttributeID</Term>
                   <Name>Attribute identifier </Name>
                   <Description>To describe the type of messure that in this context is the maximal temperature. </Description>
-                  <Reference type="CODE_LIST">UNCL6313</Reference>
+                  <Reference type="CODE_LIST">UNCL6313-T120</Reference>
                   <Value type="EXAMPLE">TC</Value>
                </Element>
                <Element cardinality="1..1">
@@ -1976,7 +1973,7 @@
                   <Attribute>
                      <Term>currencyID</Term>
                      <Name>Currency identifier </Name>
-                     <Description>Logistics: Currency identifier.</Description>
+                     <Description>Currency identifier.</Description>
                      <Reference type="CODE_LIST">ISO4217</Reference>
                      <Value type="EXAMPLE">EUR</Value>
                   </Attribute>
@@ -1989,7 +1986,7 @@
                   <Attribute>
                      <Term>unitCode</Term>
                      <Name>Quantity unit of measure </Name>
-                     <Description>Logistics: The unit of measure that applies to the quantity.</Description>
+                     <Description>The unit of measure that applies to the quantity.</Description>
                      <Value type="EXAMPLE">EA</Value>
                   </Attribute>
                </Element>
@@ -2118,7 +2115,7 @@
                            <Attribute>
                               <Term>currencyID</Term>
                               <Name>Currency identifier </Name>
-                              <Description>Logistics: Currency identifier.</Description>
+                              <Description>Currency identifier.</Description>
                               <Reference type="CODE_LIST">ISO4217</Reference>
                               <Value type="EXAMPLE">EUR</Value>
                            </Attribute>
@@ -2131,7 +2128,7 @@
                            <Attribute>
                               <Term>unitCode</Term>
                               <Name>Quantity unit of measure </Name>
-                              <Description>Logistics: The unit of measure that applies to the quantity.</Description>
+                              <Description>The unit of measure that applies to the quantity.</Description>
                               <Value type="EXAMPLE">EA</Value>
                            </Attribute>
                         </Element>
@@ -2166,7 +2163,7 @@
                            <Attribute>
                               <Term>unitCode</Term>
                               <Name>Measure unit of measure </Name>
-                              <Description>Logistics: The unit of measure that applies to the measure. </Description>
+                              <Description>The unit of measure that applies to the measure. </Description>
                               <Reference type="CODE_LIST">UNECERec20</Reference>
                               <Value type="EXAMPLE">MTR</Value>
                            </Attribute>
@@ -2199,7 +2196,7 @@
                         <Attribute>
                            <Term>currencyID</Term>
                            <Name>Currency identifier </Name>
-                           <Description>Logistics: Currency identifier.</Description>
+                           <Description>Currency identifier.</Description>
                            <Reference type="CODE_LIST">ISO4217</Reference>
                            <Value type="EXAMPLE">EUR</Value>
                         </Attribute>
@@ -2212,7 +2209,7 @@
                         <Attribute>
                            <Term>unitCode</Term>
                            <Name>Quantity unit of measure </Name>
-                           <Description>Logistics: The unit of measure that applies to the quantity.</Description>
+                           <Description>The unit of measure that applies to the quantity.</Description>
                            <Value type="EXAMPLE">EA</Value>
                         </Attribute>
                      </Element>
@@ -2247,7 +2244,7 @@
                         <Attribute>
                            <Term>unitCode</Term>
                            <Name>Measure unit of measure </Name>
-                           <Description>Logistics: The unit of measure that applies to the measure. </Description>
+                           <Description>The unit of measure that applies to the measure. </Description>
                            <Reference type="CODE_LIST">UNECERec20</Reference>
                            <Value type="EXAMPLE">KGM</Value>
                         </Attribute>
@@ -2280,7 +2277,7 @@
                      <Attribute>
                         <Term>currencyID</Term>
                         <Name>Currency identifier </Name>
-                        <Description>Logistics: Currency identifier.</Description>
+                        <Description>Currency identifier.</Description>
                         <Reference type="CODE_LIST">ISO4217</Reference>
                         <Value type="EXAMPLE">EUR</Value>
                      </Attribute>
@@ -2293,7 +2290,7 @@
                      <Attribute>
                         <Term>unitCode</Term>
                         <Name>Quantity unit of measure </Name>
-                        <Description>Logistics: The unit of measure that applies to the quantity.</Description>
+                        <Description>The unit of measure that applies to the quantity.</Description>
                         <Value type="EXAMPLE">EA</Value>
                      </Attribute>
                   </Element>
@@ -2328,7 +2325,7 @@
                      <Attribute>
                         <Term>unitCode</Term>
                         <Name>Measure unit of measure </Name>
-                        <Description>Logistics: The unit of measure that applies to the measure. </Description>
+                        <Description>The unit of measure that applies to the measure. </Description>
                         <Reference type="CODE_LIST">UNECERec20</Reference>
                         <Value type="EXAMPLE">MTR</Value>
                      </Attribute>
@@ -2368,7 +2365,7 @@
             <Attribute>
                <Term>unitCode</Term>
                <Name>Ordered quantity unit of measure</Name>
-               <Description>Peppol: The unit of measure that applies to the ordered
+               <Description>The unit of measure that applies to the ordered
 						quantity.</Description>
                <DataType>Code</DataType>
                <Reference type="CODE_LIST">UNECERec20</Reference>
@@ -2386,7 +2383,7 @@
             <Attribute>
                <Term>unitCode</Term>
                <Name>Ordered quantity unit of measure</Name>
-               <Description>Peppol: The unit of measure that applies to the ordered
+               <Description>The unit of measure that applies to the ordered
 						quantity.</Description>
                <DataType>Code</DataType>
                <Reference type="CODE_LIST">UNECERec20</Reference>
@@ -2477,14 +2474,14 @@
                   <Attribute>
                      <Term>mimeCode</Term>
                      <Name>Attached document Mime code </Name>
-                     <Description>Logistics: The mime code of the attached document. </Description>
+                     <Description>The mime code of the attached document. </Description>
                      <Reference type="CODE_LIST">MimeCode</Reference>
                      <Value type="EXAMPLE">application/pdf</Value>
                   </Attribute>
                   <Attribute>
                      <Term>filename</Term>
                      <Name>Attached document filename </Name>
-                     <Description>Logistics: The file name of the attached document. </Description>
+                     <Description>The file name of the attached document. </Description>
                      <Value type="EXAMPLE">Hours-spent.pdf</Value>
                   </Attribute>
                </Element>
@@ -2567,7 +2564,7 @@
                   <Attribute>
                      <Term>schemeID</Term>
                      <Name>Scheme identifier</Name>
-                     <Description>Peppol: The identification scheme identifier of the Item standard
+                     <Description>The identification scheme identifier of the Item standard
 								identifier</Description>
                      <Reference type="CODE_LIST">ICD</Reference>
                      <Value type="EXAMPLE">0160</Value>
@@ -2595,12 +2592,12 @@
 							(UNSPSC) etc.</Description>
                   <DataType>Code</DataType>
                   <Reference type="BUSINESS_TERM">tir16-p048</Reference>
-                  <Value type="EXAMPLE">SBMI Number</Value>
+                  <Value type="EXAMPLE">KO2012140200</Value>
                   <Attribute usage="Mandatory">
                      <Term>listID</Term>
                      <Name>Item classification identifier identification scheme
 								identifier</Name>
-                     <Description>Logistics: The identification scheme identifier of the Item classification identifier. </Description>
+                     <Description>The identification scheme identifier of the Item classification identifier. </Description>
                      <Reference type="CODE_LIST">UNCL7143</Reference>
                      <Value type="EXAMPLE">ZZZ</Value>
                   </Attribute>
@@ -2608,14 +2605,14 @@
                      <Term>listVersionID</Term>
                      <Name>Item classification identifier version identification scheme
 								identifier</Name>
-                     <Description>Peppol: The identification scheme version identifier of the
+                     <Description>The identification scheme version identifier of the
 								Item classification identifier</Description>
-                     <Value type="EXAMPLE">BEAST:4.0</Value>
+                     <Value type="EXAMPLE">3.0.2</Value>
                   </Attribute>
                   <Attribute usage="Optional">
                      <Term>name</Term>
                      <Name>Clear text name equivalent of classification code</Name>
-                     <Description>Peppol: The textual equivalent of the code value</Description>
+                     <Description>The textual equivalent of the code value</Description>
                      <Value type="EXAMPLE">SBMI</Value>
                   </Attribute>
                </Element>
@@ -2648,6 +2645,19 @@
                <Name>Additional item property information</Name>
                <Description>A group of business terms providing information about properties of
 						the goods and services invoiced.</Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:ID</Term>
+                  <Description>ID of the property if assigned by an Agency</Description>
+                  <Value type="EXAMPLE">77e416eb-a363-4258-a04e-171d843a6460</Value>
+                  <Attribute>
+                     <Term>schemeID</Term>
+                     <Value type="EXAMPLE">ISO22057</Value>
+                  </Attribute>
+                  <Attribute>
+                     <Term>schemeVersionID</Term>
+                     <Value type="EXAMPLE">2022</Value>
+                  </Attribute>
+               </Element>
                <Element>
                   <Term>cbc:Name</Term>
                   <Name>Item property name</Name>
@@ -2665,13 +2675,12 @@
 							system.</Description>
                   <DataType>Code</DataType>
                   <Reference type="BUSINESS_TERM">tir16-p042</Reference>
-                  <Value type="EXAMPLE">ConfigurationValue</Value>
+                  <Value type="EXAMPLE">EPDNumber</Value>
                   <Attribute usage="Mandatory">
                      <Term>listID</Term>
                      <Name>Name code list id.</Name>
-                     <Description>Peppol: An identifier for the code list used for the Name code,
-								this is bilaterally agreed</Description>
-                     <Value type="EXAMPLE">BEAST:4.0</Value>
+                     <Description>An identifier for the code list used for the Name code, this is bilaterally agreed</Description>
+                     <Value type="EXAMPLE">IPNC</Value>
                   </Attribute>
                </Element>
                <Element>
@@ -2680,7 +2689,7 @@
                   <Description>The value of the item property.</Description>
                   <DataType>Text</DataType>
                   <Reference type="BUSINESS_TERM">tir16-p040</Reference>
-                  <Value type="EXAMPLE">Blue</Value>
+                  <Value type="EXAMPLE">NEPD-1717-700-SE</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:ValueQuantity</Term>
@@ -2693,7 +2702,7 @@
                   <Attribute>
                      <Term>unitCode</Term>
                      <Name>Value quantity unit of measure</Name>
-                     <Description>Peppol: The unit of measure that applies to the value
+                     <Description>The unit of measure that applies to the value
 							quantity.</Description>
                      <DataType>Code</DataType>
                      <Reference type="CODE_LIST">UNECERec20</Reference>
@@ -2907,7 +2916,7 @@
                   <Term>cbc:AttributeID</Term>
                   <Name>Attribute identifier </Name>
                   <Description>To describe the type of measurement.</Description>
-                  <Reference type="CODE_LIST">UNCL6313</Reference>
+                  <Reference type="CODE_LIST">UNCL6313-T120</Reference>
                   <Value type="EXAMPLE">LN</Value>
                </Element>
                <Element cardinality="1..1">
@@ -2918,7 +2927,7 @@
                   <Attribute>
                      <Term>unitCode</Term>
                      <Name>Measure unit of measure </Name>
-                     <Description>Logistics: The unit of measure that applies to the measure. </Description>
+                     <Description>The unit of measure that applies to the measure. </Description>
                      <Reference type="CODE_LIST">UNECERec20</Reference>
                      <Value type="EXAMPLE">MTR</Value>
                   </Attribute>

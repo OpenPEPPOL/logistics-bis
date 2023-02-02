@@ -5,11 +5,13 @@
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1</cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1</cbc:ProfileID>
 	<cbc:ID>5658999</cbc:ID>
+	<!-- tag::documentstatuscode[] -->
 	<cbc:IssueDate>2021-09-10</cbc:IssueDate>
 	<cbc:IssueTime>12:00:00</cbc:IssueTime>
-	<cbc:DespatchAdviceTypeCode>1</cbc:DespatchAdviceTypeCode>
+	<cbc:DocumentStatusCode>5</cbc:DocumentStatusCode>
+	<!-- end::documentstatuscode[] -->	
 	<cbc:Note>Free text note relating to the Despatch Advice</cbc:Note>
-	
+
 	<!-- tag::ref-order[] -->
 	<cac:OrderReference>
 		<cbc:ID>AEG0123456</cbc:ID>
@@ -578,7 +580,7 @@
 
 			<!-- tag::commodityclassification[] -->
 			<cac:CommodityClassification>
-				<cbc:ItemClassificationCode listID="ZZZ" listVersionID="BEAST:4.0" name="SBMI">KO2012140200</cbc:ItemClassificationCode>
+				<cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">KO2012140200</cbc:ItemClassificationCode>
 			</cac:CommodityClassification>
 			<!-- end::commodityclassification[] -->
 			
@@ -636,7 +638,7 @@
 			<!-- Information about the price. -->
 			<cac:AdditionalItemProperty>
 				<cbc:Name>NA</cbc:Name>
-				<cbc:NameCode listID="BEAST:4.0">Price</cbc:NameCode>
+				<cbc:NameCode listID="IPNC">Price</cbc:NameCode>
 				<cbc:Value>1200</cbc:Value>
 				<!-- Price is for 10 pieces and the type of price is Contract. -->
 				<cbc:ValueQuantity unitCode="C62">10.00</cbc:ValueQuantity>
@@ -646,7 +648,7 @@
 			<!-- The item is rented, not purchased. -->
 			<cac:AdditionalItemProperty>
 				<cbc:Name>NA</cbc:Name>
-				<cbc:NameCode listID="BEAST:4.0">Rental</cbc:NameCode>
+				<cbc:NameCode listID="IPNC">Rental</cbc:NameCode>
 				<cbc:Value>Purchase</cbc:Value>
 			</cac:AdditionalItemProperty>
 			<!-- end::itemproperty[] -->
