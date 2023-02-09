@@ -1425,17 +1425,21 @@
                </Element>
             </Element>
          </Element>
-         <Element cardinality="0..1 0..1">
+         <Element cardinality="0..1">
             <Term>cac:Delivery</Term>
-            <Name>Actual Delivery Date Actual Delivery Time</Name>
-            <Description>The date on which the supply of goods or services was made or completed. Format = "YYYY-MM-DD" The date on which the supply of goods or services was made or completed. Format = "hh:mm:ss"</Description>
-            <DataType>Date Time</DataType>
-            <Element>
+            <Name>Delivery information</Name>
+            <Element cardinality="0..1">
                <Term>cbc:ActualDeliveryDate</Term>
+               <Name>Actual Delivery Date</Name>
+               <Description>The date on which the supply of goods or services was made or completed. Format = "YYYY-MM-DD"</Description>
+               <DataType>Date</DataType>
                <Value type="EXAMPLE">2021-09-26</Value>
             </Element>
-            <Element>
+            <Element cardinality="0..1">
                <Term>cbc:ActualDeliveryTime</Term>
+               <Name>Actual Delivery Time</Name>
+               <Description>The date on which the supply of goods or services was made or completed. Format = "hh:mm:ss"</Description>
+               <DataType>Time</DataType>
                <Value type="EXAMPLE">10:00:00</Value>
             </Element>
             <Element cardinality="0..1">
@@ -2825,10 +2829,9 @@
                   </Element>
                </Element>
             </Element>
-            <Element cardinality="0..1">
+            <Element cardinality="0..n">
                <Term>cac:ItemInstance</Term>
-               <Name>Manufacture Time.</Name>
-               <Description>The time at which this item instance was manufactured.</Description>
+               <Name>Item instance information</Name>
                <Element cardinality="0..1">
                   <Term>cbc:ManufactureDate</Term>
                   <Name>Item manufactured date</Name>
@@ -2837,8 +2840,10 @@
                   <Reference type="BUSINESS_TERM">tir16-079</Reference>
                   <Value type="EXAMPLE">2021-01-01</Value>
                </Element>
-               <Element>
+               <Element cardinality="0..1">
                   <Term>cbc:ManufactureTime</Term>
+                  <Name>Manufacture Time.</Name>
+                  <Description>The time at which this item instance was manufactured.</Description>
                   <Value type="EXAMPLE">06:47:30</Value>
                </Element>
                <Element cardinality="0..1">

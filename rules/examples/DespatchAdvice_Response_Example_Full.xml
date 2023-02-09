@@ -1,456 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
-   <Term>DespatchAdviceResponse</Term>
-   <Property key="sch:prefix">PEPPOL-T121</Property>
-   <Property key="sch:identifier">T121-basic</Property>
-   <Namespace prefix="">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2</Namespace>
-   <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
-   <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
-   <Document>
-      <Term>ApplicationResponse</Term>
-      <Element>
-         <Term>cbc:CustomizationID</Term>
-         <Name>Specification identification</Name>
-         <Description>Identifies the specification of content and rules that apply to the
-                transaction.</Description>
-         <DataType>Identifier</DataType>
-         <Reference type="BUSINESS_TERM">tir71-006</Reference>
-         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:despatch_advice_response:1</Value>
-      </Element>
-      <Element>
-         <Term>cbc:ProfileID</Term>
-         <Name>Business process type identifier</Name>
-         <Description>Identifies the BII profile or business process context in which the
-                transaction appears.</Description>
-         <DataType>Identifier</DataType>
-         <Reference type="BUSINESS_TERM">tir71-005</Reference>
-         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_response:1</Value>
-      </Element>
-      <Element>
-         <Term>cbc:ID</Term>
-         <Name>Response identifier</Name>
-         <Description>A transaction instance must contain an identifier. The identifier enables
-                positive referencing the transaction instance for various purposes including
-                referencing between transactions that are part of the same process.</Description>
-         <DataType>Identifier</DataType>
-         <Reference type="BUSINESS_TERM">tir71-001</Reference>
-         <Value type="EXAMPLE">ID123</Value>
-      </Element>
-      <Element>
-         <Term>cbc:IssueDate</Term>
-         <Name>Issue date </Name>
-         <Description>Document date time. </Description>
-         <DataType>Date</DataType>
-         <Reference type="BUSINESS_TERM">tir71-002</Reference>
-         <Value type="EXAMPLE">2016-08-15</Value>
-      </Element>
-      <Element cardinality="0..1">
-         <Term>cbc:IssueTime</Term>
-         <Name>Issue time </Name>
-         <Description>Document date time. </Description>
-         <DataType>Time</DataType>
-         <Reference type="BUSINESS_TERM">tir71-003</Reference>
-         <Value type="EXAMPLE">12:00:00</Value>
-      </Element>
-      <Element>
-         <Term>cac:SenderParty</Term>
-         <Name>Sender information</Name>
-         <Description>The party sending an electronic message level response message back to the sending party of the business document.</Description>
-         <Element>
-            <Term>cbc:EndpointID</Term>
-            <Name>Sender party electronic address</Name>
-            <Description>Identifies the sender party's electronic address</Description>
-            <DataType>Identifier</DataType>
-            <Reference type="BUSINESS_TERM">tir71-009</Reference>
-            <Value type="EXAMPLE">5798000000124</Value>
-            <Attribute usage="Mandatory">
-               <Term>schemeID</Term>
-               <Name>Scheme identifier</Name>
-               <Description>Scheme identifier for the electronic address</Description>
-               <Reference type="CODE_LIST">eas</Reference>
-               <Value type="EXAMPLE">0088</Value>
-            </Attribute>
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyIdentification</Term>
-            <Name>Party identification </Name>
-            <Element>
-               <Term>cbc:ID</Term>
-               <Name>Sender party identifier </Name>
-               <Description>Consignee (T0036) </Description>
-               <Value type="EXAMPLE">5790000435951</Value>
-               <Attribute>
-                  <Term>schemeID</Term>
-                  <Name>Scheme identifier </Name>
-                  <Description>Scheme identifier for party identification </Description>
-                  <Reference type="CODE_LIST">ICD</Reference>
-                  <Value type="EXAMPLE">0088</Value>
-               </Attribute>
-            </Element>
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyName</Term>
-            <Name>Party name </Name>
-            <Description>The name of the Sender Party. </Description>
-            <Element cardinality="1..1">
-               <Term>cbc:Name</Term>
-               <Name>Name of the sender party </Name>
-               <Description>The name of the sender oif the document. </Description>
-               <Value type="EXAMPLE">Sender inc.</Value>
-            </Element>
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PostalAddress</Term>
-            <Name>Postal address </Name>
-            <Element>
-               <Term>cbc:StreetName</Term>
-               <Name>Address line 1 </Name>
-               <Description>The main address line in a postal address usually the street name and number. </Description>
-               <Value type="EXAMPLE">Avon Way</Value>
-            </Element>
-            <Element>
-               <Term>cbc:AdditionalStreetName</Term>
-               <Name>Address line 2 </Name>
-               <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. </Description>
-               <Value type="EXAMPLE">Big projects</Value>
-            </Element>
-            <Element>
-               <Term>cbc:CityName</Term>
-               <Name>City </Name>
-               <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
-               <Value type="EXAMPLE">Bridgtow</Value>
-            </Element>
-            <Element>
-               <Term>cbc:PostalZone</Term>
-               <Name>Post code </Name>
-               <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
-               <Value type="EXAMPLE">ZZ99 1ZZ</Value>
-            </Element>
-            <Element>
-               <Term>cbc:CountrySubentity</Term>
-               <Name>Country subdivision </Name>
-               <Description>For specifying a region, county, state, province etc. within a country by using text. </Description>
-               <Value type="EXAMPLE">Avon</Value>
-            </Element>
-            <Element>
-               <Term>cac:AddressLine</Term>
-               <Name>Address Line </Name>
-               <Element>
-                  <Term>cbc:Line</Term>
-                  <Name>Address line 3 </Name>
-                  <Description>An additional address line in an address that can be used to give further details supplementing the main line. </Description>
-                  <Value type="EXAMPLE">3rd Floor, Room 5</Value>
-               </Element>
-            </Element>
-            <Element>
-               <Term>cac:Country</Term>
-               <Name>Country </Name>
-               <Element>
-                  <Term>cbc:IdentificationCode</Term>
-                  <Name>Country code </Name>
-                  <Description>A code that identifies the country.The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
-                  <Value type="EXAMPLE">GB</Value>
-               </Element>
-            </Element>
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyLegalEntity</Term>
-            <Name>Registration name </Name>
-            <Element>
-               <Term>cbc:RegistrationName</Term>
-               <Name>Party name </Name>
-               <Description>The name of the party legal entity for the sender party. </Description>
-               <Value type="EXAMPLE">IYT Corporation</Value>
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:CompanyID</Term>
-               <Name>Sender customers parties legal registration name </Name>
-               <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
-               <Value type="EXAMPLE">GB523859989</Value>
-               <Attribute>
-                  <Term>schemeID</Term>
-                  <Name>Scheme identifier </Name>
-                  <Description>The identification scheme identifier of the despatch customer legal registration identifier </Description>
-                  <Reference type="CODE_LIST">ICD</Reference>
-                  <Value type="EXAMPLE">0089</Value>
-               </Attribute>
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:RegistrationAddress</Term>
-               <Name>Legal address </Name>
-               <Element cardinality="0..1">
-                  <Term>cbc:CityName</Term>
-                  <Name>City name </Name>
-                  <Description>The name of the city. </Description>
-                  <Value type="EXAMPLE">Bridgtown</Value>
-               </Element>
-               <Element cardinality="1..1">
-                  <Term>cac:Country</Term>
-                  <Name>Contry </Name>
-                  <Description>The residens country for the delivery customer party. </Description>
-                  <Element>
-                     <Term>cbc:IdentificationCode</Term>
-                     <Name>Contry code </Name>
-                     <Value type="EXAMPLE">UK</Value>
-                  </Element>
-               </Element>
-            </Element>
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:Contact</Term>
-            <Name>Contact person name </Name>
-            <Description>The contact of the sender party. </Description>
-            <Element cardinality="0..1">
-               <Term>cbc:Name</Term>
-               <Name>Contact name </Name>
-               <Description>The contact name. </Description>
-               <Value type="EXAMPLE">Mrs Bouquet</Value>
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:Telephone</Term>
-               <Name>Contact telephone number </Name>
-               <Description>The phone number of the contact. </Description>
-               <Value type="EXAMPLE">0158 1233714</Value>
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:ElectronicMail</Term>
-               <Name>Contact email address </Name>
-               <Description>The electronic mail of the contact. </Description>
-               <Value type="EXAMPLE">bouquet@fpconsortial.co.uk</Value>
-            </Element>
-         </Element>
-      </Element>
-      <Element>
-         <Term>cac:ReceiverParty</Term>
-         <Name>Receiver information</Name>
-         <Description>The party, an electronic message level response was addressed to, and who is supposed to process the message level response.
-                This is the same party as the sender of the business document.</Description>
-         <Element>
-            <Term>cbc:EndpointID</Term>
-            <Name>Reciever party electronic address</Name>
-            <Description>Identifies the receiver party's electronic address</Description>
-            <DataType>Identifier</DataType>
-            <Reference type="BUSINESS_TERM">tir71-012</Reference>
-            <Value type="EXAMPLE">7315458756328</Value>
-            <Attribute usage="Mandatory">
-               <Term>schemeID</Term>
-               <Name>Scheme identifier</Name>
-               <Description>Scheme identifier for the electronic address</Description>
-               <Reference type="CODE_LIST">eas</Reference>
-               <Value type="EXAMPLE">0088</Value>
-            </Attribute>
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyIdentification</Term>
-            <Name>Party identification </Name>
-            <Element>
-               <Term>cbc:ID</Term>
-               <Name>Receiver party identifier </Name>
-               <Description>Identification of the Receiver (consignee) </Description>
-               <Value type="EXAMPLE">7300010000001</Value>
-               <Attribute>
-                  <Term>schemeID</Term>
-                  <Name>Scheme identifier </Name>
-                  <Description>Scheme identifier for party identification. </Description>
-                  <Reference type="CODE_LIST">ICD</Reference>
-                  <Value type="EXAMPLE">0088</Value>
-               </Attribute>
-            </Element>
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyName</Term>
-            <Name>Party name </Name>
-            <Description>The name of the Receiver Party. </Description>
-            <Element cardinality="1..1">
-               <Term>cbc:Name</Term>
-               <Name>Name of the fuel supplier </Name>
-               <Description>The name of the receiver. </Description>
-               <Value type="EXAMPLE">Receiver inc.</Value>
-            </Element>
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PostalAddress</Term>
-            <Name>Postal address </Name>
-            <Element>
-               <Term>cbc:StreetName</Term>
-               <Name>Address line 1 </Name>
-               <Description>The main address line in a postal address usually the street name and number. </Description>
-               <Value type="EXAMPLE">Busy Street</Value>
-            </Element>
-            <Element>
-               <Term>cbc:AdditionalStreetName</Term>
-               <Name>Address line 2 </Name>
-               <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. </Description>
-               <Value type="EXAMPLE">way 1</Value>
-            </Element>
-            <Element>
-               <Term>cbc:CityName</Term>
-               <Name>City </Name>
-               <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
-               <Value type="EXAMPLE">Farthing</Value>
-            </Element>
-            <Element>
-               <Term>cbc:PostalZone</Term>
-               <Name>Post code </Name>
-               <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
-               <Value type="EXAMPLE">AA99 1BB</Value>
-            </Element>
-            <Element>
-               <Term>cbc:CountrySubentity</Term>
-               <Name>Country subdivision </Name>
-               <Description>For specifying a region, county, state, province etc. within a country by using text. </Description>
-               <Value type="EXAMPLE">Heremouthshire</Value>
-            </Element>
-            <Element>
-               <Term>cac:AddressLine</Term>
-               <Name>Address line </Name>
-               <Element>
-                  <Term>cbc:Line</Term>
-                  <Name>Address line 3 </Name>
-                  <Description>An additional address line in an address that can be used to give further details supplementing the main line. </Description>
-                  <Value type="EXAMPLE">The Roundabout</Value>
-               </Element>
-            </Element>
-            <Element>
-               <Term>cac:Country</Term>
-               <Name>Country </Name>
-               <Element>
-                  <Term>cbc:IdentificationCode</Term>
-                  <Name>Country code </Name>
-                  <Description>A code that identifies the country.The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
-                  <Value type="EXAMPLE">GB</Value>
-               </Element>
-            </Element>
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyLegalEntity</Term>
-            <Name>Party name </Name>
-            <Element>
-               <Term>cbc:RegistrationName</Term>
-               <Name>Receiver party registration name </Name>
-               <Description>The registration name of the receiver party. </Description>
-               <Value type="EXAMPLE">Consortial</Value>
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:CompanyID</Term>
-               <Name>Reveiver parties legal registration ID </Name>
-               <Description>The official ID of the party as registered with the relevant fiscal authority. </Description>
-               <Value type="EXAMPLE">GB523859989</Value>
-               <Attribute>
-                  <Term>schemeID</Term>
-                  <Name>Scheme identifier </Name>
-                  <Description>The identification scheme identifier of the despatch customer legal registration identifier </Description>
-                  <Reference type="CODE_LIST">ICD</Reference>
-                  <Value type="EXAMPLE">0089</Value>
-               </Attribute>
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:RegistrationAddress</Term>
-               <Name>Legal address </Name>
-               <Element cardinality="0..1">
-                  <Term>cbc:CityName</Term>
-                  <Name>City name </Name>
-                  <Description>The name of the city. </Description>
-                  <Value type="EXAMPLE">Bridgtown</Value>
-               </Element>
-               <Element cardinality="1..1">
-                  <Term>cac:Country</Term>
-                  <Name>Contry </Name>
-                  <Description>The residens country for the delivery customer party. </Description>
-                  <Element>
-                     <Term>cbc:IdentificationCode</Term>
-                     <Name>Contry code </Name>
-                     <Value type="EXAMPLE">UK</Value>
-                  </Element>
-               </Element>
-            </Element>
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:Contact</Term>
-            <Name>Contact </Name>
-            <Element>
-               <Term>cbc:Name</Term>
-               <Name>Contact name </Name>
-               <Description>The contact name. </Description>
-               <Value type="EXAMPLE">Mrs Bouquet</Value>
-            </Element>
-            <Element>
-               <Term>cbc:Telephone</Term>
-               <Name>Telephone </Name>
-               <Description>The phone number of the contact. </Description>
-               <Value type="EXAMPLE">0158 1233714</Value>
-            </Element>
-            <Element>
-               <Term>cbc:ElectronicMail</Term>
-               <Name>Contact email address </Name>
-               <Description>The electronic mail of the contact. </Description>
-               <Value type="EXAMPLE">bouquet@fpconsortial.co.uk</Value>
-            </Element>
-         </Element>
-      </Element>
-      <Element>
-         <Term>cac:DocumentResponse</Term>
-         <Name>Document response</Name>
-         <Description>The document response is used to indicate the result of business document validation.
-            The element 'cac:DocumentResponse/cac:Response/cbc:ResponseCode' MUST contain the overall result code.</Description>
-         <Element>
-            <Term>cac:Response</Term>
-            <Name>Response information</Name>
-            <Element>
-               <Term>cbc:ResponseCode</Term>
-               <Name>Message response code</Name>
-               <Description>A code signifying the type of response</Description>
-               <DataType>Code</DataType>
-               <Reference type="BUSINESS_TERM">tir71-014</Reference>
-               <Reference type="CODE_LIST">UNCL4343</Reference>
-               <Value type="EXAMPLE">RE</Value>
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:Description</Term>
-               <Name>Response textual notes</Name>
-               <Description>Used to make any comments or instructions relevant to the response.
-                        The use of this element requires manual assessment by the
-                        receiver.</Description>
-               <DataType>Text</DataType>
-               <Reference type="BUSINESS_TERM">tir71-004</Reference>
-               <Value type="EXAMPLE">Rejected due to validation error.</Value>
-            </Element>
-         </Element>
-         <Element>
-            <Term>cac:DocumentReference</Term>
-            <Name>Document reference</Name>
-            <Description>The document reference is used to provide a reference to the envelope of the business document on which the message level response is based. The message level response message may only cover exactly one business document.
-                    The element 'cac:DocumentResponse/cac:DocumentReference/cbc:ID' MUST contain the instance identifier of the envelope of the original business document.</Description>
-            <Element>
-               <Term>cbc:ID</Term>
-               <Name>Document identifier</Name>
-               <Description>The id of the Despatch- or Receipt advice sent. </Description>
-               <DataType>Document reference</DataType>
-               <Reference type="BUSINESS_TERM">tir71-018</Reference>
-               <Value type="EXAMPLE">12456789</Value>
-            </Element>
-            <Element>
-               <Term>cbc:IssueDate</Term>
-               <Name>Issue date </Name>
-               <Description>Document date time. </Description>
-               <Value type="EXAMPLE">2016-08-15</Value>
-            </Element>
-            <Element>
-               <Term>cbc:IssueTime</Term>
-               <Name>Issue time </Name>
-               <Description>Document date time. </Description>
-               <Value type="EXAMPLE">12:00:00</Value>
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:DocumentTypeCode</Term>
-               <Name>Document type code</Name>
-               <Description>Specifies if it is a reference to a Despatch or a Receipt advice. </Description>
-               <DataType>Code</DataType>
-               <Reference type="BUSINESS_TERM">tir71-020</Reference>
-               <Reference type="CODE_LIST">UNCL1001</Reference>
-               <Value type="EXAMPLE">351</Value>
-            </Element>
-         </Element>
-      </Element>
-   </Document>
-</Structure>
+<!--
+                Content:
+                This file contains a Despatch Advice Response example.
+
+                Errors:
+                None
+                
+                Warnings:
+                None
+				
+-->
+<ApplicationResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2"
+                     xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                     xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+   <cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:despatch_advice_response:1
+		
+	</cbc:CustomizationID>
+   <cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_response:1</cbc:ProfileID>
+   <cbc:ID>ID123
+	  </cbc:ID>
+   <cbc:IssueDate>2016-08-15
+		</cbc:IssueDate>
+   <cbc:IssueTime>12:00:00
+		</cbc:IssueTime>
+   <cac:SenderParty>
+      <cbc:EndpointID schemeID="0088">5798000000124
+			</cbc:EndpointID>
+      <cac:PartyIdentification>
+         <cbc:ID schemeID="0088">5790000435951
+					</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+         <cbc:Name>Sender inc.
+					</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+         <cbc:StreetName>Avon Way
+					</cbc:StreetName>
+         <cbc:AdditionalStreetName>Big projects
+					</cbc:AdditionalStreetName>
+         <cbc:CityName>Bridgtow
+					</cbc:CityName>
+         <cbc:PostalZone>ZZ99 1ZZ
+					</cbc:PostalZone>
+         <cbc:CountrySubentity>Avon
+					</cbc:CountrySubentity>
+         <cac:AddressLine>
+            <cbc:Line>3rd Floor, Room 5
+						</cbc:Line>
+         </cac:AddressLine>
+         <cac:Country>
+            <cbc:IdentificationCode>GB
+						</cbc:IdentificationCode>
+         </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+         <cbc:RegistrationName>IYT Corporation
+					</cbc:RegistrationName>
+         <cbc:CompanyID schemeID="0089">GB523859989
+					</cbc:CompanyID>
+         <cac:RegistrationAddress>
+            <cbc:CityName>Bridgtown
+												</cbc:CityName>
+            <cac:Country>
+               <cbc:IdentificationCode>UK
+														</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:RegistrationAddress>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+         <cbc:Name>Mrs Bouquet
+										</cbc:Name>
+         <cbc:Telephone>0158 1233714
+										</cbc:Telephone>
+         <cbc:ElectronicMail>bouquet@fpconsortial.co.uk
+										</cbc:ElectronicMail>
+      </cac:Contact>
+   </cac:SenderParty>
+   <cac:ReceiverParty>
+      <cbc:EndpointID schemeID="0088">7315458756328
+		  </cbc:EndpointID>
+      <cac:PartyIdentification>
+         <cbc:ID schemeID="0088">7300010000001
+					</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+         <cbc:Name>Receiver inc.
+					</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+         <cbc:StreetName>Busy Street
+					</cbc:StreetName>
+         <cbc:AdditionalStreetName>way 1
+					</cbc:AdditionalStreetName>
+         <cbc:CityName>Farthing
+					</cbc:CityName>
+         <cbc:PostalZone>AA99 1BB
+					</cbc:PostalZone>
+         <cbc:CountrySubentity>Heremouthshire
+					</cbc:CountrySubentity>
+         <cac:AddressLine>
+            <cbc:Line>The Roundabout
+						</cbc:Line>
+         </cac:AddressLine>
+         <cac:Country>
+            <cbc:IdentificationCode>GB
+						</cbc:IdentificationCode>
+         </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+         <cbc:RegistrationName>Consortial
+					</cbc:RegistrationName>
+         <cbc:CompanyID schemeID="0089">GB523859989
+					</cbc:CompanyID>
+         <cac:RegistrationAddress>
+            <cbc:CityName>Bridgtown
+						</cbc:CityName>
+            <cac:Country>
+               <cbc:IdentificationCode>UK
+							</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:RegistrationAddress>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+         <cbc:Name>Mrs Bouquet
+					</cbc:Name>
+         <cbc:Telephone>0158 1233714
+					</cbc:Telephone>
+         <cbc:ElectronicMail>bouquet@fpconsortial.co.uk
+					</cbc:ElectronicMail>
+      </cac:Contact>
+   </cac:ReceiverParty>
+   <cac:DocumentResponse>
+      <cac:Response>
+         <cbc:ResponseCode>RE
+			  </cbc:ResponseCode>
+         <cbc:Description>Rejected due to validation error.</cbc:Description>
+      </cac:Response>
+      <cac:DocumentReference>
+         <cbc:ID>12456789
+			  </cbc:ID>
+         <cbc:IssueDate>2016-08-15
+				</cbc:IssueDate>
+         <cbc:IssueTime>12:00:00
+				</cbc:IssueTime>
+         <cbc:DocumentTypeCode>351
+			  </cbc:DocumentTypeCode>
+      </cac:DocumentReference>
+   </cac:DocumentResponse>
+</ApplicationResponse>
