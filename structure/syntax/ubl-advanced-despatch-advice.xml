@@ -1427,7 +1427,16 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cac:Delivery</Term>
-            <Name>Delivery information</Name>
+            <Name>Actual Delivery Date Actual Delivery Time</Name>
+            <Description>The actual date of delivery. The actual time of delivery.</Description>
+            <Element>
+               <Term>cbc:ActualDeliveryDate</Term>
+               <Value type="EXAMPLE">2021-09-26</Value>
+            </Element>
+            <Element>
+               <Term>cbc:ActualDeliveryTime</Term>
+               <Value type="EXAMPLE">10:00:00</Value>
+            </Element>
             <Element cardinality="0..1">
                <Term>cbc:TrackingID</Term>
                <Name>Delivery tracking identifier</Name>
@@ -2176,7 +2185,7 @@
                      <Description>A Goods item contained in the package.</Description>
                      <Element cardinality="1..1">
                         <Term>cbc:ID</Term>
-                        <Name>Identifiser goods item </Name>
+                        <Name>Identifier goods item </Name>
                         <Description>An identifier for this goods item. Refering to the Despatch Line </Description>
                         <Reference type="RULE">PEPPOL-T120-R020</Reference>
                         <Value type="EXAMPLE">10</Value>
@@ -2817,7 +2826,8 @@
             </Element>
             <Element cardinality="0..n">
                <Term>cac:ItemInstance</Term>
-               <Name>Item instance information</Name>
+               <Name>Manufacture Time.</Name>
+               <Description>The time at which this item instance was manufactured.</Description>
                <Element cardinality="0..1">
                   <Term>cbc:ManufactureDate</Term>
                   <Name>Item manufactured date</Name>
@@ -2825,6 +2835,10 @@
 							line.</Description>
                   <Reference type="BUSINESS_TERM">tir16-079</Reference>
                   <Value type="EXAMPLE">2021-01-01</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:ManufactureTime</Term>
+                  <Value type="EXAMPLE">06:47:30</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:BestBeforeDate</Term>
