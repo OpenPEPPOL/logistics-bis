@@ -8,10 +8,10 @@
    <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
    <Document>
       <Term>ApplicationResponse</Term>
-	
-	
-	
-	     <Element>
+    
+    
+    
+      <Element>
          <Term>cbc:CustomizationID</Term>
          <Name>Specification identification</Name>
          <Description>Identifies the specification of content and rules that apply to the
@@ -20,7 +20,7 @@
          <Reference type="BUSINESS_TERM">tir71-006</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:despatch_advice_response:1</Value>
       </Element>
-	     <Element>
+      <Element>
          <Term>cbc:ProfileID</Term>
          <Name>Business process type identifier</Name>
          <Description>Identifies the BII profile or business process context in which the
@@ -29,8 +29,8 @@
          <Reference type="BUSINESS_TERM">tir71-005</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_response:1</Value>
       </Element>
-	
-	     <Element>
+    
+      <Element>
          <Term>cbc:ID</Term>
          <Name>Response identifier</Name>
          <Description>A transaction instance must contain an identifier. The identifier enables
@@ -40,15 +40,15 @@
          <Reference type="BUSINESS_TERM">tir71-001</Reference>
          <Value type="EXAMPLE">ID123</Value>
       </Element>
-	     <Element>
+      <Element>
          <Term>cbc:IssueDate</Term>
          <Name>Issue date </Name>
-         <Description>Document date time. </Description>
+         <Description>Document date time.</Description>
          <DataType>Date</DataType>
          <Reference type="BUSINESS_TERM">tir71-002</Reference>
          <Value type="EXAMPLE">2016-08-15</Value>
       </Element>
-	     <Element cardinality="0..1">
+      <Element cardinality="0..1">
          <Term>cbc:IssueTime</Term>
          <Name>Issue time </Name>
          <Description>Document date time. </Description>
@@ -56,7 +56,7 @@
          <Reference type="BUSINESS_TERM">tir71-003</Reference>
          <Value type="EXAMPLE">12:00:00</Value>
       </Element>	
-	     <Element>
+      <Element>
          <Term>cac:SenderParty</Term>
          <Name>Sender information</Name>
          <Description>The party sending an electronic message level response message back to the sending party of the business document.</Description>
@@ -82,7 +82,7 @@
                <Term>cbc:ID</Term>
                <Name>Sender party identifier </Name>
                <Description>Consignee (T0036) </Description>
-               <Value type="EXAMPLE">5790000435951XXXX</Value>
+               <Value type="EXAMPLE">5790000435951</Value>
                <Attribute>
                   <Term>schemeID</Term>
                   <Name>Scheme identifier </Name>
@@ -224,7 +224,7 @@
             </Element>
          </Element>
       </Element>
-	     <Element>
+      <Element>
          <Term>cac:ReceiverParty</Term>
          <Name>Receiver information</Name>
          <Description>The party, an electronic message level response was addressed to, and who is supposed to process the message level response.
@@ -392,8 +392,8 @@
             </Element>
          </Element>
       </Element>
-	
-	     <Element>
+    
+      <Element>
          <Term>cac:DocumentResponse</Term>
          <Name>Document response</Name>
          <Description>The document response is used to indicate the result of business document validation.
@@ -437,7 +437,7 @@
             <Element>
                <Term>cbc:IssueDate</Term>
                <Name>Issue date </Name>
-               <Description>Document date time. </Description>
+               <Description>Document date time.</Description>
                <Value type="EXAMPLE">2016-08-15</Value>
             </Element>
             <Element>
