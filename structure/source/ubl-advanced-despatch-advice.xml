@@ -603,17 +603,8 @@
 			</cac:TransportMeans>
 		</cac:ShipmentStage>
 		<cac:Delivery>
-			<cbc:ActualDeliveryDate>2021-09-26
-				<?Name Actual Delivery Date?>
-				<?Description The date on which the supply of goods or services was made or completed. Format = "YYYY-MM-DD"?>
-				<?DataType Date?>
-				<?Cardinality 0..1?></cbc:ActualDeliveryDate>
-			<cbc:ActualDeliveryTime>10:00:00
-				<?Name Actual Delivery Time?>
-				<?Description  The date on which the supply of goods or services was made or completed. Format = "hh:mm:ss"?>
-				<?DataType Time?>
-				<?Cardinality 0..1?>
-			</cbc:ActualDeliveryTime>
+			<cbc:ActualDeliveryDate>2021-09-26<?Name Actual Delivery Date?><?Description The date on which the supply of goods or services was made or completed. Format = "YYYY-MM-DD"?><?DataType Date?><?Cardinality 0..1?></cbc:ActualDeliveryDate>
+			<cbc:ActualDeliveryTime>10:00:00<?Name Actual Delivery Time?><?Description  The date on which the supply of goods or services was made or completed. Format = "hh:mm:ss"?><?DataType Time?><?Cardinality 0..1?></cbc:ActualDeliveryTime>
 			<cbc:TrackingID>456789</cbc:TrackingID>
 			<cac:DeliveryLocation>
 				<?Name Delivery location?>
@@ -707,21 +698,10 @@
 			</cac:DeliveryLocation>
 
 			<cac:EstimatedDeliveryPeriod>
-				<cbc:StartDate>2021-09-25 <?Rule PEPPOL-T120-R012?>
-					<?Rule PEPPOL-T120-R015?>
-					<?Cardinality 1..1?>
-				</cbc:StartDate>
-				<cbc:StartTime>12:00:00 <?Rule PEPPOL-T120-R013?>
-					<?Rule PEPPOL-T120-R015?>
-				</cbc:StartTime>
-				<cbc:EndDate>2021-09-27 <?Rule PEPPOL-T120-R012?>
-					<?Rule PEPPOL-T120-R014?>
-					<?Rule PEPPOL-T120-R015?>
-				</cbc:EndDate>
-				<cbc:EndTime>12:00:00 <?Rule PEPPOL-T120-R013?>
-					<?Rule PEPPOL-T120-R014?>
-					<?Rule PEPPOL-T120-R015?>
-				</cbc:EndTime>
+				<cbc:StartDate>2021-09-25<?Rule PEPPOL-T120-R012?><?Rule PEPPOL-T120-R015?><?Cardinality 1..1?></cbc:StartDate>
+				<cbc:StartTime>12:00:00<?Rule PEPPOL-T120-R013?><?Rule PEPPOL-T120-R015?></cbc:StartTime>
+				<cbc:EndDate>2021-09-27<?Rule PEPPOL-T120-R012?><?Rule PEPPOL-T120-R014?><?Rule PEPPOL-T120-R015?></cbc:EndDate>
+				<cbc:EndTime>12:00:00<?Rule PEPPOL-T120-R013?><?Rule PEPPOL-T120-R014?><?Rule PEPPOL-T120-R015?></cbc:EndTime>
 			</cac:EstimatedDeliveryPeriod>
 			<cac:Despatch>
 				<cbc:ActualDespatchDate>2021-09-25</cbc:ActualDespatchDate>
@@ -745,11 +725,11 @@
 						<?Name Location coordinate?>
 						<?Description To specify the coordinates.?>
 						<?Cardinality 0..1?>
-						<cbc:CoordinateSystemCode> EPSG:3857 <?Name Coordinate system code?>
+						<cbc:CoordinateSystemCode>EPSG:3857<?Name Coordinate system code?>
 							<?Description Always "EPSG:3857" by definition.?>
 							<?Cardinality 1..1?>
 						</cbc:CoordinateSystemCode>
-						<cbc:LatitudeDegreesMeasure unitCode="DD"> 59.33169866504851 <?Name Latitude degrees?>
+						<cbc:LatitudeDegreesMeasure unitCode="DD">59.33169866504851 <?Name Latitude degrees?>
 							<?Description The X coordinate. Use degrees with decimals.?>
 							<?Cardinality 1..1?>
 							<?unitCode-usage Mandatory?>
