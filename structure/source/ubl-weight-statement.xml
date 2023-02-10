@@ -9,23 +9,24 @@
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:weight_statement:1</cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:weight_statement:1</cbc:ProfileID>
 
-	<cbc:ID> GOA294107
+	<cbc:ID>GOA294107
 		<?Name Document identifier?>
 		<?Description Unique identity identifying the weight statement. An transaction instance must contain an identifier. The identifier enables positive referencing the document instance for various purposes including referencing between transactions that are part of the same process.?>
 		<?Cardinality 1..1?>
-	</cbc:ID>
+		<?DataType Identifier?>
+    </cbc:ID>
 	<cbc:IssueDate>2016-11-03
 		<?Name Weight statement issue date?>
 		<?Description The date when the weight statement is issued. Format = "YYYY-MM-DD"?>
-	</cbc:IssueDate>
+		<?DataType Date?></cbc:IssueDate>
 	<cbc:IssueTime>09:30:00
 		<?Name Weight statement issue time?>
 		<?Description The time when the weight statement is issued. Format = "hh:mm:ss"?>
-	</cbc:IssueTime>
+		<?DataType Time?></cbc:IssueTime>
 	<cbc:WeightStatementTypeCode> 01
 		<?Name Weight statement type code?>
 		<?Description 01 = Outbound delivery 02 = Inbound delivery?>
-	</cbc:WeightStatementTypeCode>
+    </cbc:WeightStatementTypeCode>
 	<cac:SenderParty>
 		<?Name Sender Party?>
 		<?Description The party sending this weight statement (e.g. Weighing Station, Shipper, Freight Forwarder, Carrier, ...).?>
@@ -36,7 +37,7 @@
 			<?schemeID-Description Scheme identifier for electronic address?>
 			<?schemeID-usage Mandatory?>
 			<?schemeID-CodeList eas?>
-		</cbc:EndpointID>
+        </cbc:EndpointID>
 		<cac:PartyIdentification>
 			<?Name Party Identification?>
 			<?Description An identifier for this party.?>
@@ -47,43 +48,43 @@
 				<?schemeID-Description Scheme identifier for party identification?>
 				<?schemeID-usage Mandatory?>
 				<?schemeID-CodeList ICD?>
-			</cbc:ID>
+            </cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
 			<?Name Party Name?>
 			<cbc:Name> Weighing Solutions AB
 				<?Name Sender name?>
-			</cbc:Name>
+            </cbc:Name>
 		</cac:PartyName>
 	</cac:SenderParty>
 	<cac:ReceiverParty>
 		<?Name Receiver information?>
 		<?Description The party receiving this weight statement (e.g. Carrier, Terminal Operator, ...).?>
-		<cbc:EndpointID schemeID="0088">9994567987654
+		<cbc:EndpointID schemeID="0088">1251513513245
 			<?Name Receiver electronic address?>
 			<?Description Identifies the receivers partys electronic address?>
 			<?schemeID-Name Scheme identifier?>
 			<?schemeID-Description Scheme identifier for electronic address?>
 			<?schemeID-usage Mandatory?>
 			<?schemeID-CodeList eas?>
-		</cbc:EndpointID>
+        </cbc:EndpointID>
 		<cac:PartyIdentification>
 			<?Name Party Identification?>
 			<?Description An identifier for this party.?>
-			<cbc:ID schemeID="0088">9994567987654
+			<cbc:ID schemeID="0088">1251513513245
 				<?Name Receiver identity?>
 				<?Description The identifier of the receiver party?>
 				<?schemeID-Name Scheme identifier?>
 				<?schemeID-Description Scheme identifier for party identification?>
 				<?schemeID-usage Mandatory?>
 				<?schemeID-CodeList ICD?>
-			</cbc:ID>
+            </cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
 			<?Name Party Name?>
 			<cbc:Name> Transport Management Solutions AB
 				<?Name Receiver name?>
-			</cbc:Name>
+            </cbc:Name>
 		</cac:PartyName>
 	</cac:ReceiverParty>
 	<cac:WeighingParty>
@@ -101,14 +102,14 @@
 				<?schemeID-Description Scheme identifier for party identification?>
 				<?schemeID-usage Mandatory?>
 				<?schemeID-CodeList ICD?>
-			</cbc:ID>
+            </cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
 			<?Name Party Name?>
 			<cbc:Name> Gravel Pit Ltd.
 				<?Name Weighing party name?>
 				<?Description The name of the weighing party?>
-			</cbc:Name>
+            </cbc:Name>
 		</cac:PartyName>
 		<cac:PhysicalLocation>
 			<?Name Physical Location?>
@@ -118,12 +119,12 @@
 				<?Description Unique ID of the site for the weighing party. If possile an ID that is issued by a authority or similar.?>
 				<?Cardinality 0..1?>
 				<?schemeID-usage Optional?>
-			</cbc:ID>
+            </cbc:ID>
 			<cbc:Name> Townsend pit
 				<?Name Location name?>
 				<?Description Physical location name?>
 				<?Cardinality 0..1?>
-			</cbc:Name>
+            </cbc:Name>
 		</cac:PhysicalLocation>
 	</cac:WeighingParty>
 	<cac:ShipperParty>
@@ -140,14 +141,14 @@
 				<?schemeID-Description Scheme identifier for party identification?>
 				<?schemeID-usage Mandatory?>
 				<?schemeID-CodeList ICD?>
-			</cbc:ID>
+            </cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
 			<?Name Party Name?>
 			<cbc:Name> Tony's Trucks and Transport
 				<?Name Shipper name?>
 				<?Description The name of the shipper?>
-			</cbc:Name>
+            </cbc:Name>
 		</cac:PartyName>
 	</cac:ShipperParty>
 	<cac:Shipment>
@@ -155,7 +156,7 @@
 		<cbc:ID> NA
 			<?Name Shipment identity?>
 			<?Description Use NA if no specific shipment ID is available?>
-		</cbc:ID>
+        </cbc:ID>
 		<cac:GoodsItem>
 			<?Cardinality 1..n?>
 			<?Name Goods Item?>
@@ -163,7 +164,7 @@
 			<cbc:ID> 1
 				<?Name Line item identifier?>
 				<?Description Identifies the Line Item assigned by the weighing partner, the identifier must be unique within the order?>
-			</cbc:ID>
+            </cbc:ID>
 			<cac:Item>
 				<?Name Item?>
 				<?Description Product information relating to a goods item?>
@@ -171,13 +172,13 @@
 					användning till asfalt.
 					<?Name Item name?>
 					<?Description Name of weighed item?>
-				</cbc:Name>
+                </cbc:Name>
 				<cac:BuyersItemIdentification>
 					<?Name Buyers item identification?>
 					<cbc:ID> KO2001030300
 						<?Name Buyers item identifier?>
 						<?Description An identifier, assigned by the buyer, for the item. Associates the item with its identification according to the buyers system.?>
-					</cbc:ID>
+                    </cbc:ID>
 					<?Cardinality 0..1?>
 				</cac:BuyersItemIdentification>
 				<cac:SellersItemIdentification>
@@ -185,7 +186,7 @@
 					<cbc:ID> 17589683
 						<?Name The Sellers item identifier?>
 						<?Description An identifier, assigned by the seller, for the item. Associates the item with its identification according to the sellers system.?>
-					</cbc:ID>
+                    </cbc:ID>
 					<?Cardinality 0..1?>
 				</cac:SellersItemIdentification>
 				<cac:StandardItemIdentification>
@@ -196,7 +197,7 @@
 						<?schemeID-Name Scheme identifier?>
 						<?schemeID-Description The identification scheme identifier of the Item standard identifier?>
 						<?schemeID-usage Mandatory?>
-					</cbc:ID>
+                    </cbc:ID>
 					<?Cardinality 0..1?>
 				</cac:StandardItemIdentification>
 				<?Cardinality 0..1?>
@@ -219,7 +220,7 @@
 						<?name-Name Clear text name equivalent of classification code?>
 						<?name-Description The textual equivalent of the code value?>
 						<?name-usage Optional?>
-					</cbc:ItemClassificationCode>
+                    </cbc:ItemClassificationCode>
 				</cac:CommodityClassification>
 			</cac:Item>
 			<cac:MeasurementDimension>
@@ -231,7 +232,7 @@
 					<?CodeList UNCL6313-T122?>
 					<?Description To describe the type of measurement. Use UNCL 6313 subset.?>
 					<?Cardinality 1..1?>
-				</cbc:AttributeID>
+                </cbc:AttributeID>
 				<cbc:Measure unitCode="TNE"> 12.3
 					<?Name Measure?>
 					<?Description For the measure.?>
@@ -239,7 +240,7 @@
 					<?unitCode-CodeList UNECERec20?>
 					<?unitCode-Name Measure unit of measure?>
 					<?unitCode-Description The unit of measure that applies to the measure.?>
-				</cbc:Measure>
+                </cbc:Measure>
 			</cac:MeasurementDimension>
 		</cac:GoodsItem>
 	</cac:Shipment>
