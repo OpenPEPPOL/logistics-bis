@@ -7,7 +7,8 @@ This code is used to indicate that the current Despatch Advice is the first and 
 
 == Replace
 The document status code 5 indicates "replace" and is used to replace a previously sent Despatch Advice.
-It allows for multiple iterations of the Despatch Advice to be sent in case not all necessary information was available at the time of the first transmission. For example, the Consignee may require the Despatch Advice to document the delivery of goods or services, but all information may not be readily available. The replacements must include all information, not just the changes, and should include the Issue time so that the receiver can identify the most recent version. The updates should not be sent after the goods or services have been received or invoiced.
+It allows for multiple iterations of the Despatch Advice to be sent in case not all necessary information was available at the time of the first transmission. For example, the Consignee may require the Despatch Advice to document the delivery of goods or services, but all information may not be readily available. The replacements must include all information, not just the changes, and should include the Issue time so that the receiver can identify the most recent version.
+The updates should not be sent after a receipt adviced (document confirming goods and/or services that has been received by the buyer) has been received by the supplier or services have been invoiced.
 
 == Cancellation
 Document status code 1 indicates "ignore and delete" and is used to notify the receiver to disregard and remove the Despatch Advice from their system. This code is used when the Despatch Advice was sent in error and the intended recipient of the message was not intended to receive it.
