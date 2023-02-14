@@ -32,42 +32,42 @@
 
 	     <Element cardinality="1..1">
          <Term>cbc:ID</Term>
-         <Name>Document identifier </Name>
-         <Description>Unique identity identifying the weight statement. An transaction instance must contain an identifier. The identifier enables positive referencing the document instance for various purposes including referencing between transactions that are part of the same process. </Description>
+         <Name>Document identifier</Name>
+         <Description>Unique identity identifying the weight statement. An transaction instance must contain an identifier. The identifier enables positive referencing the document instance for various purposes including referencing between transactions that are part of the same process.</Description>
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir16-003</Reference>
          <Value type="EXAMPLE">GOA294107</Value>
       </Element>
 	     <Element>
          <Term>cbc:IssueDate</Term>
-         <Name>Weight statement issue date </Name>
-         <Description>The date when the weight statement is issued. Format = "YYYY-MM-DD" </Description>
+         <Name>Weight statement issue date</Name>
+         <Description>The date when the weight statement is issued. Format = "YYYY-MM-DD"</Description>
          <DataType>Date</DataType>
          <Reference type="BUSINESS_TERM">tir16-004</Reference>
          <Value type="EXAMPLE">2016-11-03</Value>
       </Element>
 	     <Element cardinality="0..1">
          <Term>cbc:IssueTime</Term>
-         <Name>Weight statement issue time </Name>
-         <Description>The time when the weight statement is issued. Format = "hh:mm:ss" </Description>
+         <Name>Weight statement issue time</Name>
+         <Description>The time when the weight statement is issued. Format = "hh:mm:ss"</Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
          <Value type="EXAMPLE">09:30:00</Value>
       </Element>
 	     <Element>
          <Term>cbc:WeightStatementTypeCode</Term>
-         <Name>Weight statement type code </Name>
+         <Name>Weight statement type code</Name>
          <Description>01 = Outbound delivery 02 = Inbound delivery</Description>
          <Value type="EXAMPLE">01</Value>
       </Element>
 	     <Element>
          <Term>cac:SenderParty</Term>
-         <Name>Sender Party </Name>
+         <Name>Sender Party</Name>
          <Description>The party sending this weight statement (e.g. Weighing Station, Shipper, Freight Forwarder, Carrier, ...).</Description>
          <Element>
             <Term>cbc:EndpointID</Term>
-            <Name>Senders electronic address </Name>
-            <Description>Identifies the senders party's electronic address</Description>
+            <Name>Senders electronic address</Name>
+            <Description>Identifies the senders partys electronic address</Description>
             <Value type="EXAMPLE">7300010000001</Value>
             <Attribute usage="Mandatory">
                <Term>schemeID</Term>
@@ -83,7 +83,7 @@
             <Description>An identifier for this party.</Description>
             <Element>
                <Term>cbc:ID</Term>
-               <Name>Sender party identity </Name>
+               <Name>Sender party identity</Name>
                <Description>The identifier of the Sender party</Description>
                <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Mandatory">
@@ -100,20 +100,20 @@
             <Name>Party Name</Name>
             <Element>
                <Term>cbc:Name</Term>
-               <Name>Sender name </Name>
+               <Name>Sender name</Name>
                <Value type="EXAMPLE">Weighing Solutions AB</Value>
             </Element>
          </Element>
       </Element>
 	     <Element>
          <Term>cac:ReceiverParty</Term>
-         <Name>Receiver information </Name>
+         <Name>Receiver information</Name>
          <Description>The party receiving this weight statement (e.g. Carrier, Terminal Operator, ...).</Description>
          <Element>
             <Term>cbc:EndpointID</Term>
-            <Name>Receiver electronic address </Name>
-            <Description>Identifies the receivers party's electronic address</Description>
-            <Value type="EXAMPLE">9994567987654</Value>
+            <Name>Receiver electronic address</Name>
+            <Description>Identifies the receivers partys electronic address</Description>
+            <Value type="EXAMPLE">1251513513245</Value>
             <Attribute usage="Mandatory">
                <Term>schemeID</Term>
                <Name>Scheme identifier</Name>
@@ -128,9 +128,9 @@
             <Description>An identifier for this party.</Description>
             <Element>
                <Term>cbc:ID</Term>
-               <Name>Receiver identity </Name>
+               <Name>Receiver identity</Name>
                <Description>The identifier of the receiver party</Description>
-               <Value type="EXAMPLE">9994567987654</Value>
+               <Value type="EXAMPLE">1251513513245</Value>
                <Attribute usage="Mandatory">
                   <Term>schemeID</Term>
                   <Name>Scheme identifier</Name>
@@ -145,14 +145,14 @@
             <Name>Party Name</Name>
             <Element>
                <Term>cbc:Name</Term>
-               <Name>Receiver name </Name>
+               <Name>Receiver name</Name>
                <Value type="EXAMPLE">Transport Management Solutions AB</Value>
             </Element>
          </Element>
       </Element>
 	     <Element cardinality="1..1">
          <Term>cac:WeighingParty</Term>
-         <Name>Weighing party information </Name>
+         <Name>Weighing party information</Name>
          <Description>The party executing the weight measure (e.g. Weighing Station).</Description>
          <Element cardinality="0..1">
             <Term>cac:PartyIdentification</Term>
@@ -160,7 +160,7 @@
             <Description>An identifier for this party.</Description>
             <Element>
                <Term>cbc:ID</Term>
-               <Name>Weighing party identity </Name>
+               <Name>Weighing party identity</Name>
                <Description>The identifier of the Weighing party</Description>
                <Value type="EXAMPLE">5790000435951</Value>
                <Attribute usage="Mandatory">
@@ -177,8 +177,8 @@
             <Name>Party Name</Name>
             <Element>
                <Term>cbc:Name</Term>
-               <Name>Weighing party name </Name>
-               <Description>The name of the weighing party </Description>
+               <Name>Weighing party name</Name>
+               <Description>The name of the weighing party</Description>
                <Value type="EXAMPLE">Gravel Pit Ltd.</Value>
             </Element>
          </Element>
@@ -188,8 +188,8 @@
             <Description>The physical location of this party.</Description>
             <Element cardinality="0..1">
                <Term>cbc:ID</Term>
-               <Name>Physical Location ID </Name>
-               <Description>Unique ID of the site for the weighing party. If possile an ID that is issued by a authority or similar. </Description>
+               <Name>Physical Location ID</Name>
+               <Description>Unique ID of the site for the weighing party. If possile an ID that is issued by a authority or similar.</Description>
                <Value type="EXAMPLE">0114-40-019-a</Value>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
@@ -197,22 +197,22 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cbc:Name</Term>
-               <Name>Location name </Name>
-               <Description>Physical location name </Description>
+               <Name>Location name</Name>
+               <Description>Physical location name</Description>
                <Value type="EXAMPLE">Townsend pit</Value>
             </Element>
          </Element>
       </Element>
 	     <Element cardinality="0..1">
          <Term>cac:ShipperParty</Term>
-         <Name>Shipper Party </Name>
+         <Name>Shipper Party</Name>
          <Description>The party transporting or shipping the items.</Description>
          <Element cardinality="0..1">
             <Term>cac:PartyIdentification</Term>
             <Name>Party Identification</Name>
             <Element>
                <Term>cbc:ID</Term>
-               <Name>Shipping party identity </Name>
+               <Name>Shipping party identity</Name>
                <Description>The identifier of the shippping party</Description>
                <Value type="EXAMPLE">5790000435951</Value>
                <Attribute usage="Mandatory">
@@ -229,8 +229,8 @@
             <Name>Party Name</Name>
             <Element>
                <Term>cbc:Name</Term>
-               <Name>Shipper name </Name>
-               <Description>The name of the shipper </Description>
+               <Name>Shipper name</Name>
+               <Description>The name of the shipper</Description>
                <Value type="EXAMPLE">Tony's Trucks and Transport</Value>
             </Element>
          </Element>
@@ -240,8 +240,8 @@
          <Name>Shipment information</Name>
          <Element>
             <Term>cbc:ID</Term>
-            <Name>Shipment identity </Name>
-            <Description>Use NA if no specific shipment ID is available </Description>
+            <Name>Shipment identity</Name>
+            <Description>Use NA if no specific shipment ID is available</Description>
             <Reference type="BUSINESS_TERM">tir16-038</Reference>
             <Value type="EXAMPLE">NA</Value>
          </Element>
@@ -261,8 +261,8 @@
                <Description>Product information relating to a goods item</Description>
                <Element>
                   <Term>cbc:Name</Term>
-                  <Name>Item name </Name>
-                  <Description>Name of weighed item </Description>
+                  <Name>Item name</Name>
+                  <Description>Name of weighed item</Description>
                   <Value type="EXAMPLE">Sortering 0/2 mm krossat bergmaterial CE-märkt enligt system 2+ för användning till asfalt.</Value>
                </Element>
                <Element cardinality="0..1">
@@ -270,8 +270,8 @@
                   <Name>Buyers item identification</Name>
                   <Element>
                      <Term>cbc:ID</Term>
-                     <Name>Buyers item identifier </Name>
-                     <Description>An identifier, assigned by the buyer, for the item. Associates the item with its identification according to the buyer's system. </Description>
+                     <Name>Buyers item identifier</Name>
+                     <Description>An identifier, assigned by the buyer, for the item. Associates the item with its identification according to the buyers system.</Description>
                      <Value type="EXAMPLE">KO2001030300</Value>
                   </Element>
                </Element>
@@ -281,7 +281,7 @@
                   <Element>
                      <Term>cbc:ID</Term>
                      <Name>The Sellers item identifier</Name>
-                     <Description>An identifier, assigned by the seller, for the item. Associates the item with its identification according to the seller's system. </Description>
+                     <Description>An identifier, assigned by the seller, for the item. Associates the item with its identification according to the sellers system.</Description>
                      <Value type="EXAMPLE">17589683</Value>
                   </Element>
                </Element>
@@ -291,7 +291,7 @@
                   <Element>
                      <Term>cbc:ID</Term>
                      <Name>Item standard identifier</Name>
-                     <Description>Global Trade Item Number (GTIN) or other standardized identification. Associates the item with its identification according to a standard system. </Description>
+                     <Description>Global Trade Item Number (GTIN) or other standardized identification. Associates the item with its identification according to a standard system.</Description>
                      <Value type="EXAMPLE">1234567891234</Value>
                      <Attribute usage="Mandatory">
                         <Term>schemeID</Term>
@@ -303,30 +303,30 @@
                </Element>
                <Element cardinality="0..n">
                   <Term>cac:CommodityClassification</Term>
-                  <Name>Commodity classification </Name>
-                  <Description>To classify when an item number is not sufficient. </Description>
+                  <Name>Commodity classification</Name>
+                  <Description>To classify when an item number is not sufficient.</Description>
                   <Element cardinality="1..1">
                      <Term>cbc:ItemClassificationCode</Term>
-                     <Name>Item classification code </Name>
+                     <Name>Item classification code</Name>
                      <Description>A code for classifying the item by its type or nature. Classification codes are used to allow grouping of similar items for a various purposes e.g. public procurement (CPV), e-Commerce (UNSPSC) etc.</Description>
                      <Value type="EXAMPLE">KO2012140200</Value>
                      <Attribute usage="Mandatory">
                         <Term>listID</Term>
                         <Name>Item classification identifier identification scheme identifier</Name>
-                        <Description>The identification scheme identifier of the Item classification identifier. </Description>
+                        <Description>The identification scheme identifier of the Item classification identifier.</Description>
                         <Reference type="CODE_LIST">UNCL7143</Reference>
                         <Value type="EXAMPLE">ZZZ</Value>
                      </Attribute>
                      <Attribute usage="Optional">
                         <Term>listVersionID</Term>
                         <Name>Item classification identifier version identification scheme identifier</Name>
-                        <Description>The identification scheme version identifier of the Item classification identifier </Description>
+                        <Description>The identification scheme version identifier of the Item classification identifier</Description>
                         <Value type="EXAMPLE">4.0</Value>
                      </Attribute>
                      <Attribute usage="Optional">
                         <Term>name</Term>
                         <Name>Clear text name equivalent of classification code</Name>
-                        <Description>The textual equivalent of the code value </Description>
+                        <Description>The textual equivalent of the code value</Description>
                         <Value type="EXAMPLE">SBMI</Value>
                      </Attribute>
                   </Element>
@@ -334,24 +334,24 @@
             </Element>
             <Element cardinality="1..n">
                <Term>cac:MeasurementDimension</Term>
-               <Name>Measurement Dimension </Name>
-               <Description>Used to specify weight and/or volume of the Goods Item. </Description>
+               <Name>Measurement Dimension</Name>
+               <Description>Used to specify weight and/or volume of the Goods Item.</Description>
                <Element cardinality="1..1">
                   <Term>cbc:AttributeID</Term>
-                  <Name>Attribute identifier </Name>
-                  <Description>To describe the type of measurement. Use UNCL 6313 subset. </Description>
+                  <Name>Attribute identifier</Name>
+                  <Description>To describe the type of measurement. Use UNCL 6313 subset.</Description>
                   <Reference type="CODE_LIST">UNCL6313-T122</Reference>
                   <Value type="EXAMPLE">AAF</Value>
                </Element>
                <Element cardinality="1..1">
                   <Term>cbc:Measure</Term>
-                  <Name>Measure </Name>
+                  <Name>Measure</Name>
                   <Description>For the measure.</Description>
                   <Value type="EXAMPLE">12.3</Value>
                   <Attribute>
                      <Term>unitCode</Term>
-                     <Name>Measure unit of measure </Name>
-                     <Description>The unit of measure that applies to the measure. </Description>
+                     <Name>Measure unit of measure</Name>
+                     <Description>The unit of measure that applies to the measure.</Description>
                      <Reference type="CODE_LIST">UNECERec20</Reference>
                      <Value type="EXAMPLE">TNE</Value>
                   </Attribute>

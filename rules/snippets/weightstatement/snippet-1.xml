@@ -60,15 +60,10 @@
 	<!-- end::shipper-party[] -->
 
 	<!-- tag::shipment[] -->
-		<cac:Shipment>
+	<cac:Shipment>
 		<cbc:ID>NA</cbc:ID>
 		<cac:GoodsItem>
-			<cbc:ID schemeID="SBMI">KO2001030300</cbc:ID>
-			<cbc:GrossWeightMeasure unitCode="TNE">16.8</cbc:GrossWeightMeasure>
-			<cbc:NetWeightMeasure unitCode="TNE">16.2</cbc:NetWeightMeasure>
-			<cbc:NetNetWeightMeasure unitCode="TNE">16.1</cbc:NetNetWeightMeasure>
-			<cbc:GrossVolumeMeasure unitCode="MTK">10.2</cbc:GrossVolumeMeasure>
-			<cbc:NetVolumeMeasure unitCode="MTK">10.1</cbc:NetVolumeMeasure>
+			<cbc:ID>1</cbc:ID>
 			<cac:Item>
 				<cbc:Name>Sortering 0/2 mm krossat bergmaterial CE-märkt enligt system 2+ för användning till asfalt.</cbc:Name>
 				<cac:BuyersItemIdentification>
@@ -80,7 +75,16 @@
 				<cac:StandardItemIdentification>
 					<cbc:ID schemeID="0160">1234567891234</cbc:ID>
 				</cac:StandardItemIdentification>
+				<!-- tag::commodityclassification[] -->
+				<cac:CommodityClassification>
+					<cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">KO2012140200</cbc:ItemClassificationCode>
+				</cac:CommodityClassification>
+				<!-- end::commodityclassification[] -->
 			</cac:Item>
+			<cac:MeasurementDimension>
+				<cbc:AttributeID>AAF</cbc:AttributeID>
+				<cbc:Measure unitCode="TNE">12.3</cbc:Measure>
+			</cac:MeasurementDimension>
 		</cac:GoodsItem>
 	</cac:Shipment>
 	<!-- end::shipment[] -->
