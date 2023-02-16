@@ -16,8 +16,8 @@
 	<Documentation path="profiles/68-weightstatement/">- Weight Statement 1.1</Documentation>
     <Documentation path="profiles/69-transportexecutionplan_w_request/">- Transport Execution Plan With Request 1.0</Documentation>
     <Documentation path="profiles/70-transportexecutionplan/">- Transport Execution Plan 1.0</Documentation>
-	<!-- Syntax -->
-
+	
+    <!-- Syntax -->
 	<Resource>
 		<Type>Structure-1</Type>
 		<Path>structure/syntax/ubl-advanced-despatch-advice.xml</Path>
@@ -33,7 +33,16 @@
 		<Path>structure/syntax/ubl-weight-statement.xml</Path>
 		<Title>Weight Statement 1.1 (T122)</Title>
 	</Resource>
-
+    <Resource>
+		<Type>Structure-1</Type>
+		<Path>structure/syntax/ubl-transport-execution-plan-request.xml</Path>
+		<Title>Transport Execution Plan Request 1.0 (T123)</Title>
+	</Resource>
+    <Resource>
+		<Type>Structure-1</Type>
+		<Path>structure/syntax/ubl-transport-execution-plan.xml</Path>
+		<Title>Transport Execution Plan 1.0 (T124)</Title>
+	</Resource>
   
     <!-- Rules -->
     <Resource>
@@ -59,6 +68,18 @@
 		<Type>native:Schematron</Type>
 		<Path>rules/sch/parts/PEPPOL-M-T122.sch</Path>
 		<Title>Business rules for Weight Statement transaction 1.1</Title>
+	</Resource>
+    <Resource>
+		<Identifier>T123</Identifier>
+		<Type>native:Schematron</Type>
+		<Path>rules/sch/parts/PEPPOL-M-T123.sch</Path>
+		<Title>Business rules for Transport Execution Plan Request transaction 1.0</Title>
+	</Resource>
+    <Resource>
+		<Identifier>T124</Identifier>
+		<Type>native:Schematron</Type>
+		<Path>rules/sch/parts/PEPPOL-M-T124.sch</Path>
+		<Title>Business rules for Transport Execution Plan transaction 1.0</Title>
 	</Resource>
   
     <!-- Code lists -->
