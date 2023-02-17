@@ -1,15 +1,23 @@
 [[principles-and-prerequisites]]
 = Principles and prerequisites
 
-This chapter describes the principles and assumptions that underlie the use of the Logistics Weight statement.
+This chapter describes the principles and assumptions that underlie the use of the Waybill.
 
 [[despatch-advice-message-in-general]]
 == Business process in scope
-This Peppol BIS supports a process for a supplier to send a Weight statement to a buyer with information about the weight of the shipment. It is intended to support transmission of electronic messages for processing in automated processes by the receiver. 
+The Waybill message is used in the fulfilment process by the Seller party to notify the Carrier about, the despatch and required delivery service required for the goods being sent, as well as details about the goods for cross checking with the order and ultimately the Waybill is used for declaring how the despatched goods are transported.
 
-The main activity supported by this BIS is:
+The main activities supported by this message are:
 
-* *Weight measure* The measure of the weight of the shipment and exchange of weight information between sender and receiver.
+*Transport* Full description of how the goods are packed. A delivery is taken to be a number of
+items that are despatched as a single consignment to a single delivery address. The type of transport required for the despatch and delivery of the goods being shipped is also specified.
+
+The waybill is a common term covering various terms used in different modes of transport, for example:
+
+* Bill of Lading, Ocean Bill of Lading, or Sea Waybill is used in Sea freight
+* Air Waybill or eAWB is used in Airfreight
+* Consignment Note (CMR or eCMR) is used in Road
+* Rail Transport Document CIM and SGMS are used in Rail
 
 :leveloffset: +1
 
