@@ -1,15 +1,26 @@
 [[principles-and-prerequisites]]
 = Principles and prerequisites
 
-This chapter describes the principles and assumptions that underlie the use of the Logistics Weight statement.
+This chapter describes the principles and assumptions that underlie the use of the Transport execution plan with request.
+
+Transport Execution Plans Request and Transport Execution Plan are normally used by any party who gives instructions for the transportation services required for a consignment of goods (the Transport Service Buyer) to any party who is contracted to provide the transportation services (called the Transport Service Provider). A Transport Execution Plan Request may be used by a Transport Service Buyer to confirm if a Transport Service Provider can provide the required service and to request a quotation for the service. A Transport Execution Plan may be used by any party who requests a booking of shipment space to be made for the transportation services required for a consignment of goods to any party who will provide the underlying transportation services. The parties who issue this document are commonly referred to as the shipper, or consignor, while the parties who receive this document are forwarders, carriers, shipping agents, etc.
+
+image::images/principlesandprerequisites.png[image,width=605,height=371]
+
+A Transport Execution Plan may also be issued by a freight forwarder or shipping agent in their capacity as a Transport Service Buyer. This document may be used to arrange the transportation of different types of goods or cargoes, whether containerized or non-containerized through different modes of transport and from any origin to any destination.
 
 [[despatch-advice-message-in-general]]
 == Business process in scope
-This Peppol BIS supports a process for a supplier to send a Weight statement to a buyer with information about the weight of the shipment. It is intended to support transmission of electronic messages for processing in automated processes by the receiver. 
+The electronic transaction described in this implementation guide is the Transport Execution Plan Request message and the Transport Execution Plan message.
 
-The main activity supported by this BIS is:
+The *Transport Execution Plan Request* message is used in the fulfilment process by the Transport Service Buyer to request confirmation that the Transport Service Provider can provide the required service and confirm a price for the service.
 
-* *Weight measure* The measure of the weight of the shipment and exchange of weight information between sender and receiver.
+The *Transport Execution Plan* is used to notify the transport service provider about the despatch and required delivery service for the goods being sent.  Additionally, it can convey details about the goods for cross checking with the order and ultimately the Electronic Transport Execution Plan is used for declaring how the despatched goods are to be transported and how they are packed.
+
+The main activities supported by this message are:
+
+* Full description of how the goods are packed. A delivery is taken to be a number of items that are despatched as a single consignment to a single delivery address.
+* The type of transport required for the despatch and delivery of the goods being shipped. The means of transport, routing and arrival details.
 
 :leveloffset: +1
 
