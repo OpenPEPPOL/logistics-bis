@@ -62,7 +62,8 @@ docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entry
 Step 5b. Add example generation code to build.sh e.g.
 docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-advanced-despatch-advice.xml -xsl:/src/tools/remove-pi.xsl -o:/src/rules/examples/AdvancedDespatchAdvice_Example_Full.xml -ext:on --allow-external-functions:on
 
-Step 6. Add resource to project.xml this file sets the menu on the first page
+Step 6. Edit project.xml
+Step 6a. Add resource, this file sets the menu on the first page
 
 e.g.
 	<Resource>
@@ -70,6 +71,12 @@ e.g.
 		<Path>structure/syntax/ubl-order-agreement.xml</Path>
 		<Title>Peppol Message Level Response</Title>
 	</Resource>
+
+Step 6b. Add corresponding namespace document if you created on in step 2, e.g.
+    <Resource>
+        <Type>Namespace-1</Type>
+        <Path>structure/namespace/ubl-despatch-advice.xml</Path>
+    </Resource>
 
 Step 7. Build and check
 Step 7a. Build the new documentation by commit and sync to GitHub. Check the log for errors
