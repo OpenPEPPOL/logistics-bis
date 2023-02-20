@@ -4,20 +4,9 @@
 The following parties/roles may be specified in the message.
 The same actor may play more than one role depending on the handling routine.
 
-[[sender-party]]
-== Sender (SenderParty)
-The Sender is the party who sendes the weighing statement (e.g. Weighing Station, Shipper, Freight Forwarder, Carrier, ...).
-
-Example:
-[source, xml, indent=0]
-----
-include::{snippet-dir}/snippet-1.xml[tags=sender-party]
-----
-
 [[receiver-party]]
-== Receiver (ReceiverParty)
-
-The Receiver is the party receiving this weight statement (e.g. Carrier, Terminal Operator, ...). 
+== Receiver party (ReceiverParty)
+The receiver party is the receiver of the Transport Execution Plan if it is not the Transport User Party and the receiver the Transport Execution Plan Request if it is not the Transport Service Provider Party. 
 
 Example:
 [source, xml, indent=0]
@@ -25,26 +14,100 @@ Example:
 include::{snippet-dir}/snippet-1.xml[tags=receiver-party]
 ----
 
-[[weighing-party]]
-== Weighing party (WeighingParty)
-
-The Weighing party is the party executing the weight measure (e.g. Weighing Station).
-
-The Weighing party  is optional information in the Weight statement.
+[[sender-party]]
+== Sender party (SenderParty)
+The sender party is the sender of the Transport Execution Plan if it is not the Transport Service Provider Party and the sender og the Transport Execution Plan request if it is not the transport user party.
 
 Example:
 [source, xml, indent=0]
 ----
-include::{snippet-dir}/snippet-1.xml[tags=weighing-party]
+include::{snippet-dir}/snippet-1.xml[tags=sender-party]
 ----
 
-[[shipper-party]]
-== Shipper (ShipperParty)
+[[transport-user-party]]
+== Transport user party (TransportUserParty)
 
-The party playing the role of the Shipper (BCO, FF or NVOCC) who is responsible for the VGM (e.g. according the SOLAS Convention).
+The transport user party is the user of the transport service, often the consignor. The transport user party is the default sender of the Transport Execution Plan Request and the default receiver of the Transport Execution Plan.
 
 Example:
 [source, xml, indent=0]
 ----
-include::{snippet-dir}/snippet-1.xml[tags=shipper-party]
+include::{snippet-dir}/snippet-1.xml[tags=transport-user-party]
+----
+
+[[transport-service-provider-party]]
+== Transport service provider party (TransportServiceProviderParty)
+
+The Transport Service provider is the default sender of the Transport Execution Plan and the default receiver of the Transport Executions Plan Request.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=transport-service-provider-party]
+----
+
+[[consignor-party]]
+== Consignor party (ConsignorParty)
+
+Consignor, also known as the shipper, is the sender of the goods. The Consignor is often the buyer of the freight services. If the Consignor is the same for all consignments in the Waybill, the consignor can be described on the document level instead of in each consignment.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=consignor-party]
+----
+
+[[consignee-party]]
+== Consignee party (ConsigneeParty)
+
+Consignee is known as the DeliveryCustomerParty in the Despatch and receive advice. The Consignee is the person or organisation to which the products will be shipped and who is taking possession. The role is carried out by the customer or on behalf of the customer. The Consignee is a mandatory party in the consignment element and can be the Transportation Buyer.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=consignee-party]
+----
+
+[[carrier-party]]
+== Carrier party (CarrierParty)
+
+Consignee is known as the DeliveryCustomerParty in the Despatch and receive advice. The Consignee is the person or organisation to which the products will be shipped and who is taking possession. The role is carried out by the customer or on behalf of the customer. The Consignee is a mandatory party in the consignment element and can be the Transportation Buyer.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=carrier-party]
+----
+
+[[freight-forwarder-party]]
+== Freight forwarder party (FreightForwarderParty)
+
+The freight forwarder is the party who organizes the freight transport. The freight forwarder can be the same as the carrier. For multimodal freight there can be many freight forwarders involved, one for each consignment. In this case the freight forwarder on waybill level is called the integrator.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=freight-forwarder-party]
+----
+
+[[notify-party]]
+== Notify party (NotifyParty)
+
+The Notify party is an external party that needs to be notified regarding the transport of the Waybill. This can be an agent responsible for the insurance of the goods or a public authority if the consignment contains hazardous goods. For the Notifier and Contact party, the contact element is mandatory.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=notify-party]
+----
+
+[[despatch-party]]
+== Despatch party (DespatchParty)
+
+The despatch party is a party responsible for issuing the goods on behalf of the consignor.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=despatch-party]
 ----
