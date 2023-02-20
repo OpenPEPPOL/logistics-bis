@@ -2,7 +2,7 @@
 <ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-   <cbc:CustomizationID> urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1 </cbc:CustomizationID>
+   <cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1</cbc:CustomizationID>
    <cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1</cbc:ProfileID>
    <cbc:ID>TEP_1</cbc:ID>
    <cbc:VersionID>1</cbc:VersionID>
@@ -118,27 +118,6 @@
             </cac:Address>
          </cac:DeliveryLocation>
       </cac:DeliveryTerms>
-      <cac:NotificationRequirement>
-         <cbc:NotificationTypeCode>TIME_SCHEDULE_DEVIATIONS</cbc:NotificationTypeCode>
-         <cac:NotifyParty>
-            <cbc:EndpointID>www.consignee.de/statusnotifications/</cbc:EndpointID>
-            <cac:PartyName>
-               <cbc:Name>Consignee</cbc:Name>
-            </cac:PartyName>
-            <cac:Contact>
-               <cbc:ElectronicMail>someName@consignee.de</cbc:ElectronicMail>
-            </cac:Contact>
-         </cac:NotifyParty>
-         <cac:NotifyParty>
-            <cbc:EndpointID>www.consignor.cn/statusnotifications/</cbc:EndpointID>
-            <cac:PartyName>
-               <cbc:Name>Consignor</cbc:Name>
-            </cac:PartyName>
-            <cac:Contact>
-               <cbc:ElectronicMail>someName@consignor.cn</cbc:ElectronicMail>
-            </cac:Contact>
-         </cac:NotifyParty>
-      </cac:NotificationRequirement>
       <cac:NotificationRequirement>
          <cbc:NotificationTypeCode>ITEM_CONDITION_DEVIATIONS</cbc:NotificationTypeCode>
          <!--A Transportation Status notifying about the item condition deviation (e.g. damaged goods) should 
