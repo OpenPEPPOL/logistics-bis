@@ -629,7 +629,7 @@
          <Element cardinality="0..1">
             <Term>cbc:NetNetWeightMeasure</Term>
             <Description>The net net weight of the consignment. Must be equal the sum of the net net weight specified for the included transport handling unites if this is specified</Description>
-            <Value type="EXAMPLE">278-50</Value>
+            <Value type="EXAMPLE">278.50</Value>
             <Attribute>
                <Term>unitCode</Term>
                <Value type="EXAMPLE">KGM</Value>
@@ -878,33 +878,6 @@
                   <Name>Name of the delivery location </Name>
                   <Description>The name of the delivery location. </Description>
                   <Value type="EXAMPLE">DHL Københavns lufthavn</Value>
-               </Element>
-               <Element cardinality="1..1">
-                  <Term>cac:Address</Term>
-                  <Description>The address of the location.</Description>
-                  <Element>
-                     <Term>cbc:StreetName</Term>
-                     <Value type="EXAMPLE">Kystvejen 24</Value>
-                  </Element>
-                  <Element>
-                     <Term>cbc:CityName</Term>
-                     <Value type="EXAMPLE">Kastrup</Value>
-                  </Element>
-                  <Element>
-                     <Term>cbc:PostalZone</Term>
-                     <Value type="EXAMPLE">2770</Value>
-                  </Element>
-                  <Element>
-                     <Term>cac:Country</Term>
-                     <Element>
-                        <Term>cbc:IdentificationCode</Term>
-                        <Value type="EXAMPLE">DK</Value>
-                     </Element>
-                     <Element>
-                        <Term>cbc:Name</Term>
-                        <Value type="EXAMPLE">Denmark</Value>
-                     </Element>
-                  </Element>
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:Address</Term>
@@ -2378,46 +2351,6 @@
                   </Element>
                </Element>
             </Element>
-            <Element>
-               <Term>cac:EstimatedArrivalTransportEvent</Term>
-               <Element>
-                  <Term>cbc:IdentificationID</Term>
-                  <Value type="EXAMPLE">2265431546512,1635431</Value>
-               </Element>
-               <Element>
-                  <Term>cac:Location</Term>
-                  <Element>
-                     <Term>cbc:Name</Term>
-                     <Value type="EXAMPLE">HUS Hospital</Value>
-                  </Element>
-                  <Element>
-                     <Term>cac:Address</Term>
-                     <Element>
-                        <Term>cbc:StreetName</Term>
-                        <Value type="EXAMPLE">Topeliuksenkatu 5</Value>
-                     </Element>
-                     <Element>
-                        <Term>cbc:CityName</Term>
-                        <Value type="EXAMPLE">Helsinki</Value>
-                     </Element>
-                     <Element>
-                        <Term>cbc:PostalZone</Term>
-                        <Value type="EXAMPLE">00260</Value>
-                     </Element>
-                     <Element>
-                        <Term>cac:Country</Term>
-                        <Element>
-                           <Term>cbc:IdentificationCode</Term>
-                           <Value type="EXAMPLE">FI</Value>
-                        </Element>
-                        <Element>
-                           <Term>cbc:Name</Term>
-                           <Value type="EXAMPLE">Finland</Value>
-                        </Element>
-                     </Element>
-                  </Element>
-               </Element>
-            </Element>
             <Element cardinality="0..1">
                <Term>cac:RequestedArrivalTransportEvent</Term>
                <Name>Estimated Departure Transport Event </Name>
@@ -2576,6 +2509,46 @@
                      <Term>cbc:EndTime</Term>
                      <Description>The endtime for the period. </Description>
                      <Value type="EXAMPLE">16:50:00+01:00</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:EstimatedArrivalTransportEvent</Term>
+               <Element>
+                  <Term>cbc:IdentificationID</Term>
+                  <Value type="EXAMPLE">2265431546512,1635431</Value>
+               </Element>
+               <Element>
+                  <Term>cac:Location</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">HUS Hospital</Value>
+                  </Element>
+                  <Element>
+                     <Term>cac:Address</Term>
+                     <Element>
+                        <Term>cbc:StreetName</Term>
+                        <Value type="EXAMPLE">Topeliuksenkatu 5</Value>
+                     </Element>
+                     <Element>
+                        <Term>cbc:CityName</Term>
+                        <Value type="EXAMPLE">Helsinki</Value>
+                     </Element>
+                     <Element>
+                        <Term>cbc:PostalZone</Term>
+                        <Value type="EXAMPLE">00260</Value>
+                     </Element>
+                     <Element>
+                        <Term>cac:Country</Term>
+                        <Element>
+                           <Term>cbc:IdentificationCode</Term>
+                           <Value type="EXAMPLE">FI</Value>
+                        </Element>
+                        <Element>
+                           <Term>cbc:Name</Term>
+                           <Value type="EXAMPLE">Finland</Value>
+                        </Element>
+                     </Element>
                   </Element>
                </Element>
             </Element>
