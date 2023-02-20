@@ -6,26 +6,26 @@
 	</assert>
 	<test id="1">
 		<assert>
-			<success>1</success>
+			<success>PEPPOL-T123-R002</success>
 		</assert>
-		<TransportExecutionPlanRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan_request:1</cbc:CustomizationID>
 			<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1</cbc:ProfileID>
-		</TransportExecutionPlanRequest>
+		</ubl:TransportExecutionPlanRequest>
 	</test>
 
 	<test>
 		<assert id="2">
-			<error>Didn't successfully catched the wrong profile id</error>
+			<error>PEPPOL-T123-R002</error>
 		</assert>
-		<TransportExecutionPlanRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan_request:1</cbc:CustomizationID>
-			<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1</cbc:ProfileID>
-		</TransportExecutionPlanRequest>
+			<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_error:1</cbc:ProfileID>
+		</ubl:TransportExecutionPlanRequest>
 	</test>
 
 </testSet>
