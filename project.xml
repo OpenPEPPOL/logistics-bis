@@ -2,48 +2,50 @@
 <Project xmlns="urn:fdc:difi.no:2017:vefa:structure:Project-1">
     <Name>Peppol Incubation Project Logistics</Name>
 
-	<!-- Introduction -->
+    <!-- Introduction -->
 
-	<!-- Introduction -->
-	<Documentation path="">INTRODUCTION</Documentation>
-	<Documentation path="compliance/">BIS compliance</Documentation>
-	<Documentation path="release-notes/">Release notes</Documentation>
+    <!-- Introduction -->
+    <Documentation path="">INTRODUCTION</Documentation>
+    <Documentation path="compliance/">BIS compliance</Documentation>
+    <Documentation path="release-notes/">Release notes</Documentation>
 
-	<!-- BIS documents -->
-	<Documentation path="">BIS DOCUMENTS</Documentation>
-	<Documentation path="profiles/66-advanceddespatchadvice/">- Advanced Despatch Advice Only 1.1</Documentation>
-	<Documentation path="profiles/67-advanceddespatchadvice_w_response/">- Advanced Despatch Advice With Response 1.1</Documentation>
-	<Documentation path="profiles/68-weightstatement/">- Weight Statement 1.1</Documentation>
-    <Documentation path="profiles/69-transportexecutionplan_w_request/">- Transport Execution Plan With Request 1.0</Documentation>
+    <!-- BIS documents -->
+    <Documentation path="">BIS DOCUMENTS</Documentation>
+    <Documentation path="profiles/66-advanceddespatchadvice/">- Advanced Despatch Advice Only 1.1</Documentation>
+    <Documentation path="profiles/67-advanceddespatchadvice_w_response/">- Advanced Despatch Advice
+        With Response 1.1</Documentation>
+    <Documentation path="profiles/68-weightstatement/">- Weight Statement 1.1</Documentation>
+    <Documentation path="profiles/69-transportexecutionplan_w_request/">- Transport Execution Plan
+        With Request 1.0</Documentation>
     <Documentation path="profiles/70-transportexecutionplan/">- Transport Execution Plan 1.0</Documentation>
-	
+
     <!-- Syntax -->
-	<Resource>
-		<Type>Structure-1</Type>
-		<Path>structure/syntax/ubl-advanced-despatch-advice.xml</Path>
-		<Title>Advanced Despatch Advice 1.1 (T120)</Title>
-	</Resource>
-	<Resource>
-		<Type>Structure-1</Type>
-		<Path>structure/syntax/ubl-despatch-advice-response.xml</Path>
-		<Title>Despatch Advice Response 1.1 (T121)</Title>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-advanced-despatch-advice.xml</Path>
+        <Title>Advanced Despatch Advice 1.1 (T120)</Title>
     </Resource>
-	<Resource>
-		<Type>Structure-1</Type>
-		<Path>structure/syntax/ubl-weight-statement.xml</Path>
-		<Title>Weight Statement 1.1 (T122)</Title>
-	</Resource>
     <Resource>
-		<Type>Structure-1</Type>
-		<Path>structure/syntax/ubl-transport-execution-plan-request.xml</Path>
-		<Title>Transport Execution Plan Request 1.0 (T123)</Title>
-	</Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-despatch-advice-response.xml</Path>
+        <Title>Despatch Advice Response 1.1 (T121)</Title>
+    </Resource>
     <Resource>
-		<Type>Structure-1</Type>
-		<Path>structure/syntax/ubl-transport-execution-plan.xml</Path>
-		<Title>Transport Execution Plan 1.0 (T124)</Title>
-	</Resource>
-  
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-weight-statement.xml</Path>
+        <Title>Weight Statement 1.1 (T122)</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-transport-execution-plan-request.xml</Path>
+        <Title>Transport Execution Plan Request 1.0 (T123)</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-transport-execution-plan.xml</Path>
+        <Title>Transport Execution Plan 1.0 (T124)</Title>
+    </Resource>
+
     <!-- Rules -->
     <Resource>
         <Identifier>common</Identifier>
@@ -51,37 +53,37 @@
         <Path>rules/sch/parts/common.sch</Path>
         <Title>Common rules</Title>
     </Resource>
-	<Resource>
-		<Identifier>T120</Identifier>
-		<Type>native:Schematron</Type>
-		<Path>rules/sch/parts/PEPPOL-M-T120.sch</Path>
-		<Title>Business rules for Advanced Despatch Advice transaction 1.1</Title>
-	</Resource>
-	<Resource>
-		<Identifier>T121</Identifier>
-		<Type>native:Schematron</Type>
-		<Path>rules/sch/parts/PEPPOL-M-T121.sch</Path>
-		<Title>Business rules for Despatch Advice Response transaction 1.1</Title>
-	</Resource>
-	<Resource>
-		<Identifier>T122</Identifier>
-		<Type>native:Schematron</Type>
-		<Path>rules/sch/parts/PEPPOL-M-T122.sch</Path>
-		<Title>Business rules for Weight Statement transaction 1.1</Title>
-	</Resource>
     <Resource>
-		<Identifier>T123</Identifier>
-		<Type>native:Schematron</Type>
-		<Path>rules/sch/parts/PEPPOL-M-T123.sch</Path>
-		<Title>Business rules for Transport Execution Plan Request transaction 1.0</Title>
-	</Resource>
+        <Identifier>T120</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/sch/parts/PEPPOL-M-T120.sch</Path>
+        <Title>Business rules for Advanced Despatch Advice transaction 1.1</Title>
+    </Resource>
     <Resource>
-		<Identifier>T124</Identifier>
-		<Type>native:Schematron</Type>
-		<Path>rules/sch/parts/PEPPOL-M-T124.sch</Path>
-		<Title>Business rules for Transport Execution Plan transaction 1.0</Title>
-	</Resource>
-  
+        <Identifier>T121</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/sch/parts/PEPPOL-M-T121.sch</Path>
+        <Title>Business rules for Despatch Advice Response transaction 1.1</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T122</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/sch/parts/PEPPOL-M-T122.sch</Path>
+        <Title>Business rules for Weight Statement transaction 1.1</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T123</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/sch/parts/PEPPOL-M-T123.sch</Path>
+        <Title>Business rules for Transport Execution Plan Request transaction 1.0</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T124</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/sch/parts/PEPPOL-M-T124.sch</Path>
+        <Title>Business rules for Transport Execution Plan transaction 1.0</Title>
+    </Resource>
+
     <!-- Code lists -->
 
     <Resource>
@@ -92,7 +94,7 @@
         <Type>CodeList-1</Type>
         <Path>structure/codelist/ISO3166-1_Alpha2.xml</Path>
     </Resource>
-	<Resource>
+    <Resource>
         <Type>CodeList-1</Type>
         <Path>structure/codelist/ISO4217_2015.xml</Path>
     </Resource>
@@ -112,11 +114,11 @@
         <Type>CodeList-1</Type>
         <Path>structure/codelist/DocumentStatusCode.xml</Path>
     </Resource>
-	<Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/eas.xml</Path>
-	</Resource>
-	<Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/eas.xml</Path>
+    </Resource>
+    <Resource>
         <Type>CodeList-1</Type>
         <Path>structure/codelist/HandlingCode.xml</Path>
     </Resource>
@@ -128,10 +130,10 @@
         <Type>CodeList-1</Type>
         <Path>structure/codelist/ICD.xml</Path>
     </Resource>
-	<Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/ItemPropertyNameCode.xml</Path>
-	</Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/ItemPropertyNameCode.xml</Path>
+    </Resource>
     <Resource>
         <Type>CodeList-1</Type>
         <Path>structure/codelist/UNCL7143.xml</Path>
@@ -142,10 +144,10 @@
         <Type>CodeList-1</Type>
         <Path>structure/codelist/UNCL6313-T120.xml</Path>
     </Resource>
-	<Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/UNCL6313-T122.xml</Path>
-	</Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/UNCL6313-T122.xml</Path>
+    </Resource>
     <Resource>
         <Type>CodeList-1</Type>
         <Path>structure/codelist/MimeCode.xml</Path>
@@ -159,14 +161,14 @@
         <Type>CodeList-1</Type>
         <Path>structure/codelist/UNECERec21-9e.xml</Path>
     </Resource>
-     <Resource>
+    <Resource>
         <Type>CodeList-1</Type>
-        <Path>structure/codelist/UNECERec19.xml</Path>		                         
-	 </Resource>
-	 <Resource>
+        <Path>structure/codelist/UNECERec19.xml</Path>
+    </Resource>
+    <Resource>
         <Type>CodeList-1</Type>
-        <Path>structure/codelist/UNECERec28.xml</Path>		                         
-	 </Resource>
+        <Path>structure/codelist/UNECERec28.xml</Path>
+    </Resource>
     <Resource>
         <Type>CodeList-1</Type>
         <Path>structure/codelist/TRED8155.xml</Path>
@@ -175,10 +177,10 @@
         <Type>CodeList-1</Type>
         <Path>structure/codelist/StatusReason.xml</Path>
     </Resource>
-	<Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/UNCL8053.xml</Path>
-	</Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/UNCL8053.xml</Path>
+    </Resource>
 
     <!-- Files -->
     <Resource>
@@ -205,34 +207,33 @@
         <Path>structure/namespace/ubl-order-response.xml</Path>
     </Resource>
     <Resource>
-     <Type>Namespace-1</Type>
-     <Path>structure/namespace/ubl-despatch-advice.xml</Path>
+        <Type>Namespace-1</Type>
+        <Path>structure/namespace/ubl-despatch-advice.xml</Path>
     </Resource>
-	<Resource>
-		<Type>Namespace-1</Type>
-		<Path>structure/namespace/ubl-application-response.xml</Path>
-	</Resource>
-	<Resource>
-		<Type>Namespace-1</Type>
-		<Path>structure/namespace/ubl-catalogue.xml</Path>
-	</Resource>
-	<Resource>
-		<Type>Namespace-1</Type>
-		<Path>structure/namespace/ubl-weight-statement.xml</Path>
-	</Resource>
-		<Resource>
-		<Type>Namespace-1</Type>
-		<Path>structure/namespace/ubl-transport-execution-plan-request.xml</Path>
-	</Resource>
-	</Resource>
-		<Resource>
-		<Type>Namespace-1</Type>
-		<Path>structure/namespace/ubl-transport-execution-plan.xml</Path>
-	</Resource>
     <Resource>
-		<Type>Namespace-1</Type>
-		<Path>structure/namespace/ubl-invoice.xml</Path>
-	</Resource>
+        <Type>Namespace-1</Type>
+        <Path>structure/namespace/ubl-application-response.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>Namespace-1</Type>
+        <Path>structure/namespace/ubl-catalogue.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>Namespace-1</Type>
+        <Path>structure/namespace/ubl-weight-statement.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>Namespace-1</Type>
+        <Path>structure/namespace/ubl-transport-execution-plan-request.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>Namespace-1</Type>
+        <Path>structure/namespace/ubl-transport-execution-plan.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>Namespace-1</Type>
+        <Path>structure/namespace/ubl-invoice.xml</Path>
+    </Resource>
     <Resource>
         <Type>Namespace-1</Type>
         <Path>structure/namespace/ubl-cac.xml</Path>

@@ -1,20 +1,49 @@
-add the exampel file to the /source/ directory. 
+This documentation guids you through the simple steps to add a new document to the Peppol documentation generation tool
+
+Step 1. Add the exampel file to the /source/ directory. 
 Make sure that the DocumentTerm and properties processing instruction are included
 e.g.
 <?DocumentTerm DespatchAdvice?>
 <?Property key="sch:prefix" PEPPOL-T16?>
 <?Property key="sch:identifier" T16-basic?>
 
-add resource to project.xml this file sets the menu on the first page
+Step 2. Create namespace document in the /structure/namespace directory if there is no existing namespace document for the transaction
 
-e.g.
-	<Resource>
-		<Type>Structure-1</Type>
-		<Path>structure/syntax/ubl-order-agreement.xml</Path>
-		<Title>Peppol Message Level Response</Title>
-	</Resource>
+Step 3. Add  files to /rules/sch/ and the /rules/sch/parts directories copy a simple file e.g. PEPPOLBIS-T122.sch and PEPPOL-M-T122.sch
+Edit the files to the corresponding
+- title
+- name spaces
+- customizationId
+- rule names
 
-add transformation code to build.sh by copining and paste an old one.
+Step 4. Edit /rules/buildconfig.xml
+Step 4a. Add unit test folder e.g. 
+<testfolder>unit-advanced-despatch-advice</testfolder>
+And create the folder for others to add the unit tests
+
+Step 4b. Add snippet folder e.g.
+<testfolder>snippets/advanceddespatch</testfolder>
+And create the folder for others to add snippets
+
+Step 4c. Add base configuration for the transaction e.g.
+	<configuration>
+		<identifier>peppolbis-T120-base-1.1</identifier>
+		<title>Logistics Advanced Despach Advice 1.0 (T120)</title>
+		<inherit>ubl-despatchadvice-2.1</inherit>
+		<file source="sch/PEPPOLBIS-T120.sch" path="xsl/PEPPOLBIS-T120.xsl"/>
+	</configuration>
+
+Step 4d. Add profile configuration for the BIS documentation e.g.
+	<configuration>
+		<identifier>peppolbis-120-only</identifier>
+		<title>Logistics Advanced Despatch Advice Only 1.1</title>
+		<profileId>urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1</profileId>
+		<customizationId>urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1</customizationId>
+		<inherit>peppolbis-T120-base-1.1</inherit>
+	</configuration>
+
+Step 5. Edit build.sh file
+Step 5a. Add transformation code to build.sh by copining and paste an old one.
 the following parameters must be changed
 
 Source file to the mapping
@@ -24,9 +53,25 @@ Source file to the mapping
  Peppol document url, note no /tree/
  UblDocBaseUrl=https://docs.peppol.eu/poacc/upgrade-3/syntax/OrderAgreement/ 
 
- UblXmlReferenceFile=ubl-order-agreement.xml
-
+ UblXmlReferenceFile=ubl-order-agreement.xml (this is the file name in github that the transformation will grab information from)
 
 E.g
-# Order agreement
-docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-order-agreement.xml -xsl:/src/tools/UBLInstance-To-StructureXML.xsl -o:/src/structure/syntax/ubl-order-agreement.xml UblBaseUrl=https://raw.githubusercontent.com/OpenPEPPOL/poacc-upgrade-3/master/structure/syntax/ UblDocBaseUrl=https://docs.peppol.eu/poacc/upgrade-3/syntax/OrderAgreement/ UblXmlReferenceFile=ubl-order-agreement.xml -ext:on --allow-external-functions:on
+# Advanced despatch advice
+docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-advanced-despatch-advice.xml -xsl:/src/tools/UBLInstance-To-StructureXML.xsl -o:/src/structure/syntax/ubl-advanced-despatch-advice.xml UblBaseUrl=https://raw.githubusercontent.com/OpenPEPPOL/poacc-upgrade-3/master/structure/syntax/ UblDocBaseUrl=https://docs.peppol.eu/poacc/upgrade-3/syntax/DespatchAdvice/ UblXmlReferenceFile=ubl-despatch-advice.xml -ext:on --allow-external-functions:on
+
+Step 5b. Add example generation code to build.sh e.g.
+docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-advanced-despatch-advice.xml -xsl:/src/tools/remove-pi.xsl -o:/src/rules/examples/AdvancedDespatchAdvice_Example_Full.xml -ext:on --allow-external-functions:on
+
+Step 6. Add resource to project.xml this file sets the menu on the first page
+
+e.g.
+	<Resource>
+		<Type>Structure-1</Type>
+		<Path>structure/syntax/ubl-order-agreement.xml</Path>
+		<Title>Peppol Message Level Response</Title>
+	</Resource>
+
+Step 7. Build and check
+Step 7a. Build the new documentation by commit and sync to GitHub. Check the log for errors
+Step 7b. Check that the corresponding file has been produced in the /structure/syntax/ directory if not go back to step 5a to check the code. If correct, check previous steps
+Step 7c. Check the documentation on the corresponding url
