@@ -1,0 +1,1318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+   <Term>TransportExecutionPlan</Term>
+   <Property key="sch:prefix">PEPPOL-T124</Property>
+   <Property key="sch:identifier">T124-basic</Property>
+   <Namespace prefix="">urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2</Namespace>
+   <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
+   <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
+   <Document>
+      <Term>TransportExecutionPlan</Term>
+ 
+ 
+ 
+      <Element>
+         <Term>cbc:CustomizationID</Term>
+         <Name>Specification identification</Name>
+         <Description>Identifies the specification of content and rules that apply to the
+				transaction.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir16-002</Reference>
+         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1</Value>
+      </Element>
+      <Element>
+         <Term>cbc:ProfileID</Term>
+         <Name>Business process type identifier</Name>
+         <Description>Identifies the BII profile or business process context in which the
+				transaction appears.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir16-001</Reference>
+         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:ID</Term>
+         <Name>Document identifier</Name>
+         <Description>An transaction instance must contain an identifier. The identifier enables
+				positive referencing the document instance for various purposes including
+				referencing between transactions that are part of the same process.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir16-003</Reference>
+         <Value type="EXAMPLE">TEP_1</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:VersionID</Term>
+         <Value type="EXAMPLE">1</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:IssueDate</Term>
+         <Name>Dispatch advice issue date</Name>
+         <Description>The date when the despatch advice is issued. Format =
+				"YYYY-MM-DD"</Description>
+         <DataType>Date</DataType>
+         <Reference type="BUSINESS_TERM">tir16-004</Reference>
+         <Value type="EXAMPLE">2011-09-13</Value>
+      </Element>
+	     <Element cardinality="0..1">
+         <Term>cbc:IssueTime</Term>
+         <Name>Dispatch advice issue time</Name>
+         <Description>The time when the despatch advice is issued. Format =
+				"hh:mm:ss"</Description>
+         <DataType>Time</DataType>
+         <Reference type="BUSINESS_TERM">tir16-005</Reference>
+         <Value type="EXAMPLE">10:00:30+01:00</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:DocumentStatusCode</Term>
+         <Value type="EXAMPLE">Confirmed</Value>
+      </Element>
+	     <Element>
+         <Term>cac:SenderParty</Term>
+         <Element>
+            <Term>cac:PartyIdentification</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">4058673827641</Value>
+               <Attribute>
+                  <Term>schemeAgencyName</Term>
+                  <Value type="EXAMPLE">GS1</Value>
+               </Attribute>
+               <Attribute>
+                  <Term>schemeName</Term>
+                  <Value type="EXAMPLE">GLN</Value>
+               </Attribute>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PartyName</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">NECOSS</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:Contact</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">SomeName</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Telephone</Term>
+               <Value type="EXAMPLE">+49450557000</Value>
+            </Element>
+            <Element>
+               <Term>cbc:ElectronicMail</Term>
+               <Value type="EXAMPLE">SomeName@necoss.de</Value>
+            </Element>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:ReceiverParty</Term>
+         <Element>
+            <Term>cac:PartyIdentification</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">4058673827000</Value>
+               <Attribute>
+                  <Term>schemeAgencyName</Term>
+                  <Value type="EXAMPLE">GS1</Value>
+               </Attribute>
+               <Attribute>
+                  <Term>schemeName</Term>
+                  <Value type="EXAMPLE">GLN</Value>
+               </Attribute>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PartyName</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">Consignor</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:Contact</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">SomeName</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Telephone</Term>
+               <Value type="EXAMPLE">+8687878763</Value>
+            </Element>
+            <Element>
+               <Term>cbc:ElectronicMail</Term>
+               <Value type="EXAMPLE">SomeName@consignor.cn</Value>
+            </Element>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:TransportUserParty</Term>
+         <Element>
+            <Term>cac:PartyIdentification</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">4058673827000</Value>
+               <Attribute>
+                  <Term>schemeAgencyName</Term>
+                  <Value type="EXAMPLE">GS1</Value>
+               </Attribute>
+               <Attribute>
+                  <Term>schemeName</Term>
+                  <Value type="EXAMPLE">GLN</Value>
+               </Attribute>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PartyName</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">Consignor</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:Contact</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">SomeName</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Telephone</Term>
+               <Value type="EXAMPLE">+8687878763</Value>
+            </Element>
+            <Element>
+               <Term>cbc:ElectronicMail</Term>
+               <Value type="EXAMPLE">SomeName@consignor.cn</Value>
+            </Element>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:TransportServiceProviderParty</Term>
+         <Element>
+            <Term>cac:PartyIdentification</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">4058673827641</Value>
+               <Attribute>
+                  <Term>schemeAgencyName</Term>
+                  <Value type="EXAMPLE">GS1</Value>
+               </Attribute>
+               <Attribute>
+                  <Term>schemeName</Term>
+                  <Value type="EXAMPLE">GLN</Value>
+               </Attribute>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PartyName</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">NECOSS</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:Contact</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">SomeName</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Telephone</Term>
+               <Value type="EXAMPLE">+49450557000</Value>
+            </Element>
+            <Element>
+               <Term>cbc:ElectronicMail</Term>
+               <Value type="EXAMPLE">SomeName@necoss.de</Value>
+            </Element>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:TransportServiceDescriptionDocumentReference</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Value type="EXAMPLE">2</Value>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:TransportContract</Term>
+         <Element>
+            <Term>cbc:Note</Term>
+            <Value type="EXAMPLE">Framework Agreement</Value>
+         </Element>
+         <Element>
+            <Term>cac:ContractDocumentReference</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">TC101</Value>
+            </Element>
+            <Element>
+               <Term>cbc:IssueDate</Term>
+               <Value type="EXAMPLE">2010-01-01</Value>
+            </Element>
+            <Element>
+               <Term>cbc:DocumentTypeCode</Term>
+               <Value type="EXAMPLE">315</Value>
+            </Element>
+            <Element>
+               <Term>cbc:DocumentType</Term>
+               <Value type="EXAMPLE">Contract</Value>
+            </Element>
+            <Element>
+               <Term>cbc:DocumentDescription</Term>
+               <Value type="EXAMPLE">Framework Agreement between Consignor and NECOSS</Value>
+            </Element>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:TransportUserResponseRequiredPeriod</Term>
+         <Element>
+            <Term>cbc:EndDate</Term>
+            <Value type="EXAMPLE">2011-09-13</Value>
+         </Element>
+         <Element>
+            <Term>cbc:EndTime</Term>
+            <Value type="EXAMPLE">12:00:10+01:00</Value>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:MainTransportationService</Term>
+         <Element>
+            <Term>cbc:TransportServiceCode</Term>
+            <Value type="EXAMPLE">3</Value>
+         </Element>
+         <Element>
+            <Term>cbc:TransportationServiceDescription</Term>
+            <Value type="EXAMPLE">Transport from Hamburg to Nurnberg</Value>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:ServiceEndTimePeriod</Term>
+         <Element>
+            <Term>cbc:EndDate</Term>
+            <Value type="EXAMPLE">2011-10-06</Value>
+         </Element>
+         <Element>
+            <Term>cbc:EndTime</Term>
+            <Value type="EXAMPLE">16:00:10+01:00</Value>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:FromLocation</Term>
+         <Element>
+            <Term>cbc:LocationTypeCode</Term>
+            <Value type="EXAMPLE">13</Value>
+         </Element>
+         <Element>
+            <Term>cac:Address</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">DEHAM</Value>
+               <Attribute>
+                  <Term>schemeAgencyName</Term>
+                  <Value type="EXAMPLE">UN</Value>
+               </Attribute>
+               <Attribute>
+                  <Term>schemeName</Term>
+                  <Value type="EXAMPLE">UN/LOCODE</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:StreetName</Term>
+               <Value type="EXAMPLE">Neuer Wandrahm 4</Value>
+            </Element>
+            <Element>
+               <Term>cbc:CityName</Term>
+               <Value type="EXAMPLE">Hamburg</Value>
+            </Element>
+            <Element>
+               <Term>cbc:PostalZone</Term>
+               <Value type="EXAMPLE">29400</Value>
+            </Element>
+            <Element>
+               <Term>cac:Country</Term>
+               <Element>
+                  <Term>cbc:IdentificationCode</Term>
+                  <Value type="EXAMPLE">DE</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:ToLocation</Term>
+         <Element>
+            <Term>cbc:LocationTypeCode</Term>
+            <Value type="EXAMPLE">7</Value>
+         </Element>
+         <Element>
+            <Term>cac:Address</Term>
+            <Element>
+               <Term>cbc:StreetName</Term>
+               <Value type="EXAMPLE">Grosse strasse 34</Value>
+            </Element>
+            <Element>
+               <Term>cbc:CityName</Term>
+               <Value type="EXAMPLE">Nurnberg</Value>
+            </Element>
+            <Element>
+               <Term>cbc:PostalZone</Term>
+               <Value type="EXAMPLE">28400</Value>
+            </Element>
+            <Element>
+               <Term>cac:Country</Term>
+               <Element>
+                  <Term>cbc:IdentificationCode</Term>
+                  <Value type="EXAMPLE">DE</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:TransportExecutionTerms</Term>
+         <Element>
+            <Term>cac:DeliveryTerms</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">EXW</Value>
+               <Attribute>
+                  <Term>schemeAgencyName</Term>
+                  <Value type="EXAMPLE">INCOTERMS</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cac:DeliveryLocation</Term>
+               <Element>
+                  <Term>cac:Address</Term>
+                  <Element>
+                     <Term>cbc:CityName</Term>
+                     <Value type="EXAMPLE">Hamburg</Value>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:NotificationRequirement</Term>
+            <Element>
+               <Term>cbc:NotificationTypeCode</Term>
+               <Value type="EXAMPLE">TIME_SCHEDULE_DEVIATIONS</Value>
+            </Element>
+            <Element>
+               <Term>cac:NotifyParty</Term>
+               <Element>
+                  <Term>cbc:EndpointID</Term>
+                  <Value type="EXAMPLE">www.consignee.de/statusnotifications/</Value>
+               </Element>
+               <Element>
+                  <Term>cac:PartyName</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">Consignee</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Contact</Term>
+                  <Element>
+                     <Term>cbc:ElectronicMail</Term>
+                     <Value type="EXAMPLE">someName@consignee.de</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:NotifyParty</Term>
+               <Element>
+                  <Term>cbc:EndpointID</Term>
+                  <Value type="EXAMPLE">www.consignor.cn/statusnotifications/</Value>
+               </Element>
+               <Element>
+                  <Term>cac:PartyName</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">Consignor</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Contact</Term>
+                  <Element>
+                     <Term>cbc:ElectronicMail</Term>
+                     <Value type="EXAMPLE">someName@consignor.cn</Value>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:NotificationRequirement</Term>
+            <Element>
+               <Term>cbc:NotificationTypeCode</Term>
+               <Value type="EXAMPLE">ITEM_CONDITION_DEVIATIONS</Value>
+            </Element>
+            <Element>
+               <Term>cbc:PostEventNotificationDurationMeasure</Term>
+               <Value type="EXAMPLE">10</Value>
+               <Attribute>
+                  <Term>unitCode</Term>
+                  <Value type="EXAMPLE">MIN</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cac:NotifyParty</Term>
+               <Element>
+                  <Term>cbc:EndpointID</Term>
+                  <Value type="EXAMPLE">www.consignee.com/statusnotifications/</Value>
+               </Element>
+               <Element>
+                  <Term>cac:PartyName</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">Consignee</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Contact</Term>
+                  <Element>
+                     <Term>cbc:ElectronicMail</Term>
+                     <Value type="EXAMPLE">someName@consignee.de</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:NotifyParty</Term>
+               <Element>
+                  <Term>cbc:EndpointID</Term>
+                  <Value type="EXAMPLE">www.consignor.cn/statusnotifications/</Value>
+               </Element>
+               <Element>
+                  <Term>cac:PartyName</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">Consignor</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Contact</Term>
+                  <Element>
+                     <Term>cbc:ElectronicMail</Term>
+                     <Value type="EXAMPLE">someName@consignor.cn</Value>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:Consignment</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Value type="EXAMPLE">CON_1</Value>
+         </Element>
+         <Element>
+            <Term>cbc:GrossWeightMeasure</Term>
+            <Value type="EXAMPLE">50000</Value>
+            <Attribute>
+               <Term>unitCode</Term>
+               <Value type="EXAMPLE">KGM</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:NetWeightMeasure</Term>
+            <Value type="EXAMPLE">3000</Value>
+            <Attribute>
+               <Term>unitCode</Term>
+               <Value type="EXAMPLE">KGM</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:GrossVolumeMeasure</Term>
+            <Value type="EXAMPLE">78</Value>
+            <Attribute>
+               <Term>unitCode</Term>
+               <Value type="EXAMPLE">MTQ</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:LoadingLengthMeasure</Term>
+            <Value type="EXAMPLE">12</Value>
+            <Attribute>
+               <Term>unitCode</Term>
+               <Value type="EXAMPLE">MTR</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:HazardousRiskIndicator</Term>
+            <Value type="EXAMPLE">false</Value>
+         </Element>
+         <Element>
+            <Term>cbc:TotalTransportHandlingUnitQuantity</Term>
+            <Value type="EXAMPLE">2</Value>
+         </Element>
+         <Element>
+            <Term>cac:ConsolidatedShipment</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">GSIN_1</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:ConsolidatedShipment</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">GSIN_2</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PlannedPickupTransportEvent</Term>
+            <Element>
+               <Term>cac:Location</Term>
+               <Element>
+                  <Term>cac:Address</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">DEHAM</Value>
+                     <Attribute>
+                        <Term>schemeAgencyName</Term>
+                        <Value type="EXAMPLE">UN</Value>
+                     </Attribute>
+                     <Attribute>
+                        <Term>schemeName</Term>
+                        <Value type="EXAMPLE">UN/LOCODE</Value>
+                     </Attribute>
+                  </Element>
+                  <Element>
+                     <Term>cbc:StreetName</Term>
+                     <Value type="EXAMPLE">Neuer Wandrahm 4</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:CityName</Term>
+                     <Value type="EXAMPLE">Hamburg</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:PostalZone</Term>
+                     <Value type="EXAMPLE">29400</Value>
+                  </Element>
+                  <Element>
+                     <Term>cac:Country</Term>
+                     <Element>
+                        <Term>cbc:IdentificationCode</Term>
+                        <Value type="EXAMPLE">DE</Value>
+                     </Element>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:Period</Term>
+               <Element>
+                  <Term>cbc:StartDate</Term>
+                  <Value type="EXAMPLE">2011-10-03</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:StartTime</Term>
+                  <Value type="EXAMPLE">09:30:10+01:00</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:EndDate</Term>
+                  <Value type="EXAMPLE">2011-10-03</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:EndTime</Term>
+                  <Value type="EXAMPLE">12:30:10+01:00</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PlannedDeliveryTransportEvent</Term>
+            <Element>
+               <Term>cac:Location</Term>
+               <Element>
+                  <Term>cac:Address</Term>
+                  <Element>
+                     <Term>cbc:StreetName</Term>
+                     <Value type="EXAMPLE">Grosse strasse 34</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:CityName</Term>
+                     <Value type="EXAMPLE">Nurnberg</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:PostalZone</Term>
+                     <Value type="EXAMPLE">28400</Value>
+                  </Element>
+                  <Element>
+                     <Term>cac:Country</Term>
+                     <Element>
+                        <Term>cbc:IdentificationCode</Term>
+                        <Value type="EXAMPLE">DE</Value>
+                     </Element>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:Period</Term>
+               <Element>
+                  <Term>cbc:StartDate</Term>
+                  <Value type="EXAMPLE">2011-10-06</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:StartTime</Term>
+                  <Value type="EXAMPLE">12:30:10+01:00</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:EndDate</Term>
+                  <Value type="EXAMPLE">2011-10-06</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:EndTime</Term>
+                  <Value type="EXAMPLE">15:30:10+01:00</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:ConsigneeParty</Term>
+            <Element>
+               <Term>cac:PartyIdentification</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">4058673827123</Value>
+                  <Attribute>
+                     <Term>schemeAgencyName</Term>
+                     <Value type="EXAMPLE">GS1</Value>
+                  </Attribute>
+                  <Attribute>
+                     <Term>schemeName</Term>
+                     <Value type="EXAMPLE">GLN</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PartyName</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Value type="EXAMPLE">Consignee</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:Contact</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Value type="EXAMPLE">SomeName</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Telephone</Term>
+                  <Value type="EXAMPLE">+4987878763</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:ElectronicMail</Term>
+                  <Value type="EXAMPLE">SomeName@consignee.de</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:ConsignorParty</Term>
+            <Element>
+               <Term>cac:PartyIdentification</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">4058673827000</Value>
+                  <Attribute>
+                     <Term>schemeAgencyName</Term>
+                     <Value type="EXAMPLE">GS1</Value>
+                  </Attribute>
+                  <Attribute>
+                     <Term>schemeName</Term>
+                     <Value type="EXAMPLE">GLN</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PartyName</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Value type="EXAMPLE">Consignor</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PostalAddress</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">4058673827000</Value>
+                  <Attribute>
+                     <Term>schemeAgencyName</Term>
+                     <Value type="EXAMPLE">GS1</Value>
+                  </Attribute>
+                  <Attribute>
+                     <Term>schemeName</Term>
+                     <Value type="EXAMPLE">GLN</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:Contact</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Value type="EXAMPLE">SomeName</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Telephone</Term>
+                  <Value type="EXAMPLE">+8676576456</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:ElectronicMail</Term>
+                  <Value type="EXAMPLE">SomeName@consignor.cn</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:OriginalDepartureCountry</Term>
+            <Element>
+               <Term>cbc:IdentificationCode</Term>
+               <Value type="EXAMPLE">CN</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:FinalDestinationCountry</Term>
+            <Element>
+               <Term>cbc:IdentificationCode</Term>
+               <Value type="EXAMPLE">DE</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:MainCarriageShipmentStage</Term>
+            <Element>
+               <Term>cac:PlannedDepartureTransportEvent</Term>
+               <Element>
+                  <Term>cac:Location</Term>
+                  <Element>
+                     <Term>cac:Address</Term>
+                     <Element>
+                        <Term>cbc:ID</Term>
+                        <Value type="EXAMPLE">DEHAM</Value>
+                        <Attribute>
+                           <Term>schemeAgencyName</Term>
+                           <Value type="EXAMPLE">UN</Value>
+                        </Attribute>
+                        <Attribute>
+                           <Term>schemeName</Term>
+                           <Value type="EXAMPLE">UN/LOCODE</Value>
+                        </Attribute>
+                     </Element>
+                     <Element>
+                        <Term>cbc:StreetName</Term>
+                        <Value type="EXAMPLE">Neuer Wandrahm 4</Value>
+                     </Element>
+                     <Element>
+                        <Term>cbc:CityName</Term>
+                        <Value type="EXAMPLE">Hamburg</Value>
+                     </Element>
+                     <Element>
+                        <Term>cbc:PostalZone</Term>
+                        <Value type="EXAMPLE">29400</Value>
+                     </Element>
+                     <Element>
+                        <Term>cac:Country</Term>
+                        <Element>
+                           <Term>cbc:IdentificationCode</Term>
+                           <Value type="EXAMPLE">DE</Value>
+                        </Element>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Period</Term>
+                  <Element>
+                     <Term>cbc:StartDate</Term>
+                     <Value type="EXAMPLE">2011-10-03</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:StartTime</Term>
+                     <Value type="EXAMPLE">09:30:10+01:00</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:EndDate</Term>
+                     <Value type="EXAMPLE">2011-10-03</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:EndTime</Term>
+                     <Value type="EXAMPLE">12:30:10+01:00</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PlannedArrivalTransportEvent</Term>
+               <Element>
+                  <Term>cac:Location</Term>
+                  <Element>
+                     <Term>cac:Address</Term>
+                     <Element>
+                        <Term>cbc:StreetName</Term>
+                        <Value type="EXAMPLE">Grosse strasse 34</Value>
+                     </Element>
+                     <Element>
+                        <Term>cbc:CityName</Term>
+                        <Value type="EXAMPLE">Nurnberg</Value>
+                     </Element>
+                     <Element>
+                        <Term>cbc:PostalZone</Term>
+                        <Value type="EXAMPLE">28400</Value>
+                     </Element>
+                     <Element>
+                        <Term>cac:Country</Term>
+                        <Element>
+                           <Term>cbc:IdentificationCode</Term>
+                           <Value type="EXAMPLE">DE</Value>
+                        </Element>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Period</Term>
+                  <Element>
+                     <Term>cbc:StartDate</Term>
+                     <Value type="EXAMPLE">2011-10-06</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:StartTime</Term>
+                     <Value type="EXAMPLE">12:30:10+01:00</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:EndDate</Term>
+                     <Value type="EXAMPLE">2011-10-06</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:EndTime</Term>
+                     <Value type="EXAMPLE">15:30:10+01:00</Value>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PreCarriageShipmentStage</Term>
+            <Element>
+               <Term>cbc:TransportModeCode</Term>
+               <Value type="EXAMPLE">1</Value>
+            </Element>
+            <Element>
+               <Term>cbc:TransportMeansTypeCode</Term>
+               <Value type="EXAMPLE">83</Value>
+            </Element>
+            <Element>
+               <Term>cac:CarrierParty</Term>
+               <Element>
+                  <Term>cac:PartyName</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">MAERSK</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Contact</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">SomeName</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Telephone</Term>
+                     <Value type="EXAMPLE">+4598786765</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:ElectronicMail</Term>
+                     <Value type="EXAMPLE">SomeName@maersk.dk</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:TransportMeans</Term>
+               <Element>
+                  <Term>cbc:JourneyID</Term>
+                  <Value type="EXAMPLE">M22</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:RegistrationNationalityID</Term>
+                  <Value type="EXAMPLE">DK</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:RegistrationNationality</Term>
+                  <Value type="EXAMPLE">Denmark</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:TransportMeansTypeCode</Term>
+                  <Value type="EXAMPLE">83</Value>
+               </Element>
+               <Element>
+                  <Term>cac:MaritimeTransport</Term>
+                  <Element>
+                     <Term>cbc:VesselID</Term>
+                     <Value type="EXAMPLE">SomeIMONr</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:VesselName</Term>
+                     <Value type="EXAMPLE">SomeVesselName</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PlannedDepartureTransportEvent</Term>
+               <Element>
+                  <Term>cac:Location</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">CNSHA</Value>
+                     <Attribute>
+                        <Term>schemeAgencyName</Term>
+                        <Value type="EXAMPLE">UN</Value>
+                     </Attribute>
+                     <Attribute>
+                        <Term>schemeName</Term>
+                        <Value type="EXAMPLE">UN/LOCODE</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Period</Term>
+                  <Element>
+                     <Term>cbc:StartDate</Term>
+                     <Value type="EXAMPLE">2011-09-20</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:StartTime</Term>
+                     <Value type="EXAMPLE">09:30:10+01:00</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:EndDate</Term>
+                     <Value type="EXAMPLE">2011-09-20</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:EndTime</Term>
+                     <Value type="EXAMPLE">12:30:10+01:00</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PlannedArrivalTransportEvent</Term>
+               <Element>
+                  <Term>cac:Location</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">DEHAM</Value>
+                     <Attribute>
+                        <Term>schemeAgencyName</Term>
+                        <Value type="EXAMPLE">UN</Value>
+                     </Attribute>
+                     <Attribute>
+                        <Term>schemeName</Term>
+                        <Value type="EXAMPLE">UN/LOCODE</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Period</Term>
+                  <Element>
+                     <Term>cbc:StartDate</Term>
+                     <Value type="EXAMPLE">2011-10-01</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:StartTime</Term>
+                     <Value type="EXAMPLE">09:30:10+01:00</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:EndDate</Term>
+                     <Value type="EXAMPLE">2011-10-01</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:EndTime</Term>
+                     <Value type="EXAMPLE">12:30:10+01:00</Value>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:TransportHandlingUnit</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">CON_THU_1</Value>
+            </Element>
+            <Element>
+               <Term>cbc:TransportHandlingUnitTypeCode</Term>
+               <Value type="EXAMPLE">4</Value>
+            </Element>
+            <Element>
+               <Term>cbc:HazardousRiskIndicator</Term>
+               <Value type="EXAMPLE">false</Value>
+            </Element>
+            <Element>
+               <Term>cbc:TotalGoodsItemQuantity</Term>
+               <Value type="EXAMPLE">500</Value>
+            </Element>
+            <Element>
+               <Term>cbc:TotalPackageQuantity</Term>
+               <Value type="EXAMPLE">10</Value>
+            </Element>
+            <Element>
+               <Term>cbc:ShippingMarks</Term>
+               <Value type="EXAMPLE">General Cargo</Value>
+            </Element>
+            <Element>
+               <Term>cac:TransportEquipment</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">CON_TE_1</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:TransportEquipmentTypeCode</Term>
+                  <Value type="EXAMPLE">CN</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:FullnessIndicationCode</Term>
+                  <Value type="EXAMPLE">1</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:ReturnabilityIndicator</Term>
+                  <Value type="EXAMPLE">true</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:RefrigeratedIndicator</Term>
+                  <Value type="EXAMPLE">false</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Description</Term>
+                  <Value type="EXAMPLE">SomeDescription</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:GrossWeightMeasure</Term>
+                  <Value type="EXAMPLE">25000</Value>
+                  <Attribute>
+                     <Term>unitCode</Term>
+                     <Value type="EXAMPLE">KGM</Value>
+                  </Attribute>
+               </Element>
+               <Element>
+                  <Term>cbc:GrossVolumeMeasure</Term>
+                  <Value type="EXAMPLE">39</Value>
+                  <Attribute>
+                     <Term>unitCode</Term>
+                     <Value type="EXAMPLE">MTQ</Value>
+                  </Attribute>
+               </Element>
+               <Element>
+                  <Term>cbc:PowerIndicator</Term>
+                  <Value type="EXAMPLE">false</Value>
+               </Element>
+               <Element>
+                  <Term>cac:MeasurementDimension</Term>
+                  <Element>
+                     <Term>cbc:AttributeID</Term>
+                     <Value type="EXAMPLE">Length</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Measure</Term>
+                     <Value type="EXAMPLE">6.1</Value>
+                     <Attribute>
+                        <Term>unitCode</Term>
+                        <Value type="EXAMPLE">MTR</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:MeasurementDimension</Term>
+                  <Element>
+                     <Term>cbc:AttributeID</Term>
+                     <Value type="EXAMPLE">Height</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Measure</Term>
+                     <Value type="EXAMPLE">2.6</Value>
+                     <Attribute>
+                        <Term>unitCode</Term>
+                        <Value type="EXAMPLE">MTR</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:MeasurementDimension</Term>
+                  <Element>
+                     <Term>cbc:AttributeID</Term>
+                     <Value type="EXAMPLE">Width</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Measure</Term>
+                     <Value type="EXAMPLE">2.44</Value>
+                     <Attribute>
+                        <Term>unitCode</Term>
+                        <Value type="EXAMPLE">MTR</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Package</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">CON_P_1</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Quantity</Term>
+                     <Value type="EXAMPLE">10</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:PackagingTypeCode</Term>
+                     <Value type="EXAMPLE">PL</Value>
+                  </Element>
+                  <Element>
+                     <Term>cac:GoodsItem</Term>
+                     <Element>
+                        <Term>cac:Item</Term>
+                        <Element>
+                           <Term>cac:CommodityClassification</Term>
+                           <Element>
+                              <Term>cbc:CargoTypeCode</Term>
+                              <Value type="EXAMPLE">12</Value>
+                           </Element>
+                        </Element>
+                     </Element>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:TransportHandlingUnit</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">CON_THU_2</Value>
+            </Element>
+            <Element>
+               <Term>cbc:TransportHandlingUnitTypeCode</Term>
+               <Value type="EXAMPLE">4</Value>
+            </Element>
+            <Element>
+               <Term>cbc:HazardousRiskIndicator</Term>
+               <Value type="EXAMPLE">false</Value>
+            </Element>
+            <Element>
+               <Term>cbc:TotalGoodsItemQuantity</Term>
+               <Value type="EXAMPLE">500</Value>
+            </Element>
+            <Element>
+               <Term>cbc:TotalPackageQuantity</Term>
+               <Value type="EXAMPLE">10</Value>
+            </Element>
+            <Element>
+               <Term>cbc:ShippingMarks</Term>
+               <Value type="EXAMPLE">General Cargo</Value>
+            </Element>
+            <Element>
+               <Term>cac:TransportEquipment</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">CON_TE_2</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:TransportEquipmentTypeCode</Term>
+                  <Value type="EXAMPLE">CN</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:FullnessIndicationCode</Term>
+                  <Value type="EXAMPLE">1</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:ReturnabilityIndicator</Term>
+                  <Value type="EXAMPLE">true</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:RefrigeratedIndicator</Term>
+                  <Value type="EXAMPLE">false</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Description</Term>
+                  <Value type="EXAMPLE">SomeDescription</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:GrossWeightMeasure</Term>
+                  <Value type="EXAMPLE">25000</Value>
+                  <Attribute>
+                     <Term>unitCode</Term>
+                     <Value type="EXAMPLE">KGM</Value>
+                  </Attribute>
+               </Element>
+               <Element>
+                  <Term>cbc:GrossVolumeMeasure</Term>
+                  <Value type="EXAMPLE">39</Value>
+                  <Attribute>
+                     <Term>unitCode</Term>
+                     <Value type="EXAMPLE">MTQ</Value>
+                  </Attribute>
+               </Element>
+               <Element>
+                  <Term>cbc:PowerIndicator</Term>
+                  <Value type="EXAMPLE">false</Value>
+               </Element>
+               <Element>
+                  <Term>cac:MeasurementDimension</Term>
+                  <Element>
+                     <Term>cbc:AttributeID</Term>
+                     <Value type="EXAMPLE">Length</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Measure</Term>
+                     <Value type="EXAMPLE">6.1</Value>
+                     <Attribute>
+                        <Term>unitCode</Term>
+                        <Value type="EXAMPLE">MTR</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:MeasurementDimension</Term>
+                  <Element>
+                     <Term>cbc:AttributeID</Term>
+                     <Value type="EXAMPLE">Height</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Measure</Term>
+                     <Value type="EXAMPLE">2.6</Value>
+                     <Attribute>
+                        <Term>unitCode</Term>
+                        <Value type="EXAMPLE">MTR</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:MeasurementDimension</Term>
+                  <Element>
+                     <Term>cbc:AttributeID</Term>
+                     <Value type="EXAMPLE">Width</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Measure</Term>
+                     <Value type="EXAMPLE">2.44</Value>
+                     <Attribute>
+                        <Term>unitCode</Term>
+                        <Value type="EXAMPLE">MTR</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Package</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">CON_P_2</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Quantity</Term>
+                     <Value type="EXAMPLE">10</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:PackagingTypeCode</Term>
+                     <Value type="EXAMPLE">PL</Value>
+                  </Element>
+                  <Element>
+                     <Term>cac:GoodsItem</Term>
+                     <Element>
+                        <Term>cac:Item</Term>
+                        <Element>
+                           <Term>cac:CommodityClassification</Term>
+                           <Element>
+                              <Term>cbc:CargoTypeCode</Term>
+                              <Value type="EXAMPLE">12</Value>
+                           </Element>
+                        </Element>
+                     </Element>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+   </Document>
+</Structure>
