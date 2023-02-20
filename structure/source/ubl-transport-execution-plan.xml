@@ -123,30 +123,10 @@
 			</cac:DeliveryLocation>
 		</cac:DeliveryTerms>
 		<cac:NotificationRequirement>
-			<cbc:NotificationTypeCode>TIME_SCHEDULE_DEVIATIONS</cbc:NotificationTypeCode>
-			<cac:NotifyParty>
-				<cbc:EndpointID>www.consignee.de/statusnotifications/</cbc:EndpointID>
-				<cac:PartyName>
-					<cbc:Name>Consignee</cbc:Name>
-				</cac:PartyName>
-				<cac:Contact>
-					<cbc:ElectronicMail>someName@consignee.de</cbc:ElectronicMail>
-				</cac:Contact>
-			</cac:NotifyParty>
-			<cac:NotifyParty>
-				<cbc:EndpointID>www.consignor.cn/statusnotifications/</cbc:EndpointID>
-				<cac:PartyName>
-					<cbc:Name>Consignor</cbc:Name>
-				</cac:PartyName>
-				<cac:Contact>
-					<cbc:ElectronicMail>someName@consignor.cn</cbc:ElectronicMail>
-				</cac:Contact>
-			</cac:NotifyParty>
-		</cac:NotificationRequirement>
-		<cac:NotificationRequirement>
 			<cbc:NotificationTypeCode>ITEM_CONDITION_DEVIATIONS</cbc:NotificationTypeCode>
 			<!--A Transportation Status notifying about the item condition deviation (e.g. damaged goods) should 
 			be issued at a maximum of 10 minutes after the deviation is discovered-->
+
 			<cbc:PostEventNotificationDurationMeasure unitCode="MIN">10</cbc:PostEventNotificationDurationMeasure>
 			<cac:NotifyParty>
 				<cbc:EndpointID>www.consignee.com/statusnotifications/</cbc:EndpointID>
