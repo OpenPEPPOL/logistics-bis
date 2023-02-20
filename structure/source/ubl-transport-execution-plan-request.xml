@@ -7,12 +7,8 @@
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1</cbc:ProfileID>
 	<cbc:ID>141278571829041241241</cbc:ID>
 	<cbc:VersionID>1</cbc:VersionID>
-	<cbc:IssueDate>2021-09-29
-		<?Description The date when the transport execuition plan request is issued. Format = "YYYY-MM-DD". ?>
-	</cbc:IssueDate>
-	<cbc:IssueTime>09:49:00
-		<?Description The time when the transport execuition plan request is issued. Format = "hh:mm:ss". ?>
-	</cbc:IssueTime>
+	<cbc:IssueDate>2021-09-29<?Description The date when the transport execuition plan request is issued. Format = "YYYY-MM-DD". ?></cbc:IssueDate>
+	<cbc:IssueTime>09:49:00<?Description The time when the transport execuition plan request is issued. Format = "hh:mm:ss". ?></cbc:IssueTime>
 	<cbc:DocumentStatusCode>1
 		<?Name Transport execuition plan request code ?>
 		<?Description A code signifying the status of the transport execuition plan request. Default is Original (9)?>
@@ -564,18 +560,12 @@
 			<cac:Period>
 				<?Description The period within the pickup event takes place.?>
 				<?Cardinality 1..1?>
-				<cbc:StartDate>2021-09-29
-				<?Description The start date for the pickup event.?>
-				<?Cardinality 1..1?>
-				</cbc:StartDate>
+				<cbc:StartDate>2021-09-29<?Description The start date for the pickup event.?><?Cardinality 1..1?></cbc:StartDate>
 				<cbc:StartTime>08:00:00+01:00
 				<?Description The start time for the pickup event.?>
 				<?Cardinality 0..1?>
 				</cbc:StartTime>
-				<cbc:EndDate>2021-09-29
-				<?Description The end date for the pickup event.?>
-				<?Cardinality 0..1?>
-				</cbc:EndDate>
+				<cbc:EndDate>2021-09-29<?Description The end date for the pickup event.?><?Cardinality 0..1?></cbc:EndDate>
 				<cbc:EndTime>10:00:00+01:00
 				<?Description The end time for the pickup event.?>
 				<?Cardinality 0..1?>
@@ -704,22 +694,10 @@
 			<cac:Period>
 				<?Description The period within the delivery event takes place.?>
 				<?Cardinality 1..1?>
-				<cbc:StartDate>2021-09-29
-				<?Description The start date for the delivery event.?>
-				<?Cardinality 1..1?>
-				</cbc:StartDate>
-				<cbc:StartTime>10:00:00+01:00
-				<?Description The start time for the delivery event.?>
-				<?Cardinality 0..1?>
-				</cbc:StartTime>
-				<cbc:EndDate>2021-09-29
-				<?Description The end date for the delivery event.?>
-				<?Cardinality 0..1?>
-				</cbc:EndDate>
-				<cbc:EndTime>11:00:00+01:00
-				<?Description The end time for the delivery event.?>
-				<?Cardinality 0..1?>
-				</cbc:EndTime>
+				<cbc:StartDate>2021-09-29<?Description The start date for the delivery event.?><?Cardinality 1..1?></cbc:StartDate>
+				<cbc:StartTime>10:00:00+01:00<?Description The start time for the delivery event.?><?Cardinality 0..1?></cbc:StartTime>
+				<cbc:EndDate>2021-09-29<?Description The end date for the delivery event.?><?Cardinality 0..1?></cbc:EndDate>
+				<cbc:EndTime>11:00:00+01:00<?Description The end time for the delivery event.?><?Cardinality 0..1?></cbc:EndTime>
 			</cac:Period>
 		</cac:RequestedDeliveryTransportEvent>
 		<cac:ConsigneeParty>
@@ -841,7 +819,7 @@
 		</cac:ConsignorParty>
 		<cac:FreightForwarderParty>
 			<?Name Freight Forwarder Party ?>
-			<?Description The party combining individual smaller consignments into a single larger shipment (the consolidated shipment), which is sent to a counterpart that mirrors the consolidator's activity by dividing the consolidated consignment into its original components. ?>
+			<?Description The party combining individual smaller consignments into a single larger shipment (the consolidated shipment), which is sent to a counterpart that mirrors the consolidators activity by dividing the consolidated consignment into its original components. ?>
 			<?Cardinality 1..1?>
 			<cbc:EndpointID schemeID="0198">41955619</cbc:EndpointID>
 			<cac:PartyName>
@@ -1150,22 +1128,10 @@
 				<cac:Period>
 					<?Description The period within the departure of this shipment stage takes place. ?>
 					<?Cardinality 1..1?>
-					<cbc:StartDate>2021-09-29
-					<?Description The startdate for the period. ?>
-					<?Cardinality 1..1?>
-					</cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00
-					<?Description The starttime for the period. ?>
-					<?Cardinality 0..1?>
-					</cbc:StartTime>
-					<cbc:EndDate>2021-09-29
-					<?Description Theenddate for the period. ?>
-					<?Cardinality 0..1?>
-					</cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00
-					<?Description The endtime for the period. ?>
-					<?Cardinality 0..1?>
-					</cbc:EndTime>
+					<cbc:StartDate>2021-09-29<?Description The startdate for the period. ?><?Cardinality 1..1?></cbc:StartDate>
+					<cbc:StartTime>15:00:00+01:00<?Description The starttime for the period. ?><?Cardinality 0..1?></cbc:StartTime>
+					<cbc:EndDate>2021-09-29<?Description Theenddate for the period. ?><?Cardinality 0..1?></cbc:EndDate>
+					<cbc:EndTime>16:50:00+01:00<?Description The endtime for the period. ?><?Cardinality 0..1?></cbc:EndTime>
 				</cac:Period>
 			</cac:RequestedDepartureTransportEvent>
 			<cac:RequestedArrivalTransportEvent>
@@ -1371,22 +1337,10 @@
 				<cac:Period>
 					<?Description The period within the departure of this shipment stage takes place. ?>
 					<?Cardinality 1..1?>
-					<cbc:StartDate>2021-09-29
-					<?Description The startdate for the period. ?>
-					<?Cardinality 1..1?>
-					</cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00
-					<?Description The starttime for the period. ?>
-					<?Cardinality 0..1?>
-					</cbc:StartTime>
-					<cbc:EndDate>2021-09-29
-					<?Description Theenddate for the period. ?>
-					<?Cardinality 0..1?>
-					</cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00
-					<?Description The endtime for the period. ?>
-					<?Cardinality 0..1?>
-					</cbc:EndTime>
+					<cbc:StartDate>2021-09-29<?Description The startdate for the period. ?><?Cardinality 1..1?></cbc:StartDate>
+					<cbc:StartTime>15:00:00+01:00<?Description The starttime for the period. ?><?Cardinality 0..1?></cbc:StartTime>
+					<cbc:EndDate>2021-09-29<?Description Theenddate for the period. ?><?Cardinality 0..1?></cbc:EndDate>
+					<cbc:EndTime>16:50:00+01:00<?Description The endtime for the period. ?><?Cardinality 0..1?></cbc:EndTime>
 				</cac:Period>
 			</cac:RequestedDepartureTransportEvent>
 			<cac:RequestedArrivalTransportEvent>
@@ -1500,22 +1454,10 @@
 				<cac:Period>
 					<?Description The period within the arrival of this shipment stage is requested to take place. ?>
 					<?Cardinality 1..1?>
-					<cbc:StartDate>2021-09-29
-					<?Description The startdate for the period. ?>
-					<?Cardinality 1..1?>
-					</cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00
-					<?Description The starttime for the period. ?>
-					<?Cardinality 0..1?>
-					</cbc:StartTime>
-					<cbc:EndDate>2021-09-29
-					<?Description Theenddate for the period. ?>
-					<?Cardinality 0..1?>
-					</cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00
-					<?Description The endtime for the period. ?>
-					<?Cardinality 0..1?>
-					</cbc:EndTime>
+					<cbc:StartDate>2021-09-29<?Description The startdate for the period. ?><?Cardinality 1..1?></cbc:StartDate>
+					<cbc:StartTime>15:00:00+01:00<?Description The starttime for the period. ?><?Cardinality 0..1?></cbc:StartTime>
+					<cbc:EndDate>2021-09-29<?Description Theenddate for the period. ?><?Cardinality 0..1?></cbc:EndDate>
+					<cbc:EndTime>16:50:00+01:00<?Description The endtime for the period. ?><?Cardinality 0..1?></cbc:EndTime>
 				</cac:Period>
 			</cac:RequestedArrivalTransportEvent>
 		</cac:PreCarriageShipmentStage>
