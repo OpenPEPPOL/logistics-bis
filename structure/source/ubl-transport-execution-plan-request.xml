@@ -417,7 +417,7 @@
 		<?Description The net weight of the consignment. Must be equal the sum of the net weight specified for the included transport handling unites if this is specified?>	
 		<?Cardinality 0..1?>
 		</cbc:NetWeightMeasure>
-		<cbc:NetNetWeightMeasure unitCode="KGM">278-50
+		<cbc:NetNetWeightMeasure unitCode="KGM">278.50
 		<?Description The net net weight of the consignment. Must be equal the sum of the net net weight specified for the included transport handling unites if this is specified?>	
 		<?Cardinality 0..1?>
 		</cbc:NetNetWeightMeasure>
@@ -593,17 +593,6 @@
 					<?Description The name of the delivery location. ?>
 					<?Cardinality 0..1?>
 				</cbc:Name>
-				<cac:Address>
-					<?Description The address of the location.?>
-					<?Cardinality 1..1?>
-					<cbc:StreetName>Kystvejen 24</cbc:StreetName>
-					<cbc:CityName>Kastrup</cbc:CityName>
-					<cbc:PostalZone>2770</cbc:PostalZone>
-					<cac:Country>
-						<cbc:IdentificationCode>DK</cbc:IdentificationCode>
-						<cbc:Name>Denmark</cbc:Name>
-					</cac:Country>
-				</cac:Address>
 				<cac:Address>
 					<?Name Address of the location ?>
 					<?Description Location Address. ?>
@@ -1663,7 +1652,155 @@
 					</cbc:EndTime>
 				</cac:Period>
 			</cac:RequestedDepartureTransportEvent>
-			
+
+			<cac:RequestedArrivalTransportEvent>
+				<?Name Estimated Departure Transport Event ?>
+				<?Description The arrival requested by the party requesting a transportation service. ?>
+				<?Cardinality 0..1?>
+				<cbc:IdentificationID>
+					5451568463515745
+					<?Description An identifier for the delivery event within an agreed event identification scheme.?>
+					<?Cardinality 0..1?>
+				</cbc:IdentificationID>
+				<cac:Location>
+					<cbc:ID schemeID="0088">
+						5790000435951
+						<?Name Identity of the delivery location ?>
+						<?Description Identifies the delivery location. ?>
+						<?schemeID-Name Scheme identifier?>
+						<?schemeID-usage Optional?>
+						<?schemeID-CodeList ICD?>
+					</cbc:ID>
+					<cbc:Name>
+						DHL-CPH Airport
+						<?Name Name of the consignee ?>
+						<?Description The name of the consignee. ?>
+						<?Cardinality 0..1?>
+					</cbc:Name>
+					<cac:Address>
+						<?Name The address of arrival location ?>
+						<?Description Location Address. ?>
+						<?Cardinality 0..1?>
+						<cbc:StreetName>
+							Kystvejen 24
+							<?Name Address line 1 ?>
+							<?Cardinality 0..1?>
+							<?Description The main address line in a postal address usually the street name and number. ?>
+						</cbc:StreetName>
+						<cbc:AdditionalStreetName>
+							Purchasing
+							<?Name Address line 2 ?>
+							<?Cardinality 0..1?>
+							<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
+						</cbc:AdditionalStreetName>
+						<cbc:CityName>
+							Kastrup
+							<?Name City ?>
+							<?Cardinality 0..1?>
+							<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+						</cbc:CityName>
+						<cbc:PostalZone>
+							2770
+							<?Name Post code ?>
+							<?Cardinality 0..1?>
+							<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+						</cbc:PostalZone>
+						<cbc:CountrySubentity>
+							Region Hovedstaden
+							<?Name Country subdivision ?>
+							<?Cardinality 0..1?>
+							<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
+						</cbc:CountrySubentity>
+						<cac:AddressLine>
+							<?Name Address line ?>
+							<?Cardinality 0..1?>
+							<cbc:Line>
+								3rd Floor, Room 5
+								<?Name Address line 3 ?>
+								<?Cardinality 0..1?>
+								<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
+							</cbc:Line>
+						</cac:AddressLine>
+						<cac:Country>
+							<?Name Country ?>
+							<?Cardinality 0..1?>
+							<cbc:IdentificationCode>
+								DK
+								<?Name Country code ?>
+								<?Cardinality 0..1?>
+								<?CodeList ISO3166?>
+								<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+							</cbc:IdentificationCode>
+						</cac:Country>
+						<cac:LocationCoordinate>
+							<?Name Location coordinate ?>
+							<?Description To specify the coordinates. ?>
+							<?Cardinality 0..1?>
+							<cbc:CoordinateSystemCode>
+								EPSG:3857
+								<?Name Coordinate system code ?>
+								<?Description Always "EPSG:3857" by definition. ?>
+								<?Cardinality 1..1?>
+							</cbc:CoordinateSystemCode>
+							<cbc:LatitudeDegreesMeasure unitCode="DD">
+								59.331660358041425
+								<?Name Latitude degrees ?>
+								<?Description The X coordinate. Use degrees with decimals. ?>
+								<?Cardinality 1..1?>
+								<?unitCode-Name Latitude degrees unit of measure ?>
+								<?unitCode-Description The unit of measure that applies to the latitude degrees. ?>
+								<?unitCode-usage Mandatory?>
+								<?unitCode-CodeList UNECERec20?>
+							</cbc:LatitudeDegreesMeasure>
+							<cbc:LongitudeDegreesMeasure unitCode="DD">
+								18.063363084988005
+								<?Name Longitude degrees ?>
+								<?Description The Y coordinate. Use degrees with decimals. ?>
+								<?Cardinality 1..1?>
+								<?unitCode-Name Longitude degrees unit of measure ?>
+								<?unitCode-Description The unit of measure that applies to the longitude degrees. ?>
+								<?unitCode-usage Mandatory?>
+								<?unitCode-CodeList UNECERec20?>
+							</cbc:LongitudeDegreesMeasure>
+							<cbc:AltitudeMeasure unitCode="MTR">
+								12.5
+								<?Name Altitude ?>
+								<?Description The Z coordinate. ?>
+								<?Cardinality 0..1?>
+								<?unitCode-Name Altitude unit of measure ?>
+								<?unitCode-Description The unit of measure that applies to altitude. ?>
+								<?unitCode-usage Mandatory?>
+								<?unitCode-CodeList UNECERec20?>
+							</cbc:AltitudeMeasure>
+						</cac:LocationCoordinate>
+					</cac:Address>
+				</cac:Location>
+				<cac:Period>
+					<?Description The period within the arrival of this shipment stage is requested to take place. ?>
+					<?Cardinality 1..1?>
+					<cbc:StartDate>
+						2021-09-29
+						<?Description The startdate for the period. ?>
+						<?Cardinality 1..1?>
+					</cbc:StartDate>
+					<cbc:StartTime>
+						15:00:00+01:00
+						<?Description The starttime for the period. ?>
+						<?Cardinality 0..1?>
+					</cbc:StartTime>
+					<cbc:EndDate>
+						2021-09-29
+						<?Description Theenddate for the period. ?>
+						<?Cardinality 0..1?>
+					</cbc:EndDate>
+					<cbc:EndTime>
+						16:50:00+01:00
+						<?Description The endtime for the period. ?>
+						<?Cardinality 0..1?>
+					</cbc:EndTime>
+				</cac:Period>
+			</cac:RequestedArrivalTransportEvent>
+
 			<cac:EstimatedArrivalTransportEvent>
 				<cbc:IdentificationID>2265431546512,1635431</cbc:IdentificationID>
 				<cac:Location>
@@ -1680,136 +1817,7 @@
 				</cac:Location>
 			</cac:EstimatedArrivalTransportEvent>
 			
-			<cac:RequestedArrivalTransportEvent>
-				<?Name Estimated Departure Transport Event ?>
-				<?Description The arrival requested by the party requesting a transportation service. ?>
-				<?Cardinality 0..1?>
-				<cbc:IdentificationID>5451568463515745
-				<?Description An identifier for the delivery event within an agreed event identification scheme.?>
-				<?Cardinality 0..1?>
-				</cbc:IdentificationID>
-				<cac:Location>					
-					<cbc:ID schemeID="0088">5790000435951
-						<?Name Identity of the delivery location ?>
-						<?Description Identifies the delivery location. ?>
-						<?schemeID-Name Scheme identifier?>
-						<?schemeID-usage Optional?>
-						<?schemeID-CodeList ICD?>
-					</cbc:ID>
-					<cbc:Name>DHL-CPH Airport
-						<?Name Name of the consignee ?>
-						<?Description The name of the consignee. ?>
-						<?Cardinality 0..1?>
-					</cbc:Name>
-					<cac:Address>
-						<?Name The address of arrival location ?>
-						<?Description Location Address. ?>
-						<?Cardinality 0..1?>
-						<cbc:StreetName>Kystvejen 24
-							<?Name Address line 1 ?>
-							<?Cardinality 0..1?>
-							<?Description The main address line in a postal address usually the street name and number. ?>
-						</cbc:StreetName>
-						<cbc:AdditionalStreetName>Purchasing
-							<?Name Address line 2 ?>
-							<?Cardinality 0..1?>
-							<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
-						</cbc:AdditionalStreetName>
-						<cbc:CityName>Kastrup
-							<?Name City ?>
-							<?Cardinality 0..1?>
-							<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
-						</cbc:CityName>
-						<cbc:PostalZone>2770
-							<?Name Post code ?>
-							<?Cardinality 0..1?>
-							<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
-						</cbc:PostalZone>
-						<cbc:CountrySubentity>Region Hovedstaden
-							<?Name Country subdivision ?>
-							<?Cardinality 0..1?>
-							<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
-						</cbc:CountrySubentity>
-						<cac:AddressLine>
-							<?Name Address line ?>
-							<?Cardinality 0..1?>
-							<cbc:Line>3rd Floor, Room 5
-								<?Name Address line 3 ?>
-								<?Cardinality 0..1?>
-								<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
-							</cbc:Line>
-						</cac:AddressLine>
-						<cac:Country>
-							<?Name Country ?>
-							<?Cardinality 0..1?>
-							<cbc:IdentificationCode>DK
-								<?Name Country code ?>
-								<?Cardinality 0..1?>
-								<?CodeList ISO3166?>
-								<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
-							</cbc:IdentificationCode>
-						</cac:Country>
-						<cac:LocationCoordinate>
-							<?Name Location coordinate ?>
-							<?Description To specify the coordinates. ?>
-							<?Cardinality 0..1?>
-							<cbc:CoordinateSystemCode>EPSG:3857
-								<?Name Coordinate system code ?>
-								<?Description Always "EPSG:3857" by definition. ?>
-								<?Cardinality 1..1?>
-							</cbc:CoordinateSystemCode>
-							<cbc:LatitudeDegreesMeasure unitCode="DD">59.331660358041425
-								<?Name Latitude degrees ?>
-								<?Description The X coordinate. Use degrees with decimals. ?>
-								<?Cardinality 1..1?>
-								<?unitCode-Name Latitude degrees unit of measure ?>
-								<?unitCode-Description The unit of measure that applies to the latitude degrees. ?>
-								<?unitCode-usage Mandatory?>
-								<?unitCode-CodeList UNECERec20?>
-							</cbc:LatitudeDegreesMeasure>
-							<cbc:LongitudeDegreesMeasure unitCode="DD">18.063363084988005
-								<?Name Longitude degrees ?>
-								<?Description The Y coordinate. Use degrees with decimals. ?>
-								<?Cardinality 1..1?>
-								<?unitCode-Name Longitude degrees unit of measure ?>
-								<?unitCode-Description The unit of measure that applies to the longitude degrees. ?>
-								<?unitCode-usage Mandatory?>
-								<?unitCode-CodeList UNECERec20?>
-							</cbc:LongitudeDegreesMeasure>
-							<cbc:AltitudeMeasure unitCode="MTR">12.5
-								<?Name Altitude ?>
-								<?Description The Z coordinate. ?>
-								<?Cardinality 0..1?>
-								<?unitCode-Name Altitude unit of measure ?>
-								<?unitCode-Description The unit of measure that applies to altitude. ?>
-								<?unitCode-usage Mandatory?>
-								<?unitCode-CodeList UNECERec20?>
-							</cbc:AltitudeMeasure>
-						</cac:LocationCoordinate>
-					</cac:Address>				
-				</cac:Location>				
-				<cac:Period>
-					<?Description The period within the arrival of this shipment stage is requested to take place. ?>
-					<?Cardinality 1..1?>
-					<cbc:StartDate>2021-09-29
-					<?Description The startdate for the period. ?>
-					<?Cardinality 1..1?>
-					</cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00
-					<?Description The starttime for the period. ?>
-					<?Cardinality 0..1?>
-					</cbc:StartTime>
-					<cbc:EndDate>2021-09-29
-					<?Description Theenddate for the period. ?>
-					<?Cardinality 0..1?>
-					</cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00
-					<?Description The endtime for the period. ?>
-					<?Cardinality 0..1?>
-					</cbc:EndTime>
-				</cac:Period>
-			</cac:RequestedArrivalTransportEvent>						
-		</cac:OnCarriageShipmentStage>
+	</cac:OnCarriageShipmentStage>
 		<cac:TransportHandlingUnit>
 			<?Rule PEPPOL-T120-R017?>
 			<?Name Transport handling unit ?>
