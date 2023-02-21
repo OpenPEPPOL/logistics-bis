@@ -88,22 +88,22 @@
 				<?Cardinality 1..1?>
 			</cbc:RegistrationName>
 			<cbc:CompanyID schemeID="0089">SC234567
-					<?Name Sender parties legal registration name ?>
-					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
-					<?Cardinality 0..1?>
-					<?schemeID-Name Scheme identifier ?>
-					<?schemeID-Description The identification scheme identifier of the sender partys legal registration identifier ?>
-					<?schemeID-Usage optional?>
-					<?schemeID-CodeList ICD?>
-				</cbc:CompanyID>
+				<?Name Sender parties legal registration name ?>
+				<?Description The official name of the party as registered with the relevant fiscal authority. ?>
+				<?Cardinality 0..1?>
+				<?schemeID-Name Scheme identifier ?>
+				<?schemeID-Description The identification scheme identifier of the sender partys legal registration identifier ?>
+				<?schemeID-Usage optional?>
+				<?schemeID-CodeList ICD?>
+			</cbc:CompanyID>
 			<cac:RegistrationAddress>
 				<?Name Legal address ?>
 				<?Cardinality 0..1?>
 				<cbc:CityName>Farthing
-						<?Name City name ?>
-						<?Description The name of the city. ?>
-						<?Cardinality 0..1?>
-					</cbc:CityName>
+					<?Name City name ?>
+					<?Description The name of the city. ?>
+					<?Cardinality 0..1?>
+				</cbc:CityName>
 				<cac:Country>
 					<?Name Country ?>
 					<?Description The residens country for the sender party. ?>
@@ -1050,8 +1050,9 @@
 				<?CodeList UNECERec19?>
 			</cbc:TransportModeCode>
 			<cbc:HazardousRiskIndicator>false
-			<?Description A code signifying the method of transport used for this shipment stage. ?>
-			<?Cardinality 1..1?>
+				<?Name Hazardous risk indicator ?>
+				<?Description An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+				<?Cardinality 1..1?>
 			</cbc:HazardousRiskIndicator>
 			<cac:CarrierParty>
 				<?Description The carrier party responsible for this shipment stage. ?>
@@ -1168,28 +1169,29 @@
 				</cac:MaritimeTransport>
 			</cac:TransportMeans>
 			<cac:RequestedDepartureTransportEvent>
-				<?Name Estimated Departure Transport Event ?>
+				<?Name Requested departure transport event ?>
 				<?Description The departure requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
 				<cbc:IdentificationID>6522956526554654
-				<?Description An identifier for this departure transport event within an agreed event identification scheme. ?>
-				<?Cardinality 0..1?>
+					<?Description An identifier for this departure transport event within an agreed event identification scheme. ?>
+					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
 				<cac:Location>
+					<?Name Shipment departure location ?>
 					<?Description The location where the departure of this shipment stage takes place. ?>
 					<?Cardinality 1..1?>
 					<cbc:ID schemeID="0088">5790000435951
-					<?Name Identity of the delivery location ?>
-					<?Description Identifies the delivery location. ?>
-					<?schemeID-Name Scheme identifier?>
-					<?schemeID-usage Optional?>
-					<?schemeID-CodeList ICD?>
-				</cbc:ID>
+						<?Name Identity of the delivery location ?>
+						<?Description Identifies the delivery location. ?>
+						<?schemeID-Name Scheme identifier?>
+						<?schemeID-usage Optional?>
+						<?schemeID-CodeList ICD?>
+					</cbc:ID>
 					<cbc:Name>Name
-					<?Name Name of the consignee ?>
-					<?Description The name of the consignee. ?>
-					<?Cardinality 0..1?>
-				</cbc:Name>
+						<?Name Name of the consignee ?>
+						<?Description The name of the consignee. ?>
+						<?Cardinality 0..1?>
+					</cbc:Name>
 					<cac:Address>
 						<?Name The adress of the loaction ?>
 						<?Description Postal Address. ?>
@@ -1394,12 +1396,12 @@
 				</cac:PartyLegalEntity>
 			</cac:CarrierParty>
 			<cac:RequestedDepartureTransportEvent>
-				<?Name Requested Departure Transport Event ?>
+				<?Name Requested departure transport event ?>
 				<?Description The departure requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
 				<cbc:IdentificationID>5451568463515745
-				<?Description An identifier for the delivery event within an agreed event identification scheme.?>
-				<?Cardinality 0..1?>
+					<?Description An identifier for the delivery event within an agreed event identification scheme.?>
+					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
 				<cac:Location>					
 					<cbc:ID schemeID="0088">5790000435951
@@ -1631,6 +1633,7 @@
 		
 
 		<cac:OnCarriageShipmentStage>
+			<?Name On carriage shipment stage ?>
 			<?Description A shipment stage during on-carriage (usually refers to movement activity that takes place after the container is discharged at a port of discharge). ?>
 			<?Cardinality 0..n?>
 			<cbc:TransportModeCode>3
@@ -1640,33 +1643,49 @@
 				<?CodeList UNECERec19?>
 			</cbc:TransportModeCode>						
 			<cbc:HazardousRiskIndicator>false
-				<?Description A code signifying the method of transport used for this shipment stage. ?>
+				<?Name Hazardous risk indicator ?>
+				<?Description An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 				<?Cardinality 1..1?>
 			</cbc:HazardousRiskIndicator>
-						
 			<cac:CarrierParty>
 				<?Name Carrier Party ?>
 				<?Description The party providing the transport of goods in this consignment between named points. ?>
 				<?Cardinality 0..1?>
 				<cbc:EndpointID schemeID="0212">2717767-4
+					<?Name Carrier party electronic address ?>
+					<?Description The endpoint for the carrier party. ?>
+					<?Cardinality 1..1?>
+					<?schemeID-Name Scheme identifier?>
+					<?schemeID-Description Scheme identifier for electronic address?>
 					<?schemeID-usage Mandatory?>
 					<?schemeID-CodeList eas?>
-					<?Cardinality 1..1?>
 				</cbc:EndpointID>
 				<cac:PartyName>
-					<?Name Party Name ?>
-					<?Description The name of the carrier Party. ?>
+					<?Name Party name ?>
 					<?Cardinality 0..1?>
-					<cbc:Name>DHL Express Finland</cbc:Name>
+					<cbc:Name>DHL Express Finland
+						<?Name Carrier party name?>
+						<?Description The name of the carrier party. ?>
+					</cbc:Name>
 				</cac:PartyName>
 				<cac:PostalAddress>
 					<?Name Postal address ?>
-					<?Description The postal address of the carrier?>
+					<?Description The postal address of the carrier party.?>
 					<?Cardinality 0..1?>
-					<cbc:StreetName>Tullimiehentie 10</cbc:StreetName>
-					<cbc:CityName>Vantaa</cbc:CityName>
-					<cbc:PostalZone>01530</cbc:PostalZone>
+					<cbc:StreetName>Tullimiehentie 10
+						<?Name Address line 1 ?>
+						<?Description The main address line in a postal address usually the street name and number. ?>
+					</cbc:StreetName>
+					<cbc:CityName>Vantaa	
+						<?Name City ?>
+						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+					</cbc:CityName>
+					<cbc:PostalZone>01530
+						<?Name Post code ?>
+						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+					</cbc:PostalZone>
 					<cac:Country>
+						<?Name Country ?>
 						<cbc:IdentificationCode>FI
 							<?Name Country code ?>
 							<?Cardinality 0..1?>
@@ -1676,12 +1695,15 @@
 					</cac:Country>
 				</cac:PostalAddress>
 				<cac:PartyLegalEntity>
+					<?Name Party name ?>
 					<?Cardinality 0..1?>
 					<cbc:RegistrationName>DHL Express
-					<?Cardinality 1..1?>
+						<?Name Carrier party name?>
+						<?Description The name of the carrier party. ?>
+						<?Cardinality 1..1?>
 					</cbc:RegistrationName>
-						<cbc:CompanyID schemeID="0198">10154596
-						<?Name sender parties legal registration name ?>
+					<cbc:CompanyID schemeID="0198">10154596
+						<?Name Carrier parties legal registration name ?>
 						<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 						<?Cardinality 0..1?>
 						<?schemeID-Name Scheme identifier ?>
