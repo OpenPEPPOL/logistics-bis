@@ -17,23 +17,30 @@
 	<!-- base config -->
 	<configuration>
 		<identifier>peppolbis-T120-base-1.1</identifier>
-		<title>Logistics Advanced Despach Advice 1.0 (T120)</title>
+		<title>Advanced Despach Advice 1.0 (T120)</title>
 		<inherit>ubl-despatchadvice-2.1</inherit>
 		<file source="sch/PEPPOLBIS-T120.sch" path="xsl/PEPPOLBIS-T120.xsl"/>
 	</configuration>
 
 	<configuration>
 		<identifier>peppolbis-T121-base-1.1</identifier>
-		<title>Logistics Despach Advice Response 1.0 (T121)</title>
+		<title>Despach Advice Response 1.0 (T121)</title>
 		<inherit>ubl-applicationresponse-2.1</inherit>
 		<file source="sch/PEPPOLBIS-T121.sch" path="xsl/PEPPOLBIS-T121.xsl"/>
 	</configuration>
 	
 	<configuration>
 		<identifier>peppolbis-T122-base-1.1</identifier>
-		<title>Logistics Weight Statement (T122)</title>
+		<title>Weight Statement (T122)</title>
 		<inherit>ubl-weightstatement-2.3</inherit>
 		<file source="sch/PEPPOLBIS-T122.sch" path="xsl/PEPPOLBIS-T122.xsl"/>
+	</configuration>
+
+	<configuration>
+		<identifier>peppolbis-T125-base-1.0</identifier>
+		<title>Waybill (T122)</title>
+		<inherit>ubl-waybill-2.3</inherit>
+		<file source="sch/PEPPOLBIS-T125.sch" path="xsl/PEPPOLBIS-T125.xsl"/>
 	</configuration>
 
 	<!-- profile config -->
@@ -67,5 +74,13 @@
 		<profileId>urn:fdc:peppol.eu:logistics:bis:weight_statement:1</profileId>
 		<customizationId>urn:fdc:peppol.eu:logistics:trns:weight_statement:1</customizationId>
 		<inherit>peppolbis-T122-base-1.1</inherit>
+	</configuration>
+
+	<configuration>
+		<identifier>peppolbis-125</identifier>
+		<title>Waybill</title>
+		<profileId>urn:fdc:peppol.eu:logistics:bis:waybill:1</profileId>
+		<customizationId>urn:fdc:peppol.eu:logistics:trns:waybill:1</customizationId>
+		<inherit>peppolbis-T125-base-1.0</inherit>
 	</configuration>
 </buildConfigurations>

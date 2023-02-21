@@ -3,18 +3,19 @@
         xmlns:xi="http://www.w3.org/2001/XInclude"
         schemaVersion="iso" queryBinding="xslt2">
 
-    <title>Rules for PEPPOL Catalogue transaction 3.0</title>
-    
-    <ns uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" prefix="cbc"/>
+    <title>Rules for Transport Execution Plan</title>
+
+	<ns uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" prefix="cbc"/>
     <ns uri="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" prefix="cac"/>
-    <ns uri="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2" prefix="ubl"/>
+    <ns uri="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2" prefix="ubl"/>
     <ns uri="http://www.w3.org/2001/XMLSchema" prefix="xs"/>
     <ns uri="utils" prefix="u"/>
+    
+    <xsl:key name="k_lineId"  match="cac:LineItem" use="cbc:ID"/>
     
     <!-- Functions -->
 
     <xi:include href="parts/function/gln.xml"/>
-    <xi:include href="parts/function/slack.xml"/>
     <xi:include href="parts/function/mod11.xml"/>
 	<xi:include href="parts/function/checkCodiceIPA.xml"/>
 	<xi:include href="parts/function/addPIVA.xml"/>
@@ -28,7 +29,7 @@
 
     <include href="parts/common/empty-elements.sch"/>
     <include href="parts/common/rules.sch"/>
-    <include href="../../target/generated/T19-basic.sch"/>
-    <include href="parts/PEPPOL-M-T19.sch"/>
+    <include href="../../target/generated/T124-basic.sch"/>
+    <include href="parts/PEPPOL-M-T124.sch"/>    
 
 </schema>
