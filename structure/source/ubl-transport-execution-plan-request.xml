@@ -4,7 +4,7 @@
 	<?Property key="sch:prefix" PEPPOL-T123?>
 	<?Property key="sch:identifier" T123-basic?>
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan_request:1</cbc:CustomizationID>
-	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1</cbc:ProfileID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan Request. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1"?></cbc:ProfileID>
 	<cbc:ID>141278571829041241241</cbc:ID>
 	<cbc:VersionID>1</cbc:VersionID>
 	<cbc:IssueDate>2021-09-29<?Description The date when the transport execuition plan request is issued. Format = "YYYY-MM-DD". ?></cbc:IssueDate>
@@ -405,7 +405,9 @@
 	<cac:Consignment>
 		<?Name Consignment information ?>
 		<?Cardinality 1..1?>
-		<cbc:ID>12535157654567654</cbc:ID>
+		<cbc:ID>12535157654567654
+		<?Name Consignment identifier ?>
+		</cbc:ID>
 		<cbc:TotalInvoiceAmount currencyID="EUR">5000
 			<?Description The total value of the consignment.?>
 			<?Cardinality 0..1?>
@@ -976,7 +978,7 @@
 					<?Description Description of a truck or a vehicle transporting the goods. Use only if Transport mode code is set to road transport?>
 					<?Cardinality 0..1?>
 					<cbc:LicensePlateID>DF10958
-												<?Name License plate identifier transport ?>
+						<?Name License plate identifier transport ?>
 						<?Description The licence plate(s) identifying the vehicle seperated by semicolon if there are more than one?>
 						<?Cardinality 1..1?>
 					</cbc:LicensePlateID>
@@ -986,12 +988,12 @@
 					<?Description Equipment used for rail transport in this shipment stage.?>
 					<?Cardinality 0..1?>
 					<cbc:TrainID>12014
-												<?Name Train identifier ?>
+						<?Name Train identifier ?>
 						<?Description An identifier for the train used as the means of transport.?>
 						<?Cardinality 1..1?>
 					</cbc:TrainID>
 					<cbc:RailCarID>50 63 20-33 801-5
-												<?Name Rail car identifier ?>
+						<?Name Rail car identifier ?>
 						<?Description An identifier for the rail car on the train used as the means of transport..?>
 						<?Cardinality 0..1?>
 					</cbc:RailCarID>
@@ -1001,7 +1003,7 @@
 					<?Description Description of a truck or a vehicle transporting the goods. Use only if TransportModeCode is set to maritime transport. ?>
 					<?Cardinality 0..1?>
 					<cbc:VesselID>wrt34663
-												<?Name Vessel identifier ?>
+						<?Name Vessel identifier ?>
 						<?Description The registred identifier of the vessel?>
 						<?Cardinality 1..1?>
 					</cbc:VesselID>
@@ -1083,12 +1085,12 @@
 							<?Description To specify the coordinates. ?>
 							<?Cardinality 0..1?>
 							<cbc:CoordinateSystemCode>EPSG:3857
-														<?Name Coordinate system code ?>
+							<?Name Coordinate system code ?>
 							<?Description Always "EPSG:3857" by definition. ?>
 							<?Cardinality 1..1?>
 						</cbc:CoordinateSystemCode>
 							<cbc:LatitudeDegreesMeasure unitCode="DD">59.331660358041425
-														<?Name Latitude degrees ?>
+							<?Name Latitude degrees ?>
 							<?Description The X coordinate. Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
 							<?unitCode-Name Latitude degrees unit of measure ?>
@@ -1097,7 +1099,7 @@
 							<?unitCode-CodeList UNECERec20?>
 						</cbc:LatitudeDegreesMeasure>
 							<cbc:LongitudeDegreesMeasure unitCode="DD">18.063363084988005
-														<?Name Longitude degrees ?>
+							<?Name Longitude degrees ?>
 							<?Description The Y coordinate. Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
 							<?unitCode-Name Longitude degrees unit of measure ?>
@@ -1106,7 +1108,7 @@
 							<?unitCode-CodeList UNECERec20?>
 						</cbc:LongitudeDegreesMeasure>
 							<cbc:AltitudeMeasure unitCode="MTR">12.5
-														<?Name Altitude ?>
+							<?Name Altitude ?>
 							<?Description The Z coordinate. ?>
 							<?Cardinality 0..1?>
 							<?unitCode-Name Altitude unit of measure ?>
@@ -1292,12 +1294,12 @@
 							<?Description To specify the coordinates. ?>
 							<?Cardinality 0..1?>
 							<cbc:CoordinateSystemCode>EPSG:3857
-															<?Name Coordinate system code ?>
+								<?Name Coordinate system code ?>
 								<?Description Always "EPSG:3857" by definition. ?>
 								<?Cardinality 1..1?>
 							</cbc:CoordinateSystemCode>
 							<cbc:LatitudeDegreesMeasure unitCode="DD">59.331660358041425
-															<?Name Latitude degrees ?>
+								<?Name Latitude degrees ?>
 								<?Description The X coordinate. Use degrees with decimals. ?>
 								<?Cardinality 1..1?>
 								<?unitCode-Name Latitude degrees unit of measure ?>
@@ -1306,7 +1308,7 @@
 								<?unitCode-CodeList UNECERec20?>
 							</cbc:LatitudeDegreesMeasure>
 							<cbc:LongitudeDegreesMeasure unitCode="DD">18.063363084988005
-															<?Name Longitude degrees ?>
+								<?Name Longitude degrees ?>
 								<?Description The Y coordinate. Use degrees with decimals. ?>
 								<?Cardinality 1..1?>
 								<?unitCode-Name Longitude degrees unit of measure ?>
@@ -1798,34 +1800,34 @@
 			<?Description Used to specify how the goods is packed. ?>
 			<?Cardinality 0..n?>
 			<cbc:ID>11111222222222
-								<?Name Identifier transport handling unit ?>
+				<?Name Identifier transport handling unit ?>
 				<?Description The SSCC identification code of this Transport Handling Unit. ?>
 				<?Cardinality 1..1?>
 				<?schemeID-usage Optional?>
 			</cbc:ID>
 			<cbc:TransportHandlingUnitTypeCode>AG
-								<?Name Handling unit type code ?>
+				<?Name Handling unit type code ?>
 				<?Description Type of Transport Handling Unit. Use UN/ECE Recommendation 21 with addition of the codes used by "Retursystem Byggpall". ?>
 				<?CodeList UNECERec21?>
 				<?Cardinality 1..1?>
 			</cbc:TransportHandlingUnitTypeCode>
 			<cbc:HandlingCode>CCC
-								<?Name Handling Code ?>
+				<?Name Handling Code ?>
 				<?Description The handling for this transporthandling unit expressed as a code ?>
 				<?Cardinality 0..1?>
 			</cbc:HandlingCode>
 			<cbc:HandlingInstructions>To be set vertical
-								<?Name Handling instructions ?>
+				<?Name Handling instructions ?>
 				<?Description The handling for this transporthandling unit expressed as a text ?>
 				<?Cardinality 0..1?>
 			</cbc:HandlingInstructions>
 			<cbc:HazardousRiskIndicator>false
-								<?Name Handling unit hazardous indicator ?>
+				<?Name Handling unit hazardous indicator ?>
 				<?Description An indicator that the materials contained in this transport handling unit are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 				<?Cardinality 0..1?>
 			</cbc:HazardousRiskIndicator>
 			<cbc:ShippingMarks>Keep dry
-								<?Name Shipping marks ?>
+				<?Name Shipping marks ?>
 				<?Description Free-form description of the marks and numbers on this transport handling unit. ?>
 				<?Cardinality 0..1?>
 			</cbc:ShippingMarks>
@@ -1834,34 +1836,34 @@
 				<?Description Used to specify Transport Equipment details associated with this Transport Handling Unit. ?>
 				<?Cardinality 0..n?>
 				<cbc:ID>34563444
-										<?Name Identifier transport equipment ?>
+					<?Name Identifier transport equipment ?>
 					<?Description An id for the physical transport equipment e.g. a container number. ?>
 					<?Cardinality 1..1?>
 				</cbc:ID>
 				<cbc:TransportEquipmentTypeCode>CN
-										<?Name Tranport equipment type code ?>
+					<?Name Tranport equipment type code ?>
 					<?Description An code specifying the type of equipment. ?>
 					<?CodeList UNCL8053?>
 					<?Cardinality 0..1?>
 				</cbc:TransportEquipmentTypeCode>
 				<cbc:SizeTypeCode>10
-										<?Name Size type code ?>
+					<?Name Size type code ?>
 					<?Description A code signifying the size and type of this piece of piece of transport equipment. When the piece of transport equipment is a shipping container, it is recommended to use ContainerSizeTypeCode for validation. ?>
 					<?CodeList TRED8155?>
 					<?Cardinality 0..1?>
 				</cbc:SizeTypeCode>
 				<cbc:RefrigerationOnIndicator>true
-										<?Name Indicator refrigeration transport equipment ?>
+					<?Name Indicator refrigeration transport equipment ?>
 					<?Description An indicator that this piece of transport equipment's refrigeration is on (true) or off (false). ?>
 					<?Cardinality 0..1?>
 				</cbc:RefrigerationOnIndicator>
 				<cbc:Description>A 20 foot refrigerated container that is not actively controlling temperature of the product.
-										<?Name Description transport equipment ?>
+					<?Name Description transport equipment ?>
 					<?Description A textual description of the transport equipment. ?>
 					<?Cardinality 0..1?>
 				</cbc:Description>
 				<cbc:PowerIndicator>true
-										<?Name Power indicator transport equipment ?>
+					<?Name Power indicator transport equipment ?>
 					<?Description An indicator that this piece of transport equipment can supply power (true) or not (false). ?>
 					<?Cardinality 0..1?>
 				</cbc:PowerIndicator>
@@ -1871,7 +1873,7 @@
 				<?Description Used to specify any measurement of the Transport Handling Unit. ?>
 				<?Cardinality 0..n?>
 				<cbc:AttributeID>LN
-										<?Name Attribute identifier ?>
+					<?Name Attribute identifier ?>
 					<?CodeList UNCL6313-T120?>
 					<?Description To describe the type of measurement. Use UNCL 6313 subset. ?>
 					<?Cardinality 1..1?>
@@ -1889,13 +1891,13 @@
 				<?Description Used to specify the minimal temperature for the transport handling unit under the transport. ?>
 				<?Cardinality 0..1?>
 				<cbc:AttributeID>TC
-										<?Name Attribute identifier ?>
+					<?Name Attribute identifier ?>
 					<?CodeList UNCL6313-T120?>
 					<?Description To describe the type of messure that in this context is the minimal temperature. ?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
 				<cbc:Measure unitCode="CEL">-21
-										<?Name Measure ?>
+					<?Name Measure ?>
 					<?Description The value of the minimal temperature measurement. ?>
 					<?Cardinality 1..1?>
 					<?unitCode-Name Measure unit of measure ?>
@@ -1906,13 +1908,13 @@
 				<?Description Used to specify the maximum temperature for the transport handling unit under the transport. ?>
 				<?Cardinality 0..1?>
 				<cbc:AttributeID>TC
-										<?Name Attribute identifier ?>
+					<?Name Attribute identifier ?>
 					<?CodeList UNCL6313-T120?>
 					<?Description To describe the type of messure that in this context is the maximal temperature. ?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
 				<cbc:Measure unitCode="CEL">-21
-										<?Name Measure ?>
+					<?Name Measure ?>
 					<?Description The value of the maximum temperature measurement. ?>
 					<?Cardinality 1..1?>
 					<?unitCode-Name Measure unit of measure ?>
@@ -1941,14 +1943,14 @@
 					<?currencyID-CodeList ISO4217?>
 				</cbc:DeclaredStatisticsValueAmount>
 				<cbc:Quantity unitCode="EA">6
-										<?Name Quantity ?>
+					<?Name Quantity ?>
 					<?Description The number of units making up this goods item. ?>
 					<?Cardinality 1..1?>
 					<?unitCode-Name Quantity unit of measure ?>
 					<?unitCode-Description The unit of measure that applies to the quantity.?>
 				</cbc:Quantity>
 				<cbc:TraceID schemeID="sgtin">345699634527
-										<?Name Trace identifier ?>
+					<?Name Trace identifier ?>
 					<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier?>
@@ -1960,24 +1962,24 @@
 				<?Description A package contained in the Transport Handling Unit.?>
 				<?Cardinality 0..n?>
 				<cbc:ID>3453
-										<?Name Package identifier ?>
+					<?Name Package identifier ?>
 					<?Description The Id of the package for instance a SSCC.?>
 					<?Cardinality 0..1?>
 					<?schemeID-usage Optional?>
 				</cbc:ID>
 				<cbc:ReturnableMaterialIndicator>true
-										<?Name Returnable material indicator ?>
+					<?Name Returnable material indicator ?>
 					<?Description An indicator that the packaging material is returnable (true) or not (false). ?>
 					<?Cardinality 0..1?>
 				</cbc:ReturnableMaterialIndicator>
 				<cbc:PackagingTypeCode>CT
-										<?Name Packaging type code ?>
+					<?Name Packaging type code ?>
 					<?Description A code signifying a level of packaging. ?>
 					<?CodeList UNECERec21?>
 					<?Cardinality 1..1?>
 				</cbc:PackagingTypeCode>
 				<cbc:PackingMaterial>Carbon box
-										<?Name Packing material ?>
+					<?Name Packing material ?>
 					<?Description Text describing the packaging material. ?>
 					<?Cardinality 0..1?>
 				</cbc:PackingMaterial>
@@ -1986,24 +1988,24 @@
 					<?Description A package contained in the Transport Handling Unit.?>
 					<?Cardinality 0..n?>
 					<cbc:ID>3453
-												<?Name Identifier contained package ?>
+						<?Name Identifier contained package ?>
 						<?Description The Id of the package for instance a SSCC.?>
 						<?Cardinality 0..1?>
 						<?schemeID-usage Optional?>
 					</cbc:ID>
 					<cbc:ReturnableMaterialIndicator>true
-												<?Name Returnable material indicator ?>
+						<?Name Returnable material indicator ?>
 						<?Description An indicator that the packaging material is returnable (true) or not (false). ?>
 						<?Cardinality 0..1?>
 					</cbc:ReturnableMaterialIndicator>
 					<cbc:PackagingTypeCode>OB
-												<?Name Packaging type code ?>
+						<?Name Packaging type code ?>
 						<?Description A code signifying a level of packaging. ?>
 						<?CodeList UNECERec21?>
 						<?Cardinality 1..1?>
 					</cbc:PackagingTypeCode>
 					<cbc:PackingMaterial>Wood
-												<?Name Packing material ?>
+						<?Name Packing material ?>
 						<?Description Text describing the packaging material. ?>
 						<?Cardinality 0..1?>
 					</cbc:PackingMaterial>
@@ -2012,24 +2014,24 @@
 						<?Description A package contained in the Transport Handling Unit.?>
 						<?Cardinality 0..n?>
 						<cbc:ID>3453
-														<?Name Identifier contained package ?>
+							<?Name Identifier contained package ?>
 							<?Description The Id of the package for instance a SSCC.?>
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
 						</cbc:ID>
 						<cbc:ReturnableMaterialIndicator>true
-														<?Name Returnable material indicator ?>
+							<?Name Returnable material indicator ?>
 							<?Description An indicator that the packaging material is returnable (true) or not (false). ?>
 							<?Cardinality 0..1?>
 						</cbc:ReturnableMaterialIndicator>
 						<cbc:PackagingTypeCode>OB
-														<?Name Packaging type code ?>
+							<?Name Packaging type code ?>
 							<?Description A code signifying a level of packaging. ?>
 							<?CodeList UNECERec21?>
 							<?Cardinality 1..1?>
 						</cbc:PackagingTypeCode>
 						<cbc:PackingMaterial>Wood
-														<?Name Packing material ?>
+							<?Name Packing material ?>
 							<?Description Text describing the packaging material. ?>
 							<?Cardinality 0..1?>
 						</cbc:PackingMaterial>
@@ -2048,7 +2050,7 @@
 								<?Cardinality 0..1?>
 							</cbc:HazardousRiskIndicator>
 							<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
-																<?Name Declared statistics value amount ?>
+								<?Name Declared statistics value amount ?>
 								<?Description The total declared value for customs purposes of the goods item. ?>
 								<?Cardinality 0..1?>
 								<?currencyID-Name Currency identifier ?>
@@ -2195,7 +2197,7 @@
 						<?Cardinality 1..1?>
 					</cbc:AttributeID>
 					<cbc:Measure unitCode="MTR">123
-												<?Name Measure ?>
+						<?Name Measure ?>
 						<?Description For the measure.?>
 						<?Cardinality 1..1?>
 						<?unitCode-CodeList UNECERec20?>
