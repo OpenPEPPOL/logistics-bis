@@ -32,7 +32,7 @@
 			<?Cardinality 0..1?>
 			<cbc:Name>Leman
 				<?Name Sender party name?>
-				<?Description The name of the Sender Party. ?>
+				<?Description The name of the sender party. ?>
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
@@ -63,7 +63,7 @@
 		</cac:PostalAddress>
 		<cac:PartyTaxScheme>
 			<?Name Party tax scheme ?>
-			<?Description The tax information about the sender Party. ?>
+			<?Description The tax information about the sender party. ?>
 			<?Cardinality 0..1?>
 			<cbc:CompanyID>GB325456788
 					<?Name Company ID ?>
@@ -83,10 +83,10 @@
 		<cac:PartyLegalEntity>
 			<?Name Party name ?>
 			<cbc:RegistrationName>Consortial
-					<?Name Sender party name?>
-					<?Description The name of the sender party. ?>
-					<?Cardinality 1..1?>
-				</cbc:RegistrationName>
+				<?Name Sender party name?>
+				<?Description The name of the sender party. ?>
+				<?Cardinality 1..1?>
+			</cbc:RegistrationName>
 			<cbc:CompanyID schemeID="0089">SC234567
 					<?Name Sender parties legal registration name ?>
 					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
@@ -143,26 +143,40 @@
 		<?Description The party receiving the transport execution plan request. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0198">10154596
-			<?Description The Endpoint id for the Receiver Party. ?>
+			<?Name Receiver party electronic address ?>
+			<?Description The endpoint id for the receiver party. ?>
 			<?Cardinality 1..1?>
+			<?schemeID-Name Scheme identifier?>
+			<?schemeID-Description Scheme identifier for electronic address?>
 			<?schemeID-usage Mandatory?>
 			<?schemeID-CodeList eas?>
 		</cbc:EndpointID>
 		<cac:PartyName>
-			<?Name Party Name ?>
-			<?Description The name of the Receiver Party. ?>
+			<?Name Party name ?>
 			<?Cardinality 0..1?>
 			<cbc:Name>DHL Express
-				<?Name Name ?>
+				<?Name Receiver party name ?>
+				<?Description The name of the receiver party. ?>
 				<?Cardinality 1..1?>
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
 			<?Name Postal address ?>
-			<cbc:StreetName>Jydekrogen 14</cbc:StreetName>
-			<cbc:CityName>Vallensbæk Landsby</cbc:CityName>
-			<cbc:PostalZone>2625</cbc:PostalZone>
+			<?Description Postal address for the receiver party. ?>
+			<cbc:StreetName>Jydekrogen 14
+				<?Name Address line 1 ?>
+				<?Description The main address line in a postal address usually the street name and number. ?>
+			</cbc:StreetName>
+			<cbc:CityName>Vallensbæk Landsby
+				<?Name City ?>
+				<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+			</cbc:CityName>
+			<cbc:PostalZone>2625
+				<?Name Post code ?>
+				<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+			</cbc:PostalZone>
 			<cac:Country>
+				<?Name Country ?>
 				<cbc:IdentificationCode>DK
 					<?Name Country code ?>
 					<?Cardinality 0..1?>
@@ -173,7 +187,7 @@
 		</cac:PostalAddress>
 		<cac:PartyTaxScheme>
 			<?Name Party tax scheme ?>
-			<?Description The tax information about the sender Party. ?>
+			<?Description The tax information about the receiver party. ?>
 			<?Cardinality 0..1?>
 			<cbc:CompanyID>GB325456788
 					<?Name Company ID ?>
@@ -191,11 +205,14 @@
 			</cac:TaxScheme>
 		</cac:PartyTaxScheme>
 		<cac:PartyLegalEntity>
+			<?Name Party name ?>
 			<cbc:RegistrationName>Consortial
-					<?Cardinality 1..1?>
-				</cbc:RegistrationName>
+				<?Name Receiver party name?>
+				<?Description The name of the receiver party. ?>
+				<?Cardinality 1..1?>
+			</cbc:RegistrationName>
 			<cbc:CompanyID schemeID="0089">SC234567
-					<?Name receiver parties legal registration name ?>
+					<?Name Receiver parties legal registration name ?>
 					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier ?>
@@ -234,7 +251,7 @@
 					<?Cardinality 0..1?>
 				</cbc:Name>
 			<cbc:Telephone>0158 1233714
-					<?Name Contact email telephone ?>
+					<?Name Contact telephone number ?>
 					<?Description The phone number of the contact. ?>
 					<?Cardinality 0..1?>
 				</cbc:Telephone>
