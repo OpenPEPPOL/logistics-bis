@@ -917,6 +917,7 @@
             </Element>
             <Element cardinality="1..1">
                <Term>cac:Period</Term>
+               <Name>Period </Name>
                <Description>The period within the pickup event takes place.</Description>
                <Element cardinality="1..1">
                   <Term>cbc:StartDate</Term>
@@ -1081,6 +1082,7 @@
             </Element>
             <Element cardinality="1..1">
                <Term>cac:Period</Term>
+               <Name>Period </Name>
                <Description>The period within the delivery event takes place.</Description>
                <Element cardinality="1..1">
                   <Term>cbc:StartDate</Term>
@@ -1735,6 +1737,7 @@
                </Element>
                <Element cardinality="1..1">
                   <Term>cac:Period</Term>
+                  <Name>Period </Name>
                   <Description>The period within the departure of this shipment stage takes place. </Description>
                   <Element cardinality="1..1">
                      <Term>cbc:StartDate</Term>
@@ -1764,37 +1767,59 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:RequestedArrivalTransportEvent</Term>
-               <Name>Estimated Departure Transport Event </Name>
-               <Description>The departure requested by the party requesting a transportation service. </Description>
+               <Name>Estimated arrival transport event </Name>
+               <Description>The arrival requested by the party requesting a transportation service. </Description>
                <Element>
                   <Term>cbc:IdentificationID</Term>
                   <Value type="EXAMPLE">54354684732168476514</Value>
                </Element>
                <Element cardinality="1..1">
                   <Term>cac:Location</Term>
-                  <Description>The location where the pickup takes place.</Description>
+                  <Name>Arrival location </Name>
+                  <Description>The location where the arrival takes place.</Description>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Name>Identity of the delivery location </Name>
+                     <Description>Identifies the delivery location. </Description>
+                     <Value type="EXAMPLE">5790000435951</Value>
+                     <Attribute usage="Optional">
+                        <Term>schemeID</Term>
+                        <Name>Scheme identifier</Name>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0088</Value>
+                     </Attribute>
+                  </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:Name</Term>
+                     <Name>Name of arrival location </Name>
                      <Description>The name of the location.</Description>
                      <Value type="EXAMPLE">Finnair Cargo terminal</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cac:Address</Term>
-                     <Description>The address associated with of the location.</Description>
+                     <Name>Address of the arrival location </Name>
+                     <Description>The address of the arrival location.</Description>
                      <Element>
                         <Term>cbc:StreetName</Term>
+                        <Name>Address line 1 </Name>
+                        <Description>The main address line in a postal address usually the street name and number. </Description>
                         <Value type="EXAMPLE">Turbiinitie 4</Value>
                      </Element>
                      <Element>
                         <Term>cbc:CityName</Term>
+                        <Name>City </Name>
+                        <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
                         <Value type="EXAMPLE">Vantaa</Value>
                      </Element>
                      <Element>
                         <Term>cbc:PostalZone</Term>
+                        <Name>Post code </Name>
+                        <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
                         <Value type="EXAMPLE">01530</Value>
                      </Element>
                      <Element>
                         <Term>cac:Country</Term>
+                        <Name>Country </Name>
                         <Element cardinality="0..1">
                            <Term>cbc:IdentificationCode</Term>
                            <Name>Country code </Name>
@@ -2051,6 +2076,7 @@
                </Element>
                <Element cardinality="1..1">
                   <Term>cac:Period</Term>
+                  <Name>Period </Name>
                   <Description>The period within the departure of this shipment stage takes place. </Description>
                   <Element cardinality="1..1">
                      <Term>cbc:StartDate</Term>
@@ -2080,7 +2106,7 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:RequestedArrivalTransportEvent</Term>
-               <Name>Estimated Departure Transport Event </Name>
+               <Name>Estimated arrival transport event </Name>
                <Description>The arrival requested by the party requesting a transportation service. </Description>
                <Element cardinality="0..1">
                   <Term>cbc:IdentificationID</Term>
@@ -2089,6 +2115,8 @@
                </Element>
                <Element>
                   <Term>cac:Location</Term>
+                  <Name>Arrival location </Name>
+                  <Description>The location where the arrival takes place.</Description>
                   <Element>
                      <Term>cbc:ID</Term>
                      <Name>Identity of the delivery location </Name>
@@ -2216,6 +2244,7 @@
                </Element>
                <Element cardinality="1..1">
                   <Term>cac:Period</Term>
+                  <Name>Period </Name>
                   <Description>The period within the arrival of this shipment stage is requested to take place. </Description>
                   <Element cardinality="1..1">
                      <Term>cbc:StartDate</Term>
@@ -2506,6 +2535,7 @@
                </Element>
                <Element cardinality="1..1">
                   <Term>cac:Period</Term>
+                  <Name>Period </Name>
                   <Description>The period within the departure of this shipment stage takes place. </Description>
                   <Element cardinality="1..1">
                      <Term>cbc:StartDate</Term>
@@ -2671,6 +2701,7 @@
                </Element>
                <Element cardinality="1..1">
                   <Term>cac:Period</Term>
+                  <Name>Period </Name>
                   <Description>The period within the arrival of this shipment stage is requested to take place. </Description>
                   <Element cardinality="1..1">
                      <Term>cbc:StartDate</Term>
