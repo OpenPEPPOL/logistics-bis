@@ -519,13 +519,17 @@
       </Element>
 	     <Element cardinality="1..1">
          <Term>cac:TransportServiceProviderParty</Term>
-         <Name>transport user Party </Name>
+         <Name>Transport service provider party </Name>
          <Description>The party providing the transport services referenced in the Transport Execution Plan Request. </Description>
          <Element cardinality="0..1">
             <Term>cbc:EndpointID</Term>
+            <Name>Transport service provider party electronic address </Name>
+            <Description>The endpoint for the transport service provider party. </Description>
             <Value type="EXAMPLE">41955619</Value>
             <Attribute usage="Mandatory">
                <Term>schemeID</Term>
+               <Name>Scheme identifier</Name>
+               <Description>Scheme identifier for electronic address</Description>
                <Reference type="CODE_LIST">eas</Reference>
                <Value type="EXAMPLE">0198</Value>
             </Attribute>
@@ -533,29 +537,38 @@
          <Element cardinality="0..1">
             <Term>cac:PartyName</Term>
             <Name>Party Name </Name>
-            <Description>The name of the transport service provider Party. </Description>
             <Element>
                <Term>cbc:Name</Term>
+               <Name>Transport service provider party name</Name>
+               <Description>The name of the transport service provider party. </Description>
                <Value type="EXAMPLE">Leman</Value>
             </Element>
          </Element>
          <Element>
             <Term>cac:PostalAddress</Term>
             <Name>Postal address </Name>
+            <Description>Postal address for the sender party. </Description>
             <Element>
                <Term>cbc:StreetName</Term>
+               <Name>Address line 1 </Name>
+               <Description>The main address line in a postal address usually the street name and number. </Description>
                <Value type="EXAMPLE">Ventrupvej 6</Value>
             </Element>
             <Element>
                <Term>cbc:CityName</Term>
+               <Name>City </Name>
+               <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
                <Value type="EXAMPLE">Greve</Value>
             </Element>
             <Element>
                <Term>cbc:PostalZone</Term>
+               <Name>Post code </Name>
+               <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
                <Value type="EXAMPLE">2670</Value>
             </Element>
             <Element>
                <Term>cac:Country</Term>
+               <Name>Country </Name>
                <Element cardinality="0..1">
                   <Term>cbc:IdentificationCode</Term>
                   <Name>Country code </Name>
@@ -563,20 +576,16 @@
                   <Reference type="CODE_LIST">ISO3166</Reference>
                   <Value type="EXAMPLE">DK</Value>
                </Element>
-               <Element>
-                  <Term>cbc:Name</Term>
-                  <Value type="EXAMPLE">Denmark</Value>
-               </Element>
             </Element>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:PartyTaxScheme</Term>
             <Name>Party tax scheme </Name>
-            <Description>The tax information about the service provider party. </Description>
+            <Description>The tax information about the transport service provider party. </Description>
             <Element cardinality="1..1">
                <Term>cbc:CompanyID</Term>
                <Name>Company ID </Name>
-               <Description>The transport service provider Party Value Added Tax identifer. </Description>
+               <Description>The Transport Service Provider Party Value Added Tax identifer. </Description>
                <Value type="EXAMPLE">GB325456788</Value>
             </Element>
             <Element cardinality="1..1">
@@ -592,13 +601,16 @@
          </Element>
          <Element>
             <Term>cac:PartyLegalEntity</Term>
+            <Name>Party name </Name>
             <Element cardinality="1..1">
                <Term>cbc:RegistrationName</Term>
+               <Name>Transport service provider party name</Name>
+               <Description>The name of the transport service provider party. </Description>
                <Value type="EXAMPLE">Consortial</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cbc:CompanyID</Term>
-               <Name>sender parties legal registration name </Name>
+               <Name>Transport service provider parties legal registration name </Name>
                <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
                <Value type="EXAMPLE">SC234567</Value>
                <Attribute>
@@ -644,7 +656,7 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cbc:Telephone</Term>
-               <Name>Contact email telephone </Name>
+               <Name>Contact telephone number </Name>
                <Description>The phone number of the contact. </Description>
                <Value type="EXAMPLE">0158 1233714</Value>
             </Element>
