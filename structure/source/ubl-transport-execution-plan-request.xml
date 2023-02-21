@@ -682,16 +682,10 @@
 			<cac:Period>
 				<?Description The period within the pickup event takes place.?>
 				<?Cardinality 1..1?>
-				<cbc:StartDate>2021-09-29<?Description The start date for the pickup event.?><?Cardinality 1..1?></cbc:StartDate>
-				<cbc:StartTime>08:00:00+01:00
-				<?Description The start time for the pickup event.?>
-				<?Cardinality 0..1?>
-				</cbc:StartTime>
-				<cbc:EndDate>2021-09-29<?Description The end date for the pickup event.?><?Cardinality 0..1?></cbc:EndDate>
-				<cbc:EndTime>10:00:00+01:00
-				<?Description The end time for the pickup event.?>
-				<?Cardinality 0..1?>
-				</cbc:EndTime>
+				<cbc:StartDate>2021-09-29<?Name Period start date?><?Description The start date for the pickup event.?><?Cardinality 1..1?></cbc:StartDate>
+				<cbc:StartTime>08:00:00+01:00<?Name Period start time?><?Description The start time for the pickup event.?><?Cardinality 0..1?></cbc:StartTime>
+				<cbc:EndDate>2021-09-29<?Name Period end date?><?Description The end date for the pickup event.?><?Cardinality 0..1?></cbc:EndDate>
+				<cbc:EndTime>10:00:00+01:00<?Name Period end time?><?Description The end time for the pickup event.?><?Cardinality 0..1?></cbc:EndTime>
 			</cac:Period>
 		</cac:RequestedPickupTransportEvent>
 		<cac:RequestedDeliveryTransportEvent>
@@ -805,10 +799,10 @@
 			<cac:Period>
 				<?Description The period within the delivery event takes place.?>
 				<?Cardinality 1..1?>
-				<cbc:StartDate>2021-09-29<?Description The start date for the delivery event.?><?Cardinality 1..1?></cbc:StartDate>
-				<cbc:StartTime>10:00:00+01:00<?Description The start time for the delivery event.?><?Cardinality 0..1?></cbc:StartTime>
-				<cbc:EndDate>2021-09-29<?Description The end date for the delivery event.?><?Cardinality 0..1?></cbc:EndDate>
-				<cbc:EndTime>11:00:00+01:00<?Description The end time for the delivery event.?><?Cardinality 0..1?></cbc:EndTime>
+				<cbc:StartDate>2021-09-29<?Name Period start date?><?Description The start date for the delivery event.?><?Cardinality 1..1?></cbc:StartDate>
+				<cbc:StartTime>10:00:00+01:00<?Name Period start time?><?Description The start time for the delivery event.?><?Cardinality 0..1?></cbc:StartTime>
+				<cbc:EndDate>2021-09-29<?Name Period end date?><?Description The end date for the delivery event.?><?Cardinality 0..1?></cbc:EndDate>
+				<cbc:EndTime>11:00:00+01:00<?Name Period end time?><?Description The end time for the delivery event.?><?Cardinality 0..1?></cbc:EndTime>
 			</cac:Period>
 		</cac:RequestedDeliveryTransportEvent>
 		<cac:ConsigneeParty>
@@ -830,10 +824,20 @@
 				<?Name Postal address ?>
 				<?Description The postal address of the Consignee?>
 				<?Cardinality 0..1?>
-				<cbc:StreetName>Topeliuksenkatu 5</cbc:StreetName>
-				<cbc:CityName>Helsinki</cbc:CityName>
-				<cbc:PostalZone>00260</cbc:PostalZone>
+				<cbc:StreetName>Topeliuksenkatu 5
+					<?Name Address line 1 ?>
+					<?Description The main address line in a postal address usually the street name and number. ?>
+				</cbc:StreetName>
+				<cbc:CityName>Helsinki
+					<?Name City ?>
+					<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+				</cbc:CityName>
+				<cbc:PostalZone>00260
+					<?Name Post code ?>
+					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+				</cbc:PostalZone>
 				<cac:Country>
+					<?Name Country ?>
 					<cbc:IdentificationCode>FI
 						<?Name Country code ?>
 						<?Cardinality 0..1?>
@@ -1282,10 +1286,10 @@
 				<cac:Period>
 					<?Description The period within the departure of this shipment stage takes place. ?>
 					<?Cardinality 1..1?>
-					<cbc:StartDate>2021-09-29<?Description The startdate for the period. ?><?Cardinality 1..1?></cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00<?Description The starttime for the period. ?><?Cardinality 0..1?></cbc:StartTime>
-					<cbc:EndDate>2021-09-29<?Description Theenddate for the period. ?><?Cardinality 0..1?></cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00<?Description The endtime for the period. ?><?Cardinality 0..1?></cbc:EndTime>
+					<cbc:StartDate>2021-09-29<?Name Period start date?><?Description The start date for the period. ?><?Cardinality 1..1?></cbc:StartDate>
+					<cbc:StartTime>15:00:00+01:00<?Name Period start time?><?Description The start time for the period. ?><?Cardinality 0..1?></cbc:StartTime>
+					<cbc:EndDate>2021-09-29<?Name Period end date?><?Description The end date for the period. ?><?Cardinality 0..1?></cbc:EndDate>
+					<cbc:EndTime>16:50:00+01:00<?Name Period end time?><?Description The end time for the period. ?><?Cardinality 0..1?></cbc:EndTime>
 				</cac:Period>
 			</cac:RequestedDepartureTransportEvent>
 			<cac:RequestedArrivalTransportEvent>
@@ -1506,10 +1510,10 @@
 				<cac:Period>
 					<?Description The period within the departure of this shipment stage takes place. ?>
 					<?Cardinality 1..1?>
-					<cbc:StartDate>2021-09-29<?Description The startdate for the period. ?><?Cardinality 1..1?></cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00<?Description The starttime for the period. ?><?Cardinality 0..1?></cbc:StartTime>
-					<cbc:EndDate>2021-09-29<?Description Theenddate for the period. ?><?Cardinality 0..1?></cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00<?Description The endtime for the period. ?><?Cardinality 0..1?></cbc:EndTime>
+					<cbc:StartDate>2021-09-29<?Name Period start date?><?Description The start date for the period. ?><?Cardinality 1..1?></cbc:StartDate>
+					<cbc:StartTime>15:00:00+01:00<?Name Period start time?><?Description The start time for the period. ?><?Cardinality 0..1?></cbc:StartTime>
+					<cbc:EndDate>2021-09-29<?Name Period end date?><?Description The end date for the period. ?><?Cardinality 0..1?></cbc:EndDate>
+					<cbc:EndTime>16:50:00+01:00<?Name Period end time?><?Description The end time for the period. ?><?Cardinality 0..1?></cbc:EndTime>
 				</cac:Period>
 			</cac:RequestedDepartureTransportEvent>
 			<cac:RequestedArrivalTransportEvent>
@@ -1623,10 +1627,10 @@
 				<cac:Period>
 					<?Description The period within the arrival of this shipment stage is requested to take place. ?>
 					<?Cardinality 1..1?>
-					<cbc:StartDate>2021-09-29<?Description The startdate for the period. ?><?Cardinality 1..1?></cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00<?Description The starttime for the period. ?><?Cardinality 0..1?></cbc:StartTime>
-					<cbc:EndDate>2021-09-29<?Description Theenddate for the period. ?><?Cardinality 0..1?></cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00<?Description The endtime for the period. ?><?Cardinality 0..1?></cbc:EndTime>
+					<cbc:StartDate>2021-09-29<?Name Period start date?><?Description The start date for the period. ?><?Cardinality 1..1?></cbc:StartDate>
+					<cbc:StartTime>15:00:00+01:00<?Name Period start time?><?Description The start time for the period. ?><?Cardinality 0..1?></cbc:StartTime>
+					<cbc:EndDate>2021-09-29<?Name Period end date?><?Description The end date for the period. ?><?Cardinality 0..1?></cbc:EndDate>
+					<cbc:EndTime>16:50:00+01:00<?Name Period end time?><?Description The end time for the period. ?><?Cardinality 0..1?></cbc:EndTime>
 				</cac:Period>
 			</cac:RequestedArrivalTransportEvent>
 		</cac:PreCarriageShipmentStage>
@@ -1844,10 +1848,10 @@
 				<cac:Period>
 					<?Description The period within the departure of this shipment stage takes place. ?>
 					<?Cardinality 1..1?>
-					<cbc:StartDate>2021-09-29<?Description The startdate for the period. ?><?Cardinality 1..1?></cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00<?Description The starttime for the period. ?><?Cardinality 0..1?></cbc:StartTime>
-					<cbc:EndDate>2021-09-29<?Description Theenddate for the period. ?><?Cardinality 0..1?></cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00<?Description The endtime for the period. ?><?Cardinality 0..1?></cbc:EndTime>
+					<cbc:StartDate>2021-09-29<?Name Period start date?><?Description The start date for the period. ?><?Cardinality 1..1?></cbc:StartDate>
+					<cbc:StartTime>15:00:00+01:00<?Name Period start time?><?Description The start time for the period. ?><?Cardinality 0..1?></cbc:StartTime>
+					<cbc:EndDate>2021-09-29<?Name Period end date?><?Description The end date for the period. ?><?Cardinality 0..1?></cbc:EndDate>
+					<cbc:EndTime>16:50:00+01:00<?Name Period end time?><?Description The end time for the period. ?><?Cardinality 0..1?></cbc:EndTime>
 				</cac:Period>
 			</cac:RequestedDepartureTransportEvent>
 
@@ -1975,10 +1979,10 @@
 				<cac:Period>
 					<?Description The period within the arrival of this shipment stage is requested to take place. ?>
 					<?Cardinality 1..1?>
-					<cbc:StartDate>2021-09-29<?Description The startdate for the period. ?><?Cardinality 1..1?></cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00<?Description The starttime for the period. ?><?Cardinality 0..1?></cbc:StartTime>
-					<cbc:EndDate>2021-09-29<?Description Theenddate for the period. ?><?Cardinality 0..1?></cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00<?Description The endtime for the period. ?><?Cardinality 0..1?></cbc:EndTime>
+					<cbc:StartDate>2021-09-29<?Name Period start date?><?Description The start date for the period. ?><?Cardinality 1..1?></cbc:StartDate>
+					<cbc:StartTime>15:00:00+01:00<?Name Period start time?><?Description The start time for the period. ?><?Cardinality 0..1?></cbc:StartTime>
+					<cbc:EndDate>2021-09-29<?Name Period end date?><?Description The end date for the period. ?><?Cardinality 0..1?></cbc:EndDate>
+					<cbc:EndTime>16:50:00+01:00<?Name Period end time?><?Description The end time for the period. ?><?Cardinality 0..1?></cbc:EndTime>
 				</cac:Period>
 			</cac:RequestedArrivalTransportEvent>
 
@@ -1987,17 +1991,26 @@
 				<cac:Location>
 					<cbc:Name>HUS Hospital</cbc:Name>
 					<cac:Address>
-						<cbc:StreetName>Topeliuksenkatu 5</cbc:StreetName>
-						<cbc:CityName>Helsinki</cbc:CityName>
-						<cbc:PostalZone>00260</cbc:PostalZone>
+						<cbc:StreetName>Topeliuksenkatu 5
+							<?Name Address line 1 ?>
+							<?Description The main address line in a postal address usually the street name and number. ?>
+						</cbc:StreetName>
+						<cbc:CityName>Helsinki
+							<?Name City ?>
+							<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+						</cbc:CityName>
+						<cbc:PostalZone>00260
+							<?Name Post code ?>
+							<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+						</cbc:PostalZone>
 						<cac:Country>
+							<?Name Country ?>
 							<cbc:IdentificationCode>FI
 								<?Name Country code ?>
 								<?Cardinality 0..1?>
 								<?CodeList ISO3166?>
 								<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 							</cbc:IdentificationCode>
-							<cbc:Name>Finland</cbc:Name>
 						</cac:Country>
 					</cac:Address>
 				</cac:Location>
