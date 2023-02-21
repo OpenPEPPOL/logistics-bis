@@ -135,7 +135,7 @@
 					<?Name Contact email address ?>
 					<?Description The electronic mail of the contact. ?>
 					<?Cardinality 0..1?>
-				</cbc:ElectronicMail>
+			</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:SenderParty>
 	<cac:ReceiverParty>
@@ -386,60 +386,79 @@
 		</cac:Contact>
 	</cac:TransportUserParty>
 	<cac:TransportServiceProviderParty>
-		<?Name transport user Party ?>
+		<?Name Transport service provider party ?>
 		<?Description The party providing the transport services referenced in the Transport Execution Plan Request. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0198">41955619
+			<?Name Transport service provider party electronic address ?>
+			<?Description The endpoint for the transport service provider party. ?>
 			<?Cardinality 0..1?>
+			<?schemeID-Name Scheme identifier?>
+			<?schemeID-Description Scheme identifier for electronic address?>
 			<?schemeID-usage Mandatory?>
 			<?schemeID-CodeList eas?>
 		</cbc:EndpointID>
 		<cac:PartyName>
-			<cbc:Name>Leman</cbc:Name>
 			<?Name Party Name ?>
-			<?Description The name of the transport service provider Party. ?>
 			<?Cardinality 0..1?>
+			<cbc:Name>Leman
+				<?Name Transport service provider party name?>
+				<?Description The name of the transport service provider party. ?>
+			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
 			<?Name Postal address ?>
-			<cbc:StreetName>Ventrupvej 6</cbc:StreetName>
-			<cbc:CityName>Greve</cbc:CityName>
-			<cbc:PostalZone>2670</cbc:PostalZone>
+			<?Description Postal address for the sender party. ?>
+			<cbc:StreetName>Ventrupvej 6
+				<?Name Address line 1 ?>
+				<?Description The main address line in a postal address usually the street name and number. ?>
+			</cbc:StreetName>
+			<cbc:CityName>Greve
+				<?Name City ?>
+				<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+			</cbc:CityName>
+			<cbc:PostalZone>2670
+				<?Name Post code ?>
+				<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+			</cbc:PostalZone>
 			<cac:Country>
+				<?Name Country ?>
 				<cbc:IdentificationCode>DK
 					<?Name Country code ?>
 					<?Cardinality 0..1?>
 					<?CodeList ISO3166?>
 					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 				</cbc:IdentificationCode>
-				<cbc:Name>Denmark</cbc:Name>
 			</cac:Country>
 		</cac:PostalAddress>
 		<cac:PartyTaxScheme>
 			<?Name Party tax scheme ?>
-			<?Description The tax information about the service provider party. ?>
+			<?Description The tax information about the transport service provider party. ?>
 			<?Cardinality 0..1?>
 			<cbc:CompanyID>GB325456788
 					<?Name Company ID ?>
-					<?Description The transport service provider Party Value Added Tax identifer. ?>
+					<?Description The Transport Service Provider Party Value Added Tax identifer. ?>
 					<?Cardinality 1..1?>
 				</cbc:CompanyID>
 			<cac:TaxScheme>
 				<?Name Tax scheme ?>
 				<?Cardinality 1..1?>
 				<cbc:ID>VAT
-				<?Name Tax scheme identifier ?>
-				<?Description Tax scheme identifier. E.g. "VAT" or "GST". ?>
-				<?Cardinality 1..1?>
+					<?Name Tax scheme identifier ?>
+					<?Description Tax scheme identifier. E.g. "VAT" or "GST". ?>
+					<?Cardinality 1..1?>
 				</cbc:ID>
 			</cac:TaxScheme>
 		</cac:PartyTaxScheme>
 		<cac:PartyLegalEntity>
+			<?Name Party name ?>
 			<cbc:RegistrationName>Consortial
-					<?Cardinality 1..1?>
-				</cbc:RegistrationName>
+				<?Name Transport service provider party name?>
+				<?Description The name of the transport service provider party. ?>
+				<?Cardinality 1..1?>
+			</cbc:RegistrationName>
 			<cbc:CompanyID schemeID="0089">SC234567
-					<?Name sender parties legal registration name ?>
+					<?Name Transport service provider parties legal registration name ?>
 					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier ?>
@@ -478,7 +497,7 @@
 				<?Cardinality 0..1?>
 			</cbc:Name>
 			<cbc:Telephone>0158 1233714
-				<?Name Contact email telephone ?>
+				<?Name Contact telephone number ?>
 				<?Description The phone number of the contact. ?>
 				<?Cardinality 0..1?>
 			</cbc:Telephone>
