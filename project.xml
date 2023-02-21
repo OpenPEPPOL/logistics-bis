@@ -26,13 +26,17 @@
 		<Type>Structure-1</Type>
 		<Path>structure/syntax/ubl-despatch-advice-response.xml</Path>
 		<Title>Despatch Advice Response 1.1 (T121)</Title>
-</Resource>
+    </Resource>
 	<Resource>
 		<Type>Structure-1</Type>
 		<Path>structure/syntax/ubl-weight-statement.xml</Path>
 		<Title>Weight Statement 1.1 (T122)</Title>
 	</Resource>
-
+	<Resource>
+		<Type>Structure-1</Type>
+		<Path>structure/syntax/ubl-receipt-advice.xml</Path>
+		<Title>Receipt Advice 1.0 (T128)</Title>
+	</Resource>
   
     <!-- Rules -->
     <Resource>
@@ -58,6 +62,12 @@
 		<Type>native:Schematron</Type>
 		<Path>rules/sch/parts/PEPPOL-M-T122.sch</Path>
 		<Title>Business rules for Weight Statement transaction 1.1</Title>
+	</Resource>
+	<Resource>
+		<Identifier>T128</Identifier>
+		<Type>native:Schematron</Type>
+		<Path>rules/sch/parts/PEPPOL-M-T128.sch</Path>
+		<Title>Business rules for Receipt Advice 1.0</Title>
 	</Resource>
   
     <!-- Code lists -->
@@ -210,4 +220,8 @@
         <Type>Namespace-1</Type>
         <Path>structure/namespace/ubl-cbc.xml</Path>
     </Resource>
+	<Resource>
+		<Type>Namespace-1</Type>
+		<Path>structure/namespace/ubl-receipt-advice.xml</Path>
+	</Resource>
 </Project>
