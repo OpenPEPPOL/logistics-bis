@@ -678,6 +678,7 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:TotalInvoiceAmount</Term>
+            <Name>Total invoice amount </Name>
             <Description>The total value of the consignment.</Description>
             <Value type="EXAMPLE">5000</Value>
             <Attribute>
@@ -690,6 +691,7 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:GrossWeightMeasure</Term>
+            <Name>Consignment gross weight </Name>
             <Description>The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified</Description>
             <Value type="EXAMPLE">1030</Value>
             <Attribute>
@@ -699,6 +701,7 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:NetWeightMeasure</Term>
+            <Name>Consignment net weight </Name>
             <Description>The net weight of the consignment. Must be equal the sum of the net weight specified for the included transport handling unites if this is specified</Description>
             <Value type="EXAMPLE">280</Value>
             <Attribute>
@@ -708,6 +711,7 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:NetNetWeightMeasure</Term>
+            <Name>Consignment net net weight </Name>
             <Description>The net net weight of the consignment. Must be equal the sum of the net net weight specified for the included transport handling unites if this is specified</Description>
             <Value type="EXAMPLE">278.50</Value>
             <Attribute>
@@ -717,6 +721,7 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:GrossVolumeMeasure</Term>
+            <Name>Consignment gross volume </Name>
             <Description>The gross volumen of the consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified</Description>
             <Value type="EXAMPLE">20</Value>
             <Attribute>
@@ -726,6 +731,7 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:NetVolumeMeasure</Term>
+            <Name>Consignment net volume </Name>
             <Description>The total net volume of all goods items referred to as one consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified</Description>
             <Value type="EXAMPLE">19</Value>
             <Attribute>
@@ -735,6 +741,7 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:LoadingLengthMeasure</Term>
+            <Name>Loading length measure </Name>
             <Description>The total length in a means of transport or a piece of transport equipment which, given the width and height of the transport means, will accommodate all of the consignments in a single consolidation.</Description>
             <Value type="EXAMPLE">0.4</Value>
             <Attribute>
@@ -750,6 +757,7 @@
          </Element>
          <Element>
             <Term>cbc:TotalTransportHandlingUnitQuantity</Term>
+            <Name>Total number of transport handling units </Name>
             <Value type="EXAMPLE">1</Value>
             <Attribute>
                <Term>unitCode</Term>
@@ -771,6 +779,7 @@
          </Element>
          <Element cardinality="1..1">
             <Term>cac:RequestedPickupTransportEvent</Term>
+            <Name>Requested pickup transport event </Name>
             <Description>The pickup of this consignment requested by the party requesting a transportation service (the transport user).</Description>
             <Element cardinality="0..1">
                <Term>cbc:IdentificationID</Term>
@@ -779,6 +788,7 @@
             </Element>
             <Element cardinality="1..1">
                <Term>cac:Location</Term>
+               <Name>Pickup location </Name>
                <Description>The location where the pickup takes place.</Description>
                <Element>
                   <Term>cbc:ID</Term>
@@ -1414,7 +1424,9 @@
             <Description>The shipment stage during main carriage. </Description>
             <Element cardinality="1..1">
                <Term>cbc:TransportModeCode</Term>
+               <Name>Transport mode code</Name>
                <Description>A code signifying the method of transport used for this shipment stage. </Description>
+               <Reference type="CODE_LIST">UNECERec19</Reference>
                <Value type="EXAMPLE">4</Value>
             </Element>
             <Element cardinality="1..1">
@@ -1779,7 +1791,9 @@
             <Description>A shipment stage during precarriage (usually refers to movement activity that takes place prior to the container being loaded at a port of loading). </Description>
             <Element cardinality="1..1">
                <Term>cbc:TransportModeCode</Term>
+               <Name>Transport mode code</Name>
                <Description>A code signifying the method of transport used for this shipment stage. </Description>
+               <Reference type="CODE_LIST">UNECERec19</Reference>
                <Value type="EXAMPLE">4</Value>
             </Element>
             <Element cardinality="0..1">
@@ -2206,7 +2220,9 @@
             <Description>A shipment stage during on-carriage (usually refers to movement activity that takes place after the container is discharged at a port of discharge). </Description>
             <Element cardinality="1..1">
                <Term>cbc:TransportModeCode</Term>
+               <Name>Transport mode code</Name>
                <Description>A code signifying the method of transport used for this shipment stage. </Description>
+               <Reference type="CODE_LIST">UNECERec19</Reference>
                <Value type="EXAMPLE">3</Value>
             </Element>
             <Element cardinality="1..1">
