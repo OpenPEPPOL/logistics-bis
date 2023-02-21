@@ -23,7 +23,7 @@
 	     <Element>
          <Term>cbc:ProfileID</Term>
          <Name>Business process type identifier</Name>
-         <Description>Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan Request. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1"</Description>
+         <Description>Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan Request. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1".</Description>
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir16-001</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1</Value>
@@ -89,7 +89,8 @@
          </Element>
          <Element cardinality="1..1">
             <Term>cac:PostalAddress</Term>
-            <Description>The postal addess for the Sender Party. </Description>
+            <Name>Postal address </Name>
+            <Description>Postal address for the sender party. </Description>
             <Element>
                <Term>cbc:StreetName</Term>
                <Value type="EXAMPLE">Ventrupvej 6</Value>
@@ -104,8 +105,11 @@
             </Element>
             <Element>
                <Term>cac:Country</Term>
-               <Element>
+               <Element cardinality="0..1">
                   <Term>cbc:IdentificationCode</Term>
+                  <Name>Country code </Name>
+                  <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                  <Reference type="CODE_LIST">ISO3166</Reference>
                   <Value type="EXAMPLE">DK</Value>
                </Element>
             </Element>
@@ -161,12 +165,13 @@
                </Element>
                <Element cardinality="1..1">
                   <Term>cac:Country</Term>
-                  <Name>Contry </Name>
+                  <Name>Country </Name>
                   <Description>The residens country for the sender party. </Description>
-                  <Element>
+                  <Element cardinality="0..1">
                      <Term>cbc:IdentificationCode</Term>
                      <Name>Country code </Name>
-                     <Description>Country Code </Description>
+                     <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                     <Reference type="CODE_LIST">ISO3166</Reference>
                      <Value type="EXAMPLE">UK</Value>
                   </Element>
                </Element>
@@ -222,6 +227,7 @@
          </Element>
          <Element>
             <Term>cac:PostalAddress</Term>
+            <Name>Postal address </Name>
             <Element>
                <Term>cbc:StreetName</Term>
                <Value type="EXAMPLE">Jydekrogen 14</Value>
@@ -236,8 +242,11 @@
             </Element>
             <Element>
                <Term>cac:Country</Term>
-               <Element>
+               <Element cardinality="0..1">
                   <Term>cbc:IdentificationCode</Term>
+                  <Name>Country code </Name>
+                  <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                  <Reference type="CODE_LIST">ISO3166</Reference>
                   <Value type="EXAMPLE">DK</Value>
                </Element>
             </Element>
@@ -293,12 +302,13 @@
                </Element>
                <Element cardinality="1..1">
                   <Term>cac:Country</Term>
-                  <Name>Contry </Name>
+                  <Name>Country </Name>
                   <Description>The residens country for the receiver party. </Description>
-                  <Element>
+                  <Element cardinality="0..1">
                      <Term>cbc:IdentificationCode</Term>
                      <Name>Country code </Name>
-                     <Description>Country Code </Description>
+                     <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                     <Reference type="CODE_LIST">ISO3166</Reference>
                      <Value type="EXAMPLE">UK</Value>
                   </Element>
                </Element>
@@ -352,6 +362,7 @@
          </Element>
          <Element>
             <Term>cac:PostalAddress</Term>
+            <Name>Postal address </Name>
             <Element>
                <Term>cbc:StreetName</Term>
                <Value type="EXAMPLE">Københavnsvej 216</Value>
@@ -366,8 +377,11 @@
             </Element>
             <Element>
                <Term>cac:Country</Term>
-               <Element>
+               <Element cardinality="0..1">
                   <Term>cbc:IdentificationCode</Term>
+                  <Name>Country code </Name>
+                  <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                  <Reference type="CODE_LIST">ISO3166</Reference>
                   <Value type="EXAMPLE">DK</Value>
                </Element>
             </Element>
@@ -423,12 +437,13 @@
                </Element>
                <Element cardinality="1..1">
                   <Term>cac:Country</Term>
-                  <Name>Contry </Name>
+                  <Name>Country </Name>
                   <Description>The residens country for the transport user party. </Description>
-                  <Element>
+                  <Element cardinality="0..1">
                      <Term>cbc:IdentificationCode</Term>
                      <Name>Country code </Name>
-                     <Description>Country Code </Description>
+                     <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                     <Reference type="CODE_LIST">ISO3166</Reference>
                      <Value type="EXAMPLE">UK</Value>
                   </Element>
                </Element>
@@ -482,6 +497,7 @@
          </Element>
          <Element>
             <Term>cac:PostalAddress</Term>
+            <Name>Postal address </Name>
             <Element>
                <Term>cbc:StreetName</Term>
                <Value type="EXAMPLE">Ventrupvej 6</Value>
@@ -496,8 +512,11 @@
             </Element>
             <Element>
                <Term>cac:Country</Term>
-               <Element>
+               <Element cardinality="0..1">
                   <Term>cbc:IdentificationCode</Term>
+                  <Name>Country code </Name>
+                  <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                  <Reference type="CODE_LIST">ISO3166</Reference>
                   <Value type="EXAMPLE">DK</Value>
                </Element>
                <Element>
@@ -557,12 +576,13 @@
                </Element>
                <Element cardinality="1..1">
                   <Term>cac:Country</Term>
-                  <Name>Contry </Name>
+                  <Name>Country </Name>
                   <Description>The residens country for the transport service provider party. </Description>
-                  <Element>
+                  <Element cardinality="0..1">
                      <Term>cbc:IdentificationCode</Term>
                      <Name>Country code </Name>
-                     <Description>Country Code </Description>
+                     <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                     <Reference type="CODE_LIST">ISO3166</Reference>
                      <Value type="EXAMPLE">UK</Value>
                   </Element>
                </Element>
@@ -1038,6 +1058,7 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PostalAddress</Term>
+               <Name>Postal address </Name>
                <Description>The postal address of the Consignee</Description>
                <Element>
                   <Term>cbc:StreetName</Term>
@@ -1053,8 +1074,11 @@
                </Element>
                <Element>
                   <Term>cac:Country</Term>
-                  <Element>
+                  <Element cardinality="0..1">
                      <Term>cbc:IdentificationCode</Term>
+                     <Name>Country code </Name>
+                     <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                     <Reference type="CODE_LIST">ISO3166</Reference>
                      <Value type="EXAMPLE">FI</Value>
                   </Element>
                </Element>
@@ -1089,12 +1113,13 @@
                   </Element>
                   <Element cardinality="1..1">
                      <Term>cac:Country</Term>
-                     <Name>Contry </Name>
+                     <Name>Country </Name>
                      <Description>The residens country for the sender party. </Description>
-                     <Element>
+                     <Element cardinality="0..1">
                         <Term>cbc:IdentificationCode</Term>
                         <Name>Country code </Name>
-                        <Description>Country Code </Description>
+                        <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                        <Reference type="CODE_LIST">ISO3166</Reference>
                         <Value type="EXAMPLE">FI</Value>
                      </Element>
                   </Element>
@@ -1125,6 +1150,7 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PostalAddress</Term>
+               <Name>Postal address </Name>
                <Description>The postal address of the Consignor</Description>
                <Element>
                   <Term>cbc:StreetName</Term>
@@ -1140,8 +1166,11 @@
                </Element>
                <Element>
                   <Term>cac:Country</Term>
-                  <Element>
+                  <Element cardinality="0..1">
                      <Term>cbc:IdentificationCode</Term>
+                     <Name>Country code </Name>
+                     <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                     <Reference type="CODE_LIST">ISO3166</Reference>
                      <Value type="EXAMPLE">DK</Value>
                   </Element>
                   <Element>
@@ -1180,12 +1209,13 @@
                   </Element>
                   <Element cardinality="1..1">
                      <Term>cac:Country</Term>
-                     <Name>Contry </Name>
+                     <Name>Country </Name>
                      <Description>The residens country for the consignor party. </Description>
-                     <Element>
+                     <Element cardinality="0..1">
                         <Term>cbc:IdentificationCode</Term>
                         <Name>Country code </Name>
-                        <Description>Country Code </Description>
+                        <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                        <Reference type="CODE_LIST">ISO3166</Reference>
                         <Value type="EXAMPLE">DK</Value>
                      </Element>
                   </Element>
@@ -1215,6 +1245,7 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PostalAddress</Term>
+               <Name>Postal address </Name>
                <Description>The postal address of the Freight forwarder.</Description>
                <Element>
                   <Term>cbc:StreetName</Term>
@@ -1230,8 +1261,11 @@
                </Element>
                <Element>
                   <Term>cac:Country</Term>
-                  <Element>
+                  <Element cardinality="0..1">
                      <Term>cbc:IdentificationCode</Term>
+                     <Name>Country code </Name>
+                     <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                     <Reference type="CODE_LIST">ISO3166</Reference>
                      <Value type="EXAMPLE">DK</Value>
                   </Element>
                   <Element>
@@ -1270,12 +1304,13 @@
                   </Element>
                   <Element cardinality="1..1">
                      <Term>cac:Country</Term>
-                     <Name>Contry </Name>
+                     <Name>Country </Name>
                      <Description>The residens country for the carrier party. </Description>
-                     <Element>
+                     <Element cardinality="0..1">
                         <Term>cbc:IdentificationCode</Term>
                         <Name>Country code </Name>
-                        <Description>Country Code </Description>
+                        <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                        <Reference type="CODE_LIST">ISO3166</Reference>
                         <Value type="EXAMPLE">DK</Value>
                      </Element>
                   </Element>
@@ -1285,18 +1320,22 @@
          <Element cardinality="0..1">
             <Term>cac:OriginalDepartureCountry</Term>
             <Description>The country from which the goods in this consignment were originally exported, without any commercial transaction taking place in intermediate countries. </Description>
-            <Element>
+            <Element cardinality="0..1">
                <Term>cbc:IdentificationCode</Term>
                <Name>Country code </Name>
-               <Description>Country Code </Description>
+               <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+               <Reference type="CODE_LIST">ISO3166</Reference>
                <Value type="EXAMPLE">DK</Value>
             </Element>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:FinalDestinationCountry</Term>
             <Description>The country in which the goods in this consignment are to be delivered to the final consignee or buyer. </Description>
-            <Element>
+            <Element cardinality="0..1">
                <Term>cbc:IdentificationCode</Term>
+               <Name>Country code </Name>
+               <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+               <Reference type="CODE_LIST">ISO3166</Reference>
                <Value type="EXAMPLE">FI</Value>
             </Element>
          </Element>
@@ -1349,6 +1388,7 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:PostalAddress</Term>
+                  <Name>Postal address </Name>
                   <Description>The postal address of the carrier.</Description>
                   <Element>
                      <Term>cbc:StreetName</Term>
@@ -1364,8 +1404,11 @@
                   </Element>
                   <Element>
                      <Term>cac:Country</Term>
-                     <Element>
+                     <Element cardinality="0..1">
                         <Term>cbc:IdentificationCode</Term>
+                        <Name>Country code </Name>
+                        <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                        <Reference type="CODE_LIST">ISO3166</Reference>
                         <Value type="EXAMPLE">FI</Value>
                      </Element>
                   </Element>
@@ -1400,12 +1443,13 @@
                      </Element>
                      <Element cardinality="1..1">
                         <Term>cac:Country</Term>
-                        <Name>Contry </Name>
+                        <Name>Country </Name>
                         <Description>The residens country for the carrier party. </Description>
-                        <Element>
+                        <Element cardinality="0..1">
                            <Term>cbc:IdentificationCode</Term>
                            <Name>Country code </Name>
-                           <Description>Country Code </Description>
+                           <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                           <Reference type="CODE_LIST">ISO3166</Reference>
                            <Value type="EXAMPLE">FI</Value>
                         </Element>
                      </Element>
@@ -1662,8 +1706,11 @@
                      </Element>
                      <Element>
                         <Term>cac:Country</Term>
-                        <Element>
+                        <Element cardinality="0..1">
                            <Term>cbc:IdentificationCode</Term>
+                           <Name>Country code </Name>
+                           <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                           <Reference type="CODE_LIST">ISO3166</Reference>
                            <Value type="EXAMPLE">FI</Value>
                         </Element>
                      </Element>
@@ -1703,6 +1750,7 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:PostalAddress</Term>
+                  <Name>Postal address </Name>
                   <Description>The postal address of the carrier</Description>
                   <Element>
                      <Term>cbc:StreetName</Term>
@@ -1718,8 +1766,11 @@
                   </Element>
                   <Element>
                      <Term>cac:Country</Term>
-                     <Element>
+                     <Element cardinality="0..1">
                         <Term>cbc:IdentificationCode</Term>
+                        <Name>Country code </Name>
+                        <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                        <Reference type="CODE_LIST">ISO3166</Reference>
                         <Value type="EXAMPLE">DK</Value>
                      </Element>
                      <Element>
@@ -1758,12 +1809,13 @@
                      </Element>
                      <Element cardinality="1..1">
                         <Term>cac:Country</Term>
-                        <Name>Contry </Name>
+                        <Name>Country </Name>
                         <Description>The residens country for the carrier party. </Description>
-                        <Element>
+                        <Element cardinality="0..1">
                            <Term>cbc:IdentificationCode</Term>
                            <Name>Country code </Name>
-                           <Description>Country Code </Description>
+                           <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                           <Reference type="CODE_LIST">ISO3166</Reference>
                            <Value type="EXAMPLE">DK</Value>
                         </Element>
                      </Element>
@@ -2130,6 +2182,7 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:PostalAddress</Term>
+                  <Name>Postal address </Name>
                   <Description>The postal address of the carrier</Description>
                   <Element>
                      <Term>cbc:StreetName</Term>
@@ -2145,8 +2198,11 @@
                   </Element>
                   <Element>
                      <Term>cac:Country</Term>
-                     <Element>
+                     <Element cardinality="0..1">
                         <Term>cbc:IdentificationCode</Term>
+                        <Name>Country code </Name>
+                        <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                        <Reference type="CODE_LIST">ISO3166</Reference>
                         <Value type="EXAMPLE">FI</Value>
                      </Element>
                   </Element>
@@ -2181,12 +2237,13 @@
                      </Element>
                      <Element cardinality="1..1">
                         <Term>cac:Country</Term>
-                        <Name>Contry </Name>
+                        <Name>Country </Name>
                         <Description>The residens country for the carrier party. </Description>
-                        <Element>
+                        <Element cardinality="0..1">
                            <Term>cbc:IdentificationCode</Term>
                            <Name>Country code </Name>
-                           <Description>Country Code </Description>
+                           <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                           <Reference type="CODE_LIST">ISO3166</Reference>
                            <Value type="EXAMPLE">FI</Value>
                         </Element>
                      </Element>
@@ -2543,8 +2600,11 @@
                      </Element>
                      <Element>
                         <Term>cac:Country</Term>
-                        <Element>
+                        <Element cardinality="0..1">
                            <Term>cbc:IdentificationCode</Term>
+                           <Name>Country code </Name>
+                           <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                           <Reference type="CODE_LIST">ISO3166</Reference>
                            <Value type="EXAMPLE">FI</Value>
                         </Element>
                         <Element>
