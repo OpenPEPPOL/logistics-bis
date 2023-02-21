@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t01-base-3.0">
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T120-base-1.1">
 	<assert>
 		<description>ICD (9907) provided.</description>
 		<scope>PEPPOL-COMMON-R046</scope>
@@ -9,15 +9,15 @@
 		<assert>
 			<success>PEPPOL-COMMON-R046</success>
 		</assert>
-		<Order xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
-			xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2">
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
 			<cac:BuyerCustomerParty>
 				<cac:Party>
 					<cbc:EndpointID schemeID="9907">97735020584</cbc:EndpointID>
 				</cac:Party>
 			</cac:BuyerCustomerParty>
-		</Order>
+		</DespatchAdvice>
 	</test>
     
 	
@@ -25,9 +25,9 @@
 		<assert>
 			<warning>PEPPOL-COMMON-R046</warning>
 		</assert>
-   		<Order xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+   		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
-			xmlns="urn:oasis:names:specification:ubl:schema:xsd:Order-2">
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
 
 			<cac:BuyerCustomerParty>
 				<cac:Party>
@@ -35,7 +35,7 @@
 				</cac:Party>
 			</cac:BuyerCustomerParty>
 
-		</Order>
+		</DespatchAdvice>
 	</test>
     
 	
