@@ -680,6 +680,7 @@
 				</cac:Address>
 			</cac:Location>
 			<cac:Period>
+				<?Name Period ?>
 				<?Description The period within the pickup event takes place.?>
 				<?Cardinality 1..1?>
 				<cbc:StartDate>2021-09-29<?Name Period start date?><?Description The start date for the pickup event.?><?Cardinality 1..1?></cbc:StartDate>
@@ -797,6 +798,7 @@
 				</cac:Address>
 			</cac:Location>
 			<cac:Period>
+				<?Name Period ?>
 				<?Description The period within the delivery event takes place.?>
 				<?Cardinality 1..1?>
 				<cbc:StartDate>2021-09-29<?Name Period start date?><?Description The start date for the delivery event.?><?Cardinality 1..1?></cbc:StartDate>
@@ -1284,6 +1286,7 @@
 					</cac:Address>
 				</cac:Location>
 				<cac:Period>
+					<?Name Period ?>
 					<?Description The period within the departure of this shipment stage takes place. ?>
 					<?Cardinality 1..1?>
 					<cbc:StartDate>2021-09-29<?Name Period start date?><?Description The start date for the period. ?><?Cardinality 1..1?></cbc:StartDate>
@@ -1293,24 +1296,44 @@
 				</cac:Period>
 			</cac:RequestedDepartureTransportEvent>
 			<cac:RequestedArrivalTransportEvent>
-				<?Name Estimated Departure Transport Event ?>
-				<?Description The departure requested by the party requesting a transportation service. ?>
+				<?Name Estimated arrival transport event ?>
+				<?Description The arrival requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
 				<cbc:IdentificationID>54354684732168476514</cbc:IdentificationID>
 				<cac:Location>
-					<?Description The location where the pickup takes place.?>
+					<?Name Arrival location ?>
+					<?Description The location where the arrival takes place.?>
+					<cbc:ID schemeID="0088">5790000435951
+						<?Name Identity of the delivery location ?>
+						<?Description Identifies the delivery location. ?>
+						<?schemeID-Name Scheme identifier?>
+						<?schemeID-usage Optional?>
+						<?schemeID-CodeList ICD?>
+					</cbc:ID>
 					<?Cardinality 1..1?>
 					<cbc:Name>Finnair Cargo terminal
-					<?Description The name of the location.?>
-					<?Cardinality 0..1?>
+						<?Name Name of arrival location ?>
+						<?Description The name of the location.?>
+						<?Cardinality 0..1?>
 					</cbc:Name>
 					<cac:Address>
-						<?Description The address associated with of the location.?>
+						<?Name Address of the arrival location ?>
+						<?Description The address of the arrival location.?>
 						<?Cardinality 0..1?>
-						<cbc:StreetName>Turbiinitie 4</cbc:StreetName>
-						<cbc:CityName>Vantaa</cbc:CityName>
-						<cbc:PostalZone>01530</cbc:PostalZone>
+						<cbc:StreetName>Turbiinitie 4
+							<?Name Address line 1 ?>
+							<?Description The main address line in a postal address usually the street name and number. ?>
+						</cbc:StreetName>
+						<cbc:CityName>Vantaa
+							<?Name City ?>
+							<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+						</cbc:CityName>
+						<cbc:PostalZone>01530
+							<?Name Post code ?>
+							<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+						</cbc:PostalZone>
 						<cac:Country>
+							<?Name Country ?>
 							<cbc:IdentificationCode>FI
 								<?Name Country code ?>
 								<?Cardinality 0..1?>
@@ -1508,6 +1531,7 @@
 					</cac:Address>				
 				</cac:Location>
 				<cac:Period>
+					<?Name Period ?>
 					<?Description The period within the departure of this shipment stage takes place. ?>
 					<?Cardinality 1..1?>
 					<cbc:StartDate>2021-09-29<?Name Period start date?><?Description The start date for the period. ?><?Cardinality 1..1?></cbc:StartDate>
@@ -1517,14 +1541,16 @@
 				</cac:Period>
 			</cac:RequestedDepartureTransportEvent>
 			<cac:RequestedArrivalTransportEvent>
-				<?Name Estimated Departure Transport Event ?>
+				<?Name Estimated arrival transport event ?>
 				<?Description The arrival requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
 				<cbc:IdentificationID>5451568463515745
-				<?Description An identifier for the delivery event within an agreed event identification scheme.?>
-				<?Cardinality 0..1?>
+					<?Description An identifier for the delivery event within an agreed event identification scheme.?>
+					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
-				<cac:Location>					
+				<cac:Location>
+					<?Name Arrival location ?>
+					<?Description The location where the arrival takes place.?>					
 					<cbc:ID schemeID="0088">5790000435951
 						<?Name Identity of the delivery location ?>
 						<?Description Identifies the delivery location. ?>
@@ -1625,6 +1651,7 @@
 					</cac:Address>				
 				</cac:Location>				
 				<cac:Period>
+					<?Name Period ?>
 					<?Description The period within the arrival of this shipment stage is requested to take place. ?>
 					<?Cardinality 1..1?>
 					<cbc:StartDate>2021-09-29<?Name Period start date?><?Description The start date for the period. ?><?Cardinality 1..1?></cbc:StartDate>
@@ -1846,6 +1873,7 @@
 					</cac:Address>				
 				</cac:Location>
 				<cac:Period>
+					<?Name Period ?>
 					<?Description The period within the departure of this shipment stage takes place. ?>
 					<?Cardinality 1..1?>
 					<cbc:StartDate>2021-09-29<?Name Period start date?><?Description The start date for the period. ?><?Cardinality 1..1?></cbc:StartDate>
@@ -1865,16 +1893,14 @@
 					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
 				<cac:Location>
-					<cbc:ID schemeID="0088">
-						5790000435951
+					<cbc:ID schemeID="0088">5790000435951
 						<?Name Identity of the delivery location ?>
 						<?Description Identifies the delivery location. ?>
 						<?schemeID-Name Scheme identifier?>
 						<?schemeID-usage Optional?>
 						<?schemeID-CodeList ICD?>
 					</cbc:ID>
-					<cbc:Name>
-						DHL-CPH Airport
+					<cbc:Name>DHL-CPH Airport
 						<?Name Name of the consignee ?>
 						<?Description The name of the consignee. ?>
 						<?Cardinality 0..1?>
@@ -1883,32 +1909,27 @@
 						<?Name The address of arrival location ?>
 						<?Description Location Address. ?>
 						<?Cardinality 0..1?>
-						<cbc:StreetName>
-							Kystvejen 24
+						<cbc:StreetName>Kystvejen 24
 							<?Name Address line 1 ?>
 							<?Cardinality 0..1?>
 							<?Description The main address line in a postal address usually the street name and number. ?>
 						</cbc:StreetName>
-						<cbc:AdditionalStreetName>
-							Purchasing
+						<cbc:AdditionalStreetName>Purchasing
 							<?Name Address line 2 ?>
 							<?Cardinality 0..1?>
 							<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
 						</cbc:AdditionalStreetName>
-						<cbc:CityName>
-							Kastrup
+						<cbc:CityName>Kastrup
 							<?Name City ?>
 							<?Cardinality 0..1?>
 							<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
 						</cbc:CityName>
-						<cbc:PostalZone>
-							2770
+						<cbc:PostalZone>2770
 							<?Name Post code ?>
 							<?Cardinality 0..1?>
 							<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
 						</cbc:PostalZone>
-						<cbc:CountrySubentity>
-							Region Hovedstaden
+						<cbc:CountrySubentity>Region Hovedstaden
 							<?Name Country subdivision ?>
 							<?Cardinality 0..1?>
 							<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
@@ -1916,8 +1937,7 @@
 						<cac:AddressLine>
 							<?Name Address line ?>
 							<?Cardinality 0..1?>
-							<cbc:Line>
-								3rd Floor, Room 5
+							<cbc:Line>3rd Floor, Room 5
 								<?Name Address line 3 ?>
 								<?Cardinality 0..1?>
 								<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
@@ -1977,6 +1997,7 @@
 					</cac:Address>
 				</cac:Location>
 				<cac:Period>
+					<?Name Period ?>
 					<?Description The period within the arrival of this shipment stage is requested to take place. ?>
 					<?Cardinality 1..1?>
 					<cbc:StartDate>2021-09-29<?Name Period start date?><?Description The start date for the period. ?><?Cardinality 1..1?></cbc:StartDate>
