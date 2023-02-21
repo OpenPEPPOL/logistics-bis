@@ -4,7 +4,7 @@
 	<?Property key="sch:prefix" PEPPOL-T123?>
 	<?Property key="sch:identifier" T123-basic?>
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan_request:1</cbc:CustomizationID>
-	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan Request. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1"?></cbc:ProfileID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan Request. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1".?></cbc:ProfileID>
 	<cbc:ID>141278571829041241241</cbc:ID>
 	<cbc:VersionID>1</cbc:VersionID>
 	<cbc:IssueDate>2021-09-29<?Description The date when the transport execuition plan request is issued. Format = "YYYY-MM-DD". ?></cbc:IssueDate>
@@ -31,13 +31,19 @@
 			<cbc:Name>Leman</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
-			<?Description The postal addess for the Sender Party. ?>
+			<?Name Postal address ?>
+			<?Description Postal address for the sender party. ?>
 			<?Cardinality 1..1?>
 			<cbc:StreetName>Ventrupvej 6</cbc:StreetName>
 			<cbc:CityName>Greve</cbc:CityName>
 			<cbc:PostalZone>2670</cbc:PostalZone>
 			<cac:Country>
-				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				<cbc:IdentificationCode>DK
+					<?Name Country code ?>
+					<?Cardinality 0..1?>
+					<?CodeList ISO3166?>
+					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+				</cbc:IdentificationCode>
 			</cac:Country>
 		</cac:PostalAddress>
 		<cac:PartyTaxScheme>
@@ -81,13 +87,15 @@
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 				<cac:Country>
-					<?Name Contry ?>
+					<?Name Country ?>
 					<?Description The residens country for the sender party. ?>
 					<?Cardinality 1..1?>
 					<cbc:IdentificationCode>UK
-							<?Name Country code ?>
-							<?Description Country Code ?>
-						</cbc:IdentificationCode>
+						<?Name Country code ?>
+						<?Cardinality 0..1?>
+						<?CodeList ISO3166?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+					</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:RegistrationAddress>
 		</cac:PartyLegalEntity>
@@ -132,11 +140,17 @@
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
+			<?Name Postal address ?>
 			<cbc:StreetName>Jydekrogen 14</cbc:StreetName>
 			<cbc:CityName>Vallensbæk Landsby</cbc:CityName>
 			<cbc:PostalZone>2625</cbc:PostalZone>
 			<cac:Country>
-				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				<cbc:IdentificationCode>DK
+					<?Name Country code ?>
+					<?Cardinality 0..1?>
+					<?CodeList ISO3166?>
+					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+				</cbc:IdentificationCode>
 			</cac:Country>
 		</cac:PostalAddress>
 		<cac:PartyTaxScheme>
@@ -180,12 +194,14 @@
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 				<cac:Country>
-					<?Name Contry ?>
+					<?Name Country ?>
 					<?Description The residens country for the receiver party. ?>
 					<?Cardinality 1..1?>
 					<cbc:IdentificationCode>UK
 						<?Name Country code ?>
-						<?Description Country Code ?>
+						<?Cardinality 0..1?>
+						<?CodeList ISO3166?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:RegistrationAddress>
@@ -227,11 +243,17 @@
 			<cbc:Name>Novo Nordisk Pharmatech A/S</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
+			<?Name Postal address ?>
 			<cbc:StreetName>Københavnsvej 216</cbc:StreetName>
 			<cbc:CityName>Køge</cbc:CityName>
 			<cbc:PostalZone>4600</cbc:PostalZone>
 			<cac:Country>
-				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				<cbc:IdentificationCode>DK
+					<?Name Country code ?>
+					<?Cardinality 0..1?>
+					<?CodeList ISO3166?>
+					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+				</cbc:IdentificationCode>
 			</cac:Country>
 		</cac:PostalAddress>
 		<cac:PartyTaxScheme>
@@ -275,13 +297,15 @@
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 				<cac:Country>
-					<?Name Contry ?>
+					<?Name Country ?>
 					<?Description The residens country for the transport user party. ?>
 					<?Cardinality 1..1?>
 					<cbc:IdentificationCode>UK
-							<?Name Country code ?>
-							<?Description Country Code ?>
-						</cbc:IdentificationCode>
+						<?Name Country code ?>
+						<?Cardinality 0..1?>
+						<?CodeList ISO3166?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+					</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:RegistrationAddress>
 		</cac:PartyLegalEntity>
@@ -322,11 +346,17 @@
 			<?Cardinality 0..1?>
 		</cac:PartyName>
 		<cac:PostalAddress>
+			<?Name Postal address ?>
 			<cbc:StreetName>Ventrupvej 6</cbc:StreetName>
 			<cbc:CityName>Greve</cbc:CityName>
 			<cbc:PostalZone>2670</cbc:PostalZone>
 			<cac:Country>
-				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				<cbc:IdentificationCode>DK
+					<?Name Country code ?>
+					<?Cardinality 0..1?>
+					<?CodeList ISO3166?>
+					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+				</cbc:IdentificationCode>
 				<cbc:Name>Denmark</cbc:Name>
 			</cac:Country>
 		</cac:PostalAddress>
@@ -371,13 +401,15 @@
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 				<cac:Country>
-					<?Name Contry ?>
+					<?Name Country ?>
 					<?Description The residens country for the transport service provider party. ?>
 					<?Cardinality 1..1?>
 					<cbc:IdentificationCode>UK
-							<?Name Country code ?>
-							<?Description Country Code ?>
-						</cbc:IdentificationCode>
+						<?Name Country code ?>
+						<?Cardinality 0..1?>
+						<?CodeList ISO3166?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+					</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:RegistrationAddress>
 		</cac:PartyLegalEntity>
@@ -710,13 +742,19 @@
 				<cbc:Name>HUS Hospital</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
+				<?Name Postal address ?>
 				<?Description The postal address of the Consignee?>
 				<?Cardinality 0..1?>
 				<cbc:StreetName>Topeliuksenkatu 5</cbc:StreetName>
 				<cbc:CityName>Helsinki</cbc:CityName>
 				<cbc:PostalZone>00260</cbc:PostalZone>
 				<cac:Country>
-					<cbc:IdentificationCode>FI</cbc:IdentificationCode>
+					<cbc:IdentificationCode>FI
+						<?Name Country code ?>
+						<?Cardinality 0..1?>
+						<?CodeList ISO3166?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+					</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
@@ -741,13 +779,15 @@
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 					<cac:Country>
-						<?Name Contry ?>
+						<?Name Country ?>
 						<?Description The residens country for the sender party. ?>
 						<?Cardinality 1..1?>
 						<cbc:IdentificationCode>FI
-						<?Name Country code ?>
-						<?Description Country Code ?>
-					</cbc:IdentificationCode>
+							<?Name Country code ?>
+							<?Cardinality 0..1?>
+							<?CodeList ISO3166?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						</cbc:IdentificationCode>
 					</cac:Country>
 				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
@@ -767,13 +807,19 @@
 				<cbc:Name>Novo Nordisk Pharmatech A/S</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
+				<?Name Postal address ?>
 				<?Description The postal address of the Consignor?>
 				<?Cardinality 0..1?>
 				<cbc:StreetName>Københavnsvej 216</cbc:StreetName>
 				<cbc:CityName>Køge</cbc:CityName>
 				<cbc:PostalZone>4600</cbc:PostalZone>
 				<cac:Country>
-					<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+					<cbc:IdentificationCode>DK
+						<?Name Country code ?>
+						<?Cardinality 0..1?>
+						<?CodeList ISO3166?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+					</cbc:IdentificationCode>
 					<cbc:Name>Denmark</cbc:Name>
 				</cac:Country>
 			</cac:PostalAddress>
@@ -800,13 +846,15 @@
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 					<cac:Country>
-						<?Name Contry ?>
+						<?Name Country ?>
 						<?Description The residens country for the consignor party. ?>
 						<?Cardinality 1..1?>
 						<cbc:IdentificationCode>DK
-						<?Name Country code ?>
-						<?Description Country Code ?>
-					</cbc:IdentificationCode>
+							<?Name Country code ?>
+							<?Cardinality 0..1?>
+							<?CodeList ISO3166?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						</cbc:IdentificationCode>
 					</cac:Country>
 				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
@@ -823,13 +871,19 @@
 				<cbc:Name>Leman</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
+				<?Name Postal address ?>
 				<?Description The postal address of the Freight forwarder.?>
 				<?Cardinality 0..1?>
 				<cbc:StreetName>Ventrupvej 6</cbc:StreetName>
 				<cbc:CityName>Greve</cbc:CityName>
 				<cbc:PostalZone>2670</cbc:PostalZone>
 				<cac:Country>
-					<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+					<cbc:IdentificationCode>DK
+						<?Name Country code ?>
+						<?Cardinality 0..1?>
+						<?CodeList ISO3166?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+					</cbc:IdentificationCode>
 					<cbc:Name>Denmark</cbc:Name>
 				</cac:Country>
 			</cac:PostalAddress>
@@ -856,13 +910,15 @@
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 					<cac:Country>
-						<?Name Contry ?>
+						<?Name Country ?>
 						<?Description The residens country for the carrier party. ?>
 						<?Cardinality 1..1?>
 						<cbc:IdentificationCode>DK
-						<?Name Country code ?>
-						<?Description Country Code ?>
-					</cbc:IdentificationCode>
+							<?Name Country code ?>
+							<?Cardinality 0..1?>
+							<?CodeList ISO3166?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						</cbc:IdentificationCode>
 					</cac:Country>
 				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
@@ -872,13 +928,20 @@
 			<?Cardinality 0..1?>
 			<cbc:IdentificationCode>DK
 				<?Name Country code ?>
-				<?Description Country Code ?>
+				<?Cardinality 0..1?>
+				<?CodeList ISO3166?>
+				<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 			</cbc:IdentificationCode>
 		</cac:OriginalDepartureCountry>
 		<cac:FinalDestinationCountry>
 			<?Description The country in which the goods in this consignment are to be delivered to the final consignee or buyer. ?>
 			<?Cardinality 0..1?>
-			<cbc:IdentificationCode>FI</cbc:IdentificationCode>
+			<cbc:IdentificationCode>FI
+				<?Name Country code ?>
+				<?Cardinality 0..1?>
+				<?CodeList ISO3166?>
+				<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+			</cbc:IdentificationCode>
 		</cac:FinalDestinationCountry>
 		<cac:DeliveryTerms>
 			<?Description The conditions agreed upon between a seller and a buyer with regard to the delivery of goods and/or services (e.g., CIF, FOB, or EXW from the INCOTERMS Terms of Delivery). ?>
@@ -916,13 +979,19 @@
 					<cbc:Name>Finnair Oyj</cbc:Name>
 				</cac:PartyName>
 				<cac:PostalAddress>
+					<?Name Postal address ?>
 					<?Description The postal address of the carrier.?>
 					<?Cardinality 0..1?>
 					<cbc:StreetName>Tietotie 9</cbc:StreetName>
 					<cbc:CityName>Vantaa</cbc:CityName>
 					<cbc:PostalZone>4600</cbc:PostalZone>
 					<cac:Country>
-						<cbc:IdentificationCode>FI</cbc:IdentificationCode>
+						<cbc:IdentificationCode>FI
+							<?Name Country code ?>
+							<?Cardinality 0..1?>
+							<?CodeList ISO3166?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						</cbc:IdentificationCode>
 					</cac:Country>
 				</cac:PostalAddress>
 				<cac:PartyLegalEntity>
@@ -948,13 +1017,15 @@
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 						<cac:Country>
-							<?Name Contry ?>
+							<?Name Country ?>
 							<?Description The residens country for the carrier party. ?>
 							<?Cardinality 1..1?>
 							<cbc:IdentificationCode>FI
-						<?Name Country code ?>
-						<?Description Country Code ?>
-						</cbc:IdentificationCode>
+								<?Name Country code ?>
+								<?Cardinality 0..1?>
+								<?CodeList ISO3166?>
+								<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+							</cbc:IdentificationCode>
 						</cac:Country>
 					</cac:RegistrationAddress>
 				</cac:PartyLegalEntity>
@@ -1074,11 +1145,11 @@
 							<?Name Country ?>
 							<?Cardinality 0..1?>
 							<cbc:IdentificationCode>GB
-							<?Name Country code ?>
-							<?Cardinality 0..1?>
-							<?CodeList ISO3166?>
-							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
-						</cbc:IdentificationCode>
+								<?Name Country code ?>
+								<?Cardinality 0..1?>
+								<?CodeList ISO3166?>
+								<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+							</cbc:IdentificationCode>
 						</cac:Country>
 						<cac:LocationCoordinate>
 							<?Name Location coordinate ?>
@@ -1147,7 +1218,12 @@
 						<cbc:CityName>Vantaa</cbc:CityName>
 						<cbc:PostalZone>01530</cbc:PostalZone>
 						<cac:Country>
-							<cbc:IdentificationCode>FI</cbc:IdentificationCode>
+							<cbc:IdentificationCode>FI
+								<?Name Country code ?>
+								<?Cardinality 0..1?>
+								<?CodeList ISO3166?>
+								<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+							</cbc:IdentificationCode>
 						</cac:Country>
 					</cac:Address>
 				</cac:Location>
@@ -1176,13 +1252,19 @@
 					<cbc:Name>DHL Express</cbc:Name>
 				</cac:PartyName>
 				<cac:PostalAddress>
+					<?Name Postal address ?>
 					<?Description The postal address of the carrier?>
 					<?Cardinality 0..1?>
 					<cbc:StreetName>Jydekrogen 14</cbc:StreetName>
 					<cbc:CityName>Vallensbæk Landsby</cbc:CityName>
 					<cbc:PostalZone>2625</cbc:PostalZone>
 					<cac:Country>
-						<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+						<cbc:IdentificationCode>DK
+							<?Name Country code ?>
+							<?Cardinality 0..1?>
+							<?CodeList ISO3166?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						</cbc:IdentificationCode>
 						<cbc:Name>Denmark</cbc:Name>
 					</cac:Country>
 				</cac:PostalAddress>
@@ -1209,13 +1291,15 @@
 							<?Cardinality 0..1?>
 						</cbc:CityName>
 							<cac:Country>
-								<?Name Contry ?>
+								<?Name Country ?>
 								<?Description The residens country for the carrier party. ?>
 								<?Cardinality 1..1?>
 								<cbc:IdentificationCode>DK
-							<?Name Country code ?>
-							<?Description Country Code ?>
-						</cbc:IdentificationCode>
+									<?Name Country code ?>
+									<?Cardinality 0..1?>
+									<?CodeList ISO3166?>
+									<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+								</cbc:IdentificationCode>
 							</cac:Country>
 						</cac:RegistrationAddress>
 				</cac:PartyLegalEntity>
@@ -1485,13 +1569,19 @@
 					<cbc:Name>DHL Express Finland</cbc:Name>
 				</cac:PartyName>
 				<cac:PostalAddress>
+					<?Name Postal address ?>
 					<?Description The postal address of the carrier?>
 					<?Cardinality 0..1?>
 					<cbc:StreetName>Tullimiehentie 10</cbc:StreetName>
 					<cbc:CityName>Vantaa</cbc:CityName>
 					<cbc:PostalZone>01530</cbc:PostalZone>
 					<cac:Country>
-						<cbc:IdentificationCode>FI</cbc:IdentificationCode>						
+						<cbc:IdentificationCode>FI
+							<?Name Country code ?>
+							<?Cardinality 0..1?>
+							<?CodeList ISO3166?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						</cbc:IdentificationCode>						
 					</cac:Country>
 				</cac:PostalAddress>
 				<cac:PartyLegalEntity>
@@ -1517,12 +1607,14 @@
 							<?Cardinality 0..1?>
 						</cbc:CityName>
 						<cac:Country>
-							<?Name Contry ?>
+							<?Name Country ?>
 							<?Description The residens country for the carrier party. ?>
 							<?Cardinality 1..1?>
 							<cbc:IdentificationCode>FI
 								<?Name Country code ?>
-								<?Description Country Code ?>
+								<?Cardinality 0..1?>
+								<?CodeList ISO3166?>
+								<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 							</cbc:IdentificationCode>
 						</cac:Country>
 					</cac:RegistrationAddress>
@@ -1717,8 +1809,7 @@
 						<cac:Country>
 							<?Name Country ?>
 							<?Cardinality 0..1?>
-							<cbc:IdentificationCode>
-								DK
+							<cbc:IdentificationCode>DK
 								<?Name Country code ?>
 								<?Cardinality 0..1?>
 								<?CodeList ISO3166?>
@@ -1787,7 +1878,12 @@
 						<cbc:CityName>Helsinki</cbc:CityName>
 						<cbc:PostalZone>00260</cbc:PostalZone>
 						<cac:Country>
-							<cbc:IdentificationCode>FI</cbc:IdentificationCode>
+							<cbc:IdentificationCode>FI
+								<?Name Country code ?>
+								<?Cardinality 0..1?>
+								<?CodeList ISO3166?>
+								<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+							</cbc:IdentificationCode>
 							<cbc:Name>Finland</cbc:Name>
 						</cac:Country>
 					</cac:Address>
