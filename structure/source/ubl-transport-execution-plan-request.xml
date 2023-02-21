@@ -515,6 +515,7 @@
 		<?Name Consignment identifier ?>
 		</cbc:ID>
 		<cbc:TotalInvoiceAmount currencyID="EUR">5000
+			<?Name Total invoice amount ?>
 			<?Description The total value of the consignment.?>
 			<?Cardinality 0..1?>
 			<?currencyID-Name Currency identifier ?>
@@ -522,35 +523,43 @@
 			<?currencyID-CodeList ISO4217?>
 		</cbc:TotalInvoiceAmount>
 		<cbc:GrossWeightMeasure unitCode="KGM">1030
-		<?Description The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified?>
-		<?Cardinality 0..1?>			
+			<?Name Consignment gross weight ?> 
+			<?Description The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified?>
+			<?Cardinality 0..1?>			
 		</cbc:GrossWeightMeasure>
 		<cbc:NetWeightMeasure unitCode="KGM">280
-		<?Description The net weight of the consignment. Must be equal the sum of the net weight specified for the included transport handling unites if this is specified?>	
-		<?Cardinality 0..1?>
+			<?Name Consignment net weight ?>
+			<?Description The net weight of the consignment. Must be equal the sum of the net weight specified for the included transport handling unites if this is specified?>	
+			<?Cardinality 0..1?>
 		</cbc:NetWeightMeasure>
 		<cbc:NetNetWeightMeasure unitCode="KGM">278.50
-		<?Description The net net weight of the consignment. Must be equal the sum of the net net weight specified for the included transport handling unites if this is specified?>	
-		<?Cardinality 0..1?>
+			<?Name Consignment net net weight ?>
+			<?Description The net net weight of the consignment. Must be equal the sum of the net net weight specified for the included transport handling unites if this is specified?>	
+			<?Cardinality 0..1?>
 		</cbc:NetNetWeightMeasure>
 		<cbc:GrossVolumeMeasure unitCode="MTQ">20
-		<?Description The gross volumen of the consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
-		<?Cardinality 0..1?>
+			<?Name Consignment gross volume ?>
+			<?Description The gross volumen of the consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
+			<?Cardinality 0..1?>
 		</cbc:GrossVolumeMeasure>
 		<cbc:NetVolumeMeasure unitCode="MTQ">19
-		<?Description The total net volume of all goods items referred to as one consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
-		<?Cardinality 0..1?>
+			<?Name Consignment net volume ?>
+			<?Description The total net volume of all goods items referred to as one consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
+			<?Cardinality 0..1?>
 		</cbc:NetVolumeMeasure>
 		<cbc:LoadingLengthMeasure unitCode="MTR">0.4
-		<?Description The total length in a means of transport or a piece of transport equipment which, given the width and height of the transport means, will accommodate all of the consignments in a single consolidation.?>
-		<?Cardinality 0..1?>
+			<?Name Loading length measure ?>
+			<?Description The total length in a means of transport or a piece of transport equipment which, given the width and height of the transport means, will accommodate all of the consignments in a single consolidation.?>
+			<?Cardinality 0..1?>
 		</cbc:LoadingLengthMeasure>
 		<cbc:HazardousRiskIndicator>false
-		<?Name Hazardous risk indicator ?>
-		<?Description An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).?>
-				<?Cardinality 0..1?>
-			</cbc:HazardousRiskIndicator>
-		<cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1</cbc:TotalTransportHandlingUnitQuantity>
+			<?Name Hazardous risk indicator ?>
+			<?Description An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).?>
+			<?Cardinality 0..1?>
+		</cbc:HazardousRiskIndicator>
+		<cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1
+			<?Name Total number of transport handling units ?>
+		</cbc:TotalTransportHandlingUnitQuantity>
 		<cbc:DeclaredStatisticsValueAmount currencyID="SEK">34000.45
 			<?Name Declared statistics value amount ?>
 			<?Description The total declared value for customs purposes of those goods in this shipment that are subject to the same customs procedure and have the same tariff/statistical heading, country information, and duty regime.?>
@@ -560,13 +569,15 @@
 			<?currencyID-CodeList ISO4217?>
 		</cbc:DeclaredStatisticsValueAmount>
 		<cac:RequestedPickupTransportEvent>
+			<?Name Requested pickup transport event ?>
 			<?Description The pickup of this consignment requested by the party requesting a transportation service (the transport user).?>
 			<?Cardinality 1..1?>
 			<cbc:IdentificationID>21412312412
-			<?Description An identifier for the pickup transport event within an agreed event identification scheme.?>
-			<?Cardinality 0..1?>
+				<?Description An identifier for the pickup transport event within an agreed event identification scheme.?>
+				<?Cardinality 0..1?>
 			</cbc:IdentificationID>
 			<cac:Location>
+				<?Name Pickup location ?>
 				<?Description The location where the pickup takes place.?>
 				<?Cardinality 1..1?>
 				<cbc:ID schemeID="0088">5790000435951
@@ -1033,8 +1044,10 @@
 			<?Description The shipment stage during main carriage. ?>
 			<?Cardinality 1..1?>
 			<cbc:TransportModeCode>4
-			<?Description A code signifying the method of transport used for this shipment stage. ?>
-			<?Cardinality 1..1?>
+				<?Name Transport mode code?>
+				<?Description A code signifying the method of transport used for this shipment stage. ?>
+				<?Cardinality 1..1?>
+				<?CodeList UNECERec19?>
 			</cbc:TransportModeCode>
 			<cbc:HazardousRiskIndicator>false
 			<?Description A code signifying the method of transport used for this shipment stage. ?>
@@ -1307,8 +1320,10 @@
 			<?Description A shipment stage during precarriage (usually refers to movement activity that takes place prior to the container being loaded at a port of loading). ?>
 			<?Cardinality 0..n?>
 			<cbc:TransportModeCode>4
+				<?Name Transport mode code?>
 				<?Description A code signifying the method of transport used for this shipment stage. ?>
 				<?Cardinality 1..1?>
+				<?CodeList UNECERec19?>
 			</cbc:TransportModeCode>
 			<cac:CarrierParty>
 				<?Name Carrier Party ?>
@@ -1619,8 +1634,10 @@
 			<?Description A shipment stage during on-carriage (usually refers to movement activity that takes place after the container is discharged at a port of discharge). ?>
 			<?Cardinality 0..n?>
 			<cbc:TransportModeCode>3
+				<?Name Transport mode code?>
 				<?Description A code signifying the method of transport used for this shipment stage. ?>
 				<?Cardinality 1..1?>
+				<?CodeList UNECERec19?>
 			</cbc:TransportModeCode>						
 			<cbc:HazardousRiskIndicator>false
 				<?Description A code signifying the method of transport used for this shipment stage. ?>
