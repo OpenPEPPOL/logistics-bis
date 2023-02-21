@@ -23,8 +23,7 @@
 	     <Element>
          <Term>cbc:ProfileID</Term>
          <Name>Business process type identifier</Name>
-         <Description>Identifies the BII profile or business process context in which the
-				transaction appears.</Description>
+         <Description>Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan Request. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1"</Description>
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir16-001</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1</Value>
@@ -598,6 +597,7 @@
          <Name>Consignment information </Name>
          <Element>
             <Term>cbc:ID</Term>
+            <Name>Consignment identifier </Name>
             <Value type="EXAMPLE">12535157654567654</Value>
          </Element>
          <Element cardinality="0..1">
