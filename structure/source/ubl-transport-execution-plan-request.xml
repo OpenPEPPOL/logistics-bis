@@ -386,28 +386,32 @@
 			<?Description The contact of the transport service provider party. ?>
 			<?Cardinality 0..1?>
 			<cbc:Name>Mr Transport user
-					<?Name Contact name ?>
-					<?Description The contact name. ?>
-					<?Cardinality 0..1?>
-				</cbc:Name>
+				<?Name Contact name ?>
+				<?Description The contact name. ?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
 			<cbc:Telephone>0158 1233714
-					<?Name Contact email telephone ?>
-					<?Description The phone number of the contact. ?>
-					<?Cardinality 0..1?>
-				</cbc:Telephone>
+				<?Name Contact email telephone ?>
+				<?Description The phone number of the contact. ?>
+				<?Cardinality 0..1?>
+			</cbc:Telephone>
 			<cbc:ElectronicMail>transport-user@transportuser.dk
-					<?Name Contact email address ?>
-					<?Description The electronic mail of the contact. ?>
-					<?Cardinality 0..1?>
-				</cbc:ElectronicMail>
+				<?Name Contact email address ?>
+				<?Description The electronic mail of the contact. ?>
+				<?Cardinality 0..1?>
+			</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:TransportServiceProviderParty>
 	<cac:Consignment>
-		<cbc:ID>12535157654567654</cbc:ID>
+		<?Name Consignment information ?>
 		<?Cardinality 1..1?>
+		<cbc:ID>12535157654567654</cbc:ID>
 		<cbc:TotalInvoiceAmount currencyID="EUR">5000
-		<?Description The total value of the consignment.?>
-		<?Cardinality 0..1?>
+			<?Description The total value of the consignment.?>
+			<?Cardinality 0..1?>
+			<?currencyID-Name Currency identifier ?>
+			<?currencyID-Description Currency identifier.?>
+			<?currencyID-CodeList ISO4217?>
 		</cbc:TotalInvoiceAmount>
 		<cbc:GrossWeightMeasure unitCode="KGM">1030
 		<?Description The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified?>
