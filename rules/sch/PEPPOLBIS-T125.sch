@@ -3,7 +3,7 @@
         xmlns:xi="http://www.w3.org/2001/XInclude"
         schemaVersion="iso" queryBinding="xslt2">
 
-    <title>Rules for Transport Execution Plan</title>
+    <title>Rules for Waybill</title>
 
 	<ns uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" prefix="cbc"/>
     <ns uri="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" prefix="cac"/>
@@ -29,7 +29,7 @@
 
     <include href="parts/common/empty-elements.sch"/>
     <include href="parts/common/rules.sch"/>
-    <include href="../../target/generated/T124-basic.sch"/>
-    <include href="parts/PEPPOL-M-T124.sch"/>    
+    <include href="../../target/generated/T125-basic.sch"/>
+    <include href="parts/PEPPOL-M-T125.sch"/>    
 
 </schema>
