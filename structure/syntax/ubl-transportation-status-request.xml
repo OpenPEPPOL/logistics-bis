@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+   <Term>TransprotStatusRequest</Term>
+   <Property key="sch:prefix">PEPPOL-T126</Property>
+   <Property key="sch:identifier">T126-basic</Property>
+   <Namespace prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:TransportationStatusRequest-2</Namespace>
+   <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
+   <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
+   <Document>
+      <Term>ubl:TransportationStatusRequest</Term>
+	
+	
+	
+	     <Element>
+         <Term>cbc:CustomizationID</Term>
+         <Name>Specification identification</Name>
+         <Description>Identifies the specification of content and rules that apply to the
+				transaction.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir16-002</Reference>
+         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:transport_status_request:1</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:ProfileID</Term>
+         <Name>Business process type identifier</Name>
+         <Description>Identifies the BII profile or business process context in which the
+				transaction appears.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir16-001</Reference>
+         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:transport_status_w_request:1</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:ID</Term>
+         <Name>Document identifier</Name>
+         <Description>An transaction instance must contain an identifier. The identifier enables
+				positive referencing the document instance for various purposes including
+				referencing between transactions that are part of the same process.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir16-003</Reference>
+         <Value type="EXAMPLE">TSR_1</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:IssueDate</Term>
+         <Name>Dispatch advice issue date</Name>
+         <Description>The date when the despatch advice is issued. Format =
+				"YYYY-MM-DD"</Description>
+         <DataType>Date</DataType>
+         <Reference type="BUSINESS_TERM">tir16-004</Reference>
+         <Value type="EXAMPLE">2011-10-06</Value>
+      </Element>
+	     <Element cardinality="0..1">
+         <Term>cbc:IssueTime</Term>
+         <Name>Dispatch advice issue time</Name>
+         <Description>The time when the despatch advice is issued. Format =
+				"hh:mm:ss"</Description>
+         <DataType>Time</DataType>
+         <Reference type="BUSINESS_TERM">tir16-005</Reference>
+         <Value type="EXAMPLE">09:29:10</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:TransportationStatusTypeCode</Term>
+         <Value type="EXAMPLE">All deviations</Value>
+      </Element>
+	     <Element>
+         <Term>cac:TransportExecutionPlanDocumentReference</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Value type="EXAMPLE">TEP_1</Value>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:Consignment</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Value type="EXAMPLE">CON_1</Value>
+         </Element>
+      </Element>
+   </Document>
+</Structure>
