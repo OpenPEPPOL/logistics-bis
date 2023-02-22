@@ -2,13 +2,14 @@
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron">
 
 	<rule context="cbc:CustomizationID">
-		<assert id="PEPPOL-T126-R001" test="(normalize-space(.) = 'urn:fdc:peppol.eu:logistics:trns:transport_status_request:1')" flag="fatal">Specification identifier SHALL start with the value 'urn:fdc:peppol.eu:logistics:trns:transport_status_request:1'.</assert>
+		<assert id="PEPPOL-T126-R001" test="(normalize-space(.) = 'urn:fdc:peppol.eu:logistics:trns:transport_status_request:1')" 
+				flag="fatal">CustomizationID SHALL have the value 'urn:fdc:peppol.eu:logistics:trns:transport_status_request:1'.</assert>
 	</rule>
 
 	<rule context="cbc:ProfileID">
 		<assert id="PEPPOL-T126-R002"
 				test="(normalize-space(.) = 'urn:fdc:peppol.eu:logistics:bis:transport_status_w_request:1')"
-				flag="fatal">Specification identifier SHALL start with the value 'urn:fdc:peppol.eu:logistics:bis:transport_status_w_request:1'.</assert>
+				flag="fatal">ProfileID SHALL have the value 'urn:fdc:peppol.eu:logistics:bis:transport_status_w_request:1'.</assert>
 	</rule>
 
 </pattern>
