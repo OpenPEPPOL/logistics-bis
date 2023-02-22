@@ -578,7 +578,7 @@
 				<?Cardinality 0..1?>
 			</cbc:IdentificationID>
 			<cac:Location>
-				<?Name Pickup location ?>
+				<?Name Location of requested pickup ?>
 				<?Description The location where the pickup takes place.?>
 				<?Cardinality 1..1?>
 				<cbc:ID schemeID="0088">5790000435951
@@ -691,13 +691,15 @@
 			</cac:Period>
 		</cac:RequestedPickupTransportEvent>
 		<cac:RequestedDeliveryTransportEvent>
+			<?Name Requested delivery transport event ?>
 			<?Description The delivery of this consignment requested by the party requesting a transportation service (the transport user).?>
 			<?Cardinality 1..1?>
 			<cbc:IdentificationID>625435485674654132</cbc:IdentificationID>
 			<?Description An identifier for the delivery event within an agreed event identification scheme.?>
 			<?Cardinality 0..1?>
 			<cac:Location>
-				<?Description The location where the pickup takes place.?>
+				<?Name Location of requested delivery ?>
+				<?Description The location of the requested delivery.?>
 				<?Cardinality 1..1?>
 				<cbc:ID schemeID="0088">5790000435951
 					<?Name Identity of the delivery location ?>
@@ -900,12 +902,22 @@
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<?Name Postal address ?>
-				<?Description The postal address of the Consignor?>
+				<?Description The postal address of the consignor party.?>
 				<?Cardinality 0..1?>
-				<cbc:StreetName>Københavnsvej 216</cbc:StreetName>
-				<cbc:CityName>Køge</cbc:CityName>
-				<cbc:PostalZone>4600</cbc:PostalZone>
+				<cbc:StreetName>Københavnsvej 216
+					<?Name Address line 1 ?>
+					<?Description The main address line in a postal address usually the street name and number. ?>
+				</cbc:StreetName>
+				<cbc:CityName>Køge
+					<?Name City ?>
+					<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+				</cbc:CityName>
+				<cbc:PostalZone>4600
+					<?Name Post code ?>
+					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+				</cbc:PostalZone>
 				<cac:Country>
+					<?Name Country ?>
 					<cbc:IdentificationCode>DK
 						<?Name Country code ?>
 						<?Cardinality 0..1?>
@@ -1026,6 +1038,7 @@
 			</cac:PartyLegalEntity>
 		</cac:FreightForwarderParty>
 		<cac:OriginalDepartureCountry>
+			<?Name Original departure country ?>
 			<?Description The country from which the goods in this consignment were originally exported, without any commercial transaction taking place in intermediate countries. ?>
 			<?Cardinality 0..1?>
 			<cbc:IdentificationCode>DK
@@ -1036,6 +1049,7 @@
 			</cbc:IdentificationCode>
 		</cac:OriginalDepartureCountry>
 		<cac:FinalDestinationCountry>
+			<?Name Final destination country ?>
 			<?Description The country in which the goods in this consignment are to be delivered to the final consignee or buyer. ?>
 			<?Cardinality 0..1?>
 			<cbc:IdentificationCode>FI
@@ -1046,18 +1060,22 @@
 			</cbc:IdentificationCode>
 		</cac:FinalDestinationCountry>
 		<cac:DeliveryTerms>
+			<?Name Delivery terms ?>
 			<?Description The conditions agreed upon between a seller and a buyer with regard to the delivery of goods and/or services (e.g., CIF, FOB, or EXW from the INCOTERMS Terms of Delivery). ?>
 			<?Cardinality 0..1?>
 			<cbc:ID>DAP
-			<?Description The ID of the terms expressed as Inco terms. ?>
-			<?Cardinality 0..1?>
+				<?Name Delivery terms identification ?>
+				<?Description Delivery terms code (Inco terms). ?>
+				<?Cardinality 0..1?>
 			</cbc:ID>
 			<cbc:SpecialTerms>DAP
-			<?Description The terms expressed as other than Inco terms. ?>
-			<?Cardinality 0..1?>
+				<?Name Special terms ?>
+				<?Description Special delivery terms that exceeds the inco terms. ?>
+				<?Cardinality 0..1?>
 			</cbc:SpecialTerms>
 		</cac:DeliveryTerms>
 		<cac:MainCarriageShipmentStage>
+			<?Name Main carriage shipment stage ?>
 			<?Description The shipment stage during main carriage. ?>
 			<?Cardinality 1..1?>
 			<cbc:TransportModeCode>4
@@ -1357,6 +1375,7 @@
 			</cac:RequestedArrivalTransportEvent>
 		</cac:MainCarriageShipmentStage>
 		<cac:PreCarriageShipmentStage>
+			<?Name Pre carriage shipment stage ?>
 			<?Description A shipment stage during precarriage (usually refers to movement activity that takes place prior to the container being loaded at a port of loading). ?>
 			<?Cardinality 0..n?>
 			<cbc:TransportModeCode>4
