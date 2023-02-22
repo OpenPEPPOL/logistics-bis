@@ -62,11 +62,12 @@
          <Term>cbc:DocumentStatusCode</Term>
          <Name>Transport execuition plan request code </Name>
          <Description>A code signifying the status of the transport execuition plan request. Default is Original (9)</Description>
-         <Value type="EXAMPLE">1</Value>
+         <Reference type="CODE_LIST">DocumentStatusCode</Reference>
+         <Value type="EXAMPLE">9</Value>
       </Element>
 	     <Element cardinality="1..1">
          <Term>cac:SenderParty</Term>
-         <Name>Sender Party </Name>
+         <Name>Sender party </Name>
          <Description>The party sending the transport execution plan request. </Description>
          <Element cardinality="1..1">
             <Term>cbc:EndpointID</Term>
@@ -1329,21 +1330,28 @@
             <Element cardinality="0..1">
                <Term>cac:PostalAddress</Term>
                <Name>Postal address </Name>
-               <Description>The postal address of the Freight forwarder.</Description>
+               <Description>The postal address of the freight forwarder party.</Description>
                <Element>
                   <Term>cbc:StreetName</Term>
+                  <Name>Address line 1 </Name>
+                  <Description>The main address line in a postal address usually the street name and number. </Description>
                   <Value type="EXAMPLE">Ventrupvej 6</Value>
                </Element>
                <Element>
                   <Term>cbc:CityName</Term>
+                  <Name>City </Name>
+                  <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
                   <Value type="EXAMPLE">Greve</Value>
                </Element>
                <Element>
                   <Term>cbc:PostalZone</Term>
+                  <Name>Post code </Name>
+                  <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
                   <Value type="EXAMPLE">2670</Value>
                </Element>
                <Element>
                   <Term>cac:Country</Term>
+                  <Name>Country </Name>
                   <Element cardinality="0..1">
                      <Term>cbc:IdentificationCode</Term>
                      <Name>Country code </Name>
