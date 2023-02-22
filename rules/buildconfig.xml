@@ -36,6 +36,13 @@
 		<file source="sch/PEPPOLBIS-T122.sch" path="xsl/PEPPOLBIS-T122.xsl"/>
 	</configuration>
 
+	<configuration>
+		<identifier>peppolbis-T128-base-1.1</identifier>
+		<title>Receipt Advice (T128)</title>
+		<inherit>ubl-receipt-advice-2.3</inherit>
+		<file source="sch/PEPPOLBIS-T128.sch" path="xsl/PEPPOLBIS-T128.xsl"/>
+	</configuration>
+
 	<!-- profile config -->
 	<configuration>
 		<identifier>peppolbis-120-only</identifier>
@@ -67,5 +74,13 @@
 		<profileId>urn:fdc:peppol.eu:logistics:bis:weight_statement:1</profileId>
 		<customizationId>urn:fdc:peppol.eu:logistics:trns:weight_statement:1</customizationId>
 		<inherit>peppolbis-T122-base-1.1</inherit>
+	</configuration>
+
+	<configuration>
+		<identifier>peppolbis-128</identifier>
+		<title>Receipt Advice</title>
+		<profileId>urn:fdc:peppol.eu:logistics:bis:receipt_advice_only:1</profileId>
+		<customizationId>urn:fdc:peppol.eu:logistics:trns:receipt_advice:1</customizationId>
+		<inherit>peppolbis-T128-base-1.1</inherit>
 	</configuration>
 </buildConfigurations>
