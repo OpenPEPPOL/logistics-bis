@@ -9,13 +9,14 @@
 	<cbc:VersionID>1</cbc:VersionID>
 	<cbc:IssueDate>2021-09-29<?Description The date when the transport execuition plan request is issued. Format = "YYYY-MM-DD". ?></cbc:IssueDate>
 	<cbc:IssueTime>09:49:00<?Description The time when the transport execuition plan request is issued. Format = "hh:mm:ss". ?></cbc:IssueTime>
-	<cbc:DocumentStatusCode>1
+	<cbc:DocumentStatusCode>9
 		<?Name Transport execuition plan request code ?>
 		<?Description A code signifying the status of the transport execuition plan request. Default is Original (9)?>
 		<?Cardinality 0..1?>
+		<?CodeList DocumentStatusCode?>
 	</cbc:DocumentStatusCode>
 	<cac:SenderParty>
-		<?Name Sender Party ?>
+		<?Name Sender party ?>
 		<?Description The party sending the transport execution plan request. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0198">41955619
@@ -963,12 +964,22 @@
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<?Name Postal address ?>
-				<?Description The postal address of the Freight forwarder.?>
+				<?Description The postal address of the freight forwarder party.?>
 				<?Cardinality 0..1?>
-				<cbc:StreetName>Ventrupvej 6</cbc:StreetName>
-				<cbc:CityName>Greve</cbc:CityName>
-				<cbc:PostalZone>2670</cbc:PostalZone>
+				<cbc:StreetName>Ventrupvej 6
+					<?Name Address line 1 ?>
+					<?Description The main address line in a postal address usually the street name and number. ?>	
+				</cbc:StreetName>
+				<cbc:CityName>Greve
+					<?Name City ?>
+					<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+				</cbc:CityName>
+				<cbc:PostalZone>2670
+					<?Name Post code ?>
+					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+				</cbc:PostalZone>
 				<cac:Country>
+					<?Name Country ?>
 					<cbc:IdentificationCode>DK
 						<?Name Country code ?>
 						<?Cardinality 0..1?>
