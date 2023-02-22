@@ -789,7 +789,7 @@
             </Element>
             <Element cardinality="1..1">
                <Term>cac:Location</Term>
-               <Name>Pickup location </Name>
+               <Name>Location of requested pickup </Name>
                <Description>The location where the pickup takes place.</Description>
                <Element>
                   <Term>cbc:ID</Term>
@@ -948,6 +948,7 @@
          </Element>
          <Element cardinality="1..1 0..1">
             <Term>cac:RequestedDeliveryTransportEvent</Term>
+            <Name>Requested delivery transport event </Name>
             <Description>The delivery of this consignment requested by the party requesting a transportation service (the transport user). An identifier for the delivery event within an agreed event identification scheme.</Description>
             <Element>
                <Term>cbc:IdentificationID</Term>
@@ -955,7 +956,8 @@
             </Element>
             <Element cardinality="1..1">
                <Term>cac:Location</Term>
-               <Description>The location where the pickup takes place.</Description>
+               <Name>Location of requested delivery </Name>
+               <Description>The location of the requested delivery.</Description>
                <Element>
                   <Term>cbc:ID</Term>
                   <Name>Identity of the delivery location </Name>
@@ -1235,21 +1237,28 @@
             <Element cardinality="0..1">
                <Term>cac:PostalAddress</Term>
                <Name>Postal address </Name>
-               <Description>The postal address of the Consignor</Description>
+               <Description>The postal address of the consignor party.</Description>
                <Element>
                   <Term>cbc:StreetName</Term>
+                  <Name>Address line 1 </Name>
+                  <Description>The main address line in a postal address usually the street name and number. </Description>
                   <Value type="EXAMPLE">Københavnsvej 216</Value>
                </Element>
                <Element>
                   <Term>cbc:CityName</Term>
+                  <Name>City </Name>
+                  <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
                   <Value type="EXAMPLE">Køge</Value>
                </Element>
                <Element>
                   <Term>cbc:PostalZone</Term>
+                  <Name>Post code </Name>
+                  <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
                   <Value type="EXAMPLE">4600</Value>
                </Element>
                <Element>
                   <Term>cac:Country</Term>
+                  <Name>Country </Name>
                   <Element cardinality="0..1">
                      <Term>cbc:IdentificationCode</Term>
                      <Name>Country code </Name>
@@ -1410,6 +1419,7 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cac:OriginalDepartureCountry</Term>
+            <Name>Original departure country </Name>
             <Description>The country from which the goods in this consignment were originally exported, without any commercial transaction taking place in intermediate countries. </Description>
             <Element cardinality="0..1">
                <Term>cbc:IdentificationCode</Term>
@@ -1421,6 +1431,7 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cac:FinalDestinationCountry</Term>
+            <Name>Final destination country </Name>
             <Description>The country in which the goods in this consignment are to be delivered to the final consignee or buyer. </Description>
             <Element cardinality="0..1">
                <Term>cbc:IdentificationCode</Term>
@@ -1432,20 +1443,24 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cac:DeliveryTerms</Term>
+            <Name>Delivery terms </Name>
             <Description>The conditions agreed upon between a seller and a buyer with regard to the delivery of goods and/or services (e.g., CIF, FOB, or EXW from the INCOTERMS Terms of Delivery). </Description>
             <Element cardinality="0..1">
                <Term>cbc:ID</Term>
-               <Description>The ID of the terms expressed as Inco terms. </Description>
+               <Name>Delivery terms identification </Name>
+               <Description>Delivery terms code (Inco terms). </Description>
                <Value type="EXAMPLE">DAP</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cbc:SpecialTerms</Term>
-               <Description>The terms expressed as other than Inco terms. </Description>
+               <Name>Special terms </Name>
+               <Description>Special delivery terms that exceeds the inco terms. </Description>
                <Value type="EXAMPLE">DAP</Value>
             </Element>
          </Element>
          <Element cardinality="1..1">
             <Term>cac:MainCarriageShipmentStage</Term>
+            <Name>Main carriage shipment stage </Name>
             <Description>The shipment stage during main carriage. </Description>
             <Element cardinality="1..1">
                <Term>cbc:TransportModeCode</Term>
@@ -1842,6 +1857,7 @@
          </Element>
          <Element cardinality="0..n">
             <Term>cac:PreCarriageShipmentStage</Term>
+            <Name>Pre carriage shipment stage </Name>
             <Description>A shipment stage during precarriage (usually refers to movement activity that takes place prior to the container being loaded at a port of loading). </Description>
             <Element cardinality="1..1">
                <Term>cbc:TransportModeCode</Term>
