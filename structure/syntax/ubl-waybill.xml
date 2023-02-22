@@ -1,0 +1,1917 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+   <Term>Waybill</Term>
+   <Property key="sch:prefix">PEPPOL-T125</Property>
+   <Property key="sch:identifier">T125-basic</Property>
+   <Namespace prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:Waybill-2</Namespace>
+   <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
+   <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
+   <Document>
+      <Term>ubl:Waybill</Term>
+	
+	
+	
+	     <Element>
+         <Term>cbc:CustomizationID</Term>
+         <Name>Specification identification</Name>
+         <Description>Identifies the specification of content and rules that apply to the
+				transaction.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir16-002</Reference>
+         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:waybill:1</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:ProfileID</Term>
+         <Name>Business process type identifier</Name>
+         <Description>Identifies the BII profile or business process context in which the
+				transaction appears.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir16-001</Reference>
+         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:waybill_only:1</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:ID</Term>
+         <Name>Document identifier</Name>
+         <Description>An transaction instance must contain an identifier. The identifier enables
+				positive referencing the document instance for various purposes including
+				referencing between transactions that are part of the same process.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir16-003</Reference>
+         <Value type="EXAMPLE">KHN23-44044-1</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:CarrierAssignedID</Term>
+         <Value type="EXAMPLE">123456789987654321</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:UUID</Term>
+         <Value type="EXAMPLE">74638995-D67E-002F-436-8G17366352B1</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:IssueDate</Term>
+         <Name>Dispatch advice issue date</Name>
+         <Description>The date when the despatch advice is issued. Format =
+				"YYYY-MM-DD"</Description>
+         <DataType>Date</DataType>
+         <Reference type="BUSINESS_TERM">tir16-004</Reference>
+         <Value type="EXAMPLE">2005-06-25</Value>
+      </Element>
+	     <Element cardinality="0..1">
+         <Term>cbc:IssueTime</Term>
+         <Name>Dispatch advice issue time</Name>
+         <Description>The time when the despatch advice is issued. Format =
+				"hh:mm:ss"</Description>
+         <DataType>Time</DataType>
+         <Reference type="BUSINESS_TERM">tir16-005</Reference>
+         <Value type="EXAMPLE">09:00:00.0Z</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:Name</Term>
+         <Value type="EXAMPLE">Air Waybill</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:ShippingOrderID</Term>
+         <Value type="EXAMPLE">KHN23-44044</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:AdValoremIndicator</Term>
+         <Value type="EXAMPLE">false</Value>
+      </Element>
+	     <Element>
+         <Term>cbc:DeclaredCarriageValueAmount</Term>
+         <Value type="EXAMPLE">1500.00</Value>
+         <Attribute>
+            <Term>currencyID</Term>
+            <Value type="EXAMPLE">USD</Value>
+         </Attribute>
+      </Element>
+	     <Element>
+         <Term>cac:ConsignorParty</Term>
+         <Element>
+            <Term>cac:PartyName</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">Consortial</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PostalAddress</Term>
+            <Element>
+               <Term>cbc:StreetName</Term>
+               <Value type="EXAMPLE">Boston Road</Value>
+            </Element>
+            <Element>
+               <Term>cbc:BuildingName</Term>
+               <Value type="EXAMPLE">Suite M-102</Value>
+            </Element>
+            <Element>
+               <Term>cbc:BuildingNumber</Term>
+               <Value type="EXAMPLE">630</Value>
+            </Element>
+            <Element>
+               <Term>cbc:CityName</Term>
+               <Value type="EXAMPLE">Billerica</Value>
+            </Element>
+            <Element>
+               <Term>cbc:PostalZone</Term>
+               <Value type="EXAMPLE">01821</Value>
+            </Element>
+            <Element>
+               <Term>cbc:CountrySubentity</Term>
+               <Value type="EXAMPLE">Massachusetts</Value>
+            </Element>
+            <Element>
+               <Term>cbc:CountrySubentityCode</Term>
+               <Value type="EXAMPLE">MA</Value>
+            </Element>
+            <Element>
+               <Term>cac:Country</Term>
+               <Element>
+                  <Term>cbc:IdentificationCode</Term>
+                  <Value type="EXAMPLE">US</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:Contact</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">Mrs Bouquet</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Telephone</Term>
+               <Value type="EXAMPLE">+1 158 1233714</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Telefax</Term>
+               <Value type="EXAMPLE">+ 1 158 1233856</Value>
+            </Element>
+            <Element>
+               <Term>cbc:ElectronicMail</Term>
+               <Value type="EXAMPLE">bouquet@fpconsortial.com</Value>
+            </Element>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:CarrierParty</Term>
+         <Element>
+            <Term>cac:PartyName</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">United Airfreight</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:Contact</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">Freight Bookings</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Telephone</Term>
+               <Value type="EXAMPLE">+1 3362 4788</Value>
+            </Element>
+            <Element>
+               <Term>cbc:ElectronicMail</Term>
+               <Value type="EXAMPLE">bookings@unitedfreight.com</Value>
+            </Element>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:FreightForwarderParty</Term>
+         <Element>
+            <Term>cac:PartyName</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">One-Stop Forwarders</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PostalAddress</Term>
+            <Element>
+               <Term>cbc:Postbox</Term>
+               <Value type="EXAMPLE">99043</Value>
+            </Element>
+            <Element>
+               <Term>cbc:CityName</Term>
+               <Value type="EXAMPLE">Boston</Value>
+            </Element>
+            <Element>
+               <Term>cbc:PostalZone</Term>
+               <Value type="EXAMPLE">02210</Value>
+            </Element>
+            <Element>
+               <Term>cbc:CountrySubentityCode</Term>
+               <Value type="EXAMPLE">MA</Value>
+            </Element>
+            <Element>
+               <Term>cac:Country</Term>
+               <Element>
+                  <Term>cbc:IdentificationCode</Term>
+                  <Value type="EXAMPLE">US</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:Contact</Term>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Value type="EXAMPLE">Con Solidador</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Telephone</Term>
+               <Value type="EXAMPLE">+1 343 1453654</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Telefax</Term>
+               <Value type="EXAMPLE">+1 343 1453655</Value>
+            </Element>
+            <Element>
+               <Term>cbc:ElectronicMail</Term>
+               <Value type="EXAMPLE">ctanner@onestopfreight.com</Value>
+            </Element>
+         </Element>
+      </Element>
+	     <Element cardinality="0..1">
+         <Term>cac:Shipment</Term>
+         <Name>Shipment information</Name>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Name>Shipment identifier</Name>
+            <Description>Identifies a shipment.</Description>
+            <Reference type="BUSINESS_TERM">tir16-038</Reference>
+            <Value type="EXAMPLE">CONS-0001</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:GrossWeightMeasure</Term>
+            <Name>Shipment gross weight</Name>
+            <Description>The total weight of the shipment including packaging, as dispatched
+					from the dispatching party.</Description>
+            <Reference type="BUSINESS_TERM">tir16-074</Reference>
+            <Value type="EXAMPLE">130</Value>
+            <Attribute>
+               <Term>unitCode</Term>
+               <Name>Shipment quantity unit of measure</Name>
+               <Description>The unit of measure that applies to the shipment
+						quantity.</Description>
+               <DataType>Code</DataType>
+               <Reference type="CODE_LIST">UNECERec20</Reference>
+               <Value type="EXAMPLE">KGM</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:NetWeightMeasure</Term>
+            <Value type="EXAMPLE">110</Value>
+            <Attribute>
+               <Term>unitCode</Term>
+               <Value type="EXAMPLE">KGM</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:NetNetWeightMeasure</Term>
+            <Value type="EXAMPLE">100</Value>
+            <Attribute>
+               <Term>unitCode</Term>
+               <Value type="EXAMPLE">KGM</Value>
+            </Attribute>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:GrossVolumeMeasure</Term>
+            <Name>Shipment gross volume</Name>
+            <Description>The total volume of the shipment including packaging, as dispatched
+					from the dispatching party.</Description>
+            <Reference type="BUSINESS_TERM">tir16-075</Reference>
+            <Value type="EXAMPLE">2</Value>
+            <Attribute>
+               <Term>unitCode</Term>
+               <Name>Shipment volume unit of measure</Name>
+               <Description>The unit of measure that applies to the shipment
+						volume.</Description>
+               <DataType>Code</DataType>
+               <Reference type="CODE_LIST">UNECERec20</Reference>
+               <Value type="EXAMPLE">MTQ</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:NetVolumeMeasure</Term>
+            <Value type="EXAMPLE">2.235</Value>
+            <Attribute>
+               <Term>unitCode</Term>
+               <Value type="EXAMPLE">MTQ</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:TotalGoodsItemQuantity</Term>
+            <Value type="EXAMPLE">1</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:TotalTransportHandlingUnitQuantity</Term>
+            <Name>Total number of transport handling units</Name>
+            <Reference type="BUSINESS_TERM">tir16-p002</Reference>
+            <Value type="EXAMPLE">10</Value>
+         </Element>
+         <Element>
+            <Term>cbc:InsuranceValueAmount</Term>
+            <Value type="EXAMPLE">1000.00</Value>
+            <Attribute>
+               <Term>currencyID</Term>
+               <Value type="EXAMPLE">USD</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:DeclaredCustomsValueAmount</Term>
+            <Value type="EXAMPLE">524.80</Value>
+            <Attribute>
+               <Term>currencyID</Term>
+               <Value type="EXAMPLE">GBP</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:FreeOnBoardValueAmount</Term>
+            <Value type="EXAMPLE">1200.00</Value>
+            <Attribute>
+               <Term>currencyID</Term>
+               <Value type="EXAMPLE">USD</Value>
+            </Attribute>
+         </Element>
+         <Element>
+            <Term>cbc:SpecialInstructions</Term>
+            <Value type="EXAMPLE">Beeswax becomes liquid at 50'C</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:Consignment</Term>
+            <Name>Consignment information</Name>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Name>Consignment identifier</Name>
+               <Description>An association to Consignment covering the shipment. Unique number
+						assigned to goods, both for import and export.</Description>
+               <Reference type="BUSINESS_TERM">tir16-040</Reference>
+               <Value type="EXAMPLE">2005US12345678998765432112345678</Value>
+               <Attribute>
+                  <Term>schemeAgencyName</Term>
+                  <Value type="EXAMPLE">WCO</Value>
+               </Attribute>
+               <Attribute>
+                  <Term>schemeName</Term>
+                  <Value type="EXAMPLE">Unique Consignment Reference</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:TariffDescription</Term>
+               <Value type="EXAMPLE">Beeswax, other insect waxes and spermacetti</Value>
+            </Element>
+            <Element>
+               <Term>cbc:TariffCode</Term>
+               <Value type="EXAMPLE">15219000</Value>
+            </Element>
+            <Element>
+               <Term>cbc:HazardousRiskIndicator</Term>
+               <Value type="EXAMPLE">false</Value>
+            </Element>
+            <Element>
+               <Term>cac:ConsigneeParty</Term>
+               <Element>
+                  <Term>cac:PartyName</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">IYT Corporation</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:PostalAddress</Term>
+                  <Element>
+                     <Term>cbc:StreetName</Term>
+                     <Value type="EXAMPLE">Avon Way</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:BuildingName</Term>
+                     <Value type="EXAMPLE">Thereabouts</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:BuildingNumber</Term>
+                     <Value type="EXAMPLE">56A</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:CityName</Term>
+                     <Value type="EXAMPLE">Bridgtow</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:PostalZone</Term>
+                     <Value type="EXAMPLE">ZZ99 1ZZ</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:CountrySubentity</Term>
+                     <Value type="EXAMPLE">Avon</Value>
+                  </Element>
+                  <Element>
+                     <Term>cac:AddressLine</Term>
+                     <Element>
+                        <Term>cbc:Line</Term>
+                        <Value type="EXAMPLE">3rd Floor, Room 5</Value>
+                     </Element>
+                  </Element>
+                  <Element>
+                     <Term>cac:Country</Term>
+                     <Element>
+                        <Term>cbc:IdentificationCode</Term>
+                        <Value type="EXAMPLE">GB</Value>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Contact</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">Mr Fred Churchill</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Telephone</Term>
+                     <Value type="EXAMPLE">+44 127 2653214</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Telefax</Term>
+                     <Value type="EXAMPLE">+44 127 2653215</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:ElectronicMail</Term>
+                     <Value type="EXAMPLE">fred@iytcorporation.gov.uk</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:NotifyParty</Term>
+               <Element>
+                  <Term>cac:PartyName</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">IYT Corporation</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:PostalAddress</Term>
+                  <Element>
+                     <Term>cbc:StreetName</Term>
+                     <Value type="EXAMPLE">Avon Way</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:BuildingName</Term>
+                     <Value type="EXAMPLE">Thereabouts</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:BuildingNumber</Term>
+                     <Value type="EXAMPLE">56A</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:CityName</Term>
+                     <Value type="EXAMPLE">Bridgtow</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:PostalZone</Term>
+                     <Value type="EXAMPLE">ZZ99 1ZZ</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:CountrySubentity</Term>
+                     <Value type="EXAMPLE">Avon</Value>
+                  </Element>
+                  <Element>
+                     <Term>cac:AddressLine</Term>
+                     <Element>
+                        <Term>cbc:Line</Term>
+                        <Value type="EXAMPLE">3rd Floor, Room 5</Value>
+                     </Element>
+                  </Element>
+                  <Element>
+                     <Term>cac:Country</Term>
+                     <Element>
+                        <Term>cbc:IdentificationCode</Term>
+                        <Value type="EXAMPLE">GB</Value>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Contact</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">Mr Fred Churchill</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Telephone</Term>
+                     <Value type="EXAMPLE">+44 127 2653214</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Telefax</Term>
+                     <Value type="EXAMPLE">+44 127 2653215</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:ElectronicMail</Term>
+                     <Value type="EXAMPLE">fred@iytcorporation.gov.uk</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:FinalDeliveryParty</Term>
+               <Element>
+                  <Term>cac:PartyName</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">The Terminus</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:PostalAddress</Term>
+                  <Element>
+                     <Term>cbc:StreetName</Term>
+                     <Value type="EXAMPLE">Avon Way</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:BuildingName</Term>
+                     <Value type="EXAMPLE">Thereabouts</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:BuildingNumber</Term>
+                     <Value type="EXAMPLE">56A</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:CityName</Term>
+                     <Value type="EXAMPLE">Bridgtow</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:PostalZone</Term>
+                     <Value type="EXAMPLE">ZZ99 1ZZ</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:CountrySubentity</Term>
+                     <Value type="EXAMPLE">Avon</Value>
+                  </Element>
+                  <Element>
+                     <Term>cac:AddressLine</Term>
+                     <Element>
+                        <Term>cbc:Line</Term>
+                        <Value type="EXAMPLE">3rd Floor, Room 5</Value>
+                     </Element>
+                  </Element>
+                  <Element>
+                     <Term>cac:Country</Term>
+                     <Element>
+                        <Term>cbc:IdentificationCode</Term>
+                        <Value type="EXAMPLE">GB</Value>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Contact</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">S Massiah</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Telephone</Term>
+                     <Value type="EXAMPLE">+ 44 127 98876545</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Telefax</Term>
+                     <Value type="EXAMPLE">+ 44 127 98876546</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:ElectronicMail</Term>
+                     <Value type="EXAMPLE">smassiah@the-email.co.uk</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:OriginalDepartureCountry</Term>
+               <Element>
+                  <Term>cbc:IdentificationCode</Term>
+                  <Value type="EXAMPLE">US</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:FinalDestinationCountry</Term>
+               <Element>
+                  <Term>cbc:IdentificationCode</Term>
+                  <Value type="EXAMPLE">GB</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:TransportContract</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">CONS-001</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:IssueDate</Term>
+                  <Value type="EXAMPLE">2005-06-24</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:ContractType</Term>
+                  <Value type="EXAMPLE">Forwarding Instructions</Value>
+               </Element>
+               <Element>
+                  <Term>cac:ValidityPeriod</Term>
+                  <Element>
+                     <Term>cbc:StartDate</Term>
+                     <Value type="EXAMPLE">2005-06-25</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:StartTime</Term>
+                     <Value type="EXAMPLE">01:00:00.0Z</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:EndDate</Term>
+                     <Value type="EXAMPLE">2005-06-30</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:EndTime</Term>
+                     <Value type="EXAMPLE">18:00:00.0Z</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:ContractDocumentReference</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">normalizedString</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:CopyIndicator</Term>
+                     <Value type="EXAMPLE">false</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:UUID</Term>
+                     <Value type="EXAMPLE">normalizedString</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:IssueDate</Term>
+                     <Value type="EXAMPLE">1967-08-13</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:DocumentTypeCode</Term>
+                     <Value type="EXAMPLE">normalizedString</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:DocumentType</Term>
+                     <Value type="EXAMPLE">String</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:XPath</Term>
+                     <Value type="EXAMPLE">String</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:XPath</Term>
+                     <Value type="EXAMPLE">String</Value>
+                  </Element>
+                  <Element>
+                     <Term>cac:Attachment</Term>
+                     <Element>
+                        <Term>cbc:EmbeddedDocumentBinaryObject</Term>
+                        <Value type="EXAMPLE">UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</Value>
+                        <Attribute>
+                           <Term>mimeCode</Term>
+                           <Value type="EXAMPLE">application/CSTAdata+xml</Value>
+                        </Attribute>
+                     </Element>
+                     <Element>
+                        <Term>cac:ExternalReference</Term>
+                        <Element>
+                           <Term>cbc:URI</Term>
+                           <Value type="EXAMPLE">normalizedString</Value>
+                        </Element>
+                        <Element>
+                           <Term>cbc:DocumentHash</Term>
+                           <Value type="EXAMPLE">String</Value>
+                        </Element>
+                        <Element>
+                           <Term>cbc:ExpiryDate</Term>
+                           <Value type="EXAMPLE">1967-08-13</Value>
+                        </Element>
+                        <Element>
+                           <Term>cbc:ExpiryTime</Term>
+                           <Value type="EXAMPLE">14:20:00.0Z</Value>
+                        </Element>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:ContractDocumentReference</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">normalizedString</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:CopyIndicator</Term>
+                     <Value type="EXAMPLE">false</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:UUID</Term>
+                     <Value type="EXAMPLE">normalizedString</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:IssueDate</Term>
+                     <Value type="EXAMPLE">1967-08-13</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:DocumentTypeCode</Term>
+                     <Value type="EXAMPLE">normalizedString</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:DocumentType</Term>
+                     <Value type="EXAMPLE">String</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:XPath</Term>
+                     <Value type="EXAMPLE">String</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:XPath</Term>
+                     <Value type="EXAMPLE">String</Value>
+                  </Element>
+                  <Element>
+                     <Term>cac:Attachment</Term>
+                     <Element>
+                        <Term>cbc:EmbeddedDocumentBinaryObject</Term>
+                        <Value type="EXAMPLE">UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</Value>
+                        <Attribute>
+                           <Term>mimeCode</Term>
+                           <Value type="EXAMPLE">application/CSTAdata+xml</Value>
+                        </Attribute>
+                     </Element>
+                     <Element>
+                        <Term>cac:ExternalReference</Term>
+                        <Element>
+                           <Term>cbc:URI</Term>
+                           <Value type="EXAMPLE">normalizedString</Value>
+                        </Element>
+                        <Element>
+                           <Term>cbc:DocumentHash</Term>
+                           <Value type="EXAMPLE">String</Value>
+                        </Element>
+                        <Element>
+                           <Term>cbc:ExpiryDate</Term>
+                           <Value type="EXAMPLE">1967-08-13</Value>
+                        </Element>
+                        <Element>
+                           <Term>cbc:ExpiryTime</Term>
+                           <Value type="EXAMPLE">14:20:00.0Z</Value>
+                        </Element>
+                     </Element>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:OriginalDespatchTransportationService</Term>
+               <Element>
+                  <Term>cbc:TransportServiceCode</Term>
+                  <Value type="EXAMPLE">Door to Pier</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:FinalDeliveryTransportationService</Term>
+               <Element>
+                  <Term>cbc:TransportServiceCode</Term>
+                  <Value type="EXAMPLE">Pier to Pier</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:DeliveryTerms</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">FOB Destination</Value>
+               </Element>
+               <Element>
+                  <Term>cac:DeliveryLocation</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">GBBRS</Value>
+                     <Attribute>
+                        <Term>schemeAgencyID</Term>
+                        <Value type="EXAMPLE">6</Value>
+                     </Attribute>
+                     <Attribute>
+                        <Term>schemeID</Term>
+                        <Value type="EXAMPLE">UN/LOCODE</Value>
+                     </Attribute>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Description</Term>
+                     <Value type="EXAMPLE">Bristol</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PaymentTerms</Term>
+               <Element>
+                  <Term>cbc:PaymentMeansID</Term>
+                  <Value type="EXAMPLE">Bankers Cheque</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:FreightAllowanceCharge</Term>
+               <Element>
+                  <Term>cbc:ChargeIndicator</Term>
+                  <Value type="EXAMPLE">true</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:AllowanceChargeReason</Term>
+                  <Value type="EXAMPLE">Freight charges</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:SequenceNumeric</Term>
+                  <Value type="EXAMPLE">1</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Amount</Term>
+                  <Value type="EXAMPLE">254.00</Value>
+                  <Attribute>
+                     <Term>currencyID</Term>
+                     <Value type="EXAMPLE">USD</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:FreightAllowanceCharge</Term>
+               <Element>
+                  <Term>cbc:ChargeIndicator</Term>
+                  <Value type="EXAMPLE">false</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:AllowanceChargeReasonCode</Term>
+                  <Value type="EXAMPLE">79</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:AllowanceChargeReason</Term>
+                  <Value type="EXAMPLE">Sundry discount</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:MultiplierFactorNumeric</Term>
+                  <Value type="EXAMPLE">0.05</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:SequenceNumeric</Term>
+                  <Value type="EXAMPLE">2</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Amount</Term>
+                  <Value type="EXAMPLE">12.70</Value>
+                  <Attribute>
+                     <Term>currencyID</Term>
+                     <Value type="EXAMPLE">USD</Value>
+                  </Attribute>
+               </Element>
+               <Element>
+                  <Term>cbc:BaseAmount</Term>
+                  <Value type="EXAMPLE">254.00</Value>
+                  <Attribute>
+                     <Term>currencyID</Term>
+                     <Value type="EXAMPLE">USD</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:GoodsItem</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">1</Value>
+            </Element>
+            <Element>
+               <Term>cbc:SequenceNumberID</Term>
+               <Value type="EXAMPLE">1</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Description</Term>
+               <Value type="EXAMPLE">Acme beeswax</Value>
+            </Element>
+            <Element>
+               <Term>cbc:HazardousRiskIndicator</Term>
+               <Value type="EXAMPLE">false</Value>
+            </Element>
+            <Element>
+               <Term>cbc:DeclaredCustomsValueAmount</Term>
+               <Value type="EXAMPLE">524.80</Value>
+               <Attribute>
+                  <Term>currencyID</Term>
+                  <Value type="EXAMPLE">GBP</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:DeclaredStatisticsValueAmount</Term>
+               <Value type="EXAMPLE">1000.00</Value>
+               <Attribute>
+                  <Term>currencyID</Term>
+                  <Value type="EXAMPLE">USD</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:FreeOnBoardValueAmount</Term>
+               <Value type="EXAMPLE">1241.30</Value>
+               <Attribute>
+                  <Term>currencyID</Term>
+                  <Value type="EXAMPLE">USD</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:InsuranceValueAmount</Term>
+               <Value type="EXAMPLE">1241.30</Value>
+               <Attribute>
+                  <Term>currencyID</Term>
+                  <Value type="EXAMPLE">USD</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:ValueAmount</Term>
+               <Value type="EXAMPLE">1000.00</Value>
+               <Attribute>
+                  <Term>currencyID</Term>
+                  <Value type="EXAMPLE">USD</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:GrossWeightMeasure</Term>
+               <Value type="EXAMPLE">130</Value>
+               <Attribute>
+                  <Term>unitCode</Term>
+                  <Value type="EXAMPLE">KGM</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:NetWeightMeasure</Term>
+               <Value type="EXAMPLE">110</Value>
+               <Attribute>
+                  <Term>unitCode</Term>
+                  <Value type="EXAMPLE">KGM</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:NetNetWeightMeasure</Term>
+               <Value type="EXAMPLE">100</Value>
+               <Attribute>
+                  <Term>unitCode</Term>
+                  <Value type="EXAMPLE">KGM</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:GrossVolumeMeasure</Term>
+               <Value type="EXAMPLE">2</Value>
+               <Attribute>
+                  <Term>unitCode</Term>
+                  <Value type="EXAMPLE">MTQ</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:NetVolumeMeasure</Term>
+               <Value type="EXAMPLE">2.235</Value>
+               <Attribute>
+                  <Term>unitCode</Term>
+                  <Value type="EXAMPLE">MTQ</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:Quantity</Term>
+               <Value type="EXAMPLE">10</Value>
+            </Element>
+            <Element>
+               <Term>cbc:RequiredCustomsID</Term>
+               <Value type="EXAMPLE">ECN12344566</Value>
+            </Element>
+            <Element>
+               <Term>cbc:CustomsStatusCode</Term>
+               <Value type="EXAMPLE">Cleared</Value>
+            </Element>
+            <Element>
+               <Term>cbc:CustomsTariffQuantity</Term>
+               <Value type="EXAMPLE">1000</Value>
+            </Element>
+            <Element>
+               <Term>cac:Item</Term>
+               <Element>
+                  <Term>cbc:Description</Term>
+                  <Value type="EXAMPLE">Beeswax</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Value type="EXAMPLE">Acme Beeswax</Value>
+               </Element>
+               <Element>
+                  <Term>cac:BuyersItemIdentification</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">6578489</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:SellersItemIdentification</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">17589683</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:OriginCountry</Term>
+                  <Element>
+                     <Term>cbc:IdentificationCode</Term>
+                     <Value type="EXAMPLE">MX</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">Mexico</Value>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:ShipmentStage</Term>
+            <Name>Shipment stage information</Name>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">1</Value>
+            </Element>
+            <Element cardinality="1..1">
+               <Term>cbc:TransportModeCode</Term>
+               <Name>Mode of transport</Name>
+               <Description>The mode of transport with which the goods were delivered.</Description>
+               <Reference type="BUSINESS_TERM">tir16-p056</Reference>
+               <Reference type="CODE_LIST">UNECERec19</Reference>
+               <Value type="EXAMPLE">3</Value>
+               <Attribute>
+                  <Term>listAgencyID</Term>
+                  <Value type="EXAMPLE">6</Value>
+               </Attribute>
+               <Attribute>
+                  <Term>listID</Term>
+                  <Value type="EXAMPLE">UN/ECE rec 16</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:TransportMeansTypeCode</Term>
+               <Value type="EXAMPLE">Truck</Value>
+            </Element>
+            <Element>
+               <Term>cbc:PreCarriageIndicator</Term>
+               <Value type="EXAMPLE">true</Value>
+            </Element>
+            <Element>
+               <Term>cbc:OnCarriageIndicator</Term>
+               <Value type="EXAMPLE">false</Value>
+            </Element>
+            <Element>
+               <Term>cac:TransitPeriod</Term>
+               <Element>
+                  <Term>cbc:StartDate</Term>
+                  <Value type="EXAMPLE">2005-06-25</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:StartTime</Term>
+                  <Value type="EXAMPLE">11:35:00.0Z</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:EndDate</Term>
+                  <Value type="EXAMPLE">2005-06-25</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:EndTime</Term>
+                  <Value type="EXAMPLE">16:00:00.0Z</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:CarrierParty</Term>
+               <Element>
+                  <Term>cac:PartyName</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">Keep On Trucking</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Contact</Term>
+                  <Element>
+                     <Term>cbc:Telephone</Term>
+                     <Value type="EXAMPLE">+1 36222 33847</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:TransportMeans</Term>
+               <Element>
+                  <Term>cac:RoadTransport</Term>
+                  <Element>
+                     <Term>cbc:LicensePlateID</Term>
+                     <Value type="EXAMPLE">2652 WE</Value>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:ShipmentStage</Term>
+            <Name>Shipment stage information</Name>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">2</Value>
+            </Element>
+            <Element cardinality="1..1">
+               <Term>cbc:TransportModeCode</Term>
+               <Name>Mode of transport</Name>
+               <Description>The mode of transport with which the goods were delivered.</Description>
+               <Reference type="BUSINESS_TERM">tir16-p056</Reference>
+               <Reference type="CODE_LIST">UNECERec19</Reference>
+               <Value type="EXAMPLE">4</Value>
+               <Attribute>
+                  <Term>listAgencyID</Term>
+                  <Value type="EXAMPLE">6</Value>
+               </Attribute>
+               <Attribute>
+                  <Term>listID</Term>
+                  <Value type="EXAMPLE">UN/ECE rec 16</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:TransportMeansTypeCode</Term>
+               <Value type="EXAMPLE">Plane</Value>
+            </Element>
+            <Element>
+               <Term>cbc:PreCarriageIndicator</Term>
+               <Value type="EXAMPLE">false</Value>
+            </Element>
+            <Element>
+               <Term>cbc:OnCarriageIndicator</Term>
+               <Value type="EXAMPLE">false</Value>
+            </Element>
+            <Element>
+               <Term>cac:TransitPeriod</Term>
+               <Element>
+                  <Term>cbc:StartDate</Term>
+                  <Value type="EXAMPLE">2005-06-25</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:StartTime</Term>
+                  <Value type="EXAMPLE">23:20:00.0Z</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:CarrierParty</Term>
+               <Element>
+                  <Term>cac:PartyName</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">United Airfreight</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Contact</Term>
+                  <Element>
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">Freight Bookings</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Telephone</Term>
+                     <Value type="EXAMPLE">+1 3362 4788</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:ElectronicMail</Term>
+                     <Value type="EXAMPLE">bookings@unitedfreight.com</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:TransportMeans</Term>
+               <Element>
+                  <Term>cbc:JourneyID</Term>
+                  <Value type="EXAMPLE">UA 1234</Value>
+               </Element>
+               <Element>
+                  <Term>cac:AirTransport</Term>
+                  <Element>
+                     <Term>cbc:AircraftID</Term>
+                     <Value type="EXAMPLE">A-127763-747</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:LoadingPortLocation</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">USBOS</Value>
+                  <Attribute>
+                     <Term>schemeAgencyID</Term>
+                     <Value type="EXAMPLE">6</Value>
+                  </Attribute>
+                  <Attribute>
+                     <Term>schemeID</Term>
+                     <Value type="EXAMPLE">UN/LOCODE</Value>
+                  </Attribute>
+               </Element>
+               <Element>
+                  <Term>cbc:Description</Term>
+                  <Value type="EXAMPLE">Boston Airport</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:UnloadingPortLocation</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">GBBRS</Value>
+                  <Attribute>
+                     <Term>schemeAgencyID</Term>
+                     <Value type="EXAMPLE">6</Value>
+                  </Attribute>
+                  <Attribute>
+                     <Term>schemeID</Term>
+                     <Value type="EXAMPLE">UN/LOCODE</Value>
+                  </Attribute>
+               </Element>
+               <Element>
+                  <Term>cbc:Description</Term>
+                  <Value type="EXAMPLE">Bristol Airport</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:TransshipPortLocation</Term>
+               <Element>
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">GBLHR</Value>
+                  <Attribute>
+                     <Term>schemeAgencyID</Term>
+                     <Value type="EXAMPLE">6</Value>
+                  </Attribute>
+                  <Attribute>
+                     <Term>schemeID</Term>
+                     <Value type="EXAMPLE">UN/LOCODE</Value>
+                  </Attribute>
+               </Element>
+               <Element>
+                  <Term>cbc:Description</Term>
+                  <Value type="EXAMPLE">Heathrow Apt/London</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:Delivery</Term>
+            <Name>Delivery information</Name>
+            <Element>
+               <Term>cbc:Quantity</Term>
+               <Value type="EXAMPLE">1</Value>
+            </Element>
+            <Element>
+               <Term>cbc:LatestDeliveryDate</Term>
+               <Value type="EXAMPLE">2005-06-30</Value>
+            </Element>
+            <Element>
+               <Term>cbc:LatestDeliveryTime</Term>
+               <Value type="EXAMPLE">18:00:00.0Z</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:TrackingID</Term>
+               <Name>Delivery tracking identifier</Name>
+               <Description>Used to provide a tracking id for delvivery e.g. UPS or
+						postal.</Description>
+               <Reference type="BUSINESS_TERM">tir16-041</Reference>
+               <Value type="EXAMPLE">NKH7712289-03339-000128</Value>
+            </Element>
+            <Element>
+               <Term>cac:DeliveryAddress</Term>
+               <Element>
+                  <Term>cbc:StreetName</Term>
+                  <Value type="EXAMPLE">Avon Way</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:BuildingName</Term>
+                  <Value type="EXAMPLE">Thereabouts</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:BuildingNumber</Term>
+                  <Value type="EXAMPLE">56A</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CityName</Term>
+                  <Value type="EXAMPLE">Bridgtow</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:PostalZone</Term>
+                  <Value type="EXAMPLE">ZZ99 1ZZ</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CountrySubentity</Term>
+                  <Value type="EXAMPLE">Avon</Value>
+               </Element>
+               <Element>
+                  <Term>cac:AddressLine</Term>
+                  <Element>
+                     <Term>cbc:Line</Term>
+                     <Value type="EXAMPLE">3rd Floor, Room 5</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Country</Term>
+                  <Element>
+                     <Term>cbc:IdentificationCode</Term>
+                     <Value type="EXAMPLE">GB</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:RequestedDeliveryPeriod</Term>
+               <Element>
+                  <Term>cbc:StartDate</Term>
+                  <Value type="EXAMPLE">2005-06-29</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:StartTime</Term>
+                  <Value type="EXAMPLE">01:00:00.0Z</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:EndDate</Term>
+                  <Value type="EXAMPLE">2005-06-30</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:EndTime</Term>
+                  <Value type="EXAMPLE">18:00:00.0Z</Value>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:EstimatedDeliveryPeriod</Term>
+               <Name>Estimated delivery period</Name>
+               <Element cardinality="0..1">
+                  <Term>cbc:StartDate</Term>
+                  <Name>Period start date</Name>
+                  <Description>The start date of the period</Description>
+                  <Reference type="BUSINESS_TERM">tir16-042</Reference>
+                  <Value type="EXAMPLE">2005-06-30</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:StartTime</Term>
+                  <Name>Period start time</Name>
+                  <Description>The start time of the period.</Description>
+                  <Reference type="BUSINESS_TERM">tir16-043</Reference>
+                  <Value type="EXAMPLE">01:00:00.0Z</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:DeliveryParty</Term>
+               <Element>
+                  <Term>cac:PartyName</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">The Terminus</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Contact</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">S Massiah</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Telephone</Term>
+                     <Value type="EXAMPLE">+ 44 127 98876545</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Telefax</Term>
+                     <Value type="EXAMPLE">+ 44 127 98876546</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:ElectronicMail</Term>
+                     <Value type="EXAMPLE">smassiah@the-email.co.uk</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:Despatch</Term>
+               <Name>Actual or expected despatch period</Name>
+               <Element cardinality="0..1">
+                  <Term>cbc:ActualDespatchDate</Term>
+                  <Name>Shipment dispatch date</Name>
+                  <Description>The actual or expected date when the shipment was dispatched
+							from the dispatching party.</Description>
+                  <Reference type="BUSINESS_TERM">tir16-072</Reference>
+                  <Value type="EXAMPLE">2005-06-25</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:ActualDespatchTime</Term>
+                  <Name>Shipment dispatch time</Name>
+                  <Description>The actual or expected time when the shipment was dispatched
+							from the dispatching party.</Description>
+                  <Reference type="BUSINESS_TERM">tir16-073</Reference>
+                  <Value type="EXAMPLE">11:35:00.0Z</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:DespatchAddress</Term>
+                  <Name>Despatch address</Name>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StreetName</Term>
+                     <Name>Address line 1</Name>
+                     <Description>The main address line in a postal address usually the street
+							name and number.</Description>
+                     <Reference type="BUSINESS_TERM">tir16-p003</Reference>
+                     <Value type="EXAMPLE">Boston Road</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:BuildingName</Term>
+                     <Value type="EXAMPLE">Suite M-102</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:BuildingNumber</Term>
+                     <Value type="EXAMPLE">630</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CityName</Term>
+                     <Name>City</Name>
+                     <Description>The common name of the city where the postal address is. The
+							name is written in full rather than as a code.</Description>
+                     <Reference type="BUSINESS_TERM">tir16-p005</Reference>
+                     <Value type="EXAMPLE">Billerica</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:PostalZone</Term>
+                     <Name>Post code</Name>
+                     <Description>The identifier for an addressable group of properties according
+							to the relevant national postal service, such as a ZIP code or Post
+							Code.</Description>
+                     <Reference type="BUSINESS_TERM">tir16-p006</Reference>
+                     <Value type="EXAMPLE">01821</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CountrySubentity</Term>
+                     <Name>Country subdivision</Name>
+                     <Description>For specifying a region, county, state, province etc. within a
+							country by using text.</Description>
+                     <Reference type="BUSINESS_TERM">tir16-p007</Reference>
+                     <Value type="EXAMPLE">Massachusetts</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:CountrySubentityCode</Term>
+                     <Value type="EXAMPLE">MA</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cac:Country</Term>
+                     <Name>Country</Name>
+                     <Element>
+                        <Term>cbc:IdentificationCode</Term>
+                        <Name>Country code</Name>
+                        <Description>A code that identifies the country.The lists of valid
+									countries are registered with the ISO 3166-1 Maintenance agency,
+									"Codes for the representation of names of countries and their
+									subdivisions". Codes must be according to the alpha-2
+									representation.</Description>
+                        <DataType>Code</DataType>
+                        <Reference type="BUSINESS_TERM">tir16-p008</Reference>
+                        <Reference type="CODE_LIST">ISO3166</Reference>
+                        <Value type="EXAMPLE">US</Value>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:DespatchParty</Term>
+                  <Element>
+                     <Term>cac:PartyName</Term>
+                     <Element>
+                        <Term>cbc:Name</Term>
+                        <Value type="EXAMPLE">Consortial</Value>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Contact</Term>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">Mrs Bouquet</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Telephone</Term>
+                     <Value type="EXAMPLE">+1 158 1233714</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Telefax</Term>
+                     <Value type="EXAMPLE">+ 1 158 1233856</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:ElectronicMail</Term>
+                     <Value type="EXAMPLE">bouquet@fpconsortial.com</Value>
+                  </Element>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:TransportHandlingUnit</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">1</Value>
+            </Element>
+            <Element>
+               <Term>cbc:TransportHandlingUnitTypeCode</Term>
+               <Value type="EXAMPLE">PA</Value>
+               <Attribute>
+                  <Term>listAgencyName</Term>
+                  <Value type="EXAMPLE">United Nations Economic Commission for Europe</Value>
+               </Attribute>
+               <Attribute>
+                  <Term>listID</Term>
+                  <Value type="EXAMPLE">TRED 8053</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:HazardousRiskIndicator</Term>
+               <Value type="EXAMPLE">false</Value>
+            </Element>
+            <Element>
+               <Term>cbc:TotalGoodsItemQuantity</Term>
+               <Value type="EXAMPLE">10</Value>
+            </Element>
+            <Element>
+               <Term>cbc:TotalPackageQuantity</Term>
+               <Value type="EXAMPLE">10</Value>
+            </Element>
+            <Element>
+               <Term>cac:ActualPackage</Term>
+               <Element>
+                  <Term>cbc:Quantity</Term>
+                  <Value type="EXAMPLE">10</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:PackagingTypeCode</Term>
+                  <Value type="EXAMPLE">TB</Value>
+                  <Attribute>
+                     <Term>listAgencyID</Term>
+                     <Value type="EXAMPLE">6</Value>
+                  </Attribute>
+                  <Attribute>
+                     <Term>listID</Term>
+                     <Value type="EXAMPLE">UN/ECE rec 21</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:OriginAddress</Term>
+            <Element>
+               <Term>cbc:StreetName</Term>
+               <Value type="EXAMPLE">Boston Road</Value>
+            </Element>
+            <Element>
+               <Term>cbc:BuildingName</Term>
+               <Value type="EXAMPLE">Suite M-102</Value>
+            </Element>
+            <Element>
+               <Term>cbc:BuildingNumber</Term>
+               <Value type="EXAMPLE">630</Value>
+            </Element>
+            <Element>
+               <Term>cbc:CityName</Term>
+               <Value type="EXAMPLE">Billerica</Value>
+            </Element>
+            <Element>
+               <Term>cbc:PostalZone</Term>
+               <Value type="EXAMPLE">01821</Value>
+            </Element>
+            <Element>
+               <Term>cbc:CountrySubentity</Term>
+               <Value type="EXAMPLE">Massachusetts</Value>
+            </Element>
+            <Element>
+               <Term>cbc:CountrySubentityCode</Term>
+               <Value type="EXAMPLE">MA</Value>
+            </Element>
+            <Element>
+               <Term>cac:Country</Term>
+               <Element>
+                  <Term>cbc:IdentificationCode</Term>
+                  <Value type="EXAMPLE">US</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:FirstArrivalPortLocation</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">GBBRS</Value>
+               <Attribute>
+                  <Term>schemeAgencyID</Term>
+                  <Value type="EXAMPLE">6</Value>
+               </Attribute>
+               <Attribute>
+                  <Term>schemeID</Term>
+                  <Value type="EXAMPLE">UN/LOCODE</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:Description</Term>
+               <Value type="EXAMPLE">Bristol</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:LastExitPortLocation</Term>
+            <Element>
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">USBOS</Value>
+               <Attribute>
+                  <Term>schemeAgencyID</Term>
+                  <Value type="EXAMPLE">6</Value>
+               </Attribute>
+               <Attribute>
+                  <Term>schemeID</Term>
+                  <Value type="EXAMPLE">UN/LOCODE</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:Description</Term>
+               <Value type="EXAMPLE">Boston</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:ExportCountry</Term>
+            <Element>
+               <Term>cbc:IdentificationCode</Term>
+               <Value type="EXAMPLE">US</Value>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:FreightAllowanceCharge</Term>
+            <Element>
+               <Term>cbc:ChargeIndicator</Term>
+               <Value type="EXAMPLE">true</Value>
+            </Element>
+            <Element>
+               <Term>cbc:AllowanceChargeReason</Term>
+               <Value type="EXAMPLE">Freight charges</Value>
+            </Element>
+            <Element>
+               <Term>cbc:SequenceNumeric</Term>
+               <Value type="EXAMPLE">1</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Amount</Term>
+               <Value type="EXAMPLE">254.00</Value>
+               <Attribute>
+                  <Term>currencyID</Term>
+                  <Value type="EXAMPLE">USD</Value>
+               </Attribute>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:FreightAllowanceCharge</Term>
+            <Element>
+               <Term>cbc:ChargeIndicator</Term>
+               <Value type="EXAMPLE">false</Value>
+            </Element>
+            <Element>
+               <Term>cbc:AllowanceChargeReasonCode</Term>
+               <Value type="EXAMPLE">79</Value>
+            </Element>
+            <Element>
+               <Term>cbc:AllowanceChargeReason</Term>
+               <Value type="EXAMPLE">Sundry discount</Value>
+            </Element>
+            <Element>
+               <Term>cbc:MultiplierFactorNumeric</Term>
+               <Value type="EXAMPLE">0.05</Value>
+            </Element>
+            <Element>
+               <Term>cbc:SequenceNumeric</Term>
+               <Value type="EXAMPLE">2</Value>
+            </Element>
+            <Element>
+               <Term>cbc:Amount</Term>
+               <Value type="EXAMPLE">12.70</Value>
+               <Attribute>
+                  <Term>currencyID</Term>
+                  <Value type="EXAMPLE">USD</Value>
+               </Attribute>
+            </Element>
+            <Element>
+               <Term>cbc:BaseAmount</Term>
+               <Value type="EXAMPLE">254.00</Value>
+               <Attribute>
+                  <Term>currencyID</Term>
+                  <Value type="EXAMPLE">USD</Value>
+               </Attribute>
+            </Element>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:DocumentReference</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Value type="EXAMPLE">AEG012345</Value>
+         </Element>
+         <Element>
+            <Term>cbc:UUID</Term>
+            <Value type="EXAMPLE">6E09886B-DC6E-439F-82D1-7CCAC7F4E3B1</Value>
+         </Element>
+         <Element>
+            <Term>cbc:IssueDate</Term>
+            <Value type="EXAMPLE">2005-06-20</Value>
+         </Element>
+         <Element>
+            <Term>cbc:DocumentType</Term>
+            <Value type="EXAMPLE">Order</Value>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:DocumentReference</Term>
+         <Element>
+            <Term>cbc:ID</Term>
+            <Value type="EXAMPLE">KHN23-44044</Value>
+         </Element>
+         <Element>
+            <Term>cbc:UUID</Term>
+            <Value type="EXAMPLE">6E09886B-DC6E-439F-82D1-7C83746352B1</Value>
+         </Element>
+         <Element>
+            <Term>cbc:IssueDate</Term>
+            <Value type="EXAMPLE">2005-06-24</Value>
+         </Element>
+         <Element>
+            <Term>cbc:DocumentType</Term>
+            <Value type="EXAMPLE">Forwarding Instructions</Value>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:ExchangeRate</Term>
+         <Element>
+            <Term>cbc:SourceCurrencyCode</Term>
+            <Value type="EXAMPLE">USD</Value>
+         </Element>
+         <Element>
+            <Term>cbc:SourceCurrencyBaseRate</Term>
+            <Value type="EXAMPLE">1.00</Value>
+         </Element>
+         <Element>
+            <Term>cbc:TargetCurrencyCode</Term>
+            <Value type="EXAMPLE">GBP</Value>
+         </Element>
+         <Element>
+            <Term>cbc:TargetCurrencyBaseRate</Term>
+            <Value type="EXAMPLE">1.00</Value>
+         </Element>
+         <Element>
+            <Term>cbc:CalculationRate</Term>
+            <Value type="EXAMPLE">1.8947</Value>
+         </Element>
+         <Element>
+            <Term>cbc:MathematicOperatorCode</Term>
+            <Value type="EXAMPLE">Multiply</Value>
+         </Element>
+         <Element>
+            <Term>cbc:Date</Term>
+            <Value type="EXAMPLE">1967-08-13</Value>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:DocumentDistribution</Term>
+         <Element>
+            <Term>cbc:PrintQualifier</Term>
+            <Value type="EXAMPLE">Copies allowed</Value>
+         </Element>
+         <Element>
+            <Term>cbc:MaximumCopiesNumeric</Term>
+            <Value type="EXAMPLE">5</Value>
+         </Element>
+         <Element>
+            <Term>cac:Party</Term>
+            <Element>
+               <Term>cac:PartyName</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Value type="EXAMPLE">Consortial</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PostalAddress</Term>
+               <Element>
+                  <Term>cbc:StreetName</Term>
+                  <Value type="EXAMPLE">Boston Road</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:BuildingName</Term>
+                  <Value type="EXAMPLE">Suite M-102</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:BuildingNumber</Term>
+                  <Value type="EXAMPLE">630</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CityName</Term>
+                  <Value type="EXAMPLE">Billerica</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:PostalZone</Term>
+                  <Value type="EXAMPLE">01821</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CountrySubentity</Term>
+                  <Value type="EXAMPLE">Massachusetts</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CountrySubentityCode</Term>
+                  <Value type="EXAMPLE">MA</Value>
+               </Element>
+               <Element>
+                  <Term>cac:Country</Term>
+                  <Element>
+                     <Term>cbc:IdentificationCode</Term>
+                     <Value type="EXAMPLE">US</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:Contact</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Value type="EXAMPLE">Mrs Bouquet</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Telephone</Term>
+                  <Value type="EXAMPLE">+1 158 1233714</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Telefax</Term>
+                  <Value type="EXAMPLE">+ 1 158 1233856</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:ElectronicMail</Term>
+                  <Value type="EXAMPLE">bouquet@fpconsortial.com</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+	     <Element>
+         <Term>cac:DocumentDistribution</Term>
+         <Element>
+            <Term>cbc:PrintQualifier</Term>
+            <Value type="EXAMPLE">Copies allowed</Value>
+         </Element>
+         <Element>
+            <Term>cbc:MaximumCopiesNumeric</Term>
+            <Value type="EXAMPLE">4</Value>
+         </Element>
+         <Element>
+            <Term>cac:Party</Term>
+            <Element>
+               <Term>cac:PartyName</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Value type="EXAMPLE">IYT Corporation</Value>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PostalAddress</Term>
+               <Element>
+                  <Term>cbc:StreetName</Term>
+                  <Value type="EXAMPLE">Avon Way</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:BuildingName</Term>
+                  <Value type="EXAMPLE">Thereabouts</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:BuildingNumber</Term>
+                  <Value type="EXAMPLE">56A</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CityName</Term>
+                  <Value type="EXAMPLE">Bridgtow</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:PostalZone</Term>
+                  <Value type="EXAMPLE">ZZ99 1ZZ</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:CountrySubentity</Term>
+                  <Value type="EXAMPLE">Avon</Value>
+               </Element>
+               <Element>
+                  <Term>cac:AddressLine</Term>
+                  <Element>
+                     <Term>cbc:Line</Term>
+                     <Value type="EXAMPLE">3rd Floor, Room 5</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:Country</Term>
+                  <Element>
+                     <Term>cbc:IdentificationCode</Term>
+                     <Value type="EXAMPLE">GB</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:Contact</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Value type="EXAMPLE">Mr Fred Churchill</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Telephone</Term>
+                  <Value type="EXAMPLE">+44 127 2653214</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Telefax</Term>
+                  <Value type="EXAMPLE">+44 127 2653215</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:ElectronicMail</Term>
+                  <Value type="EXAMPLE">fred@iytcorporation.gov.uk</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+   </Document>
+</Structure>
