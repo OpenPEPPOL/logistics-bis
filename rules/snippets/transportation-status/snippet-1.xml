@@ -3,12 +3,13 @@
  xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2"
  xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
  xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_status:1</cbc:CustomizationID>
-	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_status_w_request:1</cbc:ProfileID>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transportation_status:1</cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1</cbc:ProfileID>
 	<cbc:ID>TS_1</cbc:ID>
 	<cbc:IssueDate>2011-10-06</cbc:IssueDate>
 	<cbc:IssueTime>09:29:30</cbc:IssueTime>
 	<cbc:TransportationStatusTypeCode>All deviations</cbc:TransportationStatusTypeCode>
+	<!--Damage in the course of transportation-->
 	<cbc:TransportExecutionStatusCode>35</cbc:TransportExecutionStatusCode>
 	<cac:Consignment>
 		<cbc:ID>CON_1</cbc:ID>
@@ -18,7 +19,9 @@
 				<cbc:ID>CON_TE_1</cbc:ID>
 			</cac:TransportEquipment>
 			<cac:Status>
+				<!--Damage-->
 				<cbc:ConditionCode>4</cbc:ConditionCode>
+				<!--Equipment failure-->
 				<cbc:StatusReasonCode>23</cbc:StatusReasonCode>
 				<cbc:StatusReason>Reefer container lost power - cargo of fish destroyed</cbc:StatusReason>
 			</cac:Status>
