@@ -574,7 +574,8 @@
 			<?Description The pickup of this consignment requested by the party requesting a transportation service (the transport user).?>
 			<?Cardinality 1..1?>
 			<cbc:IdentificationID>21412312412
-				<?Description An identifier for the pickup transport event within an agreed event identification scheme.?>
+				<?Name Identifier pickup transport event ?>
+				<?Description An identifier for this pickup transport event within an agreed event identification scheme. ?>
 				<?Cardinality 0..1?>
 			</cbc:IdentificationID>
 			<cac:Location>
@@ -694,9 +695,11 @@
 			<?Name Requested delivery transport event ?>
 			<?Description The delivery of this consignment requested by the party requesting a transportation service (the transport user).?>
 			<?Cardinality 1..1?>
-			<cbc:IdentificationID>625435485674654132</cbc:IdentificationID>
-			<?Description An identifier for the delivery event within an agreed event identification scheme.?>
-			<?Cardinality 0..1?>
+			<cbc:IdentificationID>625435485674654132
+				<?Name Identifier delivery transport event ?>
+				<?Description An identifier for this delivery transport event within an agreed event identification scheme. ?>
+				<?Cardinality 0..1?>
+			</cbc:IdentificationID>
 			<cac:Location>
 				<?Name Location of requested delivery ?>
 				<?Description The location of the requested delivery.?>
@@ -1236,6 +1239,7 @@
 				<?Description The departure requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
 				<cbc:IdentificationID>6522956526554654
+					<?Name Identifier departure transport event ?>
 					<?Description An identifier for this departure transport event within an agreed event identification scheme. ?>
 					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
@@ -1356,7 +1360,10 @@
 				<?Name Estimated arrival transport event ?>
 				<?Description The arrival requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
-				<cbc:IdentificationID>54354684732168476514</cbc:IdentificationID>
+				<cbc:IdentificationID>54354684732168476514
+					<?Name Identifier arrival transport event ?>
+					<?Description An identifier for this arrival transport event within an agreed event identification scheme. ?>
+				</cbc:IdentificationID>
 				<cac:Location>
 					<?Name Arrival location ?>
 					<?Description The location where the arrival takes place.?>
@@ -1500,7 +1507,8 @@
 				<?Description The departure requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
 				<cbc:IdentificationID>5451568463515745
-					<?Description An identifier for the delivery event within an agreed event identification scheme.?>
+					<?Name Identifier departure transport event ?>
+					<?Description An identifier for this departure transport event within an agreed event identification scheme. ?>
 					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
 				<cac:Location>					
@@ -1618,7 +1626,8 @@
 				<?Description The arrival requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
 				<cbc:IdentificationID>5451568463515745
-					<?Description An identifier for the delivery event within an agreed event identification scheme.?>
+					<?Name Identifier arrival transport event ?>
+					<?Description An identifier for this arrival transport event within an agreed event identification scheme. ?>
 					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
 				<cac:Location>
@@ -1842,8 +1851,9 @@
 				<?Description The departure requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
 				<cbc:IdentificationID>5451568463515745
-				<?Description An identifier for the delivery event within an agreed event identification scheme.?>
-				<?Cardinality 0..1?>
+					<?Name Identifier departure transport event ?>
+					<?Description An identifier for this departure transport event within an agreed event identification scheme. ?>
+					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
 				<cac:Location>					
 					<cbc:ID schemeID="0088">5790000435951
@@ -1957,12 +1967,12 @@
 			</cac:RequestedDepartureTransportEvent>
 
 			<cac:RequestedArrivalTransportEvent>
-				<?Name Estimated Departure Transport Event ?>
+				<?Name Estimated arrival transport event ?>
 				<?Description The arrival requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
-				<cbc:IdentificationID>
-					5451568463515745
-					<?Description An identifier for the delivery event within an agreed event identification scheme.?>
+				<cbc:IdentificationID>5451568463515745
+					<?Name Identifier arrival transport event ?>
+					<?Description An identifier for this arrival transport event within an agreed event identification scheme. ?>
 					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
 				<cac:Location>
@@ -2083,7 +2093,10 @@
 			<cac:EstimatedArrivalTransportEvent>
 				<?Name Estimated arrival transport event ?>
 				<?Description The arrival requested by the party requesting a transportation service. ?>
-				<cbc:IdentificationID>2265431546512,1635431</cbc:IdentificationID>
+				<cbc:IdentificationID>2265431546512
+					<?Name Identifier arrival transport event ?>
+					<?Description An identifier for this arrival transport event within an agreed event identification scheme. ?>
+				</cbc:IdentificationID>
 				<cac:Location>
 					<?Name Location of arrival ?>
 					<cbc:Name>HUS Hospital</cbc:Name>
