@@ -386,10 +386,10 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cac:PartyName</Term>
-            <Name>Party Name </Name>
+            <Name>Party name </Name>
             <Element>
                <Term>cbc:Name</Term>
-               <Name>Sender party name</Name>
+               <Name>Transport user party name</Name>
                <Description>The name of the transport user party. </Description>
                <Value type="EXAMPLE">Novo Nordisk Pharmatech A/S</Value>
             </Element>
@@ -537,7 +537,7 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cac:PartyName</Term>
-            <Name>Party Name </Name>
+            <Name>Party name </Name>
             <Element>
                <Term>cbc:Name</Term>
                <Name>Transport service provider party name</Name>
@@ -1115,7 +1115,7 @@
          </Element>
          <Element cardinality="1..1">
             <Term>cac:ConsigneeParty</Term>
-            <Name>Consignee Party </Name>
+            <Name>Consignee party </Name>
             <Description>The party sending the transport execution plan request. </Description>
             <Element>
                <Term>cbc:EndpointID</Term>
@@ -1128,10 +1128,11 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PartyName</Term>
-               <Name>Party Name </Name>
-               <Description>The name of the consignee Party. </Description>
+               <Name>Party name </Name>
                <Element>
                   <Term>cbc:Name</Term>
+                  <Name>Consignee party name</Name>
+                  <Description>The name of the consignee party.</Description>
                   <Value type="EXAMPLE">HUS Hospital</Value>
                </Element>
             </Element>
@@ -1171,8 +1172,11 @@
             </Element>
             <Element>
                <Term>cac:PartyLegalEntity</Term>
+               <Name>Party name </Name>
                <Element cardinality="1..1">
                   <Term>cbc:RegistrationName</Term>
+                  <Name>Consignee party name </Name>
+                  <Description>The name of the consignee party.</Description>
                   <Value type="EXAMPLE">HUS Hospital</Value>
                </Element>
                <Element cardinality="0..1">
@@ -1227,10 +1231,11 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PartyName</Term>
-               <Name>Party Name </Name>
-               <Description>The name of the consignor Party. </Description>
+               <Name>Party name </Name>
                <Element>
                   <Term>cbc:Name</Term>
+                  <Name>Consignor party name</Name>
+                  <Description>The name of the consignor party.</Description>
                   <Value type="EXAMPLE">Novo Nordisk Pharmatech A/S</Value>
                </Element>
             </Element>
@@ -1274,8 +1279,11 @@
             </Element>
             <Element cardinality="1..1">
                <Term>cac:PartyLegalEntity</Term>
+               <Name>Party name</Name>
                <Element cardinality="1..1">
                   <Term>cbc:RegistrationName</Term>
+                  <Name>Consignor party name </Name>
+                  <Description>The name of the consignor party.</Description>
                   <Value type="EXAMPLE">Novo Nordisk Pharmatech A/S</Value>
                </Element>
                <Element cardinality="0..1">
@@ -1329,10 +1337,11 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PartyName</Term>
-               <Name>Party Name </Name>
-               <Description>The name of the freight forwarder Party. </Description>
+               <Name>Party name </Name>
                <Element>
                   <Term>cbc:Name</Term>
+                  <Name>Freight forwarder party name</Name>
+                  <Description>The name of the freight forwarder party. </Description>
                   <Value type="EXAMPLE">Leman</Value>
                </Element>
             </Element>
@@ -1376,8 +1385,11 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PartyLegalEntity</Term>
+               <Name>Party name </Name>
                <Element cardinality="1..1">
                   <Term>cbc:RegistrationName</Term>
+                  <Name>Freight forwarder party name </Name>
+                  <Description>The name of the freight forwarder party.</Description>
                   <Value type="EXAMPLE">Leman</Value>
                </Element>
                <Element cardinality="0..1">
@@ -1524,8 +1536,11 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:PartyLegalEntity</Term>
+                  <Name>Party name </Name>
                   <Element cardinality="1..1">
                      <Term>cbc:RegistrationName</Term>
+                     <Name>Carrier party name </Name>
+                     <Description>The name of the carrier party.</Description>
                      <Value type="EXAMPLE">Leman</Value>
                   </Element>
                   <Element cardinality="0..1">
@@ -1881,10 +1896,11 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:PartyName</Term>
-                  <Name>Party Name </Name>
-                  <Description>The name of the carrier Party. </Description>
+                  <Name>Party name </Name>
                   <Element>
                      <Term>cbc:Name</Term>
+                     <Name>Carrier party name</Name>
+                     <Description>The name of the carrier party. </Description>
                      <Value type="EXAMPLE">DHL Express</Value>
                   </Element>
                </Element>
@@ -1928,8 +1944,11 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:PartyLegalEntity</Term>
+                  <Name>Party name</Name>
                   <Element cardinality="1..1">
                      <Term>cbc:RegistrationName</Term>
+                     <Name>Carrier party name </Name>
+                     <Description>The name of the carrier party.</Description>
                      <Value type="EXAMPLE">DHL Express</Value>
                   </Element>
                   <Element cardinality="0..1">
