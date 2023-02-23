@@ -95,7 +95,7 @@
          <Element cardinality="1..1">
             <Term>cac:PostalAddress</Term>
             <Name>Postal address </Name>
-            <Description>Postal address for the sender party. </Description>
+            <Description>The postal address for the sender party. </Description>
             <Element>
                <Term>cbc:StreetName</Term>
                <Name>Address line 1 </Name>
@@ -246,7 +246,7 @@
          <Element>
             <Term>cac:PostalAddress</Term>
             <Name>Postal address </Name>
-            <Description>Postal address for the receiver party. </Description>
+            <Description>The postal address for the receiver party. </Description>
             <Element>
                <Term>cbc:StreetName</Term>
                <Name>Address line 1 </Name>
@@ -397,7 +397,7 @@
          <Element>
             <Term>cac:PostalAddress</Term>
             <Name>Postal address </Name>
-            <Description>Postal address for the transport user party. </Description>
+            <Description>The postal address for the transport user party. </Description>
             <Element>
                <Term>cbc:StreetName</Term>
                <Name>Address line 1 </Name>
@@ -548,7 +548,7 @@
          <Element>
             <Term>cac:PostalAddress</Term>
             <Name>Postal address </Name>
-            <Description>Postal address for the sender party. </Description>
+            <Description>The postal address for the transport service provider party. </Description>
             <Element>
                <Term>cbc:StreetName</Term>
                <Name>Address line 1 </Name>
@@ -811,8 +811,8 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:Address</Term>
-                  <Name>The address of location </Name>
-                  <Description>Postal Address. </Description>
+                  <Name>Address of location </Name>
+                  <Description>Location address. </Description>
                   <Element cardinality="0..1">
                      <Term>cbc:StreetName</Term>
                      <Name>Address line 1 </Name>
@@ -1891,21 +1891,28 @@
                <Element cardinality="0..1">
                   <Term>cac:PostalAddress</Term>
                   <Name>Postal address </Name>
-                  <Description>The postal address of the carrier</Description>
+                  <Description>The postal address of the carrier party.</Description>
                   <Element>
                      <Term>cbc:StreetName</Term>
+                     <Name>Address line 1 </Name>
+                     <Description>The main address line in a postal address usually the street name and number. </Description>
                      <Value type="EXAMPLE">Jydekrogen 14</Value>
                   </Element>
                   <Element>
                      <Term>cbc:CityName</Term>
+                     <Name>City </Name>
+                     <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
                      <Value type="EXAMPLE">Vallensbæk Landsby</Value>
                   </Element>
                   <Element>
                      <Term>cbc:PostalZone</Term>
+                     <Name>Post code </Name>
+                     <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
                      <Value type="EXAMPLE">2625</Value>
                   </Element>
                   <Element>
                      <Term>cac:Country</Term>
+                     <Name>Country </Name>
                      <Element cardinality="0..1">
                         <Term>cbc:IdentificationCode</Term>
                         <Name>Country code </Name>
@@ -1993,8 +2000,8 @@
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cac:Address</Term>
-                     <Name>The address of location </Name>
-                     <Description>Location Address. </Description>
+                     <Name>Address of location </Name>
+                     <Description>Location address. </Description>
                      <Element cardinality="0..1">
                         <Term>cbc:StreetName</Term>
                         <Name>Address line 1 </Name>
@@ -2161,8 +2168,8 @@
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cac:Address</Term>
-                     <Name>The address of location </Name>
-                     <Description>Location Address. </Description>
+                     <Name>Address of location </Name>
+                     <Description>Location address. </Description>
                      <Element cardinality="0..1">
                         <Term>cbc:StreetName</Term>
                         <Name>Address line 1 </Name>
@@ -2452,8 +2459,8 @@
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cac:Address</Term>
-                     <Name>The address of location </Name>
-                     <Description>Location Address. </Description>
+                     <Name>Address of location </Name>
+                     <Description>Location address. </Description>
                      <Element cardinality="0..1">
                         <Term>cbc:StreetName</Term>
                         <Name>Address line 1 </Name>
@@ -2755,18 +2762,23 @@
             </Element>
             <Element>
                <Term>cac:EstimatedArrivalTransportEvent</Term>
+               <Name>Estimated arrival transport event </Name>
+               <Description>The arrival requested by the party requesting a transportation service. </Description>
                <Element>
                   <Term>cbc:IdentificationID</Term>
                   <Value type="EXAMPLE">2265431546512,1635431</Value>
                </Element>
                <Element>
                   <Term>cac:Location</Term>
+                  <Name>Location of arrival </Name>
                   <Element>
                      <Term>cbc:Name</Term>
                      <Value type="EXAMPLE">HUS Hospital</Value>
                   </Element>
                   <Element>
                      <Term>cac:Address</Term>
+                     <Name>Address of location </Name>
+                     <Description>Location address. </Description>
                      <Element>
                         <Term>cbc:StreetName</Term>
                         <Name>Address line 1 </Name>
