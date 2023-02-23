@@ -861,7 +861,7 @@
 					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="0212">1567535-0
-					<?Name sender parties legal registration name ?>
+					<?Name Consignee parties legal registration name ?>
 					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier ?>
@@ -943,7 +943,7 @@
 					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="0198">13246149
-					<?Name sender parties legal registration name ?>
+					<?Name Consignor parties legal registration name ?>
 					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier ?>
@@ -1022,7 +1022,7 @@
 					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="0198">41955619
-					<?Name sender parties legal registration name ?>
+					<?Name Freight forwarder parties legal registration name ?>
 					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier ?>
@@ -1120,10 +1120,20 @@
 					<?Name Postal address ?>
 					<?Description The postal address of the carrier.?>
 					<?Cardinality 0..1?>
-					<cbc:StreetName>Tietotie 9</cbc:StreetName>
-					<cbc:CityName>Vantaa</cbc:CityName>
-					<cbc:PostalZone>4600</cbc:PostalZone>
+					<cbc:StreetName>Tietotie 9
+						<?Name Address line 1 ?>
+						<?Description The main address line in a postal address usually the street name and number. ?>
+					</cbc:StreetName>
+					<cbc:CityName>Vantaa
+						<?Name City ?>
+						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+					</cbc:CityName>
+					<cbc:PostalZone>4600
+						<?Name Post code ?>
+						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?
+					</cbc:PostalZone>
 					<cac:Country>
+						<?Name Country ?>
 						<cbc:IdentificationCode>FI
 							<?Name Country code ?>
 							<?Cardinality 0..1?>
@@ -1141,7 +1151,7 @@
 						<?Cardinality 1..1?>
 					</cbc:RegistrationName>
 					<cbc:CompanyID schemeID="0212">0108023-3
-						<?Name sender parties legal registration name ?>
+						<?Name Carrier parties legal registration name ?>
 						<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 						<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier ?>
@@ -1455,7 +1465,7 @@
 						<?Cardinality 1..1?>
 					</cbc:RegistrationName>
 					<cbc:CompanyID schemeID="0198">10154596
-						<?Name sender parties legal registration name ?>
+						<?Name Carrier parties legal registration name ?>
 						<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 						<?Cardinality 0..1?>
 						<?schemeID-Name Scheme identifier ?>
