@@ -277,10 +277,10 @@
 			<?schemeID-CodeList eas?>
 		</cbc:EndpointID>
 		<cac:PartyName>
-			<?Name Party Name ?>
+			<?Name Party name ?>
 			<?Cardinality 0..1?>
 			<cbc:Name>Novo Nordisk Pharmatech A/S
-				<?Name Sender party name?>
+				<?Name Transport user party name?>
 				<?Description The name of the transport user party. ?>
 			</cbc:Name>
 		</cac:PartyName>
@@ -400,7 +400,7 @@
 			<?schemeID-CodeList eas?>
 		</cbc:EndpointID>
 		<cac:PartyName>
-			<?Name Party Name ?>
+			<?Name Party name ?>
 			<?Cardinality 0..1?>
 			<cbc:Name>Leman
 				<?Name Transport service provider party name?>
@@ -811,7 +811,7 @@
 			</cac:Period>
 		</cac:RequestedDeliveryTransportEvent>
 		<cac:ConsigneeParty>
-			<?Name Consignee Party ?>
+			<?Name Consignee party ?>
 			<?Description The party sending the transport execution plan request. ?>
 			<?Cardinality 1..1?>
 			<cbc:EndpointID schemeID="0212">1567535-0
@@ -820,10 +820,12 @@
 				<?schemeID-CodeList eas?>
 			</cbc:EndpointID>
 			<cac:PartyName>
-				<?Name Party Name ?>
-				<?Description The name of the consignee Party. ?>
+				<?Name Party name ?>
 				<?Cardinality 0..1?>
-				<cbc:Name>HUS Hospital</cbc:Name>
+				<cbc:Name>HUS Hospital
+					<?Name Consignee party name?>
+					<?Description The name of the consignee party.?>
+				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<?Name Postal address ?>
@@ -852,7 +854,10 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
+				<?Name Party name ?>
 				<cbc:RegistrationName>HUS Hospital
+					<?Name Consignee party name ?>
+					<?Description The name of the consignee party.?>
 					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="0212">1567535-0
@@ -895,10 +900,12 @@
 			<?schemeID-CodeList eas?>
 			</cbc:EndpointID>
 			<cac:PartyName>
-				<?Name Party Name ?>
-				<?Description The name of the consignor Party. ?>
+				<?Name Party name ?>				
 				<?Cardinality 0..1?>
-				<cbc:Name>Novo Nordisk Pharmatech A/S</cbc:Name>
+				<cbc:Name>Novo Nordisk Pharmatech A/S
+					<?Name Consignor party name?>
+					<?Description The name of the consignor party.?>
+				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<?Name Postal address ?>
@@ -928,8 +935,11 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
+				<?Name Party name?>
 				<?Cardinality 1..1?>
 				<cbc:RegistrationName>Novo Nordisk Pharmatech A/S
+					<?Name Consignor party name ?>
+					<?Description The name of the consignor party.?>
 					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="0198">13246149
@@ -969,10 +979,12 @@
 			<?Cardinality 1..1?>
 			<cbc:EndpointID schemeID="0198">41955619</cbc:EndpointID>
 			<cac:PartyName>
-				<?Name Party Name ?>
-				<?Description The name of the freight forwarder Party. ?>
+				<?Name Party name ?>
 				<?Cardinality 0..1?>
-				<cbc:Name>Leman</cbc:Name>
+				<cbc:Name>Leman
+					<?Name Freight forwarder party name?>
+					<?Description The name of the freight forwarder party. ?>
+				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<?Name Postal address ?>
@@ -1002,8 +1014,11 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
+				<?Name Party name ?>
 				<?Cardinality 0..1?>
 				<cbc:RegistrationName>Leman
+					<?Name Freight forwarder party name ?>
+					<?Description The name of the freight forwarder party.?>
 					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="0198">41955619
@@ -1118,19 +1133,22 @@
 					</cac:Country>
 				</cac:PostalAddress>
 				<cac:PartyLegalEntity>
+					<?Name Party name ?>
 					<?Cardinality 0..1?>
 					<cbc:RegistrationName>Leman
-					<?Cardinality 1..1?>
-				</cbc:RegistrationName>
+						<?Name Carrier party name ?>
+						<?Description The name of the carrier party.?>
+						<?Cardinality 1..1?>
+					</cbc:RegistrationName>
 					<cbc:CompanyID schemeID="0212">0108023-3
-					<?Name sender parties legal registration name ?>
-					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
-					<?Cardinality 0..1?>
+						<?Name sender parties legal registration name ?>
+						<?Description The official name of the party as registered with the relevant fiscal authority. ?>
+						<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier ?>
 					<?schemeID-Description The identification scheme identifier of the carrier legal registration identifier ?>
 					<?schemeID-Usage optional?>
 					<?schemeID-CodeList ICD?>
-				</cbc:CompanyID>
+					</cbc:CompanyID>
 					<cac:RegistrationAddress>
 						<?Name Legal address ?>
 						<?Cardinality 0..1?>
@@ -1394,10 +1412,12 @@
 					<?Cardinality 1..1?>
 				</cbc:EndpointID>
 				<cac:PartyName>
-					<?Name Party Name ?>
-					<?Description The name of the carrier Party. ?>
+					<?Name Party name ?>
 					<?Cardinality 0..1?>
-					<cbc:Name>DHL Express</cbc:Name>
+					<cbc:Name>DHL Express
+						<?Name Carrier party name?>
+						<?Description The name of the carrier party. ?>
+					</cbc:Name>
 				</cac:PartyName>
 				<cac:PostalAddress>
 					<?Name Postal address ?>
@@ -1427,11 +1447,14 @@
 					</cac:Country>
 				</cac:PostalAddress>
 				<cac:PartyLegalEntity>
+					<?Name Party name?>
 					<?Cardinality 0..1?>
 					<cbc:RegistrationName>DHL Express
-					<?Cardinality 1..1?>
+						<?Name Carrier party name ?>
+						<?Description The name of the carrier party.?>
+						<?Cardinality 1..1?>
 					</cbc:RegistrationName>
-						<cbc:CompanyID schemeID="0198">10154596
+					<cbc:CompanyID schemeID="0198">10154596
 						<?Name sender parties legal registration name ?>
 						<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 						<?Cardinality 0..1?>
@@ -1440,26 +1463,26 @@
 						<?schemeID-Usage optional?>
 						<?schemeID-CodeList ICD?>
 					</cbc:CompanyID>
-						<cac:RegistrationAddress>
+					<cac:RegistrationAddress>
 							<?Name Legal address ?>
 							<?Cardinality 0..1?>
 							<cbc:CityName>Vallensbæk Landsby
 							<?Name City name ?>
 							<?Description The name of the city. ?>
 							<?Cardinality 0..1?>
-						</cbc:CityName>
-							<cac:Country>
-								<?Name Country ?>
-								<?Description The residens country for the carrier party. ?>
-								<?Cardinality 1..1?>
-								<cbc:IdentificationCode>DK
-									<?Name Country code ?>
-									<?Cardinality 0..1?>
-									<?CodeList ISO3166?>
-									<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
-								</cbc:IdentificationCode>
-							</cac:Country>
-						</cac:RegistrationAddress>
+					</cbc:CityName>
+					<cac:Country>
+						<?Name Country ?>
+						<?Description The residens country for the carrier party. ?>
+						<?Cardinality 1..1?>
+						<cbc:IdentificationCode>DK
+							<?Name Country code ?>
+							<?Cardinality 0..1?>
+							<?CodeList ISO3166?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						</cbc:IdentificationCode>
+					</cac:Country>
+					</cac:RegistrationAddress>
 				</cac:PartyLegalEntity>
 			</cac:CarrierParty>
 			<cac:RequestedDepartureTransportEvent>
