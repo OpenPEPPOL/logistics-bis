@@ -38,7 +38,7 @@
 		</cac:PartyName>
 		<cac:PostalAddress>
 			<?Name Postal address ?>
-			<?Description Postal address for the sender party. ?>
+			<?Description The postal address for the sender party. ?>
 			<?Cardinality 1..1?>
 			<cbc:StreetName>Ventrupvej 6
 				<?Name Address line 1 ?>
@@ -163,7 +163,7 @@
 		</cac:PartyName>
 		<cac:PostalAddress>
 			<?Name Postal address ?>
-			<?Description Postal address for the receiver party. ?>
+			<?Description The postal address for the receiver party. ?>
 			<cbc:StreetName>Jydekrogen 14
 				<?Name Address line 1 ?>
 				<?Description The main address line in a postal address usually the street name and number. ?>
@@ -286,7 +286,7 @@
 		</cac:PartyName>
 		<cac:PostalAddress>
 			<?Name Postal address ?>
-			<?Description Postal address for the transport user party. ?>
+			<?Description The postal address for the transport user party. ?>
 			<cbc:StreetName>Københavnsvej 216
 				<?Name Address line 1 ?>
 				<?Description The main address line in a postal address usually the street name and number. ?>
@@ -409,7 +409,7 @@
 		</cac:PartyName>
 		<cac:PostalAddress>
 			<?Name Postal address ?>
-			<?Description Postal address for the sender party. ?>
+			<?Description The postal address for the transport service provider party. ?>
 			<cbc:StreetName>Ventrupvej 6
 				<?Name Address line 1 ?>
 				<?Description The main address line in a postal address usually the street name and number. ?>
@@ -594,8 +594,8 @@
 				<?Cardinality 0..1?>
 				</cbc:Name>
 				<cac:Address>
-					<?Name The address of location ?>
-					<?Description Postal Address. ?>
+					<?Name Address of location ?>
+					<?Description Location address. ?>
 					<?Cardinality 0..1?>
 					<cbc:StreetName>Københavnsvej 216
 						<?Name Address line 1 ?>
@@ -1401,12 +1401,22 @@
 				</cac:PartyName>
 				<cac:PostalAddress>
 					<?Name Postal address ?>
-					<?Description The postal address of the carrier?>
+					<?Description The postal address of the carrier party.?>
 					<?Cardinality 0..1?>
-					<cbc:StreetName>Jydekrogen 14</cbc:StreetName>
-					<cbc:CityName>Vallensbæk Landsby</cbc:CityName>
-					<cbc:PostalZone>2625</cbc:PostalZone>
+					<cbc:StreetName>Jydekrogen 14
+						<?Name Address line 1 ?>
+						<?Description The main address line in a postal address usually the street name and number. ?>
+					</cbc:StreetName>
+					<cbc:CityName>Vallensbæk Landsby
+						<?Name City ?>
+						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>		
+					</cbc:CityName>
+					<cbc:PostalZone>2625
+						<?Name Post code ?>
+						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>		
+					</cbc:PostalZone>
 					<cac:Country>
+						<?Name Country ?>
 						<cbc:IdentificationCode>DK
 							<?Name Country code ?>
 							<?Cardinality 0..1?>
@@ -1474,8 +1484,8 @@
 						<?Cardinality 0..1?>
 					</cbc:Name>
 					<cac:Address>
-						<?Name The address of location ?>
-						<?Description Location Address. ?>
+						<?Name Address of location ?>
+						<?Description Location address. ?>
 						<?Cardinality 0..1?>
 						<cbc:StreetName>Københavnsvej 216
 							<?Name Address line 1 ?>
@@ -1594,8 +1604,8 @@
 						<?Cardinality 0..1?>
 					</cbc:Name>
 					<cac:Address>
-						<?Name The address of location ?>
-						<?Description Location Address. ?>
+						<?Name Address of location ?>
+						<?Description Location address. ?>
 						<?Cardinality 0..1?>
 						<cbc:StreetName>Kystvejen 24
 							<?Name Address line 1 ?>
@@ -1816,8 +1826,8 @@
 						<?Cardinality 0..1?>
 					</cbc:Name>
 					<cac:Address>
-						<?Name The address of location ?>
-						<?Description Location Address. ?>
+						<?Name Address of location ?>
+						<?Description Location address. ?>
 						<?Cardinality 0..1?>
 						<cbc:StreetName>Københavnsvej 216
 							<?Name Address line 1 ?>
@@ -2038,10 +2048,15 @@
 			</cac:RequestedArrivalTransportEvent>
 
 			<cac:EstimatedArrivalTransportEvent>
+				<?Name Estimated arrival transport event ?>
+				<?Description The arrival requested by the party requesting a transportation service. ?>
 				<cbc:IdentificationID>2265431546512,1635431</cbc:IdentificationID>
 				<cac:Location>
+					<?Name Location of arrival ?>
 					<cbc:Name>HUS Hospital</cbc:Name>
 					<cac:Address>
+						<?Name Address of location ?>
+						<?Description Location address. ?>
 						<cbc:StreetName>Topeliuksenkatu 5
 							<?Name Address line 1 ?>
 							<?Description The main address line in a postal address usually the street name and number. ?>
