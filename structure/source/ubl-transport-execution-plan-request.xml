@@ -1108,6 +1108,7 @@
 				<?Cardinality 1..1?>
 			</cbc:HazardousRiskIndicator>
 			<cac:CarrierParty>
+				<?Name Carrier party ?>
 				<?Description The carrier party responsible for this shipment stage. ?>
 				<?Cardinality 1..1?>
 				<cbc:EndpointID schemeID="0212">0108023-3
@@ -1115,9 +1116,12 @@
 				<?Cardinality 0..1?>
 				</cbc:EndpointID>
 				<cac:PartyName>
-					<?Description A name for this party. ?>
+					<?Name Party name ?>
 					<?Cardinality 0..1?>
-					<cbc:Name>Finnair Oyj</cbc:Name>
+					<cbc:Name>Finnair Oyj
+						<?Name Carrier party name?>
+						<?Description The name of the carrier party. ?>
+					</cbc:Name>
 				</cac:PartyName>
 				<cac:PostalAddress>
 					<?Name Postal address ?>
@@ -1420,7 +1424,7 @@
 				<?CodeList UNECERec19?>
 			</cbc:TransportModeCode>
 			<cac:CarrierParty>
-				<?Name Carrier Party ?>
+				<?Name Carrier party ?>
 				<?Description The party providing the transport of goods in this consignment between named points. ?>
 				<?Cardinality 0..1?>
 				<cbc:EndpointID schemeID="0198">10154596
@@ -1855,7 +1859,9 @@
 					<?Description An identifier for this departure transport event within an agreed event identification scheme. ?>
 					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
-				<cac:Location>					
+				<cac:Location>
+					<?Name Departure location ?>
+					<?Description The location where the departure takes place.?> 					
 					<cbc:ID schemeID="0088">5790000435951
 						<?Name Identity of the delivery location ?>
 						<?Description Identifies the delivery location. ?>
@@ -1976,6 +1982,8 @@
 					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
 				<cac:Location>
+					<?Name Arrival location ?>
+					<?Description The location where the arrival takes place.?> 	
 					<cbc:ID schemeID="0088">5790000435951
 						<?Name Identity of the delivery location ?>
 						<?Description Identifies the delivery location. ?>
