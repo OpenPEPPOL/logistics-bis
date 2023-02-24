@@ -1492,6 +1492,7 @@
             </Element>
             <Element cardinality="1..1">
                <Term>cac:CarrierParty</Term>
+               <Name>Carrier party </Name>
                <Description>The carrier party responsible for this shipment stage. </Description>
                <Element cardinality="0..1">
                   <Term>cbc:EndpointID</Term>
@@ -1504,9 +1505,11 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:PartyName</Term>
-                  <Description>A name for this party. </Description>
+                  <Name>Party name </Name>
                   <Element>
                      <Term>cbc:Name</Term>
+                     <Name>Carrier party name</Name>
+                     <Description>The name of the carrier party. </Description>
                      <Value type="EXAMPLE">Finnair Oyj</Value>
                   </Element>
                </Element>
@@ -1896,7 +1899,7 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:CarrierParty</Term>
-               <Name>Carrier Party </Name>
+               <Name>Carrier party </Name>
                <Description>The party providing the transport of goods in this consignment between named points. </Description>
                <Element cardinality="1..1">
                   <Term>cbc:EndpointID</Term>
@@ -2474,6 +2477,8 @@
                </Element>
                <Element>
                   <Term>cac:Location</Term>
+                  <Name>Departure location </Name>
+                  <Description>The location where the departure takes place.</Description>
                   <Element>
                      <Term>cbc:ID</Term>
                      <Name>Identity of the delivery location </Name>
@@ -2641,6 +2646,8 @@
                </Element>
                <Element>
                   <Term>cac:Location</Term>
+                  <Name>Arrival location </Name>
+                  <Description>The location where the arrival takes place.</Description>
                   <Element>
                      <Term>cbc:ID</Term>
                      <Name>Identity of the delivery location </Name>
