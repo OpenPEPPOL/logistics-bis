@@ -95,7 +95,7 @@
          <Element cardinality="1..1">
             <Term>cac:PostalAddress</Term>
             <Name>Postal address </Name>
-            <Description>Postal address for the sender party. </Description>
+            <Description>The postal address for the sender party. </Description>
             <Element>
                <Term>cbc:StreetName</Term>
                <Name>Address line 1 </Name>
@@ -149,7 +149,7 @@
          </Element>
          <Element>
             <Term>cac:PartyLegalEntity</Term>
-            <Name>Party name </Name>
+            <Name>Party legal entity </Name>
             <Element cardinality="1..1">
                <Term>cbc:RegistrationName</Term>
                <Name>Sender party name</Name>
@@ -246,7 +246,7 @@
          <Element>
             <Term>cac:PostalAddress</Term>
             <Name>Postal address </Name>
-            <Description>Postal address for the receiver party. </Description>
+            <Description>The postal address for the receiver party. </Description>
             <Element>
                <Term>cbc:StreetName</Term>
                <Name>Address line 1 </Name>
@@ -300,7 +300,7 @@
          </Element>
          <Element>
             <Term>cac:PartyLegalEntity</Term>
-            <Name>Party name </Name>
+            <Name>Party legal entity </Name>
             <Element cardinality="1..1">
                <Term>cbc:RegistrationName</Term>
                <Name>Receiver party name</Name>
@@ -386,10 +386,10 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cac:PartyName</Term>
-            <Name>Party Name </Name>
+            <Name>Party name </Name>
             <Element>
                <Term>cbc:Name</Term>
-               <Name>Sender party name</Name>
+               <Name>Transport user party name</Name>
                <Description>The name of the transport user party. </Description>
                <Value type="EXAMPLE">Novo Nordisk Pharmatech A/S</Value>
             </Element>
@@ -397,7 +397,7 @@
          <Element>
             <Term>cac:PostalAddress</Term>
             <Name>Postal address </Name>
-            <Description>Postal address for the transport user party. </Description>
+            <Description>The postal address for the transport user party. </Description>
             <Element>
                <Term>cbc:StreetName</Term>
                <Name>Address line 1 </Name>
@@ -451,7 +451,7 @@
          </Element>
          <Element>
             <Term>cac:PartyLegalEntity</Term>
-            <Name>Party name </Name>
+            <Name>Party legal entity </Name>
             <Element cardinality="1..1">
                <Term>cbc:RegistrationName</Term>
                <Name>Transport user party name</Name>
@@ -537,7 +537,7 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cac:PartyName</Term>
-            <Name>Party Name </Name>
+            <Name>Party name </Name>
             <Element>
                <Term>cbc:Name</Term>
                <Name>Transport service provider party name</Name>
@@ -548,7 +548,7 @@
          <Element>
             <Term>cac:PostalAddress</Term>
             <Name>Postal address </Name>
-            <Description>Postal address for the sender party. </Description>
+            <Description>The postal address for the transport service provider party. </Description>
             <Element>
                <Term>cbc:StreetName</Term>
                <Name>Address line 1 </Name>
@@ -602,7 +602,7 @@
          </Element>
          <Element>
             <Term>cac:PartyLegalEntity</Term>
-            <Name>Party name </Name>
+            <Name>Party legal entity </Name>
             <Element cardinality="1..1">
                <Term>cbc:RegistrationName</Term>
                <Name>Transport service provider party name</Name>
@@ -784,7 +784,8 @@
             <Description>The pickup of this consignment requested by the party requesting a transportation service (the transport user).</Description>
             <Element cardinality="0..1">
                <Term>cbc:IdentificationID</Term>
-               <Description>An identifier for the pickup transport event within an agreed event identification scheme.</Description>
+               <Name>Identifier pickup transport event </Name>
+               <Description>An identifier for this pickup transport event within an agreed event identification scheme. </Description>
                <Value type="EXAMPLE">21412312412</Value>
             </Element>
             <Element cardinality="1..1">
@@ -811,8 +812,8 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:Address</Term>
-                  <Name>The address of location </Name>
-                  <Description>Postal Address. </Description>
+                  <Name>Address of location </Name>
+                  <Description>Location address. </Description>
                   <Element cardinality="0..1">
                      <Term>cbc:StreetName</Term>
                      <Name>Address line 1 </Name>
@@ -946,12 +947,14 @@
                </Element>
             </Element>
          </Element>
-         <Element cardinality="1..1 0..1">
+         <Element cardinality="1..1">
             <Term>cac:RequestedDeliveryTransportEvent</Term>
             <Name>Requested delivery transport event </Name>
-            <Description>The delivery of this consignment requested by the party requesting a transportation service (the transport user). An identifier for the delivery event within an agreed event identification scheme.</Description>
-            <Element>
+            <Description>The delivery of this consignment requested by the party requesting a transportation service (the transport user).</Description>
+            <Element cardinality="0..1">
                <Term>cbc:IdentificationID</Term>
+               <Name>Identifier delivery transport event </Name>
+               <Description>An identifier for this delivery transport event within an agreed event identification scheme. </Description>
                <Value type="EXAMPLE">625435485674654132</Value>
             </Element>
             <Element cardinality="1..1">
@@ -1115,7 +1118,7 @@
          </Element>
          <Element cardinality="1..1">
             <Term>cac:ConsigneeParty</Term>
-            <Name>Consignee Party </Name>
+            <Name>Consignee party </Name>
             <Description>The party sending the transport execution plan request. </Description>
             <Element>
                <Term>cbc:EndpointID</Term>
@@ -1128,10 +1131,11 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PartyName</Term>
-               <Name>Party Name </Name>
-               <Description>The name of the consignee Party. </Description>
+               <Name>Party name </Name>
                <Element>
                   <Term>cbc:Name</Term>
+                  <Name>Consignee party name</Name>
+                  <Description>The name of the consignee party.</Description>
                   <Value type="EXAMPLE">HUS Hospital</Value>
                </Element>
             </Element>
@@ -1171,13 +1175,16 @@
             </Element>
             <Element>
                <Term>cac:PartyLegalEntity</Term>
+               <Name>Party legal entity </Name>
                <Element cardinality="1..1">
                   <Term>cbc:RegistrationName</Term>
+                  <Name>Consignee party name </Name>
+                  <Description>The name of the consignee party.</Description>
                   <Value type="EXAMPLE">HUS Hospital</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:CompanyID</Term>
-                  <Name>sender parties legal registration name </Name>
+                  <Name>Consignee parties legal registration name </Name>
                   <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
                   <Value type="EXAMPLE">1567535-0</Value>
                   <Attribute>
@@ -1227,10 +1234,11 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PartyName</Term>
-               <Name>Party Name </Name>
-               <Description>The name of the consignor Party. </Description>
+               <Name>Party name </Name>
                <Element>
                   <Term>cbc:Name</Term>
+                  <Name>Consignor party name</Name>
+                  <Description>The name of the consignor party.</Description>
                   <Value type="EXAMPLE">Novo Nordisk Pharmatech A/S</Value>
                </Element>
             </Element>
@@ -1274,13 +1282,16 @@
             </Element>
             <Element cardinality="1..1">
                <Term>cac:PartyLegalEntity</Term>
+               <Name>Party legal entity </Name>
                <Element cardinality="1..1">
                   <Term>cbc:RegistrationName</Term>
+                  <Name>Consignor party name </Name>
+                  <Description>The name of the consignor party.</Description>
                   <Value type="EXAMPLE">Novo Nordisk Pharmatech A/S</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:CompanyID</Term>
-                  <Name>sender parties legal registration name </Name>
+                  <Name>Consignor parties legal registration name </Name>
                   <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
                   <Value type="EXAMPLE">13246149</Value>
                   <Attribute>
@@ -1329,10 +1340,11 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PartyName</Term>
-               <Name>Party Name </Name>
-               <Description>The name of the freight forwarder Party. </Description>
+               <Name>Party name </Name>
                <Element>
                   <Term>cbc:Name</Term>
+                  <Name>Freight forwarder party name</Name>
+                  <Description>The name of the freight forwarder party. </Description>
                   <Value type="EXAMPLE">Leman</Value>
                </Element>
             </Element>
@@ -1376,13 +1388,16 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PartyLegalEntity</Term>
+               <Name>Party legal entity </Name>
                <Element cardinality="1..1">
                   <Term>cbc:RegistrationName</Term>
+                  <Name>Freight forwarder party name </Name>
+                  <Description>The name of the freight forwarder party.</Description>
                   <Value type="EXAMPLE">Leman</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:CompanyID</Term>
-                  <Name>sender parties legal registration name </Name>
+                  <Name>Freight forwarder parties legal registration name </Name>
                   <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
                   <Value type="EXAMPLE">41955619</Value>
                   <Attribute>
@@ -1477,6 +1492,7 @@
             </Element>
             <Element cardinality="1..1">
                <Term>cac:CarrierParty</Term>
+               <Name>Carrier party </Name>
                <Description>The carrier party responsible for this shipment stage. </Description>
                <Element cardinality="0..1">
                   <Term>cbc:EndpointID</Term>
@@ -1489,9 +1505,11 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:PartyName</Term>
-                  <Description>A name for this party. </Description>
+                  <Name>Party name </Name>
                   <Element>
                      <Term>cbc:Name</Term>
+                     <Name>Carrier party name</Name>
+                     <Description>The name of the carrier party. </Description>
                      <Value type="EXAMPLE">Finnair Oyj</Value>
                   </Element>
                </Element>
@@ -1501,18 +1519,25 @@
                   <Description>The postal address of the carrier.</Description>
                   <Element>
                      <Term>cbc:StreetName</Term>
+                     <Name>Address line 1 </Name>
+                     <Description>The main address line in a postal address usually the street name and number. </Description>
                      <Value type="EXAMPLE">Tietotie 9</Value>
                   </Element>
                   <Element>
                      <Term>cbc:CityName</Term>
+                     <Name>City </Name>
+                     <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
                      <Value type="EXAMPLE">Vantaa</Value>
                   </Element>
                   <Element>
                      <Term>cbc:PostalZone</Term>
+                     <Name>Post code </Name>
+                     <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
                      <Value type="EXAMPLE">4600</Value>
                   </Element>
                   <Element>
                      <Term>cac:Country</Term>
+                     <Name>Country </Name>
                      <Element cardinality="0..1">
                         <Term>cbc:IdentificationCode</Term>
                         <Name>Country code </Name>
@@ -1524,13 +1549,16 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:PartyLegalEntity</Term>
+                  <Name>Party legal entity </Name>
                   <Element cardinality="1..1">
                      <Term>cbc:RegistrationName</Term>
+                     <Name>Carrier party name </Name>
+                     <Description>The name of the carrier party.</Description>
                      <Value type="EXAMPLE">Leman</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:CompanyID</Term>
-                     <Name>sender parties legal registration name </Name>
+                     <Name>Carrier parties legal registration name </Name>
                      <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
                      <Value type="EXAMPLE">0108023-3</Value>
                      <Attribute>
@@ -1626,6 +1654,7 @@
                <Description>The departure requested by the party requesting a transportation service. </Description>
                <Element cardinality="0..1">
                   <Term>cbc:IdentificationID</Term>
+                  <Name>Identifier departure transport event </Name>
                   <Description>An identifier for this departure transport event within an agreed event identification scheme. </Description>
                   <Value type="EXAMPLE">6522956526554654</Value>
                </Element>
@@ -1794,6 +1823,8 @@
                <Description>The arrival requested by the party requesting a transportation service. </Description>
                <Element>
                   <Term>cbc:IdentificationID</Term>
+                  <Name>Identifier arrival transport event </Name>
+                  <Description>An identifier for this arrival transport event within an agreed event identification scheme. </Description>
                   <Value type="EXAMPLE">54354684732168476514</Value>
                </Element>
                <Element cardinality="1..1">
@@ -1868,7 +1899,7 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:CarrierParty</Term>
-               <Name>Carrier Party </Name>
+               <Name>Carrier party </Name>
                <Description>The party providing the transport of goods in this consignment between named points. </Description>
                <Element cardinality="1..1">
                   <Term>cbc:EndpointID</Term>
@@ -1881,31 +1912,39 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:PartyName</Term>
-                  <Name>Party Name </Name>
-                  <Description>The name of the carrier Party. </Description>
+                  <Name>Party name </Name>
                   <Element>
                      <Term>cbc:Name</Term>
+                     <Name>Carrier party name</Name>
+                     <Description>The name of the carrier party. </Description>
                      <Value type="EXAMPLE">DHL Express</Value>
                   </Element>
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:PostalAddress</Term>
                   <Name>Postal address </Name>
-                  <Description>The postal address of the carrier</Description>
+                  <Description>The postal address of the carrier party.</Description>
                   <Element>
                      <Term>cbc:StreetName</Term>
+                     <Name>Address line 1 </Name>
+                     <Description>The main address line in a postal address usually the street name and number. </Description>
                      <Value type="EXAMPLE">Jydekrogen 14</Value>
                   </Element>
                   <Element>
                      <Term>cbc:CityName</Term>
+                     <Name>City </Name>
+                     <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
                      <Value type="EXAMPLE">Vallensbæk Landsby</Value>
                   </Element>
                   <Element>
                      <Term>cbc:PostalZone</Term>
+                     <Name>Post code </Name>
+                     <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
                      <Value type="EXAMPLE">2625</Value>
                   </Element>
                   <Element>
                      <Term>cac:Country</Term>
+                     <Name>Country </Name>
                      <Element cardinality="0..1">
                         <Term>cbc:IdentificationCode</Term>
                         <Name>Country code </Name>
@@ -1921,13 +1960,16 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:PartyLegalEntity</Term>
+                  <Name>Party legal entity </Name>
                   <Element cardinality="1..1">
                      <Term>cbc:RegistrationName</Term>
+                     <Name>Carrier party name </Name>
+                     <Description>The name of the carrier party.</Description>
                      <Value type="EXAMPLE">DHL Express</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:CompanyID</Term>
-                     <Name>sender parties legal registration name </Name>
+                     <Name>Carrier parties legal registration name </Name>
                      <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
                      <Value type="EXAMPLE">10154596</Value>
                      <Attribute>
@@ -1968,7 +2010,8 @@
                <Description>The departure requested by the party requesting a transportation service. </Description>
                <Element cardinality="0..1">
                   <Term>cbc:IdentificationID</Term>
-                  <Description>An identifier for the delivery event within an agreed event identification scheme.</Description>
+                  <Name>Identifier departure transport event </Name>
+                  <Description>An identifier for this departure transport event within an agreed event identification scheme. </Description>
                   <Value type="EXAMPLE">5451568463515745</Value>
                </Element>
                <Element>
@@ -1993,8 +2036,8 @@
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cac:Address</Term>
-                     <Name>The address of location </Name>
-                     <Description>Location Address. </Description>
+                     <Name>Address of location </Name>
+                     <Description>Location address. </Description>
                      <Element cardinality="0..1">
                         <Term>cbc:StreetName</Term>
                         <Name>Address line 1 </Name>
@@ -2134,7 +2177,8 @@
                <Description>The arrival requested by the party requesting a transportation service. </Description>
                <Element cardinality="0..1">
                   <Term>cbc:IdentificationID</Term>
-                  <Description>An identifier for the delivery event within an agreed event identification scheme.</Description>
+                  <Name>Identifier arrival transport event </Name>
+                  <Description>An identifier for this arrival transport event within an agreed event identification scheme. </Description>
                   <Value type="EXAMPLE">5451568463515745</Value>
                </Element>
                <Element>
@@ -2161,8 +2205,8 @@
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cac:Address</Term>
-                     <Name>The address of location </Name>
-                     <Description>Location Address. </Description>
+                     <Name>Address of location </Name>
+                     <Description>Location address. </Description>
                      <Element cardinality="0..1">
                         <Term>cbc:StreetName</Term>
                         <Name>Address line 1 </Name>
@@ -2377,7 +2421,7 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:PartyLegalEntity</Term>
-                  <Name>Party name </Name>
+                  <Name>Party legal entity </Name>
                   <Element cardinality="1..1">
                      <Term>cbc:RegistrationName</Term>
                      <Name>Carrier party name</Name>
@@ -2427,11 +2471,14 @@
                <Description>The departure requested by the party requesting a transportation service. </Description>
                <Element cardinality="0..1">
                   <Term>cbc:IdentificationID</Term>
-                  <Description>An identifier for the delivery event within an agreed event identification scheme.</Description>
+                  <Name>Identifier departure transport event </Name>
+                  <Description>An identifier for this departure transport event within an agreed event identification scheme. </Description>
                   <Value type="EXAMPLE">5451568463515745</Value>
                </Element>
                <Element>
                   <Term>cac:Location</Term>
+                  <Name>Departure location </Name>
+                  <Description>The location where the departure takes place.</Description>
                   <Element>
                      <Term>cbc:ID</Term>
                      <Name>Identity of the delivery location </Name>
@@ -2452,8 +2499,8 @@
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cac:Address</Term>
-                     <Name>The address of location </Name>
-                     <Description>Location Address. </Description>
+                     <Name>Address of location </Name>
+                     <Description>Location address. </Description>
                      <Element cardinality="0..1">
                         <Term>cbc:StreetName</Term>
                         <Name>Address line 1 </Name>
@@ -2589,15 +2636,18 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:RequestedArrivalTransportEvent</Term>
-               <Name>Estimated Departure Transport Event </Name>
+               <Name>Estimated arrival transport event </Name>
                <Description>The arrival requested by the party requesting a transportation service. </Description>
                <Element cardinality="0..1">
                   <Term>cbc:IdentificationID</Term>
-                  <Description>An identifier for the delivery event within an agreed event identification scheme.</Description>
+                  <Name>Identifier arrival transport event </Name>
+                  <Description>An identifier for this arrival transport event within an agreed event identification scheme. </Description>
                   <Value type="EXAMPLE">5451568463515745</Value>
                </Element>
                <Element>
                   <Term>cac:Location</Term>
+                  <Name>Arrival location </Name>
+                  <Description>The location where the arrival takes place.</Description>
                   <Element>
                      <Term>cbc:ID</Term>
                      <Name>Identity of the delivery location </Name>
@@ -2755,18 +2805,25 @@
             </Element>
             <Element>
                <Term>cac:EstimatedArrivalTransportEvent</Term>
+               <Name>Estimated arrival transport event </Name>
+               <Description>The arrival requested by the party requesting a transportation service. </Description>
                <Element>
                   <Term>cbc:IdentificationID</Term>
-                  <Value type="EXAMPLE">2265431546512,1635431</Value>
+                  <Name>Identifier arrival transport event </Name>
+                  <Description>An identifier for this arrival transport event within an agreed event identification scheme. </Description>
+                  <Value type="EXAMPLE">2265431546512</Value>
                </Element>
                <Element>
                   <Term>cac:Location</Term>
+                  <Name>Location of arrival </Name>
                   <Element>
                      <Term>cbc:Name</Term>
                      <Value type="EXAMPLE">HUS Hospital</Value>
                   </Element>
                   <Element>
                      <Term>cac:Address</Term>
+                     <Name>Address of location </Name>
+                     <Description>Location address. </Description>
                      <Element>
                         <Term>cbc:StreetName</Term>
                         <Name>Address line 1 </Name>

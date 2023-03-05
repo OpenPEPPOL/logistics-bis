@@ -44,7 +44,7 @@
 		</cac:PartyName>
 		<cac:PostalAddress>
 			<?Name Postal address ?>
-			<?Description Postal address for the sender party. ?>
+			<?Description The postal address for the sender party. ?>
 			<?Cardinality 1..1?>
 			<cbc:StreetName>Ventrupvej 6
 				<?Name Address line 1 ?>
@@ -96,7 +96,7 @@
 			</cac:TaxScheme>
 		</cac:PartyTaxScheme>
 		<cac:PartyLegalEntity>
-			<?Name Party name ?>
+			<?Name Party legal entity ?>
 			<cbc:RegistrationName>Consortial
 				<?Name Sender party name?>
 				<?Description The name of the sender party. ?>
@@ -177,7 +177,7 @@
 		</cac:PartyName>
 		<cac:PostalAddress>
 			<?Name Postal address ?>
-			<?Description Postal address for the receiver party. ?>
+			<?Description The postal address for the receiver party. ?>
 			<cbc:StreetName>Jydekrogen 14
 				<?Name Address line 1 ?>
 				<?Description The main address line in a postal address usually the street name and number. ?>
@@ -302,16 +302,16 @@
 			<?schemeID-CodeList eas?>
 		</cbc:EndpointID>
 		<cac:PartyName>
-			<?Name Party Name ?>
+			<?Name Party name ?>
 			<?Cardinality 0..1?>
 			<cbc:Name>Novo Nordisk Pharmatech A/S
-				<?Name Sender party name?>
+				<?Name Transport user party name?>
 				<?Description The name of the transport user party. ?>
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
 			<?Name Postal address ?>
-			<?Description Postal address for the transport user party. ?>
+			<?Description The postal address for the transport user party. ?>
 			<cbc:StreetName>Københavnsvej 216
 				<?Name Address line 1 ?>
 				<?Description The main address line in a postal address usually the street name and number. ?>
@@ -436,7 +436,7 @@
 			<?schemeID-CodeList eas?>
 		</cbc:EndpointID>
 		<cac:PartyName>
-			<?Name Party Name ?>
+			<?Name Party name ?>
 			<?Cardinality 0..1?>
 			<cbc:Name>Leman
 				<?Name Transport service provider party name?>
@@ -445,7 +445,7 @@
 		</cac:PartyName>
 		<cac:PostalAddress>
 			<?Name Postal address ?>
-			<?Description Postal address for the sender party. ?>
+			<?Description The postal address for the transport service provider party. ?>
 			<cbc:StreetName>Ventrupvej 6
 				<?Name Address line 1 ?>
 				<?Description The main address line in a postal address usually the street name and number. ?>
@@ -657,7 +657,8 @@
 			<?Description The pickup of this consignment requested by the party requesting a transportation service (the transport user).?>
 			<?Cardinality 1..1?>
 			<cbc:IdentificationID>21412312412
-				<?Description An identifier for the pickup transport event within an agreed event identification scheme.?>
+				<?Name Identifier pickup transport event ?>
+				<?Description An identifier for this pickup transport event within an agreed event identification scheme. ?>
 				<?Cardinality 0..1?>
 			</cbc:IdentificationID>
 			<cac:Location>
@@ -677,8 +678,8 @@
 				<?Cardinality 0..1?>
 				</cbc:Name>
 				<cac:Address>
-					<?Name The address of location ?>
-					<?Description Postal Address. ?>
+					<?Name Address of location ?>
+					<?Description Location address. ?>
 					<?Cardinality 0..1?>
 					<cbc:StreetName>Københavnsvej 216
 						<?Name Address line 1 ?>
@@ -777,9 +778,11 @@
 			<?Name Requested delivery transport event ?>
 			<?Description The delivery of this consignment requested by the party requesting a transportation service (the transport user).?>
 			<?Cardinality 1..1?>
-			<cbc:IdentificationID>625435485674654132</cbc:IdentificationID>
-			<?Description An identifier for the delivery event within an agreed event identification scheme.?>
-			<?Cardinality 0..1?>
+			<cbc:IdentificationID>625435485674654132
+				<?Name Identifier delivery transport event ?>
+				<?Description An identifier for this delivery transport event within an agreed event identification scheme. ?>
+				<?Cardinality 0..1?>
+			</cbc:IdentificationID>
 			<cac:Location>
 				<?Name Location of requested delivery ?>
 				<?Description The location of the requested delivery.?>
@@ -894,7 +897,7 @@
 			</cac:Period>
 		</cac:RequestedDeliveryTransportEvent>
 		<cac:ConsigneeParty>
-			<?Name Consignee Party ?>
+			<?Name Consignee party ?>
 			<?Description The party sending the transport execution plan request. ?>
 			<?Cardinality 1..1?>
 			<cbc:EndpointID schemeID="0212">1567535-0
@@ -903,10 +906,12 @@
 				<?schemeID-CodeList eas?>
 			</cbc:EndpointID>
 			<cac:PartyName>
-				<?Name Party Name ?>
-				<?Description The name of the consignee Party. ?>
+				<?Name Party name ?>
 				<?Cardinality 0..1?>
-				<cbc:Name>HUS Hospital</cbc:Name>
+				<cbc:Name>HUS Hospital
+					<?Name Consignee party name?>
+					<?Description The name of the consignee party.?>
+				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<?Name Postal address ?>
@@ -935,11 +940,14 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
+				<?Name Party legal entity ?>
 				<cbc:RegistrationName>HUS Hospital
+					<?Name Consignee party name ?>
+					<?Description The name of the consignee party.?>
 					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="0212">1567535-0
-					<?Name sender parties legal registration name ?>
+					<?Name Consignee parties legal registration name ?>
 					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier ?>
@@ -998,10 +1006,12 @@
 			<?schemeID-CodeList eas?>
 			</cbc:EndpointID>
 			<cac:PartyName>
-				<?Name Party Name ?>
-				<?Description The name of the consignor Party. ?>
+				<?Name Party name ?>				
 				<?Cardinality 0..1?>
-				<cbc:Name>Novo Nordisk Pharmatech A/S</cbc:Name>
+				<cbc:Name>Novo Nordisk Pharmatech A/S
+					<?Name Consignor party name?>
+					<?Description The name of the consignor party.?>
+				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<?Name Postal address ?>
@@ -1030,12 +1040,15 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
+				<?Name Party legal entity ?>
 				<?Cardinality 1..1?>
 				<cbc:RegistrationName>Novo Nordisk Pharmatech A/S
+					<?Name Consignor party name ?>
+					<?Description The name of the consignor party.?>
 					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="0198">13246149
-					<?Name sender parties legal registration name ?>
+					<?Name Consignor parties legal registration name ?>
 					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier ?>
@@ -1076,6 +1089,78 @@
 				<cbc:Telephone>0158 1233714
 						<?Name Contact telephone number ?>
 						<?Description The phone number of the contact. ?>
+						<?Cardinality 0..1?>
+					</cbc:Telephone>
+				<cbc:ElectronicMail>sender@consignor-company.co.uk
+						<?Name Contact email address ?>
+						<?Description The electronic mail of the contact. ?>
+						<?Cardinality 0..1?>
+				</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:ConsignorParty>
+		<cac:FreightForwarderParty>
+			<?Name Freight Forwarder Party ?>
+			<?Description The party combining individual smaller consignments into a single larger shipment (the consolidated shipment), which is sent to a counterpart that mirrors the consolidators activity by dividing the consolidated consignment into its original components. ?>
+			<?Cardinality 1..1?>
+			<cbc:EndpointID schemeID="0198">41955619</cbc:EndpointID>
+			<cac:PartyName>
+				<?Name Party name ?>
+				<?Cardinality 0..1?>
+				<cbc:Name>Leman
+					<?Name Freight forwarder party name?>
+					<?Description The name of the freight forwarder party. ?>
+				</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<?Name Postal address ?>
+				<?Description The postal address of the freight forwarder party.?>
+				<?Cardinality 0..1?>
+				<cbc:StreetName>Ventrupvej 6
+					<?Name Address line 1 ?>
+					<?Description The main address line in a postal address usually the street name and number. ?>	
+				</cbc:StreetName>
+				<cbc:CityName>Greve
+					<?Name City ?>
+					<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+				</cbc:CityName>
+				<cbc:PostalZone>2670
+					<?Name Post code ?>
+					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+				</cbc:PostalZone>
+				<cac:Country>
+					<?Name Country ?>
+					<cbc:IdentificationCode>DK
+						<?Name Country code ?>
+						<?Cardinality 0..1?>
+						<?CodeList ISO3166?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+					</cbc:IdentificationCode>
+					<cbc:Name>Denmark</cbc:Name>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<?Name Party legal entity ?>
+				<?Cardinality 0..1?>
+				<cbc:RegistrationName>Leman
+					<?Name Freight forwarder party name ?>
+					<?Description The name of the freight forwarder party.?>
+					<?Cardinality 1..1?>
+				</cbc:RegistrationName>
+				<cbc:CompanyID schemeID="0198">41955619
+					<?Name Freight forwarder parties legal registration name ?>
+					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
+					<?Cardinality 0..1?>
+					<?schemeID-Name Scheme identifier ?>
+					<?schemeID-Description The identification scheme identifier of the carrier legal registration identifier ?>
+					<?schemeID-Usage optional?>
+					<?schemeID-CodeList ICD?>
+				</cbc:CompanyID>
+				<cac:RegistrationAddress>
+					<?Name Legal address ?>
+					<?Cardinality 0..1?>
+					<cbc:CityName>Greve
+						<?Name City name ?>
+						<?Description The name of the city. ?>
 						<?Cardinality 0..1?>
 					</cbc:Telephone>
 				<cbc:ElectronicMail>sender@consignor-company.co.uk
@@ -1138,6 +1223,7 @@
 				<?Cardinality 1..1?>
 			</cbc:HazardousRiskIndicator>
 			<cac:CarrierParty>
+				<?Name Carrier party ?>
 				<?Description The carrier party responsible for this shipment stage. ?>
 				<?Cardinality 1..1?>
 				<cbc:EndpointID schemeID="0212">0108023-3
@@ -1145,18 +1231,31 @@
 				<?Cardinality 0..1?>
 				</cbc:EndpointID>
 				<cac:PartyName>
-					<?Description A name for this party. ?>
+					<?Name Party name ?>
 					<?Cardinality 0..1?>
-					<cbc:Name>Finnair Oyj</cbc:Name>
+					<cbc:Name>Finnair Oyj
+						<?Name Carrier party name?>
+						<?Description The name of the carrier party. ?>
+					</cbc:Name>
 				</cac:PartyName>
 				<cac:PostalAddress>
 					<?Name Postal address ?>
 					<?Description The postal address of the carrier.?>
 					<?Cardinality 0..1?>
-					<cbc:StreetName>Tietotie 9</cbc:StreetName>
-					<cbc:CityName>Vantaa</cbc:CityName>
-					<cbc:PostalZone>4600</cbc:PostalZone>
+					<cbc:StreetName>Tietotie 9
+						<?Name Address line 1 ?>
+						<?Description The main address line in a postal address usually the street name and number. ?>
+					</cbc:StreetName>
+					<cbc:CityName>Vantaa
+						<?Name City ?>
+						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+					</cbc:CityName>
+					<cbc:PostalZone>4600
+						<?Name Post code ?>
+						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+					</cbc:PostalZone>
 					<cac:Country>
+						<?Name Country ?>
 						<cbc:IdentificationCode>FI
 							<?Name Country code ?>
 							<?Cardinality 0..1?>
@@ -1166,19 +1265,22 @@
 					</cac:Country>
 				</cac:PostalAddress>
 				<cac:PartyLegalEntity>
+					<?Name Party legal entity ?>
 					<?Cardinality 0..1?>
 					<cbc:RegistrationName>Leman
-					<?Cardinality 1..1?>
-				</cbc:RegistrationName>
+						<?Name Carrier party name ?>
+						<?Description The name of the carrier party.?>
+						<?Cardinality 1..1?>
+					</cbc:RegistrationName>
 					<cbc:CompanyID schemeID="0212">0108023-3
-					<?Name sender parties legal registration name ?>
-					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
-					<?Cardinality 0..1?>
+						<?Name Carrier parties legal registration name ?>
+						<?Description The official name of the party as registered with the relevant fiscal authority. ?>
+						<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier ?>
 					<?schemeID-Description The identification scheme identifier of the carrier legal registration identifier ?>
 					<?schemeID-Usage optional?>
 					<?schemeID-CodeList ICD?>
-				</cbc:CompanyID>
+					</cbc:CompanyID>
 					<cac:RegistrationAddress>
 						<?Name Legal address ?>
 						<?Cardinality 0..1?>
@@ -1256,6 +1358,7 @@
 				<?Description The departure requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
 				<cbc:IdentificationID>6522956526554654
+					<?Name Identifier departure transport event ?>
 					<?Description An identifier for this departure transport event within an agreed event identification scheme. ?>
 					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
@@ -1376,7 +1479,10 @@
 				<?Name Estimated arrival transport event ?>
 				<?Description The arrival requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
-				<cbc:IdentificationID>54354684732168476514</cbc:IdentificationID>
+				<cbc:IdentificationID>54354684732168476514
+					<?Name Identifier arrival transport event ?>
+					<?Description An identifier for this arrival transport event within an agreed event identification scheme. ?>
+				</cbc:IdentificationID>
 				<cac:Location>
 					<?Name Arrival location ?>
 					<?Description The location where the arrival takes place.?>
@@ -1433,7 +1539,7 @@
 				<?CodeList UNECERec19?>
 			</cbc:TransportModeCode>
 			<cac:CarrierParty>
-				<?Name Carrier Party ?>
+				<?Name Carrier party ?>
 				<?Description The party providing the transport of goods in this consignment between named points. ?>
 				<?Cardinality 0..1?>
 				<cbc:EndpointID schemeID="0198">10154596
@@ -1442,19 +1548,31 @@
 					<?Cardinality 1..1?>
 				</cbc:EndpointID>
 				<cac:PartyName>
-					<?Name Party Name ?>
-					<?Description The name of the carrier Party. ?>
+					<?Name Party name ?>
 					<?Cardinality 0..1?>
-					<cbc:Name>DHL Express</cbc:Name>
+					<cbc:Name>DHL Express
+						<?Name Carrier party name?>
+						<?Description The name of the carrier party. ?>
+					</cbc:Name>
 				</cac:PartyName>
 				<cac:PostalAddress>
 					<?Name Postal address ?>
-					<?Description The postal address of the carrier?>
+					<?Description The postal address of the carrier party.?>
 					<?Cardinality 0..1?>
-					<cbc:StreetName>Jydekrogen 14</cbc:StreetName>
-					<cbc:CityName>Vallensbæk Landsby</cbc:CityName>
-					<cbc:PostalZone>2625</cbc:PostalZone>
+					<cbc:StreetName>Jydekrogen 14
+						<?Name Address line 1 ?>
+						<?Description The main address line in a postal address usually the street name and number. ?>
+					</cbc:StreetName>
+					<cbc:CityName>Vallensbæk Landsby
+						<?Name City ?>
+						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>		
+					</cbc:CityName>
+					<cbc:PostalZone>2625
+						<?Name Post code ?>
+						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>		
+					</cbc:PostalZone>
 					<cac:Country>
+						<?Name Country ?>
 						<cbc:IdentificationCode>DK
 							<?Name Country code ?>
 							<?Cardinality 0..1?>
@@ -1464,12 +1582,15 @@
 					</cac:Country>
 				</cac:PostalAddress>
 				<cac:PartyLegalEntity>
+					<?Name Party legal entity ?>
 					<?Cardinality 0..1?>
 					<cbc:RegistrationName>DHL Express
-					<?Cardinality 1..1?>
+						<?Name Carrier party name ?>
+						<?Description The name of the carrier party.?>
+						<?Cardinality 1..1?>
 					</cbc:RegistrationName>
-						<cbc:CompanyID schemeID="0198">10154596
-						<?Name sender parties legal registration name ?>
+					<cbc:CompanyID schemeID="0198">10154596
+						<?Name Carrier parties legal registration name ?>
 						<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 						<?Cardinality 0..1?>
 						<?schemeID-Name Scheme identifier ?>
@@ -1477,26 +1598,26 @@
 						<?schemeID-Usage optional?>
 						<?schemeID-CodeList ICD?>
 					</cbc:CompanyID>
-						<cac:RegistrationAddress>
+					<cac:RegistrationAddress>
 							<?Name Legal address ?>
 							<?Cardinality 0..1?>
 							<cbc:CityName>Vallensbæk Landsby
 							<?Name City name ?>
 							<?Description The name of the city. ?>
 							<?Cardinality 0..1?>
-						</cbc:CityName>
-							<cac:Country>
-								<?Name Country ?>
-								<?Description The residens country for the carrier party. ?>
-								<?Cardinality 1..1?>
-								<cbc:IdentificationCode>DK
-									<?Name Country code ?>
-									<?Cardinality 0..1?>
-									<?CodeList ISO3166?>
-									<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
-								</cbc:IdentificationCode>
-							</cac:Country>
-						</cac:RegistrationAddress>
+					</cbc:CityName>
+					<cac:Country>
+						<?Name Country ?>
+						<?Description The residens country for the carrier party. ?>
+						<?Cardinality 1..1?>
+						<cbc:IdentificationCode>DK
+							<?Name Country code ?>
+							<?Cardinality 0..1?>
+							<?CodeList ISO3166?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						</cbc:IdentificationCode>
+					</cac:Country>
+					</cac:RegistrationAddress>
 				</cac:PartyLegalEntity>
 			</cac:CarrierParty>
 			<cac:RequestedDepartureTransportEvent>
@@ -1504,7 +1625,8 @@
 				<?Description The departure requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
 				<cbc:IdentificationID>5451568463515745
-					<?Description An identifier for the delivery event within an agreed event identification scheme.?>
+					<?Name Identifier departure transport event ?>
+					<?Description An identifier for this departure transport event within an agreed event identification scheme. ?>
 					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
 				<cac:Location>					
@@ -1521,8 +1643,8 @@
 						<?Cardinality 0..1?>
 					</cbc:Name>
 					<cac:Address>
-						<?Name The address of location ?>
-						<?Description Location Address. ?>
+						<?Name Address of location ?>
+						<?Description Location address. ?>
 						<?Cardinality 0..1?>
 						<cbc:StreetName>Københavnsvej 216
 							<?Name Address line 1 ?>
@@ -1622,7 +1744,8 @@
 				<?Description The arrival requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
 				<cbc:IdentificationID>5451568463515745
-					<?Description An identifier for the delivery event within an agreed event identification scheme.?>
+					<?Name Identifier arrival transport event ?>
+					<?Description An identifier for this arrival transport event within an agreed event identification scheme. ?>
 					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
 				<cac:Location>
@@ -1641,8 +1764,8 @@
 						<?Cardinality 0..1?>
 					</cbc:Name>
 					<cac:Address>
-						<?Name The address of location ?>
-						<?Description Location Address. ?>
+						<?Name Address of location ?>
+						<?Description Location address. ?>
 						<?Cardinality 0..1?>
 						<cbc:StreetName>Kystvejen 24
 							<?Name Address line 1 ?>
@@ -1803,7 +1926,7 @@
 					</cac:Country>
 				</cac:PostalAddress>
 				<cac:PartyLegalEntity>
-					<?Name Party name ?>
+					<?Name Party legal entity ?>
 					<?Cardinality 0..1?>
 					<cbc:RegistrationName>DHL Express
 						<?Name Carrier party name?>
@@ -1846,10 +1969,13 @@
 				<?Description The departure requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
 				<cbc:IdentificationID>5451568463515745
-				<?Description An identifier for the delivery event within an agreed event identification scheme.?>
-				<?Cardinality 0..1?>
+					<?Name Identifier departure transport event ?>
+					<?Description An identifier for this departure transport event within an agreed event identification scheme. ?>
+					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
-				<cac:Location>					
+				<cac:Location>
+					<?Name Departure location ?>
+					<?Description The location where the departure takes place.?> 					
 					<cbc:ID schemeID="0088">5790000435951
 						<?Name Identity of the delivery location ?>
 						<?Description Identifies the delivery location. ?>
@@ -1863,8 +1989,8 @@
 						<?Cardinality 0..1?>
 					</cbc:Name>
 					<cac:Address>
-						<?Name The address of location ?>
-						<?Description Location Address. ?>
+						<?Name Address of location ?>
+						<?Description Location address. ?>
 						<?Cardinality 0..1?>
 						<cbc:StreetName>Københavnsvej 216
 							<?Name Address line 1 ?>
@@ -1961,15 +2087,17 @@
 			</cac:RequestedDepartureTransportEvent>
 
 			<cac:RequestedArrivalTransportEvent>
-				<?Name Estimated Departure Transport Event ?>
+				<?Name Estimated arrival transport event ?>
 				<?Description The arrival requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
-				<cbc:IdentificationID>
-					5451568463515745
-					<?Description An identifier for the delivery event within an agreed event identification scheme.?>
+				<cbc:IdentificationID>5451568463515745
+					<?Name Identifier arrival transport event ?>
+					<?Description An identifier for this arrival transport event within an agreed event identification scheme. ?>
 					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
 				<cac:Location>
+					<?Name Arrival location ?>
+					<?Description The location where the arrival takes place.?> 	
 					<cbc:ID schemeID="0088">5790000435951
 						<?Name Identity of the delivery location ?>
 						<?Description Identifies the delivery location. ?>
@@ -2085,10 +2213,18 @@
 			</cac:RequestedArrivalTransportEvent>
 
 			<cac:EstimatedArrivalTransportEvent>
-				<cbc:IdentificationID>2265431546512,1635431</cbc:IdentificationID>
+				<?Name Estimated arrival transport event ?>
+				<?Description The arrival requested by the party requesting a transportation service. ?>
+				<cbc:IdentificationID>2265431546512
+					<?Name Identifier arrival transport event ?>
+					<?Description An identifier for this arrival transport event within an agreed event identification scheme. ?>
+				</cbc:IdentificationID>
 				<cac:Location>
+					<?Name Location of arrival ?>
 					<cbc:Name>HUS Hospital</cbc:Name>
 					<cac:Address>
+						<?Name Address of location ?>
+						<?Description Location address. ?>
 						<cbc:StreetName>Topeliuksenkatu 5
 							<?Name Address line 1 ?>
 							<?Description The main address line in a postal address usually the street name and number. ?>
