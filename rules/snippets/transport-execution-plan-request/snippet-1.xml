@@ -10,6 +10,7 @@
 	<cbc:IssueDate>2021-09-29</cbc:IssueDate>
 	<cbc:IssueTime>09:49:00</cbc:IssueTime>
 	<cbc:DocumentStatusCode>9 </cbc:DocumentStatusCode>
+	<!-- tag::sender-party[] -->
 	<cac:SenderParty>
 		<cbc:EndpointID schemeID="0198">41955619 </cbc:EndpointID>
 		<cac:PartyName>
@@ -45,6 +46,8 @@
 			<cbc:ElectronicMail>sender@consignor-company.co.uk </cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:SenderParty>
+	<!-- end::sender-party[] -->
+	<!-- tag::receiver-party[] -->
 	<cac:ReceiverParty>
 		<cbc:EndpointID schemeID="0198">10154596 </cbc:EndpointID>
 		<cac:PartyName>
@@ -80,6 +83,8 @@
 			<cbc:ElectronicMail>msreceiver@tplogistics.co.uk </cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:ReceiverParty>
+	<!-- end::receiver-party[] -->
+	<!-- tag::transport-user-party[] -->
 	<cac:TransportUserParty>
 		<cbc:EndpointID schemeID="0198">13246149 </cbc:EndpointID>
 		<cac:PartyName>
@@ -115,6 +120,8 @@
 			<cbc:ElectronicMail>transport-user@transportuser.dk </cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:TransportUserParty>
+	<!-- end::transport-user-party[] -->
+	<!-- tag::transport-service-provider-party[] -->
 	<cac:TransportServiceProviderParty>
 		<cbc:EndpointID schemeID="0198">41955619 </cbc:EndpointID>
 		<cac:PartyName>
@@ -150,6 +157,8 @@
 			<cbc:ElectronicMail>transport-user@transportuser.dk </cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:TransportServiceProviderParty>
+	<!-- end::transport-service-provider-party[] -->
+
 	<cac:Consignment>
 		<cbc:ID>12535157654567654 </cbc:ID>
 		<cbc:TotalInvoiceAmount currencyID="EUR">5000 </cbc:TotalInvoiceAmount>
@@ -226,7 +235,8 @@
 				<cbc:EndTime>11:00:00+01:00</cbc:EndTime>
 			</cac:Period>
 		</cac:RequestedDeliveryTransportEvent>
-		<cac:ConsigneeParty>
+		<!-- tag::consignee-party[] -->
+			<cac:ConsigneeParty>
 			<cbc:EndpointID schemeID="0212">1567535-0 </cbc:EndpointID>
 			<cac:PartyName>
 				<cbc:Name>HUS Hospital</cbc:Name>
@@ -250,6 +260,8 @@
 				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 		</cac:ConsigneeParty>
+		<!-- end::consignee-party[] -->
+		<!-- tag::consignor-party[] -->
 		<cac:ConsignorParty>
 			<cbc:EndpointID schemeID="0198">13246149 </cbc:EndpointID>
 			<cac:PartyName>
@@ -275,6 +287,7 @@
 				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
 		</cac:ConsignorParty>
+		<!-- end::consignor-party[] -->
 		<cac:FreightForwarderParty>
 			<cbc:EndpointID schemeID="0198">41955619</cbc:EndpointID>
 			<cac:PartyName>
@@ -313,6 +326,7 @@
 		<cac:MainCarriageShipmentStage>
 			<cbc:TransportModeCode>4 </cbc:TransportModeCode>
 			<cbc:HazardousRiskIndicator>false </cbc:HazardousRiskIndicator>
+			<!-- tag::carrier-party[] -->
 			<cac:CarrierParty>
 				<cbc:EndpointID schemeID="0212">0108023-3 </cbc:EndpointID>
 				<cac:PartyName>
@@ -337,6 +351,7 @@
 					</cac:RegistrationAddress>
 				</cac:PartyLegalEntity>
 			</cac:CarrierParty>
+			<!-- end::carrier-party[] -->
 			<cac:TransportMeans>
 				<cac:AirTransport>
 					<cbc:AircraftID>JA8088 </cbc:AircraftID>
