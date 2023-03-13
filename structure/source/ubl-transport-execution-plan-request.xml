@@ -12,16 +12,15 @@
 	<cbc:IssueTime>09:49:00<?Description The time when the transport execuition plan request is issued. Format = "hh:mm:ss". ?><?Cardinality 1..1?>
 	</cbc:IssueTime>
 	<cbc:DocumentStatusCode>9
-		<?Name Transport execuition plan request code ?>
+		<?Name Transport execuition plan request status code ?>
 		<?Description A code signifying the status of the transport execuition plan request. Default is Original (9)?>
 		<?Cardinality 0..1?>
 		<?CodeList DocumentStatusCode?>
 	</cbc:DocumentStatusCode>
-	<cbc:TransportUserRemarks>Som remarks
+	<cbc:TransportUserRemarks>Some remarks
 		<?Name Transport User Remarks ?>
 		<?Description Remarks from the transport user regarding the transport operations referenced in the Transport Execution Plan Request.?>
-		<?Cardinality 0..1?>
-		<?CodeList DocumentStatusCode?>
+		<?Cardinality 0..1?>		
 	</cbc:TransportUserRemarks>
 	<cac:SenderParty>
 		<?Name Sender party ?>
@@ -669,7 +668,7 @@
 		</cac:PartyName>
 		<cac:PostalAddress>
 			<?Name Postal address ?>
-			<?Description The postal address for the transport user party. ?>
+			<?Description The postal address for the payee party. ?>
 			<cbc:StreetName>Københavnsvej 216
 				<?Name Address line 1 ?>
 				<?Description The main address line in a postal address usually the street name and number. ?>
@@ -720,7 +719,7 @@
 			<?Cardinality 0..1?>
 			<cbc:CompanyID>GB325456788
 					<?Name Company ID ?>
-					<?Description The Transport User Party Value Added Tax identifer. ?>
+					<?Description The Payee Party Value Added Tax identifer. ?>
 					<?Cardinality 1..1?>
 				</cbc:CompanyID>
 			<cac:TaxScheme>
