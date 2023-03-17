@@ -5,7 +5,9 @@
    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan_request:1</cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1</cbc:ProfileID>
+	<!-- tag::document-id[] -->
 	<cbc:ID>141278571829041241241</cbc:ID>
+	<!-- end::document-id[] -->
 	<cbc:VersionID>1</cbc:VersionID>
 	<cbc:IssueDate>2021-09-29</cbc:IssueDate>
 	<cbc:IssueTime>09:49:00</cbc:IssueTime>
@@ -171,6 +173,7 @@
 		<cbc:HazardousRiskIndicator>false </cbc:HazardousRiskIndicator>
 		<cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1 </cbc:TotalTransportHandlingUnitQuantity>
 		<cbc:DeclaredStatisticsValueAmount currencyID="SEK">34000.45 </cbc:DeclaredStatisticsValueAmount>
+		<!-- tag::requested-pickup-transport-event[] -->
 		<cac:RequestedPickupTransportEvent>
 			<cbc:IdentificationID>21412312412 </cbc:IdentificationID>
 			<cac:Location>
@@ -203,6 +206,7 @@
 				<cbc:EndTime>10:00:00+01:00</cbc:EndTime>
 			</cac:Period>
 		</cac:RequestedPickupTransportEvent>
+		<!-- end::requested-pickup-transport-event[] -->
 		<cac:RequestedDeliveryTransportEvent>
 			<cbc:IdentificationID>625435485674654132</cbc:IdentificationID>
 			<cac:Location>
@@ -323,6 +327,7 @@
 			<cbc:ID>DAP </cbc:ID>
 			<cbc:SpecialTerms>DAP </cbc:SpecialTerms>
 		</cac:DeliveryTerms>
+		<!-- tag::main-shipment-stage[] -->
 		<cac:MainCarriageShipmentStage>
 			<cbc:TransportModeCode>4 </cbc:TransportModeCode>
 			<cbc:HazardousRiskIndicator>false </cbc:HazardousRiskIndicator>
@@ -415,6 +420,7 @@
 				</cac:Location>
 			</cac:RequestedArrivalTransportEvent>
 		</cac:MainCarriageShipmentStage>
+		<!-- end::main-shipment-stage[] -->
 		<cac:PreCarriageShipmentStage>
 			<cbc:TransportModeCode>4 </cbc:TransportModeCode>
 			<cac:CarrierParty>
@@ -613,6 +619,7 @@
 				</cac:Location>
 			</cac:EstimatedArrivalTransportEvent>
 		</cac:OnCarriageShipmentStage>
+		<!-- tag::transport-handling-unit[] -->
 		<cac:TransportHandlingUnit>
 			<cbc:ID>11111222222222 </cbc:ID>
 			<cbc:TransportHandlingUnitTypeCode>AG </cbc:TransportHandlingUnitTypeCode>
@@ -620,6 +627,7 @@
 			<cbc:HandlingInstructions>To be set vertical </cbc:HandlingInstructions>
 			<cbc:HazardousRiskIndicator>false </cbc:HazardousRiskIndicator>
 			<cbc:ShippingMarks>Keep dry </cbc:ShippingMarks>
+			<!-- tag::transport-equipment[] -->
 			<cac:TransportEquipment>
 				<cbc:ID>34563444 </cbc:ID>
 				<cbc:TransportEquipmentTypeCode>CN </cbc:TransportEquipmentTypeCode>
@@ -631,6 +639,7 @@
 				</cbc:Description>
 				<cbc:PowerIndicator>true </cbc:PowerIndicator>
 			</cac:TransportEquipment>
+			<!-- end::transport-equipment[] -->
 			<cac:MeasurementDimension>
 				<cbc:AttributeID>LN </cbc:AttributeID>
 				<cbc:Measure unitCode="MTR">123 </cbc:Measure>
@@ -643,13 +652,16 @@
 				<cbc:AttributeID>TC </cbc:AttributeID>
 				<cbc:Measure unitCode="CEL">-21 </cbc:Measure>
 			</cac:MaximumTemperature>
+			<!-- tag::goods-item[] -->
 			<cac:GoodsItem>
-				<cbc:ID>10 </cbc:ID>
-				<cbc:HazardousRiskIndicator>false </cbc:HazardousRiskIndicator>
-				<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78 </cbc:DeclaredStatisticsValueAmount>
-				<cbc:Quantity unitCode="EA">6 </cbc:Quantity>
-				<cbc:TraceID schemeID="sgtin">345699634527 </cbc:TraceID>
+				<cbc:ID>10</cbc:ID>
+				<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+				<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78</cbc:DeclaredStatisticsValueAmount>
+				<cbc:Quantity unitCode="EA">6</cbc:Quantity>
+				<cbc:TraceID schemeID="sgtin">345699634527</cbc:TraceID>
 			</cac:GoodsItem>
+			<!-- end::goods-item[] -->
+			<!-- tag::package[] -->
 			<cac:Package>
 				<cbc:ID>3453 </cbc:ID>
 				<cbc:ReturnableMaterialIndicator>true </cbc:ReturnableMaterialIndicator>
@@ -672,10 +684,12 @@
 							<cbc:Quantity unitCode="EA">6 </cbc:Quantity>
 							<cbc:TraceID schemeID="urn:epc:sgid">345699634527 </cbc:TraceID>
 						</cac:GoodsItem>
+						<!-- tag::measurement-dimension[] -->
 						<cac:MeasurementDimension>
 							<cbc:AttributeID>LN </cbc:AttributeID>
 							<cbc:Measure unitCode="MTR">123 </cbc:Measure>
 						</cac:MeasurementDimension>
+						<!-- end::measurement-dimension[] -->
 					</cac:ContainedPackage>
 					<cac:GoodsItem>
 						<cbc:ID>10 </cbc:ID>
@@ -701,6 +715,8 @@
 					<cbc:Measure unitCode="MTR">123 </cbc:Measure>
 				</cac:MeasurementDimension>
 			</cac:Package>
+			<!-- end::package[] -->
 		</cac:TransportHandlingUnit>
+		<!-- end::transport-handling-unit[] -->
 	</cac:Consignment>
 </ubl:TransportExecutionPlanRequest>
