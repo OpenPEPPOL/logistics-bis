@@ -360,7 +360,9 @@
 	<cac:Shipment>
 		<cbc:ID> 1 <?Description Identifies a shipment. Freight forwarders reference number.?>
 		</cbc:ID>
-		<cbc:Information> text <?Description Used by Logistics for Supplier Remark.?>
+		<cbc:Information> text
+			<?Description Used by Logistics for Supplier Remark.?>
+			<?Cardinality 0..1?>
 		</cbc:Information>
 		<cbc:GrossWeightMeasure unitCode="KGM"> 1030 <?Description The gross weight of the despatch as a whole. Must be equal the the weight specified for the included transport handling unites if this is specified?>
 			<?Rule PEPPOL-T120-R018?>
