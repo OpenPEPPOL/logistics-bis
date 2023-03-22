@@ -4,465 +4,323 @@
 	<?Property key="sch:prefix" PEPPOL-T125?>
 	<?Property key="sch:identifier" T125-basic?>
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:waybill:1</cbc:CustomizationID>
-	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:waybill_only:1</cbc:ProfileID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:waybill_only:1<?Description Identifies the BII profile or business process context in which the transaction appears.?>	
+	</cbc:ProfileID>
 	<cbc:ID>KHN23-44044-1</cbc:ID>
 	<cbc:CarrierAssignedID>123456789987654321</cbc:CarrierAssignedID>
-	<cbc:UUID>74638995-D67E-002F-436-8G17366352B1</cbc:UUID>
-	<cbc:IssueDate>2005-06-25</cbc:IssueDate>
-	<cbc:IssueTime>09:00:00.0Z</cbc:IssueTime>
-	<cbc:Name>Air Waybill</cbc:Name>
-	<cbc:ShippingOrderID>KHN23-44044</cbc:ShippingOrderID>
-	<cbc:AdValoremIndicator>false</cbc:AdValoremIndicator>
-	<cbc:DeclaredCarriageValueAmount currencyID="USD">1500.00</cbc:DeclaredCarriageValueAmount>
+	<cbc:IssueDate>2005-06-25<?Description The date when the waybill is issued. Format = "YYYY-MM-DD". ?>
+	</cbc:IssueDate>
+	<cbc:IssueTime>09:00:00
+		<?Description The time when the transport execuition plan is issued. Format = "hh:mm:ss". ?>
+		<?Cardinality 1..1?>
+	</cbc:IssueTime>
+	<cbc:Name>Air Waybill
+		<?Name Waybill type ?>
+		<?Description The name (kind of waybill) of waybill type. Use "CMR" for CMR, "Bill of Laden" for Bill of laden or "Air waybill" for Air waybill. ?>
+		<?Cardinality 1..1?>
+	</cbc:Name>
+	<cbc:ShippingOrderID>KHN23-44044
+		<?Name Shipping Order ID ?>
+		<?Description An identifier (in the form of a reference number) of the Shipping Order or Forwarding Instruction associated with this shipment. ?>
+		<?Cardinality 0..1?>
+	</cbc:ShippingOrderID>
+	<cbc:DeclaredCarriageValueAmount currencyID="USD">1500.00
+		<?Name Declared Carriage Value Amount ?>
+		<?Description Value declared by the shipper or his agent solely for the purpose of varying the carrier's level of liability from that provided in the contract of carriage in case of loss or damage to goods or delayed delivery. ?>
+		<?Cardinality 0..1?>
+		<?currencyID-Name Currency identifier ?>
+		<?currencyID-Description Currency identifier.?>
+		<?currencyID-CodeList ISO4217?>
+	</cbc:DeclaredCarriageValueAmount>
 	<cac:ConsignorParty>
+		<?Name Consignee Party ?>
+		<?Description The party sending the waybill request. ?>
+		<?Cardinality 1..1?>
+		<cbc:EndpointID schemeID="0198">13246149
+			<?schemeID-usage Mandatory?>
+			<?schemeID-CodeList eas?>
+			</cbc:EndpointID>
 		<cac:PartyName>
-			<cbc:Name>Consortial</cbc:Name>
+			<?Name Party name ?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Novo Nordisk Pharmatech A/S
+					<?Name Consignor party name?>
+					<?Description The name of the consignor party.?>
+				</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
-			<cbc:StreetName>Boston Road</cbc:StreetName>
-			<cbc:BuildingName>Suite M-102</cbc:BuildingName>
-			<cbc:BuildingNumber>630</cbc:BuildingNumber>
-			<cbc:CityName>Billerica</cbc:CityName>
-			<cbc:PostalZone>01821</cbc:PostalZone>
-			<cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
-			<cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+			<?Name Postal address ?>
+			<?Description The postal address of the consignor party.?>
+			<?Cardinality 0..1?>
+			<cbc:StreetName>Københavnsvej 216
+					<?Name Address line 1 ?>
+					<?Description The main address line in a postal address usually the street name and number. ?>
+				</cbc:StreetName>
+			<cbc:CityName>Køge
+					<?Name City ?>
+					<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+				</cbc:CityName>
+			<cbc:PostalZone>4600
+					<?Name Post code ?>
+					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+				</cbc:PostalZone>
 			<cac:Country>
-				<cbc:IdentificationCode>US</cbc:IdentificationCode>
+				<?Name Country ?>
+				<cbc:IdentificationCode>DK
+						<?Name Country code ?>
+						<?Cardinality 0..1?>
+						<?CodeList ISO3166?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+					</cbc:IdentificationCode>
 			</cac:Country>
 		</cac:PostalAddress>
+		<cac:PartyLegalEntity>
+			<?Name Party legal entity ?>
+			<?Cardinality 1..1?>
+			<cbc:RegistrationName>Novo Nordisk Pharmatech A/S
+					<?Name Consignor party name ?>
+					<?Description The name of the consignor party.?>
+					<?Cardinality 1..1?>
+				</cbc:RegistrationName>
+			<cbc:CompanyID schemeID="0198">13246149
+					<?Name Consignor parties legal registration name ?>
+					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
+					<?Cardinality 0..1?>
+					<?schemeID-Name Scheme identifier ?>
+					<?schemeID-Description The identification scheme identifier of the consignor legal registration identifier ?>
+					<?schemeID-Usage optional?>
+					<?schemeID-CodeList ICD?>
+				</cbc:CompanyID>
+			<cac:RegistrationAddress>
+				<?Name Legal address ?>
+				<?Cardinality 0..1?>
+				<cbc:CityName>Køge
+						<?Name City name ?>
+						<?Description The name of the city. ?>
+						<?Cardinality 0..1?>
+					</cbc:CityName>
+				<cac:Country>
+					<?Name Country ?>
+					<?Description The residens country for the consignor party. ?>
+					<?Cardinality 1..1?>
+					<cbc:IdentificationCode>DK
+							<?Name Country code ?>
+							<?Cardinality 0..1?>
+							<?CodeList ISO3166?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:RegistrationAddress>
+		</cac:PartyLegalEntity>
 		<cac:Contact>
-			<cbc:Name>Mrs Bouquet</cbc:Name>
-			<cbc:Telephone> +1 158 1233714</cbc:Telephone>
-			<cbc:Telefax>+ 1 158 1233856</cbc:Telefax>
-			<cbc:ElectronicMail>bouquet@fpconsortial.com</cbc:ElectronicMail>
+			<?Name Contact ?>
+			<?Description The contact of the consignor party. ?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Mr Sender
+						<?Name Contact name ?>
+						<?Description The contact name. ?>
+						<?Cardinality 0..1?>
+					</cbc:Name>
+			<cbc:Telephone>0158 1233714
+						<?Name Contact telephone number ?>
+						<?Description The phone number of the contact. ?>
+						<?Cardinality 0..1?>
+					</cbc:Telephone>
+			<cbc:ElectronicMail>sender@consignor-company.co.uk
+						<?Name Contact email address ?>
+						<?Description The electronic mail of the contact. ?>
+						<?Cardinality 0..1?>
+				</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:ConsignorParty>
 	<cac:CarrierParty>
+		<?Name Carrier party ?>
+		<?Description The carrier party responsible for this waybill. ?>
+		<?Cardinality 1..1?>
+		<cbc:EndpointID schemeID="0212">0108023-3
+				<?Description An identifier for the end point of the routing service (e.g., EAN Location Number, GLN). ?>
+				<?Cardinality 0..1?>
+				</cbc:EndpointID>
 		<cac:PartyName>
-			<cbc:Name>United Airfreight</cbc:Name>
-		</cac:PartyName>
-		<cac:Contact>
-			<cbc:ID>Freight Bookings</cbc:ID>
-			<cbc:Telephone>+1 3362 4788</cbc:Telephone>
-			<cbc:ElectronicMail>bookings@unitedfreight.com</cbc:ElectronicMail>
-		</cac:Contact>
-	</cac:CarrierParty>
-	<cac:FreightForwarderParty>
-		<cac:PartyName>
-			<cbc:Name>One-Stop Forwarders</cbc:Name>
+			<?Name Party name ?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Finnair Oyj
+						<?Name Carrier party name?>
+						<?Description The name of the carrier party. ?>
+					</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
-			<cbc:Postbox>99043</cbc:Postbox>
-			<cbc:CityName>Boston</cbc:CityName>
-			<cbc:PostalZone>02210</cbc:PostalZone>
-			<cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+			<?Name Postal address ?>
+			<?Description The postal address of the carrier.?>
+			<?Cardinality 0..1?>
+			<cbc:StreetName>Tietotie 9
+						<?Name Address line 1 ?>
+						<?Description The main address line in a postal address usually the street name and number. ?>
+					</cbc:StreetName>
+			<cbc:CityName>Vantaa
+						<?Name City ?>
+						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+					</cbc:CityName>
+			<cbc:PostalZone>4600
+						<?Name Post code ?>
+						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+					</cbc:PostalZone>
 			<cac:Country>
-				<cbc:IdentificationCode>US</cbc:IdentificationCode>
+				<?Name Country ?>
+				<cbc:IdentificationCode>FI
+							<?Name Country code ?>
+							<?Cardinality 0..1?>
+							<?CodeList ISO3166?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						</cbc:IdentificationCode>
 			</cac:Country>
 		</cac:PostalAddress>
-		<cac:Contact>
-			<cbc:Name>Con Solidador</cbc:Name>
-			<cbc:Telephone> +1 343 1453654</cbc:Telephone>
-			<cbc:Telefax>+1 343 1453655</cbc:Telefax>
-			<cbc:ElectronicMail>ctanner@onestopfreight.com</cbc:ElectronicMail>
-		</cac:Contact>
-	</cac:FreightForwarderParty>
-	<cac:Shipment>
-		<cbc:ID>CONS-0001</cbc:ID>
-		<cbc:GrossWeightMeasure unitCode="KGM">130</cbc:GrossWeightMeasure>
-		<cbc:NetWeightMeasure unitCode="KGM">110</cbc:NetWeightMeasure>
-		<cbc:NetNetWeightMeasure unitCode="KGM">100</cbc:NetNetWeightMeasure>
-		<cbc:GrossVolumeMeasure unitCode="MTQ">2</cbc:GrossVolumeMeasure>
-		<cbc:NetVolumeMeasure unitCode="MTQ">2.235</cbc:NetVolumeMeasure>
-		<cbc:TotalGoodsItemQuantity>1</cbc:TotalGoodsItemQuantity>
-		<cbc:TotalTransportHandlingUnitQuantity>10</cbc:TotalTransportHandlingUnitQuantity>
-		<cbc:InsuranceValueAmount currencyID="USD">1000.00</cbc:InsuranceValueAmount>
-		<cbc:DeclaredCustomsValueAmount currencyID="GBP">524.80</cbc:DeclaredCustomsValueAmount>
-		<cbc:FreeOnBoardValueAmount currencyID="USD">1200.00</cbc:FreeOnBoardValueAmount>
-		<cbc:SpecialInstructions>Beeswax becomes liquid at 50'C</cbc:SpecialInstructions>
-		<cac:Consignment>
-			<cbc:ID schemeAgencyName="WCO" schemeName="Unique Consignment Reference">2005US12345678998765432112345678</cbc:ID>
-			<cbc:TariffDescription>Beeswax, other insect waxes and spermacetti</cbc:TariffDescription>
-			<cbc:TariffCode>15219000</cbc:TariffCode>
-			<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-			<cac:ConsigneeParty>
-				<cac:PartyName>
-					<cbc:Name>IYT Corporation</cbc:Name>
-				</cac:PartyName>
-				<cac:PostalAddress>
-					<cbc:StreetName>Avon Way</cbc:StreetName>
-					<cbc:BuildingName>Thereabouts</cbc:BuildingName>
-					<cbc:BuildingNumber>56A</cbc:BuildingNumber>
-					<cbc:CityName>Bridgtow</cbc:CityName>
-					<cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-					<cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-					<cac:AddressLine>
-						<cbc:Line>3rd Floor, Room 5</cbc:Line>
-					</cac:AddressLine>
-					<cac:Country>
-						<cbc:IdentificationCode>GB</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:PostalAddress>
-				<cac:Contact>
-					<cbc:Name>Mr Fred Churchill</cbc:Name>
-					<cbc:Telephone>+44 127 2653214</cbc:Telephone>
-					<cbc:Telefax>+44 127 2653215</cbc:Telefax>
-					<cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-				</cac:Contact>
-			</cac:ConsigneeParty>
-			<cac:NotifyParty>
-				<cac:PartyName>
-					<cbc:Name>IYT Corporation</cbc:Name>
-				</cac:PartyName>
-				<cac:PostalAddress>
-					<cbc:StreetName>Avon Way</cbc:StreetName>
-					<cbc:BuildingName>Thereabouts</cbc:BuildingName>
-					<cbc:BuildingNumber>56A</cbc:BuildingNumber>
-					<cbc:CityName>Bridgtow</cbc:CityName>
-					<cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-					<cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-					<cac:AddressLine>
-						<cbc:Line>3rd Floor, Room 5</cbc:Line>
-					</cac:AddressLine>
-					<cac:Country>
-						<cbc:IdentificationCode>GB</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:PostalAddress>
-				<cac:Contact>
-					<cbc:Name>Mr Fred Churchill</cbc:Name>
-					<cbc:Telephone>+44 127 2653214</cbc:Telephone>
-					<cbc:Telefax>+44 127 2653215</cbc:Telefax>
-					<cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-				</cac:Contact>
-			</cac:NotifyParty>
-			<cac:FinalDeliveryParty>
-				<cac:PartyName>
-					<cbc:Name>The Terminus</cbc:Name>
-				</cac:PartyName>
-				<cac:PostalAddress>
-					<cbc:StreetName>Avon Way</cbc:StreetName>
-					<cbc:BuildingName>Thereabouts</cbc:BuildingName>
-					<cbc:BuildingNumber>56A</cbc:BuildingNumber>
-					<cbc:CityName>Bridgtow</cbc:CityName>
-					<cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-					<cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-					<cac:AddressLine>
-						<cbc:Line>3rd Floor, Room 5</cbc:Line>
-					</cac:AddressLine>
-					<cac:Country>
-						<cbc:IdentificationCode>GB</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:PostalAddress>
-				<cac:Contact>
-					<cbc:Name>S Massiah</cbc:Name>
-					<cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
-					<cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
-					<cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
-				</cac:Contact>
-			</cac:FinalDeliveryParty>
-			<cac:OriginalDepartureCountry>
-				<cbc:IdentificationCode>US</cbc:IdentificationCode>
-			</cac:OriginalDepartureCountry>
-			<cac:FinalDestinationCountry>
-				<cbc:IdentificationCode>GB</cbc:IdentificationCode>
-			</cac:FinalDestinationCountry>
-			<cac:TransportContract>
-				<cbc:ID>CONS-001</cbc:ID>
-				<cbc:IssueDate>2005-06-24</cbc:IssueDate>
-				<cbc:ContractType>Forwarding Instructions</cbc:ContractType>
-				<cac:ValidityPeriod>
-					<cbc:StartDate>2005-06-25</cbc:StartDate>
-					<cbc:StartTime>01:00:00.0Z</cbc:StartTime>
-					<cbc:EndDate>2005-06-30</cbc:EndDate>
-					<cbc:EndTime>18:00:00.0Z</cbc:EndTime>
-				</cac:ValidityPeriod>
-				<cac:ContractDocumentReference>
-					<cbc:ID>normalizedString</cbc:ID>
-					<cbc:CopyIndicator>false</cbc:CopyIndicator>
-					<cbc:UUID>normalizedString</cbc:UUID>
-					<cbc:IssueDate>1967-08-13</cbc:IssueDate>
-					<cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
-					<cbc:DocumentType>String</cbc:DocumentType>
-					<cbc:XPath>String</cbc:XPath>
-					<cbc:XPath>String</cbc:XPath>
-					<cac:Attachment>
-						<cbc:EmbeddedDocumentBinaryObject mimeCode="application/CSTAdata+xml">UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-						<cac:ExternalReference>
-							<cbc:URI>normalizedString</cbc:URI>
-							<cbc:DocumentHash>String</cbc:DocumentHash>
-							<cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
-							<cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
-						</cac:ExternalReference>
-					</cac:Attachment>
-				</cac:ContractDocumentReference>
-				<cac:ContractDocumentReference>
-					<cbc:ID>normalizedString</cbc:ID>
-					<cbc:CopyIndicator>false</cbc:CopyIndicator>
-					<cbc:UUID>normalizedString</cbc:UUID>
-					<cbc:IssueDate>1967-08-13</cbc:IssueDate>
-					<cbc:DocumentTypeCode>normalizedString</cbc:DocumentTypeCode>
-					<cbc:DocumentType>String</cbc:DocumentType>
-					<cbc:XPath>String</cbc:XPath>
-					<cbc:XPath>String</cbc:XPath>
-					<cac:Attachment>
-						<cbc:EmbeddedDocumentBinaryObject mimeCode="application/CSTAdata+xml">UjBsR09EbGhjZ0dTQUxNQUFBUUNBRU1tQ1p0dU1GUXhEUzhi</cbc:EmbeddedDocumentBinaryObject>
-						<cac:ExternalReference>
-							<cbc:URI>normalizedString</cbc:URI>
-							<cbc:DocumentHash>String</cbc:DocumentHash>
-							<cbc:ExpiryDate>1967-08-13</cbc:ExpiryDate>
-							<cbc:ExpiryTime>14:20:00.0Z</cbc:ExpiryTime>
-						</cac:ExternalReference>
-					</cac:Attachment>
-				</cac:ContractDocumentReference>
-			</cac:TransportContract>
-			<cac:OriginalDespatchTransportationService>
-				<cbc:TransportServiceCode>Door to Pier</cbc:TransportServiceCode>
-			</cac:OriginalDespatchTransportationService>
-			<cac:FinalDeliveryTransportationService>
-				<cbc:TransportServiceCode>Pier to Pier</cbc:TransportServiceCode>
-			</cac:FinalDeliveryTransportationService>
-			<cac:DeliveryTerms>
-				<cbc:ID>FOB Destination</cbc:ID>
-				<cac:DeliveryLocation>
-					<cbc:ID schemeAgencyID="6" schemeID="UN/LOCODE">GBBRS</cbc:ID>
-					<cbc:Description>Bristol</cbc:Description>
-				</cac:DeliveryLocation>
-			</cac:DeliveryTerms>
-			<cac:PaymentTerms>
-				<cbc:PaymentMeansID>Bankers Cheque</cbc:PaymentMeansID>
-			</cac:PaymentTerms>
-			<cac:FreightAllowanceCharge>
-				<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-				<cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
-				<cbc:SequenceNumeric>1</cbc:SequenceNumeric>
-				<cbc:Amount currencyID="USD">254.00</cbc:Amount>
-			</cac:FreightAllowanceCharge>
-			<cac:FreightAllowanceCharge>
-				<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-				<cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
-				<cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
-				<cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-				<cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-				<cbc:Amount currencyID="USD">12.70</cbc:Amount>
-				<cbc:BaseAmount currencyID="USD">254.00</cbc:BaseAmount>
-			</cac:FreightAllowanceCharge>
-		</cac:Consignment>
-		<cac:GoodsItem>
-			<cbc:ID>1</cbc:ID>
-			<cbc:SequenceNumberID>1</cbc:SequenceNumberID>
-			<cbc:Description>Acme beeswax</cbc:Description>
-			<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-			<cbc:DeclaredCustomsValueAmount currencyID="GBP">524.80</cbc:DeclaredCustomsValueAmount>
-			<cbc:DeclaredStatisticsValueAmount currencyID="USD">1000.00</cbc:DeclaredStatisticsValueAmount>
-			<cbc:FreeOnBoardValueAmount currencyID="USD">1241.30</cbc:FreeOnBoardValueAmount>
-			<cbc:InsuranceValueAmount currencyID="USD">1241.30</cbc:InsuranceValueAmount>
-			<cbc:ValueAmount currencyID="USD">1000.00</cbc:ValueAmount>
-			<cbc:GrossWeightMeasure unitCode="KGM">130</cbc:GrossWeightMeasure>
-			<cbc:NetWeightMeasure unitCode="KGM">110</cbc:NetWeightMeasure>
-			<cbc:NetNetWeightMeasure unitCode="KGM">100</cbc:NetNetWeightMeasure>
-			<cbc:GrossVolumeMeasure unitCode="MTQ">2</cbc:GrossVolumeMeasure>
-			<cbc:NetVolumeMeasure unitCode="MTQ">2.235</cbc:NetVolumeMeasure>
-			<cbc:Quantity>10</cbc:Quantity>
-			<cbc:RequiredCustomsID>ECN12344566</cbc:RequiredCustomsID>
-			<cbc:CustomsStatusCode>Cleared</cbc:CustomsStatusCode>
-			<cbc:CustomsTariffQuantity>1000</cbc:CustomsTariffQuantity>
-			<cac:Item>
-				<cbc:Description>Beeswax</cbc:Description>
-				<cbc:Name>Acme Beeswax</cbc:Name>
-				<cac:BuyersItemIdentification>
-					<cbc:ID>6578489</cbc:ID>
-				</cac:BuyersItemIdentification>
-				<cac:SellersItemIdentification>
-					<cbc:ID>17589683</cbc:ID>
-				</cac:SellersItemIdentification>
-				<cac:OriginCountry>
-					<cbc:IdentificationCode>MX</cbc:IdentificationCode>
-					<cbc:Name>Mexico</cbc:Name>
-				</cac:OriginCountry>
-			</cac:Item>
-		</cac:GoodsItem>
-		<cac:ShipmentStage>
-			<cbc:ID>1</cbc:ID>
-			<cbc:TransportModeCode listAgencyID="6" listID="UN/ECE rec 16">3</cbc:TransportModeCode>
-			<cbc:TransportMeansTypeCode>Truck</cbc:TransportMeansTypeCode>
-			<cbc:PreCarriageIndicator>true</cbc:PreCarriageIndicator>
-			<cbc:OnCarriageIndicator>false</cbc:OnCarriageIndicator>
-			<cac:TransitPeriod>
-				<cbc:StartDate>2005-06-25</cbc:StartDate>
-				<cbc:StartTime>11:35:00.0Z</cbc:StartTime>
-				<cbc:EndDate>2005-06-25</cbc:EndDate>
-				<cbc:EndTime>16:00:00.0Z</cbc:EndTime>
-			</cac:TransitPeriod>
-			<cac:CarrierParty>
-				<cac:PartyName>
-					<cbc:Name>Keep On Trucking</cbc:Name>
-				</cac:PartyName>
-				<cac:Contact>
-					<cbc:Telephone>+1 36222 33847</cbc:Telephone>
-				</cac:Contact>
-			</cac:CarrierParty>
-			<cac:TransportMeans>
-				<cac:RoadTransport>
-					<cbc:LicensePlateID>2652 WE</cbc:LicensePlateID>
-				</cac:RoadTransport>
-			</cac:TransportMeans>
-		</cac:ShipmentStage>
-		<cac:ShipmentStage>
-			<cbc:ID>2</cbc:ID>
-			<cbc:TransportModeCode listAgencyID="6" listID="UN/ECE rec 16">4</cbc:TransportModeCode>
-			<cbc:TransportMeansTypeCode>Plane</cbc:TransportMeansTypeCode>
-			<cbc:PreCarriageIndicator>false</cbc:PreCarriageIndicator>
-			<cbc:OnCarriageIndicator>false</cbc:OnCarriageIndicator>
-			<cac:TransitPeriod>
-				<cbc:StartDate>2005-06-25</cbc:StartDate>
-				<cbc:StartTime>23:20:00.0Z</cbc:StartTime>
-			</cac:TransitPeriod>
-			<cac:CarrierParty>
-				<cac:PartyName>
-					<cbc:Name>United Airfreight</cbc:Name>
-				</cac:PartyName>
-				<cac:Contact>
-					<cbc:ID>Freight Bookings</cbc:ID>
-					<cbc:Telephone>+1 3362 4788</cbc:Telephone>
-					<cbc:ElectronicMail>bookings@unitedfreight.com</cbc:ElectronicMail>
-				</cac:Contact>
-			</cac:CarrierParty>
-			<cac:TransportMeans>
-				<cbc:JourneyID>UA 1234</cbc:JourneyID>
-				<cac:AirTransport>
-					<cbc:AircraftID>A-127763-747</cbc:AircraftID>
-				</cac:AirTransport>
-			</cac:TransportMeans>
-			<cac:LoadingPortLocation>
-				<cbc:ID schemeAgencyID="6" schemeID="UN/LOCODE">USBOS</cbc:ID>
-				<cbc:Description>Boston Airport</cbc:Description>
-			</cac:LoadingPortLocation>
-			<cac:UnloadingPortLocation>
-				<cbc:ID schemeAgencyID="6" schemeID="UN/LOCODE">GBBRS</cbc:ID>
-				<cbc:Description>Bristol Airport</cbc:Description>
-			</cac:UnloadingPortLocation>
-			<cac:TransshipPortLocation>
-				<cbc:ID schemeAgencyID="6" schemeID="UN/LOCODE">GBLHR</cbc:ID>
-				<cbc:Description>Heathrow Apt/London</cbc:Description>
-			</cac:TransshipPortLocation>
-		</cac:ShipmentStage>
-		<cac:Delivery>
-			<cbc:Quantity>1</cbc:Quantity>
-			<cbc:LatestDeliveryDate>2005-06-30</cbc:LatestDeliveryDate>
-			<cbc:LatestDeliveryTime>18:00:00.0Z</cbc:LatestDeliveryTime>
-			<cbc:TrackingID>NKH7712289-03339-000128</cbc:TrackingID>
-			<cac:DeliveryAddress>
-				<cbc:StreetName>Avon Way</cbc:StreetName>
-				<cbc:BuildingName>Thereabouts</cbc:BuildingName>
-				<cbc:BuildingNumber>56A</cbc:BuildingNumber>
-				<cbc:CityName>Bridgtow</cbc:CityName>
-				<cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-				<cbc:CountrySubentity>Avon</cbc:CountrySubentity>
-				<cac:AddressLine>
-					<cbc:Line>3rd Floor, Room 5</cbc:Line>
-				</cac:AddressLine>
+		<cac:PartyLegalEntity>
+			<?Name Party legal entity ?>
+			<?Cardinality 0..1?>
+			<cbc:RegistrationName>Leman
+						<?Name Carrier party name ?>
+						<?Description The name of the carrier party.?>
+						<?Cardinality 1..1?>
+					</cbc:RegistrationName>
+			<cbc:CompanyID schemeID="0212">0108023-3
+						<?Name Carrier parties legal registration name ?>
+						<?Description The official name of the party as registered with the relevant fiscal authority. ?>
+						<?Cardinality 0..1?>
+					<?schemeID-Name Scheme identifier ?>
+					<?schemeID-Description The identification scheme identifier of the carrier legal registration identifier ?>
+					<?schemeID-Usage optional?>
+					<?schemeID-CodeList ICD?>
+					</cbc:CompanyID>
+			<cac:RegistrationAddress>
+				<?Name Legal address ?>
+				<?Cardinality 0..1?>
+				<cbc:CityName>Vantaa
+						<?Name City name ?>
+						<?Description The name of the city. ?>
+						<?Cardinality 0..1?>
+					</cbc:CityName>
 				<cac:Country>
-					<cbc:IdentificationCode>GB</cbc:IdentificationCode>
+					<?Name Country ?>
+					<?Description The residens country for the carrier party. ?>
+					<?Cardinality 1..1?>
+					<cbc:IdentificationCode>FI
+						<?Name Country code ?>
+						<?Cardinality 0..1?>
+						<?CodeList ISO3166?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+					</cbc:IdentificationCode>
 				</cac:Country>
-			</cac:DeliveryAddress>
-			<cac:RequestedDeliveryPeriod>
-				<cbc:StartDate>2005-06-29</cbc:StartDate>
-				<cbc:StartTime>01:00:00.0Z</cbc:StartTime>
-				<cbc:EndDate>2005-06-30</cbc:EndDate>
-				<cbc:EndTime>18:00:00.0Z</cbc:EndTime>
-			</cac:RequestedDeliveryPeriod>
-			<cac:EstimatedDeliveryPeriod>
-				<cbc:StartDate>2005-06-30</cbc:StartDate>
-				<cbc:StartTime>01:00:00.0Z</cbc:StartTime>
-			</cac:EstimatedDeliveryPeriod>
-			<cac:DeliveryParty>
-				<cac:PartyName>
-					<cbc:Name>The Terminus</cbc:Name>
-				</cac:PartyName>
-				<cac:Contact>
-					<cbc:Name>S Massiah</cbc:Name>
-					<cbc:Telephone>+ 44 127 98876545</cbc:Telephone>
-					<cbc:Telefax>+ 44 127 98876546</cbc:Telefax>
-					<cbc:ElectronicMail>smassiah@the-email.co.uk</cbc:ElectronicMail>
-				</cac:Contact>
-			</cac:DeliveryParty>
-			<cac:Despatch>
-				<cbc:ActualDespatchDate>2005-06-25</cbc:ActualDespatchDate>
-				<cbc:ActualDespatchTime>11:35:00.0Z</cbc:ActualDespatchTime>
-				<cac:DespatchAddress>
-					<cbc:StreetName>Boston Road</cbc:StreetName>
-					<cbc:BuildingName>Suite M-102</cbc:BuildingName>
-					<cbc:BuildingNumber>630</cbc:BuildingNumber>
-					<cbc:CityName>Billerica</cbc:CityName>
-					<cbc:PostalZone>01821</cbc:PostalZone>
-					<cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
-					<cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
-					<cac:Country>
-						<cbc:IdentificationCode>US</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:DespatchAddress>
-				<cac:DespatchParty>
-					<cac:PartyName>
-						<cbc:Name>Consortial</cbc:Name>
-					</cac:PartyName>
-				</cac:DespatchParty>
-				<cac:Contact>
-					<cbc:Name>Mrs Bouquet</cbc:Name>
-					<cbc:Telephone> +1 158 1233714</cbc:Telephone>
-					<cbc:Telefax>+ 1 158 1233856</cbc:Telefax>
-					<cbc:ElectronicMail>bouquet@fpconsortial.com</cbc:ElectronicMail>
-				</cac:Contact>
-			</cac:Despatch>
-		</cac:Delivery>
-		<cac:TransportHandlingUnit>
-			<cbc:ID>1</cbc:ID>
-			<cbc:TransportHandlingUnitTypeCode listAgencyName="United Nations Economic Commission for Europe" listID="TRED 8053">PA</cbc:TransportHandlingUnitTypeCode>
-			<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-			<cbc:TotalGoodsItemQuantity>10</cbc:TotalGoodsItemQuantity>
-			<cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
-			<cac:ActualPackage>
-				<cbc:Quantity>10</cbc:Quantity>
-				<cbc:PackagingTypeCode listAgencyID="6" listID="UN/ECE rec 21">TB</cbc:PackagingTypeCode>
-			</cac:ActualPackage>
-		</cac:TransportHandlingUnit>
-		<cac:OriginAddress>
-			<cbc:StreetName>Boston Road</cbc:StreetName>
-			<cbc:BuildingName>Suite M-102</cbc:BuildingName>
-			<cbc:BuildingNumber>630</cbc:BuildingNumber>
-			<cbc:CityName>Billerica</cbc:CityName>
-			<cbc:PostalZone>01821</cbc:PostalZone>
-			<cbc:CountrySubentity>Massachusetts</cbc:CountrySubentity>
-			<cbc:CountrySubentityCode>MA</cbc:CountrySubentityCode>
+			</cac:RegistrationAddress>
+		</cac:PartyLegalEntity>
+	</cac:CarrierParty>
+	<cac:FreightForwarderParty>
+		<?Name Freight Forwarder party ?>
+		<?Description A party combining individual smaller consignments into a single larger shipment (a so-called consolidated consignment or shipment) that is sent to a counterpart who mirrors the consolidator's activity by dividing the consolidated consignment into its original components. ?>
+		<?Cardinality 1..1?>
+		<cbc:EndpointID schemeID="0212">0108023-3
+				<?Description An identifier for the end point of the routing service (e.g., EAN Location Number, GLN). ?>
+				<?Cardinality 0..1?>
+				</cbc:EndpointID>
+		<cac:PartyName>
+			<?Name Party name ?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Finnair Oyj
+						<?Name Carrier party name?>
+						<?Description The name of the carrier party. ?>
+					</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<?Name Postal address ?>
+			<?Description The postal address of the carrier.?>
+			<?Cardinality 0..1?>
+			<cbc:StreetName>Tietotie 9
+						<?Name Address line 1 ?>
+						<?Description The main address line in a postal address usually the street name and number. ?>
+					</cbc:StreetName>
+			<cbc:CityName>Vantaa
+						<?Name City ?>
+						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+					</cbc:CityName>
+			<cbc:PostalZone>4600
+						<?Name Post code ?>
+						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+					</cbc:PostalZone>
 			<cac:Country>
-				<cbc:IdentificationCode>US</cbc:IdentificationCode>
+				<?Name Country ?>
+				<cbc:IdentificationCode>FI
+							<?Name Country code ?>
+							<?Cardinality 0..1?>
+							<?CodeList ISO3166?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						</cbc:IdentificationCode>
 			</cac:Country>
-		</cac:OriginAddress>
-		<cac:FirstArrivalPortLocation>
-			<cbc:ID schemeAgencyID="6" schemeID="UN/LOCODE">GBBRS</cbc:ID>
-			<cbc:Description>Bristol</cbc:Description>
-		</cac:FirstArrivalPortLocation>
-		<cac:LastExitPortLocation>
-			<cbc:ID schemeAgencyID="6" schemeID="UN/LOCODE">USBOS</cbc:ID>
-			<cbc:Description>Boston</cbc:Description>
-		</cac:LastExitPortLocation>
-		<cac:ExportCountry>
-			<cbc:IdentificationCode>US</cbc:IdentificationCode>
-		</cac:ExportCountry>
-		<cac:FreightAllowanceCharge>
-			<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
-			<cbc:AllowanceChargeReason>Freight charges</cbc:AllowanceChargeReason>
-			<cbc:SequenceNumeric>1</cbc:SequenceNumeric>
-			<cbc:Amount currencyID="USD">254.00</cbc:Amount>
-		</cac:FreightAllowanceCharge>
-		<cac:FreightAllowanceCharge>
-			<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-			<cbc:AllowanceChargeReasonCode>79</cbc:AllowanceChargeReasonCode>
-			<cbc:AllowanceChargeReason>Sundry discount</cbc:AllowanceChargeReason>
-			<cbc:MultiplierFactorNumeric>0.05</cbc:MultiplierFactorNumeric>
-			<cbc:SequenceNumeric>2</cbc:SequenceNumeric>
-			<cbc:Amount currencyID="USD">12.70</cbc:Amount>
-			<cbc:BaseAmount currencyID="USD">254.00</cbc:BaseAmount>
-		</cac:FreightAllowanceCharge>
+		</cac:PostalAddress>
+		<cac:PartyLegalEntity>
+			<?Name Party legal entity ?>
+			<?Cardinality 0..1?>
+			<cbc:RegistrationName>Leman
+						<?Name Carrier party name ?>
+						<?Description The name of the carrier party.?>
+						<?Cardinality 1..1?>
+					</cbc:RegistrationName>
+			<cbc:CompanyID schemeID="0212">0108023-3
+						<?Name Carrier parties legal registration name ?>
+						<?Description The official name of the party as registered with the relevant fiscal authority. ?>
+						<?Cardinality 0..1?>
+					<?schemeID-Name Scheme identifier ?>
+					<?schemeID-Description The identification scheme identifier of the carrier legal registration identifier ?>
+					<?schemeID-Usage optional?>
+					<?schemeID-CodeList ICD?>
+					</cbc:CompanyID>
+			<cac:RegistrationAddress>
+				<?Name Legal address ?>
+				<?Cardinality 0..1?>
+				<cbc:CityName>Vantaa
+						<?Name City name ?>
+						<?Description The name of the city. ?>
+						<?Cardinality 0..1?>
+					</cbc:CityName>
+				<cac:Country>
+					<?Name Country ?>
+					<?Description The residens country for the carrier party. ?>
+					<?Cardinality 1..1?>
+					<cbc:IdentificationCode>FI
+								<?Name Country code ?>
+								<?Cardinality 0..1?>
+								<?CodeList ISO3166?>
+								<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+							</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:RegistrationAddress>
+		</cac:PartyLegalEntity>
+	</cac:FreightForwarderParty>
+<cac:Shipment>
+		<cbc:ID> 1 <?Description Identifies a shipment. Freight forwarders reference number.?>
+		</cbc:ID>
+		<cbc:Information>hank at arriving
+			<?Description Used by Logistics for Supplier Remark.?>
+			<?Cardinality 0..1?>
+		</cbc:Information>
+		<cbc:GrossWeightMeasure unitCode="KGM">1030
+			<?Description The gross weight of the despatch as a whole. Must be equal the the weight specified for the included transport handling unites if this is specified?>
+			<?Rule PEPPOL-T120-R018?>
+		</cbc:GrossWeightMeasure>
+		<cbc:GrossVolumeMeasure unitCode="MTQ"> 1.456 <?Rule PEPPOL-T120-R019?>
+			<?Description The gross volumen of the despatch as a whole. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
+		</cbc:GrossVolumeMeasure>
+		<cbc:TotalTransportHandlingUnitQuantity> 1 <?Rule PEPPOL-T120-R016?>
+			<?Rule PEPPOL-T120-R017?>
+		</cbc:TotalTransportHandlingUnitQuantity>
+	    <cbc:DeclaredStatisticsValueAmount currencyID="SEK">92179.12<?Name Declared statistics value amount?>
+			<?Description The total declared value for customs purposes of those goods in this shipment that are subject to the same customs procedure and have the same tariff/statistical heading, country information, and duty regime.?>
+			<?Cardinality 0..1?>
+			<?Rule PEPPOL-T120-R021?>
+			<?currencyID-Name Currency identifier?>
+			<?currencyID-Description Currency identifier.?>
+			<?currencyID-CodeList ISO4217?>
+		</cbc:DeclaredStatisticsValueAmount>
+
 	</cac:Shipment>
 	<cac:DocumentReference>
 		<cbc:ID>AEG012345</cbc:ID>
