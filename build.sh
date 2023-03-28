@@ -27,6 +27,17 @@ docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entry
 echo "Generating Waybill example"
 docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-waybill.xml -xsl:/src/tools/remove-pi.xsl -o:/src/rules/examples/Waybill_Example_Full.xml -ext:on --allow-external-functions:on
 
+echo "Generating mapping documents"
+echo "Advanced Despatch advice"
+docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/syntax/ubl-advanced-despatch-advice.xml -xsl:/src/tools/create-mapping-document.xsl -o:/src/rules/mapping/AdvancedDespatchAdvice.xml -ext:on --allow-external-functions:on
+echo "Despatch Advice Response"
+docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/syntax/ubl-despatch-advice-response.xml -xsl:/src/tools/create-mapping-document.xsl -o:/src/rules/mapping/DespatchAdvice_Response.xml -ext:on --allow-external-functions:on
+echo "Weight statement"
+docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/syntax/ubl-weight-statement.xml -xsl:/src/tools/create-mapping-document.xsl -o:/src/rules/mapping/WeightStatement.xml  -ext:on --allow-external-functions:on
+echo "Waybill"
+docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/syntax/ubl-waybill.xml -xsl:/src/tools/create-mapping-document.xsl -o:/src/rules/mapping/Waybill.xml -ext:on --allow-external-functions:on
+
+
 # Structure
 docker run --rm -i \
     -v $PROJECT:/src \
@@ -46,6 +57,10 @@ docker run --rm -i -v $PROJECT/target/schematron:/src -v $PROJECT/target/site/fi
 # Example files
 docker run --rm -i -v $PROJECT/target/site/files:/src alpine:3.6 rm -rf /src/Examples.zip
 docker run --rm -i -v $PROJECT/rules/examples:/src -v $PROJECT/target/site/files:/target -w /src kramos/alpine-zip -r /target/Examples.zip .
+
+# Mapping files
+docker run --rm -i -v $PROJECT/target/site/files:/src alpine:3.6 rm -rf /src/Mapping.zip
+docker run --rm -i -v $PROJECT/rules/mapping:/src -v $PROJECT/target/site/files:/target -w /src kramos/alpine-zip -r /target/Mapping.zip .
 
 # Guides
 docker run --rm -i -v $PROJECT:/documents -v $PROJECT/target:/target difi/asciidoctor
