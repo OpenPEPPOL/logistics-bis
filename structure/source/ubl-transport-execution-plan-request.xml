@@ -38,13 +38,16 @@
 		<cac:PartyIdentification>
 			<?Name Sender party identification ?>
 			<?Description An identifier for the sender party as known to the receiver party. ?>
+			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088"> 7300010000001 				
 			<?schemeID-CodeList ICD?>
+			<?schemeID-usage Optional?>
 			<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
 			<?Name Party name ?>
+			<?Description The common name for the sender party. ?>
 			<?Cardinality 0..1?>
 			<cbc:Name>Leman
 				<?Name Sender party name?>
@@ -55,7 +58,7 @@
 		<cac:PostalAddress>
 			<?Name Postal address ?>
 			<?Description The postal address for the sender party. ?>
-			<?Cardinality 1..1?>
+			<?Cardinality 0..1?>
 			<cbc:StreetName>Ventrupvej 6
 				<?Name Address line 1 ?>
 				<?Description The main address line in a postal address usually the street name and number. ?>
@@ -110,10 +113,10 @@
 				<?Name Tax scheme ?>
 				<?Cardinality 1..1?>
 				<cbc:ID>VAT
-						<?Name Tax scheme identifier ?>
-						<?Description Tax scheme identifier. E.g. "VAT" or "GST". ?>
-						<?Cardinality 1..1?>
-					</cbc:ID>
+					<?Name Tax scheme identifier ?>
+					<?Description Tax scheme identifier. E.g. "VAT" or "GST". ?>
+					<?Cardinality 1..1?>
+				</cbc:ID>
 			</cac:TaxScheme>
 		</cac:PartyTaxScheme>
 		<cac:PartyLegalEntity>
@@ -146,7 +149,7 @@
 					<?Cardinality 1..1?>
 					<cbc:IdentificationCode>GB
 						<?Name Country code ?>
-						<?Cardinality 0..1?>
+						<?Cardinality 1..1?>
 						<?CodeList ISO3166?>
 						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
@@ -177,22 +180,15 @@
 	<cac:ReceiverParty>
 		<?Name Receiver Party ?>
 		<?Description The party receiving the transport execution plan request. ?>
-		<?Cardinality 1..1?>
-		<cbc:EndpointID schemeID="0198">10154596
-			<?Name Receiver party electronic address ?>
-			<?Description The endpoint id for the receiver party. ?>
-			<?Cardinality 1..1?>
-			<?schemeID-Name Scheme identifier?>
-			<?schemeID-Description Scheme identifier for electronic address?>
-			<?schemeID-usage Mandatory?>
-			<?schemeID-CodeList eas?>
-		</cbc:EndpointID>
+		<?Cardinality 1..1?>		
 		<cac:PartyIdentification>
 			<?Name Receiver party identification ?>
 			<?Description An identifier for the sender party as known to the sender party. ?>
+			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">7300010000001 				
-			<?schemeID-CodeList ICD?>
-			<?Cardinality 1..1?>
+				<?schemeID-CodeList ICD?>
+				<?schemeID-usage Optional?>
+				<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
@@ -206,6 +202,7 @@
 		</cac:PartyName>
 		<cac:PostalAddress>
 			<?Name Postal address ?>
+			<?Cardinality 0..1?>
 			<?Description The postal address for the receiver party. ?>
 			<cbc:StreetName>Jydekrogen 14
 				<?Name Address line 1 ?>
@@ -302,7 +299,7 @@
 					<?Cardinality 1..1?>
 					<cbc:IdentificationCode>GB
 						<?Name Country code ?>
-						<?Cardinality 0..1?>
+						<?Cardinality 1..1?>
 						<?CodeList ISO3166?>
 						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
@@ -333,21 +330,14 @@
 	<cac:TransportUserParty>
 		<?Name Transport user party ?>
 		<?Description The party requesting the transport services referenced in the transport execution plan request. ?>
-		<?Cardinality 1..1?>
-		<cbc:EndpointID schemeID="0198">13246149
-			<?Name Transport user party electronic address ?>
-			<?Description The endpoint for the transport user party. ?>
-			<?Cardinality 0..1?>
-			<?schemeID-Name Scheme identifier?>
-			<?schemeID-Description Scheme identifier for electronic address?>
-			<?schemeID-usage Mandatory?>
-			<?schemeID-CodeList eas?>
-		</cbc:EndpointID>
+		<?Cardinality 1..1?>		
 		<cac:PartyIdentification>
 			<?Name Transport user party identification ?>
 			<?Description An identifier for the transport user party. ?>
+			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">7300010000001 				
 			<?schemeID-CodeList ICD?>
+			<?schemeID-usage Optional?>
 			<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
@@ -362,6 +352,7 @@
 		<cac:PostalAddress>
 			<?Name Postal address ?>
 			<?Description The postal address for the transport user party. ?>
+			<?Cardinality 0..1?>
 			<cbc:StreetName>Københavnsvej 216
 				<?Name Address line 1 ?>
 				<?Description The main address line in a postal address usually the street name and number. ?>
@@ -457,7 +448,7 @@
 					<?Cardinality 1..1?>
 					<cbc:IdentificationCode>GB
 						<?Name Country code ?>
-						<?Cardinality 0..1?>
+						<?Cardinality 1..1?>
 						<?CodeList ISO3166?>
 						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
@@ -503,6 +494,7 @@
 			<?Description An identifier for the transport service provider party. ?>
 			<cbc:ID schemeID="0088">7300010000001 				
 			<?schemeID-CodeList ICD?>
+			<?schemeID-usage Optional?>
 			<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
@@ -640,22 +632,15 @@
 	<cac:PayeeParty>
 		<?Name Payee party ?>
 		<?Description The party that will pay for the transport service(s) referred to in a Transport Execution Plan. ?>
-		<?Cardinality 0..1?>
-		<cbc:EndpointID schemeID="0198">13246149
-			<?Name Payee party electronic address ?>
-			<?Description The endpoint for the payee party. ?>
-			<?Cardinality 0..1?>
-			<?schemeID-Name Scheme identifier?>
-			<?schemeID-Description Scheme identifier for electronic address?>
-			<?schemeID-usage Mandatory?>
-			<?schemeID-CodeList eas?>
-		</cbc:EndpointID>
+		<?Cardinality 0..1?>		
 		<cac:PartyIdentification>
 			<?Name Payee party identification ?>
 			<?Description An identifier for the payee party. ?>
+			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">7300010000001 				
-			<?schemeID-CodeList ICD?>
-			<?Cardinality 1..1?>
+				<?schemeID-CodeList ICD?>
+				<?schemeID-usage Optional?>
+				<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
@@ -669,6 +654,7 @@
 		<cac:PostalAddress>
 			<?Name Postal address ?>
 			<?Description The postal address for the payee party. ?>
+			<?Cardinality 0..1?>
 			<cbc:StreetName>Københavnsvej 216
 				<?Name Address line 1 ?>
 				<?Description The main address line in a postal address usually the street name and number. ?>
@@ -764,7 +750,7 @@
 					<?Cardinality 1..1?>
 					<cbc:IdentificationCode>GB
 						<?Name Country code ?>
-						<?Cardinality 0..1?>
+						<?Cardinality 1..1?>
 						<?CodeList ISO3166?>
 						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
@@ -831,7 +817,7 @@
 	</cac:AdditionalDocumentReference>
 	<cac:MainTransportationService>
 		<?Name Main Transportatin Service?>
-		<?Cardinality 0..1?>
+		<?Cardinality 1..1?>
 		<?Description A description of the main transportation service referenced in the Transport Execution Plan Request.?>
 		<cbc:TransportServiceCode>
 			<?Name Main Transportatin Service Code?>
@@ -871,27 +857,12 @@
 			<?Name Consignment gross weight ?> 
 			<?Description The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified?>
 			<?Cardinality 0..1?>			
-		</cbc:GrossWeightMeasure>
-		<cbc:NetWeightMeasure unitCode="KGM">280
-			<?Name Consignment net weight ?>
-			<?Description The net weight of the consignment. Must be equal the sum of the net weight specified for the included transport handling unites if this is specified?>	
-			<?Cardinality 0..1?>
-		</cbc:NetWeightMeasure>
-		<cbc:NetNetWeightMeasure unitCode="KGM">278.50
-			<?Name Consignment net net weight ?>
-			<?Description The net net weight of the consignment. Must be equal the sum of the net net weight specified for the included transport handling unites if this is specified?>	
-			<?Cardinality 0..1?>
-		</cbc:NetNetWeightMeasure>
+		</cbc:GrossWeightMeasure>		
 		<cbc:GrossVolumeMeasure unitCode="MTQ">20
 			<?Name Consignment gross volume ?>
 			<?Description The gross volumen of the consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
 			<?Cardinality 0..1?>
-		</cbc:GrossVolumeMeasure>
-		<cbc:NetVolumeMeasure unitCode="MTQ">19
-			<?Name Consignment net volume ?>
-			<?Description The total net volume of all goods items referred to as one consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
-			<?Cardinality 0..1?>
-		</cbc:NetVolumeMeasure>
+		</cbc:GrossVolumeMeasure>		
 		<cbc:LoadingLengthMeasure unitCode="MTR">0.4
 			<?Name Loading length measure ?>
 			<?Description The total length in a means of transport or a piece of transport equipment which, given the width and height of the transport means, will accommodate all of the consignments in a single consolidation.?>
@@ -904,6 +875,8 @@
 		</cbc:HazardousRiskIndicator>
 		<cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1
 			<?Name Total number of transport handling units ?>
+			<?Description The total number of transport handling units for this consignment.?>
+			<?Cardinality 0..1?>
 		</cbc:TotalTransportHandlingUnitQuantity>
 		<cbc:InsuranceValueAmount currencyID="SEK">34000.45
 			<?Name Insurance value amount ?>
@@ -937,6 +910,7 @@
 				<cbc:ID schemeID="0088">5790000435951
 					<?Name Identity of the  pickup location ?>
 					<?Description Identifies the pickup location. ?>
+					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier?>
 					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
@@ -1057,8 +1031,8 @@
 		</cac:RequestedPickupTransportEvent>
 		<cac:RequestedDeliveryTransportEvent>
 			<?Name Requested delivery transport event ?>
-			<?Description The delivery of this consignment requested by the party requesting a transportation service (the transport user).?>
-			<?Cardinality 1..1?>
+			<?Description The delivery of this consignment requested by the party requesting a transportation service (the transport user). For pre-booking it can be left as optional.?>
+			<?Cardinality 0..1?>
 			<cbc:IdentificationID>625435485674654132
 				<?Name Identifier delivery transport event ?>
 				<?Description An identifier for this delivery transport event within an agreed event identification scheme. ?>
@@ -1071,6 +1045,7 @@
 				<cbc:ID schemeID="0088">5790000435951
 					<?Name Identity of the delivery location ?>
 					<?Description Identifies the delivery location. ?>
+					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier?>
 					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
@@ -1192,17 +1167,12 @@
 		<cac:ConsigneeParty>
 			<?Name Consignee party ?>
 			<?Description The party sending the transport execution plan request. ?>
-			<?Cardinality 1..1?>
-			<cbc:EndpointID schemeID="0212">1567535-0
-				<?Cardinallity 0..1?>
-				<?schemeID-usage Mandatory?>
-				<?schemeID-CodeList eas?>
-			</cbc:EndpointID>
+			<?Cardinality 1..1?>			
 			<cac:PartyName>
 				<?Name Party name ?>
 				<?Cardinality 0..1?>
 				<cbc:Name>HUS Hospital
-					<?Name Consignee party name?>
+					<?Name Consignee party common name?>
 					<?Description The name of the consignee party.?>
 				</cbc:Name>
 			</cac:PartyName>
@@ -1213,20 +1183,23 @@
 				<cbc:StreetName>Topeliuksenkatu 5
 					<?Name Address line 1 ?>
 					<?Description The main address line in a postal address usually the street name and number. ?>
+					<?Cardinality 0..1?>
 				</cbc:StreetName>
 				<cbc:CityName>Helsinki
 					<?Name City ?>
 					<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+					<?Cardinality 0..1?>
 				</cbc:CityName>
 				<cbc:PostalZone>00260
 					<?Name Post code ?>
 					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+					<?Cardinality 0..1?>
 				</cbc:PostalZone>
 				<cac:Country>
 					<?Name Country ?>
 					<cbc:IdentificationCode>FI
 						<?Name Country code ?>
-						<?Cardinality 0..1?>
+						<?Cardinality 1..1?>
 						<?CodeList ISO3166?>
 						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
@@ -1234,6 +1207,7 @@
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
 				<?Name Party legal entity ?>
+				<?Cardinality 0..1?>
 				<cbc:RegistrationName>HUS Hospital
 					<?Name Consignee party name ?>
 					<?Description The name of the consignee party.?>
@@ -1262,7 +1236,7 @@
 						<?Cardinality 1..1?>
 						<cbc:IdentificationCode>FI
 							<?Name Country code ?>
-							<?Cardinality 0..1?>
+							<?Cardinality 1..1?>
 							<?CodeList ISO3166?>
 							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 						</cbc:IdentificationCode>
@@ -1293,11 +1267,7 @@
 		<cac:ConsignorParty>
 			<?Name Consignee Party ?>
 			<?Description The party sending the transport execution plan request. ?>
-			<?Cardinality 1..1?>
-			<cbc:EndpointID schemeID="0198">13246149
-			<?schemeID-usage Mandatory?>
-			<?schemeID-CodeList eas?>
-			</cbc:EndpointID>
+			<?Cardinality 1..1?>			
 			<cac:PartyName>
 				<?Name Party name ?>
 				<?Cardinality 0..1?>
@@ -1312,21 +1282,25 @@
 				<?Cardinality 0..1?>
 				<cbc:StreetName>Københavnsvej 216
 					<?Name Address line 1 ?>
+					<?Cardinality 0..1?>
 					<?Description The main address line in a postal address usually the street name and number. ?>
 				</cbc:StreetName>
 				<cbc:CityName>Køge
 					<?Name City ?>
+					<?Cardinality 0..1?>
 					<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
 				</cbc:CityName>
 				<cbc:PostalZone>4600
 					<?Name Post code ?>
 					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+					<?Cardinality 0..1?>
 				</cbc:PostalZone>
 				<cac:Country>
 					<?Name Country ?>
+					<?Cardinality 1..1?>
 					<cbc:IdentificationCode>DK
 						<?Name Country code ?>
-						<?Cardinality 0..1?>
+						<?Cardinality 1..1?>
 						<?CodeList ISO3166?>
 						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
@@ -1363,7 +1337,7 @@
 						<?Cardinality 1..1?>
 						<cbc:IdentificationCode>DK
 							<?Name Country code ?>
-							<?Cardinality 0..1?>
+							<?Cardinality 1..1?>
 							<?CodeList ISO3166?>
 							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 						</cbc:IdentificationCode>
@@ -1431,7 +1405,7 @@
 		
 		<cac:PaymentTerms>
 			<?Name Payment terms ?>
-			<?Description The terms of payment between the parties (such as logistics service client, logistics service provider) in a transaction. ?>
+			<?Description The terms of payment between the parties (such as logistics service client, logistics service provider) in a transaction as related to the reqested transport service. ?>
 			<?Cardinality 0..1?>
 			<cbc:ID>DAP
 				<?Name Payment terms identification ?>
@@ -1451,8 +1425,7 @@
 				<?currencyID-Description Currency identifier.?>
 				<?currencyID-CodeList ISO4217?>
 			</cbc:Amount>
-			<cbc:PaymentDueDate>2022-01-20<?Name Payment terms due date ?><?Description The due date for these payment terms. ?><?Cardinality 0..1?>
-			</cbc:PaymentDueDate>
+			
 		</cac:PaymentTerms>
 		<cac:MainCarriageShipmentStage>
 			<?Name Main carriage shipment stage ?>
@@ -1467,16 +1440,12 @@
 			<cbc:HazardousRiskIndicator>false
 				<?Name Hazardous risk indicator ?>
 				<?Description An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 			</cbc:HazardousRiskIndicator>
 			<cac:CarrierParty>
 				<?Name Carrier party ?>
 				<?Description The carrier party responsible for this shipment stage. ?>
-				<?Cardinality 1..1?>
-				<cbc:EndpointID schemeID="0212">0108023-3
-				<?Description An identifier for the end point of the routing service (e.g., EAN Location Number, GLN). ?>
-				<?Cardinality 0..1?>
-				</cbc:EndpointID>
+				<?Cardinality 1..1?>				
 				<cac:PartyName>
 					<?Name Party name ?>
 					<?Cardinality 0..1?>
@@ -1492,20 +1461,24 @@
 					<cbc:StreetName>Tietotie 9
 						<?Name Address line 1 ?>
 						<?Description The main address line in a postal address usually the street name and number. ?>
+						<?Cardinality 0..1?>
 					</cbc:StreetName>
 					<cbc:CityName>Vantaa
 						<?Name City ?>
 						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+						<?Cardinality 0..1?>
 					</cbc:CityName>
 					<cbc:PostalZone>4600
 						<?Name Post code ?>
 						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+						<?Cardinality 0..1?>
 					</cbc:PostalZone>
 					<cac:Country>
 						<?Name Country ?>
+						<?Cardinality 1..1?>
 						<cbc:IdentificationCode>FI
 							<?Name Country code ?>
-							<?Cardinality 0..1?>
+							<?Cardinality 1..1?>
 							<?CodeList ISO3166?>
 							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 						</cbc:IdentificationCode>
