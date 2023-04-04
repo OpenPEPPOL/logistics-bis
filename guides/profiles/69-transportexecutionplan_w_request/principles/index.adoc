@@ -1,21 +1,28 @@
 [[principles-and-prerequisites]]
 = Principles and prerequisites
 
-This chapter describes the principles and assumptions that underlie the use of the Transport execution plan with request.
+This chapter describes the principles and assumptions that underlie the use of the Transport Execution Plan with Request.
 
-Transport Execution Plans Request and Transport Execution Plan are normally used by any party who gives instructions for the transportation services required for a consignment of goods (the Transport Service Buyer) to any party who is contracted to provide the transportation services (called the Transport Service Provider). A Transport Execution Plan Request may be used by a Transport Service Buyer to confirm if a Transport Service Provider can provide the required service and to request a quotation for the service. A Transport Execution Plan may be used by any party who requests a booking of shipment space to be made for the transportation services required for a consignment of goods to any party who will provide the underlying transportation services. The parties who issue this document are commonly referred to as the shipper, or consignor, while the parties who receive this document are forwarders, carriers, shipping agents, etc.
+The Transport Execution Plan Request and the Transport Execution Plan are used to give instructions for the transportation services required for a consignment of goods to any party who is contracted to provide the transportation services. A Transport Execution Plan Request is used by a Transport User to request if a Transport Service Provider can provide the required service. A Transport Execution Plan is used by the Transport Service Provider as a response to the request from the Transport User. 
+A Transport Execution Plan is also used as a receipt message to confirm or reject a change or cancellation of the plan from either the Transport User or the Transport Service Provider. 
 
-image::images/principlesandprerequisites.png[image,width=605,height=371]
+A Transport Execution Plan may also be forwarded to a Freight Forwarder or a Carrier involved in the transportation.
 
-A Transport Execution Plan may also be issued by a freight forwarder or shipping agent in their capacity as a Transport Service Buyer. This document may be used to arrange the transportation of different types of goods or cargoes, whether containerized or non-containerized through different modes of transport and from any origin to any destination.
+//image::images/principlesandprerequisites.png[image,width=605,height=371]
 
-[[despatch-advice-message-in-general]]
-== Business process in scope
-The electronic transaction described in this implementation guide is the Transport Execution Plan Request message and the Transport Execution Plan message.
 
-The *Transport Execution Plan Request* message is used in the fulfilment process by the Transport Service Buyer to request confirmation that the Transport Service Provider can provide the required service and confirm a price for the service.
+[[transport-execution-in-general]]
+== Business processes in scope
+The processes covered by this profile are:
 
-The *Transport Execution Plan* is used to notify the transport service provider about the despatch and required delivery service for the goods being sent.  Additionally, it can convey details about the goods for cross checking with the order and ultimately the Electronic Transport Execution Plan is used for declaring how the despatched goods are to be transported and how they are packed.
+* The *Transport Execution Plan Request* is sent by the Transport User to request confirmation that the Transport Service Provider can provide the required service and confirm a price for the service.
+
+* The *Transport Execution Plan* is sent by the Transport Service Provider about the despatch and required delivery service for the goods being sent. Additionally, it can convey details about the goods for cross checking with the order and ultimately the Transport Execution Plan is used for declaring how the despatched goods are to be transported and how they are packed.
+
+* The *Transport Execution Plan* may be sent by either the Transport User or the Transport Service Provider to change an existing plan.
+
+* The *Transport Execution Plan* may be sent by either the Transport User or the Transport Service Provider to cancel an existing plan. A cancellation must be accepted by the opposit part before it is effectuated.
+
 
 The main activities supported by this message are:
 
