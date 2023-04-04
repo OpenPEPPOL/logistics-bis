@@ -1,13 +1,16 @@
-[use-case-7-waste-treatment]]
-== Use case 7 – Despatch Advice for waste treatment service
+[[use-case-7-bulk-goods]]
+== Use case 7 – Despatch Advice for bulk goods including the transport
 
-This use case covers waste treatment services or similar services where the buyer brings the material to the supplier and leaves it there.
+This is a use case based on the recommended requirements for a Despatch Advice regarding a delivery of bulk goods and including the transport.
 [cols="1,5",options="header",]
 |====
 |*Use Case number* |7
-|*Use Case Name* |Despatch Advice for waste treatment service
+|*Use Case Name* |Despatch Advice for bulk goods with transport
 |*Use Case Description* a|
-The Despatch Advice enables the service provider (seller) to give detailed information about the service provided and the location where the material has been treated. In some cases the service provider can report the location where the material has been collected. Which enables a Buyer to reconcile, or confirm, the services provided against the order.
+Describes a complete process whereby a Despatch party generates a Despatch Advice based on information about
+delivered bulk material and the transport.
+
+The Despatch Advice enables the service provider to give detailed information about the service provided between the specified locations once the service has been delivered. Which enables a Buyer to reconcile the goods provided against the order.
 
 |*Parties involved* a|
 Buyer (In UBL: BuyerCustomerParty)
@@ -18,35 +21,37 @@ Despatch party (In UBL: DespatchSupplierParty) (Same legal entity as the Seller 
 
 Consignee party (In UBL: DeliveryCustomerParty) (Same legal entity as the Buyer in this use case) 
 
+|*Locations involved* a|
+Ship-from (In UBL: DespatchAddress) (Defines the place the bulk goods is coming from.)
+
 |*Pre conditions* a|
-Material is delivered to the seller and the services are delivered before Despatch Advice is sent. 
+Bulk goods is delivered before or after Despatch Advice is sent. Both cases are possible. 
 
 |*Post conditions* a|
-Despatch advice is received by the receiver of the services.
+Despatch advice is received by the receiver of the bulk goods.
 
 |*Assumptions* a|
-. The Seller has received one order from the Buyer with one (1) line for the serices to be provided.
+. The Seller has received one order from the Buyer with one (1) article (bulk goods) to be picked up.
 . The Seller has accepted the order without changes.
-. The Despatch party delivers the services specified in the order. 
+. The Despatch party delivers the complete order as accepted
 
 
 |*The flow* a|
-. The Buyer arrange delivery of material to the seller either by the sellers transport service or other carrier services.
-. The Despatch party deliver agreed services.
-. The Despatch party sends Despatch advice message to the Consignee
+. The Seller arrange delivery of agreed bulk goods.
+. The Despatch party deliver agreed bulk goods when customer or customer's representative arrives.
+. The bulk goods is weighed and a Weight statement is created.
+. The Despatch party sends Despatch advice message to the Consignee.
 . The Consignee party receives the Despatch advice message
-. The Consignee party uses the content in the Despatch advice message for confirmation of delivery.
+. The Consignee party uses the content in the Despatch advice message to verify the delivery.
 
 
 |*Result* a|
-. The Despatch advice message helped the Consignee party to confirm delivery.
+. The Despatch advice message helped the Consignee party to verify the delivery.
 .. At the right time
-.. At the right location (Delivery Location)
-.. Optionally, the location of the origin of the waste (Despatch Address)
-Note that the addresses are following the material flow, so the despatch address is the address where the material started it's journey, even if this address belongs to the buyer.
+.. At the right location
+.. At the correct price
 
-
-. The Despatch advice message helped the Consignee party in the process of confirming delvery to identify the
+. The Despatch advice message helped the Consignee party in the process of verifying the delvery to identify the
 .. Order
 .. The order lines
 .. The articles
