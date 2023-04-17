@@ -5,11 +5,14 @@
    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1</cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1</cbc:ProfileID>
+	<!-- tag::document-id[] -->
 	<cbc:ID>TEP_1</cbc:ID>
+	<!-- end::document-id[] -->
 	<cbc:VersionID>1</cbc:VersionID>
 	<cbc:IssueDate>2011-09-13</cbc:IssueDate>
 	<cbc:IssueTime>10:00:30+01:00</cbc:IssueTime>
 	<cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
+	<!-- tag::sender-party[] -->
 	<cac:SenderParty>
 		<cac:PartyIdentification>
 			<cbc:ID schemeAgencyName="GS1" schemeName="GLN">4058673827641</cbc:ID>
@@ -23,6 +26,8 @@
 			<cbc:ElectronicMail>SomeName@necoss.de</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:SenderParty>
+	<!-- end::sender-party[] -->
+	<!-- tag::receiver-party[] -->
 	<cac:ReceiverParty>
 		<cac:PartyIdentification>
 			<cbc:ID schemeAgencyName="GS1" schemeName="GLN">4058673827000</cbc:ID>
@@ -36,6 +41,8 @@
 			<cbc:ElectronicMail>SomeName@consignor.cn</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:ReceiverParty>
+	<!-- end::receiver-party[] -->
+	<!-- tag::transport-user-party[] -->
 	<cac:TransportUserParty>
 		<cac:PartyIdentification>
 			<cbc:ID schemeAgencyName="GS1" schemeName="GLN">4058673827000</cbc:ID>
@@ -49,6 +56,8 @@
 			<cbc:ElectronicMail>SomeName@consignor.cn</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:TransportUserParty>
+	<!-- end::transport-user-party[] -->
+	<!-- tag::transport-service-provider-party[] -->
 	<cac:TransportServiceProviderParty>
 		<cac:PartyIdentification>
 			<cbc:ID schemeAgencyName="GS1" schemeName="GLN">4058673827641</cbc:ID>
@@ -62,6 +71,7 @@
 			<cbc:ElectronicMail>SomeName@necoss.de</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:TransportServiceProviderParty>
+	<!-- end::transport-service-provider-party[] -->
 	<cac:TransportServiceDescriptionDocumentReference>
 		<cbc:ID>2</cbc:ID>
 	</cac:TransportServiceDescriptionDocumentReference>
@@ -165,6 +175,7 @@
 		<cac:ConsolidatedShipment>
 			<cbc:ID>GSIN_2</cbc:ID>
 		</cac:ConsolidatedShipment>
+		<!-- tag::planned-pickup-transport-event[] -->
 		<cac:PlannedPickupTransportEvent>
 			<cac:Location>
 				<cac:Address>
@@ -184,6 +195,7 @@
 				<cbc:EndTime>12:30:10+01:00</cbc:EndTime>
 			</cac:Period>
 		</cac:PlannedPickupTransportEvent>
+		<!-- end::planned-pickup-transport-event[] -->
 		<cac:PlannedDeliveryTransportEvent>
 			<cac:Location>
 				<cac:Address>
@@ -202,6 +214,7 @@
 				<cbc:EndTime>15:30:10+01:00</cbc:EndTime>
 			</cac:Period>
 		</cac:PlannedDeliveryTransportEvent>
+		<!-- tag::consignee-party[] -->
 		<cac:ConsigneeParty>
 			<cac:PartyIdentification>
 				<cbc:ID schemeAgencyName="GS1" schemeName="GLN">4058673827123</cbc:ID>
@@ -215,6 +228,8 @@
 				<cbc:ElectronicMail>SomeName@consignee.de</cbc:ElectronicMail>
 			</cac:Contact>
 		</cac:ConsigneeParty>
+		<!-- end::consignee-party[] -->
+		<!-- tag::consignor-party[] -->
 		<cac:ConsignorParty>
 			<cac:PartyIdentification>
 				<cbc:ID schemeAgencyName="GS1" schemeName="GLN">4058673827000</cbc:ID>
@@ -231,12 +246,14 @@
 				<cbc:ElectronicMail>SomeName@consignor.cn</cbc:ElectronicMail>
 			</cac:Contact>
 		</cac:ConsignorParty>
+		<!-- end::consignor-party[] -->
 		<cac:OriginalDepartureCountry>
 			<cbc:IdentificationCode>CN</cbc:IdentificationCode>
 		</cac:OriginalDepartureCountry>
 		<cac:FinalDestinationCountry>
 			<cbc:IdentificationCode>DE</cbc:IdentificationCode>
 		</cac:FinalDestinationCountry>
+		<!-- tag::main-shipment-stage[] -->
 		<cac:MainCarriageShipmentStage>
 			<cac:PlannedDepartureTransportEvent>
 				<cac:Location>
@@ -276,9 +293,11 @@
 				</cac:Period>
 			</cac:PlannedArrivalTransportEvent>
 		</cac:MainCarriageShipmentStage>
+		<!-- end::main-shipment-stage[] -->
 		<cac:PreCarriageShipmentStage>
 			<cbc:TransportModeCode>1</cbc:TransportModeCode>
 			<cbc:TransportMeansTypeCode>83</cbc:TransportMeansTypeCode>
+			<!-- tag::carrier-party[] -->
 			<cac:CarrierParty>
 				<cac:PartyName>
 					<cbc:Name>MAERSK</cbc:Name>
@@ -289,6 +308,7 @@
 					<cbc:ElectronicMail>SomeName@maersk.dk</cbc:ElectronicMail>
 				</cac:Contact>
 			</cac:CarrierParty>
+			<!-- end::carrier-party[] -->
 			<cac:TransportMeans>
 				<cbc:JourneyID>M22</cbc:JourneyID>
 				<cbc:RegistrationNationalityID>DK</cbc:RegistrationNationalityID>
@@ -322,6 +342,7 @@
 				</cac:Period>
 			</cac:PlannedArrivalTransportEvent>
 		</cac:PreCarriageShipmentStage>
+		<!-- tag::transport-handling-unit[] -->
 		<cac:TransportHandlingUnit>
 			<cbc:ID>CON_THU_1</cbc:ID>
 			<cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
@@ -329,6 +350,7 @@
 			<cbc:TotalGoodsItemQuantity>500</cbc:TotalGoodsItemQuantity>
 			<cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
 			<cbc:ShippingMarks>General Cargo</cbc:ShippingMarks>
+			<!-- tag::transport-equipment[] -->
 			<cac:TransportEquipment>
 				<cbc:ID>CON_TE_1</cbc:ID>
 				<cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
@@ -364,7 +386,9 @@
 					</cac:GoodsItem>
 				</cac:Package>
 			</cac:TransportEquipment>
+			<!-- end::transport-equipment[] -->
 		</cac:TransportHandlingUnit>
+		<!-- end::transport-handling-unit[] -->
 		<cac:TransportHandlingUnit>
 			<cbc:ID>CON_THU_2</cbc:ID>
 			<cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>

@@ -1,0 +1,113 @@
+[[parties]]
+= Parties
+
+The following parties/roles may be specified in the message.
+The same actor may play more than one role depending on the handling routine.
+
+[[sender-party]]
+== Sender party (SenderParty)
+The Sender party is the sender of the transaction. Normally the Transport user party is the sender of the Transport Execution Plan Request and the Transport service provider party is the sender of the Transport Execution Plan. But the Transport Execution Plan may also be sent by the Transport user party in case of a change or cancellation.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=sender-party]
+----
+
+[[receiver-party]]
+== Receiver party (ReceiverParty)
+The Receiver party is the receiver of the transaction. Normally the Transport service provider party is the receiver of the Transport Execution Plan Request and the Transport user party is the receiver of the Transport Execution Plan. But the Transport Execution Plan may also be received by the Transport service provider party in case of a change or cancellation.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=receiver-party]
+----
+
+[[transport-user-party]]
+== Transport user party (TransportUserParty)
+
+The Transport user party is the user of the transport service, often the consignor. The transport user party is the default sender of the Transport Execution Plan Request and the default receiver of the Transport Execution Plan.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=transport-user-party]
+----
+
+[[transport-service-provider-party]]
+== Transport service provider party (TransportServiceProviderParty)
+
+The Transport Service provider is the party providing the transport services. The Transport Service provider is the default sender of the Transport Execution Plan and the default receiver of the Transport Executions Plan Request.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=transport-service-provider-party]
+----
+
+[[consignor-party]]
+== Consignor party (ConsignorParty)
+
+Consignor party, also known as the shipper, is the sender of the goods. The Consignor is often the buyer of the freight services. If the Consignor is the same for all consignments in the Waybill, the consignor can be described on the document level instead of in each consignment.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=consignor-party]
+----
+
+[[consignee-party]]
+== Consignee party (ConsigneeParty)
+
+Consignee party is known as the DeliveryCustomerParty in the Despatch and receive advice. The Consignee is the person or organisation to which the products will be shipped and who is taking possession. The role is carried out by the customer or on behalf of the customer. The Consignee is a mandatory party in the consignment element and can be the Transportation Buyer.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=consignee-party]
+----
+
+[[carrier-party]]
+== Carrier party (CarrierParty)
+
+Consignee is known as the DeliveryCustomerParty in the Despatch and receive advice. The Consignee is the person or organisation to which the products will be shipped and who is taking possession. The role is carried out by the customer or on behalf of the customer. The Consignee is a mandatory party in the consignment element and can be the Transportation Buyer.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=carrier-party]
+----
+
+[[payee-party]]
+== Payee party (PayeeParty)
+
+Used in the Transport Execution Plan Request to identify the party paying for the transport. NB! The Payee is normally seen as the party receiving the payment, and the name of this role will be changed in the next UBL-version.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=carrier-party]
+----
+
+[[billto-party]]
+== Bill to party (BillToParty)
+
+Used in the Transport Execution Plan to identify the party paying for the transport.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=carrier-party]
+----
+
+[[notify-party]]
+== Notify party (NotifyParty)
+
+The Notify party is an external party that needs to be notified regarding the transport of the Waybill. This can be an agent responsible for the insurance of the goods or a public authority if the consignment contains hazardous goods. For the Notifier and Contact party, the contact element is mandatory.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=notify-party]
+----
