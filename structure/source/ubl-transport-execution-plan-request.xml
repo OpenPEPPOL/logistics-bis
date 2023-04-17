@@ -180,7 +180,16 @@
 	<cac:ReceiverParty>
 		<?Name Receiver Party ?>
 		<?Description The party receiving the transport execution plan request. ?>
-		<?Cardinality 1..1?>		
+		<?Cardinality 1..1?>
+		<cbc:EndpointID schemeID="0192">982813085
+			<?Name Sender party electronic address ?>
+			<?Description The endpoint for the sender party. ?>
+			<?Cardinality 1..1?>
+			<?schemeID-Name Scheme identifier?>
+			<?schemeID-Description Scheme identifier for electronic address?>
+			<?schemeID-usage Mandatory?>
+			<?schemeID-CodeList eas?>
+		</cbc:EndpointID>		
 		<cac:PartyIdentification>
 			<?Name Receiver party identification ?>
 			<?Description An identifier for the sender party as known to the sender party. ?>
@@ -495,7 +504,7 @@
 			<cbc:ID schemeID="0088">7300010000001 				
 			<?schemeID-CodeList ICD?>
 			<?schemeID-usage Optional?>
-			<?Cardinality 1..1?>
+			<?Cardinality 0..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
@@ -509,6 +518,7 @@
 		<cac:PostalAddress>
 			<?Name Postal address ?>
 			<?Description The postal address for the transport service provider party. ?>
+			<?Cardinality 0..1?>
 			<cbc:StreetName>Ventrupvej 6
 				<?Name Address line 1 ?>
 				<?Description The main address line in a postal address usually the street name and number. ?>
@@ -849,10 +859,24 @@
 	</cac:AdditionalTransportationService>
 	<cac:Consignment>
 		<?Name Consignment information ?>
-		<?Cardinality 1..1?>
+		<?Cardinality 1..1?>		
 		<cbc:ID>12535157654567654
-		<?Name Consignment identifier ?>
-		</cbc:ID>		
+			<?Name Consignment identifier ?>
+			<?Cardinality 1..1?>
+			<?schemeID-Name Scheme identifier?>
+			<?schemeID-Description Scheme identifier for electronic address?>
+			<?schemeID-usage Optional?>
+		</cbc:ID>
+		<cbc:ConsigneeAssignedID>0160110
+			<?Name Consignee reference ?>
+			<?Description ID or reference used by the consignee to identify this consignment.?>
+			<?Cardinality 0..1?>			
+		</cbc:ConsigneeAssignedID>
+		<cbc:ConsignorAssignedID>501153162
+			<?Name Consignor reference ?>
+			<?Description ID or reference used by the consignor to identify this consignment.?>
+			<?Cardinality 0..1?>			
+		</cbc:ConsignorAssignedID>			
 		<cbc:GrossWeightMeasure unitCode="KGM">1030
 			<?Name Consignment gross weight ?> 
 			<?Description The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified?>
@@ -2540,7 +2564,9 @@
 				<?Name Handling unit type code ?>
 				<?Description Type of Transport Handling Unit. Use UN/ECE Recommendation 21 with addition of the codes used by "Retursystem Byggpall". ?>
 				<?CodeList UNECERec21?>
-				<?Cardinality 1..1?>
+				<?Cardinality 1..1?>				
+				<?name-Description Textual description of the transport handling unit type code. ?>
+				<?name-usage optional?>
 			</cbc:TransportHandlingUnitTypeCode>
 			<cbc:HandlingCode>CCC
 				<?Name Handling Code ?>

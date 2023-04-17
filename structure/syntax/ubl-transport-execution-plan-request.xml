@@ -258,6 +258,19 @@
          <Term>cac:ReceiverParty</Term>
          <Name>Receiver Party </Name>
          <Description>The party receiving the transport execution plan request. </Description>
+         <Element cardinality="1..1">
+            <Term>cbc:EndpointID</Term>
+            <Name>Sender party electronic address </Name>
+            <Description>The endpoint for the sender party. </Description>
+            <Value type="EXAMPLE">982813085</Value>
+            <Attribute usage="Mandatory">
+               <Term>schemeID</Term>
+               <Name>Scheme identifier</Name>
+               <Description>Scheme identifier for electronic address</Description>
+               <Reference type="CODE_LIST">eas</Reference>
+               <Value type="EXAMPLE">0192</Value>
+            </Attribute>
+         </Element>
          <Element cardinality="0..1">
             <Term>cac:PartyIdentification</Term>
             <Name>Receiver party identification </Name>
@@ -623,7 +636,7 @@
             <Term>cac:PartyIdentification</Term>
             <Name>Transport service provider party identification </Name>
             <Description>An identifier for the transport service provider party. </Description>
-            <Element cardinality="1..1">
+            <Element cardinality="0..1">
                <Term>cbc:ID</Term>
                <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Optional">
@@ -643,7 +656,7 @@
                <Value type="EXAMPLE">Leman</Value>
             </Element>
          </Element>
-         <Element>
+         <Element cardinality="0..1">
             <Term>cac:PostalAddress</Term>
             <Name>Postal address </Name>
             <Description>The postal address for the transport service provider party. </Description>
@@ -1064,10 +1077,22 @@
 	     <Element cardinality="1..1">
          <Term>cac:Consignment</Term>
          <Name>Consignment information </Name>
-         <Element>
+         <Element cardinality="1..1">
             <Term>cbc:ID</Term>
             <Name>Consignment identifier </Name>
             <Value type="EXAMPLE">12535157654567654</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:ConsigneeAssignedID</Term>
+            <Name>Consignee reference </Name>
+            <Description>ID or reference used by the consignee to identify this consignment.</Description>
+            <Value type="EXAMPLE">0160110</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:ConsignorAssignedID</Term>
+            <Name>Consignor reference </Name>
+            <Description>ID or reference used by the consignor to identify this consignment.</Description>
+            <Value type="EXAMPLE">501153162</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:GrossWeightMeasure</Term>
