@@ -11,6 +11,7 @@
 	
 	
 	
+	
 	     <Element>
          <Term>cbc:CustomizationID</Term>
          <Name>Specification identification</Name>
@@ -29,6 +30,7 @@
          <Reference type="BUSINESS_TERM">tir16-001</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:receipt_advice_only:1</Value>
       </Element>
+	
 	     <Element>
          <Term>cbc:ID</Term>
          <Name>Document identifier</Name>
@@ -77,6 +79,7 @@
          <Reference type="BUSINESS_TERM">tir16-088</Reference>
          <Value type="EXAMPLE">Delivery ok</Value>
       </Element>
+	
 	     <Element cardinality="0..1">
          <Term>cac:OrderReference</Term>
          <Name>Order reference information</Name>
@@ -91,6 +94,7 @@
             <Value type="EXAMPLE">AEG0123456</Value>
          </Element>
       </Element>
+	
 	     <Element cardinality="0..1">
          <Term>cac:DespatchDocumentReference</Term>
          <Description>A reference to the despatch advice. mandatory if the receipt advice is a reponse to a despatch advice</Description>
@@ -110,7 +114,8 @@
             <Value type="EXAMPLE">12:00:00</Value>
          </Element>
       </Element>
-		    <Element cardinality="0..n">
+	
+	     <Element cardinality="0..n">
          <Term>cac:AdditionalDocumentReference</Term>
          <Name>Additional document reference</Name>
          <Description>Reference to additional documents relevant for this Receipt advice. Can be used for additional BEAst information on header level.</Description>
@@ -176,6 +181,7 @@
             </Element>
          </Element>
       </Element>
+	
 	     <Element>
          <Term>cac:DeliveryCustomerParty</Term>
          <Name>Consignee information</Name>
@@ -376,29 +382,6 @@
                   </Element>
                </Element>
             </Element>
-            <Element cardinality="0..1">
-               <Term>cac:Contact</Term>
-               <Name>Contact person name</Name>
-               <Description>The contact of the Delivery customer party.</Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:Name</Term>
-                  <Name>Contact name</Name>
-                  <Description>The contact name.</Description>
-                  <Value type="EXAMPLE">Mrs Bouquet</Value>
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:Telephone</Term>
-                  <Name>Contact telephone number</Name>
-                  <Description>The phone number of the contact.</Description>
-                  <Value type="EXAMPLE">0158 1233714</Value>
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:ElectronicMail</Term>
-                  <Name>Contact email address</Name>
-                  <Description>The electronic mail of the contact.</Description>
-                  <Value type="EXAMPLE">bouquet@fpconsortial.co.uk</Value>
-               </Element>
-            </Element>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:DeliveryContact</Term>
@@ -431,6 +414,7 @@
             </Element>
          </Element>
       </Element>
+	
 	     <Element>
          <Term>cac:DespatchSupplierParty</Term>
          <Name>Despatching party information</Name>
@@ -663,6 +647,7 @@
             </Element>
          </Element>
       </Element>
+	
 	     <Element cardinality="0..1">
          <Term>cac:BuyerCustomerParty</Term>
          <Name>Buyer</Name>
@@ -789,6 +774,7 @@
             </Element>
          </Element>
       </Element>
+	
 	     <Element cardinality="0..1">
          <Term>cac:SellerSupplierParty</Term>
          <Name>Seller</Name>
@@ -915,6 +901,7 @@
             </Element>
          </Element>
       </Element>
+	
 		    <Element cardinality="0..1">
          <Term>cac:Shipment</Term>
          <Name>Shipment information</Name>
@@ -952,7 +939,7 @@
          <Element cardinality="0..1">
             <Term>cbc:GrossVolumeMeasure</Term>
             <Name>Shipment gross volume</Name>
-            <Description>The gross volumen of the despatch as a whole. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified</Description>
+            <Description>The gross volume of the despatch as a whole. Must be greather or equal the the volume specified for the included transport handling unites if this is specified</Description>
             <Reference type="BUSINESS_TERM">tir16-075</Reference>
             <Reference type="RULE">PEPPOL-T120-R019</Reference>
             <Value type="EXAMPLE">1.456</Value>
@@ -2009,6 +1996,7 @@
             </Element>
          </Element>
       </Element>
+	
 	     <Element cardinality="0..n">
          <Term>cac:ReceiptLine</Term>
          <Name>Receipt Line</Name>
@@ -2024,7 +2012,7 @@
          <Element cardinality="0..1">
             <Term>cbc:ReceivedQuantity</Term>
             <Description>The quantity received.</Description>
-            <Value type="EXAMPLE">90</Value>
+            <Value type="EXAMPLE">89</Value>
             <Attribute>
                <Term>unitCode</Term>
                <Name>Quantity unit of measure</Name>
@@ -2052,6 +2040,13 @@
          <Element cardinality="0..1">
             <Term>cbc:RejectedQuantity</Term>
             <Description>The quantity rejected.</Description>
+            <Value type="EXAMPLE">1</Value>
+            <Attribute>
+               <Term>unitCode</Term>
+               <Name>Quantity unit of measure</Name>
+               <Description>The unit of measure that applies to the quantity.</Description>
+               <Value type="EXAMPLE">KGM</Value>
+            </Attribute>
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:RejectReason</Term>
@@ -2062,6 +2057,7 @@
             <Term>cbc:RejectActionCode</Term>
             <Description>A code signifying the action that the delivery party wishes the despatch party to take as the result of a rejection.</Description>
             <Reference type="CODE_LIST">RejectActionCode</Reference>
+            <Value type="EXAMPLE">20</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:QuantityDiscrepancyCode</Term>
@@ -2073,18 +2069,27 @@
             <Term>cbc:OversupplyQuantity</Term>
             <Description>The quantity over-supplied, i.e., the quantity over and above the quantity ordered.</Description>
             <Value type="EXAMPLE">5</Value>
+            <Attribute>
+               <Term>unitCode</Term>
+               <Name>Quantity unit of measure</Name>
+               <Description>The unit of measure that applies to the quantity.</Description>
+               <Value type="EXAMPLE">KGM</Value>
+            </Attribute>
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:ReceivedDate</Term>
             <Description>The date on which the goods or services were received.</Description>
+            <Value type="EXAMPLE">2023-04-18</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:TimingComplaint</Term>
             <Description>A complaint about the timing of delivery, expressed as text.</Description>
+            <Value type="EXAMPLE">Two hours after time window.</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:OrderLineReference</Term>
             <Description>A reference to the order line associated with this receipt line. Not used when the receipt advice is used as a repsonse</Description>
+            <Value type="EXAMPLE">10</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:DespatchLineReference</Term>
