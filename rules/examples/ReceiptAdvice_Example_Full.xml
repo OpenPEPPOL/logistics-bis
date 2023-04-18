@@ -229,7 +229,8 @@
          </cac:CarrierParty>
       </cac:Consignment>
       <cac:Delivery>
-         <cbc:ActualDeliveryDate>2021-09-26</cbc:ActualDeliveryDate>
+         <cbc:ActualDeliveryDate>2021-09-26
+				</cbc:ActualDeliveryDate>
          <cbc:ActualDeliveryTime>10:00:00
 				</cbc:ActualDeliveryTime>
          <cbc:TrackingID>456789</cbc:TrackingID>
@@ -476,14 +477,21 @@
 			</cbc:QuantityDiscrepancyCode>
       <cbc:OversupplyQuantity unitCode="KGM">5
 			</cbc:OversupplyQuantity>
-      <cbc:ReceivedDate>2023-04-18
-			</cbc:ReceivedDate>
+      <cbc:ReceivedDate>2023-04-18</cbc:ReceivedDate>
       <cbc:TimingComplaint>Two hours after time window.
 			</cbc:TimingComplaint>
-      <cac:OrderLineReference>10
-			</cac:OrderLineReference>
-      <cac:DespatchLineReference>34
-			</cac:DespatchLineReference>
+      <cac:OrderLineReference>
+         <cbc:LineID>1</cbc:LineID>
+         <cbc:SalesOrderLineID>10 
+				</cbc:SalesOrderLineID>
+         <cac:OrderReference>
+            <cbc:ID>AEG012345</cbc:ID>
+            <cbc:SalesOrderID>5678985 </cbc:SalesOrderID>
+         </cac:OrderReference>
+      </cac:OrderLineReference>
+      <cac:DespatchLineReference>
+         <cbc:LineID>1</cbc:LineID>
+      </cac:DespatchLineReference>
       <cac:Item>
          <cbc:Name>Beeswax 
 				</cbc:Name>
