@@ -21,7 +21,7 @@
 	</cbc:DocumentStatusCode>
 	<cbc:ReceiptAdviceTypeCode>1 
 		<?Name Receipt advice type code?>
-		<?Description A code signifying the type of the Despatch Advice. Default is Advice of despatch of goods (1)?>
+		<?Description A code signifying the type of the Receipt Advice. Default is a comment on Received goods (1)?>
 		<?Cardinality 0..1?>
 		<?CodeList ReceiptAdviceTypeCode?>
 	</cbc:ReceiptAdviceTypeCode>
@@ -36,14 +36,19 @@
 	</cac:OrderReference>
 	
 	<cac:DespatchDocumentReference>
+		<?Name Despatch Document Reference?>
 		<?Description A reference to the despatch advice. mandatory if the receipt advice is a reponse to a despatch advice?>
 		<?Cardinality 0..1?>
 		<cbc:ID>565899
 		<?Description The ID of the despatch advice. ?>
 		<?Cardinality 1..1?>
 		</cbc:ID>		
-		<cbc:IssueDate>2021-09-10</cbc:IssueDate>
+		<cbc:IssueDate>2021-09-10<?Name Issue Date?>
+			<?Description The date the Despatch Advice was issued.?>
+			<?Cardinality 1..1?>
+		</cbc:IssueDate>
 		<cbc:IssueTime>12:00:00
+			<?Name The time the Despatch Advice was issued.?>
 			<?Description The time when the despatch advice is issued. Format = "hh:mm:ss".?>
 		</cbc:IssueTime>
 		<cbc:DocumentStatusCode>RE
@@ -406,7 +411,10 @@
 		</cac:Consignment>
 			
 		<cac:Delivery>
-			<cbc:ActualDeliveryDate>2021-09-26</cbc:ActualDeliveryDate>
+			<cbc:ActualDeliveryDate>2021-09-26<?Name Actual Delivery Date?>
+				<?Description The Date the goods or service was delivered.?>
+				<?Cardinality 1..1?>
+			</cbc:ActualDeliveryDate>
 			<cbc:ActualDeliveryTime>10:00:00
 				<?Name Actual Delivery Time?>
 				<?Description  The date on which the supply of goods or services was made or completed according to the delivery term. Format = "hh:mm:ss"?>
@@ -415,13 +423,28 @@
 			</cbc:ActualDeliveryTime>
 
 			<cac:RequestedDeliveryPeriod>
-				<cbc:StartDate>2021-09-25</cbc:StartDate>
+				<?Name Requested Delivery Period?>
+				<?Description The date, time or period the goods or service was requested to be delivered on. ?>
+				<?Cardinality 0..1?>
+				<cbc:StartDate>2021-09-25<?Name Requested Start Date?>
+					<?Cardinality 1..1?>
+					<?Description The requested delivery date or the start of the requested delivery period. ?>
+				</cbc:StartDate>
 				<cbc:StartTime>12:00:00
+					<?Name Requested Start Time?>
+					<?Description The start time of the requested delivery period. ?>
+					<?Cardinality 0..1?>
 					<?Rule PEPPOL-T120-R013?>
 					<?Rule PEPPOL-T120-R015?>
 				</cbc:StartTime>
-				<cbc:EndDate>2021-09-27</cbc:EndDate>
+				<cbc:EndDate>2021-09-27<?Name Requested End Date. ?>
+					<?Description The last date of the requested period. ?>
+					<?Cardinality 0..1?>
+				</cbc:EndDate>
 				<cbc:EndTime>12:00:00
+					<?Name Requested End Time?>
+					<?Description The ending time of the requested delivery period. ?>
+					<?Cardinality 0..1?>
 					<?Rule PEPPOL-T120-R013?>
 					<?Rule PEPPOL-T120-R014?>
 					<?Rule PEPPOL-T120-R015?>
@@ -491,67 +514,95 @@
 		<?Name Receipt Line?>
 		<?Description A line detailing a kind of item received.?>
 		<?Cardinality 0..n?>
-		<cbc:ID>1</cbc:ID>
+		<cbc:ID>1
+			<?Name Line identity?>
+			<?Description A unique identity on this line, normally an increasing sequence number. ?>
+			<?Cardinality 1..1?>
+		</cbc:ID>
 		<cbc:Note>SAMPLE
-			<?Free-form text conveying information that is not contained explicitly in other structures..?>
+			<?Name Note ?>
+			<?Description Text conveying information that is not contained explicitly in other structures. ?>
 			<?Cardinality 0..1?>
 		</cbc:Note>
 		<cbc:ReceivedQuantity unitCode="KGM">89
-			<?Description The quantity received.?>
-			<?Cardinality 0..1?>
+			<?Name Received quantity?>
+			<?Description The total quantity received, including any rejected parts.?>
+			<?Cardinality 1..1?>
 			<?unitCode-Name Quantity unit of measure?>
 			<?unitCode-Description The unit of measure that applies to the quantity.?>
+			<?unitCode-Cardinality 1..1?>
 		</cbc:ReceivedQuantity>
 		<cbc:ShortQuantity unitCode="KGM">10
-			<?Description The quantity received short; the difference between the quantity reported despatched and the quantity actually received.?>
+			<?Name Short quantity?>
+			<?Description The quantity received short; the difference between the quantity reported despatched and the quantity actually received. ?>
 			<?Cardinality 0..1?>
 			<?unitCode-Name Quantity unit of measure?>
 			<?unitCode-Description The unit of measure that applies to the quantity.?>
+			<?unitCode-Cardinality 1..1?>
 		</cbc:ShortQuantity>
 		<cbc:ShortageActionCode>5
+			<?Name Shortage Action Code?>
 			<?Description A code signifying the action that the delivery party wishes the despatch party to take as the result of a shortage.?>
 			<?Cardinality 0..1?>
 			<?CodeList ShorageActionCode?>
 		</cbc:ShortageActionCode>
 		<cbc:RejectedQuantity unitCode="KGM">1
-			<?Description The quantity rejected.?>
+			<?Name Rejected quantity?>
+			<?Description The quantity rejected due to damage, quality issues or any other cause. ?>
 			<?Cardinality 0..1?>
 			<?unitCode-Name Quantity unit of measure?>
 			<?unitCode-Description The unit of measure that applies to the quantity.?>
+			<?unitCode-Cardinality 1..1?>
 		</cbc:RejectedQuantity>
 		<cbc:RejectReasonCode>78
-			<?Name Reject Reaso Code?>
+			<?Name Reject Reason Code?>
 			<?Description The reason for a rejection, expressed as a code. ?>
 			<?Cardinality 0..1?>
 		</cbc:RejectReasonCode>
 		<cbc:RejectReason>Wrong item delivered.
+			<?Name Reject Reason?>
 			<?Description The reason for a rejection, expressed as text.?>
 			<?Cardinality 0..1?>
 		</cbc:RejectReason>
 		<cbc:RejectActionCode>20
+			<?Name Reject Action Code?>
 			<?Description A code signifying the action that the delivery party wishes the despatch party to take as the result of a rejection.?>
 			<?Cardinality 0..1?>
 			<?CodeList RejectActionCode?>
 		</cbc:RejectActionCode>
 
 		<cbc:OversupplyQuantity unitCode="KGM">5
+			<?Name Oversupply Quantity?>
 			<?Description The quantity over-supplied, i.e., the quantity over and above the quantity ordered.?>
 			<?Cardinality 0..1?>
 			<?unitCode-Name Quantity unit of measure?>
 			<?unitCode-Description The unit of measure that applies to the quantity.?>
+			<?unitCode-Cardinality 1..1?>
 		</cbc:OversupplyQuantity>
 		
 		<cac:OrderLineReference>
+			<?Name Orderline Reference?>
 			<?Description A reference to the order line associated with this receipt line. Not used when the receipt advice is used as a repsonse?>
 			<?Cardinality 0..1?>
-			<cbc:LineID>1</cbc:LineID>
+			<cbc:LineID>1
+				<?Name Line ID?>
+				<?Description The Orderline this Responseline refers to. ?>
+				<?Cardinality 1..1?>
+			</cbc:LineID>
 			<cbc:SalesOrderLineID>10 
 				<?Name Sales order line number?>
 				<?Cardinality 0..1?>
 				<?Description Reference to the sellers orderline number.?>
 			</cbc:SalesOrderLineID>
 			<cac:OrderReference>
-				<cbc:ID>AEG012345</cbc:ID>
+				<?Name Order reference?>
+				<?Description The order can be referred to at header level or here. Doing it here at line level it is possible to refer to multiple order in one document. ?>
+				<?Cardinality 0..1?>
+				<cbc:ID>AEG012345
+					<?Name Order number?>
+					<?Description The order number referred to. ?>
+					<?Cardinality 0..1?>
+				</cbc:ID>
 				<cbc:SalesOrderID>5678985 <?Name Sales order number?>
 					<?Cardinality 0..1?>
 					<?Description Reference to the sellers order number.?>
@@ -559,22 +610,44 @@
 			</cac:OrderReference>
 		</cac:OrderLineReference>
 		<cac:DespatchLineReference>
+			<?Name Despatch line Reference?>
 			<?Description A reference to a despatch line associated with this receipt line. Mandotory when the receipt advice is used as a repsonse?>
 			<?Cardinality 0..1?>
-			<cbc:LineID>1</cbc:LineID>
+			<cbc:LineID>1
+				<?Name Line ID?>
+				<?Description The identity of the Despatch Advice line number referred to. ?>
+				<?Cardinality 1..1?>
+			</cbc:LineID>
 		</cac:DespatchLineReference>
 		
 		<cac:Item>
+			<?Name Item. ?>
+			<?Description Information to describe and identify the item. ?>
+			<?Cardinality 1..1?>
 			<cbc:Name>Beeswax 
+				<?Name Name?>
+				<?Description The name of the item. ?>
+				<?Cardinality 1..1?>
 				<?Rule PEPPOL-T120-R004?>
 			</cbc:Name>
 			<cac:BuyersItemIdentification>
+				<?Name Buyer's item Identification. ?>
+				<?Description The identity on the item assigned by the buyer. ?>
 				<?Cardinality 0..1?>
-				<cbc:ID>6578489</cbc:ID>
+				<cbc:ID>6578489
+					<?Name Item identity?>
+					<?Description The buyer's identity on the item. ?>
+					<?Cardinality 1..1?>
+				</cbc:ID>
 			</cac:BuyersItemIdentification>
 			<cac:SellersItemIdentification>
+				<?Name Seller's item Identification. ?>
+				<?Description The identity on the item assigned by the seller. ?>
 				<?Cardinality 0..1?>
-				<cbc:ID> 17589683 
+				<cbc:ID>17589683
+					<?Name Item identity?>
+					<?Description The seller's identity on the item. ?>
+					<?Cardinality 1..1?>
 					<?Rule PEPPOL-T120-R003?>
 				</cbc:ID>
 			</cac:SellersItemIdentification>
@@ -585,17 +658,26 @@
 				<cbc:ID> 17589683 
 					<?Name Manufacturers item identifier?>
 					<?Description Manufacturers article number?>
+					<?Cardinality 1..1?>
 				</cbc:ID>
 			</cac:ManufacturersItemIdentification>
 			<cac:StandardItemIdentification>
+				<?Name Standard Item Identification ?>
 				<?Cardinality 0..1?>
-				<?Description Only one StandardItemIdentification can be used per line.?>
+				<?Description A standardized item number. Only one StandardItemIdentification can be used per line.?>
 				<cbc:ID schemeID="0160"> 1234567891234 
+					<?Name Standard Item number?>
+					<?Cardinality 1..1?>
 					<?Description Global Trade Item Number (GTIN) or other standardized identification.?>
 					<?Rule PEPPOL-T120-R003?>
 					<?schemeID-Name Scheme identifier?>
+					<?schemeID-CodeList ICD?>
+					<?schemeID-Cardinality 1..1?>
+					<?schemeID-Description The scheme identifier of the Item standard identifier. ?>
 				</cbc:ID>
 				<cbc:ExtendedID>22114455
+					<?Name Item standard extended identifier. ?>
+					<?Description With specific properties, e.g., Item 123 = Chair / Item 123 Ext 45 = brown chair. ?>
 					<?Cardinality 0..1?>
 				</cbc:ExtendedID>
 			</cac:StandardItemIdentification>
