@@ -4,8 +4,12 @@
 The following parties/roles may be specified in the message.
 The same actor may play more than one role depending on the handling routine.
 
+The diagram below shows the parties and roles in this profile.
+
+image::images/roles.png[image,width=649,height=260]
+
 [[receiver-party]]
-== Receiver party (ReceiverParty)
+== Receiver (ReceiverParty)
 The Receiver is the receiver of the Transport Execution Plan. 
 
 Example:
@@ -15,7 +19,7 @@ include::{snippet-dir}/snippet-1.xml[tags=receiver-party]
 ----
 
 [[sender-party]]
-== Sender party (SenderParty)
+== Sender (SenderParty)
 The Sender is the sender of the Transport Execution Plan.
 
 Example:
@@ -25,9 +29,9 @@ include::{snippet-dir}/snippet-1.xml[tags=sender-party]
 ----
 
 [[transport-user-party]]
-== Transport User Party (TransportUserParty)
+== Transport User (TransportUserParty)
 
-The Transport User is the user of the transport service, often the consignor. The Transport User Party may change or cancel the Transport Execution Plan.
+The Transport User is the user of the transport service, often the consignor. The Transport User may change or cancel the Transport Execution Plan.
 
 Example:
 [source, xml, indent=0]
@@ -36,7 +40,7 @@ include::{snippet-dir}/snippet-1.xml[tags=transport-user-party]
 ----
 
 [[transport-service-provider-party]]
-== Transport service provider party (TransportServiceProviderParty)
+== Transport Service Provider (TransportServiceProviderParty)
 
 The Transport Service Provider is the sender of the original Transport Execution Plan and later changes to the plan.
 
@@ -47,7 +51,7 @@ include::{snippet-dir}/snippet-1.xml[tags=transport-service-provider-party]
 ----
 
 [[consignor-party]]
-== Consignor party (ConsignorParty)
+== Consignor (ConsignorParty)
 
 Consignor, also known as the shipper, is the sender of the goods. The Consignor is often the buyer of the freight services. If the Consignor is the same for all consignments in the Waybill, the consignor can be described on the document level instead of in each consignment.
 
@@ -58,7 +62,7 @@ include::{snippet-dir}/snippet-1.xml[tags=consignor-party]
 ----
 
 [[consignee-party]]
-== Consignee party (ConsigneeParty)
+== Consignee (ConsigneeParty)
 
 Consignee is known as the DeliveryCustomerParty in the Despatch Advice. The Consignee is the person or organisation to which the products will be shipped and who is taking possession. The role is carried out by the customer or on behalf of the customer. The Consignee is a mandatory party in the consignment element and can be the Transportation Buyer.
 
@@ -69,7 +73,7 @@ include::{snippet-dir}/snippet-1.xml[tags=consignee-party]
 ----
 
 [[carrier-party]]
-== Carrier party (CarrierParty)
+== Carrier (CarrierParty)
 
 Carrier is the party providing the transport of goods between named points.
 
