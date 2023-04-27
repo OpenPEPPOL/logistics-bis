@@ -72,7 +72,95 @@
 		</cac:Contact>
 	</cac:TransportServiceProviderParty>
 	<!-- end::transport-service-provider-party[] -->
-	
+	<cac:TransportServiceDescriptionDocumentReference>
+		<cbc:ID>2</cbc:ID>
+	</cac:TransportServiceDescriptionDocumentReference>
+	<cac:TransportContract>
+		<cbc:Note>Framework Agreement</cbc:Note>
+		<cac:ContractDocumentReference>
+			<cbc:ID>TC101</cbc:ID>
+			<cbc:IssueDate>2010-01-01</cbc:IssueDate>
+			<cbc:DocumentTypeCode>315</cbc:DocumentTypeCode>
+			<cbc:DocumentType>Contract</cbc:DocumentType>
+			<cbc:DocumentDescription>
+				Framework Agreement between Consignor and
+				NECOSS
+			</cbc:DocumentDescription>
+		</cac:ContractDocumentReference>
+	</cac:TransportContract>
+	<cac:TransportUserResponseRequiredPeriod>
+		<cbc:EndDate>2011-09-13</cbc:EndDate>
+		<cbc:EndTime>12:00:10+01:00</cbc:EndTime>
+	</cac:TransportUserResponseRequiredPeriod>
+	<cac:MainTransportationService>
+		<cbc:TransportServiceCode>3</cbc:TransportServiceCode>
+		<cbc:TransportationServiceDescription>
+			Transport from Hamburg to
+			Nurnberg
+		</cbc:TransportationServiceDescription>
+	</cac:MainTransportationService>
+	<cac:ServiceEndTimePeriod>
+		<cbc:EndDate>2011-10-06</cbc:EndDate>
+		<cbc:EndTime>16:00:10+01:00</cbc:EndTime>
+	</cac:ServiceEndTimePeriod>
+	<cac:FromLocation>
+		<cbc:LocationTypeCode>13</cbc:LocationTypeCode>
+		<cac:Address>
+			<cbc:ID schemeAgencyName="UN" schemeName="UN/LOCODE">DEHAM</cbc:ID>
+			<cbc:StreetName>Neuer Wandrahm 4</cbc:StreetName>
+			<cbc:CityName>Hamburg</cbc:CityName>
+			<cbc:PostalZone>29400</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:Address>
+	</cac:FromLocation>
+	<cac:ToLocation>
+		<cbc:LocationTypeCode>7</cbc:LocationTypeCode>
+		<cac:Address>
+			<cbc:StreetName>Grosse strasse 34</cbc:StreetName>
+			<cbc:CityName>Nurnberg</cbc:CityName>
+			<cbc:PostalZone>28400</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:Address>
+	</cac:ToLocation>
+	<cac:TransportExecutionTerms>
+		<cac:DeliveryTerms>
+			<cbc:ID schemeAgencyName="INCOTERMS">EXW</cbc:ID>
+			<cac:DeliveryLocation>
+				<cac:Address>
+					<cbc:CityName>Hamburg</cbc:CityName>
+				</cac:Address>
+			</cac:DeliveryLocation>
+		</cac:DeliveryTerms>
+		<cac:NotificationRequirement>
+			<cbc:NotificationTypeCode>ITEM_CONDITION_DEVIATIONS</cbc:NotificationTypeCode>
+			<!--A Transportation Status notifying about the item condition deviation (e.g. damaged goods) should 
+			be issued at a maximum of 10 minutes after the deviation is discovered-->
+			<cbc:PostEventNotificationDurationMeasure unitCode="MIN"
+            >10</cbc:PostEventNotificationDurationMeasure>
+			<cac:NotifyParty>
+				<cbc:EndpointID>www.consignee.com/statusnotifications/</cbc:EndpointID>
+				<cac:PartyName>
+					<cbc:Name>Consignee</cbc:Name>
+				</cac:PartyName>
+				<cac:Contact>
+					<cbc:ElectronicMail>someName@consignee.de</cbc:ElectronicMail>
+				</cac:Contact>
+			</cac:NotifyParty>
+			<cac:NotifyParty>
+				<cbc:EndpointID>www.consignor.cn/statusnotifications/</cbc:EndpointID>
+				<cac:PartyName>
+					<cbc:Name>Consignor</cbc:Name>
+				</cac:PartyName>
+				<cac:Contact>
+					<cbc:ElectronicMail>someName@consignor.cn</cbc:ElectronicMail>
+				</cac:Contact>
+			</cac:NotifyParty>
+		</cac:NotificationRequirement>
+	</cac:TransportExecutionTerms>
 	<cac:Consignment>
 		<cbc:ID>CON_1</cbc:ID>
 		<cbc:GrossWeightMeasure unitCode="KGM">50000</cbc:GrossWeightMeasure>
@@ -81,6 +169,12 @@
 		<cbc:LoadingLengthMeasure unitCode="MTR">12</cbc:LoadingLengthMeasure>
 		<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
 		<cbc:TotalTransportHandlingUnitQuantity>2</cbc:TotalTransportHandlingUnitQuantity>
+		<cac:ConsolidatedShipment>
+			<cbc:ID>GSIN_1</cbc:ID>
+		</cac:ConsolidatedShipment>
+		<cac:ConsolidatedShipment>
+			<cbc:ID>GSIN_2</cbc:ID>
+		</cac:ConsolidatedShipment>
 		<!-- tag::planned-pickup-transport-event[] -->
 		<cac:PlannedPickupTransportEvent>
 			<cac:Location>
@@ -128,16 +222,6 @@
 			<cac:PartyName>
 				<cbc:Name>Consignee</cbc:Name>
 			</cac:PartyName>
-			<cac:PartyLegalEntity>
-				<cbc:RegistrationName>HUS Hospital </cbc:RegistrationName>
-				<cbc:CompanyID schemeID="0212">1567535-0 </cbc:CompanyID>
-				<cac:RegistrationAddress>
-					<cbc:CityName>Helsinki </cbc:CityName>
-					<cac:Country>
-						<cbc:IdentificationCode>FI </cbc:IdentificationCode>
-					</cac:Country>
-				</cac:RegistrationAddress>
-			</cac:PartyLegalEntity>		
 			<cac:Contact>
 				<cbc:Name>SomeName</cbc:Name>
 				<cbc:Telephone>+4987878763</cbc:Telephone>
@@ -156,16 +240,6 @@
 			<cac:PostalAddress>
 				<cbc:ID schemeAgencyName="GS1" schemeName="GLN">4058673827000</cbc:ID>
 			</cac:PostalAddress>
-			<cac:PartyLegalEntity>
-				<cbc:RegistrationName>Novo Nordisk Pharmatech A/S</cbc:RegistrationName>
-				<cbc:CompanyID schemeID="0198">13246149 </cbc:CompanyID>
-				<cac:RegistrationAddress>
-					<cbc:CityName>Køge</cbc:CityName>
-					<cac:Country>
-						<cbc:IdentificationCode>DK</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:RegistrationAddress>
-			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:Name>SomeName</cbc:Name>
 				<cbc:Telephone>+8676576456</cbc:Telephone>
@@ -181,38 +255,6 @@
 		</cac:FinalDestinationCountry>
 		<!-- tag::main-shipment-stage[] -->
 		<cac:MainCarriageShipmentStage>
-			<cbc:TransportModeCode>4 </cbc:TransportModeCode>
-			<cbc:HazardousRiskIndicator>false </cbc:HazardousRiskIndicator>
-			<!-- tag::carrier-party[] -->
-			<cac:CarrierParty>
-				<cac:PartyName>
-					<cbc:Name>Finnair Oyj</cbc:Name>
-				</cac:PartyName>
-				<cac:PostalAddress>
-					<cbc:StreetName>Tietotie 9</cbc:StreetName>
-					<cbc:CityName>Vantaa</cbc:CityName>
-					<cbc:PostalZone>4600</cbc:PostalZone>
-					<cac:Country>
-						<cbc:IdentificationCode>FI </cbc:IdentificationCode>
-					</cac:Country>
-				</cac:PostalAddress>
-				<cac:PartyLegalEntity>
-					<cbc:RegistrationName>Leman </cbc:RegistrationName>
-					<cbc:CompanyID schemeID="0212">0108023-3 </cbc:CompanyID>
-					<cac:RegistrationAddress>
-						<cbc:CityName>Vantaa </cbc:CityName>
-						<cac:Country>
-							<cbc:IdentificationCode>FI </cbc:IdentificationCode>
-						</cac:Country>
-					</cac:RegistrationAddress>
-				</cac:PartyLegalEntity>
-			</cac:CarrierParty>
-			<!-- end::carrier-party[] -->
-			<cac:TransportMeans>
-				<cac:AirTransport>
-					<cbc:AircraftID>JA8088 </cbc:AircraftID>
-				</cac:AirTransport>
-			</cac:TransportMeans>
 			<cac:PlannedDepartureTransportEvent>
 				<cac:Location>
 					<cac:Address>
@@ -254,6 +296,7 @@
 		<!-- end::main-shipment-stage[] -->
 		<cac:PreCarriageShipmentStage>
 			<cbc:TransportModeCode>1</cbc:TransportModeCode>
+			<cbc:TransportMeansTypeCode>83</cbc:TransportMeansTypeCode>
 			<!-- tag::carrier-party[] -->
 			<cac:CarrierParty>
 				<cac:PartyName>
