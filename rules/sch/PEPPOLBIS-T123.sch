@@ -29,7 +29,7 @@
 
     <include href="parts/common/empty-elements.sch"/>
     <include href="parts/common/rules.sch"/>
-    <include href="../../target/generated/T123-basic.sch"/>
+    <!--<include href="../../target/generated/T123-basic.sch"/>-->
     <include href="parts/PEPPOL-M-T123.sch"/>    
 
 </schema>

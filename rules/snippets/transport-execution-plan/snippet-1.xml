@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ubl:TransportExecutionPlan
-   xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
-   xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-   xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
+	xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1</cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1</cbc:ProfileID>
 	<!-- tag::document-id[] -->
@@ -14,6 +14,7 @@
 	<cbc:DocumentStatusCode>Confirmed</cbc:DocumentStatusCode>
 	<!-- tag::sender-party[] -->
 	<cac:SenderParty>
+		<cbc:EndpointID schemeID="0198">13246149</cbc:EndpointID>
 		<cac:PartyIdentification>
 			<cbc:ID schemeAgencyName="GS1" schemeName="GLN">4058673827641</cbc:ID>
 		</cac:PartyIdentification>
@@ -29,6 +30,7 @@
 	<!-- end::sender-party[] -->
 	<!-- tag::receiver-party[] -->
 	<cac:ReceiverParty>
+		<cbc:EndpointID schemeID="0198">13246149</cbc:EndpointID>
 		<cac:PartyIdentification>
 			<cbc:ID schemeAgencyName="GS1" schemeName="GLN">4058673827000</cbc:ID>
 		</cac:PartyIdentification>
@@ -44,35 +46,85 @@
 	<!-- end::receiver-party[] -->
 	<!-- tag::transport-user-party[] -->
 	<cac:TransportUserParty>
+		<cbc:EndpointID schemeID="0198">13246149</cbc:EndpointID>
 		<cac:PartyIdentification>
 			<cbc:ID schemeAgencyName="GS1" schemeName="GLN">4058673827000</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
-			<cbc:Name>Consignor</cbc:Name>
+			<cbc:Name>Novo Nordisk Pharmatech A/S</cbc:Name>
 		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Københavnsvej 216</cbc:StreetName>
+			<cbc:CityName>Køge</cbc:CityName>
+			<cbc:PostalZone>4600</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:PartyTaxScheme>
+			<cbc:CompanyID>GB325456788</cbc:CompanyID>
+			<cac:TaxScheme>
+				<cbc:ID>VAT</cbc:ID>
+			</cac:TaxScheme>
+		</cac:PartyTaxScheme>
+		<cac:PartyLegalEntity>
+			<cbc:RegistrationName>Consortial</cbc:RegistrationName>
+			<cbc:CompanyID schemeID="0089">SC234567</cbc:CompanyID>
+			<cac:RegistrationAddress>
+				<cbc:CityName>Farthing</cbc:CityName>
+				<cac:Country>
+					<cbc:IdentificationCode>GB</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:RegistrationAddress>
+		</cac:PartyLegalEntity>
 		<cac:Contact>
-			<cbc:Name>SomeName</cbc:Name>
-			<cbc:Telephone>+8687878763</cbc:Telephone>
-			<cbc:ElectronicMail>SomeName@consignor.cn</cbc:ElectronicMail>
+			<cbc:Name>Mr Transport user</cbc:Name>
+			<cbc:Telephone>0158 1233714</cbc:Telephone>
+			<cbc:ElectronicMail>transport-user@transportuser.dk</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:TransportUserParty>
 	<!-- end::transport-user-party[] -->
 	<!-- tag::transport-service-provider-party[] -->
 	<cac:TransportServiceProviderParty>
+		<cbc:EndpointID schemeID="0198">13246149</cbc:EndpointID>
 		<cac:PartyIdentification>
 			<cbc:ID schemeAgencyName="GS1" schemeName="GLN">4058673827641</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
-			<cbc:Name>NECOSS</cbc:Name>
+			<cbc:Name>Leman</cbc:Name>
 		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Ventrupvej 6</cbc:StreetName>
+			<cbc:CityName>Greve</cbc:CityName>
+			<cbc:PostalZone>2670</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:PartyTaxScheme>
+			<cbc:CompanyID>GB325456788</cbc:CompanyID>
+			<cac:TaxScheme>
+				<cbc:ID>VAT</cbc:ID>
+			</cac:TaxScheme>
+		</cac:PartyTaxScheme>
+		<cac:PartyLegalEntity>
+			<cbc:RegistrationName>Consortial</cbc:RegistrationName>
+			<cbc:CompanyID schemeID="0089">SC234567</cbc:CompanyID>
+			<cac:RegistrationAddress>
+				<cbc:CityName>Farthing</cbc:CityName>
+				<cac:Country>
+					<cbc:IdentificationCode>GB</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:RegistrationAddress>
+		</cac:PartyLegalEntity>
 		<cac:Contact>
-			<cbc:Name>SomeName</cbc:Name>
-			<cbc:Telephone>+49450557000</cbc:Telephone>
-			<cbc:ElectronicMail>SomeName@necoss.de</cbc:ElectronicMail>
+			<cbc:Name>Mr Transport provider</cbc:Name>
+			<cbc:Telephone>0158 1233714</cbc:Telephone>
+			<cbc:ElectronicMail>post@transportprovider.dk</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:TransportServiceProviderParty>
 	<!-- end::transport-service-provider-party[] -->
-	
+
 	<cac:Consignment>
 		<cbc:ID>CON_1</cbc:ID>
 		<cbc:GrossWeightMeasure unitCode="KGM">50000</cbc:GrossWeightMeasure>
@@ -122,6 +174,7 @@
 		</cac:PlannedDeliveryTransportEvent>
 		<!-- tag::consignee-party[] -->
 		<cac:ConsigneeParty>
+			<cbc:EndpointID schemeID="0198">13246149</cbc:EndpointID>
 			<cac:PartyIdentification>
 				<cbc:ID schemeAgencyName="GS1" schemeName="GLN">4058673827123</cbc:ID>
 			</cac:PartyIdentification>
@@ -137,7 +190,7 @@
 						<cbc:IdentificationCode>FI </cbc:IdentificationCode>
 					</cac:Country>
 				</cac:RegistrationAddress>
-			</cac:PartyLegalEntity>		
+			</cac:PartyLegalEntity>
 			<cac:Contact>
 				<cbc:Name>SomeName</cbc:Name>
 				<cbc:Telephone>+4987878763</cbc:Telephone>
@@ -147,6 +200,7 @@
 		<!-- end::consignee-party[] -->
 		<!-- tag::consignor-party[] -->
 		<cac:ConsignorParty>
+			<cbc:EndpointID schemeID="0198">13246149</cbc:EndpointID>
 			<cac:PartyIdentification>
 				<cbc:ID schemeAgencyName="GS1" schemeName="GLN">4058673827000</cbc:ID>
 			</cac:PartyIdentification>
@@ -311,83 +365,36 @@
 			<cac:TransportEquipment>
 				<cbc:ID>CON_TE_1</cbc:ID>
 				<cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-				<cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
-				<cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
 				<cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
 				<cbc:Description>SomeDescription</cbc:Description>
-				<cbc:GrossWeightMeasure unitCode="KGM">25000</cbc:GrossWeightMeasure>
-				<cbc:GrossVolumeMeasure unitCode="MTQ">39</cbc:GrossVolumeMeasure>
 				<cbc:PowerIndicator>false</cbc:PowerIndicator>
-				<cac:MeasurementDimension>
-					<cbc:AttributeID>Length</cbc:AttributeID>
-					<cbc:Measure unitCode="MTR">6.1</cbc:Measure>
-				</cac:MeasurementDimension>
-				<cac:MeasurementDimension>
-					<cbc:AttributeID>Height</cbc:AttributeID>
-					<cbc:Measure unitCode="MTR">2.6</cbc:Measure>
-				</cac:MeasurementDimension>
-				<cac:MeasurementDimension>
-					<cbc:AttributeID>Width</cbc:AttributeID>
-					<cbc:Measure unitCode="MTR">2.44</cbc:Measure>
-				</cac:MeasurementDimension>
-				<cac:Package>
-					<cbc:ID>CON_P_1</cbc:ID>
-					<cbc:Quantity>10</cbc:Quantity>
-					<cbc:PackagingTypeCode>PL</cbc:PackagingTypeCode>
-					<cac:GoodsItem>
-						<cac:Item>
-							<cac:CommodityClassification>
-								<cbc:CargoTypeCode>12</cbc:CargoTypeCode>
-							</cac:CommodityClassification>
-						</cac:Item>
-					</cac:GoodsItem>
-				</cac:Package>
 			</cac:TransportEquipment>
 			<!-- end::transport-equipment[] -->
+			<cac:MeasurementDimension>
+				<cbc:AttributeID>Length</cbc:AttributeID>
+				<cbc:Measure unitCode="MTR">6.1</cbc:Measure>
+			</cac:MeasurementDimension>
+			<cac:MeasurementDimension>
+				<cbc:AttributeID>Height</cbc:AttributeID>
+				<cbc:Measure unitCode="MTR">2.6</cbc:Measure>
+			</cac:MeasurementDimension>
+			<cac:MeasurementDimension>
+				<cbc:AttributeID>Width</cbc:AttributeID>
+				<cbc:Measure unitCode="MTR">2.44</cbc:Measure>
+			</cac:MeasurementDimension>
+			<cac:Package>
+				<cbc:ID>CON_P_1</cbc:ID>
+				<cbc:Quantity>10</cbc:Quantity>
+				<cbc:PackagingTypeCode>PL</cbc:PackagingTypeCode>
+				<cac:GoodsItem>
+					<cac:Item>
+						<cac:CommodityClassification>
+							<cbc:CargoTypeCode>12</cbc:CargoTypeCode>
+						</cac:CommodityClassification>
+					</cac:Item>
+				</cac:GoodsItem>
+			</cac:Package>
 		</cac:TransportHandlingUnit>
 		<!-- end::transport-handling-unit[] -->
-		<cac:TransportHandlingUnit>
-			<cbc:ID>CON_THU_2</cbc:ID>
-			<cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
-			<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-			<cbc:TotalGoodsItemQuantity>500</cbc:TotalGoodsItemQuantity>
-			<cbc:TotalPackageQuantity>10</cbc:TotalPackageQuantity>
-			<cbc:ShippingMarks>General Cargo</cbc:ShippingMarks>
-			<cac:TransportEquipment>
-				<cbc:ID>CON_TE_2</cbc:ID>
-				<cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>
-				<cbc:FullnessIndicationCode>1</cbc:FullnessIndicationCode>
-				<cbc:ReturnabilityIndicator>true</cbc:ReturnabilityIndicator>
-				<cbc:RefrigeratedIndicator>false</cbc:RefrigeratedIndicator>
-				<cbc:Description>SomeDescription</cbc:Description>
-				<cbc:GrossWeightMeasure unitCode="KGM">25000</cbc:GrossWeightMeasure>
-				<cbc:GrossVolumeMeasure unitCode="MTQ">39</cbc:GrossVolumeMeasure>
-				<cbc:PowerIndicator>false</cbc:PowerIndicator>
-				<cac:MeasurementDimension>
-					<cbc:AttributeID>Length</cbc:AttributeID>
-					<cbc:Measure unitCode="MTR">6.1</cbc:Measure>
-				</cac:MeasurementDimension>
-				<cac:MeasurementDimension>
-					<cbc:AttributeID>Height</cbc:AttributeID>
-					<cbc:Measure unitCode="MTR">2.6</cbc:Measure>
-				</cac:MeasurementDimension>
-				<cac:MeasurementDimension>
-					<cbc:AttributeID>Width</cbc:AttributeID>
-					<cbc:Measure unitCode="MTR">2.44</cbc:Measure>
-				</cac:MeasurementDimension>
-				<cac:Package>
-					<cbc:ID>CON_P_2</cbc:ID>
-					<cbc:Quantity>10</cbc:Quantity>
-					<cbc:PackagingTypeCode>PL</cbc:PackagingTypeCode>
-					<cac:GoodsItem>
-						<cac:Item>
-							<cac:CommodityClassification>
-								<cbc:CargoTypeCode>12</cbc:CargoTypeCode>
-							</cac:CommodityClassification>
-						</cac:Item>
-					</cac:GoodsItem>
-				</cac:Package>
-			</cac:TransportEquipment>
-		</cac:TransportHandlingUnit>
 	</cac:Consignment>
 </ubl:TransportExecutionPlan>
