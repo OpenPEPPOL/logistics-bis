@@ -8,30 +8,10 @@ The diagram below shows the parties and roles in this profile.
 
 image::images/roles.png[image,width=649,height=260]
 
-[[sender-party]]
-== Sender (SenderParty)
-The Sender is the sender of the transaction. Normally the Transport User is the sender of the Transport Execution Plan Request and the Transport Service Provider  is the sender of the Transport Execution Plan. But the Transport Execution Plan may also be sent by the Transport User  in case of a change or cancellation.
-
-Example:
-[source, xml, indent=0]
-----
-include::{snippet-dir}/snippet-1.xml[tags=sender-party]
-----
-
-[[receiver-party]]
-== Receiver (ReceiverParty)
-The Receiver is the receiver of the transaction. Normally the Transport Service Provider is the receiver of the Transport Execution Plan Request and the Transport User is the receiver of the Transport Execution Plan. But the Transport Execution Plan may also be received by the Transport Service Provider in case of a change or cancellation.
-
-Example:
-[source, xml, indent=0]
-----
-include::{snippet-dir}/snippet-1.xml[tags=receiver-party]
-----
-
 [[transport-user-party]]
 == Transport User (TransportUserParty)
 
-The Transport User is the user of the transport service, often the Consignor. The transport User is the default sender of the Transport Execution Plan Request and the default receiver of the Transport Execution Plan.
+The Transport User is the user of the transport service, often the Consignor. The transport User is the  sender of the Transport Execution Plan Request and the receiver of the Transport Execution Plan.
 
 Example:
 [source, xml, indent=0]
@@ -42,7 +22,7 @@ include::{snippet-dir}/snippet-1.xml[tags=transport-user-party]
 [[transport-service-provider-party]]
 == Transport Service Provider (TransportServiceProviderParty)
 
-The Transport Service Provider is the party providing the transport services. The Transport Service Provider is the default sender of the Transport Execution Plan and the default receiver of the Transport Executions Plan Request.
+The Transport Service Provider is the party providing the transport services. The Transport Service Provider is the sender of the Transport Execution Plan and the receiver of the Transport Executions Plan Request.
 
 Example:
 [source, xml, indent=0]
@@ -103,15 +83,4 @@ Example:
 [source, xml, indent=0]
 ----
 include::{snippet-dir}/snippet-1.xml[tags=carrier-party]
-----
-
-[[notify-party]]
-== Notify (NotifyParty)
-
-The Notify party is an external party that needs to be notified regarding the transport of the Waybill. This can be an agent responsible for the insurance of the goods or a public authority if the consignment contains hazardous goods. For the Notifier and Contact party, the contact element is mandatory.
-
-Example:
-[source, xml, indent=0]
-----
-include::{snippet-dir}/snippet-1.xml[tags=notify-party]
 ----
