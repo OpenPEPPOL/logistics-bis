@@ -6,16 +6,11 @@
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan_request:1</cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan Request. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1".?>
 	</cbc:ProfileID>
-	<cbc:ID>141278571829041241241</cbc:ID>
-	<cbc:VersionID>1
-		<?Name Version Identification ?>
-		<?Description The version of this document?>
-		<?Cardinality 0..1?>
-	</cbc:VersionID>
+	<cbc:ID>141278571829041241241</cbc:ID>	
 	<cbc:IssueDate>2021-09-29<?Description The date when the transport execuition plan request is issued. Format = "YYYY-MM-DD". ?>
 	</cbc:IssueDate>
 	<cbc:IssueTime>09:49:00<?Description The time when the transport execuition plan request is issued. Format = "hh:mm:ss". ?>
-		<?Cardinality 0..1?>
+		<?Cardinality 1..1?>
 	</cbc:IssueTime>
 	<cbc:DocumentStatusCode>9
 		<?Name Transport execuition plan request status code ?>
@@ -200,12 +195,13 @@
 			<?schemeID-CodeList eas?>
 		</cbc:EndpointID>
 		<cac:PartyIdentification>
-			<?Name Transport service provider party identification ?>
+			<?Name Transport service provider party identification ?>			
 			<?Description An identifier for the transport service provider party. ?>
+			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">7300010000001 				
 			<?schemeID-CodeList ICD?>
 			<?schemeID-usage Optional?>
-			<?Cardinality 0..1?>
+			<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
@@ -223,6 +219,7 @@
 			<cbc:StreetName>Ventrupvej 6
 				<?Name Address line 1 ?>
 				<?Description The main address line in a postal address usually the street name and number. ?>
+				<?Cardinality 0..1?>
 			</cbc:StreetName>
 			<cbc:AdditionalStreetName>way 1
 				<?Name Address line 2 ?>
@@ -583,7 +580,8 @@
 			<?Name Consignor reference ?>
 			<?Description ID or reference used by the consignor to identify this consignment.?>
 			<?Cardinality 0..1?>			
-		</cbc:ConsignorAssignedID>
+		</cbc:ConsignorAssignedID>		
+		
 		<cbc:GrossWeightMeasure unitCode="KGM">1030
 			<?Name Consignment gross weight ?> 
 			<?Description The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified?>
@@ -609,6 +607,14 @@
 			<?Description The total number of transport handling units for this consignment.?>
 			<?Cardinality 0..1?>
 		</cbc:TotalTransportHandlingUnitQuantity>
+		<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
+			<?Name Declared statistics value amount ?>
+			<?Description The value, declared for statistical purposes, of those goods in this consignment that have the same statistical heading. ?>
+			<?Cardinality 0..1?>
+			<?currencyID-Name Currency identifier ?>
+			<?currencyID-Description Currency identifier.?>
+			<?currencyID-CodeList ISO4217?>
+		</cbc:DeclaredStatisticsValueAmount>
 		<cac:RequestedPickupTransportEvent>
 			<?Name Requested pickup transport event ?>
 			<?Description The pickup of this consignment requested by the party requesting a transportation service (the transport user). Mandatory if the Requested delivery transport event is not specified.?>
@@ -678,7 +684,7 @@
 						<?Cardinality 0..1?>
 						<cbc:IdentificationCode>DK
 							<?Name Country code ?>
-							<?Cardinality 0..1?>
+							<?Cardinality 1..1?>
 							<?CodeList ISO3166?>
 							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 						</cbc:IdentificationCode>
@@ -728,7 +734,7 @@
 				<?Cardinality 1..1?>
 				<cbc:StartDate>2021-09-29<?Name Period start date?>
 					<?Description The start date for the pickup event.?>
-					<?Cardinality 1..1?>
+					<?Cardinality 0..1?>
 				</cbc:StartDate>
 				<cbc:StartTime>08:00:00+01:00<?Name Period start time?>
 					<?Description The start time for the pickup event.?>
@@ -813,7 +819,7 @@
 						<?Cardinality 0..1?>
 						<cbc:IdentificationCode>DK
 							<?Name Country code ?>
-							<?Cardinality 0..1?>
+							<?Cardinality 1..1?>
 							<?CodeList ISO3166?>
 							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 						</cbc:IdentificationCode>
@@ -863,7 +869,7 @@
 				<?Cardinality 1..1?>
 				<cbc:StartDate>2021-09-29<?Name Period start date?>
 					<?Description The start date for the delivery event.?>
-					<?Cardinality 1..1?>
+					<?Cardinality 0..1?>
 				</cbc:StartDate>
 				<cbc:StartTime>10:00:00+01:00<?Name Period start time?>
 					<?Description The start time for the delivery event.?>
@@ -883,6 +889,16 @@
 			<?Name Consignee party ?>
 			<?Description The party responsible for receiveing the goods. ?>
 			<?Cardinality 1..1?>
+			<cac:PartyIdentification>
+			<?Name Consignee party identification ?>
+			<?Description An identifier for the consignee party. ?>
+			<?Cardinality 0..1?>
+				<cbc:ID schemeID="0088">7300010000001 				
+					<?schemeID-CodeList ICD?>
+					<?schemeID-usage Optional?>
+					<?Cardinality 1..1?>
+				</cbc:ID>
+			</cac:PartyIdentification>
 			<cac:PartyName>
 				<?Name Party name ?>
 				<?Cardinality 0..1?>
@@ -983,6 +999,16 @@
 			<?Name Consignor Party ?>
 			<?Description The party responsible for sending the goods. ?>
 			<?Cardinality 1..1?>
+			<cac:PartyIdentification>
+			<?Name Consignor party identification ?>
+			<?Description An identifier for the consignor party. ?>
+			<?Cardinality 0..1?>
+				<cbc:ID schemeID="0088">7300010000001 				
+					<?schemeID-CodeList ICD?>
+					<?schemeID-usage Optional?>
+					<?Cardinality 1..1?>
+				</cbc:ID>
+			</cac:PartyIdentification>
 			<cac:PartyName>
 				<?Name Party name ?>
 				<?Cardinality 0..1?>
@@ -1023,7 +1049,7 @@
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
 				<?Name Party legal entity ?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:RegistrationName>Novo Nordisk Pharmatech A/S
 					<?Name Consignor party name ?>
 					<?Description The name of the consignor party.?>
@@ -1147,7 +1173,7 @@
 			<cbc:TransportModeCode>4
 				<?Name Transport mode code?>
 				<?Description A code signifying the method of transport used for this shipment stage. ?>
-				<?Cardinality 0..1?>
+				<?Cardinality 1..1?>
 				<?CodeList UNECERec19?>
 			</cbc:TransportModeCode>
 			<cbc:HazardousRiskIndicator>false
@@ -1159,6 +1185,16 @@
 				<?Name Carrier party ?>
 				<?Description The carrier party responsible for this shipment stage. ?>
 				<?Cardinality 0..1?>
+				<cac:PartyIdentification>
+				<?Name Carrier identification ?>
+				<?Description An identifier for the carrier party. ?>
+				<?Cardinality 0..1?>
+				<cbc:ID schemeID="0088">7300010000001 				
+					<?schemeID-CodeList ICD?>
+					<?schemeID-usage Optional?>
+					<?Cardinality 1..1?>
+				</cbc:ID>
+			</cac:PartyIdentification>
 				<cac:PartyName>
 					<?Name Party name ?>
 					<?Cardinality 0..1?>
@@ -1252,6 +1288,7 @@
 					<cbc:ID schemeID="0088">5790000435951
 						<?Name Identity of the delivery location  ?>
 						<?Description Identifies the delivery location with e.g. UN Loco code ?>
+						<?Cardinality 0..1?>
 						<?schemeID-Name Scheme identifier?>
 						<?schemeID-usage Optional?>
 						<?schemeID-CodeList ICD?>
@@ -1304,7 +1341,7 @@
 							<?Cardinality 0..1?>
 							<cbc:IdentificationCode>GB
 								<?Name Country code ?>
-								<?Cardinality 0..1?>
+								<?Cardinality 1..1?>
 								<?CodeList ISO3166?>
 								<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 							</cbc:IdentificationCode>
@@ -1350,11 +1387,11 @@
 				</cac:Location>
 				<cac:Period>
 					<?Name Period ?>
-					<?Description The period within the departure of this shipment stage takes place. ?>
+					<?Description The period within the departure of this transport event takes place. ?>
 					<?Cardinality 1..1?>
 					<cbc:StartDate>2021-09-29<?Name Period start date?>
 						<?Description The start date for the period. ?>
-						<?Cardinality 1..1?>
+						<?Cardinality 0..1?>
 					</cbc:StartDate>
 					<cbc:StartTime>15:00:00+01:00<?Name Period start time?>
 						<?Description The start time for the period. ?>
@@ -1377,6 +1414,7 @@
 				<cbc:IdentificationID>54354684732168476514
 					<?Name Identifier arrival transport event ?>
 					<?Description An identifier for this arrival transport event within an agreed event identification scheme. ?>
+					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
 				<cac:Location>
 					<?Name Arrival location ?>
@@ -1384,6 +1422,7 @@
 					<cbc:ID schemeID="0088">5790000435951
 						<?Name Identity of the delivery location ?>
 						<?Description Identifies the delivery location. ?>
+						<?Cardinality 0..1?>
 						<?schemeID-Name Scheme identifier?>
 						<?schemeID-usage Optional?>
 						<?schemeID-CodeList ICD?>
@@ -1401,26 +1440,51 @@
 						<cbc:StreetName>Turbiinitie 4
 							<?Name Address line 1 ?>
 							<?Description The main address line in a postal address usually the street name and number. ?>
+							<?Cardinality 0..1?>
 						</cbc:StreetName>
 						<cbc:CityName>Vantaa
 							<?Name City ?>
 							<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+							<?Cardinality 0..1?>
 						</cbc:CityName>
 						<cbc:PostalZone>01530
 							<?Name Post code ?>
 							<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+							<?Cardinality 0..1?>
 						</cbc:PostalZone>
 						<cac:Country>
 							<?Name Country ?>
+							<?Cardinality 0..1?>
 							<cbc:IdentificationCode>FI
 								<?Name Country code ?>
-								<?Cardinality 0..1?>
+								<?Cardinality 1..1?>
 								<?CodeList ISO3166?>
 								<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 							</cbc:IdentificationCode>
 						</cac:Country>
 					</cac:Address>
 				</cac:Location>
+				<cac:Period>
+					<?Name Period ?>
+					<?Description The period within the departure of this transport event takes place. ?>
+					<?Cardinality 1..1?>
+					<cbc:StartDate>2021-09-29<?Name Period start date?>
+						<?Description The start date for the period. ?>
+						<?Cardinality 0..1?>
+					</cbc:StartDate>
+					<cbc:StartTime>15:00:00+01:00<?Name Period start time?>
+						<?Description The start time for the period. ?>
+						<?Cardinality 0..1?>
+					</cbc:StartTime>
+					<cbc:EndDate>2021-09-29<?Name Period end date?>
+						<?Description The end date for the period. ?>
+						<?Cardinality 0..1?>
+					</cbc:EndDate>
+					<cbc:EndTime>16:50:00+01:00<?Name Period end time?>
+						<?Description The end time for the period. ?>
+						<?Cardinality 0..1?>
+					</cbc:EndTime>
+				</cac:Period>
 			</cac:RequestedArrivalTransportEvent>
 		</cac:MainCarriageShipmentStage>
 		<cac:TransportHandlingUnit>
@@ -1557,7 +1621,7 @@
 				<cbc:ID>10
 					<?Name Identifiser goods item ?>
 					<?Description An identifier for this goods item. ?>
-					<?Cardinality 1..1?>
+					<?Cardinality 0..1?>
 				</cbc:ID>
 				<cbc:Desciption>Torsk sl u/h fersk fulliset 20kg iso 2-4 kg
 					<?Name Description ?>
@@ -1568,19 +1632,11 @@
 					<?Name Hazardous risk indicator ?>
 					<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 					<?Cardinality 0..1?>
-				</cbc:HazardousRiskIndicator>
-				<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
-					<?Name Declared statistics value amount ?>
-					<?Description The total declared value for customs purposes of the goods item. ?>
-					<?Cardinality 0..1?>
-					<?currencyID-Name Currency identifier ?>
-					<?currencyID-Description Currency identifier.?>
-					<?currencyID-CodeList ISO4217?>
-				</cbc:DeclaredStatisticsValueAmount>
+				</cbc:HazardousRiskIndicator>				
 				<cbc:Quantity unitCode="EA">6
 					<?Name Quantity ?>
 					<?Description The number of units making up this goods item. ?>
-					<?Cardinality 1..1?>
+					<?Cardinality 0..1?>
 					<?unitCode-Name Quantity unit of measure ?>
 					<?unitCode-Description The unit of measure that applies to the quantity.?>
 				</cbc:Quantity>
@@ -1622,7 +1678,10 @@
 							<?Cardinality 1..1?>
 						</cbc:ItemClassificationCode>
 					</cac:CommodityClassification>
-					<cac:HazardousItem>						
+					<cac:HazardousItem>	
+						<?Name Hazardous Item ?>
+						<?Description Description of hazardous item. ?>
+						<?Cardinality 0..1?>
 						<cbc:UNDGCode>ADR
 							<?Name UNDGCode ?>
 							<?Description The UN code for this kind of hazardous item. ?>
