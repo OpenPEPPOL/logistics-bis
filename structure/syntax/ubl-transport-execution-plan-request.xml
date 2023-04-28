@@ -37,13 +37,7 @@
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir16-003</Reference>
          <Value type="EXAMPLE">141278571829041241241</Value>
-      </Element>
-	     <Element cardinality="0..1">
-         <Term>cbc:VersionID</Term>
-         <Name>Version Identification </Name>
-         <Description>The version of this document</Description>
-         <Value type="EXAMPLE">1</Value>
-      </Element>
+      </Element>	
 	     <Element>
          <Term>cbc:IssueDate</Term>
          <Name>Dispatch advice issue date</Name>
@@ -52,7 +46,7 @@
          <Reference type="BUSINESS_TERM">tir16-004</Reference>
          <Value type="EXAMPLE">2021-09-29</Value>
       </Element>
-	     <Element cardinality="0..1">
+	     <Element cardinality="1..1">
          <Term>cbc:IssueTime</Term>
          <Name>Dispatch advice issue time</Name>
          <Description>The time when the transport execuition plan request is issued. Format = "hh:mm:ss". </Description>
@@ -277,11 +271,11 @@
                <Value type="EXAMPLE">0198</Value>
             </Attribute>
          </Element>
-         <Element>
+         <Element cardinality="0..1">
             <Term>cac:PartyIdentification</Term>
             <Name>Transport service provider party identification </Name>
             <Description>An identifier for the transport service provider party. </Description>
-            <Element cardinality="0..1">
+            <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Optional">
@@ -305,7 +299,7 @@
             <Term>cac:PostalAddress</Term>
             <Name>Postal address </Name>
             <Description>The postal address for the transport service provider party. </Description>
-            <Element>
+            <Element cardinality="0..1">
                <Term>cbc:StreetName</Term>
                <Name>Address line 1 </Name>
                <Description>The main address line in a postal address usually the street name and number. </Description>
@@ -786,6 +780,19 @@
             </Attribute>
          </Element>
          <Element cardinality="0..1">
+            <Term>cbc:DeclaredStatisticsValueAmount</Term>
+            <Name>Declared statistics value amount </Name>
+            <Description>The value, declared for statistical purposes, of those goods in this consignment that have the same statistical heading. </Description>
+            <Value type="EXAMPLE">23044.78</Value>
+            <Attribute>
+               <Term>currencyID</Term>
+               <Name>Currency identifier </Name>
+               <Description>Currency identifier.</Description>
+               <Reference type="CODE_LIST">ISO4217</Reference>
+               <Value type="EXAMPLE">EUR</Value>
+            </Attribute>
+         </Element>
+         <Element cardinality="0..1">
             <Term>cac:RequestedPickupTransportEvent</Term>
             <Name>Requested pickup transport event </Name>
             <Description>The pickup of this consignment requested by the party requesting a transportation service (the transport user). Mandatory if the Requested delivery transport event is not specified.</Description>
@@ -864,7 +871,7 @@
                   <Element cardinality="0..1">
                      <Term>cac:Country</Term>
                      <Name>Country </Name>
-                     <Element cardinality="0..1">
+                     <Element cardinality="1..1">
                         <Term>cbc:IdentificationCode</Term>
                         <Name>Country code </Name>
                         <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
@@ -928,7 +935,7 @@
                <Term>cac:Period</Term>
                <Name>Period </Name>
                <Description>The period within the pickup event takes place.</Description>
-               <Element cardinality="1..1">
+               <Element cardinality="0..1">
                   <Term>cbc:StartDate</Term>
                   <Name>Period start date</Name>
                   <Description>The start date for the pickup event.</Description>
@@ -1033,7 +1040,7 @@
                   <Element cardinality="0..1">
                      <Term>cac:Country</Term>
                      <Name>Country </Name>
-                     <Element cardinality="0..1">
+                     <Element cardinality="1..1">
                         <Term>cbc:IdentificationCode</Term>
                         <Name>Country code </Name>
                         <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
@@ -1097,7 +1104,7 @@
                <Term>cac:Period</Term>
                <Name>Period </Name>
                <Description>The period within the delivery event takes place.</Description>
-               <Element cardinality="1..1">
+               <Element cardinality="0..1">
                   <Term>cbc:StartDate</Term>
                   <Name>Period start date</Name>
                   <Description>The start date for the delivery event.</Description>
@@ -1127,6 +1134,20 @@
             <Term>cac:ConsigneeParty</Term>
             <Name>Consignee party </Name>
             <Description>The party responsible for receiveing the goods. </Description>
+            <Element cardinality="0..1">
+               <Term>cac:PartyIdentification</Term>
+               <Name>Consignee party identification </Name>
+               <Description>An identifier for the consignee party. </Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">7300010000001</Value>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Reference type="CODE_LIST">ICD</Reference>
+                     <Value type="EXAMPLE">0088</Value>
+                  </Attribute>
+               </Element>
+            </Element>
             <Element cardinality="0..1">
                <Term>cac:PartyName</Term>
                <Name>Party name </Name>
@@ -1245,6 +1266,20 @@
             <Name>Consignor Party </Name>
             <Description>The party responsible for sending the goods. </Description>
             <Element cardinality="0..1">
+               <Term>cac:PartyIdentification</Term>
+               <Name>Consignor party identification </Name>
+               <Description>An identifier for the consignor party. </Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">7300010000001</Value>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Reference type="CODE_LIST">ICD</Reference>
+                     <Value type="EXAMPLE">0088</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
                <Term>cac:PartyName</Term>
                <Name>Party name </Name>
                <Element>
@@ -1288,7 +1323,7 @@
                   </Element>
                </Element>
             </Element>
-            <Element cardinality="1..1">
+            <Element cardinality="0..1">
                <Term>cac:PartyLegalEntity</Term>
                <Name>Party legal entity </Name>
                <Element cardinality="1..1">
@@ -1432,7 +1467,7 @@
             <Term>cac:MainCarriageShipmentStage</Term>
             <Name>Main carriage shipment stage </Name>
             <Description>The shipment stage during main carriage. </Description>
-            <Element cardinality="0..1">
+            <Element cardinality="1..1">
                <Term>cbc:TransportModeCode</Term>
                <Name>Transport mode code</Name>
                <Description>A code signifying the method of transport used for this shipment stage. </Description>
@@ -1449,6 +1484,20 @@
                <Term>cac:CarrierParty</Term>
                <Name>Carrier party </Name>
                <Description>The carrier party responsible for this shipment stage. </Description>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyIdentification</Term>
+                  <Name>Carrier identification </Name>
+                  <Description>An identifier for the carrier party. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">7300010000001</Value>
+                     <Attribute usage="Optional">
+                        <Term>schemeID</Term>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0088</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
                <Element cardinality="0..1">
                   <Term>cac:PartyName</Term>
                   <Name>Party name </Name>
@@ -1553,7 +1602,7 @@
                   <Term>cac:Location</Term>
                   <Name>Shipment departure location </Name>
                   <Description>The location where the departure of this shipment stage takes place. </Description>
-                  <Element>
+                  <Element cardinality="0..1">
                      <Term>cbc:ID</Term>
                      <Name>Identity of the delivery location  </Name>
                      <Description>Identifies the delivery location with e.g. UN Loco code </Description>
@@ -1618,7 +1667,7 @@
                      <Element cardinality="0..1">
                         <Term>cac:Country</Term>
                         <Name>Country </Name>
-                        <Element cardinality="0..1">
+                        <Element cardinality="1..1">
                            <Term>cbc:IdentificationCode</Term>
                            <Name>Country code </Name>
                            <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
@@ -1681,8 +1730,8 @@
                <Element cardinality="1..1">
                   <Term>cac:Period</Term>
                   <Name>Period </Name>
-                  <Description>The period within the departure of this shipment stage takes place. </Description>
-                  <Element cardinality="1..1">
+                  <Description>The period within the departure of this transport event takes place. </Description>
+                  <Element cardinality="0..1">
                      <Term>cbc:StartDate</Term>
                      <Name>Period start date</Name>
                      <Description>The start date for the period. </Description>
@@ -1712,7 +1761,7 @@
                <Term>cac:RequestedArrivalTransportEvent</Term>
                <Name>Estimated arrival transport event </Name>
                <Description>The arrival requested by the party requesting a transportation service. </Description>
-               <Element>
+               <Element cardinality="0..1">
                   <Term>cbc:IdentificationID</Term>
                   <Name>Identifier arrival transport event </Name>
                   <Description>An identifier for this arrival transport event within an agreed event identification scheme. </Description>
@@ -1722,7 +1771,7 @@
                   <Term>cac:Location</Term>
                   <Name>Arrival location </Name>
                   <Description>The location where the arrival takes place.</Description>
-                  <Element>
+                  <Element cardinality="0..1">
                      <Term>cbc:ID</Term>
                      <Name>Identity of the delivery location </Name>
                      <Description>Identifies the delivery location. </Description>
@@ -1744,28 +1793,28 @@
                      <Term>cac:Address</Term>
                      <Name>Address of the arrival location </Name>
                      <Description>The address of the arrival location.</Description>
-                     <Element>
+                     <Element cardinality="0..1">
                         <Term>cbc:StreetName</Term>
                         <Name>Address line 1 </Name>
                         <Description>The main address line in a postal address usually the street name and number. </Description>
                         <Value type="EXAMPLE">Turbiinitie 4</Value>
                      </Element>
-                     <Element>
+                     <Element cardinality="0..1">
                         <Term>cbc:CityName</Term>
                         <Name>City </Name>
                         <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
                         <Value type="EXAMPLE">Vantaa</Value>
                      </Element>
-                     <Element>
+                     <Element cardinality="0..1">
                         <Term>cbc:PostalZone</Term>
                         <Name>Post code </Name>
                         <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
                         <Value type="EXAMPLE">01530</Value>
                      </Element>
-                     <Element>
+                     <Element cardinality="0..1">
                         <Term>cac:Country</Term>
                         <Name>Country </Name>
-                        <Element cardinality="0..1">
+                        <Element cardinality="1..1">
                            <Term>cbc:IdentificationCode</Term>
                            <Name>Country code </Name>
                            <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
@@ -1773,6 +1822,35 @@
                            <Value type="EXAMPLE">FI</Value>
                         </Element>
                      </Element>
+                  </Element>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cac:Period</Term>
+                  <Name>Period </Name>
+                  <Description>The period within the departure of this transport event takes place. </Description>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StartDate</Term>
+                     <Name>Period start date</Name>
+                     <Description>The start date for the period. </Description>
+                     <Value type="EXAMPLE">2021-09-29</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StartTime</Term>
+                     <Name>Period start time</Name>
+                     <Description>The start time for the period. </Description>
+                     <Value type="EXAMPLE">15:00:00+01:00</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:EndDate</Term>
+                     <Name>Period end date</Name>
+                     <Description>The end date for the period. </Description>
+                     <Value type="EXAMPLE">2021-09-29</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:EndTime</Term>
+                     <Name>Period end time</Name>
+                     <Description>The end time for the period. </Description>
+                     <Value type="EXAMPLE">16:50:00+01:00</Value>
                   </Element>
                </Element>
             </Element>
@@ -1935,7 +2013,7 @@
                <Term>cac:GoodsItem</Term>
                <Name>Goods item </Name>
                <Description>A Goods item contained in the transport handling unit.</Description>
-               <Element cardinality="1..1">
+               <Element cardinality="0..1">
                   <Term>cbc:ID</Term>
                   <Name>Identifiser goods item </Name>
                   <Description>An identifier for this goods item. </Description>
@@ -1954,19 +2032,6 @@
                   <Value type="EXAMPLE">false</Value>
                </Element>
                <Element cardinality="0..1">
-                  <Term>cbc:DeclaredStatisticsValueAmount</Term>
-                  <Name>Declared statistics value amount </Name>
-                  <Description>The total declared value for customs purposes of the goods item. </Description>
-                  <Value type="EXAMPLE">23044.78</Value>
-                  <Attribute>
-                     <Term>currencyID</Term>
-                     <Name>Currency identifier </Name>
-                     <Description>Currency identifier.</Description>
-                     <Reference type="CODE_LIST">ISO4217</Reference>
-                     <Value type="EXAMPLE">EUR</Value>
-                  </Attribute>
-               </Element>
-               <Element cardinality="1..1">
                   <Term>cbc:Quantity</Term>
                   <Name>Quantity </Name>
                   <Description>The number of units making up this goods item. </Description>
@@ -2034,8 +2099,10 @@
                         </Attribute>
                      </Element>
                   </Element>
-                  <Element>
+                  <Element cardinality="0..1">
                      <Term>cac:HazardousItem</Term>
+                     <Name>Hazardous Item </Name>
+                     <Description>Description of hazardous item. </Description>
                      <Element cardinality="0..1">
                         <Term>cbc:UNDGCode</Term>
                         <Name>UNDGCode </Name>

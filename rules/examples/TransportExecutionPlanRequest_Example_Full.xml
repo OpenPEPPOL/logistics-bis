@@ -5,8 +5,6 @@
    <cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan_request:1</cbc:CustomizationID>
    <cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1</cbc:ProfileID>
    <cbc:ID>141278571829041241241</cbc:ID>
-   <cbc:VersionID>1
-		</cbc:VersionID>
    <cbc:IssueDate>2021-09-29</cbc:IssueDate>
    <cbc:IssueTime>09:49:00</cbc:IssueTime>
    <cbc:DocumentStatusCode>9
@@ -223,6 +221,8 @@
 			</cbc:HazardousRiskIndicator>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1
 			</cbc:TotalTransportHandlingUnitQuantity>
+      <cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
+			</cbc:DeclaredStatisticsValueAmount>
       <cac:RequestedPickupTransportEvent>
          <cbc:IdentificationID>21412312412
 				</cbc:IdentificationID>
@@ -316,6 +316,10 @@
          </cac:Period>
       </cac:RequestedDeliveryTransportEvent>
       <cac:ConsigneeParty>
+         <cac:PartyIdentification>
+            <cbc:ID schemeID="0088">7300010000001 				
+					</cbc:ID>
+         </cac:PartyIdentification>
          <cac:PartyName>
             <cbc:Name>HUS Hospital
 					</cbc:Name>
@@ -356,6 +360,10 @@
          </cac:Contact>
       </cac:ConsigneeParty>
       <cac:ConsignorParty>
+         <cac:PartyIdentification>
+            <cbc:ID schemeID="0088">7300010000001 				
+					</cbc:ID>
+         </cac:PartyIdentification>
          <cac:PartyName>
             <cbc:Name>Novo Nordisk Pharmatech A/S
 					</cbc:Name>
@@ -423,6 +431,10 @@
          <cbc:HazardousRiskIndicator>false
 				</cbc:HazardousRiskIndicator>
          <cac:CarrierParty>
+            <cac:PartyIdentification>
+               <cbc:ID schemeID="0088">7300010000001 				
+					</cbc:ID>
+            </cac:PartyIdentification>
             <cac:PartyName>
                <cbc:Name>Finnair Oyj
 						</cbc:Name>
@@ -521,6 +533,12 @@
                   </cac:Country>
                </cac:Address>
             </cac:Location>
+            <cac:Period>
+               <cbc:StartDate>2021-09-29</cbc:StartDate>
+               <cbc:StartTime>15:00:00+01:00</cbc:StartTime>
+               <cbc:EndDate>2021-09-29</cbc:EndDate>
+               <cbc:EndTime>16:50:00+01:00</cbc:EndTime>
+            </cac:Period>
          </cac:RequestedArrivalTransportEvent>
       </cac:MainCarriageShipmentStage>
       <cac:TransportHandlingUnit>
@@ -575,8 +593,6 @@
 					</cbc:Desciption>
             <cbc:HazardousRiskIndicator>false
 					</cbc:HazardousRiskIndicator>
-            <cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
-					</cbc:DeclaredStatisticsValueAmount>
             <cbc:Quantity unitCode="EA">6
 					</cbc:Quantity>
             <cbc:TraceID schemeID="sgtin">345699634527
