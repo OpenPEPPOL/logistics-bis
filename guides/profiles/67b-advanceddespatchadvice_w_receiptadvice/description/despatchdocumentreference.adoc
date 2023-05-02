@@ -5,14 +5,16 @@ This is the reference to the received Advanced Despatch Advice, and here the sta
 The reference must always be provided when the Receipt Advice is a response to a digital Despatch Advice or any other Despatch document like a paper Despatch note or Excel Timesheet.
 With the Status code the sender reports the status for when the Advanced Despatch Advice was receievd and processed. Following values can be used:
 
-== Received, not yet validated ("AB")
+* AB = Received, not yet validated 
 This status confirms that the Advanced Despatch Advice has been receied ok, but the content is not yet validated.
 
-== Accepted after validation ("AP")
+* AP = Accepted after validation 
 With this code the receiver confirms that the Advanced Despatch Advice contains valid information, but the correctness of the Consignment is not yet validated.
 
-== Rejected after validation ("RE")
+* RE = Rejected after validation 
 With this code the receiver informs the supplier that there are formal errors in the Advanced Despatch Advice that need to be corrected and the a new Advanced Despatch Advice sent. This version of it can not be used.
+
+At line level there is also a reference to the Despatch Advice Line number.
 
 Example:
 [source, xml, indent=0]
