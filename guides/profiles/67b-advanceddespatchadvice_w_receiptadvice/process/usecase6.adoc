@@ -1,0 +1,55 @@
+[[use-case-6-reception-claims-at-shipment-level]]
+== Use case 6 – Goods/service has arrived too late, but been received.
+
+This use case is based on the recommendation that a receipt of goods or service should be confirmed by a Receipt Advice.
+[cols="1,5",options="header",]
+|====
+|*Use Case number* |6
+|*Use Case Name* |Goods/service has been received too late.
+|*Use Case Description* a|
+This is the confirmation that the goods/service has arrived too late, but been received at a higher cost for the Consignee.
+
+The Receipt Advice enables the goods receiver to inform the supplier that the goods/service arrived late, but was received by the Consignee anyway by asking personel to work overtime, creating a higher cost for the Consignee. 
+A claim process for this will be started.
+(At a later stage, when the Transport Handling Units are opened and the content is checked, an updated Receipt Advice may be sent.) 
+This enables the Supplier to issue the corresponding invoice and be ready for the claim process to start.
+
+|*Parties involved* a|
+Buyer (In UBL: BuyerCustomerParty) 
+
+Seller (In UBL: SellerSupplierParty)
+
+Despatch party (In UBL: DespatchSupplierParty) (Same legal entity as the Seller in this use case)
+
+Consignee party (In UBL: DeliveryCustomerParty) (Same legal entity as the Buyer in this use case).
+
+|*Pre conditions* a|
+Advanced Despatch Advice is sent from Consignor to Consignee. Receipt Advice is sent from Consignee to Consignor.
+
+|*Post conditions* a|
+Receipt advice is received by the sender of the goods.
+
+|*Assumptions* a| 
+. The Consignor and Consignee has agreed to use the Receipt Advice to confirm that the goods/service has been received.
+. Earlier a Receipt Advice may have been exchanged to confirm the reception of the Advanced Despatch Advice. 
+. Later new Receipt Advices can be exchanged if shortages or other problems are found at a later stage.
+
+|*The flow* a|
+. The Advanced Despatch Advice is received by the Consignee.
+. A Receipt Advice may be sent by the Consignee to confirm/reject the Advanced Despatch Advice.
+. The goods/service is received.
+. A Receipt Advice is created and sent by the Consignee party.
+. The Consignor party receives the Receipt advice message.
+. The Consignor party uses the content in the Advanced Despatch Advice and Receipt Advice messages to start the invoicing process.
+. The Consignor party will also be ready for the start of the claim process.
+. The Consignee will wait for a the invoice to arrive and besides that also start the claim process.
+
+|*Result* a|
+. The Receipt advice message helped the Consignee party to inform the supplier that the goods/service was received late at a higher cost and that there will be a claim process for that.
+
+. The Receipt advice message helped the Consignor party know when to start the invoicing process, and to expect a claim from the Consignee party.
+
+
+|*XML example file* a|
+See {examples-zip} for a sample file illustrating Use Case 6.
+|====
