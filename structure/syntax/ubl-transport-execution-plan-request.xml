@@ -1432,6 +1432,29 @@
                <Description>Special delivery terms that exceeds the inco terms. </Description>
                <Value type="EXAMPLE">DAP</Value>
             </Element>
+            <Element cardinality="1..1">
+               <Term>cac:Location</Term>
+               <Name>Location of attchaed to the delivery terms </Name>
+               <Description>The location where the pickup takes place.</Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:ID</Term>
+                  <Name>Identity of the  location </Name>
+                  <Description>Identifies the location. </Description>
+                  <Value type="EXAMPLE">5790000435951</Value>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Name>Scheme identifier</Name>
+                     <Reference type="CODE_LIST">ICD</Reference>
+                     <Value type="EXAMPLE">0088</Value>
+                  </Attribute>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:Name</Term>
+                  <Name>Name of the location </Name>
+                  <Description>The name of the location.</Description>
+                  <Value type="EXAMPLE">CPH</Value>
+               </Element>
+            </Element>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:PaymentTerms</Term>
