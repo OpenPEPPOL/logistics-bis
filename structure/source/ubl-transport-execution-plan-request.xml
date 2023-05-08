@@ -597,15 +597,7 @@
 			<?Name Total number of transport handling units ?>
 			<?Description The total number of transport handling units for this consignment.?>
 			<?Cardinality 0..1?>
-		</cbc:TotalTransportHandlingUnitQuantity>
-		<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
-			<?Name Declared statistics value amount ?>
-			<?Description The value, declared for statistical purposes, of those goods in this consignment that have the same statistical heading. ?>
-			<?Cardinality 0..1?>
-			<?currencyID-Name Currency identifier ?>
-			<?currencyID-Description Currency identifier.?>
-			<?currencyID-CodeList ISO4217?>
-		</cbc:DeclaredStatisticsValueAmount>
+		</cbc:TotalTransportHandlingUnitQuantity>		
 		<cac:RequestedPickupTransportEvent>
 			<?Name Requested pickup transport event ?>
 			<?Description The pickup of this consignment requested by the party requesting a transportation service (the transport user). Mandatory if the Requested delivery transport event is not specified.?>
@@ -1175,6 +1167,28 @@
 				<?currencyID-CodeList ISO4217?>
 			</cbc:Amount>
 		</cac:PaymentTerms>
+		<cac:FreightAllowanceCharge>
+			<?Name Freight Allowance Charge ?>
+			<?Description A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage for this consignment. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.?>
+			<?Cardinality 0..n?>
+			<cbc:ChargeIndicator>true
+				<?Name ChargeIndication ?>
+				<?Description An indicator that this AllowanceCharge describes a charge (true) or a discount (false). ?>
+				<?Cardinality 1..1?>				
+			</cbc:ChargeIndicator>
+			<cbc:AllowanceChargeReasonCode>1
+				<?Name Allowance Charge Reason Code ?>
+				<?Description A code signifying this freight allowance or charge. ?>
+				<?Cardinality 1..1?>	
+				<?listID-CodeList FreightAllowanceChargeReasonCode?>
+				<?listID-usage Mandatory?>
+			</cbc:AllowanceChargeReasonCode>
+			<cbc:Amount>100
+				<?Name Amount ?>
+				<?Description The amount for this allowance or charge. ?>
+				<?Cardinality 1..1?>			
+			</cbc:Amount>
+		</cac:FreightAllowanceCharge>
 		<cac:MainCarriageShipmentStage>
 			<?Name Main carriage shipment stage ?>
 			<?Description The shipment stage during main carriage. ?>
