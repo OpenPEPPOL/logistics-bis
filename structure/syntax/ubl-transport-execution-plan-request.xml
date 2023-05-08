@@ -771,19 +771,6 @@
             </Attribute>
          </Element>
          <Element cardinality="0..1">
-            <Term>cbc:DeclaredStatisticsValueAmount</Term>
-            <Name>Declared statistics value amount </Name>
-            <Description>The value, declared for statistical purposes, of those goods in this consignment that have the same statistical heading. </Description>
-            <Value type="EXAMPLE">23044.78</Value>
-            <Attribute>
-               <Term>currencyID</Term>
-               <Name>Currency identifier </Name>
-               <Description>Currency identifier.</Description>
-               <Reference type="CODE_LIST">ISO4217</Reference>
-               <Value type="EXAMPLE">EUR</Value>
-            </Attribute>
-         </Element>
-         <Element cardinality="0..1">
             <Term>cac:RequestedPickupTransportEvent</Term>
             <Name>Requested pickup transport event </Name>
             <Description>The pickup of this consignment requested by the party requesting a transportation service (the transport user). Mandatory if the Requested delivery transport event is not specified.</Description>
@@ -1475,6 +1462,29 @@
                   <Reference type="CODE_LIST">ISO4217</Reference>
                   <Value type="EXAMPLE">DKK</Value>
                </Attribute>
+            </Element>
+         </Element>
+         <Element cardinality="0..n">
+            <Term>cac:FreightAllowanceCharge</Term>
+            <Name>Freight Allowance Charge </Name>
+            <Description>A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage for this consignment. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.</Description>
+            <Element cardinality="1..1">
+               <Term>cbc:ChargeIndicator</Term>
+               <Name>ChargeIndication </Name>
+               <Description>An indicator that this AllowanceCharge describes a charge (true) or a discount (false). </Description>
+               <Value type="EXAMPLE">true</Value>
+            </Element>
+            <Element cardinality="1..1">
+               <Term>cbc:AllowanceChargeReasonCode</Term>
+               <Name>Allowance Charge Reason Code </Name>
+               <Description>A code signifying this freight allowance or charge. </Description>
+               <Value type="EXAMPLE">1</Value>
+            </Element>
+            <Element cardinality="1..1">
+               <Term>cbc:Amount</Term>
+               <Name>Amount </Name>
+               <Description>The amount for this allowance or charge. </Description>
+               <Value type="EXAMPLE">100</Value>
             </Element>
          </Element>
          <Element cardinality="0..1">
