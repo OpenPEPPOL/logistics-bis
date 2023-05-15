@@ -1163,7 +1163,7 @@
             <Description>Text conveying information that is not contained explicitly in other structures. </Description>
             <Value type="EXAMPLE">SAMPLE</Value>
          </Element>
-         <Element cardinality="1..1">
+         <Element cardinality="0..1">
             <Term>cbc:ReceivedQuantity</Term>
             <Name>Received quantity</Name>
             <Description>The total quantity received, including any rejected parts.</Description>
@@ -1272,10 +1272,10 @@
                </Element>
             </Element>
          </Element>
-         <Element cardinality="0..1">
+         <Element cardinality="1..1">
             <Term>cac:DespatchLineReference</Term>
             <Name>Despatch line Reference</Name>
-            <Description>A reference to a despatch line associated with this receipt line. Mandotory when the receipt advice is used as a repsonse</Description>
+            <Description>A reference to a despatch line associated with this receipt line. </Description>
             <Element cardinality="1..1">
                <Term>cbc:LineID</Term>
                <Name>Line ID</Name>
@@ -1283,7 +1283,7 @@
                <Value type="EXAMPLE">1</Value>
             </Element>
          </Element>
-         <Element cardinality="1..1">
+         <Element cardinality="0..1">
             <Term>cac:Item</Term>
             <Name>Item. </Name>
             <Description>Information to describe and identify the item. </Description>
