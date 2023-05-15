@@ -7,10 +7,13 @@
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:receipt_advice:1</cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:receipt_advice_only:1</cbc:ProfileID>
 	
-	<cbc:ID>5658999</cbc:ID>
+	<cbc:ID>5658999
+		<?Description The identity of the Receipt Advice set by the sender. It must be a unique identity. 
+		The Identity together with the Issue Date and Issue Time gives the version of the Receipt Advice. ?>
+	</cbc:ID>
 	<cbc:IssueDate>2021-09-10</cbc:IssueDate>
 	<cbc:IssueTime>12:00:00
-		<?Description The time when the receipt advice is issued. Format = "hh:mm:ss".?>
+		<?Description The time when the receipt advice is issued. Format = "HH:MM:SS".?>
 		<?Cardinality 1..1?>
 	</cbc:IssueTime>
 	<cbc:DocumentStatusCode>9
@@ -21,7 +24,8 @@
 	</cbc:DocumentStatusCode>
 	<cbc:ReceiptAdviceTypeCode>1 
 		<?Name Receipt advice type code?>
-		<?Description A code signifying the type of the Receipt Advice. Default is a comment on Received goods (1)?>
+		<?Description A code signifying the type of the Receipt Advice - Response to the Advanced Despatch Advice or Response to the received Shipment. 
+		If omitted, the default is Response to the received Shipment. ?>
 		<?Cardinality 0..1?>
 		<?CodeList ReceiptAdviceTypeCode?>
 	</cbc:ReceiptAdviceTypeCode>
@@ -37,25 +41,27 @@
 	
 	<cac:DespatchDocumentReference>
 		<?Name Despatch Document Reference?>
-		<?Description A reference to the despatch advice. mandatory if the receipt advice is a reponse to a despatch advice?>
-		<?Cardinality 0..1?>
-		<cbc:ID>565899
-		<?Description The ID of the despatch advice. ?>
+		<?Description A reference to the Advanced Despatch Advice. ?>
 		<?Cardinality 1..1?>
+		<cbc:ID>565899
+			<?Name Identity of the Despatch Document. ?>
+			<?Description The ID of the Advanced Despatch Advice. ?>
+			<?Cardinality 1..1?>
 		</cbc:ID>		
 		<cbc:IssueDate>2021-09-10<?Name Issue Date?>
-			<?Description The date the Despatch Advice was issued.?>
+			<?Description The date the Advanced Despatch Advice was issued.?>
 			<?Cardinality 1..1?>
 		</cbc:IssueDate>
 		<cbc:IssueTime>12:00:00
-			<?Name The time the Despatch Advice was issued.?>
-			<?Description The time when the despatch advice is issued. Format = "hh:mm:ss".?>
+			<?Name The time the Advanced Despatch Advice was issued.?>
+			<?Description The time when the Advanced Despatch Advice was issued. Format = "HH:MM:SS".?>
 		</cbc:IssueTime>
 		<cbc:DocumentStatusCode>RE
 			<?Name Document Status Code?>
-			<?Description To be used when the Advanced Despatch Advice is rejected due to errors and the supplier should send a new. ?>
+			<?Description To be used when the Receipt Advice is a response to the received Advanced Despatch Advice.
+			The status Code describes whether the Advanced Despatch Advice is accepted or if it is rejected due to errors, and the supplier should send a new. ?>
 			<?Cardinality 0..1?>
-			<?CodeList xxxxxxxx?>
+			<?CodeList R_A_DocumentStatusCode?>
 		</cbc:DocumentStatusCode>
 		<cbc:DocumentDescription>Incorrect Identity of the buyer.
 			<?Name Document Description?>
@@ -78,7 +84,7 @@
 			<?Cardinality 0..1?>
 			<?CodeList UNCL1001?>
 		</cbc:DocumentTypeCode>
-		<cbc:DocumentType> BEAST:FreightPayersCustomerNumber 
+		<cbc:DocumentType> Photo 
 			<?Name Document type?>
 			<?Description The type of reference that cannot be specified by a code?>
 			<?Cardinality 0..1?>
@@ -87,7 +93,7 @@
 			<?Name Attachment?>
 			<?Cardinality 0..1?>
 			<?Description Group to describe an attached document. An attachment can refer to an external document or be included with the document being exchanged.?>
-			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">
+			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="DamageReport_01.pdf">
 				aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw== <?Name Embedded binary object?>
 				<?Cardinality 0..1?>
 				<?mimeCode-CodeList MimeCode?>
@@ -105,7 +111,7 @@
 	</cac:AdditionalDocumentReference>
 	
 	<cac:DeliveryCustomerParty>
-		<?Description The Consignee is the person or organization to which the products will be shipped and who is taking possession. It also defines the sender of the receip advice. The role is carried out by the customer or on behalf of the customer. ?>
+		<?Description The Consignee is the person or organization to which the products will be or has been shipped and who is taking possession. It also defines the sender of the Receipt Advice. The role is carried out by the customer or on behalf of the customer. ?>
 		<cac:Party>
 			<cbc:EndpointID schemeID="0088">5798000000124</cbc:EndpointID>
 				<?schemeID-CodeList eas?>
@@ -118,8 +124,9 @@
 				<?Name Party name?>
 				<?Description The name of the Delivery Customer Party.?>
 				<?Cardinality 0..1?>
-				<cbc:Name> Sender inc. <?Name Name of the fuel supplier?>
-					<?Description The Despatch Supplier.?>
+				<cbc:Name> Goods Receiver inc. 
+					<?Name Name of the Consignee ?>
+					<?Description The Name of the Consignee.?>
 					<?Cardinality 1..1?>
 				</cbc:Name>
 			</cac:PartyName>
@@ -192,7 +199,7 @@
 	</cac:DeliveryCustomerParty>
 	
 	<cac:DespatchSupplierParty>
-		<?Description The Despatch Party is the person or organization who provides (despatch) the goods or services. It also defines the receiver of the receipt advice. The role is carried out by the supplier or on behalf of the supplier. ?>
+		<?Description The Despatch Party is the person or organization who provides (despatch) the goods or services. It also defines the receiver of the Receipt Advice. The role is carried out by the supplier or on behalf of the supplier. ?>
 		<cac:Party>
 			<cbc:EndpointID schemeID="0088"> 7300010000001 
 				<?schemeID-usage Mandatory?>
@@ -207,8 +214,8 @@
 				<?Name Party Name?>
 				<?Description The name of the Despatch Supplier Party.?>
 				<?Cardinality 0..1?>
-				<cbc:Name> Sender inc. <?Name Name of the fuel supplier?>
-					<?Description The Despatch Supplier.?>
+				<cbc:Name> Sender inc. <?Name Name of the Consignor?>
+					<?Description The name of the Despatch Supplier.?>
 					<?Cardinality 1..1?>
 				</cbc:Name>
 			</cac:PartyName>
@@ -299,15 +306,12 @@
 		<cac:Party>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088"> 5790000435951 
-					<?Rule PEPPOL-T120-R008?>
 					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
-				<cbc:Name> IYT Corporation 
-					<?Rule PEPPOL-T120-R008?>
-				</cbc:Name>
+				<cbc:Name> IYT Corporation </cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<cbc:StreetName>Avon Way</cbc:StreetName>
@@ -329,15 +333,12 @@
 		<cac:Party>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088"> 5790000435951 
-					<?Rule PEPPOL-T120-R009?>
 					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
-				<cbc:Name> IYT Corporation 
-					<?Rule PEPPOL-T120-R009?>
-				</cbc:Name>
+				<cbc:Name> IYT Corporation </cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<cbc:StreetName>Avon Way</cbc:StreetName>
@@ -356,74 +357,75 @@
 	</cac:SellerSupplierParty>
 	
 		<cac:Shipment>
+			<?Description Use the Shipment group only when the Receipt Advice is used as a response to a received shipment. ?>
 			<cbc:ID> 1 
-				<?Description Identifies a shipment. Freight forwarders reference number.?>
-		</cbc:ID>
-		<cbc:Information> text 
-			<?Description Information from Goods receiver to Supplier.?>
-			<?Cardinality 0..1?>
-		</cbc:Information>
-			
-		<cac:Consignment>
-			<cbc:ID> NA 
-				<?Description Use a dummy value since this element is mandatory.?>
+				<?Description Identifies a shipment. Freight forwarder's reference number.?>
 			</cbc:ID>
-			<cac:Status>
-				<?Name Status?>
-				<?Description To report the status of the consignment. ?>
-				<?Cardinality 1..1?>
-				<cbc:ConditionCode>CA
-					<?Name Condition Code?>
-					<?Description Specifies the status condition of the consignment. ?>
-					<?Cardinality 1..1?>
-				</cbc:ConditionCode>
-				<cbc:StatusReasonCode>10
-					<?Name Status Reason Code?>
-					<?Description The reason for this status condition or position, expressed a code. ?>
-					<?Cardinality 0..1?>
-				</cbc:StatusReasonCode>
-				<cbc:StatusReason>Delivery outside requested time window.
-					<?Name Status Reason Code?>
-					<?Description The reason for this status condition or position, expressed text. ?>
-					<?Cardinality 0..1?>
-				</cbc:StatusReason>
-			</cac:Status>
-			
-			<cac:CarrierParty>
-				<cac:PartyIdentification>
-					<?Name Party identification?>
-					<?Description This party defines the company providing the transport service?>
-					<?Cardinality 0..1?>
-					<cbc:ID schemeID="0088"> 5790000435951 
-						<?Name Carrying party identifier?>
-						<?Description Identifies the Carrier party.?>
-						<?schemeID-usage Optional?>
-						<?schemeID-CodeList ICD?>
-					</cbc:ID>
-				</cac:PartyIdentification>
-				<cac:PartyName>
-					<cbc:Name>Name</cbc:Name>
-				</cac:PartyName>
-				<cac:Person>
-					<cac:IdentityDocumentReference>
-						<cbc:ID>45642323</cbc:ID>
-						<cbc:DocumentType>DriverLicence</cbc:DocumentType>
-					</cac:IdentityDocumentReference>
-				</cac:Person>
-			</cac:CarrierParty>	
-		</cac:Consignment>
-			
-		<cac:Delivery>
-			<cbc:ActualDeliveryDate>2021-09-26<?Name Actual Delivery Date?>
-				<?Description The Date the goods or service was delivered.?>
-				<?Cardinality 1..1?>
-			</cbc:ActualDeliveryDate>
-			<cbc:ActualDeliveryTime>10:00:00
-				<?Name Actual Delivery Time?>
-				<?Description  The date on which the supply of goods or services was made or completed according to the delivery term. Format = "hh:mm:ss"?>
-				<?DataType Time?>
+			<cbc:Information> text 
+				<?Description Information from Goods receiver to Supplier.?>
 				<?Cardinality 0..1?>
-			</cbc:ActualDeliveryTime>
+			</cbc:Information>
+			
+			<cac:Consignment>
+				<cbc:ID> NA 
+					<?Description Use a dummy value since this element is mandatory.?>
+				</cbc:ID>
+				<cac:Status>
+					<?Name Status?>
+					<?Description To report the status of the received consignment. ?>
+					<?Cardinality 1..1?>
+					<cbc:ConditionCode>CA
+						<?Name Condition Code?>
+						<?Description Specifies the status condition of the consignment. ?>
+						<?Cardinality 1..1?>
+					</cbc:ConditionCode>
+					<cbc:StatusReasonCode>10
+						<?Name Status Reason Code?>
+						<?Description The reason for this status condition or position, expressed as a code. ?>
+						<?Cardinality 0..1?>
+					</cbc:StatusReasonCode>
+					<cbc:StatusReason>Delivery outside requested time window.
+						<?Name Status Reason Code?>
+						<?Description The reason for this status condition or position, expressed as a text. ?>
+						<?Cardinality 0..1?>
+					</cbc:StatusReason>
+				</cac:Status>
+			
+				<cac:CarrierParty>
+					<cac:PartyIdentification>
+						<?Name Party identification?>
+						<?Description This party defines the company providing the transport service?>
+						<?Cardinality 0..1?>
+						<cbc:ID schemeID="0088"> 5790000435951 
+							<?Name Carrying party identifier?>
+							<?Description Identifies the Carrier party.?>
+							<?schemeID-usage Optional?>
+							<?schemeID-CodeList ICD?>
+						</cbc:ID>
+					</cac:PartyIdentification>
+					<cac:PartyName>
+						<cbc:Name>Name</cbc:Name>
+					</cac:PartyName>
+					<cac:Person>
+						<cac:IdentityDocumentReference>
+							<cbc:ID>45642323</cbc:ID>
+							<cbc:DocumentType>DriverLicence</cbc:DocumentType>
+						</cac:IdentityDocumentReference>
+					</cac:Person>
+				</cac:CarrierParty>	
+			</cac:Consignment>
+			
+			<cac:Delivery>
+				<cbc:ActualDeliveryDate>2021-09-26<?Name Actual Delivery Date?>
+					<?Description The Date the goods or service was delivered.?>
+					<?Cardinality 1..1?>
+				</cbc:ActualDeliveryDate>
+				<cbc:ActualDeliveryTime>10:00:00
+					<?Name Actual Delivery Time?>
+					<?Description  The date on which the supply of goods or services was made or completed according to the delivery term. Format = "hh:mm:ss"?>
+					<?DataType Time?>
+					<?Cardinality 0..1?>
+				</cbc:ActualDeliveryTime>
 
 			<cac:RequestedDeliveryPeriod>
 				<?Name Requested Delivery Period?>
@@ -483,13 +485,13 @@
 			
 		<cac:TransportHandlingUnit>
 			<?Name Transport handling unit?>
-			<?Description Used to specify how the goods is marked and if there are any damages.?>
+			<?Description Used to specify how the goods is marked and if there are any damages.
+			If this group is used, all Transport Handling Units in the Advanced Despatch Advice must be included, not just some. ?>
 			<?Cardinality 0..n?>
 			<cbc:ID>11111222222222 
 				<?Name Identifier transport handling unit?>
 				<?Description The SSCC identification code of this Transport Handling Unit.?>
 				<?Cardinality 1..1?>
-				<?schemeID-usage Optional?>
 			</cbc:ID>
 			<cbc:TransportHandlingUnitTypeCode> AG 
 				<?Name Handling unit type code?>
@@ -518,7 +520,7 @@
 	<cac:ReceiptLine>
 		<?Name Receipt Line?>
 		<?Description A line detailing a kind of item received.?>
-		<?Cardinality 0..n?>
+		<?Cardinality 1..n?>
 		<cbc:ID>1
 			<?Name Line identity?>
 			<?Description A unique identity on this line, normally an increasing sequence number. ?>
@@ -529,10 +531,10 @@
 			<?Description Text conveying information that is not contained explicitly in other structures. ?>
 			<?Cardinality 0..1?>
 		</cbc:Note>
-		<cbc:ReceivedQuantity unitCode="KGM">89
+		<cbc:ReceivedQuantity unitCode="KGM">90
 			<?Name Received quantity?>
 			<?Description The total quantity received, including any rejected parts.?>
-			<?Cardinality 1..1?>
+			<?Cardinality 0..1?>
 			<?unitCode-Name Quantity unit of measure?>
 			<?unitCode-Description The unit of measure that applies to the quantity.?>
 			<?unitCode-Cardinality 1..1?>
@@ -549,7 +551,7 @@
 			<?Name Shortage Action Code?>
 			<?Description A code signifying the action that the delivery party wishes the despatch party to take as the result of a shortage.?>
 			<?Cardinality 0..1?>
-			<?CodeList ShorageActionCode?>
+			<?CodeList ActionCode?>
 		</cbc:ShortageActionCode>
 		<cbc:RejectedQuantity unitCode="KGM">1
 			<?Name Rejected quantity?>
@@ -563,6 +565,7 @@
 			<?Name Reject Reason Code?>
 			<?Description The reason for a rejection, expressed as a code. ?>
 			<?Cardinality 0..1?>
+			<?CodeList RejectReasonCode?>
 		</cbc:RejectReasonCode>
 		<cbc:RejectReason>Wrong item delivered.
 			<?Name Reject Reason?>
@@ -573,7 +576,7 @@
 			<?Name Reject Action Code?>
 			<?Description A code signifying the action that the delivery party wishes the despatch party to take as the result of a rejection.?>
 			<?Cardinality 0..1?>
-			<?CodeList RejectActionCode?>
+			<?CodeList ActionCode?>
 		</cbc:RejectActionCode>
 
 		<cbc:OversupplyQuantity unitCode="KGM">5
@@ -587,7 +590,7 @@
 		
 		<cac:OrderLineReference>
 			<?Name Orderline Reference?>
-			<?Description A reference to the order line associated with this receipt line. Not used when the receipt advice is used as a repsonse?>
+			<?Description A reference to the order line associated with this receipt line. ?>
 			<?Cardinality 0..1?>
 			<cbc:LineID>1
 				<?Name Line ID?>
@@ -614,10 +617,11 @@
 				</cbc:SalesOrderID>
 			</cac:OrderReference>
 		</cac:OrderLineReference>
+		
 		<cac:DespatchLineReference>
 			<?Name Despatch line Reference?>
-			<?Description A reference to a despatch line associated with this receipt line. Mandotory when the receipt advice is used as a repsonse?>
-			<?Cardinality 0..1?>
+			<?Description A reference to a despatch line associated with this receipt line. ?>
+			<?Cardinality 1..1?>
 			<cbc:LineID>1
 				<?Name Line ID?>
 				<?Description The identity of the Despatch Advice line number referred to. ?>
@@ -628,12 +632,11 @@
 		<cac:Item>
 			<?Name Item. ?>
 			<?Description Information to describe and identify the item. ?>
-			<?Cardinality 1..1?>
+			<?Cardinality 0..1?>
 			<cbc:Name>Beeswax 
 				<?Name Name?>
 				<?Description The name of the item. ?>
 				<?Cardinality 1..1?>
-				<?Rule PEPPOL-T120-R004?>
 			</cbc:Name>
 			<cac:BuyersItemIdentification>
 				<?Name Buyer's item Identification. ?>
