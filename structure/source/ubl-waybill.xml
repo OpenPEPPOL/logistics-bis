@@ -532,43 +532,89 @@
 					<?unitCode-Name Measure unit of measure ?>
 				</cbc:Measure>
 				</cac:MaximumTemperature>
-				<cac:GoodsItem>
-					<?Name Goods item ?>
-					<?Description A Goods item contained in the package.?>
-					<?Cardinality 0..n?>
-					<cbc:ID>10
+			<cac:GoodsItem>
+				<?Name Goods item ?>
+				<?Description A Goods item contained in the transport handling unit.?>
+				<?Cardinality 0..n?>
+				<cbc:ID>10
 					<?Name Identifiser goods item ?>
 					<?Description An identifier for this goods item. ?>
-					<?Cardinality 1..1?>
+					<?Cardinality 0..1?>
 				</cbc:ID>
-					<cbc:HazardousRiskIndicator>false
+				<cbc:Desciption>Torsk sl u/h fersk fulliset 20kg iso 2-4 kg
+					<?Name Description ?>
+					<?Description A textual descript this goods item. ?>
+					<?Cardinality 0..1?>
+				</cbc:Desciption>
+				<cbc:HazardousRiskIndicator>false
 					<?Name Hazardous risk indicator ?>
 					<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 					<?Cardinality 0..1?>
-				</cbc:HazardousRiskIndicator>
-					<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78
-					<?Name Declared statistics value amount ?>
-					<?Description The total declared value for customs purposes of the goods item. ?>
-					<?Cardinality 0..1?>
-					<?currencyID-Name Currency identifier ?>
-					<?currencyID-Description Currency identifier.?>
-					<?currencyID-CodeList ISO4217?>
-				</cbc:DeclaredStatisticsValueAmount>
-					<cbc:Quantity unitCode="EA">6
+				</cbc:HazardousRiskIndicator>				
+				<cbc:Quantity unitCode="EA">6
 					<?Name Quantity ?>
 					<?Description The number of units making up this goods item. ?>
-					<?Cardinality 1..1?>
+					<?Cardinality 0..1?>
 					<?unitCode-Name Quantity unit of measure ?>
 					<?unitCode-Description The unit of measure that applies to the quantity.?>
 				</cbc:Quantity>
-					<cbc:TraceID schemeID="sgtin">345699634527
+				<cbc:TraceID schemeID="sgtin">345699634527
 					<?Name Trace identifier ?>
 					<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
 					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier?>
 					<?schemeID-usage Optional?>
 				</cbc:TraceID>
-				</cac:GoodsItem>				
+				<cac:Item>
+					<?Name Item ?>
+					<?Description Description of the product beeing transported. ?>
+					<?Cardinality 0..1?>
+					<cbc:Name>Torsk
+						<?Name Name?>
+						<?Description The name of the Item. ?>
+						<?Cardinality 0..1?>
+					</cbc:Name>					
+					<cac:SellersItemIdentification>
+						<?Name Sellers Identification?>
+						<?Description The identification of the product ?>
+						<?Cardinality 0..1?>
+						<cbc:ID>17589683 
+							<?Name ID?>
+							<?Description The product ID ?>
+							<?Cardinality 1..1?>
+						</cbc:ID>
+					</cac:SellersItemIdentification>
+					<cac:CommodityClassification>
+						<?Name Commodity classification?>
+						<?Description To classify when an item number is not sufficient.?>
+						<?Cardinality 0..n?>
+						<cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">
+							KO2012140200 <?Name Item classification code?>
+							<?listID-CodeList UNCL7143?>
+							<?listID-usage Mandatory?>
+							<?listID-Description The identification scheme identifier of the Item classification identifier.?>
+							<?Cardinality 1..1?>
+						</cbc:ItemClassificationCode>
+					</cac:CommodityClassification>
+					<cac:HazardousItem>	
+						<?Name Hazardous Item ?>
+						<?Description Description of hazardous item. ?>
+						<?Cardinality 0..1?>
+						<cbc:UNDGCode>ADR
+							<?Name UNDGCode ?>
+							<?Description The UN code for this kind of hazardous item. ?>
+							<?Cardinality 0..1?>
+							<?CodeList UNCL8273?>
+						</cbc:UNDGCode>						
+						<cbc:HazardClassID>2
+							<?Name UNDGCode ?>
+							<?Description The UN code for this kind of hazardous item. ?>
+							<?Cardinality 0..1?>
+							<?CodeList HazardClasses?>
+						</cbc:HazardClassID>
+					</cac:HazardousItem>
+				</cac:Item>
+			</cac:GoodsItem>			
 			</cac:TransportHandlingUnit>
 		</cac:Consignment>
 		<cac:ShipmentStage>
@@ -581,83 +627,7 @@
 				<?Cardinality 1..1?>
 				<?CodeList UNECERec19?>
 			</cbc:TransportModeCode>
-			<cac:CarrierParty>
-				<?Name Carrier party ?>
-				<?Description The carrier party responsible for this shipment stage. ?>
-				<?Cardinality 1..1?>
-				<cac:PartyName>
-					<?Name Party name ?>
-					<?Cardinality 0..1?>
-					<cbc:Name>Finnair Oyj
-						<?Name Carrier party name?>
-						<?Description The name of the carrier party. ?>
-					</cbc:Name>
-				</cac:PartyName>
-				<cac:PostalAddress>
-					<?Name Postal address ?>
-					<?Description The postal address of the carrier.?>
-					<?Cardinality 0..1?>
-					<cbc:StreetName>Tietotie 9
-						<?Name Address line 1 ?>
-						<?Description The main address line in a postal address usually the street name and number. ?>
-					</cbc:StreetName>
-					<cbc:CityName>Vantaa
-						<?Name City ?>
-						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
-					</cbc:CityName>
-					<cbc:PostalZone>4600
-						<?Name Post code ?>
-						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
-					</cbc:PostalZone>
-					<cac:Country>
-						<?Name Country ?>
-						<cbc:IdentificationCode>FI
-							<?Name Country code ?>
-							<?Cardinality 0..1?>
-							<?CodeList ISO3166?>
-							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
-						</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:PostalAddress>
-				<cac:PartyLegalEntity>
-					<?Name Party legal entity ?>
-					<?Cardinality 0..1?>
-					<cbc:RegistrationName>Leman
-						<?Name Carrier party name ?>
-						<?Description The name of the carrier party.?>
-						<?Cardinality 1..1?>
-					</cbc:RegistrationName>
-					<cbc:CompanyID schemeID="0212">0108023-3
-						<?Name Carrier parties legal registration name ?>
-						<?Description The official name of the party as registered with the relevant fiscal authority. ?>
-						<?Cardinality 0..1?>
-					<?schemeID-Name Scheme identifier ?>
-					<?schemeID-Description The identification scheme identifier of the carrier legal registration identifier ?>
-					<?schemeID-Usage optional?>
-					<?schemeID-CodeList ICD?>
-					</cbc:CompanyID>
-					<cac:RegistrationAddress>
-						<?Name Legal address ?>
-						<?Cardinality 0..1?>
-						<cbc:CityName>Vantaa
-						<?Name City name ?>
-						<?Description The name of the city. ?>
-						<?Cardinality 0..1?>
-					</cbc:CityName>
-						<cac:Country>
-							<?Name Country ?>
-							<?Description The residens country for the carrier party. ?>
-							<?Cardinality 1..1?>
-							<cbc:IdentificationCode>FI
-								<?Name Country code ?>
-								<?Cardinality 0..1?>
-								<?CodeList ISO3166?>
-								<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
-							</cbc:IdentificationCode>
-						</cac:Country>
-					</cac:RegistrationAddress>
-				</cac:PartyLegalEntity>
-			</cac:CarrierParty>
+			
 			<cac:TransportMeans>
 				<?Name Transport means ?>
 				<?Description The means of transport used in this shipment stage.?>
@@ -709,8 +679,7 @@
 				</cac:MaritimeTransport>
 			</cac:TransportMeans>
 		</cac:ShipmentStage>
-	</cac:Shipment>
-			<cac:Delivery>
+		<cac:Delivery>
 			<cbc:ActualDeliveryDate>2021-09-26<?Name Actual Delivery Date?><?Description The date on which the supply of goods or services was made or completed according to the delivery term. Format = "YYYY-MM-DD"?><?DataType Date?><?Cardinality 0..1?></cbc:ActualDeliveryDate>
 			<cbc:ActualDeliveryTime>10:00:00<?Name Actual Delivery Time?><?Description  The date on which the supply of goods or services was made or completed according to the delivery term. Format = "hh:mm:ss"?><?DataType Time?><?Cardinality 0..1?></cbc:ActualDeliveryTime>
 			<cbc:TrackingID>456789</cbc:TrackingID>
@@ -845,7 +814,7 @@
 							<?unitCode-Name Latitude degrees unit of measure?>
 							<?unitCode-Description The unit of measure that applies to the latitude degrees.?>
 						</cbc:LatitudeDegreesMeasure>
-						<cbc:LongitudeDegreesMeasure unitCode="DD"> 18.063330898492403 <?Name Longitude degrees?>
+						<cbc:LongitudeDegreesMeasure unitCode="DD">18.063330898492403 <?Name Longitude degrees?>
 							<?Description The Y coordinate. Use degrees with decimals.?>
 							<?Cardinality 1..1?>
 							<?unitCode-usage Mandatory?>
@@ -865,6 +834,8 @@
 				</cac:DespatchAddress>
 			</cac:Despatch>			
 		</cac:Delivery>
+	</cac:Shipment>
+			
 	<cac:DocumentReference>
 		<?Name Additional document reference?>
 		<?Description Reference to additional documents relevant for this transport execution plan request. ?>
