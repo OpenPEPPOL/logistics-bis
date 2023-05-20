@@ -953,13 +953,15 @@
                   <Term>cbc:ConditionCode</Term>
                   <Name>Condition Code</Name>
                   <Description>Specifies the status condition of the consignment. </Description>
+                  <Reference type="CODE_LIST">UNCL4343_T128 </Reference>
                   <Value type="EXAMPLE">CA</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:StatusReasonCode</Term>
                   <Name>Status Reason Code</Name>
                   <Description>The reason for this status condition or position, expressed as a code. </Description>
-                  <Value type="EXAMPLE">10</Value>
+                  <Reference type="CODE_LIST">ConsignmentStatusReason </Reference>
+                  <Value type="EXAMPLE">3</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:StatusReason</Term>
@@ -1141,7 +1143,8 @@
                   <Term>cbc:ConditionCode</Term>
                   <Name>ConditionCode</Name>
                   <Description>A code describing the status of the TransportHandlingUnit. </Description>
-                  <Value type="EXAMPLE">20</Value>
+                  <Reference type="CODE_LIST">TransportHandlingUnitCondition</Reference>
+                  <Value type="EXAMPLE">4</Value>
                </Element>
             </Element>
          </Element>
@@ -1192,7 +1195,7 @@
             <Name>Shortage Action Code</Name>
             <Description>A code signifying the action that the delivery party wishes the despatch party to take as the result of a shortage.</Description>
             <Reference type="CODE_LIST">ReceiptAdviceActionCode</Reference>
-            <Value type="EXAMPLE">5</Value>
+            <Value type="EXAMPLE">2</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:RejectedQuantity</Term>
@@ -1211,7 +1214,7 @@
             <Name>Reject Reason Code</Name>
             <Description>The reason for a rejection, expressed as a code. </Description>
             <Reference type="CODE_LIST">RejectReasonCode</Reference>
-            <Value type="EXAMPLE">78</Value>
+            <Value type="EXAMPLE">1</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:RejectReason</Term>
@@ -1224,7 +1227,7 @@
             <Name>Reject Action Code</Name>
             <Description>A code signifying the action that the delivery party wishes the despatch party to take as the result of a rejection.</Description>
             <Reference type="CODE_LIST">ReceiveAdviceActionCode</Reference>
-            <Value type="EXAMPLE">20</Value>
+            <Value type="EXAMPLE">1</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:OversupplyQuantity</Term>
