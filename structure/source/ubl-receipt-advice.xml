@@ -5,7 +5,7 @@
 	<?Property key="sch:identifier" T128-basic?>
 	
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:receipt_advice:1</cbc:CustomizationID>
-	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:receipt_advice_only:1</cbc:ProfileID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1</cbc:ProfileID>
 	
 	<cbc:ID>5658999
 		<?Description The identity of the Receipt Advice set by the sender. It must be a unique identity. 
@@ -22,10 +22,10 @@
 		<?Cardinality 0..1?>
 		<?CodeList DocumentStatusCode?>
 	</cbc:DocumentStatusCode>
-	<cbc:ReceiptAdviceTypeCode>1 
+	<cbc:ReceiptAdviceTypeCode>S 
 		<?Name Receipt advice type code?>
-		<?Description A code signifying the type of the Receipt Advice - Response to the Advanced Despatch Advice or Response to the received Shipment. 
-		If omitted, the default is Response to the received Shipment. ?>
+		<?Description A code signifying the type of the Receipt Advice - Response to the Advanced Despatch Advice (D) or Response to the received Shipment (S). 
+		If omitted, the default is Response to the received Shipment (S). ?>
 		<?Cardinality 0..1?>
 		<?CodeList ReceiptAdviceTypeCode?>
 	</cbc:ReceiptAdviceTypeCode>
@@ -45,13 +45,14 @@
 		<?Cardinality 1..1?>
 		<cbc:ID>565899
 			<?Name Identity of the Despatch Document. ?>
-			<?Description The ID of the Advanced Despatch Advice. ?>
+			<?Description The ID of the Advanced Despatch Advice. The unique identity of the Advanced Despatch Advice is made up by ID, IssueDate and IssueTime in combination. ?>
 			<?Cardinality 1..1?>
 		</cbc:ID>		
 		<cbc:IssueDate>2021-09-10<?Name Issue Date?>
 			<?Description The date the Advanced Despatch Advice was issued.?>
 			<?Cardinality 1..1?>
 		</cbc:IssueDate>
+		
 		<cbc:IssueTime>12:00:00
 			<?Name The time the Advanced Despatch Advice was issued.?>
 			<?Description The time when the Advanced Despatch Advice was issued. Format = "HH:MM:SS".?>
@@ -61,7 +62,7 @@
 			<?Description To be used when the Receipt Advice is a response to the received Advanced Despatch Advice.
 			The status Code describes whether the Advanced Despatch Advice is accepted or if it is rejected due to errors, and the supplier should send a new. ?>
 			<?Cardinality 0..1?>
-			<?CodeList R_A_DocumentStatusCode?>
+			<?CodeList UNCL4343_T128?>
 		</cbc:DocumentStatusCode>
 		<cbc:DocumentDescription>Incorrect Identity of the buyer.
 			<?Name Document Description?>
@@ -551,7 +552,7 @@
 			<?Name Shortage Action Code?>
 			<?Description A code signifying the action that the delivery party wishes the despatch party to take as the result of a shortage.?>
 			<?Cardinality 0..1?>
-			<?CodeList ActionCode?>
+			<?CodeList ReceiptAdviceActionCode?>
 		</cbc:ShortageActionCode>
 		<cbc:RejectedQuantity unitCode="KGM">1
 			<?Name Rejected quantity?>
@@ -576,7 +577,7 @@
 			<?Name Reject Action Code?>
 			<?Description A code signifying the action that the delivery party wishes the despatch party to take as the result of a rejection.?>
 			<?Cardinality 0..1?>
-			<?CodeList ActionCode?>
+			<?CodeList ReceiveAdviceActionCode?>
 		</cbc:RejectActionCode>
 
 		<cbc:OversupplyQuantity unitCode="KGM">5
