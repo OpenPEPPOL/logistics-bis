@@ -1,0 +1,53 @@
+[[use-case-3-reject-received-ADA]]
+== Use case 3 – Reject the reived Advanced Despatch Advice due to application errors (Party identities, References etc.).
+
+This use case is based on the recommendation that an Advanced Despatch Advice should be confirmed as received and validated before the goods reception is made.
+[cols="1,5",options="header",]
+|====
+|*Use Case number* |3
+|*Use Case Name* |Reject the reived Advanced Despatch Advice due to application errors (Party identities, References etc.).
+|*Use Case Description* a|
+This is the confirmation that the Advanced Despatch Advice has been received. Data checks have been made and errors have been found.
+The received Advanced Despatch Advice is now deleted and the supplier should correct it and send it again.
+
+The Receipt Advice enables the goods receiver to request a correction of the errors found and that the supplier must send a new version. 
+This enables the Supplier to correct the errors so that a new correct Advanced Despatch Advice can be sent.
+
+|*Parties involved* a|
+Buyer (In UBL: BuyerCustomerParty) 
+
+Seller (In UBL: SellerSupplierParty)
+
+Despatch party (In UBL: DespatchSupplierParty) (Same legal entity as the Seller in this use case)
+
+Consignee party (In UBL: DeliveryCustomerParty) (Same legal entity as the Buyer in this use case).
+
+|*Pre conditions* a|
+Advanced Despatch Advice is sent from Consignor to Consignee. Receipt Advice is sent from Consignee to Consignor.
+
+|*Post conditions* a|
+Receipt advice is received by the sender of the goods.
+
+|*Assumptions* a| 
+. The Consignor and Consignee has agreed to use the Receipt Advice message as a confirmation of that the Advance Despatch Advice has been received and controlled.
+. Earlier a Receipt Advice may have been exchanged before any data checks were made. 
+. Later new Receipt Advices can be exchanged depending on what other agreements have been made.
+
+|*The flow* a|
+. The Advanced Despatch Advice is received by the Consignee.
+. If the formal validation (Peppol business rules) and the application validation 
+	(Party identities, References etc.) of the Advanced Despatch Advice fail, a Receipt Advice message is sent by the Consignee's application. 
+. The Consignor party receives the Receipt advice message
+. The Consignor party uses the content in the Despatch advice message to correct and resend the Advanced Despatch Advice.
+. The Consignee will wait for a new version of the Advanced Despatch Advice to be received.
+
+|*Result* a|
+. The Receipt advice message helped the Consignee party to inform the supplier that the Advanced Despatch Advice has been rejected due to errors.
+The supplier now must correct the errors and send a new Advanced Despatch Advice.
+
+. The Receipt advice message helped the Consignor party to find the errors so that a new correct Advanced Despatch Advice can be sent.
+
+
+|*XML example file* a|
+See {examples-zip} for a sample file illustrating Use Case 3.
+|====

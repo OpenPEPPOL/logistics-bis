@@ -1,0 +1,24 @@
+[[despatch_document_reference]]
+= Despatch Document Reference
+
+This is the reference to the received Advanced Despatch Advice, and here the status of it can be reported.
+The reference must always be provided, but the Status must only be included when the Receipt Advice is used as a response to the Advanced Despatch Advice.
+When used as a response to a received shipment, this Status must be omitted.
+With the Status code the sender reports the status for when the Advanced Despatch Advice was received and processed. Following values can be used:
+
+* AB = Received, not yet validated. 
+This status confirms that the Advanced Despatch Advice has been received ok, but the content is not yet validated.
+
+* AP = Accepted after validation. 
+With this code the receiver confirms that the Advanced Despatch Advice contains valid information.
+
+* RE = Rejected after validation. 
+With this code the receiver informs the supplier that there are formal errors in the Advanced Despatch Advice that need to be corrected and a new Advanced Despatch Advice sent.
+
+At line level there is also a reference to the Despatch Advice Line number.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=despatchdocumentreference]
+----

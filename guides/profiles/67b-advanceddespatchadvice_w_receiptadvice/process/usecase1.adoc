@@ -1,0 +1,51 @@
+[[use-case-1-accept-received-ADA]]
+== Use case 1 – Confirm the reception of a Advanced Despatch Advice before content is validated.
+
+This use case is based on the recommendation that an Advanced Despatch Advice should be confirmed as received before any validation starts.
+[cols="1,5",options="header",]
+|====
+|*Use Case number* |1
+|*Use Case Name* |Confirm the reception of a Advanced Despatch Advice before content is validated.
+|*Use Case Description* a|
+This is only a simple confirmation that the Advanced Despatch Advice has been technically received. No data checks have yet been made.
+
+The Receipt Advice enables the goods receiver to give a confirmation that the Adva nced Despatch Advice has been received. 
+This enables the Supplier check this step and wait for the next.
+
+|*Parties involved* a|
+Buyer (In UBL: BuyerCustomerParty) 
+
+Seller (In UBL: SellerSupplierParty)
+
+Despatch party (In UBL: DespatchSupplierParty) (Same legal entity as the Seller in this use case)
+
+Consignee party (In UBL: DeliveryCustomerParty) (Same legal entity as the Buyer in this use case).
+
+|*Pre conditions* a|
+Advanced Despatch Advice is sent from Consignor to Consignee. Receipt Advice is sent from Consignee to Consignor.
+
+|*Post conditions* a|
+Receipt advice is received by the sender of the goods.
+
+|*Assumptions* a| 
+. The Consignor and Consignee has agreed to use the Receipt Advice message as a confirmation of that the Advance Despatch Advice has been received.
+. Later new Receipt Advices can be exchanged depending on what other agreements have been made.
+
+|*The flow* a|
+. The Advanced Despatch Advice is received by the Consignee.
+. If the formal validation (Peppol business rules) passes and the Advanced Despath Advice is received, a Receipt Advice message is sent by the Consignee's application. 
+. The Consignor party receives the Receipt advice message
+. The Consignor party uses the content in the Despatch advice message confirm that the Advanced Despatch Advice now has been received by the Conignee.
+. The Consignee now can continue to the next steps of validating data and receive the goods/service.
+
+|*Result* a|
+. The Receipt advice message helped the Consignee party to inform the supplier that the Advanced Despatch ADvice has arrived.
+.. With no formal errors
+.. That the process now continues with next steps
+
+. The Receipt advice message helped the Consignor party in the process to be sure that the Advanced Despatch Advice is received and in the process.
+
+
+|*XML example file* a|
+See {examples-zip} for a sample file illustrating Use Case 1.
+|====
