@@ -618,7 +618,7 @@
                   <Value type="EXAMPLE">EA</Value>
                </Attribute>
             </Element>
-            <Element cardinality="0..1">
+            <Element cardinality="1..1">
                <Term>cac:PlannedPickupTransportEvent</Term>
                <Name>Requested pickup transport event </Name>
                <Description>The pickup of this consignment requested by the party requesting a transportation service (the transport user). Mandatory if the Requested delivery transport event is not specified.</Description>
@@ -787,7 +787,7 @@
                   </Element>
                </Element>
             </Element>
-            <Element cardinality="1..1">
+            <Element cardinality="0..1">
                <Term>cac:PlannedDeliveryTransportEvent</Term>
                <Name>Requested delivery transport event </Name>
                <Description>The delivery of this consignment requested by the party requesting a transportation service (the transport user).</Description>
@@ -837,6 +837,17 @@
                   <Name>Special terms </Name>
                   <Description>Special delivery terms that exceeds the inco terms. </Description>
                   <Value type="EXAMPLE">DAP</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:DeliveryLocation</Term>
+                  <Name>Delivery terms location</Name>
+                  <Description/>
+                  <Element cardinality="1..1">
+                     <Term>cbc:ID</Term>
+                     <Name>Delivery terms location</Name>
+                     <Description>Delivery terms location. The location to which the delivery terms refer. Used to qualify the delivery terms e.g. "Terms of delivery are FOB Rotterdam"</Description>
+                     <Value type="EXAMPLE">Kalmar</Value>
+                  </Element>
                </Element>
             </Element>
             <Element cardinality="0..n">
