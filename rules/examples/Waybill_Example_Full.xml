@@ -70,7 +70,7 @@
    </cac:ConsignorParty>
    <cac:CarrierParty>
       <cbc:EndpointID schemeID="0212">0108023-3
-				</cbc:EndpointID>
+			</cbc:EndpointID>
       <cac:PartyIdentification>
          <cbc:ID schemeID="0088">7300010000001 				
 			</cbc:ID>
@@ -162,7 +162,7 @@
       <cbc:GrossWeightMeasure unitCode="KGM">1030
 			</cbc:GrossWeightMeasure>
       <cbc:GrossVolumeMeasure unitCode="MTQ"> 1.456 </cbc:GrossVolumeMeasure>
-      <cbc:TotalTransportHandlingUnitQuantity>1
+      <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1
 			</cbc:TotalTransportHandlingUnitQuantity>
       <cac:Consignment>
          <cbc:ID>12535157654567654
@@ -239,15 +239,6 @@
             <cbc:IdentificationCode>FI
 				</cbc:IdentificationCode>
          </cac:FinalDestinationCountry>
-         <cac:DeliveryTerms>
-            <cbc:ID>DAP
-					</cbc:ID>
-            <cbc:SpecialTerms>DAP
-				</cbc:SpecialTerms>
-            <cac:DeliveryLocation>
-               <cbc:ID> Kalmar </cbc:ID>
-            </cac:DeliveryLocation>
-         </cac:DeliveryTerms>
          <cac:TransportHandlingUnit>
             <cbc:ID>11111222222222
 				</cbc:ID>
@@ -294,23 +285,15 @@
 					</cbc:Measure>
             </cac:MaximumTemperature>
             <cac:GoodsItem>
-               <cbc:ID>10
-					</cbc:ID>
                <cbc:Description>Torsk sl u/h fersk fulliset 20kg iso 2-4 kg
 					</cbc:Description>
                <cbc:HazardousRiskIndicator>false
 					</cbc:HazardousRiskIndicator>
                <cbc:Quantity unitCode="EA">6
 					</cbc:Quantity>
-               <cbc:TraceID schemeID="sgtin">345699634527
-					</cbc:TraceID>
                <cac:Item>
                   <cbc:Name>Torsk
 						</cbc:Name>
-                  <cac:SellersItemIdentification>
-                     <cbc:ID>17589683 
-							</cbc:ID>
-                  </cac:SellersItemIdentification>
                   <cac:CommodityClassification>
                      <cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">
 							KO2012140200 </cbc:ItemClassificationCode>
@@ -379,6 +362,55 @@
             <cbc:EndDate>2021-09-27</cbc:EndDate>
             <cbc:EndTime>12:00:00</cbc:EndTime>
          </cac:EstimatedDeliveryPeriod>
+         <cac:DeliveryParty>
+            <cac:PartyName>
+               <cbc:Name>HUS Hospital
+					</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+               <cbc:StreetName>Topeliuksenkatu 5
+					</cbc:StreetName>
+               <cbc:CityName>Helsinki
+					</cbc:CityName>
+               <cbc:PostalZone>00260
+					</cbc:PostalZone>
+               <cac:Country>
+                  <cbc:IdentificationCode>FI
+						</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:PostalAddress>
+            <cac:PartyLegalEntity>
+               <cbc:RegistrationName>HUS Hospital
+					</cbc:RegistrationName>
+               <cbc:CompanyID schemeID="0212">1567535-0
+					</cbc:CompanyID>
+               <cac:RegistrationAddress>
+                  <cbc:CityName>Helsinki
+						</cbc:CityName>
+                  <cac:Country>
+                     <cbc:IdentificationCode>FI
+							</cbc:IdentificationCode>
+                  </cac:Country>
+               </cac:RegistrationAddress>
+            </cac:PartyLegalEntity>
+            <cac:Contact>
+               <cbc:Name>Mr Sender
+						</cbc:Name>
+               <cbc:Telephone>0158 1233714
+						</cbc:Telephone>
+               <cbc:ElectronicMail>sender@consignor-company.co.uk
+						</cbc:ElectronicMail>
+            </cac:Contact>
+         </cac:DeliveryParty>
+         <cac:DeliveryTerms>
+            <cbc:ID>DAP
+					</cbc:ID>
+            <cbc:SpecialTerms>DAP
+					</cbc:SpecialTerms>
+            <cac:DeliveryLocation>
+               <cbc:ID> Kalmar </cbc:ID>
+            </cac:DeliveryLocation>
+         </cac:DeliveryTerms>
       </cac:Delivery>
    </cac:Shipment>
    <cac:DocumentReference>
@@ -427,6 +459,8 @@
             </cac:Country>
          </cac:PostalAddress>
          <cac:Person>
+            <cbc:ID schemeID="zzz">45976	
+					</cbc:ID>
             <cbc:FirstName>Valiry
 						</cbc:FirstName>
             <cbc:FamilytName>Sender
