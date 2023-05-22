@@ -449,7 +449,7 @@
 			<cac:PlannedPickupTransportEvent>
 				<?Name Requested pickup transport event ?>
 				<?Description The pickup of this consignment requested by the party requesting a transportation service (the transport user). Mandatory if the Requested delivery transport event is not specified.?>
-				<?Cardinality 0..1?>
+				<?Cardinality 1..1?>
 			<cbc:IdentificationID>21412312412
 				<?Name Identifier pickup transport event ?>
 				<?Description An identifier for this pickup transport event within an agreed event identification scheme. ?>
@@ -584,7 +584,7 @@
 			<cac:PlannedDeliveryTransportEvent>
 				<?Name Requested delivery transport event ?>
 				<?Description The delivery of this consignment requested by the party requesting a transportation service (the transport user).?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:IdentificationID>625435485674654132
 					<?Name Identifier delivery transport event ?>
 					<?Description An identifier for this delivery transport event within an agreed event identification scheme. ?>
@@ -627,8 +627,16 @@
 				<?Description Special delivery terms that exceeds the inco terms. ?>
 				<?Cardinality 0..1?>
 			</cbc:SpecialTerms>
+			<cac:DeliveryLocation>
+					<?Name Delivery terms location?>
+					<?Description?>
+					<?Cardinality 0..1?>
+					<cbc:ID> Kalmar <?Name Delivery terms location?>
+						<?Description Delivery terms location. The location to which the delivery terms refer. Used to qualify the delivery terms e.g. "Terms of delivery are FOB Rotterdam"?>
+						<?Cardinality 1..1?>
+					</cbc:ID>
+				</cac:DeliveryLocation>			
 			</cac:DeliveryTerms>
-
 			<cac:TransportHandlingUnit>
 				<?Name Transport handling unit ?>
 				<?Description Used to specify how the goods is packed. ?>
