@@ -92,7 +92,6 @@
 			<cbc:ConsigneeAssignedID>1234</cbc:ConsigneeAssignedID>
 			<cbc:ConsignorAssignedID>5678</cbc:ConsignorAssignedID>
 			<cbc:GrossWeightMeasure unitCode="KGM">50000</cbc:GrossWeightMeasure>
-			<cbc:NetWeightMeasure unitCode="KGM">3000</cbc:NetWeightMeasure>
 			<cbc:GrossVolumeMeasure unitCode="MTQ">78</cbc:GrossVolumeMeasure>
 			<cbc:LoadingLengthMeasure unitCode="MTR">12</cbc:LoadingLengthMeasure>
 			<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
@@ -101,6 +100,33 @@
 			<!-- tag::planned-pickup-transport-event[] -->
 			<cac:PlannedPickupTransportEvent>
 				<cbc:IdentificationID>21412312412</cbc:IdentificationID>
+				<cac:Location>
+					<cbc:ID schemeID="0088">5790000435951</cbc:ID>
+					<cbc:Name>Novo Nordisk Pharmatech A/S</cbc:Name>
+					<cac:Address>
+						<cbc:StreetName>Københavnsvej 216</cbc:StreetName>
+						<cbc:CityName>Køge</cbc:CityName>
+						<cbc:PostalZone>4600</cbc:PostalZone>
+						<cac:AddressLine>
+							<cbc:Line>3rd Floor, Room 5</cbc:Line>
+						</cac:AddressLine>
+						<cac:Country>
+							<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+						</cac:Country>
+						<cac:LocationCoordinate>
+							<cbc:CoordinateSystemCode>EPSG:3857</cbc:CoordinateSystemCode>
+							<cbc:LatitudeDegreesMeasure unitCode="DD">59.331660358041425</cbc:LatitudeDegreesMeasure>
+							<cbc:LongitudeDegreesMeasure unitCode="DD">18.063363084988005</cbc:LongitudeDegreesMeasure>
+							<cbc:AltitudeMeasure unitCode="MTR">12.5</cbc:AltitudeMeasure>
+						</cac:LocationCoordinate>
+					</cac:Address>
+				</cac:Location>
+				<cac:Period>
+					<cbc:StartDate>2021-09-29</cbc:StartDate>
+					<cbc:StartTime>08:00:00+01:00</cbc:StartTime>
+					<cbc:EndDate>2021-09-29</cbc:EndDate>
+					<cbc:EndTime>10:00:00+01:00</cbc:EndTime>
+				</cac:Period>
 			</cac:PlannedPickupTransportEvent>
 			<!-- end::planned-pickup-transport-event[] -->
 			<cac:PlannedDeliveryTransportEvent>
@@ -136,7 +162,7 @@
 			<!-- tag::transport-handling-unit[] -->
 			<cac:TransportHandlingUnit>
 				<cbc:ID>CON_THU_1</cbc:ID>
-				<cbc:TransportHandlingUnitTypeCode>4</cbc:TransportHandlingUnitTypeCode>
+				<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
 				<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
 				<cbc:ShippingMarks>General Cargo</cbc:ShippingMarks>
 				<cac:TransportEquipment>
@@ -147,15 +173,15 @@
 					<cbc:PowerIndicator>false</cbc:PowerIndicator>
 				</cac:TransportEquipment>
 				<cac:MeasurementDimension>
-					<cbc:AttributeID>Length</cbc:AttributeID>
+					<cbc:AttributeID>LN</cbc:AttributeID>
 					<cbc:Measure unitCode="MTR">6.1</cbc:Measure>
 				</cac:MeasurementDimension>
 				<cac:MeasurementDimension>
-					<cbc:AttributeID>Height</cbc:AttributeID>
+					<cbc:AttributeID>HT</cbc:AttributeID>
 					<cbc:Measure unitCode="MTR">2.6</cbc:Measure>
 				</cac:MeasurementDimension>
 				<cac:MeasurementDimension>
-					<cbc:AttributeID>Width</cbc:AttributeID>
+					<cbc:AttributeID>WD</cbc:AttributeID>
 					<cbc:Measure unitCode="MTR">2.44</cbc:Measure>
 				</cac:MeasurementDimension>
 				<cac:GoodsItem>
@@ -212,7 +238,6 @@
 					<cbc:CoordinateSystemCode> EPSG:3857 </cbc:CoordinateSystemCode>
 					<cbc:LatitudeDegreesMeasure unitCode="DD"> 59.331660358041425 </cbc:LatitudeDegreesMeasure>
 					<cbc:LongitudeDegreesMeasure unitCode="DD"> 18.063363084988005 </cbc:LongitudeDegreesMeasure>
-					<cbc:AltitudeMeasure unitCode="MTR"> 12.5 </cbc:AltitudeMeasure>
 				</cac:LocationCoordinate>
 			</cac:DeliveryLocation>
 			<cac:EstimatedDeliveryPeriod>
