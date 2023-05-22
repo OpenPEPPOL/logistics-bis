@@ -168,13 +168,15 @@
 		<?Description The carrier party responsible for this waybill. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0212">0108023-3
-				<?Description An identifier for the end point of the routing service (e.g., EAN Location Number, GLN). ?>
-				<?Cardinality 0..1?>
+			<?Description An identifier for the end point of the routing service (e.g., EAN Location Number, GLN). ?>
+			<?Cardinality 1..1?>
+			<?schemeID-usage Mandatory?>
+			<?schemeID-CodeList eas?>
 		</cbc:EndpointID>
 		<cac:PartyIdentification>
 			<?Name Carrier party identification ?>
 			<?Description An identifier for the Carrier party. ?>
-			<?Cardinality 0..1?>
+			<?Cardinality 0..1?>			
 			<cbc:ID schemeID="0088">7300010000001 				
 			<?schemeID-CodeList ICD?>
 			<?schemeID-usage Optional?>
@@ -389,15 +391,22 @@
 		</cbc:Information>
 		<cbc:GrossWeightMeasure unitCode="KGM">1030
 			<?Name Shipment gross weight ?> 
-			<?Description The gross weight of the despatch as a whole. Must be equal the the weight specified for the consignments if this is specified?>			
-			<?Cardinality 1..1?>
+			<?Description The gross weight of the despatch as a whole. Must be equal the the weight specified for the consignments if this is specified. Mandatory for road transport of if the gross volumen is not specified?>			
+			<?Cardinality 0..1?>
+			
 		</cbc:GrossWeightMeasure>
 		<cbc:GrossVolumeMeasure unitCode="MTQ"> 1.456 <?Rule PEPPOL-T120-R019?>
 			<?Description The gross volumen of the despatch as a whole. Must be greather or equal the the volumen specified for the consignments if this is specified?>
+			<?Cardinality 0..1?>
+			
 		</cbc:GrossVolumeMeasure>
-		<cbc:TotalTransportHandlingUnitQuantity>1
-			<?Rule PEPPOL-T120-R016?>
-			<?Rule PEPPOL-T120-R017?>
+		<cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1
+			<?Description The gross volumen of the shipment as a whole. Must be equal to the numbers of Transport handling units in the consignments?>
+			<?Cardinality 0..1?>
+			<?unitCode-Name Quantity unit of measure ?>
+			<?unitCode-Description The unit of measure that applies to quantity ?>
+			<?unitCode-usage Optinal?>
+			<?unitCode-CodeList UNECERec20?>
 		</cbc:TotalTransportHandlingUnitQuantity>		
 		<cac:Consignment>
 			<?Name Consignment information ?>
@@ -613,30 +622,7 @@
 				<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 			</cbc:IdentificationCode>
 			</cac:FinalDestinationCountry>
-			<cac:DeliveryTerms>
-				<?Name Delivery terms ?>
-				<?Description The conditions agreed upon between a seller and a buyer with regard to the delivery of goods and/or services (e.g., CIF, FOB, or EXW from the INCOTERMS Terms of Delivery). ?>
-				<?Cardinality 0..1?>
-				<cbc:ID>DAP
-					<?Name Delivery terms identification ?>
-					<?Description Delivery terms code (Inco terms). ?>
-					<?Cardinality 0..1?>
-				</cbc:ID>
-				<cbc:SpecialTerms>DAP
-				<?Name Special terms ?>
-				<?Description Special delivery terms that exceeds the inco terms. ?>
-				<?Cardinality 0..1?>
-			</cbc:SpecialTerms>
-			<cac:DeliveryLocation>
-					<?Name Delivery terms location?>
-					<?Description?>
-					<?Cardinality 0..1?>
-					<cbc:ID> Kalmar <?Name Delivery terms location?>
-						<?Description Delivery terms location. The location to which the delivery terms refer. Used to qualify the delivery terms e.g. "Terms of delivery are FOB Rotterdam"?>
-						<?Cardinality 1..1?>
-					</cbc:ID>
-				</cac:DeliveryLocation>			
-			</cac:DeliveryTerms>
+			
 			<cac:TransportHandlingUnit>
 				<?Name Transport handling unit ?>
 				<?Description Used to specify how the goods is packed. ?>
@@ -766,11 +752,7 @@
 				<?Name Goods item ?>
 				<?Description A Goods item contained in the transport handling unit.?>
 				<?Cardinality 0..n?>
-				<cbc:ID>10
-					<?Name Identifiser goods item ?>
-					<?Description An identifier for this goods item. ?>
-					<?Cardinality 0..1?>
-				</cbc:ID>
+				
 				<cbc:Description>Torsk sl u/h fersk fulliset 20kg iso 2-4 kg
 					<?Name Description ?>
 					<?Description A textual descript this goods item. ?>
@@ -783,18 +765,11 @@
 				</cbc:HazardousRiskIndicator>				
 				<cbc:Quantity unitCode="EA">6
 					<?Name Quantity ?>
-					<?Description The number of units making up this goods item. ?>
+					<?Description The number of units making up this goods item. Mandatory with hazadous goods?>
 					<?Cardinality 0..1?>
 					<?unitCode-Name Quantity unit of measure ?>
 					<?unitCode-Description The unit of measure that applies to the quantity.?>
-				</cbc:Quantity>
-				<cbc:TraceID schemeID="sgtin">345699634527
-					<?Name Trace identifier ?>
-					<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID. ?>
-					<?Cardinality 0..1?>
-					<?schemeID-Name Scheme identifier?>
-					<?schemeID-usage Optional?>
-				</cbc:TraceID>
+				</cbc:Quantity>				
 				<cac:Item>
 					<?Name Item ?>
 					<?Description Description of the product beeing transported. ?>
@@ -804,16 +779,7 @@
 						<?Description The name of the Item. ?>
 						<?Cardinality 0..1?>
 					</cbc:Name>					
-					<cac:SellersItemIdentification>
-						<?Name Sellers Identification?>
-						<?Description The identification of the product ?>
-						<?Cardinality 0..1?>
-						<cbc:ID>17589683 
-							<?Name ID?>
-							<?Description The product ID ?>
-							<?Cardinality 1..1?>
-						</cbc:ID>
-					</cac:SellersItemIdentification>
+					
 					<cac:CommodityClassification>
 						<?Name Commodity classification?>
 						<?Description To classify when an item number is not sufficient.?>
@@ -823,6 +789,8 @@
 							<?listID-CodeList UNCL7143?>
 							<?listID-usage Mandatory?>
 							<?listID-Description The identification scheme identifier of the Item classification identifier.?>
+							<?listVersionID-usage Optional?>
+							<?name-usage Optional?>
 							<?Cardinality 1..1?>
 						</cbc:ItemClassificationCode>
 					</cac:CommodityClassification>
@@ -1000,17 +968,140 @@
 						</cbc:LongitudeDegreesMeasure>						
 					</cac:LocationCoordinate>
 			</cac:DeliveryLocation>
-
+	
 			<cac:EstimatedDeliveryPeriod>
 				<?Name Estimated delivery period?>
 				<?Description The estimated delivery period.?>
 				<?Cardinality 1..1?>
-				<cbc:StartDate>2021-09-25<?Rule PEPPOL-T120-R012?><?Rule PEPPOL-T120-R015?><?Cardinality 1..1?></cbc:StartDate>
+				<cbc:StartDate>2021-09-25<?Rule PEPPOL-T120-R012?><?Rule PEPPOL-T120-R015?><?Cardinality 0..1?></cbc:StartDate>
 				<cbc:StartTime>12:00:00<?Rule PEPPOL-T120-R013?><?Rule PEPPOL-T120-R015?></cbc:StartTime>
 				<cbc:EndDate>2021-09-27<?Rule PEPPOL-T120-R012?><?Rule PEPPOL-T120-R014?><?Rule PEPPOL-T120-R015?></cbc:EndDate>
 				<cbc:EndTime>12:00:00<?Rule PEPPOL-T120-R013?><?Rule PEPPOL-T120-R014?><?Rule PEPPOL-T120-R015?></cbc:EndTime>
 			</cac:EstimatedDeliveryPeriod>
-			
+			<cac:DeliveryParty>
+			<?Name Delivery party ?>
+			<?Description The party responsible for receiving the goods in waybill also known as the consignee. ?>
+			<?Cardinality 1..1?>			
+			<cac:PartyName>
+				<?Name Party name ?>
+				<?Cardinality 0..1?>
+				<cbc:Name>HUS Hospital
+					<?Name Delivery party name?>
+					<?Description The name of the consignee party.?>
+				</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<?Name Postal address ?>
+				<?Description The postal address of the Consignee?>
+				<?Cardinality 0..1?>
+				<cbc:StreetName>Topeliuksenkatu 5
+					<?Name Address line 1 ?>
+					<?Description The main address line in a postal address usually the street name and number. ?>
+					<?Cardinality 0..1?>
+				</cbc:StreetName>
+				<cbc:CityName>Helsinki
+					<?Name City ?>
+					<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+					<?Cardinality 0..1?>
+				</cbc:CityName>
+				<cbc:PostalZone>00260
+					<?Name Post code ?>
+					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+					<?Cardinality 0..1?>
+				</cbc:PostalZone>
+				<cac:Country>
+					<?Name Country ?>
+					<cbc:IdentificationCode>FI
+						<?Name Country code ?>
+						<?Cardinality 1..1?>
+						<?CodeList ISO3166?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+					</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<?Name Party legal entity ?>
+				<?Cardinality 0..1?>
+				<cbc:RegistrationName>HUS Hospital
+					<?Name Consignee party name ?>
+					<?Description The name of the delivery party.?>
+					<?Cardinality 1..1?>
+				</cbc:RegistrationName>
+				<cbc:CompanyID schemeID="0212">1567535-0
+					<?Name Consignee parties legal registration name ?>
+					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
+					<?Cardinality 0..1?>
+					<?schemeID-Name Scheme identifier ?>
+					<?schemeID-Description The identification scheme identifier of the consinee parties legal registration identifier ?>
+					<?schemeID-Usage optional?>
+					<?schemeID-CodeList ICD?>
+				</cbc:CompanyID>
+				<cac:RegistrationAddress>
+					<?Name Legal address ?>
+					<?Cardinality 0..1?>
+					<cbc:CityName>Helsinki
+						<?Name City name ?>
+						<?Description The name of the city. ?>
+						<?Cardinality 0..1?>
+					</cbc:CityName>
+					<cac:Country>
+						<?Name Country ?>
+						<?Description The residens country for the delivery party. ?>
+						<?Cardinality 1..1?>
+						<cbc:IdentificationCode>FI
+							<?Name Country code ?>
+							<?Cardinality 1..1?>
+							<?CodeList ISO3166?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:RegistrationAddress>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<?Name Contact ?>
+				<?Description The contact of the delivery party. ?>
+				<?Cardinality 0..1?>
+				<cbc:Name>Mr Sender
+						<?Name Contact name ?>
+						<?Description The contact name. ?>
+						<?Cardinality 0..1?>
+					</cbc:Name>
+				<cbc:Telephone>0158 1233714
+						<?Name Contact telephone number ?>
+						<?Description The phone number of the contact. ?>
+						<?Cardinality 0..1?>
+					</cbc:Telephone>
+				<cbc:ElectronicMail>sender@consignor-company.co.uk
+						<?Name Contact email address ?>
+						<?Description The electronic mail of the contact. ?>
+						<?Cardinality 0..1?>
+				</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:DeliveryParty>
+			<cac:DeliveryTerms>
+				<?Name Delivery terms ?>
+				<?Description The conditions agreed upon between a seller and a buyer with regard to the delivery of goods and/or services (e.g., CIF, FOB, or EXW from the INCOTERMS Terms of Delivery). ?>
+				<?Cardinality 0..1?>
+				<cbc:ID>DAP
+					<?Name Delivery terms identification ?>
+					<?Description Delivery terms code (Inco terms). ?>
+					<?Cardinality 0..1?>
+				</cbc:ID>
+				<cbc:SpecialTerms>DAP
+					<?Name Special terms ?>
+					<?Description Special delivery terms that exceeds the inco terms. ?>
+					<?Cardinality 0..1?>
+				</cbc:SpecialTerms>
+				<cac:DeliveryLocation>
+					<?Name Delivery terms location?>
+					<?Description?>
+					<?Cardinality 0..1?>
+					<cbc:ID> Kalmar <?Name Delivery terms location?>
+						<?Description Delivery terms location. The location to which the delivery terms refer. Used to qualify the delivery terms e.g. "Terms of delivery are FOB Rotterdam"?>
+						<?Cardinality 1..1?>
+					</cbc:ID>
+				</cac:DeliveryLocation>			
+			</cac:DeliveryTerms>
 		</cac:Delivery>
 	</cac:Shipment>
 			
@@ -1134,6 +1225,12 @@
 				<?Name Person ?>
 				<?Description The person who applies the signature on behalf of the Signature Party. ?>
 				<?Cardinality 0..1?>
+				<cbc:ID schemeID="zzz">45976	
+					<?Name Person ID ?>
+					<?Description The ID for a person. The type of ID can be specified in a schemeID. ?>
+					<?schemeID-usage Optional?>
+					<?Cardinality 0..1?>
+				</cbc:ID>
 				<cbc:FirstName>Valiry
 						<?Name First Name ?>
 						<?Description The persons first name. ?>
