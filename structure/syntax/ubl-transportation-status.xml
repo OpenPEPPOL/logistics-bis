@@ -163,7 +163,7 @@
             <Description>The time the transport event occured. </Description>
          </Element>
       </Element>
-		    <Element cardinality="0..n">
+	     <Element cardinality="0..n">
          <Term>cac:DocumentReference</Term>
          <Name>Document reference</Name>
          <Description>Reference to additional documents relevant for this transportation status such as picktures of damages. </Description>
@@ -751,6 +751,29 @@
          </Element>
       </Element>
 	     <Element cardinality="0..1">
+         <Term>cac:TransportationStatusRequestDocumentReference</Term>
+         <Name>Additional document reference</Name>
+         <Description>Reference to a transport execution plan. </Description>
+         <Element cardinality="1..1">
+            <Term>cbc:ID</Term>
+            <Name>Identity of the reference</Name>
+            <Description>The reference number of added document</Description>
+            <Value type="EXAMPLE">7648779</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:IssueDate</Term>
+            <Name>Issue Date</Name>
+            <Description>The issue Date when the transport execution plan request was issued</Description>
+            <Value type="EXAMPLE">2021-09-29</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:IssueTime</Term>
+            <Name>Issue Time</Name>
+            <Description>The issue time when the transport execution plan request was issued</Description>
+            <Value type="EXAMPLE">07:49:00</Value>
+         </Element>
+      </Element>
+	     <Element cardinality="0..1">
          <Term>cac:TransportExecutionPlanDocumentReference</Term>
          <Name>Additional document reference</Name>
          <Description>Reference to a transport execution plan. </Description>
@@ -793,7 +816,7 @@
             <Description>The time the transport event occured. </Description>
          </Element>
       </Element>
-		    <Element cardinality="0..1">
+	     <Element cardinality="0..1">
          <Term>cac:UpdatedDeliveryTransportEvent</Term>
          <Name>Updated Delivery Transport Event </Name>
          <Description>The transport event associated to a delivery in the transport execution plan. Can only be described id the updated pickup transport event is not described </Description>
