@@ -12,10 +12,10 @@
 		<?Description The ID assigned by the carrier party ?>
 		<?Cardinality 0..1?>	
 	</cbc:CarrierAssignedID>
-	<cbc:IssueDate>2005-06-25<?Description The date when the waybill is issued. Format = "YYYY-MM-DD". ?>
+	<cbc:IssueDate>2005-06-25<?Description The date when thus version of the waybill is issued. Format = "YYYY-MM-DD". ?>
 	</cbc:IssueDate>
 	<cbc:IssueTime>09:00:00
-		<?Description The time when the transport execuition plan is issued. Format = "hh:mm:ss". ?>
+		<?Description The time when this version of the waybill is issued. Format = "hh:mm:ss". ?>
 		<?Cardinality 1..1?>
 	</cbc:IssueTime>
 	<cbc:Name>Air Waybill
@@ -29,10 +29,13 @@
 		<?Cardinality 0..1?>
 	</cbc:ShippingOrderID>
 	<cac:ConsignorParty>
-		<?Name Consignee Party ?>
-		<?Description The party sending the waybill request. ?>
+		<?Name Consignor Party ?>
+		<?Description The party sending the goods in the waybill, often the issuer of the waybill. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0198">13246149
+			<?Name Endpoint ID ?>
+			<?Description An identifier for the end point of the routing service for the Consignor party (e.g., EAN Location Number, GLN). ?>			
+			<?Cardinality 1..1?>
 			<?schemeID-usage Mandatory?>
 			<?schemeID-CodeList eas?>
 		</cbc:EndpointID>
@@ -40,7 +43,9 @@
 			<?Name Consignor identification ?>
 			<?Description An identifier for the consignor party. ?>
 			<?Cardinality 0..1?>
-			<cbc:ID schemeID="0088">7300010000001 				
+			<cbc:ID schemeID="0088">7300010000001 	
+			<?Name ID ?>
+			<?Description The ID used for identification.?>			
 			<?schemeID-CodeList ICD?>
 			<?schemeID-usage Optional?>
 			<?Cardinality 1..1?>
@@ -115,7 +120,7 @@
 			<cbc:CompanyID schemeID="0198">13246149
 					<?Name Consignor parties legal registration name ?>
 					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 					<?schemeID-Name Scheme identifier ?>
 					<?schemeID-Description The identification scheme identifier of the consignor legal registration identifier ?>
 					<?schemeID-Usage optional?>
@@ -168,7 +173,8 @@
 		<?Description The carrier party responsible for this waybill. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0212">0108023-3
-			<?Description An identifier for the end point of the routing service (e.g., EAN Location Number, GLN). ?>
+			<?Description An identifier for the end point of the routing service for the carrier party (e.g., EAN Location Number, GLN). ?>
+			<?Name Endpoint ID ?>			
 			<?Cardinality 1..1?>
 			<?schemeID-usage Mandatory?>
 			<?schemeID-CodeList eas?>
@@ -243,10 +249,10 @@
 			<?Name Party legal entity ?>
 			<?Cardinality 0..1?>
 			<cbc:RegistrationName>Leman
-						<?Name Carrier party name ?>
-						<?Description The name of the carrier party.?>
+						<?Name The registration name of the carrier party ?>
+						<?Description The registration name of the carrier party.?>
 						<?Cardinality 1..1?>
-					</cbc:RegistrationName>
+			</cbc:RegistrationName>
 			<cbc:CompanyID schemeID="0212">0108023-3
 						<?Name Carrier parties legal registration name ?>
 						<?Description The official name of the party as registered with the relevant fiscal authority. ?>
@@ -270,7 +276,7 @@
 					<?Cardinality 1..1?>
 					<cbc:IdentificationCode>FI
 						<?Name Country code ?>
-						<?Cardinality 0..1?>
+						<?Cardinality 1..1?>
 						<?CodeList ISO3166?>
 						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
@@ -280,19 +286,19 @@
 	</cac:CarrierParty>
 	<cac:FreightForwarderParty>
 		<?Name Freight Forwarder party ?>
-		<?Description A party combining individual smaller consignments into a single larger shipment (a so-called consolidated consignment or shipment) that is sent to a counterpart who mirrors the consolidator's activity by dividing the consolidated consignment into its original components. ?>
+		<?Description The party responsible for organizing the shipment, often known as the integrator ?>
 		<?Cardinality 0..1?>		
 		<cac:PartyName>
 			<?Name Party name ?>
 			<?Cardinality 0..1?>
 			<cbc:Name>Finnair Oyj
-				<?Name Carrier party name?>
-				<?Description The name of the carrier party. ?>
+				<?Name Freight forwarder party name?>
+				<?Description The name of the freight forwarder party. ?>
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
 			<?Name Postal address ?>
-			<?Description The postal address of the carrier.?>
+			<?Description The postal address of the freight forwarder.?>
 			<?Cardinality 0..1?>
 			<cbc:StreetName>Tietotie 9
 						<?Name Address line 1 ?>
@@ -343,16 +349,16 @@
 			<?Name Party legal entity ?>
 			<?Cardinality 0..1?>
 			<cbc:RegistrationName>Leman
-						<?Name Carrier party name ?>
-						<?Description The name of the carrier party.?>
+						<?Name Freight forwarder party name ?>
+						<?Description The name of the freight forwarder party.?>
 						<?Cardinality 1..1?>
 					</cbc:RegistrationName>
 			<cbc:CompanyID schemeID="0212">0108023-3
-						<?Name Carrier parties legal registration name ?>
+						<?Name Freight forwarders parties legal registration name ?>
 						<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 						<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier ?>
-					<?schemeID-Description The identification scheme identifier of the carrier legal registration identifier ?>
+					<?schemeID-Description The identification scheme identifier of the freight forwarders legal registration identifier ?>
 					<?schemeID-Usage optional?>
 					<?schemeID-CodeList ICD?>
 					</cbc:CompanyID>
@@ -386,7 +392,7 @@
 			<?Description Identifies a shipment. Freight forwarders reference number.?>
 		</cbc:ID>
 		<cbc:Information>hank at arriving
-			<?Description Used by Logistics for Supplier Remark.?>
+			<?Description Free-form text pertinent to this shipment, conveying information that is not contained explicitly in other structures.?>
 			<?Cardinality 0..1?>
 		</cbc:Information>
 			
@@ -409,20 +415,20 @@
 			</cbc:ConsignorAssignedID>
 			<cbc:GrossWeightMeasure unitCode="KGM">1030
 				<?Name Consignment gross weight ?> 
-				<?Description The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified?>
-				<?Cardinality 1..1?>			
+				<?Description The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified. Mandatory if grossvolumen or loading lenght is not specified?>
+				<?Cardinality 0..1?>			
 			</cbc:GrossWeightMeasure>
 			
 			
 			<cbc:GrossVolumeMeasure unitCode="MTQ">20
 				<?Name Consignment gross volume ?>
-				<?Description The gross volumen of the consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
+				<?Description The gross volumen of the consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified. Mandatory if grosswaight or loading lenght is not specified.?>
 				<?Cardinality 0..1?>
 			</cbc:GrossVolumeMeasure>
 			
 			<cbc:LoadingLengthMeasure unitCode="MTR">0.4
 				<?Name Loading length measure ?>
-				<?Description The total length in a means of transport or a piece of transport equipment which, given the width and height of the transport means, will accommodate all of the consignments in a single consolidation.?>
+				<?Description The total length in a means of transport or a piece of transport equipment which, given the width and height of the transport means, will accommodate all of the consignments in a single consolidation. Mandatory if grossweight or grossvolumen is not specified?>
 				<?Cardinality 0..1?>
 			</cbc:LoadingLengthMeasure>
 			<cbc:HazardousRiskIndicator>false
@@ -482,7 +488,7 @@
 			
 			<cac:TransportHandlingUnit>
 				<?Name Transport handling unit ?>
-				<?Description Used to specify how the goods is packed. ?>
+				<?Description Used to specify the outer most packages, the units that the transporters deals with. ?>
 				<?Cardinality 0..n?>
 				<cbc:ID>11111222222222
 				<?Name Identifier transport handling unit ?>
@@ -496,10 +502,12 @@
 				<?CodeList UNECERec21?>
 				<?Cardinality 1..1?>
 			</cbc:TransportHandlingUnitTypeCode>
-				<cbc:HandlingCode>CCC
+				<cbc:HandlingCode listID = "HandlingCode">CCC
 				<?Name Handling Code ?>
 				<?Description The handling for this transporthandling unit expressed as a code ?>
 				<?Cardinality 0..1?>
+				<?listID-usage Optional?>
+				<?CodeList HandlingCode?>				
 			</cbc:HandlingCode>
 				<cbc:HandlingInstructions>To be set vertical
 				<?Name Handling instructions ?>
@@ -619,17 +627,10 @@
 					<?Name Hazardous risk indicator ?>
 					<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 					<?Cardinality 0..1?>
-				</cbc:HazardousRiskIndicator>				
-				<cbc:Quantity unitCode="EA">6
-					<?Name Quantity ?>
-					<?Description The number of units making up this goods item. Mandatory with hazadous goods?>
-					<?Cardinality 0..1?>
-					<?unitCode-Name Quantity unit of measure ?>
-					<?unitCode-Description The unit of measure that applies to the quantity.?>
-				</cbc:Quantity>				
+				</cbc:HazardousRiskIndicator>												
 				<cac:Item>
 					<?Name Item ?>
-					<?Description Description of the product beeing transported. ?>
+					<?Description Description of the product beeing transported. Used for a structurel description of the item. mandatory for Hazardous items.?>
 					<?Cardinality 0..1?>
 					<cbc:Name>Torsk
 						<?Name Name?>
@@ -667,6 +668,14 @@
 							<?Cardinality 0..1?>
 							<?CodeList HazardClasses?>
 						</cbc:HazardClassID>
+						<cbc:NetWeightMeasure unitCode="KGM">40.8
+							<?Description The net weight for the item. Use if the Hazard class ID requires it?>
+							<?Cardinality 0..1?>
+							<?unitCode-Name Latitude degrees unit of measure?>
+							<?unitCode-Description The unit of measure that applies to the latitude degrees.?>
+							<?unitCode-usage Mandatory?>
+							<?unitCode-CodeList UNECERec20?>
+						</cbc:NetWeightMeasure> 
 					</cac:HazardousItem>
 				</cac:Item>
 			</cac:GoodsItem>			
@@ -738,7 +747,7 @@
 			<cbc:TrackingID>456789</cbc:TrackingID>
 			<cac:DeliveryLocation>
 				<?Name Delivery location?>
-				<?Description The Delivery Location is used to define the Ship-to when the Delivery Customer Party is not . When the Despatch Advice describes a movement, the Delivery Location should always be included. When the Despatch Advice describes a service given at a location, the Delivery Location describes this location.?>
+				<?Description The location where the goods are delivered.?>
 				<?Cardinality 1..1?>
 				<cbc:ID schemeID="0088"> 5790000435951 <?Name Identity of the delivery location?>
 					<?Description Identifies the delivery location.?>
@@ -880,12 +889,12 @@
 				<?Name Party legal entity ?>
 				<?Cardinality 0..1?>
 				<cbc:RegistrationName>HUS Hospital
-					<?Name Consignee party name ?>
+					<?Name Consignee or delivery party name ?>
 					<?Description The name of the delivery party.?>
 					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="0212">1567535-0
-					<?Name Consignee parties legal registration name ?>
+					<?Name Consignee or delivery parties legal registration id ?>
 					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier ?>
@@ -937,8 +946,8 @@
 			</cac:DeliveryParty>
 			<cac:Despatch>				
 				<cac:DespatchAddress>
-					<?Description The Despatch Address is used to define the Ship-from when the Despatch Supplier Party is not. When the Despatch Advice describes a movement, the Despatch Address should be included.?>
-					<cbc:ID> 34456456456456 <?Description An identifier for the location to which the goods and services are despatched. For example a global location number.?>
+					<?Description The Despatch Address is the address from where the goods is despatched.?>
+					<cbc:ID> 34456456456456 <?Description An identifier for the location from which the goods and services are despatched. For example a global location number.?>
 					</cbc:ID>
 					<cbc:StreetName>Avon Way
 						<?Name Address line 1 ?>
@@ -1023,7 +1032,7 @@
 			
 	<cac:DocumentReference>
 		<?Name Additional document reference?>
-		<?Description Reference to additional documents relevant for this transport execution plan request. ?>
+		<?Description Reference to documents relevant for this waybill. ?>
 		<?Cardinality 0..n?>
 		<cbc:ID> 7648779 <?Name Identity of the reference?>
 			<?Description The reference number of added document?>
@@ -1166,7 +1175,7 @@
 		</cac:SignatoryParty>
 		<cac:DigitalSignatureAttachment>
 			<?Name Attachment?>
-			<?Cardinality 0..1?>
+			<?Cardinality 1..1?>
 			<?Description The actual signature included or refered to as an attachment .?>
 			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">
 				aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw== <?Name Embedded binary object?>
