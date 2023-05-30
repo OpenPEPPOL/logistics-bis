@@ -1,50 +1,64 @@
 [[parties]]
-= Parties
+= Parties and roles
 
 The following parties/roles may be specified in the message.
 The same actor may play more than one role depending on the handling routine.
 
-[[sender-party]]
-== Sender (SenderParty)
-The Sender is the party who sendes the weighing statement (e.g. Weighing Station, Shipper, Freight Forwarder, Carrier, ...).
+The diagram below shows the parties and roles in this profile.
+
+image::images/roles.png[image,width=649,height=260]
+
+[[transport-user-party]]
+== Transport User (TransportUserParty)
+
+The Transport User is the user of the transport service, often the Consignor. The transport User is the  sender of the Transport Execution Plan Request and the receiver of the Transport Execution Plan.
 
 Example:
 [source, xml, indent=0]
 ----
-include::{snippet-dir}/snippet-1.xml[tags=sender-party]
+include::{snippet-dir}/snippet-1.xml[tags=transport-user-party]
 ----
 
-[[receiver-party]]
-== Receiver (ReceiverParty)
+[[transport-service-provider-party]]
+== Transport Service Provider (TransportServiceProviderParty)
 
-The Receiver is the party receiving this weight statement (e.g. Carrier, Terminal Operator, ...). 
+The Transport Service Provider is the party providing the transport services. The Transport Service Provider is the sender of the Transport Execution Plan and the receiver of the Transport Executions Plan Request.
 
 Example:
 [source, xml, indent=0]
 ----
-include::{snippet-dir}/snippet-1.xml[tags=receiver-party]
+include::{snippet-dir}/snippet-1.xml[tags=transport-service-provider-party]
 ----
 
-[[weighing-party]]
-== Weighing party (WeighingParty)
+[[consignor-party]]
+== Consignor (ConsignorParty)
 
-The Weighing party is the party executing the weight measure (e.g. Weighing Station).
-
-The Weighing party  is optional information in the Weight statement.
+Consignor, also known as the shipper, is the sender of the goods. The Consignor is often the buyer of the freight services. If the Consignor is the same for all consignments in the Waybill, the consignor can be described on the document level instead of in each consignment.
 
 Example:
 [source, xml, indent=0]
 ----
-include::{snippet-dir}/snippet-1.xml[tags=weighing-party]
+include::{snippet-dir}/snippet-1.xml[tags=consignor-party]
 ----
 
-[[shipper-party]]
-== Shipper (ShipperParty)
+[[consignee-party]]
+== Consignee (ConsigneeParty)
 
-The party playing the role of the Shipper (BCO, FF or NVOCC) who is responsible for the VGM (e.g. according the SOLAS Convention).
+Consignee is known as the DeliveryCustomerParty in the Despatch and receive advice. The Consignee is the person or organisation to which the products will be shipped and who is taking possession. The role is carried out by the customer or on behalf of the customer. The Consignee is a mandatory party in the consignment element and can be the Transportation Buyer.
 
 Example:
 [source, xml, indent=0]
 ----
-include::{snippet-dir}/snippet-1.xml[tags=shipper-party]
+include::{snippet-dir}/snippet-1.xml[tags=consignee-party]
+----
+
+[[carrier-party]]
+== Carrier (CarrierParty)
+
+Carrier is the party providing the transport of goods between named points.
+
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=carrier-party]
 ----
