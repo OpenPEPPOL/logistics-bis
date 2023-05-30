@@ -47,7 +47,7 @@
 	     <Element>
          <Term>cbc:IssueDate</Term>
          <Name>Dispatch advice issue date</Name>
-         <Description>The date when the waybill is issued. Format = "YYYY-MM-DD". </Description>
+         <Description>The date when thus version of the waybill is issued. Format = "YYYY-MM-DD". </Description>
          <DataType>Date</DataType>
          <Reference type="BUSINESS_TERM">tir16-004</Reference>
          <Value type="EXAMPLE">2005-06-25</Value>
@@ -55,7 +55,7 @@
 	     <Element cardinality="1..1">
          <Term>cbc:IssueTime</Term>
          <Name>Dispatch advice issue time</Name>
-         <Description>The time when the transport execuition plan is issued. Format = "hh:mm:ss". </Description>
+         <Description>The time when this version of the waybill is issued. Format = "hh:mm:ss". </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
          <Value type="EXAMPLE">09:00:00</Value>
@@ -74,10 +74,12 @@
       </Element>
 	     <Element cardinality="1..1">
          <Term>cac:ConsignorParty</Term>
-         <Name>Consignee Party </Name>
-         <Description>The party sending the waybill request. </Description>
-         <Element>
+         <Name>Consignor Party </Name>
+         <Description>The party sending the goods in the waybill, often the issuer of the waybill. </Description>
+         <Element cardinality="1..1">
             <Term>cbc:EndpointID</Term>
+            <Name>Endpoint ID </Name>
+            <Description>An identifier for the end point of the routing service for the Consignor party (e.g., EAN Location Number, GLN). </Description>
             <Value type="EXAMPLE">13246149</Value>
             <Attribute usage="Mandatory">
                <Term>schemeID</Term>
@@ -91,6 +93,8 @@
             <Description>An identifier for the consignor party. </Description>
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
+               <Name>ID </Name>
+               <Description>The ID used for identification.</Description>
                <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
@@ -175,7 +179,7 @@
                <Description>The name of the consignor party.</Description>
                <Value type="EXAMPLE">Novo Nordisk Pharmatech A/S</Value>
             </Element>
-            <Element cardinality="0..1">
+            <Element cardinality="1..1">
                <Term>cbc:CompanyID</Term>
                <Name>Consignor parties legal registration name </Name>
                <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
@@ -241,7 +245,8 @@
          <Description>The carrier party responsible for this waybill. </Description>
          <Element cardinality="1..1">
             <Term>cbc:EndpointID</Term>
-            <Description>An identifier for the end point of the routing service (e.g., EAN Location Number, GLN). </Description>
+            <Name>Endpoint ID </Name>
+            <Description>An identifier for the end point of the routing service for the carrier party (e.g., EAN Location Number, GLN). </Description>
             <Value type="EXAMPLE">0108023-3</Value>
             <Attribute usage="Mandatory">
                <Term>schemeID</Term>
@@ -334,8 +339,8 @@
             <Name>Party legal entity </Name>
             <Element cardinality="1..1">
                <Term>cbc:RegistrationName</Term>
-               <Name>Carrier party name </Name>
-               <Description>The name of the carrier party.</Description>
+               <Name>The registration name of the carrier party </Name>
+               <Description>The registration name of the carrier party.</Description>
                <Value type="EXAMPLE">Leman</Value>
             </Element>
             <Element cardinality="0..1">
@@ -364,7 +369,7 @@
                   <Term>cac:Country</Term>
                   <Name>Country </Name>
                   <Description>The residens country for the carrier party. </Description>
-                  <Element cardinality="0..1">
+                  <Element cardinality="1..1">
                      <Term>cbc:IdentificationCode</Term>
                      <Name>Country code </Name>
                      <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
@@ -378,21 +383,21 @@
 	     <Element cardinality="0..1">
          <Term>cac:FreightForwarderParty</Term>
          <Name>Freight Forwarder party </Name>
-         <Description>A party combining individual smaller consignments into a single larger shipment (a so-called consolidated consignment or shipment) that is sent to a counterpart who mirrors the consolidator's activity by dividing the consolidated consignment into its original components. </Description>
+         <Description>The party responsible for organizing the shipment, often known as the integrator </Description>
          <Element cardinality="0..1">
             <Term>cac:PartyName</Term>
             <Name>Party name </Name>
             <Element>
                <Term>cbc:Name</Term>
-               <Name>Carrier party name</Name>
-               <Description>The name of the carrier party. </Description>
+               <Name>Freight forwarder party name</Name>
+               <Description>The name of the freight forwarder party. </Description>
                <Value type="EXAMPLE">Finnair Oyj</Value>
             </Element>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:PostalAddress</Term>
             <Name>Postal address </Name>
-            <Description>The postal address of the carrier.</Description>
+            <Description>The postal address of the freight forwarder.</Description>
             <Element cardinality="0..1">
                <Term>cbc:StreetName</Term>
                <Name>Address line 1 </Name>
@@ -450,19 +455,19 @@
             <Name>Party legal entity </Name>
             <Element cardinality="1..1">
                <Term>cbc:RegistrationName</Term>
-               <Name>Carrier party name </Name>
-               <Description>The name of the carrier party.</Description>
+               <Name>Freight forwarder party name </Name>
+               <Description>The name of the freight forwarder party.</Description>
                <Value type="EXAMPLE">Leman</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cbc:CompanyID</Term>
-               <Name>Carrier parties legal registration name </Name>
+               <Name>Freight forwarders parties legal registration name </Name>
                <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
                <Value type="EXAMPLE">0108023-3</Value>
                <Attribute>
                   <Term>schemeID</Term>
                   <Name>Scheme identifier </Name>
-                  <Description>The identification scheme identifier of the carrier legal registration identifier </Description>
+                  <Description>The identification scheme identifier of the freight forwarders legal registration identifier </Description>
                   <Reference type="CODE_LIST">ICD</Reference>
                   <Value type="EXAMPLE">0212</Value>
                </Attribute>
@@ -505,7 +510,7 @@
          <Element cardinality="0..1">
             <Term>cbc:Information</Term>
             <Name>Shipment description</Name>
-            <Description>Used by Logistics for Supplier Remark.</Description>
+            <Description>Free-form text pertinent to this shipment, conveying information that is not contained explicitly in other structures.</Description>
             <Reference type="BUSINESS_TERM">tir16-039</Reference>
             <Value type="EXAMPLE">hank at arriving</Value>
          </Element>
@@ -532,10 +537,10 @@
                <Description>Consignment identifier assigned by the consignor</Description>
                <Value type="EXAMPLE">5678</Value>
             </Element>
-            <Element cardinality="1..1">
+            <Element cardinality="0..1">
                <Term>cbc:GrossWeightMeasure</Term>
                <Name>Consignment gross weight </Name>
-               <Description>The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified</Description>
+               <Description>The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified. Mandatory if grossvolumen or loading lenght is not specified</Description>
                <Value type="EXAMPLE">1030</Value>
                <Attribute>
                   <Term>unitCode</Term>
@@ -545,7 +550,7 @@
             <Element cardinality="0..1">
                <Term>cbc:GrossVolumeMeasure</Term>
                <Name>Consignment gross volume </Name>
-               <Description>The gross volumen of the consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified</Description>
+               <Description>The gross volumen of the consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified. Mandatory if grosswaight or loading lenght is not specified.</Description>
                <Value type="EXAMPLE">20</Value>
                <Attribute>
                   <Term>unitCode</Term>
@@ -555,7 +560,7 @@
             <Element cardinality="0..1">
                <Term>cbc:LoadingLengthMeasure</Term>
                <Name>Loading length measure </Name>
-               <Description>The total length in a means of transport or a piece of transport equipment which, given the width and height of the transport means, will accommodate all of the consignments in a single consolidation.</Description>
+               <Description>The total length in a means of transport or a piece of transport equipment which, given the width and height of the transport means, will accommodate all of the consignments in a single consolidation. Mandatory if grossweight or grossvolumen is not specified</Description>
                <Value type="EXAMPLE">0.4</Value>
                <Attribute>
                   <Term>unitCode</Term>
@@ -627,7 +632,7 @@
             <Element cardinality="0..n">
                <Term>cac:TransportHandlingUnit</Term>
                <Name>Transport handling unit </Name>
-               <Description>Used to specify how the goods is packed. </Description>
+               <Description>Used to specify the outer most packages, the units that the transporters deals with. </Description>
                <Element cardinality="1..1">
                   <Term>cbc:ID</Term>
                   <Name>Identifier transport handling unit </Name>
@@ -645,7 +650,12 @@
                   <Term>cbc:HandlingCode</Term>
                   <Name>Handling Code </Name>
                   <Description>The handling for this transporthandling unit expressed as a code </Description>
+                  <Reference type="CODE_LIST">HandlingCode</Reference>
                   <Value type="EXAMPLE">CCC</Value>
+                  <Attribute usage="Optional">
+                     <Term>listID</Term>
+                     <Value type="EXAMPLE">HandlingCode</Value>
+                  </Attribute>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:HandlingInstructions</Term>
@@ -795,21 +805,9 @@
                      <Value type="EXAMPLE">false</Value>
                   </Element>
                   <Element cardinality="0..1">
-                     <Term>cbc:Quantity</Term>
-                     <Name>Quantity </Name>
-                     <Description>The number of units making up this goods item. Mandatory with hazadous goods</Description>
-                     <Value type="EXAMPLE">6</Value>
-                     <Attribute>
-                        <Term>unitCode</Term>
-                        <Name>Quantity unit of measure </Name>
-                        <Description>The unit of measure that applies to the quantity.</Description>
-                        <Value type="EXAMPLE">EA</Value>
-                     </Attribute>
-                  </Element>
-                  <Element cardinality="0..1">
                      <Term>cac:Item</Term>
                      <Name>Item </Name>
-                     <Description>Description of the product beeing transported. </Description>
+                     <Description>Description of the product beeing transported. Used for a structurel description of the item. mandatory for Hazardous items.</Description>
                      <Element cardinality="0..1">
                         <Term>cbc:Name</Term>
                         <Name>Name</Name>
@@ -857,6 +855,18 @@
                            <Description>The UN code for this kind of hazardous item. </Description>
                            <Reference type="CODE_LIST">HazardClasses</Reference>
                            <Value type="EXAMPLE">2</Value>
+                        </Element>
+                        <Element cardinality="0..1">
+                           <Term>cbc:NetWeightMeasure</Term>
+                           <Description>The net weight for the item. Use if the Hazard class ID requires it</Description>
+                           <Value type="EXAMPLE">40.8</Value>
+                           <Attribute usage="Mandatory">
+                              <Term>unitCode</Term>
+                              <Name>Latitude degrees unit of measure</Name>
+                              <Description>The unit of measure that applies to the latitude degrees.</Description>
+                              <Reference type="CODE_LIST">UNECERec20</Reference>
+                              <Value type="EXAMPLE">KGM</Value>
+                           </Attribute>
                         </Element>
                      </Element>
                   </Element>
@@ -945,7 +955,7 @@
             <Element cardinality="1..1">
                <Term>cac:DeliveryLocation</Term>
                <Name>Delivery location</Name>
-               <Description>The Delivery Location is used to define the Ship-to when the Delivery Customer Party is not . When the Despatch Advice describes a movement, the Delivery Location should always be included. When the Despatch Advice describes a service given at a location, the Delivery Location describes this location.</Description>
+               <Description>The location where the goods are delivered.</Description>
                <Element cardinality="0..1">
                   <Term>cbc:ID</Term>
                   <Name>Identity of the delivery location</Name>
@@ -1154,13 +1164,13 @@
                   <Name>Party legal entity </Name>
                   <Element cardinality="1..1">
                      <Term>cbc:RegistrationName</Term>
-                     <Name>Consignee party name </Name>
+                     <Name>Consignee or delivery party name </Name>
                      <Description>The name of the delivery party.</Description>
                      <Value type="EXAMPLE">HUS Hospital</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:CompanyID</Term>
-                     <Name>Consignee parties legal registration name </Name>
+                     <Name>Consignee or delivery parties legal registration id </Name>
                      <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
                      <Value type="EXAMPLE">1567535-0</Value>
                      <Attribute>
@@ -1224,11 +1234,11 @@
                <Element cardinality="0..1">
                   <Term>cac:DespatchAddress</Term>
                   <Name>Despatch address</Name>
-                  <Description>The Despatch Address is used to define the Ship-from when the Despatch Supplier Party is not. When the Despatch Advice describes a movement, the Despatch Address should be included.</Description>
+                  <Description>The Despatch Address is the address from where the goods is despatched.</Description>
                   <Element cardinality="0..1">
                      <Term>cbc:ID</Term>
                      <Name>Identifier</Name>
-                     <Description>An identifier for the location to which the goods and services are despatched. For example a global location number.</Description>
+                     <Description>An identifier for the location from which the goods and services are despatched. For example a global location number.</Description>
                      <Reference type="BUSINESS_TERM">tir16-p046</Reference>
                      <Value type="EXAMPLE">34456456456456</Value>
                   </Element>
@@ -1387,7 +1397,7 @@
 	     <Element cardinality="0..n">
          <Term>cac:DocumentReference</Term>
          <Name>Additional document reference</Name>
-         <Description>Reference to additional documents relevant for this transport execution plan request. </Description>
+         <Description>Reference to documents relevant for this waybill. </Description>
          <Element>
             <Term>cbc:ID</Term>
             <Name>Identity of the reference</Name>
@@ -1564,7 +1574,7 @@
                </Element>
             </Element>
          </Element>
-         <Element cardinality="0..1">
+         <Element cardinality="1..1">
             <Term>cac:DigitalSignatureAttachment</Term>
             <Name>Attachment</Name>
             <Description>The actual signature included or refered to as an attachment .</Description>
