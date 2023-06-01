@@ -477,7 +477,7 @@
             <Description>Id for the consignment, often a number from the Transport Service provider. </Description>
             <Value type="EXAMPLE">12535157654567654</Value>
          </Element>
-         <Element cardinality="0..1">
+         <Element cardinality="0..n">
             <Term>cac:TransportEvent</Term>
             <Name>Transport event </Name>
             <Description>A transport event in this consignment a status is requested for.</Description>
@@ -486,6 +486,12 @@
                <Name>Identifier pickup transport event </Name>
                <Description>An identifier for this pickup transport event within an agreed event identification scheme. </Description>
                <Value type="EXAMPLE">21412312412</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:TransportEventTypeCode</Term>
+               <Name>Transport Event Type Code </Name>
+               <Description>A code specifying the requested transport event type. </Description>
+               <Reference type="CODE_LIST">TransportEventTypeCode</Reference>
             </Element>
          </Element>
          <Element cardinality="0..n">

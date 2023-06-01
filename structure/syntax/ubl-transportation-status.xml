@@ -61,10 +61,16 @@
          <Name>Description</Name>
          <Description>Textual description of the Transportation status.</Description>
       </Element>
-	     <Element cardinality="1..1">
+	     <Element cardinality="0..1">
+         <Term>cbc:ShippingOrderID</Term>
+         <Name>Shipping Order ID </Name>
+         <Description>An identifier (in the form of a reference number) of the Shipping Order or Forwarding Instruction associated with this shipment. </Description>
+         <Value type="EXAMPLE">KHN23-44044</Value>
+      </Element>
+	     <Element cardinality="0..1">
          <Term>cbc:TransportationStatusTypeCode</Term>
          <Name>Transportation Status Type Code</Name>
-         <Description>The type of the transportation status code.</Description>
+         <Description>The type of the transportation status code. Mandatory if the transportation status is an answer to a transportation status request.</Description>
          <Reference type="CODE_LIST">TransportationStatusTypeCode</Reference>
          <Value type="EXAMPLE">1</Value>
       </Element>
@@ -151,16 +157,19 @@
             <Term>cbc:IdentificationID</Term>
             <Name>Identification ID </Name>
             <Description>Identifices the transport event. </Description>
+            <Value type="EXAMPLE">234526457</Value>
          </Element>
          <Element cardinality="1..1">
             <Term>cbc:OccurrenceDate</Term>
             <Name>Occurence Date </Name>
             <Description>The date the transport event occured. </Description>
+            <Value type="EXAMPLE">2023-06-01</Value>
          </Element>
          <Element cardinality="1..1">
             <Term>cbc:OccurrenceTime</Term>
             <Name>Occurence Time </Name>
             <Description>The time the transport event occured. </Description>
+            <Value type="EXAMPLE">10:23:34</Value>
          </Element>
       </Element>
 	     <Element cardinality="0..n">
@@ -373,6 +382,32 @@
                   <Value type="EXAMPLE">www.beast.se</Value>
                </Element>
             </Element>
+         </Element>
+      </Element>
+	     <Element cardinality="0..n">
+         <Term>cac:TransportEvent</Term>
+         <Name>Updated Pickup Transport Event </Name>
+         <Description>The transport event associated to a pickup in the transport execution plan. Can only be described id the updated Delivery transport event is not described </Description>
+         <Element cardinality="1..1">
+            <Term>cbc:IdentificationID</Term>
+            <Name>Identification ID </Name>
+            <Description>Identifices the transport event. </Description>
+         </Element>
+         <Element cardinality="1..1">
+            <Term>cbc:OccurrenceDate</Term>
+            <Name>Occurence Date </Name>
+            <Description>The date the transport event occured. </Description>
+         </Element>
+         <Element cardinality="1..1">
+            <Term>cbc:OccurrenceTime</Term>
+            <Name>Occurence Time </Name>
+            <Description>The time the transport event occured. </Description>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:TransportEventTypeCode</Term>
+            <Name>Transport Event Type Code </Name>
+            <Description>A code specifying the requested transport event type. </Description>
+            <Reference type="CODE_LIST">TransportEventTypeCode</Reference>
          </Element>
       </Element>
 	     <Element cardinality="1..1">
@@ -796,46 +831,8 @@
             <Value type="EXAMPLE">07:49:00</Value>
          </Element>
       </Element>
-	     <Element cardinality="0..1">
-         <Term>cac:UpdatedPickupTransportEvent</Term>
-         <Name>Updated Pickup Transport Event </Name>
-         <Description>The transport event associated to a pickup in the transport execution plan. Can only be described id the updated Delivery transport event is not described </Description>
-         <Element cardinality="1..1">
-            <Term>cbc:IdentificationID</Term>
-            <Name>Identification ID </Name>
-            <Description>Identifices the transport event. </Description>
-         </Element>
-         <Element cardinality="1..1">
-            <Term>cbc:OccurrenceDate</Term>
-            <Name>Occurence Date </Name>
-            <Description>The date the transport event occured. </Description>
-         </Element>
-         <Element cardinality="1..1">
-            <Term>cbc:OccurrenceTime</Term>
-            <Name>Occurence Time </Name>
-            <Description>The time the transport event occured. </Description>
-         </Element>
-      </Element>
-	     <Element cardinality="0..1">
-         <Term>cac:UpdatedDeliveryTransportEvent</Term>
-         <Name>Updated Delivery Transport Event </Name>
-         <Description>The transport event associated to a delivery in the transport execution plan. Can only be described id the updated pickup transport event is not described </Description>
-         <Element cardinality="1..1">
-            <Term>cbc:IdentificationID</Term>
-            <Name>Identification ID </Name>
-            <Description>Identifices the transport event. </Description>
-         </Element>
-         <Element cardinality="1..1">
-            <Term>cbc:OccurrenceDate</Term>
-            <Name>Occurence Date </Name>
-            <Description>The date the transport event occured. </Description>
-         </Element>
-         <Element cardinality="1..1">
-            <Term>cbc:OccurrenceTime</Term>
-            <Name>Occurence Time </Name>
-            <Description>The time the transport event occured. </Description>
-         </Element>
-      </Element>
+
+	
 	     <Element cardinality="1..1">
          <Term>cac:StatusLocation</Term>
          <Name>Delivery location</Name>
