@@ -371,12 +371,18 @@
 		<cac:TransportEvent>
 				<?Name Transport event ?>
 				<?Description A transport event in this consignment a status is requested for.?>
-				<?Cardinality 0..1?>
+				<?Cardinality 0..n?>
 			<cbc:IdentificationID>21412312412
 				<?Name Identifier pickup transport event ?>
 				<?Description An identifier for this pickup transport event within an agreed event identification scheme. ?>
 				<?Cardinality 0..1?>
 			</cbc:IdentificationID>
+			<cbc:TransportEventTypeCode>
+				<?Name Transport Event Type Code ?>
+				<?Description A code specifying the requested transport event type. ?>
+				<?Cardinality 0..1?>
+				<?CodeList TransportEventTypeCode?>
+			</cbc:TransportEventTypeCode>
 		</cac:TransportEvent>
 		<cac:TransportHandlingUnit>
 				<?Name Transport handling unit ?>
