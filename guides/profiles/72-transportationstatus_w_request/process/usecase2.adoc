@@ -1,62 +1,32 @@
-[[use-case-2-four-parties-1]]
-== Use case 2 – Four Parties Involved: Consignor, Despatch Party, Freight Forwarder and Carrier
+[[use-case-2]]
+== Use case 2 – Request for status on all transport events
 
 [cols="2,6",options="header",]
 |====
 |Use Case Number | 2
 |*Use Case Name* a|
 
-Four parties involved Consignor, Despatch Party, Freight Forwarder and Carrier. The Consignor preparing and issuing a Transport Execution Plan Request and a Transport Execution Plan.
+Request for status on all transport events.
 
 |*Use Case Description* a|
 
-The Consignor provides detailed instructions to the Despatch Party for the transport of a consignment.
-
-The Despatch Party issues a Transport Execution Plan Request and send to the Freight Forwarder.
-
-The Freight forwarder issued a Transport Execution Plan Request and sends to the Carrier.
+The Sender sends a Transportation Status Request to ask for status on all transport events up to date including the current status of the transport. The Transportation Status Type Code must be set to ????.
 
 |*Parties involved* a|
 
-Consignor +
-Despatch Party +
-Freight Forwarder +
-Carrier
+Sender +
+Receiver
 
 |*Assumptions* a|
 
-The Consignor has a consignment to be transported and knows the type of means of transport required and has agreed terms with the Despatch Party for its transportation. 
-
-The Despatch Party knows the type of means of transport required by the Consignor and has agreed terms with the Freight Forwarder for its transportation.
-
-The Freight Forwarder knows the type of means of transport required by the Consignor and has agreed terms with the Carrier for its transportation
-
-The consignment has been or will be loaded into one or more specific pieces of transport equipment.
-
-The Carrier has space available on a specific means of transport. The Consignor and the Despatch Party have a relationship. 
-
-The Despatch Party and Freight Forwarder have a relationship.
-
-The Freight Forwarder and the Carrier have a relationship.
-
-The Consignor has ordered transportation from the Despatch Party, the Despatch Party has ordered transportation from the Freight Forwarder and the Freight Forwarder has ordered transportation from the Carrier.
+The transport is agreed in a Transport Execution Plan or similar document. 
+The sender of the Transportation Status Request has the rights to receive the type of status that is requested.
 
 |*The flow* a|
 
-. The Consignor has received an Order from a Consignee
-. The Consignor sends a Transport Execution Plan Request to the Despatch Party.
-. The Despatch Party sends a Transport Execution Plan Request to the Freight Forwarder.
-. The Freight Forwarder Sends a Transport Execution Plan Request to the Carrier.
-. The Carrier accepts the Transport Execution Plan Request and confirms price and conditions with the Freight Forwarder.
-. The Freight Forwarder accepts the Transport Execution Plan Request and confirms price and conditions with the Despatch Party.
-. The Despatch Party accepts the Transport Execution Plan Request and confirms price and conditions with the Consignor.
-. The Consignor accepts the price and terms issued by the Despatch Party.
-. The Consignor issues a Transport Execution Plan.
-. The Consignor packs the goods ready for collection by the Carrier.
-. The Carrier collects the Shipment and transports it to the Consignee.
+. The Sender sends a Transportation Status Request to ask for status on all transport events.
+. The Receiver processes the request and prepares the Transportation Status with the relevant information.
+. The Receiver sends the Transportation Status to the party that sent the request.
+. The requester receives the Transportation Status and takes any action based on the response.
 
-
-|*Remarks* a|
-
-The Consignor provides the detailed instructions and the Consignor issues a Transport Execution Plan for the transport of a consignment.
 |====
