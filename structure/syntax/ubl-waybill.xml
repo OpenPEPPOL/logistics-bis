@@ -47,7 +47,7 @@
 	     <Element>
          <Term>cbc:IssueDate</Term>
          <Name>Dispatch advice issue date</Name>
-         <Description>The date when thus version of the waybill is issued. Format = "YYYY-MM-DD". </Description>
+         <Description>The date when this version of the waybill is issued. Format = "YYYY-MM-DD". </Description>
          <DataType>Date</DataType>
          <Reference type="BUSINESS_TERM">tir16-004</Reference>
          <Value type="EXAMPLE">2005-06-25</Value>
@@ -582,28 +582,6 @@
                   <Term>unitCode</Term>
                   <Value type="EXAMPLE">EA</Value>
                </Attribute>
-            </Element>
-            <Element cardinality="1..1">
-               <Term>cac:PlannedPickupTransportEvent</Term>
-               <Name>Requested pickup transport event </Name>
-               <Description>The pickup of this consignment requested by the party requesting a transportation service.</Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:IdentificationID</Term>
-                  <Name>Identifier pickup transport event </Name>
-                  <Description>An identifier for this pickup transport event within an agreed event identification scheme. </Description>
-                  <Value type="EXAMPLE">21412312412</Value>
-               </Element>
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:PlannedDeliveryTransportEvent</Term>
-               <Name>Requested delivery transport event </Name>
-               <Description>The delivery transport event of this consignment as specified in transport exexution plan.</Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:IdentificationID</Term>
-                  <Name>Identifier delivery transport event </Name>
-                  <Description>An identifier for this delivery transport event within an agreed event identification scheme. </Description>
-                  <Value type="EXAMPLE">625435485674654132</Value>
-               </Element>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:OriginalDepartureCountry</Term>
@@ -1531,7 +1509,7 @@
                   <Term>cac:Country</Term>
                   <Name>Country </Name>
                   <Description>The country for the address</Description>
-                  <Element cardinality="0..1">
+                  <Element cardinality="1..1">
                      <Term>cbc:IdentificationCode</Term>
                      <Name>Country code </Name>
                      <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
