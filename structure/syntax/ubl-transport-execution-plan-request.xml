@@ -1505,114 +1505,6 @@
                <Value type="EXAMPLE">false</Value>
             </Element>
             <Element cardinality="0..1">
-               <Term>cac:CarrierParty</Term>
-               <Name>Carrier party </Name>
-               <Description>The carrier party responsible for this shipment stage. </Description>
-               <Element cardinality="0..1">
-                  <Term>cac:PartyIdentification</Term>
-                  <Name>Carrier identification </Name>
-                  <Description>An identifier for the carrier party. </Description>
-                  <Element cardinality="1..1">
-                     <Term>cbc:ID</Term>
-                     <Value type="EXAMPLE">7300010000001</Value>
-                     <Attribute usage="Optional">
-                        <Term>schemeID</Term>
-                        <Reference type="CODE_LIST">ICD</Reference>
-                        <Value type="EXAMPLE">0088</Value>
-                     </Attribute>
-                  </Element>
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:PartyName</Term>
-                  <Name>Party name </Name>
-                  <Element>
-                     <Term>cbc:Name</Term>
-                     <Name>Carrier party name</Name>
-                     <Description>The name of the carrier party. </Description>
-                     <Value type="EXAMPLE">Finnair Oyj</Value>
-                  </Element>
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:PostalAddress</Term>
-                  <Name>Postal address </Name>
-                  <Description>The postal address of the carrier.</Description>
-                  <Element cardinality="0..1">
-                     <Term>cbc:StreetName</Term>
-                     <Name>Address line 1 </Name>
-                     <Description>The main address line in a postal address usually the street name and number. </Description>
-                     <Value type="EXAMPLE">Tietotie 9</Value>
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:CityName</Term>
-                     <Name>City </Name>
-                     <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
-                     <Value type="EXAMPLE">Vantaa</Value>
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:PostalZone</Term>
-                     <Name>Post code </Name>
-                     <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
-                     <Value type="EXAMPLE">4600</Value>
-                  </Element>
-                  <Element cardinality="1..1">
-                     <Term>cac:Country</Term>
-                     <Name>Country </Name>
-                     <Element cardinality="1..1">
-                        <Term>cbc:IdentificationCode</Term>
-                        <Name>Country code </Name>
-                        <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
-                        <Reference type="CODE_LIST">ISO3166</Reference>
-                        <Value type="EXAMPLE">FI</Value>
-                     </Element>
-                  </Element>
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:PartyLegalEntity</Term>
-                  <Name>Party legal entity </Name>
-                  <Element cardinality="1..1">
-                     <Term>cbc:RegistrationName</Term>
-                     <Name>Carrier party name </Name>
-                     <Description>The name of the carrier party.</Description>
-                     <Value type="EXAMPLE">Leman</Value>
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:CompanyID</Term>
-                     <Name>Carrier parties legal registration name </Name>
-                     <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
-                     <Value type="EXAMPLE">0108023-3</Value>
-                     <Attribute>
-                        <Term>schemeID</Term>
-                        <Name>Scheme identifier </Name>
-                        <Description>The identification scheme identifier of the carrier legal registration identifier </Description>
-                        <Reference type="CODE_LIST">ICD</Reference>
-                        <Value type="EXAMPLE">0212</Value>
-                     </Attribute>
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cac:RegistrationAddress</Term>
-                     <Name>Legal address </Name>
-                     <Element cardinality="0..1">
-                        <Term>cbc:CityName</Term>
-                        <Name>City name </Name>
-                        <Description>The name of the city. </Description>
-                        <Value type="EXAMPLE">Vantaa</Value>
-                     </Element>
-                     <Element cardinality="1..1">
-                        <Term>cac:Country</Term>
-                        <Name>Country </Name>
-                        <Description>The residens country for the carrier party. </Description>
-                        <Element cardinality="0..1">
-                           <Term>cbc:IdentificationCode</Term>
-                           <Name>Country code </Name>
-                           <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
-                           <Reference type="CODE_LIST">ISO3166</Reference>
-                           <Value type="EXAMPLE">FI</Value>
-                        </Element>
-                     </Element>
-                  </Element>
-               </Element>
-            </Element>
-            <Element cardinality="0..1">
                <Term>cac:RequestedDepartureTransportEvent</Term>
                <Name>Requested departure transport event </Name>
                <Description>The departure requested by the party requesting a transportation service. </Description>
@@ -2065,17 +1957,6 @@
                      <Name>Quantity unit of measure </Name>
                      <Description>The unit of measure that applies to the quantity.</Description>
                      <Value type="EXAMPLE">EA</Value>
-                  </Attribute>
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:TraceID</Term>
-                  <Name>Trace identifier </Name>
-                  <Description>An identifier for use in tracing this goods item, such as the EPC number used in RFID. </Description>
-                  <Value type="EXAMPLE">345699634527</Value>
-                  <Attribute usage="Optional">
-                     <Term>schemeID</Term>
-                     <Name>Scheme identifier</Name>
-                     <Value type="EXAMPLE">sgtin</Value>
                   </Attribute>
                </Element>
                <Element cardinality="0..1">
