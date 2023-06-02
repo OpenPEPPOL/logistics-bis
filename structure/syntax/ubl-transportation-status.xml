@@ -113,6 +113,54 @@
             </Element>
          </Element>
          <Element cardinality="0..n">
+            <Term>cac:TransportEvent</Term>
+            <Name>Transport Event </Name>
+            <Description>A transport event associated to this transportation status. </Description>
+            <Element cardinality="1..1">
+               <Term>cbc:IdentificationID</Term>
+               <Name>Identification ID </Name>
+               <Description>Identifices the transport event. </Description>
+               <Value type="EXAMPLE">234526457</Value>
+            </Element>
+            <Element cardinality="1..1">
+               <Term>cbc:OccurrenceDate</Term>
+               <Name>Occurence Date </Name>
+               <Description>The date the transport event occured. </Description>
+               <Value type="EXAMPLE">2023-06-01</Value>
+            </Element>
+            <Element cardinality="1..1">
+               <Term>cbc:OccurrenceTime</Term>
+               <Name>Occurence Time </Name>
+               <Description>The time the transport event occured. </Description>
+               <Value type="EXAMPLE">10:23:34</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:TransportEventTypeCode</Term>
+               <Name>Transport Event Type Code </Name>
+               <Description>A code specifying the requested transport event type. </Description>
+               <Reference type="CODE_LIST">TransportEventTypeCode</Reference>
+            </Element>
+            <Element>
+               <Term>cac:Period</Term>
+               <Element cardinality="0..1">
+                  <Term>cbc:StartDate</Term>
+                  <Value type="EXAMPLE">2021-09-25</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:StartTime</Term>
+                  <Value type="EXAMPLE">12:00:00</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:EndDate</Term>
+                  <Value type="EXAMPLE">2021-09-27</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:EndTime</Term>
+                  <Value type="EXAMPLE">12:00:00</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element cardinality="0..n">
             <Term>cac:TransportHandlingUnit</Term>
             <Name>Transport handling Unit </Name>
             <Description>The transport handling unit refered to in this transportation status. </Description>
@@ -148,30 +196,7 @@
                </Element>
             </Element>
          </Element>
-      </Element>
-	     <Element cardinality="0..1">
-         <Term>cac:TransportEvent</Term>
-         <Name>Transport Event </Name>
-         <Description>The transport event associated to this transportation status. </Description>
-         <Element cardinality="1..1">
-            <Term>cbc:IdentificationID</Term>
-            <Name>Identification ID </Name>
-            <Description>Identifices the transport event. </Description>
-            <Value type="EXAMPLE">234526457</Value>
-         </Element>
-         <Element cardinality="1..1">
-            <Term>cbc:OccurrenceDate</Term>
-            <Name>Occurence Date </Name>
-            <Description>The date the transport event occured. </Description>
-            <Value type="EXAMPLE">2023-06-01</Value>
-         </Element>
-         <Element cardinality="1..1">
-            <Term>cbc:OccurrenceTime</Term>
-            <Name>Occurence Time </Name>
-            <Description>The time the transport event occured. </Description>
-            <Value type="EXAMPLE">10:23:34</Value>
-         </Element>
-      </Element>
+      </Element>	
 	     <Element cardinality="0..n">
          <Term>cac:DocumentReference</Term>
          <Name>Document reference</Name>
