@@ -12,7 +12,7 @@
 		<?Description The ID assigned by the carrier party ?>
 		<?Cardinality 0..1?>	
 	</cbc:CarrierAssignedID>
-	<cbc:IssueDate>2005-06-25<?Description The date when thus version of the waybill is issued. Format = "YYYY-MM-DD". ?>
+	<cbc:IssueDate>2005-06-25<?Description The date when this version of the waybill is issued. Format = "YYYY-MM-DD". ?>
 	</cbc:IssueDate>
 	<cbc:IssueTime>09:00:00
 		<?Description The time when this version of the waybill is issued. Format = "hh:mm:ss". ?>
@@ -441,28 +441,7 @@
 				<?Description The total numbers of transport handling units is this consignment?>
 				<?Cardinality 0..1?>
 			</cbc:TotalTransportHandlingUnitQuantity>
-			
-
-			<cac:PlannedPickupTransportEvent>
-				<?Name Requested pickup transport event ?>
-				<?Description The pickup of this consignment requested by the party requesting a transportation service.?>
-				<?Cardinality 1..1?>
-			<cbc:IdentificationID>21412312412
-				<?Name Identifier pickup transport event ?>
-				<?Description An identifier for this pickup transport event within an agreed event identification scheme. ?>
-				<?Cardinality 0..1?>
-			</cbc:IdentificationID>
-		</cac:PlannedPickupTransportEvent>
-			<cac:PlannedDeliveryTransportEvent>
-				<?Name Requested delivery transport event ?>
-				<?Description The delivery transport event of this consignment as specified in transport exexution plan.?>
-				<?Cardinality 0..1?>
-				<cbc:IdentificationID>625435485674654132
-					<?Name Identifier delivery transport event ?>
-					<?Description An identifier for this delivery transport event within an agreed event identification scheme. ?>
-					<?Cardinality 0..1?>
-				</cbc:IdentificationID>	
-			</cac:PlannedDeliveryTransportEvent>													
+																
 			<cac:OriginalDepartureCountry>
 				<?Name Original departure country ?>
 				<?Description The country from which the goods in this consignment were originally exported, without any commercial transaction taking place in intermediate countries. ?>
@@ -1140,7 +1119,7 @@
 					<?Cardinality 1..1?>
 					<cbc:IdentificationCode>FI
 						<?Name Country code ?>
-						<?Cardinality 0..1?>
+						<?Cardinality 1..1?>
 						<?CodeList ISO3166?>
 						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
