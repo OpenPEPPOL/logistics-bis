@@ -4,8 +4,12 @@
 	<?Property key="sch:prefix" PEPPOL-T128?>
 	<?Property key="sch:identifier" T128-basic?>
 	
-	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:receipt_advice:1</cbc:CustomizationID>
-	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1</cbc:ProfileID>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:receipt_advice:1
+		<?Rule PEPPOL-T128-R001?>
+	</cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1
+		<?Rule PEPPOL-T128-R002?>
+	</cbc:ProfileID>
 	
 	<cbc:ID>5658999
 		<?Description The identity of the Receipt Advice set by the sender. It must be a unique identity. 
@@ -306,12 +310,15 @@
 		<cac:Party>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088"> 5790000435951 
+					<?Rule PEPPOL-T128-R008?>
 					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
-				<cbc:Name> IYT Corporation </cbc:Name>
+				<cbc:Name> IYT Corporation 
+					<?Rule PEPPOL-T128-R008?>
+				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<cbc:StreetName>Avon Way</cbc:StreetName>
@@ -332,13 +339,16 @@
 	<cac:SellerSupplierParty>
 		<cac:Party>
 			<cac:PartyIdentification>
-				<cbc:ID schemeID="0088"> 5790000435951 
+				<cbc:ID schemeID="0088">5790000435951
+					<?Rule PEPPOL-T128-R009?>
 					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
-				<cbc:Name> IYT Corporation </cbc:Name>
+				<cbc:Name> IYT Corporation 
+					<?Rule PEPPOL-T128-R009?>
+				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<cbc:StreetName>Avon Way</cbc:StreetName>
@@ -434,6 +444,8 @@
 				<?Description The date, time or period the goods or service was requested to be delivered on. ?>
 				<?Cardinality 0..1?>
 				<cbc:StartDate>2021-09-25<?Name Requested Start Date?>
+					<?Rule PEPPOL-T128-R012?>
+					<?Rule PEPPOL-T128-R015?>
 					<?Cardinality 1..1?>
 					<?Description The requested delivery date or the start of the requested delivery period. ?>
 				</cbc:StartDate>
@@ -441,10 +453,12 @@
 					<?Name Requested Start Time?>
 					<?Description The start time of the requested delivery period. ?>
 					<?Cardinality 0..1?>
-					<?Rule PEPPOL-T120-R013?>
-					<?Rule PEPPOL-T120-R015?>
+					<?Rule PEPPOL-T128-R013?>
+					<?Rule PEPPOL-T128-R015?>
 				</cbc:StartTime>
 				<cbc:EndDate>2021-09-27<?Name Requested End Date. ?>
+					<?Rule PEPPOL-T128-R014?>
+					<?Rule PEPPOL-T128-R015?>
 					<?Description The last date of the requested period. ?>
 					<?Cardinality 0..1?>
 				</cbc:EndDate>
@@ -452,9 +466,9 @@
 					<?Name Requested End Time?>
 					<?Description The ending time of the requested delivery period. ?>
 					<?Cardinality 0..1?>
-					<?Rule PEPPOL-T120-R013?>
-					<?Rule PEPPOL-T120-R014?>
-					<?Rule PEPPOL-T120-R015?>
+					<?Rule PEPPOL-T128-R013?>
+					<?Rule PEPPOL-T128-R014?>
+					<?Rule PEPPOL-T128-R015?>
 				</cbc:EndTime>
 			</cac:RequestedDeliveryPeriod>
 			
@@ -463,13 +477,13 @@
 				<?Description?>
 				<?Name Delivery terms?>
 				<cbc:ID> EXW <?Name Delivery terms?> 
-					<?Rule PEPPOL-T120-R022?>
+					<?Rule PEPPOL-T128-R022?>
 					<?Description Delivery terms code (Inco terms).?>
 					<?Cardinality 0..1?>
 				</cbc:ID>
 				<cbc:SpecialTerms> EQN-06 
 					<?Name Special terms?> 
-					<?Rule PEPPOL-T120-R022?>
+					<?Rule PEPPOL-T128-R022?>
 					<?Description Special delivery terms that exceeds the inco terms.?>
 					<?Cardinality 0..1?>
 				</cbc:SpecialTerms>
@@ -543,6 +557,7 @@
 			<?unitCode-Cardinality 1..1?>
 		</cbc:ReceivedQuantity>
 		<cbc:ShortQuantity unitCode="KGM">10
+			
 			<?Name Short quantity?>
 			<?Description The quantity received short; the difference between the quantity reported despatched and the quantity actually received. ?>
 			<?Cardinality 0..1?>
@@ -551,6 +566,7 @@
 			<?unitCode-Cardinality 1..1?>
 		</cbc:ShortQuantity>
 		<cbc:ShortageActionCode>2
+			<?Rule PEPPOL-T128-R007?>
 			<?Name Shortage Action Code?>
 			<?Description A code signifying the action that the delivery party wishes the despatch party to take as the result of a shortage.?>
 			<?Cardinality 0..1?>
@@ -659,7 +675,7 @@
 					<?Name Item identity?>
 					<?Description The seller's identity on the item. ?>
 					<?Cardinality 1..1?>
-					<?Rule PEPPOL-T120-R003?>
+					<?Rule PEPPOL-T128-R003?>
 				</cbc:ID>
 			</cac:SellersItemIdentification>
 			<cac:ManufacturersItemIdentification>
@@ -680,7 +696,7 @@
 					<?Name Standard Item number?>
 					<?Cardinality 1..1?>
 					<?Description Global Trade Item Number (GTIN) or other standardized identification.?>
-					<?Rule PEPPOL-T120-R003?>
+					<?Rule PEPPOL-T128-R003?>
 					<?schemeID-Name Scheme identifier?>
 					<?schemeID-CodeList ICD?>
 					<?schemeID-Cardinality 1..1?>
