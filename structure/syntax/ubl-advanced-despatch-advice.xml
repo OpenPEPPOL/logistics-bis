@@ -42,12 +42,13 @@
 	     <Element>
          <Term>cbc:IssueDate</Term>
          <Name>Dispatch advice issue date</Name>
-         <Description>The date when the advanced despatch advice is issued. Format = "YYYY-MM-DD".</Description>
+         <Description>The date when the advanced despatch advice is issued. Format = "YYYY-MM-DD".
+		Together with ID and IssueTime the IssueDate forms the identity of the Version of the ADvanced Despatch Advice. </Description>
          <DataType>Date</DataType>
          <Reference type="BUSINESS_TERM">tir16-004</Reference>
          <Value type="EXAMPLE">2021-09-10</Value>
       </Element>
-	     <Element cardinality="0..1">
+	     <Element cardinality="1..1">
          <Term>cbc:IssueTime</Term>
          <Name>Dispatch advice issue time</Name>
          <Description>The time when the advanced despatch advice is issued. Format = "hh:mm:ss".</Description>
