@@ -19,6 +19,7 @@
 				transaction.</Description>
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir16-002</Reference>
+         <Reference type="RULE">PEPPOL-T128-R001</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:receipt_advice:1</Value>
       </Element>
 	     <Element>
@@ -28,6 +29,7 @@
 				transaction appears.</Description>
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir16-001</Reference>
+         <Reference type="RULE">PEPPOL-T128-R002</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1</Value>
       </Element>
 	
@@ -685,6 +687,7 @@
                   <Description>The buying party identifier</Description>
                   <DataType>Identifier</DataType>
                   <Reference type="BUSINESS_TERM">tir16-030</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R008</Reference>
                   <Value type="EXAMPLE">5790000435951</Value>
                   <Attribute usage="Optional">
                      <Term>schemeID</Term>
@@ -704,6 +707,7 @@
                   <Description>The name of the buying party</Description>
                   <DataType>Text</DataType>
                   <Reference type="BUSINESS_TERM">tir16-029</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R008</Reference>
                   <Value type="EXAMPLE">IYT Corporation</Value>
                </Element>
             </Element>
@@ -810,6 +814,7 @@
                   <Description>An identifier for the seller party.</Description>
                   <DataType>Identifier</DataType>
                   <Reference type="BUSINESS_TERM">tir16-066</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R009</Reference>
                   <Value type="EXAMPLE">5790000435951</Value>
                   <Attribute usage="Optional">
                      <Term>schemeID</Term>
@@ -829,6 +834,7 @@
                   <Description>The seller party name.</Description>
                   <DataType>Text</DataType>
                   <Reference type="BUSINESS_TERM">tir16-065</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R009</Reference>
                   <Value type="EXAMPLE">IYT Corporation</Value>
                </Element>
             </Element>
@@ -1054,29 +1060,33 @@
                   <Term>cbc:StartDate</Term>
                   <Name>Requested Start Date</Name>
                   <Description>The requested delivery date or the start of the requested delivery period. </Description>
+                  <Reference type="RULE">PEPPOL-T128-R012</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R015</Reference>
                   <Value type="EXAMPLE">2021-09-25</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:StartTime</Term>
                   <Name>Requested Start Time</Name>
                   <Description>The start time of the requested delivery period. </Description>
-                  <Reference type="RULE">PEPPOL-T120-R013</Reference>
-                  <Reference type="RULE">PEPPOL-T120-R015</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R013</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R015</Reference>
                   <Value type="EXAMPLE">12:00:00</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:EndDate</Term>
                   <Name>Requested End Date. </Name>
                   <Description>The last date of the requested period. </Description>
+                  <Reference type="RULE">PEPPOL-T128-R014</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R015</Reference>
                   <Value type="EXAMPLE">2021-09-27</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:EndTime</Term>
                   <Name>Requested End Time</Name>
                   <Description>The ending time of the requested delivery period. </Description>
-                  <Reference type="RULE">PEPPOL-T120-R013</Reference>
-                  <Reference type="RULE">PEPPOL-T120-R014</Reference>
-                  <Reference type="RULE">PEPPOL-T120-R015</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R013</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R014</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R015</Reference>
                   <Value type="EXAMPLE">12:00:00</Value>
                </Element>
             </Element>
@@ -1088,14 +1098,14 @@
                   <Term>cbc:ID</Term>
                   <Name>Delivery terms</Name>
                   <Description>Delivery terms code (Inco terms).</Description>
-                  <Reference type="RULE">PEPPOL-T120-R022</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R022</Reference>
                   <Value type="EXAMPLE">EXW</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:SpecialTerms</Term>
                   <Name>Special terms</Name>
                   <Description>Special delivery terms that exceeds the inco terms.</Description>
-                  <Reference type="RULE">PEPPOL-T120-R022</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R022</Reference>
                   <Value type="EXAMPLE">EQN-06</Value>
                </Element>
                <Element cardinality="0..1">
@@ -1194,6 +1204,7 @@
             <Term>cbc:ShortageActionCode</Term>
             <Name>Shortage Action Code</Name>
             <Description>A code signifying the action that the delivery party wishes the despatch party to take as the result of a shortage.</Description>
+            <Reference type="RULE">PEPPOL-T128-R007</Reference>
             <Reference type="CODE_LIST">ReceiptAdviceActionCode</Reference>
             <Value type="EXAMPLE">2</Value>
          </Element>
@@ -1315,7 +1326,7 @@
                   <Term>cbc:ID</Term>
                   <Name>Item identity</Name>
                   <Description>The seller's identity on the item. </Description>
-                  <Reference type="RULE">PEPPOL-T120-R003</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R003</Reference>
                   <Value type="EXAMPLE">17589683</Value>
                </Element>
             </Element>
@@ -1338,7 +1349,7 @@
                   <Term>cbc:ID</Term>
                   <Name>Standard Item number</Name>
                   <Description>Global Trade Item Number (GTIN) or other standardized identification.</Description>
-                  <Reference type="RULE">PEPPOL-T120-R003</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R003</Reference>
                   <Value type="EXAMPLE">1234567891234</Value>
                   <Attribute>
                      <Term>schemeID</Term>
