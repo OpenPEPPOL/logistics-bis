@@ -20,7 +20,7 @@
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Advanced Despatch Advice. One profile is used when the receiver of the Despatch Advice is expected to return a response message, the other is used when no response message is used. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1" and "urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_response:1"?></cbc:ProfileID>
 	<cbc:ID>5658999</cbc:ID>
 	<cbc:IssueDate>2021-09-10<?Description The date when the advanced despatch advice is issued. Format = "YYYY-MM-DD".
-		Together with ID and IssueTime the IssueDate forms the identity of the Version of the ADvanced Despatch Advice. ?>
+		Together with ID and IssueTime the IssueDate forms the identity of the Version of the Advanced Despatch Advice. ?>
 	</cbc:IssueDate>
 	<cbc:IssueTime>12:00:00<?Description The time when the advanced despatch advice is issued. Format = "hh:mm:ss".?>
 		<?Cardinality 1..1?>
@@ -52,7 +52,7 @@
 			<?Cardinality 0..1?>
 			<?CodeList UNCL1001?>
 		</cbc:DocumentTypeCode>
-		<cbc:DocumentType> BEAST:FreightPayersCustomerNumber <?Name Document type?>
+		<cbc:DocumentType> FreightPayersCustomerNumber <?Name Document type?>
 			<?Description The type of reference that cannot be specified by a code?>
 			<?Cardinality 0..1?>
 		</cbc:DocumentType>
@@ -126,7 +126,10 @@
 				</cac:TaxScheme>
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
+				<?Name Party Legal Entity?>
 				<cbc:RegistrationName> Consortial <?Cardinality 1..1?>
+					<?Name Despatching party's legal name. ?>
+					<?Description The legal name of the Despatching party. ?>
 				</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="0089"> SC234567 <?Name Despatch supplier parties legal registration name?>
 					<?Description The official name of the party as registered with the relevant fiscal authority.?>
@@ -222,7 +225,10 @@
 				</cac:TaxScheme>
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
+				<?Name Party Legal Entity?>
 				<cbc:RegistrationName> Sender inc. <?Cardinality 1..1?>
+					<?Name Consignee party's Legal name. ?>
+					<?Description The Legal Name of the Receiving party. ?>
 				</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="0089"> GB523859989 <?Name Delivery customers parties legal registration name?>
 					<?Description The official name of the party as registered with the relevant fiscal authority.?>
@@ -612,7 +618,10 @@
 			<cbc:TrackingID>456789</cbc:TrackingID>
 			<cac:DeliveryLocation>
 				<?Name Delivery location?>
-				<?Description The Delivery Location is used to define the Ship-to when the Delivery Customer Party is not . When the Despatch Advice describes a movement, the Delivery Location should always be included. When the Despatch Advice describes a service given at a location, the Delivery Location describes this location.?>
+				<?Description The Delivery Location is used to define the Ship-to when the Delivery Customer Party is not. 
+					If Despatch Location is omitted, the Delivery Customer Party is the actual Delivery Location. 
+					When the Despatch Advice describes a movement, the Delivery Location should always be included. 
+					When the Despatch Advice describes a service given at a location, the Delivery Location describes this location.?>
 				<?Cardinality 0..1?>
 				<cbc:ID schemeID="0088"> 5790000435951 <?Name Identity of the delivery location?>
 					<?Description Identifies the delivery location.?>
@@ -1338,10 +1347,10 @@
 					</cac:Country>
 				</cac:PostalAddress>
 				<cac:PartyLegalEntity>
-					<?Name Party name?>
+					<?Name Party legal name?>
 					<?Cardinality 0..1?>
-					<cbc:RegistrationName> Consortial <?Name Manufacturer party name?>
-						<?Description The name of the manufacturing party.?>
+					<cbc:RegistrationName> Consortial <?Name Manufacturer party legal name?>
+						<?Description The legal name of the manufacturing party.?>
 					</cbc:RegistrationName>
 				</cac:PartyLegalEntity>
 			</cac:ManufacturerParty>
