@@ -1429,7 +1429,7 @@
 					If Delivery Location is omitted, the Delivery Customer Party is the actual Delivery Location. 
 					When the Despatch Advice describes a movement, the Delivery Location should always be included. 
 					When the Despatch Advice describes a service given at a location, the Delivery Location describes this location.</Description>
-               <Element>
+               <Element cardinality="0..1">
                   <Term>cbc:ID</Term>
                   <Name>Identity of the delivery location</Name>
                   <Description>Identifies the delivery location.</Description>
@@ -1803,7 +1803,15 @@
                <Term>cbc:HandlingCode</Term>
                <Name>Handling Code</Name>
                <Description>The handling for this transporthandling unit expressed as a code</Description>
+               <Reference type="CODE_LIST">TRED4079</Reference>
+               <Reference type="CODE_LIST">HandlingCode</Reference>
                <Value type="EXAMPLE">CCC</Value>
+               <Attribute usage="Optional">
+                  <Term>listID</Term>
+                  <Name>Identifier for codelist for handling code</Name>
+                  <Description>An identifier for the codelist used for the handling code</Description>
+                  <Value type="EXAMPLE">TRED4079</Value>
+               </Attribute>
             </Element>
             <Element cardinality="0..1">
                <Term>cbc:HandlingInstructions</Term>
