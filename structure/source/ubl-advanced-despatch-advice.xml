@@ -131,8 +131,8 @@
 					<?Name Despatching party's legal name. ?>
 					<?Description The legal name of the Despatching party. ?>
 				</cbc:RegistrationName>
-				<cbc:CompanyID schemeID="0089"> SC234567 <?Name Despatch supplier parties legal registration name?>
-					<?Description The official name of the party as registered with the relevant fiscal authority.?>
+				<cbc:CompanyID schemeID="0089"> SC234567 <?Name Despatch supplier parties legal registration ID. ?>
+					<?Description The official identity of the party as registered with the relevant fiscal authority.?>
 					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier?>
 					<?schemeID-Description The identification scheme identifier of the despatch supplier legal registration identifier?>
@@ -230,8 +230,8 @@
 					<?Name Consignee party's Legal name. ?>
 					<?Description The Legal Name of the Receiving party. ?>
 				</cbc:RegistrationName>
-				<cbc:CompanyID schemeID="0089"> GB523859989 <?Name Delivery customers parties legal registration name?>
-					<?Description The official name of the party as registered with the relevant fiscal authority.?>
+				<cbc:CompanyID schemeID="0089"> GB523859989 <?Name Delivery customers parties legal registration ID. ?>
+					<?Description The official identity of the party as registered with the relevant fiscal authority.?>
 					<?Cardinality 0..1?>
 					<?schemeID-Usage optional?>
 					<?schemeID-CodeList ICD?>
@@ -619,7 +619,7 @@
 			<cac:DeliveryLocation>
 				<?Name Delivery location?>
 				<?Description The Delivery Location is used to define the Ship-to when the Delivery Customer Party is not. 
-					If Despatch Location is omitted, the Delivery Customer Party is the actual Delivery Location. 
+					If Delivery Location is omitted, the Delivery Customer Party is the actual Delivery Location. 
 					When the Despatch Advice describes a movement, the Delivery Location should always be included. 
 					When the Despatch Advice describes a service given at a location, the Delivery Location describes this location.?>
 				<?Cardinality 0..1?>
@@ -1347,7 +1347,7 @@
 					</cac:Country>
 				</cac:PostalAddress>
 				<cac:PartyLegalEntity>
-					<?Name Party legal name?>
+					<?Name Party legal entity?>
 					<?Cardinality 0..1?>
 					<cbc:RegistrationName> Consortial <?Name Manufacturer party legal name?>
 						<?Description The legal name of the manufacturing party.?>
