@@ -29,6 +29,7 @@
          <Reference type="BUSINESS_TERM">tir16-001</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1</Value>
       </Element>
+	
 	     <Element>
          <Term>cbc:ID</Term>
          <Name>Document identifier</Name>
@@ -78,6 +79,7 @@
          <Reference type="BUSINESS_TERM">tir16-088</Reference>
          <Value type="EXAMPLE">Text</Value>
       </Element>
+	
 	     <Element cardinality="0..n">
          <Term>cac:OrderReference</Term>
          <Name>Order reference information</Name>
@@ -91,6 +93,7 @@
             <Value type="EXAMPLE">AEG0123456</Value>
          </Element>
       </Element>
+	
 	     <Element cardinality="0..n">
          <Term>cac:AdditionalDocumentReference</Term>
          <Name>Additional document reference</Name>
@@ -157,6 +160,7 @@
             </Element>
          </Element>
       </Element>
+	
 	     <Element>
          <Term>cac:DespatchSupplierParty</Term>
          <Name>Despatching party information</Name>
@@ -389,6 +393,7 @@
             </Element>
          </Element>
       </Element>
+	
 	     <Element>
          <Term>cac:DeliveryCustomerParty</Term>
          <Name>Consignee information</Name>
@@ -739,8 +744,96 @@
                   </Element>
                </Element>
             </Element>
+            <Element cardinality="0..1">
+               <Term>cac:PartyTaxScheme</Term>
+               <Name>Party tax scheme</Name>
+               <Description>The tax information about the Buyer Party.</Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:CompanyID</Term>
+                  <Name>Company ID</Name>
+                  <Description>The Buyer Party Value Added Tax identifer.</Description>
+                  <Value type="EXAMPLE">GB523859989</Value>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cac:TaxScheme</Term>
+                  <Name>Tax scheme</Name>
+                  <Element cardinality="1..1">
+                     <Term>cbc:ID</Term>
+                     <Name>Tax scheme identifier</Name>
+                     <Description>Tax scheme identifier. E.g. "VAT" or "GST".</Description>
+                     <Value type="EXAMPLE">VAT</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PartyLegalEntity</Term>
+               <Name>Party Legal Entity</Name>
+               <Element cardinality="1..1">
+                  <Term>cbc:RegistrationName</Term>
+                  <Name>Buyer party's Legal name. </Name>
+                  <Description>The Legal Name of the Buying party. </Description>
+                  <Value type="EXAMPLE">Buyer inc.</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:CompanyID</Term>
+                  <Name>Buyer party's legal registration ID. </Name>
+                  <Description>The official identity of the party as registered with the relevant fiscal authority.</Description>
+                  <Value type="EXAMPLE">GB523859989</Value>
+                  <Attribute>
+                     <Term>schemeID</Term>
+                     <Name>Scheme identifier</Name>
+                     <Description>The identification scheme identifier of the Buyer's legal registration identifier</Description>
+                     <Reference type="CODE_LIST">ICD</Reference>
+                     <Value type="EXAMPLE">0089</Value>
+                  </Attribute>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:RegistrationAddress</Term>
+                  <Name>Legal address</Name>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CityName</Term>
+                     <Name>City name</Name>
+                     <Description>The name of the city.</Description>
+                     <Value type="EXAMPLE">Bridgtown</Value>
+                  </Element>
+                  <Element cardinality="1..1">
+                     <Term>cac:Country</Term>
+                     <Name>Contry</Name>
+                     <Description>The residens country for the Buyer party.</Description>
+                     <Element>
+                        <Term>cbc:IdentificationCode</Term>
+                        <Name>Contry code</Name>
+                        <Value type="EXAMPLE">UK</Value>
+                     </Element>
+                  </Element>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:Contact</Term>
+               <Name>Contact person name</Name>
+               <Description>The contact of the Buyer party.</Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:Name</Term>
+                  <Name>Contact name</Name>
+                  <Description>The contact name.</Description>
+                  <Value type="EXAMPLE">Mrs Bouquet</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:Telephone</Term>
+                  <Name>Contact telephone number</Name>
+                  <Description>The phone number of the contact.</Description>
+                  <Value type="EXAMPLE">0158 1233714</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:ElectronicMail</Term>
+                  <Name>Contact email address</Name>
+                  <Description>The electronic mail of the contact.</Description>
+                  <Value type="EXAMPLE">bouquet@fpconsortial.co.uk</Value>
+               </Element>
+            </Element>
          </Element>
       </Element>
+	
 	     <Element cardinality="0..1">
          <Term>cac:SellerSupplierParty</Term>
          <Name>Seller</Name>
@@ -865,8 +958,97 @@
                   </Element>
                </Element>
             </Element>
+            <Element cardinality="0..1">
+               <Term>cac:PartyTaxScheme</Term>
+               <Name>Party tax scheme</Name>
+               <Description>The tax information about the Seller Party.</Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:CompanyID</Term>
+                  <Name>Company ID</Name>
+                  <Description>The Seller Party Value Added Tax identifer.</Description>
+                  <Value type="EXAMPLE">GB325456788</Value>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cac:TaxScheme</Term>
+                  <Name>Tax scheme</Name>
+                  <Element cardinality="1..1">
+                     <Term>cbc:ID</Term>
+                     <Name>Tax scheme identifier</Name>
+                     <Description>Tax scheme identifier. E.g. "VAT" or "GST".</Description>
+                     <Value type="EXAMPLE">VAT</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element>
+               <Term>cac:PartyLegalEntity</Term>
+               <Name>Party Legal Entity</Name>
+               <Element cardinality="1..1">
+                  <Term>cbc:RegistrationName</Term>
+                  <Name>Selling party's legal name. </Name>
+                  <Description>The legal name of the Selling party. </Description>
+                  <Value type="EXAMPLE">Consortial</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:CompanyID</Term>
+                  <Name>Seller party's legal registration ID. </Name>
+                  <Description>The official identity of the party as registered with the relevant fiscal authority.</Description>
+                  <Value type="EXAMPLE">SC234567</Value>
+                  <Attribute>
+                     <Term>schemeID</Term>
+                     <Name>Scheme identifier</Name>
+                     <Description>The identification scheme identifier of Seller's legal registration identifier</Description>
+                     <Reference type="CODE_LIST">ICD</Reference>
+                     <Value type="EXAMPLE">0089</Value>
+                  </Attribute>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:RegistrationAddress</Term>
+                  <Name>Legal address</Name>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CityName</Term>
+                     <Name>City name</Name>
+                     <Description>The name of the city.</Description>
+                     <Value type="EXAMPLE">Farthing</Value>
+                  </Element>
+                  <Element cardinality="1..1">
+                     <Term>cac:Country</Term>
+                     <Name>Contry</Name>
+                     <Description>The residens country for the Seller party.</Description>
+                     <Element>
+                        <Term>cbc:IdentificationCode</Term>
+                        <Name>Country code</Name>
+                        <Description>Country Code</Description>
+                        <Value type="EXAMPLE">UK</Value>
+                     </Element>
+                  </Element>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:Contact</Term>
+               <Name>Contact</Name>
+               <Description>The contact of the Seller party.</Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:Name</Term>
+                  <Name>Contact name</Name>
+                  <Description>The contact name.</Description>
+                  <Value type="EXAMPLE">Mrs Bouquet</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:Telephone</Term>
+                  <Name>Contact email telephone</Name>
+                  <Description>The phone number of the contact.</Description>
+                  <Value type="EXAMPLE">0158 1233714</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:ElectronicMail</Term>
+                  <Name>Contact email address</Name>
+                  <Description>The electronic mail of the contact.</Description>
+                  <Value type="EXAMPLE">bouquet@fpconsortial.co.uk</Value>
+               </Element>
+            </Element>
          </Element>
       </Element>
+	
 	     <Element cardinality="0..1">
          <Term>cac:OriginatorCustomerParty</Term>
          <Name>Originator customer party</Name>
@@ -989,6 +1171,7 @@
             </Element>
          </Element>
       </Element>
+	
 	     <Element cardinality="0..1">
          <Term>cac:Shipment</Term>
          <Name>Shipment information</Name>
@@ -1133,6 +1316,131 @@
                      <Value type="EXAMPLE">Name</Value>
                   </Element>
                </Element>
+               <Element>
+                  <Term>cac:PostalAddress</Term>
+                  <Element>
+                     <Term>cbc:StreetName</Term>
+                     <Value type="EXAMPLE">Busy Street</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:AdditionalStreetName</Term>
+                     <Value type="EXAMPLE">way 1</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:CityName</Term>
+                     <Value type="EXAMPLE">Farthing</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:PostalZone</Term>
+                     <Value type="EXAMPLE">AA99 1BB</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:CountrySubentity</Term>
+                     <Value type="EXAMPLE">Heremouthshire</Value>
+                  </Element>
+                  <Element>
+                     <Term>cac:AddressLine</Term>
+                     <Element cardinality="1..1">
+                        <Term>cbc:Line</Term>
+                        <Value type="EXAMPLE">The Roundabout</Value>
+                     </Element>
+                  </Element>
+                  <Element>
+                     <Term>cac:Country</Term>
+                     <Element>
+                        <Term>cbc:IdentificationCode</Term>
+                        <Value type="EXAMPLE">GB</Value>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyTaxScheme</Term>
+                  <Name>Party tax scheme</Name>
+                  <Description>The tax information for the Carrier Party.</Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:CompanyID</Term>
+                     <Name>Company ID</Name>
+                     <Description>The Carrier Party Value Added Tax identifer.</Description>
+                     <Value type="EXAMPLE">GB325456788</Value>
+                  </Element>
+                  <Element cardinality="1..1">
+                     <Term>cac:TaxScheme</Term>
+                     <Name>Tax scheme</Name>
+                     <Element cardinality="1..1">
+                        <Term>cbc:ID</Term>
+                        <Name>Tax scheme identifier</Name>
+                        <Description>Tax scheme identifier. E.g. "VAT" or "GST".</Description>
+                        <Value type="EXAMPLE">VAT</Value>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:PartyLegalEntity</Term>
+                  <Name>Party Legal Entity</Name>
+                  <Element cardinality="1..1">
+                     <Term>cbc:RegistrationName</Term>
+                     <Name>Carrier party's legal name. </Name>
+                     <Description>The legal name of the Carrier party. </Description>
+                     <Value type="EXAMPLE">Consortial</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CompanyID</Term>
+                     <Name>Carrier supplier parties legal registration ID. </Name>
+                     <Description>The official identity of the party as registered with the relevant fiscal authority.</Description>
+                     <Value type="EXAMPLE">SC234567</Value>
+                     <Attribute>
+                        <Term>schemeID</Term>
+                        <Name>Scheme identifier</Name>
+                        <Description>The identification scheme identifier of the Carrier party's legal registration identifier</Description>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0089</Value>
+                     </Attribute>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cac:RegistrationAddress</Term>
+                     <Name>Legal address</Name>
+                     <Element cardinality="0..1">
+                        <Term>cbc:CityName</Term>
+                        <Name>City name</Name>
+                        <Description>The name of the city.</Description>
+                        <Value type="EXAMPLE">Farthing</Value>
+                     </Element>
+                     <Element cardinality="1..1">
+                        <Term>cac:Country</Term>
+                        <Name>Contry</Name>
+                        <Description>The residens country for the Carrier party.</Description>
+                        <Element>
+                           <Term>cbc:IdentificationCode</Term>
+                           <Name>Country code</Name>
+                           <Description>Country Code</Description>
+                           <Value type="EXAMPLE">UK</Value>
+                        </Element>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:Contact</Term>
+                  <Name>Contact</Name>
+                  <Description>The contact of the Carrier party.</Description>
+                  <Element cardinality="0..1">
+                     <Term>cbc:Name</Term>
+                     <Name>Contact name</Name>
+                     <Description>The contact name.</Description>
+                     <Value type="EXAMPLE">Mrs Bouquet</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:Telephone</Term>
+                     <Name>Contact email telephone</Name>
+                     <Description>The phone number of the contact.</Description>
+                     <Value type="EXAMPLE">0158 1233714</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:ElectronicMail</Term>
+                     <Name>Contact email address</Name>
+                     <Description>The electronic mail of the contact.</Description>
+                     <Value type="EXAMPLE">bouquet@fpconsortial.co.uk</Value>
+                  </Element>
+               </Element>
                <Element cardinality="0..1">
                   <Term>cac:Person</Term>
                   <Name>Information about the driver</Name>
@@ -1152,7 +1460,7 @@
                         <Description>The type of document used for identifying the driver,
 									expressed in text.</Description>
                         <Reference type="BUSINESS_TERM">tir16-p009</Reference>
-                        <Value type="EXAMPLE">DriverLicence</Value>
+                        <Value type="EXAMPLE">ID06</Value>
                      </Element>
                   </Element>
                </Element>
@@ -2357,6 +2665,8 @@
             </Element>
          </Element>
       </Element>
+	
+	
 	     <Element cardinality="1..n">
          <Term>cac:DespatchLine</Term>
          <Name>Despatch advice line</Name>
