@@ -611,6 +611,22 @@
 						<?Cardinality 1..1?>
 					</cbc:VesselID>
 				</cac:MaritimeTransport>
+				<cac:MeasurementDimension>
+					<?Name Measurement dimension?>
+					<?Description Used to specify any measurement of the Transport Means.?>
+					<?Cardinality 0..n?>
+					<cbc:AttributeID> ABT <?Name Attribute identifier?>
+						<?CodeList UNCL6313-T120?>
+						<?Description To describe the type of measurement. Use UNCL 6313 subset.?>
+						<?Cardinality 1..1?>
+					</cbc:AttributeID>
+					<cbc:Measure unitCode="TNE">12.3 <?Name Measure?>
+						<?Description For the measure. Use UN/ECE Recommendation 20 and 21.subset.?>
+						<?Cardinality 1..1?>
+						<?unitCode-Name Measure unit of measure?>
+						<?unitCode-CodeList UNECERec20?>
+					</cbc:Measure>
+				</cac:MeasurementDimension>
 			</cac:TransportMeans>
 		</cac:ShipmentStage>
 		<cac:Delivery>
