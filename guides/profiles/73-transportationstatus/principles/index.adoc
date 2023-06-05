@@ -1,21 +1,26 @@
 [[principles-and-prerequisites]]
 = Principles and prerequisites
 
-This chapter describes the principles and assumptions that underlie the use of the Logistics Weight statement.
+This chapter describes the principles and assumptions that underlie the use of the Transportation Status Only.
 
-[[despatch-advice-message-in-general]]
-== Business process in scope
-This Peppol BIS supports a process for a supplier to send a Weight statement to a buyer with information about the weight of the shipment. It is intended to support transmission of electronic messages for processing in automated processes by the receiver. 
+This profile describes a process where the Transportation Status is sent based on a agreement between the Sender and Receiver and without the use of a Transportation Status Request.
+//image::images/principlesandprerequisites.png[image,width=605,height=371]
 
-The main activity supported by this BIS is:
+[[transportation-status-in-general]]
+== Business processes in scope
+The processes covered by this profile are:
 
-* *Weight measure* The measure of the weight of the shipment and exchange of weight information between sender and receiver.
+* The *Transportation Status* is used to report the status of a transport. 
+
+The main activities supported by this message are:
+
+* The type of transport required for the despatch and delivery of the goods being shipped. The means of transport, routing and arrival details.
 
 :leveloffset: +1
 
 include::parties.adoc[]
 
-//include::../../66-advanceddespatchadvice/principles/otherconcepts.adoc[]
+//include::otherconcepts.adoc[]
 
 //include::requirements.adoc[]
 
