@@ -11,9 +11,13 @@
 			test="(normalize-space(.) = 'urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1')"
 			flag="fatal">ProfileID SHALL have the value urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1.</assert>
 	</rule>
+	
 	<rule context="cac:ReceiptLine">
 		<assert id="PEPPOL-T128-R003" test="(cac:Item/cac:StandardItemIdentification/cbc:ID) or  (cac:Item/cac:SellersItemIdentification/cbc:ID) or not(cac:Item)" flag="fatal">Each item in a Receipt Advice line SHALL be identifiable by either "item seller's identifier" or "item standard identifier"</assert>
-		<assert id="PEPPOL-T128-R007" test="((cbc:ShortQuantity) and (cbc:ShortageActionCode)) or not(cbc:ShortQuantity)" flag="fatal">A shortage quantity action SHALL be provided if the receipt line contains a shortage quantity</assert>
+		<assert id="PEPPOL-T128-R004" test="((cbc:RejectedQuantity) and (cbc:RejectActionCode)) or not(cbc:RejectedQuantity)" flag="fatal">A Reject Action Code SHALL be provided if the receipt line contains a rejected quantity</assert>
+		<assert id="PEPPOL-T128-R005" test="((cbc:RejectedQuantity) and (cbc:RejectReasonCode)) or not(cbc:RejectedQuantity)" flag="fatal">A Reject Reason Code SHALL be provided if the receipt line contains a rejected quantity</assert>
+		<assert id="PEPPOL-T128-R006" test="((cbc:RejectedQuantity) and (cbc:RejectReason)) or not(cbc:RejectedQuantity)" flag="fatal">A Reject Reason SHALL be provided if the receipt line contains a rejected quantity</assert>
+		<assert id="PEPPOL-T128-R007" test="((cbc:ShortQuantity) and (cbc:ShortageActionCode)) or not(cbc:ShortQuantity)" flag="fatal">A Shortage Action Code SHALL be provided if the receipt line contains a shortage quantity</assert>
 	</rule>
 	<rule context="cac:BuyerCustomerParty">
 		<assert id="PEPPOL-T128-R008" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A Receipt advice buyer party SHALL contain the name or an identifier</assert>
