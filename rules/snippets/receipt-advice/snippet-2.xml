@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ubl:ReceiptAdvice xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:receipt_advice:1</cbc:CustomizationID>
-	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:receipt_advice_only:1</cbc:ProfileID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1</cbc:ProfileID>
 	<cbc:ID>658398</cbc:ID>
 	<cbc:CopyIndicator>false</cbc:CopyIndicator>
 	<cbc:UUID>89F82FA6-5331-491D-83BC-7B6CA7FD047C</cbc:UUID>
@@ -116,7 +116,8 @@
 		<cbc:Note>SAMPLE</cbc:Note>
 		<cbc:ReceivedQuantity unitCode="KGM">90</cbc:ReceivedQuantity>
 		<cbc:ShortQuantity unitCode="KGM">10</cbc:ShortQuantity>
-		<cac:Item>
+		<cbc:ShortageActionCode>2</cbc:ShortageActionCode>
+			<cac:Item>
 			<cbc:Description>Acme beeswax</cbc:Description>
 			<cbc:Name>beeswax</cbc:Name>
 			<cac:BuyersItemIdentification>
