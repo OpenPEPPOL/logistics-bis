@@ -2,12 +2,12 @@
 <testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T128-base-1.0">
 	
 	<assert>
-		<description>Verify each item in a Despatch Advice line is identifiable by either “item sellers identifier” or “item standard identifier”</description>
-		<scope>PEPPOL-T120-R003</scope>
+		<description>Verify each item in a Receipt Advice line is identifiable by either “item sellers identifier” or “item standard identifier”</description>
+		<scope>PEPPOL-T128-R003</scope>
 	</assert>
 	<test id="1">
 		<assert>
-			<success>PEPPOL-T120-R003</success>
+			<success>PEPPOL-T128-R003</success>
 		</assert>
 		<ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -28,7 +28,7 @@
 
 	<test id="2">
 		<assert>
-			<success>PEPPOL-T120-R003</success>
+			<success>PEPPOL-T128-R003</success>
 		</assert>
 		<ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -45,9 +45,9 @@
 
 	<test id="3">
 		<assert>
-			<success>PEPPOL-T120-R003</success>
+			<success>PEPPOL-T128-R003</success>
 		</assert>
-		<ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
+		<DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:ReceiptLine>
@@ -62,9 +62,9 @@
 
 	<test id="4">
 		<assert>
-			<error>PEPPOL-T120-R003</error>
+			<error>PEPPOL-T128-R003</error>
 		</assert>
-		<ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
+		<DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:ReceiptLine>
@@ -77,9 +77,9 @@
 
 	<test>
 		<assert id="5">
-			<error>PEPPOL-T120-R003</error>
+			<error>PEPPOL-T128-R003</error>
 		</assert>
-		<ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
+		<DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:ReceiptLine>
