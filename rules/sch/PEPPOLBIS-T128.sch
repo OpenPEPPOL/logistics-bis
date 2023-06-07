@@ -11,8 +11,6 @@
     <ns uri="http://www.w3.org/2001/XMLSchema" prefix="xs"/>
     <ns uri="utils" prefix="u"/>
     
-    <xsl:key name="k_lineId"  match="cac:LineItem" use="cbc:ID"/>
-    
     <!-- Functions -->
 
     <xi:include href="parts/function/gln.xml"/>
