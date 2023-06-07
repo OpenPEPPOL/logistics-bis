@@ -7,11 +7,9 @@
 
 	<ns uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" prefix="cbc"/>
     <ns uri="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" prefix="cac"/>
-    <ns uri="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2" prefix="ubl"/>
+    <ns uri="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2" prefix="ubl"/>
     <ns uri="http://www.w3.org/2001/XMLSchema" prefix="xs"/>
     <ns uri="utils" prefix="u"/>
-    
-    <xsl:key name="k_lineId"  match="cac:LineItem" use="cbc:ID"/>
     
     <!-- Functions -->
 
