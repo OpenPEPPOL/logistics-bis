@@ -2,13 +2,13 @@
 <testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T128-base-1.0">
 	
 	<assert>
-		<description>Verify that a Reject Action Code is provided when a Rejected Quantity is used. ”</description>
-		<scope>PEPPOL-T128-R004</scope>
+		<description>Verify that a Reject Reson (text) is provided when a Rejected Quantity is used. ”</description>
+		<scope>PEPPOL-T128-R006</scope>
 	</assert>
 	
 	<test id="1">
 		<assert>
-			<success>PEPPOL-T128-R004</success>
+			<success>PEPPOL-T128-R006</success>
 		</assert>
 		<ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -24,7 +24,7 @@
 
 	<test id="2">
 		<assert>
-			<success>PEPPOL-T128-R004</success>
+			<success>PEPPOL-T128-R006</success>
 		</assert>
 		<ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -34,9 +34,10 @@
 			</cac:ReceiptLine>
 		</ReceiptAdvice>
 	</test>
+	
 	<test id="3">
 		<assert>
-			<error>PEPPOL-T128-R004</error>
+			<error>PEPPOL-T128-R006</error>
 		</assert>
 		<ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"

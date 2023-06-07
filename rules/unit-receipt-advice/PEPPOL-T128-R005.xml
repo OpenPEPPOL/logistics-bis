@@ -5,6 +5,7 @@
 		<description>Verify that a Reject Reson Code is provided when a Rejected Quantity is used. ”</description>
 		<scope>PEPPOL-T128-R005</scope>
 	</assert>
+	
 	<test id="1">
 		<assert>
 			<success>PEPPOL-T128-R005</success>
@@ -22,6 +23,19 @@
 	</test>
 
 	<test id="2">
+		<assert>
+			<success>PEPPOL-T128-R005</success>
+		</assert>
+		<ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:ReceiptLine>
+
+			</cac:ReceiptLine>
+		</ReceiptAdvice>
+	</test>
+	
+	<test id="3">
 		<assert>
 			<error>PEPPOL-T128-R005</error>
 		</assert>
