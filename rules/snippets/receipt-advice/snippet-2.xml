@@ -8,7 +8,7 @@
    <cbc:IssueDate>2021-09-10</cbc:IssueDate>
    <cbc:IssueTime>12:00:00</cbc:IssueTime>
    <cbc:DocumentStatusCode>9</cbc:DocumentStatusCode>
-   <cbc:ReceiptAdviceTypeCode>D</cbc:ReceiptAdviceTypeCode>
+   <cbc:ReceiptAdviceTypeCode>S</cbc:ReceiptAdviceTypeCode>
    <cbc:Note>Delivery ok</cbc:Note>
 	
 	<!-- tag::orderreference[] -->
@@ -22,8 +22,6 @@
       <cbc:ID>565899</cbc:ID>
       <cbc:IssueDate>2021-09-10</cbc:IssueDate>
       <cbc:IssueTime>12:00:00</cbc:IssueTime>
-      <cbc:DocumentStatusCode>RE</cbc:DocumentStatusCode>
-      <cbc:DocumentDescription>Incorrect Identity of the buyer.</cbc:DocumentDescription>
    </cac:DespatchDocumentReference>
 	<!-- end::despatchdocumentreference[] -->
 
@@ -185,7 +183,69 @@
       </cac:Party>
    </cac:SellerSupplierParty>
 	
-  	<!-- tag::receiptline[] -->
+   <cac:Shipment>
+      <cbc:ID> 1 </cbc:ID>
+      <cbc:Information> text </cbc:Information>
+
+	   <!-- tag::consignment[] -->
+      <cac:Consignment>
+         <cbc:ID> NA</cbc:ID>
+         <cac:Status>
+            <cbc:ConditionCode>CA</cbc:ConditionCode>
+            <cbc:StatusReasonCode>4</cbc:StatusReasonCode>
+            <cbc:StatusReason>Delivery outside requested time window.</cbc:StatusReason>
+         </cac:Status>
+         <cac:CarrierParty>
+            <cac:PartyIdentification>
+               <cbc:ID schemeID="0088"> 5790000435951</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+               <cbc:Name>Name</cbc:Name>
+            </cac:PartyName>
+            <cac:Person>
+               <cac:IdentityDocumentReference>
+                  <cbc:ID>45642323</cbc:ID>
+                  <cbc:DocumentType>DriverLicence</cbc:DocumentType>
+               </cac:IdentityDocumentReference>
+            </cac:Person>
+         </cac:CarrierParty>
+      </cac:Consignment>
+	   <!-- end::consignment[] -->
+
+	   <!-- tag::delivery[] -->
+      <cac:Delivery>
+         <cbc:ActualDeliveryDate>2021-09-27</cbc:ActualDeliveryDate>
+         <cbc:ActualDeliveryTime>16:00:00</cbc:ActualDeliveryTime>
+         <cac:RequestedDeliveryPeriod>
+            <cbc:StartDate>2021-09-25</cbc:StartDate>
+            <cbc:StartTime>12:00:00</cbc:StartTime>
+            <cbc:EndDate>2021-09-27</cbc:EndDate>
+            <cbc:EndTime>12:00:00</cbc:EndTime>
+         </cac:RequestedDeliveryPeriod>
+         <cac:DeliveryTerms>
+            <cbc:ID> EXW </cbc:ID>
+            <cbc:SpecialTerms> EQN-06</cbc:SpecialTerms>
+            <cac:DeliveryLocation>
+               <cbc:ID> Kalmar </cbc:ID>
+            </cac:DeliveryLocation>
+         </cac:DeliveryTerms>
+      </cac:Delivery>
+	   <!-- end::delivery[] -->
+
+	   <!-- tag::transporthandlingunit[] -->
+      <cac:TransportHandlingUnit>
+         <cbc:ID>11111222222222</cbc:ID>
+         <cbc:TransportHandlingUnitTypeCode> AG </cbc:TransportHandlingUnitTypeCode>
+         <cbc:DamageRemark>Pallet cover broken, see attached photo.</cbc:DamageRemark>
+         <cac:Status>
+            <cbc:ConditionCode>2</cbc:ConditionCode>
+         </cac:Status>
+      </cac:TransportHandlingUnit>
+	   <!-- end::transporthandlingunit[] -->
+	   
+   </cac:Shipment>
+
+	<!-- tag::receiptline[] -->
    <cac:ReceiptLine>
       <cbc:ID>1</cbc:ID>
       <cbc:Note>SAMPLE</cbc:Note>
