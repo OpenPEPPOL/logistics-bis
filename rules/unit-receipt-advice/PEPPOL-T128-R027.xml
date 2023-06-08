@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T128-base-1.0">
+	<assert>
+		<description>Verify that a Damage Remark is provided if a Transport Handling Unit is not fully OK. </description>
+		<scope>PEPPOL-T128-R027</scope>
+	</assert>
+	
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T128-R027</success>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cac:Shipment>
+					<cac:TransportHandlingUnit>
+						<cbc:DamageRemark>Pallet cover broken, see attached photo.</cbc:DamageRemark>
+						<cac:Status>
+							<cbc:ConditionCode>4</cbc:ConditionCode>
+						</cac:Status>
+					</cac:TransportHandlingUnit>
+			</cac:Shipment>
+		</ReceiptAdvice>
+	</test>
+
+	<test id="2">
+		<assert>
+			<success>PEPPOL-T128-R027</success>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cac:Shipment>
+				<cac:TransportHandlingUnit>
+					<cbc:DamageRemark>Pallet cover broken, see attached photo.</cbc:DamageRemark>
+					<cac:Status>
+						<cbc:ConditionCode>6</cbc:ConditionCode>
+					</cac:Status>
+				</cac:TransportHandlingUnit>
+			</cac:Shipment>
+		</ReceiptAdvice>
+	</test>
+	
+	<test id="3">
+		<assert>
+			<success>PEPPOL-T128-R027</success>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cac:Shipment>
+				<cac:TransportHandlingUnit>
+					<cac:Status>
+						<cbc:ConditionCode>5</cbc:ConditionCode>
+					</cac:Status>
+				</cac:TransportHandlingUnit>
+			</cac:Shipment>
+		</ReceiptAdvice>
+	</test>
+
+	<test id="4">
+		<assert>
+			<error>PEPPOL-T128-R027</error>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cac:Shipment>
+				<cac:TransportHandlingUnit>
+					<cac:Status>
+						<cbc:ConditionCode>4</cbc:ConditionCode>
+					</cac:Status>
+				</cac:TransportHandlingUnit>
+			</cac:Shipment>
+		</ReceiptAdvice>
+	</test>
+
+	<test id="5">
+		<assert>
+			<error>PEPPOL-T128-R027</error>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cac:Shipment>
+				<cac:TransportHandlingUnit>
+					<cac:Status>
+						<cbc:ConditionCode>6</cbc:ConditionCode>
+					</cac:Status>
+				</cac:TransportHandlingUnit>
+			</cac:Shipment>
+		</ReceiptAdvice>
+	</test>
+	
+</testSet>
