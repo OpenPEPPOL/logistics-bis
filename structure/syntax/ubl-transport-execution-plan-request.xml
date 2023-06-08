@@ -1948,18 +1948,6 @@
                   <Value type="EXAMPLE">false</Value>
                </Element>
                <Element cardinality="0..1">
-                  <Term>cbc:Quantity</Term>
-                  <Name>Quantity </Name>
-                  <Description>The number of units making up this goods item. </Description>
-                  <Value type="EXAMPLE">6</Value>
-                  <Attribute>
-                     <Term>unitCode</Term>
-                     <Name>Quantity unit of measure </Name>
-                     <Description>The unit of measure that applies to the quantity.</Description>
-                     <Value type="EXAMPLE">EA</Value>
-                  </Attribute>
-               </Element>
-               <Element cardinality="0..1">
                   <Term>cac:Item</Term>
                   <Name>Item </Name>
                   <Description>Description of the product beeing transported. </Description>
@@ -2021,6 +2009,18 @@
                         <Description>The UN code for this kind of hazardous item. </Description>
                         <Reference type="CODE_LIST">HazardClasses</Reference>
                         <Value type="EXAMPLE">2</Value>
+                     </Element>
+                     <Element cardinality="0..1">
+                        <Term>cbc:NetWeightMeasure</Term>
+                        <Description>The net weight for the item. Use if the Hazard class ID requires it</Description>
+                        <Value type="EXAMPLE">40.8</Value>
+                        <Attribute usage="Mandatory">
+                           <Term>unitCode</Term>
+                           <Name>Latitude degrees unit of measure</Name>
+                           <Description>The unit of measure that applies to the latitude degrees.</Description>
+                           <Reference type="CODE_LIST">UNECERec20</Reference>
+                           <Value type="EXAMPLE">KGM</Value>
+                        </Attribute>
                      </Element>
                   </Element>
                </Element>

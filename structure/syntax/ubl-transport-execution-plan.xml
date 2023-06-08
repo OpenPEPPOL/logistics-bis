@@ -2539,6 +2539,35 @@
                      </Element>
                   </Element>
                </Element>
+               <Element cardinality="1..1">
+                  <Term>cac:Period</Term>
+                  <Name>Period </Name>
+                  <Description>The period within the arrival of this shipment stage takes place. </Description>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StartDate</Term>
+                     <Name>Period start date</Name>
+                     <Description>The start date for the period. </Description>
+                     <Value type="EXAMPLE">2021-09-29</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StartTime</Term>
+                     <Name>Period start time</Name>
+                     <Description>The start time for the period. </Description>
+                     <Value type="EXAMPLE">15:00:00+01:00</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:EndDate</Term>
+                     <Name>Period end date</Name>
+                     <Description>The end date for the period. </Description>
+                     <Value type="EXAMPLE">2021-09-29</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:EndTime</Term>
+                     <Name>Period end time</Name>
+                     <Description>The end time for the period. </Description>
+                     <Value type="EXAMPLE">16:50:00+01:00</Value>
+                  </Element>
+               </Element>
             </Element>
          </Element>
          <Element cardinality="0..n">
@@ -2880,6 +2909,35 @@
                            <Value type="EXAMPLE">FI</Value>
                         </Element>
                      </Element>
+                  </Element>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cac:Period</Term>
+                  <Name>Period </Name>
+                  <Description>The period within the arrival of this shipment stage takes place. </Description>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StartDate</Term>
+                     <Name>Period start date</Name>
+                     <Description>The start date for the period. </Description>
+                     <Value type="EXAMPLE">2021-09-29</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StartTime</Term>
+                     <Name>Period start time</Name>
+                     <Description>The start time for the period. </Description>
+                     <Value type="EXAMPLE">15:00:00+01:00</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:EndDate</Term>
+                     <Name>Period end date</Name>
+                     <Description>The end date for the period. </Description>
+                     <Value type="EXAMPLE">2021-09-29</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:EndTime</Term>
+                     <Name>Period end time</Name>
+                     <Description>The end time for the period. </Description>
+                     <Value type="EXAMPLE">16:50:00+01:00</Value>
                   </Element>
                </Element>
             </Element>
@@ -3231,6 +3289,35 @@
                      </Element>
                   </Element>
                </Element>
+               <Element cardinality="1..1">
+                  <Term>cac:Period</Term>
+                  <Name>Period </Name>
+                  <Description>The period within the arrival of this shipment stage takes place. </Description>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StartDate</Term>
+                     <Name>Period start date</Name>
+                     <Description>The start date for the period. </Description>
+                     <Value type="EXAMPLE">2021-09-29</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StartTime</Term>
+                     <Name>Period start time</Name>
+                     <Description>The start time for the period. </Description>
+                     <Value type="EXAMPLE">15:00:00+01:00</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:EndDate</Term>
+                     <Name>Period end date</Name>
+                     <Description>The end date for the period. </Description>
+                     <Value type="EXAMPLE">2021-09-29</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:EndTime</Term>
+                     <Name>Period end time</Name>
+                     <Description>The end time for the period. </Description>
+                     <Value type="EXAMPLE">16:50:00+01:00</Value>
+                  </Element>
+               </Element>
             </Element>
          </Element>
          <Element cardinality="0..n">
@@ -3483,6 +3570,18 @@
                         <Description>The UN code for this kind of hazardous item. </Description>
                         <Reference type="CODE_LIST">HazardClasses</Reference>
                         <Value type="EXAMPLE">2</Value>
+                     </Element>
+                     <Element cardinality="0..1">
+                        <Term>cbc:NetWeightMeasure</Term>
+                        <Description>The net weight for the item. Use if the Hazard class ID requires it</Description>
+                        <Value type="EXAMPLE">40.8</Value>
+                        <Attribute usage="Mandatory">
+                           <Term>unitCode</Term>
+                           <Name>Latitude degrees unit of measure</Name>
+                           <Description>The unit of measure that applies to the latitude degrees.</Description>
+                           <Reference type="CODE_LIST">UNECERec20</Reference>
+                           <Value type="EXAMPLE">KGM</Value>
+                        </Attribute>
                      </Element>
                   </Element>
                </Element>
