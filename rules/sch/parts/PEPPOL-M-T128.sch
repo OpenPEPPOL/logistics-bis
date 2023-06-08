@@ -36,7 +36,7 @@
 	</rule>
 	<rule context="cbc:ReceiptAdviceTypeCode">
 		<assert id="PEPPOL-T128-R023" test="((normalize-space(.) = 'D') and not(//cac:Shipment/cbc:ID)) or ((normalize-space(.) = 'S') and (//cac:Shipment/cbc:ID))" flag="fatal">When ReceiptAdvice is a response to Advanced Despatch Advice (D), it MUST NOT contain any Shipment group.</assert>
-		<assert id="PEPPOL-T128-R024" test="((normalize-space(.) = 'D') and (//cac:DespatchDocumentReference/cbc:DocumentStatusCode)) or ((normalize-space(.) = 'S') and not (//cac:DespatchDocumentReference/cbc:DocumentStatusCode))" flag="fatal">When ReceiptAdvice is a response to Advanced Despatch Advice (D), it SHALL provide a Document Status Code on the Despatch Document Reference.</assert>
+		<assert id="PEPPOL-T128-R024" test="((normalize-space(.) = 'D') and (//cac:DespatchDocumentReference/cbc:DocumentStatusCode)) or ((normalize-space(.) = 'S') and not (//cac:DespatchDocumentReference/cbc:DocumentStatusCode)) or (not(cbc:ReceiptAdviceTypeCode) and not (//cac:DespatchDocumentReference/cbc:DocumentStatusCode))" flag="fatal">When ReceiptAdvice is a response to Advanced Despatch Advice (D), it SHALL provide a Document Status Code on the Despatch Document Reference.</assert>
 
 	</rule>
 	
