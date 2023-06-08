@@ -34,7 +34,7 @@
 	<rule context="cac:Shipment">
 		<assert id="PEPPOL-T128-R022" test="not(cac:Delivery/cac:DeliveryTerms) or ((cac:Delivery/cac:DeliveryTerms/cbc:ID) or (cac:Delivery/cac:DeliveryTerms/cbc:SpecialTerms))" flag="fatal">Either ID or special terms need to be specified in Delivery terms</assert>
 	</rule>
-	<rule>
+	<rule context="">
 		<assert id="PEPPOL-T128-R023" test="not(cbc:ReceiptAdviceTypeCode) or ((normalize-space(cbc:ReceiptAdviceTypeCode)='D') and not(cac:Shipment))" flag="fatal">When ReceiptAdvice is a response to Advanced Despatch Advice (D), it MUST NOT contain any Shipment group.</assert>
 	</rule>
 	
