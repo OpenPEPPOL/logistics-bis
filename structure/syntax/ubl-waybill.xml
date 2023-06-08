@@ -583,6 +583,123 @@
                   <Value type="EXAMPLE">EA</Value>
                </Attribute>
             </Element>
+            <Element cardinality="1..1">
+               <Term>cac:ConsigneeParty</Term>
+               <Name>Delivery party </Name>
+               <Description>The party responsible for receiving the goods in waybill. </Description>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyName</Term>
+                  <Name>Party name </Name>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Name>Delivery party name</Name>
+                     <Description>The name of the consignee party.</Description>
+                     <Value type="EXAMPLE">HUS Hospital</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:PostalAddress</Term>
+                  <Name>Postal address </Name>
+                  <Description>The postal address of the Consignee</Description>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StreetName</Term>
+                     <Name>Address line 1 </Name>
+                     <Description>The main address line in a postal address usually the street name and number. </Description>
+                     <Value type="EXAMPLE">Topeliuksenkatu 5</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CityName</Term>
+                     <Name>City </Name>
+                     <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
+                     <Value type="EXAMPLE">Helsinki</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:PostalZone</Term>
+                     <Name>Post code </Name>
+                     <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
+                     <Value type="EXAMPLE">00260</Value>
+                  </Element>
+                  <Element>
+                     <Term>cac:Country</Term>
+                     <Name>Country </Name>
+                     <Element cardinality="1..1">
+                        <Term>cbc:IdentificationCode</Term>
+                        <Name>Country code </Name>
+                        <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                        <Reference type="CODE_LIST">ISO3166</Reference>
+                        <Value type="EXAMPLE">FI</Value>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyLegalEntity</Term>
+                  <Name>Party legal entity </Name>
+                  <Element cardinality="1..1">
+                     <Term>cbc:RegistrationName</Term>
+                     <Name>Consignee or delivery party name </Name>
+                     <Description>The legal name of the consignee party.</Description>
+                     <Value type="EXAMPLE">HUS Hospital</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CompanyID</Term>
+                     <Name>Consignee or delivery parties legal registration id </Name>
+                     <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
+                     <Value type="EXAMPLE">1567535-0</Value>
+                     <Attribute>
+                        <Term>schemeID</Term>
+                        <Name>Scheme identifier </Name>
+                        <Description>The identification scheme identifier of the consignee parties legal registration identifier </Description>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0212</Value>
+                     </Attribute>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cac:RegistrationAddress</Term>
+                     <Name>Legal address </Name>
+                     <Element cardinality="0..1">
+                        <Term>cbc:CityName</Term>
+                        <Name>City name </Name>
+                        <Description>The name of the city. </Description>
+                        <Value type="EXAMPLE">Helsinki</Value>
+                     </Element>
+                     <Element cardinality="1..1">
+                        <Term>cac:Country</Term>
+                        <Name>Country </Name>
+                        <Description>The residens country for the consignee party. </Description>
+                        <Element cardinality="1..1">
+                           <Term>cbc:IdentificationCode</Term>
+                           <Name>Country code </Name>
+                           <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                           <Reference type="CODE_LIST">ISO3166</Reference>
+                           <Value type="EXAMPLE">FI</Value>
+                        </Element>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:Contact</Term>
+                  <Name>Contact </Name>
+                  <Description>The contact of the delivery party. </Description>
+                  <Element cardinality="0..1">
+                     <Term>cbc:Name</Term>
+                     <Name>Contact name </Name>
+                     <Description>The contact name. </Description>
+                     <Value type="EXAMPLE">Mr Sender</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:Telephone</Term>
+                     <Name>Contact telephone number </Name>
+                     <Description>The phone number of the contact. </Description>
+                     <Value type="EXAMPLE">0158 1233714</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:ElectronicMail</Term>
+                     <Name>Contact email address </Name>
+                     <Description>The electronic mail of the contact. </Description>
+                     <Value type="EXAMPLE">sender@consignor-company.co.uk</Value>
+                  </Element>
+               </Element>
+            </Element>
             <Element cardinality="0..1">
                <Term>cac:OriginalDepartureCountry</Term>
                <Name>Original departure country </Name>
@@ -611,6 +728,7 @@
                <Term>cac:TransportHandlingUnit</Term>
                <Name>Transport handling unit </Name>
                <Description>Used to specify the outer most packages, the units that the transporters deals with. </Description>
+               <Reference type="CODE_LIST">HandlingCode</Reference>
                <Element cardinality="1..1">
                   <Term>cbc:ID</Term>
                   <Name>Identifier transport handling unit </Name>
@@ -1087,123 +1205,6 @@
                   <Reference type="RULE">PEPPOL-T120-R014</Reference>
                   <Reference type="RULE">PEPPOL-T120-R015</Reference>
                   <Value type="EXAMPLE">12:00:00</Value>
-               </Element>
-            </Element>
-            <Element cardinality="1..1">
-               <Term>cac:DeliveryParty</Term>
-               <Name>Delivery party </Name>
-               <Description>The party responsible for receiving the goods in waybill also known as the consignee. </Description>
-               <Element cardinality="0..1">
-                  <Term>cac:PartyName</Term>
-                  <Name>Party name </Name>
-                  <Element>
-                     <Term>cbc:Name</Term>
-                     <Name>Delivery party name</Name>
-                     <Description>The name of the consignee party.</Description>
-                     <Value type="EXAMPLE">HUS Hospital</Value>
-                  </Element>
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:PostalAddress</Term>
-                  <Name>Postal address </Name>
-                  <Description>The postal address of the Consignee</Description>
-                  <Element cardinality="0..1">
-                     <Term>cbc:StreetName</Term>
-                     <Name>Address line 1 </Name>
-                     <Description>The main address line in a postal address usually the street name and number. </Description>
-                     <Value type="EXAMPLE">Topeliuksenkatu 5</Value>
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:CityName</Term>
-                     <Name>City </Name>
-                     <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
-                     <Value type="EXAMPLE">Helsinki</Value>
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:PostalZone</Term>
-                     <Name>Post code </Name>
-                     <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
-                     <Value type="EXAMPLE">00260</Value>
-                  </Element>
-                  <Element>
-                     <Term>cac:Country</Term>
-                     <Name>Country </Name>
-                     <Element cardinality="1..1">
-                        <Term>cbc:IdentificationCode</Term>
-                        <Name>Country code </Name>
-                        <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
-                        <Reference type="CODE_LIST">ISO3166</Reference>
-                        <Value type="EXAMPLE">FI</Value>
-                     </Element>
-                  </Element>
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:PartyLegalEntity</Term>
-                  <Name>Party legal entity </Name>
-                  <Element cardinality="1..1">
-                     <Term>cbc:RegistrationName</Term>
-                     <Name>Consignee or delivery party name </Name>
-                     <Description>The name of the delivery party.</Description>
-                     <Value type="EXAMPLE">HUS Hospital</Value>
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:CompanyID</Term>
-                     <Name>Consignee or delivery parties legal registration id </Name>
-                     <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
-                     <Value type="EXAMPLE">1567535-0</Value>
-                     <Attribute>
-                        <Term>schemeID</Term>
-                        <Name>Scheme identifier </Name>
-                        <Description>The identification scheme identifier of the consinee parties legal registration identifier </Description>
-                        <Reference type="CODE_LIST">ICD</Reference>
-                        <Value type="EXAMPLE">0212</Value>
-                     </Attribute>
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cac:RegistrationAddress</Term>
-                     <Name>Legal address </Name>
-                     <Element cardinality="0..1">
-                        <Term>cbc:CityName</Term>
-                        <Name>City name </Name>
-                        <Description>The name of the city. </Description>
-                        <Value type="EXAMPLE">Helsinki</Value>
-                     </Element>
-                     <Element cardinality="1..1">
-                        <Term>cac:Country</Term>
-                        <Name>Country </Name>
-                        <Description>The residens country for the delivery party. </Description>
-                        <Element cardinality="1..1">
-                           <Term>cbc:IdentificationCode</Term>
-                           <Name>Country code </Name>
-                           <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
-                           <Reference type="CODE_LIST">ISO3166</Reference>
-                           <Value type="EXAMPLE">FI</Value>
-                        </Element>
-                     </Element>
-                  </Element>
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:Contact</Term>
-                  <Name>Contact </Name>
-                  <Description>The contact of the delivery party. </Description>
-                  <Element cardinality="0..1">
-                     <Term>cbc:Name</Term>
-                     <Name>Contact name </Name>
-                     <Description>The contact name. </Description>
-                     <Value type="EXAMPLE">Mr Sender</Value>
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:Telephone</Term>
-                     <Name>Contact telephone number </Name>
-                     <Description>The phone number of the contact. </Description>
-                     <Value type="EXAMPLE">0158 1233714</Value>
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:ElectronicMail</Term>
-                     <Name>Contact email address </Name>
-                     <Description>The electronic mail of the contact. </Description>
-                     <Value type="EXAMPLE">sender@consignor-company.co.uk</Value>
-                  </Element>
                </Element>
             </Element>
             <Element cardinality="0..1">
