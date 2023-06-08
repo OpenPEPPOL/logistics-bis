@@ -39,10 +39,10 @@
 		<assert id="PEPPOL-T128-R024" test="((normalize-space(.) = 'D') and (//cac:DespatchDocumentReference/cbc:DocumentStatusCode)) or ((normalize-space(.) = 'S') and not (//cac:DespatchDocumentReference/cbc:DocumentStatusCode))" flag="fatal">When ReceiptAdvice is a response to Advanced Despatch Advice (D), it SHALL provide a Document Status Code on the Despatch Document Reference.</assert>
 	</rule>
 	<rule context="cac:Shipment/cac:Consignment/cac:Status">
-		<assert id="PEPPOL-T128-R025" test="((normalize-space(.) (cbc:ConditionCode) = 'CA') and (cbc:StatusReasonCode)) " flag="fatal">If the Consignment is Conditiobally Accepted (CA), a status reason code SHALL be provided. </assert>
-		<assert id="PEPPOL-T128-R026" test="((normalize-space(.) (cbc:ConditionCode) = 'CA') and (cbc:StatusReason)) " flag="fatal">If the Consignment is Conditiobally Accepted (CA), a status reason (text) SHALL be provided. </assert>
-		<assert id="PEPPOL-T128-R027" test="((normalize-space(.) (cbc:ConditionCode) = 'RE') and (cbc:StatusReasonCode)) " flag="fatal">If the Consignment is Rejected (RE), a status reason code SHALL be provided. </assert>
-		<assert id="PEPPOL-T128-R028" test="((normalize-space(.) (cbc:ConditionCode) = 'RE') and (cbc:StatusReason)) " flag="fatal">If the Consignment is Rejected (RE), a status reason (text) SHALL be provided. </assert>
+		<assert id="PEPPOL-T128-R025" test="((normalize-space(cbc:ConditionCode) = 'CA') and (cbc:StatusReasonCode)) " flag="fatal">If the Consignment is Conditiobally Accepted (CA), a status reason code SHALL be provided. </assert>
+		<assert id="PEPPOL-T128-R026" test="((normalize-space(cbc:ConditionCode) = 'CA') and (cbc:StatusReason)) " flag="fatal">If the Consignment is Conditiobally Accepted (CA), a status reason (text) SHALL be provided. </assert>
+		<assert id="PEPPOL-T128-R027" test="((normalize-space(cbc:ConditionCode) = 'RE') and (cbc:StatusReasonCode)) " flag="fatal">If the Consignment is Rejected (RE), a status reason code SHALL be provided. </assert>
+		<assert id="PEPPOL-T128-R028" test="((normalize-space(cbc:ConditionCode) = 'RE') and (cbc:StatusReason)) " flag="fatal">If the Consignment is Rejected (RE), a status reason (text) SHALL be provided. </assert>
 	</rule>
 </pattern>
 
