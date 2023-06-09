@@ -1,0 +1,16 @@
+[[consignment]]
+= Consignment
+
+The Consignment describes how and when the goods/service has been delivered. 
+The Reciver can accept or reject everything in the Consignment with a Condition code, a Reason Code and a text describing why it is rejected when rejected.
+Valid Condition codes are:
+
+* AP = Accepted, no problems found.
+* CA = Accepted with claims. Description of found issues are provided.
+* RE = Rejected, the whole Consignment was rejected and the goods/service not received.
+
+.Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=consignment]
+----
