@@ -35,11 +35,16 @@
 		<assert id="PEPPOL-T128-R022" test="not(cac:Delivery/cac:DeliveryTerms) or ((cac:Delivery/cac:DeliveryTerms/cbc:ID) or (cac:Delivery/cac:DeliveryTerms/cbc:SpecialTerms))" flag="fatal">Either ID or special terms need to be specified in Delivery terms</assert>
 	</rule>
 	<rule context="cbc:ReceiptAdviceTypeCode">
-		<assert id="PEPPOL-T128-R023" test="((normalize-space(.) = 'D') and not(//cac:Shipment/cbc:ID)) or ((normalize-space(.) = 'S') and (//cac:Shipment/cbc:ID))" flag="fatal">When ReceiptAdvice is a response to Advanced Despatch Advice (D), it MUST NOT contain any Shipment group.</assert>
-		<assert id="PEPPOL-T128-R024" test="((normalize-space(.) = 'D') and (//cac:DespatchDocumentReference/cbc:DocumentStatusCode)) or ((normalize-space(.) = 'S') and not (//cac:DespatchDocumentReference/cbc:DocumentStatusCode))" flag="fatal">When ReceiptAdvice is a response to Advanced Despatch Advice (D), it SHALL provide a Document Status Code on the Despatch Document Reference.</assert>
-
+		<assert id="PEPPOL-T128-R023" test="((normalize-space(.) = 'D') and not(//cac:Shipment/cbc:ID)) or ((normalize-space(.) = 'S') and (//cac:Shipment/cbc:ID))" flag="fatal">When ReceiptAdvice is a response to Advanced Despatch Advice (D), it MUST NOT contain any Shipment group. When it is a response to a recived shipment/service (S), it SHALL include the Shipment group. </assert>
+		<assert id="PEPPOL-T128-R024" test="((normalize-space(.) = 'D') and (//cac:DespatchDocumentReference/cbc:DocumentStatusCode)) or ((normalize-space(.) = 'S') and not (//cac:DespatchDocumentReference/cbc:DocumentStatusCode))" flag="fatal">When ReceiptAdvice is a response to Advanced Despatch Advice (D), it SHALL provide a Document Status Code on the Despatch Document Reference. When it is a response to a received shipment/service, the Status code SHALL be omitted. </assert>
 	</rule>
-	
+	<rule context="cac:Shipment/cac:Consignment/cac:Status">
+		<assert id="PEPPOL-T128-R025" test="((normalize-space(cbc:ConditionCode) &gt;= 'AQ') and (cbc:StatusReasonCode)) or ((normalize-space(cbc:ConditionCode) &lt;= 'AQ') and not(cbc:StatusReasonCode))" flag="fatal">If the Consignment is Conditionally Accepted or Rejected (CA/RE), a status reason code SHALL be provided. </assert>
+		<assert id="PEPPOL-T128-R026" test="((normalize-space(cbc:ConditionCode) &gt;= 'AQ') and (cbc:StatusReason)) or ((normalize-space(cbc:ConditionCode) &lt;= 'AQ') and not(cbc:StatusReason)) " flag="fatal">If the Consignment is Conditionally Accepted or Rejected (CA/RE), a status reason (text) SHALL be provided. </assert>
+	</rule>
+	<rule context="cac:Shipment/cac:TransportHandlingUnit">
+		<assert id="PEPPOL-T128-R027" test="((normalize-space(cac:Status/cbc:ConditionCode) = '5') and not(cbc:DamageRemark)) or (not(normalize-space(cac:Status/cbc:ConditionCode) = '5') and (cbc:DamageRemark))" flag="fatal">If the Condition Code on the Transport Handling Unit is not ok, a Damage Remark SHALL be provided.  </assert>
+	</rule>
 </pattern>
 
 
