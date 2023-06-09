@@ -10,8 +10,6 @@ fi
 # Transform the files in source dir to syntax.
 echo "Generating Advanced Despatch Advice"
 docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-advanced-despatch-advice.xml -xsl:/src/tools/UBLInstance-To-StructureXML.xsl -o:/src/structure/syntax/ubl-advanced-despatch-advice.xml UblBaseUrl=https://raw.githubusercontent.com/OpenPEPPOL/poacc-upgrade-3/master/structure/syntax/ UblDocBaseUrl=https://docs.peppol.eu/poacc/upgrade-3/syntax/DespatchAdvice/ UblXmlReferenceFile=ubl-despatch-advice.xml -ext:on --allow-external-functions:on
-echo "Generating Despatch Advice Response"
-docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-despatch-advice-response.xml -xsl:/src/tools/UBLInstance-To-StructureXML.xsl -o:/src/structure/syntax/ubl-despatch-advice-response.xml UblBaseUrl=https://raw.githubusercontent.com/OpenPEPPOL/poacc-upgrade-3/master/structure/syntax/ UblDocBaseUrl=https://docs.peppol.eu/poacc/upgrade-3/syntax/MLR/ UblXmlReferenceFile=ubl-mlr.xml -ext:on --allow-external-functions:on
 echo "Generating Weight statement"
 docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-weight-statement.xml -xsl:/src/tools/UBLInstance-To-StructureXML.xsl -o:/src/structure/syntax/ubl-weight-statement.xml UblBaseUrl=https://raw.githubusercontent.com/OpenPEPPOL/poacc-upgrade-3/master/structure/syntax/ UblDocBaseUrl=https://docs.peppol.eu/poacc/upgrade-3/syntax/DespatchAdvice/ UblXmlReferenceFile=ubl-despatch-advice.xml -ext:on --allow-external-functions:on
 echo "Generating Waybill"
@@ -33,8 +31,6 @@ docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entry
 echo "Generating mapping documents"
 echo "Advanced Despatch advice"
 docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/syntax/ubl-advanced-despatch-advice.xml -xsl:/src/tools/create-mapping-document.xsl -o:/src/rules/mapping/AdvancedDespatchAdvice.xml -ext:on --allow-external-functions:on
-echo "Despatch Advice Response"
-docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/syntax/ubl-despatch-advice-response.xml -xsl:/src/tools/create-mapping-document.xsl -o:/src/rules/mapping/DespatchAdvice_Response.xml -ext:on --allow-external-functions:on
 echo "Weight statement"
 docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/syntax/ubl-weight-statement.xml -xsl:/src/tools/create-mapping-document.xsl -o:/src/rules/mapping/WeightStatement.xml  -ext:on --allow-external-functions:on
 echo "Waybill"
@@ -45,8 +41,6 @@ docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entry
 # Create examples based on documentation.
 echo "Generating Advanced Despatch Advice example"
 docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-advanced-despatch-advice.xml -xsl:/src/tools/remove-pi.xsl -o:/src/rules/examples/AdvancedDespatchAdvice_Example_Full.xml -ext:on --allow-external-functions:on
-echo "Generating Despatch Advice Response example"
-docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-despatch-advice-response.xml -xsl:/src/tools/remove-pi.xsl -o:/src/rules/examples/DespatchAdvice_Response_Example_Full.xml -ext:on --allow-external-functions:on
 echo "Generating Weight statement example"
 docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-weight-statement.xml -xsl:/src/tools/remove-pi.xsl -o:/src/rules/examples/WeightStatement_Example_Full.xml  -ext:on --allow-external-functions:on
 echo "Generating Transport execution plan request example"

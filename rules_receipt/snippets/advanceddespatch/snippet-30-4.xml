@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
+	xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1</cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1</cbc:ProfileID>
+	<cbc:ID>1234</cbc:ID>
+	<cbc:IssueDate>2013-03-15</cbc:IssueDate>
+	<cbc:IssueTime>08:00:00</cbc:IssueTime>
+	<cbc:Note>Free text note relating to the Despatch Advice</cbc:Note>
+	<cac:OrderReference>
+		<cbc:ID>4321</cbc:ID>
+	</cac:OrderReference>
+	<cac:DespatchSupplierParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="0088">7300010000001</cbc:EndpointID>
+			<!-- tag::partyid-se[] -->
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="0007">5541277711</cbc:ID>
+			</cac:PartyIdentification>
+			<!-- end::partyid-se[] -->
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>Supplier AB</cbc:RegistrationName>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Name>John</cbc:Name>
+				<cbc:Telephone>123456789</cbc:Telephone>
+				<cbc:ElectronicMail>John@SenderCompany.dk</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:DespatchSupplierParty>
+	<!-- tag::deliverycustomer[] -->
+	<cac:DeliveryCustomerParty>
+		<cac:Party>
+			<cbc:EndpointID schemeID="0088">7300010000001</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="0088">7300010000001</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PostalAddress>
+				<cbc:StreetName>Reciever Street 1</cbc:StreetName>
+				<cbc:AdditionalStreetName>Reciever Building</cbc:AdditionalStreetName>
+				<cbc:CityName>Reciever City</cbc:CityName>
+				<cbc:PostalZone>9000</cbc:PostalZone>
+				<cbc:CountrySubentity>Region A</cbc:CountrySubentity>
+				<cac:Country>
+					<cbc:IdentificationCode>DK</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>Receiver AB</cbc:RegistrationName>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Name>Tim</cbc:Name>
+				<cbc:Telephone>987654321</cbc:Telephone>
+				<cbc:ElectronicMail>Tim@RecieverCompany.dk</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:DeliveryCustomerParty>
+	<!-- end::deliverycustomer[] -->
+	<!-- tag::buyer[] -->
+	<cac:BuyerCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="0088">7300010000001</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Buyer Company</cbc:Name>
+			</cac:PartyName>
+		</cac:Party>
+	</cac:BuyerCustomerParty>
+	<!-- end::buyer[] -->
+	<!-- tag::seller[] -->
+	<cac:SellerSupplierParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="0088">7300010000001</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Seller Company</cbc:Name>
+			</cac:PartyName>
+		</cac:Party>
+	</cac:SellerSupplierParty>
+	<!-- end::seller[] -->
+	<!-- tag::originator[] -->
+	<cac:OriginatorCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="0088">7300010000001</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Originator</cbc:Name>
+			</cac:PartyName>
+		</cac:Party>
+	</cac:OriginatorCustomerParty>
+	<!-- end::originator[] -->
+	<cac:Shipment>
+		<cbc:ID>NA</cbc:ID>
+		<cbc:Information>The shipment is Despatched on schedule</cbc:Information>
+		<cbc:GrossWeightMeasure unitCode="KGM">10.00</cbc:GrossWeightMeasure>
+		<cbc:GrossVolumeMeasure unitCode="MTQ">25.00</cbc:GrossVolumeMeasure>
+		<cac:Consignment>
+			<cbc:ID>LRX093</cbc:ID>
+			<cac:CarrierParty>
+				<cac:PartyName>
+					<cbc:Name>CarrierPart</cbc:Name>
+				</cac:PartyName>
+			</cac:CarrierParty>
+
+			<!-- tag::fuel[] -->
+			<cac:OriginalDespatchTransportationService>
+				<cbc:TransportServiceCode>FuelReport</cbc:TransportServiceCode>
+				<cac:TransportEquipment>
+					<cbc:TransportEquipmentTypeCode>Diesel</cbc:TransportEquipmentTypeCode>
+					<cbc:Description>ACP Diesel 50 max 7% RME</cbc:Description>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>FuelConsumption</cbc:AttributeID>
+						<cbc:Measure unitCode="LTR">15</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>EnergyContent</cbc:AttributeID>
+						<cbc:Measure unitCode="E14">32</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>ConversionFactor</cbc:AttributeID>
+						<cbc:Measure unitCode="EA">27</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>DrivingDistance</cbc:AttributeID>
+						<cbc:Measure unitCode="KMT">86</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>DrivingTime</cbc:AttributeID>
+						<cbc:Measure unitCode="HUR">7.3</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>RenewableFuel</cbc:AttributeID>
+						<cbc:Measure unitCode="P1">100.00</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>FuelMeasurementMethod</cbc:AttributeID>
+						<cbc:Description>AutomaticMeasurement</cbc:Description>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>EngineType</cbc:AttributeID>
+						<cbc:Description>EURO4</cbc:Description>
+					</cac:MeasurementDimension>
+					<cac:ProviderParty>
+						<cac:PartyIdentification>
+							<cbc:ID schemeID="0007">5560726977</cbc:ID>
+						</cac:PartyIdentification>
+						<cac:PartyName>
+							<cbc:Name>Preem AB</cbc:Name>
+						</cac:PartyName>
+					</cac:ProviderParty>
+					<cac:GoodsItem>
+						<cac:Item>
+							<cac:SellersItemIdentification>
+								<cbc:ID>123</cbc:ID>
+							</cac:SellersItemIdentification>
+							<cac:StandardItemIdentification>
+								<cbc:ID schemeID="0160">1234567891234</cbc:ID>
+							</cac:StandardItemIdentification>
+						</cac:Item>
+					</cac:GoodsItem>
+				</cac:TransportEquipment>
+				<!-- end::fuel[] -->
+				<!-- tag::environmentalemission[] -->
+				<cac:EnvironmentalEmission>
+					<cbc:EnvironmentalEmissionTypeCode>CO2</cbc:EnvironmentalEmissionTypeCode>
+					<cbc:ValueMeasure unitCode="MGM">2.8</cbc:ValueMeasure>
+				</cac:EnvironmentalEmission>
+
+				<cac:EnvironmentalEmission>
+					<cbc:EnvironmentalEmissionTypeCode>HC</cbc:EnvironmentalEmissionTypeCode>
+					<cbc:ValueMeasure unitCode="KGM">0.6</cbc:ValueMeasure>
+				</cac:EnvironmentalEmission>
+
+				<cac:EnvironmentalEmission>
+					<cbc:EnvironmentalEmissionTypeCode>NOX</cbc:EnvironmentalEmissionTypeCode>
+					<cbc:ValueMeasure unitCode="KGM">6</cbc:ValueMeasure>
+				</cac:EnvironmentalEmission>
+
+				<cac:EnvironmentalEmission>
+					<cbc:EnvironmentalEmissionTypeCode>PM</cbc:EnvironmentalEmissionTypeCode>
+					<cbc:ValueMeasure unitCode="GRM">0.07</cbc:ValueMeasure>
+				</cac:EnvironmentalEmission>
+
+				<!-- end::environmentalemission[] -->
+			</cac:OriginalDespatchTransportationService>
+
+		</cac:Consignment>
+		<cac:Delivery>
+			<cac:EstimatedDeliveryPeriod>
+				<cbc:StartDate>2013-03-15</cbc:StartDate>
+				<cbc:StartTime>08:00:00</cbc:StartTime>
+				<cbc:EndDate>2013-03-16</cbc:EndDate>
+				<cbc:EndTime>12:00:00</cbc:EndTime>
+			</cac:EstimatedDeliveryPeriod>
+			<cac:Despatch>
+				<cbc:ActualDespatchDate>2013-03-13</cbc:ActualDespatchDate>
+				<cbc:ActualDespatchTime>08:00:00</cbc:ActualDespatchTime>
+			</cac:Despatch>
+		</cac:Delivery>
+
+	</cac:Shipment>
+	<cac:DespatchLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:DeliveredQuantity unitCode="EA">10</cbc:DeliveredQuantity>
+		<cac:OrderLineReference>
+			<cbc:LineID>1</cbc:LineID>
+			<cac:OrderReference>
+				<cbc:ID>123</cbc:ID>
+			</cac:OrderReference>
+		</cac:OrderLineReference>
+		<cac:Item>
+			<cbc:Name>Item123</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>010120401</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="0160">7611104117056</cbc:ID>
+			</cac:StandardItemIdentification>
+			<!-- tag::bestbefore[] -->
+			<cac:ItemInstance>
+				<cbc:BestBeforeDate>2015-04-15</cbc:BestBeforeDate>
+			</cac:ItemInstance>
+			<!-- end::bestbefore[] -->
+		</cac:Item>
+	</cac:DespatchLine>
+	<cac:DespatchLine>
+		<cbc:ID>2</cbc:ID>
+		<cbc:DeliveredQuantity unitCode="EA">10</cbc:DeliveredQuantity>
+		<cac:OrderLineReference>
+			<cbc:LineID>2</cbc:LineID>
+			<cac:OrderReference>
+				<cbc:ID>123</cbc:ID>
+			</cac:OrderReference>
+		</cac:OrderLineReference>
+		<cac:Item>
+			<cbc:Name>GIPSSKIVA NORMAL VÄDERPLASTAD 2700x900x13</cbc:Name>
+			<cac:BuyersItemIdentification>
+				<cbc:ID>9870202</cbc:ID>
+				<!-- Litera number or similar, used for the buyer reference -->
+			</cac:BuyersItemIdentification>
+			<cac:SellersItemIdentification>
+				<cbc:ID>900206705</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="0160">7318936539543</cbc:ID>
+				<!-- 0160 = GTIN, full list https://docs.peppol.eu/poacc/upgrade-3/codelist/ICD/ -->
+			</cac:StandardItemIdentification>
+			<!-- tag::epd[] -->
+			<!-- Machine readable data -->
+			<cac:AdditionalItemProperty>
+				<cbc:Name>EPD Dataset ID</cbc:Name>
+				<cbc:NameCode listID="IPNC">EPDDataSetID</cbc:NameCode>
+				<cbc:Value>165f8554-00cd-43ad-aeb7-ba769854554a</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<!-- Machine readable data -->
+			<cac:AdditionalItemProperty>
+				<cbc:Name>EPD Dataset URL</cbc:Name>
+				<cbc:NameCode listID="IPNC">EPDDataSetURL</cbc:NameCode>
+				<cbc:Value>https://epdnorway.lca-data.com/resource/processes/165f8554-00cd-43ad-aeb7-ba769854554a?format=xml&amp;version=00.01.000</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<!-- Human readable data -->
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Program Operator</cbc:Name>
+				<cbc:NameCode listID="IPNC">ProgramOperator</cbc:NameCode>
+				<cbc:Value>The Norwegian EPD Foundation</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<!-- Human readable data -->
+			<cac:AdditionalItemProperty>
+				<cbc:Name>EPD Number</cbc:Name>
+				<cbc:NameCode listID="IPNC">EPDNumber</cbc:NameCode>
+				<cbc:Value>NEPD-1260-406-EN</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<!-- Human readable data -->
+			<cac:AdditionalItemProperty>
+				<cbc:Name>EPD Product Name</cbc:Name>
+				<cbc:NameCode listID="IPNC">EPDProductName</cbc:NameCode>
+				<cbc:Value>Gyproc® Normal – Standard Plasterboard</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<!-- Human readable data -->
+			<cac:AdditionalItemProperty>
+				<cbc:Name>EPD URL</cbc:Name>
+				<cbc:NameCode listID="IPNC">EPDHRURL</cbc:NameCode>
+				<cbc:Value>https://portal.environdec.com/api/api/v1/EPDLibrary/Files/07e17ba1-cf00-48e5-9cf1-d8bd90a468f8/Data</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<!-- Human readable data -->
+			<cac:AdditionalItemProperty>
+				<cbc:Name>EPD Data Set Product Name</cbc:Name>
+				<cbc:NameCode listID="IPNC">EPDDataSetProductName</cbc:NameCode>
+				<cbc:Value>Gyproc® Normal – Standard Plasterboard</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<!-- GWP data calculated from supplier -->
+			<cac:AdditionalItemProperty>
+				<cbc:Name>GWP GHG A1-3 EPD total value for line</cbc:Name>
+				<cbc:NameCode listID="IPNC">GWP-GHG_A1-3_vA1</cbc:NameCode>
+				<cbc:Value>NA</cbc:Value>
+				<cbc:ValueQuantity unitCode="KGM">124</cbc:ValueQuantity>
+			</cac:AdditionalItemProperty>
+			<!-- end::epd[] -->
+			<!-- tag::genericproductclimatedata[] -->
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Boverket Resource ID</cbc:Name>
+				<cbc:NameCode listID="IPNC">BoVResourceID</cbc:NameCode>
+				<cbc:Value>6000000020</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Trafikverket Resource ID</cbc:Name>
+				<cbc:NameCode listID="IPNC">TrVResourceID</cbc:NameCode>
+				<cbc:Value>123456789</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<!-- end::genericproductclimatedata[] -->
+			<!-- tag::price[] -->
+			<cac:AdditionalItemProperty>
+				<cbc:Name>NA</cbc:Name>
+				<cbc:NameCode listID="IPNC">Price</cbc:NameCode>
+				<cbc:Value>119</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<!-- end::price[] -->
+		</cac:Item>
+	</cac:DespatchLine>
+</DespatchAdvice>
