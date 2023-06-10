@@ -8,7 +8,7 @@
 	</rule>
 	<rule context="cbc:ProfileID">
 		<assert id="PEPPOL-T127-R002"
-		   test="(normalize-space(.) = 'urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1') or (normalize-space(.) = 'urn:fdc:peppol.eu:logistics:bis:transportation_status_only:1')"
+		  test="some $p in tokenize('urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1 urn:fdc:peppol.eu:logistics:bis:transportation_status_only:1', '\s') satisfies $p = normalize-space(.)"
 		  flag="fatal">Specification identifier SHALL start with the value 'urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1' or 'urn:fdc:peppol.eu:logistics:bis:transportation_status_only:1'.</assert>
 	</rule>
 </pattern>
