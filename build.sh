@@ -53,7 +53,7 @@ docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entry
 echo "Generating example: Transport execution plan"
 docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-transport-execution-plan.xml -xsl:/src/tools/remove-pi.xsl -o:/src/rules/examples/TransportExecutionPlan_Example_Full.xml -ext:on --allow-external-functions:on
 echo "Generating example: Waybill"
-docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-waybill.xml -xsl:/src/tools/remove-pi.xsl -o:/src/rules/examples/Waybill_Example_Full.xml -ext:on --allow-external-functions:on -tree:tinyc
+docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-waybill.xml -xsl:/src/tools/remove-pi.xsl -o:/src/rules/examples/Waybill_Example_Full.xml -ext:on --allow-external-functions:on -tree:linked
 echo "Generating example: Transportation Status Request "
 docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-transportation-status-request.xml -xsl:/src/tools/remove-pi.xsl -o:/src/rules/examples/TransportationStatusRequest_Example_Full.xml -ext:on --allow-external-functions:on
 echo "Generating example: Transportation Status"
