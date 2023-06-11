@@ -25,6 +25,8 @@
 		<?Description A code signifying the type of the Receipt Advice - Response to the Advanced Despatch Advice (D) or Response to the received Shipment (S). ?>
 		<?Cardinality 1..1?>
 		<?CodeList ReceiptAdviceTypeCode?>
+		<?Rule PEPPOL-T128-R023?>
+		<?Rule PEPPOL-T128-R024?>
 	</cbc:ReceiptAdviceTypeCode>
 	<cbc:Note>Delivery ok
 		<?Description A textual note for the delivery as whole.?>
@@ -60,6 +62,7 @@
 			The status Code describes whether the Advanced Despatch Advice is accepted or if it is rejected due to errors, and the supplier should send a new. ?>
 			<?Cardinality 0..1?>
 			<?CodeList UNCL4343_T128?>
+			<?Rule PEPPOL-T128-R024?>
 		</cbc:DocumentStatusCode>
 		<cbc:DocumentDescription>Incorrect Identity of the buyer.
 			<?Name Document Description?>
@@ -364,6 +367,7 @@
 			<?Description Use the Shipment group only when the Receipt Advice is used as a response to a received shipment. ?>
 			<cbc:ID> 1 
 				<?Description Identifies a shipment. Freight forwarder's reference number.?>
+				<?Rule PEPPOL-T128-R023?>
 			</cbc:ID>
 			<cbc:Information> text 
 				<?Description Information from Goods receiver to Supplier.?>
@@ -383,17 +387,21 @@
 						<?Description Specifies the status condition of the consignment. ?>
 						<?Cardinality 1..1?>
 						<?CodeList UNCL4343_T128?>
+						<?Rule PEPPOL-T128-R025?>
+						<?Rule PEPPOL-T128-R026?>
 					</cbc:ConditionCode>
 					<cbc:StatusReasonCode>3
 						<?Name Status Reason Code?>
 						<?Description The reason for this status condition or position, expressed as a code. ?>
 						<?Cardinality 0..1?>
 						<?CodeList ConsignmentStatusReason?>
+						<?Rule PEPPOL-T128-R025?>
 					</cbc:StatusReasonCode>
 					<cbc:StatusReason>Delivery outside requested time window.
 						<?Name Status Reason Code?>
 						<?Description The reason for this status condition or position, expressed as a text. ?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T128-R026?>
 					</cbc:StatusReason>
 				</cac:Status>
 			
@@ -513,6 +521,7 @@
 				<?Name Damage Remark?>
 				<?Description A textual description of the damage on this TransportHandlingUnit. ?>
 				<?Cardinality 0..n?>
+				<?Rule PEPPOL-T128-R027?>
 			</cbc:DamageRemarks>
 			<cac:Status>
 				<?Name Status of the Transport Handling Unit. ?>
@@ -523,6 +532,7 @@
 					<?Description A code describing the status of the TransportHandlingUnit. ?>
 					<?Cardinality 1..1?>
 					<?CodeList TransportHandlingUnitCondition?>
+					<?Rule PEPPOL-T128-R027?>
 				</cbc:ConditionCode>
 			</cac:Status>
 		</cac:TransportHandlingUnit>
