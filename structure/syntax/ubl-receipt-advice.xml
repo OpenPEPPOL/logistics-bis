@@ -32,7 +32,6 @@
          <Reference type="RULE">PEPPOL-T128-R002</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1</Value>
       </Element>
-	
 	     <Element>
          <Term>cbc:ID</Term>
          <Name>Document identifier</Name>
@@ -70,6 +69,8 @@
          <Term>cbc:ReceiptAdviceTypeCode</Term>
          <Name>Receipt advice type code</Name>
          <Description>A code signifying the type of the Receipt Advice - Response to the Advanced Despatch Advice (D) or Response to the received Shipment (S). </Description>
+         <Reference type="RULE">PEPPOL-T128-R023</Reference>
+         <Reference type="RULE">PEPPOL-T128-R024</Reference>
          <Reference type="CODE_LIST">ReceiptAdviceTypeCode</Reference>
          <Value type="EXAMPLE">S</Value>
       </Element>
@@ -124,6 +125,7 @@
             <Name>Document Status Code</Name>
             <Description>To be used when the Receipt Advice is a response to the received Advanced Despatch Advice.
 			The status Code describes whether the Advanced Despatch Advice is accepted or if it is rejected due to errors, and the supplier should send a new. </Description>
+            <Reference type="RULE">PEPPOL-T128-R024</Reference>
             <Reference type="CODE_LIST">UNCL4343_T128</Reference>
             <Value type="EXAMPLE">RE</Value>
          </Element>
@@ -931,6 +933,7 @@
             <Name>Shipment identifier</Name>
             <Description>Identifies a shipment. Freight forwarder's reference number.</Description>
             <Reference type="BUSINESS_TERM">tir16-038</Reference>
+            <Reference type="RULE">PEPPOL-T128-R023</Reference>
             <Value type="EXAMPLE">1</Value>
          </Element>
          <Element cardinality="0..1">
@@ -958,6 +961,8 @@
                   <Term>cbc:ConditionCode</Term>
                   <Name>Condition Code</Name>
                   <Description>Specifies the status condition of the consignment. </Description>
+                  <Reference type="RULE">PEPPOL-T128-R025</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R026</Reference>
                   <Reference type="CODE_LIST">UNCL4343_T128</Reference>
                   <Value type="EXAMPLE">CA</Value>
                </Element>
@@ -965,6 +970,7 @@
                   <Term>cbc:StatusReasonCode</Term>
                   <Name>Status Reason Code</Name>
                   <Description>The reason for this status condition or position, expressed as a code. </Description>
+                  <Reference type="RULE">PEPPOL-T128-R025</Reference>
                   <Reference type="CODE_LIST">ConsignmentStatusReason</Reference>
                   <Value type="EXAMPLE">3</Value>
                </Element>
@@ -972,6 +978,7 @@
                   <Term>cbc:StatusReason</Term>
                   <Name>Status Reason Code</Name>
                   <Description>The reason for this status condition or position, expressed as a text. </Description>
+                  <Reference type="RULE">PEPPOL-T128-R026</Reference>
                   <Value type="EXAMPLE">Delivery outside requested time window.</Value>
                </Element>
             </Element>
@@ -1139,9 +1146,10 @@
                <Value type="EXAMPLE">AG</Value>
             </Element>
             <Element cardinality="0..n">
-               <Term>cbc:DamageRemark</Term>
+               <Term>cbc:DamageRemarks</Term>
                <Name>Damage Remark</Name>
                <Description>A textual description of the damage on this TransportHandlingUnit. </Description>
+               <Reference type="RULE">PEPPOL-T128-R027</Reference>
                <Value type="EXAMPLE">Pallet cover broken, see attached photo.</Value>
             </Element>
             <Element cardinality="0..1">
@@ -1152,6 +1160,7 @@
                   <Term>cbc:ConditionCode</Term>
                   <Name>ConditionCode</Name>
                   <Description>A code describing the status of the TransportHandlingUnit. </Description>
+                  <Reference type="RULE">PEPPOL-T128-R027</Reference>
                   <Reference type="CODE_LIST">TransportHandlingUnitCondition</Reference>
                   <Value type="EXAMPLE">4</Value>
                </Element>

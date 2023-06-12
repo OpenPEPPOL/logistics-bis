@@ -43,7 +43,7 @@
 		<assert id="PEPPOL-T128-R026" test="((normalize-space(cbc:ConditionCode) &gt;= 'AQ') and (cbc:StatusReason)) or ((normalize-space(cbc:ConditionCode) &lt;= 'AQ') and not(cbc:StatusReason)) " flag="fatal">If the Consignment is Conditionally Accepted or Rejected (CA/RE), a status reason (text) SHALL be provided. </assert>
 	</rule>
 	<rule context="cac:Shipment/cac:TransportHandlingUnit">
-		<assert id="PEPPOL-T128-R027" test="((normalize-space(cac:Status/cbc:ConditionCode) = '5') and not(cbc:DamageRemark)) or (not(normalize-space(cac:Status/cbc:ConditionCode) = '5') and (cbc:DamageRemark))" flag="fatal">If the Condition Code on the Transport Handling Unit is not ok, a Damage Remark SHALL be provided.  </assert>
+		<assert id="PEPPOL-T128-R027" test="((normalize-space(cac:Status/cbc:ConditionCode) = '5') and not(cbc:DamageRemarks)) or (not(normalize-space(cac:Status/cbc:ConditionCode) = '5') and (cbc:DamageRemarks))" flag="fatal">If the Condition Code on the Transport Handling Unit is not ok, a Damage Remark SHALL be provided.  </assert>
 	</rule>
 </pattern>
 
