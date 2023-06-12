@@ -1156,7 +1156,7 @@
 		</cbc:DeliveredQuantity>
 		<cbc:OutstandingQuantity unitCode="C62"> 2 <?Rule PEPPOL-T120-R007?>
 		</cbc:OutstandingQuantity>
-		<cbc:OutstandingReason>Text</cbc:OutstandingReason>
+		<cbc:OutstandingReason>Text<?Rule PEPPOL-T120-R007?></cbc:OutstandingReason>
 		<cac:OrderLineReference>
 			<cbc:LineID>1</cbc:LineID>
 			<cbc:SalesOrderLineID> 10 <?Name Sales order line number?>
@@ -1164,7 +1164,8 @@
 				<?Description Reference to the sellers orderline number.?>
 			</cbc:SalesOrderLineID>
 			<cac:OrderReference>
-				<cbc:ID>AEG012345</cbc:ID>
+				<cbc:ID>AEG012345<?Rule PEPPOL-T120-R007?>
+			</cbc:ID>
 				<cbc:SalesOrderID> 5678985 <?Name Sales order number?>
 					<?Cardinality 0..1?>
 					<?Description Reference to the sellers order number.?>
@@ -1220,7 +1221,8 @@
 				<cbc:ID>6578489</cbc:ID>
 			</cac:BuyersItemIdentification>
 			<cac:SellersItemIdentification>
-				<cbc:ID> 17589683 <?Rule PEPPOL-T120-R003?>
+				<?Rule PEPPOL-T120-R003?>
+				<cbc:ID>17589683<?Rule PEPPOL-T120-R003?>
 				</cbc:ID>
 			</cac:SellersItemIdentification>
 			<cac:ManufacturersItemIdentification>
