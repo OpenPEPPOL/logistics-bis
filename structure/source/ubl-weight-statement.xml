@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ubl:WeightStatement xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:WeightStatement-2"
+	xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	<?DocumentTerm WeightStatement?>
+	<?Property key="sch:prefix" PEPPOL-T122?>
+	<?Property key="sch:identifier" T122-basic?>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:weight_statement:1</cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:weight_statement:1</cbc:ProfileID>
+
+	<cbc:ID>GOA294107
+		<?Name Document identifier?>
+		<?Description Unique identity identifying the weight statement. An transaction instance must contain an identifier. The identifier enables positive referencing the document instance for various purposes including referencing between transactions that are part of the same process.?>
+		<?Cardinality 1..1?>
+		<?DataType Identifier?>
+	</cbc:ID>
+	<cbc:IssueDate>2016-11-03<?Name Weight statement issue date?>
+		<?Description The date when the weight statement is issued. Format = "YYYY-MM-DD"?>
+		<?Cardinality 1..1?>
+		<?DataType Date?>
+	</cbc:IssueDate>
+	<cbc:IssueTime>09:30:00<?Name Weight statement issue time?>
+		<?Cardinality 1..1?>
+		<?Description The time when the weight statement is issued. Format = "hh:mm:ss"?>
+		<?DataType Time?>
+	</cbc:IssueTime>
+	<cbc:WeightStatementTypeCode>01
+		<?Name Weight statement type code?>
+		<?Description 01 = Outbound delivery 02 = Inbound delivery?>
+	</cbc:WeightStatementTypeCode>
+	<cac:SenderParty>
+		<?Name Sender Party?>
+		<?Description The party sending this weight statement (e.g. Weighing Station, Shipper, Freight Forwarder, Carrier, ...).?>
+		<cbc:EndpointID schemeID="0088">7300010000001
+			<?Name Senders electronic address?>
+			<?Description Identifies the senders partys electronic address?>
+			<?schemeID-Name Scheme identifier?>
+			<?schemeID-Description Scheme identifier for electronic address?>
+			<?schemeID-usage Mandatory?>
+			<?schemeID-CodeList eas?>
+		</cbc:EndpointID>
+		<cac:PartyIdentification>
+			<?Name Party Identification?>
+			<?Description An identifier for this party.?>
+			<cbc:ID schemeID="0088">7300010000001
+				<?Name Sender party identity?>
+				<?Description The identifier of the Sender party?>
+				<?schemeID-Name Scheme identifier?>
+				<?schemeID-Description Scheme identifier for party identification?>
+				<?schemeID-usage Mandatory?>
+				<?schemeID-CodeList ICD?>
+			</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<?Name Party Name?>
+			<cbc:Name> Weighing Solutions AB
+				<?Name Sender name?>
+			</cbc:Name>
+		</cac:PartyName>
+	</cac:SenderParty>
+	<cac:ReceiverParty>
+		<?Name Receiver information?>
+		<?Description The party receiving this weight statement (e.g. Carrier, Terminal Operator, ...).?>
+		<cbc:EndpointID schemeID="0088">1251513513245
+			<?Name Receiver electronic address?>
+			<?Description Identifies the receivers partys electronic address?>
+			<?schemeID-Name Scheme identifier?>
+			<?schemeID-Description Scheme identifier for electronic address?>
+			<?schemeID-usage Mandatory?>
+			<?schemeID-CodeList eas?>
+		</cbc:EndpointID>
+		<cac:PartyIdentification>
+			<?Name Party Identification?>
+			<?Description An identifier for this party.?>
+			<cbc:ID schemeID="0088">1251513513245
+				<?Name Receiver identity?>
+				<?Description The identifier of the receiver party?>
+				<?schemeID-Name Scheme identifier?>
+				<?schemeID-Description Scheme identifier for party identification?>
+				<?schemeID-usage Mandatory?>
+				<?schemeID-CodeList ICD?>
+			</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<?Name Party Name?>
+			<cbc:Name> Transport Management Solutions AB
+				<?Name Receiver name?>
+			</cbc:Name>
+		</cac:PartyName>
+	</cac:ReceiverParty>
+	<cac:WeighingParty>
+		<?Name Weighing party information?>
+		<?Description The party executing the weight measure (e.g. Weighing Station).?>
+		<?Cardinality 1..1?>
+		<cac:PartyIdentification>
+			<?Name Party Identification?>
+			<?Description An identifier for this party.?>
+			<?Cardinality 0..1?>
+			<cbc:ID schemeID="0088">5790000435951
+				<?Name Weighing party identity?>
+				<?Description The identifier of the Weighing party?>
+				<?schemeID-Name Scheme identifier?>
+				<?schemeID-Description Scheme identifier for party identification?>
+				<?schemeID-usage Mandatory?>
+				<?schemeID-CodeList ICD?>
+			</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<?Name Party Name?>
+			<cbc:Name> Gravel Pit Ltd.
+				<?Name Weighing party name?>
+				<?Description The name of the weighing party?>
+			</cbc:Name>
+		</cac:PartyName>
+		<cac:PhysicalLocation>
+			<?Name Physical Location?>
+			<?Description The physical location of this party.?>
+			<cbc:ID schemeID=""> 0114-40-019-a
+				<?Name Physical Location ID?>
+				<?Description Unique ID of the site for the weighing party. If possile an ID that is issued by a authority or similar.?>
+				<?Cardinality 0..1?>
+				<?schemeID-usage Optional?>
+			</cbc:ID>
+			<cbc:Name> Townsend pit
+				<?Name Location name?>
+				<?Description Physical location name?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
+		</cac:PhysicalLocation>
+	</cac:WeighingParty>
+	<cac:ShipperParty>
+		<?Name Shipper Party?>
+		<?Description The party transporting or shipping the items.?>
+		<?Cardinality 0..1?>
+		<cac:PartyIdentification>
+			<?Name Party Identification?>
+			<?Cardinality 0..1?>
+			<cbc:ID schemeID="0088">5790000435951
+				<?Name Shipping party identity?>
+				<?Description The identifier of the shippping party?>
+				<?schemeID-Name Scheme identifier?>
+				<?schemeID-Description Scheme identifier for party identification?>
+				<?schemeID-usage Mandatory?>
+				<?schemeID-CodeList ICD?>
+			</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<?Name Party Name?>
+			<cbc:Name> Tony's Trucks and Transport
+				<?Name Shipper name?>
+				<?Description The name of the shipper?>
+			</cbc:Name>
+		</cac:PartyName>
+	</cac:ShipperParty>
+	<cac:Shipment>
+		<?Cardinality 1..1?>
+		<cbc:ID> NA
+			<?Name Shipment identity?>
+			<?Description Use NA if no specific shipment ID is available?>
+		</cbc:ID>
+		<cac:GoodsItem>
+			<?Cardinality 1..n?>
+			<?Name Goods Item?>
+			<?Description A goods item included in this shipment.?>
+			<cbc:ID> 1
+				<?Name Line item identifier?>
+				<?Description Identifies the Line Item assigned by the weighing partner, the identifier must be unique within the order?>
+			</cbc:ID>
+			<cac:Item>
+				<?Name Item?>
+				<?Description Product information relating to a goods item?>
+				<cbc:Name> Sortering 0/2 mm krossat bergmaterial CE-märkt enligt system 2+ för
+					användning till asfalt. 
+					<?Name Item name?>
+					<?Description Name of weighed item?>
+				</cbc:Name>
+				<cac:BuyersItemIdentification>
+					<?Name Buyers item identification?>
+					<cbc:ID> KO2001030300
+						<?Name Buyers item identifier?>
+						<?Description An identifier, assigned by the buyer, for the item. Associates the item with its identification according to the buyers system.?>
+					</cbc:ID>
+					<?Cardinality 0..1?>
+				</cac:BuyersItemIdentification>
+				<cac:SellersItemIdentification>
+					<?Name Sellers item identification?>
+					<cbc:ID> 17589683
+						<?Name The Sellers item identifier?>
+						<?Description An identifier, assigned by the seller, for the item. Associates the item with its identification according to the sellers system.?>
+					</cbc:ID>
+					<?Cardinality 0..1?>
+				</cac:SellersItemIdentification>
+				<cac:StandardItemIdentification>
+					<?Name Standard item identification?>
+					<cbc:ID schemeID="0160"> 1234567891234
+						<?Name Item standard identifier?>
+						<?Description Global Trade Item Number (GTIN) or other standardized identification. Associates the item with its identification according to a standard system.?>
+						<?schemeID-Name Scheme identifier?>
+						<?schemeID-Description The identification scheme identifier of the Item standard identifier?>
+						<?schemeID-usage Mandatory?>
+					</cbc:ID>
+					<?Cardinality 0..1?>
+				</cac:StandardItemIdentification>
+				<?Cardinality 0..1?>
+				<cac:CommodityClassification>
+					<?Name Commodity classification?>
+					<?Description To classify when an item number is not sufficient.?>
+					<?Cardinality 0..n?>
+					<cbc:ItemClassificationCode listID="ZZZ" listVersionID="4.0" name="SBMI">
+						KO2012140200
+						<?Name Item classification code?>
+						<?Description A code for classifying the item by its type or nature. Classification codes are used to allow grouping of similar items for a various purposes e.g. public procurement (CPV), e-Commerce (UNSPSC) etc.?>
+						<?Cardinality 1..1?>
+						<?listID-Name Item classification identifier identification scheme identifier?>
+						<?listID-Description The identification scheme identifier of the Item classification identifier.?>
+						<?listID-CodeList UNCL7143?>
+						<?listID-usage Mandatory?>
+						<?listVersionID-Name Item classification identifier version identification scheme identifier?>
+						<?listVersionID-Description The identification scheme version identifier of the Item classification identifier?>
+						<?listVersionID-usage Optional?>
+						<?name-Name Clear text name equivalent of classification code?>
+						<?name-Description The textual equivalent of the code value?>
+						<?name-usage Optional?>
+					</cbc:ItemClassificationCode>
+				</cac:CommodityClassification>
+			</cac:Item>
+			<cac:MeasurementDimension>
+				<?Name Measurement Dimension?>
+				<?Description Used to specify weight and/or volume of the Goods Item.?>
+				<?Cardinality 1..n?>
+				<cbc:AttributeID> AAF
+					<?Name Attribute identifier?>
+					<?CodeList UNCL6313-T122?>
+					<?Description To describe the type of measurement. Use UNCL 6313 subset.?>
+					<?Cardinality 1..1?>
+				</cbc:AttributeID>
+				<cbc:Measure unitCode="TNE"> 12.3
+					<?Name Measure?>
+					<?Description For the measure.?>
+					<?Cardinality 1..1?>
+					<?unitCode-CodeList UNECERec20?>
+					<?unitCode-Name Measure unit of measure?>
+					<?unitCode-Description The unit of measure that applies to the measure.?>
+				</cbc:Measure>
+			</cac:MeasurementDimension>
+		</cac:GoodsItem>
+	</cac:Shipment>
+</ubl:WeightStatement>
