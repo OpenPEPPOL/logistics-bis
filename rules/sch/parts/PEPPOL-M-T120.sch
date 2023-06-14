@@ -37,5 +37,12 @@
 		<assert id="PEPPOL-T120-R006" test="number(cbc:DeliveredQuantity) &gt;= 0" flag="fatal">Each despatch advice line delivered quantity SHALL not be negative</assert>
 		<assert id="PEPPOL-T120-R007" test="((cbc:OutstandingQuantity) and (cbc:OutstandingReason)) or not(cbc:OutstandingQuantity)" flag="warning">An outstanding quantity reason SHOULD be provided if the despatch line contains an outstanding quantity</assert>
 	</rule>
+	
+	<rule context="cac:AdditionalDocumentReference">
+		<assert id="PEPPOL-T120-R031" test="(cbc:DocumentTypeCode) or (cbc:DocumentType)" flag="fatal">AdditionalDocumentReference SHALL contain a Document Type Code or a Document Type. </assert>
+	</rule>
+	<rule context="cac:DespatchLine/cac:DocumentReference">
+		<assert id="PEPPOL-T120-R032" test="(cbc:DocumentTypeCode) or (cbc:DocumentType)" flag="fatal">DocumentReference (Despatch Line) SHALL contain a Document Type Code or a Document Type. </assert>
+	</rule>
 
 </pattern>
