@@ -37,4 +37,5 @@
 		<assert id="PEPPOL-T120-R006" test="number(cbc:DeliveredQuantity) &gt;= 0" flag="fatal">Each despatch advice line delivered quantity SHALL not be negative</assert>
 		<assert id="PEPPOL-T120-R007" test="((cbc:OutstandingQuantity) and (cbc:OutstandingReason)) or not(cbc:OutstandingQuantity)" flag="warning">An outstanding quantity reason SHOULD be provided if the despatch line contains an outstanding quantity</assert>
 	</rule>
+
 </pattern>
