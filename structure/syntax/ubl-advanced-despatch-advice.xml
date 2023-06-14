@@ -104,17 +104,19 @@
          <Element cardinality="0..1">
             <Term>cbc:DocumentTypeCode</Term>
             <Name>Document type code</Name>
-            <Description>The type of reference. Must me part of UNCL1001</Description>
+            <Description>The type of reference. Must me part of UNCL1001. At least one of Document Type Code and Document Type must be used. </Description>
+            <Reference type="RULE">PEPPOL-T120-R031</Reference>
             <Reference type="CODE_LIST">UNCL1001</Reference>
             <Value type="EXAMPLE">380</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:DocumentType</Term>
             <Name>Document type</Name>
-            <Description>The type of reference that cannot be specified by a code</Description>
+            <Description>The type of reference that cannot be specified by a code. At least one of Document Type Code and Document Type must be used. </Description>
             <DataType>Text</DataType>
             <Reference type="BUSINESS_TERM">tir16-p050</Reference>
-            <Value type="EXAMPLE">BEAST:FreightPayersCustomerNumber</Value>
+            <Reference type="RULE">PEPPOL-T120-R031</Reference>
+            <Value type="EXAMPLE">FreightPayersCustomerNumber</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:Attachment</Term>
@@ -2350,6 +2352,7 @@
             </Element>
          </Element>
       </Element>
+	
 	     <Element cardinality="1..n">
          <Term>cac:DespatchLine</Term>
          <Name>Despatch advice line</Name>
@@ -2467,6 +2470,7 @@
                <Term>cbc:DocumentTypeCode</Term>
                <Name>Document type code</Name>
                <Description>Identifies the type of document or item.</Description>
+               <Reference type="RULE">PEPPOL-T120-R032</Reference>
                <Reference type="CODE_LIST">UNCL1001</Reference>
                <Value type="EXAMPLE">380</Value>
             </Element>
@@ -2476,6 +2480,7 @@
                <Description>The type of reference that cannot be specified by a code</Description>
                <DataType>Text</DataType>
                <Reference type="BUSINESS_TERM">tir16-p054</Reference>
+               <Reference type="RULE">PEPPOL-T120-R032</Reference>
                <Value type="EXAMPLE">Letter Of Credit</Value>
             </Element>
             <Element cardinality="0..1">
