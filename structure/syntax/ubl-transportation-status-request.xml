@@ -38,25 +38,23 @@
          <Reference type="BUSINESS_TERM">tir16-003</Reference>
          <Value type="EXAMPLE">TSR_1</Value>
       </Element>
-	     <Element>
+	     <Element cardinality="1..1">
          <Term>cbc:IssueDate</Term>
-         <Name>Dispatch advice issue date</Name>
-         <Description>The date when the despatch advice is issued. Format =
-				"YYYY-MM-DD"</Description>
+         <Name>Issue Date</Name>
+         <Description>The date when the transporation status request was issued. Format = "YYYY-MM-DD". </Description>
          <DataType>Date</DataType>
          <Reference type="BUSINESS_TERM">tir16-004</Reference>
          <Value type="EXAMPLE">2011-10-06</Value>
       </Element>
-	     <Element cardinality="0..1">
+	     <Element cardinality="1..1 1..1">
          <Term>cbc:IssueTime</Term>
-         <Name>Dispatch advice issue time</Name>
-         <Description>The time when the despatch advice is issued. Format =
-				"hh:mm:ss"</Description>
+         <Name>Issue Time</Name>
+         <Description>The time when the transportation status request was issued. Format = "hh:mm:ss". </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
          <Value type="EXAMPLE">09:29:30</Value>
       </Element>
-	     <Element cardinality="0..1">
+	     <Element cardinality="1..1">
          <Term>cbc:ShippingOrderID</Term>
          <Name>Shipping Order ID </Name>
          <Description>An identifier (in the form of a reference number) of the Shipping Order or Forwarding Instruction associated with this shipment. </Description>
@@ -222,7 +220,7 @@
                   <Term>cac:Country</Term>
                   <Name>Country </Name>
                   <Description>The residens country for the sender party. </Description>
-                  <Element cardinality="0..1">
+                  <Element cardinality="1..1">
                      <Term>cbc:IdentificationCode</Term>
                      <Name>Country code </Name>
                      <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
@@ -273,7 +271,7 @@
                <Value type="EXAMPLE">0198</Value>
             </Attribute>
          </Element>
-         <Element>
+         <Element cardinality="0..1">
             <Term>cac:PartyIdentification</Term>
             <Name>Receiver party identification </Name>
             <Description>An identifier for the sender party as known to the sender party. </Description>
@@ -410,7 +408,7 @@
                   <Term>cac:Country</Term>
                   <Name>Country </Name>
                   <Description>The residens country for the receiver party. </Description>
-                  <Element cardinality="0..1">
+                  <Element cardinality="1..1">
                      <Term>cbc:IdentificationCode</Term>
                      <Name>Country code </Name>
                      <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>

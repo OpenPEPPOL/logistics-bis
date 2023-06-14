@@ -38,20 +38,18 @@
          <Reference type="BUSINESS_TERM">tir16-003</Reference>
          <Value type="EXAMPLE">TS_1</Value>
       </Element>
-	     <Element>
+	     <Element cardinality="1..1">
          <Term>cbc:IssueDate</Term>
-         <Name>Dispatch advice issue date</Name>
-         <Description>The date when the despatch advice is issued. Format =
-				"YYYY-MM-DD"</Description>
+         <Name>Issue Date</Name>
+         <Description>The date when the transporation status was issued. Format = "YYYY-MM-DD". </Description>
          <DataType>Date</DataType>
          <Reference type="BUSINESS_TERM">tir16-004</Reference>
          <Value type="EXAMPLE">2011-10-06</Value>
       </Element>
-	     <Element cardinality="0..1">
+	     <Element cardinality="1..1 1..1">
          <Term>cbc:IssueTime</Term>
-         <Name>Dispatch advice issue time</Name>
-         <Description>The time when the despatch advice is issued. Format =
-				"hh:mm:ss"</Description>
+         <Name>Issue Time</Name>
+         <Description>The time when the transportation status was issued. Format = "hh:mm:ss". </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
          <Value type="EXAMPLE">09:29:30</Value>
@@ -61,7 +59,7 @@
          <Name>Description</Name>
          <Description>Textual description of the Transportation status.</Description>
       </Element>
-	     <Element cardinality="0..1">
+	     <Element cardinality="1..1">
          <Term>cbc:ShippingOrderID</Term>
          <Name>Shipping Order ID </Name>
          <Description>An identifier (in the form of a reference number) of the Shipping Order or Forwarding Instruction associated with this shipment. </Description>
@@ -73,6 +71,10 @@
          <Description>The type of the transportation status code. Mandatory if the transportation status is an answer to a transportation status request.</Description>
          <Reference type="CODE_LIST">TransportationStatusTypeCode</Reference>
          <Value type="EXAMPLE">1</Value>
+         <Attribute usage="Optional">
+            <Term>listID</Term>
+            <Value type="EXAMPLE">TrStatus1</Value>
+         </Attribute>
       </Element>
 	
 	     <Element cardinality="1..1">
@@ -101,14 +103,14 @@
                <Name>Status </Name>
                <Description>Specifies the status condition of the related object.  </Description>
                <Value type="EXAMPLE">4</Value>
-               <Attribute>
-                  <Term>schemeID</Term>
+               <Attribute usage="Mandatory">
+                  <Term>listID</Term>
                   <Value type="EXAMPLE">zzz</Value>
                </Attribute>
             </Element>
             <Element cardinality="1..1">
                <Term>cbc:Description</Term>
-               <Name>Status </Name>
+               <Name>Status description </Name>
                <Description>Description of the status. </Description>
             </Element>
          </Element>
@@ -116,19 +118,19 @@
             <Term>cac:TransportEvent</Term>
             <Name>Transport Event </Name>
             <Description>A transport event associated to this transportation status. </Description>
-            <Element cardinality="1..1">
+            <Element cardinality="0..1">
                <Term>cbc:IdentificationID</Term>
                <Name>Identification ID </Name>
                <Description>Identifices the transport event. </Description>
                <Value type="EXAMPLE">234526457</Value>
             </Element>
-            <Element cardinality="1..1">
+            <Element cardinality="0..1">
                <Term>cbc:OccurrenceDate</Term>
                <Name>Occurence Date </Name>
                <Description>The date the transport event occured. </Description>
                <Value type="EXAMPLE">2023-06-01</Value>
             </Element>
-            <Element cardinality="1..1">
+            <Element cardinality="0..1">
                <Term>cbc:OccurrenceTime</Term>
                <Name>Occurence Time </Name>
                <Description>The time the transport event occured. </Description>
@@ -137,8 +139,51 @@
             <Element cardinality="0..1">
                <Term>cbc:TransportEventTypeCode</Term>
                <Name>Transport Event Type Code </Name>
-               <Description>A code specifying the requested transport event type. </Description>
+               <Description>An indicator ('true' or 'false') indicating whether the transport event is completed or not. </Description>
                <Reference type="CODE_LIST">TransportEventTypeCode</Reference>
+               <Value type="EXAMPLE">1</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:CompletionIndicator</Term>
+               <Name>Completion Indicator </Name>
+               <Description>A code specifying the requested transport event type. </Description>
+               <Value type="EXAMPLE">true</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:CurrentStatus</Term>
+               <Name>Status </Name>
+               <Description>Staus related to the consignment as a whole. </Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:ConditionCode</Term>
+                  <Name>Status </Name>
+                  <Description>Specifies the status condition of the related object.  </Description>
+                  <Value type="EXAMPLE">4</Value>
+                  <Attribute>
+                     <Term>schemeID</Term>
+                     <Value type="EXAMPLE">zzz</Value>
+                  </Attribute>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cbc:Description</Term>
+                  <Name>Status </Name>
+                  <Description>Description of the status. </Description>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:StatusReasonCode</Term>
+                  <Name>Status Reason code</Name>
+                  <Description>The reason of the status expressed as a code. </Description>
+                  <Value type="EXAMPLE">80</Value>
+                  <Attribute usage="Mandatory">
+                     <Term>listID</Term>
+                     <Value type="EXAMPLE">zzz</Value>
+                  </Attribute>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:StatusReason</Term>
+                  <Name>Status Reason</Name>
+                  <Description>The reason for this status expressed as text. </Description>
+                  <Value type="EXAMPLE">Prolonged coffebreak</Value>
+               </Element>
             </Element>
             <Element>
                <Term>cac:Period</Term>
@@ -167,13 +212,6 @@
             <Element>
                <Term>cbc:ID</Term>
                <Value type="EXAMPLE">CON_THU_1</Value>
-            </Element>
-            <Element>
-               <Term>cac:TransportEquipment</Term>
-               <Element>
-                  <Term>cbc:ID</Term>
-                  <Value type="EXAMPLE">CON_TE_1</Value>
-               </Element>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:Status</Term>
@@ -334,7 +372,7 @@
                   <Term>cac:Country</Term>
                   <Name>Country </Name>
                   <Description>The country for the address</Description>
-                  <Element cardinality="0..1">
+                  <Element cardinality="1..1">
                      <Term>cbc:IdentificationCode</Term>
                      <Name>Country code </Name>
                      <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
@@ -343,7 +381,7 @@
                   </Element>
                </Element>
             </Element>
-            <Element cardinality="0..1">
+            <Element cardinality="1..1">
                <Term>cac:Person</Term>
                <Name>Person </Name>
                <Description>The person who applies the signature on behalf of the Signature Party. </Description>
@@ -411,8 +449,8 @@
       </Element>
 	     <Element cardinality="0..n">
          <Term>cac:TransportEvent</Term>
-         <Name>Updated Pickup Transport Event </Name>
-         <Description>The transport event associated to a pickup in the transport execution plan. Can only be described id the updated Delivery transport event is not described </Description>
+         <Name>Transport Event </Name>
+         <Description>A transport event related to thist transportation status.</Description>
          <Element cardinality="1..1">
             <Term>cbc:IdentificationID</Term>
             <Name>Identification ID </Name>
@@ -433,6 +471,163 @@
             <Name>Transport Event Type Code </Name>
             <Description>A code specifying the requested transport event type. </Description>
             <Reference type="CODE_LIST">TransportEventTypeCode</Reference>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:Signature</Term>
+            <Name>Signature</Name>
+            <Description>A signature applied to this waybill. </Description>
+            <Element cardinality="1..1">
+               <Term>cbc:ID</Term>
+               <Name>Identifier Signature </Name>
+               <Description>The Id of the Signature.</Description>
+               <Value type="EXAMPLE">3453</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:ValidationDate</Term>
+               <Description>The date upon which this signature was verified. Format = "YYYY-MM-DD". </Description>
+               <Value type="EXAMPLE">2021-09-29</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:ValidationTime</Term>
+               <Description>The local time at which this signature was verified.. Format = "hh:mm:ss". </Description>
+               <Value type="EXAMPLE">09:49:00</Value>
+            </Element>
+            <Element cardinality="1..1">
+               <Term>cac:SignatoryParty</Term>
+               <Name>Signature party </Name>
+               <Description>The party signing this waybill. </Description>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyName</Term>
+                  <Name>Party name </Name>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Name>Consignee party name</Name>
+                     <Description>The name of the Signature party.</Description>
+                     <Value type="EXAMPLE">HUS Hospital</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:PostalAddress</Term>
+                  <Name>Postal address </Name>
+                  <Description>The postal address of the Signature Party</Description>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StreetName</Term>
+                     <Name>Address line 1 </Name>
+                     <Description>The main address line in a postal address usually the street name and number. </Description>
+                     <Value type="EXAMPLE">Topeliuksenkatu 5</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:AdditionalStreetName</Term>
+                     <Name>Address line 2</Name>
+                     <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.</Description>
+                     <Value type="EXAMPLE">Purchasing</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CityName</Term>
+                     <Name>City </Name>
+                     <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
+                     <Value type="EXAMPLE">Helsinki</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:PostalZone</Term>
+                     <Name>Post code </Name>
+                     <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
+                     <Value type="EXAMPLE">00260</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CountrySubentity</Term>
+                     <Name>Country subdivision </Name>
+                     <Description>For specifying a region, county, state, province etc. within a country by using text. </Description>
+                     <Value type="EXAMPLE">Heremouthshire</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cac:AddressLine</Term>
+                     <Name>Address line </Name>
+                     <Element cardinality="1..1">
+                        <Term>cbc:Line</Term>
+                        <Name>Address line 3 </Name>
+                        <Description>An additional address line in an address that can be used to give further details supplementing the main line. </Description>
+                        <Value type="EXAMPLE">Gate 34</Value>
+                     </Element>
+                  </Element>
+                  <Element cardinality="1..1">
+                     <Term>cac:Country</Term>
+                     <Name>Country </Name>
+                     <Description>The country for the address</Description>
+                     <Element cardinality="1.1">
+                        <Term>cbc:IdentificationCode</Term>
+                        <Name>Country code </Name>
+                        <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                        <Reference type="CODE_LIST">ISO3166</Reference>
+                        <Value type="EXAMPLE">FI</Value>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:Person</Term>
+                  <Name>Person </Name>
+                  <Description>The person who applies the signature on behalf of the Signature Party. </Description>
+                  <Element cardinality="0..1">
+                     <Term>cbc:ID</Term>
+                     <Name>Person ID </Name>
+                     <Description>The ID for a person. The type of ID can be specified in a schemeID. </Description>
+                     <Value type="EXAMPLE">45976</Value>
+                     <Attribute usage="Optional">
+                        <Term>schemeID</Term>
+                        <Value type="EXAMPLE">zzz</Value>
+                     </Attribute>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:FirstName</Term>
+                     <Name>First Name </Name>
+                     <Description>The persons first name. </Description>
+                     <Value type="EXAMPLE">Valiry</Value>
+                  </Element>
+                  <Element cardinality="1..1">
+                     <Term>cbc:FamilyName</Term>
+                     <Name>Family Name </Name>
+                     <Description>The persons family name. </Description>
+                     <Value type="EXAMPLE">Sender</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:JobTitle</Term>
+                     <Name>Job title </Name>
+                     <Description>The persons job title. </Description>
+                     <Value type="EXAMPLE">Director</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:DigitalSignatureAttachment</Term>
+               <Name>Attachment</Name>
+               <Description>The actual signature included or refered to as an attachment .</Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:EmbeddedDocumentBinaryObject</Term>
+                  <Name>Embedded binary object</Name>
+                  <Description>The referenced document can here be inserted as a binary object.</Description>
+                  <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>
+                  <Attribute>
+                     <Term>mimeCode</Term>
+                     <Reference type="CODE_LIST">MimeCode</Reference>
+                     <Value type="EXAMPLE">application/pdf</Value>
+                  </Attribute>
+                  <Attribute>
+                     <Term>filename</Term>
+                     <Value type="EXAMPLE">Hours-spent.pdf</Value>
+                  </Attribute>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:ExternalReference</Term>
+                  <Name>External reference</Name>
+                  <Description>A reference to an attached document that is external to the document(s) being exchanged.</Description>
+                  <Element>
+                     <Term>cbc:URI</Term>
+                     <Name>Address to internet resource</Name>
+                     <Description>The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource.</Description>
+                     <Value type="EXAMPLE">www.beast.se</Value>
+                  </Element>
+               </Element>
+            </Element>
          </Element>
       </Element>
 	     <Element cardinality="1..1">
@@ -588,7 +783,7 @@
                   <Term>cac:Country</Term>
                   <Name>Country </Name>
                   <Description>The residens country for the sender party. </Description>
-                  <Element cardinality="0..1">
+                  <Element cardinality="1..1">
                      <Term>cbc:IdentificationCode</Term>
                      <Name>Country code </Name>
                      <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
@@ -639,7 +834,7 @@
                <Value type="EXAMPLE">0198</Value>
             </Attribute>
          </Element>
-         <Element>
+         <Element cardinality="0..1">
             <Term>cac:PartyIdentification</Term>
             <Name>Receiver party identification </Name>
             <Description>An identifier for the sender party as known to the sender party. </Description>
@@ -776,7 +971,7 @@
                   <Term>cac:Country</Term>
                   <Name>Country </Name>
                   <Description>The residens country for the receiver party. </Description>
-                  <Element cardinality="0..1">
+                  <Element cardinality="1..1">
                      <Term>cbc:IdentificationCode</Term>
                      <Name>Country code </Name>
                      <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
@@ -855,124 +1050,6 @@
             <Description>The Issue time when the transport execution plan request was issued </Description>
             <Value type="EXAMPLE">07:49:00</Value>
          </Element>
-      </Element>
-
-	
-	     <Element cardinality="1..1">
-         <Term>cac:StatusLocation</Term>
-         <Name>Delivery location</Name>
-         <Description>The Delivery Location is used to define the Ship-to when the Delivery Customer Party is not . When the Despatch Advice describes a movement, the Delivery Location should always be included. When the Despatch Advice describes a service given at a location, the Delivery Location describes this location.</Description>
-         <Element cardinality="0..1">
-            <Term>cbc:ID</Term>
-            <Name>Identity of the delivery location</Name>
-            <Description>Identifies the delivery location.</Description>
-            <Value type="EXAMPLE">5790000435951</Value>
-            <Attribute usage="Optional">
-               <Term>schemeID</Term>
-               <Name>Scheme identifier</Name>
-               <Reference type="CODE_LIST">ICD</Reference>
-               <Value type="EXAMPLE">0088</Value>
-            </Attribute>
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cbc:Name</Term>
-            <Name>Name of the delivery location</Name>
-            <Description>The name of the delivery location.</Description>
-            <Value type="EXAMPLE">Name</Value>
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:Address</Term>
-            <Name>Address of the delivery location</Name>
-            <Description>The address of the delivery location.</Description>
-            <Element cardinality="0..1 0..1">
-               <Term>cbc:StreetName</Term>
-               <Name>Address line 1</Name>
-               <Description>The main address line in a postal address usually the street name and number.</Description>
-               <Value type="EXAMPLE">Avon Way</Value>
-            </Element>
-            <Element cardinality="0..1 0..1">
-               <Term>cbc:AdditionalStreetName</Term>
-               <Name>Address line 2</Name>
-               <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.</Description>
-               <Value type="EXAMPLE">Purchasing</Value>
-            </Element>
-            <Element cardinality="0..1 0..1">
-               <Term>cbc:CityName</Term>
-               <Name>City</Name>
-               <Description>The common name of the city where the postal address is. The name is written in full rather than as a code.</Description>
-               <Value type="EXAMPLE">Bridgtow</Value>
-            </Element>
-            <Element cardinality="0..1 0..1">
-               <Term>cbc:PostalZone</Term>
-               <Name>Post code</Name>
-               <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.</Description>
-               <Value type="EXAMPLE">ZZ99 1ZZ</Value>
-            </Element>
-            <Element cardinality="0..1 0..1">
-               <Term>cbc:CountrySubentity</Term>
-               <Name>Country subdivision</Name>
-               <Description>For specifying a region, county, state, province etc. within a country by using text.</Description>
-               <Value type="EXAMPLE">Avon</Value>
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:AddressLine</Term>
-               <Name>Address line</Name>
-               <Element cardinality="0..1 0..1">
-                  <Term>cbc:Line</Term>
-                  <Name>Address line 3</Name>
-                  <Description>An additional address line in an address that can be used to give further details supplementing the main line.</Description>
-                  <Value type="EXAMPLE">3rd Floor, Room 5</Value>
-               </Element>
-            </Element>
-            <Element cardinality="1..1">
-               <Term>cac:Country</Term>
-               <Name>Country</Name>
-               <Element cardinality="1..1">
-                  <Term>cbc:IdentificationCode</Term>
-                  <Name>Country code</Name>
-                  <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.</Description>
-                  <Reference type="CODE_LIST">ISO3166</Reference>
-                  <Value type="EXAMPLE">GB</Value>
-               </Element>
-            </Element>
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:LocationCoordinate</Term>
-            <Name>Location coordinate</Name>
-            <Description>To specify the coordinates.</Description>
-            <Element cardinality="1..1">
-               <Term>cbc:CoordinateSystemCode</Term>
-               <Name>Coordinate system code</Name>
-               <Description>Always "EPSG:3857" by definition.</Description>
-               <Value type="EXAMPLE">EPSG:3857</Value>
-            </Element>
-            <Element cardinality="1..1">
-               <Term>cbc:LatitudeDegreesMeasure</Term>
-               <Name>Latitude degrees</Name>
-               <Description>The X coordinate. Use degrees with decimals.</Description>
-               <Value type="EXAMPLE">59.331660358041425</Value>
-               <Attribute usage="Mandatory">
-                  <Term>unitCode</Term>
-                  <Name>Latitude degrees unit of measure</Name>
-                  <Description>The unit of measure that applies to the latitude degrees.</Description>
-                  <Reference type="CODE_LIST">UNECERec20</Reference>
-                  <Value type="EXAMPLE">DD</Value>
-               </Attribute>
-            </Element>
-            <Element cardinality="1..1">
-               <Term>cbc:LongitudeDegreesMeasure</Term>
-               <Name>Longitude degrees</Name>
-               <Description>The Y coordinate. Use degrees with decimals.</Description>
-               <Value type="EXAMPLE">18.063363084988005</Value>
-               <Attribute usage="Mandatory">
-                  <Term>unitCode</Term>
-                  <Name>Longitude degrees unit of measure</Name>
-                  <Description>The unit of measure that applies to the longitude degrees.</Description>
-                  <Reference type="CODE_LIST">UNECERec20</Reference>
-                  <Value type="EXAMPLE">DD</Value>
-               </Attribute>
-            </Element>
-         </Element>
-      </Element>
+      </Element>	
    </Document>
 </Structure>

@@ -1410,7 +1410,7 @@
                <Description>Special delivery terms that exceeds the inco terms. </Description>
                <Value type="EXAMPLE">DAP</Value>
             </Element>
-            <Element cardinality="1..1">
+            <Element cardinality="0..1">
                <Term>cac:Location</Term>
                <Name>Location of attchaed to the delivery terms </Name>
                <Description>The location where the pickup takes place.</Description>
@@ -1450,19 +1450,6 @@
                <Description>A free text describing this set of payment terms. </Description>
                <Value type="EXAMPLE">To be paid on invoice</Value>
             </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:Amount</Term>
-               <Name>Amount </Name>
-               <Description>The monetary amount covered by these payment terms. </Description>
-               <Value type="EXAMPLE">1056.40</Value>
-               <Attribute>
-                  <Term>currencyID</Term>
-                  <Name>Currency identifier </Name>
-                  <Description>Currency identifier.</Description>
-                  <Reference type="CODE_LIST">ISO4217</Reference>
-                  <Value type="EXAMPLE">DKK</Value>
-               </Attribute>
-            </Element>
          </Element>
          <Element cardinality="0..n">
             <Term>cac:FreightAllowanceCharge</Term>
@@ -1478,6 +1465,7 @@
                <Term>cbc:AllowanceChargeReasonCode</Term>
                <Name>Allowance Charge Reason Code </Name>
                <Description>A code signifying this freight allowance or charge. </Description>
+               <Reference type="CODE_LIST">FreightAllowanceChargeReasonCode</Reference>
                <Value type="EXAMPLE">1</Value>
             </Element>
             <Element cardinality="1..1">
@@ -1956,17 +1944,6 @@
                      <Name>Name</Name>
                      <Description>The name of the Item. </Description>
                      <Value type="EXAMPLE">Torsk</Value>
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cac:SellersItemIdentification</Term>
-                     <Name>Sellers Identification</Name>
-                     <Description>The identification of the product </Description>
-                     <Element cardinality="1..1">
-                        <Term>cbc:ID</Term>
-                        <Name>ID</Name>
-                        <Description>The product ID </Description>
-                        <Value type="EXAMPLE">17589683</Value>
-                     </Element>
                   </Element>
                   <Element cardinality="0..n">
                      <Term>cac:CommodityClassification</Term>

@@ -633,7 +633,8 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:PartyLegalEntity</Term>
-                  <Name>Party legal entity </Name>
+                  <Name>Party legal entity.</Name>
+                  <Description>Information about the legal entity for the consignee party. </Description>
                   <Element cardinality="1..1">
                      <Term>cbc:RegistrationName</Term>
                      <Name>Consignee or delivery party name </Name>
@@ -722,6 +723,23 @@
                   <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
                   <Reference type="CODE_LIST">ISO3166</Reference>
                   <Value type="EXAMPLE">FI</Value>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:PaymentTerms</Term>
+               <Name>Payment terms </Name>
+               <Description>The terms of payment between the parties (such as logistics service client, logistics service provider) in a transaction. </Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:ID</Term>
+                  <Name>Payment terms identification </Name>
+                  <Description>An identifier for this set of payment terms. </Description>
+                  <Value type="EXAMPLE">DAP</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:Note</Term>
+                  <Name>Payment terms note </Name>
+                  <Description>A free text describing this set of payment terms. </Description>
+                  <Value type="EXAMPLE">To be paid on invoice</Value>
                </Element>
             </Element>
             <Element cardinality="0..n">
@@ -903,7 +921,7 @@
                   <Element cardinality="0..1">
                      <Term>cac:Item</Term>
                      <Name>Item </Name>
-                     <Description>Description of the product beeing transported. Used for a structurel description of the item. mandatory for Hazardous items.</Description>
+                     <Description>Description of the product beeing transported. Used for a structurel description of an item. Mandatory if the goods item is a Hazardous items.</Description>
                      <Element cardinality="0..1">
                         <Term>cbc:Name</Term>
                         <Name>Name</Name>
@@ -1341,6 +1359,37 @@
                      </Element>
                   </Element>
                </Element>
+               <Element cardinality="1..1">
+                  <Term>cac:EstimatedDeliveryPeriod</Term>
+                  <Name>Estimated despatch period</Name>
+                  <Description>The estimated despatch period.</Description>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StartDate</Term>
+                     <Reference type="RULE">PEPPOL-T120-R012</Reference>
+                     <Reference type="RULE">PEPPOL-T120-R015</Reference>
+                     <Value type="EXAMPLE">2021-09-25</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:StartTime</Term>
+                     <Reference type="RULE">PEPPOL-T120-R013</Reference>
+                     <Reference type="RULE">PEPPOL-T120-R015</Reference>
+                     <Value type="EXAMPLE">12:00:00</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:EndDate</Term>
+                     <Reference type="RULE">PEPPOL-T120-R012</Reference>
+                     <Reference type="RULE">PEPPOL-T120-R014</Reference>
+                     <Reference type="RULE">PEPPOL-T120-R015</Reference>
+                     <Value type="EXAMPLE">2021-09-27</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:EndTime</Term>
+                     <Reference type="RULE">PEPPOL-T120-R013</Reference>
+                     <Reference type="RULE">PEPPOL-T120-R014</Reference>
+                     <Reference type="RULE">PEPPOL-T120-R015</Reference>
+                     <Value type="EXAMPLE">12:00:00</Value>
+                  </Element>
+               </Element>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:DeliveryTerms</Term>
@@ -1371,8 +1420,7 @@
                </Element>
             </Element>
          </Element>
-      </Element>
-			
+      </Element>			
 	     <Element cardinality="0..n">
          <Term>cac:DocumentReference</Term>
          <Name>Additional document reference</Name>
