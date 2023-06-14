@@ -852,7 +852,7 @@
 	</cac:AdditionalDocumentReference>	
 	<cac:MainTransportationService>
 		<?Name Main Transportatin Service?>
-		<?Cardinality 0..1?>
+		<?Cardinality 1..1?>
 		<?Description A description of the main transportation service referenced in the Transport Execution Plan.?>
 		<cbc:TransportServiceCode>4
 			<?Name Main Transportatin Service Code?>
@@ -1716,7 +1716,7 @@
 			<cac:Location>
 				<?Name Location of attchaed to the delivery terms ?>
 				<?Description The location where the pickup takes place.?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:ID schemeID="0088">5790000435951
 					<?Name Identity of the  location ?>
 					<?Description Identifies the location. ?>
@@ -1761,7 +1761,7 @@
 				<?Name Allowance Charge Reason Code ?>
 				<?Description A code signifying this freight allowance or charge. ?>
 				<?Cardinality 1..1?>	
-				<?listID-CodeList FreightAllowanceChargeReasonCode?>
+				<?CodeList FreightAllowanceChargeReasonCode?>
 				<?listID-usage Mandatory?>
 			</cbc:AllowanceChargeReasonCode>
 			<cbc:Amount>100
@@ -1784,89 +1784,7 @@
 				<?Name Hazardous risk indicator ?>
 				<?Description An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 				<?Cardinality 0..1?>
-			</cbc:HazardousRiskIndicator>
-			<cac:CarrierParty>
-				<?Name Carrier party ?>
-				<?Description The carrier party responsible for this shipment stage. ?>
-				<?Cardinality 0..1?>				
-				<cac:PartyName>
-					<?Name Party name ?>
-					<?Cardinality 0..1?>
-					<cbc:Name>Finnair Oyj
-						<?Name Carrier party name?>
-						<?Description The name of the carrier party. ?>
-					</cbc:Name>
-				</cac:PartyName>
-				<cac:PostalAddress>
-					<?Name Postal address ?>
-					<?Description The postal address of the carrier.?>
-					<?Cardinality 0..1?>
-					<cbc:StreetName>Tietotie 9
-						<?Name Address line 1 ?>
-						<?Description The main address line in a postal address usually the street name and number. ?>
-						<?Cardinality 0..1?>
-					</cbc:StreetName>
-					<cbc:CityName>Vantaa
-						<?Name City ?>
-						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
-						<?Cardinality 0..1?>
-					</cbc:CityName>
-					<cbc:PostalZone>4600
-						<?Name Post code ?>
-						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
-						<?Cardinality 0..1?>
-					</cbc:PostalZone>
-					<cac:Country>
-						<?Name Country ?>
-						<?Cardinality 1..1?>
-						<cbc:IdentificationCode>FI
-							<?Name Country code ?>
-							<?Cardinality 1..1?>
-							<?CodeList ISO3166?>
-							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
-						</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:PostalAddress>
-				<cac:PartyLegalEntity>
-					<?Name Party legal entity ?>
-					<?Cardinality 0..1?>
-					<cbc:RegistrationName>Leman
-						<?Name Carrier party name ?>
-						<?Description The name of the carrier party.?>
-						<?Cardinality 1..1?>
-					</cbc:RegistrationName>
-					<cbc:CompanyID schemeID="0212">0108023-3
-						<?Name Carrier parties legal registration name ?>
-						<?Description The official name of the party as registered with the relevant fiscal authority. ?>
-						<?Cardinality 0..1?>
-					<?schemeID-Name Scheme identifier ?>
-					<?schemeID-Description The identification scheme identifier of the carrier legal registration identifier ?>
-					<?schemeID-Usage optional?>
-					<?schemeID-CodeList ICD?>
-					</cbc:CompanyID>
-					<cac:RegistrationAddress>
-						<?Name Legal address ?>
-						<?Cardinality 0..1?>
-						<cbc:CityName>Vantaa
-						<?Name City name ?>
-						<?Description The name of the city. ?>
-						<?Cardinality 0..1?>
-					</cbc:CityName>
-						<cac:Country>
-							<?Name Country ?>
-							<?Description The residens country for the carrier party. ?>
-							<?Cardinality 1..1?>
-							<cbc:IdentificationCode>FI
-								<?Name Country code ?>
-								<?Cardinality 1..1?>
-								<?CodeList ISO3166?>
-								<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
-							</cbc:IdentificationCode>
-						</cac:Country>
-					</cac:RegistrationAddress>
-				</cac:PartyLegalEntity>
-			</cac:CarrierParty>
-			
+			</cbc:HazardousRiskIndicator>			
 			<cac:PlannedDepartureTransportEvent>
 				<?Name Requested departure transport event ?>
 				<?Description The departure requested by the party requesting a transportation service. ?>
@@ -2857,17 +2775,7 @@
 						<?Name Name?>
 						<?Description The name of the Item. ?>
 						<?Cardinality 0..1?>
-					</cbc:Name>					
-					<cac:SellersItemIdentification>
-						<?Name Sellers Identification?>
-						<?Description The identification of the product ?>
-						<?Cardinality 0..1?>
-						<cbc:ID>17589683 
-							<?Name ID?>
-							<?Description The product ID ?>
-							<?Cardinality 1..1?>
-						</cbc:ID>
-					</cac:SellersItemIdentification>
+					</cbc:Name>										
 					<cac:CommodityClassification>
 						<?Name Commodity classification?>
 						<?Description To classify when an item number is not sufficient.?>

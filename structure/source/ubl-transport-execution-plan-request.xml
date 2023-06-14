@@ -1127,7 +1127,7 @@
 			<cac:Location>
 				<?Name Location of attchaed to the delivery terms ?>
 				<?Description The location where the pickup takes place.?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:ID schemeID="0088">5790000435951
 					<?Name Identity of the  location ?>
 					<?Description Identifies the location. ?>
@@ -1157,14 +1157,7 @@
 				<?Description A free text describing this set of payment terms. ?>
 				<?Cardinality 0..1?>
 			</cbc:Note>
-			<cbc:Amount currencyID="DKK">1056.40
-				<?Name Amount ?>
-				<?Description The monetary amount covered by these payment terms. ?>
-				<?Cardinality 0..1?>
-				<?currencyID-Name Currency identifier ?>
-				<?currencyID-Description Currency identifier.?>
-				<?currencyID-CodeList ISO4217?>
-			</cbc:Amount>
+			
 		</cac:PaymentTerms>
 		<cac:FreightAllowanceCharge>
 			<?Name Freight Allowance Charge ?>
@@ -1179,7 +1172,7 @@
 				<?Name Allowance Charge Reason Code ?>
 				<?Description A code signifying this freight allowance or charge. ?>
 				<?Cardinality 1..1?>	
-				<?listID-CodeList FreightAllowanceChargeReasonCode?>
+				<?CodeList FreightAllowanceChargeReasonCode?>
 				<?listID-usage Mandatory?>
 			</cbc:AllowanceChargeReasonCode>
 			<cbc:Amount>100
@@ -1574,17 +1567,7 @@
 						<?Name Name?>
 						<?Description The name of the Item. ?>
 						<?Cardinality 0..1?>
-					</cbc:Name>					
-					<cac:SellersItemIdentification>
-						<?Name Sellers Identification?>
-						<?Description The identification of the product ?>
-						<?Cardinality 0..1?>
-						<cbc:ID>17589683 
-							<?Name ID?>
-							<?Description The product ID ?>
-							<?Cardinality 1..1?>
-						</cbc:ID>
-					</cac:SellersItemIdentification>
+					</cbc:Name>							
 					<cac:CommodityClassification>
 						<?Name Commodity classification?>
 						<?Description To classify when an item number is not sufficient.?>
