@@ -81,14 +81,16 @@
 		</cbc:ID>
 		<cbc:DocumentTypeCode> 380 
 			<?Name Document type code?>
-			<?Description The type of reference. Must me part of UNCL1001?>
+			<?Description The type of reference. Must me part of UNCL1001. At least one of Document Type Code and Document Type must be used. ?>
 			<?Cardinality 0..1?>
 			<?CodeList UNCL1001?>
+			<?Rule PEPPOL-T128-R031?>
 		</cbc:DocumentTypeCode>
 		<cbc:DocumentType> Photo 
 			<?Name Document type?>
-			<?Description The type of reference that cannot be specified by a code?>
+			<?Description The type of reference that cannot be specified by a code. At least one of Document Type Code and Document Type must be used. ?>
 			<?Cardinality 0..1?>
+			<?Rule PEPPOL-T128-R031?>
 		</cbc:DocumentType>
 		<cac:Attachment>
 			<?Name Attachment?>

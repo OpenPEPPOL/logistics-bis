@@ -45,6 +45,9 @@
 	<rule context="cac:Shipment/cac:TransportHandlingUnit">
 		<assert id="PEPPOL-T128-R027" test="((normalize-space(cac:Status/cbc:ConditionCode) = '5') and not(cbc:DamageRemarks)) or (not(normalize-space(cac:Status/cbc:ConditionCode) = '5') and (cbc:DamageRemarks))" flag="fatal">If the Condition Code on the Transport Handling Unit is not ok, a Damage Remark SHALL be provided.  </assert>
 	</rule>
+	<rule context="cac:AdditionalDocumentReference">
+		<assert id="PEPPOL-T128-R031" test="(cbc:DocumentTypeCode) or (cbc:DocumentType)" flag="fatal">AdditionalDocumentReference SHALL contain a Document Type Code or a Document Type. </assert>
+	</rule>
 </pattern>
 
 

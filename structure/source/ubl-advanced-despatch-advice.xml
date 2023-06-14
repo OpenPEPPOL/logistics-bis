@@ -44,13 +44,15 @@
 			<?Description The reference number of added document?>
 		</cbc:ID>
 		<cbc:DocumentTypeCode> 380 <?Name Document type code?>
-			<?Description The type of reference. Must me part of UNCL1001?>
+			<?Description The type of reference. Must me part of UNCL1001. At least one of Document Type Code and Document Type must be used. ?>
 			<?Cardinality 0..1?>
 			<?CodeList UNCL1001?>
+			<?Rule PEPPOL-T120-R031?>
 		</cbc:DocumentTypeCode>
-		<cbc:DocumentType> BEAST:FreightPayersCustomerNumber <?Name Document type?>
-			<?Description The type of reference that cannot be specified by a code?>
+		<cbc:DocumentType> FreightPayersCustomerNumber <?Name Document type?>
+			<?Description The type of reference that cannot be specified by a code. At least one of Document Type Code and Document Type must be used. ?>
 			<?Cardinality 0..1?>
+			<?Rule PEPPOL-T120-R031?>
 		</cbc:DocumentType>
 		<cac:Attachment>
 			<?Name Attachment?>
@@ -1148,6 +1150,7 @@
 			</cac:Package>
 		</cac:TransportHandlingUnit>
 	</cac:Shipment>
+	
 	<cac:DespatchLine>
 		<cbc:ID>10</cbc:ID>
 		<cbc:Note>Mrs Green agreed to waive charge</cbc:Note>
@@ -1184,10 +1187,12 @@
 				<?Description Identifies the type of document or item.?>
 				<?Cardinality 0..1?>
 				<?CodeList UNCL1001?>
+				<?Rule PEPPOL-T120-R032?>
 			</cbc:DocumentTypeCode>
 			<cbc:DocumentType> Letter Of Credit <?Name Document type?>
 				<?Description The type of reference that cannot be specified by a code?>
 				<?Cardinality 0..1?>
+				<?Rule PEPPOL-T120-R032?>
 			</cbc:DocumentType>
 			<cac:Attachment>
 				<?Name Attachment?>
