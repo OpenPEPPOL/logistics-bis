@@ -126,13 +126,13 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cbc:OccurrenceDate</Term>
-               <Name>Occurence Date </Name>
+               <Name>Occurrence Date </Name>
                <Description>The date the transport event occured. </Description>
                <Value type="EXAMPLE">2023-06-01</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cbc:OccurrenceTime</Term>
-               <Name>Occurence Time </Name>
+               <Name>Occurrence Time </Name>
                <Description>The time the transport event occured. </Description>
                <Value type="EXAMPLE">10:23:34</Value>
             </Element>
@@ -293,7 +293,7 @@
 	     <Element cardinality="0..1">
          <Term>cac:Signature</Term>
          <Name>Signature</Name>
-         <Description>A signature applied to this waybill. </Description>
+         <Description>A signature applied to this transportation status. </Description>
          <Element cardinality="1..1">
             <Term>cbc:ID</Term>
             <Name>Identifier Signature </Name>
@@ -313,7 +313,7 @@
          <Element cardinality="1..1">
             <Term>cac:SignatoryParty</Term>
             <Name>Signature party </Name>
-            <Description>The party signing this waybill. </Description>
+            <Description>The party signing this transportation status </Description>
             <Element cardinality="0..1">
                <Term>cac:PartyName</Term>
                <Name>Party name </Name>
@@ -475,7 +475,7 @@
          <Element cardinality="0..1">
             <Term>cac:Signature</Term>
             <Name>Signature</Name>
-            <Description>A signature applied to this waybill. </Description>
+            <Description>A signature applied to this transportation status. </Description>
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>Identifier Signature </Name>
@@ -495,7 +495,7 @@
             <Element cardinality="1..1">
                <Term>cac:SignatoryParty</Term>
                <Name>Signature party </Name>
-               <Description>The party signing this waybill. </Description>
+               <Description>The party signing this transportation status. </Description>
                <Element cardinality="0..1">
                   <Term>cac:PartyName</Term>
                   <Name>Party name </Name>
@@ -563,7 +563,7 @@
                      </Element>
                   </Element>
                </Element>
-               <Element cardinality="0..1">
+               <Element cardinality="1..1">
                   <Term>cac:Person</Term>
                   <Name>Person </Name>
                   <Description>The person who applies the signature on behalf of the Signature Party. </Description>

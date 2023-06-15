@@ -8,10 +8,10 @@
    <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
    <Document>
       <Term>ubl:TransportExecutionPlan</Term>
- 
- 
- 
-      <Element>
+	
+	
+	
+	     <Element>
          <Term>cbc:CustomizationID</Term>
          <Name>Specification identification</Name>
          <Description>Identifies the specification of content and rules that apply to the
@@ -20,7 +20,7 @@
          <Reference type="BUSINESS_TERM">tir16-002</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1</Value>
       </Element>
-      <Element>
+	     <Element>
          <Term>cbc:ProfileID</Term>
          <Name>Business process type identifier</Name>
          <Description>Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1".</Description>
@@ -798,7 +798,6 @@
             </Element>
          </Element>
       </Element>
-	
 	     <Element cardinality="0..1">
          <Term>cac:BillToParty</Term>
          <Name>Bill To Party </Name>
@@ -985,7 +984,7 @@
                <Value type="EXAMPLE">transport-user@transportuser.dk</Value>
             </Element>
          </Element>
-      </Element>		
+      </Element>
 	     <Element cardinality="0..1">
          <Term>cac:TransportExecutionPlanRequestDocumentReference</Term>
          <Name>Additional document reference</Name>
@@ -1074,7 +1073,7 @@
                </Element>
             </Element>
          </Element>
-      </Element>	
+      </Element>
 	     <Element cardinality="1..1">
          <Term>cac:MainTransportationService</Term>
          <Name>Main Transportatin Service</Name>
@@ -1111,7 +1110,6 @@
             <Value type="EXAMPLE">Insurance</Value>
          </Element>
       </Element>
-	
 	     <Element cardinality="1..1">
          <Term>cac:Consignment</Term>
          <Name>Consignment information </Name>
@@ -1879,6 +1877,12 @@
                   <Value type="EXAMPLE">Topeliuksenkatu 5</Value>
                </Element>
                <Element cardinality="0..1">
+                  <Term>cbc:AdditionalStreetName</Term>
+                  <Name>Address line 2 </Name>
+                  <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. </Description>
+                  <Value type="EXAMPLE">way 1</Value>
+               </Element>
+               <Element cardinality="0..1">
                   <Term>cbc:CityName</Term>
                   <Name>City </Name>
                   <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
@@ -1889,6 +1893,21 @@
                   <Name>Post code </Name>
                   <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
                   <Value type="EXAMPLE">00260</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:CountrySubentity</Term>
+                  <Name>Country sub entity </Name>
+                  <Description>For specifying a region, county, state, province etc. within a country by using text. </Description>
+                  <Value type="EXAMPLE">Region Hovedstaden</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:AddressLine</Term>
+                  <Name>Address line 3 </Name>
+                  <Description>An additional address line in an address that can be used to give further details supplementing the main line. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:Line</Term>
+                     <Value type="EXAMPLE">Bygning 5</Value>
+                  </Element>
                </Element>
                <Element>
                   <Term>cac:Country</Term>
@@ -1996,6 +2015,12 @@
                   <Value type="EXAMPLE">Københavnsvej 216</Value>
                </Element>
                <Element cardinality="0..1">
+                  <Term>cbc:AdditionalStreetName</Term>
+                  <Name>Address line 2 </Name>
+                  <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. </Description>
+                  <Value type="EXAMPLE">way 1</Value>
+               </Element>
+               <Element cardinality="0..1">
                   <Term>cbc:CityName</Term>
                   <Name>City </Name>
                   <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
@@ -2006,6 +2031,21 @@
                   <Name>Post code </Name>
                   <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
                   <Value type="EXAMPLE">4600</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:CountrySubentity</Term>
+                  <Name>Country sub entity </Name>
+                  <Description>For specifying a region, county, state, province etc. within a country by using text. </Description>
+                  <Value type="EXAMPLE">Region Hovedstaden</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:AddressLine</Term>
+                  <Name>Address line 3 </Name>
+                  <Description>An additional address line in an address that can be used to give further details supplementing the main line. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:Line</Term>
+                     <Value type="EXAMPLE">Bygning 5</Value>
+                  </Element>
                </Element>
                <Element cardinality="1..1">
                   <Term>cac:Country</Term>
@@ -2513,6 +2553,12 @@
                      <Value type="EXAMPLE">Jydekrogen 14</Value>
                   </Element>
                   <Element cardinality="0..1">
+                     <Term>cbc:AdditionalStreetName</Term>
+                     <Name>Address line 2 </Name>
+                     <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. </Description>
+                     <Value type="EXAMPLE">way 1</Value>
+                  </Element>
+                  <Element cardinality="0..1">
                      <Term>cbc:CityName</Term>
                      <Name>City </Name>
                      <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
@@ -2523,6 +2569,21 @@
                      <Name>Post code </Name>
                      <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
                      <Value type="EXAMPLE">2625</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CountrySubentity</Term>
+                     <Name>Country sub entity </Name>
+                     <Description>For specifying a region, county, state, province etc. within a country by using text. </Description>
+                     <Value type="EXAMPLE">Region Hovedstaden</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cac:AddressLine</Term>
+                     <Name>Address line 3 </Name>
+                     <Description>An additional address line in an address that can be used to give further details supplementing the main line. </Description>
+                     <Element cardinality="1..1">
+                        <Term>cbc:Line</Term>
+                        <Value type="EXAMPLE">Bygning 5</Value>
+                     </Element>
                   </Element>
                   <Element cardinality="1..1">
                      <Term>cac:Country</Term>
@@ -2891,6 +2952,12 @@
                      <Value type="EXAMPLE">Tullimiehentie 10</Value>
                   </Element>
                   <Element cardinality="0..1">
+                     <Term>cbc:AdditionalStreetName</Term>
+                     <Name>Address line 2 </Name>
+                     <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. </Description>
+                     <Value type="EXAMPLE">way 1</Value>
+                  </Element>
+                  <Element cardinality="0..1">
                      <Term>cbc:CityName</Term>
                      <Name>City </Name>
                      <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
@@ -2901,6 +2968,21 @@
                      <Name>Post code </Name>
                      <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
                      <Value type="EXAMPLE">01530</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CountrySubentity</Term>
+                     <Name>Country sub entity </Name>
+                     <Description>For specifying a region, county, state, province etc. within a country by using text. </Description>
+                     <Value type="EXAMPLE">Region Hovedstaden</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cac:AddressLine</Term>
+                     <Name>Address line 3 </Name>
+                     <Description>An additional address line in an address that can be used to give further details supplementing the main line. </Description>
+                     <Element cardinality="1..1">
+                        <Term>cbc:Line</Term>
+                        <Value type="EXAMPLE">Bygning 5</Value>
+                     </Element>
                   </Element>
                   <Element cardinality="1..1">
                      <Term>cac:Country</Term>
