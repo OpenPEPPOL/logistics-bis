@@ -67,12 +67,12 @@
 				<?Cardinality 0..1?>
 			</cbc:IdentificationID>
 			<cbc:OccurrenceDate>2023-06-01
-				<?Name Occurence Date ?>
+				<?Name Occurrence Date ?>
 				<?Description The date the transport event occured. ?>
 				<?Cardinality 0..1?>
 			</cbc:OccurrenceDate>
 			<cbc:OccurrenceTime>10:23:34
-				<?Name Occurence Time ?>
+				<?Name Occurrence Time ?>
 				<?Description The time the transport event occured. ?>
 				<?Cardinality 0..1?>
 			</cbc:OccurrenceTime>
@@ -182,7 +182,7 @@
 	</cac:DocumentReference>
 	<cac:Signature>
 		<?Name Signature?>
-		<?Description A signature applied to this waybill. ?>
+		<?Description A signature applied to this transportation status. ?>
 		<?Cardinality 0..1?>
 		<cbc:ID>3453
 			<?Name Identifier Signature ?>
@@ -199,7 +199,7 @@
 		</cbc:ValidationTime>
 		<cac:SignatoryParty>
 			<?Name Signature party ?>
-			<?Description The party signing this waybill. ?>
+			<?Description The party signing this transportation status ?>
 			<?Cardinality 1..1?>
 			<cac:PartyName>
 				<?Name Party name ?>
@@ -333,7 +333,7 @@
 		</cbc:TransportEventTypeCode>
 			<cac:Signature>
 		<?Name Signature?>
-		<?Description A signature applied to this waybill. ?>
+		<?Description A signature applied to this transportation status. ?>
 		<?Cardinality 0..1?>
 		<cbc:ID>3453
 			<?Name Identifier Signature ?>
@@ -350,7 +350,7 @@
 		</cbc:ValidationTime>
 		<cac:SignatoryParty>
 			<?Name Signature party ?>
-			<?Description The party signing this waybill. ?>
+			<?Description The party signing this transportation status. ?>
 			<?Cardinality 1..1?>
 			<cac:PartyName>
 				<?Name Party name ?>
@@ -413,7 +413,7 @@
 			<cac:Person>
 				<?Name Person ?>
 				<?Description The person who applies the signature on behalf of the Signature Party. ?>
-				<?Cardinality 0..1?>
+				<?Cardinality 1..1?>
 				<cbc:ID schemeID="zzz">45976	
 					<?Name Person ID ?>
 					<?Description The ID for a person. The type of ID can be specified in a schemeID. ?>
