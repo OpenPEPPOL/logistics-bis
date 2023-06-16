@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ubl:TransportExecutionPlan
- xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
- xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
- xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
- <?DocumentTerm TransportExecutionPlan?>
- <?Property key="sch:prefix" PEPPOL-T124?>
- <?Property key="sch:identifier" T124-basic?>
- <cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1</cbc:CustomizationID>
- <cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1".?></cbc:ProfileID>
+<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	<?DocumentTerm TransportExecutionPlan?>
+	<?Property key="sch:prefix" PEPPOL-T124?>
+	<?Property key="sch:identifier" T124-basic?>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1</cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1".?>
+	</cbc:ProfileID>
 	<cbc:ID>691278571829041271246</cbc:ID>
 	<cbc:IssueDate>2021-09-29<?Description The date when the transport execuition plan is issued. Format = "YYYY-MM-DD". ?>
 	</cbc:IssueDate>
-	<cbc:IssueTime>09:49:00<?Description The time when the transport execuition plan is issued. Format = "hh:mm:ss". ?><?Cardinality 1..1?>
+	<cbc:IssueTime>09:49:00<?Description The time when the transport execuition plan is issued. Format = "hh:mm:ss". ?>
+		<?Cardinality 1..1?>
 	</cbc:IssueTime>
 	<cbc:DocumentStatusCode>9
 		<?Name Transport execuition plan status code ?>
@@ -43,7 +42,7 @@
 			<?schemeID-CodeList eas?>
 		</cbc:EndpointID>
 		<cac:PartyIdentification>
-			<?Name Sender party identification ?>			
+			<?Name Sender party identification ?>
 			<?Description An identifier for the sender party as known to the receiver party. ?>
 			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088"> 7300010000001 	
@@ -346,11 +345,11 @@
 	<cac:TransportUserParty>
 		<?Name Transport user party ?>
 		<?Description The party requesting the transport services referenced in the transport execution plan. ?>
-		<?Cardinality 1..1?>		
+		<?Cardinality 1..1?>
 		<cac:PartyIdentification>
 			<?Name Transport user party identification ?>
 			<?Description An identifier for the transport user party. ?>
-			<?Cardinality 0..1?>	
+			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">7300010000001 				
 			<?Name ID ?>
 			<?Cardinality 1..1?>			
@@ -496,7 +495,7 @@
 	<cac:TransportServiceProviderParty>
 		<?Name Transport service provider party ?>
 		<?Description The party providing the transport services referenced in the Transport Execution Plan. ?>
-		<?Cardinality 1..1?>		
+		<?Cardinality 1..1?>
 		<cac:PartyIdentification>
 			<?Name Transport service provider party identification ?>
 			<?Description An identifier for the transport service provider party. ?>
@@ -641,7 +640,6 @@
 			</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:TransportServiceProviderParty>
-	
 	<cac:BillToParty>
 		<?Name Bill To Party ?>
 		<?Description The party that will pay for the transport service(s) referred to in this Transport Execution Plan. ?>
@@ -796,8 +794,8 @@
 					<?Cardinality 0..1?>
 				</cbc:ElectronicMail>
 		</cac:Contact>
-	</cac:BillToParty>		
-	<cac:TransportExecutionPlanRequestDocumentReference >
+	</cac:BillToParty>
+	<cac:TransportExecutionPlanRequestDocumentReference>
 		<?Name Additional document reference?>
 		<?Description Reference to a transport execution plan request. Mandatory if it is not  ?>
 		<?Cardinality 0..1?>
@@ -812,7 +810,7 @@
 			<?Description The Issue time when the transport execution plan request was issued ?>
 			<?Cardinality 0..1?>
 		</cbc:IssueTime>
-	</cac:TransportExecutionPlanRequestDocumentReference >
+	</cac:TransportExecutionPlanRequestDocumentReference>
 	<cac:AdditionalDocumentReference>
 		<?Name Additional document reference?>
 		<?Description Reference to additional documents relevant for this transport execution plan. ?>
@@ -849,10 +847,10 @@
 				</cbc:URI>
 			</cac:ExternalReference>
 		</cac:Attachment>
-	</cac:AdditionalDocumentReference>	
+	</cac:AdditionalDocumentReference>
 	<cac:MainTransportationService>
 		<?Name Main Transportatin Service?>
-		<?Cardinality 0..1?>
+		<?Cardinality 1..1?>
 		<?Description A description of the main transportation service referenced in the Transport Execution Plan.?>
 		<cbc:TransportServiceCode>4
 			<?Name Main Transportatin Service Code?>
@@ -862,7 +860,7 @@
 			<?listID-Usage optional?>
 			<?listAgencyID-Usage optional?>
 			<?listVersionID-Usage optional?>
-		</cbc:TransportServiceCode> 
+		</cbc:TransportServiceCode>
 		<cbc:TransportationServiceDescription>Transport from door to door
 			 <?Name Main Transportatin Service Description?>
 			<?Cardinality 0..1?>
@@ -881,14 +879,13 @@
 			<?listID-Usage optional?>
 			<?listAgencyID-Usage optional?>
 			<?listVersionID-Usage optional?>
-		</cbc:TransportServiceCode> 
+		</cbc:TransportServiceCode>
 		<cbc:TransportationServiceDescription>Insurance
 			 <?Name Main Transportatin Service Description?>
 			<?Cardinality 0..1?>
 			<?Description Text describing the transportation service.?>
 		</cbc:TransportationServiceDescription>
 	</cac:AdditionalTransportationService>
-	
 	<cac:Consignment>
 		<?Name Consignment information ?>
 		<?Cardinality 1..1?>
@@ -905,19 +902,17 @@
 			<?Name Consignor reference ?>
 			<?Description ID or reference used by the consignor to identify this consignment.?>
 			<?Cardinality 0..1?>			
-		</cbc:ConsignorAssignedID>		
+		</cbc:ConsignorAssignedID>
 		<cbc:GrossWeightMeasure unitCode="KGM">1030
 			<?Name Consignment gross weight ?> 
 			<?Description The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified?>
 			<?Cardinality 0..1?>			
 		</cbc:GrossWeightMeasure>
-		
 		<cbc:GrossVolumeMeasure unitCode="MTQ">20
 			<?Name Consignment gross volume ?>
 			<?Description The gross volumen of the consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
 			<?Cardinality 0..1?>
 		</cbc:GrossVolumeMeasure>
-		
 		<cbc:LoadingLengthMeasure unitCode="MTR">0.4
 			<?Name Loading length measure ?>
 			<?Description The total length in a means of transport or a piece of transport equipment which, given the width and height of the transport means, will accommodate all of the consignments in a single consolidation.?>
@@ -932,7 +927,6 @@
 			<?Name Total number of transport handling units ?>
 			<?Cardinality 0..1?>
 		</cbc:TotalTransportHandlingUnitQuantity>
-				
 		<cac:RequestedPickupTransportEvent>
 			<?Name Requested pickup transport event ?>
 			<?Description The pickup of this consignment requested by the party requesting a transportation service (the transport user).?>
@@ -1068,7 +1062,6 @@
 				</cbc:EndTime>
 			</cac:Period>
 		</cac:RequestedPickupTransportEvent>
-
 		<cac:RequestedDeliveryTransportEvent>
 			<?Name Requested delivery transport event ?>
 			<?Description The delivery of this consignment requested by the party requesting a transportation service (the transport user).?>
@@ -1203,8 +1196,7 @@
 					<?Cardinality 0..1?>
 				</cbc:EndTime>
 			</cac:Period>
-		</cac:RequestedDeliveryTransportEvent>		
-		
+		</cac:RequestedDeliveryTransportEvent>
 		<cac:PlannedPickupTransportEvent>
 			<?Name Planned pickup transport event ?>
 			<?Description The pickup of this consignment planned by the party responsible for providing the transportation service (the transport service provider)?>
@@ -1340,7 +1332,6 @@
 				</cbc:EndTime>
 			</cac:Period>
 		</cac:PlannedPickupTransportEvent>
-		
 		<cac:PlannedDeliveryTransportEvent>
 			<?Name Requested delivery transport event ?>
 			<?Description The delivery of this consignment requested by the party requesting a transportation service (the transport user).?>
@@ -1479,7 +1470,7 @@
 		<cac:ConsigneeParty>
 			<?Name Consignee party ?>
 			<?Description The party responsible for receiving the goods in the transport execution plan. ?>
-			<?Cardinality 1..1?>			
+			<?Cardinality 1..1?>
 			<cac:PartyName>
 				<?Name Party name ?>
 				<?Cardinality 0..1?>
@@ -1497,6 +1488,11 @@
 					<?Description The main address line in a postal address usually the street name and number. ?>
 					<?Cardinality 0..1?>
 				</cbc:StreetName>
+				<cbc:AdditionalStreetName>way 1
+				<?Name Address line 2 ?>
+				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>				
+				<?Cardinality 0..1?>
+			</cbc:AdditionalStreetName>
 				<cbc:CityName>Helsinki
 					<?Name City ?>
 					<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
@@ -1507,6 +1503,19 @@
 					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
 					<?Cardinality 0..1?>
 				</cbc:PostalZone>
+				<cbc:CountrySubentity>Region Hovedstaden
+				<?Name Country sub entity ?>
+				<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
+				<?Cardinality 0..1?>
+			</cbc:CountrySubentity>
+				<cac:AddressLine>
+					<?Name Address line 3 ?>
+					<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
+					<?Cardinality 0..1?>
+					<cbc:Line>Bygning 5
+					<?Cardinality 1..1?>
+				</cbc:Line>
+				</cac:AddressLine>
 				<cac:Country>
 					<?Name Country ?>
 					<cbc:IdentificationCode>FI
@@ -1579,7 +1588,7 @@
 		<cac:ConsignorParty>
 			<?Name Consignor Party ?>
 			<?Description The party responsible for sending the goods in the transport execution plan. ?>
-			<?Cardinality 1..1?>			
+			<?Cardinality 1..1?>
 			<cac:PartyName>
 				<?Name Party name ?>
 				<?Cardinality 0..1?>
@@ -1597,6 +1606,11 @@
 					<?Description The main address line in a postal address usually the street name and number. ?>
 					<?Cardinality 0..1?>
 				</cbc:StreetName>
+				<cbc:AdditionalStreetName>way 1
+				<?Name Address line 2 ?>
+				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>				
+				<?Cardinality 0..1?>
+			</cbc:AdditionalStreetName>
 				<cbc:CityName>Køge
 					<?Name City ?>
 					<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
@@ -1607,6 +1621,19 @@
 					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
 					<?Cardinality 0..1?>
 				</cbc:PostalZone>
+				<cbc:CountrySubentity>Region Hovedstaden
+				<?Name Country sub entity ?>
+				<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
+				<?Cardinality 0..1?>
+			</cbc:CountrySubentity>
+				<cac:AddressLine>
+					<?Name Address line 3 ?>
+					<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
+					<?Cardinality 0..1?>
+					<cbc:Line>Bygning 5
+					<?Cardinality 1..1?>
+				</cbc:Line>
+				</cac:AddressLine>
 				<cac:Country>
 					<?Name Country ?>
 					<?Cardinality 1..1?>
@@ -1716,7 +1743,7 @@
 			<cac:Location>
 				<?Name Location of attchaed to the delivery terms ?>
 				<?Description The location where the pickup takes place.?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:ID schemeID="0088">5790000435951
 					<?Name Identity of the  location ?>
 					<?Description Identifies the location. ?>
@@ -1732,7 +1759,6 @@
 				</cbc:Name>
 			</cac:Location>
 		</cac:DeliveryTerms>
-		
 		<cac:PaymentTerms>
 			<?Name Payment terms ?>
 			<?Description The terms of payment between the parties (such as logistics service client, logistics service provider) in a transaction. ?>
@@ -1746,7 +1772,7 @@
 				<?Name Payment terms note ?>
 				<?Description A free text describing this set of payment terms. ?>
 				<?Cardinality 0..1?>
-			</cbc:Note>			
+			</cbc:Note>
 		</cac:PaymentTerms>
 		<cac:FreightAllowanceCharge>
 			<?Name Freight Allowance Charge ?>
@@ -1761,7 +1787,7 @@
 				<?Name Allowance Charge Reason Code ?>
 				<?Description A code signifying this freight allowance or charge. ?>
 				<?Cardinality 1..1?>	
-				<?listID-CodeList FreightAllowanceChargeReasonCode?>
+				<?CodeList FreightAllowanceChargeReasonCode?>
 				<?listID-usage Mandatory?>
 			</cbc:AllowanceChargeReasonCode>
 			<cbc:Amount>100
@@ -1785,88 +1811,6 @@
 				<?Description An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 				<?Cardinality 0..1?>
 			</cbc:HazardousRiskIndicator>
-			<cac:CarrierParty>
-				<?Name Carrier party ?>
-				<?Description The carrier party responsible for this shipment stage. ?>
-				<?Cardinality 0..1?>				
-				<cac:PartyName>
-					<?Name Party name ?>
-					<?Cardinality 0..1?>
-					<cbc:Name>Finnair Oyj
-						<?Name Carrier party name?>
-						<?Description The name of the carrier party. ?>
-					</cbc:Name>
-				</cac:PartyName>
-				<cac:PostalAddress>
-					<?Name Postal address ?>
-					<?Description The postal address of the carrier.?>
-					<?Cardinality 0..1?>
-					<cbc:StreetName>Tietotie 9
-						<?Name Address line 1 ?>
-						<?Description The main address line in a postal address usually the street name and number. ?>
-						<?Cardinality 0..1?>
-					</cbc:StreetName>
-					<cbc:CityName>Vantaa
-						<?Name City ?>
-						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
-						<?Cardinality 0..1?>
-					</cbc:CityName>
-					<cbc:PostalZone>4600
-						<?Name Post code ?>
-						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
-						<?Cardinality 0..1?>
-					</cbc:PostalZone>
-					<cac:Country>
-						<?Name Country ?>
-						<?Cardinality 1..1?>
-						<cbc:IdentificationCode>FI
-							<?Name Country code ?>
-							<?Cardinality 1..1?>
-							<?CodeList ISO3166?>
-							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
-						</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:PostalAddress>
-				<cac:PartyLegalEntity>
-					<?Name Party legal entity ?>
-					<?Cardinality 0..1?>
-					<cbc:RegistrationName>Leman
-						<?Name Carrier party name ?>
-						<?Description The name of the carrier party.?>
-						<?Cardinality 1..1?>
-					</cbc:RegistrationName>
-					<cbc:CompanyID schemeID="0212">0108023-3
-						<?Name Carrier parties legal registration name ?>
-						<?Description The official name of the party as registered with the relevant fiscal authority. ?>
-						<?Cardinality 0..1?>
-					<?schemeID-Name Scheme identifier ?>
-					<?schemeID-Description The identification scheme identifier of the carrier legal registration identifier ?>
-					<?schemeID-Usage optional?>
-					<?schemeID-CodeList ICD?>
-					</cbc:CompanyID>
-					<cac:RegistrationAddress>
-						<?Name Legal address ?>
-						<?Cardinality 0..1?>
-						<cbc:CityName>Vantaa
-						<?Name City name ?>
-						<?Description The name of the city. ?>
-						<?Cardinality 0..1?>
-					</cbc:CityName>
-						<cac:Country>
-							<?Name Country ?>
-							<?Description The residens country for the carrier party. ?>
-							<?Cardinality 1..1?>
-							<cbc:IdentificationCode>FI
-								<?Name Country code ?>
-								<?Cardinality 1..1?>
-								<?CodeList ISO3166?>
-								<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
-							</cbc:IdentificationCode>
-						</cac:Country>
-					</cac:RegistrationAddress>
-				</cac:PartyLegalEntity>
-			</cac:CarrierParty>
-			
 			<cac:PlannedDepartureTransportEvent>
 				<?Name Requested departure transport event ?>
 				<?Description The departure requested by the party requesting a transportation service. ?>
@@ -2021,7 +1965,7 @@
 						<?schemeID-Name Scheme identifier?>
 						<?schemeID-usage Optional?>
 						<?schemeID-CodeList ICD?>
-					</cbc:ID>					
+					</cbc:ID>
 					<cbc:Name>Finnair Cargo terminal
 						<?Name Name of arrival location ?>
 						<?Description The name of the location.?>
@@ -2093,7 +2037,7 @@
 			<cac:CarrierParty>
 				<?Name Carrier party ?>
 				<?Description The party providing the transport of goods in this consignment between named points. ?>
-				<?Cardinality 0..1?>				
+				<?Cardinality 0..1?>
 				<cac:PartyName>
 					<?Name Party name ?>
 					<?Cardinality 0..1?>
@@ -2111,6 +2055,11 @@
 						<?Description The main address line in a postal address usually the street name and number. ?>
 						<?Cardinality 0..1?>	
 					</cbc:StreetName>
+					<cbc:AdditionalStreetName>way 1
+				<?Name Address line 2 ?>
+				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>				
+				<?Cardinality 0..1?>
+			</cbc:AdditionalStreetName>
 					<cbc:CityName>Vallensbæk Landsby
 						<?Name City ?>
 						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
@@ -2121,9 +2070,22 @@
 						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>	
 						<?Cardinality 0..1?>	
 					</cbc:PostalZone>
+					<cbc:CountrySubentity>Region Hovedstaden
+				<?Name Country sub entity ?>
+				<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
+				<?Cardinality 0..1?>
+			</cbc:CountrySubentity>
+					<cac:AddressLine>
+						<?Name Address line 3 ?>
+						<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
+						<?Cardinality 0..1?>
+						<cbc:Line>Bygning 5
+					<?Cardinality 1..1?>
+				</cbc:Line>
+					</cac:AddressLine>
 					<cac:Country>
 						<?Name Country ?>
-						<?Cardinality 1..1?>	
+						<?Cardinality 1..1?>
 						<cbc:IdentificationCode>DK
 							<?Name Country code ?>
 							<?Cardinality 1..1?>
@@ -2306,7 +2268,6 @@
 					</cbc:EndTime>
 				</cac:Period>
 			</cac:PlannedDepartureTransportEvent>
-			
 			<cac:PlannedArrivalTransportEvent>
 				<?Name Estimated arrival transport event ?>
 				<?Description The arrival requested by the party requesting a transportation service. ?>
@@ -2326,7 +2287,7 @@
 						<?schemeID-Name Scheme identifier?>
 						<?schemeID-usage Optional?>
 						<?schemeID-CodeList ICD?>
-					</cbc:ID>					
+					</cbc:ID>
 					<cbc:Name>Finnair Cargo terminal
 						<?Name Name of arrival location ?>
 						<?Description The name of the location.?>
@@ -2384,7 +2345,6 @@
 					</cbc:EndTime>
 				</cac:Period>
 			</cac:PlannedArrivalTransportEvent>
-						
 		</cac:PreCarriageShipmentStage>
 		<cac:OnCarriageShipmentStage>
 			<?Name On carriage shipment stage ?>
@@ -2404,7 +2364,7 @@
 			<cac:CarrierParty>
 				<?Name Carrier Party ?>
 				<?Description The party providing the transport of goods in this consignment between named points. ?>
-				<?Cardinality 0..1?>				
+				<?Cardinality 0..1?>
 				<cac:PartyName>
 					<?Name Party name ?>
 					<?Cardinality 0..1?>
@@ -2422,6 +2382,11 @@
 						<?Description The main address line in a postal address usually the street name and number. ?>
 						<?Cardinality 0..1?>
 					</cbc:StreetName>
+					<cbc:AdditionalStreetName>way 1
+				<?Name Address line 2 ?>
+				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>				
+				<?Cardinality 0..1?>
+			</cbc:AdditionalStreetName>
 					<cbc:CityName>Vantaa	
 						<?Name City ?>
 						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
@@ -2432,6 +2397,19 @@
 						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
 						<?Cardinality 0..1?>
 					</cbc:PostalZone>
+					<cbc:CountrySubentity>Region Hovedstaden
+				<?Name Country sub entity ?>
+				<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
+				<?Cardinality 0..1?>
+			</cbc:CountrySubentity>
+					<cac:AddressLine>
+						<?Name Address line 3 ?>
+						<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
+						<?Cardinality 0..1?>
+						<cbc:Line>Bygning 5
+					<?Cardinality 1..1?>
+				</cbc:Line>
+					</cac:AddressLine>
 					<cac:Country>
 						<?Name Country ?>
 						<?Cardinality 1..1?>
@@ -2617,7 +2595,6 @@
 					</cbc:EndTime>
 				</cac:Period>
 			</cac:PlannedDepartureTransportEvent>
-			
 			<cac:PlannedArrivalTransportEvent>
 				<?Name Estimated arrival transport event ?>
 				<?Description The arrival requested by the party requesting a transportation service. ?>
@@ -2637,7 +2614,7 @@
 						<?schemeID-Name Scheme identifier?>
 						<?schemeID-usage Optional?>
 						<?schemeID-CodeList ICD?>
-					</cbc:ID>					
+					</cbc:ID>
 					<cbc:Name>Finnair Cargo terminal
 						<?Name Name of arrival location ?>
 						<?Description The name of the location.?>
@@ -2694,7 +2671,7 @@
 						<?Cardinality 0..1?>
 					</cbc:EndTime>
 				</cac:Period>
-			</cac:PlannedArrivalTransportEvent>						
+			</cac:PlannedArrivalTransportEvent>
 		</cac:OnCarriageShipmentStage>
 		<cac:TransportHandlingUnit>
 			<?Name Transport handling unit ?>
@@ -2841,14 +2818,14 @@
 					<?Name Hazardous risk indicator ?>
 					<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 					<?Cardinality 0..1?>
-				</cbc:HazardousRiskIndicator>				
+				</cbc:HazardousRiskIndicator>
 				<cbc:Quantity unitCode="EA">6
 					<?Name Quantity ?>
 					<?Description The number of units making up this goods item. ?>
 					<?Cardinality 0..1?>
 					<?unitCode-Name Quantity unit of measure ?>
 					<?unitCode-Description The unit of measure that applies to the quantity.?>
-				</cbc:Quantity>				
+				</cbc:Quantity>
 				<cac:Item>
 					<?Name Item ?>
 					<?Description Description of the product beeing transported. ?>
@@ -2857,17 +2834,7 @@
 						<?Name Name?>
 						<?Description The name of the Item. ?>
 						<?Cardinality 0..1?>
-					</cbc:Name>					
-					<cac:SellersItemIdentification>
-						<?Name Sellers Identification?>
-						<?Description The identification of the product ?>
-						<?Cardinality 0..1?>
-						<cbc:ID>17589683 
-							<?Name ID?>
-							<?Description The product ID ?>
-							<?Cardinality 1..1?>
-						</cbc:ID>
-					</cac:SellersItemIdentification>
+					</cbc:Name>
 					<cac:CommodityClassification>
 						<?Name Commodity classification?>
 						<?Description To classify when an item number is not sufficient.?>
@@ -2880,7 +2847,7 @@
 							<?Cardinality 1..1?>
 						</cbc:ItemClassificationCode>
 					</cac:CommodityClassification>
-					<cac:HazardousItem>	
+					<cac:HazardousItem>
 						<?Name Hazardous Item ?>
 						<?Description Description of hazardous item. ?>
 						<?Cardinality 0..1?>
@@ -2889,7 +2856,7 @@
 							<?Description The UN code for this kind of hazardous item. ?>
 							<?Cardinality 0..1?>
 							<?CodeList UNCL8273?>
-						</cbc:UNDGCode>						
+						</cbc:UNDGCode>
 						<cbc:HazardClassID>2
 							<?Name UNDGCode ?>
 							<?Description The UN code for this kind of hazardous item. ?>
@@ -2906,7 +2873,7 @@
 						</cbc:NetWeightMeasure>
 					</cac:HazardousItem>
 				</cac:Item>
-			</cac:GoodsItem>			
+			</cac:GoodsItem>
 		</cac:TransportHandlingUnit>
 	</cac:Consignment>
 </ubl:TransportExecutionPlan>

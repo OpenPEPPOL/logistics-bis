@@ -9,18 +9,20 @@
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transportation_status_request:1</cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1<?Name Profile ID?><?Description Identifies the Peppol profile or business process context in which the transaction appears.?><?Cardinality 1..1?></cbc:ProfileID>
 	<cbc:ID>TSR_1</cbc:ID>
-	<cbc:IssueDate>2011-10-06</cbc:IssueDate>
-	<cbc:IssueTime>09:29:30</cbc:IssueTime>
-	<cbc:ShippingOrderID>KHN23-44044
+	<cbc:IssueDate>2011-10-06<?Name Issue Date?><?Description The date when the transporation status request was issued. Format = "YYYY-MM-DD". ?><?Cardinality 1..1?></cbc:IssueDate>
+	<cbc:IssueTime>09:29:30<?Name Issue Time?><?Description The time when the transportation status request was issued. Format = "hh:mm:ss". ?><?Cardinality 1..1?><?Cardinality 1..1?></cbc:IssueTime>
+	<cbc:ShippingOrderID schemeID = "zzz">KHN23-44044
 		<?Name Shipping Order ID ?>
 		<?Description An identifier (in the form of a reference number) of the Shipping Order or Forwarding Instruction associated with this shipment. ?>
-		<?Cardinality 0..1?>
+		<?Cardinality 1..1?>
+		<?schemeID-usage Optional?>
 	</cbc:ShippingOrderID>
 	<cbc:TransportationStatusTypeCode>1
 		<?Name Transportation Status Type Code?>
 		<?Description The type of the transportation status code.?>
 		<?Cardinality 1..1?>
 		<?CodeList TransportationStatusTypeCode?>
+		<?listID-usage Optional?>
 	</cbc:TransportationStatusTypeCode>
 		<cac:SenderParty>
 		<?Name Sender party ?>
@@ -149,7 +151,7 @@
 					<?Cardinality 1..1?>
 					<cbc:IdentificationCode>GB
 						<?Name Country code ?>
-						<?Cardinality 0..1?>
+						<?Cardinality 1..1?>
 						<?CodeList ISO3166?>
 						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
@@ -193,6 +195,7 @@
 		<cac:PartyIdentification>
 			<?Name Receiver party identification ?>
 			<?Description An identifier for the sender party as known to the sender party. ?>
+			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">7300010000001 		
 			<?Name ID?>
 			<?Cardinality 1..1?>					
@@ -308,7 +311,7 @@
 					<?Cardinality 1..1?>
 					<cbc:IdentificationCode>GB
 						<?Name Country code ?>
-						<?Cardinality 0..1?>
+						<?Cardinality 1..1?>
 						<?CodeList ISO3166?>
 						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>

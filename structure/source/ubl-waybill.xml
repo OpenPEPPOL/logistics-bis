@@ -41,7 +41,7 @@
 		<cac:PartyIdentification>
 			<?Name Consignor identification ?>
 			<?Description An identifier for the consignor party. ?>
-			<?Cardinality 0..1?>
+			<?Cardinality 0..1?>			
 			<cbc:ID schemeID="0088">7300010000001 	
 			<?Name ID ?>
 			<?Description The ID used for identification.?>			
@@ -461,6 +461,11 @@
 					<?Description The main address line in a postal address usually the street name and number. ?>
 					<?Cardinality 0..1?>
 				</cbc:StreetName>
+				<cbc:AdditionalStreetName> Purchasing 
+					<?Name Address line 2?>
+					<?Cardinality 0..1?>
+					<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.?>						
+				</cbc:AdditionalStreetName>
 				<cbc:CityName>Helsinki
 					<?Name City ?>
 					<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
@@ -471,6 +476,20 @@
 					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
 					<?Cardinality 0..1?>
 				</cbc:PostalZone>
+				<cbc:CountrySubentity>Heremouthshire
+					<?Name Country subdivision ?>
+					<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
+					<?Cardinality 0..1?>	
+				</cbc:CountrySubentity>
+				<cac:AddressLine>
+					<?Name Address line ?>					
+					<?Cardinality 0..1?>	
+					<cbc:Line>Gate 34
+						<?Name Address line 3 ?>
+						<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
+						<?Cardinality 1..1?>	
+					</cbc:Line>
+				</cac:AddressLine>
 				<cac:Country>
 					<?Name Country ?>
 					<cbc:IdentificationCode>FI
@@ -482,7 +501,8 @@
 				</cac:Country>
 			</cac:PostalAddress>
 			<cac:PartyLegalEntity>
-				<?Name Party legal entity ?>
+				<?Name Party legal entity.?>
+				<?Description Information about the legal entity for the consignee party. ?>
 				<?Cardinality 0..1?>
 				<cbc:RegistrationName>HUS Hospital
 					<?Name Consignee or delivery party name ?>
@@ -561,7 +581,22 @@
 				<?CodeList ISO3166?>
 				<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 				</cbc:IdentificationCode>
-			</cac:FinalDestinationCountry>			
+			</cac:FinalDestinationCountry>	
+			<cac:PaymentTerms>
+				<?Name Payment terms ?>
+				<?Description The terms of payment between the parties (such as logistics service client, logistics service provider) in a transaction. ?>
+				<?Cardinality 0..1?>
+				<cbc:ID>DAP
+					<?Name Payment terms identification ?>
+					<?Description An identifier for this set of payment terms. ?>
+					<?Cardinality 0..1?>
+				</cbc:ID>
+				<cbc:Note>To be paid on invoice
+					<?Name Payment terms note ?>
+					<?Description A free text describing this set of payment terms. ?>
+					<?Cardinality 0..1?>
+				</cbc:Note>			
+			</cac:PaymentTerms>		
 			<cac:TransportHandlingUnit>
 				<?Name Transport handling unit ?>
 				<?Description Used to specify the outer most packages, the units that the transporters deals with. ?>
@@ -708,7 +743,7 @@
 				</cbc:HazardousRiskIndicator>												
 				<cac:Item>
 					<?Name Item ?>
-					<?Description Description of the product beeing transported. Used for a structurel description of the item. mandatory for Hazardous items.?>
+					<?Description Description of the product beeing transported. Used for a structurel description of an item. Mandatory if the goods item is a Hazardous items.?>
 					<?Cardinality 0..1?>
 					<cbc:Name>Torsk
 						<?Name Name?>
@@ -913,7 +948,7 @@
 					</cac:LocationCoordinate>
 			</cac:DeliveryLocation>
 	
-			<cac:EstimatedDeliveryPeriod>
+			<cac:EstimatedDeapatchPeriod>
 				<?Name Estimated delivery period?>
 				<?Description The estimated delivery period.?>
 				<?Cardinality 1..1?>
@@ -921,7 +956,7 @@
 				<cbc:StartTime>12:00:00<?Rule PEPPOL-T120-R013?><?Rule PEPPOL-T120-R015?></cbc:StartTime>
 				<cbc:EndDate>2021-09-27<?Rule PEPPOL-T120-R012?><?Rule PEPPOL-T120-R014?><?Rule PEPPOL-T120-R015?></cbc:EndDate>
 				<cbc:EndTime>12:00:00<?Rule PEPPOL-T120-R013?><?Rule PEPPOL-T120-R014?><?Rule PEPPOL-T120-R015?></cbc:EndTime>
-			</cac:EstimatedDeliveryPeriod>
+			</cac:EstimatedDeapatchPeriod	>
 			<cac:Despatch>				
 				<cac:DespatchAddress>
 					<?Description The Despatch Address is the address from where the goods is despatched.?>
@@ -980,6 +1015,15 @@
 						</cbc:AltitudeMeasure>
 					</cac:LocationCoordinate>
 				</cac:DespatchAddress>
+				<cac:EstimatedDeliveryPeriod>
+					<?Name Estimated despatch period?>
+					<?Description The estimated despatch period.?>
+					<?Cardinality 1..1?>
+					<cbc:StartDate>2021-09-25<?Rule PEPPOL-T120-R012?><?Rule PEPPOL-T120-R015?><?Cardinality 0..1?></cbc:StartDate>
+					<cbc:StartTime>12:00:00<?Rule PEPPOL-T120-R013?><?Rule PEPPOL-T120-R015?></cbc:StartTime>
+					<cbc:EndDate>2021-09-27<?Rule PEPPOL-T120-R012?><?Rule PEPPOL-T120-R014?><?Rule PEPPOL-T120-R015?></cbc:EndDate>
+					<cbc:EndTime>12:00:00<?Rule PEPPOL-T120-R013?><?Rule PEPPOL-T120-R014?><?Rule PEPPOL-T120-R015?></cbc:EndTime>
+			</cac:EstimatedDeliveryPeriod>
 			</cac:Despatch>
 			<cac:DeliveryTerms>
 				<?Name Delivery terms ?>
@@ -1004,10 +1048,9 @@
 						<?Cardinality 1..1?>
 					</cbc:ID>
 				</cac:DeliveryLocation>			
-			</cac:DeliveryTerms>
+			</cac:DeliveryTerms>			
 		</cac:Delivery>
-	</cac:Shipment>
-			
+	</cac:Shipment>			
 	<cac:DocumentReference>
 		<?Name Additional document reference?>
 		<?Description Reference to documents relevant for this waybill. ?>
