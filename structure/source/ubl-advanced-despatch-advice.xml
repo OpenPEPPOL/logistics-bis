@@ -1774,6 +1774,15 @@
 				<cbc:UNDGCode> ADR <?CodeList UNCL8273?>
 				</cbc:UNDGCode>
 				<cbc:HazardClassID>Code</cbc:HazardClassID>
+				<cbc:NetWeightMeasure unitCode="KGM">123
+					<?Name Net Weight Measure ?>
+					<?Description Net weight of the Hazardous item. ?>
+					<?Cardinality 0..1?>
+					<?unitCode-CodeList UNECERec20?>
+					<?unitCode-Name Measure unit of measure?>
+					<?unitCode-Description The unit of measure that applies to the Net Weight.?>
+					<?unitCode-usage Mandatory?>
+				</cbc:NetWeightMeasure>
 			</cac:HazardousItem>
 			
 			<cac:AdditionalItemProperty>
@@ -1795,6 +1804,7 @@
 				<cbc:ValueQuantity unitCode="C62">15.00</cbc:ValueQuantity>
 				<cbc:ValueQualifier>descr</cbc:ValueQualifier>
 			</cac:AdditionalItemProperty>
+			
 			<cac:ManufacturerParty>
 				<?Name Manufacturer party?>
 				<?Description The manufacturer of this item.?>
