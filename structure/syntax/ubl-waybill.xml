@@ -1205,30 +1205,42 @@
                </Element>
             </Element>
             <Element cardinality="1..1">
-               <Term>cac:EstimatedDeapatchPeriod</Term>
+               <Term>cac:EstimatedDeliveryPeriod</Term>
                <Name>Estimated delivery period</Name>
                <Description>The estimated delivery period.</Description>
                <Element cardinality="0..1">
                   <Term>cbc:StartDate</Term>
+                  <Name>Period start date</Name>
+                  <Description>The start date of the period</Description>
+                  <Reference type="BUSINESS_TERM">tir16-042</Reference>
                   <Reference type="RULE">PEPPOL-T120-R012</Reference>
                   <Reference type="RULE">PEPPOL-T120-R015</Reference>
                   <Value type="EXAMPLE">2021-09-25</Value>
                </Element>
-               <Element>
+               <Element cardinality="0..1">
                   <Term>cbc:StartTime</Term>
+                  <Name>Period start time</Name>
+                  <Description>The start time of the period.</Description>
+                  <Reference type="BUSINESS_TERM">tir16-043</Reference>
                   <Reference type="RULE">PEPPOL-T120-R013</Reference>
                   <Reference type="RULE">PEPPOL-T120-R015</Reference>
                   <Value type="EXAMPLE">12:00:00</Value>
                </Element>
-               <Element>
+               <Element cardinality="0..1">
                   <Term>cbc:EndDate</Term>
+                  <Name>Period end date</Name>
+                  <Description>The end date of the period.</Description>
+                  <Reference type="BUSINESS_TERM">tir16-044</Reference>
                   <Reference type="RULE">PEPPOL-T120-R012</Reference>
                   <Reference type="RULE">PEPPOL-T120-R014</Reference>
                   <Reference type="RULE">PEPPOL-T120-R015</Reference>
                   <Value type="EXAMPLE">2021-09-27</Value>
                </Element>
-               <Element>
+               <Element cardinality="0..1">
                   <Term>cbc:EndTime</Term>
+                  <Name>Period end time</Name>
+                  <Description>The end time of the period.</Description>
+                  <Reference type="BUSINESS_TERM">tir16-045</Reference>
                   <Reference type="RULE">PEPPOL-T120-R013</Reference>
                   <Reference type="RULE">PEPPOL-T120-R014</Reference>
                   <Reference type="RULE">PEPPOL-T120-R015</Reference>
@@ -1370,7 +1382,7 @@
                   </Element>
                </Element>
                <Element cardinality="1..1">
-                  <Term>cac:EstimatedDeliveryPeriod</Term>
+                  <Term>cac:EstimatedDespatchPeriod</Term>
                   <Name>Estimated despatch period</Name>
                   <Description>The estimated despatch period.</Description>
                   <Element cardinality="0..1">
