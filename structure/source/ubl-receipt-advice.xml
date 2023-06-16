@@ -193,12 +193,12 @@
 					</cac:Country>
 				</cac:RegistrationAddress>
 			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Name>Mr Fred Churchill</cbc:Name>
+				<cbc:Telephone>0127 2653214</cbc:Telephone>
+				<cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
+			</cac:Contact>
 		</cac:Party>
-		<cac:DeliveryContact>
-			<cbc:Name>Mr Fred Churchill</cbc:Name>
-			<cbc:Telephone>0127 2653214</cbc:Telephone>
-			<cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-		</cac:DeliveryContact>
 	</cac:DeliveryCustomerParty>
 	
 	<cac:DespatchSupplierParty>
@@ -450,7 +450,7 @@
 				<cbc:StartDate>2021-09-25<?Name Requested Start Date?>
 					<?Rule PEPPOL-T128-R012?>
 					<?Rule PEPPOL-T128-R015?>
-					<?Cardinality 1..1?>
+					<?Cardinality 0..1?>
 					<?Description The requested delivery date or the start of the requested delivery period. ?>
 				</cbc:StartDate>
 				<cbc:StartTime>12:00:00
@@ -514,8 +514,8 @@
 				<?Cardinality 1..1?>
 			</cbc:ID>
 			<cbc:TransportHandlingUnitTypeCode> AG 
-				<?Name Handling unit type code?>
-				<?Description Type of Transport Handling Unit. Use UN/ECE Recommendation 21 with addition of the codes used by "Retursystem Byggpall".?>
+				<?Name Transport Handling Unit type code?>
+				<?Description Type of Transport Handling Unit. Use UN/ECE Recommendation 21.?>
 				<?CodeList UNECERec21?>
 				<?Cardinality 1..1?>
 			</cbc:TransportHandlingUnitTypeCode>
