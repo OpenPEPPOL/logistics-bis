@@ -406,18 +406,26 @@
                   </Element>
                </Element>
             </Element>
-            <Element>
+            <Element cardinality="0..1">
                <Term>cac:Contact</Term>
-               <Element>
+               <Name>Contact</Name>
+               <Description>The contact of the Delivery Customer party.</Description>
+               <Element cardinality="0..1">
                   <Term>cbc:Name</Term>
+                  <Name>Contact name</Name>
+                  <Description>The contact name.</Description>
                   <Value type="EXAMPLE">Mr Fred Churchill</Value>
                </Element>
-               <Element>
+               <Element cardinality="0..1">
                   <Term>cbc:Telephone</Term>
+                  <Name>Contact email telephone</Name>
+                  <Description>The phone number of the contact.</Description>
                   <Value type="EXAMPLE">0127 2653214</Value>
                </Element>
-               <Element>
+               <Element cardinality="0..1">
                   <Term>cbc:ElectronicMail</Term>
+                  <Name>Contact email address</Name>
+                  <Description>The electronic mail of the contact.</Description>
                   <Value type="EXAMPLE">fred@iytcorporation.gov.uk</Value>
                </Element>
             </Element>
