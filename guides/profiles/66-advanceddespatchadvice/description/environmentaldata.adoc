@@ -11,7 +11,7 @@ The environmental data on header level resides within the OriginalDespatchTransp
 
 The fuel consumption and related information regarding the fuel type to be used to caculate emissions tor the tansport or other service that consumes fuel.
 
-The table below describes the definitions of the AttributeID:s.
+Table 4. Definitions of the AttributeID:s.
 
 [cols="2,4",options="header",stripes=even]
 |====
@@ -26,7 +26,7 @@ The table below describes the definitions of the AttributeID:s.
 |RenewableFuel |Share of renewable fuel in percent.
 |====
 
-The table below describes the definitions of the FuelMeasurementMethod values.
+Table 5. Definitions of the FuelMeasurementMethod values.
 
 [cols="2,4",options="header",stripes=even]
 |====
@@ -37,7 +37,7 @@ The table below describes the definitions of the FuelMeasurementMethod values.
 
 |====
 
-The table below describes the definitions of the EngineType values.
+Table 6. Definitions of the EngineType values.
 
 [cols="2,4",options="header",stripes=even]
 |====
@@ -65,7 +65,7 @@ include::{snippet-dir}/snippet-30-4.xml[tags=fuel]
 
 Caculated envionmental emissions related to the transport or other related service that consumes fuel.
 
-The table below describes the definitions of the EnvironmentalEmissionTypeCode:s.
+Table 7. Definitions of the EnvironmentalEmissionTypeCode:s.
 
 [cols="1,5",options="header",stripes=even]
 |====
@@ -87,6 +87,12 @@ include::{snippet-dir}/snippet-30-4.xml[tags=environmentalemission]
 
 [[product-climate-data]]
 == Product Climate Data
+
+To determine the CO~2~ equivalent in kilograms for the despatch line, the following calculation must be performed:
+
+*CO~2~eq despatch line = (Net net weight) x (GWP GHG value per kilogram) x Quantity*
+
+The GWP GHG value per kilogram can be either a generic value from an authority or specific value from an Enviromental Product Declaration (EPD).
 
 To be able to calculate product climate data the related CO~2~ value and the weight of products are needed. 
 The net weight per item is the recommended way to provide the weight information to the customer. See related information here: link:{ada-dir}/cac-DespatchLine/cac-Item/cac-Dimension/[cac-Dimension]
@@ -115,12 +121,17 @@ Generic product climate data is often provided from an authority and are related
 Below you will find two examples from Swedish authorities that provide generic product climate data.
 
 The list id IPNC is a reference to the code list link:{codelist-ItemPropertyNameCode}[Item Property Name Code (openPEPPOL)]
+
+Table 8. Reference external generic climate data list.
+
 [cols="1,1,1,3",options="header",stripes=even]
 |====
 |Name |NameCode |listID |Definition
 |Boverket Resource ID |BoVResourceID |IPNC | A representative Resource ID according to the Swedish National Board of Housing, Building and Planning (Boverket) generic product type. Use NA as value if no relevant Resource ID exists.
 |Trafikverket Resource ID |TrVResourceID |IPNC | A representative Resource ID according to the Swedish Transport Administration (Trafikverket) generic product type. Use NA as value if no relevant Resource ID exists.
 |====
+
+If no suitable generic value can be found in the resource lists, it is recommended to use 'NA' to indicate that there are no applicable resources available for the item.
 
 Example:
 
@@ -134,7 +145,10 @@ include::{snippet-dir}/snippet-30-4.xml[tags=genericproductclimatedata]
 Environmental Product Declaration (EPD) provides specific CO~2~ data related to the product.
 EPD:s are related to despatch line but since it is environmental related information it is presented in this section.
 
-The table below describes the definitions of the EPD related properties for machine readable information.
+Please note that "GWP-GHG" and "GWP-IOBC" are interchangable terms and can be used interchangeably, but in this document
+"GWP-GHG" is used. The term "GWP-IOBC" is commonly utilized by certain program operators, which are organizations responsible for publishing Environmental Product Declarations (EPDs).
+
+Table 9. Definitions of the EPD related properties for machine readable information.
 
 [cols="1,1,1,3",options="header",stripes=even]
 |====
@@ -146,7 +160,7 @@ The table below describes the definitions of the EPD related properties for mach
 |GWP GHG A1-3 vA2 EPD line value  |GWP-GHG_A1-3_vA3 |IPNC |Global warming potential green house gases for process A1-3 100 EPD total value for line in kilo grams (unitCode="KGM") according to EN15804 amendment version A3
 |====
 
-The table below describes the definitions of the EPD related properties for human readable information, e.g. EPD published as PDF.
+Table 10. Definition of the EPD related properties for human readable information, e.g. EPD published as PDF.
 See <<reference-to-other-documents>> for more info how to link or attach the PDF.
 [cols="1,1,1,3",options="header",stripes=even]
 |====
@@ -159,6 +173,8 @@ See <<reference-to-other-documents>> for more info how to link or attach the PDF
 |GWP GHG A1-3 vA2 EPD line value  |GWP-GHG_A1-3_vA2 |IPNC |Global warming potential green house gases for process A1-3 100 EPD total value for line in kilo grams (unitCode="KGM") according to EN15804 amendment version A2
 |GWP GHG A1-3 vA2 EPD line value  |GWP-GHG_A1-3_vA2 |IPNC |Global warming potential green house gases for process A1-3 100 EPD total value for line in kilo grams (unitCode="KGM") according to EN15804 amendment version A3
 |====
+
+See reference to other documents for more info how to link or attach the PDF.
 
 Example:
 
