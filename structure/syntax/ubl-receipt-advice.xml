@@ -406,35 +406,20 @@
                   </Element>
                </Element>
             </Element>
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:DeliveryContact</Term>
-            <Name>Contact information</Name>
-            <Element cardinality="0..1">
-               <Term>cbc:Name</Term>
-               <Name>Contact person name</Name>
-               <Description>The name of the contact person.</Description>
-               <DataType>Text</DataType>
-               <Reference type="BUSINESS_TERM">tir16-024</Reference>
-               <Value type="EXAMPLE">Mr Fred Churchill</Value>
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:Telephone</Term>
-               <Name>Contact telephone number</Name>
-               <Description>A phone number for the contact person. If the person has a direct
-						number, this is that number.</Description>
-               <DataType>Text</DataType>
-               <Reference type="BUSINESS_TERM">tir16-027</Reference>
-               <Value type="EXAMPLE">0127 2653214</Value>
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:ElectronicMail</Term>
-               <Name>Contact email address</Name>
-               <Description>The e-mail address for the contact person. If the person has a
-						direct e-mail this is that email.</Description>
-               <DataType>Text</DataType>
-               <Reference type="BUSINESS_TERM">tir16-028</Reference>
-               <Value type="EXAMPLE">fred@iytcorporation.gov.uk</Value>
+            <Element>
+               <Term>cac:Contact</Term>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Value type="EXAMPLE">Mr Fred Churchill</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:Telephone</Term>
+                  <Value type="EXAMPLE">0127 2653214</Value>
+               </Element>
+               <Element>
+                  <Term>cbc:ElectronicMail</Term>
+                  <Value type="EXAMPLE">fred@iytcorporation.gov.uk</Value>
+               </Element>
             </Element>
          </Element>
       </Element>
@@ -1064,7 +1049,7 @@
                <Term>cac:RequestedDeliveryPeriod</Term>
                <Name>Requested Delivery Period</Name>
                <Description>The date, time or period the goods or service was requested to be delivered on. </Description>
-               <Element cardinality="1..1">
+               <Element cardinality="0..1">
                   <Term>cbc:StartDate</Term>
                   <Name>Requested Start Date</Name>
                   <Description>The requested delivery date or the start of the requested delivery period. </Description>
@@ -1142,8 +1127,8 @@
             </Element>
             <Element cardinality="1..1">
                <Term>cbc:TransportHandlingUnitTypeCode</Term>
-               <Name>Handling unit type code</Name>
-               <Description>Type of Transport Handling Unit. Use UN/ECE Recommendation 21 with addition of the codes used by "Retursystem Byggpall".</Description>
+               <Name>Transport Handling Unit type code</Name>
+               <Description>Type of Transport Handling Unit. Use UN/ECE Recommendation 21.</Description>
                <Reference type="CODE_LIST">UNECERec21</Reference>
                <Value type="EXAMPLE">AG</Value>
             </Element>
