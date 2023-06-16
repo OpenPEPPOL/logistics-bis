@@ -44,7 +44,7 @@
          <Description>The date when the transporation status was issued. Format = "YYYY-MM-DD". </Description>
          <DataType>Date</DataType>
          <Reference type="BUSINESS_TERM">tir16-004</Reference>
-         <Value type="EXAMPLE">2011-10-06</Value>
+         <Value type="EXAMPLE">2023-06-06</Value>
       </Element>
 	     <Element cardinality="1..1">
          <Term>cbc:IssueTime</Term>
@@ -58,6 +58,7 @@
          <Term>cbc:Description</Term>
          <Name>Description</Name>
          <Description>Textual description of the Transportation status.</Description>
+         <Value type="EXAMPLE">Description</Value>
       </Element>
 	     <Element cardinality="1..1">
          <Term>cbc:ShippingOrderID</Term>
@@ -112,6 +113,7 @@
                <Term>cbc:Description</Term>
                <Name>Status description </Name>
                <Description>Description of the status. </Description>
+               <Value type="EXAMPLE">Description</Value>
             </Element>
          </Element>
          <Element cardinality="0..n">
@@ -167,6 +169,7 @@
                   <Term>cbc:Description</Term>
                   <Name>Status </Name>
                   <Description>Description of the status. </Description>
+                  <Value type="EXAMPLE">Description</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:StatusReasonCode</Term>
@@ -231,6 +234,7 @@
                   <Term>cbc:Description</Term>
                   <Name>Status </Name>
                   <Description>Description of the status. </Description>
+                  <Value type="EXAMPLE">Description</Value>
                </Element>
             </Element>
          </Element>
@@ -455,22 +459,26 @@
             <Term>cbc:IdentificationID</Term>
             <Name>Identification ID </Name>
             <Description>Identifices the transport event. </Description>
+            <Value type="EXAMPLE">1234</Value>
          </Element>
          <Element cardinality="1..1">
             <Term>cbc:OccurrenceDate</Term>
             <Name>Occurence Date </Name>
             <Description>The date the transport event occured. </Description>
+            <Value type="EXAMPLE">2023-06-06</Value>
          </Element>
          <Element cardinality="1..1">
             <Term>cbc:OccurrenceTime</Term>
             <Name>Occurence Time </Name>
             <Description>The time the transport event occured. </Description>
+            <Value type="EXAMPLE">09:29:30</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:TransportEventTypeCode</Term>
             <Name>Transport Event Type Code </Name>
             <Description>A code specifying the requested transport event type. </Description>
             <Reference type="CODE_LIST">TransportEventTypeCode</Reference>
+            <Value type="EXAMPLE">1</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:Signature</Term>
