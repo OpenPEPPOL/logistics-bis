@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
                 Content:
-                This file contains a Example of Miljödata NU! base information in UBL Despatch Adivce.
-			
+                This file contains a Example of Milj�data NU! base information in UBL Despatch Adivce.
+				
+				Change Log:
+				2023-05-05
+				- Added ManufacturersItemIdentification for those cases GTIN is not possible to provide
+				
+				2023-02-14
+				- Added this change log to inline file
+				- Replaced the with and without Order example with one example (this file).
+				
+				2023-02-02
+				- Updated to match changes in chapter 6.7.3
+				- Added Dimension with weight example
+				- Added comments on how to handle Item content with full previous cataloge.
+				- Added a Resource id to give example with both Boverket and Trafikverkets Resource ID
+		
 -->
 <DespatchAdvice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
@@ -15,7 +29,15 @@
 	<cbc:IssueDate>2020-12-21</cbc:IssueDate>
 	<cbc:IssueTime>13:14:34</cbc:IssueTime>
 	<cbc:Note>Some note about the delivery</cbc:Note>
-
+	
+	<cac:AdditionalDocumentReference>
+		<cbc:ID>9876986</cbc:ID>
+		<cbc:DocumentType>ProjectReference</cbc:DocumentType>
+	</cac:AdditionalDocumentReference>
+	<cac:AdditionalDocumentReference>
+		<cbc:ID>9876986-1-5544</cbc:ID>
+		<cbc:DocumentType>AccountingCost</cbc:DocumentType>
+	</cac:AdditionalDocumentReference>
 	
 	<cac:DespatchSupplierParty>
 		<!-- Mandatory, the party that despatcheds the goods or provides service -->
@@ -118,14 +140,21 @@
 	<cac:DespatchLine>
 		<cbc:ID>1</cbc:ID>
 		<cbc:DeliveredQuantity unitCode="EA">84</cbc:DeliveredQuantity>
+		
+		<!-- OrderLineReference LineID is Mandatory, if no order number and line has been provided by the buyer, set it to NA (For example, if no digital order has been issued.)
 		<cac:OrderLineReference>
-			<!-- Mandatory -->
+			<cbc:LineID>NA</cbc:LineID>
+		</cac:OrderLineReference>  -->
+		<cac:OrderLineReference>
 			<cbc:LineID>1</cbc:LineID>
 			<cac:OrderReference>
 				<cbc:ID>90000123</cbc:ID>
 			</cac:OrderReference>
 		</cac:OrderLineReference>
+		
 		<cac:Item>
+			<!-- If a up to date and complete masterdata/catalog are available for the receiver of this message
+			then the only necessary Item information to send would be StandardItemIdentification as GTIN-->
 			<cbc:Name>GIPSSKIVA NORMAL VÄDERPLASTAD 2700x900x13</cbc:Name>
 			<cac:BuyersItemIdentification>
 				<cbc:ID>9870202</cbc:ID>
@@ -134,43 +163,70 @@
 			<cac:SellersItemIdentification>
 				<cbc:ID>900206705</cbc:ID>
 			</cac:SellersItemIdentification>
+			<cac:ManufacturersItemIdentification>
+				<cbc:ID>1234567890</cbc:ID>
+			</cac:ManufacturersItemIdentification>
 			<cac:StandardItemIdentification>
 				<cbc:ID schemeID="0160">7318936539543</cbc:ID>
 				<!-- 0160 = GTIN, full list https://docs.peppol.eu/poacc/upgrade-3/codelist/ICD/ -->
 			</cac:StandardItemIdentification>
+			
+			<!-- Machine readable data -->
 			<cac:AdditionalItemProperty>
 				<cbc:Name>EPD Dataset ID</cbc:Name>
 				<cbc:NameCode listID="IPNC">EPDDataSetID</cbc:NameCode>
 				<cbc:Value>165f8554-00cd-43ad-aeb7-ba769854554a</cbc:Value>
 			</cac:AdditionalItemProperty>
+			<!-- Machine readable data -->
 			<cac:AdditionalItemProperty>
 				<cbc:Name>EPD Dataset URL</cbc:Name>
 				<cbc:NameCode listID="IPNC">EPDDataSetURL</cbc:NameCode>
 				<cbc:Value>https://epdnorway.lca-data.com/datasetdetail/process.xhtml?uuid=165f8554-00cd-43ad-aeb7-ba769854554a&amp;version=00.01.000&amp;stock=PUBLIC</cbc:Value>
 			</cac:AdditionalItemProperty>
+			<!-- Human readable data -->
 			<cac:AdditionalItemProperty>
 				<cbc:Name>EPD HR URL</cbc:Name>
 				<cbc:NameCode listID="IPNC">EPDHRURL</cbc:NameCode>
 				<cbc:Value>https://portal.environdec.com/api/api/v1/EPDLibrary/Files/07e17ba1-cf00-48e5-9cf1-d8bd90a468f8/Data</cbc:Value>
 			</cac:AdditionalItemProperty>
 			<cac:AdditionalItemProperty>
+				<cbc:Name>GWP GHG A1-3 vA1 EPD value</cbc:Name>
+				<cbc:NameCode listID="IPNC">GWP-GHG_A1-3_vA2</cbc:NameCode>
+				<cbc:Value>112 kg</cbc:Value>
+				<cbc:ValueQuantity unitCode="KGM">112</cbc:ValueQuantity>
+			</cac:AdditionalItemProperty>
+			<cac:AdditionalItemProperty>
 				<cbc:Name>Boverket Resource ID</cbc:Name>
 				<cbc:NameCode listID="IPNC">BoVResourceID</cbc:NameCode>
 				<cbc:Value>6000000020</cbc:Value>
 			</cac:AdditionalItemProperty>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Trafikverket Resource ID</cbc:Name>
+				<cbc:NameCode listID="IPNC">TrVResourceID</cbc:NameCode>
+				<cbc:Value>123456790</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<cac:Dimension>
+				<cbc:AttributeID>AAF</cbc:AttributeID>
+				<cbc:Measure unitCode="KGM">21.87</cbc:Measure>
+			</cac:Dimension>
 		</cac:Item>
 	</cac:DespatchLine>
 	<cac:DespatchLine>
 		<cbc:ID>2</cbc:ID>
 		<cbc:DeliveredQuantity unitCode="EA">30</cbc:DeliveredQuantity>
+		<!-- OrderLineReference LineID is Mandatory, if no order number and line has been provided by the buyer, set it to NA (For example, if no digital order has been issued.)
+		<cac:OrderLineReference>
+			<cbc:LineID>NA</cbc:LineID>
+		</cac:OrderLineReference>  -->
 		<cac:OrderLineReference>
 			<cbc:LineID>2</cbc:LineID>
-			<!-- Mandatory, if no order number and line has been provided by the buyer, set it to NA -->
 			<cac:OrderReference>
 				<cbc:ID>90000123</cbc:ID>
 			</cac:OrderReference>
 		</cac:OrderLineReference>
 		<cac:Item>
+			<!-- If a up to date and complete masterdata/catalog are available for the receiver of this message
+			then the only necessary Item information to send would be StandardItemIdentification as GTIN-->
 			<cbc:Name>Gyproc GFE 15 VPL PROTECT F Ergo 2700x900</cbc:Name>
 			<cac:BuyersItemIdentification>
 				<cbc:ID>006496171</cbc:ID>
@@ -179,30 +235,51 @@
 			<cac:SellersItemIdentification>
 				<cbc:ID>900206705</cbc:ID>
 			</cac:SellersItemIdentification>
+			<cac:ManufacturersItemIdentification>
+				<cbc:ID>1234567891</cbc:ID>
+			</cac:ManufacturersItemIdentification>
 			<cac:StandardItemIdentification>
 				<cbc:ID schemeID="0160">7318936616442</cbc:ID>
 				<!-- 0160 = GTIN, full list https://docs.peppol.eu/poacc/upgrade-3/codelist/ICD/ -->
 			</cac:StandardItemIdentification>
+			<!-- Machine readable data -->
 			<cac:AdditionalItemProperty>
 				<cbc:Name>EPD Dataset ID</cbc:Name>
 				<cbc:NameCode listID="IPNC">EPDDataSetID</cbc:NameCode>
 				<cbc:Value>a8a00e68-fc50-44e3-8772-1ebfe6c2353c</cbc:Value>
 			</cac:AdditionalItemProperty>
+			<!-- Machine readable data -->
 			<cac:AdditionalItemProperty>
 				<cbc:Name>EPD Dataset URL</cbc:Name>
 				<cbc:NameCode listID="IPNC">EPDDataSetURL</cbc:NameCode>
 				<cbc:Value>https://epdnorway.lca-data.com/resource/processes/a8a00e68-fc50-44e3-8772-1ebfe6c2353c?format=xml</cbc:Value>
 			</cac:AdditionalItemProperty>
+			<!-- Human readable data -->
 			<cac:AdditionalItemProperty>
 				<cbc:Name>EPD HR URL</cbc:Name>
-				<cbc:NameCode listID="IPNC">EPDPDFURL</cbc:NameCode>
+				<cbc:NameCode listID="IPNC">EPDHRURL</cbc:NameCode>
 				<cbc:Value>https://portal.environdec.com/api/api/v1/EPDLibrary/Files/07e17ba1-cf00-48e5-9cf1-d8bd90a468f8/Data</cbc:Value>
 			</cac:AdditionalItemProperty>
 			<cac:AdditionalItemProperty>
+				<cbc:Name>GWP GHG A1-3 vA1 EPD value</cbc:Name>
+				<cbc:NameCode listID="IPNC">GWP-GHG_A1-3_vA2</cbc:NameCode>
+				<cbc:Value>123 kg</cbc:Value>
+				<cbc:ValueQuantity unitCode="KGM">123</cbc:ValueQuantity>
+			</cac:AdditionalItemProperty>
+			<cac:AdditionalItemProperty>
 				<cbc:Name>Boverket Resource ID</cbc:Name>
-				<cbc:NameCode listID="IPNC">ResourceID</cbc:NameCode>
+				<cbc:NameCode listID="IPNC">BoVResourceID</cbc:NameCode>
 				<cbc:Value>6000000016</cbc:Value>
 			</cac:AdditionalItemProperty>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Trafikverket Resource ID</cbc:Name>
+				<cbc:NameCode listID="IPNC">TrVResourceID</cbc:NameCode>
+				<cbc:Value>123456789</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<cac:Dimension>
+				<cbc:AttributeID>AAF</cbc:AttributeID>
+				<cbc:Measure unitCode="KGM">30.861</cbc:Measure>
+			</cac:Dimension>
 		</cac:Item>
 	</cac:DespatchLine>
 </DespatchAdvice>
