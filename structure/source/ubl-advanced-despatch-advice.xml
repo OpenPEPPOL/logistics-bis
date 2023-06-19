@@ -1658,11 +1658,8 @@
 			<?Rule PEPPOL-T120-R005?>
 			<?Rule PEPPOL-T120-R006?>
 		</cbc:DeliveredQuantity>
-		<cbc:OutstandingQuantity unitCode="C62"> 2 
-			<?Rule PEPPOL-T120-R007?>
-		</cbc:OutstandingQuantity>
-		<cbc:OutstandingReason>Text</cbc:OutstandingReason>
-		
+		<cbc:OutstandingQuantity unitCode="C62">2<?Rule PEPPOL-T120-R007?></cbc:OutstandingQuantity>
+		<cbc:OutstandingReason>Text<?Rule PEPPOL-T120-R007?></cbc:OutstandingReason>	
 		<cac:OrderLineReference>
 			<cbc:LineID>1</cbc:LineID>
 			<cbc:SalesOrderLineID> 10 
@@ -1671,7 +1668,7 @@
 				<?Description Reference to the sellers orderline number.?>
 			</cbc:SalesOrderLineID>
 			<cac:OrderReference>
-				<cbc:ID>AEG012345</cbc:ID>
+				<cbc:ID>AEG012345<?Rule PEPPOL-T120-R002?></cbc:ID>
 				<cbc:SalesOrderID> 5678985 <?Name Sales order number?>
 					<?Cardinality 0..1?>
 					<?Description Reference to the sellers order number.?>
@@ -1734,6 +1731,7 @@
 				<cbc:ID>6578489</cbc:ID>
 			</cac:BuyersItemIdentification>
 			<cac:SellersItemIdentification>
+				<?Rule PEPPOL-T120-R003?>
 				<cbc:ID> 17589683 
 					<?Rule PEPPOL-T120-R003?>
 				</cbc:ID>
@@ -1748,6 +1746,7 @@
 				</cbc:ID>
 			</cac:ManufacturersItemIdentification>
 			<cac:StandardItemIdentification>
+				<?Rule PEPPOL-T120-R003?>
 				<?Description Only one StandardItemIdentification can be used per line.?>
 				<cbc:ID schemeID="0160"> 1234567891234 
 					<?Description Global Trade Item Number (GTIN) or other standardized identification.?>
