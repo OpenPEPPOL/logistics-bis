@@ -11,7 +11,7 @@
 		The Identity together with the Issue Date and Issue Time gives the version of the Receipt Advice. ?>
 	</cbc:ID>
 	<cbc:IssueDate>2021-09-10</cbc:IssueDate>
-	<cbc:IssueTime>12:00:00<?Description The time when the receipt advice is issued. Format = "HH:MM:SS".?>
+	<cbc:IssueTime>12:00:00+01:00<?Description The time when the receipt advice is issued. Format = "HH:MM:SS+timezone".?>
 		<?Cardinality 1..1?>
 	</cbc:IssueTime>
 	<cbc:DocumentStatusCode>9
@@ -52,9 +52,9 @@
 			<?Cardinality 1..1?>
 		</cbc:IssueDate>
 		
-		<cbc:IssueTime>12:00:00
+		<cbc:IssueTime>12:00:00+01:00
 			<?Name The time the Advanced Despatch Advice was issued.?>
-			<?Description The time when the Advanced Despatch Advice was issued. Format = "HH:MM:SS".?>
+			<?Description The time when the Advanced Despatch Advice was issued. Format = "HH:MM:SS+timezone".?>
 		</cbc:IssueTime>
 		<cbc:DocumentStatusCode>RE
 			<?Name Document Status Code?>
@@ -451,9 +451,9 @@
 					<?Description The Date the goods or service was delivered.?>
 					<?Cardinality 1..1?>
 				</cbc:ActualDeliveryDate>
-				<cbc:ActualDeliveryTime>10:00:00
+				<cbc:ActualDeliveryTime>10:00:00+01:00
 					<?Name Actual Delivery Time?>
-					<?Description  The date on which the supply of goods or services was made or completed according to the delivery term. Format = "hh:mm:ss"?>
+					<?Description  The time on which the supply of goods or services was made or completed according to the delivery term. Format = "hh:mm:ss+timezone"?>
 					<?DataType Time?>
 					<?Cardinality 0..1?>
 				</cbc:ActualDeliveryTime>
@@ -468,7 +468,7 @@
 					<?Cardinality 0..1?>
 					<?Description The requested delivery date or the start of the requested delivery period. ?>
 				</cbc:StartDate>
-				<cbc:StartTime>12:00:00
+				<cbc:StartTime>12:00:00+01:00
 					<?Name Requested Start Time?>
 					<?Description The start time of the requested delivery period. ?>
 					<?Cardinality 0..1?>
@@ -481,7 +481,7 @@
 					<?Description The last date of the requested period. ?>
 					<?Cardinality 0..1?>
 				</cbc:EndDate>
-				<cbc:EndTime>12:00:00
+				<cbc:EndTime>12:00:00+01:00
 					<?Name Requested End Time?>
 					<?Description The ending time of the requested delivery period. ?>
 					<?Cardinality 0..1?>
