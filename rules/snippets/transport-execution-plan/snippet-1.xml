@@ -368,10 +368,12 @@
 				<cbc:PowerIndicator>false</cbc:PowerIndicator>
 			</cac:TransportEquipment>
 			<!-- end::transport-equipment[] -->
+			<!-- tag::measurement-dimension[] -->
 			<cac:MeasurementDimension>
 				<cbc:AttributeID>Length</cbc:AttributeID>
 				<cbc:Measure unitCode="MTR">6.1</cbc:Measure>
 			</cac:MeasurementDimension>
+			<!-- end::measurement-dimension[] -->
 			<cac:MeasurementDimension>
 				<cbc:AttributeID>Height</cbc:AttributeID>
 				<cbc:Measure unitCode="MTR">2.6</cbc:Measure>
@@ -384,13 +386,20 @@
 				<cbc:ID>CON_P_1</cbc:ID>
 				<cbc:Quantity>10</cbc:Quantity>
 				<cbc:PackagingTypeCode>PL</cbc:PackagingTypeCode>
+				<!-- tag::goods-item[] -->
 				<cac:GoodsItem>
 					<cac:Item>
 						<cac:CommodityClassification>
 							<cbc:CargoTypeCode>12</cbc:CargoTypeCode>
 						</cac:CommodityClassification>
+						<cac:HazardousItem>
+							<cbc:UNDGCode>ADR</cbc:UNDGCode>
+							<cbc:HazardClassID>2</cbc:HazardClassID>
+							<cbc:NetWeightMeasure unitCode="KGM">40.8</cbc:NetWeightMeasure>          
+						</cac:HazardousItem>        
 					</cac:Item>
 				</cac:GoodsItem>
+				<!-- end::goods-item[] -->
 			</cac:Package>
 		</cac:TransportHandlingUnit>
 		<!-- end::transport-handling-unit[] -->
