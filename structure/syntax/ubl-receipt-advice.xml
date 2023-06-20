@@ -53,10 +53,10 @@
 	     <Element cardinality="1..1">
          <Term>cbc:IssueTime</Term>
          <Name>Dispatch advice issue time</Name>
-         <Description>The time when the receipt advice is issued. Format = "HH:MM:SS".</Description>
+         <Description>The time when the receipt advice is issued. Format = "HH:MM:SS+timezone".</Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
-         <Value type="EXAMPLE">12:00:00</Value>
+         <Value type="EXAMPLE">12:00:00+01:00</Value>
       </Element>
 	     <Element cardinality="0..1">
          <Term>cbc:DocumentStatusCode</Term>
@@ -117,8 +117,8 @@
          <Element>
             <Term>cbc:IssueTime</Term>
             <Name>The time the Advanced Despatch Advice was issued.</Name>
-            <Description>The time when the Advanced Despatch Advice was issued. Format = "HH:MM:SS".</Description>
-            <Value type="EXAMPLE">12:00:00</Value>
+            <Description>The time when the Advanced Despatch Advice was issued. Format = "HH:MM:SS+timezone".</Description>
+            <Value type="EXAMPLE">12:00:00+01:00</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:DocumentStatusCode</Term>
@@ -1049,9 +1049,9 @@
             <Element cardinality="0..1">
                <Term>cbc:ActualDeliveryTime</Term>
                <Name>Actual Delivery Time</Name>
-               <Description>The date on which the supply of goods or services was made or completed according to the delivery term. Format = "hh:mm:ss"</Description>
+               <Description>The time on which the supply of goods or services was made or completed according to the delivery term. Format = "hh:mm:ss+timezone"</Description>
                <DataType>Time</DataType>
-               <Value type="EXAMPLE">10:00:00</Value>
+               <Value type="EXAMPLE">10:00:00+01:00</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:RequestedDeliveryPeriod</Term>
@@ -1071,7 +1071,7 @@
                   <Description>The start time of the requested delivery period. </Description>
                   <Reference type="RULE">PEPPOL-T128-R013</Reference>
                   <Reference type="RULE">PEPPOL-T128-R015</Reference>
-                  <Value type="EXAMPLE">12:00:00</Value>
+                  <Value type="EXAMPLE">12:00:00+01:00</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:EndDate</Term>
@@ -1088,7 +1088,7 @@
                   <Reference type="RULE">PEPPOL-T128-R013</Reference>
                   <Reference type="RULE">PEPPOL-T128-R014</Reference>
                   <Reference type="RULE">PEPPOL-T128-R015</Reference>
-                  <Value type="EXAMPLE">12:00:00</Value>
+                  <Value type="EXAMPLE">12:00:00+01:00</Value>
                </Element>
             </Element>
             <Element cardinality="0..1">
