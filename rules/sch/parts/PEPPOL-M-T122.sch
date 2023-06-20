@@ -6,7 +6,11 @@
 				test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:logistics:trns:weight_statement:1')"
 				flag="fatal">Specification identifier SHALL start with the value 'urn:fdc:peppol.eu:logistics:trns:weight_statement:1'.</assert>
 	</rule>
-
+	
+	<rule context="ubl:WeightStatement/cbc:IssueTime">
+		<assert id="PEPPOL-T122-R100" flag="fatal" test="count(timezone-from-time(.)) &gt; 0">[PEPPOL-T122-R100] IssueTime MUST include timezone information.</assert>
+	</rule>
+	
 	<rule context="cac:GoodsItem">
 		<assert id="PEPPOL-T122-R003" test="(cac:Item/cac:StandardItemIdentification/cbc:ID) or  (cac:Item/cac:SellersItemIdentification/cbc:ID)" flag="fatal">Each item in a Weight Statement SHALL be identifiable by either "item sellers identifier" or "item standard identifier"</assert>
 	</rule>
