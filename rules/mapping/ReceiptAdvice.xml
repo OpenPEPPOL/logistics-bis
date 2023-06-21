@@ -221,7 +221,7 @@
                <Data ss:Type="String">Dispatch advice issue time</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The time when the receipt advice is issued. Format = "HH:MM:SS+timezone".</Data>
+               <Data ss:Type="String">The time when the receipt advice is issued. Format = "HH:MM:SS+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">12:00:00+01:00</Data>
@@ -455,7 +455,7 @@
                <Data ss:Type="String">The time the Advanced Despatch Advice was issued.</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The time when the Advanced Despatch Advice was issued. Format = "HH:MM:SS+timezone".</Data>
+               <Data ss:Type="String">The time when the Advanced Despatch Advice was issued. Format = "HH:MM:SS+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">12:00:00+01:00</Data>
@@ -4043,7 +4043,7 @@
                <Data ss:Type="String">Actual Delivery Time</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The time on which the supply of goods or services was made or completed according to the delivery term. Format = "hh:mm:ss+timezone"</Data>
+               <Data ss:Type="String">The time on which the supply of goods or services was made or completed according to the delivery term. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the delivery was made should be assumed.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">10:00:00+01:00</Data>
@@ -4056,136 +4056,6 @@
             </Cell>
             <Cell>
                <Data ss:Type="Number">15200</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">0..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  •  cac:RequestedDeliveryPeriod</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Requested Delivery Period</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">The date, time or period the goods or service was requested to be delivered on.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String"/>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:ReceiptAdvice/cac:Shipment/cac:Delivery/cac:RequestedDeliveryPeriod</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">3</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">15300</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">0..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  •  •  cbc:StartDate</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Requested Start Date</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">The requested delivery date or the start of the requested delivery period.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">2021-09-25</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:ReceiptAdvice/cac:Shipment/cac:Delivery/cac:RequestedDeliveryPeriod/cbc:StartDate</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">4</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">15400</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">0..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  •  •  cbc:StartTime</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Requested Start Time</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">The start time of the requested delivery period.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">12:00:00+01:00</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:ReceiptAdvice/cac:Shipment/cac:Delivery/cac:RequestedDeliveryPeriod/cbc:StartTime</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">4</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">15500</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">0..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  •  •  cbc:EndDate</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Requested End Date. </Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">The last date of the requested period.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">2021-09-27</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:ReceiptAdvice/cac:Shipment/cac:Delivery/cac:RequestedDeliveryPeriod/cbc:EndDate</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">4</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">15600</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">0..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  •  •  cbc:EndTime</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Requested End Time</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">The ending time of the requested delivery period.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">12:00:00+01:00</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:ReceiptAdvice/cac:Shipment/cac:Delivery/cac:RequestedDeliveryPeriod/cbc:EndTime</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">4</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">15700</Data>
             </Cell>
          </Row>
          <Row>
@@ -4211,7 +4081,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">15800</Data>
+               <Data ss:Type="Number">15300</Data>
             </Cell>
          </Row>
          <Row>
@@ -4237,7 +4107,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">15900</Data>
+               <Data ss:Type="Number">15400</Data>
             </Cell>
          </Row>
          <Row>
@@ -4263,7 +4133,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">16000</Data>
+               <Data ss:Type="Number">15500</Data>
             </Cell>
          </Row>
          <Row>
@@ -4289,7 +4159,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">16100</Data>
+               <Data ss:Type="Number">15600</Data>
             </Cell>
          </Row>
          <Row>
@@ -4315,7 +4185,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">16200</Data>
+               <Data ss:Type="Number">15700</Data>
             </Cell>
          </Row>
          <Row>
@@ -4341,7 +4211,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">16300</Data>
+               <Data ss:Type="Number">15800</Data>
             </Cell>
          </Row>
          <Row>
@@ -4367,7 +4237,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">16400</Data>
+               <Data ss:Type="Number">15900</Data>
             </Cell>
          </Row>
          <Row>
@@ -4393,7 +4263,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">16500</Data>
+               <Data ss:Type="Number">16000</Data>
             </Cell>
          </Row>
          <Row>
@@ -4419,7 +4289,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">16600</Data>
+               <Data ss:Type="Number">16100</Data>
             </Cell>
          </Row>
          <Row>
@@ -4445,7 +4315,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">16700</Data>
+               <Data ss:Type="Number">16200</Data>
             </Cell>
          </Row>
          <Row>
@@ -4471,7 +4341,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">16800</Data>
+               <Data ss:Type="Number">16300</Data>
             </Cell>
          </Row>
          <Row>
@@ -4497,7 +4367,7 @@
                <Data ss:Type="Number">1</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">16900</Data>
+               <Data ss:Type="Number">16400</Data>
             </Cell>
          </Row>
          <Row>
@@ -4523,7 +4393,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">17000</Data>
+               <Data ss:Type="Number">16500</Data>
             </Cell>
          </Row>
          <Row>
@@ -4549,7 +4419,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">17100</Data>
+               <Data ss:Type="Number">16600</Data>
             </Cell>
          </Row>
          <Row>
@@ -4575,7 +4445,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">17200</Data>
+               <Data ss:Type="Number">16700</Data>
             </Cell>
          </Row>
          <Row>
@@ -4601,7 +4471,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">17300</Data>
+               <Data ss:Type="Number">16800</Data>
             </Cell>
          </Row>
          <Row>
@@ -4627,7 +4497,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">17400</Data>
+               <Data ss:Type="Number">16900</Data>
             </Cell>
          </Row>
          <Row>
@@ -4653,7 +4523,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">17500</Data>
+               <Data ss:Type="Number">17000</Data>
             </Cell>
          </Row>
          <Row>
@@ -4679,7 +4549,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">17600</Data>
+               <Data ss:Type="Number">17100</Data>
             </Cell>
          </Row>
          <Row>
@@ -4705,7 +4575,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">17700</Data>
+               <Data ss:Type="Number">17200</Data>
             </Cell>
          </Row>
          <Row>
@@ -4731,7 +4601,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">17800</Data>
+               <Data ss:Type="Number">17300</Data>
             </Cell>
          </Row>
          <Row>
@@ -4757,7 +4627,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">17900</Data>
+               <Data ss:Type="Number">17400</Data>
             </Cell>
          </Row>
          <Row>
@@ -4783,7 +4653,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">18000</Data>
+               <Data ss:Type="Number">17500</Data>
             </Cell>
          </Row>
          <Row>
@@ -4809,7 +4679,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">18100</Data>
+               <Data ss:Type="Number">17600</Data>
             </Cell>
          </Row>
          <Row>
@@ -4835,7 +4705,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">18200</Data>
+               <Data ss:Type="Number">17700</Data>
             </Cell>
          </Row>
          <Row>
@@ -4861,7 +4731,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">18300</Data>
+               <Data ss:Type="Number">17800</Data>
             </Cell>
          </Row>
          <Row>
@@ -4887,7 +4757,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">18400</Data>
+               <Data ss:Type="Number">17900</Data>
             </Cell>
          </Row>
          <Row>
@@ -4913,7 +4783,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">18500</Data>
+               <Data ss:Type="Number">18000</Data>
             </Cell>
          </Row>
          <Row>
@@ -4939,7 +4809,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">18600</Data>
+               <Data ss:Type="Number">18100</Data>
             </Cell>
          </Row>
          <Row>
@@ -4965,7 +4835,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">18700</Data>
+               <Data ss:Type="Number">18200</Data>
             </Cell>
          </Row>
          <Row>
@@ -4991,7 +4861,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">18800</Data>
+               <Data ss:Type="Number">18300</Data>
             </Cell>
          </Row>
          <Row>
@@ -5017,7 +4887,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">18900</Data>
+               <Data ss:Type="Number">18400</Data>
             </Cell>
          </Row>
          <Row>
@@ -5043,7 +4913,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">19000</Data>
+               <Data ss:Type="Number">18500</Data>
             </Cell>
          </Row>
          <Row>
@@ -5069,7 +4939,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">19100</Data>
+               <Data ss:Type="Number">18600</Data>
             </Cell>
          </Row>
          <Row>
@@ -5095,7 +4965,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">19200</Data>
+               <Data ss:Type="Number">18700</Data>
             </Cell>
          </Row>
          <Row>
@@ -5121,7 +4991,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">19300</Data>
+               <Data ss:Type="Number">18800</Data>
             </Cell>
          </Row>
          <Row>
@@ -5147,7 +5017,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">19400</Data>
+               <Data ss:Type="Number">18900</Data>
             </Cell>
          </Row>
          <Row>
@@ -5173,7 +5043,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">19500</Data>
+               <Data ss:Type="Number">19000</Data>
             </Cell>
          </Row>
          <Row>
@@ -5199,7 +5069,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">19600</Data>
+               <Data ss:Type="Number">19100</Data>
             </Cell>
          </Row>
          <Row>
@@ -5225,7 +5095,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">19700</Data>
+               <Data ss:Type="Number">19200</Data>
             </Cell>
          </Row>
          <Row>
@@ -5251,7 +5121,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">19800</Data>
+               <Data ss:Type="Number">19300</Data>
             </Cell>
          </Row>
          <Row>
@@ -5277,7 +5147,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">19900</Data>
+               <Data ss:Type="Number">19400</Data>
             </Cell>
          </Row>
          <Row>
@@ -5303,7 +5173,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">20000</Data>
+               <Data ss:Type="Number">19500</Data>
             </Cell>
          </Row>
          <Row>
@@ -5329,7 +5199,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">20100</Data>
+               <Data ss:Type="Number">19600</Data>
             </Cell>
          </Row>
          <Row>
@@ -5355,7 +5225,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">20200</Data>
+               <Data ss:Type="Number">19700</Data>
             </Cell>
          </Row>
          <Row>
@@ -5381,7 +5251,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">20300</Data>
+               <Data ss:Type="Number">19800</Data>
             </Cell>
          </Row>
       </Table>
