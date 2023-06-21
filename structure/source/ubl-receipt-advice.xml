@@ -11,7 +11,7 @@
 		The Identity together with the Issue Date and Issue Time gives the version of the Receipt Advice. ?>
 	</cbc:ID>
 	<cbc:IssueDate>2021-09-10</cbc:IssueDate>
-	<cbc:IssueTime>12:00:00+01:00<?Description The time when the receipt advice is issued. Format = "HH:MM:SS+timezone".?>
+	<cbc:IssueTime>12:00:00+01:00<?Description The time when the receipt advice is issued. Format = "HH:MM:SS+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. ?>
 		<?Cardinality 1..1?>
 	</cbc:IssueTime>
 	<cbc:DocumentStatusCode>9
@@ -54,7 +54,7 @@
 		
 		<cbc:IssueTime>12:00:00+01:00
 			<?Name The time the Advanced Despatch Advice was issued.?>
-			<?Description The time when the Advanced Despatch Advice was issued. Format = "HH:MM:SS+timezone".?>
+			<?Description The time when the Advanced Despatch Advice was issued. Format = "HH:MM:SS+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. ?>
 		</cbc:IssueTime>
 		<cbc:DocumentStatusCode>RE
 			<?Name Document Status Code?>
@@ -453,43 +453,10 @@
 				</cbc:ActualDeliveryDate>
 				<cbc:ActualDeliveryTime>10:00:00+01:00
 					<?Name Actual Delivery Time?>
-					<?Description  The time on which the supply of goods or services was made or completed according to the delivery term. Format = "hh:mm:ss+timezone"?>
+					<?Description  The time on which the supply of goods or services was made or completed according to the delivery term. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the delivery was made should be assumed. ?>
 					<?DataType Time?>
 					<?Cardinality 0..1?>
 				</cbc:ActualDeliveryTime>
-
-			<cac:RequestedDeliveryPeriod>
-				<?Name Requested Delivery Period?>
-				<?Description The date, time or period the goods or service was requested to be delivered on. ?>
-				<?Cardinality 0..1?>
-				<cbc:StartDate>2021-09-25<?Name Requested Start Date?>
-					<?Rule PEPPOL-T128-R012?>
-					<?Rule PEPPOL-T128-R015?>
-					<?Cardinality 0..1?>
-					<?Description The requested delivery date or the start of the requested delivery period. ?>
-				</cbc:StartDate>
-				<cbc:StartTime>12:00:00+01:00
-					<?Name Requested Start Time?>
-					<?Description The start time of the requested delivery period. ?>
-					<?Cardinality 0..1?>
-					<?Rule PEPPOL-T128-R013?>
-					<?Rule PEPPOL-T128-R015?>
-				</cbc:StartTime>
-				<cbc:EndDate>2021-09-27<?Name Requested End Date. ?>
-					<?Rule PEPPOL-T128-R014?>
-					<?Rule PEPPOL-T128-R015?>
-					<?Description The last date of the requested period. ?>
-					<?Cardinality 0..1?>
-				</cbc:EndDate>
-				<cbc:EndTime>12:00:00+01:00
-					<?Name Requested End Time?>
-					<?Description The ending time of the requested delivery period. ?>
-					<?Cardinality 0..1?>
-					<?Rule PEPPOL-T128-R013?>
-					<?Rule PEPPOL-T128-R014?>
-					<?Rule PEPPOL-T128-R015?>
-				</cbc:EndTime>
-			</cac:RequestedDeliveryPeriod>
 			
 			<cac:DeliveryTerms>
 				<?Cardinality 0..1?>
