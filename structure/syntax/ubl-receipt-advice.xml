@@ -53,7 +53,7 @@
 	     <Element cardinality="1..1">
          <Term>cbc:IssueTime</Term>
          <Name>Dispatch advice issue time</Name>
-         <Description>The time when the receipt advice is issued. Format = "HH:MM:SS+timezone".</Description>
+         <Description>The time when the receipt advice is issued. Format = "HH:MM:SS+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
          <Value type="EXAMPLE">12:00:00+01:00</Value>
@@ -117,7 +117,7 @@
          <Element>
             <Term>cbc:IssueTime</Term>
             <Name>The time the Advanced Despatch Advice was issued.</Name>
-            <Description>The time when the Advanced Despatch Advice was issued. Format = "HH:MM:SS+timezone".</Description>
+            <Description>The time when the Advanced Despatch Advice was issued. Format = "HH:MM:SS+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. </Description>
             <Value type="EXAMPLE">12:00:00+01:00</Value>
          </Element>
          <Element cardinality="0..1">
@@ -1049,47 +1049,9 @@
             <Element cardinality="0..1">
                <Term>cbc:ActualDeliveryTime</Term>
                <Name>Actual Delivery Time</Name>
-               <Description>The time on which the supply of goods or services was made or completed according to the delivery term. Format = "hh:mm:ss+timezone"</Description>
+               <Description>The time on which the supply of goods or services was made or completed according to the delivery term. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the delivery was made should be assumed. </Description>
                <DataType>Time</DataType>
                <Value type="EXAMPLE">10:00:00+01:00</Value>
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:RequestedDeliveryPeriod</Term>
-               <Name>Requested Delivery Period</Name>
-               <Description>The date, time or period the goods or service was requested to be delivered on. </Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:StartDate</Term>
-                  <Name>Requested Start Date</Name>
-                  <Description>The requested delivery date or the start of the requested delivery period. </Description>
-                  <Reference type="RULE">PEPPOL-T128-R012</Reference>
-                  <Reference type="RULE">PEPPOL-T128-R015</Reference>
-                  <Value type="EXAMPLE">2021-09-25</Value>
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:StartTime</Term>
-                  <Name>Requested Start Time</Name>
-                  <Description>The start time of the requested delivery period. </Description>
-                  <Reference type="RULE">PEPPOL-T128-R013</Reference>
-                  <Reference type="RULE">PEPPOL-T128-R015</Reference>
-                  <Value type="EXAMPLE">12:00:00+01:00</Value>
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:EndDate</Term>
-                  <Name>Requested End Date. </Name>
-                  <Description>The last date of the requested period. </Description>
-                  <Reference type="RULE">PEPPOL-T128-R014</Reference>
-                  <Reference type="RULE">PEPPOL-T128-R015</Reference>
-                  <Value type="EXAMPLE">2021-09-27</Value>
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:EndTime</Term>
-                  <Name>Requested End Time</Name>
-                  <Description>The ending time of the requested delivery period. </Description>
-                  <Reference type="RULE">PEPPOL-T128-R013</Reference>
-                  <Reference type="RULE">PEPPOL-T128-R014</Reference>
-                  <Reference type="RULE">PEPPOL-T128-R015</Reference>
-                  <Value type="EXAMPLE">12:00:00+01:00</Value>
-               </Element>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:DeliveryTerms</Term>
