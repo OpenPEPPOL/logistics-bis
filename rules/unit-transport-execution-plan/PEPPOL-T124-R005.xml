@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testSet xmlns="http://difi.no/xsd/vefa/validator/1.0"
-	configuration="peppolbis-T120-base-1.1">
+	configuration="peppolbis-T124-base-1.1">
 	<assert>
-		<description>Verify each line has a name</description>
+		<description>Verify that the grossweight on consignment match the sum of the grossweight on the THU if they are specified</description>
 		<scope>PEPPOL-T124-R005</scope>
 	</assert>
 	<test>
 		<assert>
-			<success>PEPPOL-T124-R005</success>
+			<success>PEPPOL-T124-R005:a</success>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -28,7 +28,7 @@
 	
 	<test>
 		<assert>
-			<success>PEPPOL-T124-R005</success>
+			<success>PEPPOL-T124-R005:b</success>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -45,7 +45,7 @@
 	
 	<test>
 		<assert>
-			<success>PEPPOL-T124-R005</success>
+			<success>PEPPOL-T124-R005:c</success>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -73,7 +73,7 @@
 	
 	<test>
 		<assert>
-			<warning>PEPPOL-T120-R005</warning>
+			<warning>PEPPOL-T124-R005:d</warning>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -93,7 +93,7 @@
 	
 	<test>
 		<assert>
-			<warning>PEPPOL-T120-R005</warning>
+			<warning>PEPPOL-T124-R005:e</warning>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -113,7 +113,7 @@
 
 	<test>
 		<assert>
-			<warning>PEPPOL-T124-R005</warning>
+			<warning>PEPPOL-T124-R005:f</warning>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
