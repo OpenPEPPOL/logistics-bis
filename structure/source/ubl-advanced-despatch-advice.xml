@@ -23,7 +23,7 @@
 	<cbc:IssueDate>2021-09-10<?Description The date when the advanced despatch advice is issued. Format = "YYYY-MM-DD".
 		Together with ID and IssueTime the IssueDate forms the identity of the Version of the Advanced Despatch Advice. ?>
 	</cbc:IssueDate>
-	<cbc:IssueTime>12:00:00<?Description The time when the advanced despatch advice is issued. Format = "hh:mm:ss".?>
+	<cbc:IssueTime>12:00:00+01:00<?Description The time when the advanced despatch advice is issued. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. ?>
 		<?Cardinality 1..1?>
 	</cbc:IssueTime>
 	<cbc:DocumentStatusCode>9
@@ -1002,8 +1002,8 @@
 				<?DataType Date?>
 				<?Cardinality 0..1?>
 			</cbc:ActualDeliveryDate>
-			<cbc:ActualDeliveryTime>10:00:00<?Name Actual Delivery Time?>
-				<?Description  The date on which the supply of goods or services was made or completed according to the delivery term. Used only when Advanced Despatch Advice is sent after delivery. Format = "hh:mm:ss"?>
+			<cbc:ActualDeliveryTime>10:00:00+01:00<?Name Actual Delivery Time?>
+				<?Description  The date on which the supply of goods or services was made or completed according to the delivery term. Used only when Advanced Despatch Advice is sent after delivery. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the delivery was made should be assumed. ?>
 				<?DataType Time?>
 				<?Cardinality 0..1?>
 			</cbc:ActualDeliveryTime>
@@ -1121,22 +1121,24 @@
 					<?Rule PEPPOL-T120-R015?>
 					<?Cardinality 0..1?>
 				</cbc:StartDate>
-				<cbc:StartTime>12:00:00<?Rule PEPPOL-T120-R013?>
+				<cbc:StartTime>12:00:00+01:00<?Rule PEPPOL-T120-R013?>
 					<?Rule PEPPOL-T120-R015?>
+					<?Description The Start time of the period. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the delivery is made should be assumed.?>
 				</cbc:StartTime>
 				<cbc:EndDate>2021-09-27<?Rule PEPPOL-T120-R012?>
 					<?Rule PEPPOL-T120-R014?>
 					<?Rule PEPPOL-T120-R015?>
 				</cbc:EndDate>
-				<cbc:EndTime>12:00:00<?Rule PEPPOL-T120-R013?>
+				<cbc:EndTime>12:00:00+01:00<?Rule PEPPOL-T120-R013?>
 					<?Rule PEPPOL-T120-R014?>
 					<?Rule PEPPOL-T120-R015?>
+					<?Description The End time of the period. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the delivery is made should be assumed.?>
 				</cbc:EndTime>
 			</cac:EstimatedDeliveryPeriod>
 			
 			<cac:Despatch>
 				<cbc:ActualDespatchDate>2021-09-25</cbc:ActualDespatchDate>
-				<cbc:ActualDespatchTime>13:00:00</cbc:ActualDespatchTime>
+				<cbc:ActualDespatchTime>13:00:00+01:00<?Description The actual or expected date when the shipment was dispatched from the dispatching party. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the despatch was made should be assumed.?></cbc:ActualDespatchTime>
 				<cac:DespatchAddress>
 					<?Description The Despatch Address is used to define the Ship-from when the Despatch Supplier Party is not. When the Despatch Advice describes a movement, the Despatch Address should be included.?>
 					<cbc:ID>34456456456456 <?Description An identifier for the location to which the goods and services are despatched. For example a global location number.?>
@@ -1658,11 +1660,8 @@
 			<?Rule PEPPOL-T120-R005?>
 			<?Rule PEPPOL-T120-R006?>
 		</cbc:DeliveredQuantity>
-		<cbc:OutstandingQuantity unitCode="C62"> 2 
-			<?Rule PEPPOL-T120-R007?>
-		</cbc:OutstandingQuantity>
-		<cbc:OutstandingReason>Text</cbc:OutstandingReason>
-		
+		<cbc:OutstandingQuantity unitCode="C62">2<?Rule PEPPOL-T120-R007?></cbc:OutstandingQuantity>
+		<cbc:OutstandingReason>Text<?Rule PEPPOL-T120-R007?></cbc:OutstandingReason>	
 		<cac:OrderLineReference>
 			<cbc:LineID>1</cbc:LineID>
 			<cbc:SalesOrderLineID> 10 
@@ -1671,7 +1670,7 @@
 				<?Description Reference to the sellers orderline number.?>
 			</cbc:SalesOrderLineID>
 			<cac:OrderReference>
-				<cbc:ID>AEG012345</cbc:ID>
+				<cbc:ID>AEG012345<?Rule PEPPOL-T120-R002?></cbc:ID>
 				<cbc:SalesOrderID> 5678985 <?Name Sales order number?>
 					<?Cardinality 0..1?>
 					<?Description Reference to the sellers order number.?>
@@ -1734,6 +1733,7 @@
 				<cbc:ID>6578489</cbc:ID>
 			</cac:BuyersItemIdentification>
 			<cac:SellersItemIdentification>
+				<?Rule PEPPOL-T120-R003?>
 				<cbc:ID> 17589683 
 					<?Rule PEPPOL-T120-R003?>
 				</cbc:ID>
@@ -1748,6 +1748,7 @@
 				</cbc:ID>
 			</cac:ManufacturersItemIdentification>
 			<cac:StandardItemIdentification>
+				<?Rule PEPPOL-T120-R003?>
 				<?Description Only one StandardItemIdentification can be used per line.?>
 				<cbc:ID schemeID="0160"> 1234567891234 
 					<?Description Global Trade Item Number (GTIN) or other standardized identification.?>
@@ -1786,14 +1787,16 @@
 			</cac:HazardousItem>
 			
 			<cac:AdditionalItemProperty>
-				<cbc:ID schemeID="ISO22057" schemeVersionID="2022">	77e416eb-a363-4258-a04e-171d843a6460 
+				<cbc:ID schemeDataURI="sdfdf" schemeID="ISO22057" schemeVersionID="2022">	77e416eb-a363-4258-a04e-171d843a6460 
 					<?Description ID of the property if assigned by an Agency?>
 					<?Cardinality 0..1?>
+					<?schemeDataURI-Name Scheme Data URI?>
+					<?schemeDataURI-usage Optional?>
+					<?schemeID-Name Scheme identifier?>
+					<?schemeID-usage Optional?>
+					<?schemeVersionID-Name Scheme version identifier?>
+					<?schemeVersionID-usage Optional?>
 				</cbc:ID>
-				<?schemeID-Name Scheme identifier?>
-				<?schemeID-usage Optional?>
-				<?schemeVersionID-Name Scheme version identifier?>
-				<?schemeVersionID-usage Optional?>
 				<cbc:Name>Rigidity</cbc:Name>
 				<cbc:NameCode listID="IPNC"> EPDNumber 
 					<?listID-usage Mandatory?>
@@ -1884,9 +1887,9 @@
 			</cac:ManufacturerParty>
 			<cac:ItemInstance>
 				<cbc:ManufactureDate>2021-01-01</cbc:ManufactureDate>
-				<cbc:ManufactureTime>06:47:30
+				<cbc:ManufactureTime>06:47:30+01:00
 				<?Name Item manufactured time?>
-					<?Description The time at which this item instance was manufactured.?>
+					<?Description The time at which this item instance was manufactured. Timezone is optional to use. If omitted, the local timezone where the manufacturing was made should be assumed.?>
 					<?DateType Time?>
 					<?Cardinality 0..1?>
 			    </cbc:ManufactureTime>

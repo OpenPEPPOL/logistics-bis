@@ -52,10 +52,10 @@
 	     <Element cardinality="1..1">
          <Term>cbc:IssueTime</Term>
          <Name>Dispatch advice issue time</Name>
-         <Description>The time when the advanced despatch advice is issued. Format = "hh:mm:ss".</Description>
+         <Description>The time when the advanced despatch advice is issued. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
-         <Value type="EXAMPLE">12:00:00</Value>
+         <Value type="EXAMPLE">12:00:00+01:00</Value>
       </Element>
 	     <Element cardinality="0..1">
          <Term>cbc:DocumentStatusCode</Term>
@@ -1761,9 +1761,9 @@
             <Element cardinality="0..1">
                <Term>cbc:ActualDeliveryTime</Term>
                <Name>Actual Delivery Time</Name>
-               <Description>The date on which the supply of goods or services was made or completed according to the delivery term. Used only when Advanced Despatch Advice is sent after delivery. Format = "hh:mm:ss"</Description>
+               <Description>The date on which the supply of goods or services was made or completed according to the delivery term. Used only when Advanced Despatch Advice is sent after delivery. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the delivery was made should be assumed. </Description>
                <DataType>Time</DataType>
-               <Value type="EXAMPLE">10:00:00</Value>
+               <Value type="EXAMPLE">10:00:00+01:00</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cbc:TrackingID</Term>
@@ -1921,11 +1921,11 @@
                <Element cardinality="0..1">
                   <Term>cbc:StartTime</Term>
                   <Name>Period start time</Name>
-                  <Description>The start time of the period.</Description>
+                  <Description>The Start time of the period. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the delivery is made should be assumed.</Description>
                   <Reference type="BUSINESS_TERM">tir16-043</Reference>
                   <Reference type="RULE">PEPPOL-T120-R013</Reference>
                   <Reference type="RULE">PEPPOL-T120-R015</Reference>
-                  <Value type="EXAMPLE">12:00:00</Value>
+                  <Value type="EXAMPLE">12:00:00+01:00</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:EndDate</Term>
@@ -1940,12 +1940,12 @@
                <Element cardinality="0..1">
                   <Term>cbc:EndTime</Term>
                   <Name>Period end time</Name>
-                  <Description>The end time of the period.</Description>
+                  <Description>The End time of the period. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the delivery is made should be assumed.</Description>
                   <Reference type="BUSINESS_TERM">tir16-045</Reference>
                   <Reference type="RULE">PEPPOL-T120-R013</Reference>
                   <Reference type="RULE">PEPPOL-T120-R014</Reference>
                   <Reference type="RULE">PEPPOL-T120-R015</Reference>
-                  <Value type="EXAMPLE">12:00:00</Value>
+                  <Value type="EXAMPLE">12:00:00+01:00</Value>
                </Element>
             </Element>
             <Element cardinality="0..1">
@@ -1962,10 +1962,9 @@
                <Element cardinality="0..1">
                   <Term>cbc:ActualDespatchTime</Term>
                   <Name>Shipment dispatch time</Name>
-                  <Description>The actual or expected time when the shipment was dispatched
-							from the dispatching party.</Description>
+                  <Description>The actual or expected date when the shipment was dispatched from the dispatching party. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the despatch was made should be assumed.</Description>
                   <Reference type="BUSINESS_TERM">tir16-073</Reference>
-                  <Value type="EXAMPLE">13:00:00</Value>
+                  <Value type="EXAMPLE">13:00:00+01:00</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:DespatchAddress</Term>
@@ -2748,7 +2747,7 @@
             <Name>Outstanding quantity reason</Name>
             <Description>The reason for the outstanding quantity.</Description>
             <Reference type="BUSINESS_TERM">tir16-050</Reference>
-            <Reference type="RULE">PEPPOL-T16-R007</Reference>
+            <Reference type="RULE">PEPPOL-T120-R007</Reference>
             <Value type="EXAMPLE">Text</Value>
          </Element>
          <Element>
@@ -2778,7 +2777,7 @@
                   <Description>Identifies the order that the reference order line belongs
 							to.</Description>
                   <Reference type="BUSINESS_TERM">tir16-p010</Reference>
-                  <Reference type="RULE">PEPPOL-T16-R002</Reference>
+                  <Reference type="RULE">PEPPOL-T120-R002</Reference>
                   <Value type="EXAMPLE">AEG012345</Value>
                </Element>
                <Element cardinality="0..1">
@@ -2880,7 +2879,7 @@
             <Element cardinality="0..1">
                <Term>cac:SellersItemIdentification</Term>
                <Name>Sellers item identification</Name>
-               <Reference type="RULE">PEPPOL-T16-R003</Reference>
+               <Reference type="RULE">PEPPOL-T120-R003</Reference>
                <Element>
                   <Term>cbc:ID</Term>
                   <Name>The Sellers item identifier</Name>
@@ -2907,7 +2906,7 @@
                <Term>cac:StandardItemIdentification</Term>
                <Name>Standard item identification</Name>
                <Description>Only one StandardItemIdentification can be used per line.</Description>
-               <Reference type="RULE">PEPPOL-T16-R003</Reference>
+               <Reference type="RULE">PEPPOL-T120-R003</Reference>
                <Element>
                   <Term>cbc:ID</Term>
                   <Name>Item standard identifier</Name>
@@ -3017,12 +3016,19 @@
                   <Term>cbc:ID</Term>
                   <Description>ID of the property if assigned by an Agency</Description>
                   <Value type="EXAMPLE">77e416eb-a363-4258-a04e-171d843a6460</Value>
-                  <Attribute>
+                  <Attribute usage="Optional">
+                     <Term>schemeDataURI</Term>
+                     <Name>Scheme Data URI</Name>
+                     <Value type="EXAMPLE">sdfdf</Value>
+                  </Attribute>
+                  <Attribute usage="Optional">
                      <Term>schemeID</Term>
+                     <Name>Scheme identifier</Name>
                      <Value type="EXAMPLE">ISO22057</Value>
                   </Attribute>
-                  <Attribute>
+                  <Attribute usage="Optional">
                      <Term>schemeVersionID</Term>
+                     <Name>Scheme version identifier</Name>
                      <Value type="EXAMPLE">2022</Value>
                   </Attribute>
                </Element>
@@ -3197,8 +3203,8 @@
                <Element cardinality="0..1">
                   <Term>cbc:ManufactureTime</Term>
                   <Name>Item manufactured time</Name>
-                  <Description>The time at which this item instance was manufactured.</Description>
-                  <Value type="EXAMPLE">06:47:30</Value>
+                  <Description>The time at which this item instance was manufactured. Timezone is optional to use. If omitted, the local timezone where the manufacturing was made should be assumed.</Description>
+                  <Value type="EXAMPLE">06:47:30+01:00</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:BestBeforeDate</Term>

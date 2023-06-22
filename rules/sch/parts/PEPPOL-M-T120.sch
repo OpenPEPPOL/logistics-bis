@@ -31,6 +31,7 @@
 		<assert id="PEPPOL-T120-R020" test="//cac:DespatchLine[normalize-space(cbc:ID) = $itemId]" flag="fatal">Each Goods Item ID should have a corresponding Despatch Advice Line ID</assert>
 	</rule>
 	<rule context="cac:DespatchLine">
+		<assert id="PEPPOL-T120-R002" test="(cbc:ID)" flag="fatal">Dummy rule."</assert>
 		<assert id="PEPPOL-T120-R003" test="(cac:Item/cac:StandardItemIdentification/cbc:ID) or  (cac:Item/cac:SellersItemIdentification/cbc:ID)" flag="fatal">Each item in a Despatch Advice line SHALL be identifiable by either "item sellers identifier" or "item standard identifier"</assert>
 		<assert id="PEPPOL-T120-R004" test="(cac:Item/cbc:Name)" flag="fatal">Each Despatch Advice SHALL contain the item name</assert>
 		<assert id="PEPPOL-T120-R005" test="(cbc:DeliveredQuantity)" flag="warning">Each despatch advice line SHOULD have a delivered quantity</assert>
