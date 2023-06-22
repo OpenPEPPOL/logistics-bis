@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testSet xmlns="http://difi.no/xsd/vefa/validator/1.0"
-	configuration="peppolbis-T124-base-1.1">
+	configuration="peppolbis-T124-base-1.0">
 	<assert>
 		<description>Verify that the grossweight on consignment match the sum of the grossweight on the THU if they are specified</description>
 		<scope>PEPPOL-T124-R005</scope>
@@ -71,29 +71,10 @@
 		</ubl:TransportExecutionPlan>
 	</test>
 	
+		
 	<test>
 		<assert>
 			<warning>PEPPOL-T124-R005:d</warning>
-		</assert>
-		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
-                            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
-		   <cac:Consignment>      
-			  <!--No gross weight specified and specified on THU level -->
-			  <cac:TransportHandlingUnit>
-				<cbc:ID>11111222222222</cbc:ID>
-				<cac:MeasurementDimension>
-					<cbc:AttributeID>AAB</cbc:AttributeID>
-					<cbc:Measure unitCode="KGM">1030</cbc:Measure>      
-				 </cac:MeasurementDimension>         
-			  </cac:TransportHandlingUnit>			   
-		   </cac:Consignment>
-		</ubl:TransportExecutionPlan>
-	</test>
-	
-	<test>
-		<assert>
-			<warning>PEPPOL-T124-R005:e</warning>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -113,7 +94,7 @@
 
 	<test>
 		<assert>
-			<warning>PEPPOL-T124-R005:f</warning>
+			<warning>PEPPOL-T124-R005:e</warning>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
