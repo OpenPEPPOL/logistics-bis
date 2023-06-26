@@ -8,7 +8,6 @@
 	<!-- tag::document-id[] -->
 	<cbc:ID>141278571829041241241</cbc:ID>
 	<!-- end::document-id[] -->
-	<cbc:VersionID>1</cbc:VersionID>
 	<cbc:IssueDate>2021-09-29</cbc:IssueDate>
 	<cbc:IssueTime>09:49:00</cbc:IssueTime>
 	<cbc:DocumentStatusCode>9 </cbc:DocumentStatusCode>
@@ -234,31 +233,6 @@
 		<cac:MainCarriageShipmentStage>
 			<cbc:TransportModeCode>4</cbc:TransportModeCode>
 			<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-			<!-- tag::carrier-party[] -->
-			<cac:CarrierParty>
-				<cac:PartyName>
-					<cbc:Name>Finnair Oyj</cbc:Name>
-				</cac:PartyName>
-				<cac:PostalAddress>
-					<cbc:StreetName>Tietotie 9</cbc:StreetName>
-					<cbc:CityName>Vantaa</cbc:CityName>
-					<cbc:PostalZone>4600</cbc:PostalZone>
-					<cac:Country>
-						<cbc:IdentificationCode>FI</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:PostalAddress>
-				<cac:PartyLegalEntity>
-					<cbc:RegistrationName>Leman</cbc:RegistrationName>
-					<cbc:CompanyID schemeID="0212">0108023-3</cbc:CompanyID>
-					<cac:RegistrationAddress>
-						<cbc:CityName>Vantaa</cbc:CityName>
-						<cac:Country>
-							<cbc:IdentificationCode>FI</cbc:IdentificationCode>
-						</cac:Country>
-					</cac:RegistrationAddress>
-				</cac:PartyLegalEntity>
-			</cac:CarrierParty>
-			<!-- end::carrier-party[] -->
 			<cac:RequestedDepartureTransportEvent>
 				<cbc:IdentificationID>6522956526554654</cbc:IdentificationID>
 				<cac:Location>
@@ -305,7 +279,12 @@
 						</cac:Country>
 					</cac:Address>
 				</cac:Location>
-			</cac:RequestedArrivalTransportEvent>
+				<cac:Period>
+					<cbc:StartDate>2021-09-29</cbc:StartDate>
+					<cbc:StartTime>15:00:00+01:00</cbc:StartTime>
+					<cbc:EndDate>2021-09-29</cbc:EndDate>
+					<cbc:EndTime>16:50:00+01:00</cbc:EndTime>
+				</cac:Period>			</cac:RequestedArrivalTransportEvent>
 		</cac:MainCarriageShipmentStage>
 		<!-- end::main-shipment-stage[] -->
 
@@ -346,12 +325,19 @@
 				<cbc:ID>10</cbc:ID>
 				<cbc:Description>Goods item description</cbc:Description>
 				<cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
-				<cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78</cbc:DeclaredStatisticsValueAmount>
-				<cbc:Quantity unitCode="EA">6</cbc:Quantity>
-				<cbc:TraceID schemeID="sgtin">345699634527</cbc:TraceID>
+				<cac:Item>
+					<cbc:Name>Torsk</cbc:Name>
+					<cac:CommodityClassification>
+						<cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">KO2012140200 </cbc:ItemClassificationCode>
+					</cac:CommodityClassification>
+					<cac:HazardousItem>
+						<cbc:UNDGCode>ADR</cbc:UNDGCode>
+						<cbc:HazardClassID>2</cbc:HazardClassID>
+						<cbc:NetWeightMeasure unitCode="KGM">40.8</cbc:NetWeightMeasure>
+					</cac:HazardousItem>
+				</cac:Item>
 			</cac:GoodsItem>
 			<!-- end::goods-item[] -->
-
 		</cac:TransportHandlingUnit>
 		<!-- end::transport-handling-unit[] -->
 	</cac:Consignment>
