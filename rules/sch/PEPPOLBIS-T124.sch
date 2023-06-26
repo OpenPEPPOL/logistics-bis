@@ -11,7 +11,7 @@
     <ns uri="http://www.w3.org/2001/XMLSchema" prefix="xs"/>
     <ns uri="utils" prefix="u"/>
     
-    <xsl:key name="k_lineId"  match="cac:LineItem" use="cbc:ID"/>
+   
     
     <!-- Functions -->
 
@@ -29,7 +29,7 @@
 
     <include href="parts/common/empty-elements.sch"/>
     <include href="parts/common/rules.sch"/>
-    <!--<include href="../../target/generated/T124-basic.sch"/>-->
+    <include href="../../target/generated/T124-basic.sch"/>
     <include href="parts/PEPPOL-M-T124.sch"/>    
 
 </schema>
