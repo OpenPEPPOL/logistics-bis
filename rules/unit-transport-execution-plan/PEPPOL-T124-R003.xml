@@ -5,15 +5,15 @@
 		<description>Verify that Transport handling unit quantity is not negative</description>
 		<scope>PEPPOL-T124-R003</scope>
 	</assert>
-	<test>
+	<test id="1">
 		<assert>
-			<success>PEPPOL-T124-R003:a</success>
+			<success>PEPPOL-T124-R003</success>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
 		   <cac:Consignment>      
-			  <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">2</cbc:TotalTransportHandlingUnitQuantity>
+			  <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1</cbc:TotalTransportHandlingUnitQuantity>
 			  <cac:TransportHandlingUnit>
 				<cbc:ID>11111222222222</cbc:ID>         
 			  </cac:TransportHandlingUnit>
@@ -24,9 +24,9 @@
 		</ubl:TransportExecutionPlan>
 	</test>
 	
-	<test>
+	<test id="2">
 		<assert>
-			<Error>PEPPOL-T124-R003:b</Error>
+			<Error>PEPPOL-T124-R003</Error>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -40,4 +40,3 @@
 	
 
 </testSet>
-
