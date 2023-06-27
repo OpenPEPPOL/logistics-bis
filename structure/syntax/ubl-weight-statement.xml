@@ -91,6 +91,7 @@
                <Term>cbc:ID</Term>
                <Name>Sender party identity</Name>
                <Description>The identifier of the Sender party</Description>
+               <Reference type="RULE">PEPPOL-T122-R011</Reference>
                <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Mandatory">
                   <Term>schemeID</Term>
@@ -107,6 +108,7 @@
             <Element cardinality="1..1">
                <Term>cbc:Name</Term>
                <Name>Sender name</Name>
+               <Reference type="RULE">PEPPOL-T122-R011</Reference>
                <Value type="EXAMPLE">Weighing Solutions AB</Value>
             </Element>
          </Element>
@@ -215,6 +217,7 @@
                <Term>cbc:ID</Term>
                <Name>Receiver identity</Name>
                <Description>The identifier of the receiver party</Description>
+               <Reference type="RULE">PEPPOL-T122-R012</Reference>
                <Value type="EXAMPLE">1251513513245</Value>
                <Attribute usage="Mandatory">
                   <Term>schemeID</Term>
@@ -231,6 +234,7 @@
             <Element cardinality="1..1">
                <Term>cbc:Name</Term>
                <Name>Receiver name</Name>
+               <Reference type="RULE">PEPPOL-T122-R012</Reference>
                <Value type="EXAMPLE">Transport Management Solutions AB</Value>
             </Element>
          </Element>
@@ -322,10 +326,11 @@
             <Term>cac:PartyIdentification</Term>
             <Name>Party Identification</Name>
             <Description>An identifier for this party.</Description>
-            <Element>
+            <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>Weighing party identity</Name>
                <Description>The identifier of the Weighing party</Description>
+               <Reference type="RULE">PEPPOL-T122-R013</Reference>
                <Value type="EXAMPLE">5790000435951</Value>
                <Attribute usage="Mandatory">
                   <Term>schemeID</Term>
@@ -339,10 +344,11 @@
          <Element cardinality="0..1">
             <Term>cac:PartyName</Term>
             <Name>Party Name</Name>
-            <Element>
+            <Element cardinality="1..1">
                <Term>cbc:Name</Term>
                <Name>Weighing party name</Name>
                <Description>The name of the weighing party</Description>
+               <Reference type="RULE">PEPPOL-T122-R013</Reference>
                <Value type="EXAMPLE">Gravel Pit Ltd.</Value>
             </Element>
          </Element>
@@ -459,6 +465,7 @@
                <Term>cbc:ID</Term>
                <Name>Shipping party identity</Name>
                <Description>The identifier of the shippping party</Description>
+               <Reference type="RULE">PEPPOL-T122-R014</Reference>
                <Value type="EXAMPLE">5790000435951</Value>
                <Attribute usage="Mandatory">
                   <Term>schemeID</Term>
@@ -476,6 +483,7 @@
                <Term>cbc:Name</Term>
                <Name>Shipper name</Name>
                <Description>The name of the shipper</Description>
+               <Reference type="RULE">PEPPOL-T122-R014</Reference>
                <Value type="EXAMPLE">Tony's Trucks and Transport</Value>
             </Element>
          </Element>
@@ -562,7 +570,7 @@
 	     <Element cardinality="1..1">
          <Term>cac:Shipment</Term>
          <Name>Shipment information</Name>
-         <Element>
+         <Element cardinality="1..1">
             <Term>cbc:ID</Term>
             <Name>Shipment identity</Name>
             <Description>Use NA if no specific shipment ID is available</Description>
@@ -573,7 +581,7 @@
             <Term>cac:GoodsItem</Term>
             <Name>Goods Item</Name>
             <Description>A goods item included in this shipment.</Description>
-            <Element>
+            <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>Line item identifier</Name>
                <Description>Identifies the Line Item assigned by the weighing partner, the identifier must be unique within the order</Description>
@@ -583,7 +591,7 @@
                <Term>cac:Item</Term>
                <Name>Item</Name>
                <Description>Product information relating to a goods item</Description>
-               <Element>
+               <Element cardinality="1..1">
                   <Term>cbc:Name</Term>
                   <Name>Item name</Name>
                   <Description>Name of weighed item</Description>
