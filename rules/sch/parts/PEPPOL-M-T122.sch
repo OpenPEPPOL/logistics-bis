@@ -19,7 +19,7 @@
 		<assert id="PEPPOL-T122-R011" test="(cac:PartyName/cbc:Name) or (cac:PartyIdentification/cbc:ID)" flag="fatal">The Sender party SHALL contain the Name or an Identifier. </assert>
 	</rule>
 
-	<rule context="cac:ReceivererParty">
+	<rule context="cac:ReceiverParty">
 		<assert id="PEPPOL-T122-R012" test="(cac:PartyName/cbc:Name) or (cac:PartyIdentification/cbc:ID)" flag="fatal">The Receiver party SHALL contain the Name or an Identifier. </assert>
 	</rule>
 
