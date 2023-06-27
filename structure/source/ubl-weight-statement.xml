@@ -54,6 +54,7 @@
 			<cbc:ID schemeID="0088">7300010000001
 				<?Name Sender party identity?>
 				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T122-R011?>
 				<?Description The identifier of the Sender party?>
 				<?schemeID-Name Scheme identifier?>
 				<?schemeID-Description Scheme identifier for party identification?>
@@ -68,6 +69,7 @@
 			<cbc:Name> Weighing Solutions AB
 				<?Name Sender name?>
 				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T122-R011?>
 			</cbc:Name>
 		</cac:PartyName>
 
@@ -161,6 +163,7 @@
 			<cbc:ID schemeID="0088">1251513513245
 				<?Name Receiver identity?>
 				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T122-R012?>
 				<?Description The identifier of the receiver party?>
 				<?schemeID-Name Scheme identifier?>
 				<?schemeID-Description Scheme identifier for party identification?>
@@ -175,6 +178,7 @@
 			<cbc:Name> Transport Management Solutions AB
 				<?Name Receiver name?>
 				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T122-R012?>
 			</cbc:Name>
 		</cac:PartyName>
 
@@ -257,6 +261,8 @@
 			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">5790000435951
 				<?Name Weighing party identity?>
+				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T122-R013?>
 				<?Description The identifier of the Weighing party?>
 				<?schemeID-Name Scheme identifier?>
 				<?schemeID-Description Scheme identifier for party identification?>
@@ -270,6 +276,8 @@
 			<?Cardinality 0..1?>
 			<cbc:Name> Gravel Pit Ltd.
 				<?Name Weighing party name?>
+				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T122-R013?>
 				<?Description The name of the weighing party?>
 			</cbc:Name>
 		</cac:PartyName>
@@ -372,6 +380,7 @@
 			<cbc:ID schemeID="0088">5790000435951
 				<?Name Shipping party identity?>
 				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T122-R014?>
 				<?Description The identifier of the shippping party?>
 				<?schemeID-Name Scheme identifier?>
 				<?schemeID-Description Scheme identifier for party identification?>
@@ -386,6 +395,7 @@
 			<cbc:Name> Tony's Trucks and Transport
 				<?Name Shipper name?>
 				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T122-R014?>
 				<?Description The name of the shipper?>
 			</cbc:Name>
 		</cac:PartyName>
@@ -463,6 +473,7 @@
 		<?Cardinality 1..1?>
 		<cbc:ID> NA
 			<?Name Shipment identity?>
+			<?Cardinality 1..1?>
 			<?Description Use NA if no specific shipment ID is available?>
 		</cbc:ID>
 		
@@ -472,6 +483,7 @@
 			<?Description A goods item included in this shipment.?>
 			<cbc:ID> 1
 				<?Name Line item identifier?>
+				<?Cardinality 1..1?>
 				<?Description Identifies the Line Item assigned by the weighing partner, the identifier must be unique within the order?>
 			</cbc:ID>
 			
@@ -481,6 +493,7 @@
 				<cbc:Name> Sortering 0/2 mm krossat bergmaterial CE-märkt enligt system 2+ för
 					användning till asfalt. 
 					<?Name Item name?>
+					<?Cardinality 1..1?>
 					<?Description Name of weighed item?>
 				</cbc:Name>
 				
