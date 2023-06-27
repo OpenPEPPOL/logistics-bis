@@ -13,6 +13,7 @@
 	
 	<rule context="cac:WeighingParty">
 		<assert id="PEPPOL-T122-R010" test="(cac:PhysicalLocation/cbc:Name) or (cac:PhysicalLocation/cbc:ID)" flag="fatal">The Weighing party's Physical location SHALL contain the Name or an Identifier. </assert>
+		<assert id="PEPPOL-T122-R013" test="(cac:PartyName/cbc:Name) or (cac:PartyIdentification/cbc:ID)" flag="fatal">The Weighing party SHALL contain the Name or an Identifier. </assert>
 	</rule>
 
 	<rule context="cac:SenderParty">
@@ -21,10 +22,6 @@
 
 	<rule context="cac:ReceiverParty">
 		<assert id="PEPPOL-T122-R012" test="(cac:PartyName/cbc:Name) or (cac:PartyIdentification/cbc:ID)" flag="fatal">The Receiver party SHALL contain the Name or an Identifier. </assert>
-	</rule>
-
-	<rule context="cac:WeighingParty">
-		<assert id="PEPPOL-T122-R013" test="(cac:PartyName/cbc:Name) or (cac:PartyIdentification/cbc:ID)" flag="fatal">The Weighing party SHALL contain the Name or an Identifier. </assert>
 	</rule>
 
 	<rule context="cac:ShipperParty">
