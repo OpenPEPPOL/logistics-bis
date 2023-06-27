@@ -24,7 +24,7 @@
 	</rule>
 
 	<rule context="cac:WeighingParty">
-		<assert id="PEPPOL-T122-R013" test="(cac:PartyName/cbc:Name) or (cac:PartyIdentification/cbc:ID)" flag="fatal">The Weighing party SHALL contain the Name or an Identifier. </assert>
+		<assert id="PEPPOL-T122-R013" test="(cac:PartyName) or (cac:PartyIdentification)" flag="fatal">The Weighing party SHALL contain the Name or an Identifier. </assert>
 	</rule>
 
 	<rule context="cac:ShipperParty">
