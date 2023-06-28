@@ -515,13 +515,27 @@
 				<?Name Status of the Transport Handling Unit. ?>
 				<?Description To report if there are any claims related to this Transport Handling Unit. If omitted, default is that the THU is received ok and with no damage or claim related to it. ?>
 				<?Cardinality 1..1?>
-				<cbc:ConditionCode>4
+				<cbc:ConditionCode>CA
 					<?Name ConditionCode?>
 					<?Description A code describing the status of the TransportHandlingUnit. ?>
 					<?Cardinality 1..1?>
-					<?CodeList TransportHandlingUnitCondition?>
+					<?CodeList UNCL4343_T128?>
 					<?Rule PEPPOL-T128-R027?>
+					<?Rule PEPPOL-T128-R028?>
 				</cbc:ConditionCode>
+				<cbc:StatusReasonCode>3
+					<?Name Status Reason Code?>
+					<?Description The reason for this status condition or position, expressed as a code. ?>
+					<?Cardinality 0..1?>
+					<?CodeList TransportHandlingUnitReason?>
+					<?Rule PEPPOL-T128-R027?>
+				</cbc:StatusReasonCode>
+				<cbc:StatusReason>Delivery outside requested time window.
+					<?Name Status Reason ?>
+					<?Description The reason for this status condition or position, expressed as a text. ?>
+					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T128-R028?>
+				</cbc:StatusReason>
 			</cac:Status>
 		</cac:TransportHandlingUnit>
 	</cac:Shipment>
