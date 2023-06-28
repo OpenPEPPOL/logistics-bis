@@ -7,7 +7,7 @@
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1<?Name Profile ID?><?Description Identifies the Peppol profile or business process context in which the transaction appears.?><?Cardinality 1..1?></cbc:ProfileID>
 	<cbc:ID>TS_1</cbc:ID>
 	<cbc:IssueDate>2023-06-06<?Name Issue Date?><?Description The date when the transporation status was issued. Format = "YYYY-MM-DD". ?><?Cardinality 1..1?></cbc:IssueDate>
-	<cbc:IssueTime>09:29:30<?Name Issue Time?><?Description The time when the transportation status was issued. Format = "hh:mm:ss". ?><?Cardinality 1..1?></cbc:IssueTime>
+	<cbc:IssueTime>09:29:30+01:00<?Name Issue Time?><?Description The time when the transportation status was issued. Format = "hh:mm:ss". ?><?Cardinality 1..1?></cbc:IssueTime>
 	<cbc:Description>Description
 		<?Name Description?>
 		<?Description Textual description of the Transportation status.?>
@@ -71,7 +71,7 @@
 				<?Description The date the transport event occured. ?>
 				<?Cardinality 0..1?>
 			</cbc:OccurrenceDate>
-			<cbc:OccurrenceTime>10:23:34
+			<cbc:OccurrenceTime>10:23:34+01:00
 				<?Name Occurrence Time ?>
 				<?Description The time the transport event occured. ?>
 				<?Cardinality 0..1?>
@@ -115,9 +115,9 @@
 			</cac:CurrentStatus>
 			<cac:Period>
 				<cbc:StartDate>2021-09-25<?Cardinality 0..1?></cbc:StartDate>
-				<cbc:StartTime>12:00:00<?Cardinality 0..1?></cbc:StartTime>
+				<cbc:StartTime>12:00:00+01:00<?Cardinality 0..1?></cbc:StartTime>
 				<cbc:EndDate>2021-09-27<?Cardinality 0..1?></cbc:EndDate>
-				<cbc:EndTime>12:00:00<?Cardinality 0..1?></cbc:EndTime>
+				<cbc:EndTime>12:00:00+01:00<?Cardinality 0..1?></cbc:EndTime>
 			</cac:Period>
 		</cac:TransportEvent>
 		<cac:TransportHandlingUnit>
@@ -193,7 +193,7 @@
 			<?Description The date upon which this signature was verified. Format = "YYYY-MM-DD". ?>
 			<?Cardinality 0..1?>
 		</cbc:ValidationDate>
-		<cbc:ValidationTime>09:49:00
+		<cbc:ValidationTime>09:49:00+01:00
 			<?Description The local time at which this signature was verified.. Format = "hh:mm:ss". ?>
 			<?Cardinality 0..1?>
 		</cbc:ValidationTime>
@@ -320,9 +320,7 @@
 			<?Description The date the transport event occured. ?>
 			<?Cardinality 1..1?>
 		</cbc:OccurrenceDate>
-		<cbc:OccurrenceTime>09:29:30
-			<?Name Occurence Time ?>
-			<?Description The time the transport event occured. ?>
+		<cbc:OccurrenceTime>09:29:30+01:00<?Name Occurence Time ?><?Description The time the transport event occured. ?>
 			<?Cardinality 1..1?>
 		</cbc:OccurrenceTime>
 		<cbc:TransportEventTypeCode>1
@@ -344,8 +342,7 @@
 			<?Description The date upon which this signature was verified. Format = "YYYY-MM-DD". ?>
 			<?Cardinality 0..1?>
 		</cbc:ValidationDate>
-		<cbc:ValidationTime>09:49:00
-			<?Description The local time at which this signature was verified.. Format = "hh:mm:ss". ?>
+		<cbc:ValidationTime>09:49:00+01:00<?Description The local time at which this signature was verified.. Format = "hh:mm:ss". ?>
 			<?Cardinality 0..1?>
 		</cbc:ValidationTime>
 		<cac:SignatoryParty>
@@ -787,8 +784,7 @@
 			<?Description The issue Date when the transport execution plan request was issued?>
 			<?Cardinality 0..1?>
 		</cbc:IssueDate>
-		<cbc:IssueTime>07:49:00
-			<?Name Issue Time?>
+		<cbc:IssueTime>07:49:00+01:00<?Name Issue Time?>
 			<?Description The issue time when the transport execution plan request was issued?>
 			<?Cardinality 0..1?>
 		</cbc:IssueTime>
@@ -804,7 +800,7 @@
 			<?Description The Issue Date when the transport execution plan request was issued ?>
 			<?Cardinality 0..1?>
 		</cbc:IssueDate>
-		<cbc:IssueTime>07:49:00<?Name Issue Time?>
+		<cbc:IssueTime>07:49:00+01:00<?Name Issue Time?>
 			<?Description The Issue time when the transport execution plan request was issued ?>
 			<?Cardinality 0..1?>
 		</cbc:IssueTime>
