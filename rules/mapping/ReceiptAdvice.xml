@@ -192,10 +192,10 @@
                <Data ss:Type="String">•  cbc:IssueDate</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Dispatch advice issue date</Data>
+               <Data ss:Type="String">Receipt Advice Issue Date. </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The date when the despatch advice is issued. Format = "YYYY-MM-DD"</Data>
+               <Data ss:Type="String">The date when the receipt advice was issued. Format = "YYYY-MM-DD"</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">2021-09-10</Data>
@@ -218,7 +218,7 @@
                <Data ss:Type="String">•  cbc:IssueTime</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Dispatch advice issue time</Data>
+               <Data ss:Type="String">Receipt Advice Issue Time. </Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">The time when the receipt advice is issued. Format = "HH:MM:SS+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed.</Data>
@@ -296,7 +296,7 @@
                <Data ss:Type="String">•  cbc:Note</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Dispatch note</Data>
+               <Data ss:Type="String">Note. </Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">A textual note for the delivery as whole.</Data>
@@ -504,7 +504,7 @@
                <Data ss:Type="String">•  •  cbc:DocumentDescription</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Document Description</Data>
+               <Data ss:Type="String">Document Status Description</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">Text to describe the reason for the rejection.</Data>
@@ -3601,7 +3601,7 @@
                <Data ss:Type="String">Consignment identifier</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Use a dummy value since this element is mandatory.</Data>
+               <Data ss:Type="String">Use a dummy value if the Consignment ID is unknown since this element is mandatory.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">NA</Data>
@@ -3702,7 +3702,7 @@
                <Data ss:Type="String">•  •  •  •  cbc:StatusReason</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Status Reason Code</Data>
+               <Data ss:Type="String">Status Reason </Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">The reason for this status condition or position, expressed as a text.</Data>
@@ -4294,7 +4294,7 @@
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">0..1</Data>
+               <Data ss:Type="String">1..1</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">•  •  •  cac:Status</Data>
@@ -4771,7 +4771,7 @@
                <Data ss:Type="String">Line ID</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The Orderline this Responseline refers to.</Data>
+               <Data ss:Type="String">The Orderline this Responseline refers to. Use NA if this is unknown or not relevant since the ID is Mandatory to use.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">1</Data>
