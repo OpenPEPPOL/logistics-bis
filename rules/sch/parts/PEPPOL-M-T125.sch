@@ -18,8 +18,8 @@
 		<assert id="PEPPOL-T125-R005" test="not(cbc:GrossWeightMeasure) or not(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAB']/cbc:Measure) or number(cbc:GrossWeightMeasure) = sum(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAB']/cbc:Measure)" flag="warning">Shipment  gross weight measure SHALL match the gross weight of the transport handling units specified</assert>
 		<assert id="PEPPOL-T125-R006" test="not(cbc:GrossVolumeMeasure) or number(cbc:GrossVolumeMeasure) &gt;= sum(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAW']/cbc:Measure)" flag="warning">Shipment gross volume measure SHALL greater or equal of the transport handling units specified</assert>		
 		<assert id="PEPPOL-T125-R007" test="not(cac:Delivery/cac:DeliveryTerms) or ((cac:Delivery/cac:DeliveryTerms/cbc:ID) or (cac:Delivery/cac:DeliveryTerms/cbc:SpecialTerms))" flag="fatal">Either ID or special terms need to be specified in Delivery terms</assert>
-		<assert id="PEPPOL-T125-R008" test="not(cbc:GrossWeightMeasure) and not(cbc:GrossVolumeMeasure) and not(cbc:LoadingLengthMeasure)" flag="warning">Either grossweight, gossvolumen or loadinglength must be specified</assert>
-		<assert id="PEPPOL-T125-R009" test="cac:TransportHandlingUnit/cbc:HazardousRiskIndicator and not(cbc:HazardousRiskIndicator)" flag="warning">Hazardous risk indicator must be specified on consignment if it is set on a transport handling unit"</assert>
+		<assert id="PEPPOL-T125-R008" test="(cbc:GrossWeightMeasure) or (cbc:GrossVolumeMeasure) or (cbc:LoadingLengthMeasure)" flag="warning">Either gross weight, gross volume or loading length must be specified</assert>
+		<assert id="PEPPOL-T125-R009" test="((cac:TransportHandlingUnit/cbc:HazardousRiskIndicator) and (cbc:HazardousRiskIndicator)) or (not(cac:TransportHandlingUnit/cbc:HazardousRiskIndicator) and not(cbc:HazardousRiskIndicator))" flag="warning">Hazardous risk indicator must be specified on consignment if it is set on a transport handling unit"</assert>
 		<assert id="PEPPOL-T125-R010" test = "not(cac:PaymentTerms) or cac:PaymentTerms/cbc:ID or cac:PaymentTerms/cbc:Note"	flag="warning">When Payment terms is specified, either the ID or the note must be specified</assert>			
 	</rule>
 	
@@ -47,6 +47,11 @@
 		<assert id= "PEPPOL-T125-R030" test= "(cbc:TransportModeCode = 4 and cac:AirTransport/cbc:AircraftID) or (cbc:TransportModeCode = 3 and cac:RoadTransport/cbc:LicensePlateID) or (cbc:TransportModeCode = 2 and cac:RailTransport/cbc:TrainID) or (cbc:TransportModeCode = 1 and cac:MaritimeTransport/cbc:VesselID)" flag="warning">Id for the transport means needs to be speficied</assert>
 		<assert id= "PEPPOL-T125-R031" test= "count(cac:AirTransport) + count(cac:RoadTransport) + count(cac:RailTransport) + count(cac:MaritimeTransport) = 1" flag="warning">Only one type of transport means can be speficied</assert>
 	</rule>
+	
+	<rule context="cac:Waybill">
+		<assert id= "PEPPOL-T125-R040" test= "not(cbc:Name = 'CMR') or cac:Shipment/cac:Consignment/cbc:GrossWeightMeasure" flag="faltal">In a waybill the grosswaight needs to be speficied</assert>		
+	</rule>
+	
 	
 </pattern>
 
