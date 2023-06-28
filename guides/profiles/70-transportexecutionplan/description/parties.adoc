@@ -4,9 +4,15 @@
 The following parties/roles may be specified in the message.
 The same actor may play more than one role depending on the handling routine.
 
-The diagram below shows the parties and roles in this profile.
+[[sender-party]]
+== Sender (SenderParty)
+The Sender is the sender of the Transport Execution Plan.
 
-image::images/roles.png[image,width=649,height=260]
+Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-1.xml[tags=sender-party]
+----
 
 [[receiver-party]]
 == Receiver (ReceiverParty)
@@ -16,16 +22,6 @@ Example:
 [source, xml, indent=0]
 ----
 include::{snippet-dir}/snippet-1.xml[tags=receiver-party]
-----
-
-[[sender-party]]
-== Sender (SenderParty)
-The Sender is the sender of the Transport Execution Plan.
-
-Example:
-[source, xml, indent=0]
-----
-include::{snippet-dir}/snippet-1.xml[tags=sender-party]
 ----
 
 [[transport-user-party]]
@@ -72,14 +68,14 @@ Example:
 include::{snippet-dir}/snippet-1.xml[tags=consignee-party]
 ----
 
-[[carrier-party]]
-== Carrier (CarrierParty)
+[[billto-party]]
+== Bill to party (BillToParty)
 
-Carrier is the party providing the transport of goods between named points.
+Used in the Transport Execution Plan to identify the party paying for the transport.
 
 Example:
 [source, xml, indent=0]
 ----
-include::{snippet-dir}/snippet-1.xml[tags=carrier-party]
+include::{snippet-dir}/snippet-1.xml[tags=billto-party]
 ----
 
