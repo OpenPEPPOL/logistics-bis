@@ -10,8 +10,11 @@
 		<?Description The identity of the Receipt Advice set by the sender. It must be a unique identity. 
 		The Identity together with the Issue Date and Issue Time gives the version of the Receipt Advice. ?>
 	</cbc:ID>
-	<cbc:IssueDate>2021-09-10</cbc:IssueDate>
+	<cbc:IssueDate>2021-09-10<?Name Receipt Advice Issue Date. ?>
+		<?Description The date when the receipt advice was issued. Format = "YYYY-MM-DD" ?>
+	</cbc:IssueDate>
 	<cbc:IssueTime>12:00:00+01:00<?Description The time when the receipt advice is issued. Format = "HH:MM:SS+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. ?>
+		<?Name Receipt Advice Issue Time. ?>
 		<?Cardinality 1..1?>
 	</cbc:IssueTime>
 	<cbc:DocumentStatusCode>9
@@ -29,6 +32,7 @@
 		<?Rule PEPPOL-T128-R024?>
 	</cbc:ReceiptAdviceTypeCode>
 	<cbc:Note>Delivery ok
+		<?Name Note. ?>
 		<?Description A textual note for the delivery as whole.?>
 	</cbc:Note>
 	
@@ -65,7 +69,7 @@
 			<?Rule PEPPOL-T128-R024?>
 		</cbc:DocumentStatusCode>
 		<cbc:DocumentDescription>Incorrect Identity of the buyer.
-			<?Name Document Description?>
+			<?Name Document Status Description?>
 			<?Description Text to describe the reason for the rejection. ?>
 			<?Cardinality 0..1?>
 		</cbc:DocumentDescription>
@@ -393,7 +397,7 @@
 			
 			<cac:Consignment>
 				<cbc:ID> NA 
-					<?Description Use a dummy value since this element is mandatory.?>
+					<?Description Use a dummy value if the Consignment ID is unknown since this element is mandatory.?>
 				</cbc:ID>
 				<cac:Status>
 					<?Name Status?>
@@ -415,7 +419,7 @@
 						<?Rule PEPPOL-T128-R025?>
 					</cbc:StatusReasonCode>
 					<cbc:StatusReason>Delivery outside requested time window.
-						<?Name Status Reason Code?>
+						<?Name Status Reason ?>
 						<?Description The reason for this status condition or position, expressed as a text. ?>
 						<?Cardinality 0..1?>
 						<?Rule PEPPOL-T128-R026?>
@@ -510,7 +514,7 @@
 			<cac:Status>
 				<?Name Status of the Transport Handling Unit. ?>
 				<?Description To report if there are any claims related to this Transport Handling Unit. If omitted, default is that the THU is received ok and with no damage or claim related to it. ?>
-				<?Cardinality 0..1?>
+				<?Cardinality 1..1?>
 				<cbc:ConditionCode>4
 					<?Name ConditionCode?>
 					<?Description A code describing the status of the TransportHandlingUnit. ?>
@@ -607,7 +611,7 @@
 			<?Cardinality 0..1?>
 			<cbc:LineID>1
 				<?Name Line ID?>
-				<?Description The Orderline this Responseline refers to. ?>
+				<?Description The Orderline this Responseline refers to. Use NA if this is unknown or not relevant since the ID is Mandatory to use. ?>
 				<?Cardinality 1..1?>
 			</cbc:LineID>
 			<cbc:SalesOrderLineID>10 
