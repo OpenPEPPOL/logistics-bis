@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T128-base-1.0">
 	<assert>
-		<description>Verify that a Status Reason Code is provided if Transport Handling Unit is Conditionally Accepted (CA) or Rejected (RE). </description>
-		<scope>PEPPOL-T128-R027</scope>
+		<description>Verify that a Status Reason is provided if Transport Handling Unit is Conditionally Accepted (CA) or Rejected (RE). </description>
+		<scope>PEPPOL-T128-R028</scope>
 	</assert>
 	
 	<test id="1">
 		<assert>
-			<success>PEPPOL-T128-R027</success>
+			<success>PEPPOL-T128-R028</success>
 		</assert>
 		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
 			<cac:Shipment>
@@ -24,7 +24,7 @@
 
 	<test id="2">
 		<assert>
-			<success>PEPPOL-T128-R027</success>
+			<success>PEPPOL-T128-R028</success>
 		</assert>
 		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
 			<cac:Shipment>
@@ -41,7 +41,7 @@
 	
 	<test id="3">
 		<assert>
-			<success>PEPPOL-T128-R027</success>
+			<success>PEPPOL-T128-R028</success>
 		</assert>
 		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
 			<cac:Shipment>
@@ -56,14 +56,14 @@
 
 	<test id="4">
 		<assert>
-			<error>PEPPOL-T128-R027</error>
+			<error>PEPPOL-T128-R028</error>
 		</assert>
 		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
 			<cac:Shipment>
 				<cac:TransportHandlingUnit>
 					<cac:Status>
 						<cbc:ConditionCode>CA</cbc:ConditionCode>
-						<cbc:StatusReason>Delivery outside requested time window.</cbc:StatusReason>
+						<cbc:StatusReasonCode>3</cbc:StatusReasonCode>
 					</cac:Status>
 				</cac:TransportHandlingUnit>
 			</cac:Shipment>
@@ -72,14 +72,14 @@
 
 	<test id="5">
 		<assert>
-			<error>PEPPOL-T128-R027</error>
+			<error>PEPPOL-T128-R028</error>
 		</assert>
 		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
 			<cac:Shipment>
 				<cac:TransportHandlingUnit>
 					<cac:Status>
 						<cbc:ConditionCode>RE</cbc:ConditionCode>
-						<cbc:StatusReason>Delivery outside requested time window.</cbc:StatusReason>
+						<cbc:StatusReasonCode>3</cbc:StatusReasonCode>
 					</cac:Status>
 				</cac:TransportHandlingUnit>
 			</cac:Shipment>

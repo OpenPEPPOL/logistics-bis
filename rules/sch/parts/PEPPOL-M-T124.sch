@@ -17,9 +17,9 @@
 		<assert id="PEPPOL-T124-R005" test="not(cbc:GrossWeightMeasure) or not(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAB']/cbc:Measure) or number(cbc:GrossWeightMeasure) = sum(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAB']/cbc:Measure)" flag="warning">Shipment  gross weight measure SHALL match the gross weight of the transport handling units specified</assert>
 		<assert id="PEPPOL-T124-R006" test="not(cbc:GrossVolumeMeasure) or number(cbc:GrossVolumeMeasure) &gt;= sum(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAW']/cbc:Measure)" flag="warning">Shipment gross volume measure SHALL greater or equal of the transport handling units specified</assert>		
 		<assert id="PEPPOL-T124-R007" test="not(cac:Delivery/cac:DeliveryTerms) or ((cac:Delivery/cac:DeliveryTerms/cbc:ID) or (cac:Delivery/cac:DeliveryTerms/cbc:SpecialTerms))" flag="fatal">Either ID or special terms need to be specified in Delivery terms</assert>
-		<assert id="PEPPOL-T124-R008" test="not(cbc:GrossWeightMeasure) and not(cbc:GrossVolumeMeasure) and not(cbc:LoadingLengthMeasure)" flag="warning">Either grossweight, gossvolumen or loadinglength must be specified</assert>
+		<assert id="PEPPOL-T124-R008" test="not(cbc:GrossWeightMeasure) and not(cbc:GrossVolumeMeasure) and not(cbc:LoadingLengthMeasure)" flag="warning">Either gross weight, gross volume or loading length must be specified</assert>
 		<assert id="PEPPOL-T124-R009" test="cac:TransportHandlingUnit/cbc:HazardousRiskIndicator and not(cbc:HazardousRiskIndicator)" flag="warning">Hazardous risk indicator must be specified on consignment if it is set on a transport handling unit"</assert>
-		<assert id="PEPPOL-T124-R010" test = "not(cac:PaymentTerms) or cac:PaymentTerms/cbc:ID or cac:PaymentTerms/cbc:Note"	flag="warning">When Payment terms is specified, either the ID or the note must be specified</assert>			
+		<assert id="PEPPOL-T124-R010" test="not(cac:PaymentTerms) or cac:PaymentTerms/cbc:ID or cac:PaymentTerms/cbc:Note"	flag="warning">When Payment terms is specified, either the ID or the note must be specified</assert>			
 	</rule>
 	
 	<rule context="cac:Period">
