@@ -1,86 +1,56 @@
-[[parties]]
+[[parties-and-roles]]
 = Parties and roles
 
-The following parties/roles may be specified in the message.
-The same actor may play more than one role depending on the handling routine.
+The table below gives the definitions of the parties and roles involved in the Transport Execution with Request process.
 
-The diagram below shows the parties and roles in this profile.
+[cols="2,8",options="header",]
+|====
+|Business partners |Definition
+|*Customer* a|
+
+The customer is the legal person or organization who is in demand of a product or service.
+
+Examples of customer roles: buyer, consignee, debtor, contracting authority.
+
+|*Supplier* a|
+
+The supplier is the legal person or organization who provides a product or service.
+
+Examples of supplier roles: seller, consignor, despatch party, economic operator. 
+
+|====
+
+[cols="2,9",options="header",]
+|====
+|Role/actor |Definition
+|*Transport User (cac:TransportUserParty)* a|
+
+The party requesting the transport services referenced in the Transport Execution Plan Request and the sender of the Transport Execution Plan.
+
+|*Transport Service Provider (cac:TransportServiceProviderParty)* a|
+
+The party providing the transport services referenced in the Transport Execution Plan Request. The receiver of the Transport Execution Plan.
+
+|*Consignor (cac:ConsignorParty)* a|
+
+Consignor is the seller of the goods and is often referred to as the seller or shipper. The role is carried out by the supplier or on behalf of the supplier.
+
+|*Consignee (cac:ConsigneeParty)* a|
+
+Consignee is the person or organisation to which the products will be shipped and who is taking possession. The role is carried out by the customer or on behalf of the customer.
+
+|*Payee (cac:PayeeParty)* a|
+
+The party that will pay for the transport service(s) referred to in the Transport Execution Plan.
+This role is used in the Transport Execution Plan Request.
+
+|*Bill to (cac:BillToParty)* a|
+
+The party that will pay for the transport service(s) referred to in the Transport Execution Plan.
+This role is used in the Transport Execution Plan.
+
+|====
+
+The diagram below shows the roles in the Transport Execution with Request process.
 
 image::images/roles.png[image,width=649,height=260]
-
-[[transport-user-party]]
-== Transport User (TransportUserParty)
-
-The Transport User is the user of the transport service, often the Consignor. The transport User is the  sender of the Transport Execution Plan Request and the receiver of the Transport Execution Plan.
-
-Example:
-[source, xml, indent=0]
-----
-include::{snippet-dir}/snippet-1.xml[tags=transport-user-party]
-----
-
-[[transport-service-provider-party]]
-== Transport Service Provider (TransportServiceProviderParty)
-
-The Transport Service Provider is the party providing the transport services. The Transport Service Provider is the sender of the Transport Execution Plan and the receiver of the Transport Executions Plan Request.
-
-Example:
-[source, xml, indent=0]
-----
-include::{snippet-dir}/snippet-1.xml[tags=transport-service-provider-party]
-----
-
-[[consignor-party]]
-== Consignor (ConsignorParty)
-
-Consignor, also known as the shipper, is the sender of the goods. The Consignor is often the buyer of the freight services. If the Consignor is the same for all consignments in the Waybill, the consignor can be described on the document level instead of in each consignment.
-
-Example:
-[source, xml, indent=0]
-----
-include::{snippet-dir}/snippet-1.xml[tags=consignor-party]
-----
-
-[[consignee-party]]
-== Consignee (ConsigneeParty)
-
-Consignee is known as the DeliveryCustomerParty in the Despatch and receive advice. The Consignee is the person or organisation to which the products will be shipped and who is taking possession. The role is carried out by the customer or on behalf of the customer. The Consignee is a mandatory party in the consignment element and can be the Transportation Buyer.
-
-Example:
-[source, xml, indent=0]
-----
-include::{snippet-dir}/snippet-1.xml[tags=consignee-party]
-----
-
-[[carrier-party]]
-== Carrier (CarrierParty)
-
-Carrier is the party providing the transport of goods between named points.
-
-Example:
-[source, xml, indent=0]
-----
-include::{snippet-dir}/snippet-1.xml[tags=carrier-party]
-----
-
-[[payee-party]]
-== Payee (PayeeParty)
-
-Used in the Transport Execution Plan Request to identify the party paying for the transport. NB! The Payee is normally seen as the party receiving the payment, and the name of this role will be changed in the next UBL-version.
-
-Example:
-[source, xml, indent=0]
-----
-include::{snippet-dir}/snippet-1.xml[tags=carrier-party]
-----
-
-[[billto-party]]
-== Bill To (BillToParty)
-
-Used in the Transport Execution Plan to identify the party paying for the transport.
-
-Example:
-[source, xml, indent=0]
-----
-include::{snippet-dir}/snippet-1.xml[tags=carrier-party]
-----
