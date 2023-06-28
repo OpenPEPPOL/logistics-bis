@@ -45,7 +45,7 @@
 	
 	<rule context="cac:ShipmentStage">
 		<assert id= "PEPPOL-T125-R030" test= "(cbc:TransportModeCode = 4 and cac:AirTransport/cbc:AircraftID) or (cbc:TransportModeCode = 3 and cac:RoadTransport/cbc:LicensePlateID) or (cbc:TransportModeCode = 2 and cac:RailTransport/cbc:TrainID) or (cbc:TransportModeCode = 1 and cac:MaritimeTransport/cbc:VesselID)" flag="warning">Id for the transport means needs to be speficied</assert>
-		<assert id= "PEPPOL-T125-R031" test= "count(cac:AirTransport) + count(cac:RoadTransport) + count(cac:RailTransport) + count(cac:MaritimeTransport) = 1" flag="warning">Only one type of transport means must be speficied</assert>
+		<assert id= "PEPPOL-T125-R031" test= "count(cac:AirTransport) + count(cac:RoadTransport) + count(cac:RailTransport) + count(cac:MaritimeTransport) = 1" flag="warning">Only one type of transport means can be speficied</assert>
 	</rule>
 	
 </pattern>
