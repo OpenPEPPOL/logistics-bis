@@ -43,16 +43,15 @@
       </Element>
 	     <Element>
          <Term>cbc:IssueDate</Term>
-         <Name>Dispatch advice issue date</Name>
-         <Description>The date when the despatch advice is issued. Format =
-				"YYYY-MM-DD"</Description>
+         <Name>Receipt Advice Issue Date. </Name>
+         <Description>The date when the receipt advice was issued. Format = "YYYY-MM-DD" </Description>
          <DataType>Date</DataType>
          <Reference type="BUSINESS_TERM">tir16-004</Reference>
          <Value type="EXAMPLE">2021-09-10</Value>
       </Element>
 	     <Element cardinality="1..1">
          <Term>cbc:IssueTime</Term>
-         <Name>Dispatch advice issue time</Name>
+         <Name>Receipt Advice Issue Time. </Name>
          <Description>The time when the receipt advice is issued. Format = "HH:MM:SS+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
@@ -76,7 +75,7 @@
       </Element>
 	     <Element cardinality="0..1">
          <Term>cbc:Note</Term>
-         <Name>Dispatch note</Name>
+         <Name>Note. </Name>
          <Description>A textual note for the delivery as whole.</Description>
          <DataType>Text</DataType>
          <Reference type="BUSINESS_TERM">tir16-088</Reference>
@@ -131,7 +130,7 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:DocumentDescription</Term>
-            <Name>Document Description</Name>
+            <Name>Document Status Description</Name>
             <Description>Text to describe the reason for the rejection. </Description>
             <Value type="EXAMPLE">Incorrect Identity of the buyer.</Value>
          </Element>
@@ -944,7 +943,7 @@
             <Element>
                <Term>cbc:ID</Term>
                <Name>Consignment identifier</Name>
-               <Description>Use a dummy value since this element is mandatory.</Description>
+               <Description>Use a dummy value if the Consignment ID is unknown since this element is mandatory.</Description>
                <Reference type="BUSINESS_TERM">tir16-040</Reference>
                <Value type="EXAMPLE">NA</Value>
             </Element>
@@ -971,7 +970,7 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:StatusReason</Term>
-                  <Name>Status Reason Code</Name>
+                  <Name>Status Reason </Name>
                   <Description>The reason for this status condition or position, expressed as a text. </Description>
                   <Reference type="RULE">PEPPOL-T128-R026</Reference>
                   <Value type="EXAMPLE">Delivery outside requested time window.</Value>
@@ -1109,7 +1108,7 @@
                <Reference type="RULE">PEPPOL-T128-R027</Reference>
                <Value type="EXAMPLE">Pallet cover broken, see attached photo.</Value>
             </Element>
-            <Element cardinality="0..1">
+            <Element cardinality="1..1">
                <Term>cac:Status</Term>
                <Name>Status of the Transport Handling Unit. </Name>
                <Description>To report if there are any claims related to this Transport Handling Unit. If omitted, default is that the THU is received ok and with no damage or claim related to it. </Description>
@@ -1230,7 +1229,7 @@
             <Element cardinality="1..1">
                <Term>cbc:LineID</Term>
                <Name>Line ID</Name>
-               <Description>The Orderline this Responseline refers to. </Description>
+               <Description>The Orderline this Responseline refers to. Use NA if this is unknown or not relevant since the ID is Mandatory to use. </Description>
                <Value type="EXAMPLE">1</Value>
             </Element>
             <Element cardinality="0..1">
