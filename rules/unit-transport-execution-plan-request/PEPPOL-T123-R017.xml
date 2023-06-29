@@ -1,51 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T123-base-1.0">
 	<assert>
-		<description>EndTime cannot be specified without StartTime</description>
-		<scope>PEPPOL-T123-R013</scope>
+		<description>Verify that EndTime contains a timezone. </description>
+		<scope>PEPPOL-T123-R017</scope>
 	</assert>
-	
+
 	<test id="1">
 		<assert>
-			<success>PEPPOL-T123-R013</success>
+			<success>PEPPOL-T123-R017</success>
 		</assert>
 		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Period>
-				<cbc:StartDate>2021-09-24</cbc:StartDate>
-				<cbc:StartTime>12:00:00+01:00</cbc:StartTime>
 				<cbc:EndDate>2021-09-25</cbc:EndDate>
-				<cbc:EndTime>13:00:00+01:00</cbc:EndTime>
+				<cbc:EndTime>09:49:00+02:00</cbc:EndTime>
 			</cac:Period>
 		</ubl:TransportExecutionPlanRequest>
 	</test>
 
 	<test id="2">
 		<assert>
-			<success>PEPPOL-T123-R013</success>
+			<success>PEPPOL-T123-R017</success>
 		</assert>
 		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Period>
-				<cbc:StartDate>2021-09-24</cbc:StartDate>
-				<cbc:StartTime>12:00:00+01:00</cbc:StartTime>
+				<cbc:EndDate>2021-09-25</cbc:EndDate>
 			</cac:Period>
 		</ubl:TransportExecutionPlanRequest>
 	</test>
-
+	
 	<test id="3">
 		<assert>
-			<error number="1">PEPPOL-T123-R013</error>
+			<error>PEPPOL-T123-R017</error>
 		</assert>
 		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Period>
-				<cbc:StartDate>2021-09-24</cbc:StartDate>
-				<cbc:EndDate>2021-09-24</cbc:EndDate>
-				<cbc:EndTime>13:00:00+01:00</cbc:EndTime>
+				<cbc:EndDate>2021-09-25</cbc:EndDate>
+				<cbc:EndTime>09:49:00</cbc:EndTime>
 			</cac:Period>
 		</ubl:TransportExecutionPlanRequest>
 	</test>
