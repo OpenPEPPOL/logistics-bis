@@ -1,16 +1,16 @@
 [[use-case-4]]
-== Use case 4 – Request for subscription
+== Use case 4 – Request for status on deviations
 
 [cols="2,6",options="header",]
 |====
 |Use Case Number | 4
 |*Use Case Name* a|
 
-Request for subscription.
+Request for status on deviations.
 
 |*Use Case Description* a|
 
-The Sender sends a Transportation Status Request to ask for a subsctiption on status for all future deviations on planned events. The Transportation Status Type Code must be set to 4.
+The Sender sends a Transportation Status Request to ask for deviations on all transport events. The Transportation Status Type Code must be set to 3 (Deviations) and the reason for the deviations must be stated in the Transportation Execution Status Code with addtional information in Description.
 
 |*Parties involved* a|
 
@@ -20,13 +20,11 @@ Receiver
 |*Assumptions* a|
 
 The transport is agreed in a Transport Execution Plan or similar document. 
-The sender of the Transportation Status Request has the rights to receive the type of status that is requested.
+The receiver of the Transportation Status has an agreement to get the status being sent.
 
 |*The flow* a|
 
-. The Sender sends a Transportation Status Request to ask for subsciption on status for all future deviations on planned events.
-. The Receiver processes the request and prepares the Transportation Status with the relevant information.
-. The Receiver sends a Transportation Status message to the party that sent the request whenever there is a deviation on an event.
-. The requester receives the Transportation Statuses and takes any action based on the response.
+. The Sender sends a Transportation Status to the party having an agreement to receive a status on certain conditions.
+. The Receiver receives the Transportation Status and takes any action based on the status.
 
 |====
