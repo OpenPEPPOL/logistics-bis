@@ -1,47 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T124-base-1.0">
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T123-base-1.0">
 	<assert>
 		<description>Verify that delivery terms is used properly</description>
-		<scope>PEPPOL-T124-R007</scope>
+		<scope>PEPPOL-T123-R007</scope>
 	</assert>
 	<test id="1">
 		<assert>
-			<success>PEPPOL-T124-R007</success>
+			<success>PEPPOL-T123-R007</success>
 		</assert>
-		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Consignment>
 				<!--Delivery terms with ID only -->
 				<cac:DeliveryTerms>
 					<cbc:ID>DAP</cbc:ID>
 				</cac:DeliveryTerms>
 			</cac:Consignment>
-		</ubl:TransportExecutionPlan>
+		</ubl:TransportExecutionPlanRequest>
 	</test>
+	
 	<test id="2">
 		<assert>
-			<success>PEPPOL-T124-R007</success>
+			<success>PEPPOL-T123-R007</success>
 		</assert>
-		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Consignment>
 				<!--Delivery terms with Special terms only -->
 				<cac:DeliveryTerms>
 					<cbc:SpecialTerms>DAP</cbc:SpecialTerms>
 				</cac:DeliveryTerms>
 			</cac:Consignment>
-		</ubl:TransportExecutionPlan>
+		</ubl:TransportExecutionPlanRequest>
 	</test>
+	
 	<test id="3">
 		<assert>
-			<Error>PEPPOL-T124-R007</Error>
+			<Success>PEPPOL-T123-R007</Success>
 		</assert>
-		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Consignment>
 				<!--Delivery terms with ID and Special terms -->
 				<cac:DeliveryTerms>
 					<cbc:ID>DAP</cbc:ID>
-					<cbc:SpecialTerms>DAP</cbc:SpecialTerms>					
+					<cbc:SpecialTerms>DAP-123</cbc:SpecialTerms>
+					<cac:DeliveryLocation>
+						<cbc:ID>Kalmar</cbc:ID>
+					</cac:DeliveryLocation>
 				</cac:DeliveryTerms>
 			</cac:Consignment>
-		</ubl:TransportExecutionPlan>
+		</ubl:TransportExecutionPlanRequest>
 	</test>
+
+
+	<test id="4">
+		<assert>
+			<error>PEPPOL-T123-R007</error>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+				<cac:DeliveryTerms>
+					<cac:DeliveryLocation>
+						<cbc:ID>Kalmar</cbc:ID>
+					</cac:DeliveryLocation>
+				</cac:DeliveryTerms>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+	
 </testSet>
