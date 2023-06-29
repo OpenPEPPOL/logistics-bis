@@ -2,24 +2,24 @@
 <testSet xmlns="http://difi.no/xsd/vefa/validator/1.0"
 	configuration="peppolbis-T123-base-1.0">
 	<assert>
-		<description>Verify that the grossweight on consignment match the sum of the grossweight on the THU if they are specified</description>
-		<scope>PEPPOL-T123-R005</scope>
+		<description>Verify that the grossvolume on consignment match the sum of the grossvolume on the THU if they are specified</description>
+		<scope>PEPPOL-T123-R006</scope>
 	</assert>
 	<test id="1">
 		<assert>
-			<success>PEPPOL-T123-R005</success>
+			<success>PEPPOL-T123-R006</success>
 		</assert>
 		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Consignment>
-		   <!--Gross weight specified and specified as the  on THU level -->      
-			  <cbc:GrossWeightMeasure unitCode="KGM">1030</cbc:GrossWeightMeasure>
+		   <!--Gross volume specified and specified as the  on THU level -->      
+			  <cbc:GrossVolumeMeasure unitCode="MTQ">1.030</cbc:GrossVolumeMeasure>
 			  <cac:TransportHandlingUnit>
 				<cbc:ID>11111222222222</cbc:ID>
 				<cac:MeasurementDimension>
-					<cbc:AttributeID>AAB</cbc:AttributeID>
-					<cbc:Measure unitCode="KGM">1030</cbc:Measure>      
+					<cbc:AttributeID>AAW</cbc:AttributeID>
+					<cbc:Measure unitCode="MTQ">1.030</cbc:Measure>      
 				 </cac:MeasurementDimension>         
 			  </cac:TransportHandlingUnit>
 		   </cac:Consignment>
@@ -28,14 +28,14 @@
 	
 	<test id="2">
 		<assert>
-			<success>PEPPOL-T123-R005</success>
+			<success>PEPPOL-T123-R006</success>
 		</assert>
 		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Consignment>
-		   <!--Gross weight specified and not specified on THU level -->      
-			  <cbc:GrossWeightMeasure unitCode="KGM">1030</cbc:GrossWeightMeasure>
+		   <!--Gross volume specified and not specified on THU level -->      
+			  <cbc:GrossVolumeMeasure unitCode="MTQ">1.030</cbc:GrossVolumeMeasure>
 			  <cac:TransportHandlingUnit>
 				<cbc:ID>11111222222222</cbc:ID>				      
 			  </cac:TransportHandlingUnit>
@@ -45,26 +45,26 @@
 	
 	<test id="3">
 		<assert>
-			<success>PEPPOL-T123-R005</success>
+			<success>PEPPOL-T123-R006</success>
 		</assert>
 		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Consignment>
-		   <!--Gross weight specified and specified as the  on THU level -->      
-			  <cbc:GrossWeightMeasure unitCode="KGM">2030</cbc:GrossWeightMeasure>
+		   <!--Gross volume specified and specified as the  on THU level -->      
+			  <cbc:GrossVolumeMeasure unitCode="KGM">2.030</cbc:GrossVolumeMeasure>
 			  <cac:TransportHandlingUnit>
 				<cbc:ID>11111222222222</cbc:ID>
 				<cac:MeasurementDimension>
-					<cbc:AttributeID>AAB</cbc:AttributeID>
-					<cbc:Measure unitCode="KGM">1030</cbc:Measure>      
+					<cbc:AttributeID>AAW</cbc:AttributeID>
+					<cbc:Measure unitCode="MTQ">1.030</cbc:Measure>      
 				 </cac:MeasurementDimension>         
 			  </cac:TransportHandlingUnit>
 			  <cac:TransportHandlingUnit>
 				<cbc:ID>11111222222223</cbc:ID>
 				<cac:MeasurementDimension>
-					<cbc:AttributeID>AAB</cbc:AttributeID>
-					<cbc:Measure unitCode="KGM">1000</cbc:Measure>      
+					<cbc:AttributeID>AAW</cbc:AttributeID>
+					<cbc:Measure unitCode="MTQ">1.000</cbc:Measure>      
 				 </cac:MeasurementDimension>         
 			  </cac:TransportHandlingUnit>
 		   </cac:Consignment>
@@ -73,7 +73,7 @@
 
 	<test id="4">
 		<assert>
-			<success>PEPPOL-T123-R005</success>
+			<success>PEPPOL-T123-R006</success>
 		</assert>
 		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -82,8 +82,8 @@
 				<cac:TransportHandlingUnit>
 					<cbc:ID>11111222222222</cbc:ID>
 					<cac:MeasurementDimension>
-						<cbc:AttributeID>AAB</cbc:AttributeID>
-						<cbc:Measure unitCode="KGM">1030</cbc:Measure>
+						<cbc:AttributeID>AAW</cbc:AttributeID>
+						<cbc:Measure unitCode="MTQ">1.030</cbc:Measure>
 					</cac:MeasurementDimension>
 				</cac:TransportHandlingUnit>
 			</cac:Consignment>
@@ -92,18 +92,18 @@
 		
 	<test id="5">
 		<assert>
-			<warning>PEPPOL-T123-R005</warning>
+			<warning>PEPPOL-T123-R006</warning>
 		</assert>
 		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Consignment>      
-			  <cbc:GrossWeightMeasure unitCode="KGM">1030</cbc:GrossWeightMeasure>
+			  <cbc:GrossVolumeMeasure unitCode="MTQ">1.030</cbc:GrossVolumeMeasure>
 			  <cac:TransportHandlingUnit>
 				<cbc:ID>11111222222222</cbc:ID>
 				<cac:MeasurementDimension>
-					<cbc:AttributeID>AAB</cbc:AttributeID>
-					<cbc:Measure unitCode="KGM">1000</cbc:Measure>      
+					<cbc:AttributeID>AAW</cbc:AttributeID>
+					<cbc:Measure unitCode="MTQ">1.000</cbc:Measure>      
 				 </cac:MeasurementDimension>         
 			  </cac:TransportHandlingUnit>			   
 		   </cac:Consignment>
@@ -112,26 +112,26 @@
 
 	<test id="6">
 		<assert>
-			<warning>PEPPOL-T123-R005</warning>
+			<warning>PEPPOL-T123-R006</warning>
 		</assert>
 		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Consignment>
 		   <!--Gross weight specified and specified as the  on THU level -->      
-			  <cbc:GrossWeightMeasure unitCode="KGM">2030</cbc:GrossWeightMeasure>
+			  <cbc:GrossVolumeMeasure unitCode="MTQ">2.030</cbc:GrossVolumeMeasure>
 			  <cac:TransportHandlingUnit>
 				<cbc:ID>11111222222222</cbc:ID>
 				<cac:MeasurementDimension>
-					<cbc:AttributeID>AAB</cbc:AttributeID>
-					<cbc:Measure unitCode="KGM">1030</cbc:Measure>      
+					<cbc:AttributeID>AAW</cbc:AttributeID>
+					<cbc:Measure unitCode="MTQ">1.030</cbc:Measure>      
 				 </cac:MeasurementDimension>         
 			  </cac:TransportHandlingUnit>
 			  <cac:TransportHandlingUnit>
 				<cbc:ID>11111222222223</cbc:ID>
 				<cac:MeasurementDimension>
-					<cbc:AttributeID>AAB</cbc:AttributeID>
-					<cbc:Measure unitCode="KGM">1030</cbc:Measure>      
+					<cbc:AttributeID>AAW</cbc:AttributeID>
+					<cbc:Measure unitCode="MTQ">1.030</cbc:Measure>      
 				 </cac:MeasurementDimension>         
 			  </cac:TransportHandlingUnit>
 		   </cac:Consignment>
