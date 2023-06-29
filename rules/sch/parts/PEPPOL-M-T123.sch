@@ -21,7 +21,7 @@
 		<assert id="PEPPOL-T123-R008" test="(cbc:GrossWeightMeasure) or (cbc:GrossVolumeMeasure) or (cbc:LoadingLengthMeasure)" flag="warning">Either gross weight, gross volume or loading length must be specified</assert>
 		<assert id="PEPPOL-T123-R009" test="((cac:TransportHandlingUnit/cbc:HazardousRiskIndicator) and (cbc:HazardousRiskIndicator)) or (not(cac:TransportHandlingUnit/cbc:HazardousRiskIndicator) and not(cbc:HazardousRiskIndicator))" flag="warning">Hazardous risk indicator must be specified on consignment if it is set on a transport handling unit"</assert>
 		<assert id="PEPPOL-T123-R010" test="not(cac:PaymentTerms) or cac:PaymentTerms/cbc:ID or cac:PaymentTerms/cbc:Note"	flag="warning">When Payment terms is specified, either the ID or the note must be specified</assert>
-		<assert id="PEPPOL-T123-R021" test="cac:RequestedPickupTransportEvent or cac:RequestedDeliveryTransportEvent"	flag="fatal">At least on of Requested Pickup Transport Event or Requested Delivery Transport Event has to be specified</assert>			
+		<assert id="PEPPOL-T123-R021" test="cac:RequestedPickupTransportEvent or cac:RequestedDeliveryTransportEvent"	flag="fatal">At least one of Requested Pickup Transport Event or Requested Delivery Transport Event has to be specified</assert>			
 	</rule>
 	
 	<rule context="cac:Period">
