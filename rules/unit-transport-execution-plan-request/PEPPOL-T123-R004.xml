@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T123-base-1.0">
+	<assert>
+		<description>Verify that the No of Transport Handling Units are correct. </description>
+		<scope>PEPPOL-T123-R004</scope>
+	</assert>
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T123-R004</success>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+				<cbc:TotalTransportHandlingUnitQuantity>3</cbc:TotalTransportHandlingUnitQuantity>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+
+	<test id="2">
+		<assert>
+			<success>PEPPOL-T123-R004</success>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+
+	<test id="3">
+		<assert>
+			<success>PEPPOL-T123-R004</success>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+				<cbc:TotalTransportHandlingUnitQuantity>3</cbc:TotalTransportHandlingUnitQuantity>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>1</cbc:ID>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>2</cbc:ID>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>3</cbc:ID>
+				</cac:TransportHandlingUnit>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+	
+	<test id="4">
+		<assert>
+			<success>PEPPOL-T123-R004</success>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>1</cbc:ID>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>2</cbc:ID>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>3</cbc:ID>
+				</cac:TransportHandlingUnit>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+	
+	<test>
+		<assert id="5">
+			<error>PEPPOL-T123-R004</error>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+				<cbc:TotalTransportHandlingUnitQuantity>4</cbc:TotalTransportHandlingUnitQuantity>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>1</cbc:ID>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>2</cbc:ID>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>3</cbc:ID>
+				</cac:TransportHandlingUnit>
+			</cac:Consignment>
+
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+
+</testSet>
