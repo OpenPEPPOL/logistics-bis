@@ -120,6 +120,19 @@
 
 	<test id="6">
 		<assert>
+			<success>PEPPOL-T123-R006</success>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+				<cbc:GrossVolumeMeasure unitCode="MTQ">1.030</cbc:GrossVolumeMeasure>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+	
+	<test id="7">
+		<assert>
 			<warning>PEPPOL-T123-R006</warning>
 		</assert>
 		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
