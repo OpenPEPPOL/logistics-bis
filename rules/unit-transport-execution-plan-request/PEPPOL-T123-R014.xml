@@ -38,8 +38,22 @@
 			</cac:Period>
 		</ubl:TransportExecutionPlanRequest>
 	</test>
-	
+
 	<test id="3">
+		<assert>
+			<success>PEPPOL-T123-R014</success>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Period>
+				<cbc:EndDate>2021-09-24</cbc:EndDate>
+				<cbc:EndTime>12:00:00+01:00</cbc:EndTime>
+			</cac:Period>
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+
+	<test id="4">
 		<assert>
 			<error number="1">PEPPOL-T123-R014</error>
 		</assert>

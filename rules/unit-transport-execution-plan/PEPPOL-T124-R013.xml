@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T123-base-1.0">
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T124-base-1.0">
 	<assert>
 		<description>EndTime cannot be specified without StartTime</description>
-		<scope>PEPPOL-T123-R013</scope>
+		<scope>PEPPOL-T124-R013</scope>
 	</assert>
 	
 	<test id="1">
 		<assert>
-			<success>PEPPOL-T123-R013</success>
+			<success>PEPPOL-T124-R013</success>
 		</assert>
-		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Period>
@@ -18,42 +18,42 @@
 				<cbc:EndDate>2021-09-25</cbc:EndDate>
 				<cbc:EndTime>13:00:00+01:00</cbc:EndTime>
 			</cac:Period>
-		</ubl:TransportExecutionPlanRequest>
+		</ubl:TransportExecutionPlan>
 	</test>
 
 	<test id="2">
 		<assert>
-			<success>PEPPOL-T123-R013</success>
+			<success>PEPPOL-T124-R013</success>
 		</assert>
-		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Period>
 				<cbc:StartDate>2021-09-24</cbc:StartDate>
 				<cbc:StartTime>12:00:00+01:00</cbc:StartTime>
 			</cac:Period>
-		</ubl:TransportExecutionPlanRequest>
+		</ubl:TransportExecutionPlan>
 	</test>
 
 	<test id="3">
 		<assert>
-			<success>PEPPOL-T123-R013</success>
+			<success>PEPPOL-T124-R013</success>
 		</assert>
-		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Period>
 				<cbc:EndDate>2021-09-24</cbc:EndDate>
 				<cbc:EndTime>12:00:00+01:00</cbc:EndTime>
 			</cac:Period>
-		</ubl:TransportExecutionPlanRequest>
+		</ubl:TransportExecutionPlan>
 	</test>
-
+	
 	<test id="4">
 		<assert>
-			<error number="1">PEPPOL-T123-R013</error>
+			<error number="1">PEPPOL-T124-R013</error>
 		</assert>
-		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Period>
@@ -61,6 +61,6 @@
 				<cbc:EndDate>2021-09-24</cbc:EndDate>
 				<cbc:EndTime>13:00:00+01:00</cbc:EndTime>
 			</cac:Period>
-		</ubl:TransportExecutionPlanRequest>
+		</ubl:TransportExecutionPlan>
 	</test>
 </testSet>
