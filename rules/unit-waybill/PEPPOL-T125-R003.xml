@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0"
+	configuration="peppolbis-T125-base-1.0">
+	<assert>
+		<description>Verify that Transport handling unit quantity is not negative</description>
+		<scope>PEPPOL-T125-R003</scope>
+	</assert>
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T125-R003</success>
+		</assert>
+		<Waybill xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+                            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
+		   <cac:Consignment>      
+			  <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1</cbc:TotalTransportHandlingUnitQuantity>			 
+		   </cac:Consignment>
+		</Waybill>
+	</test>
+	
+	<test id="2">
+		<assert>
+			<warning>PEPPOL-T125-R003</warning>
+		</assert>
+		<Waybill xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+                            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>      
+			  <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">-1</cbc:TotalTransportHandlingUnitQuantity>
+		   </cac:Consignment>
+		</Waybill>
+	</test>
+	
+
+</testSet>
