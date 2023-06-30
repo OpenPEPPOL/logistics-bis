@@ -7,20 +7,20 @@
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1".?>
 	</cbc:ProfileID>
 	<cbc:ID>691278571829041271246</cbc:ID>
-	<cbc:IssueDate>2021-09-29<?Description The date when the transport execuition plan is issued. Format = "YYYY-MM-DD". ?>
+	<cbc:IssueDate>2021-09-29<?Description The date when the Transport Execution Plan is issued. Format = "YYYY-MM-DD". ?>
 	</cbc:IssueDate>
-	<cbc:IssueTime>09:49:00+02:00<?Description The time when the transport execuition plan is issued. Format = "hh:mm:ss". ?>
+	<cbc:IssueTime>09:49:00+02:00<?Description The time when the Transport Execution Plan is issued. Format = "hh:mm:ss". ?>
 		<?Cardinality 1..1?>
 	</cbc:IssueTime>
 	<cbc:DocumentStatusCode>9
 		<?Name Transport execuition plan status code ?>
-		<?Description A code signifying the status of the transport execuition plan. Default is Original (9)?>
+		<?Description A code signifying the status of the Transport Execution Plan. Default is Original (9)?>
 		<?Cardinality 0..1?>
 		<?CodeList DocumentStatusCode?>
 	</cbc:DocumentStatusCode>
 	<cbc:TransportUserRemarks>Some remarks
 		<?Name Transport Service Provider Remarks ?>
-		<?Description Remarks from the transport user regarding the transport operations copied from the Transport Execution Plan request. Not used in the transport execution plan only profile?>
+		<?Description Remarks from the transport user regarding the transport operations copied from the Transport Execution Plan Request. Not used in the transport execution plan only profile?>
 		<?Cardinality 0..1?>		
 	</cbc:TransportUserRemarks>
 	<cbc:TransportServiceProviderRemarks>Some remarks
@@ -30,7 +30,7 @@
 	</cbc:TransportServiceProviderRemarks>
 	<cac:SenderParty>
 		<?Name Sender party ?>
-		<?Description The party sending the transport execution plan. ?>
+		<?Description The party sending the Transport Execution Plan. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0198">41955619
 			<?Name Sender party electronic address ?>
@@ -185,7 +185,7 @@
 	</cac:SenderParty>
 	<cac:ReceiverParty>
 		<?Name Receiver Party ?>
-		<?Description The party receiving the transport execution plan. ?>
+		<?Description The party receiving the Transport Execution Plan. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0198">10154596
 			<?Name Receiver party electronic address ?>
@@ -344,7 +344,7 @@
 	</cac:ReceiverParty>
 	<cac:TransportUserParty>
 		<?Name Transport user party ?>
-		<?Description The party requesting the transport services referenced in the transport execution plan. ?>
+		<?Description The party requesting the transport services referenced in the Transport Execution Plan. ?>
 		<?Cardinality 1..1?>
 		<cac:PartyIdentification>
 			<?Name Transport user party identification ?>
@@ -644,17 +644,8 @@
 		<?Name Bill To Party ?>
 		<?Description The party that will pay for the transport service(s) referred to in this Transport Execution Plan. ?>
 		<?Cardinality 0..1?>
-		<cbc:EndpointID schemeID="0198">13246149
-			<?Name Payee party electronic address ?>
-			<?Description The endpoint for the bill to party. ?>
-			<?Cardinality 0..1?>
-			<?schemeID-Name Scheme identifier?>
-			<?schemeID-Description Scheme identifier for electronic address?>
-			<?schemeID-usage Mandatory?>
-			<?schemeID-CodeList eas?>
-		</cbc:EndpointID>
 		<cac:PartyIdentification>
-			<?Name Payee party identification ?>
+			<?Name Payee party identification (Bill to Party) ?>
 			<?Description An identifier for the bill-to party. ?>
 			<cbc:ID schemeID="0088">7300010000001 				
 			<?schemeID-CodeList ICD?>
@@ -1006,12 +997,12 @@
 						<?Description To specify the coordinates. ?>
 						<?Cardinality 0..1?>
 						<cbc:CoordinateSystemCode>EPSG:3857
-														<?Name Coordinate system code ?>
+							<?Name Coordinate system code ?>
 							<?Description Always "EPSG:3857" by definition. ?>
 							<?Cardinality 1..1?>
 						</cbc:CoordinateSystemCode>
 						<cbc:LatitudeDegreesMeasure unitCode="DD">59.331660358041425
-														<?Name Latitude degrees ?>
+							<?Name Latitude degrees ?>
 							<?Description The X coordinate. Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
 							<?unitCode-Name Latitude degrees unit of measure ?>
@@ -1020,7 +1011,7 @@
 							<?unitCode-CodeList UNECERec20?>
 						</cbc:LatitudeDegreesMeasure>
 						<cbc:LongitudeDegreesMeasure unitCode="DD">18.063363084988005
-														<?Name Longitude degrees ?>
+							<?Name Longitude degrees ?>
 							<?Description The Y coordinate. Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
 							<?unitCode-Name Longitude degrees unit of measure ?>
@@ -1029,7 +1020,7 @@
 							<?unitCode-CodeList UNECERec20?>
 						</cbc:LongitudeDegreesMeasure>
 						<cbc:AltitudeMeasure unitCode="MTR">12.5
-														<?Name Altitude ?>
+							<?Name Altitude ?>
 							<?Description The Z coordinate. ?>
 							<?Cardinality 0..1?>
 							<?unitCode-Name Altitude unit of measure ?>
@@ -1103,7 +1094,7 @@
 						<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
 					</cbc:AdditionalStreetName>
 					<cbc:CityName>Kastrup
-												<?Name City ?>
+						<?Name City ?>
 						<?Cardinality 0..1?>
 						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
 					</cbc:CityName>
@@ -1155,7 +1146,7 @@
 							<?unitCode-CodeList UNECERec20?>
 						</cbc:LatitudeDegreesMeasure>
 						<cbc:LongitudeDegreesMeasure unitCode="DD">18.063363084988005
-														<?Name Longitude degrees ?>
+							<?Name Longitude degrees ?>
 							<?Description The Y coordinate. Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
 							<?unitCode-Name Longitude degrees unit of measure ?>
@@ -1373,7 +1364,7 @@
 						<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
 					</cbc:AdditionalStreetName>
 					<cbc:CityName>Kastrup
-												<?Name City ?>
+						<?Name City ?>
 						<?Cardinality 0..1?>
 						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
 					</cbc:CityName>
@@ -1425,7 +1416,7 @@
 							<?unitCode-CodeList UNECERec20?>
 						</cbc:LatitudeDegreesMeasure>
 						<cbc:LongitudeDegreesMeasure unitCode="DD">18.063363084988005
-														<?Name Longitude degrees ?>
+							<?Name Longitude degrees ?>
 							<?Description The Y coordinate. Use degrees with decimals. ?>
 							<?Cardinality 1..1?>
 							<?unitCode-Name Longitude degrees unit of measure ?>
@@ -1947,7 +1938,7 @@
 				</cac:Period>
 			</cac:PlannedDepartureTransportEvent>
 			<cac:PlannedArrivalTransportEvent>
-				<?Name Estimated arrival transport event ?>
+				<?Name Planned arrival transport event ?>
 				<?Description The arrival requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
 				<cbc:IdentificationID>54354684732168476514
@@ -2026,7 +2017,7 @@
 		</cac:MainCarriageShipmentStage>
 		<cac:PreCarriageShipmentStage>
 			<?Name Pre carriage shipment stage ?>
-			<?Description A shipment stage during precarriage (usually refers to movement activity that takes place prior to the container being loaded at a port of loading). ?>
+			<?Description A shipment stage during pre-carriage (usually refers to movement activity that takes place prior to the container being loaded at a port of loading). ?>
 			<?Cardinality 0..n?>
 			<cbc:TransportModeCode>4
 				<?Name Transport mode code?>
@@ -2059,7 +2050,7 @@
 				<?Name Address line 2 ?>
 				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>				
 				<?Cardinality 0..1?>
-			</cbc:AdditionalStreetName>
+				</cbc:AdditionalStreetName>
 					<cbc:CityName>Vallensbæk Landsby
 						<?Name City ?>
 						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
@@ -2134,7 +2125,7 @@
 				</cac:PartyLegalEntity>
 			</cac:CarrierParty>
 			<cac:PlannedDepartureTransportEvent>
-				<?Name Requested departure transport event ?>
+				<?Name Planned departure transport event ?>
 				<?Description The departure requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
 				<cbc:IdentificationID>6522956526554654
@@ -2269,7 +2260,7 @@
 				</cac:Period>
 			</cac:PlannedDepartureTransportEvent>
 			<cac:PlannedArrivalTransportEvent>
-				<?Name Estimated arrival transport event ?>
+				<?Name Planned arrival transport event ?>
 				<?Description The arrival requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
 				<cbc:IdentificationID>54354684732168476514
@@ -2596,7 +2587,7 @@
 				</cac:Period>
 			</cac:PlannedDepartureTransportEvent>
 			<cac:PlannedArrivalTransportEvent>
-				<?Name Estimated arrival transport event ?>
+				<?Name Planned arrival transport event ?>
 				<?Description The arrival requested by the party requesting a transportation service. ?>
 				<?Cardinality 0..1?>
 				<cbc:IdentificationID>54354684732168476514
@@ -2734,7 +2725,7 @@
 				</cbc:SizeTypeCode>
 				<cbc:RefrigerationOnIndicator>true
 					<?Name Indicator refrigeration transport equipment ?>
-					<?Description An indicator that this piece of transport equipment's refrigeration is on (true) or off (false). ?>
+					<?Description An indicator that this piece of transport equipments refrigeration is on (true) or off (false). ?>
 					<?Cardinality 0..1?>
 				</cbc:RefrigerationOnIndicator>
 				<cbc:Description>A 20 foot refrigerated container that is not actively controlling temperature of the product.
