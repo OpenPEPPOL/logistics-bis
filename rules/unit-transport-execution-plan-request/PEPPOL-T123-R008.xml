@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T123-base-1.0">
+	<assert>
+		<description>Verify that either gross weight, gross volume or loading length is specified. </description>
+		<scope>PEPPOL-T123-R008</scope>
+	</assert>
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T123-R008</success>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+				<cbc:GrossWeightMeasure unitCode="KGM">1030</cbc:GrossWeightMeasure>
+				<cbc:GrossVolumeMeasure unitCode="MTQ">1.030</cbc:GrossVolumeMeasure>
+				<cbc:LoadingLengthMeasure unitCode="MTR">4.5</cbc:LoadingLengthMeasure>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+
+	<test id="2">
+		<assert>
+			<success>PEPPOL-T123-R008</success>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+				<cbc:GrossWeightMeasure unitCode="KGM">1030</cbc:GrossWeightMeasure>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+
+	<test id="3">
+		<assert>
+			<success>PEPPOL-T123-R008</success>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+				<cbc:GrossVolumeMeasure unitCode="MTQ">1.030</cbc:GrossVolumeMeasure>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+	
+	<test id="4">
+		<assert>
+			<success>PEPPOL-T123-R008</success>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+				<cbc:LoadingLengthMeasure unitCode="MTR">4.5</cbc:LoadingLengthMeasure>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+	
+	<test>
+		<assert id="5">
+			<warning>PEPPOL-T123-R008</warning>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+
+			</cac:Consignment>
+
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+
+</testSet>
