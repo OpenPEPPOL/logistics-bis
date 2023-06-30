@@ -26,6 +26,49 @@
 	
 	<test id="2">
 		<assert>
+			<success>PEPPOL-T124-R004</success>
+		</assert>
+		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
+                            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlan>
+	</test>
+
+	<test id="3">
+		<assert>
+			<success>PEPPOL-T124-R004</success>
+		</assert>
+		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
+                            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+				<cbc:TotalTransportHandlingUnitQuantity unitCode="EA">2</cbc:TotalTransportHandlingUnitQuantity>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlan>
+	</test>
+	
+	<test id="4">
+		<assert>
+			<success>PEPPOL-T124-R004</success>
+		</assert>
+		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
+                            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>11111222222222</cbc:ID>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>111112222222223</cbc:ID>
+				</cac:TransportHandlingUnit>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlan>
+	</test>
+	
+	<test id="5">
+		<assert>
 			<warning>PEPPOL-T124-R004</warning>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
@@ -40,20 +83,7 @@
 		</ubl:TransportExecutionPlan>
 	</test>
 	
-	<test id="3">
-		<assert>
-			<success>PEPPOL-T124-R004</success>
-		</assert>
-		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
-                            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
-		   <cac:Consignment>      
-			 			  			   
-		   </cac:Consignment>
-		</ubl:TransportExecutionPlan>
-	</test>
-	
-	<test id="4">
+	<test id="6">
 		<assert>
 			<warning>PEPPOL-T124-R004</warning>
 		</assert>
