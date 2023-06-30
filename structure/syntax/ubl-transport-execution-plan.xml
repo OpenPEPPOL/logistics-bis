@@ -41,7 +41,7 @@
 	     <Element>
          <Term>cbc:IssueDate</Term>
          <Name>Dispatch advice issue date</Name>
-         <Description>The date when the transport execuition plan is issued. Format = "YYYY-MM-DD". </Description>
+         <Description>The date when the Transport Execution Plan is issued. Format = "YYYY-MM-DD". </Description>
          <DataType>Date</DataType>
          <Reference type="BUSINESS_TERM">tir16-004</Reference>
          <Value type="EXAMPLE">2021-09-29</Value>
@@ -49,7 +49,7 @@
 	     <Element cardinality="1..1">
          <Term>cbc:IssueTime</Term>
          <Name>Dispatch advice issue time</Name>
-         <Description>The time when the transport execuition plan is issued. Format = "hh:mm:ss". </Description>
+         <Description>The time when the Transport Execution Plan is issued. Format = "hh:mm:ss". </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
          <Value type="EXAMPLE">09:49:00+02:00</Value>
@@ -57,14 +57,14 @@
 	     <Element cardinality="0..1">
          <Term>cbc:DocumentStatusCode</Term>
          <Name>Transport execuition plan status code </Name>
-         <Description>A code signifying the status of the transport execuition plan. Default is Original (9)</Description>
+         <Description>A code signifying the status of the Transport Execution Plan. Default is Original (9)</Description>
          <Reference type="CODE_LIST">DocumentStatusCode</Reference>
          <Value type="EXAMPLE">9</Value>
       </Element>
 	     <Element cardinality="0..1">
          <Term>cbc:TransportUserRemarks</Term>
          <Name>Transport Service Provider Remarks </Name>
-         <Description>Remarks from the transport user regarding the transport operations copied from the Transport Execution Plan request. Not used in the transport execution plan only profile</Description>
+         <Description>Remarks from the transport user regarding the transport operations copied from the Transport Execution Plan Request. Not used in the transport execution plan only profile</Description>
          <Value type="EXAMPLE">Some remarks</Value>
       </Element>
 	     <Element cardinality="0..1">
@@ -76,7 +76,7 @@
 	     <Element cardinality="1..1">
          <Term>cac:SenderParty</Term>
          <Name>Sender party </Name>
-         <Description>The party sending the transport execution plan. </Description>
+         <Description>The party sending the Transport Execution Plan. </Description>
          <Element cardinality="1..1">
             <Term>cbc:EndpointID</Term>
             <Name>Sender party electronic address </Name>
@@ -263,7 +263,7 @@
 	     <Element cardinality="1..1">
          <Term>cac:ReceiverParty</Term>
          <Name>Receiver Party </Name>
-         <Description>The party receiving the transport execution plan. </Description>
+         <Description>The party receiving the Transport Execution Plan. </Description>
          <Element cardinality="1..1">
             <Term>cbc:EndpointID</Term>
             <Name>Receiver party electronic address </Name>
@@ -451,7 +451,7 @@
 	     <Element cardinality="1..1">
          <Term>cac:TransportUserParty</Term>
          <Name>Transport user party </Name>
-         <Description>The party requesting the transport services referenced in the transport execution plan. </Description>
+         <Description>The party requesting the transport services referenced in the Transport Execution Plan. </Description>
          <Element cardinality="0..1">
             <Term>cac:PartyIdentification</Term>
             <Name>Transport user party identification </Name>
@@ -802,22 +802,9 @@
          <Term>cac:BillToParty</Term>
          <Name>Bill To Party </Name>
          <Description>The party that will pay for the transport service(s) referred to in this Transport Execution Plan. </Description>
-         <Element cardinality="0..1">
-            <Term>cbc:EndpointID</Term>
-            <Name>Payee party electronic address </Name>
-            <Description>The endpoint for the bill to party. </Description>
-            <Value type="EXAMPLE">13246149</Value>
-            <Attribute usage="Mandatory">
-               <Term>schemeID</Term>
-               <Name>Scheme identifier</Name>
-               <Description>Scheme identifier for electronic address</Description>
-               <Reference type="CODE_LIST">eas</Reference>
-               <Value type="EXAMPLE">0198</Value>
-            </Attribute>
-         </Element>
          <Element>
             <Term>cac:PartyIdentification</Term>
-            <Name>Payee party identification </Name>
+            <Name>Payee party identification (Bill to Party) </Name>
             <Description>An identifier for the bill-to party. </Description>
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
@@ -2421,7 +2408,7 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PlannedArrivalTransportEvent</Term>
-               <Name>Estimated arrival transport event </Name>
+               <Name>Planned arrival transport event </Name>
                <Description>The arrival requested by the party requesting a transportation service. </Description>
                <Element>
                   <Term>cbc:IdentificationID</Term>
@@ -2520,7 +2507,7 @@
          <Element cardinality="0..n">
             <Term>cac:PreCarriageShipmentStage</Term>
             <Name>Pre carriage shipment stage </Name>
-            <Description>A shipment stage during precarriage (usually refers to movement activity that takes place prior to the container being loaded at a port of loading). </Description>
+            <Description>A shipment stage during pre-carriage (usually refers to movement activity that takes place prior to the container being loaded at a port of loading). </Description>
             <Element cardinality="1..1">
                <Term>cbc:TransportModeCode</Term>
                <Name>Transport mode code</Name>
@@ -2645,7 +2632,7 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PlannedDepartureTransportEvent</Term>
-               <Name>Requested departure transport event </Name>
+               <Name>Planned departure transport event </Name>
                <Description>The departure requested by the party requesting a transportation service. </Description>
                <Element cardinality="0..1">
                   <Term>cbc:IdentificationID</Term>
@@ -2814,7 +2801,7 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PlannedArrivalTransportEvent</Term>
-               <Name>Estimated arrival transport event </Name>
+               <Name>Planned arrival transport event </Name>
                <Description>The arrival requested by the party requesting a transportation service. </Description>
                <Element>
                   <Term>cbc:IdentificationID</Term>
@@ -3213,7 +3200,7 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PlannedArrivalTransportEvent</Term>
-               <Name>Estimated arrival transport event </Name>
+               <Name>Planned arrival transport event </Name>
                <Description>The arrival requested by the party requesting a transportation service. </Description>
                <Element>
                   <Term>cbc:IdentificationID</Term>
@@ -3377,7 +3364,7 @@
                <Element cardinality="0..1">
                   <Term>cbc:RefrigerationOnIndicator</Term>
                   <Name>Indicator refrigeration transport equipment </Name>
-                  <Description>An indicator that this piece of transport equipment's refrigeration is on (true) or off (false). </Description>
+                  <Description>An indicator that this piece of transport equipments refrigeration is on (true) or off (false). </Description>
                   <Value type="EXAMPLE">true</Value>
                </Element>
                <Element cardinality="0..1">

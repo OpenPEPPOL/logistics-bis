@@ -41,7 +41,7 @@
 	     <Element>
          <Term>cbc:IssueDate</Term>
          <Name>Dispatch advice issue date</Name>
-         <Description>The date when the transport execuition plan request is issued. Format = "YYYY-MM-DD". </Description>
+         <Description>The date when the Transport Execution Plan Request is issued. Format = "YYYY-MM-DD". </Description>
          <DataType>Date</DataType>
          <Reference type="BUSINESS_TERM">tir16-004</Reference>
          <Value type="EXAMPLE">2021-09-29</Value>
@@ -49,7 +49,7 @@
 	     <Element cardinality="1..1">
          <Term>cbc:IssueTime</Term>
          <Name>Dispatch advice issue time</Name>
-         <Description>The time when the transport execuition plan request is issued. </Description>
+         <Description>The time when the Transport Execution Plan Request is issued. </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
          <Value type="EXAMPLE">09:49:00+02:00</Value>
@@ -57,7 +57,7 @@
 	     <Element cardinality="0..1">
          <Term>cbc:DocumentStatusCode</Term>
          <Name>Transport execuition plan request status code </Name>
-         <Description>A code signifying the status of the transport execuition plan request. Default is Original (9)</Description>
+         <Description>A code signifying the status of the Transport Execution Plan Request. Default is Original (9)</Description>
          <Reference type="CODE_LIST">DocumentStatusCode</Reference>
          <Value type="EXAMPLE">9</Value>
       </Element>
@@ -70,7 +70,7 @@
 	     <Element cardinality="1..1">
          <Term>cac:TransportUserParty</Term>
          <Name>Transport user party </Name>
-         <Description>The party requesting the transport services referenced in the transport execution plan request and the sender of the transponrt execution plan. </Description>
+         <Description>The party requesting the transport services referenced in the Transport Execution Plan Request and the sender of the Transport Execution Plan. </Description>
          <Element cardinality="1..1">
             <Term>cbc:EndpointID</Term>
             <Name>Sender party electronic address </Name>
@@ -257,11 +257,11 @@
 	     <Element cardinality="1..1">
          <Term>cac:TransportServiceProviderParty</Term>
          <Name>Transport service provider party </Name>
-         <Description>The party providing the transport services referenced in the Transport Execution Plan Request. The receiver of the transport execution plan. </Description>
+         <Description>The party providing the transport services referenced in the Transport Execution Plan Request. The receiver of the Transport Execution Plan. </Description>
          <Element cardinality="1..1">
             <Term>cbc:EndpointID</Term>
             <Name>Sender party electronic address </Name>
-            <Description>The endpoint for the transport user party. </Description>
+            <Description>The endpoint for the transport service provider party. </Description>
             <Value type="EXAMPLE">85955619</Value>
             <Attribute usage="Mandatory">
                <Term>schemeID</Term>
@@ -618,7 +618,7 @@
 	     <Element cardinality="0..n">
          <Term>cac:AdditionalDocumentReference</Term>
          <Name>Additional document reference</Name>
-         <Description>Reference to additional documents relevant for this transport execution plan request. </Description>
+         <Description>Reference to additional documents relevant for this Transport Execution Plan Request. </Description>
          <Element>
             <Term>cbc:ID</Term>
             <Name>Identity of the reference</Name>
@@ -712,7 +712,7 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:TransportationServiceDescription</Term>
-            <Name>Main Transportatin Service Description</Name>
+            <Name>Main Transportation Service Description</Name>
             <Description>Text describing the transportation service.</Description>
             <Value type="EXAMPLE">Insurance</Value>
          </Element>
@@ -1720,7 +1720,7 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:RequestedArrivalTransportEvent</Term>
-               <Name>Estimated arrival transport event </Name>
+               <Name>Requested arrival transport event </Name>
                <Description>The arrival requested by the party requesting a transportation service. </Description>
                <Element cardinality="0..1">
                   <Term>cbc:IdentificationID</Term>
@@ -1819,7 +1819,7 @@
          <Element cardinality="0..n">
             <Term>cac:TransportHandlingUnit</Term>
             <Name>Transport handling unit </Name>
-            <Description>Used to specify how the goods is packed. </Description>
+            <Description>Used to specify how the goods are packed. </Description>
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>Identifier transport handling unit </Name>
