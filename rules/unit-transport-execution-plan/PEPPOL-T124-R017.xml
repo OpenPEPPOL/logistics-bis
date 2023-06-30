@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T124-base-1.0">
+	<assert>
+		<description>Verify that EndTime contains a timezone. </description>
+		<scope>PEPPOL-T124-R017</scope>
+	</assert>
+
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T124-R017</success>
+		</assert>
+		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Period>
+				<cbc:EndDate>2021-09-25</cbc:EndDate>
+				<cbc:EndTime>09:49:00+02:00</cbc:EndTime>
+			</cac:Period>
+		</ubl:TransportExecutionPlan>
+	</test>
+
+	<test id="2">
+		<assert>
+			<success>PEPPOL-T124-R017</success>
+		</assert>
+		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Period>
+				<cbc:EndDate>2021-09-25</cbc:EndDate>
+			</cac:Period>
+		</ubl:TransportExecutionPlan>
+	</test>
+	
+	<test id="3">
+		<assert>
+			<error>PEPPOL-T124-R017</error>
+		</assert>
+		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Period>
+				<cbc:EndDate>2021-09-25</cbc:EndDate>
+				<cbc:EndTime>09:49:00</cbc:EndTime>
+			</cac:Period>
+		</ubl:TransportExecutionPlan>
+	</test>
+</testSet>
