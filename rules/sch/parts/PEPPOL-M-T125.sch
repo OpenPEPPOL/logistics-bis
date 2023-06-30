@@ -32,6 +32,10 @@
 		<assert id="PEPPOL-T125-R017" test= "not(cbc:EndTime) or contains(cbc:EndTime, '+') or contains(cbc:EndTime, '-') or contains(cbc:EndTime, 'z') or contains(cbc:EndTime, 'Z')" flag="fatal">EndTime cannot be specified without time zone</assert>
 	</rule>
 	
+	<rule context="ubl:Waybill/cbc:IssueTime">
+		<assert id="PEPPOL-T125-R018" test="count(timezone-from-time(.)) &gt; 0" flag="fatal"> [PEPPOL-T125-R018] IssueTime MUST include timezone information.</assert>
+	</rule>
+
 	<rule context="cac:EstimatedDespatchPeriod">
 		<assert id="PEPPOL-T124-R021" test="cbc:EndDate or cbc:StartDate" flag="fatal">Start date or end date must be spefied in a period</assert>
 		<assert id="PEPPOL-T125-R022" test="not(cbc:EndDate) or translate(cbc:StartDate,'-','') &lt;= translate(cbc:EndDate,'-','')" flag="fatal">Start date must be earlier or equal to end date</assert>
