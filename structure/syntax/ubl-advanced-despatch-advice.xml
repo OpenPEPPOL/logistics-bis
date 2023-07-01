@@ -3097,10 +3097,10 @@
                <Term>cac:ManufacturerParty</Term>
                <Name>Manufacturer party</Name>
                <Description>The manufacturer of this item.</Description>
-               <Element>
+               <Element cardinality="0..1">
                   <Term>cac:PartyIdentification</Term>
                   <Name>Party identification</Name>
-                  <Element>
+                  <Element cardinality="1..1">
                      <Term>cbc:ID</Term>
                      <Name>Manufacturer party identifier</Name>
                      <Description>Identifies the manufacturer party.</Description>
@@ -3116,7 +3116,7 @@
                <Element cardinality="0..1">
                   <Term>cac:PartyName</Term>
                   <Name>Party name</Name>
-                  <Element>
+                  <Element cardinality="1..1">
                      <Term>cbc:Name</Term>
                      <Name>Manufacturer party name</Name>
                      <Description>The name of the manufacturer party.</Description>
