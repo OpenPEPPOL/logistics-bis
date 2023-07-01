@@ -52,7 +52,7 @@
 	</rule>
 
 	<rule context="ubl:Waybill/IssueTime">
-		<assert id="PEPPOL-T125-R018" test="count(timezone-from-time(.)) &gt; 0" flag="fatal"> [PEPPOL-T125-R018] IssueTime MUST include timezone information.</assert>
+		<assert id="PEPPOL-T125-R018" test= "contains(cbc:IssueTime, '+') or contains(cbc:IssueTime, '-') or contains(cbc:IssueTime, 'z') or contains(cbc:IssueTime, 'Z')" flag="fatal">IssueTime cannot be specified without time zone</assert>
 	</rule>
 
 </pattern>
