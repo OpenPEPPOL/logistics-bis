@@ -22,7 +22,7 @@
 		<assert id="PEPPOL-T125-R010" test ="not(cac:PaymentTerms) or cac:PaymentTerms/cbc:ID or cac:PaymentTerms/cbc:Note"	flag="warning">When Payment terms is specified, either the ID or the note must be specified</assert>			
 	</rule>
 	
-	<rule context="cac:EstimatedDeliveryPeriod">
+	<rule context="cac:Shipment/cac:Delivery/cac:EstimatedDeliveryPeriod">
 		<assert id="PEPPOL-T124-R011" test="cbc:EndDate or cbc:StartDate" flag="fatal">Start date or end date must be spefied in a period</assert>
 		<assert id="PEPPOL-T125-R012" test="not(cbc:EndDate) or translate(cbc:StartDate,'-','') &lt;= translate(cbc:EndDate,'-','')" flag="fatal">Start date must be earlier or equal to end date</assert>
 		<assert id="PEPPOL-T125-R013" test="not(cbc:EndTime) or (cbc:EndTime) and (cbc:StartTime)" flag="fatal">EndTime cannot be specified without StartTime</assert>
@@ -36,7 +36,7 @@
 		<assert id="PEPPOL-T125-R018" test="count(timezone-from-time(.)) &gt; 0" flag="fatal"> [PEPPOL-T125-R018] IssueTime MUST include timezone information.</assert>
 	</rule>
 
-	<rule context="cac:EstimatedDespatchPeriod">
+	<rule context="cac:Shipment/cac:Delivery/cac:Despatch/cac:EstimatedDespatchPeriod">
 		<assert id="PEPPOL-T124-R021" test="cbc:EndDate or cbc:StartDate" flag="fatal">Start date or end date must be spefied in a period</assert>
 		<assert id="PEPPOL-T125-R022" test="not(cbc:EndDate) or translate(cbc:StartDate,'-','') &lt;= translate(cbc:EndDate,'-','')" flag="fatal">Start date must be earlier or equal to end date</assert>
 		<assert id="PEPPOL-T125-R023" test="not(cbc:EndTime) or (cbc:EndTime) and (cbc:StartTime)" flag="fatal">EndTime cannot be specified without StartTime</assert>

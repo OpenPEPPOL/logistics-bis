@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T125-base-1.0">
+	<assert>
+		<description>Verify that a Period has a Start date or an End date. </description>
+		<scope>PEPPOL-T125-R021</scope>
+	</assert>
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T125-R021</success>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+			<cbc:ID>1</cbc:ID>
+			<cac:Delivery>
+				<cac:Despatch>
+					<cac:EstimatedDespatchPeriod>
+						<cbc:StartDate>2021-09-29</cbc:StartDate>
+						<cbc:StartTime>15:00:00+01:00</cbc:StartTime>
+						<cbc:EndDate>2021-09-29</cbc:EndDate>
+						<cbc:EndTime>16:50:00+01:00</cbc:EndTime>
+					</cac:EstimatedDespatchPeriod>
+				</cac:Despatch>
+			</cac:Delivery>
+			</cac:Shipment>
+		</ubl:Waybill>
+	</test>
+	
+	<test id="2">
+		<assert>
+			<success>PEPPOL-T125-R021</success>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cbc:ID>1</cbc:ID>
+				<cac:Delivery>
+					<cac:Despatch>
+						<cac:EstimatedDespatchPeriod>
+							<cbc:StartDate>2021-09-29</cbc:StartDate>
+							<cbc:StartTime>15:00:00+01:00</cbc:StartTime>
+						</cac:EstimatedDespatchPeriod>
+					</cac:Despatch>
+				</cac:Delivery>
+			</cac:Shipment>
+		</ubl:Waybill>
+	</test>
+	
+	<test id="3">
+		<assert>
+			<Success>PEPPOL-T125-R021</Success>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cbc:ID>1</cbc:ID>
+				<cac:Delivery>
+					<cac:Despatch>
+						<cac:EstimatedDespatchPeriod>
+							<cbc:EndDate>2021-09-29</cbc:EndDate>
+							<cbc:EndTime>16:50:00+01:00</cbc:EndTime>
+						</cac:EstimatedDespatchPeriod>
+					</cac:Despatch>
+				</cac:Delivery>
+			</cac:Shipment>
+		</ubl:Waybill>
+	</test>
+
+	<test id="4">
+		<assert>
+			<error>PEPPOL-T125-R021</error>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cbc:ID>1</cbc:ID>
+				<cac:Delivery>
+					<cac:Despatch>
+						<cac:EstimatedDespatchPeriod>
+							<cbc:StartTime>15:00:00+01:00</cbc:StartTime>
+						</cac:EstimatedDespatchPeriod>
+					</cac:Despatch>
+				</cac:Delivery>
+			</cac:Shipment>
+		</ubl:Waybill>
+	</test>
+	
+</testSet>
