@@ -4,13 +4,25 @@
 		<assert id="PEPPOL-T120-R011" test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1')" flag="fatal">Specification identifier SHALL start with the value 'urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1'.</assert>
 	</rule>
 	<rule context="cac:BuyerCustomerParty">
-		<assert id="PEPPOL-T120-R008" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A despatch advice buyer party SHALL contain the name or an identifier</assert>
+		<assert id="PEPPOL-T120-R008" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A Despatch Advice Buyer Party SHALL contain the name or an identifier</assert>
+	</rule>
+	<rule context="cac:DeliveryCustomerParty">
+		<assert id="PEPPOL-T120-R108" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A Despatch Advice Delivery Customer Party SHALL contain the name or an identifier</assert>
 	</rule>
 	<rule context="cac:SellerSupplierParty">
-		<assert id="PEPPOL-T120-R009" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A despatch advice seller party SHALL contain the name or an identifier</assert>
+		<assert id="PEPPOL-T120-R009" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A Despatch Advice Seller Party SHALL contain the name or an identifier</assert>
+	</rule>
+	<rule context="cac:DespatchSupplierParty">
+		<assert id="PEPPOL-T120-R109" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A Despatch Advice Despatch Supplier Party SHALL contain the name or an identifier</assert>
 	</rule>
 	<rule context="cac:OriginatorCustomerParty">
-		<assert id="PEPPOL-T120-R010" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A despatch advice originator customer party SHALL contain the name or an identifier</assert>
+		<assert id="PEPPOL-T120-R010" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A Despatch Advice Originator Customer Party SHALL contain the name or an identifier</assert>
+	</rule>
+	<rule context="cac:Shipment/cac:Consignment/cac:CarrierParty">
+		<assert id="PEPPOL-T120-R110" test="(cac:PartyName/cbc:Name) or (cac:PartyIdentification/cbc:ID)" flag="fatal">A Despatch Advice Despatch Supplier Party SHALL contain the name or an identifier</assert>
+	</rule>
+	<rule context="cac:DespatchLine/cac:Item/cac:ManufacturerParty">
+		<assert id="PEPPOL-T120-R111" test="(cac:PartyName/cbc:Name) or (cac:PartyIdentification/cbc:ID)" flag="fatal">A Despatch Advice Despatch Supplier Party SHALL contain the name or an identifier</assert>
 	</rule>
 	<rule context="cac:EstimatedDeliveryPeriod">
 		<assert id="PEPPOL-T120-R012" test="not(cbc:EndDate) or translate(cbc:StartDate,'-','') &lt;= translate(cbc:EndDate,'-','')" flag="fatal">Start date must be earlier or equal to end date</assert>
@@ -31,7 +43,6 @@
 		<assert id="PEPPOL-T120-R020" test="//cac:DespatchLine[normalize-space(cbc:ID) = $itemId]" flag="fatal">Each Goods Item ID should have a corresponding Despatch Advice Line ID</assert>
 	</rule>
 	<rule context="cac:DespatchLine">
-		<assert id="PEPPOL-T120-R002" test="(cbc:ID)" flag="fatal">Dummy rule."</assert>
 		<assert id="PEPPOL-T120-R003" test="(cac:Item/cac:StandardItemIdentification/cbc:ID) or  (cac:Item/cac:SellersItemIdentification/cbc:ID)" flag="fatal">Each item in a Despatch Advice line SHALL be identifiable by either "item sellers identifier" or "item standard identifier"</assert>
 		<assert id="PEPPOL-T120-R004" test="(cac:Item/cbc:Name)" flag="fatal">Each Despatch Advice SHALL contain the item name</assert>
 		<assert id="PEPPOL-T120-R005" test="(cbc:DeliveredQuantity)" flag="warning">Each despatch advice line SHOULD have a delivered quantity</assert>
