@@ -48,10 +48,12 @@
 	</rule>
 	
 	<rule context="ubl:Waybill">
-		<assert id="PEPPOL-T125-R018" test="count(timezone-from-time(.)) &gt; 0" flag="fatal"> [PEPPOL-T125-R018] IssueTime MUST include timezone information.</assert>
-		<assert id= "PEPPOL-T125-R040" test= "not(cbc:Name = 'CMR') or cac:Shipment/cac:Consignment/cbc:GrossWeightMeasure" flag="faltal">In a waybill the grosswaight needs to be speficied</assert>		
+		<assert id= "PEPPOL-T125-R040" test= "not(cbc:Name = 'CMR') or cac:Shipment/cac:Consignment/cbc:GrossWeightMeasure" flag="fatal"> [PEPPOL-T125-R040] In a waybill the grosswaight needs to be speficied</assert>		
 	</rule>
-	
-	
+
+	<rule context="ubl:Waybill/IssueTime">
+		<assert id="PEPPOL-T125-R018" test="count(timezone-from-time(.)) &gt; 0" flag="fatal"> [PEPPOL-T125-R018] IssueTime MUST include timezone information.</assert>
+	</rule>
+
 </pattern>
 
