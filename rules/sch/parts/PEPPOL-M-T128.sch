@@ -19,12 +19,23 @@
 		<assert id="PEPPOL-T128-R006" test="((cbc:RejectedQuantity) and (cbc:RejectReason)) or not(cbc:RejectedQuantity)" flag="fatal">A Reject Reason SHALL be provided if the receipt line contains a rejected quantity</assert>
 		<assert id="PEPPOL-T128-R007" test="((cbc:ShortQuantity) and (cbc:ShortageActionCode)) or not(cbc:ShortQuantity)" flag="fatal">A Shortage Action Code SHALL be provided if the receipt line contains a shortage quantity</assert>
 	</rule>
+	
 	<rule context="cac:BuyerCustomerParty">
-		<assert id="PEPPOL-T128-R008" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A Receipt advice buyer party SHALL contain the name or an identifier</assert>
+		<assert id="PEPPOL-T128-R008" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A Receipt Advice Buyer Party SHALL contain the name or an identifier</assert>
+	</rule>
+	<rule context="cac:DeliveryCustomerParty">
+		<assert id="PEPPOL-T128-R108" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A Receipt Advice Delivery Customer Party SHALL contain the name or an identifier</assert>
+	</rule>
+	<rule context="cac:DespatchSupplierParty">
+		<assert id="PEPPOL-T128-R109" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A Receipt Advice Despatch Supplier Party SHALL contain the name or an identifier</assert>
 	</rule>
 	<rule context="cac:SellerSupplierParty">
-		<assert id="PEPPOL-T128-R009" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A Receipt advice seller party SHALL contain the name or an identifier</assert>
+		<assert id="PEPPOL-T128-R009" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A Receipt Advice Seller Party SHALL contain the name or an identifier</assert>
 	</rule>
+	<rule context="cac:Shipment/cac:Consignment/cac:CarrierParty">
+		<assert id="PEPPOL-T128-R110" test="(cac:PartyName/cbc:Name) or (cac:PartyIdentification/cbc:ID)" flag="fatal">A Receipt Advice Carrier Party SHALL contain the name or an identifier</assert>
+	</rule>
+
 	<rule context="cac:Shipment/cac:Delivery/cac:RequestedDeliveryPeriod">
 		<assert id="PEPPOL-T128-R012" test="not(cbc:EndDate) or translate(cbc:StartDate,'-','') &lt;= translate(cbc:EndDate,'-','')" flag="fatal">Start date must be earlier or equal to end date</assert>
 		<assert id="PEPPOL-T128-R013" test="not(cbc:EndTime) or (cbc:EndTime) and (cbc:StartTime)" flag="fatal">EndTime cannot be specified without StartTime</assert>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ubl:ReceiptAdvice xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<ubl:ReceiptAdvice xmlns:ubl="urn:oasis:names:rule:ubl:schema:xsd:ReceiptAdvice-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 	<?DocumentTerm ReceiptAdvice?>
 	<?Property key="sch:prefix" PEPPOL-T128?>
 	<?Property key="sch:identifier" T128-basic?>
@@ -125,6 +125,7 @@
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088"> 5790000435951 
 					<?schemeID-CodeList ICD?>
+					<?Rule PEPPOL-T128-R108?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
@@ -135,6 +136,7 @@
 					<?Name Name of the Consignee ?>
 					<?Description The Name of the Consignee.?>
 					<?Cardinality 1..1?>
+					<?Rule PEPPOL-T128-R108?>
 				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
@@ -230,6 +232,7 @@
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0088"> 7300010000001 
 					<?schemeID-CodeList ICD?>
+					<?Rule PEPPOL-T128-R109?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
@@ -239,6 +242,7 @@
 				<cbc:Name> Sender inc. <?Name Name of the Consignor?>
 					<?Description The name of the Despatch Supplier.?>
 					<?Cardinality 1..1?>
+					<?Rule PEPPOL-T128-R109?>
 				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
@@ -436,10 +440,13 @@
 							<?Description Identifies the Carrier party.?>
 							<?schemeID-usage Optional?>
 							<?schemeID-CodeList ICD?>
+							<?Rule PEPPOL-T128-R110?>
 						</cbc:ID>
 					</cac:PartyIdentification>
 					<cac:PartyName>
-						<cbc:Name>Name</cbc:Name>
+						<cbc:Name>Name
+							<?Rule PEPPOL-T128-R110?>
+						</cbc:Name>
 					</cac:PartyName>
 					<cac:Person>
 						<cac:IdentityDocumentReference>
