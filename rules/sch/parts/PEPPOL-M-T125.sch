@@ -51,8 +51,5 @@
 		<assert id= "PEPPOL-T125-R031" test= "not(cac:TransportMeans) or (count(cac:TransportMeans/cac:AirTransport) + count(cac:TransportMeans/cac:RoadTransport) + count(cac:TransportMeans/cac:RailTransport) + count(cac:TransportMeans/cac:MaritimeTransport) = 1)" flag="warning">Only one type of transport means can be specified</assert>
 	</rule>
 	
-	<rule context="ubl:Waybill">
-		<assert id= "PEPPOL-T125-R040" test= "not(cbc:Name = 'CMR') or cac:Shipment/cac:Consignment/cbc:GrossWeightMeasure" flag="fatal"> [PEPPOL-T125-R040] In a Waybill the grossweight needs to be speficied. </assert>		
-	</rule>
 </pattern>
 
