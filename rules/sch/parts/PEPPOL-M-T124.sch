@@ -24,7 +24,7 @@
 	<rule context="cac:Period">
 		<assert id="PEPPOL-T124-R011" test="cbc:EndDate or cbc:StartDate" flag="fatal">Start date or end date must be spefied in a period</assert>
 		<assert id="PEPPOL-T124-R012" test="not(cbc:EndDate) or translate(cbc:StartDate,'-','') &lt;= translate(cbc:EndDate,'-','')" flag="fatal">Start date must be earlier or equal to end date</assert>
-		<assert id="PEPPOL-T124-R013" test="not(cbc:EndTime) or (cbc:EndTime) and (cbc:StartTime)" flag="fatal">EndTime cannot be specified without StartTime</assert>
+		<assert id="PEPPOL-T124-R013" test="not(cbc:EndTime) or ((cbc:EndTime) and (cbc:StartTime)) or ((cbc:EndDate) and (cbc:EndTime) and not(cbc:StartDate) and not(cbc:StartTime))" flag="fatal">EndTime cannot be specified without StartTime</assert>
 		<assert id="PEPPOL-T124-R014" test="not(cbc:EndTime) or (cbc:EndTime) and (cbc:EndDate)" flag="fatal">EndTime cannot be specified without EndDate</assert>
 		<assert id="PEPPOL-T124-R015" test="not(cbc:StartDate) or not(cbc:StartTime) or not(cbc:EndDate) or not(cbc:EndTime) or dateTime((cbc:EndDate),(cbc:EndTime)) &gt;= dateTime((cbc:StartDate),(cbc:StartTime)) " flag="fatal">StartTime must be before EndTime</assert>
 		<assert id="PEPPOL-T124-R016" test= "not(cbc:StartTime) or  contains(cbc:StartTime, '+') or contains(cbc:StartTime, '-') or contains(cbc:StartTime, 'z') or contains(cbc:StartTime, 'Z')" flag="fatal">StartTime cannot be specified without timezone</assert>
