@@ -47,7 +47,7 @@
 		<assert id= "PEPPOL-T125-R031" test= "not(cac:TransportMeans) or (count(cac:TransportMeans/cac:AirTransport) + count(cac:TransportMeans/cac:RoadTransport) + count(cac:TransportMeans/cac:RailTransport) + count(cac:TransportMeans/cac:MaritimeTransport) = 1)" flag="warning">Only one type of transport means can be specified</assert>
 	</rule>
 	
-	<rule context="cac:Waybill">
+	<rule context="ubl:Waybill">
 		<assert id="PEPPOL-T125-R018" test="count(timezone-from-time(.)) &gt; 0" flag="fatal"> [PEPPOL-T125-R018] IssueTime MUST include timezone information.</assert>
 		<assert id= "PEPPOL-T125-R040" test= "not(cbc:Name = 'CMR') or cac:Shipment/cac:Consignment/cbc:GrossWeightMeasure" flag="faltal">In a waybill the grosswaight needs to be speficied</assert>		
 	</rule>
