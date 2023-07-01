@@ -31,7 +31,7 @@
 		<assert id="PEPPOL-T124-R017" test= "not(cbc:EndTime) or contains(cbc:EndTime, '+') or contains(cbc:EndTime, '-') or contains(cbc:EndTime, 'z') or contains(cbc:EndTime, 'Z')" flag="fatal">EndTime cannot be specified without time zone</assert>
 	</rule>
 
-	<rule context="ubl:TransportExecutionPlan">
+	<rule context="ubl:TransportExecutionPlan/cbc:IssueTime">
 		<assert id="PEPPOL-T124-R018" test="count(timezone-from-time(.)) &gt; 0" flag="fatal"> [PEPPOL-T124-R018] IssueTime MUST include timezone information.</assert>
 	</rule>
 
