@@ -31,7 +31,11 @@
 		<assert id="PEPPOL-T125-R016" test= "not(cbc:StartTime) or  contains(cbc:StartTime, '+') or contains(cbc:StartTime, '-') or contains(cbc:StartTime, 'z') or contains(cbc:StartTime, 'Z')" flag="fatal">StartTime cannot be specified without timezone</assert>
 		<assert id="PEPPOL-T125-R017" test= "not(cbc:EndTime) or contains(cbc:EndTime, '+') or contains(cbc:EndTime, '-') or contains(cbc:EndTime, 'z') or contains(cbc:EndTime, 'Z')" flag="fatal">EndTime cannot be specified without time zone</assert>
 	</rule>
-	
+
+	<rule context="ubl:Waybill/IssueTime">
+		<assert id="PEPPOL-T125-R018" test= "contains(cbc:IssueTime, '+') or contains(cbc:IssueTime, '-') or contains(cbc:IssueTime, 'z') or contains(cbc:IssueTime, 'Z')" flag="fatal">IssueTime cannot be specified without time zone. </assert>
+	</rule>
+
 	<rule context="cac:EstimatedDespatchPeriod">
 		<assert id="PEPPOL-T125-R021" test="cbc:EndDate or cbc:StartDate" flag="fatal">Start date or end date must be spefied in a period</assert>
 		<assert id="PEPPOL-T125-R022" test="not(cbc:EndDate) or translate(cbc:StartDate,'-','') &lt;= translate(cbc:EndDate,'-','')" flag="fatal">Start date must be earlier or equal to end date</assert>
@@ -48,12 +52,7 @@
 	</rule>
 	
 	<rule context="ubl:Waybill">
-		<assert id= "PEPPOL-T125-R040" test= "not(cbc:Name = 'CMR') or cac:Shipment/cac:Consignment/cbc:GrossWeightMeasure" flag="fatal"> [PEPPOL-T125-R040] In a waybill the grosswaight needs to be speficied</assert>		
+		<assert id= "PEPPOL-T125-R040" test= "not(cbc:Name = 'CMR') or cac:Shipment/cac:Consignment/cbc:GrossWeightMeasure" flag="fatal"> [PEPPOL-T125-R040] In a Waybill the grossweight needs to be speficied. </assert>		
 	</rule>
-
-	<rule context="ubl:Waybill/IssueTime">
-		<assert id="PEPPOL-T125-R018" test= "contains(cbc:IssueTime, '+') or contains(cbc:IssueTime, '-') or contains(cbc:IssueTime, 'z') or contains(cbc:IssueTime, 'Z')" flag="fatal">IssueTime cannot be specified without time zone</assert>
-	</rule>
-
 </pattern>
 
