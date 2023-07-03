@@ -61,7 +61,7 @@
 	<rule context="ubl:Waybill">
 		<assert id="PEPPOL-T125-R033" test="not(cac:FreightForwarderParty) or cac:FreightForwarderParty/cac:PartyName or cac:FreightForwarderParty/cac:PartyIdentification" flag="fatal"> [PEPPOL-T125-R033] Party must include either a party name or a party identification.</assert>
 	</rule>
-	<rule context="ubl:Waybill/cac:Consignment/cac:ConsigneeParty">
+	<rule context="ubl:Waybill/cac:Shipment/cac:Consignment/cac:ConsigneeParty">
 		<assert id="PEPPOL-T125-R034" test="cac:PartyName or cac:PartyIdentification" flag="fatal">[PEPPOL-T125-R034] Party must include either a party name or a party identification.</assert>
 	</rule>
 </pattern>
