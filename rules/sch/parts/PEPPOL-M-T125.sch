@@ -50,19 +50,20 @@
 	<rule context="ubl:Waybill">
 		<assert id= "PEPPOL-T125-R018" test= "count(timezone-from-time(cbc:IssueTime)) &gt; 0" flag="fatal">IssueTime cannot be specified without time zone. </assert>
 		<assert id= "PEPPOL-T125-R040" test= "not(cbc:Name = 'CMR') or cac:Shipment/cac:Consignment/cbc:GrossWeightMeasure" flag="fatal"> [PEPPOL-T125-R040] In a Waybill the grossweight needs to be speficied. </assert>
+		<assert id= "PEPPOL-T125-R033" test="not(cac:FreightForwarderParty) or cac:FreightForwarderParty/cac:PartyName or cac:FreightForwarderParty/cac:PartyIdentification" flag="fatal"> [PEPPOL-T125-R033] Party must include either a party name or a party identification.</assert>
 	</rule>
 
 	<rule context="ubl:Waybill/cac:ConsignorParty">
 		<assert id="PEPPOL-T125-R031" test="cac:PartyName or cac:PartyIdentification" flag="fatal">[PEPPOL-T125-R031] Party must include either a party name or a party identification.</assert>
 	</rule>
+	
 	<rule context="ubl:Waybill/cac:CarrierParty">
 		<assert id="PEPPOL-T125-R032" test="cac:PartyName or cac:PartyIdentification" flag="fatal">[PEPPOL-T125-R032] Party must include either a party name or a party identification.</assert>
 	</rule>
-	<rule context="ubl:Waybill">
-		<assert id="PEPPOL-T125-R033" test="not(cac:FreightForwarderParty) or cac:FreightForwarderParty/cac:PartyName or cac:FreightForwarderParty/cac:PartyIdentification" flag="fatal"> [PEPPOL-T125-R033] Party must include either a party name or a party identification.</assert>
-	</rule>
+	
 	<rule context="ubl:Waybill/cac:Shipment/cac:Consignment/cac:ConsigneeParty">
 		<assert id="PEPPOL-T125-R034" test="cac:PartyName or cac:PartyIdentification" flag="fatal">[PEPPOL-T125-R034] Party must include either a party name or a party identification.</assert>
 	</rule>
+	
 </pattern>
 
