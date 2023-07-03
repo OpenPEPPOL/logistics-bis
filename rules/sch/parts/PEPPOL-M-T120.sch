@@ -3,6 +3,11 @@
 	<rule context="cbc:CustomizationID">
 		<assert id="PEPPOL-T120-R011" test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1')" flag="fatal">Specification identifier SHALL start with the value 'urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1'.</assert>
 	</rule>
+	<rule context="cbc:ProfileID">
+		<assert id="PEPPOL-T120-R002"
+		  test="some $p in tokenize('urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1 urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1', '\s') satisfies $p = normalize-space(.)"
+		  flag="fatal">ProfileID SHALL have the value 'urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1' or 'urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1'.</assert>
+	</rule>
 	<rule context="cac:BuyerCustomerParty">
 		<assert id="PEPPOL-T120-R008" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A Despatch Advice Buyer Party SHALL contain the name or an identifier</assert>
 	</rule>
