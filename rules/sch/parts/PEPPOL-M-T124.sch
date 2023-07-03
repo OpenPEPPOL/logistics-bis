@@ -58,7 +58,7 @@
 		<assert id="PEPPOL-T124-R036" test="cac:PartyName or cac:PartyIdentification" flag="fatal"> [PEPPOL-T124-R036] Party must include either a party name or a party identification.</assert>
 	</rule>
 	<rule context="ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty">
-		<assert id="PEPPOL-T124-R037" test="ccac:PartyName or cac:PartyIdentification" flag="fatal"> [PEPPOL-T124-R037] Party must include either a party name or a party identification.</assert>
+		<assert id="PEPPOL-T124-R037" test="cac:PartyName or cac:PartyIdentification" flag="fatal"> [PEPPOL-T124-R037] Party must include either a party name or a party identification.</assert>
 	</rule>
 	
 	<rule context="ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage">
