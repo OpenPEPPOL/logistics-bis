@@ -27,8 +27,8 @@
 		<assert id="PEPPOL-T124-R013" test="not(cbc:EndTime) or ((cbc:EndTime) and (cbc:StartTime)) or ((cbc:EndDate) and (cbc:EndTime) and not(cbc:StartDate) and not(cbc:StartTime))" flag="fatal">[PEPPOL-T124-R013] EndTime cannot be specified without StartTime</assert>
 		<assert id="PEPPOL-T124-R014" test="not(cbc:EndTime) or (cbc:EndTime) and (cbc:EndDate)" flag="fatal">[PEPPOL-T124-R014] EndTime cannot be specified without EndDate</assert>
 		<assert id="PEPPOL-T124-R015" test="not(cbc:StartDate) or not(cbc:StartTime) or not(cbc:EndDate) or not(cbc:EndTime) or dateTime((cbc:EndDate),(cbc:EndTime)) &gt;= dateTime((cbc:StartDate),(cbc:StartTime)) " flag="fatal">[PEPPOL-T124-R015] StartTime must be before EndTime</assert>
-		<assert id="PEPPOL-T123-R016" test="not(cbc:StartTime) or count(timezone-from-time(cbc:StartTime)) &gt; 0" flag="fatal"> [PEPPOL-T124-R016] IssueTime MUST include timezone information.</assert>
-		<assert id="PEPPOL-T123-R017" test="not(cbc:EndTime) or count(timezone-from-time(cbc:EndTime)) &gt; 0" flag="fatal"> [PEPPOL-T124-R017] IssueTime MUST include timezone information.</assert>
+		<assert id="PEPPOL-T124-R016" test="not(cbc:StartTime) or count(timezone-from-time(cbc:StartTime)) &gt; 0" flag="fatal"> [PEPPOL-T124-R016] IssueTime MUST include timezone information.</assert>
+		<assert id="PEPPOL-T124-R017" test="not(cbc:EndTime) or count(timezone-from-time(cbc:EndTime)) &gt; 0" flag="fatal"> [PEPPOL-T124-R017] IssueTime MUST include timezone information.</assert>
 	</rule>
 
 	<rule context="ubl:TransportExecutionPlan/cbc:IssueTime">
