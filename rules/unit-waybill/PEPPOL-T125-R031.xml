@@ -1,72 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T125-base-1.0">
+<!--BII2-T19-R012-->
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0"
+	configuration="peppolbis-T125-base-1.0">
 	<assert>
-		<description>Verify that only one type of Transport Means Identity is specified when there is a Transport Means.</description>
+		<description>Verify that the Consignor Party's Name or Identifier is specified. </description>
 		<scope>PEPPOL-T125-R031</scope>
 	</assert>
+	
 	<test id="1">
 		<assert>
 			<success>PEPPOL-T125-R031</success>
 		</assert>
-		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
-			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Shipment>
-				<cac:ShipmentStage>
-					<cbc:TransportModeCode>4</cbc:TransportModeCode>
-					<cac:TransportMeans>
-						<cac:AirTransport>
-							<cbc:AircraftID>JA8088</cbc:AircraftID>
-						</cac:AirTransport>
-					</cac:TransportMeans>
-				</cac:ShipmentStage>
-			</cac:Shipment>
-		</ubl:Waybill>
+		<Waybill xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+				xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2">
+
+			<cac:ConsignorParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeID="0088">5790000435951</cbc:ID>
+				</cac:PartyIdentification>
+				<cac:PartyName>
+					<cbc:Name>ABC Supplier Ltd.</cbc:Name>
+				</cac:PartyName>
+			</cac:ConsignorParty>
+		</Waybill>
 	</test>
-	
+
 	<test id="2">
 		<assert>
 			<success>PEPPOL-T125-R031</success>
 		</assert>
-		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
-			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Shipment>
-				<cac:ShipmentStage>
-					<cbc:TransportModeCode>4</cbc:TransportModeCode>
-				</cac:ShipmentStage>
-			</cac:Shipment>
-		</ubl:Waybill>
-	</test>
+		<Waybill xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+				xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2">
 
+			<cac:ConsignorParty>
+				<cac:PartyName>
+					<cbc:Name>ABC Supplier Ltd.</cbc:Name>
+				</cac:PartyName>
+			</cac:ConsignorParty>
+		</Waybill>
+	</test>
+	
 	<test id="3">
 		<assert>
-			<warning>PEPPOL-T125-R031</warning>
+			<success>PEPPOL-T125-R031</success>
 		</assert>
-		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
-			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Shipment>
-				<cac:ShipmentStage>
-					<cbc:TransportModeCode>4</cbc:TransportModeCode>
-					<cac:TransportMeans>
-						<cac:AirTransport>
-							<cbc:AircraftID>JA8088</cbc:AircraftID>
-						</cac:AirTransport>
-						<cac:RoadTransport>
-							<cbc:LicensePlateID>DF10958</cbc:LicensePlateID>
-						</cac:RoadTransport>
-						<cac:RailTransport>
-							<cbc:TrainID>12014</cbc:TrainID>
-							<cbc:RailCarID>50 63 20-33 801-5</cbc:RailCarID>
-						</cac:RailTransport>
-						<cac:MaritimeTransport>
-							<cbc:VesselID>wrt34663</cbc:VesselID>
-						</cac:MaritimeTransport>
-					</cac:TransportMeans>
-				</cac:ShipmentStage>
-			</cac:Shipment>
-			</ubl:Waybill>
-		</test>
+		<Waybill xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+				xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2">
+
+			<cac:ConsignorParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeID="0088">5790000435951</cbc:ID>
+				</cac:PartyIdentification>
+			</cac:ConsignorParty>
+		</Waybill>
+	</test>
 	
+	<test id="4">
+		<assert>
+			<error>PEPPOL-T125-R031</error>
+		</assert>
+		<Waybill xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+				xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2">
+
+			<cac:ConsignorParty>
+			</cac:ConsignorParty>
+		</Waybill>
+	</test>
+
 </testSet>
