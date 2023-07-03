@@ -3,72 +3,85 @@
 <testSet xmlns="http://difi.no/xsd/vefa/validator/1.0"
 	configuration="peppolbis-T125-base-1.0">
 	<assert>
-		<description>Verify that the Freight Forwarder Party's Name or Identifier is specified. </description>
-		<scope>PEPPOL-T125-R033</scope>
+		<description>Verify that the Freight Consignee Party's Name or Identifier is specified. </description>
+		<scope>PEPPOL-T125-R034</scope>
 	</assert>
 	
 	<test id="1">
 		<assert>
-			<success>PEPPOL-T125-R033</success>
+			<success>PEPPOL-T125-R034</success>
 		</assert>
 		<Waybill xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
 				xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2">
 
-			<cac:FreightForwarderParty>
-				<cac:PartyIdentification>
-					<cbc:ID schemeID="0088">5790000435951</cbc:ID>
-				</cac:PartyIdentification>
-				<cac:PartyName>
-					<cbc:Name>ABC Supplier Ltd.</cbc:Name>
-				</cac:PartyName>
-			</cac:FreightForwarderParty>
+			<cac:Shipment>
+				<cac:Consignment>
+					<cac:ConsigneeParty>
+						<cac:PartyIdentification>
+							<cbc:ID schemeID="0088">5790000435951</cbc:ID>
+						</cac:PartyIdentification>
+						<cac:PartyName>
+							<cbc:Name>ABC Supplier Ltd.</cbc:Name>
+						</cac:PartyName>
+					</cac:ConsigneeParty>
+				</cac:Consignment>
+			</cac:Shipment>
 		</Waybill>
 	</test>
 
 	<test id="2">
 		<assert>
-			<success>PEPPOL-T125-R032</success>
+			<success>PEPPOL-T125-R034</success>
 		</assert>
 		<Waybill xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
 				xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2">
 
-			<cac:CarrierParty>
-				<cac:PartyName>
-					<cbc:Name>ABC Supplier Ltd.</cbc:Name>
-				</cac:PartyName>
-			</cac:CarrierParty>
-		</Waybill>
+			<cac:Shipment>
+				<cac:Consignment>
+					<cac:ConsigneeParty>
+						<cac:PartyName>
+							<cbc:Name>ABC Supplier Ltd.</cbc:Name>
+						</cac:PartyName>
+					</cac:ConsigneeParty>
+				</cac:Consignment>
+			</cac:Shipment>		</Waybill>
 	</test>
 	
 	<test id="3">
 		<assert>
-			<success>PEPPOL-T125-R032</success>
+			<success>PEPPOL-T125-R034</success>
 		</assert>
 		<Waybill xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
 				xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2">
 
-			<cac:CarrierParty>
-				<cac:PartyIdentification>
-					<cbc:ID schemeID="0088">5790000435951</cbc:ID>
-				</cac:PartyIdentification>
-			</cac:CarrierParty>
-		</Waybill>
+			<cac:Shipment>
+				<cac:Consignment>
+					<cac:ConsigneeParty>
+						<cac:PartyIdentification>
+							<cbc:ID schemeID="0088">5790000435951</cbc:ID>
+						</cac:PartyIdentification>
+					</cac:ConsigneeParty>
+				</cac:Consignment>
+			</cac:Shipment>		</Waybill>
 	</test>
 	
 	<test id="4">
 		<assert>
-			<error>PEPPOL-T125-R032</error>
+			<error>PEPPOL-T125-R034</error>
 		</assert>
 		<Waybill xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
 				xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2">
 
-			<cac:CarrierParty>
-			</cac:CarrierParty>
-		</Waybill>
+			<cac:Shipment>
+				<cac:Consignment>
+					<cac:ConsigneeParty>
+					</cac:ConsigneeParty>
+				</cac:Consignment>
+			</cac:Shipment>		</Waybill>
 	</test>
 
 </testSet>
