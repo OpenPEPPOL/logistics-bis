@@ -3,7 +3,7 @@
    <Term>ReceiptAdvice</Term>
    <Property key="sch:prefix">PEPPOL-T128</Property>
    <Property key="sch:identifier">T128-basic</Property>
-   <Namespace prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2</Namespace>
+   <Namespace prefix="ubl">urn:oasis:names:rule:ubl:schema:xsd:ReceiptAdvice-2</Namespace>
    <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
    <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
    <Document>
@@ -236,6 +236,7 @@
                   <Description>The receiving party identifier.</Description>
                   <DataType>Identifier</DataType>
                   <Reference type="BUSINESS_TERM">tir16-015</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R108</Reference>
                   <Value type="EXAMPLE">5790000435951</Value>
                   <Attribute usage="optional">
                      <Term>schemeID</Term>
@@ -254,6 +255,7 @@
                   <Term>cbc:Name</Term>
                   <Name>Name of the Consignee </Name>
                   <Description>The Name of the Consignee.</Description>
+                  <Reference type="RULE">PEPPOL-T128-R108</Reference>
                   <Value type="EXAMPLE">Goods Receiver inc.</Value>
                </Element>
             </Element>
@@ -462,6 +464,7 @@
                   <Description>The identifier of the despatching party</Description>
                   <DataType>Identifier</DataType>
                   <Reference type="BUSINESS_TERM">tir16-p001</Reference>
+                  <Reference type="RULE">PEPPOL-T128-R109</Reference>
                   <Value type="EXAMPLE">7300010000001</Value>
                   <Attribute usage="optional">
                      <Term>schemeID</Term>
@@ -480,6 +483,7 @@
                   <Term>cbc:Name</Term>
                   <Name>Name of the Consignor</Name>
                   <Description>The name of the Despatch Supplier.</Description>
+                  <Reference type="RULE">PEPPOL-T128-R109</Reference>
                   <Value type="EXAMPLE">Sender inc.</Value>
                </Element>
             </Element>
@@ -989,6 +993,7 @@
                      <Description>Identifies the Carrier party.</Description>
                      <DataType>Identifier</DataType>
                      <Reference type="BUSINESS_TERM">tir16-p055</Reference>
+                     <Reference type="RULE">PEPPOL-T128-R110</Reference>
                      <Value type="EXAMPLE">5790000435951</Value>
                      <Attribute usage="Optional">
                         <Term>schemeID</Term>
@@ -1008,6 +1013,7 @@
                      <Description>The name of the carrier that handles the delivery of the
 								dispatched shipment.</Description>
                      <Reference type="BUSINESS_TERM">tir16-076</Reference>
+                     <Reference type="RULE">PEPPOL-T128-R110</Reference>
                      <Value type="EXAMPLE">Name</Value>
                   </Element>
                </Element>
