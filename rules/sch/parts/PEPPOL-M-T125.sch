@@ -48,7 +48,7 @@
 	</rule>
 	
 	<rule context="ubl:Waybill">
-		<assert id= "PEPPOL-T125-R018" test= "count(timezone-from-time(.)) &gt; 0" flag="fatal">IssueTime cannot be specified without time zone. </assert>
+		<assert id= "PEPPOL-T125-R018" test= "count(timezone-from-time(cbc:IssueTime)) &gt; 0" flag="fatal">IssueTime cannot be specified without time zone. </assert>
 		<assert id= "PEPPOL-T125-R040" test= "not(cbc:Name = 'CMR') or cac:Shipment/cac:Consignment/cbc:GrossWeightMeasure" flag="fatal"> [PEPPOL-T125-R040] In a Waybill the grossweight needs to be speficied. </assert>
 	</rule>
 
