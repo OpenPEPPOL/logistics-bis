@@ -99,9 +99,69 @@
 			</cac:Shipment>
 		</DespatchAdvice>
 	</test>
-	
-	
+
 	<test id="5">
+		<assert>
+			<success>PEPPOL-T120-R019</success>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cbc:ID>A123</cbc:ID>
+				<cbc:GrossVolumeMeasure unitCode="MTQ">2.060</cbc:GrossVolumeMeasure>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAW</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1.030</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12346</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAW</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1.090</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+			</cac:Shipment>
+		</DespatchAdvice>
+	</test>
+
+	<test id="6">
+		<assert>
+			<success>PEPPOL-T120-R019</success>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cbc:ID>A123</cbc:ID>
+				<cbc:GrossVolumeMeasure unitCode="KGM">2060</cbc:GrossVolumeMeasure>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAW</cbc:AttributeID>
+						<cbc:Measure unitCode="MTQ">1.030</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12346</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAW</cbc:AttributeID>
+						<cbc:Measure unitCode="MTQ">1.030</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+			</cac:Shipment>
+		</DespatchAdvice>
+	</test>
+
+
+	<test id="7">
 		<assert>
 			<warning>PEPPOL-T120-R019</warning>
 		</assert>
@@ -131,7 +191,7 @@
 		</DespatchAdvice>
 	</test>
 
-	<test id="6">
+	<test id="8">
 		<assert>
 			<warning>PEPPOL-T120-R019</warning>
 		</assert>
@@ -152,4 +212,43 @@
 			</cac:Shipment>
 		</DespatchAdvice>
 	</test>
+
+	<test id="9">
+		<assert>
+			<warning>PEPPOL-T120-R019</warning>
+		</assert>
+		<DespatchAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2">
+			<cac:Shipment>
+				<cbc:ID>A123</cbc:ID>
+				<cbc:GrossVolumeMeasure unitCode="MTQ">2.060</cbc:GrossVolumeMeasure>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAW</cbc:AttributeID>
+						<cbc:Measure unitCode="MTQ">1.030</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAB</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1030</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12346</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAB</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1060</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAW</cbc:AttributeID>
+						<cbc:Measure unitCode="MTQ">1.060</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+			</cac:Shipment>
+		</DespatchAdvice>
+	</test>
+	
 </testSet>
