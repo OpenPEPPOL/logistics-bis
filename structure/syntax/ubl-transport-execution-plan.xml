@@ -2238,6 +2238,121 @@
                <Value type="EXAMPLE">false</Value>
             </Element>
             <Element cardinality="0..1">
+               <Term>cac:CarrierParty</Term>
+               <Name>Carrier party </Name>
+               <Description>The party providing the transport of goods in this consignment between named points. </Description>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyName</Term>
+                  <Name>Party name </Name>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Name>Carrier party name</Name>
+                     <Description>The name of the carrier party. </Description>
+                     <Value type="EXAMPLE">DHL Express</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:PostalAddress</Term>
+                  <Name>Postal address </Name>
+                  <Description>The postal address of the carrier party.</Description>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StreetName</Term>
+                     <Name>Address line 1 </Name>
+                     <Description>The main address line in a postal address usually the street name and number. </Description>
+                     <Value type="EXAMPLE">Jydekrogen 14</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:AdditionalStreetName</Term>
+                     <Name>Address line 2 </Name>
+                     <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. </Description>
+                     <Value type="EXAMPLE">way 1</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CityName</Term>
+                     <Name>City </Name>
+                     <Description>The common name of the city where the postal address is. The name is written in full rather than as a code. </Description>
+                     <Value type="EXAMPLE">Vallensbæk Landsby</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:PostalZone</Term>
+                     <Name>Post code </Name>
+                     <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. </Description>
+                     <Value type="EXAMPLE">2625</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CountrySubentity</Term>
+                     <Name>Country sub entity </Name>
+                     <Description>For specifying a region, county, state, province etc. within a country by using text. </Description>
+                     <Value type="EXAMPLE">Region Hovedstaden</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cac:AddressLine</Term>
+                     <Name>Address line 3 </Name>
+                     <Description>An additional address line in an address that can be used to give further details supplementing the main line. </Description>
+                     <Element cardinality="1..1">
+                        <Term>cbc:Line</Term>
+                        <Value type="EXAMPLE">Bygning 5</Value>
+                     </Element>
+                  </Element>
+                  <Element cardinality="1..1">
+                     <Term>cac:Country</Term>
+                     <Name>Country </Name>
+                     <Element cardinality="1..1">
+                        <Term>cbc:IdentificationCode</Term>
+                        <Name>Country code </Name>
+                        <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                        <Reference type="CODE_LIST">ISO3166</Reference>
+                        <Value type="EXAMPLE">DK</Value>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyLegalEntity</Term>
+                  <Name>Party legal entity </Name>
+                  <Element cardinality="1..1">
+                     <Term>cbc:RegistrationName</Term>
+                     <Name>Carrier party name </Name>
+                     <Description>The name of the carrier party.</Description>
+                     <Value type="EXAMPLE">DHL Express</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CompanyID</Term>
+                     <Name>Carrier parties legal registration name </Name>
+                     <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
+                     <Value type="EXAMPLE">10154596</Value>
+                     <Attribute>
+                        <Term>schemeID</Term>
+                        <Name>Scheme identifier </Name>
+                        <Description>The identification scheme identifier of the carrier legal registration identifier </Description>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0198</Value>
+                     </Attribute>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cac:RegistrationAddress</Term>
+                     <Name>Legal address </Name>
+                     <Element cardinality="0..1">
+                        <Term>cbc:CityName</Term>
+                        <Name>City name </Name>
+                        <Description>The name of the city. </Description>
+                        <Value type="EXAMPLE">Vallensbæk Landsby</Value>
+                     </Element>
+                     <Element cardinality="1..1">
+                        <Term>cac:Country</Term>
+                        <Name>Country </Name>
+                        <Description>The residens country for the carrier party. </Description>
+                        <Element cardinality="1..1">
+                           <Term>cbc:IdentificationCode</Term>
+                           <Name>Country code </Name>
+                           <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. </Description>
+                           <Reference type="CODE_LIST">ISO3166</Reference>
+                           <Value type="EXAMPLE">DK</Value>
+                        </Element>
+                     </Element>
+                  </Element>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
                <Term>cac:PlannedDepartureTransportEvent</Term>
                <Name>Requested departure transport event </Name>
                <Description>The departure requested by the party requesting a transportation service. </Description>
