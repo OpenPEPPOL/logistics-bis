@@ -56,13 +56,17 @@
 	<rule context="ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty">
 		<assert id="PEPPOL-T124-R037" test="cac:PartyName or cac:PartyIdentification" flag="fatal"> [PEPPOL-T124-R037] Party must include either a party name or a party identification.</assert>
 	</rule>
+
+	<rule context="ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage">
+		<assert id="PEPPOL-T124-R030" test="not(cac:CarrierParty) or cac:CarrierParty/cac:PartyName or cac:CarrierParty/cac:PartyIdentification" flag="fatal"> [PEPPOL-T124-R030] Party must include either a party name or a party identification.</assert>
+	</rule>
 	
 	<rule context="ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage">
 		<assert id="PEPPOL-T124-R038" test="not(cac:CarrierParty) or cac:CarrierParty/cac:PartyName or cac:CarrierParty/cac:PartyIdentification" flag="fatal"> [PEPPOL-T124-R038] Party must include either a party name or a party identification.</assert>
 	</rule>
 	
 	<rule context="ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage">
-		<assert id="PEPPOL-T124-R039" test="not(cac:CarrierParty) or cac:CarrierParty/cac:PartyName or cac:CarrierParty/cac:PartyIdentification" flag="fatal"> [PEPPOL-T124-R038] Party must include either a party name or a party identification.</assert>
+		<assert id="PEPPOL-T124-R039" test="not(cac:CarrierParty) or cac:CarrierParty/cac:PartyName or cac:CarrierParty/cac:PartyIdentification" flag="fatal"> [PEPPOL-T124-R039] Party must include either a party name or a party identification.</assert>
 	</rule>
 </pattern>
 
