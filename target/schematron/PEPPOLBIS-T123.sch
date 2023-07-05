@@ -1309,12 +1309,15 @@
 		       <assert id="PEPPOL-T123-R005"
                  test="not(cbc:GrossWeightMeasure) or not(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAB']/cbc:Measure) or number(cbc:GrossWeightMeasure) = sum(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAB']/cbc:Measure)"
                  flag="warning">[PEPPOL-T123-R005] Shipment  gross weight measure SHALL match the gross weight of the transport handling units specified</assert>
-		       <let name="THUGrossVolume"
-              value="round(sum(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAW']/cbc:Measure) * 1000)"/>
-		       <assert id="PEPPOL-T123-R006"
-                 test="not(cbc:GrossVolumeMeasure) or ((cbc:GrossVolumeMeasure)/xs:decimal(.) * 1000) &gt;= $THUGrossVolume">
-			[PEPPOL-T123-R006] Gross Volume Measure value must be greater than or equal to the sum of the MeasurementDimension/Measure values with AttributeID 'AAW'.
-		</assert>
+	        <let name="THUGrossVolume" value="round(sum(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAW']/cbc:Measure) * 1000)"/>
+	        <assert id="PEPPOL-T123-R006" 
+	           test="not(cbc:GrossVolumeMeasure) or ((cbc:GrossVolumeMeasure)/xs:decimal(.) * 1000) &gt;= $THUGrossVolume">
+	           [PEPPOL-T123-R006] Gross Volume Measure value must be greater than or equal to the sum of the MeasurementDimension/Measure values with AttributeID 'AAW'.     
+	           <value-of select="((cbc:GrossVolumeMeasure)/xs:decimal(.) * 1000)"/>
+	           <value-of select="$THUGrossVolume"/>
+	        </assert>
+
+
 		       <assert id="PEPPOL-T123-R007"
                  test="not(cac:Delivery/cac:DeliveryTerms) or ((cac:Delivery/cac:DeliveryTerms/cbc:ID) or (cac:Delivery/cac:DeliveryTerms/cbc:SpecialTerms))"
                  flag="fatal">[PEPPOL-T123-R007] Either ID or special terms need to be specified in Delivery terms</assert>
