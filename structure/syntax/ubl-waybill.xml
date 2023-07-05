@@ -385,6 +385,20 @@
          <Name>Freight Forwarder party </Name>
          <Description>The party responsible for organizing the shipment, often known as the integrator </Description>
          <Element cardinality="0..1">
+            <Term>cac:PartyIdentification</Term>
+            <Name>Freight Forwarder party identification </Name>
+            <Description>An identifier for the Freight Forwarder party. </Description>
+            <Element cardinality="1..1">
+               <Term>cbc:ID</Term>
+               <Value type="EXAMPLE">7300010000002</Value>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0088</Value>
+               </Attribute>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
             <Term>cac:PartyName</Term>
             <Name>Party name </Name>
             <Element>
@@ -587,6 +601,20 @@
                <Term>cac:ConsigneeParty</Term>
                <Name>Delivery party </Name>
                <Description>The party responsible for receiving the goods in waybill. </Description>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyIdentification</Term>
+                  <Name>Consignee party identification </Name>
+                  <Description>An identifier for the consignee party. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:ID</Term>
+                     <Value type="EXAMPLE">7300010000001</Value>
+                     <Attribute usage="Optional">
+                        <Term>schemeID</Term>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0088</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
                <Element cardinality="0..1">
                   <Term>cac:PartyName</Term>
                   <Name>Party name </Name>
