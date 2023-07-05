@@ -3,7 +3,7 @@
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
    <cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1</cbc:CustomizationID>
-   <cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1</cbc:ProfileID>
+   <cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1</cbc:ProfileID>
    <cbc:ID>691278571829041271246</cbc:ID>
    <cbc:IssueDate>2021-09-29</cbc:IssueDate>
    <cbc:IssueTime>09:49:00+02:00</cbc:IssueTime>
@@ -119,13 +119,7 @@
 		<cac:PartyLegalEntity>
 			<cbc:RegistrationName>Skanska Sverige AB</cbc:RegistrationName>
 		</cac:PartyLegalEntity>  
-   </cac:BillToParty>
-   <cac:TransportExecutionPlanRequestDocumentReference>
-      <cbc:ID>141278571829041241241</cbc:ID>
-      <cbc:IssueDate>2021-09-29</cbc:IssueDate>
-      <cbc:IssueTime>09:49:00+02:00</cbc:IssueTime>  
-   </cac:TransportExecutionPlanRequestDocumentReference>
-  
+   </cac:BillToParty>     
    <cac:MainTransportationService>
       <cbc:TransportServiceCode>3</cbc:TransportServiceCode>
       <cbc:TransportationServiceDescription>Transport from door to door</cbc:TransportationServiceDescription>  
@@ -144,14 +138,14 @@
          <cbc:IdentificationID>21412312412</cbc:IdentificationID>
          <cac:Location>            
             <cbc:Name>Beijer Byggmaterial port 2</cbc:Name>
-            <cac:Address>
+            <cac:DespatchAddress>
 					<cbc:StreetName>Bällstavägen 102</cbc:StreetName>
 					<cbc:CityName>Bromma</cbc:CityName>
 					<cbc:PostalZone>168 64</cbc:PostalZone>
 					<cac:Country>
 						<cbc:IdentificationCode>SE</cbc:IdentificationCode>
 					</cac:Country>
-				</cac:Address>      
+				</cac:DespatchAddress>      
          </cac:Location>
          <cac:Period>
             <cbc:StartDate>2021-09-25</cbc:StartDate>
@@ -184,50 +178,6 @@
             <cbc:EndTime>11:00:00+01:00</cbc:EndTime>      
          </cac:Period>    
       </cac:RequestedDeliveryTransportEvent>
-       <cac:PlannedPickupTransportEvent>
-         <cbc:IdentificationID>21412312412</cbc:IdentificationID>
-         <cac:Location>            
-            <cbc:Name>Beijer Byggmaterial port 2</cbc:Name>
-            <cac:Address>
-					<cbc:StreetName>Bällstavägen 102</cbc:StreetName>
-					<cbc:CityName>Bromma</cbc:CityName>
-					<cbc:PostalZone>168 64</cbc:PostalZone>
-					<cac:Country>
-						<cbc:IdentificationCode>SE</cbc:IdentificationCode>
-					</cac:Country>
-				</cac:Address>      
-         </cac:Location>
-         <cac:Period>
-            <cbc:StartDate>2021-09-25</cbc:StartDate>
-            <cbc:StartTime>12:45:00+02:00</cbc:StartTime>
-            <cbc:EndDate>2021-09-25</cbc:EndDate>
-            <cbc:EndTime>13:00:00+02:00</cbc:EndTime>      
-         </cac:Period>    
-      </cac:PlannedPickupTransportEvent>
-      <cac:PlannedDeliveryTransportEvent>
-         <cbc:IdentificationID>625435485674654132</cbc:IdentificationID>
-         <cac:Location>
-			<cbc:ID schemeID="0088">5790000435951</cbc:ID>
-			<cbc:Name>Skanska Sverige AB</cbc:Name>
-			<cac:Address>
-				<cbc:StreetName>Hammarbyvägen 3</cbc:StreetName>
-				<cbc:CityName>Stockholm</cbc:CityName>
-				<cbc:PostalZone>123 45</cbc:PostalZone>
-				<cac:AddressLine>
-					<cbc:Line>3:e våningen, Rum 5</cbc:Line>
-				</cac:AddressLine>
-				<cac:Country>
-					<cbc:IdentificationCode>SE</cbc:IdentificationCode>
-				</cac:Country>
-			</cac:Address>      
-         </cac:Location>
-         <cac:Period>
-            <cbc:StartDate>2021-09-29</cbc:StartDate>
-            <cbc:StartTime>10:00:00+01:00</cbc:StartTime>
-            <cbc:EndDate>2021-09-29</cbc:EndDate>
-            <cbc:EndTime>11:00:00+01:00</cbc:EndTime>      
-         </cac:Period>    
-      </cac:PlannedDeliveryTransportEvent>
       <cac:ConsigneeParty>
          <cac:PartyIdentification>
 			<cbc:ID schemeID="0007">5560339086</cbc:ID>
