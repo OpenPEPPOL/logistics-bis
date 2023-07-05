@@ -281,7 +281,7 @@
             <Term>cac:PartyIdentification</Term>
             <Name>Receiver party identification </Name>
             <Description>An identifier for the sender party as known to the sender party. </Description>
-            <Element cardinality="1..1">
+            <Element cardinality="0..1">
                <Term>cbc:ID</Term>
                <Name>ID</Name>
                <Value type="EXAMPLE">7300010000001</Value>
@@ -802,9 +802,9 @@
          <Term>cac:BillToParty</Term>
          <Name>Bill To Party </Name>
          <Description>The party that will pay for the transport service(s) referred to in this Transport Execution Plan. </Description>
-         <Element>
+         <Element cardinality="0..1">
             <Term>cac:PartyIdentification</Term>
-            <Name>Payee party identification (Bill to Party) </Name>
+            <Name>Payer party identification (Bill to Party) </Name>
             <Description>An identifier for the bill-to party. </Description>
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
@@ -826,7 +826,7 @@
                <Value type="EXAMPLE">Novo Nordisk Pharmatech A/S</Value>
             </Element>
          </Element>
-         <Element>
+         <Element cardinality="0..1">
             <Term>cac:PostalAddress</Term>
             <Name>Postal address </Name>
             <Description>The postal address for the bill-to party. </Description>
@@ -884,11 +884,11 @@
          <Element cardinality="0..1">
             <Term>cac:PartyTaxScheme</Term>
             <Name>Party tax scheme </Name>
-            <Description>The tax information about the payee party. </Description>
+            <Description>The tax information about the bill-to party. </Description>
             <Element cardinality="1..1">
                <Term>cbc:CompanyID</Term>
                <Name>Company ID </Name>
-               <Description>The Transport User Party Value Added Tax identifer. </Description>
+               <Description>The bill-to party Value Added Tax identifer. </Description>
                <Value type="EXAMPLE">GB325456788</Value>
             </Element>
             <Element cardinality="1..1">
@@ -905,11 +905,11 @@
          <Element cardinality="1..1">
             <Term>cac:PartyLegalEntity</Term>
             <Name>Party Legal Entity </Name>
-            <Description>The party legal entity for the payee party.</Description>
+            <Description>The party legal entity for the bill-to party.</Description>
             <Element cardinality="1..1">
                <Term>cbc:RegistrationName</Term>
                <Name>Transport user party name</Name>
-               <Description>The name of the payee party. </Description>
+               <Description>The name of the bill-to party. </Description>
                <Value type="EXAMPLE">Consortial</Value>
             </Element>
             <Element cardinality="0..1">
@@ -951,7 +951,7 @@
          <Element cardinality="0..1">
             <Term>cac:Contact</Term>
             <Name>Contact </Name>
-            <Description>The contact of the payee party. </Description>
+            <Description>The contact of the bill-to party. </Description>
             <Element cardinality="0..1">
                <Term>cbc:Name</Term>
                <Name>Contact name </Name>
@@ -1844,6 +1844,20 @@
             <Name>Consignee party </Name>
             <Description>The party responsible for receiving the goods in the transport execution plan. </Description>
             <Element cardinality="0..1">
+               <Term>cac:PartyIdentification</Term>
+               <Name>Consignee party identification </Name>
+               <Description>An identifier for the consignee party. </Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">7300010000001</Value>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Reference type="CODE_LIST">ICD</Reference>
+                     <Value type="EXAMPLE">0088</Value>
+                  </Attribute>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
                <Term>cac:PartyName</Term>
                <Name>Party name </Name>
                <Element>
@@ -1981,6 +1995,20 @@
             <Term>cac:ConsignorParty</Term>
             <Name>Consignor Party </Name>
             <Description>The party responsible for sending the goods in the transport execution plan. </Description>
+            <Element cardinality="0..1">
+               <Term>cac:PartyIdentification</Term>
+               <Name>Consignor party identification </Name>
+               <Description>An identifier for the consignor party. </Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:ID</Term>
+                  <Value type="EXAMPLE">7300010000001</Value>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Reference type="CODE_LIST">ICD</Reference>
+                     <Value type="EXAMPLE">0088</Value>
+                  </Attribute>
+               </Element>
+            </Element>
             <Element cardinality="0..1">
                <Term>cac:PartyName</Term>
                <Name>Party name </Name>
@@ -2241,6 +2269,21 @@
                <Term>cac:CarrierParty</Term>
                <Name>Carrier party </Name>
                <Description>The party providing the transport of goods in this consignment between named points. </Description>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyIdentification</Term>
+                  <Name>Sender party identification </Name>
+                  <Description>An identifier for the sender party as known to the receiver party. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:ID</Term>
+                     <Name>ID </Name>
+                     <Value type="EXAMPLE">7300010000001</Value>
+                     <Attribute usage="Optional">
+                        <Term>schemeID</Term>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0088</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
                <Element cardinality="0..1">
                   <Term>cac:PartyName</Term>
                   <Name>Party name </Name>
@@ -2634,6 +2677,21 @@
                <Term>cac:CarrierParty</Term>
                <Name>Carrier party </Name>
                <Description>The party providing the transport of goods in this consignment between named points. </Description>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyIdentification</Term>
+                  <Name>Sender party identification </Name>
+                  <Description>An identifier for the sender party as known to the receiver party. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:ID</Term>
+                     <Name>ID </Name>
+                     <Value type="EXAMPLE">7300010000001</Value>
+                     <Attribute usage="Optional">
+                        <Term>schemeID</Term>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0088</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
                <Element cardinality="0..1">
                   <Term>cac:PartyName</Term>
                   <Name>Party name </Name>
@@ -3033,6 +3091,21 @@
                <Term>cac:CarrierParty</Term>
                <Name>Carrier Party </Name>
                <Description>The party providing the transport of goods in this consignment between named points. </Description>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyIdentification</Term>
+                  <Name>Sender party identification </Name>
+                  <Description>An identifier for the sender party as known to the receiver party. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:ID</Term>
+                     <Name>ID </Name>
+                     <Value type="EXAMPLE">7300010000001</Value>
+                     <Attribute usage="Optional">
+                        <Term>schemeID</Term>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0088</Value>
+                     </Attribute>
+                  </Element>
+               </Element>
                <Element cardinality="0..1">
                   <Term>cac:PartyName</Term>
                   <Name>Party name </Name>

@@ -42,11 +42,11 @@
 			<?Description An identifier for the consignor party. ?>
 			<?Cardinality 0..1?>			
 			<cbc:ID schemeID="0088">7300010000001 	
-			<?Name ID ?>
-			<?Description The ID used for identification.?>			
-			<?schemeID-CodeList ICD?>
-			<?schemeID-usage Optional?>
-			<?Cardinality 1..1?>
+				<?Name ID ?>
+				<?Description The ID used for identification.?>			
+				<?schemeID-CodeList ICD?>
+				<?schemeID-usage Optional?>
+				<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>		
 		<cac:PartyName>
@@ -182,9 +182,9 @@
 			<?Description An identifier for the Carrier party. ?>
 			<?Cardinality 0..1?>			
 			<cbc:ID schemeID="0088">7300010000001 				
-			<?schemeID-CodeList ICD?>
-			<?schemeID-usage Optional?>
-			<?Cardinality 1..1?>
+				<?schemeID-CodeList ICD?>
+				<?schemeID-usage Optional?>
+				<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
@@ -286,6 +286,16 @@
 		<?Name Freight Forwarder party ?>
 		<?Description The party responsible for organizing the shipment, often known as the integrator ?>
 		<?Cardinality 0..1?>		
+		<cac:PartyIdentification>
+			<?Name Freight Forwarder party identification ?>
+			<?Description An identifier for the Freight Forwarder party. ?>
+			<?Cardinality 0..1?>			
+			<cbc:ID schemeID="0088">7300010000001				
+				<?schemeID-CodeList ICD?>
+				<?schemeID-usage Optional?>
+				<?Cardinality 1..1?>
+			</cbc:ID>
+		</cac:PartyIdentification>
 		<cac:PartyName>
 			<?Name Party name ?>
 			<?Cardinality 0..1?>
@@ -443,6 +453,16 @@
 			<?Name Delivery party ?>
 			<?Description The party responsible for receiving the goods in waybill. ?>
 			<?Cardinality 1..1?>			
+			<cac:PartyIdentification>
+				<?Name Consignee party identification ?>
+				<?Description An identifier for the consignee party. ?>
+				<?Cardinality 0..1?>
+				<cbc:ID schemeID="0088">7300010000001 				
+					<?schemeID-CodeList ICD?>
+					<?schemeID-usage Optional?>
+					<?Cardinality 1..1?>
+				</cbc:ID>
+			</cac:PartyIdentification>
 			<cac:PartyName>
 				<?Name Party name ?>
 				<?Cardinality 0..1?>
