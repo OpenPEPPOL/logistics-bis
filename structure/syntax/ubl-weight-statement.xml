@@ -34,7 +34,7 @@
 	     <Element cardinality="1..1">
          <Term>cbc:ID</Term>
          <Name>Document identifier</Name>
-         <Description>Unique identity identifying the weight statement. An transaction instance must contain an identifier. The identifier enables positive referencing the document instance for various purposes including referencing between transactions that are part of the same process.</Description>
+         <Description>Unique identity identifying the Weight Statement. An transaction instance must contain an identifier. The identifier enables positive referencing the document instance for various purposes including referencing between transactions that are part of the same process.</Description>
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir16-003</Reference>
          <Value type="EXAMPLE">GOA294107</Value>
@@ -42,8 +42,8 @@
 	
 	     <Element cardinality="1..1">
          <Term>cbc:IssueDate</Term>
-         <Name>Weight statement issue date</Name>
-         <Description>The date when the weight statement is issued. Format = "YYYY-MM-DD"</Description>
+         <Name>Weight Statement issue date</Name>
+         <Description>The date when the Weight Statement is issued. Format = "YYYY-MM-DD"</Description>
          <DataType>Date</DataType>
          <Reference type="BUSINESS_TERM">tir16-004</Reference>
          <Value type="EXAMPLE">2016-11-03</Value>
@@ -51,7 +51,7 @@
 	
 	     <Element cardinality="1..1">
          <Term>cbc:IssueTime</Term>
-         <Name>Weight statement issue time</Name>
+         <Name>Weight Statement issue time</Name>
          <Description>The time when the Weight Statement is issued. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
@@ -60,7 +60,7 @@
 	
 	     <Element>
          <Term>cbc:WeightStatementTypeCode</Term>
-         <Name>Weight statement type code</Name>
+         <Name>Weight Statement type code</Name>
          <Description>01 = Outbound delivery 02 = Inbound delivery</Description>
          <Reference type="CODE_LIST">WeightStatementTypeCode</Reference>
          <Value type="EXAMPLE">01</Value>
@@ -69,7 +69,7 @@
 	     <Element cardinality="1..1">
          <Term>cac:SenderParty</Term>
          <Name>Sender Party</Name>
-         <Description>The party sending this weight statement (e.g. Weighing Station, Shipper, Freight Forwarder, Carrier, ...).</Description>
+         <Description>The party sending this Weight Statement (e.g. Weighing Station, Shipper, Freight Forwarder, Carrier, ...).</Description>
          <Element cardinality="1..1">
             <Term>cbc:EndpointID</Term>
             <Name>Senders electronic address</Name>
@@ -195,7 +195,7 @@
 	     <Element cardinality="1..1">
          <Term>cac:ReceiverParty</Term>
          <Name>Receiver information</Name>
-         <Description>The party receiving this weight statement (e.g. Carrier, Terminal Operator, ...).</Description>
+         <Description>The party receiving this Weight Statement (e.g. Carrier, Terminal Operator, ...).</Description>
          <Element cardinality="1..1">
             <Term>cbc:EndpointID</Term>
             <Name>Receiver electronic address</Name>
