@@ -5,14 +5,14 @@ There are in the structure four date/times that can be used to define the delive
 
 * EstimatedDeliveryPeriod/StartDate and StartTime.
 * EstimatedDeliveryPeriod/EndDate and EndTime.
-* ActualDeliveryDate and Time.
-* ActualDespatchDate and Time.
+* ActualDespatchDate and ActualDespatchTime.
+* ActualDeliveryDate and ActualDeliveryTime.
 
 
 They should be used as follows in the different situations:
 
-* When sending the DespatchAdvice before delivery, the EstimatedDeliveryPeriod is used for the calculated arrival date/time. At least one of the Dates must be given, but a full period with both Start and End date and time is possible. The ActualDespatchDate and Time is used to inform about when the truck departs.
-* When sending the DespatchAdvice after delivery, the ActualDeliveryDate and Time is used for the real arrival date/time. The EstimatedDeliveryPeriod may be used to inform about what was expected, so that it is possible to measure the difference. The ActualDespatchDate and Time is also here the real the time the truck departs.
-* When the DespatchAdvice is for a service and therefore sent after delivery, the delivery period should be sent so that the service start is sent in ActualDespatchDate and the service end in ActualDeliveryDate. The EstimatedDeliveryPeriod is not used in this case.
+* When sending the DespatchAdvice *before delivery*, the EstimatedDeliveryPeriod is used for the calculated arrival date/time. At least the StartDate must be given, but a full period with both Start and End date and time is possible. The ActualDespatchDate and Time is used to inform about when the truck departs.
+* When sending the DespatchAdvice *after delivery*, the ActualDeliveryDate and Time is used for the real arrival date/time. The EstimatedDeliveryPeriod may be used to inform about what was expected, so that it is possible to measure the difference. The ActualDespatchDate and Time is also here the real the time the truck departs.
+* When the DespatchAdvice is for a *service* and therefore sent after delivery, the delivery period should be sent so that the service start is sent in ActualDespatchDate and the service end in ActualDeliveryDate. The EstimatedDeliveryPeriod is not used in this case.
 
 Note that the delivery dates are dependent on the delivery term. E.g, if the delivery term is Incoterms Ex Works it means that the goods are ready for pickup at the supplier the givien delivery date.
