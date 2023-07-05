@@ -44,7 +44,7 @@
 	     <Element>
          <Term>cbc:IssueDate</Term>
          <Name>Receipt Advice Issue Date. </Name>
-         <Description>The date when the receipt advice was issued. Format = "YYYY-MM-DD" </Description>
+         <Description>The date when the Receipt Advice was issued. Format = "YYYY-MM-DD" </Description>
          <DataType>Date</DataType>
          <Reference type="BUSINESS_TERM">tir16-004</Reference>
          <Value type="EXAMPLE">2021-09-10</Value>
@@ -52,21 +52,21 @@
 	     <Element cardinality="1..1">
          <Term>cbc:IssueTime</Term>
          <Name>Receipt Advice Issue Time. </Name>
-         <Description>The time when the receipt advice is issued. Format = "HH:MM:SS+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. </Description>
+         <Description>The time when the Receipt Advice is issued. Format = "HH:MM:SS+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
          <Value type="EXAMPLE">12:00:00+01:00</Value>
       </Element>
 	     <Element cardinality="0..1">
          <Term>cbc:DocumentStatusCode</Term>
-         <Name>Receipt advice status code</Name>
+         <Name>Receipt Advice Status Code</Name>
          <Description>A code signifying the status of the Receipt Advice. Default is Original (9) </Description>
          <Reference type="CODE_LIST">DocumentStatusCode</Reference>
          <Value type="EXAMPLE">9</Value>
       </Element>
 	     <Element cardinality="1..1">
          <Term>cbc:ReceiptAdviceTypeCode</Term>
-         <Name>Receipt advice type code</Name>
+         <Name>Receipt Advice Type Code</Name>
          <Description>A code signifying the type of the Receipt Advice - Response to the Advanced Despatch Advice (D) or Response to the received Shipment (S). </Description>
          <Reference type="RULE">PEPPOL-T128-R023</Reference>
          <Reference type="CODE_LIST">ReceiptAdviceTypeCode</Reference>
@@ -138,7 +138,7 @@
 	     <Element cardinality="0..n">
          <Term>cac:AdditionalDocumentReference</Term>
          <Name>Additional document reference</Name>
-         <Description>Reference to additional documents relevant for this Receipt advice. Can also be used for additional information on header level.</Description>
+         <Description>Reference to additional documents relevant for this Receipt Advice. Can also be used for additional information on header level.</Description>
          <Element>
             <Term>cbc:ID</Term>
             <Name>Identity of the reference</Name>

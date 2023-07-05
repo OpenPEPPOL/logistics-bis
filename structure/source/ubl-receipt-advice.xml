@@ -11,20 +11,20 @@
 		The Identity together with the Issue Date and Issue Time gives the version of the Receipt Advice. ?>
 	</cbc:ID>
 	<cbc:IssueDate>2021-09-10<?Name Receipt Advice Issue Date. ?>
-		<?Description The date when the receipt advice was issued. Format = "YYYY-MM-DD" ?>
+		<?Description The date when the Receipt Advice was issued. Format = "YYYY-MM-DD" ?>
 	</cbc:IssueDate>
-	<cbc:IssueTime>12:00:00+01:00<?Description The time when the receipt advice is issued. Format = "HH:MM:SS+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. ?>
+	<cbc:IssueTime>12:00:00+01:00<?Description The time when the Receipt Advice is issued. Format = "HH:MM:SS+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. ?>
 		<?Name Receipt Advice Issue Time. ?>
 		<?Cardinality 1..1?>
 	</cbc:IssueTime>
 	<cbc:DocumentStatusCode>9
-		<?Name Receipt advice status code?>
+		<?Name Receipt Advice Status Code?>
 		<?Description A code signifying the status of the Receipt Advice. Default is Original (9) ?>
 		<?Cardinality 0..1?>
 		<?CodeList DocumentStatusCode?>
 	</cbc:DocumentStatusCode>
 	<cbc:ReceiptAdviceTypeCode>S 
-		<?Name Receipt advice type code?>
+		<?Name Receipt Advice Type Code?>
 		<?Description A code signifying the type of the Receipt Advice - Response to the Advanced Despatch Advice (D) or Response to the received Shipment (S). ?>
 		<?Cardinality 1..1?>
 		<?CodeList ReceiptAdviceTypeCode?>
@@ -76,7 +76,7 @@
 	
 	<cac:AdditionalDocumentReference>
 		<?Name Additional document reference?>
-		<?Description Reference to additional documents relevant for this Receipt advice. Can also be used for additional information on header level.?>
+		<?Description Reference to additional documents relevant for this Receipt Advice. Can also be used for additional information on header level.?>
 		<?Cardinality 0..n?>
 		<cbc:ID> 7648779 
 			<?Name Identity of the reference?>
