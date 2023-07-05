@@ -20,7 +20,6 @@
 		<assert id="PEPPOL-T123-R006"
 		   test="not(cbc:GrossVolumeMeasure) or ((cbc:GrossVolumeMeasure)/xs:decimal(.) * 1000) &gt;= $THUGrossVolume">
 			[PEPPOL-T123-R006] Gross Volume Measure value must be greater than or equal to the sum of the MeasurementDimension/Measure values with AttributeID 'AAW'.
-			<value-of select="$THUGrossVolume"/>
 		</assert>
 		<assert id="PEPPOL-T123-R007" test="not(cac:Delivery/cac:DeliveryTerms) or ((cac:Delivery/cac:DeliveryTerms/cbc:ID) or (cac:Delivery/cac:DeliveryTerms/cbc:SpecialTerms))" flag="fatal">[PEPPOL-T123-R007] Either ID or special terms need to be specified in Delivery terms</assert>
 		<assert id="PEPPOL-T123-R008" test="(cbc:GrossWeightMeasure) or (cbc:GrossVolumeMeasure) or (cbc:LoadingLengthMeasure)" flag="warning">[PEPPOL-T123-R008] Either gross weight, gross volume or loading length must be specified</assert>
