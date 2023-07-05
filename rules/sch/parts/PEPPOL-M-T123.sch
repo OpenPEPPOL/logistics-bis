@@ -19,8 +19,8 @@
 		<assert id="PEPPOL-T123-R006"
 		   test="not(cbc:GrossVolumeMeasure) or ((cbc:GrossVolumeMeasure)/xs:decimal(.) * 1000) &gt;= round(sum(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAW']/cbc:Measure) * 1000)">
 			[PEPPOL-T123-R006] Gross Volume Measure value must be greater than or equal to the sum of the MeasurementDimension/Measure values with AttributeID 'AAW'.
-			GrossVolumeMeasure * 1000 = <value-of select="(cbc:GrossVolumeMeasure/xs:decimal(.) * 1000)"/>
-			Sum of MeasurementDimension * 1000 = <value-of select="round(sum(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAW']/cbc:Measure) * 1000)"/>
+			<value-of select="(cbc:GrossVolumeMeasure/xs:decimal(.) * 1000)"/>
+			<value-of select="round(sum(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAW']/cbc:Measure) * 1000)"/>
 		</assert>
 
 
