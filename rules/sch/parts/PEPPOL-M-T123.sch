@@ -17,7 +17,7 @@
 		<assert id="PEPPOL-T123-R004" test="not(cbc:TotalTransportHandlingUnitQuantity) or not(cac:TransportHandlingUnit) or number(cbc:TotalTransportHandlingUnitQuantity) = count(cac:TransportHandlingUnit)" flag="warning">[PEPPOL-T123-R004] Shipment transport handling unit quantity SHALL match the number of the transport handling units specified</assert>
 		<assert id="PEPPOL-T123-R005" test="not(cbc:GrossWeightMeasure) or not(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAB']/cbc:Measure) or number(cbc:GrossWeightMeasure) = sum(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAB']/cbc:Measure)" flag="warning">[PEPPOL-T123-R005] Shipment  gross weight measure SHALL match the gross weight of the transport handling units specified</assert>
 		<assert id="PEPPOL-T123-R006"
-		  test="not(cbc:GrossVolumeMeasure) or (round(cbc:GrossVolumeMeasure) * 1000) &gt;= round(sum(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAW']/cbc:Measure) * 1000)">
+				   test="not(cbc:GrossVolumeMeasure) or ((cbc:GrossVolumeMeasure)/xs:decimal(.) * 1000) &gt;= round(sum(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAW']/cbc:Measure) * 1000)">
 			[PEPPOL-T123-R006] Gross Volume Measure value must be greater than or equal to the sum of the MeasurementDimension/Measure values with AttributeID 'AAW'.
 		</assert>
 
