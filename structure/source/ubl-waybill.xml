@@ -855,7 +855,7 @@
 			<?Name Shipment stage ?>
 			<?Description The shipment stage for this waybill. ?>
 			<?Cardinality 1..1?>
-			<cbc:TransportModeCode>4
+			<cbc:TransportModeCode>3
 				<?Name Transport mode code?>
 				<?Description A code signifying the method of transport used for this shipment stage. ?>
 				<?Cardinality 1..1?>
@@ -866,16 +866,6 @@
 				<?Name Transport means ?>
 				<?Description The means of transport used in this shipment stage.?>
 				<?Cardinality 0..1?>
-				<cac:AirTransport>
-					<?Name Air transport ?>
-					<?Description An aircraft used in this shipment stage.?>
-					<?Cardinality 0..1?>
-					<cbc:AircraftID>JA8088
-						<?Name Air transport identifier ?>
-						<?Description An identifer for a specific aircraft.?>
-						<?Cardinality 1..1?>
-					</cbc:AircraftID>
-				</cac:AirTransport>
 				<cac:RoadTransport>
 					<?Name Road transport ?>
 					<?Description Description of a truck or a vehicle transporting the goods. Use only if Transport mode code is set to road transport?>
@@ -886,31 +876,6 @@
 						<?Cardinality 1..1?>
 					</cbc:LicensePlateID>
 				</cac:RoadTransport>
-				<cac:RailTransport>
-					<?Name Rail transport ?>
-					<?Description Equipment used for rail transport in this shipment stage.?>
-					<?Cardinality 0..1?>
-					<cbc:TrainID>12014
-						<?Name Train identifier ?>
-						<?Description An identifier for the train used as the means of transport.?>
-						<?Cardinality 1..1?>
-					</cbc:TrainID>
-					<cbc:RailCarID>50 63 20-33 801-5
-						<?Name Rail car identifier ?>
-						<?Description An identifier for the rail car on the train used as the means of transport..?>
-						<?Cardinality 0..1?>
-					</cbc:RailCarID>
-				</cac:RailTransport>
-				<cac:MaritimeTransport>
-					<?Name Maritime transport ?>
-					<?Description Description of a truck or a vehicle transporting the goods. Use only if TransportModeCode is set to maritime transport. ?>
-					<?Cardinality 0..1?>
-					<cbc:VesselID>wrt34663
-						<?Name Vessel identifier ?>
-						<?Description The registred identifier of the vessel?>
-						<?Cardinality 1..1?>
-					</cbc:VesselID>
-				</cac:MaritimeTransport>
 			</cac:TransportMeans>
 		</cac:ShipmentStage>
 		<cac:Delivery>			

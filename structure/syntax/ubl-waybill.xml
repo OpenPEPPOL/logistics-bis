@@ -1046,23 +1046,12 @@
                <Description>A code signifying the method of transport used for this shipment stage. </Description>
                <Reference type="BUSINESS_TERM">tir16-p056</Reference>
                <Reference type="CODE_LIST">UNECERec19</Reference>
-               <Value type="EXAMPLE">4</Value>
+               <Value type="EXAMPLE">3</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:TransportMeans</Term>
                <Name>Transport means </Name>
                <Description>The means of transport used in this shipment stage.</Description>
-               <Element cardinality="0..1">
-                  <Term>cac:AirTransport</Term>
-                  <Name>Air transport </Name>
-                  <Description>An aircraft used in this shipment stage.</Description>
-                  <Element cardinality="1..1">
-                     <Term>cbc:AircraftID</Term>
-                     <Name>Air transport identifier </Name>
-                     <Description>An identifer for a specific aircraft.</Description>
-                     <Value type="EXAMPLE">JA8088</Value>
-                  </Element>
-               </Element>
                <Element cardinality="0..1">
                   <Term>cac:RoadTransport</Term>
                   <Name>Road transport </Name>
@@ -1072,34 +1061,6 @@
                      <Name>License plate identifier transport </Name>
                      <Description>The licence plate(s) identifying the vehicle seperated by semicolon if there are more than one</Description>
                      <Value type="EXAMPLE">DF10958</Value>
-                  </Element>
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:RailTransport</Term>
-                  <Name>Rail transport </Name>
-                  <Description>Equipment used for rail transport in this shipment stage.</Description>
-                  <Element cardinality="1..1">
-                     <Term>cbc:TrainID</Term>
-                     <Name>Train identifier </Name>
-                     <Description>An identifier for the train used as the means of transport.</Description>
-                     <Value type="EXAMPLE">12014</Value>
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:RailCarID</Term>
-                     <Name>Rail car identifier </Name>
-                     <Description>An identifier for the rail car on the train used as the means of transport..</Description>
-                     <Value type="EXAMPLE">50 63 20-33 801-5</Value>
-                  </Element>
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:MaritimeTransport</Term>
-                  <Name>Maritime transport </Name>
-                  <Description>Description of a truck or a vehicle transporting the goods. Use only if TransportModeCode is set to maritime transport. </Description>
-                  <Element cardinality="1..1">
-                     <Term>cbc:VesselID</Term>
-                     <Name>Vessel identifier </Name>
-                     <Description>The registred identifier of the vessel</Description>
-                     <Value type="EXAMPLE">wrt34663</Value>
                   </Element>
                </Element>
             </Element>

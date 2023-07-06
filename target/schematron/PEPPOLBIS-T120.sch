@@ -1746,12 +1746,12 @@
 	     <rule context="cac:Shipment/cac:Consignment/cac:CarrierParty">
 		       <assert id="PEPPOL-T120-R110"
                  test="(cac:PartyName/cbc:Name) or (cac:PartyIdentification/cbc:ID)"
-                 flag="fatal">A Despatch Advice Despatch Supplier Party SHALL contain the name or an identifier</assert>
+                 flag="fatal">A Despatch Advice Carrier Party SHALL contain the name or an identifier</assert>
 	     </rule>
 	     <rule context="cac:DespatchLine/cac:Item/cac:ManufacturerParty">
 		       <assert id="PEPPOL-T120-R111"
                  test="(cac:PartyName/cbc:Name) or (cac:PartyIdentification/cbc:ID)"
-                 flag="fatal">A Despatch Advice Despatch Supplier Party SHALL contain the name or an identifier</assert>
+                 flag="fatal">A Despatch Advice Manufacturer Party SHALL contain the name or an identifier</assert>
 	     </rule>
 	     <rule context="cac:EstimatedDeliveryPeriod">
 		       <assert id="PEPPOL-T120-R012"
