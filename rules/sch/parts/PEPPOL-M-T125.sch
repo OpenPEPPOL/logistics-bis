@@ -26,7 +26,7 @@
 	</rule>
 	
 	<rule context="cac:Shipment/cac:Delivery">
-		<assert id="PEPPOL-T125-R007" test="not(cac:DeliveryTerms) or (cac:DeliveryTerms/cbc:ID) or (cac:DeliveryTerms/cbc:SpecialTerms)" flag="fatal">[PEPPOL-T125-R007] Either ID or special terms need to be specified in Delivery terms</assert>
+		<assert id="PEPPOL-T125-R007" test="not(cac:DeliveryTerms) or ((cac:DeliveryTerms/cbc:ID) or (cac:DeliveryTerms/cbc:SpecialTerms))" flag="fatal">[PEPPOL-T125-R007] Either ID or special terms need to be specified in Delivery terms</assert>
 	</rule>
 
 	<rule context="cac:EstimatedDeliveryPeriod">
