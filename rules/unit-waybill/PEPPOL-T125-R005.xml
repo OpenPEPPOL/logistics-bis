@@ -11,8 +11,9 @@
 		</assert>
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
-		   <cac:Consignment>
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+			<cac:Consignment>
 		   <!--Gross weight specified and specified as the  on THU level -->      
 			  <cbc:GrossWeightMeasure unitCode="KGM">1030</cbc:GrossWeightMeasure>
 			  <cac:TransportHandlingUnit>
@@ -23,6 +24,7 @@
 				 </cac:MeasurementDimension>         
 			  </cac:TransportHandlingUnit>
 		   </cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 	
@@ -32,14 +34,16 @@
 		</assert>
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
-		   <cac:Consignment>
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>
 		   <!--Gross weight specified and not specified on THU level -->      
 			  <cbc:GrossWeightMeasure unitCode="KGM">1030</cbc:GrossWeightMeasure>
 			  <cac:TransportHandlingUnit>
 				<cbc:ID>11111222222222</cbc:ID>				      
 			  </cac:TransportHandlingUnit>
 		   </cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 	
@@ -49,8 +53,9 @@
 		</assert>
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
-		   <cac:Consignment>
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>
 		   <!--Gross weight specified and specified as the  on THU level -->      
 			  <cbc:GrossWeightMeasure unitCode="KGM">2030</cbc:GrossWeightMeasure>
 			  <cac:TransportHandlingUnit>
@@ -68,6 +73,7 @@
 				 </cac:MeasurementDimension>         
 			  </cac:TransportHandlingUnit>
 		   </cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 
@@ -78,7 +84,8 @@
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Consignment>
+			<cac:Shipment>
+				<cac:Consignment>
 				<cac:TransportHandlingUnit>
 					<cbc:ID>11111222222222</cbc:ID>
 					<cac:MeasurementDimension>
@@ -87,6 +94,7 @@
 					</cac:MeasurementDimension>
 				</cac:TransportHandlingUnit>
 			</cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 		
@@ -96,8 +104,9 @@
 		</assert>
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
-		   <cac:Consignment>      
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>      
 			  <cbc:GrossWeightMeasure unitCode="KGM">1030</cbc:GrossWeightMeasure>
 			  <cac:TransportHandlingUnit>
 				<cbc:ID>11111222222222</cbc:ID>
@@ -107,6 +116,7 @@
 				 </cac:MeasurementDimension>         
 			  </cac:TransportHandlingUnit>			   
 		   </cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 
@@ -116,8 +126,9 @@
 		</assert>
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
-		   <cac:Consignment>
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>
 		   <!--Gross weight specified and specified as the  on THU level -->      
 			  <cbc:GrossWeightMeasure unitCode="KGM">2030</cbc:GrossWeightMeasure>
 			  <cac:TransportHandlingUnit>
@@ -135,6 +146,7 @@
 				 </cac:MeasurementDimension>         
 			  </cac:TransportHandlingUnit>
 		   </cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 
@@ -145,7 +157,8 @@
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Consignment>
+			<cac:Shipment>
+				<cac:Consignment>
 				<!--Gross weight specified and specified as the  on THU level -->
 				<cbc:GrossWeightMeasure unitCode="KGM">2060.5</cbc:GrossWeightMeasure>
 				<cac:TransportHandlingUnit>
@@ -163,6 +176,7 @@
 					</cac:MeasurementDimension>
 				</cac:TransportHandlingUnit>
 			</cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 
@@ -173,7 +187,8 @@
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Consignment>
+			<cac:Shipment>
+				<cac:Consignment>
 				<!--Gross weight specified and specified as the  on THU level -->
 				<cbc:GrossWeightMeasure unitCode="KGM">2060.7</cbc:GrossWeightMeasure>
 				<cac:TransportHandlingUnit>
@@ -191,6 +206,7 @@
 					</cac:MeasurementDimension>
 				</cac:TransportHandlingUnit>
 			</cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 
@@ -201,7 +217,8 @@
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Consignment>
+			<cac:Shipment>
+				<cac:Consignment>
 				<cbc:GrossWeightMeasure unitCode="KGM">2060</cbc:GrossWeightMeasure>
 				<cac:TransportHandlingUnit>
 					<cbc:ID>12345</cbc:ID>
@@ -220,6 +237,7 @@
 					</cac:MeasurementDimension>
 				</cac:TransportHandlingUnit>
 			</cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 
@@ -230,7 +248,8 @@
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Consignment>
+			<cac:Shipment>
+				<cac:Consignment>
 				<cbc:GrossWeightMeasure unitCode="TNE">2.060</cbc:GrossWeightMeasure>
 				<cac:TransportHandlingUnit>
 					<cbc:ID>12345</cbc:ID>
@@ -249,6 +268,7 @@
 					</cac:MeasurementDimension>
 				</cac:TransportHandlingUnit>
 			</cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 
@@ -259,7 +279,8 @@
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Consignment>
+			<cac:Shipment>
+				<cac:Consignment>
 				<!--Gross weight specified and specified as the  on THU level -->
 				<cbc:GrossWeightMeasure unitCode="KGM">2060</cbc:GrossWeightMeasure>
 				<cac:TransportHandlingUnit>
@@ -287,6 +308,7 @@
 					</cac:MeasurementDimension>
 				</cac:TransportHandlingUnit>
 			</cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 
@@ -297,7 +319,8 @@
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Consignment>
+			<cac:Shipment>
+				<cac:Consignment>
 				<!--Gross weight specified and specified as the  on THU level -->
 				<cbc:GrossWeightMeasure unitCode="KGM">2090</cbc:GrossWeightMeasure>
 				<cac:TransportHandlingUnit>
@@ -325,6 +348,7 @@
 					</cac:MeasurementDimension>
 				</cac:TransportHandlingUnit>
 			</cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 
@@ -335,7 +359,8 @@
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Consignment>
+			<cac:Shipment>
+				<cac:Consignment>
 				<cbc:GrossWeightMeasure unitCode="KGM">2091</cbc:GrossWeightMeasure>
 				<cac:TransportHandlingUnit>
 					<cbc:ID>12345</cbc:ID>
@@ -362,6 +387,7 @@
 					</cac:MeasurementDimension>
 				</cac:TransportHandlingUnit>
 			</cac:Consignment>
+				</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 
