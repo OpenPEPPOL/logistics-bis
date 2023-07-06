@@ -1414,21 +1414,35 @@
 					<?Name Period ?>
 					<?Description The period within the departure of this transport event takes place. ?>
 					<?Cardinality 1..1?>
-					<cbc:StartDate>2021-09-29<?Name Period start date?>
-						<?Description The start date for the period. ?>
+				<cbc:StartDate>2021-09-29<?Name Period start date?>
+					<?Description The start date for the period.?>
+					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T123-R011?>
+					<?Rule PEPPOL-T123-R012?>
+				</cbc:StartDate>
+					<cbc:StartTime>10:00:00+01:00<?Name Period start time?>
+						<?Description The start time for the period.?>
 						<?Cardinality 0..1?>
-					</cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00<?Name Period start time?>
-						<?Description The start time for the period. ?>
-						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T123-R013?>
+						<?Rule PEPPOL-T123-R014?>
+						<?Rule PEPPOL-T123-R015?>
+						<?Rule PEPPOL-T123-R016?>
+						<?Rule PEPPOL-T123-R017?>
 					</cbc:StartTime>
 					<cbc:EndDate>2021-09-29<?Name Period end date?>
-						<?Description The end date for the period. ?>
+						<?Description The end date for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T123-R011?>
+						<?Rule PEPPOL-T123-R012?>
 					</cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00<?Name Period end time?>
-						<?Description The end time for the period. ?>
+					<cbc:EndTime>11:00:00+01:00<?Name Period end time?>
+						<?Description The end time for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T123-R013?>
+						<?Rule PEPPOL-T123-R014?>
+						<?Rule PEPPOL-T123-R015?>
+						<?Rule PEPPOL-T123-R016?>
+						<?Rule PEPPOL-T123-R017?>
 					</cbc:EndTime>
 				</cac:Period>
 			</cac:RequestedDepartureTransportEvent>
@@ -1493,21 +1507,29 @@
 					<?Name Period ?>
 					<?Description The period within the departure of this transport event takes place. ?>
 					<?Cardinality 1..1?>
-					<cbc:StartDate>2021-09-29<?Name Period start date?>
-						<?Description The start date for the period. ?>
+					<cbc:StartTime>10:00:00+01:00<?Name Period start time?>
+						<?Description The start time for the period.?>
 						<?Cardinality 0..1?>
-					</cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00<?Name Period start time?>
-						<?Description The start time for the period. ?>
-						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T123-R013?>
+						<?Rule PEPPOL-T123-R014?>
+						<?Rule PEPPOL-T123-R015?>
+						<?Rule PEPPOL-T123-R016?>
+						<?Rule PEPPOL-T123-R017?>
 					</cbc:StartTime>
 					<cbc:EndDate>2021-09-29<?Name Period end date?>
-						<?Description The end date for the period. ?>
+						<?Description The end date for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T123-R011?>
+						<?Rule PEPPOL-T123-R012?>
 					</cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00<?Name Period end time?>
-						<?Description The end time for the period. ?>
+					<cbc:EndTime>11:00:00+01:00<?Name Period end time?>
+						<?Description The end time for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T123-R013?>
+						<?Rule PEPPOL-T123-R014?>
+						<?Rule PEPPOL-T123-R015?>
+						<?Rule PEPPOL-T123-R016?>
+						<?Rule PEPPOL-T123-R017?>
 					</cbc:EndTime>
 				</cac:Period>
 			</cac:RequestedArrivalTransportEvent>
