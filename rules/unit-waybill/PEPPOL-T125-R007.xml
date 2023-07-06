@@ -26,9 +26,9 @@
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Shipment>
 				<cac:Delivery>			
-				<cac:DeliveryTerms>
-					<cbc:SpecialTerms>DAP</cbc:SpecialTerms>
-				</cac:DeliveryTerms>
+					<cac:DeliveryTerms>
+						<cbc:SpecialTerms>DAP</cbc:SpecialTerms>
+					</cac:DeliveryTerms>
 				</cac:Delivery>
 			</cac:Shipment>
 		</ubl:Waybill>
@@ -41,16 +41,16 @@
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 			<cac:Shipment>
 				<cac:Delivery>
-				<cac:DeliveryTerms>
-					<cbc:ID>DAP</cbc:ID>
-					<cbc:SpecialTerms>DAP-123</cbc:SpecialTerms>
-					<cac:DeliveryLocation>
-						<cbc:ID>Kalmar</cbc:ID>
-					</cac:DeliveryLocation>
-				</cac:DeliveryTerms>
+					<cac:DeliveryTerms>
+						<cbc:ID>DAP</cbc:ID>
+						<cbc:SpecialTerms>DAP-123</cbc:SpecialTerms>
+						<cac:DeliveryLocation>
+							<cbc:ID>Kalmar</cbc:ID>
+						</cac:DeliveryLocation>
+					</cac:DeliveryTerms>
 				</cac:Delivery>
-				</cac:Shipment>
-			</ubl:Waybill>
+			</cac:Shipment>
+		</ubl:Waybill>
 	</test>
 	
 	<test id="4">
@@ -61,9 +61,7 @@
 			<cac:Shipment>
 				<cac:Delivery>
 					<cac:DeliveryTerms>
-						<cac:DeliveryLocation>
-							<cbc:ID>Kalmar</cbc:ID>
-						</cac:DeliveryLocation>				
+			
 					</cac:DeliveryTerms>
 				</cac:Delivery>
 			</cac:Shipment>
