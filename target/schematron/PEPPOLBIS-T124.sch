@@ -979,15 +979,13 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T124-B23801">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period">
-         <assert test="cbc:StartDate" flag="fatal" id="PEPPOL-T124-B26001">Element 'cbc:StartDate' MUST be provided.</assert>
-      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period/cbc:StartDate"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period/cbc:StartTime"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period/cbc:EndDate"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period/cbc:EndTime"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B26002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B26001">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T124-B23603">Document MUST NOT contain elements not part of the data model.</assert>
@@ -2260,9 +2258,14 @@
 		       <assert id="PEPPOL-T124-R005"
                  test="not(cbc:GrossWeightMeasure) or not(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAB']/cbc:Measure) or (cbc:GrossWeightMeasure/@unitCode) &gt; (cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAB']/cbc:Measure/@unitCode) or (cbc:GrossWeightMeasure/@unitCode) &lt; (cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAB']/cbc:Measure/@unitCode) or number(cbc:GrossWeightMeasure) = sum(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAB']/cbc:Measure)"
                  flag="warning">[PEPPOL-T124-R005] Shipment  gross weight measure SHALL match the gross weight of the transport handling units specified</assert>
-		       <assert id="PEPPOL-T124-R006"
-                 test="not(cbc:GrossVolumeMeasure) or not(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAW']/cbc:Measure) or (cbc:GrossVolumeMeasure/@unitCode) &gt; (cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAW']/cbc:Measure/@unitCode) or (cbc:GrossVolumeMeasure/@unitCode) &lt; (cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAW']/cbc:Measure/@unitCode) or number(cbc:GrossVolumeMeasure) &gt;= sum(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAW']/cbc:Measure)"
-                 flag="warning">[PEPPOL-T124-R006] Shipment gross volume measure SHALL greater or equal of the transport handling units specified</assert>		
+		       <let name="THUGrossVolume"
+              value="round(sum(cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAW']/cbc:Measure) * 1000)"/>
+		       <assert id="PEPPOL-T123-R006"
+                 test="not(cbc:GrossVolumeMeasure) or (cbc:GrossVolumeMeasure/@unitCode) &gt; (cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAW']/cbc:Measure/@unitCode) or (cbc:GrossVolumeMeasure/@unitCode) &lt; (cac:TransportHandlingUnit/cac:MeasurementDimension[normalize-space(cbc:AttributeID) = 'AAW']/cbc:Measure/@unitCode) or ((cbc:GrossVolumeMeasure)/xs:decimal(.) * 1000) &gt;= $THUGrossVolume"
+                 flag="warning">
+			[PEPPOL-T124-R006] Gross Volume Measure value must be greater than or equal to the sum of the MeasurementDimension/Measure values with AttributeID 'AAW'.
+		</assert>
+
 		       <assert id="PEPPOL-T124-R007"
                  test="not(cac:Delivery/cac:DeliveryTerms) or ((cac:Delivery/cac:DeliveryTerms/cbc:ID) or (cac:Delivery/cac:DeliveryTerms/cbc:SpecialTerms))"
                  flag="fatal">[PEPPOL-T124-R007] Either ID or special terms need to be specified in Delivery terms</assert>

@@ -6,11 +6,21 @@
 	<?DocumentTerm TransportationStatusRequest?>
 	<?Property key="sch:prefix" PEPPOL-T126?>
 	<?Property key="sch:identifier" T126-basic?>
-	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transportation_status_request:1</cbc:CustomizationID>
-	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1<?Name Profile ID?><?Description Identifies the Peppol profile or business process context in which the transaction appears.?><?Cardinality 1..1?></cbc:ProfileID>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transportation_status_request:1<?Rule PEPPOL-T126-R001?></cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1
+		<?Name Profile ID?>
+		<?Description Identifies the Peppol profile or business process context in which the transaction appears.?>
+		<?Rule PEPPOL-T126-R002?>
+		<?Cardinality 1..1?>
+	</cbc:ProfileID>
 	<cbc:ID>TSR_1</cbc:ID>
 	<cbc:IssueDate>2011-10-06<?Name Issue Date?><?Description The date when the transporation status request was issued. Format = "YYYY-MM-DD". ?><?Cardinality 1..1?></cbc:IssueDate>
-	<cbc:IssueTime>09:29:30+02:00<?Name Issue Time?><?Description The time when the transportation status request was issued. ?><?Cardinality 1..1?><?Cardinality 1..1?></cbc:IssueTime>
+	<cbc:IssueTime>09:29:30+02:00
+		<?Name Issue Time?>
+		<?Description The time when the transportation status request was issued. ?>
+		<?Rule PEPPOL-T123-R018?>
+		<?Cardinality 1..1?>
+	</cbc:IssueTime>
 	<cbc:ShippingOrderID schemeID = "zzz">KHN23-44044
 		<?Name Shipping Order ID ?>
 		<?Description An identifier (in the form of a reference number) of the Shipping Order or Forwarding Instruction associated with this shipment. ?>
@@ -24,7 +34,7 @@
 		<?CodeList TransportationStatusTypeCode?>
 		<?listID-usage Optional?>
 	</cbc:TransportationStatusTypeCode>
-		<cac:SenderParty>
+	<cac:SenderParty>
 		<?Name Sender party ?>
 		<?Description The party sending the transportation status request. ?>
 		<?Cardinality 1..1?>
@@ -42,10 +52,11 @@
 			<?Description An identifier for the sender party as known to the receiver party. ?>
 			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088"> 7300010000001 	
-			<?Name ID ?>
-			<?Cardinality 1..1?>			
-			<?schemeID-CodeList ICD?>
-			<?schemeID-usage Optional?>			
+				<?Name ID ?>
+				<?Cardinality 1..1?>			
+				<?schemeID-CodeList ICD?>
+				<?schemeID-usage Optional?>			
+				<?Rule PEPPOL-T126-R031?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
@@ -55,6 +66,7 @@
 				<?Name Sender party name?>
 				<?Description The name of the sender party. ?>
 				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T126-R031?>
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
@@ -107,18 +119,18 @@
 			<?Description The tax information about the sender party. ?>
 			<?Cardinality 0..1?>
 			<cbc:CompanyID>GB325456788
-					<?Name Company ID ?>
-					<?Description The Sender Party Value Added Tax identifer. ?>
-					<?Cardinality 1..1?>
-				</cbc:CompanyID>
+				<?Name Company ID ?>
+				<?Description The Sender Party Value Added Tax identifer. ?>
+				<?Cardinality 1..1?>
+			</cbc:CompanyID>
 			<cac:TaxScheme>
 				<?Name Tax scheme ?>
 				<?Cardinality 1..1?>
 				<cbc:ID>VAT
-						<?Name Tax scheme identifier ?>
-						<?Description Tax scheme identifier. E.g. "VAT" or "GST". ?>
-						<?Cardinality 1..1?>
-					</cbc:ID>
+					<?Name Tax scheme identifier ?>
+					<?Description Tax scheme identifier. E.g. "VAT" or "GST". ?>
+					<?Cardinality 1..1?>
+				</cbc:ID>
 			</cac:TaxScheme>
 		</cac:PartyTaxScheme>
 		<cac:PartyLegalEntity>
@@ -197,10 +209,11 @@
 			<?Description An identifier for the sender party as known to the sender party. ?>
 			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">7300010000001 		
-			<?Name ID?>
-			<?Cardinality 1..1?>					
-			<?schemeID-CodeList ICD?>
-			<?schemeID-usage Optional?>			
+				<?Name ID?>
+				<?Cardinality 1..1?>					
+				<?schemeID-CodeList ICD?>
+				<?schemeID-usage Optional?>			
+				<?Rule PEPPOL-T126-R032?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
@@ -210,6 +223,7 @@
 				<?Name Receiver party name ?>
 				<?Description The name of the receiver party. ?>
 				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T126-R032?>
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
@@ -384,10 +398,10 @@
 			</cbc:TransportEventTypeCode>
 		</cac:TransportEvent>
 		<cac:TransportHandlingUnit>
-				<?Name Transport handling unit ?>
-				<?Description A transport handling unit from witch a status is requested ?>
-				<?Cardinality 0..n?>
-				<cbc:ID schemeID = "sscc">11111222222222
+			<?Name Transport handling unit ?>
+			<?Description A transport handling unit from witch a status is requested ?>
+			<?Cardinality 0..n?>
+			<cbc:ID schemeID = "sscc">11111222222222
 				<?Name Identifier transport handling unit ?>
 				<?Description The SSCC identification code of this Transport Handling Unit. ?>
 				<?Cardinality 1..1?>

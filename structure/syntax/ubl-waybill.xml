@@ -18,6 +18,7 @@
 				transaction.</Description>
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir16-002</Reference>
+         <Reference type="RULE">PEPPOL-T125-R001</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:waybill:1</Value>
       </Element>
 	     <Element>
@@ -26,6 +27,7 @@
          <Description>Identifies the BII profile or business process context in which the transaction appears.</Description>
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir16-001</Reference>
+         <Reference type="RULE">PEPPOL-T125-R002</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:waybill_only:1</Value>
       </Element>
 	     <Element>
@@ -58,6 +60,7 @@
          <Description>The time when this version of the waybill is issued. Format = "hh:mm:ss". </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
+         <Reference type="RULE">PEPPOL-T125-R018</Reference>
          <Value type="EXAMPLE">09:00:00+02:00</Value>
       </Element>
 	     <Element cardinality="1..1">
@@ -95,6 +98,7 @@
                <Term>cbc:ID</Term>
                <Name>ID </Name>
                <Description>The ID used for identification.</Description>
+               <Reference type="RULE">PEPPOL-T125-R031</Reference>
                <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
@@ -110,6 +114,7 @@
                <Term>cbc:Name</Term>
                <Name>Consignor party name</Name>
                <Description>The name of the consignor party.</Description>
+               <Reference type="RULE">PEPPOL-T125-R031</Reference>
                <Value type="EXAMPLE">Novo Nordisk Pharmatech A/S</Value>
             </Element>
          </Element>
@@ -260,6 +265,7 @@
             <Description>An identifier for the Carrier party. </Description>
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
+               <Reference type="RULE">PEPPOL-T125-R032</Reference>
                <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
@@ -275,6 +281,7 @@
                <Term>cbc:Name</Term>
                <Name>Carrier party name</Name>
                <Description>The name of the carrier party. </Description>
+               <Reference type="RULE">PEPPOL-T125-R032</Reference>
                <Value type="EXAMPLE">Finnair Oyj</Value>
             </Element>
          </Element>
@@ -435,6 +442,7 @@
             <Description>An identifier for the Freight Forwarder party. </Description>
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
+               <Reference type="RULE">PEPPOL-T125-R033</Reference>
                <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
@@ -450,6 +458,7 @@
                <Term>cbc:Name</Term>
                <Name>Freight forwarder party name</Name>
                <Description>The name of the freight forwarder party. </Description>
+               <Reference type="RULE">PEPPOL-T125-R033</Reference>
                <Value type="EXAMPLE">Finnair Oyj</Value>
             </Element>
          </Element>
@@ -623,6 +632,9 @@
                <Term>cbc:GrossWeightMeasure</Term>
                <Name>Consignment gross weight </Name>
                <Description>The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified. Mandatory if grossvolumen or loading lenght is not specified</Description>
+               <Reference type="RULE">PEPPOL-T125-R005</Reference>
+               <Reference type="RULE">PEPPOL-T125-R008</Reference>
+               <Reference type="RULE">PEPPOL-T125-R040</Reference>
                <Value type="EXAMPLE">1030</Value>
                <Attribute>
                   <Term>unitCode</Term>
@@ -633,6 +645,8 @@
                <Term>cbc:GrossVolumeMeasure</Term>
                <Name>Consignment gross volume </Name>
                <Description>The gross volumen of the consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified. Mandatory if grosswaight or loading lenght is not specified.</Description>
+               <Reference type="RULE">PEPPOL-T125-R006</Reference>
+               <Reference type="RULE">PEPPOL-T125-R008</Reference>
                <Value type="EXAMPLE">20</Value>
                <Attribute>
                   <Term>unitCode</Term>
@@ -643,6 +657,7 @@
                <Term>cbc:LoadingLengthMeasure</Term>
                <Name>Loading length measure </Name>
                <Description>The total length in a means of transport or a piece of transport equipment which, given the width and height of the transport means, will accommodate all of the consignments in a single consolidation. Mandatory if grossweight or grossvolumen is not specified</Description>
+               <Reference type="RULE">PEPPOL-T125-R008</Reference>
                <Value type="EXAMPLE">0.4</Value>
                <Attribute>
                   <Term>unitCode</Term>
@@ -659,6 +674,8 @@
                <Term>cbc:TotalTransportHandlingUnitQuantity</Term>
                <Name>Total number of transport handling units </Name>
                <Description>The total numbers of transport handling units is this consignment</Description>
+               <Reference type="RULE">PEPPOL-T125-R003</Reference>
+               <Reference type="RULE">PEPPOL-T125-R004</Reference>
                <Value type="EXAMPLE">1</Value>
                <Attribute>
                   <Term>unitCode</Term>
@@ -675,6 +692,7 @@
                   <Description>An identifier for the consignee party. </Description>
                   <Element cardinality="1..1">
                      <Term>cbc:ID</Term>
+                     <Reference type="RULE">PEPPOL-T125-R034</Reference>
                      <Value type="EXAMPLE">7300010000001</Value>
                      <Attribute usage="Optional">
                         <Term>schemeID</Term>
@@ -690,6 +708,7 @@
                      <Term>cbc:Name</Term>
                      <Name>Delivery party name</Name>
                      <Description>The name of the consignee party.</Description>
+                     <Reference type="RULE">PEPPOL-T125-R034</Reference>
                      <Value type="EXAMPLE">HUS Hospital</Value>
                   </Element>
                </Element>
@@ -851,12 +870,14 @@
                   <Term>cbc:ID</Term>
                   <Name>Payment terms identification </Name>
                   <Description>An identifier for this set of payment terms. </Description>
+                  <Reference type="RULE">PEPPOL-T125-R010</Reference>
                   <Value type="EXAMPLE">DAP</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:Note</Term>
                   <Name>Payment terms note </Name>
                   <Description>A free text describing this set of payment terms. </Description>
+                  <Reference type="RULE">PEPPOL-T125-R010</Reference>
                   <Value type="EXAMPLE">To be paid on invoice</Value>
                </Element>
             </Element>
@@ -933,7 +954,7 @@
                   <Element cardinality="0..1">
                      <Term>cbc:RefrigerationOnIndicator</Term>
                      <Name>Indicator refrigeration transport equipment </Name>
-                     <Description>An indicator that this piece of transport equipment's refrigeration is on (true) or off (false). </Description>
+                     <Description>An indicator that this piece of transport equipments refrigeration is on (true) or off (false). </Description>
                      <Value type="EXAMPLE">true</Value>
                   </Element>
                   <Element cardinality="0..1">
@@ -1113,6 +1134,7 @@
                <Name>Transport mode code</Name>
                <Description>A code signifying the method of transport used for this shipment stage. </Description>
                <Reference type="BUSINESS_TERM">tir16-p056</Reference>
+               <Reference type="RULE">PEPPOL-T125-R050</Reference>
                <Reference type="CODE_LIST">UNECERec19</Reference>
                <Value type="EXAMPLE">3</Value>
             </Element>
@@ -1120,6 +1142,18 @@
                <Term>cac:TransportMeans</Term>
                <Name>Transport means </Name>
                <Description>The means of transport used in this shipment stage.</Description>
+               <Reference type="RULE">PEPPOL-T125-R051</Reference>
+               <Element cardinality="0..1">
+                  <Term>cac:AirTransport</Term>
+                  <Name>Air transport </Name>
+                  <Description>An aircraft used in this shipment stage.</Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:AircraftID</Term>
+                     <Name>Air transport identifier </Name>
+                     <Description>An identifer for a specific aircraft.</Description>
+                     <Value type="EXAMPLE">JA8088</Value>
+                  </Element>
+               </Element>
                <Element cardinality="0..1">
                   <Term>cac:RoadTransport</Term>
                   <Name>Road transport </Name>
@@ -1129,6 +1163,34 @@
                      <Name>License plate identifier transport </Name>
                      <Description>The licence plate(s) identifying the vehicle seperated by semicolon if there are more than one</Description>
                      <Value type="EXAMPLE">DF10958</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:RailTransport</Term>
+                  <Name>Rail transport </Name>
+                  <Description>Equipment used for rail transport in this shipment stage.</Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:TrainID</Term>
+                     <Name>Train identifier </Name>
+                     <Description>An identifier for the train used as the means of transport.</Description>
+                     <Value type="EXAMPLE">12014</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:RailCarID</Term>
+                     <Name>Rail car identifier </Name>
+                     <Description>An identifier for the rail car on the train used as the means of transport..</Description>
+                     <Value type="EXAMPLE">50 63 20-33 801-5</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:MaritimeTransport</Term>
+                  <Name>Maritime transport </Name>
+                  <Description>Description of a truck or a vehicle transporting the goods. Use only if TransportModeCode is set to maritime transport. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:VesselID</Term>
+                     <Name>Vessel identifier </Name>
+                     <Description>The registred identifier of the vessel</Description>
+                     <Value type="EXAMPLE">wrt34663</Value>
                   </Element>
                </Element>
             </Element>
@@ -1267,40 +1329,40 @@
                <Element cardinality="0..1">
                   <Term>cbc:StartDate</Term>
                   <Name>Period start date</Name>
-                  <Description>The start date of the period</Description>
+                  <Description>The start date for the delivery period.</Description>
                   <Reference type="BUSINESS_TERM">tir16-042</Reference>
-                  <Reference type="RULE">PEPPOL-T120-R012</Reference>
-                  <Reference type="RULE">PEPPOL-T120-R015</Reference>
-                  <Value type="EXAMPLE">2021-09-25</Value>
+                  <Reference type="RULE">PEPPOL-T125-R011</Reference>
+                  <Reference type="RULE">PEPPOL-T125-R012</Reference>
+                  <Value type="EXAMPLE">2021-09-29</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:StartTime</Term>
                   <Name>Period start time</Name>
-                  <Description>The start time of the period.</Description>
+                  <Description>The start time for the delivery period.</Description>
                   <Reference type="BUSINESS_TERM">tir16-043</Reference>
-                  <Reference type="RULE">PEPPOL-T120-R013</Reference>
-                  <Reference type="RULE">PEPPOL-T120-R015</Reference>
-                  <Value type="EXAMPLE">12:00:00+02:00</Value>
+                  <Reference type="RULE">PEPPOL-T125-R013</Reference>
+                  <Reference type="RULE">PEPPOL-T125-R015</Reference>
+                  <Reference type="RULE">PEPPOL-T125-R016</Reference>
+                  <Value type="EXAMPLE">08:00:00+01:00</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:EndDate</Term>
                   <Name>Period end date</Name>
-                  <Description>The end date of the period.</Description>
+                  <Description>The end date for the delivery period.</Description>
                   <Reference type="BUSINESS_TERM">tir16-044</Reference>
-                  <Reference type="RULE">PEPPOL-T120-R012</Reference>
-                  <Reference type="RULE">PEPPOL-T120-R014</Reference>
-                  <Reference type="RULE">PEPPOL-T120-R015</Reference>
-                  <Value type="EXAMPLE">2021-09-27</Value>
+                  <Reference type="RULE">PEPPOL-T125-R011</Reference>
+                  <Reference type="RULE">PEPPOL-T125-R012</Reference>
+                  <Value type="EXAMPLE">2021-09-29</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:EndTime</Term>
                   <Name>Period end time</Name>
-                  <Description>The end time of the period.</Description>
+                  <Description>The end time for the delivery period.</Description>
                   <Reference type="BUSINESS_TERM">tir16-045</Reference>
-                  <Reference type="RULE">PEPPOL-T120-R013</Reference>
-                  <Reference type="RULE">PEPPOL-T120-R014</Reference>
-                  <Reference type="RULE">PEPPOL-T120-R015</Reference>
-                  <Value type="EXAMPLE">12:00:00+02:00</Value>
+                  <Reference type="RULE">PEPPOL-T125-R013</Reference>
+                  <Reference type="RULE">PEPPOL-T125-R014</Reference>
+                  <Reference type="RULE">PEPPOL-T125-R017</Reference>
+                  <Value type="EXAMPLE">10:00:00+01:00</Value>
                </Element>
             </Element>
             <Element cardinality="0..1">
@@ -1443,29 +1505,37 @@
                   <Description>The estimated despatch period.</Description>
                   <Element cardinality="0..1">
                      <Term>cbc:StartDate</Term>
-                     <Reference type="RULE">PEPPOL-T120-R012</Reference>
-                     <Reference type="RULE">PEPPOL-T120-R015</Reference>
-                     <Value type="EXAMPLE">2021-09-25</Value>
+                     <Name>Period start date</Name>
+                     <Description>The start date for the delivery period.</Description>
+                     <Reference type="RULE">PEPPOL-T125-R021</Reference>
+                     <Reference type="RULE">PEPPOL-T125-R022</Reference>
+                     <Value type="EXAMPLE">2021-09-29</Value>
                   </Element>
-                  <Element>
+                  <Element cardinality="0..1">
                      <Term>cbc:StartTime</Term>
-                     <Reference type="RULE">PEPPOL-T120-R013</Reference>
-                     <Reference type="RULE">PEPPOL-T120-R015</Reference>
-                     <Value type="EXAMPLE">12:00:00+02:00</Value>
+                     <Name>Period start time</Name>
+                     <Description>The start time for the despatch period.</Description>
+                     <Reference type="RULE">PEPPOL-T125-R023</Reference>
+                     <Reference type="RULE">PEPPOL-T125-R025</Reference>
+                     <Reference type="RULE">PEPPOL-T125-R026</Reference>
+                     <Value type="EXAMPLE">08:00:00+01:00</Value>
                   </Element>
-                  <Element>
+                  <Element cardinality="0..1">
                      <Term>cbc:EndDate</Term>
-                     <Reference type="RULE">PEPPOL-T120-R012</Reference>
-                     <Reference type="RULE">PEPPOL-T120-R014</Reference>
-                     <Reference type="RULE">PEPPOL-T120-R015</Reference>
-                     <Value type="EXAMPLE">2021-09-27</Value>
+                     <Name>Period end date</Name>
+                     <Description>The end date for the despatch period.</Description>
+                     <Reference type="RULE">PEPPOL-T125-R021</Reference>
+                     <Reference type="RULE">PEPPOL-T125-R022</Reference>
+                     <Value type="EXAMPLE">2021-09-29</Value>
                   </Element>
-                  <Element>
+                  <Element cardinality="0..1">
                      <Term>cbc:EndTime</Term>
-                     <Reference type="RULE">PEPPOL-T120-R013</Reference>
-                     <Reference type="RULE">PEPPOL-T120-R014</Reference>
-                     <Reference type="RULE">PEPPOL-T120-R015</Reference>
-                     <Value type="EXAMPLE">12:00:00+02:00</Value>
+                     <Name>Period end time</Name>
+                     <Description>The end time for the despatch period.</Description>
+                     <Reference type="RULE">PEPPOL-T125-R023</Reference>
+                     <Reference type="RULE">PEPPOL-T125-R024</Reference>
+                     <Reference type="RULE">PEPPOL-T125-R027</Reference>
+                     <Value type="EXAMPLE">10:00:00+01:00</Value>
                   </Element>
                </Element>
             </Element>
@@ -1477,12 +1547,14 @@
                   <Term>cbc:ID</Term>
                   <Name>Delivery terms identification </Name>
                   <Description>Delivery terms code (Inco terms). </Description>
+                  <Reference type="RULE">PEPPOL-T125-R007</Reference>
                   <Value type="EXAMPLE">DAP</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:SpecialTerms</Term>
                   <Name>Special terms </Name>
                   <Description>Special delivery terms that exceeds the inco terms. </Description>
+                  <Reference type="RULE">PEPPOL-T125-R007</Reference>
                   <Value type="EXAMPLE">DAP</Value>
                </Element>
                <Element cardinality="0..1">
