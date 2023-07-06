@@ -192,22 +192,28 @@
                   <Value type="EXAMPLE">Prolonged coffebreak</Value>
                </Element>
             </Element>
-            <Element>
+            <Element cardinality="0..1">
                <Term>cac:Period</Term>
+               <Name>Period</Name>
+               <Description>The updated period for this transport event. Unse only if the event has not occured. </Description>
                <Element cardinality="0..1">
                   <Term>cbc:StartDate</Term>
+                  <Description>The start date of the period. </Description>
                   <Value type="EXAMPLE">2021-09-25</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:StartTime</Term>
+                  <Description>The start time of the period. </Description>
                   <Value type="EXAMPLE">12:00:00+01:00</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:EndDate</Term>
+                  <Description>The end date of the period. </Description>
                   <Value type="EXAMPLE">2021-09-27</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:EndTime</Term>
+                  <Description>The end time of the period. </Description>
                   <Value type="EXAMPLE">12:00:00+01:00</Value>
                </Element>
             </Element>
