@@ -1121,9 +1121,9 @@
                  flag="warning">[PEPPOL-T125-R010] When Payment terms is specified, either the ID or the note must be specified</assert>			
 	     </rule>
 	
-	     <rule context="cac:Shipment/cac:Delivery">
+	     <rule context="cac:Shipment">
 		       <assert id="PEPPOL-T125-R007"
-                 test="not(cac:DeliveryTerms) or ((cac:DeliveryTerms/cbc:ID) or (cac:DeliveryTerms/cbc:SpecialTerms))"
+                 test="not(cac:Delivery/cac:DeliveryTerms) or ((cac:Delivery/cac:DeliveryTerms/cbc:ID) or (cac/Delivery/cac:DeliveryTerms/cbc:SpecialTerms))"
                  flag="fatal">[PEPPOL-T125-R007] Either ID or special terms need to be specified in Delivery terms</assert>
 	     </rule>
 
