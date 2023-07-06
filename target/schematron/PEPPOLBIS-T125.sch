@@ -927,17 +927,13 @@
       <rule context="/ubl:Waybill/cac:Shipment/cac:Delivery/cac:Despatch/cac:DespatchAddress/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T125-B22801">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:Waybill/cac:Shipment/cac:Delivery/cac:Despatch/cac:EstimatedDespatchPeriod">
-         <assert test="cbc:StartTime" flag="fatal" id="PEPPOL-T125-B24701">Element 'cbc:StartTime' MUST be provided.</assert>
-         <assert test="cbc:EndDate" flag="fatal" id="PEPPOL-T125-B24702">Element 'cbc:EndDate' MUST be provided.</assert>
-         <assert test="cbc:EndTime" flag="fatal" id="PEPPOL-T125-B24703">Element 'cbc:EndTime' MUST be provided.</assert>
-      </rule>
+      <rule context="/ubl:Waybill/cac:Shipment/cac:Delivery/cac:Despatch/cac:EstimatedDespatchPeriod"/>
       <rule context="/ubl:Waybill/cac:Shipment/cac:Delivery/cac:Despatch/cac:EstimatedDespatchPeriod/cbc:StartDate"/>
       <rule context="/ubl:Waybill/cac:Shipment/cac:Delivery/cac:Despatch/cac:EstimatedDespatchPeriod/cbc:StartTime"/>
       <rule context="/ubl:Waybill/cac:Shipment/cac:Delivery/cac:Despatch/cac:EstimatedDespatchPeriod/cbc:EndDate"/>
       <rule context="/ubl:Waybill/cac:Shipment/cac:Delivery/cac:Despatch/cac:EstimatedDespatchPeriod/cbc:EndTime"/>
       <rule context="/ubl:Waybill/cac:Shipment/cac:Delivery/cac:Despatch/cac:EstimatedDespatchPeriod/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T125-B24704">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T125-B24701">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:Waybill/cac:Shipment/cac:Delivery/cac:Despatch/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T125-B22702">Document MUST NOT contain elements not part of the data model.</assert>
