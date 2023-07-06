@@ -179,7 +179,7 @@
                <Description>The name of the consignor party.</Description>
                <Value type="EXAMPLE">Novo Nordisk Pharmatech A/S</Value>
             </Element>
-            <Element cardinality="1..1">
+            <Element cardinality="0..1">
                <Term>cbc:CompanyID</Term>
                <Name>Consignor parties legal registration name </Name>
                <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
@@ -376,6 +376,51 @@
                      <Reference type="CODE_LIST">ISO3166</Reference>
                      <Value type="EXAMPLE">FI</Value>
                   </Element>
+               </Element>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:Contact</Term>
+            <Name>Contact</Name>
+            <Description>The contact of the Carrier party.</Description>
+            <Element cardinality="0..1">
+               <Term>cbc:Name</Term>
+               <Name>Contact name</Name>
+               <Description>The contact name.</Description>
+               <Value type="EXAMPLE">Mrs Bouquet</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:Telephone</Term>
+               <Name>Contact email telephone</Name>
+               <Description>The phone number of the contact.</Description>
+               <Value type="EXAMPLE">0158 1233714</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:ElectronicMail</Term>
+               <Name>Contact email address</Name>
+               <Description>The electronic mail of the contact.</Description>
+               <Value type="EXAMPLE">bouquet@fpconsortial.co.uk</Value>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:Person</Term>
+            <Name>Person</Name>
+            <Description>The driver or master person for the carrier party.</Description>
+            <Element cardinality="1..1">
+               <Term>cac:IdentityDocumentReference</Term>
+               <Name>Identity Document Reference</Name>
+               <Description>Reference to an identity of the driver or master person.</Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:ID</Term>
+                  <Name>ID</Name>
+                  <Description>The ID of identity the person for instance a driver license number.</Description>
+                  <Value type="EXAMPLE">45642323</Value>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cbc:DocumentType</Term>
+                  <Name>Document Type</Name>
+                  <Description>The type of identity for instance a driver license.</Description>
+                  <Value type="EXAMPLE">ID06</Value>
                </Element>
             </Element>
          </Element>
