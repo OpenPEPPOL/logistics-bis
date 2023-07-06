@@ -115,10 +115,10 @@
 					<?Description The name of the consignor party.?>
 					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
-			<cbc:CompanyID schemeID="0198">13246149
+				<cbc:CompanyID schemeID="0198">13246149
 					<?Name Consignor parties legal registration name ?>
 					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
-					<?Cardinality 1..1?>
+					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier ?>
 					<?schemeID-Description The identification scheme identifier of the consignor legal registration identifier ?>
 					<?schemeID-Usage optional?>
@@ -281,6 +281,46 @@
 				</cac:Country>
 			</cac:RegistrationAddress>
 		</cac:PartyLegalEntity>
+		<cac:Contact>
+			<?Name Contact?>
+			<?Description The contact of the Carrier party.?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Mrs Bouquet
+				<?Name Contact name?>
+				<?Description The contact name.?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
+			<cbc:Telephone>0158 1233714
+				<?Name Contact email telephone?>
+				<?Description The phone number of the contact.?>
+				<?Cardinality 0..1?>
+			</cbc:Telephone>
+			<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
+				<?Name Contact email address?>
+				<?Description The electronic mail of the contact.?>
+				<?Cardinality 0..1?>
+			</cbc:ElectronicMail>
+		</cac:Contact>				
+		<cac:Person>
+			<?Name Person?>
+			<?Description The driver or master person for the carrier party.?>
+			<?Cardinality 0..1?>
+			<cac:IdentityDocumentReference>
+				<?Name Identity Document Reference?>
+				<?Description Reference to an identity of the driver or master person.?>
+				<?Cardinality 1..1?>
+				<cbc:ID>45642323
+					<?Name ID?>
+					<?Description The ID of identity the person for instance a driver license number.?>
+					<?Cardinality 1..1?>
+				</cbc:ID>
+				<cbc:DocumentType>ID06
+					<?Name Document Type?>
+					<?Description The type of identity for instance a driver license.?>
+					<?Cardinality 1..1?>
+				</cbc:DocumentType>
+			</cac:IdentityDocumentReference>
+		</cac:Person>
 	</cac:CarrierParty>
 	<cac:FreightForwarderParty>
 		<?Name Freight Forwarder party ?>
@@ -815,7 +855,7 @@
 			<?Name Shipment stage ?>
 			<?Description The shipment stage for this waybill. ?>
 			<?Cardinality 1..1?>
-			<cbc:TransportModeCode>4
+			<cbc:TransportModeCode>3
 				<?Name Transport mode code?>
 				<?Description A code signifying the method of transport used for this shipment stage. ?>
 				<?Cardinality 1..1?>
