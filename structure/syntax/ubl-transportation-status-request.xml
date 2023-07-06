@@ -18,6 +18,7 @@
 				transaction.</Description>
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir16-002</Reference>
+         <Reference type="RULE">PEPPOL-T126-R001</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:transportation_status_request:1</Value>
       </Element>
 	     <Element cardinality="1..1">
@@ -26,6 +27,7 @@
          <Description>Identifies the Peppol profile or business process context in which the transaction appears.</Description>
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir16-001</Reference>
+         <Reference type="RULE">PEPPOL-T126-R002</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1</Value>
       </Element>
 	     <Element>
@@ -46,12 +48,13 @@
          <Reference type="BUSINESS_TERM">tir16-004</Reference>
          <Value type="EXAMPLE">2011-10-06</Value>
       </Element>
-	     <Element cardinality="1..1 1..1">
+	     <Element cardinality="1..1">
          <Term>cbc:IssueTime</Term>
          <Name>Issue Time</Name>
          <Description>The time when the transportation status request was issued. </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
+         <Reference type="RULE">PEPPOL-T123-R018</Reference>
          <Value type="EXAMPLE">09:29:30+02:00</Value>
       </Element>
 	     <Element cardinality="1..1">
@@ -71,7 +74,7 @@
          <Reference type="CODE_LIST">TransportationStatusTypeCode</Reference>
          <Value type="EXAMPLE">3</Value>
       </Element>
-		    <Element cardinality="1..1">
+	     <Element cardinality="1..1">
          <Term>cac:SenderParty</Term>
          <Name>Sender party </Name>
          <Description>The party sending the transportation status request. </Description>
@@ -95,6 +98,7 @@
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>ID </Name>
+               <Reference type="RULE">PEPPOL-T126-R031</Reference>
                <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
@@ -110,6 +114,7 @@
                <Term>cbc:Name</Term>
                <Name>Sender party name</Name>
                <Description>The name of the sender party. </Description>
+               <Reference type="RULE">PEPPOL-T126-R031</Reference>
                <Value type="EXAMPLE">Leman</Value>
             </Element>
          </Element>
@@ -282,6 +287,7 @@
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>ID</Name>
+               <Reference type="RULE">PEPPOL-T126-R032</Reference>
                <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
@@ -297,6 +303,7 @@
                <Term>cbc:Name</Term>
                <Name>Receiver party name </Name>
                <Description>The name of the receiver party. </Description>
+               <Reference type="RULE">PEPPOL-T126-R032</Reference>
                <Value type="EXAMPLE">DHL Express</Value>
             </Element>
          </Element>

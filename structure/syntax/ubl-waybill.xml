@@ -60,6 +60,7 @@
          <Description>The time when this version of the waybill is issued. Format = "hh:mm:ss". </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
+         <Reference type="RULE">PEPPOL-T125-R018</Reference>
          <Value type="EXAMPLE">09:00:00+02:00</Value>
       </Element>
 	     <Element cardinality="1..1">
@@ -633,6 +634,7 @@
                <Description>The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified. Mandatory if grossvolumen or loading lenght is not specified</Description>
                <Reference type="RULE">PEPPOL-T125-R005</Reference>
                <Reference type="RULE">PEPPOL-T125-R008</Reference>
+               <Reference type="RULE">PEPPOL-T125-R040</Reference>
                <Value type="EXAMPLE">1030</Value>
                <Attribute>
                   <Term>unitCode</Term>
