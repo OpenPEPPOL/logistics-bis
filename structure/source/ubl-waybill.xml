@@ -17,6 +17,7 @@
 	<cbc:IssueDate>2005-06-25<?Description The date when this version of the waybill is issued. Format = "YYYY-MM-DD". ?>
 	</cbc:IssueDate>
 	<cbc:IssueTime>09:00:00+02:00<?Description The time when this version of the waybill is issued. Format = "hh:mm:ss". ?>
+		<?Rule PEPPOL-T125-R018?>
 		<?Cardinality 1..1?>
 	</cbc:IssueTime>
 	<cbc:Name>Air Waybill
@@ -358,10 +359,10 @@
 			<?Description The postal address of the freight forwarder.?>
 			<?Cardinality 0..1?>
 			<cbc:StreetName>Tietotie 9
-						<?Name Address line 1 ?>
-						<?Description The main address line in a postal address usually the street name and number. ?>
-						<?Cardinality 0..1?>
-					</cbc:StreetName>
+				<?Name Address line 1 ?>
+				<?Description The main address line in a postal address usually the street name and number. ?>
+				<?Cardinality 0..1?>
+			</cbc:StreetName>
 			<cbc:AdditionalStreetName> Purchasing 
 				<?Name Address line 2?>
 				<?Cardinality 0..1?>
@@ -445,22 +446,21 @@
 			<?Description The contact of the freight forwareder party. ?>
 			<?Cardinality 0..1?>
 			<cbc:Name>Mr Sender
-						<?Name Contact name ?>
-						<?Description The contact name. ?>
-						<?Cardinality 0..1?>
-					</cbc:Name>
+				<?Name Contact name ?>
+				<?Description The contact name. ?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
 			<cbc:Telephone>0158 1233714
-						<?Name Contact telephone number ?>
-						<?Description The phone number of the contact. ?>
-						<?Cardinality 0..1?>
-					</cbc:Telephone>
+				<?Name Contact telephone number ?>
+				<?Description The phone number of the contact. ?>
+				<?Cardinality 0..1?>
+			</cbc:Telephone>
 			<cbc:ElectronicMail>sender@forwarder-company.se
-						<?Name Contact email address ?>
-						<?Description The electronic mail of the contact. ?>
-						<?Cardinality 0..1?>
-				</cbc:ElectronicMail>
+				<?Name Contact email address ?>
+				<?Description The electronic mail of the contact. ?>
+				<?Cardinality 0..1?>
+			</cbc:ElectronicMail>
 		</cac:Contact>
-		
 	</cac:FreightForwarderParty>
 	<cac:Shipment>
 		<?Name Shipping Order ID ?>
@@ -497,6 +497,7 @@
 				<?Cardinality 0..1?>			
 				<?Rule PEPPOL-T125-R005?>
 				<?Rule PEPPOL-T125-R008?>
+				<?Rule PEPPOL-T125-R040?>
 			</cbc:GrossWeightMeasure>			
 			<cbc:GrossVolumeMeasure unitCode="MTQ">20
 				<?Name Consignment gross volume ?>

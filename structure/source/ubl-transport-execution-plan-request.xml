@@ -6,16 +6,18 @@
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan_request:1<?Rule PEPPOL-T123-R001?></cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1
 		<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan Request. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1".?>
-		<?Rule PEPPOL-T123-R001?>
+		<?Rule PEPPOL-T123-R002?>
 	</cbc:ProfileID>
 	<cbc:ID>141278571829041241241</cbc:ID>
 	<cbc:IssueDate>2021-09-29<?Description The date when the Transport Execution Plan Request is issued. Format = "YYYY-MM-DD". ?>
 	</cbc:IssueDate>
-	<cbc:IssueTime>09:49:00+02:00<?Description The time when the Transport Execution Plan Request is issued. ?>
+	<cbc:IssueTime>09:49:00+02:00
+		<?Description The time when the Transport Execution Plan Request is issued. ?>
+		<?Rule PEPPOL-T123-R018?>
 		<?Cardinality 1..1?>
 	</cbc:IssueTime>
 	<cbc:DocumentStatusCode>9
-		<?Name Transport execuition plan request status code ?>
+		<?Name Transport execution plan request status code ?>
 		<?Description A code signifying the status of the Transport Execution Plan Request. Default is Original (9)?>
 		<?Cardinality 0..1?>
 		<?CodeList DocumentStatusCode?>
