@@ -13,18 +13,18 @@
 	<cbc:ID>TS_1</cbc:ID>
 	<cbc:IssueDate>2023-06-06
 		<?Name Issue Date?>
-		<?Description The date when the transporation status was issued. Format = "YYYY-MM-DD". ?
+		<?Description The date when the Transportation Status was issued. Format = "YYYY-MM-DD". ?
 		<?Cardinality 1..1?>
 	</cbc:IssueDate>
 	<cbc:IssueTime>09:29:30+01:00
 		<?Name Issue Time?>
-		<?Description The time when the transportation status was issued. Format = "hh:mm:ss". ?>
+		<?Description The time when the Transportation Status was issued. Format = "hh:mm:ss". ?>
 		<?Cardinality 1..1?>
 		<?Rule PEPPOL-T127-R018?>
 	</cbc:IssueTime>
 	<cbc:Description>Description
 		<?Name Description?>
-		<?Description Textual description of the Transportation status.?>
+		<?Description Textual description of the Transportation Status.?>
 		<?Cardinality 1..1?>
 	</cbc:Description>
 	<cbc:ShippingOrderID>KHN23-44044
@@ -34,7 +34,7 @@
 	</cbc:ShippingOrderID>
 	<cbc:TransportationStatusTypeCode listID ="TrStatus1">3
 		<?Name Transportation Status Type Code?>
-		<?Description The type of the transportation status code. Mandatory if the transportation status is an answer to a transportation status request.?>
+		<?Description The type of the transportation status code. Mandatory if the Transportation Status is an answer to a Transportation Status Request.?>
 		<?Cardinality 1..1?>
 		<?CodeList TransportationStatusTypeCode?>
 		<?listID-usage Optional?>
@@ -48,11 +48,11 @@
 	</cbc:TransportExecutionStatusCode>
 	<cac:Consignment>
 		<?Name Consignment information ?>
-		<?Description The consignment related to this transportation status.?>
+		<?Description The consignment related to this Transportation Status.?>
 		<?Cardinality 0..1?>
 		<cbc:ID>12535157654567654
 		<?Name Consignment identifier ?>
-		<?Description Id for the consignment, often a number from the Transport Service provider. ?>
+		<?Description Id for the consignment, often a number from the Transport Service Provider. ?>
 		<?Cardinality 1..1?>
 		</cbc:ID>
 		<cac:Status>
@@ -73,7 +73,7 @@
 		</cac:Status>
 		<cac:TransportEvent>
 			<?Name Transport Event ?>
-			<?Description A transport event associated to this transportation status. ?>
+			<?Description A transport event associated to this Transportation Status. ?>
 			<?Cardinality 0..n?>
 			<cbc:IdentificationID>234526457
 				<?Name Identification ID ?>
@@ -139,7 +139,7 @@
 		</cac:TransportEvent>
 		<cac:TransportHandlingUnit>
 			<?Name Transport handling Unit ?>
-			<?Description The transport handling unit refered to in this transportation status. ?>
+			<?Description The transport handling unit refered to in this Transportation Status. ?>
 			<?Cardinality 0..n?>
 			<cbc:ID>CON_THU_1</cbc:ID>			
 			<cac:Status>
@@ -161,7 +161,7 @@
 	</cac:Consignment>	
 	<cac:DocumentReference>
 		<?Name Document reference?>
-		<?Description Reference to additional documents relevant for this transportation status such as picktures of damages. ?>
+		<?Description Reference to additional documents relevant for this Transportation Status such as pictures of damages. ?>
 		<?Cardinality 0..n?>
 		<cbc:ID>7648779
 			<?Name Identity of the reference?>
@@ -199,7 +199,7 @@
 	</cac:DocumentReference>
 	<cac:Signature>
 		<?Name Signature?>
-		<?Description A signature applied to this transportation status. ?>
+		<?Description A signature applied to this Transportation Status. ?>
 		<?Cardinality 0..1?>
 		<cbc:ID>3453
 			<?Name Identifier Signature ?>
@@ -216,19 +216,19 @@
 		</cbc:ValidationTime>
 		<cac:SignatoryParty>
 			<?Name Signature party ?>
-			<?Description The party signing this transportation status ?>
+			<?Description The party signing this Transportation Status ?>
 			<?Cardinality 1..1?>
 			<cac:PartyName>
 				<?Name Party name ?>
 				<?Cardinality 0..1?>
 				<cbc:Name>HUS Hospital
 					<?Name Consignee party name?>
-					<?Description The name of the Signature party.?>
+					<?Description The name of the Signatory Party.?>
 				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<?Name Postal address ?>
-				<?Description The postal address of the Signature Party?>
+				<?Description The postal address of the Signatory Party?>
 				<?Cardinality 0..1?>
 				<cbc:StreetName>Topeliuksenkatu 5
 					<?Name Address line 1 ?>
@@ -278,7 +278,7 @@
 			</cac:PostalAddress>
 			<cac:Person>
 				<?Name Person ?>
-				<?Description The person who applies the signature on behalf of the Signature Party. ?>
+				<?Description The person who applies the signature on behalf of the Signatory Party. ?>
 				<?Cardinality 1..1?>
 				<cbc:ID schemeID="zzz">45976	
 					<?Name Person ID ?>
@@ -325,7 +325,7 @@
 	</cac:Signature>
 	<cac:TransportEvent>
 		<?Name Transport Event ?>
-		<?Description A transport event related to thist transportation status.?>
+		<?Description A transport event related to thist Transportation Status.?>
 		<?Cardinality 0..n?>
 		<cbc:IdentificationID>1234
 			<?Name Identification ID ?>
@@ -341,140 +341,140 @@
 			<?Cardinality 1..1?>
 		</cbc:OccurrenceTime>
 		<cbc:TransportEventTypeCode>1
-				<?Name Transport Event Type Code ?>
-				<?Description A code specifying the requested transport event type. ?>
-				<?Cardinality 0..1?>
-				<?CodeList TransportEventTypeCode?>
+			<?Name Transport Event Type Code ?>
+			<?Description A code specifying the requested transport event type. ?>
+			<?Cardinality 0..1?>
+			<?CodeList TransportEventTypeCode?>
 		</cbc:TransportEventTypeCode>
-			<cac:Signature>
-		<?Name Signature?>
-		<?Description A signature applied to this transportation status. ?>
-		<?Cardinality 0..1?>
-		<cbc:ID>3453
-			<?Name Identifier Signature ?>
-			<?Description The Id of the Signature.?>
-			<?Cardinality 1..1?>						
-		</cbc:ID>
-		<cbc:ValidationDate>2021-09-29
-			<?Description The date upon which this signature was verified. Format = "YYYY-MM-DD". ?>
+		<cac:Signature>
+			<?Name Signature?>
+			<?Description A signature applied to this transport event. ?>
 			<?Cardinality 0..1?>
-		</cbc:ValidationDate>
-		<cbc:ValidationTime>09:49:00+01:00<?Description The local time at which this signature was verified.. Format = "hh:mm:ss". ?>
-			<?Cardinality 0..1?>
-		</cbc:ValidationTime>
-		<cac:SignatoryParty>
-			<?Name Signature party ?>
-			<?Description The party signing this transportation status. ?>
-			<?Cardinality 1..1?>
-			<cac:PartyName>
-				<?Name Party name ?>
+			<cbc:ID>3453
+				<?Name Identifier Signature ?>
+				<?Description The Id of the Signature.?>
+				<?Cardinality 1..1?>						
+			</cbc:ID>
+			<cbc:ValidationDate>2021-09-29
+				<?Description The date upon which this signature was verified. Format = "YYYY-MM-DD". ?>
 				<?Cardinality 0..1?>
-				<cbc:Name>HUS Hospital
-					<?Name Consignee party name?>
-					<?Description The name of the Signature party.?>
-				</cbc:Name>
-			</cac:PartyName>
-			<cac:PostalAddress>
-				<?Name Postal address ?>
-				<?Description The postal address of the Signature Party?>
+			</cbc:ValidationDate>
+			<cbc:ValidationTime>09:49:00+01:00<?Description The local time at which this signature was verified.. Format = "hh:mm:ss". ?>
 				<?Cardinality 0..1?>
-				<cbc:StreetName>Topeliuksenkatu 5
-					<?Name Address line 1 ?>
-					<?Description The main address line in a postal address usually the street name and number. ?>
-					<?Cardinality 0..1?>
-				</cbc:StreetName>
-				<cbc:AdditionalStreetName> Purchasing 
-					<?Name Address line 2?>
-					<?Cardinality 0..1?>
-					<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.?>						
-				</cbc:AdditionalStreetName>
-				<cbc:CityName>Helsinki
-					<?Name City ?>
-					<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
-					<?Cardinality 0..1?>
-				</cbc:CityName>
-				<cbc:PostalZone>00260
-					<?Name Post code ?>
-					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
-					<?Cardinality 0..1?>
-				</cbc:PostalZone>
-				<cbc:CountrySubentity>Heremouthshire
-					<?Name Country subdivision ?>
-					<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
-					<?Cardinality 0..1?>	
-				</cbc:CountrySubentity>
-				<cac:AddressLine>
-					<?Name Address line ?>
-					<?Cardinality 0..1?>
-					<cbc:Line>Gate 34
-						<?Name Address line 3 ?>
-						<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
-						<?Cardinality 1..1?>	
-					</cbc:Line>
-				</cac:AddressLine>
-				<cac:Country>
-					<?Name Country ?>
-					<?Description The country for the address?>
-					<?Cardinality 1..1?>
-					<cbc:IdentificationCode>FI
-						<?Name Country code ?>
-						<?Cardinality 1.1?>
-						<?CodeList ISO3166?>
-						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
-					</cbc:IdentificationCode>
-				</cac:Country>
-			</cac:PostalAddress>
-			<cac:Person>
-				<?Name Person ?>
-				<?Description The person who applies the signature on behalf of the Signature Party. ?>
+			</cbc:ValidationTime>
+			<cac:SignatoryParty>
+				<?Name Signature party ?>
+				<?Description The party signing this event. ?>
 				<?Cardinality 1..1?>
-				<cbc:ID schemeID="zzz">45976	
-					<?Name Person ID ?>
-					<?Description The ID for a person. The type of ID can be specified in a schemeID. ?>
-					<?schemeID-usage Optional?>
+				<cac:PartyName>
+					<?Name Party name ?>
 					<?Cardinality 0..1?>
-				</cbc:ID>
-				<cbc:FirstName>Valiry
-						<?Name First Name ?>
-						<?Description The persons first name. ?>
+					<cbc:Name>HUS Hospital
+						<?Name Consignee party name?>
+						<?Description The name of the Signatory party.?>
+					</cbc:Name>
+				</cac:PartyName>
+				<cac:PostalAddress>
+					<?Name Postal address ?>
+					<?Description The postal address of the Signatory Party?>
+					<?Cardinality 0..1?>
+					<cbc:StreetName>Topeliuksenkatu 5
+						<?Name Address line 1 ?>
+						<?Description The main address line in a postal address usually the street name and number. ?>
 						<?Cardinality 0..1?>
-					</cbc:FirstName>
-				<cbc:FamilyName>Sender
-						<?Name Family Name ?>
-						<?Description The persons family name. ?>
+					</cbc:StreetName>
+					<cbc:AdditionalStreetName> Purchasing 
+						<?Name Address line 2?>
+						<?Cardinality 0..1?>
+						<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.?>						
+					</cbc:AdditionalStreetName>
+					<cbc:CityName>Helsinki
+						<?Name City ?>
+						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+						<?Cardinality 0..1?>
+					</cbc:CityName>
+					<cbc:PostalZone>00260
+						<?Name Post code ?>
+						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+						<?Cardinality 0..1?>
+					</cbc:PostalZone>
+					<cbc:CountrySubentity>Heremouthshire
+						<?Name Country subdivision ?>
+						<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
+						<?Cardinality 0..1?>	
+					</cbc:CountrySubentity>
+					<cac:AddressLine>
+						<?Name Address line ?>
+						<?Cardinality 0..1?>
+						<cbc:Line>Gate 34
+							<?Name Address line 3 ?>
+							<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
+							<?Cardinality 1..1?>	
+						</cbc:Line>
+					</cac:AddressLine>
+					<cac:Country>
+						<?Name Country ?>
+						<?Description The country for the address?>
 						<?Cardinality 1..1?>
-					</cbc:FamilyName>
-				<cbc:JobTitle>Director
-						<?Name Job title ?>
-						<?Description The persons job title. ?>
+						<cbc:IdentificationCode>FI
+							<?Name Country code ?>
+							<?Cardinality 1.1?>
+							<?CodeList ISO3166?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:PostalAddress>
+				<cac:Person>
+					<?Name Person ?>
+					<?Description The person who applies the signature on behalf of the Signatory Party. ?>
+					<?Cardinality 1..1?>
+					<cbc:ID schemeID="zzz">45976	
+						<?Name Person ID ?>
+						<?Description The ID for a person. The type of ID can be specified in a schemeID. ?>
+						<?schemeID-usage Optional?>
 						<?Cardinality 0..1?>
-					</cbc:JobTitle>
-			</cac:Person>
-		</cac:SignatoryParty>
-		<cac:DigitalSignatureAttachment>
-			<?Name Attachment?>
-			<?Cardinality 0..1?>
-			<?Description The actual signature included or refered to as an attachment .?>
-			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">
-				aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw== <?Name Embedded binary object?>
+					</cbc:ID>
+					<cbc:FirstName>Valiry
+							<?Name First Name ?>
+							<?Description The persons first name. ?>
+							<?Cardinality 0..1?>
+						</cbc:FirstName>
+					<cbc:FamilyName>Sender
+							<?Name Family Name ?>
+							<?Description The persons family name. ?>
+							<?Cardinality 1..1?>
+						</cbc:FamilyName>
+					<cbc:JobTitle>Director
+							<?Name Job title ?>
+							<?Description The persons job title. ?>
+							<?Cardinality 0..1?>
+						</cbc:JobTitle>
+				</cac:Person>
+			</cac:SignatoryParty>
+			<cac:DigitalSignatureAttachment>
+				<?Name Attachment?>
 				<?Cardinality 0..1?>
-				<?mimeCode-CodeList MimeCode?>
-				<?Description The referenced document can here be inserted as a binary object.?>
-			</cbc:EmbeddedDocumentBinaryObject>
-			<cac:ExternalReference>
-				<?Name External reference?>
-				<?Description A reference to an attached document that is external to the document(s) being exchanged.?>
-				<?Cardinality 0..1?>
-				<cbc:URI> www.beast.se <?Name Address to internet resource?>
-					<?Description The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource.?>
-				</cbc:URI>
-			</cac:ExternalReference>
-		</cac:DigitalSignatureAttachment>
-	</cac:Signature>
+				<?Description The actual signature included or refered to as an attachment .?>
+				<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">
+					aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw== <?Name Embedded binary object?>
+					<?Cardinality 0..1?>
+					<?mimeCode-CodeList MimeCode?>
+					<?Description The referenced document can here be inserted as a binary object.?>
+				</cbc:EmbeddedDocumentBinaryObject>
+				<cac:ExternalReference>
+					<?Name External reference?>
+					<?Description A reference to an attached document that is external to the document(s) being exchanged.?>
+					<?Cardinality 0..1?>
+					<cbc:URI> www.beast.se <?Name Address to internet resource?>
+						<?Description The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource.?>
+					</cbc:URI>
+				</cac:ExternalReference>
+			</cac:DigitalSignatureAttachment>
+		</cac:Signature>
 	</cac:TransportEvent>
 	<cac:SenderParty>
 		<?Name Sender party ?>
-		<?Description The party sending the transportation status. ?>
+		<?Description The party sending the Transportation Status. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0198">41955619
 			<?Name Sender party electronic address ?>
@@ -631,7 +631,7 @@
 	</cac:SenderParty>
 	<cac:ReceiverParty>
 		<?Name Receiver Party ?>
-		<?Description The party receiving the transportation status. ?>
+		<?Description The party receiving the Transportation Status. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0198">10154596
 			<?Name Receiver party electronic address ?>
@@ -644,7 +644,7 @@
 		</cbc:EndpointID>
 		<cac:PartyIdentification>
 			<?Name Receiver party identification ?>
-			<?Description An identifier for the sender party as known to the sender party. ?>
+			<?Description An identifier for the receiver party. ?>
 			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">7300010000001 		
 				<?Name ID?>
@@ -793,7 +793,7 @@
 	</cac:ReceiverParty>
 	<cac:TransportationStatusRequestDocumentReference>
 		<?Name Additional document reference?>
-		<?Description Reference to a transport execution plan. ?>
+		<?Description Reference to a Transportation Status Request. ?>
 		<?Cardinality 0..1?>
 		<cbc:ID>7648779
 			<?Name Identity of the reference?>
@@ -802,27 +802,27 @@
 		</cbc:ID>
 		<cbc:IssueDate>2021-09-29
 			<?Name Issue Date?>
-			<?Description The issue Date when the transport execution plan request was issued?>
+			<?Description The date when the Transportation Status Request was issued?>
 			<?Cardinality 0..1?>
 		</cbc:IssueDate>
 		<cbc:IssueTime>07:49:00+01:00<?Name Issue Time?>
-			<?Description The issue time when the transport execution plan request was issued?>
+			<?Description The time when the Transportation Status Request was issued?>
 			<?Cardinality 0..1?>
 		</cbc:IssueTime>
 	</cac:TransportationStatusRequestDocumentReference>
 	<cac:TransportExecutionPlanDocumentReference>
 		<?Name Additional document reference?>
-		<?Description Reference to a transport execution plan. ?>
+		<?Description Reference to a Transport Execution Plan. ?>
 		<?Cardinality 0..1?>
 		<cbc:ID>7648779 <?Name Identity of the reference?>
 			<?Description The reference number of added document?>
 		</cbc:ID>
 		<cbc:IssueDate>2021-09-29<?Name Issue Date?>
-			<?Description The Issue Date when the transport execution plan request was issued ?>
+			<?Description The date when the Transport Execution Plan was issued ?>
 			<?Cardinality 0..1?>
 		</cbc:IssueDate>
 		<cbc:IssueTime>07:49:00+01:00<?Name Issue Time?>
-			<?Description The Issue time when the transport execution plan request was issued ?>
+			<?Description The time when the Transport Execution Plan was issued ?>
 			<?Cardinality 0..1?>
 		</cbc:IssueTime>
 	</cac:TransportExecutionPlanDocumentReference>	

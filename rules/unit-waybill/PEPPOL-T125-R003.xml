@@ -11,10 +11,13 @@
 		</assert>
 		<Waybill xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
-		   <cac:Consignment>      
-			  <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1</cbc:TotalTransportHandlingUnitQuantity>			 
-		   </cac:Consignment>
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>      
+				  <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1</cbc:TotalTransportHandlingUnitQuantity>			 
+				</cac:Consignment>
+			</cac:Shipment>
+
 		</Waybill>
 	</test>
 	
@@ -25,9 +28,11 @@
 		<Waybill xmlns="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Consignment>      
-			  <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">-1</cbc:TotalTransportHandlingUnitQuantity>
-		   </cac:Consignment>
+			<cac:Shipment>
+				<cac:Consignment>      
+					<cbc:TotalTransportHandlingUnitQuantity unitCode="EA">-1</cbc:TotalTransportHandlingUnitQuantity>
+				</cac:Consignment>
+			</cac:Shipment>
 		</Waybill>
 	</test>
 	

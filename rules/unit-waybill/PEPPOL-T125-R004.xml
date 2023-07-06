@@ -11,8 +11,9 @@
 		</assert>
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
-		   <cac:Consignment>      
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+			<cac:Consignment>      
 			  <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">2</cbc:TotalTransportHandlingUnitQuantity>
 			  <cac:TransportHandlingUnit>
 				<cbc:ID>11111222222222</cbc:ID>         
@@ -21,6 +22,7 @@
 				<cbc:ID>111112222222223</cbc:ID>         
 			  </cac:TransportHandlingUnit> 
 		   </cac:Consignment>
+		   </cac:Shipment>
 		</ubl:Waybill>
 	</test>
 	
@@ -31,8 +33,10 @@
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Consignment>
+			<cac:Shipment>
+				<cac:Consignment>
 			</cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 
@@ -43,9 +47,11 @@
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Consignment>
+			<cac:Shipment>
+				<cac:Consignment>
 				<cbc:TotalTransportHandlingUnitQuantity unitCode="EA">2</cbc:TotalTransportHandlingUnitQuantity>
 			</cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 	
@@ -56,7 +62,8 @@
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Consignment>
+			<cac:Shipment>
+				<cac:Consignment>
 				<cac:TransportHandlingUnit>
 					<cbc:ID>11111222222222</cbc:ID>
 				</cac:TransportHandlingUnit>
@@ -64,7 +71,8 @@
 					<cbc:ID>111112222222223</cbc:ID>
 				</cac:TransportHandlingUnit>
 			</cac:Consignment>
-			</ubl:Waybill>
+			</cac:Shipment>
+		</ubl:Waybill>
 		</test>
 	
 	<test id="5">
@@ -73,13 +81,15 @@
 		</assert>
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
-		   <cac:Consignment>      
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>      
 			  <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">2</cbc:TotalTransportHandlingUnitQuantity>
 			  <cac:TransportHandlingUnit>
 				<cbc:ID>11111222222222</cbc:ID>         
 			  </cac:TransportHandlingUnit>			   
 		   </cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 	
@@ -90,7 +100,8 @@
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Consignment>
+			<cac:Shipment>
+				<cac:Consignment>
 				<cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1</cbc:TotalTransportHandlingUnitQuantity>
 				<cac:TransportHandlingUnit>
 					<cbc:ID>11111222222222</cbc:ID>
@@ -99,6 +110,7 @@
 					<cbc:ID>111112222222223</cbc:ID>
 				</cac:TransportHandlingUnit>
 			</cac:Consignment>
-			</ubl:Waybill>
+			</cac:Shipment>
+		</ubl:Waybill>
 		</test>
 </testSet>

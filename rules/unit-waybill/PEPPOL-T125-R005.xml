@@ -11,8 +11,9 @@
 		</assert>
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
-		   <cac:Consignment>
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+			<cac:Consignment>
 		   <!--Gross weight specified and specified as the  on THU level -->      
 			  <cbc:GrossWeightMeasure unitCode="KGM">1030</cbc:GrossWeightMeasure>
 			  <cac:TransportHandlingUnit>
@@ -23,6 +24,7 @@
 				 </cac:MeasurementDimension>         
 			  </cac:TransportHandlingUnit>
 		   </cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 	
@@ -32,14 +34,16 @@
 		</assert>
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
-		   <cac:Consignment>
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>
 		   <!--Gross weight specified and not specified on THU level -->      
 			  <cbc:GrossWeightMeasure unitCode="KGM">1030</cbc:GrossWeightMeasure>
 			  <cac:TransportHandlingUnit>
 				<cbc:ID>11111222222222</cbc:ID>				      
 			  </cac:TransportHandlingUnit>
 		   </cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 	
@@ -49,8 +53,9 @@
 		</assert>
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
-		   <cac:Consignment>
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>
 		   <!--Gross weight specified and specified as the  on THU level -->      
 			  <cbc:GrossWeightMeasure unitCode="KGM">2030</cbc:GrossWeightMeasure>
 			  <cac:TransportHandlingUnit>
@@ -68,6 +73,7 @@
 				 </cac:MeasurementDimension>         
 			  </cac:TransportHandlingUnit>
 		   </cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 
@@ -78,7 +84,8 @@
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-			<cac:Consignment>
+			<cac:Shipment>
+				<cac:Consignment>
 				<cac:TransportHandlingUnit>
 					<cbc:ID>11111222222222</cbc:ID>
 					<cac:MeasurementDimension>
@@ -87,6 +94,7 @@
 					</cac:MeasurementDimension>
 				</cac:TransportHandlingUnit>
 			</cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 		
@@ -96,8 +104,9 @@
 		</assert>
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
-		   <cac:Consignment>      
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>      
 			  <cbc:GrossWeightMeasure unitCode="KGM">1030</cbc:GrossWeightMeasure>
 			  <cac:TransportHandlingUnit>
 				<cbc:ID>11111222222222</cbc:ID>
@@ -107,6 +116,7 @@
 				 </cac:MeasurementDimension>         
 			  </cac:TransportHandlingUnit>			   
 		   </cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
 
@@ -116,8 +126,9 @@
 		</assert>
 		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
                             xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">      
-		   <cac:Consignment>
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>
 		   <!--Gross weight specified and specified as the  on THU level -->      
 			  <cbc:GrossWeightMeasure unitCode="KGM">2030</cbc:GrossWeightMeasure>
 			  <cac:TransportHandlingUnit>
@@ -135,6 +146,249 @@
 				 </cac:MeasurementDimension>         
 			  </cac:TransportHandlingUnit>
 		   </cac:Consignment>
+			</cac:Shipment>
 		</ubl:Waybill>
 	</test>
+
+	<test id="7">
+		<assert>
+			<warning>PEPPOL-T125-R005</warning>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+                            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>
+				<!--Gross weight specified and specified as the  on THU level -->
+				<cbc:GrossWeightMeasure unitCode="KGM">2060.5</cbc:GrossWeightMeasure>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>11111222222222</cbc:ID>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAB</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1030.5</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>11111222222223</cbc:ID>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAB</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1030.2</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+			</cac:Consignment>
+			</cac:Shipment>
+		</ubl:Waybill>
+	</test>
+
+	<test id="8">
+		<assert>
+			<success>PEPPOL-T125-R005</success>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+                            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>
+				<!--Gross weight specified and specified as the  on THU level -->
+				<cbc:GrossWeightMeasure unitCode="KGM">2060.7</cbc:GrossWeightMeasure>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>11111222222222</cbc:ID>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAB</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1030.5</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>11111222222223</cbc:ID>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAB</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1030.2</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+			</cac:Consignment>
+			</cac:Shipment>
+		</ubl:Waybill>
+	</test>
+
+	<test id="9">
+		<assert>
+			<success>PEPPOL-T125-R005</success>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+                            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>
+				<cbc:GrossWeightMeasure unitCode="KGM">2060</cbc:GrossWeightMeasure>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAB</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1030</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12346</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAB</cbc:AttributeID>
+						<cbc:Measure unitCode="TNE">1.030</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+			</cac:Consignment>
+			</cac:Shipment>
+		</ubl:Waybill>
+	</test>
+
+	<test id="10">
+		<assert>
+			<success>PEPPOL-T125-R005</success>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+                            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>
+				<cbc:GrossWeightMeasure unitCode="TNE">2.060</cbc:GrossWeightMeasure>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAB</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1030</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12346</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAB</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1030</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+			</cac:Consignment>
+			</cac:Shipment>
+		</ubl:Waybill>
+	</test>
+
+	<test id="11">
+		<assert>
+			<warning>PEPPOL-T125-R005</warning>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+                            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>
+				<!--Gross weight specified and specified as the  on THU level -->
+				<cbc:GrossWeightMeasure unitCode="KGM">2060</cbc:GrossWeightMeasure>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAW</cbc:AttributeID>
+						<cbc:Measure unitCode="MTQ">1.030</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAB</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1030</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12346</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAB</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1060</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAW</cbc:AttributeID>
+						<cbc:Measure unitCode="MTQ">1.060</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+			</cac:Consignment>
+			</cac:Shipment>
+		</ubl:Waybill>
+	</test>
+
+	<test id="12">
+		<assert>
+			<warning>PEPPOL-T125-R005</warning>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+                            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>
+				<!--Gross weight specified and specified as the  on THU level -->
+				<cbc:GrossWeightMeasure unitCode="KGM">2090</cbc:GrossWeightMeasure>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAW</cbc:AttributeID>
+						<cbc:Measure unitCode="MTQ">1.030</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAB</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1030.5</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12346</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAB</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1060.5</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAW</cbc:AttributeID>
+						<cbc:Measure unitCode="MTQ">1.060</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+			</cac:Consignment>
+			</cac:Shipment>
+		</ubl:Waybill>
+	</test>
+
+	<test id="13">
+		<assert>
+			<success>PEPPOL-T125-R005</success>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+                            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:Consignment>
+				<cbc:GrossWeightMeasure unitCode="KGM">2091</cbc:GrossWeightMeasure>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12345</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAW</cbc:AttributeID>
+						<cbc:Measure unitCode="MTQ">1.030</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAB</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1030.5</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+				<cac:TransportHandlingUnit>
+					<cbc:ID>12346</cbc:ID>
+					<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAB</cbc:AttributeID>
+						<cbc:Measure unitCode="KGM">1060.5</cbc:Measure>
+					</cac:MeasurementDimension>
+					<cac:MeasurementDimension>
+						<cbc:AttributeID>AAW</cbc:AttributeID>
+						<cbc:Measure unitCode="MTQ">1.060</cbc:Measure>
+					</cac:MeasurementDimension>
+				</cac:TransportHandlingUnit>
+			</cac:Consignment>
+				</cac:Shipment>
+		</ubl:Waybill>
+	</test>
+
 </testSet>
