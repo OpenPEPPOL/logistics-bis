@@ -3,8 +3,10 @@
 	<?DocumentTerm TransportExecutionPlanRequest?>
 	<?Property key="sch:prefix" PEPPOL-T123?>
 	<?Property key="sch:identifier" T123-basic?>
-	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan_request:1</cbc:CustomizationID>
-	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan Request. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1".?>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan_request:1<?Rule PEPPOL-T123-R001?></cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1
+		<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan Request. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1".?>
+		<?Rule PEPPOL-T123-R001?>
 	</cbc:ProfileID>
 	<cbc:ID>141278571829041241241</cbc:ID>
 	<cbc:IssueDate>2021-09-29<?Description The date when the Transport Execution Plan Request is issued. Format = "YYYY-MM-DD". ?>
@@ -41,9 +43,10 @@
 			<?Description An identifier for the transport user party. ?>
 			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">7300010000001 				
-			<?schemeID-CodeList ICD?>
-			<?schemeID-usage Optional?>
-			<?Cardinality 1..1?>
+				<?schemeID-CodeList ICD?>
+				<?schemeID-usage Optional?>
+				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T123-R031?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
@@ -52,6 +55,7 @@
 			<cbc:Name>Novo Nordisk Pharmatech A/S
 				<?Name Transport user party name?>
 				<?Description The name of the transport user party. ?>
+				<?Rule PEPPOL-T123-R031?>
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
@@ -199,9 +203,10 @@
 			<?Description An identifier for the transport service provider party. ?>
 			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">7300010000001 				
-			<?schemeID-CodeList ICD?>
-			<?schemeID-usage Optional?>
-			<?Cardinality 1..1?>
+				<?schemeID-CodeList ICD?>
+				<?schemeID-usage Optional?>
+				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T123-R032?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
@@ -210,6 +215,7 @@
 			<cbc:Name>Leman
 				<?Name Transport service provider party name?>
 				<?Description The name of the transport service provider party. ?>
+				<?Rule PEPPOL-T123-R032?>
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
@@ -349,6 +355,7 @@
 				<?schemeID-CodeList ICD?>
 				<?schemeID-usage Optional?>
 				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T123-R033?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
@@ -357,6 +364,7 @@
 			<cbc:Name>Novo Nordisk Pharmatech A/S
 				<?Name Transport user party name?>
 				<?Description The name of the payee party. ?>
+				<?Rule PEPPOL-T123-R033?>
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
@@ -585,16 +593,21 @@
 			<?Name Consignment gross weight ?> 
 			<?Description The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified?>
 			<?Cardinality 0..1?>			
+			<?Rule PEPPOL-T123-R005?>
+			<?Rule PEPPOL-T123-R008?>
 		</cbc:GrossWeightMeasure>
 		<cbc:GrossVolumeMeasure unitCode="MTQ">20
 			<?Name Consignment gross volume ?>
 			<?Description The gross volumen of the consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
 			<?Cardinality 0..1?>
+			<?Rule PEPPOL-T123-R006?>
+			<?Rule PEPPOL-T123-R008?>
 		</cbc:GrossVolumeMeasure>
 		<cbc:LoadingLengthMeasure unitCode="MTR">0.4
 			<?Name Loading length measure ?>
 			<?Description The total length in a means of transport or a piece of transport equipment which, given the width and height of the transport means, will accommodate all of the consignments in a single consolidation.?>
 			<?Cardinality 0..1?>
+			<?Rule PEPPOL-T123-R008?>
 		</cbc:LoadingLengthMeasure>
 		<cbc:HazardousRiskIndicator>false
 			<?Name Hazardous risk indicator ?>
@@ -605,11 +618,14 @@
 			<?Name Total number of transport handling units ?>
 			<?Description The total number of transport handling units for this consignment.?>
 			<?Cardinality 0..1?>
+			<?Rule PEPPOL-T123-R003?>
+			<?Rule PEPPOL-T123-R004?>
 		</cbc:TotalTransportHandlingUnitQuantity>
 		<cac:RequestedPickupTransportEvent>
 			<?Name Requested pickup transport event ?>
 			<?Description The pickup of this consignment requested by the party requesting a transportation service (the transport user). Mandatory if the Requested delivery transport event is not specified.?>
 			<?Cardinality 0..1?>
+			<?Rule PEPPOL-T123-R021?>
 			<cbc:IdentificationID>21412312412
 				<?Name Identifier pickup transport event ?>
 				<?Description An identifier for this pickup transport event within an agreed event identification scheme. ?>
@@ -726,18 +742,32 @@
 				<cbc:StartDate>2021-09-29<?Name Period start date?>
 					<?Description The start date for the pickup event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T123-R011?>
+					<?Rule PEPPOL-T123-R012?>
 				</cbc:StartDate>
 				<cbc:StartTime>08:00:00+01:00<?Name Period start time?>
 					<?Description The start time for the pickup event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T123-R013?>
+					<?Rule PEPPOL-T123-R014?>
+					<?Rule PEPPOL-T123-R015?>
+					<?Rule PEPPOL-T123-R016?>
+					<?Rule PEPPOL-T123-R017?>
 				</cbc:StartTime>
 				<cbc:EndDate>2021-09-29<?Name Period end date?>
 					<?Description The end date for the pickup event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T123-R011?>
+					<?Rule PEPPOL-T123-R012?>
 				</cbc:EndDate>
 				<cbc:EndTime>10:00:00+01:00<?Name Period end time?>
 					<?Description The end time for the pickup event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T123-R013?>
+					<?Rule PEPPOL-T123-R014?>
+					<?Rule PEPPOL-T123-R015?>
+					<?Rule PEPPOL-T123-R016?>
+					<?Rule PEPPOL-T123-R017?>
 				</cbc:EndTime>
 			</cac:Period>
 		</cac:RequestedPickupTransportEvent>
@@ -745,6 +775,7 @@
 			<?Name Requested delivery transport event ?>
 			<?Description The delivery of this consignment requested by the party requesting a transportation service (the transport user). Mandatory if the requested pickup transpoinrt event is not present.?>
 			<?Cardinality 0..1?>
+			<?Rule PEPPOL-T123-R021?>
 			<cbc:IdentificationID>625435485674654132
 				<?Name Identifier delivery transport event ?>
 				<?Description An identifier for this delivery transport event within an agreed event identification scheme. ?>
@@ -782,7 +813,7 @@
 						<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
 					</cbc:AdditionalStreetName>
 					<cbc:CityName>Kastrup
-												<?Name City ?>
+						<?Name City ?>
 						<?Cardinality 0..1?>
 						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
 					</cbc:CityName>
@@ -861,18 +892,32 @@
 				<cbc:StartDate>2021-09-29<?Name Period start date?>
 					<?Description The start date for the delivery event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T123-R011?>
+					<?Rule PEPPOL-T123-R012?>
 				</cbc:StartDate>
 				<cbc:StartTime>10:00:00+01:00<?Name Period start time?>
 					<?Description The start time for the delivery event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T123-R013?>
+					<?Rule PEPPOL-T123-R014?>
+					<?Rule PEPPOL-T123-R015?>
+					<?Rule PEPPOL-T123-R016?>
+					<?Rule PEPPOL-T123-R017?>
 				</cbc:StartTime>
 				<cbc:EndDate>2021-09-29<?Name Period end date?>
 					<?Description The end date for the delivery event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T123-R011?>
+					<?Rule PEPPOL-T123-R012?>
 				</cbc:EndDate>
 				<cbc:EndTime>11:00:00+01:00<?Name Period end time?>
 					<?Description The end time for the delivery event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T123-R013?>
+					<?Rule PEPPOL-T123-R014?>
+					<?Rule PEPPOL-T123-R015?>
+					<?Rule PEPPOL-T123-R016?>
+					<?Rule PEPPOL-T123-R017?>
 				</cbc:EndTime>
 			</cac:Period>
 		</cac:RequestedDeliveryTransportEvent>
@@ -888,6 +933,7 @@
 					<?schemeID-CodeList ICD?>
 					<?schemeID-usage Optional?>
 					<?Cardinality 1..1?>
+					<?Rule PEPPOL-T123-R034?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
@@ -896,6 +942,7 @@
 				<cbc:Name>HUS Hospital
 					<?Name Consignee party common name?>
 					<?Description The name of the consignee party.?>
+					<?Rule PEPPOL-T123-R034?>
 				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
@@ -1017,6 +1064,7 @@
 					<?schemeID-CodeList ICD?>
 					<?schemeID-usage Optional?>
 					<?Cardinality 1..1?>
+					<?Rule PEPPOL-T123-R035?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
@@ -1025,6 +1073,7 @@
 				<cbc:Name>Novo Nordisk Pharmatech A/S
 					<?Name Consignor party name?>
 					<?Description The name of the consignor party.?>
+					<?Rule PEPPOL-T123-R035?>
 				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
@@ -1165,11 +1214,13 @@
 				<?Name Delivery terms identification ?>
 				<?Description Delivery terms code (Inco terms). ?>
 				<?Cardinality 0..1?>
+				<?Rule PEPPOL-T123-R007?>
 			</cbc:ID>
 			<cbc:SpecialTerms>DAP
 				<?Name Special terms ?>
 				<?Description Special delivery terms that exceeds the inco terms. ?>
 				<?Cardinality 0..1?>
+				<?Rule PEPPOL-T123-R007?>
 			</cbc:SpecialTerms>
 			<cac:DeliveryLocation>
 				<?Name Location of attchaed to the delivery terms ?>
@@ -1198,11 +1249,13 @@
 				<?Name Payment terms identification ?>
 				<?Description An identifier for this set of payment terms. ?>
 				<?Cardinality 0..1?>
+				<?Rule PEPPOL-T123-R010?>
 			</cbc:ID>
 			<cbc:Note>To be paid on invoice
 				<?Name Payment terms note ?>
 				<?Description A free text describing this set of payment terms. ?>
 				<?Cardinality 0..1?>
+				<?Rule PEPPOL-T123-R010?>
 			</cbc:Note>
 		</cac:PaymentTerms>
 		<cac:FreightAllowanceCharge>
