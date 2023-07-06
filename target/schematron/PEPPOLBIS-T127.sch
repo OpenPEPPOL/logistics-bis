@@ -244,9 +244,7 @@
       <rule context="/ubl:TransportationStatus/cac:Consignment/cac:Status/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T127-B01402">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:TransportationStatus/cac:Consignment/cac:TransportEvent">
-         <assert test="cac:Period" flag="fatal" id="PEPPOL-T127-B01801">Element 'cac:Period' MUST be provided.</assert>
-      </rule>
+      <rule context="/ubl:TransportationStatus/cac:Consignment/cac:TransportEvent"/>
       <rule context="/ubl:TransportationStatus/cac:Consignment/cac:TransportEvent/cbc:IdentificationID"/>
       <rule context="/ubl:TransportationStatus/cac:Consignment/cac:TransportEvent/cbc:OccurrenceDate"/>
       <rule context="/ubl:TransportationStatus/cac:Consignment/cac:TransportEvent/cbc:OccurrenceTime"/>
@@ -279,7 +277,7 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T127-B03101">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportationStatus/cac:Consignment/cac:TransportEvent/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T127-B01802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T127-B01801">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportationStatus/cac:Consignment/cac:TransportHandlingUnit">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T127-B03601">Element 'cbc:ID' MUST be provided.</assert>
