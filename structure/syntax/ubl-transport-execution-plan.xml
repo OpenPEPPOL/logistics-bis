@@ -18,6 +18,7 @@
 				transaction.</Description>
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir16-002</Reference>
+         <Reference type="RULE">PEPPOL-T124-R001</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1</Value>
       </Element>
 	     <Element>
@@ -26,6 +27,7 @@
          <Description>Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1".</Description>
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir16-001</Reference>
+         <Reference type="RULE">PEPPOL-T124-R002</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1</Value>
       </Element>
 	     <Element>
@@ -52,6 +54,7 @@
          <Description>The time when the Transport Execution Plan is issued. Format = "hh:mm:ss". </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
+         <Reference type="RULE">PEPPOL-T124-R018</Reference>
          <Value type="EXAMPLE">09:49:00+02:00</Value>
       </Element>
 	     <Element cardinality="0..1">
@@ -97,6 +100,7 @@
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>ID </Name>
+               <Reference type="RULE">PEPPOL-T124-R031</Reference>
                <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
@@ -112,6 +116,7 @@
                <Term>cbc:Name</Term>
                <Name>Sender party name</Name>
                <Description>The name of the sender party. </Description>
+               <Reference type="RULE">PEPPOL-T124-R031</Reference>
                <Value type="EXAMPLE">Leman</Value>
             </Element>
          </Element>
@@ -284,6 +289,7 @@
             <Element cardinality="0..1">
                <Term>cbc:ID</Term>
                <Name>ID</Name>
+               <Reference type="RULE">PEPPOL-T124-R032</Reference>
                <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
@@ -299,6 +305,7 @@
                <Term>cbc:Name</Term>
                <Name>Receiver party name </Name>
                <Description>The name of the receiver party. </Description>
+               <Reference type="RULE">PEPPOL-T124-R032</Reference>
                <Value type="EXAMPLE">DHL Express</Value>
             </Element>
          </Element>
@@ -459,6 +466,7 @@
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>ID </Name>
+               <Reference type="RULE">PEPPOL-T124-R033</Reference>
                <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
@@ -474,6 +482,7 @@
                <Term>cbc:Name</Term>
                <Name>Transport user party name</Name>
                <Description>The name of the transport user party. </Description>
+               <Reference type="RULE">PEPPOL-T124-R033</Reference>
                <Value type="EXAMPLE">Novo Nordisk Pharmatech A/S</Value>
             </Element>
          </Element>
@@ -634,6 +643,7 @@
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>ID </Name>
+               <Reference type="RULE">PEPPOL-T124-R034</Reference>
                <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
@@ -649,6 +659,7 @@
                <Term>cbc:Name</Term>
                <Name>Transport service provider party name</Name>
                <Description>The name of the transport service provider party. </Description>
+               <Reference type="RULE">PEPPOL-T124-R034</Reference>
                <Value type="EXAMPLE">Leman</Value>
             </Element>
          </Element>
@@ -808,6 +819,7 @@
             <Description>An identifier for the bill-to party. </Description>
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
+               <Reference type="RULE">PEPPOL-T124-R035</Reference>
                <Value type="EXAMPLE">7300010000001</Value>
                <Attribute>
                   <Term>schemeID</Term>
@@ -823,6 +835,7 @@
                <Term>cbc:Name</Term>
                <Name>Transport user party name</Name>
                <Description>The name of the bill-to party. </Description>
+               <Reference type="RULE">PEPPOL-T124-R035</Reference>
                <Value type="EXAMPLE">Novo Nordisk Pharmatech A/S</Value>
             </Element>
          </Element>
@@ -1122,6 +1135,8 @@
             <Term>cbc:GrossWeightMeasure</Term>
             <Name>Consignment gross weight </Name>
             <Description>The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified</Description>
+            <Reference type="RULE">PEPPOL-T124-R005</Reference>
+            <Reference type="RULE">PEPPOL-T124-R008</Reference>
             <Value type="EXAMPLE">1030</Value>
             <Attribute>
                <Term>unitCode</Term>
@@ -1132,6 +1147,8 @@
             <Term>cbc:GrossVolumeMeasure</Term>
             <Name>Consignment gross volume </Name>
             <Description>The gross volumen of the consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified</Description>
+            <Reference type="RULE">PEPPOL-T124-R006</Reference>
+            <Reference type="RULE">PEPPOL-T124-R008</Reference>
             <Value type="EXAMPLE">20</Value>
             <Attribute>
                <Term>unitCode</Term>
@@ -1142,6 +1159,7 @@
             <Term>cbc:LoadingLengthMeasure</Term>
             <Name>Loading length measure </Name>
             <Description>The total length in a means of transport or a piece of transport equipment which, given the width and height of the transport means, will accommodate all of the consignments in a single consolidation.</Description>
+            <Reference type="RULE">PEPPOL-T124-R008</Reference>
             <Value type="EXAMPLE">0.4</Value>
             <Attribute>
                <Term>unitCode</Term>
@@ -1157,6 +1175,8 @@
          <Element cardinality="0..1">
             <Term>cbc:TotalTransportHandlingUnitQuantity</Term>
             <Name>Total number of transport handling units </Name>
+            <Reference type="RULE">PEPPOL-T124-R003</Reference>
+            <Reference type="RULE">PEPPOL-T124-R004</Reference>
             <Value type="EXAMPLE">1</Value>
             <Attribute>
                <Term>unitCode</Term>
@@ -1310,24 +1330,34 @@
                   <Term>cbc:StartDate</Term>
                   <Name>Period start date</Name>
                   <Description>The start date for the pickup event.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R012</Reference>
                   <Value type="EXAMPLE">2021-09-29</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:StartTime</Term>
                   <Name>Period start time</Name>
                   <Description>The start time for the pickup event.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R015</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R016</Reference>
                   <Value type="EXAMPLE">08:00:00+01:00</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:EndDate</Term>
                   <Name>Period end date</Name>
                   <Description>The end date for the pickup event.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R012</Reference>
                   <Value type="EXAMPLE">2021-09-29</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:EndTime</Term>
                   <Name>Period end time</Name>
                   <Description>The end time for the pickup event.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R014</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R017</Reference>
                   <Value type="EXAMPLE">10:00:00+01:00</Value>
                </Element>
             </Element>
@@ -1475,28 +1505,38 @@
                <Term>cac:Period</Term>
                <Name>Period </Name>
                <Description>The period within the delivery event takes place.</Description>
-               <Element cardinality="1..1">
+               <Element cardinality="0..1">
                   <Term>cbc:StartDate</Term>
                   <Name>Period start date</Name>
                   <Description>The start date for the delivery event.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R012</Reference>
                   <Value type="EXAMPLE">2021-09-29</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:StartTime</Term>
                   <Name>Period start time</Name>
                   <Description>The start time for the delivery event.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R015</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R016</Reference>
                   <Value type="EXAMPLE">10:00:00+01:00</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:EndDate</Term>
                   <Name>Period end date</Name>
                   <Description>The end date for the delivery event.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R012</Reference>
                   <Value type="EXAMPLE">2021-09-29</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:EndTime</Term>
                   <Name>Period end time</Name>
                   <Description>The end time for the delivery event.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R014</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R017</Reference>
                   <Value type="EXAMPLE">11:00:00+01:00</Value>
                </Element>
             </Element>
@@ -1648,24 +1688,34 @@
                   <Term>cbc:StartDate</Term>
                   <Name>Period start date</Name>
                   <Description>The start date for the pickup event.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R012</Reference>
                   <Value type="EXAMPLE">2021-09-29</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:StartTime</Term>
                   <Name>Period start time</Name>
                   <Description>The start time for the pickup event.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R015</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R016</Reference>
                   <Value type="EXAMPLE">08:00:00+01:00</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:EndDate</Term>
                   <Name>Period end date</Name>
                   <Description>The end date for the pickup event.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R012</Reference>
                   <Value type="EXAMPLE">2021-09-29</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:EndTime</Term>
                   <Name>Period end time</Name>
                   <Description>The end time for the pickup event.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R014</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R017</Reference>
                   <Value type="EXAMPLE">10:00:00+01:00</Value>
                </Element>
             </Element>
@@ -1817,24 +1867,34 @@
                   <Term>cbc:StartDate</Term>
                   <Name>Period start date</Name>
                   <Description>The start date for the delivery event.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R012</Reference>
                   <Value type="EXAMPLE">2021-09-29</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:StartTime</Term>
                   <Name>Period start time</Name>
                   <Description>The start time for the delivery event.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R015</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R016</Reference>
                   <Value type="EXAMPLE">10:00:00+01:00</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:EndDate</Term>
                   <Name>Period end date</Name>
                   <Description>The end date for the delivery event.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R012</Reference>
                   <Value type="EXAMPLE">2021-09-29</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:EndTime</Term>
                   <Name>Period end time</Name>
                   <Description>The end time for the delivery event.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R014</Reference>
+                  <Reference type="RULE">PEPPOL-T124-R017</Reference>
                   <Value type="EXAMPLE">11:00:00+01:00</Value>
                </Element>
             </Element>
@@ -1849,6 +1909,7 @@
                <Description>An identifier for the consignee party. </Description>
                <Element cardinality="1..1">
                   <Term>cbc:ID</Term>
+                  <Reference type="RULE">PEPPOL-T124-R036</Reference>
                   <Value type="EXAMPLE">7300010000001</Value>
                   <Attribute usage="Optional">
                      <Term>schemeID</Term>
@@ -1864,6 +1925,7 @@
                   <Term>cbc:Name</Term>
                   <Name>Consignee party name</Name>
                   <Description>The name of the consignee party.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R036</Reference>
                   <Value type="EXAMPLE">HUS Hospital</Value>
                </Element>
             </Element>
@@ -2001,6 +2063,7 @@
                <Description>An identifier for the consignor party. </Description>
                <Element cardinality="1..1">
                   <Term>cbc:ID</Term>
+                  <Reference type="RULE">PEPPOL-T124-R037</Reference>
                   <Value type="EXAMPLE">7300010000001</Value>
                   <Attribute usage="Optional">
                      <Term>schemeID</Term>
@@ -2016,6 +2079,7 @@
                   <Term>cbc:Name</Term>
                   <Name>Consignor party name</Name>
                   <Description>The name of the consignor party.</Description>
+                  <Reference type="RULE">PEPPOL-T124-R037</Reference>
                   <Value type="EXAMPLE">Novo Nordisk Pharmatech A/S</Value>
                </Element>
             </Element>
@@ -2175,12 +2239,14 @@
                <Term>cbc:ID</Term>
                <Name>Delivery terms identification </Name>
                <Description>Delivery terms code (Inco terms). </Description>
+               <Reference type="RULE">PEPPOL-T124-R007</Reference>
                <Value type="EXAMPLE">DAP</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cbc:SpecialTerms</Term>
                <Name>Special terms </Name>
                <Description>Special delivery terms that exceeds the inco terms. </Description>
+               <Reference type="RULE">PEPPOL-T124-R007</Reference>
                <Value type="EXAMPLE">DAP</Value>
             </Element>
             <Element cardinality="0..1">
@@ -2215,12 +2281,14 @@
                <Term>cbc:ID</Term>
                <Name>Payment terms identification </Name>
                <Description>An identifier for this set of payment terms. </Description>
+               <Reference type="RULE">PEPPOL-T124-R010</Reference>
                <Value type="EXAMPLE">DAP</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cbc:Note</Term>
                <Name>Payment terms note </Name>
                <Description>A free text describing this set of payment terms. </Description>
+               <Reference type="RULE">PEPPOL-T124-R010</Reference>
                <Value type="EXAMPLE">To be paid on invoice</Value>
             </Element>
          </Element>
@@ -2276,6 +2344,7 @@
                   <Element cardinality="1..1">
                      <Term>cbc:ID</Term>
                      <Name>ID </Name>
+                     <Reference type="RULE">PEPPOL-T124-R030</Reference>
                      <Value type="EXAMPLE">7300010000001</Value>
                      <Attribute usage="Optional">
                         <Term>schemeID</Term>
@@ -2291,6 +2360,7 @@
                      <Term>cbc:Name</Term>
                      <Name>Carrier party name</Name>
                      <Description>The name of the carrier party. </Description>
+                     <Reference type="RULE">PEPPOL-T124-R030</Reference>
                      <Value type="EXAMPLE">DHL Express</Value>
                   </Element>
                </Element>
@@ -2586,26 +2656,36 @@
                   <Element cardinality="0..1">
                      <Term>cbc:StartDate</Term>
                      <Name>Period start date</Name>
-                     <Description>The start date for the period. </Description>
+                     <Description>The start date for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R012</Reference>
                      <Value type="EXAMPLE">2021-09-29</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:StartTime</Term>
                      <Name>Period start time</Name>
-                     <Description>The start time for the period. </Description>
-                     <Value type="EXAMPLE">15:00:00+01:00</Value>
+                     <Description>The start time for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R015</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R016</Reference>
+                     <Value type="EXAMPLE">10:00:00+01:00</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:EndDate</Term>
                      <Name>Period end date</Name>
-                     <Description>The end date for the period. </Description>
+                     <Description>The end date for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R012</Reference>
                      <Value type="EXAMPLE">2021-09-29</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:EndTime</Term>
                      <Name>Period end time</Name>
-                     <Description>The end time for the period. </Description>
-                     <Value type="EXAMPLE">16:50:00+01:00</Value>
+                     <Description>The end time for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R014</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R017</Reference>
+                     <Value type="EXAMPLE">11:00:00+01:00</Value>
                   </Element>
                </Element>
             </Element>
@@ -2683,26 +2763,36 @@
                   <Element cardinality="0..1">
                      <Term>cbc:StartDate</Term>
                      <Name>Period start date</Name>
-                     <Description>The start date for the period. </Description>
+                     <Description>The start date for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R012</Reference>
                      <Value type="EXAMPLE">2021-09-29</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:StartTime</Term>
                      <Name>Period start time</Name>
-                     <Description>The start time for the period. </Description>
-                     <Value type="EXAMPLE">15:00:00+01:00</Value>
+                     <Description>The start time for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R015</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R016</Reference>
+                     <Value type="EXAMPLE">10:00:00+01:00</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:EndDate</Term>
                      <Name>Period end date</Name>
-                     <Description>The end date for the period. </Description>
+                     <Description>The end date for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R012</Reference>
                      <Value type="EXAMPLE">2021-09-29</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:EndTime</Term>
                      <Name>Period end time</Name>
-                     <Description>The end time for the period. </Description>
-                     <Value type="EXAMPLE">16:50:00+01:00</Value>
+                     <Description>The end time for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R014</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R017</Reference>
+                     <Value type="EXAMPLE">11:00:00+01:00</Value>
                   </Element>
                </Element>
             </Element>
@@ -2729,6 +2819,7 @@
                   <Element cardinality="1..1">
                      <Term>cbc:ID</Term>
                      <Name>ID </Name>
+                     <Reference type="RULE">PEPPOL-T124-R038</Reference>
                      <Value type="EXAMPLE">7300010000001</Value>
                      <Attribute usage="Optional">
                         <Term>schemeID</Term>
@@ -2744,6 +2835,7 @@
                      <Term>cbc:Name</Term>
                      <Name>Carrier party name</Name>
                      <Description>The name of the carrier party. </Description>
+                     <Reference type="RULE">PEPPOL-T124-R038</Reference>
                      <Value type="EXAMPLE">DHL Express</Value>
                   </Element>
                </Element>
@@ -3039,26 +3131,36 @@
                   <Element cardinality="0..1">
                      <Term>cbc:StartDate</Term>
                      <Name>Period start date</Name>
-                     <Description>The start date for the period. </Description>
+                     <Description>The start date for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R012</Reference>
                      <Value type="EXAMPLE">2021-09-29</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:StartTime</Term>
                      <Name>Period start time</Name>
-                     <Description>The start time for the period. </Description>
-                     <Value type="EXAMPLE">15:00:00+01:00</Value>
+                     <Description>The start time for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R015</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R016</Reference>
+                     <Value type="EXAMPLE">10:00:00+01:00</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:EndDate</Term>
                      <Name>Period end date</Name>
-                     <Description>The end date for the period. </Description>
+                     <Description>The end date for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R012</Reference>
                      <Value type="EXAMPLE">2021-09-29</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:EndTime</Term>
                      <Name>Period end time</Name>
-                     <Description>The end time for the period. </Description>
-                     <Value type="EXAMPLE">16:50:00+01:00</Value>
+                     <Description>The end time for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R014</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R017</Reference>
+                     <Value type="EXAMPLE">11:00:00+01:00</Value>
                   </Element>
                </Element>
             </Element>
@@ -3136,26 +3238,36 @@
                   <Element cardinality="0..1">
                      <Term>cbc:StartDate</Term>
                      <Name>Period start date</Name>
-                     <Description>The start date for the period. </Description>
+                     <Description>The start date for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R012</Reference>
                      <Value type="EXAMPLE">2021-09-29</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:StartTime</Term>
                      <Name>Period start time</Name>
-                     <Description>The start time for the period. </Description>
-                     <Value type="EXAMPLE">15:00:00+01:00</Value>
+                     <Description>The start time for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R015</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R016</Reference>
+                     <Value type="EXAMPLE">10:00:00+01:00</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:EndDate</Term>
                      <Name>Period end date</Name>
-                     <Description>The end date for the period. </Description>
+                     <Description>The end date for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R012</Reference>
                      <Value type="EXAMPLE">2021-09-29</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:EndTime</Term>
                      <Name>Period end time</Name>
-                     <Description>The end time for the period. </Description>
-                     <Value type="EXAMPLE">16:50:00+01:00</Value>
+                     <Description>The end time for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R014</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R017</Reference>
+                     <Value type="EXAMPLE">11:00:00+01:00</Value>
                   </Element>
                </Element>
             </Element>
@@ -3188,6 +3300,7 @@
                   <Element cardinality="1..1">
                      <Term>cbc:ID</Term>
                      <Name>ID </Name>
+                     <Reference type="RULE">PEPPOL-T124-R039</Reference>
                      <Value type="EXAMPLE">7300010000001</Value>
                      <Attribute usage="Optional">
                         <Term>schemeID</Term>
@@ -3203,6 +3316,7 @@
                      <Term>cbc:Name</Term>
                      <Name>Carrier party name</Name>
                      <Description>The name of the carrier party. </Description>
+                     <Reference type="RULE">PEPPOL-T124-R039</Reference>
                      <Value type="EXAMPLE">DHL Express Finland</Value>
                   </Element>
                </Element>
@@ -3498,26 +3612,36 @@
                   <Element cardinality="0..1">
                      <Term>cbc:StartDate</Term>
                      <Name>Period start date</Name>
-                     <Description>The start date for the period. </Description>
+                     <Description>The start date for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R012</Reference>
                      <Value type="EXAMPLE">2021-09-29</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:StartTime</Term>
                      <Name>Period start time</Name>
-                     <Description>The start time for the period. </Description>
-                     <Value type="EXAMPLE">15:00:00+01:00</Value>
+                     <Description>The start time for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R015</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R016</Reference>
+                     <Value type="EXAMPLE">10:00:00+01:00</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:EndDate</Term>
                      <Name>Period end date</Name>
-                     <Description>The end date for the period. </Description>
+                     <Description>The end date for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R012</Reference>
                      <Value type="EXAMPLE">2021-09-29</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:EndTime</Term>
                      <Name>Period end time</Name>
-                     <Description>The end time for the period. </Description>
-                     <Value type="EXAMPLE">16:50:00+01:00</Value>
+                     <Description>The end time for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R014</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R017</Reference>
+                     <Value type="EXAMPLE">11:00:00+01:00</Value>
                   </Element>
                </Element>
             </Element>
@@ -3595,26 +3719,36 @@
                   <Element cardinality="0..1">
                      <Term>cbc:StartDate</Term>
                      <Name>Period start date</Name>
-                     <Description>The start date for the period. </Description>
+                     <Description>The start date for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R012</Reference>
                      <Value type="EXAMPLE">2021-09-29</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:StartTime</Term>
                      <Name>Period start time</Name>
-                     <Description>The start time for the period. </Description>
-                     <Value type="EXAMPLE">15:00:00+01:00</Value>
+                     <Description>The start time for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R015</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R016</Reference>
+                     <Value type="EXAMPLE">10:00:00+01:00</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:EndDate</Term>
                      <Name>Period end date</Name>
-                     <Description>The end date for the period. </Description>
+                     <Description>The end date for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R011</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R012</Reference>
                      <Value type="EXAMPLE">2021-09-29</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:EndTime</Term>
                      <Name>Period end time</Name>
-                     <Description>The end time for the period. </Description>
-                     <Value type="EXAMPLE">16:50:00+01:00</Value>
+                     <Description>The end time for the period.</Description>
+                     <Reference type="RULE">PEPPOL-T124-R013</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R014</Reference>
+                     <Reference type="RULE">PEPPOL-T124-R017</Reference>
+                     <Value type="EXAMPLE">11:00:00+01:00</Value>
                   </Element>
                </Element>
             </Element>

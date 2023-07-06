@@ -3,13 +3,16 @@
 	<?DocumentTerm TransportExecutionPlan?>
 	<?Property key="sch:prefix" PEPPOL-T124?>
 	<?Property key="sch:identifier" T124-basic?>
-	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1</cbc:CustomizationID>
-	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1".?>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1<?Rule PEPPOL-T124-R001?></cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1
+		<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1".?>
+		<?Rule PEPPOL-T124-R002?>
 	</cbc:ProfileID>
 	<cbc:ID>691278571829041271246</cbc:ID>
 	<cbc:IssueDate>2021-09-29<?Description The date when the Transport Execution Plan is issued. Format = "YYYY-MM-DD". ?>
 	</cbc:IssueDate>
 	<cbc:IssueTime>09:49:00+02:00<?Description The time when the Transport Execution Plan is issued. Format = "hh:mm:ss". ?>
+		<?Rule PEPPOL-T124-R018?>
 		<?Cardinality 1..1?>
 	</cbc:IssueTime>
 	<cbc:DocumentStatusCode>9
@@ -46,10 +49,11 @@
 			<?Description An identifier for the sender party as known to the receiver party. ?>
 			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">7300010000001 	
-			<?Name ID ?>
-			<?Cardinality 1..1?>			
-			<?schemeID-CodeList ICD?>
-			<?schemeID-usage Optional?>			
+				<?Name ID ?>
+				<?Cardinality 1..1?>			
+				<?schemeID-CodeList ICD?>
+				<?schemeID-usage Optional?>			
+				<?Rule PEPPOL-T124-R031?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
@@ -59,6 +63,7 @@
 				<?Name Sender party name?>
 				<?Description The name of the sender party. ?>
 				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T124-R031?>
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
@@ -200,10 +205,11 @@
 			<?Name Receiver party identification ?>
 			<?Description An identifier for the sender party as known to the sender party. ?>
 			<cbc:ID schemeID="0088">7300010000001 		
-			<?Name ID?>
-			<?Cardinality 0..1?>					
-			<?schemeID-CodeList ICD?>
-			<?schemeID-usage Optional?>			
+				<?Name ID?>
+				<?Cardinality 0..1?>					
+				<?schemeID-CodeList ICD?>
+				<?schemeID-usage Optional?>			
+				<?Rule PEPPOL-T124-R032?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
@@ -213,6 +219,7 @@
 				<?Name Receiver party name ?>
 				<?Description The name of the receiver party. ?>
 				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T124-R032?>
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
@@ -351,10 +358,11 @@
 			<?Description An identifier for the transport user party. ?>
 			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">7300010000001 				
-			<?Name ID ?>
-			<?Cardinality 1..1?>			
-			<?schemeID-CodeList ICD?>
-			<?schemeID-usage Optional?>	
+				<?Name ID ?>
+				<?Cardinality 1..1?>			
+				<?schemeID-CodeList ICD?>
+				<?schemeID-usage Optional?>	
+				<?Rule PEPPOL-T124-R033?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
@@ -363,6 +371,7 @@
 			<cbc:Name>Novo Nordisk Pharmatech A/S
 				<?Name Transport user party name?>
 				<?Description The name of the transport user party. ?>
+				<?Rule PEPPOL-T124-R033?>
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
@@ -501,10 +510,11 @@
 			<?Description An identifier for the transport service provider party. ?>
 			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">7300010000001 	
-			<?Name ID ?>			
-			<?schemeID-CodeList ICD?>
-			<?schemeID-usage Optional?>	
-			<?Cardinality 1..1?>
+				<?Name ID ?>			
+				<?schemeID-CodeList ICD?>
+				<?schemeID-usage Optional?>	
+				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T124-R034?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
@@ -513,6 +523,7 @@
 			<cbc:Name>Leman
 				<?Name Transport service provider party name?>
 				<?Description The name of the transport service provider party. ?>
+				<?Rule PEPPOL-T124-R034?>
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
@@ -651,6 +662,7 @@
 			<cbc:ID schemeID="0088">7300010000001 				
 				<?schemeID-CodeList ICD?>
 				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T124-R035?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
@@ -660,6 +672,7 @@
 				<?Name Transport user party name?>
 				<?Description The name of the bill-to party. ?>
 				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T124-R035?>
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
@@ -900,17 +913,22 @@
 		<cbc:GrossWeightMeasure unitCode="KGM">1030
 			<?Name Consignment gross weight ?> 
 			<?Description The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified?>
+			<?Rule PEPPOL-T124-R005?>
+			<?Rule PEPPOL-T124-R008?>
 			<?Cardinality 0..1?>			
 		</cbc:GrossWeightMeasure>
 		<cbc:GrossVolumeMeasure unitCode="MTQ">20
 			<?Name Consignment gross volume ?>
 			<?Description The gross volumen of the consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
 			<?Cardinality 0..1?>
+			<?Rule PEPPOL-T124-R006?>
+			<?Rule PEPPOL-T124-R008?>
 		</cbc:GrossVolumeMeasure>
 		<cbc:LoadingLengthMeasure unitCode="MTR">0.4
 			<?Name Loading length measure ?>
 			<?Description The total length in a means of transport or a piece of transport equipment which, given the width and height of the transport means, will accommodate all of the consignments in a single consolidation.?>
 			<?Cardinality 0..1?>
+			<?Rule PEPPOL-T124-R008?>
 		</cbc:LoadingLengthMeasure>
 		<cbc:HazardousRiskIndicator>false
 			<?Name Hazardous risk indicator ?>
@@ -920,6 +938,8 @@
 		<cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1
 			<?Name Total number of transport handling units ?>
 			<?Cardinality 0..1?>
+			<?Rule PEPPOL-T124-R003?>
+			<?Rule PEPPOL-T124-R004?>
 		</cbc:TotalTransportHandlingUnitQuantity>
 		<cac:RequestedPickupTransportEvent>
 			<?Name Requested pickup transport event ?>
@@ -1041,18 +1061,28 @@
 				<cbc:StartDate>2021-09-29<?Name Period start date?>
 					<?Description The start date for the pickup event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T124-R011?>
+					<?Rule PEPPOL-T124-R012?>
 				</cbc:StartDate>
 				<cbc:StartTime>08:00:00+01:00<?Name Period start time?>
 					<?Description The start time for the pickup event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T124-R013?>
+					<?Rule PEPPOL-T124-R015?>
+					<?Rule PEPPOL-T124-R016?>
 				</cbc:StartTime>
 				<cbc:EndDate>2021-09-29<?Name Period end date?>
 					<?Description The end date for the pickup event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T124-R011?>
+					<?Rule PEPPOL-T124-R012?>
 				</cbc:EndDate>
 				<cbc:EndTime>10:00:00+01:00<?Name Period end time?>
 					<?Description The end time for the pickup event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T124-R013?>
+					<?Rule PEPPOL-T124-R014?>
+					<?Rule PEPPOL-T124-R017?>
 				</cbc:EndTime>
 			</cac:Period>
 		</cac:RequestedPickupTransportEvent>
@@ -1175,19 +1205,29 @@
 				<?Cardinality 1..1?>
 				<cbc:StartDate>2021-09-29<?Name Period start date?>
 					<?Description The start date for the delivery event.?>
-					<?Cardinality 1..1?>
+					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T124-R011?>
+					<?Rule PEPPOL-T124-R012?>
 				</cbc:StartDate>
 				<cbc:StartTime>10:00:00+01:00<?Name Period start time?>
 					<?Description The start time for the delivery event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T124-R013?>
+					<?Rule PEPPOL-T124-R015?>
+					<?Rule PEPPOL-T124-R016?>
 				</cbc:StartTime>
 				<cbc:EndDate>2021-09-29<?Name Period end date?>
 					<?Description The end date for the delivery event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T124-R011?>
+					<?Rule PEPPOL-T124-R012?>
 				</cbc:EndDate>
 				<cbc:EndTime>11:00:00+01:00<?Name Period end time?>
 					<?Description The end time for the delivery event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T124-R013?>
+					<?Rule PEPPOL-T124-R014?>
+					<?Rule PEPPOL-T124-R017?>
 				</cbc:EndTime>
 			</cac:Period>
 		</cac:RequestedDeliveryTransportEvent>
@@ -1311,18 +1351,28 @@
 				<cbc:StartDate>2021-09-29<?Name Period start date?>
 					<?Description The start date for the pickup event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T124-R011?>
+					<?Rule PEPPOL-T124-R012?>
 				</cbc:StartDate>
 				<cbc:StartTime>08:00:00+01:00<?Name Period start time?>
 					<?Description The start time for the pickup event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T124-R013?>
+					<?Rule PEPPOL-T124-R015?>
+					<?Rule PEPPOL-T124-R016?>
 				</cbc:StartTime>
 				<cbc:EndDate>2021-09-29<?Name Period end date?>
 					<?Description The end date for the pickup event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T124-R011?>
+					<?Rule PEPPOL-T124-R012?>
 				</cbc:EndDate>
 				<cbc:EndTime>10:00:00+01:00<?Name Period end time?>
 					<?Description The end time for the pickup event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T124-R013?>
+					<?Rule PEPPOL-T124-R014?>
+					<?Rule PEPPOL-T124-R017?>
 				</cbc:EndTime>
 			</cac:Period>
 		</cac:PlannedPickupTransportEvent>
@@ -1446,18 +1496,28 @@
 				<cbc:StartDate>2021-09-29<?Name Period start date?>
 					<?Description The start date for the delivery event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T124-R011?>
+					<?Rule PEPPOL-T124-R012?>
 				</cbc:StartDate>
 				<cbc:StartTime>10:00:00+01:00<?Name Period start time?>
 					<?Description The start time for the delivery event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T124-R013?>
+					<?Rule PEPPOL-T124-R015?>
+					<?Rule PEPPOL-T124-R016?>
 				</cbc:StartTime>
 				<cbc:EndDate>2021-09-29<?Name Period end date?>
 					<?Description The end date for the delivery event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T124-R011?>
+					<?Rule PEPPOL-T124-R012?>
 				</cbc:EndDate>
 				<cbc:EndTime>11:00:00+01:00<?Name Period end time?>
 					<?Description The end time for the delivery event.?>
 					<?Cardinality 0..1?>
+					<?Rule PEPPOL-T124-R013?>
+					<?Rule PEPPOL-T124-R014?>
+					<?Rule PEPPOL-T124-R017?>
 				</cbc:EndTime>
 			</cac:Period>
 		</cac:PlannedDeliveryTransportEvent>
@@ -1473,6 +1533,7 @@
 					<?schemeID-CodeList ICD?>
 					<?schemeID-usage Optional?>
 					<?Cardinality 1..1?>
+					<?Rule PEPPOL-T124-R036?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
@@ -1481,6 +1542,7 @@
 				<cbc:Name>HUS Hospital
 					<?Name Consignee party name?>
 					<?Description The name of the consignee party.?>
+					<?Rule PEPPOL-T124-R036?>
 				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
@@ -1601,6 +1663,7 @@
 					<?schemeID-CodeList ICD?>
 					<?schemeID-usage Optional?>
 					<?Cardinality 1..1?>
+					<?Rule PEPPOL-T124-R037?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
@@ -1609,6 +1672,7 @@
 				<cbc:Name>Novo Nordisk Pharmatech A/S
 					<?Name Consignor party name?>
 					<?Description The name of the consignor party.?>
+					<?Rule PEPPOL-T124-R037?>
 				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
@@ -1702,19 +1766,19 @@
 				<?Description The contact of the consignor party. ?>
 				<?Cardinality 0..1?>
 				<cbc:Name>Mr Sender
-						<?Name Contact name ?>
-						<?Description The contact name. ?>
-						<?Cardinality 0..1?>
-					</cbc:Name>
+					<?Name Contact name ?>
+					<?Description The contact name. ?>
+					<?Cardinality 0..1?>
+				</cbc:Name>
 				<cbc:Telephone>0158 1233714
-						<?Name Contact telephone number ?>
-						<?Description The phone number of the contact. ?>
-						<?Cardinality 0..1?>
-					</cbc:Telephone>
+					<?Name Contact telephone number ?>
+					<?Description The phone number of the contact. ?>
+					<?Cardinality 0..1?>
+				</cbc:Telephone>
 				<cbc:ElectronicMail>sender@consignor-company.co.uk
-						<?Name Contact email address ?>
-						<?Description The electronic mail of the contact. ?>
-						<?Cardinality 0..1?>
+					<?Name Contact email address ?>
+					<?Description The electronic mail of the contact. ?>
+					<?Cardinality 0..1?>
 				</cbc:ElectronicMail>
 			</cac:Contact>
 		</cac:ConsignorParty>
@@ -1748,11 +1812,13 @@
 				<?Name Delivery terms identification ?>
 				<?Description Delivery terms code (Inco terms). ?>
 				<?Cardinality 0..1?>
+				<?Rule PEPPOL-T124-R007?>
 			</cbc:ID>
 			<cbc:SpecialTerms>DAP
 				<?Name Special terms ?>
 				<?Description Special delivery terms that exceeds the inco terms. ?>
 				<?Cardinality 0..1?>
+				<?Rule PEPPOL-T124-R007?>
 			</cbc:SpecialTerms>
 			<cac:Location>
 				<?Name Location of attchaed to the delivery terms ?>
@@ -1781,11 +1847,13 @@
 				<?Name Payment terms identification ?>
 				<?Description An identifier for this set of payment terms. ?>
 				<?Cardinality 0..1?>
+				<?Rule PEPPOL-T124-R010?>
 			</cbc:ID>
 			<cbc:Note>To be paid on invoice
 				<?Name Payment terms note ?>
 				<?Description A free text describing this set of payment terms. ?>
 				<?Cardinality 0..1?>
+				<?Rule PEPPOL-T124-R010?>
 			</cbc:Note>
 		</cac:PaymentTerms>
 		<cac:FreightAllowanceCharge>
@@ -1835,9 +1903,10 @@
 					<?Cardinality 0..1?>
 					<cbc:ID schemeID="0088">7300010000001 	
 					<?Name ID ?>
-					<?Cardinality 1..1?>			
-					<?schemeID-CodeList ICD?>
-					<?schemeID-usage Optional?>			
+						<?Cardinality 1..1?>			
+						<?schemeID-CodeList ICD?>
+						<?schemeID-usage Optional?>			
+						<?Rule PEPPOL-T124-R030?>
 					</cbc:ID>
 				</cac:PartyIdentification>
 				<cac:PartyName>
@@ -1846,6 +1915,7 @@
 					<cbc:Name>DHL Express
 						<?Name Carrier party name?>
 						<?Description The name of the carrier party. ?>
+						<?Rule PEPPOL-T124-R030?>
 					</cbc:Name>
 				</cac:PartyName>
 				<cac:PostalAddress>
@@ -2093,21 +2163,31 @@
 					<?Description The period within the departure of this shipment stage takes place. ?>
 					<?Cardinality 1..1?>
 					<cbc:StartDate>2021-09-29<?Name Period start date?>
-						<?Description The start date for the period. ?>
+						<?Description The start date for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R011?>
+						<?Rule PEPPOL-T124-R012?>
 					</cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00<?Name Period start time?>
-						<?Description The start time for the period. ?>
+					<cbc:StartTime>10:00:00+01:00<?Name Period start time?>
+						<?Description The start time for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R013?>
+						<?Rule PEPPOL-T124-R015?>
+						<?Rule PEPPOL-T124-R016?>
 					</cbc:StartTime>
 					<cbc:EndDate>2021-09-29<?Name Period end date?>
-						<?Description The end date for the period. ?>
+						<?Description The end date for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R011?>
+						<?Rule PEPPOL-T124-R012?>
 					</cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00<?Name Period end time?>
-						<?Description The end time for the period. ?>
+					<cbc:EndTime>11:00:00+01:00<?Name Period end time?>
+						<?Description The end time for the period.?>
 						<?Cardinality 0..1?>
-					</cbc:EndTime>
+						<?Rule PEPPOL-T124-R013?>
+						<?Rule PEPPOL-T124-R014?>
+						<?Rule PEPPOL-T124-R017?>
+					</cbc:EndTime>				
 				</cac:Period>
 			</cac:PlannedDepartureTransportEvent>
 			<cac:PlannedArrivalTransportEvent>
@@ -2170,21 +2250,31 @@
 					<?Description The period within the arrival of this shipment stage takes place. ?>
 					<?Cardinality 1..1?>
 					<cbc:StartDate>2021-09-29<?Name Period start date?>
-						<?Description The start date for the period. ?>
+						<?Description The start date for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R011?>
+						<?Rule PEPPOL-T124-R012?>
 					</cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00<?Name Period start time?>
-						<?Description The start time for the period. ?>
+					<cbc:StartTime>10:00:00+01:00<?Name Period start time?>
+						<?Description The start time for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R013?>
+						<?Rule PEPPOL-T124-R015?>
+						<?Rule PEPPOL-T124-R016?>
 					</cbc:StartTime>
 					<cbc:EndDate>2021-09-29<?Name Period end date?>
-						<?Description The end date for the period. ?>
+						<?Description The end date for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R011?>
+						<?Rule PEPPOL-T124-R012?>
 					</cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00<?Name Period end time?>
-						<?Description The end time for the period. ?>
+					<cbc:EndTime>11:00:00+01:00<?Name Period end time?>
+						<?Description The end time for the period.?>
 						<?Cardinality 0..1?>
-					</cbc:EndTime>
+						<?Rule PEPPOL-T124-R013?>
+						<?Rule PEPPOL-T124-R014?>
+						<?Rule PEPPOL-T124-R017?>
+					</cbc:EndTime>	
 				</cac:Period>
 			</cac:PlannedArrivalTransportEvent>
 		</cac:MainCarriageShipmentStage>
@@ -2204,10 +2294,11 @@
 					<?Description An identifier for the sender party as known to the receiver party. ?>
 					<?Cardinality 0..1?>
 					<cbc:ID schemeID="0088">7300010000001 	
-					<?Name ID ?>
-					<?Cardinality 1..1?>			
-					<?schemeID-CodeList ICD?>
-					<?schemeID-usage Optional?>			
+						<?Name ID ?>
+						<?Cardinality 1..1?>			
+						<?schemeID-CodeList ICD?>
+						<?schemeID-usage Optional?>			
+						<?Rule PEPPOL-T124-R038?>
 					</cbc:ID>
 				</cac:PartyIdentification>
 				<?Name Carrier party ?>
@@ -2219,6 +2310,7 @@
 					<cbc:Name>DHL Express
 						<?Name Carrier party name?>
 						<?Description The name of the carrier party. ?>
+						<?Rule PEPPOL-T124-R038?>
 					</cbc:Name>
 				</cac:PartyName>
 				<cac:PostalAddress>
@@ -2246,10 +2338,10 @@
 						<?Cardinality 0..1?>	
 					</cbc:PostalZone>
 					<cbc:CountrySubentity>Region Hovedstaden
-				<?Name Country sub entity ?>
-				<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
-				<?Cardinality 0..1?>
-			</cbc:CountrySubentity>
+						<?Name Country sub entity ?>
+						<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
+						<?Cardinality 0..1?>
+					</cbc:CountrySubentity>
 					<cac:AddressLine>
 						<?Name Address line 3 ?>
 						<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
@@ -2466,21 +2558,31 @@
 					<?Description The period within the departure of this shipment stage takes place. ?>
 					<?Cardinality 1..1?>
 					<cbc:StartDate>2021-09-29<?Name Period start date?>
-						<?Description The start date for the period. ?>
+						<?Description The start date for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R011?>
+						<?Rule PEPPOL-T124-R012?>
 					</cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00<?Name Period start time?>
-						<?Description The start time for the period. ?>
+					<cbc:StartTime>10:00:00+01:00<?Name Period start time?>
+						<?Description The start time for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R013?>
+						<?Rule PEPPOL-T124-R015?>
+						<?Rule PEPPOL-T124-R016?>
 					</cbc:StartTime>
 					<cbc:EndDate>2021-09-29<?Name Period end date?>
-						<?Description The end date for the period. ?>
+						<?Description The end date for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R011?>
+						<?Rule PEPPOL-T124-R012?>
 					</cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00<?Name Period end time?>
-						<?Description The end time for the period. ?>
+					<cbc:EndTime>11:00:00+01:00<?Name Period end time?>
+						<?Description The end time for the period.?>
 						<?Cardinality 0..1?>
-					</cbc:EndTime>
+						<?Rule PEPPOL-T124-R013?>
+						<?Rule PEPPOL-T124-R014?>
+						<?Rule PEPPOL-T124-R017?>
+					</cbc:EndTime>	
 				</cac:Period>
 			</cac:PlannedDepartureTransportEvent>
 			<cac:PlannedArrivalTransportEvent>
@@ -2543,21 +2645,31 @@
 					<?Description The period within the arrival of this shipment stage takes place. ?>
 					<?Cardinality 1..1?>
 					<cbc:StartDate>2021-09-29<?Name Period start date?>
-						<?Description The start date for the period. ?>
+						<?Description The start date for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R011?>
+						<?Rule PEPPOL-T124-R012?>
 					</cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00<?Name Period start time?>
-						<?Description The start time for the period. ?>
+					<cbc:StartTime>10:00:00+01:00<?Name Period start time?>
+						<?Description The start time for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R013?>
+						<?Rule PEPPOL-T124-R015?>
+						<?Rule PEPPOL-T124-R016?>
 					</cbc:StartTime>
 					<cbc:EndDate>2021-09-29<?Name Period end date?>
-						<?Description The end date for the period. ?>
+						<?Description The end date for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R011?>
+						<?Rule PEPPOL-T124-R012?>
 					</cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00<?Name Period end time?>
-						<?Description The end time for the period. ?>
+					<cbc:EndTime>11:00:00+01:00<?Name Period end time?>
+						<?Description The end time for the period.?>
 						<?Cardinality 0..1?>
-					</cbc:EndTime>
+						<?Rule PEPPOL-T124-R013?>
+						<?Rule PEPPOL-T124-R014?>
+						<?Rule PEPPOL-T124-R017?>
+					</cbc:EndTime>	
 				</cac:Period>
 			</cac:PlannedArrivalTransportEvent>
 		</cac:PreCarriageShipmentStage>
@@ -2586,9 +2698,10 @@
 					<?Cardinality 0..1?>
 					<cbc:ID schemeID="0088">7300010000001 	
 					<?Name ID ?>
-					<?Cardinality 1..1?>			
-					<?schemeID-CodeList ICD?>
-					<?schemeID-usage Optional?>			
+						<?Cardinality 1..1?>			
+						<?schemeID-CodeList ICD?>
+						<?schemeID-usage Optional?>			
+						<?Rule PEPPOL-T124-R039?>
 					</cbc:ID>
 				</cac:PartyIdentification>
 				<cac:PartyName>
@@ -2597,6 +2710,7 @@
 					<cbc:Name>DHL Express Finland
 						<?Name Carrier party name?>
 						<?Description The name of the carrier party. ?>
+						<?Rule PEPPOL-T124-R039?>
 					</cbc:Name>
 				</cac:PartyName>
 				<cac:PostalAddress>
@@ -2612,22 +2726,22 @@
 				<?Name Address line 2 ?>
 				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>				
 				<?Cardinality 0..1?>
-			</cbc:AdditionalStreetName>
-					<cbc:CityName>Vantaa	
-						<?Name City ?>
-						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
-						<?Cardinality 0..1?>
-					</cbc:CityName>
-					<cbc:PostalZone>01530
-						<?Name Post code ?>
-						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
-						<?Cardinality 0..1?>
-					</cbc:PostalZone>
-					<cbc:CountrySubentity>Region Hovedstaden
-				<?Name Country sub entity ?>
-				<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
-				<?Cardinality 0..1?>
-			</cbc:CountrySubentity>
+				</cbc:AdditionalStreetName>
+				<cbc:CityName>Vantaa	
+					<?Name City ?>
+					<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+					<?Cardinality 0..1?>
+				</cbc:CityName>
+				<cbc:PostalZone>01530
+					<?Name Post code ?>
+					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+					<?Cardinality 0..1?>
+				</cbc:PostalZone>
+				<cbc:CountrySubentity>Region Hovedstaden
+					<?Name Country sub entity ?>
+					<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
+					<?Cardinality 0..1?>
+				</cbc:CountrySubentity>
 					<cac:AddressLine>
 						<?Name Address line 3 ?>
 						<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
@@ -2844,21 +2958,31 @@
 					<?Description The period within the departure of this shipment stage takes place. ?>
 					<?Cardinality 1..1?>
 					<cbc:StartDate>2021-09-29<?Name Period start date?>
-						<?Description The start date for the period. ?>
+						<?Description The start date for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R011?>
+						<?Rule PEPPOL-T124-R012?>
 					</cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00<?Name Period start time?>
-						<?Description The start time for the period. ?>
+					<cbc:StartTime>10:00:00+01:00<?Name Period start time?>
+						<?Description The start time for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R013?>
+						<?Rule PEPPOL-T124-R015?>
+						<?Rule PEPPOL-T124-R016?>
 					</cbc:StartTime>
 					<cbc:EndDate>2021-09-29<?Name Period end date?>
-						<?Description The end date for the period. ?>
+						<?Description The end date for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R011?>
+						<?Rule PEPPOL-T124-R012?>
 					</cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00<?Name Period end time?>
-						<?Description The end time for the period. ?>
+					<cbc:EndTime>11:00:00+01:00<?Name Period end time?>
+						<?Description The end time for the period.?>
 						<?Cardinality 0..1?>
-					</cbc:EndTime>
+						<?Rule PEPPOL-T124-R013?>
+						<?Rule PEPPOL-T124-R014?>
+						<?Rule PEPPOL-T124-R017?>
+					</cbc:EndTime>	
 				</cac:Period>
 			</cac:PlannedDepartureTransportEvent>
 			<cac:PlannedArrivalTransportEvent>
@@ -2921,21 +3045,31 @@
 					<?Description The period within the arrival of this shipment stage takes place. ?>
 					<?Cardinality 1..1?>
 					<cbc:StartDate>2021-09-29<?Name Period start date?>
-						<?Description The start date for the period. ?>
+						<?Description The start date for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R011?>
+						<?Rule PEPPOL-T124-R012?>
 					</cbc:StartDate>
-					<cbc:StartTime>15:00:00+01:00<?Name Period start time?>
-						<?Description The start time for the period. ?>
+					<cbc:StartTime>10:00:00+01:00<?Name Period start time?>
+						<?Description The start time for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R013?>
+						<?Rule PEPPOL-T124-R015?>
+						<?Rule PEPPOL-T124-R016?>
 					</cbc:StartTime>
 					<cbc:EndDate>2021-09-29<?Name Period end date?>
-						<?Description The end date for the period. ?>
+						<?Description The end date for the period.?>
 						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T124-R011?>
+						<?Rule PEPPOL-T124-R012?>
 					</cbc:EndDate>
-					<cbc:EndTime>16:50:00+01:00<?Name Period end time?>
-						<?Description The end time for the period. ?>
+					<cbc:EndTime>11:00:00+01:00<?Name Period end time?>
+						<?Description The end time for the period.?>
 						<?Cardinality 0..1?>
-					</cbc:EndTime>
+						<?Rule PEPPOL-T124-R013?>
+						<?Rule PEPPOL-T124-R014?>
+						<?Rule PEPPOL-T124-R017?>
+					</cbc:EndTime>	
 				</cac:Period>
 			</cac:PlannedArrivalTransportEvent>
 		</cac:OnCarriageShipmentStage>
