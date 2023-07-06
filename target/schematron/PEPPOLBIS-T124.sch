@@ -979,15 +979,13 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T124-B23801">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period">
-         <assert test="cbc:StartDate" flag="fatal" id="PEPPOL-T124-B26001">Element 'cbc:StartDate' MUST be provided.</assert>
-      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period/cbc:StartDate"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period/cbc:StartTime"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period/cbc:EndDate"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period/cbc:EndTime"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B26002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B26001">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T124-B23603">Document MUST NOT contain elements not part of the data model.</assert>
