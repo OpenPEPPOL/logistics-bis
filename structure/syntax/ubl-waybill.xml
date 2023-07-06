@@ -49,7 +49,7 @@
 	     <Element>
          <Term>cbc:IssueDate</Term>
          <Name>Dispatch advice issue date</Name>
-         <Description>The date when this version of the waybill is issued. Format = "YYYY-MM-DD". </Description>
+         <Description>The date when this version of the Waybill is issued. Format = "YYYY-MM-DD". </Description>
          <DataType>Date</DataType>
          <Reference type="BUSINESS_TERM">tir16-004</Reference>
          <Value type="EXAMPLE">2005-06-25</Value>
@@ -57,7 +57,7 @@
 	     <Element cardinality="1..1">
          <Term>cbc:IssueTime</Term>
          <Name>Dispatch advice issue time</Name>
-         <Description>The time when this version of the waybill is issued. Format = "hh:mm:ss". </Description>
+         <Description>The time when this version of the Waybill is issued. Format = "hh:mm:ss". </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
          <Reference type="RULE">PEPPOL-T125-R018</Reference>
@@ -66,7 +66,7 @@
 	     <Element cardinality="1..1">
          <Term>cbc:Name</Term>
          <Name>Waybill type </Name>
-         <Description>The name (kind of waybill) of waybill type. Use "CMR" for CMR, "Bill of Laden" for Bill of laden, "Air waybill" for Air waybill or CIM for Train waybill. </Description>
+         <Description>The name (kind of Waybill) of Waybill type. Use "CMR" for CMR, "Bill of Laden" for Bill of laden, "Air Waybill" for Air Waybill or CIM for Train Waybill. </Description>
          <Value type="EXAMPLE">Air Waybill</Value>
       </Element>
 	     <Element cardinality="0..1">
@@ -78,7 +78,7 @@
 	     <Element cardinality="1..1">
          <Term>cac:ConsignorParty</Term>
          <Name>Consignor Party </Name>
-         <Description>The party sending the goods in the waybill, often the issuer of the waybill. </Description>
+         <Description>The party sending the goods in the Waybill, often the issuer of the Waybill. </Description>
          <Element cardinality="1..1">
             <Term>cbc:EndpointID</Term>
             <Name>Endpoint ID </Name>
@@ -247,7 +247,7 @@
 	     <Element cardinality="1..1">
          <Term>cac:CarrierParty</Term>
          <Name>Carrier party </Name>
-         <Description>The carrier party responsible for this waybill. </Description>
+         <Description>The carrier party responsible for this Waybill. </Description>
          <Element cardinality="1..1">
             <Term>cbc:EndpointID</Term>
             <Name>Endpoint ID </Name>
@@ -590,7 +590,7 @@
 	     <Element cardinality="1..1">
          <Term>cac:Shipment</Term>
          <Name>Shipping Order ID </Name>
-         <Description>The shipment for this waybill.</Description>
+         <Description>The shipment for this Waybill.</Description>
          <Element>
             <Term>cbc:ID</Term>
             <Name>Shipment identifier</Name>
@@ -685,7 +685,7 @@
             <Element cardinality="1..1">
                <Term>cac:ConsigneeParty</Term>
                <Name>Delivery party </Name>
-               <Description>The party responsible for receiving the goods in waybill. </Description>
+               <Description>The party responsible for receiving the goods in the Waybill. </Description>
                <Element cardinality="0..1">
                   <Term>cac:PartyIdentification</Term>
                   <Name>Consignee party identification </Name>
@@ -1128,7 +1128,7 @@
          <Element cardinality="1..1">
             <Term>cac:ShipmentStage</Term>
             <Name>Shipment stage </Name>
-            <Description>The shipment stage for this waybill. </Description>
+            <Description>The shipment stage for this Waybill. </Description>
             <Element cardinality="1..1">
                <Term>cbc:TransportModeCode</Term>
                <Name>Transport mode code</Name>
@@ -1574,7 +1574,7 @@
 	     <Element cardinality="0..n">
          <Term>cac:DocumentReference</Term>
          <Name>Additional document reference</Name>
-         <Description>Reference to documents relevant for this waybill. </Description>
+         <Description>Reference to documents relevant for this Waybill. </Description>
          <Element>
             <Term>cbc:ID</Term>
             <Name>Identity of the reference</Name>
@@ -1629,7 +1629,7 @@
 	     <Element cardinality="0..n">
          <Term>cac:Signature</Term>
          <Name>Signature</Name>
-         <Description>A signature applied to this waybill. </Description>
+         <Description>A signature applied to this Waybill. </Description>
          <Element cardinality="1..1">
             <Term>cbc:ID</Term>
             <Name>Identifier Signature </Name>
@@ -1649,7 +1649,7 @@
          <Element cardinality="1..1">
             <Term>cac:SignatoryParty</Term>
             <Name>Signature party </Name>
-            <Description>The party signing this waybill. </Description>
+            <Description>The party signing this Waybill. </Description>
             <Element cardinality="0..1">
                <Term>cac:PartyName</Term>
                <Name>Party name </Name>
