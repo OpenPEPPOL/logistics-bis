@@ -14,10 +14,10 @@
 		<?Cardinality 1..1?>
 	</cbc:ProfileID>
 	<cbc:ID>TSR_1</cbc:ID>
-	<cbc:IssueDate>2011-10-06<?Name Issue Date?><?Description The date when the transporation status request was issued. Format = "YYYY-MM-DD". ?><?Cardinality 1..1?></cbc:IssueDate>
+	<cbc:IssueDate>2011-10-06<?Name Issue Date?><?Description The date when the Transportation Status Request was issued. Format = "YYYY-MM-DD". ?><?Cardinality 1..1?></cbc:IssueDate>
 	<cbc:IssueTime>09:29:30+02:00
 		<?Name Issue Time?>
-		<?Description The time when the transportation status request was issued. ?>
+		<?Description The time when the Transportation Status Request was issued. ?>
 		<?Rule PEPPOL-T123-R018?>
 		<?Cardinality 1..1?>
 	</cbc:IssueTime>
@@ -36,7 +36,7 @@
 	</cbc:TransportationStatusTypeCode>
 	<cac:SenderParty>
 		<?Name Sender party ?>
-		<?Description The party sending the transportation status request. ?>
+		<?Description The party sending the Transportation Status Request. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0198">41955619
 			<?Name Sender party electronic address ?>
@@ -120,7 +120,7 @@
 			<?Cardinality 0..1?>
 			<cbc:CompanyID>GB325456788
 				<?Name Company ID ?>
-				<?Description The Sender Party Value Added Tax identifer. ?>
+				<?Description The sender party value added tax identifer. ?>
 				<?Cardinality 1..1?>
 			</cbc:CompanyID>
 			<cac:TaxScheme>
@@ -193,7 +193,7 @@
 	</cac:SenderParty>
 	<cac:ReceiverParty>
 		<?Name Receiver Party ?>
-		<?Description The party receiving the transportation status request. ?>
+		<?Description The party receiving the Transportation Status Request. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0198">10154596
 			<?Name Receiver party electronic address ?>
@@ -280,7 +280,7 @@
 			<?Cardinality 0..1?>
 			<cbc:CompanyID>GB325456788
 					<?Name Company ID ?>
-					<?Description The Receiver Party Value Added Tax identifer. ?>
+					<?Description The receiver party value added tax identifer. ?>
 					<?Cardinality 1..1?>
 				</cbc:CompanyID>
 			<cac:TaxScheme>
@@ -315,10 +315,10 @@
 				<?Name Legal address ?>
 				<?Cardinality 0..1?>
 				<cbc:CityName>Farthing
-						<?Name City name ?>
-						<?Description The name of the city. ?>
-						<?Cardinality 0..1?>
-					</cbc:CityName>
+					<?Name City name ?>
+					<?Description The name of the city. ?>
+					<?Cardinality 0..1?>
+				</cbc:CityName>
 				<cac:Country>
 					<?Name Country ?>
 					<?Description The residens country for the receiver party. ?>
@@ -355,7 +355,7 @@
 	</cac:ReceiverParty>
 	<cac:TransportExecutionPlanDocumentReference>
 		<?Name Additional document reference?>
-		<?Description Reference to a transport execution plan. ?>
+		<?Description Reference to a Transport Execution Plan. ?>
 		<?Cardinality 0..1?>
 		<cbc:ID>7648779
 			<?Name Identity of the reference?>
@@ -363,18 +363,18 @@
 		</cbc:ID>
 		<cbc:IssueDate>2021-09-29
 			<?Name Issue Date?>
-			<?Description The Issue Date when the transport execution plan request was issued ?>
+			<?Description The Issue Date when the Transport Execution Plan was issued ?>
 			<?Cardinality 0..1?>
 		</cbc:IssueDate>
 		<cbc:IssueTime>07:49:00+02:00
 			<?Name Issue Time?>
-			<?Description The Issue time when the transport execution plan request was issued ?>
+			<?Description The Issue time when the Transport Execution Plan was issued ?>
 			<?Cardinality 0..1?>
 		</cbc:IssueTime>
 	</cac:TransportExecutionPlanDocumentReference>
 	<cac:Consignment>
 		<?Name Consignment information ?>
-		<?Description The consignment related to this transportation status.?>
+		<?Description The consignment related to this Transportation Status.?>
 		<?Cardinality 0..1?>
 		<cbc:ID>12535157654567654
 			<?Name Consignment identifier ?>
@@ -403,7 +403,7 @@
 			<?Cardinality 0..n?>
 			<cbc:ID schemeID = "sscc">11111222222222
 				<?Name Identifier transport handling unit ?>
-				<?Description The SSCC identification code of this Transport Handling Unit. ?>
+				<?Description The SSCC identification code of this transport handling unit. ?>
 				<?Cardinality 1..1?>
 				<?schemeID-usage Optional?>
 			</cbc:ID>
