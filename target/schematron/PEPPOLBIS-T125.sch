@@ -1114,7 +1114,7 @@
 			[PEPPOL-T125-R006] Gross Volume Measure value must be greater than or equal to the sum of the MeasurementDimension/Measure values with AttributeID 'AAW'.
 		</assert>
 		       <assert id="PEPPOL-T125-R007"
-                 test="not(cac:Delivery/cac:DeliveryTerms) or ((cac:Delivery/cac:DeliveryTerms/cbc:ID) or (cac:Delivery/cac:DeliveryTerms/cbc:SpecialTerms))"
+                 test="not(cac:Delivery/cac:DeliveryTerms) or (cac:Delivery/cac:DeliveryTerms/cbc:ID) or (cac:Delivery/cac:DeliveryTerms/cbc:SpecialTerms)"
                  flag="fatal">[PEPPOL-T125-R007] Either ID or special terms need to be specified in Delivery terms</assert>
 		       <assert id="PEPPOL-T125-R008"
                  test="(cac:Consignment/cbc:GrossWeightMeasure) or cac:Consignment/(cbc:GrossVolumeMeasure) or (cac:Consignment/cbc:LoadingLengthMeasure)"
