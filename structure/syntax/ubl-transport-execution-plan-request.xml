@@ -27,7 +27,7 @@
          <Description>Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan Request. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1".</Description>
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir16-001</Reference>
-         <Reference type="RULE">PEPPOL-T123-R001</Reference>
+         <Reference type="RULE">PEPPOL-T123-R002</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1</Value>
       </Element>
 	     <Element>
@@ -54,11 +54,12 @@
          <Description>The time when the Transport Execution Plan Request is issued. </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
+         <Reference type="RULE">PEPPOL-T123-R018</Reference>
          <Value type="EXAMPLE">09:49:00+02:00</Value>
       </Element>
 	     <Element cardinality="0..1">
          <Term>cbc:DocumentStatusCode</Term>
-         <Name>Transport execuition plan request status code </Name>
+         <Name>Transport execution plan request status code </Name>
          <Description>A code signifying the status of the Transport Execution Plan Request. Default is Original (9)</Description>
          <Reference type="CODE_LIST">DocumentStatusCode</Reference>
          <Value type="EXAMPLE">9</Value>
