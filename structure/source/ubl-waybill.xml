@@ -14,15 +14,15 @@
 		<?Description The ID assigned by the carrier party ?>
 		<?Cardinality 0..1?>	
 	</cbc:CarrierAssignedID>
-	<cbc:IssueDate>2005-06-25<?Description The date when this version of the waybill is issued. Format = "YYYY-MM-DD". ?>
+	<cbc:IssueDate>2005-06-25<?Description The date when this version of the Waybill is issued. Format = "YYYY-MM-DD". ?>
 	</cbc:IssueDate>
-	<cbc:IssueTime>09:00:00+02:00<?Description The time when this version of the waybill is issued. Format = "hh:mm:ss". ?>
+	<cbc:IssueTime>09:00:00+02:00<?Description The time when this version of the Waybill is issued. Format = "hh:mm:ss". ?>
 		<?Rule PEPPOL-T125-R018?>
 		<?Cardinality 1..1?>
 	</cbc:IssueTime>
 	<cbc:Name>Air Waybill
 		<?Name Waybill type ?>
-		<?Description The name (kind of waybill) of waybill type. Use "CMR" for CMR, "Bill of Laden" for Bill of laden, "Air waybill" for Air waybill or CIM for Train waybill. ?>
+		<?Description The name (kind of Waybill) of Waybill type. Use "CMR" for CMR, "Bill of Laden" for Bill of laden, "Air Waybill" for Air Waybill or CIM for Train Waybill. ?>
 		<?Cardinality 1..1?>
 	</cbc:Name>
 	<cbc:ShippingOrderID>KHN23-44044
@@ -32,7 +32,7 @@
 	</cbc:ShippingOrderID>
 	<cac:ConsignorParty>
 		<?Name Consignor Party ?>
-		<?Description The party sending the goods in the waybill, often the issuer of the waybill. ?>
+		<?Description The party sending the goods in the Waybill, often the issuer of the Waybill. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0198">13246149
 			<?Name Endpoint ID ?>
@@ -174,7 +174,7 @@
 	</cac:ConsignorParty>
 	<cac:CarrierParty>
 		<?Name Carrier party ?>
-		<?Description The carrier party responsible for this waybill. ?>
+		<?Description The carrier party responsible for this Waybill. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0212">0108023-3
 			<?Description An identifier for the end point of the routing service for the carrier party (e.g., EAN Location Number, GLN). ?>
@@ -464,7 +464,7 @@
 	</cac:FreightForwarderParty>
 	<cac:Shipment>
 		<?Name Shipping Order ID ?>
-		<?Description The shipment for this waybill.?>
+		<?Description The shipment for this Waybill.?>
 		<?Cardinality 1..1?>
 		<cbc:ID>1
 			<?Description Identifies a shipment. Freight forwarders reference number.?>
@@ -526,7 +526,7 @@
 			</cbc:TotalTransportHandlingUnitQuantity>
 			<cac:ConsigneeParty>
 				<?Name Delivery party ?>
-				<?Description The party responsible for receiving the goods in waybill. ?>
+				<?Description The party responsible for receiving the goods in the Waybill. ?>
 				<?Cardinality 1..1?>			
 				<cac:PartyIdentification>
 					<?Name Consignee party identification ?>
@@ -892,7 +892,7 @@
 		</cac:Consignment>
 		<cac:ShipmentStage>
 			<?Name Shipment stage ?>
-			<?Description The shipment stage for this waybill. ?>
+			<?Description The shipment stage for this Waybill. ?>
 			<?Cardinality 1..1?>
 			<cbc:TransportModeCode>3
 				<?Name Transport mode code?>
@@ -1202,7 +1202,7 @@
 	</cac:Shipment>			
 	<cac:DocumentReference>
 		<?Name Additional document reference?>
-		<?Description Reference to documents relevant for this waybill. ?>
+		<?Description Reference to documents relevant for this Waybill. ?>
 		<?Cardinality 0..n?>
 		<cbc:ID> 7648779 <?Name Identity of the reference?>
 			<?Description The reference number of added document?>
@@ -1239,7 +1239,7 @@
 	</cac:DocumentReference>
 	<cac:Signature>
 		<?Name Signature?>
-		<?Description A signature applied to this waybill. ?>
+		<?Description A signature applied to this Waybill. ?>
 		<?Cardinality 0..n?>
 		<cbc:ID>3453
 			<?Name Identifier Signature ?>
@@ -1255,7 +1255,7 @@
 		</cbc:ValidationTime>
 		<cac:SignatoryParty>
 			<?Name Signature party ?>
-			<?Description The party signing this waybill. ?>
+			<?Description The party signing this Waybill. ?>
 			<?Cardinality 1..1?>
 			<cac:PartyName>
 				<?Name Party name ?>

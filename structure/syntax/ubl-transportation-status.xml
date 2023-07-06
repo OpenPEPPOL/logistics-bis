@@ -43,7 +43,7 @@
 	     <Element>
          <Term>cbc:IssueDate</Term>
          <Name>Issue Date</Name>
-         <Description>The date when the transporation status was issued. Format = "YYYY-MM-DD". ?
+         <Description>The date when the Transportation Status was issued. Format = "YYYY-MM-DD". ?
 		&lt;?Cardinality 1..1</Description>
          <DataType>Date</DataType>
          <Reference type="BUSINESS_TERM">tir16-004</Reference>
@@ -52,7 +52,7 @@
 	     <Element cardinality="1..1">
          <Term>cbc:IssueTime</Term>
          <Name>Issue Time</Name>
-         <Description>The time when the transportation status was issued. Format = "hh:mm:ss". </Description>
+         <Description>The time when the Transportation Status was issued. Format = "hh:mm:ss". </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
          <Reference type="RULE">PEPPOL-T127-R018</Reference>
@@ -61,7 +61,7 @@
 	     <Element cardinality="1..1">
          <Term>cbc:Description</Term>
          <Name>Description</Name>
-         <Description>Textual description of the Transportation status.</Description>
+         <Description>Textual description of the Transportation Status.</Description>
          <Value type="EXAMPLE">Description</Value>
       </Element>
 	     <Element cardinality="1..1">
@@ -73,7 +73,7 @@
 	     <Element cardinality="1..1">
          <Term>cbc:TransportationStatusTypeCode</Term>
          <Name>Transportation Status Type Code</Name>
-         <Description>The type of the transportation status code. Mandatory if the transportation status is an answer to a transportation status request.</Description>
+         <Description>The type of the transportation status code. Mandatory if the Transportation Status is an answer to a Transportation Status Request.</Description>
          <Reference type="CODE_LIST">TransportationStatusTypeCode</Reference>
          <Value type="EXAMPLE">3</Value>
          <Attribute usage="Optional">
@@ -92,11 +92,11 @@
 	     <Element cardinality="0..1">
          <Term>cac:Consignment</Term>
          <Name>Consignment information </Name>
-         <Description>The consignment related to this transportation status.</Description>
+         <Description>The consignment related to this Transportation Status.</Description>
          <Element cardinality="1..1">
             <Term>cbc:ID</Term>
             <Name>Consignment identifier </Name>
-            <Description>Id for the consignment, often a number from the Transport Service provider. </Description>
+            <Description>Id for the consignment, often a number from the Transport Service Provider. </Description>
             <Value type="EXAMPLE">12535157654567654</Value>
          </Element>
          <Element cardinality="1..1">
@@ -123,7 +123,7 @@
          <Element cardinality="0..n">
             <Term>cac:TransportEvent</Term>
             <Name>Transport Event </Name>
-            <Description>A transport event associated to this transportation status. </Description>
+            <Description>A transport event associated to this Transportation Status. </Description>
             <Element cardinality="0..1">
                <Term>cbc:IdentificationID</Term>
                <Name>Identification ID </Name>
@@ -215,7 +215,7 @@
          <Element cardinality="0..n">
             <Term>cac:TransportHandlingUnit</Term>
             <Name>Transport handling Unit </Name>
-            <Description>The transport handling unit refered to in this transportation status. </Description>
+            <Description>The transport handling unit refered to in this Transportation Status. </Description>
             <Element>
                <Term>cbc:ID</Term>
                <Value type="EXAMPLE">CON_THU_1</Value>
@@ -246,7 +246,7 @@
 	     <Element cardinality="0..n">
          <Term>cac:DocumentReference</Term>
          <Name>Document reference</Name>
-         <Description>Reference to additional documents relevant for this transportation status such as picktures of damages. </Description>
+         <Description>Reference to additional documents relevant for this Transportation Status such as pictures of damages. </Description>
          <Element>
             <Term>cbc:ID</Term>
             <Name>Identity of the reference</Name>
@@ -301,7 +301,7 @@
 	     <Element cardinality="0..1">
          <Term>cac:Signature</Term>
          <Name>Signature</Name>
-         <Description>A signature applied to this transportation status. </Description>
+         <Description>A signature applied to this Transportation Status. </Description>
          <Element cardinality="1..1">
             <Term>cbc:ID</Term>
             <Name>Identifier Signature </Name>
@@ -321,21 +321,21 @@
          <Element cardinality="1..1">
             <Term>cac:SignatoryParty</Term>
             <Name>Signature party </Name>
-            <Description>The party signing this transportation status </Description>
+            <Description>The party signing this Transportation Status </Description>
             <Element cardinality="0..1">
                <Term>cac:PartyName</Term>
                <Name>Party name </Name>
                <Element>
                   <Term>cbc:Name</Term>
                   <Name>Consignee party name</Name>
-                  <Description>The name of the Signature party.</Description>
+                  <Description>The name of the Signatory Party.</Description>
                   <Value type="EXAMPLE">HUS Hospital</Value>
                </Element>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PostalAddress</Term>
                <Name>Postal address </Name>
-               <Description>The postal address of the Signature Party</Description>
+               <Description>The postal address of the Signatory Party</Description>
                <Element cardinality="0..1">
                   <Term>cbc:StreetName</Term>
                   <Name>Address line 1 </Name>
@@ -392,7 +392,7 @@
             <Element cardinality="1..1">
                <Term>cac:Person</Term>
                <Name>Person </Name>
-               <Description>The person who applies the signature on behalf of the Signature Party. </Description>
+               <Description>The person who applies the signature on behalf of the Signatory Party. </Description>
                <Element cardinality="0..1">
                   <Term>cbc:ID</Term>
                   <Name>Person ID </Name>
@@ -458,7 +458,7 @@
 	     <Element cardinality="0..n">
          <Term>cac:TransportEvent</Term>
          <Name>Transport Event </Name>
-         <Description>A transport event related to thist transportation status.</Description>
+         <Description>A transport event related to thist Transportation Status.</Description>
          <Element cardinality="1..1">
             <Term>cbc:IdentificationID</Term>
             <Name>Identification ID </Name>
@@ -487,7 +487,7 @@
          <Element cardinality="0..1">
             <Term>cac:Signature</Term>
             <Name>Signature</Name>
-            <Description>A signature applied to this transportation status. </Description>
+            <Description>A signature applied to this transport event. </Description>
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>Identifier Signature </Name>
@@ -507,21 +507,21 @@
             <Element cardinality="1..1">
                <Term>cac:SignatoryParty</Term>
                <Name>Signature party </Name>
-               <Description>The party signing this transportation status. </Description>
+               <Description>The party signing this event. </Description>
                <Element cardinality="0..1">
                   <Term>cac:PartyName</Term>
                   <Name>Party name </Name>
                   <Element>
                      <Term>cbc:Name</Term>
                      <Name>Consignee party name</Name>
-                     <Description>The name of the Signature party.</Description>
+                     <Description>The name of the Signatory party.</Description>
                      <Value type="EXAMPLE">HUS Hospital</Value>
                   </Element>
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:PostalAddress</Term>
                   <Name>Postal address </Name>
-                  <Description>The postal address of the Signature Party</Description>
+                  <Description>The postal address of the Signatory Party</Description>
                   <Element cardinality="0..1">
                      <Term>cbc:StreetName</Term>
                      <Name>Address line 1 </Name>
@@ -578,7 +578,7 @@
                <Element cardinality="1..1">
                   <Term>cac:Person</Term>
                   <Name>Person </Name>
-                  <Description>The person who applies the signature on behalf of the Signature Party. </Description>
+                  <Description>The person who applies the signature on behalf of the Signatory Party. </Description>
                   <Element cardinality="0..1">
                      <Term>cbc:ID</Term>
                      <Name>Person ID </Name>
@@ -645,7 +645,7 @@
 	     <Element cardinality="1..1">
          <Term>cac:SenderParty</Term>
          <Name>Sender party </Name>
-         <Description>The party sending the transportation status. </Description>
+         <Description>The party sending the Transportation Status. </Description>
          <Element cardinality="1..1">
             <Term>cbc:EndpointID</Term>
             <Name>Sender party electronic address </Name>
@@ -834,7 +834,7 @@
 	     <Element cardinality="1..1">
          <Term>cac:ReceiverParty</Term>
          <Name>Receiver Party </Name>
-         <Description>The party receiving the transportation status. </Description>
+         <Description>The party receiving the Transportation Status. </Description>
          <Element cardinality="1..1">
             <Term>cbc:EndpointID</Term>
             <Name>Receiver party electronic address </Name>
@@ -851,7 +851,7 @@
          <Element cardinality="0..1">
             <Term>cac:PartyIdentification</Term>
             <Name>Receiver party identification </Name>
-            <Description>An identifier for the sender party as known to the sender party. </Description>
+            <Description>An identifier for the receiver party. </Description>
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>ID</Name>
@@ -1024,7 +1024,7 @@
 	     <Element cardinality="0..1">
          <Term>cac:TransportationStatusRequestDocumentReference</Term>
          <Name>Additional document reference</Name>
-         <Description>Reference to a transport execution plan. </Description>
+         <Description>Reference to a Transportation Status Request. </Description>
          <Element cardinality="1..1">
             <Term>cbc:ID</Term>
             <Name>Identity of the reference</Name>
@@ -1034,20 +1034,20 @@
          <Element cardinality="0..1">
             <Term>cbc:IssueDate</Term>
             <Name>Issue Date</Name>
-            <Description>The issue Date when the transport execution plan request was issued</Description>
+            <Description>The date when the Transportation Status Request was issued</Description>
             <Value type="EXAMPLE">2021-09-29</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:IssueTime</Term>
             <Name>Issue Time</Name>
-            <Description>The issue time when the transport execution plan request was issued</Description>
+            <Description>The time when the Transportation Status Request was issued</Description>
             <Value type="EXAMPLE">07:49:00+01:00</Value>
          </Element>
       </Element>
 	     <Element cardinality="0..1">
          <Term>cac:TransportExecutionPlanDocumentReference</Term>
          <Name>Additional document reference</Name>
-         <Description>Reference to a transport execution plan. </Description>
+         <Description>Reference to a Transport Execution Plan. </Description>
          <Element>
             <Term>cbc:ID</Term>
             <Name>Identity of the reference</Name>
@@ -1057,13 +1057,13 @@
          <Element cardinality="0..1">
             <Term>cbc:IssueDate</Term>
             <Name>Issue Date</Name>
-            <Description>The Issue Date when the transport execution plan request was issued </Description>
+            <Description>The date when the Transport Execution Plan was issued </Description>
             <Value type="EXAMPLE">2021-09-29</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:IssueTime</Term>
             <Name>Issue Time</Name>
-            <Description>The Issue time when the transport execution plan request was issued </Description>
+            <Description>The time when the Transport Execution Plan was issued </Description>
             <Value type="EXAMPLE">07:49:00+01:00</Value>
          </Element>
       </Element>	
