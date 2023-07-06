@@ -24,10 +24,10 @@
 		<assert id="PEPPOL-T120-R010" test="(cac:Party/cac:PartyName/cbc:Name) or (cac:Party/cac:PartyIdentification/cbc:ID)" flag="fatal">A Despatch Advice Originator Customer Party SHALL contain the name or an identifier</assert>
 	</rule>
 	<rule context="cac:Shipment/cac:Consignment/cac:CarrierParty">
-		<assert id="PEPPOL-T120-R110" test="(cac:PartyName/cbc:Name) or (cac:PartyIdentification/cbc:ID)" flag="fatal">A Despatch Advice Despatch Supplier Party SHALL contain the name or an identifier</assert>
+		<assert id="PEPPOL-T120-R110" test="(cac:PartyName/cbc:Name) or (cac:PartyIdentification/cbc:ID)" flag="fatal">A Despatch Advice Carrier Party SHALL contain the name or an identifier</assert>
 	</rule>
 	<rule context="cac:DespatchLine/cac:Item/cac:ManufacturerParty">
-		<assert id="PEPPOL-T120-R111" test="(cac:PartyName/cbc:Name) or (cac:PartyIdentification/cbc:ID)" flag="fatal">A Despatch Advice Despatch Supplier Party SHALL contain the name or an identifier</assert>
+		<assert id="PEPPOL-T120-R111" test="(cac:PartyName/cbc:Name) or (cac:PartyIdentification/cbc:ID)" flag="fatal">A Despatch Advice Manufacturer Party SHALL contain the name or an identifier</assert>
 	</rule>
 	<rule context="cac:EstimatedDeliveryPeriod">
 		<assert id="PEPPOL-T120-R012" test="not(cbc:EndDate) or translate(cbc:StartDate,'-','') &lt;= translate(cbc:EndDate,'-','')" flag="fatal">Start date must be earlier or equal to end date</assert>
