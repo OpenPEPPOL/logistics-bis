@@ -431,6 +431,27 @@
 				</cac:Country>
 			</cac:RegistrationAddress>
 		</cac:PartyLegalEntity>
+		<cac:Contact>
+			<?Name Contact ?>
+			<?Description The contact of the freight forwareder party. ?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Mr Sender
+						<?Name Contact name ?>
+						<?Description The contact name. ?>
+						<?Cardinality 0..1?>
+					</cbc:Name>
+			<cbc:Telephone>0158 1233714
+						<?Name Contact telephone number ?>
+						<?Description The phone number of the contact. ?>
+						<?Cardinality 0..1?>
+					</cbc:Telephone>
+			<cbc:ElectronicMail>sender@forwarder-company.se
+						<?Name Contact email address ?>
+						<?Description The electronic mail of the contact. ?>
+						<?Cardinality 0..1?>
+				</cbc:ElectronicMail>
+		</cac:Contact>
+		
 	</cac:FreightForwarderParty>
 	<cac:Shipment>
 		<?Name Shipping Order ID ?>
@@ -975,9 +996,9 @@
 				<?Description The estimated delivery period.?>
 				<?Cardinality 1..1?>
 				<cbc:StartDate>2021-09-25<?Rule PEPPOL-T120-R012?><?Rule PEPPOL-T120-R015?><?Cardinality 0..1?></cbc:StartDate>
-				<cbc:StartTime>12:00:00+02:00<?Rule PEPPOL-T120-R013?><?Rule PEPPOL-T120-R015?></cbc:StartTime>
-				<cbc:EndDate>2021-09-27<?Rule PEPPOL-T120-R012?><?Rule PEPPOL-T120-R014?><?Rule PEPPOL-T120-R015?></cbc:EndDate>
-				<cbc:EndTime>12:00:00+02:00<?Rule PEPPOL-T120-R013?><?Rule PEPPOL-T120-R014?><?Rule PEPPOL-T120-R015?></cbc:EndTime>
+				<cbc:StartTime>12:00:00+02:00<?Rule PEPPOL-T120-R013?><?Rule PEPPOL-T120-R015?><?Cardinality 0..1?></cbc:StartTime>
+				<cbc:EndDate>2021-09-27<?Rule PEPPOL-T120-R012?><?Rule PEPPOL-T120-R014?><?Rule PEPPOL-T120-R015?><?Cardinality 0..1?></cbc:EndDate>
+				<cbc:EndTime>12:00:00+02:00<?Rule PEPPOL-T120-R013?><?Rule PEPPOL-T120-R014?><?Rule PEPPOL-T120-R015?><?Cardinality 0..1?></cbc:EndTime>
 			</cac:EstimatedDeliveryPeriod>
 			<cac:Despatch>				
 				<cac:DespatchAddress>
