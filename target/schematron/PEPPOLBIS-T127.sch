@@ -480,8 +480,6 @@
       </rule>
       <rule context="/ubl:TransportationStatus/cac:TransportEvent">
          <assert test="cbc:IdentificationID" flag="fatal" id="PEPPOL-T127-B11001">Element 'cbc:IdentificationID' MUST be provided.</assert>
-         <assert test="cbc:OccurrenceDate" flag="fatal" id="PEPPOL-T127-B11002">Element 'cbc:OccurrenceDate' MUST be provided.</assert>
-         <assert test="cbc:OccurrenceTime" flag="fatal" id="PEPPOL-T127-B11003">Element 'cbc:OccurrenceTime' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportationStatus/cac:TransportEvent/cbc:IdentificationID"/>
       <rule context="/ubl:TransportationStatus/cac:TransportEvent/cbc:OccurrenceDate"/>
@@ -589,7 +587,7 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T127-B15201">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportationStatus/cac:TransportEvent/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T127-B11004">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T127-B11002">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportationStatus/cac:SenderParty">
          <assert test="cbc:EndpointID" flag="fatal" id="PEPPOL-T127-B15701">Element 'cbc:EndpointID' MUST be provided.</assert>
