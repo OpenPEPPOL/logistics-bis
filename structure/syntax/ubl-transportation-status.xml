@@ -67,13 +67,13 @@
 	     <Element cardinality="1..1">
          <Term>cbc:ShippingOrderID</Term>
          <Name>Shipping Order ID </Name>
-         <Description>An identifier (in the form of a reference number) of the Shipping Order or Forwarding Instruction associated with this shipment. </Description>
+         <Description>An identifier (in the form of a reference number) of the shipping order or forwarding instruction associated with this shipment. </Description>
          <Value type="EXAMPLE">KHN23-44044</Value>
       </Element>
 	     <Element cardinality="1..1">
          <Term>cbc:TransportationStatusTypeCode</Term>
          <Name>Transportation Status Type Code</Name>
-         <Description>The type of the transportation status code. Mandatory if the Transportation Status is an answer to a Transportation Status Request.</Description>
+         <Description>The type of status being reported.</Description>
          <Reference type="CODE_LIST">TransportationStatusTypeCode</Reference>
          <Value type="EXAMPLE">3</Value>
          <Attribute usage="Optional">
@@ -85,7 +85,7 @@
 	     <Element cardinality="1..1">
          <Term>cbc:TransportExecutionStatusCode</Term>
          <Name>Transportation Execution Status Code</Name>
-         <Description>The status of the transport execution expressed as a code.</Description>
+         <Description>The status of the transport expressed as a code.</Description>
          <Reference type="CODE_LIST">TransportationStatusCode</Reference>
          <Value type="EXAMPLE">35</Value>
       </Element>
@@ -209,7 +209,7 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:ValidationTime</Term>
-                  <Description>The local time at which this signature was verified.. Format = "hh:mm:ss". </Description>
+                  <Description>The local time at which this signature was verified. Format = "hh:mm:ss". </Description>
                   <Value type="EXAMPLE">09:49:00+01:00</Value>
                </Element>
                <Element cardinality="1..1">
@@ -222,14 +222,14 @@
                      <Element>
                         <Term>cbc:Name</Term>
                         <Name>Consignee party name</Name>
-                        <Description>The name of the Signatory party.</Description>
+                        <Description>The name of the signatory party.</Description>
                         <Value type="EXAMPLE">HUS Hospital</Value>
                      </Element>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cac:PostalAddress</Term>
                      <Name>Postal address </Name>
-                     <Description>The postal address of the Signatory Party</Description>
+                     <Description>The postal address of the signatory party</Description>
                      <Element cardinality="0..1">
                         <Term>cbc:StreetName</Term>
                         <Name>Address line 1 </Name>
@@ -286,7 +286,7 @@
                   <Element cardinality="1..1">
                      <Term>cac:Person</Term>
                      <Name>Person </Name>
-                     <Description>The person who applies the signature on behalf of the Signatory Party. </Description>
+                     <Description>The person who applies the signature on behalf of the signatory party. </Description>
                      <Element cardinality="0..1">
                         <Term>cbc:ID</Term>
                         <Name>Person ID </Name>
@@ -468,7 +468,7 @@
          <Element cardinality="1..1">
             <Term>cbc:ID</Term>
             <Name>Identifier Signature </Name>
-            <Description>The Id of the Signature.</Description>
+            <Description>The Id of the signature.</Description>
             <Value type="EXAMPLE">3453</Value>
          </Element>
          <Element cardinality="0..1">
@@ -490,15 +490,15 @@
                <Name>Party name </Name>
                <Element>
                   <Term>cbc:Name</Term>
-                  <Name>Consignee party name</Name>
-                  <Description>The name of the Signatory Party.</Description>
+                  <Name>Signatory party name</Name>
+                  <Description>The name of the signatory party.</Description>
                   <Value type="EXAMPLE">HUS Hospital</Value>
                </Element>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:PostalAddress</Term>
                <Name>Postal address </Name>
-               <Description>The postal address of the Signatory Party</Description>
+               <Description>The postal address of the signatory party</Description>
                <Element cardinality="0..1">
                   <Term>cbc:StreetName</Term>
                   <Name>Address line 1 </Name>
@@ -555,7 +555,7 @@
             <Element cardinality="1..1">
                <Term>cac:Person</Term>
                <Name>Person </Name>
-               <Description>The person who applies the signature on behalf of the Signatory Party. </Description>
+               <Description>The person who applies the signature on behalf of the signatory party. </Description>
                <Element cardinality="0..1">
                   <Term>cbc:ID</Term>
                   <Name>Person ID </Name>
@@ -719,15 +719,15 @@
                   <Name>Party name </Name>
                   <Element>
                      <Term>cbc:Name</Term>
-                     <Name>Consignee party name</Name>
-                     <Description>The name of the Signatory party.</Description>
+                     <Name>Signatory party name</Name>
+                     <Description>The name of the signatory party.</Description>
                      <Value type="EXAMPLE">HUS Hospital</Value>
                   </Element>
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:PostalAddress</Term>
                   <Name>Postal address </Name>
-                  <Description>The postal address of the Signatory Party</Description>
+                  <Description>The postal address of the signatory party</Description>
                   <Element cardinality="0..1">
                      <Term>cbc:StreetName</Term>
                      <Name>Address line 1 </Name>
@@ -784,7 +784,7 @@
                <Element cardinality="1..1">
                   <Term>cac:Person</Term>
                   <Name>Person </Name>
-                  <Description>The person who applies the signature on behalf of the Signatory Party. </Description>
+                  <Description>The person who applies the signature on behalf of the signatory party. </Description>
                   <Element cardinality="0..1">
                      <Term>cbc:ID</Term>
                      <Name>Person ID </Name>
