@@ -30,12 +30,12 @@
 	</cbc:Description>
 	<cbc:ShippingOrderID>KHN23-44044
 		<?Name Shipping Order ID ?>
-		<?Description An identifier (in the form of a reference number) of the Shipping Order or Forwarding Instruction associated with this shipment. ?>
+		<?Description An identifier (in the form of a reference number) of the shipping order or forwarding instruction associated with this shipment. ?>
 		<?Cardinality 1..1?>
 	</cbc:ShippingOrderID>
 	<cbc:TransportationStatusTypeCode listID="TrStatus1">3
 		<?Name Transportation Status Type Code?>
-		<?Description The type of the transportation status code. Mandatory if the Transportation Status is an answer to a Transportation Status Request.?>
+		<?Description The type of status being reported.?>
 		<?Cardinality 1..1?>
 		<?CodeList TransportationStatusTypeCode?>
 		<?listID-usage Optional?>
@@ -43,7 +43,7 @@
 	<!--Damage in the course of transportation-->
 	<cbc:TransportExecutionStatusCode>35
 		<?Name Transportation Execution Status Code?>
-		<?Description The status of the transport execution expressed as a code.?>
+		<?Description The status of the transport expressed as a code.?>
 		<?Cardinality 1..1?>
 		<?CodeList TransportationStatusCode?>
 	</cbc:TransportExecutionStatusCode>
@@ -141,7 +141,7 @@
 				<?Description The date upon which this signature was verified. Format = "YYYY-MM-DD". ?>
 				<?Cardinality 0..1?>
 			</cbc:ValidationDate>
-				<cbc:ValidationTime>09:49:00+01:00<?Description The local time at which this signature was verified.. Format = "hh:mm:ss". ?>
+				<cbc:ValidationTime>09:49:00+01:00<?Description The local time at which this signature was verified. Format = "hh:mm:ss". ?>
 				<?Cardinality 0..1?>
 			</cbc:ValidationTime>
 				<cac:SignatoryParty>
@@ -153,12 +153,12 @@
 						<?Cardinality 0..1?>
 						<cbc:Name>HUS Hospital
 						<?Name Consignee party name?>
-						<?Description The name of the Signatory party.?>
+						<?Description The name of the signatory party.?>
 					</cbc:Name>
 					</cac:PartyName>
 					<cac:PostalAddress>
 						<?Name Postal address ?>
-						<?Description The postal address of the Signatory Party?>
+						<?Description The postal address of the signatory party?>
 						<?Cardinality 0..1?>
 						<cbc:StreetName>Topeliuksenkatu 5
 						<?Name Address line 1 ?>
@@ -208,7 +208,7 @@
 					</cac:PostalAddress>
 					<cac:Person>
 						<?Name Person ?>
-						<?Description The person who applies the signature on behalf of the Signatory Party. ?>
+						<?Description The person who applies the signature on behalf of the signatory party. ?>
 						<?Cardinality 1..1?>
 						<cbc:ID schemeID="zzz">45976	
 						<?Name Person ID ?>
@@ -337,7 +337,7 @@
 		<?Cardinality 0..1?>
 		<cbc:ID>3453
 			<?Name Identifier Signature ?>
-			<?Description The Id of the Signature.?>
+			<?Description The Id of the signature.?>
 			<?Cardinality 1..1?>						
 		</cbc:ID>
 		<cbc:ValidationDate>2021-09-29
@@ -356,13 +356,13 @@
 				<?Name Party name ?>
 				<?Cardinality 0..1?>
 				<cbc:Name>HUS Hospital
-					<?Name Consignee party name?>
-					<?Description The name of the Signatory Party.?>
+					<?Name Signatory party name?>
+					<?Description The name of the signatory party.?>
 				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<?Name Postal address ?>
-				<?Description The postal address of the Signatory Party?>
+				<?Description The postal address of the signatory party?>
 				<?Cardinality 0..1?>
 				<cbc:StreetName>Topeliuksenkatu 5
 					<?Name Address line 1 ?>
@@ -412,7 +412,7 @@
 			</cac:PostalAddress>
 			<cac:Person>
 				<?Name Person ?>
-				<?Description The person who applies the signature on behalf of the Signatory Party. ?>
+				<?Description The person who applies the signature on behalf of the signatory party. ?>
 				<?Cardinality 1..1?>
 				<cbc:ID schemeID="zzz">45976	
 					<?Name Person ID ?>
@@ -536,13 +536,13 @@
 					<?Name Party name ?>
 					<?Cardinality 0..1?>
 					<cbc:Name>HUS Hospital
-						<?Name Consignee party name?>
-						<?Description The name of the Signatory party.?>
+						<?Name Signatory party name?>
+						<?Description The name of the signatory party.?>
 					</cbc:Name>
 				</cac:PartyName>
 				<cac:PostalAddress>
 					<?Name Postal address ?>
-					<?Description The postal address of the Signatory Party?>
+					<?Description The postal address of the signatory party?>
 					<?Cardinality 0..1?>
 					<cbc:StreetName>Topeliuksenkatu 5
 						<?Name Address line 1 ?>
@@ -592,7 +592,7 @@
 				</cac:PostalAddress>
 				<cac:Person>
 					<?Name Person ?>
-					<?Description The person who applies the signature on behalf of the Signatory Party. ?>
+					<?Description The person who applies the signature on behalf of the signatory party. ?>
 					<?Cardinality 1..1?>
 					<cbc:ID schemeID="zzz">45976	
 						<?Name Person ID ?>
