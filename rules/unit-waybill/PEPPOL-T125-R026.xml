@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T125-base-1.0">
+	<assert>
+		<description>Verify that StartTime contains a timezone. </description>
+		<scope>PEPPOL-T125-R026</scope>
+	</assert>
+
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T125-R026</success>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cbc:ID>1</cbc:ID>
+				<cac:Delivery>
+					<cac:Despatch>
+						<cac:EstimatedDespatchPeriod>
+							<cbc:StartDate>2021-09-25</cbc:StartDate>
+							<cbc:StartTime>09:49:00+02:00</cbc:StartTime>
+						</cac:EstimatedDespatchPeriod>
+					</cac:Despatch>
+				</cac:Delivery>
+			</cac:Shipment>
+		</ubl:Waybill>
+	</test>
+
+	<test id="2">
+		<assert>
+			<success>PEPPOL-T125-R026</success>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cbc:ID>1</cbc:ID>
+				<cac:Delivery>
+					<cac:Despatch>
+						<cac:EstimatedDespatchPeriod>
+							<cbc:StartDate>2021-09-25</cbc:StartDate>
+						</cac:EstimatedDespatchPeriod>
+					</cac:Despatch>
+				</cac:Delivery>
+			</cac:Shipment>
+		</ubl:Waybill>
+	</test>
+	
+	<test id="3">
+		<assert>
+			<error>PEPPOL-T125-R026</error>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cbc:ID>1</cbc:ID>
+				<cac:Delivery>
+					<cac:Despatch>
+						<cac:EstimatedDespatchPeriod>
+							<cbc:StartDate>2021-09-25</cbc:StartDate>
+							<cbc:StartTime>09:49:00</cbc:StartTime>
+						</cac:EstimatedDespatchPeriod>
+					</cac:Despatch>
+				</cac:Delivery>
+			</cac:Shipment>
+		</ubl:Waybill>
+	</test>
+</testSet>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T127-base-1.0">
+	<assert>
+		<description>Verify that IssueTime contains a timezone. </description>
+		<scope>PEPPOL-T127-R018</scope>
+	</assert>
+
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T127-R018</success>
+		</assert>
+		<ubl:TransportationStatus xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+				<cbc:IssueDate>2021-09-25</cbc:IssueDate>
+				<cbc:IssueTime>09:49:00+01:00</cbc:IssueTime>
+		</ubl:TransportationStatus>
+	</test>
+
+	<test id="2">
+		<assert>
+			<error>PEPPOL-T127-R018</error>
+		</assert>
+		<ubl:TransportationStatus xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatus-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cbc:IssueDate>2021-09-25</cbc:IssueDate>
+			<cbc:IssueTime>09:49:00</cbc:IssueTime>
+		</ubl:TransportationStatus>
+	</test>
+</testSet>

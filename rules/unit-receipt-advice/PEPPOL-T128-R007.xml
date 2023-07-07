@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T128-base-1.0">
+	
+	<assert>
+		<description>Verify that a Shortage Action Code is provided when a Short Quantity is used. ”</description>
+		<scope>PEPPOL-T128-R007</scope>
+	</assert>
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T128-R007</success>
+		</assert>
+		<ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:ReceiptLine>
+				<cbc:ShortQuantity unitCode="KGM">1</cbc:ShortQuantity>
+				<cbc:ShortageActionCode>1</cbc:ShortageActionCode>
+			</cac:ReceiptLine>
+		</ReceiptAdvice>
+	</test>
+	
+	<test id="2">
+		<assert>
+			<success>PEPPOL-T128-R007</success>
+		</assert>
+		<ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:ReceiptLine>
+
+			</cac:ReceiptLine>
+		</ReceiptAdvice>
+	</test>
+	
+	<test id="3">
+		<assert>
+			<error>PEPPOL-T128-R007</error>
+		</assert>
+		<ReceiptAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:ReceiptLine>
+				<cbc:ShortQuantity unitCode="KGM">1</cbc:ShortQuantity>
+			</cac:ReceiptLine>
+		</ReceiptAdvice>
+	</test>
+
+</testSet>

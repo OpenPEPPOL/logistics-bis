@@ -1,49 +1,52 @@
-[[use-case-8-transport-of-bulk-goods]]
-== Use case 8 – Despatch Advice for transport of bulk goods (service only)
+[[use-case-8-waste-treatment]]
+== Use case 8 – Despatch Advice for waste treatment service, no transport.
 
-The use case covers transport of bulk goods and other types of transports that needs a weight statement and are not packaged. e.g. gravel, oil, milk, soil and waste. 
-Note that the use case only covers the transprotation service, if the despach advice also covers material, additional information needs to be added from the relevant use cases.
+This use case covers waste treatment services or similar services where the buyer brings the material to the supplier and leaves it there.
 [cols="1,5",options="header",]
 |====
 |*Use Case number* |8
-|*Use Case Name* |Despatch Advice for transport of bulk goods (service only)
+|*Use Case Name* |Despatch Advice for waste treatment service, no transport
 |*Use Case Description* a|
-Describes a complete process whereby a Despatch party (the service provider) generates a Despatch Advice based on information about the service provided of bulk goods transport between two locations.
-
-The Despatch Advice enables the service provider to give detailed information about the service provided between the specified locations once the service has been delivered. Which enables a Buyer to reconcile, or confirm, the services provided against the order.
+The Despatch Advice enables the service provider (seller) to give detailed information about the service provided and the location where the material has been treated. In some cases the service provider can report the location where the material has been collected. Which enables a Buyer to reconcile, or confirm, the services provided against the order.
 
 |*Parties involved* a|
 Buyer (In UBL: BuyerCustomerParty)
 
 Seller (In UBL: SellerSupplierParty)
 
+Despatch party (In UBL: DespatchSupplierParty) (Same legal entity as the Seller in this use case)
+
+Consignee party (In UBL: DeliveryCustomerParty) (Same legal entity as the Buyer in this use case) 
+
 |*Pre conditions* a|
-Services are delivered before Despatch Advice is sent. 
+Material is delivered to the seller and the services are delivered before Despatch Advice is sent. 
 
 |*Post conditions* a|
 Despatch advice is received by the receiver of the services.
 
 |*Assumptions* a|
-. The Seller has received one order from the Buyer with one (1) line describing the service to be provided between two locations, e.g transport of goods between locations A and B. 
-. The Seller (transporter) has accepted the order without changes.
-. The Despatch party delivers the complete order as accepted
+. The Seller has received one order from the Buyer with one (1) line for the serices to be provided.
+. The Seller has accepted the order without changes.
+. The Despatch party delivers the services specified in the order. 
 
 
 |*The flow* a|
-. The Seller arange delivery of agreed services.
-. The Seller party deliver agreed services.
-. The Seller party sends Despatch advice message to the Buyer
-. The Buyer party receives the Despatch advice message
-. The Buyer party uses the content in the Despatch advice message for confirmation of delivery.
+. The Buyer arrange delivery of material to the seller either by the sellers transport service or other carrier services.
+. The Despatch party deliver agreed services.
+. The Despatch party sends Despatch advice message to the Consignee
+. The Consignee party receives the Despatch advice message
+. The Consignee party uses the content in the Despatch advice message for confirmation of delivery.
 
 
 |*Result* a|
-. The Despatch advice message helped the Buyer party to confirm the serivce delivered.
+. The Despatch advice message helped the Consignee party to confirm delivery.
 .. At the right time
-.. At the right location
-..(At the correct price)
+.. At the right location (Delivery Location)
+.. Optionally, the location of the origin of the waste (Despatch Address)
+Note that the addresses are following the material flow, so the despatch address is the address where the material started it's journey, even if this address belongs to the buyer.
 
-. The Despatch advice message helped the Buyer party in the process of confirming delvery to identify the
+
+. The Despatch advice message helped the Consignee party in the process of confirming delvery to identify the
 .. Order
 .. The order lines
 .. The articles

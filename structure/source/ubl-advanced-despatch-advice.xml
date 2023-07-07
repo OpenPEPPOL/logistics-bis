@@ -17,40 +17,55 @@
 	<?Property key="sch:prefix" PEPPOL-T120?>
 	<?Property key="sch:identifier" T120-basic?>
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1<?Rule PEPPOL-T120-R011?></cbc:CustomizationID>
-	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Advanced Despatch Advice. One profile is used when the receiver of the Despatch Advice is expected to return a response message, the other is used when no response message is used. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1" and "urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_response:1"?></cbc:ProfileID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Advanced Despatch Advice. One profile is used when the receiver of the Despatch Advice is expected to return a response message, the other is used when no response message is used. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1" and "urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1"?></cbc:ProfileID>
+	
 	<cbc:ID>5658999</cbc:ID>
-	<cbc:IssueDate>2021-09-10<?Description The date when the advanced despatch advice is issued. Format = "YYYY-MM-DD".?></cbc:IssueDate>
-	<cbc:IssueTime>12:00:00<?Description The time when the advanced despatch advice is issued. Format = "hh:mm:ss".?></cbc:IssueTime>
-	<cbc:DocumentStatusCode>9<?Name Despatch advice status code?>
+	<cbc:IssueDate>2021-09-10<?Description The date when the Advanced Despatch Advice is issued. Format = "YYYY-MM-DD".
+		Together with ID and IssueTime the IssueDate forms the identity of the Version of the Advanced Despatch Advice. ?>
+	</cbc:IssueDate>
+	<cbc:IssueTime>12:00:00+01:00<?Description The time when the Advanced Despatch Advice is issued. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. ?>
+		<?Cardinality 1..1?>
+	</cbc:IssueTime>
+	<cbc:DocumentStatusCode>9
+		<?Name Despatch advice status code?>
 		<?Description A code signifying the status of the Despatch Advice. Default is Original (9)?>
 		<?Cardinality 0..1?>
 		<?CodeList DocumentStatusCode?>
 	</cbc:DocumentStatusCode>
-	<cbc:DespatchAdviceTypeCode> 1 <?Name Despatch advice type code?>
+	<cbc:DespatchAdviceTypeCode> 1 
+		<?Name Despatch advice type code?>
 		<?Description A code signifying the type of the Despatch Advice. Default is Advice of despatch of goods (1)?>
 		<?Cardinality 0..1?>
 		<?CodeList DespatchAdviceTypeCode?>
 	</cbc:DespatchAdviceTypeCode>
-	<cbc:Note> Text <?Description A textual note for the dispatch as whole. Used for Transport Information.?>
+	<cbc:Note> Text 
+		<?Description A textual note for the dispatch as whole. Used for Transport Information.?>
 	</cbc:Note>
+	
 	<cac:OrderReference>
 		<cbc:ID>AEG0123456</cbc:ID>
 	</cac:OrderReference>
+	
 	<cac:AdditionalDocumentReference>
 		<?Name Additional document reference?>
 		<?Description Reference to additional documents relevant for this Despatch advice. Can be used for additional BEAst information on header level.?>
 		<?Cardinality 0..n?>
-		<cbc:ID> 7648779 <?Name Identity of the reference?>
+		<cbc:ID> 7648779 
+			<?Name Identity of the reference?>
 			<?Description The reference number of added document?>
 		</cbc:ID>
-		<cbc:DocumentTypeCode> 380 <?Name Document type code?>
-			<?Description The type of reference. Must me part of UNCL1001?>
+		<cbc:DocumentTypeCode> 380 
+			<?Name Document type code?>
+			<?Description The type of reference. Must me part of UNCL1001. At least one of Document Type Code and Document Type must be used. ?>
 			<?Cardinality 0..1?>
 			<?CodeList UNCL1001?>
+			<?Rule PEPPOL-T120-R031?>
 		</cbc:DocumentTypeCode>
-		<cbc:DocumentType> BEAST:FreightPayersCustomerNumber <?Name Document type?>
-			<?Description The type of reference that cannot be specified by a code?>
+		<cbc:DocumentType> FreightPayersCustomerNumber 
+			<?Name Document type?>
+			<?Description The type of reference that cannot be specified by a code. At least one of Document Type Code and Document Type must be used. ?>
 			<?Cardinality 0..1?>
+			<?Rule PEPPOL-T120-R031?>
 		</cbc:DocumentType>
 		<cac:Attachment>
 			<?Name Attachment?>
@@ -66,29 +81,36 @@
 				<?Name External reference?>
 				<?Description A reference to an attached document that is external to the document(s) being exchanged.?>
 				<?Cardinality 0..1?>
-				<cbc:URI> www.beast.se <?Name Address to internet resource?>
+				<cbc:URI> www.beast.se 
+					<?Name Address to internet resource?>
 					<?Description The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource.?>
 				</cbc:URI>
 			</cac:ExternalReference>
 		</cac:Attachment>
 	</cac:AdditionalDocumentReference>
+	
 	<cac:DespatchSupplierParty>
 		<?Description The Despatch Party is the person or organization who provides (despatch) the goods or services. It also defines the sender of the Advanced Despatch Advice. The role is carried out by the supplier or on behalf of the supplier. The real ship-from address must be provided in the Despatch Address when the Advanced Despatch Advice describes a movement.?>
 		<cac:Party>
-			<cbc:EndpointID schemeID="0088"> 7300010000001 <?schemeID-usage Mandatory?>
+			<cbc:EndpointID schemeID="0088"> 7300010000001 
+				<?schemeID-usage Mandatory?>
 				<?schemeID-CodeList eas?>
 			</cbc:EndpointID>
 			<cac:PartyIdentification>
-				<cbc:ID schemeID="0088"> 7300010000001 <?schemeID-CodeList ICD?>
+				<cbc:ID schemeID="0088"> 7300010000001 
+					<?schemeID-CodeList ICD?>
+					<?Rule PEPPOL-T120-R109?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
 				<?Name Party Name?>
 				<?Description The name of the Despatch Supplier Party.?>
 				<?Cardinality 0..1?>
-				<cbc:Name> Sender inc. <?Name Name of the fuel supplier?>
+				<cbc:Name> Sender inc. 
+					<?Name Name of the fuel supplier?>
 					<?Description The Despatch Supplier.?>
 					<?Cardinality 1..1?>
+					<?Rule PEPPOL-T120-R109?>
 				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
@@ -98,7 +120,9 @@
 				<cbc:PostalZone>AA99 1BB</cbc:PostalZone>
 				<cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
 				<cac:AddressLine>
-					<cbc:Line>The Roundabout</cbc:Line>
+					<cbc:Line>The Roundabout
+						<?Cardinality 1..1?>
+					</cbc:Line>
 				</cac:AddressLine>
 				<cac:Country>
 					<cbc:IdentificationCode>GB</cbc:IdentificationCode>
@@ -108,24 +132,31 @@
 				<?Name Party tax scheme?>
 				<?Description The tax information about the Despatch Party.?>
 				<?Cardinality 0..1?>
-				<cbc:CompanyID> GB325456788 <?Name Company ID?>
+				<cbc:CompanyID> GB325456788 
+					<?Name Company ID?>
 					<?Description The Despatch Party Value Added Tax identifer.?>
 					<?Cardinality 1..1?>
 				</cbc:CompanyID>
 				<cac:TaxScheme>
 					<?Name Tax scheme?>
 					<?Cardinality 1..1?>
-					<cbc:ID> VAT <?Name Tax scheme identifier?>
+					<cbc:ID> VAT 
+						<?Name Tax scheme identifier?>
 						<?Description Tax scheme identifier. E.g. "VAT" or "GST".?>
 						<?Cardinality 1..1?>
 					</cbc:ID>
 				</cac:TaxScheme>
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
-				<cbc:RegistrationName> Consortial <?Cardinality 1..1?>
+				<?Name Party Legal Entity?>
+				<cbc:RegistrationName> Consortial 
+					<?Cardinality 1..1?>
+					<?Name Despatching party's legal name. ?>
+					<?Description The legal name of the Despatching party. ?>
 				</cbc:RegistrationName>
-				<cbc:CompanyID schemeID="0089"> SC234567 <?Name Despatch supplier parties legal registration name?>
-					<?Description The official name of the party as registered with the relevant fiscal authority.?>
+				<cbc:CompanyID schemeID="0089"> SC234567 
+					<?Name Despatch supplier parties legal registration ID. ?>
+					<?Description The official identity of the party as registered with the relevant fiscal authority.?>
 					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier?>
 					<?schemeID-Description The identification scheme identifier of the despatch supplier legal registration identifier?>
@@ -135,7 +166,8 @@
 				<cac:RegistrationAddress>
 					<?Name Legal address?>
 					<?Cardinality 0..1?>
-					<cbc:CityName> Farthing <?Name City name?>
+					<cbc:CityName> Farthing 
+						<?Name City name?>
 						<?Description The name of the city.?>
 						<?Cardinality 0..1?>
 					</cbc:CityName>
@@ -143,7 +175,8 @@
 						<?Name Contry?>
 						<?Description The residens country for the despatch party.?>
 						<?Cardinality 1..1?>
-						<cbc:IdentificationCode> UK <?Name Country code?>
+						<cbc:IdentificationCode> UK 
+							<?Name Country code?>
 							<?Description Country Code?>
 						</cbc:IdentificationCode>
 					</cac:Country>
@@ -153,36 +186,44 @@
 				<?Name Contact?>
 				<?Description The contact of the Despatch supplier party.?>
 				<?Cardinality 0..1?>
-				<cbc:Name> Mrs Bouquet <?Name Contact name?>
+				<cbc:Name> Mrs Bouquet 
+					<?Name Contact name?>
 					<?Description The contact name.?>
 					<?Cardinality 0..1?>
 				</cbc:Name>
-				<cbc:Telephone> 0158 1233714 <?Name Contact email telephone?>
+				<cbc:Telephone> 0158 1233714 
+					<?Name Contact email telephone?>
 					<?Description The phone number of the contact.?>
 					<?Cardinality 0..1?>
 				</cbc:Telephone>
-				<cbc:ElectronicMail> bouquet@fpconsortial.co.uk <?Name Contact email address?>
+				<cbc:ElectronicMail> bouquet@fpconsortial.co.uk 
+					<?Name Contact email address?>
 					<?Description The electronic mail of the contact.?>
 					<?Cardinality 0..1?>
 				</cbc:ElectronicMail>
 			</cac:Contact>
 		</cac:Party>
 	</cac:DespatchSupplierParty>
+	
 	<cac:DeliveryCustomerParty>
 		<?Description The Consignee is the person or organization to which the products will be shipped and who is taking possession. It also defines the receiver of the Advanced Despatch Advice. The role is carried out by the customer or on behalf of the customer. The real ship-to address must be provided in the delivery location if the Advanced Despatch Advice describes a movement. If the Despatch address describes a service provided at a specific location, the Delivery Location contains this location.?>
 		<cac:Party>
 			<cbc:EndpointID schemeID="0088">5798000000124</cbc:EndpointID>
 			<cac:PartyIdentification>
-				<cbc:ID schemeID="0088"> 5790000435951 <?schemeID-CodeList ICD?>
+				<cbc:ID schemeID="0088"> 5790000435951 
+					<?schemeID-CodeList ICD?>
+					<?Rule PEPPOL-T120-R108?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
 				<?Name Party name?>
 				<?Description The name of the Delivery Customer Party.?>
 				<?Cardinality 0..1?>
-				<cbc:Name> Sender inc. <?Name Name of the fuel supplier?>
+				<cbc:Name> Sender inc. 
+					<?Name Name of the fuel supplier?>
 					<?Description The Despatch Supplier.?>
 					<?Cardinality 1..1?>
+					<?Rule PEPPOL-T120-R108?>
 				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
@@ -192,8 +233,8 @@
 				<cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
 				<cbc:CountrySubentity>Avon</cbc:CountrySubentity>
 				<cac:AddressLine>
-					<cbc:Line>
-						3rd Floor, Room 5
+					<cbc:Line>3rd Floor, Room 5
+						<?Cardinality 1..1?>
 					</cbc:Line>
 				</cac:AddressLine>
 				<cac:Country>
@@ -204,24 +245,31 @@
 				<?Name Party tax scheme?>
 				<?Description The tax information about the Delivery Party.?>
 				<?Cardinality 0..1?>
-				<cbc:CompanyID> GB523859989 <?Name Company ID?>
+				<cbc:CompanyID> GB523859989 
+					<?Name Company ID?>
 					<?Description The Delivery Party Value Added Tax identifer.?>
 					<?Cardinality 1..1?>
 				</cbc:CompanyID>
 				<cac:TaxScheme>
 					<?Name Tax scheme?>
 					<?Cardinality 1..1?>
-					<cbc:ID> VAT <?Name Tax scheme identifier?>
+					<cbc:ID> VAT 
+						<?Name Tax scheme identifier?>
 						<?Description Tax scheme identifier. E.g. "VAT" or "GST".?>
 						<?Cardinality 1..1?>
 					</cbc:ID>
 				</cac:TaxScheme>
 			</cac:PartyTaxScheme>
 			<cac:PartyLegalEntity>
-				<cbc:RegistrationName> Sender inc. <?Cardinality 1..1?>
+				<?Name Party Legal Entity?>
+				<cbc:RegistrationName> Sender inc. 
+					<?Cardinality 1..1?>
+					<?Name Consignee party's Legal name. ?>
+					<?Description The Legal Name of the Receiving party. ?>
 				</cbc:RegistrationName>
-				<cbc:CompanyID schemeID="0089"> GB523859989 <?Name Delivery customers parties legal registration name?>
-					<?Description The official name of the party as registered with the relevant fiscal authority.?>
+				<cbc:CompanyID schemeID="0089"> GB523859989 
+					<?Name Delivery customers parties legal registration ID. ?>
+					<?Description The official identity of the party as registered with the relevant fiscal authority.?>
 					<?Cardinality 0..1?>
 					<?schemeID-Usage optional?>
 					<?schemeID-CodeList ICD?>
@@ -231,7 +279,8 @@
 				<cac:RegistrationAddress>
 					<?Name Legal address?>
 					<?Cardinality 0..1?>
-					<cbc:CityName> Bridgtown <?Name City name?>
+					<cbc:CityName> Bridgtown 
+						<?Name City name?>
 						<?Description The name of the city.?>
 						<?Cardinality 0..1?>
 					</cbc:CityName>
@@ -239,7 +288,8 @@
 						<?Name Contry?>
 						<?Description The residens country for the delivery customer party.?>
 						<?Cardinality 1..1?>
-						<cbc:IdentificationCode> UK <?Name Contry code?>
+						<cbc:IdentificationCode> UK 
+							<?Name Contry code?>
 						</cbc:IdentificationCode>
 					</cac:Country>
 				</cac:RegistrationAddress>
@@ -249,36 +299,37 @@
 				<?Name Contact person name?>
 				<?Description The contact of the Delivery customer party.?>
 				<?Cardinality 0..1?>
-				<cbc:Name> Mrs Bouquet <?Name Contact name?>
+				<cbc:Name> Mrs Bouquet 
+					<?Name Contact name?>
 					<?Description The contact name.?>
 					<?Cardinality 0..1?>
 				</cbc:Name>
-				<cbc:Telephone> 0158 1233714 <?Name Contact telephone number?>
+				<cbc:Telephone> 0158 1233714 
+					<?Name Contact telephone number?>
 					<?Description The phone number of the contact.?>
 					<?Cardinality 0..1?>
 				</cbc:Telephone>
-				<cbc:ElectronicMail> bouquet@fpconsortial.co.uk <?Name Contact email address?>
+				<cbc:ElectronicMail> bouquet@fpconsortial.co.uk 
+					<?Name Contact email address?>
 					<?Description The electronic mail of the contact.?>
 					<?Cardinality 0..1?>
 				</cbc:ElectronicMail>
 			</cac:Contact>
 		</cac:Party>
-		<cac:DeliveryContact>
-			<cbc:Name>Mr Fred Churchill</cbc:Name>
-			<cbc:Telephone>0127 2653214</cbc:Telephone>
-			<cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>
-		</cac:DeliveryContact>
 	</cac:DeliveryCustomerParty>
+	
 	<cac:BuyerCustomerParty>
 		<cac:Party>
 			<cac:PartyIdentification>
-				<cbc:ID schemeID="0088"> 5790000435951 <?Rule PEPPOL-T120-R008?>
+				<cbc:ID schemeID="0088"> 5790000435951 
+					<?Rule PEPPOL-T120-R008?>
 					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
-				<cbc:Name> IYT Corporation <?Rule PEPPOL-T120-R008?>
+				<cbc:Name> IYT Corporation 
+					<?Rule PEPPOL-T120-R008?>
 				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
@@ -288,24 +339,106 @@
 				<cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
 				<cbc:CountrySubentity>Avon</cbc:CountrySubentity>
 				<cac:AddressLine>
-					<cbc:Line>3rd Floor, Room 5</cbc:Line>
+					<cbc:Line>3rd Floor, Room 5
+						<?Cardinality 1..1?>
+					</cbc:Line>
 				</cac:AddressLine>
 				<cac:Country>
 					<cbc:IdentificationCode>GB</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
+			
+			<cac:PartyTaxScheme>
+				<?Name Party tax scheme?>
+				<?Description The tax information about the Buyer Party.?>
+				<?Cardinality 0..1?>
+				<cbc:CompanyID>GB523859989
+					<?Name Company ID?>
+					<?Description The Buyer Party Value Added Tax identifer.?>
+					<?Cardinality 1..1?>
+				</cbc:CompanyID>
+				<cac:TaxScheme>
+					<?Name Tax scheme?>
+					<?Cardinality 1..1?>
+					<cbc:ID>VAT
+						<?Name Tax scheme identifier?>
+						<?Description Tax scheme identifier. E.g. "VAT" or "GST".?>
+						<?Cardinality 1..1?>
+					</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			
+			<cac:PartyLegalEntity>
+				<?Name Party Legal Entity?>
+				<?Cardinality 0..1?>
+				<cbc:RegistrationName>Buyer inc.
+					<?Cardinality 1..1?>
+					<?Name Buyer party's Legal name. ?>
+					<?Description The Legal Name of the Buying party. ?>
+				</cbc:RegistrationName>
+				<cbc:CompanyID schemeID="0089">GB523859989
+					<?Name Buyer party's legal registration ID. ?>
+					<?Description The official identity of the party as registered with the relevant fiscal authority.?>
+					<?Cardinality 0..1?>
+					<?schemeID-Usage optional?>
+					<?schemeID-CodeList ICD?>
+					<?schemeID-Name Scheme identifier?>
+					<?schemeID-Description The identification scheme identifier of the Buyer's legal registration identifier?>
+				</cbc:CompanyID>
+				<cac:RegistrationAddress>
+					<?Name Legal address?>
+					<?Cardinality 0..1?>
+					<cbc:CityName>Bridgtown
+						<?Name City name?>
+						<?Description The name of the city.?>
+						<?Cardinality 0..1?>
+					</cbc:CityName>
+					<cac:Country>
+						<?Name Contry?>
+						<?Description The residens country for the Buyer party.?>
+						<?Cardinality 1..1?>
+						<cbc:IdentificationCode>UK
+							<?Name Contry code?>
+						</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:RegistrationAddress>
+			</cac:PartyLegalEntity>
+
+			<cac:Contact>
+				<?Name Contact person name?>
+				<?Description The contact of the Buyer party.?>
+				<?Cardinality 0..1?>
+				<cbc:Name>Mrs Bouquet
+					<?Name Contact name?>
+					<?Description The contact name.?>
+					<?Cardinality 0..1?>
+				</cbc:Name>
+				<cbc:Telephone>0158 1233714
+					<?Name Contact telephone number?>
+					<?Description The phone number of the contact.?>
+					<?Cardinality 0..1?>
+				</cbc:Telephone>
+				<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
+					<?Name Contact email address?>
+					<?Description The electronic mail of the contact.?>
+					<?Cardinality 0..1?>
+				</cbc:ElectronicMail>
+			</cac:Contact>
 		</cac:Party>
 	</cac:BuyerCustomerParty>
+	
 	<cac:SellerSupplierParty>
 		<cac:Party>
 			<cac:PartyIdentification>
-				<cbc:ID schemeID="0088"> 5790000435951 <?Rule PEPPOL-T120-R009?>
+				<cbc:ID schemeID="0088"> 5790000435951 
+					<?Rule PEPPOL-T120-R009?>
 					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
-				<cbc:Name> IYT Corporation <?Rule PEPPOL-T120-R009?>
+				<cbc:Name> IYT Corporation 
+					<?Rule PEPPOL-T120-R009?>
 				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
@@ -315,40 +448,121 @@
 				<cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
 				<cbc:CountrySubentity>Avon</cbc:CountrySubentity>
 				<cac:AddressLine>
-					<cbc:Line>3rd Floor, Room 5</cbc:Line>
+					<cbc:Line>3rd Floor, Room 5
+						<?Cardinality 1..1?>
+					</cbc:Line>
 				</cac:AddressLine>
 				<cac:Country>
 					<cbc:IdentificationCode>GB</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
+			
+			<cac:PartyTaxScheme>
+				<?Name Party tax scheme?>
+				<?Description The tax information about the Seller Party.?>
+				<?Cardinality 0..1?>
+				<cbc:CompanyID>GB325456788
+					<?Name Company ID?>
+					<?Description The Seller Party Value Added Tax identifer.?>
+					<?Cardinality 1..1?>
+				</cbc:CompanyID>
+				<cac:TaxScheme>
+					<?Name Tax scheme?>
+					<?Cardinality 1..1?>
+					<cbc:ID>VAT
+						<?Name Tax scheme identifier?>
+						<?Description Tax scheme identifier. E.g. "VAT" or "GST".?>
+						<?Cardinality 1..1?>
+					</cbc:ID>
+				</cac:TaxScheme>
+			</cac:PartyTaxScheme>
+			
+			<cac:PartyLegalEntity>
+				<?Name Party Legal Entity?>
+				<?Cardinality 0..1?>
+				<cbc:RegistrationName>Consortial
+					<?Cardinality 1..1?>
+					<?Name Selling party's legal name. ?>
+					<?Description The legal name of the Selling party. ?>
+				</cbc:RegistrationName>
+				<cbc:CompanyID schemeID="0089">SC234567
+					<?Name Seller party's legal registration ID. ?>
+					<?Description The official identity of the party as registered with the relevant fiscal authority.?>
+					<?Cardinality 0..1?>
+					<?schemeID-Name Scheme identifier?>
+					<?schemeID-Description The identification scheme identifier of Seller's legal registration identifier?>
+					<?schemeID-Usage optional?>
+					<?schemeID-CodeList ICD?>
+				</cbc:CompanyID>
+				<cac:RegistrationAddress>
+					<?Name Legal address?>
+					<?Cardinality 0..1?>
+					<cbc:CityName>Farthing
+						<?Name City name?>
+						<?Description The name of the city.?>
+						<?Cardinality 0..1?>
+					</cbc:CityName>
+					<cac:Country>
+						<?Name Contry?>
+						<?Description The residens country for the Seller party.?>
+						<?Cardinality 1..1?>
+						<cbc:IdentificationCode>UK
+							<?Name Country code?>
+							<?Description Country Code?>
+						</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:RegistrationAddress>
+			</cac:PartyLegalEntity>
+			
+			<cac:Contact>
+				<?Name Contact?>
+				<?Description The contact of the Seller party.?>
+				<?Cardinality 0..1?>
+				<cbc:Name>Mrs Bouquet
+					<?Name Contact name?>
+					<?Description The contact name.?>
+					<?Cardinality 0..1?>
+				</cbc:Name>
+				<cbc:Telephone>0158 1233714
+					<?Name Contact email telephone?>
+					<?Description The phone number of the contact.?>
+					<?Cardinality 0..1?>
+				</cbc:Telephone>
+				<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
+					<?Name Contact email address?>
+					<?Description The electronic mail of the contact.?>
+					<?Cardinality 0..1?>
+				</cbc:ElectronicMail>
+			</cac:Contact>
 		</cac:Party>
 	</cac:SellerSupplierParty>
+	
 	<cac:OriginatorCustomerParty>
 		<?Description For 3PL shipments, this party defines the final receiver of the goods.?>
 		<cac:Party>
 			<cac:PartyIdentification>
-				<cbc:ID schemeID="0088"> 5790000435951 <?Rule PEPPOL-T120-R010?>
+				<cbc:ID schemeID="0088"> 5790000435951 
+					<?Rule PEPPOL-T120-R010?>
 					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
-				<cbc:Name> IYT Corporation <?Rule PEPPOL-T120-R010?>
+				<cbc:Name> IYT Corporation 
+					<?Rule PEPPOL-T120-R010?>
 				</cbc:Name>
 			</cac:PartyName>
 			<cac:PostalAddress>
 				<cbc:StreetName>Avon Way</cbc:StreetName>
-				<cbc:AdditionalStreetName>
-					way 2
+				<cbc:AdditionalStreetName>way 2
 				</cbc:AdditionalStreetName>
 				<cbc:CityName>Bridgtow</cbc:CityName>
 				<cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
-				<cbc:CountrySubentity>
-					Avon
+				<cbc:CountrySubentity>Avon
 				</cbc:CountrySubentity>
 				<cac:AddressLine>
-					<cbc:Line>
-						3rd Floor, Room 5
+					<cbc:Line>3rd Floor, Room 5
+						<?Cardinality 1..1?>
 					</cbc:Line>
 				</cac:AddressLine>
 				<cac:Country>
@@ -357,21 +571,29 @@
 			</cac:PostalAddress>
 		</cac:Party>
 	</cac:OriginatorCustomerParty>
+	
 	<cac:Shipment>
-		<cbc:ID> 1 <?Description Identifies a shipment. Freight forwarders reference number.?>
+		<?Cardinality 1..1?>
+		<cbc:ID> 1 
+			<?Description Identifies a shipment. Freight forwarders reference number.?>
 		</cbc:ID>
-		<cbc:Information> text <?Description Used by Logistics for Supplier Remark.?>
+		<cbc:Information> text 
+			<?Description Used by Logistics for Supplier Remark.?>
 		</cbc:Information>
-		<cbc:GrossWeightMeasure unitCode="KGM"> 1030 <?Description The gross weight of the despatch as a whole. Must be equal the the weight specified for the included transport handling unites if this is specified?>
+		<cbc:GrossWeightMeasure unitCode="KGM"> 1030 
+			<?Description The gross weight of the despatch as a whole. Must be equal the the weight specified for the included transport handling unites if this is specified?>
 			<?Rule PEPPOL-T120-R018?>
 		</cbc:GrossWeightMeasure>
-		<cbc:GrossVolumeMeasure unitCode="MTQ"> 1.456 <?Rule PEPPOL-T120-R019?>
-			<?Description The gross volumen of the despatch as a whole. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
+		<cbc:GrossVolumeMeasure unitCode="MTQ"> 1.456 
+			<?Rule PEPPOL-T120-R019?>
+			<?Description The gross volume of the despatch as a whole. Must be greather or equal to the the volume specified for the included transport handling units if this is specified?>
 		</cbc:GrossVolumeMeasure>
-		<cbc:TotalTransportHandlingUnitQuantity> 1 <?Rule PEPPOL-T120-R016?>
+		<cbc:TotalTransportHandlingUnitQuantity> 1 
+			<?Rule PEPPOL-T120-R016?>
 			<?Rule PEPPOL-T120-R017?>
 		</cbc:TotalTransportHandlingUnitQuantity>
-	    <cbc:DeclaredStatisticsValueAmount currencyID="SEK">92179.12<?Name Declared statistics value amount?>
+	    <cbc:DeclaredStatisticsValueAmount currencyID="SEK">92179.12
+			<?Name Declared statistics value amount?>
 			<?Description The total declared value for customs purposes of those goods in this shipment that are subject to the same customs procedure and have the same tariff/statistical heading, country information, and duty regime.?>
 			<?Cardinality 0..1?>
 			<?Rule PEPPOL-T120-R021?>
@@ -379,66 +601,207 @@
 			<?currencyID-Description Currency identifier.?>
 			<?currencyID-CodeList ISO4217?>
 		</cbc:DeclaredStatisticsValueAmount>
+		
 		<cac:Consignment>
-			<cbc:ID> NA <?Description Use a dummy value since this element is mandatory.?>
+			<cbc:ID> NA 
+				<?Description Use a dummy value since this element is mandatory.?>
 			</cbc:ID>
-			<cbc:HazardousRiskIndicator> false <?Name Hazardous risk indicator?>
+			<cbc:HazardousRiskIndicator> false 
+				<?Name Hazardous risk indicator?>
 				<?Description An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).?>
 				<?Cardinality 0..1?>
 			</cbc:HazardousRiskIndicator>
-			<cbc:HandlingCode listID="TRED4079"> 1 <?Name Handling code?>
+			<cbc:HandlingCode listID="TRED4079"> 1 
+				<?Name Handling code?>
 				<?Description The handling required for this shipment, expressed as a code. Use TRED4079, BeastHandlingCode or an another code id as listID.?>
 				<?Cardinality 0..1?>
 				<?listID-Name Identifier for codelist for handling code?>
 				<?listID-Description An identifier for the codelist used for the handling code?>
-				<?listID-usage Optional?>
+				<?listID-usage Mandatory?>
 				<?listID Tred4079?>
-				<?listID HandlingCode?>
 				<?CodeList TRED4079?>
 				<?CodeList HandlingCode?>
 			</cbc:HandlingCode>
-			<cbc:HandlingInstructions> Keep the Container Carefully Closed <?Name Handling instructions?>
+			<cbc:HandlingInstructions> Keep the Container Carefully Closed 
+				<?Name Handling instructions?>
 				<?Description The handling required for this consignment, expressed as text.?>
 				<?Cardinality 0..1?>
 			</cbc:HandlingInstructions>
+			
 			<cac:CarrierParty>
 				<cac:PartyIdentification>
 					<?Name Party identification?>
 					<?Description This party defines the company providing the transport service?>
 					<?Cardinality 0..1?>
-					<cbc:ID schemeID="0088"> 5790000435951 <?Name Carrying party identifier?>
+					<cbc:ID schemeID="0088"> 5790000435951 
+						<?Name Carrying party identifier?>
 						<?Description Identifies the Carrier party.?>
 						<?schemeID-usage Optional?>
 						<?schemeID-CodeList ICD?>
+						<?Rule PEPPOL-T120-R110?>
 					</cbc:ID>
 				</cac:PartyIdentification>
 				<cac:PartyName>
-					<cbc:Name>Name</cbc:Name>
+					<?Name Carrier Party Name?>
+					<?Description The name of the Carrier party.?>
+					<cbc:Name>Name
+						<?Name Carrier party name?>
+						<?Description The name of the Carrier party.?>
+						<?Rule PEPPOL-T120-R110?>
+					</cbc:Name>
 				</cac:PartyName>
+				
+				<cac:PostalAddress>
+					<?Name Postal Address?>
+					<?Description The address of the Carrier Party. ?>
+					<?Cardinality 0..1?>
+					<cbc:StreetName>Busy Street
+						<?Name Street name?>
+						<?Description The name of the Street.?>
+						<?Cardinality 0..1?>
+					</cbc:StreetName>
+					<cbc:AdditionalStreetName>way 1
+						<?Name Additional Street name ?>
+						<?Description Second line of the address.?>
+						<?Cardinality 0..1?>
+					</cbc:AdditionalStreetName>
+					<cbc:CityName>Farthing
+						<?Name City name ?>
+						<?Description The name of the City.?>
+						<?Cardinality 0..1?>
+					</cbc:CityName>
+					<cbc:PostalZone>AA99 1BB
+						<?Name Postal Zone?>
+						<?Description The Zip-code.?>
+						<?Cardinality 0..1?>
+					</cbc:PostalZone>
+					<cbc:CountrySubentity>Heremouthshire
+						<?Name Country Subentity?>
+						<?Description The county or similar.?>
+						<?Cardinality 0..1?>
+					</cbc:CountrySubentity>
+					<cac:AddressLine>
+						<?Name Address Line?>
+						<?Cardinality 0..1?>
+						<cbc:Line>The Roundabout
+							<?Name Line?>
+							<?Description An additional address line.?>
+							<?Cardinality 1..1?>
+						</cbc:Line>
+					</cac:AddressLine>
+					<cac:Country>
+						<?Cardinality 0..1?>
+						<cbc:IdentificationCode>GB
+							<?Name Country identification code?>
+							<?Description The country code.?>
+						</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:PostalAddress>
+				<cac:PartyTaxScheme>
+					<?Name Party tax scheme?>
+					<?Description The tax information for the Carrier Party.?>
+					<?Cardinality 0..1?>
+					<cbc:CompanyID>GB325456788
+						<?Name Company ID?>
+						<?Description The Carrier Party Value Added Tax identifer.?>
+						<?Cardinality 1..1?>
+					</cbc:CompanyID>
+					<cac:TaxScheme>
+						<?Name Tax scheme?>
+						<?Cardinality 1..1?>
+						<cbc:ID>VAT
+							<?Name Tax scheme identifier?>
+							<?Description Tax scheme identifier. E.g. "VAT" or "GST".?>
+							<?Cardinality 1..1?>
+						</cbc:ID>
+					</cac:TaxScheme>
+				</cac:PartyTaxScheme>
+				<cac:PartyLegalEntity>
+					<?Name Party Legal Entity?>
+					<?Cardinality 0..1?>
+					<cbc:RegistrationName>Consortial
+						<?Cardinality 1..1?>
+						<?Name Carrier party's legal name. ?>
+						<?Description The legal name of the Carrier party. ?>
+					</cbc:RegistrationName>
+					<cbc:CompanyID schemeID="0089">SC234567
+						<?Name Carrier supplier parties legal registration ID. ?>
+						<?Description The official identity of the party as registered with the relevant fiscal authority.?>
+						<?Cardinality 0..1?>
+						<?schemeID-Name Scheme identifier?>
+						<?schemeID-Description The identification scheme identifier of the Carrier party's legal registration identifier?>
+						<?schemeID-Usage optional?>
+						<?schemeID-CodeList ICD?>
+					</cbc:CompanyID>
+					<cac:RegistrationAddress>
+						<?Name Legal address?>
+						<?Cardinality 0..1?>
+						<cbc:CityName>Farthing
+							<?Name City name?>
+							<?Description The name of the city.?>
+							<?Cardinality 0..1?>
+						</cbc:CityName>
+						<cac:Country>
+							<?Name Contry?>
+							<?Description The residens country for the Carrier party.?>
+							<?Cardinality 1..1?>
+							<cbc:IdentificationCode>UK
+								<?Name Country code?>
+								<?Description Country Code?>
+							</cbc:IdentificationCode>
+						</cac:Country>
+					</cac:RegistrationAddress>
+				</cac:PartyLegalEntity>
+				<cac:Contact>
+					<?Name Contact?>
+					<?Description The contact of the Carrier party.?>
+					<?Cardinality 0..1?>
+					<cbc:Name>Mrs Bouquet
+						<?Name Contact name?>
+						<?Description The contact name.?>
+						<?Cardinality 0..1?>
+					</cbc:Name>
+					<cbc:Telephone>0158 1233714
+						<?Name Contact email telephone?>
+						<?Description The phone number of the contact.?>
+						<?Cardinality 0..1?>
+					</cbc:Telephone>
+					<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
+						<?Name Contact email address?>
+						<?Description The electronic mail of the contact.?>
+						<?Cardinality 0..1?>
+					</cbc:ElectronicMail>
+				</cac:Contact>
+				
 				<cac:Person>
 					<cac:IdentityDocumentReference>
 						<cbc:ID>45642323</cbc:ID>
-						<cbc:DocumentType>DriverLicence</cbc:DocumentType>
+						<cbc:DocumentType>ID06</cbc:DocumentType>
 					</cac:IdentityDocumentReference>
 				</cac:Person>
 			</cac:CarrierParty>
+			
 			<cac:OriginalDespatchTransportationService>
 				<?Name Original despatch transportation service?>
 				<?Description Used to specify Fuel consumption and Environmental Emission.?>
 				<?Cardinality 0..1?>
-				<cbc:TransportServiceCode> FuelReport <?Name Tranport service code?>
+				<cbc:TransportServiceCode> FuelReport 
+					<?Name Tranport service code?>
 					<?Description Use "FuelReport" since this element is mandatory.?>
 					<?Cardinality 1..1?>
 				</cbc:TransportServiceCode>
+				
 				<cac:TransportEquipment>
 					<?Name Transport equipment?>
 					<?Description Used to specify fuel consumption. To be repeated for all fuel types used.?>
 					<?Cardinality 0..n?>
-					<cbc:TransportEquipmentTypeCode> Diesel <?Name Tranport equipment type code?>
+					<cbc:TransportEquipmentTypeCode> Diesel 
+						<?Name Tranport equipment type code?>
 						<?Description Used to specify the type of fuel.?>
 						<?Cardinality 0..1?>
 					</cbc:TransportEquipmentTypeCode>
-					<cbc:Description> Forrest diesel mix <?Name Description?>
+					<cbc:Description> Forrest diesel mix 
+						<?Name Description?>
 						<?Description Fuel description.?>
 						<?Cardinality 0..1?>
 					</cbc:Description>
@@ -446,18 +809,21 @@
 						<?Name Fuel measurements?>
 						<?Description Used to specify information about the fuel and fuel consumption.?>
 						<?Cardinality 0..n?>
-						<cbc:AttributeID> FuelConsumption <?Name Attribute identifier?>
+						<cbc:AttributeID> FuelConsumption 
+							<?Name Attribute identifier?>
 							<?Description To define the type of measurement. EnergyContent = T6428, ConversionFactor = T6429, FuelConsumption = T6374, DrivingDistance = T6380, DrivingTime = T6381, FuelMeasurementMethod = T6728, EngineType = T6379, RenewableFuel = T6382.?>
 							<?Cardinality 1..1?>
 						</cbc:AttributeID>
-						<cbc:Measure unitCode="KGM"> 123 <?Name Measure?>
+						<cbc:Measure unitCode="KGM"> 123 
+							<?Name Measure?>
 							<?Description The measured value. Used for EnergyContent, ConversionFactor, FuelConsumption, DrivingDistance, DrivingTime and RenewableFuel. unitCode refers to T6706.?>
 							<?Cardinality 0..1?>
 							<?unitCode-Name Measure unit of measure?>
 							<?unitCode-Description The unit of measure that applies to the measure.?>
 							<?unitCode-CodeList UNECERec20?>
 						</cbc:Measure>
-						<cbc:Description> StandardEstimate <?Name Attribute value?>
+						<cbc:Description> StandardEstimate 
+							<?Name Attribute value?>
 							<?Description Description of the attribute when there is no value to measure. Used for FuelMeasurementMethod and EngineType. Possible values are for FuelMeasurementMethod: "AutomaticMeasurement", "StandardEstimate", "ManualMeasurement" and for EngineType: "Euro2", "Euro3", "Euro4", "Euro5", "Euro6", "EuroStep2", "EuroStep3A", "EuroStep3B", "EuroStep4".?>
 							<?Cardinality 0..1?>
 						</cbc:Description>
@@ -470,7 +836,8 @@
 							<?Name Party identification?>
 							<?Description To identify the fuel supplier.?>
 							<?Cardinality 0..1?>
-							<cbc:ID schemeID="0088"> 7300010000001 <?Name Identity of the fuel supplier?>
+							<cbc:ID schemeID="0088"> 7300010000001 
+								<?Name Identity of the fuel supplier?>
 								<?Description The fuel supplier.?>
 								<?Cardinality 0..1?>
 								<?schemeID-Name Scheme identifier?>
@@ -482,7 +849,8 @@
 							<?Name Party name?>
 							<?Description The name of the fuel supplier.?>
 							<?Cardinality 0..1?>
-							<cbc:Name> Preem <?Name Name of the fuel supplier?>
+							<cbc:Name> Preem 
+								<?Name Name of the fuel supplier?>
 								<?Description The fuel supplier.?>
 								<?Cardinality 0..1?>
 							</cbc:Name>
@@ -509,7 +877,8 @@
 								<?Name Standard item identification?>
 								<?Description Only one Standard Item Number can be used. Specify the type of standard in schemeID.?>
 								<?Cardinality 0..1?>
-								<cbc:ID schemeID="0160"> 1234567891234 <?Name Standard article identity of the fuel?>
+								<cbc:ID schemeID="0160"> 1234567891234 
+									<?Name Standard article identity of the fuel?>
 									<?Description The fuel article number. The schemeID refers to the Article Number Type.?>
 									<?Cardinality 1..1?>
 									<?schemeID-Name Scheme identifier?>
@@ -519,11 +888,13 @@
 						</cac:Item>
 					</cac:GoodsItem>
 				</cac:TransportEquipment>
+				
 				<cac:EnvironmentalEmission>
 					<?Name Environmental emission?>
 					<?Description To report the emissions.?>
 					<?Cardinality 0..n?>
-					<cbc:EnvironmentalEmissionTypeCode listID="UN785" name="Carbon Dioxide"> CO2 <?Name Environmental emission type code?>
+					<cbc:EnvironmentalEmissionTypeCode listID="UN785" name="Carbon Dioxide"> CO2 
+						<?Name Environmental emission type code?>
 						<?Description Defines the type of emission reported. Values: "CO2" (Carbon Dioxide), NOX (Nitrogen Oxide), PM (Particulate Matter), HC (Hydro Carbon).?>
 						<?Cardinality 1..1?>
 						<?listID-Name Identifier for codelist for environmental emissions type?>
@@ -532,7 +903,8 @@
 						<?name-Name Name of environmental emissions type?>
 						<?name-usage Optional?>
 					</cbc:EnvironmentalEmissionTypeCode>
-					<cbc:ValueMeasure unitCode="MGM"> 10 <?Name Value of measurement?>
+					<cbc:ValueMeasure unitCode="MGM"> 10 
+						<?Name Value of measurement?>
 						<?Description The value of the emission. Refers to Carbon Dioxide/Nitrogen Oxide/Particulate Matter/Hydro Carbon.?>
 						<?Cardinality 1..1?>
 						<?unitCode-Name Measure unit of measure?>
@@ -542,16 +914,19 @@
 				</cac:EnvironmentalEmission>
 			</cac:OriginalDespatchTransportationService>
 		</cac:Consignment>
+		
 		<cac:ShipmentStage>
 			<?Name Shipment stage?>
 			<?Description The shipment stage for the last mile of the delivery?>
 			<?Cardinality 0..1?>
-			<cbc:TransportModeCode> 3 <?Name Transport mode code?>
+			<cbc:TransportModeCode> 3 
+				<?Name Transport mode code?>
 				<?Description Must be a value in UNECERec19.?>
 				<?Cardinality 1..1?>
 				<?CodeList UNECERec19?>
 			</cbc:TransportModeCode>
-			<cbc:TransportMeansTypeCode> 31 <?Name Transport means type code?>
+			<cbc:TransportMeansTypeCode> 31 
+				<?Name Transport means type code?>
 				<?Description The means of transport used in this shipment stage.?>
 				<?Cardinality 0..1?>
 				<?CodeList UNECERec28?>
@@ -564,7 +939,8 @@
 					<?Name Air transport?>
 					<?Description An aircraft used in this shipment stage.?>
 					<?Cardinality 0..1?>
-					<cbc:AircraftID> JA8088 <?Name Air transport identifier?>
+					<cbc:AircraftID> JA8088 
+						<?Name Air transport identifier?>
 						<?Description An identifer for a specific aircraft.?>
 						<?Cardinality 1..1?>
 					</cbc:AircraftID>
@@ -573,7 +949,8 @@
 					<?Name Road transport?>
 					<?Description Description of a truck or a vehicle transporting the goods. Use only if Transport mode code is set to road transport?>
 					<?Cardinality 0..1?>
-					<cbc:LicensePlateID> DF10958 <?Name License plate identifier transport?>
+					<cbc:LicensePlateID> DF10958 
+						<?Name License plate identifier transport?>
 						<?Description The licence plate(s) identifying the vehicle seperated by semicolon if there are more than one?>
 						<?Cardinality 1..1?>
 					</cbc:LicensePlateID>
@@ -582,11 +959,13 @@
 					<?Name Rail transport?>
 					<?Description Equipment used for rail transport in this shipment stage.?>
 					<?Cardinality 0..1?>
-					<cbc:TrainID> 12014 <?Name Train identifier?>
+					<cbc:TrainID> 12014 
+						<?Name Train identifier?>
 						<?Description An identifier for the train used as the means of transport.?>
 						<?Cardinality 1..1?>
 					</cbc:TrainID>
-					<cbc:RailCarID> 50 63 20-33 801-5 <?Name Rail car identifier?>
+					<cbc:RailCarID> 50 63 20-33 801-5 
+						<?Name Rail car identifier?>
 						<?Description An identifier for the rail car on the train used as the means of transport..?>
 						<?Cardinality 0..1?>
 					</cbc:RailCarID>
@@ -595,28 +974,63 @@
 					<?Name Maritime transport?>
 					<?Description Description of a truck or a vehicle transporting the goods. Use only if TransportModeCode is set to maritime transport.?>
 					<?Cardinality 0..1?>
-					<cbc:VesselID> wrt34663 <?Name Vessel identifier?>
+					<cbc:VesselID> wrt34663 
+						<?Name Vessel identifier?>
 						<?Description The registred identifier of the vessel?>
 						<?Cardinality 1..1?>
 					</cbc:VesselID>
 				</cac:MaritimeTransport>
+				
+				<cac:MeasurementDimension>
+					<?Name Measurement dimension?>
+					<?Description Used to specify any measurement of the Transport Means.?>
+					<?Cardinality 0..n?>
+					<cbc:AttributeID> ABT 
+						<?Name Attribute identifier?>
+						<?CodeList UNCL6313-T120?>
+						<?Description To describe the type of measurement. Use UNCL 6313 subset.?>
+						<?Cardinality 1..1?>
+					</cbc:AttributeID>
+					<cbc:Measure unitCode="TNE">12.3 
+						<?Name Measure?>
+						<?Description For the measure. Use UN/ECE Recommendation 20 and 21.subset.?>
+						<?Cardinality 1..1?>
+						<?unitCode-Name Measure unit of measure?>
+						<?unitCode-CodeList UNECERec20?>
+					</cbc:Measure>
+				</cac:MeasurementDimension>
 			</cac:TransportMeans>
 		</cac:ShipmentStage>
+		
 		<cac:Delivery>
-			<cbc:ActualDeliveryDate>2021-09-26<?Name Actual Delivery Date?><?Description The date on which the supply of goods or services was made or completed according to the delivery term. Format = "YYYY-MM-DD"?><?DataType Date?><?Cardinality 0..1?></cbc:ActualDeliveryDate>
-			<cbc:ActualDeliveryTime>10:00:00<?Name Actual Delivery Time?><?Description  The date on which the supply of goods or services was made or completed according to the delivery term. Format = "hh:mm:ss"?><?DataType Time?><?Cardinality 0..1?></cbc:ActualDeliveryTime>
+			<cbc:ActualDeliveryDate>2021-09-26<?Name Actual Delivery Date?>
+				<?Description The date on which the supply of goods or services was made or completed according to the delivery term. Used only when Advanced Despatch Advice is sent after delivery. Format = "YYYY-MM-DD"?>
+				<?DataType Date?>
+				<?Cardinality 0..1?>
+			</cbc:ActualDeliveryDate>
+			<cbc:ActualDeliveryTime>10:00:00+01:00<?Name Actual Delivery Time?>
+				<?Description  The date on which the supply of goods or services was made or completed according to the delivery term. Used only when Advanced Despatch Advice is sent after delivery. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the delivery was made should be assumed. ?>
+				<?DataType Time?>
+				<?Cardinality 0..1?>
+			</cbc:ActualDeliveryTime>
 			<cbc:TrackingID>456789</cbc:TrackingID>
 			<cac:DeliveryLocation>
 				<?Name Delivery location?>
-				<?Description The Delivery Location is used to define the Ship-to when the Delivery Customer Party is not . When the Despatch Advice describes a movement, the Delivery Location should always be included. When the Despatch Advice describes a service given at a location, the Delivery Location describes this location.?>
+				<?Description The Delivery Location is used to define the Ship-to when the Delivery Customer Party is not. 
+					If Delivery Location is omitted, the Delivery Customer Party is the actual Delivery Location. 
+					When the Despatch Advice describes a movement, the Delivery Location should always be included. 
+					When the Despatch Advice describes a service given at a location, the Delivery Location describes this location.?>
 				<?Cardinality 0..1?>
-				<cbc:ID schemeID="0088"> 5790000435951 <?Name Identity of the delivery location?>
+				<cbc:ID schemeID="0088"> 5790000435951 
+					<?Name Identity of the delivery location?>
+					<?Cardinality 0..1?>
 					<?Description Identifies the delivery location.?>
 					<?schemeID-Name Scheme identifier?>
 					<?schemeID-usage Optional?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
-				<cbc:Name> Name <?Name Name of the delivery location?>
+				<cbc:Name> Name 
+					<?Name Name of the delivery location?>
 					<?Description The name of the delivery location.?>
 					<?Cardinality 0..1?>
 				</cbc:Name>
@@ -624,38 +1038,45 @@
 					<?Name Address of the delivery location?>
 					<?Description The address of the delivery location.?>
 					<?Cardinality 0..1?>
-					<cbc:StreetName> Avon Way <?Name Address line 1?>
+					<cbc:StreetName> Avon Way 
+						<?Name Address line 1?>
 						<?Cardinality 0..1?>
 						<?Description The main address line in a postal address usually the street name and number.?>
 					</cbc:StreetName>
-					<cbc:AdditionalStreetName> Purchasing <?Name Address line 2?>
+					<cbc:AdditionalStreetName> Purchasing 
+						<?Name Address line 2?>
 						<?Cardinality 0..1?>
 						<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.?>
 					</cbc:AdditionalStreetName>
-					<cbc:CityName> Bridgtow <?Name City?>
+					<cbc:CityName> Bridgtow 
+						<?Name City?>
 						<?Cardinality 0..1?>
 						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code.?>
 					</cbc:CityName>
-					<cbc:PostalZone> ZZ99 1ZZ <?Name Post code?>
+					<cbc:PostalZone> ZZ99 1ZZ 
+						<?Name Post code?>
 						<?Cardinality 0..1?>
 						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.?>
 					</cbc:PostalZone>
-					<cbc:CountrySubentity> Avon <?Name Country subdivision?>
+					<cbc:CountrySubentity> Avon 
+						<?Name Country subdivision?>
 						<?Cardinality 0..1?>
 						<?Description For specifying a region, county, state, province etc. within a country by using text.?>
 					</cbc:CountrySubentity>
 					<cac:AddressLine>
 						<?Name Address line?>
 						<?Cardinality 0..1?>
-						<cbc:Line> 3rd Floor, Room 5 <?Name Address line 3?>
-							<?Cardinality 0..1?>
+						<cbc:Line> 3rd Floor, Room 5 
+							<?Name Address line 3?>
+							<?Cardinality 1..1?>
 							<?Description An additional address line in an address that can be used to give further details supplementing the main line.?>
 						</cbc:Line>
 					</cac:AddressLine>
 					<cac:Country>
 						<?Name Country?>
 						<?Cardinality 0..1?>
-						<cbc:IdentificationCode> GB <?Name Country code?>
+						<cbc:IdentificationCode> GB 
+							<?Name Country code?>
 							<?Cardinality 0..1?>
 							<?CodeList ISO3166?>
 							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.?>
@@ -665,11 +1086,13 @@
 						<?Name Location coordinate?>
 						<?Description To specify the coordinates.?>
 						<?Cardinality 0..1?>
-						<cbc:CoordinateSystemCode> EPSG:3857 <?Name Coordinate system code?>
+						<cbc:CoordinateSystemCode> EPSG:3857 
+							<?Name Coordinate system code?>
 							<?Description Always "EPSG:3857" by definition.?>
 							<?Cardinality 1..1?>
 						</cbc:CoordinateSystemCode>
-						<cbc:LatitudeDegreesMeasure unitCode="DD"> 59.331660358041425 <?Name Latitude degrees?>
+						<cbc:LatitudeDegreesMeasure unitCode="DD"> 59.331660358041425 
+							<?Name Latitude degrees?>
 							<?Description The X coordinate. Use degrees with decimals.?>
 							<?Cardinality 1..1?>
 							<?unitCode-Name Latitude degrees unit of measure?>
@@ -677,7 +1100,8 @@
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
 						</cbc:LatitudeDegreesMeasure>
-						<cbc:LongitudeDegreesMeasure unitCode="DD"> 18.063363084988005 <?Name Longitude degrees?>
+						<cbc:LongitudeDegreesMeasure unitCode="DD"> 18.063363084988005 
+							<?Name Longitude degrees?>
 							<?Description The Y coordinate. Use degrees with decimals.?>
 							<?Cardinality 1..1?>
 							<?unitCode-Name Longitude degrees unit of measure?>
@@ -685,7 +1109,8 @@
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
 						</cbc:LongitudeDegreesMeasure>
-						<cbc:AltitudeMeasure unitCode="MTR"> 12.5 <?Name Altitude?>
+						<cbc:AltitudeMeasure unitCode="MTR"> 12.5 
+							<?Name Altitude?>
 							<?Description The Z coordinate.?>
 							<?Cardinality 0..1?>
 							<?unitCode-Name Altitude unit of measure?>
@@ -698,17 +1123,31 @@
 			</cac:DeliveryLocation>
 
 			<cac:EstimatedDeliveryPeriod>
-				<cbc:StartDate>2021-09-25<?Rule PEPPOL-T120-R012?><?Rule PEPPOL-T120-R015?><?Cardinality 1..1?></cbc:StartDate>
-				<cbc:StartTime>12:00:00<?Rule PEPPOL-T120-R013?><?Rule PEPPOL-T120-R015?></cbc:StartTime>
-				<cbc:EndDate>2021-09-27<?Rule PEPPOL-T120-R012?><?Rule PEPPOL-T120-R014?><?Rule PEPPOL-T120-R015?></cbc:EndDate>
-				<cbc:EndTime>12:00:00<?Rule PEPPOL-T120-R013?><?Rule PEPPOL-T120-R014?><?Rule PEPPOL-T120-R015?></cbc:EndTime>
+				<?Description Used only when Advanced Despatch Advice is sent before delivery.?>				<cbc:StartDate>2021-09-25<?Rule PEPPOL-T120-R012?>
+					<?Rule PEPPOL-T120-R015?>
+					<?Cardinality 0..1?>
+				</cbc:StartDate>
+				<cbc:StartTime>12:00:00+01:00<?Rule PEPPOL-T120-R013?>
+					<?Rule PEPPOL-T120-R015?>
+					<?Description The Start time of the period. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the delivery is made should be assumed.?>
+				</cbc:StartTime>
+				<cbc:EndDate>2021-09-27<?Rule PEPPOL-T120-R012?>
+					<?Rule PEPPOL-T120-R014?>
+					<?Rule PEPPOL-T120-R015?>
+				</cbc:EndDate>
+				<cbc:EndTime>12:00:00+01:00<?Rule PEPPOL-T120-R013?>
+					<?Rule PEPPOL-T120-R014?>
+					<?Rule PEPPOL-T120-R015?>
+					<?Description The End time of the period. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the delivery is made should be assumed.?>
+				</cbc:EndTime>
 			</cac:EstimatedDeliveryPeriod>
+			
 			<cac:Despatch>
 				<cbc:ActualDespatchDate>2021-09-25</cbc:ActualDespatchDate>
-				<cbc:ActualDespatchTime>13:00:00</cbc:ActualDespatchTime>
+				<cbc:ActualDespatchTime>13:00:00+01:00<?Description The actual or expected date when the shipment was dispatched from the dispatching party. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the despatch was made should be assumed.?></cbc:ActualDespatchTime>
 				<cac:DespatchAddress>
 					<?Description The Despatch Address is used to define the Ship-from when the Despatch Supplier Party is not. When the Despatch Advice describes a movement, the Despatch Address should be included.?>
-					<cbc:ID> 34456456456456 <?Description An identifier for the location to which the goods and services are despatched. For example a global location number.?>
+					<cbc:ID>34456456456456 <?Description An identifier for the location to which the goods and services are despatched. For example a global location number.?>
 					</cbc:ID>
 					<cbc:StreetName>Avon Way</cbc:StreetName>
 					<cbc:AdditionalStreetName>way 2</cbc:AdditionalStreetName>
@@ -716,7 +1155,9 @@
 					<cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
 					<cbc:CountrySubentity>Avon</cbc:CountrySubentity>
 					<cac:AddressLine>
-						<cbc:Line>3rd Floor, Room 5</cbc:Line>
+						<cbc:Line>3rd Floor, Room 5
+							<?Cardinality 1..1?>
+						</cbc:Line>
 					</cac:AddressLine>
 					<cac:Country>
 						<cbc:IdentificationCode>GB</cbc:IdentificationCode>
@@ -725,11 +1166,15 @@
 						<?Name Location coordinate?>
 						<?Description To specify the coordinates.?>
 						<?Cardinality 0..1?>
-						<cbc:CoordinateSystemCode>EPSG:3857<?Name Coordinate system code?>
+						<cbc:CoordinateSystemCode>
+							EPSG:3857
+							<?Name Coordinate system code?>
 							<?Description Always "EPSG:3857" by definition.?>
 							<?Cardinality 1..1?>
 						</cbc:CoordinateSystemCode>
-						<cbc:LatitudeDegreesMeasure unitCode="DD">59.33169866504851 <?Name Latitude degrees?>
+						<cbc:LatitudeDegreesMeasure unitCode="DD">
+							59.33169866504851
+							<?Name Latitude degrees?>
 							<?Description The X coordinate. Use degrees with decimals.?>
 							<?Cardinality 1..1?>
 							<?unitCode-usage Mandatory?>
@@ -737,7 +1182,9 @@
 							<?unitCode-Name Latitude degrees unit of measure?>
 							<?unitCode-Description The unit of measure that applies to the latitude degrees.?>
 						</cbc:LatitudeDegreesMeasure>
-						<cbc:LongitudeDegreesMeasure unitCode="DD"> 18.063330898492403 <?Name Longitude degrees?>
+						<cbc:LongitudeDegreesMeasure unitCode="DD">
+							18.063330898492403
+							<?Name Longitude degrees?>
 							<?Description The Y coordinate. Use degrees with decimals.?>
 							<?Cardinality 1..1?>
 							<?unitCode-usage Mandatory?>
@@ -745,7 +1192,9 @@
 							<?unitCode-Name Longitude degrees unit of measure?>
 							<?unitCode-Description The unit of measure that applies to the longitude degrees.?>
 						</cbc:LongitudeDegreesMeasure>
-						<cbc:AltitudeMeasure unitCode="MTR"> 12.5 <?Name Altitude?>
+						<cbc:AltitudeMeasure unitCode="MTR">
+							12.5
+							<?Name Altitude?>
 							<?Description The Z coordinate.?>
 							<?Cardinality 0..1?>
 							<?unitCode-usage Mandatory?>
@@ -756,15 +1205,20 @@
 					</cac:LocationCoordinate>
 				</cac:DespatchAddress>
 			</cac:Despatch>
+			
 			<cac:DeliveryTerms>
 				<?Cardinality 0..1?>
 				<?Description?>
 				<?Name Delivery terms?>
-				<cbc:ID> EXW <?Name Delivery terms?> <?Rule PEPPOL-T120-R022?>
+				<cbc:ID> EXW 
+					<?Name Delivery terms?> 
+					<?Rule PEPPOL-T120-R022?>
 					<?Description Delivery terms code (Inco terms).?>
 					<?Cardinality 0..1?>
 				</cbc:ID>
-				<cbc:SpecialTerms> EQN-06 <?Name Special terms?> <?Rule PEPPOL-T120-R022?>
+				<cbc:SpecialTerms> EQN-06 
+					<?Name Special terms?> 
+					<?Rule PEPPOL-T120-R022?>
 					<?Description Special delivery terms that exceeds the inco terms.?>
 					<?Cardinality 0..1?>
 				</cbc:SpecialTerms>
@@ -772,41 +1226,56 @@
 					<?Name Delivery terms location?>
 					<?Description?>
 					<?Cardinality 0..1?>
-					<cbc:ID> Kalmar <?Name Delivery terms location?>
+					<cbc:ID> Kalmar 
+						<?Name Delivery terms location?>
 						<?Description Delivery terms location. The location to which the delivery terms refer. Used to qualify the delivery terms e.g. "Terms of delivery are FOB Rotterdam"?>
 						<?Cardinality 1..1?>
 					</cbc:ID>
 				</cac:DeliveryLocation>
 			</cac:DeliveryTerms>
 		</cac:Delivery>
+		
 		<cac:TransportHandlingUnit>
 			<?Rule PEPPOL-T120-R017?>
 			<?Name Transport handling unit?>
 			<?Description Used to specify how the goods is packed.?>
 			<?Cardinality 0..n?>
-			<cbc:ID>11111222222222 <?Name Identifier transport handling unit?>
+			<cbc:ID>11111222222222 
+				<?Name Identifier transport handling unit?>
 				<?Description The SSCC identification code of this Transport Handling Unit.?>
 				<?Cardinality 1..1?>
 				<?schemeID-usage Optional?>
 			</cbc:ID>
-			<cbc:TransportHandlingUnitTypeCode> AG <?Name Handling unit type code?>
-				<?Description Type of Transport Handling Unit. Use UN/ECE Recommendation 21 with addition of the codes used by "Retursystem Byggpall".?>
+			<cbc:TransportHandlingUnitTypeCode> AG 
+				<?Name Handling unit type code?>
+				<?Description Type of Transport Handling Unit. Use UN/ECE Recommendation 21. ?>
 				<?CodeList UNECERec21?>
 				<?Cardinality 1..1?>
 			</cbc:TransportHandlingUnitTypeCode>
-			<cbc:HandlingCode> CCC <?Name Handling Code?>
+			<cbc:HandlingCode listID="TRED4079"> 1 
+				<?Name Handling Code?>
 				<?Description The handling for this transporthandling unit expressed as a code?>
 				<?Cardinality 0..1?>
+				<?listID-Name Identifier for codelist for handling code?>
+				<?listID-Description An identifier for the codelist used for the handling code?>
+				<?listID-usage Mandatory?>
+				<?listID Tred4079?>
+				<?listID HandlingCode?>
+				<?CodeList TRED4079?>
+				<?CodeList HandlingCode?>
 			</cbc:HandlingCode>
-			<cbc:HandlingInstructions> To be set vertical <?Name Handling instructions?>
+			<cbc:HandlingInstructions> To be set vertical 
+				<?Name Handling instructions?>
 				<?Description The handling for this transporthandling unit expressed as a text?>
 				<?Cardinality 0..1?>
 			</cbc:HandlingInstructions>
-			<cbc:HazardousRiskIndicator> false <?Name Handling unit hazardous indicator?>
+			<cbc:HazardousRiskIndicator> false 
+				<?Name Handling unit hazardous indicator?>
 				<?Description An indicator that the materials contained in this transport handling unit are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).?>
 				<?Cardinality 0..1?>
 			</cbc:HazardousRiskIndicator>
-			<cbc:ShippingMarks> Keep dry <?Name Shipping marks?>
+			<cbc:ShippingMarks> Keep dry 
+				<?Name Shipping marks?>
 				<?Description Free-form description of the marks and numbers on this transport handling unit.?>
 				<?Cardinality 0..1?>
 			</cbc:ShippingMarks>
@@ -814,30 +1283,36 @@
 				<?Name Transport equipment?>
 				<?Description Used to specify Transport Equipment details associated with this Transport Handling Unit.?>
 				<?Cardinality 0..n?>
-				<cbc:ID> 34563444 <?Name Identifier transport equipment?>
+				<cbc:ID> 34563444 
+					<?Name Identifier transport equipment?>
 					<?Description An id for the physical transport equipment e.g. a container number.?>
 					<?Cardinality 1..1?>
 				</cbc:ID>
-				<cbc:TransportEquipmentTypeCode> CN <?Name Tranport equipment type code?>
+				<cbc:TransportEquipmentTypeCode> CN 
+					<?Name Tranport equipment type code?>
 					<?Description An code specifying the type of equipment.?>
 					<?CodeList UNCL8053?>
 					<?Cardinality 0..1?>
 				</cbc:TransportEquipmentTypeCode>
-				<cbc:SizeTypeCode> 10 <?Name Size type code?>
+				<cbc:SizeTypeCode> 10 
+					<?Name Size type code?>
 					<?Description A code signifying the size and type of this piece of piece of transport equipment. When the piece of transport equipment is a shipping container, it is recommended to use ContainerSizeTypeCode for validation.?>
 					<?CodeList TRED8155?>
 					<?Cardinality 0..1?>
 				</cbc:SizeTypeCode>
-				<cbc:RefrigerationOnIndicator> true <?Name Indicator refrigeration transport equipment?>
+				<cbc:RefrigerationOnIndicator> true 
+					<?Name Indicator refrigeration transport equipment?>
 					<?Description An indicator that this piece of transport equipments refrigeration is on (true) or off (false).?>
 					<?Cardinality 0..1?>
 				</cbc:RefrigerationOnIndicator>
 				<cbc:Description> A 20 foot refrigerated container that is not actively controlling
-					temperature of the product. <?Name Description transport equipment?>
+					temperature of the product. 
+						<?Name Description transport equipment?>
 					<?Description A textual description of the transport equipment.?>
 					<?Cardinality 0..1?>
 				</cbc:Description>
-				<cbc:PowerIndicator> true <?Name Power indicator transport equipment?>
+				<cbc:PowerIndicator> true 
+					<?Name Power indicator transport equipment?>
 					<?Description An indicator that this piece of transport equipment can supply power (true) or not (false).?>
 					<?Cardinality 0..1?>
 				</cbc:PowerIndicator>
@@ -846,12 +1321,14 @@
 				<?Name Measurement dimension?>
 				<?Description Used to specify any measurement of the Transport Handling Unit.?>
 				<?Cardinality 0..n?>
-				<cbc:AttributeID> LN <?Name Attribute identifier?>
+				<cbc:AttributeID> LN 
+					<?Name Attribute identifier?>
 					<?CodeList UNCL6313-T120?>
 					<?Description To describe the type of measurement. Use UNCL 6313 subset.?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
-				<cbc:Measure unitCode="MTR"> 123 <?Name Measure?>
+				<cbc:Measure unitCode="MTR"> 123 
+					<?Name Measure?>
 					<?Rule PEPPOL-T120-R018?>
 					<?Rule PEPPOL-T120-R019?>
 					<?Description For the measure. Use UN/ECE Recommendation 20 and 21.subset.?>
@@ -864,12 +1341,14 @@
 				<?Name Minimum temperature?>
 				<?Description Used to specify the minimal temperature for the transport handling unit under the transport.?>
 				<?Cardinality 0..1?>
-				<cbc:AttributeID> TC <?Name Attribute identifier?>
+				<cbc:AttributeID> TC 
+					<?Name Attribute identifier?>
 					<?CodeList UNCL6313-T120?>
 					<?Description To describe the type of messure that in this context is the minimal temperature.?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
-				<cbc:Measure unitCode="CEL"> -21 <?Name Measure?>
+				<cbc:Measure unitCode="CEL"> -21 
+					<?Name Measure?>
 					<?Description The value of the minimal temperature measurement.?>
 					<?Cardinality 1..1?>
 					<?unitCode-Name Measure unit of measure?>
@@ -879,12 +1358,14 @@
 				<?Name Maximum temperature?>
 				<?Description Used to specify the maximum temperature for the transport handling unit under the transport.?>
 				<?Cardinality 0..1?>
-				<cbc:AttributeID> TC <?Name Attribute identifier?>
+				<cbc:AttributeID> TC 
+					<?Name Attribute identifier?>
 					<?CodeList UNCL6313-T120?>
 					<?Description To describe the type of messure that in this context is the maximal temperature.?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
-				<cbc:Measure unitCode="CEL"> -21 <?Name Measure?>
+				<cbc:Measure unitCode="CEL"> -21 
+					<?Name Measure?>
 					<?Description The value of the maximum temperature measurement.?>
 					<?Cardinality 1..1?>
 					<?unitCode-Name Measure unit of measure?>
@@ -892,9 +1373,10 @@
 			</cac:MaximumTemperature>
 			<cac:GoodsItem>
 				<?Name Goods item?>
-				<?Description A Goods item contained in the package.?>
+				<?Description A Goods item contained in the Transport Handling Unit.?>
 				<?Cardinality 0..n?>
-				<cbc:ID> 10 <?Name Identifiser goods item?>
+				<cbc:ID> 10 
+					<?Name Identifier goods item?>
 					<?Rule PEPPOL-T120-R020?>
 					<?Description An identifier for this goods item. Refering to the Despatch Line?>
 					<?Cardinality 1..1?>
@@ -903,7 +1385,8 @@
 					<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).?>
 					<?Cardinality 0..1?>
 				</cbc:HazardousRiskIndicator>
-				<cbc:DeclaredStatisticsValueAmount currencyID="EUR"> 23044.78 <?Name Declared statistics value amount?>
+				<cbc:DeclaredStatisticsValueAmount currencyID="EUR"> 23044.78 
+					<?Name Declared statistics value amount?>
 					<?Description The total declared value for customs purposes of the goods item.?>
 					<?Cardinality 0..1?>
 					<?Rule PEPPOL-T120-R021?>
@@ -911,13 +1394,15 @@
 					<?currencyID-Description Currency identifier.?>
 					<?currencyID-CodeList ISO4217?>
 				</cbc:DeclaredStatisticsValueAmount>
-				<cbc:Quantity unitCode="EA"> 6 <?Name Quantity?>
+				<cbc:Quantity unitCode="EA"> 6 
+					<?Name Quantity?>
 					<?Description The number of units making up this goods item.?>
 					<?Cardinality 1..1?>
 					<?unitCode-Name Quantity unit of measure?>
 					<?unitCode-Description The unit of measure that applies to the quantity.?>
 				</cbc:Quantity>
-				<cbc:TraceID schemeID="sgtin"> 345699634527 <?Name Trace identifier?>
+				<cbc:TraceID schemeID="sgtin"> 345699634527 
+					<?Name Trace identifier?>
 					<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID.?>
 					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier?>
@@ -933,16 +1418,19 @@
 					<?Cardinality 0..1?>
 					<?schemeID-usage Optional?>
 				</cbc:ID>
-				<cbc:ReturnableMaterialIndicator> true <?Name Returnable material indicator?>
+				<cbc:ReturnableMaterialIndicator> true 
+					<?Name Returnable material indicator?>
 					<?Description An indicator that the packaging material is returnable (true) or not (false).?>
 					<?Cardinality 0..1?>
 				</cbc:ReturnableMaterialIndicator>
-				<cbc:PackagingTypeCode>CT <?Name Packaging type code?>
+				<cbc:PackagingTypeCode>CT 
+					<?Name Packaging type code?>
 					<?Description A code signifying a level of packaging.?>
 					<?CodeList UNECERec21?>
 					<?Cardinality 1..1?>
 				</cbc:PackagingTypeCode>
-				<cbc:PackingMaterial>Carbon box <?Name Packing material?>
+				<cbc:PackingMaterial>Carbon box 
+					<?Name Packing material?>
 					<?Description Text describing the packaging material.?>
 					<?Cardinality 0..1?>
 				</cbc:PackingMaterial>
@@ -955,16 +1443,19 @@
 						<?Cardinality 0..1?>
 						<?schemeID-usage Optional?>
 					</cbc:ID>
-					<cbc:ReturnableMaterialIndicator> true <?Name Returnable material indicator?>
+					<cbc:ReturnableMaterialIndicator> true 
+						<?Name Returnable material indicator?>
 						<?Description An indicator that the packaging material is returnable (true) or not (false).?>
 						<?Cardinality 0..1?>
 					</cbc:ReturnableMaterialIndicator>
-					<cbc:PackagingTypeCode> OB <?Name Packaging type code?>
+					<cbc:PackagingTypeCode> OB 
+						<?Name Packaging type code?>
 						<?Description A code signifying a level of packaging.?>
 						<?CodeList UNECERec21?>
 						<?Cardinality 1..1?>
 					</cbc:PackagingTypeCode>
-					<cbc:PackingMaterial> Wood <?Name Packing material?>
+					<cbc:PackingMaterial> Wood 
+						<?Name Packing material?>
 						<?Description Text describing the packaging material.?>
 						<?Cardinality 0..1?>
 					</cbc:PackingMaterial>
@@ -977,16 +1468,19 @@
 							<?Cardinality 0..1?>
 							<?schemeID-usage Optional?>
 						</cbc:ID>
-						<cbc:ReturnableMaterialIndicator> true <?Name Returnable material indicator?>
+						<cbc:ReturnableMaterialIndicator> true 
+							<?Name Returnable material indicator?>
 							<?Description An indicator that the packaging material is returnable (true) or not (false).?>
 							<?Cardinality 0..1?>
 						</cbc:ReturnableMaterialIndicator>
-						<cbc:PackagingTypeCode> OB <?Name Packaging type code?>
+						<cbc:PackagingTypeCode> OB 
+							<?Name Packaging type code?>
 							<?Description A code signifying a level of packaging.?>
 							<?CodeList UNECERec21?>
 							<?Cardinality 1..1?>
 						</cbc:PackagingTypeCode>
-						<cbc:PackingMaterial> Wood <?Name Packing material?>
+						<cbc:PackingMaterial> Wood 
+							<?Name Packing material?>
 							<?Description Text describing the packaging material.?>
 							<?Cardinality 0..1?>
 						</cbc:PackingMaterial>
@@ -994,16 +1488,19 @@
 							<?Name Goods item?>
 							<?Description A Goods item contained in the package.?>
 							<?Cardinality 0..n?>
-							<cbc:ID> 10 <?Name Identifiser goods item?>
+							<cbc:ID> 10 
+								<?Name Identifiser goods item?>
 								<?Rule PEPPOL-T120-R020?>
 								<?Description An identifier for this goods item. Refering to the Despatch Line?>
 								<?Cardinality 1..1?>
 							</cbc:ID>
-							<cbc:HazardousRiskIndicator> false <?Name Hazardous risk indicator?>
+							<cbc:HazardousRiskIndicator> false 
+								<?Name Hazardous risk indicator?>
 								<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).?>
 								<?Cardinality 0..1?>
 							</cbc:HazardousRiskIndicator>
-							<cbc:DeclaredStatisticsValueAmount currencyID="EUR"> 23044.78 <?Name Declared statistics value amount?>
+							<cbc:DeclaredStatisticsValueAmount currencyID="EUR"> 23044.78 
+								<?Name Declared statistics value amount?>
 								<?Description The total declared value for customs purposes of the goods item.?>
 								<?Cardinality 0..1?>
 								<?Rule PEPPOL-T120-R021?>
@@ -1011,13 +1508,15 @@
 								<?currencyID-Description Currency identifier.?>
 								<?currencyID-CodeList ISO4217?>
 							</cbc:DeclaredStatisticsValueAmount>
-							<cbc:Quantity unitCode="EA"> 6 <?Name Quantity?>
+							<cbc:Quantity unitCode="EA"> 6 
+								<?Name Quantity?>
 								<?Description The number of units making up this goods item.?>
 								<?Cardinality 1..1?>
 								<?unitCode-Name Quantity unit of measure?>
 								<?unitCode-Description The unit of measure that applies to the quantity.?>
 							</cbc:Quantity>
-							<cbc:TraceID schemeID="urn:epc:sgid"> 345699634527 <?Name Trace identifier?>
+							<cbc:TraceID schemeID="urn:epc:sgid"> 345699634527 
+								<?Name Trace identifier?>
 								<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID.?>
 								<?Cardinality 0..1?>
 								<?schemeID-Name Scheme identifier?>
@@ -1028,12 +1527,14 @@
 							<?Name Measurement dimension?>
 							<?Description Used to specify any measurement of this Package?>
 							<?Cardinality 0..n?>
-							<cbc:AttributeID> LN <?Name Attribute identifier?>
+							<cbc:AttributeID> LN 
+								<?Name Attribute identifier?>
 								<?CodeList UNCL6313-T120?>
 								<?Description To describe the type of measurement. Use UNCL 6313 subset.?>
 								<?Cardinality 1..1?>
 							</cbc:AttributeID>
-							<cbc:Measure unitCode="MTR"> 123 <?Name Measure?>
+							<cbc:Measure unitCode="MTR"> 123 
+								<?Name Measure?>
 								<?Description For the measure.?>
 								<?Cardinality 1..1?>
 								<?unitCode-Name Measure unit of measure?>
@@ -1051,11 +1552,13 @@
 							<?Description An identifier for this goods item. Refering to the Despatch Line?>
 							<?Cardinality 1..1?>
 						</cbc:ID>
-						<cbc:HazardousRiskIndicator> false <?Name Hazardous risk indicator?>
+						<cbc:HazardousRiskIndicator> false 
+							<?Name Hazardous risk indicator?>
 							<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).?>
 							<?Cardinality 0..1?>
 						</cbc:HazardousRiskIndicator>
-						<cbc:DeclaredStatisticsValueAmount currencyID="EUR"> 23044.78 <?Name Declared statistics value amount?>
+						<cbc:DeclaredStatisticsValueAmount currencyID="EUR"> 23044.78 
+							<?Name Declared statistics value amount?>
 							<?Description The total declared value for customs purposes of the goods item.?>
 							<?Cardinality 0..1?>
 							<?Rule PEPPOL-T120-R021?>
@@ -1063,13 +1566,15 @@
 							<?currencyID-Description Currency identifier.?>
 							<?currencyID-CodeList ISO4217?>
 						</cbc:DeclaredStatisticsValueAmount>
-						<cbc:Quantity unitCode="EA"> 6 <?Name Quantity?>
+						<cbc:Quantity unitCode="EA"> 6 
+							<?Name Quantity?>
 							<?Description The number of units making up this goods item.?>
 							<?Cardinality 1..1?>
 							<?unitCode-Name Quantity unit of measure?>
 							<?unitCode-Description The unit of measure that applies to the quantity.?>
 						</cbc:Quantity>
-						<cbc:TraceID schemeID="urn:epc:sgid"> 345699634527 <?Name Trace identifier?>
+						<cbc:TraceID schemeID="urn:epc:sgid"> 345699634527 
+							<?Name Trace identifier?>
 							<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID.?>
 							<?Cardinality 0..1?>
 							<?schemeID-Name Scheme identifier?>
@@ -1085,7 +1590,8 @@
 							<?Description To describe the type of measurement.?>
 							<?Cardinality 1..1?>
 						</cbc:AttributeID>
-						<cbc:Measure unitCode="KGM"> 123 <?Name Measure?>
+						<cbc:Measure unitCode="KGM"> 123 
+							<?Name Measure?>
 							<?Description For the measure.?>
 							<?Cardinality 1..1?>
 							<?unitCode-Name Measure unit of measure?>
@@ -1107,7 +1613,8 @@
 						<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).?>
 						<?Cardinality 0..1?>
 					</cbc:HazardousRiskIndicator>
-					<cbc:DeclaredStatisticsValueAmount currencyID="EUR"> 23044.78 <?Name Declared statistics value amount?>
+					<cbc:DeclaredStatisticsValueAmount currencyID="EUR"> 23044.78 
+						<?Name Declared statistics value amount?>
 						<?Description The total declared value for customs purposes of the goods item.?>
 						<?Cardinality 0..1?>
 						<?Rule PEPPOL-T120-R021?>
@@ -1121,7 +1628,8 @@
 						<?unitCode-Name Quantity unit of measure?>
 						<?unitCode-Description The unit of measure that applies to the quantity.?>
 					</cbc:Quantity>
-					<cbc:TraceID schemeID="urn:epc:sgid"> 345699634527 <?Name Trace identifier?>
+					<cbc:TraceID schemeID="urn:epc:sgid"> 345699634527 
+						<?Name Trace identifier?>
 						<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID.?>
 						<?Cardinality 0..1?>
 						<?schemeID-Name Scheme identifier?>
@@ -1137,7 +1645,8 @@
 						<?Description To describe the type of measurement. Use UNCL 6313 subset.?>
 						<?Cardinality 1..1?>
 					</cbc:AttributeID>
-					<cbc:Measure unitCode="MTR"> 123 <?Name Measure?>
+					<cbc:Measure unitCode="MTR"> 123 
+						<?Name Measure?>
 						<?Description For the measure.?>
 						<?Cardinality 1..1?>
 						<?unitCode-CodeList UNECERec20?>
@@ -1148,29 +1657,33 @@
 			</cac:Package>
 		</cac:TransportHandlingUnit>
 	</cac:Shipment>
+	
+	
 	<cac:DespatchLine>
 		<cbc:ID>10</cbc:ID>
 		<cbc:Note>Mrs Green agreed to waive charge</cbc:Note>
-		<cbc:DeliveredQuantity unitCode="C62"> 10 <?Rule PEPPOL-T120-R005?>
+		<cbc:DeliveredQuantity unitCode="C62"> 10 
+			<?Rule PEPPOL-T120-R005?>
 			<?Rule PEPPOL-T120-R006?>
 		</cbc:DeliveredQuantity>
-		<cbc:OutstandingQuantity unitCode="C62"> 2 <?Rule PEPPOL-T120-R007?>
-		</cbc:OutstandingQuantity>
-		<cbc:OutstandingReason>Text</cbc:OutstandingReason>
+		<cbc:OutstandingQuantity unitCode="C62">2<?Rule PEPPOL-T120-R007?></cbc:OutstandingQuantity>
+		<cbc:OutstandingReason>Text<?Rule PEPPOL-T120-R007?></cbc:OutstandingReason>	
 		<cac:OrderLineReference>
 			<cbc:LineID>1</cbc:LineID>
-			<cbc:SalesOrderLineID> 10 <?Name Sales order line number?>
+			<cbc:SalesOrderLineID> 10 
+				<?Name Sales order line number?>
 				<?Cardinality 0..1?>
 				<?Description Reference to the sellers orderline number.?>
 			</cbc:SalesOrderLineID>
 			<cac:OrderReference>
-				<cbc:ID>AEG012345</cbc:ID>
+				<cbc:ID>AEG012345<?Rule PEPPOL-T120-R002?></cbc:ID>
 				<cbc:SalesOrderID> 5678985 <?Name Sales order number?>
 					<?Cardinality 0..1?>
 					<?Description Reference to the sellers order number.?>
 				</cbc:SalesOrderID>
 			</cac:OrderReference>
 		</cac:OrderLineReference>
+		
 		<cac:DocumentReference>
 			<?Name Document reference?>
 			<?Description Used for sending additional references at line level.?>
@@ -1179,14 +1692,18 @@
 				<?Description ID of the referenced document or item.?>
 				<?Cardinality 1..1?>
 			</cbc:ID>
-			<cbc:DocumentTypeCode> 380 <?Name Document type code?>
-				<?Description Identifies the type of document or item.?>
+			<cbc:DocumentTypeCode> 380 
+				<?Name Document type code?>
+				<?Description Identifies the type of document or item. At least one of Document Type Code and Document Type must be used. ?>
 				<?Cardinality 0..1?>
 				<?CodeList UNCL1001?>
+				<?Rule PEPPOL-T120-R032?>
 			</cbc:DocumentTypeCode>
-			<cbc:DocumentType> Letter Of Credit <?Name Document type?>
-				<?Description The type of reference that cannot be specified by a code?>
+			<cbc:DocumentType> Letter Of Credit 
+				<?Name Document type?>
+				<?Description The type of reference that cannot be specified by a code. At least one of Document Type Code and Document Type must be used. ?>
 				<?Cardinality 0..1?>
+				<?Rule PEPPOL-T120-R032?>
 			</cbc:DocumentType>
 			<cac:Attachment>
 				<?Name Attachment?>
@@ -1207,38 +1724,46 @@
 					<?Name External reference?>
 					<?Description A reference to an attached document that is external to the document(s) being exchanged.?>
 					<?Cardinality 0..1?>
-					<cbc:URI> www.beast.se <?Name Address to internet resource?>
+					<cbc:URI> www.beast.se 
+						<?Name Address to internet resource?>
 						<?Description The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource.?>
 					</cbc:URI>
 				</cac:ExternalReference>
 			</cac:Attachment>
 		</cac:DocumentReference>
+		
 		<cac:Item>
-			<cbc:Name> Beeswax <?Rule PEPPOL-T120-R004?>
+			<cbc:Name>Beeswax <?Rule PEPPOL-T120-R004?>
 			</cbc:Name>
 			<cac:BuyersItemIdentification>
 				<cbc:ID>6578489</cbc:ID>
 			</cac:BuyersItemIdentification>
 			<cac:SellersItemIdentification>
-				<cbc:ID> 17589683 <?Rule PEPPOL-T120-R003?>
+				<?Rule PEPPOL-T120-R003?>
+				<cbc:ID> 17589683 
+					<?Rule PEPPOL-T120-R003?>
 				</cbc:ID>
 			</cac:SellersItemIdentification>
 			<cac:ManufacturersItemIdentification>
 				<?Name Manufacturers item identification?>
 				<?Description Identifying information for this item, assigned by the manufacturer.?>
 				<?Cardinality 0..1?>
-				<cbc:ID> 17589683 <?Name Manufacturers item identifier?>
+				<cbc:ID> 17589683 
+					<?Name Manufacturers item identifier?>
 					<?Description Manufacturers article number?>
 				</cbc:ID>
 			</cac:ManufacturersItemIdentification>
 			<cac:StandardItemIdentification>
+				<?Rule PEPPOL-T120-R003?>
 				<?Description Only one StandardItemIdentification can be used per line.?>
-				<cbc:ID schemeID="0160"> 1234567891234 <?Description Global Trade Item Number (GTIN) or other standardized identification.?>
+				<cbc:ID schemeID="0160"> 1234567891234 
+					<?Description Global Trade Item Number (GTIN) or other standardized identification.?>
 					<?Rule PEPPOL-T120-R003?>
 					<?schemeID-Name Scheme identifier?>
 				</cbc:ID>
 				<cbc:ExtendedID>22114455</cbc:ExtendedID>
 			</cac:StandardItemIdentification>
+			
 			<cac:CommodityClassification>
 				<?Name Commodity classification?>
 				<?Description To classify when an item number is not sufficient.?>
@@ -1251,22 +1776,36 @@
 					<?Cardinality 1..1?>
 				</cbc:ItemClassificationCode>
 			</cac:CommodityClassification>
+			
 			<cac:HazardousItem>
 				<cbc:UNDGCode> ADR <?CodeList UNCL8273?>
 				</cbc:UNDGCode>
 				<cbc:HazardClassID>Code</cbc:HazardClassID>
-			</cac:HazardousItem>
-			<cac:AdditionalItemProperty>
-				<cbc:ID schemeID="ISO22057" schemeVersionID="2022">
-					77e416eb-a363-4258-a04e-171d843a6460 <?Description ID of the property if assigned by an Agency?>
+				<cbc:NetWeightMeasure unitCode="KGM">123
+					<?Name Net Weight Measure ?>
+					<?Description Net weight of the Hazardous item. ?>
 					<?Cardinality 0..1?>
+					<?unitCode-CodeList UNECERec20?>
+					<?unitCode-Name Measure unit of measure?>
+					<?unitCode-Description The unit of measure that applies to the Net Weight.?>
+					<?unitCode-usage Mandatory?>
+				</cbc:NetWeightMeasure>
+			</cac:HazardousItem>
+			
+			<cac:AdditionalItemProperty>
+				<cbc:ID schemeDataURI="sdfdf" schemeID="ISO22057" schemeVersionID="2022">	77e416eb-a363-4258-a04e-171d843a6460 
+					<?Description ID of the property if assigned by an Agency?>
+					<?Cardinality 0..1?>
+					<?schemeDataURI-Name Scheme Data URI?>
+					<?schemeDataURI-usage Optional?>
+					<?schemeID-Name Scheme identifier?>
+					<?schemeID-usage Optional?>
+					<?schemeVersionID-Name Scheme version identifier?>
+					<?schemeVersionID-usage Optional?>
 				</cbc:ID>
-				<?schemeID-Name Scheme identifier?>
-				<?schemeID-usage Optional?>
-				<?schemeVersionID-Name Scheme version identifier?>
-				<?schemeVersionID-usage Optional?>
 				<cbc:Name>Rigidity</cbc:Name>
-				<cbc:NameCode listID="IPNC"> EPDNumber <?listID-usage Mandatory?>
+				<cbc:NameCode listID="IPNC"> EPDNumber 
+					<?listID-usage Mandatory?>
 					<?listID-Name Name code list id.?>
 					<?listID-Description An identifier for the code list used for the Name code, this is bilaterally agreed?>
 				</cbc:NameCode>
@@ -1274,13 +1813,18 @@
 				<cbc:ValueQuantity unitCode="C62">15.00</cbc:ValueQuantity>
 				<cbc:ValueQualifier>descr</cbc:ValueQualifier>
 			</cac:AdditionalItemProperty>
+			
 			<cac:ManufacturerParty>
 				<?Name Manufacturer party?>
 				<?Description The manufacturer of this item.?>
 				<?Cardinality 0..1?>
 				<cac:PartyIdentification>
 					<?Name Party identification?>
-					<cbc:ID schemeID="0088"> 5790000435951 <?Name Manufacturer party identifier?>
+					<?Cardinality 0..1?>
+					<cbc:ID schemeID="0088"> 5790000435951 
+						<?Name Manufacturer party identifier?>
+						<?Cardinality 1..1?>
+						<?Rule PEPPOL-T120-R111?>
 						<?Description Identifies the manufacturer party.?>
 						<?schemeID-Name Scheme identifier?>
 						<?schemeID-usage Optional?>
@@ -1290,7 +1834,10 @@
 				<cac:PartyName>
 					<?Name Party name?>
 					<?Cardinality 0..1?>
-					<cbc:Name> IYT Corporation <?Name Manufacturer party name?>
+					<cbc:Name> IYT Corporation 
+						<?Name Manufacturer party name?>
+						<?Cardinality 1..1?>
+						<?Rule PEPPOL-T120-R111?>
 						<?Description The name of the manufacturer party.?>
 					</cbc:Name>
 				</cac:PartyName>
@@ -1298,59 +1845,70 @@
 					<?Name Postal address?>
 					<?Description The address for the manufacturer.?>
 					<?Cardinality 0..1?>
-					<cbc:StreetName> Busy Street <?Name Address line 1?>
+					<cbc:StreetName> Busy Street 
+						<?Name Address line 1?>
 						<?Description The main address line in a postal address usually the street name and number.?>
 						<?Cardinality 0..1?>
 					</cbc:StreetName>
-					<cbc:AdditionalStreetName> way 1 <?Name Address line 2?>
+					<cbc:AdditionalStreetName> way 1 
+						<?Name Address line 2?>
 						<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.?>
 						<?Cardinality 0..1?>
 					</cbc:AdditionalStreetName>
-					<cbc:CityName> Farthing <?Name City?>
+					<cbc:CityName> Farthing 
+						<?Name City?>
 						<?Description The common name of the city where the postal address is. The name is written in full rather than as a code.?>
 						<?Cardinality 0..1?>
 					</cbc:CityName>
-					<cbc:PostalZone> AA99 1BB <?Name Post code?>
+					<cbc:PostalZone> AA99 1BB 
+						<?Name Post code?>
 						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.?>
 						<?Cardinality 0..1?>
 					</cbc:PostalZone>
-					<cbc:CountrySubentity> Heremouthshire <?Name Country subdivision?>
+					<cbc:CountrySubentity> Heremouthshire 
+						<?Name Country subdivision?>
 						<?Description For specifying a region, county, state, province etc. within a country by using text.?>
 						<?Cardinality 0..1?>
 					</cbc:CountrySubentity>
 					<cac:AddressLine>
 						<?Name Address line?>
 						<?Cardinality 0..1?>
-						<cbc:Line> The Roundabout <?Name Address line 3?>
+						<cbc:Line> The Roundabout 
+							<?Name Address line 3?>
 							<?Description An additional address line in an address that can be used to give further details supplementing the main line.?>
 							<?Cardinality 1..1?>
 						</cbc:Line>
 					</cac:AddressLine>
 					<cac:Country>
 						<?Name Country?>
-						<cbc:IdentificationCode> GB <?Name Country code?>
+						<cbc:IdentificationCode> GB 
+							<?Name Country code?>
 							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.?>
 						</cbc:IdentificationCode>
 					</cac:Country>
 				</cac:PostalAddress>
 				<cac:PartyLegalEntity>
-					<?Name Party name?>
+					<?Name Party legal entity?>
 					<?Cardinality 0..1?>
-					<cbc:RegistrationName> Consortial <?Name Manufacturer party name?>
-						<?Description The name of the manufacturing party.?>
+					<cbc:RegistrationName> Consortial 
+						<?Name Manufacturer party legal name?>
+						<?Description The legal name of the manufacturing party.?>
 					</cbc:RegistrationName>
 				</cac:PartyLegalEntity>
 			</cac:ManufacturerParty>
 			<cac:ItemInstance>
 				<cbc:ManufactureDate>2021-01-01</cbc:ManufactureDate>
-				<cbc:ManufactureTime>06:47:30
+				<cbc:ManufactureTime>06:47:30+01:00
 				<?Name Item manufactured time?>
-					<?Description The time at which this item instance was manufactured.?>
+					<?Description The time at which this item instance was manufactured. Timezone is optional to use. If omitted, the local timezone where the manufacturing was made should be assumed.?>
 					<?DateType Time?>
 					<?Cardinality 0..1?>
 			    </cbc:ManufactureTime>
 				<cbc:BestBeforeDate>2021-12-01</cbc:BestBeforeDate>
-				<cbc:SerialID>4558784</cbc:SerialID>
+				<cbc:SerialID>4558784
+					<?Name Item serial number. ?>
+					<?Description Serial number for item listed in the despatch line..?>
+				</cbc:SerialID>
 				<cac:LotIdentification>
 					<cbc:LotNumberID>546378239</cbc:LotNumberID>
 					<cbc:ExpiryDate>2023-01-01</cbc:ExpiryDate>
@@ -1360,19 +1918,23 @@
 				<?Name Certificate?>
 				<?Description Used for referring to the Certificate for Wooden products.?>
 				<?Cardinality 0..n?>
-				<cbc:ID> 6655223 <?Name Identity of the certificate?>
+				<cbc:ID> 6655223 
+					<?Name Identity of the certificate?>
 					<?Description Certificate number.?>
 					<?Cardinality 1..1?>
 				</cbc:ID>
-				<cbc:CertificateTypeCode> NA <?Name Certificate type code?>
+				<cbc:CertificateTypeCode> NA 
+					<?Name Certificate type code?>
 					<?Description Code that specifies the certificate type expressed as a code. Use the value NA if not applicabel.?>
 					<?Cardinality 1..1?>
 				</cbc:CertificateTypeCode>
-				<cbc:CertificateType> FSC <?Name Certificate type?>
+				<cbc:CertificateType> FSC 
+					<?Name Certificate type?>
 					<?Description Identifies the type of certificate.?>
 					<?Cardinality 1..1?>
 				</cbc:CertificateType>
-				<cbc:Remarks> 48% Certified. <?Name Remarks?>
+				<cbc:Remarks> 48% Certified. 
+					<?Name Remarks?>
 					<?Description Used to inform about how much is certified, in percent.?>
 					<?Cardinality 0..1?>
 				</cbc:Remarks>
@@ -1384,7 +1946,8 @@
 						<?Name Party name?>
 						<?Description The name of the party issuing the certificate.?>
 						<?Cardinality 1..1?>
-						<cbc:Name> NA <?Name Party name?>
+						<cbc:Name> NA 
+							<?Name Party name?>
 							<?Description The UBL structure used requires this element. Use the value NA if not applicable.?>
 							<?Cardinality 1..1?>
 						</cbc:Name>
@@ -1395,12 +1958,14 @@
 				<?Name Measurement Dimension?>
 				<?Description Used to specify any dimension of the Item.?>
 				<?Cardinality 0..n?>
-				<cbc:AttributeID> LN <?Name Attribute identifier?>
+				<cbc:AttributeID> LN 
+					<?Name Attribute identifier?>
 					<?CodeList UNCL6313-T120?>
 					<?Description To describe the type of measurement.?>
 					<?Cardinality 1..1?>
 				</cbc:AttributeID>
-				<cbc:Measure unitCode="MTR"> 123 <?Name Measure?>
+				<cbc:Measure unitCode="MTR"> 123 
+					<?Name Measure?>
 					<?Description For the measure.?>
 					<?Cardinality 1..1?>
 					<?unitCode-CodeList UNECERec20?>

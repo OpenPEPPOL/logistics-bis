@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T125-base-1.0">
+	<assert>
+		<description>Verify that Transport Means Identity is specified when there is a Transport Means.</description>
+		<scope>PEPPOL-T125-R050</scope>
+	</assert>
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T125-R050</success>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:ShipmentStage>
+					<cbc:TransportModeCode>4</cbc:TransportModeCode>
+					<cac:TransportMeans>
+						<cac:AirTransport>
+							<cbc:AircraftID>JA8088</cbc:AircraftID>
+						</cac:AirTransport>
+					</cac:TransportMeans>
+				</cac:ShipmentStage>
+			</cac:Shipment>
+		</ubl:Waybill>
+	</test>
+	
+	<test id="2">
+		<assert>
+			<success>PEPPOL-T125-R050</success>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:ShipmentStage>
+					<cbc:TransportModeCode>4</cbc:TransportModeCode>
+				</cac:ShipmentStage>
+			</cac:Shipment>
+		</ubl:Waybill>
+	</test>
+
+	<test id="3">
+		<assert>
+			<warning>PEPPOL-T125-R050</warning>
+		</assert>
+		<ubl:Waybill xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Shipment>
+				<cac:ShipmentStage>
+					<cbc:TransportModeCode>3</cbc:TransportModeCode>
+					<cac:TransportMeans>
+						<cac:AirTransport>
+							<cbc:AircraftID>JA8088</cbc:AircraftID>
+						</cac:AirTransport>
+					</cac:TransportMeans>
+				</cac:ShipmentStage>
+			</cac:Shipment>
+			</ubl:Waybill>
+		</test>
+	
+</testSet>

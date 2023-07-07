@@ -6,7 +6,7 @@
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1</cbc:ProfileID>
 	<cbc:ID>1234</cbc:ID>
 	<cbc:IssueDate>2013-03-15</cbc:IssueDate>
-	<cbc:IssueTime>08:00:00</cbc:IssueTime>
+	<cbc:IssueTime>08:00:00+01:00</cbc:IssueTime>
 	<cbc:Note>Free text note relating to the Despatch Advice</cbc:Note>
 	<cac:OrderReference>
 		<cbc:ID>4321</cbc:ID>
@@ -49,12 +49,12 @@
 			<cac:PartyLegalEntity>
 				<cbc:RegistrationName>Receiver AB</cbc:RegistrationName>
 			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Name>Tim</cbc:Name>
+				<cbc:Telephone>987654321</cbc:Telephone>
+				<cbc:ElectronicMail>Tim@RecieverCompany.dk</cbc:ElectronicMail>
+			</cac:Contact>
 		</cac:Party>
-		<cac:DeliveryContact>
-			<cbc:Name>Tim</cbc:Name>
-			<cbc:Telephone>987654321</cbc:Telephone>
-			<cbc:ElectronicMail>Tim@RecieverCompany.dk</cbc:ElectronicMail>
-		</cac:DeliveryContact>
 	</cac:DeliveryCustomerParty>
 	<!-- end::deliverycustomer[] -->
 	<!-- tag::buyer[] -->
@@ -109,13 +109,13 @@
 		<cac:Delivery>
 			<cac:EstimatedDeliveryPeriod>
 				<cbc:StartDate>2013-03-15</cbc:StartDate>
-				<cbc:StartTime>08:00:00</cbc:StartTime>
+				<cbc:StartTime>08:00:00+01:00</cbc:StartTime>
 				<cbc:EndDate>2013-03-16</cbc:EndDate>
-				<cbc:EndTime>12:00:00</cbc:EndTime>
+				<cbc:EndTime>12:00:00+01:00</cbc:EndTime>
 			</cac:EstimatedDeliveryPeriod>
 			<cac:Despatch>
 				<cbc:ActualDespatchDate>2013-03-13</cbc:ActualDespatchDate>
-				<cbc:ActualDespatchTime>08:00:00</cbc:ActualDespatchTime>
+				<cbc:ActualDespatchTime>08:00:00+01:00</cbc:ActualDespatchTime>
 			</cac:Despatch>
 		</cac:Delivery>
 

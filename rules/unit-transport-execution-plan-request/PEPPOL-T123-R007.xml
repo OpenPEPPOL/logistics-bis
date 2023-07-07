@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T123-base-1.0">
+	<assert>
+		<description>Verify that delivery terms is used properly</description>
+		<scope>PEPPOL-T123-R007</scope>
+	</assert>
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T123-R007</success>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+				<!--Delivery terms with ID only -->
+				<cac:DeliveryTerms>
+					<cbc:ID>DAP</cbc:ID>
+				</cac:DeliveryTerms>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+	
+	<test id="2">
+		<assert>
+			<success>PEPPOL-T123-R007</success>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+				<!--Delivery terms with Special terms only -->
+				<cac:DeliveryTerms>
+					<cbc:SpecialTerms>DAP</cbc:SpecialTerms>
+				</cac:DeliveryTerms>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+	
+	<test id="3">
+		<assert>
+			<Success>PEPPOL-T123-R007</Success>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+				<!--Delivery terms with ID and Special terms -->
+				<cac:DeliveryTerms>
+					<cbc:ID>DAP</cbc:ID>
+					<cbc:SpecialTerms>DAP-123</cbc:SpecialTerms>
+					<cac:DeliveryLocation>
+						<cbc:ID>Kalmar</cbc:ID>
+					</cac:DeliveryLocation>
+				</cac:DeliveryTerms>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+
+
+	<test id="4">
+		<assert>
+			<warning>PEPPOL-T123-R007</warning>
+		</assert>
+		<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:Consignment>
+				<cac:DeliveryTerms>
+					<cac:DeliveryLocation>
+						<cbc:ID>Kalmar</cbc:ID>
+					</cac:DeliveryLocation>
+				</cac:DeliveryTerms>
+			</cac:Consignment>
+		</ubl:TransportExecutionPlanRequest>
+	</test>
+	
+</testSet>

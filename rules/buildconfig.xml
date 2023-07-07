@@ -5,67 +5,186 @@
 	<!-- unit testing -->
 	<!--testfolder>unit-common</testfolder-->
 	<testfolder>unit-advanced-despatch-advice</testfolder>
-	<testfolder>unit-despatch-advice-w-response</testfolder>
+	<!--<testfolder>unit-despatch-advice-w-response</testfolder>-->
 	<testfolder>unit-weight-statement</testfolder>
+	<testfolder>unit-transport-execution-plan-request</testfolder>
+	<testfolder>unit-transport-execution-plan</testfolder>
+	<testfolder>unit-waybill</testfolder>
+	<testfolder>unit-transportation-status-request</testfolder>
+	<testfolder>unit-transportation-status</testfolder>
+	<testfolder>unit-receipt-advice</testfolder>
 
 	<!-- example and snippet folders -->
 	<testfolder>examples</testfolder>
 	<testfolder>snippets/advanceddespatch</testfolder>
-	<testfolder>snippets/despatch-response</testfolder>
+	<!-- <testfolder>snippets/despatch-response</testfolder>-->
 	<testfolder>snippets/weightstatement</testfolder>
+	<testfolder>snippets/transport-execution-plan-request</testfolder>
+	<testfolder>snippets/transport-execution-plan</testfolder>
+	<testfolder>snippets/waybill</testfolder>
+	<testfolder>snippets/transportation-status-request</testfolder>
+	<testfolder>snippets/transportation-status</testfolder>
+	<testfolder>snippets/receipt-advice</testfolder>
 
 	<!-- base config -->
 	<configuration>
 		<identifier>peppolbis-T120-base-1.1</identifier>
-		<title>Logistics Advanced Despach Advice 1.0 (T120)</title>
+		<title>Advanced Despach Advice 1.0 (T120)</title>
 		<inherit>ubl-despatchadvice-2.1</inherit>
 		<file source="sch/PEPPOLBIS-T120.sch" path="xsl/PEPPOLBIS-T120.xsl"/>
 	</configuration>
 
-	<configuration>
+	<!--<configuration>
 		<identifier>peppolbis-T121-base-1.1</identifier>
-		<title>Logistics Despach Advice Response 1.0 (T121)</title>
+		<title>Despach Advice Response 1.0 (T121)</title>
 		<inherit>ubl-applicationresponse-2.1</inherit>
 		<file source="sch/PEPPOLBIS-T121.sch" path="xsl/PEPPOLBIS-T121.xsl"/>
-	</configuration>
+	</configuration>-->
 	
 	<configuration>
 		<identifier>peppolbis-T122-base-1.1</identifier>
-		<title>Logistics Weight Statement (T122)</title>
+		<title>Weight Statement (T122)</title>
 		<inherit>ubl-weightstatement-2.3</inherit>
 		<file source="sch/PEPPOLBIS-T122.sch" path="xsl/PEPPOLBIS-T122.xsl"/>
+	</configuration>
+
+	<configuration>
+		<identifier>peppolbis-T123-base-1.0</identifier>
+		<title>Transport Execution Plan Request (T123)</title>
+		<inherit>ubl-transport-execution-plan-request-2.3</inherit>
+		<file source="sch/PEPPOLBIS-T123.sch" path="xsl/PEPPOLBIS-T123.xsl"/>
+	</configuration>
+
+	<configuration>
+		<identifier>peppolbis-T124-base-1.0</identifier>
+		<title>Transport Execution Plan (T124)</title>
+		<inherit>ubl-transport-execution-plan-2.3</inherit>
+		<file source="sch/PEPPOLBIS-T124.sch" path="xsl/PEPPOLBIS-T124.xsl"/>
+	</configuration>
+
+	<configuration>
+		<identifier>peppolbis-T125-base-1.0</identifier>
+		<title>Waybill (T125)</title>
+		<inherit>ubl-waybill-2.3</inherit>
+		<file source="sch/PEPPOLBIS-T125.sch" path="xsl/PEPPOLBIS-T125.xsl"/>
+	</configuration>
+
+	<configuration>
+		<identifier>peppolbis-T126-base-1.0</identifier>
+		<title>Transportation Status Request (T126)</title>
+		<inherit>ubl-transportation-status-request-2.3</inherit>
+		<file source="sch/PEPPOLBIS-T126.sch" path="xsl/PEPPOLBIS-T126.xsl"/>
+	</configuration>
+
+	<configuration>
+		<identifier>peppolbis-T127-base-1.0</identifier>
+		<title>Transportation Status (T127)</title>
+		<inherit>ubl-transportation-status-2.3</inherit>
+		<file source="sch/PEPPOLBIS-T127.sch" path="xsl/PEPPOLBIS-T127.xsl"/>
+	</configuration>
+
+	<configuration>
+		<identifier>peppolbis-T128-base-1.0</identifier>
+		<title>Receipt Advice (T128)</title>
+		<inherit>ubl-receipt-advice-2.3</inherit>
+		<file source="sch/PEPPOLBIS-T128.sch" path="xsl/PEPPOLBIS-T128.xsl"/>
 	</configuration>
 
 	<!-- profile config -->
 	<configuration>
 		<identifier>peppolbis-120-only</identifier>
-		<title>Logistics Advanced Despatch Advice Only 1.1</title>
+		<title>Advanced Despatch Advice Only 1.1</title>
 		<profileId>urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1</profileId>
 		<customizationId>urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1</customizationId>
 		<inherit>peppolbis-T120-base-1.1</inherit>
 	</configuration>
 
-	<configuration>
-		<identifier>peppolbis-120-response</identifier>
-		<title>Logistics Advanced Despatch Advice with Response</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_response:1</profileId>
+	<!--Configuration>
+		<identifier>peppolbis-121-response</identifier>
+		<title>Advanced Despatch Advice with Receipt Advice</title>
+		<profileId>urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1</profileId>
 		<customizationId>urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1</customizationId>
-		<inherit>peppolbis-T120-base-1.1</inherit>
-	</configuration>
+		<inherit>peppolbis-T121-base-1.1</inherit>
+	</Configuration-->
 
-	<configuration>
+	<!--<configuration>
 		<identifier>peppolbis-121</identifier>
 		<title>Logistics Despatch Advice Response</title>
 		<profileId>urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_response:1</profileId>
 		<customizationId>urn:fdc:peppol.eu:logistics:trns:despatch_advice_response:1</customizationId>
 		<inherit>peppolbis-T121-base-1.1</inherit>
-	</configuration>
+	</configuration>-->
 
 	<configuration>
 		<identifier>peppolbis-122</identifier>
-		<title>Logistics Weight Statement</title>
+		<title>Weight Statement</title>
 		<profileId>urn:fdc:peppol.eu:logistics:bis:weight_statement:1</profileId>
 		<customizationId>urn:fdc:peppol.eu:logistics:trns:weight_statement:1</customizationId>
 		<inherit>peppolbis-T122-base-1.1</inherit>
 	</configuration>
+
+	<configuration>
+		<identifier>peppolbis-123-request</identifier>
+		<title>Transport Execution Plan with Request</title>
+		<profileId>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1</profileId>
+		<customizationId>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan_request:1</customizationId>
+		<inherit>peppolbis-T123-base-1.0</inherit>
+	</configuration>
+
+	<configuration>
+		<identifier>peppolbis-124-request</identifier>
+		<title>Transport Execution Plan with Request</title>
+		<profileId>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1</profileId>
+		<customizationId>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1</customizationId>
+		<inherit>peppolbis-T124-base-1.0</inherit>
+	</configuration>
+	
+	<configuration>
+		<identifier>peppolbis-124-only</identifier>
+		<title>Transport Execution Plan Only</title>
+		<profileId>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1</profileId>
+		<customizationId>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1</customizationId>
+		<inherit>peppolbis-T124-base-1.0</inherit>
+	</configuration>
+
+	<configuration>
+		<identifier>peppolbis-125</identifier>
+		<title>Waybill</title>
+		<profileId>urn:fdc:peppol.eu:logistics:bis:waybill_only:1</profileId>
+		<customizationId>urn:fdc:peppol.eu:logistics:trns:waybill:1</customizationId>
+		<inherit>peppolbis-T125-base-1.0</inherit>
+	</configuration>
+
+	<configuration>
+		<identifier>peppolbis-126-request</identifier>
+		<title>Transportation Status with Request</title>
+		<profileId>urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1</profileId>
+		<customizationId>urn:fdc:peppol.eu:logistics:trns:transportation_status_request:1</customizationId>
+		<inherit>peppolbis-T126-base-1.0</inherit>
+	</configuration>
+
+	<configuration>
+		<identifier>peppolbis-127-only</identifier>
+		<title>Transportation Status Only</title>
+		<profileId>urn:fdc:peppol.eu:logistics:bis:transportation_status_only:1</profileId>
+		<customizationId>urn:fdc:peppol.eu:logistics:trns:transportation_status:1</customizationId>
+		<inherit>peppolbis-T127-base-1.0</inherit>
+	</configuration>
+
+	<configuration>
+		<identifier>peppolbis-127-request</identifier>
+		<title>Transportation Status with Request</title>
+		<profileId>urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1</profileId>
+		<customizationId>urn:fdc:peppol.eu:logistics:trns:transportation_status:1</customizationId>
+		<inherit>peppolbis-T127-base-1.0</inherit>
+	</configuration>
+	
+	<configuration>
+		<identifier>peppolbis-128-w-despatch-advice</identifier>
+		<title>Receipt Advice</title>
+		<profileId>urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1</profileId>
+		<customizationId>urn:fdc:peppol.eu:logistics:trns:receipt_advice:1</customizationId>
+		<inherit>peppolbis-T128-base-1.0</inherit>
+	</configuration>
+
 </buildConfigurations>

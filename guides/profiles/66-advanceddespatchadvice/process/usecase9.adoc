@@ -1,0 +1,58 @@
+[[use-case-9-waste-treatment]]
+== Use case 9 – Despatch Advice for waste treatment service, including the transport.
+
+This use case covers waste treatment services or similar services where the supplier picks the material up and takes it to the recycling station.
+[cols="1,5",options="header",]
+|====
+|*Use Case number* |9
+|*Use Case Name* |Despatch Advice for waste treatment service, including the transport
+|*Use Case Description* a|
+The Despatch Advice enables the service provider (seller) to give detailed information about the service provided and the location where the material has been treated. In some cases the service provider can report the location where the material has been collected. Which enables a Buyer to reconcile, or confirm, the services provided against the order.
+
+|*Parties involved* a|
+Buyer (In UBL: BuyerCustomerParty)
+
+Seller (In UBL: SellerSupplierParty)
+
+Despatch party (In UBL: DespatchSupplierParty) (Same legal entity as the Seller in this use case)
+
+Consignee party (In UBL: DeliveryCustomerParty) (Same legal entity as the Buyer in this use case) 
+
+|*Pre conditions* a|
+Material is delivered to the seller and the services are delivered before Despatch Advice is sent. 
+
+|*Post conditions* a|
+Despatch advice is received by the receiver of the services.
+
+|*Assumptions* a|
+. The Seller has received one order from the Buyer with one (1) line for the serices to be provided.
+. The Seller has accepted the order without changes.
+. The Despatch party delivers the services specified in the order. 
+
+
+|*The flow* a|
+. The Buyer arrange delivery of material to the seller either by the sellers transport service or other carrier services.
+. The Despatch party deliver agreed services.
+. The Despatch party sends Despatch advice message to the Consignee
+. The Consignee party receives the Despatch advice message
+. The Consignee party uses the content in the Despatch advice message for confirmation of delivery.
+
+
+|*Result* a|
+. The Despatch advice message helped the Consignee party to confirm delivery.
+.. At the right time
+.. At the right location (Delivery Location)
+.. Optionally, the location of the origin of the waste (Despatch Address)
+Note that the addresses are following the material flow, so the despatch address is the address where the material started it's journey, even if this address belongs to the buyer.
+
+
+. The Despatch advice message helped the Consignee party in the process of confirming delvery to identify the
+.. Order
+.. The order lines
+.. The articles
+.. The delivered quantity of services
+
+
+|*XML example file* a|
+See {examples-zip} for a sample file illustrating Use Case 9.
+|====

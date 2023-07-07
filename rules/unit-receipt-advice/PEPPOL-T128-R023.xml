@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T128-base-1.0">
+	<assert>
+		<description>Verify that a ReceiptAdvice used as a response to  Advanced Despatch Advice ("D") does not contain the Shipment group but contains a Status. </description>
+		<scope>PEPPOL-T128-R023</scope>
+	</assert>
+	
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T128-R023</success>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cbc:ReceiptAdviceTypeCode>D</cbc:ReceiptAdviceTypeCode>
+			<cac:DespatchDocumentReference>
+				<cbc:ID>565899</cbc:ID>
+				<cbc:DocumentStatusCode>RE</cbc:DocumentStatusCode>
+			</cac:DespatchDocumentReference>
+		</ReceiptAdvice>
+	</test>
+
+	<test id="2">
+		<assert>
+			<success>PEPPOL-T128-R023</success>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cbc:ReceiptAdviceTypeCode>S</cbc:ReceiptAdviceTypeCode>
+			<cac:DespatchDocumentReference>
+				<cbc:ID>565899</cbc:ID>
+			</cac:DespatchDocumentReference>
+			<cac:Shipment>
+				<cbc:ID>123</cbc:ID>
+			</cac:Shipment>
+		</ReceiptAdvice>
+	</test>
+	
+	<test id="3">
+		<assert>
+			<error>PEPPOL-T128-R023</error>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cbc:ReceiptAdviceTypeCode>D</cbc:ReceiptAdviceTypeCode>
+			<cac:DespatchDocumentReference>
+				<cbc:ID>565899</cbc:ID>
+				<cbc:DocumentStatusCode>RE</cbc:DocumentStatusCode>
+			</cac:DespatchDocumentReference>
+			<cac:Shipment>
+				<cbc:ID>123</cbc:ID>
+			</cac:Shipment>
+		</ReceiptAdvice>
+	</test>
+
+	<test id="4">
+		<assert>
+			<error>PEPPOL-T128-R023</error>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cbc:ReceiptAdviceTypeCode>S</cbc:ReceiptAdviceTypeCode>
+			<cac:DespatchDocumentReference>
+				<cbc:ID>565899</cbc:ID>
+			</cac:DespatchDocumentReference>
+		</ReceiptAdvice>
+	</test>
+
+	<test id="5">
+		<assert>
+			<error>PEPPOL-T128-R023</error>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cbc:ReceiptAdviceTypeCode>D</cbc:ReceiptAdviceTypeCode>
+			<cac:DespatchDocumentReference>
+				<cbc:ID>565899</cbc:ID>
+			</cac:DespatchDocumentReference>
+		</ReceiptAdvice>
+	</test>
+
+	<test id="6">
+		<assert>
+			<error>PEPPOL-T128-R023</error>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cbc:ReceiptAdviceTypeCode>S</cbc:ReceiptAdviceTypeCode>
+			<cac:DespatchDocumentReference>
+				<cbc:ID>565899</cbc:ID>
+				<cbc:DocumentStatusCode>RE</cbc:DocumentStatusCode>
+			</cac:DespatchDocumentReference>
+			<cac:Shipment>
+				<cbc:ID>123</cbc:ID>
+			</cac:Shipment>
+		</ReceiptAdvice>
+	</test>
+	
+	<test id="7">
+		<assert>
+			<error>PEPPOL-T128-R023</error>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cbc:ReceiptAdviceTypeCode>D</cbc:ReceiptAdviceTypeCode>
+			<cac:DespatchDocumentReference>
+				<cbc:ID>565899</cbc:ID>
+			</cac:DespatchDocumentReference>
+			<cac:Shipment>
+				<cbc:ID>123</cbc:ID>
+			</cac:Shipment>
+		</ReceiptAdvice>
+	</test>
+
+	<test id="8">
+		<assert>
+			<error>PEPPOL-T128-R023</error>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cbc:ReceiptAdviceTypeCode>S</cbc:ReceiptAdviceTypeCode>
+			<cac:DespatchDocumentReference>
+				<cbc:ID>565899</cbc:ID>
+				<cbc:DocumentStatusCode>RE</cbc:DocumentStatusCode>
+			</cac:DespatchDocumentReference>
+		</ReceiptAdvice>
+	</test>
+
+
+</testSet>

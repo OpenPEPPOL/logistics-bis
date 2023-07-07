@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T128-base-1.0">
+	<assert>
+		<description>Verify that a Status Reason is provided if Consignment is Conditionally Accepted (CA). </description>
+		<scope>PEPPOL-T128-R026</scope>
+	</assert>
+	
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T128-R026</success>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cac:Shipment>
+				<cac:Consignment>
+					<cac:Status>
+						<cbc:ConditionCode>CA</cbc:ConditionCode>
+						<cbc:StatusReasonCode>3</cbc:StatusReasonCode>
+						<cbc:StatusReason>Delivery outside requested time window.</cbc:StatusReason>
+					</cac:Status>
+				</cac:Consignment>
+			</cac:Shipment>
+		</ReceiptAdvice>
+	</test>
+
+	<test id="2">
+		<assert>
+			<success>PEPPOL-T128-R026</success>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cac:Shipment>
+				<cac:Consignment>
+					<cac:Status>
+						<cbc:ConditionCode>RE</cbc:ConditionCode>
+						<cbc:StatusReasonCode>3</cbc:StatusReasonCode>
+						<cbc:StatusReason>Delivery outside requested time window.</cbc:StatusReason>
+					</cac:Status>
+				</cac:Consignment>
+			</cac:Shipment>
+		</ReceiptAdvice>
+	</test>
+	
+	<test id="3">
+		<assert>
+			<success>PEPPOL-T128-R026</success>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cac:Shipment>
+				<cac:Consignment>
+					<cac:Status>
+						<cbc:ConditionCode>AP</cbc:ConditionCode>
+					</cac:Status>
+				</cac:Consignment>
+			</cac:Shipment>
+		</ReceiptAdvice>
+	</test>
+
+	<test id="4">
+		<assert>
+			<error>PEPPOL-T128-R026</error>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cac:Shipment>
+				<cac:Consignment>
+					<cac:Status>
+						<cbc:ConditionCode>CA</cbc:ConditionCode>
+						<cbc:StatusReasonCode>3</cbc:StatusReasonCode>
+					</cac:Status>
+				</cac:Consignment>
+			</cac:Shipment>
+		</ReceiptAdvice>
+	</test>
+
+	<test id="5">
+		<assert>
+			<error>PEPPOL-T128-R026</error>
+		</assert>
+		<ReceiptAdvice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:ReceiptAdvice-2">
+			<cac:Shipment>
+				<cac:Consignment>
+					<cac:Status>
+						<cbc:ConditionCode>RE</cbc:ConditionCode>
+						<cbc:StatusReasonCode>3</cbc:StatusReasonCode>
+					</cac:Status>
+				</cac:Consignment>
+			</cac:Shipment>
+		</ReceiptAdvice>
+	</test>
+	
+</testSet>

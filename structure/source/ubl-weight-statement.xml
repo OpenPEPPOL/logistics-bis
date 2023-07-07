@@ -5,37 +5,56 @@
 	<?DocumentTerm WeightStatement?>
 	<?Property key="sch:prefix" PEPPOL-T122?>
 	<?Property key="sch:identifier" T122-basic?>
-	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:weight_statement:1</cbc:CustomizationID>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:weight_statement:1<?Rule PEPPOL-T122-R001?></cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:weight_statement:1</cbc:ProfileID>
 
 	<cbc:ID>GOA294107
 		<?Name Document identifier?>
-		<?Description Unique identity identifying the weight statement. An transaction instance must contain an identifier. The identifier enables positive referencing the document instance for various purposes including referencing between transactions that are part of the same process.?>
+		<?Description Unique identity identifying the Weight Statement. An transaction instance must contain an identifier. The identifier enables positive referencing the document instance for various purposes including referencing between transactions that are part of the same process.?>
 		<?Cardinality 1..1?>
 		<?DataType Identifier?>
 	</cbc:ID>
-	<cbc:IssueDate>2016-11-03<?Name Weight statement issue date?><?Description The date when the weight statement is issued. Format = "YYYY-MM-DD"?><?DataType Date?></cbc:IssueDate>
-	<cbc:IssueTime>09:30:00<?Name Weight statement issue time?><?Description The time when the weight statement is issued. Format = "hh:mm:ss"?><?DataType Time?></cbc:IssueTime>
+	
+	<cbc:IssueDate>2016-11-03<?Name Weight Statement issue date?>
+		<?Description The date when the Weight Statement is issued. Format = "YYYY-MM-DD"?>
+		<?Cardinality 1..1?>
+		<?DataType Date?>
+	</cbc:IssueDate>
+	
+	<cbc:IssueTime>09:30:00+01:00<?Name Weight Statement issue time?>
+		<?Cardinality 1..1?>
+		<?Description The time when the Weight Statement is issued. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. ?>
+		<?DataType Time?>
+	</cbc:IssueTime>
+	
 	<cbc:WeightStatementTypeCode>01
-		<?Name Weight statement type code?>
+		<?Name Weight Statement type code?>
 		<?Description 01 = Outbound delivery 02 = Inbound delivery?>
+		<?CodeList WeightStatementTypeCode?>
 	</cbc:WeightStatementTypeCode>
+	
 	<cac:SenderParty>
 		<?Name Sender Party?>
-		<?Description The party sending this weight statement (e.g. Weighing Station, Shipper, Freight Forwarder, Carrier, ...).?>
+		<?Cardinality 1..1?>
+		<?Description The party sending this Weight Statement (e.g. Weighing Station, Shipper, Freight Forwarder, Carrier, ...).?>
 		<cbc:EndpointID schemeID="0088">7300010000001
 			<?Name Senders electronic address?>
+			<?Cardinality 1..1?>
 			<?Description Identifies the senders partys electronic address?>
 			<?schemeID-Name Scheme identifier?>
 			<?schemeID-Description Scheme identifier for electronic address?>
 			<?schemeID-usage Mandatory?>
 			<?schemeID-CodeList eas?>
 		</cbc:EndpointID>
+		
 		<cac:PartyIdentification>
 			<?Name Party Identification?>
+			<?Cardinality 0..1?>
 			<?Description An identifier for this party.?>
 			<cbc:ID schemeID="0088">7300010000001
 				<?Name Sender party identity?>
+				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T122-R011?>
 				<?Description The identifier of the Sender party?>
 				<?schemeID-Name Scheme identifier?>
 				<?schemeID-Description Scheme identifier for party identification?>
@@ -43,29 +62,108 @@
 				<?schemeID-CodeList ICD?>
 			</cbc:ID>
 		</cac:PartyIdentification>
+		
 		<cac:PartyName>
 			<?Name Party Name?>
+			<?Cardinality 0..1?>
 			<cbc:Name> Weighing Solutions AB
 				<?Name Sender name?>
+				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T122-R011?>
 			</cbc:Name>
 		</cac:PartyName>
+
+		<cac:PostalAddress>
+			<?Name Postal address?>
+			<?Description The address for the Sender.?>
+			<?Cardinality 0..1?>
+			<cbc:StreetName>Skogsgatan nr 1
+				<?Name Address line 1?>
+				<?Description The main address line in a postal address usually the street name and number.?>
+				<?Cardinality 0..1?>
+			</cbc:StreetName>
+			<cbc:AdditionalStreetName>Second entry
+				<?Name Address line 2?>
+				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.?>
+				<?Cardinality 0..1?>
+			</cbc:AdditionalStreetName>
+			<cbc:CityName>Norrköping
+				<?Name City?>
+				<?Description The common name of the city where the postal address is. The name is written in full rather than as a code.?>
+				<?Cardinality 0..1?>
+			</cbc:CityName>
+			<cbc:PostalZone>123 45
+				<?Name Post code?>
+				<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.?>
+				<?Cardinality 0..1?>
+			</cbc:PostalZone>
+			<cbc:CountrySubentity>NA
+				<?Name Country subdivision?>
+				<?Description For specifying a region, county, state, province etc. within a country by using text.?>
+				<?Cardinality 0..1?>
+			</cbc:CountrySubentity>
+			<cac:AddressLine>
+				<?Name Address line?>
+				<?Cardinality 0..1?>
+				<cbc:Line>To the right
+					<?Name Address line 3?>
+					<?Description An additional address line in an address that can be used to give further details supplementing the main line.?>
+					<?Cardinality 1..1?>
+				</cbc:Line>
+			</cac:AddressLine>
+			<cac:Country>
+				<?Name Country?>
+				<cbc:IdentificationCode>SE
+					<?Name Country code?>
+					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.?>
+				</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		
+		<cac:Contact>
+			<?Name Contact person name?>
+			<?Description The contact of the Sender party.?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Mats Svensson
+				<?Name Contact name?>
+				<?Description The contact name.?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
+			<cbc:Telephone>0158 1233714
+				<?Name Contact telephone number?>
+				<?Description The phone number of the contact.?>
+				<?Cardinality 0..1?>
+			</cbc:Telephone>
+			<cbc:ElectronicMail>mats.svensson@senderab.se
+				<?Name Contact email address?>
+				<?Description The electronic mail of the contact.?>
+				<?Cardinality 0..1?>
+			</cbc:ElectronicMail>
+		</cac:Contact>
 	</cac:SenderParty>
+	
 	<cac:ReceiverParty>
 		<?Name Receiver information?>
-		<?Description The party receiving this weight statement (e.g. Carrier, Terminal Operator, ...).?>
+		<?Cardinality 1..1?>
+		<?Description The party receiving this Weight Statement (e.g. Carrier, Terminal Operator, ...).?>
 		<cbc:EndpointID schemeID="0088">1251513513245
 			<?Name Receiver electronic address?>
+			<?Cardinality 1..1?>
 			<?Description Identifies the receivers partys electronic address?>
 			<?schemeID-Name Scheme identifier?>
 			<?schemeID-Description Scheme identifier for electronic address?>
 			<?schemeID-usage Mandatory?>
 			<?schemeID-CodeList eas?>
 		</cbc:EndpointID>
+		
 		<cac:PartyIdentification>
 			<?Name Party Identification?>
+			<?Cardinality 0..1?>
 			<?Description An identifier for this party.?>
 			<cbc:ID schemeID="0088">1251513513245
 				<?Name Receiver identity?>
+				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T122-R012?>
 				<?Description The identifier of the receiver party?>
 				<?schemeID-Name Scheme identifier?>
 				<?schemeID-Description Scheme identifier for party identification?>
@@ -73,13 +171,86 @@
 				<?schemeID-CodeList ICD?>
 			</cbc:ID>
 		</cac:PartyIdentification>
+		
 		<cac:PartyName>
 			<?Name Party Name?>
+			<?Cardinality 0..1?>
 			<cbc:Name> Transport Management Solutions AB
 				<?Name Receiver name?>
+				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T122-R012?>
 			</cbc:Name>
 		</cac:PartyName>
+
+		<cac:PostalAddress>
+			<?Name Postal address?>
+			<?Description The address for the Receiver.?>
+			<?Cardinality 0..1?>
+			<cbc:StreetName>Byagatan nr 14
+				<?Name Address line 1?>
+				<?Description The main address line in a postal address usually the street name and number.?>
+				<?Cardinality 0..1?>
+			</cbc:StreetName>
+			<cbc:AdditionalStreetName>Second entry
+				<?Name Address line 2?>
+				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.?>
+				<?Cardinality 0..1?>
+			</cbc:AdditionalStreetName>
+			<cbc:CityName>Norrköping
+				<?Name City?>
+				<?Description The common name of the city where the postal address is. The name is written in full rather than as a code.?>
+				<?Cardinality 0..1?>
+			</cbc:CityName>
+			<cbc:PostalZone>123 45
+				<?Name Post code?>
+				<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.?>
+				<?Cardinality 0..1?>
+			</cbc:PostalZone>
+			<cbc:CountrySubentity>NA
+				<?Name Country subdivision?>
+				<?Description For specifying a region, county, state, province etc. within a country by using text.?>
+				<?Cardinality 0..1?>
+			</cbc:CountrySubentity>
+			<cac:AddressLine>
+				<?Name Address line?>
+				<?Cardinality 0..1?>
+				<cbc:Line>To the left
+					<?Name Address line 3?>
+					<?Description An additional address line in an address that can be used to give further details supplementing the main line.?>
+					<?Cardinality 1..1?>
+				</cbc:Line>
+			</cac:AddressLine>
+			<cac:Country>
+				<?Name Country?>
+				<cbc:IdentificationCode>SE
+					<?Name Country code?>
+					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.?>
+				</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+
+		<cac:Contact>
+			<?Name Contact person name?>
+			<?Description The contact of the Sender party.?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Nils Johansson
+				<?Name Contact name?>
+				<?Description The contact name.?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
+			<cbc:Telephone>0158 1236543
+				<?Name Contact telephone number?>
+				<?Description The phone number of the contact.?>
+				<?Cardinality 0..1?>
+			</cbc:Telephone>
+			<cbc:ElectronicMail>nils.johansson@receiverab.se
+				<?Name Contact email address?>
+				<?Description The electronic mail of the contact.?>
+				<?Cardinality 0..1?>
+			</cbc:ElectronicMail>
+		</cac:Contact>
 	</cac:ReceiverParty>
+	
 	<cac:WeighingParty>
 		<?Name Weighing party information?>
 		<?Description The party executing the weight measure (e.g. Weighing Station).?>
@@ -90,6 +261,8 @@
 			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">5790000435951
 				<?Name Weighing party identity?>
+				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T122-R013?>
 				<?Description The identifier of the Weighing party?>
 				<?schemeID-Name Scheme identifier?>
 				<?schemeID-Description Scheme identifier for party identification?>
@@ -97,29 +270,106 @@
 				<?schemeID-CodeList ICD?>
 			</cbc:ID>
 		</cac:PartyIdentification>
+		
 		<cac:PartyName>
 			<?Name Party Name?>
+			<?Cardinality 0..1?>
 			<cbc:Name> Gravel Pit Ltd.
 				<?Name Weighing party name?>
+				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T122-R013?>
 				<?Description The name of the weighing party?>
 			</cbc:Name>
 		</cac:PartyName>
+		
 		<cac:PhysicalLocation>
 			<?Name Physical Location?>
 			<?Description The physical location of this party.?>
 			<cbc:ID schemeID=""> 0114-40-019-a
 				<?Name Physical Location ID?>
+				<?Rule PEPPOL-T122-R010?>
 				<?Description Unique ID of the site for the weighing party. If possile an ID that is issued by a authority or similar.?>
 				<?Cardinality 0..1?>
 				<?schemeID-usage Optional?>
 			</cbc:ID>
+			
 			<cbc:Name> Townsend pit
 				<?Name Location name?>
+				<?Rule PEPPOL-T122-R010?>
 				<?Description Physical location name?>
 				<?Cardinality 0..1?>
 			</cbc:Name>
 		</cac:PhysicalLocation>
+
+		<cac:PostalAddress>
+			<?Name Postal address?>
+			<?Description The address for the Weighing party.?>
+			<?Cardinality 0..1?>
+			<cbc:StreetName>Byagatan nr 14
+				<?Name Address line 1?>
+				<?Description The main address line in a postal address usually the street name and number.?>
+				<?Cardinality 0..1?>
+			</cbc:StreetName>
+			<cbc:AdditionalStreetName>Second entry
+				<?Name Address line 2?>
+				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.?>
+				<?Cardinality 0..1?>
+			</cbc:AdditionalStreetName>
+			<cbc:CityName>Norrköping
+				<?Name City?>
+				<?Description The common name of the city where the postal address is. The name is written in full rather than as a code.?>
+				<?Cardinality 0..1?>
+			</cbc:CityName>
+			<cbc:PostalZone>123 45
+				<?Name Post code?>
+				<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.?>
+				<?Cardinality 0..1?>
+			</cbc:PostalZone>
+			<cbc:CountrySubentity>NA
+				<?Name Country subdivision?>
+				<?Description For specifying a region, county, state, province etc. within a country by using text.?>
+				<?Cardinality 0..1?>
+			</cbc:CountrySubentity>
+			<cac:AddressLine>
+				<?Name Address line?>
+				<?Cardinality 0..1?>
+				<cbc:Line>To the left
+					<?Name Address line 3?>
+					<?Description An additional address line in an address that can be used to give further details supplementing the main line.?>
+					<?Cardinality 1..1?>
+				</cbc:Line>
+			</cac:AddressLine>
+			<cac:Country>
+				<?Name Country?>
+				<cbc:IdentificationCode>SE
+					<?Name Country code?>
+					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.?>
+				</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+
+		<cac:Contact>
+			<?Name Contact person name?>
+			<?Description The contact of the Sender party.?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Nils Johansson
+				<?Name Contact name?>
+				<?Description The contact name.?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
+			<cbc:Telephone>0158 1236543
+				<?Name Contact telephone number?>
+				<?Description The phone number of the contact.?>
+				<?Cardinality 0..1?>
+			</cbc:Telephone>
+			<cbc:ElectronicMail>nils.johansson@receiverab.se
+				<?Name Contact email address?>
+				<?Description The electronic mail of the contact.?>
+				<?Cardinality 0..1?>
+			</cbc:ElectronicMail>
+		</cac:Contact>
 	</cac:WeighingParty>
+	
 	<cac:ShipperParty>
 		<?Name Shipper Party?>
 		<?Description The party transporting or shipping the items.?>
@@ -129,6 +379,8 @@
 			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">5790000435951
 				<?Name Shipping party identity?>
+				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T122-R014?>
 				<?Description The identifier of the shippping party?>
 				<?schemeID-Name Scheme identifier?>
 				<?schemeID-Description Scheme identifier for party identification?>
@@ -136,36 +388,115 @@
 				<?schemeID-CodeList ICD?>
 			</cbc:ID>
 		</cac:PartyIdentification>
+		
 		<cac:PartyName>
 			<?Name Party Name?>
+			<?Cardinality 0..1?>
 			<cbc:Name> Tony's Trucks and Transport
 				<?Name Shipper name?>
+				<?Cardinality 1..1?>
+				<?Rule PEPPOL-T122-R014?>
 				<?Description The name of the shipper?>
 			</cbc:Name>
 		</cac:PartyName>
+
+		<cac:PostalAddress>
+			<?Name Postal address?>
+			<?Description The address for the Shipper party.?>
+			<?Cardinality 0..1?>
+			<cbc:StreetName>Skogsgatan nr 1
+				<?Name Address line 1?>
+				<?Description The main address line in a postal address usually the street name and number.?>
+				<?Cardinality 0..1?>
+			</cbc:StreetName>
+			<cbc:AdditionalStreetName>Second entry
+				<?Name Address line 2?>
+				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.?>
+				<?Cardinality 0..1?>
+			</cbc:AdditionalStreetName>
+			<cbc:CityName>Norrköping
+				<?Name City?>
+				<?Description The common name of the city where the postal address is. The name is written in full rather than as a code.?>
+				<?Cardinality 0..1?>
+			</cbc:CityName>
+			<cbc:PostalZone>123 45
+				<?Name Post code?>
+				<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.?>
+				<?Cardinality 0..1?>
+			</cbc:PostalZone>
+			<cbc:CountrySubentity>NA
+				<?Name Country subdivision?>
+				<?Description For specifying a region, county, state, province etc. within a country by using text.?>
+				<?Cardinality 0..1?>
+			</cbc:CountrySubentity>
+			<cac:AddressLine>
+				<?Name Address line?>
+				<?Cardinality 0..1?>
+				<cbc:Line>To the right
+					<?Name Address line 3?>
+					<?Description An additional address line in an address that can be used to give further details supplementing the main line.?>
+					<?Cardinality 1..1?>
+				</cbc:Line>
+			</cac:AddressLine>
+			<cac:Country>
+				<?Name Country?>
+				<cbc:IdentificationCode>SE
+					<?Name Country code?>
+					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.?>
+				</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+
+		<cac:Contact>
+			<?Name Contact person name?>
+			<?Description The contact of the Sender party.?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Mats Svensson
+				<?Name Contact name?>
+				<?Description The contact name.?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
+			<cbc:Telephone>0158 1233714
+				<?Name Contact telephone number?>
+				<?Description The phone number of the contact.?>
+				<?Cardinality 0..1?>
+			</cbc:Telephone>
+			<cbc:ElectronicMail>mats.svensson@senderab.se
+				<?Name Contact email address?>
+				<?Description The electronic mail of the contact.?>
+				<?Cardinality 0..1?>
+			</cbc:ElectronicMail>
+		</cac:Contact>
 	</cac:ShipperParty>
+	
 	<cac:Shipment>
 		<?Cardinality 1..1?>
 		<cbc:ID> NA
 			<?Name Shipment identity?>
+			<?Cardinality 1..1?>
 			<?Description Use NA if no specific shipment ID is available?>
 		</cbc:ID>
+		
 		<cac:GoodsItem>
 			<?Cardinality 1..n?>
 			<?Name Goods Item?>
 			<?Description A goods item included in this shipment.?>
 			<cbc:ID> 1
 				<?Name Line item identifier?>
+				<?Cardinality 1..1?>
 				<?Description Identifies the Line Item assigned by the weighing partner, the identifier must be unique within the order?>
 			</cbc:ID>
+			
 			<cac:Item>
 				<?Name Item?>
 				<?Description Product information relating to a goods item?>
 				<cbc:Name> Sortering 0/2 mm krossat bergmaterial CE-märkt enligt system 2+ för
 					användning till asfalt. 
 					<?Name Item name?>
+					<?Cardinality 1..1?>
 					<?Description Name of weighed item?>
 				</cbc:Name>
+				
 				<cac:BuyersItemIdentification>
 					<?Name Buyers item identification?>
 					<cbc:ID> KO2001030300
@@ -174,18 +505,22 @@
 					</cbc:ID>
 					<?Cardinality 0..1?>
 				</cac:BuyersItemIdentification>
+				
 				<cac:SellersItemIdentification>
 					<?Name Sellers item identification?>
 					<cbc:ID> 17589683
 						<?Name The Sellers item identifier?>
+						<?Rule PEPPOL-T122-R003?>
 						<?Description An identifier, assigned by the seller, for the item. Associates the item with its identification according to the sellers system.?>
 					</cbc:ID>
 					<?Cardinality 0..1?>
 				</cac:SellersItemIdentification>
+				
 				<cac:StandardItemIdentification>
 					<?Name Standard item identification?>
 					<cbc:ID schemeID="0160"> 1234567891234
 						<?Name Item standard identifier?>
+						<?Rule PEPPOL-T122-R003?>
 						<?Description Global Trade Item Number (GTIN) or other standardized identification. Associates the item with its identification according to a standard system.?>
 						<?schemeID-Name Scheme identifier?>
 						<?schemeID-Description The identification scheme identifier of the Item standard identifier?>
@@ -193,6 +528,7 @@
 					</cbc:ID>
 					<?Cardinality 0..1?>
 				</cac:StandardItemIdentification>
+				
 				<?Cardinality 0..1?>
 				<cac:CommodityClassification>
 					<?Name Commodity classification?>
@@ -216,6 +552,7 @@
 					</cbc:ItemClassificationCode>
 				</cac:CommodityClassification>
 			</cac:Item>
+			
 			<cac:MeasurementDimension>
 				<?Name Measurement Dimension?>
 				<?Description Used to specify weight and/or volume of the Goods Item.?>

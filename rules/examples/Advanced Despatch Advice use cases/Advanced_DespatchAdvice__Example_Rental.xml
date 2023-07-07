@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+                Content:
+				Exampel of a rental despatch advice with
+				 - one item with serial number
+				 - one item without serial number
+				 - one sales item
+
+				Version 1.0
+				Initial version
+				
+				Complies with Logistics Advanced Despatch Advice 1.0	
+
+-->
+<DespatchAdvice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
+ xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1</cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1</cbc:ProfileID>
+	<cbc:ID>43413589</cbc:ID>
+	<!-- Unique ID from the supplier -->
+	
+	<cbc:IssueDate>2022-11-22</cbc:IssueDate>
+	<cbc:IssueTime>13:14:34</cbc:IssueTime>
+	<cbc:DespatchAdviceTypeCode>1</cbc:DespatchAdviceTypeCode>
+	<cbc:Note>Some note about the delivery</cbc:Note>
+	<cac:OrderReference>
+		<!-- Attribute schemeID is used to send project number or buyer reference if buyer order number is missing, i.e. electronic order has not been sent. 
+		Default is order number so if schemeID is missing the number in the element is order number as per Peppol global BIS.
+		ProjectReference is used for project number only.
+		AccountingCost is used for the buyer reference if no buyer order number exists, i.e. in construction often code string (kodsträng) -->
+		<cbc:ID schemeID="ProjectReference">9876986</cbc:ID>
+	
+	</cac:OrderReference>
+
+	<cac:DespatchSupplierParty>
+		<!-- Mandatory, the party that despatcheds the goods or provides service -->
+		<cac:Party>
+			<cbc:EndpointID schemeID="0007">5561043539</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="0088">7365561043532</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PostalAddress>
+				<cbc:StreetName>Rosenborgsgatan 12</cbc:StreetName>
+				<cbc:CityName>Solna</cbc:CityName>
+				<cbc:PostalZone>169 04</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>SE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>CRAMO AB</cbc:RegistrationName>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Name>Kalle Kula</cbc:Name>
+				<cbc:Telephone>08123456789</cbc:Telephone>
+				<cbc:ElectronicMail>info@cramo.se</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:DespatchSupplierParty>
+	<cac:DeliveryCustomerParty>
+		<!-- Mandatory, the party that recieves the goods or service -->
+		<cac:Party>
+			<cbc:EndpointID schemeID="0088">7300009058334</cbc:EndpointID>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="0088">7300009058334</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PostalAddress>
+				<cbc:StreetName>SKURUSUNDSVÄGEN / HÖGVALLAVÄGEN</cbc:StreetName>
+				<cbc:CityName>Nacka</cbc:CityName>
+				<cbc:PostalZone>131 46</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>SE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cbc:RegistrationName>JM ENTREPRENAD</cbc:RegistrationName>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Name>Alexander Janving</cbc:Name>
+				<cbc:Telephone>010-448 00 004</cbc:Telephone>
+				<cbc:ElectronicMail>some.email@jm.se</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:Party>
+	</cac:DeliveryCustomerParty>
+	<cac:BuyerCustomerParty>
+		<!-- BEAst recommends sending BuyerCustomerParty even if it is optional since it is easier for the receiver. -->
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="0007">5560608837</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>JM ENTREPRENAD</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>ROSENBORGSGATAN 12</cbc:StreetName>
+				<cbc:CityName>Solna</cbc:CityName>
+				<cbc:PostalZone>169 74</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>SE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+		</cac:Party>
+	</cac:BuyerCustomerParty>
+	<cac:SellerSupplierParty>
+		<!-- BEAst recommends sending SellerSupplierParty even if it is optional since it is easier for the receiver. -->
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="0007">5561043539</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Cramo AB</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>ROSENBORGSGATAN 12</cbc:StreetName>
+				<cbc:CityName>Solna</cbc:CityName>
+				<cbc:PostalZone>169 74</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>SE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+		</cac:Party>
+	</cac:SellerSupplierParty>
+	<cac:Shipment>
+		<cbc:ID>1</cbc:ID>
+		<!-- Mandatory Shipment number (fraktsedelsnummer) is mapped to this field -->
+		<cac:Delivery>
+			<cac:EstimatedDeliveryPeriod>
+				<cbc:StartDate>2022-11-23</cbc:StartDate>
+			</cac:EstimatedDeliveryPeriod>
+		</cac:Delivery>
+	</cac:Shipment>
+	<cac:DespatchLine>
+		<cbc:ID>1</cbc:ID>
+		<cbc:DeliveredQuantity unitCode="EA">1</cbc:DeliveredQuantity>
+		<cac:OrderLineReference>
+			<!-- Mandatory -->
+			<cbc:LineID>NA</cbc:LineID>
+			<cbc:SalesOrderLineID>10</cbc:SalesOrderLineID>
+
+		</cac:OrderLineReference>
+		<cac:DocumentReference>
+			<cbc:ID schemeID="VN">7845281</cbc:ID>
+			<cbc:DocumentType>BEAST:VendorsOrderNumber</cbc:DocumentType>
+		</cac:DocumentReference>
+		<cac:Item>
+			<cbc:Name>VERKTYGSCONT. MED/UTAN HJUL</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>9371212</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="0160">7318936539543</cbc:ID>
+				<!-- 0160 = GTIN, full list https://docs.peppol.eu/poacc/upgrade-3/codelist/ICD/ -->
+			</cac:StandardItemIdentification>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>BEAst:RentalDeliveryStatus</cbc:Name>
+				<cbc:Value>100</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>BEAst:Site</cbc:Name>
+				<!-- Säljarens depånummer/site -->
+				<cbc:Value>JORDBRO BOD 54240</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>BEAst:Rental</cbc:Name>
+				<!-- Indikator för Hyra eller Köp -->
+				<cbc:Value>Rental</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<cac:ItemInstance>
+				<cbc:SerialID>1571078</cbc:SerialID>
+			</cac:ItemInstance>
+		</cac:Item>
+	</cac:DespatchLine>
+	<cac:DespatchLine>
+		<cbc:ID>2</cbc:ID>
+		<cbc:DeliveredQuantity unitCode="EA">14</cbc:DeliveredQuantity>
+		<cac:OrderLineReference>
+			<!-- Mandatory -->
+			<cbc:LineID>NA</cbc:LineID>
+			<cbc:SalesOrderLineID>20</cbc:SalesOrderLineID>
+
+		</cac:OrderLineReference>
+		<cac:DocumentReference>
+			<cbc:ID schemeID="VN">7845281</cbc:ID>
+			<cbc:DocumentType>BEAST:VendorsOrderNumber</cbc:DocumentType>
+		</cac:DocumentReference>
+		<cac:Item>
+			<cbc:Name>MEJSEL BM110</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>01250320</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="0160">7318936539543</cbc:ID>
+				<!-- 0160 = GTIN, full list https://docs.peppol.eu/poacc/upgrade-3/codelist/ICD/ -->
+			</cac:StandardItemIdentification>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>BEAst:Site</cbc:Name>
+				<!-- Säljarens depånummer/site -->
+				<cbc:Value>JORDBRO BOD 54240</cbc:Value>
+			</cac:AdditionalItemProperty>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>BEAst:Rental</cbc:Name>
+				<!-- Indikator för Hyra eller Köp -->
+				<cbc:Value>Rental</cbc:Value>
+			</cac:AdditionalItemProperty>
+		</cac:Item>
+	</cac:DespatchLine>
+
+	<cac:DespatchLine>
+		<cbc:ID>3</cbc:ID>
+		<cbc:DeliveredQuantity unitCode="EA">5</cbc:DeliveredQuantity>
+		<cac:OrderLineReference>
+			<!-- Mandatory -->
+			<cbc:LineID>NA</cbc:LineID>
+			<cbc:SalesOrderLineID>30</cbc:SalesOrderLineID>
+
+		</cac:OrderLineReference>
+		<cac:DocumentReference>
+			<cbc:ID schemeID="VN">7845281</cbc:ID>
+			<cbc:DocumentType>BEAST:VendorsOrderNumber</cbc:DocumentType>
+		</cac:DocumentReference>
+		<cac:Item>
+			<cbc:Name>MEJSEL BM110</cbc:Name>
+			<cac:SellersItemIdentification>
+				<cbc:ID>01250320</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="0160">7318936539543</cbc:ID>
+				<!-- 0160 = GTIN, full list https://docs.peppol.eu/poacc/upgrade-3/codelist/ICD/ -->
+			</cac:StandardItemIdentification>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>BEAST:Site</cbc:Name>
+				<!-- Säljarens depånummer/site -->
+				<cbc:Value>JORDBRO BOD 54240</cbc:Value>
+			</cac:AdditionalItemProperty>
+		</cac:Item>
+	</cac:DespatchLine>
+
+</DespatchAdvice>
