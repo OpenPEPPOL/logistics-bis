@@ -56,7 +56,7 @@
 	</rule>
 
 	<rule context="cac:DespatchLine/cac:Item/cac:CommodityClassification">
-		<assert id="PEPPOL-T120-R040" test="((normalize-space(cbc:ItemClassificationCode/listID) = 'ZZZ') and (cbc:ItemClassificationCode/name)) or (normalize-space(cbc:ItemClassificationCode/listID) != 'ZZZ') or not (cbc:ItemClassificationCode)" flag="warning">A name must be provided if the listID is "ZZZ".</assert>
+		<assert id="PEPPOL-T120-R040" test="((normalize-space(cbc:ItemClassificationCode/@listID) = 'ZZZ') and (cbc:ItemClassificationCode/name)) or (normalize-space(cbc:ItemClassificationCode/@listID) != 'ZZZ') or not (cbc:ItemClassificationCode)" flag="warning">A name must be provided if the listID is "ZZZ".</assert>
 	</rule>
 
 	<rule context="cac:AdditionalDocumentReference">
