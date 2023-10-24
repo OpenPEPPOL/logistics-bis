@@ -879,11 +879,7 @@
       </rule>
       <rule context="/ubl:DespatchAdvice/cac:Shipment/cac:Consignment/cac:OriginalDespatchTransportationService/cbc:TransportServiceCode"/>
       <rule context="/ubl:DespatchAdvice/cac:Shipment/cac:Consignment/cac:OriginalDespatchTransportationService/cac:TransportEquipment"/>
-      <rule context="/ubl:DespatchAdvice/cac:Shipment/cac:Consignment/cac:OriginalDespatchTransportationService/cac:TransportEquipment/cbc:TransportEquipmentTypeCode">
-         <assert test="@listID" flag="fatal" id="PEPPOL-T120-B23001">Attribute 'listID' MUST be present.</assert>
-         <assert test="@listAgencyID" flag="fatal" id="PEPPOL-T120-B23002">Attribute 'listAgencyID' MUST be present.</assert>
-         <assert test="@listVersionID" flag="fatal" id="PEPPOL-T120-B23003">Attribute 'listVersionID' MUST be present.</assert>
-      </rule>
+      <rule context="/ubl:DespatchAdvice/cac:Shipment/cac:Consignment/cac:OriginalDespatchTransportationService/cac:TransportEquipment/cbc:TransportEquipmentTypeCode"/>
       <rule context="/ubl:DespatchAdvice/cac:Shipment/cac:Consignment/cac:OriginalDespatchTransportationService/cac:TransportEquipment/cbc:Description"/>
       <rule context="/ubl:DespatchAdvice/cac:Shipment/cac:Consignment/cac:OriginalDespatchTransportationService/cac:TransportEquipment/cac:MeasurementDimension">
          <assert test="cbc:AttributeID" flag="fatal" id="PEPPOL-T120-B23501">Element 'cbc:AttributeID' MUST be provided.</assert>
