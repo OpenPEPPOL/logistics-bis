@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T120-base-1.1">
+	<assert>
+		<description>Verify the attributes in ItemClassificationCode</description>
+		<scope>PEPPOL-T120-R040</scope>
+	</assert>
+	<test>
+		<assert>
+			<success>PEPPOL-T120-R040</success>
+		</assert>
+		<DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:ItemClassificationCode>
+				<cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">KO2012140200</cbc:ItemClassificationCode>
+			</cac:ItemClassificationCode>
+		</DespatchAdvice>
+	</test>
+
+	<test>
+		<assert>
+			<success>PEPPOL-T120-R040</success>
+		</assert>
+		<DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:ItemClassificationCode>
+				<cbc:ItemClassificationCode listID="ABC" listVersionID="3.0.2">KO2012140200</cbc:ItemClassificationCode>
+			</cac:ItemClassificationCode>
+		</DespatchAdvice>
+	</test>
+
+	<test>
+		<assert>
+			<error>PEPPOL-T120-R040</error>
+		</assert>
+		<DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+			<cac:ItemClassificationCode>
+				<cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2">KO2012140200</cbc:ItemClassificationCode>
+			</cac:ItemClassificationCode>
+		</DespatchAdvice>
+	</test>
+
+</testSet>
