@@ -1,41 +1,46 @@
 [[environmental-data]]
 = Environmental Data
 
-The environmental data on header level resides within the OriginalDespatchTransportationService element and are 
-.Transport Service Code, which is set to a fixed value of FuelReport since this is the only current application
-.Transport Equipment, where the fuel consumption and related information resides for the transport
-.Environmental Emission, that can contain CO~2~ and other emissions related to the transport or other service that consumes fuel.
+The environmental data on header level resides within the OriginalDespatchTransportationService group. 
+The element *Transport Service Code,* is set to a fix value of FuelReport since this is the only current application.
+The group *Transport Equipment,* is where the fuel consumption and related information resides for the transport.
+The group *Environmental Emission,* contains CO~2~ and other emissions related to the transport or other service that consumes fuel.
 
 [[fuel]]
 == Fuel
 
-The fuel consumption and related information regarding the fuel type to be used to caculate emissions tor the tansport or other service that consumes fuel.
+The fuel consumption and related information regarding the fuel type, that is used to calculate emissions for the transport or other service that consumes fuel.
+Table 4 shows which information that can be sent, and by repeating the group MeasurementDimension you can send several. The value in Table 4 is sent in element AttributeID and the value of it in Measure or Description. See example below.
 
 Table 4. Definitions of the AttributeID:s.
 
 [cols="2,4",options="header",stripes=even]
 |====
-|AttributeID |Definition
-|ConversionFactor |Conversion and emission factor CO~2~ equivalent for calculating CO~2~ according to the fuel specified in the group. 
-|DrivingDistance |Driving distance in kilometers that has been used for the assignment.
-|DrivingTime |Driving time in hours that has been used for the assignment.
-|EnergyContent |Amount of energy content (KWh) in the fuel specified in the group.
-|EngineType |Environment class for the type of engine that has been used for the assignment.
-|FuelConsumption |The consumed amount of fuel in the assignment.
+|AttributeID           |Definition
+|ConversionFactor      |Conversion and emission factor CO~2~ equivalent for calculating CO~2~ according to the fuel specified in the group. 
+|DrivingDistance       |Driving distance in kilometers that has been used for the assignment.
+|DrivingTime           |Driving time in hours that has been used for the assignment.
+|EnergyContent         |Amount of energy content (KWh) in the fuel specified in the group.
+|EngineType            |Environment class for the type of engine that has been used for the assignment.
+|FuelConsumption       |The consumed amount of fuel in the assignment.
 |FuelMeasurementMethod |The method that the fuel consumption has been measured. 
-|RenewableFuel |Share of renewable fuel in percent.
+|RenewableFuel         |Share of renewable fuel in percent.
 |====
+
+Table 5 contains the possible values for the Description element when the AttributeID is FuelMeasurementMethod.
 
 Table 5. Definitions of the FuelMeasurementMethod values.
 
 [cols="2,4",options="header",stripes=even]
 |====
 |FuelMeasurementMethod |Definition
-|AutomaticMeasurement |Automatic measurement via CAN bus, OBD2 or similar
-|StandardEstimate |The values have been calculated by using standard consumption for a machine or vehicle.
-|ManualMeasurement |The values have been calculated by manually measure, e.g. fuel consumption for a machine between two refueling occasions. 
+|AutomaticMeasurement  |Automatic measurement via CAN bus, OBD2 or similar
+|StandardEstimate      |The values have been calculated by using standard consumption for a machine or vehicle.
+|ManualMeasurement     |The values have been calculated by manually measure, e.g. fuel consumption for a machine between two refueling occasions. 
 
 |====
+
+Table 6 contains the possible values for the Description element when the AttributeID is EngineType.
 
 Table 6. Definitions of the EngineType values.
 
@@ -67,6 +72,8 @@ include::{snippet-dir}/snippet-30-4.xml[tags=fuel]
 == Environmental Emission
 
 Caculated envionmental emissions related to the transport or other related service that consumes fuel.
+
+For all other AttributeIDs, the element Measure is used instead of Description.
 
 Table 7. Definitions of the EnvironmentalEmissionTypeCode:s.
 

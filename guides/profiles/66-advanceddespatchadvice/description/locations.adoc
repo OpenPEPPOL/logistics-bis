@@ -1,14 +1,15 @@
 [[locations]]
 = Locations
 
-Sometimes the parties are not the same as the Ship-from and Ship-to locations. Then it is important to provide information about the real from- and to addresses.
+Sometimes the parties DespatchSupplierParty and DeliveryCustomerParty are not the same as the Ship-from and Ship-to locations. Then it is important to provide information about the real from- and to addresses.
 An example when this must be used is for transporting waste from the customer's location to a recycling unit.
-The customer then is the ship-from address and the supplier is the ship-to.
+The DeliveryCustomerParty then is the ship-from address and the DespatchSupplierParty can be the ship-to.
+To describe this situation we need to use DespatchAddress and DeliveryLocation.
 
 [[ship-from-despatchaddress]]
 == Ship-from (DespatchAddress)
-The Ship-from is the real address where the goods is picked up. Must be included when it is different than the DespatchSupplierParty. (If omitted the DespatchSupplierParty is the real ship-from address.)
-The Ship-from includes the option to give gps coordinates. They may be added besides the address, but in case there is no address (like picking up waste from a construction of a new road)
+The Ship-from is the real address where the goods is picked up. Must be included when it is different from the DespatchSupplierParty. (If DespatchAddress is omitted the DespatchSupplierParty is assumed to be the real ship-from address.)
+The Ship-from includes the option to give gps coordinates. They may be added along with the address, but in case there is no address (like picking up waste from a construction of a new road)
 the gps coordinates can be used instead of the address.
 
 Example:
@@ -20,8 +21,8 @@ include::{snippet-dir}/snippet-30-1.xml[tags=despatchaddress]
 [[ship-to-deliverylocation]]
 == Ship-to (DeliveryLocation)
 
-The Ship-to is the real address to which the goods is delivered. Must be included when it is different than the DeliveryCustomerParty. (If omitted the DeliveryCustomerParty is the real ship-to address.)
-The Ship-to includes the option to give gps coordinates. They may be added besides the address, but in case there is no address (like delivering goods to a construction of a new road)
+The Ship-to is the real address to which the goods is delivered. Must be included when it is different from the DeliveryCustomerParty. (If DeliveryLocation is omitted the DeliveryCustomerParty is assumed to be the real ship-to address.)
+The Ship-to includes the option to give gps coordinates. They may be added along with the address, but in case there is no address (like delivering goods to a construction of a new road)
 the gps coordinates can be used instead of the address.
 
 Example:
