@@ -1808,11 +1808,14 @@
 		       <assert id="PEPPOL-T120-R007"
                  test="((cbc:OutstandingQuantity) and (cbc:OutstandingReason)) or not(cbc:OutstandingQuantity)"
                  flag="warning">An outstanding quantity reason SHOULD be provided if the despatch line contains an outstanding quantity</assert>
+	     </rule>
+
+	     <rule context="cac:DespatchLine/cac:Item/cac:CommodityClassification">
 		       <assert id="PEPPOL-T120-R040"
-                 test="((cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/listID = 'ZZZ') and (cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/name)) or (cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/listID != 'ZZZ') or not (cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode)"
+                 test="((normalize-space(cbc:ItemClassificationCode/listID) = 'ZZZ') and (cbc:ItemClassificationCode/name)) or (normalize-space(cbc:ItemClassificationCode/listID) != 'ZZZ') or not (cbc:ItemClassificationCode)"
                  flag="warning">A name must be provided if the listID is "ZZZ".</assert>
 	     </rule>
-	
+
 	     <rule context="cac:AdditionalDocumentReference">
 		       <assert id="PEPPOL-T120-R031"
                  test="(cbc:DocumentTypeCode) or (cbc:DocumentType)"
