@@ -53,9 +53,12 @@
 		<assert id="PEPPOL-T120-R005" test="(cbc:DeliveredQuantity)" flag="warning">Each despatch advice line SHOULD have a delivered quantity</assert>
 		<assert id="PEPPOL-T120-R006" test="number(cbc:DeliveredQuantity) &gt;= 0" flag="fatal">Each despatch advice line delivered quantity SHALL not be negative</assert>
 		<assert id="PEPPOL-T120-R007" test="((cbc:OutstandingQuantity) and (cbc:OutstandingReason)) or not(cbc:OutstandingQuantity)" flag="warning">An outstanding quantity reason SHOULD be provided if the despatch line contains an outstanding quantity</assert>
-		<assert id="PEPPOL-T120-R040" test="((cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/listID = 'ZZZ') and (cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/name)) or (cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode/listID != 'ZZZ') or not (cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode)" flag="warning">A name must be provided if the listID is "ZZZ".</assert>
 	</rule>
-	
+
+	<rule context="cac:DespatchLine/cac:Item/cac:CommodityClassification">
+		<assert id="PEPPOL-T120-R040" test="((normalize-space(cbc:ItemClassificationCode/listID) = 'ZZZ') and (cbc:ItemClassificationCode/name)) or (normalize-space(cbc:ItemClassificationCode/listID) != 'ZZZ') or not (cbc:ItemClassificationCode)" flag="warning">A name must be provided if the listID is "ZZZ".</assert>
+	</rule>
+
 	<rule context="cac:AdditionalDocumentReference">
 		<assert id="PEPPOL-T120-R031" test="(cbc:DocumentTypeCode) or (cbc:DocumentType)" flag="fatal">AdditionalDocumentReference SHALL contain a Document Type Code or a Document Type. </assert>
 	</rule>
