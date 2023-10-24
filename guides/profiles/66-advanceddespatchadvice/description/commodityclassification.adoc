@@ -4,10 +4,11 @@
 Here you can add classification of the item. It can be the classification for customs purpose, 
 but also a classification of waste or other classifications.
 
-Besides the classification code you need to provide information about the code in the attributes. 
-In @listID you need to refer to a valid code in codelist UNCL7143. If there is none that matches, you can use ZZZ.
-If you use ZZZ as @listID, you can in @listVersionID provide further information about the origin of the code.
-The @name attribute is the key to the classification code and it must be provided if @listID is set to ZZZ. 
+Besides the classification code itself, you need to include information on which code-list it belongs to. This you primarily do by referring to a @listID.
+The @listID is linked to UNCL7143. Select the correct @listID there. You may also specify the version in @listVersionID.
+If you use a codelist that is not in UNCL7143 you do like this:
+1. Use "ZZZ" as the @listID.
+2. Define the name of your codelist in attribute @name. You may also specify the version in @listVersionID.
 
 .Example - to classify the item according to BEAst's codelist over SBMI items:
 [source, xml, indent=0]
