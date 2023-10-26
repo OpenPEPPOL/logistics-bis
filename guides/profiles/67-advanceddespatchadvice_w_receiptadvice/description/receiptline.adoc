@@ -1,8 +1,8 @@
 [[receipt_line]]
 = Receipt Line
 
-If the Consignment was not fully accepted or rejected, lines must be provided in the Receipt Advice.
-In that case all lines in the Advanced Despatch Advice must be included, not only the ones with a problem.
+Since the ReceiptLine is mandatory in UBL, we need to always include lines in the Receipt Advice.
+To avoid misunderstandings, all lines in the Advanced Despatch Advice must be included in the Receipt Advice, not only the ones with a problem.
 Each line contains several element and some of them are described here:
 
 [[received_quantity]]
@@ -11,7 +11,7 @@ This quantity is the whole received quantity, including also what has been rejec
 
 [[short_quantity]]
 == Shortage Quantity (ShortQuantity)
-Here is reported what is missing - how much less quantity that was delivered than ordered.
+Here is reported what is missing - how much less quantity that was received than ordered.
 
 [[rejected_quantity]]
 == Rejected Quantity (RejectedQuantity)
