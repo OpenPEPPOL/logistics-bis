@@ -795,7 +795,7 @@
 					<?Name Transport equipment?>
 					<?Description Used to specify fuel consumption. To be repeated for all fuel types used.?>
 					<?Cardinality 0..n?>
-					<cbc:TransportEquipmentTypeCode listID="FuelGroup" listAgencyID="Trafikverket" listVersionID="2023:1"> Diesel 
+					<cbc:TransportEquipmentTypeCode listID="FuelGroup" listAgencyID="Trafikverket" listVersionID="2023:1"> HVO 
 						<?Name Tranport equipment type code?>
 						<?Description Used to specify the type of fuel.?>
 						<?Cardinality 0..1?>
@@ -809,7 +809,7 @@
 						<?listVersionID-Description Identifies the version of the List. ?>
 						<?listVersionID-usage Optional?>
 					</cbc:TransportEquipmentTypeCode>
-					<cbc:Description> Forrest diesel mix 
+					<cbc:Description> HVO Diesel 
 						<?Name Description?>
 						<?Description Fuel description.?>
 						<?Cardinality 0..1?>
@@ -833,7 +833,7 @@
 						</cbc:Measure>
 						<cbc:Description> StandardEstimate 
 							<?Name Attribute value?>
-							<?Description Description of the attribute when there is no value to measure. Used for FuelMeasurementMethod and EngineType. Possible values are for FuelMeasurementMethod: "AutomaticMeasurement", "StandardEstimate", "ManualMeasurement" and for EngineType: "Euro2", "Euro3", "Euro4", "Euro5", "Euro6", "EuroStep2", "EuroStep3A", "EuroStep3B", "EuroStep4", "EV", "Hybrid", "FuelCell".?>
+							<?Description Description of the attribute when there is no value to measure. Used for FuelMeasurementMethod and EngineType. Possible values are for FuelMeasurementMethod: "AutomaticMeasurement", "StandardEstimate", "ManualMeasurement" and for EngineType: "Euro2", "Euro3", "Euro4", "Euro5", "Euro6", "EuroStep2", "EuroStep3A", "EuroStep3B", "EuroStep4", "EV", "FuelCell", "Hybrid".?>
 							<?Cardinality 0..1?>
 						</cbc:Description>
 					</cac:MeasurementDimension>
@@ -912,7 +912,7 @@
 						<?name-Name Name of environmental emissions type?>
 						<?name-usage Optional?>
 					</cbc:EnvironmentalEmissionTypeCode>
-					<cbc:ValueMeasure unitCode="MGM"> 10 
+					<cbc:ValueMeasure unitCode="MGM"> 2.8 
 						<?Name Value of measurement?>
 						<?Description The value of the emission. Refers to Carbon Dioxide/Nitrogen Oxide/Particulate Matter/Hydro Carbon.?>
 						<?Cardinality 1..1?>
@@ -1745,9 +1745,11 @@
 			<cbc:Name>Beeswax <?Rule PEPPOL-T120-R004?>
 			</cbc:Name>
 			<cac:BuyersItemIdentification>
+				<?Description Identifying information for this item, assigned by the buyer.?>
 				<cbc:ID>6578489</cbc:ID>
 			</cac:BuyersItemIdentification>
 			<cac:SellersItemIdentification>
+				<?Description Identifying information for this item, assigned by the seller.?>
 				<?Rule PEPPOL-T120-R003?>
 				<cbc:ID> 17589683 
 					<?Rule PEPPOL-T120-R003?>
@@ -1788,6 +1790,7 @@
 			</cac:CommodityClassification>
 			
 			<cac:HazardousItem>
+				<?Description Contains information on the Hazardous item.?>
 				<cbc:ID>123
 					<?Name Identifier?>
 					<?Description An identifier for this hazardous item. ?>
@@ -1931,6 +1934,7 @@
 				</cac:PartyLegalEntity>
 			</cac:ManufacturerParty>
 			<cac:ItemInstance>
+				<?Description Adding information on individual instances of the item.?>
 				<cbc:ManufactureDate>2021-01-01</cbc:ManufactureDate>
 				<cbc:ManufactureTime>06:47:30+01:00
 				<?Name Item manufactured time?>
@@ -1950,7 +1954,7 @@
 			</cac:ItemInstance>
 			<cac:Certificate>
 				<?Name Certificate?>
-				<?Description Used for referring to the Certificate for Wooden products.?>
+				<?Description Used for referring to the Certificates for the product.?>
 				<?Cardinality 0..n?>
 				<cbc:ID> 6655223 
 					<?Name Identity of the certificate?>

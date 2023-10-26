@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
                 Content:
-                This file contains an Example for Use-case no 10 in UBL Despatch Advice.
+                This file contains an Example for Use-case no 10 in Logistics Advanced Despatch Advice.
 			
 -->
 <DespatchAdvice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -127,19 +127,19 @@
 			<cac:OriginalDespatchTransportationService>
 				<cbc:TransportServiceCode>FuelReport</cbc:TransportServiceCode>
 				<cac:TransportEquipment>
-					<cbc:TransportEquipmentTypeCode>Diesel</cbc:TransportEquipmentTypeCode>
-					<cbc:Description>ACP Diesel 50 max 7% RME</cbc:Description>
+					<cbc:TransportEquipmentTypeCode>HVO</cbc:TransportEquipmentTypeCode>
+					<cbc:Description>HVO Diesel</cbc:Description>
 					<cac:MeasurementDimension>
 						<cbc:AttributeID>FuelConsumption</cbc:AttributeID>
-						<cbc:Measure unitCode="LTR">15</cbc:Measure>
+						<cbc:Measure unitCode="LTR">115.6</cbc:Measure>
 					</cac:MeasurementDimension>
 					<cac:MeasurementDimension>
 						<cbc:AttributeID>EnergyContent</cbc:AttributeID>
-						<cbc:Measure unitCode="E14">32</cbc:Measure>
+						<cbc:Measure unitCode="3B">3927</cbc:Measure>
 					</cac:MeasurementDimension>
 					<cac:MeasurementDimension>
 						<cbc:AttributeID>ConversionFactor</cbc:AttributeID>
-						<cbc:Measure unitCode="EA">27</cbc:Measure>
+						<cbc:Measure unitCode="EA">0.52</cbc:Measure>
 					</cac:MeasurementDimension>
 					<cac:MeasurementDimension>
 						<cbc:AttributeID>DrivingDistance</cbc:AttributeID>
@@ -182,22 +182,22 @@
 				</cac:TransportEquipment>
 				
 				<cac:EnvironmentalEmission>
-					<cbc:EnvironmentalEmissionTypeCode>CO2</cbc:EnvironmentalEmissionTypeCode>
+					<cbc:EnvironmentalEmissionTypeCode listID="UN785" name="Carbon Dioxide">CO2</cbc:EnvironmentalEmissionTypeCode>
 					<cbc:ValueMeasure unitCode="KGM">2.8</cbc:ValueMeasure>
 				</cac:EnvironmentalEmission>
 				
 				<cac:EnvironmentalEmission>
-					<cbc:EnvironmentalEmissionTypeCode>HC</cbc:EnvironmentalEmissionTypeCode>
+					<cbc:EnvironmentalEmissionTypeCode listID="UN785" name="Hydrocarbon">HC</cbc:EnvironmentalEmissionTypeCode>
 					<cbc:ValueMeasure unitCode="KGM">0.6</cbc:ValueMeasure>
 				</cac:EnvironmentalEmission>
 
 				<cac:EnvironmentalEmission>
-					<cbc:EnvironmentalEmissionTypeCode>NOX</cbc:EnvironmentalEmissionTypeCode>
+					<cbc:EnvironmentalEmissionTypeCode listID="UN785" name="Nitric Oxide">NOX</cbc:EnvironmentalEmissionTypeCode>
 					<cbc:ValueMeasure unitCode="KGM">6</cbc:ValueMeasure>
 				</cac:EnvironmentalEmission>
 
 				<cac:EnvironmentalEmission>
-					<cbc:EnvironmentalEmissionTypeCode>PM</cbc:EnvironmentalEmissionTypeCode>
+					<cbc:EnvironmentalEmissionTypeCode listID="UN785" name="Particular Matter">PM</cbc:EnvironmentalEmissionTypeCode>
 					<cbc:ValueMeasure unitCode="GRM">0.07</cbc:ValueMeasure>
 				</cac:EnvironmentalEmission>
 				
@@ -208,7 +208,7 @@
 			<cbc:TransportModeCode>3</cbc:TransportModeCode>
 			<cac:TransportMeans>
 				<cac:RoadTransport>
-					<cbc:LicensePlateID>ABC123</cbc:LicensePlateID>
+					<cbc:LicensePlateID>SE-ABC123;SE-DEF456</cbc:LicensePlateID>
 				</cac:RoadTransport>
 			</cac:TransportMeans>
 		</cac:ShipmentStage>
@@ -216,15 +216,15 @@
 		<cac:Delivery>
 
 			<cbc:ActualDeliveryDate>2020-12-21</cbc:ActualDeliveryDate>
-			<cbc:ActualDeliveryTime>07:15:00</cbc:ActualDeliveryTime>
+			<cbc:ActualDeliveryTime>14:15:00</cbc:ActualDeliveryTime>
 
 			<cac:DeliveryLocation>
 				<cbc:ID schemeID="0088">5790000435951</cbc:ID>
 				<cbc:Name>Construction site ABC</cbc:Name>
 				<cac:Address>
 					<cbc:StreetName>Construction road 1</cbc:StreetName>
-					<cbc:CityName>Stockholm</cbc:CityName>
-					<cbc:PostalZone>123 45</cbc:PostalZone>
+					<cbc:CityName>Linköping</cbc:CityName>
+					<cbc:PostalZone>323 45</cbc:PostalZone>
 					<cac:Country>
 						<cbc:IdentificationCode>SE</cbc:IdentificationCode>
 					</cac:Country>
@@ -260,7 +260,7 @@
 	
 	<cac:DespatchLine>
 		<cbc:ID>1</cbc:ID>
-		<cbc:DeliveredQuantity unitCode="HUR">1.25</cbc:DeliveredQuantity>
+		<cbc:DeliveredQuantity unitCode="HUR">6.8</cbc:DeliveredQuantity>
 		
 		<cac:OrderLineReference>
 			<cbc:LineID>10</cbc:LineID>
