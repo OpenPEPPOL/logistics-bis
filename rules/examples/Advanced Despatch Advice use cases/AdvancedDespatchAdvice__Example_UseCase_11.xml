@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
                 Content:
-                This file contains an Example for Use-case no 11 in UBL Despatch Advice.
+                This file contains an Example for Use-case no 11 in Logistics Advanced Despatch Advice.
 			
 -->
 <DespatchAdvice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -15,7 +15,7 @@
 	<cbc:ID>43413589</cbc:ID>
 	<cbc:IssueDate>2020-12-21</cbc:IssueDate>
 	<cbc:IssueTime>13:14:34</cbc:IssueTime>
-	<cbc:DespatchAdviceTypeCode>1</cbc:DespatchAdviceTypeCode>
+	<cbc:DespatchAdviceTypeCode>2</cbc:DespatchAdviceTypeCode>
 	
 	<cac:AdditionalDocumentReference>
 		<cbc:ID>P-12345</cbc:ID>
@@ -122,8 +122,7 @@
 	<cac:Shipment>
 		<cbc:ID>2343127641</cbc:ID>
 		
-		<cbc:GrossWeightMeasure unitCode="KGM">2460</cbc:GrossWeightMeasure>
-		<cbc:GrossVolumeMeasure unitCode="MTQ">3.10</cbc:GrossVolumeMeasure>
+		<cbc:GrossWeightMeasure unitCode="KGM">12460</cbc:GrossWeightMeasure>
 
 		<cac:Consignment>
 			<cbc:ID>NA</cbc:ID>
@@ -135,7 +134,7 @@
 					<cbc:Description>ACP Diesel 50 max 7% RME</cbc:Description>
 					<cac:MeasurementDimension>
 						<cbc:AttributeID>FuelConsumption</cbc:AttributeID>
-						<cbc:Measure unitCode="LTR">15</cbc:Measure>
+						<cbc:Measure unitCode="LTR">5.6</cbc:Measure>
 					</cac:MeasurementDimension>
 					<cac:MeasurementDimension>
 						<cbc:AttributeID>EnergyContent</cbc:AttributeID>
@@ -147,11 +146,11 @@
 					</cac:MeasurementDimension>
 					<cac:MeasurementDimension>
 						<cbc:AttributeID>DrivingDistance</cbc:AttributeID>
-						<cbc:Measure unitCode="KMT">86</cbc:Measure>
+						<cbc:Measure unitCode="KMT">16</cbc:Measure>
 					</cac:MeasurementDimension>
 					<cac:MeasurementDimension>
 						<cbc:AttributeID>DrivingTime</cbc:AttributeID>
-						<cbc:Measure unitCode="HUR">7.3</cbc:Measure>
+						<cbc:Measure unitCode="HUR">1.3</cbc:Measure>
 					</cac:MeasurementDimension>
 					<cac:MeasurementDimension>
 						<cbc:AttributeID>RenewableFuel</cbc:AttributeID>
@@ -186,22 +185,22 @@
 				</cac:TransportEquipment>
 				
 				<cac:EnvironmentalEmission>
-					<cbc:EnvironmentalEmissionTypeCode>CO2</cbc:EnvironmentalEmissionTypeCode>
+					<cbc:EnvironmentalEmissionTypeCode listID="UN785" name="Carbon Dioxide">CO2</cbc:EnvironmentalEmissionTypeCode>
 					<cbc:ValueMeasure unitCode="KGM">2.8</cbc:ValueMeasure>
 				</cac:EnvironmentalEmission>
 				
 				<cac:EnvironmentalEmission>
-					<cbc:EnvironmentalEmissionTypeCode>HC</cbc:EnvironmentalEmissionTypeCode>
+					<cbc:EnvironmentalEmissionTypeCode listID="UN785" name="Hydrocarbon">HC</cbc:EnvironmentalEmissionTypeCode>
 					<cbc:ValueMeasure unitCode="KGM">0.6</cbc:ValueMeasure>
 				</cac:EnvironmentalEmission>
 
 				<cac:EnvironmentalEmission>
-					<cbc:EnvironmentalEmissionTypeCode>NOX</cbc:EnvironmentalEmissionTypeCode>
+					<cbc:EnvironmentalEmissionTypeCode listID="UN785" name="Nitric Oxide">NOX</cbc:EnvironmentalEmissionTypeCode>
 					<cbc:ValueMeasure unitCode="KGM">6</cbc:ValueMeasure>
 				</cac:EnvironmentalEmission>
 
 				<cac:EnvironmentalEmission>
-					<cbc:EnvironmentalEmissionTypeCode>PM</cbc:EnvironmentalEmissionTypeCode>
+					<cbc:EnvironmentalEmissionTypeCode listID="UN785" name="Particular Matter">PM</cbc:EnvironmentalEmissionTypeCode>
 					<cbc:ValueMeasure unitCode="GRM">0.07</cbc:ValueMeasure>
 				</cac:EnvironmentalEmission>
 				
@@ -212,13 +211,16 @@
 			<cbc:TransportModeCode>3</cbc:TransportModeCode>
 			<cac:TransportMeans>
 				<cac:RoadTransport>
-					<cbc:LicensePlateID>ABC123</cbc:LicensePlateID>
+					<cbc:LicensePlateID>SE-ABC123</cbc:LicensePlateID>
 				</cac:RoadTransport>
 			</cac:TransportMeans>
 		</cac:ShipmentStage>
 		
 		<cac:Delivery>
-
+			
+			<cbc:ActualDeliveryDate>2020-12-21</cbc:ActualDeliveryDate>
+			<cbc:ActualDeliveryTime>06:30:00</cbc:ActualDeliveryTime>
+			
 			<cac:DeliveryLocation>
 				<cbc:ID schemeID="0088">5790000435951</cbc:ID>
 				<cbc:Name>Construction site ABC</cbc:Name>
@@ -236,20 +238,13 @@
 					</cac:LocationCoordinate>
 				</cac:Address>
 			</cac:DeliveryLocation>
-			
-			<cac:EstimatedDeliveryPeriod>
-				<cbc:StartDate>2020-12-21</cbc:StartDate>
-				<cbc:StartTime>06:00:00</cbc:StartTime>
-				<cbc:EndDate>2020-12-21</cbc:EndDate>
-				<cbc:EndTime>07:15:00</cbc:EndTime>
-			</cac:EstimatedDeliveryPeriod>
 
 			<cac:Despatch>
 				<cbc:ActualDespatchDate>2020-12-21</cbc:ActualDespatchDate>
-				<cbc:ActualDespatchTime>06:30:00</cbc:ActualDespatchTime>
+				<cbc:ActualDespatchTime>06:00:00</cbc:ActualDespatchTime>
 				
 				<cac:DespatchAddress>
-					<cbc:StreetName>Quarry road 1</cbc:StreetName>
+					<cbc:StreetName>Harry's road 1</cbc:StreetName>
 					<cbc:CityName>Stockholm</cbc:CityName>
 					<cbc:PostalZone>123 45</cbc:PostalZone>
 					<cac:Country>
@@ -262,130 +257,15 @@
 					</cac:LocationCoordinate>
 				</cac:DespatchAddress>
 			</cac:Despatch>
+			
 			<cac:DeliveryTerms>
 				<cbc:ID>EXW</cbc:ID>
 				<cac:DeliveryLocation>
 					<cbc:ID>Stockholm</cbc:ID>
 				</cac:DeliveryLocation>
 			</cac:DeliveryTerms>
+			
 		</cac:Delivery>
-		
-		<cac:TransportHandlingUnit>
-			<cbc:ID>11111222222222</cbc:ID>
-			<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
-
-			<cbc:ShippingMarks>Text</cbc:ShippingMarks>
-
-			<cac:MeasurementDimension>
-				<cbc:AttributeID>AAB</cbc:AttributeID>
-				<cbc:Measure unitCode="KGM">1230</cbc:Measure>
-			</cac:MeasurementDimension>
-
-			<cac:Package>
-				<cbc:ID>3453</cbc:ID>
-				<cbc:PackagingTypeCode>4H</cbc:PackagingTypeCode>
-
-				<cac:GoodsItem>
-					<cbc:ID>1</cbc:ID>
-					<cbc:Quantity unitCode="EA">72</cbc:Quantity>
-				</cac:GoodsItem>
-			</cac:Package>
-
-			<cac:Package>
-				<cbc:ID>3454</cbc:ID>
-				<cbc:PackagingTypeCode>4H</cbc:PackagingTypeCode>
-
-				<cac:GoodsItem>
-					<cbc:ID>1</cbc:ID>
-					<cbc:Quantity unitCode="EA">72</cbc:Quantity>
-				</cac:GoodsItem>
-			</cac:Package>
-
-			<cac:Package>
-				<cbc:ID>3455</cbc:ID>
-				<cbc:PackagingTypeCode>4H</cbc:PackagingTypeCode>
-
-				<cac:GoodsItem>
-					<cbc:ID>1</cbc:ID>
-					<cbc:Quantity unitCode="EA">72</cbc:Quantity>
-				</cac:GoodsItem>
-			</cac:Package>
-
-			<cac:Package>
-				<cbc:ID>3456</cbc:ID>
-				<cbc:PackagingTypeCode>4H</cbc:PackagingTypeCode>
-
-				<cac:GoodsItem>
-					<cbc:ID>1</cbc:ID>
-					<cbc:Quantity unitCode="EA">72</cbc:Quantity>
-				</cac:GoodsItem>
-			</cac:Package>
-
-		</cac:TransportHandlingUnit>
-
-		<cac:TransportHandlingUnit>
-			<cbc:ID>111113333333</cbc:ID>
-			<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
-
-			<cbc:ShippingMarks>Text</cbc:ShippingMarks>
-
-			<cac:MeasurementDimension>
-				<cbc:AttributeID>AAB</cbc:AttributeID>
-				<cbc:Measure unitCode="KGM">1230</cbc:Measure>
-			</cac:MeasurementDimension>
-			<cac:MeasurementDimension>
-				<cbc:AttributeID>AAW</cbc:AttributeID>
-				<cbc:Measure unitCode="MTQ">1.55</cbc:Measure>
-			</cac:MeasurementDimension>
-
-			<cac:Package>
-				<cbc:ID>3457</cbc:ID>
-				<cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-				<cbc:PackagingTypeCode>4H</cbc:PackagingTypeCode>
-				<cbc:PackingMaterial>Carbon box</cbc:PackingMaterial>
-
-				<cac:GoodsItem>
-					<cbc:ID>1</cbc:ID>
-					<cbc:Quantity unitCode="EA">72</cbc:Quantity>
-				</cac:GoodsItem>
-			</cac:Package>
-
-			<cac:Package>
-				<cbc:ID>3458</cbc:ID>
-				<cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-				<cbc:PackagingTypeCode>4H</cbc:PackagingTypeCode>
-				<cbc:PackingMaterial>Carbon box</cbc:PackingMaterial>
-
-				<cac:GoodsItem>
-					<cbc:ID>1</cbc:ID>
-					<cbc:Quantity unitCode="EA">72</cbc:Quantity>
-				</cac:GoodsItem>
-			</cac:Package>
-
-			<cac:Package>
-				<cbc:ID>3459</cbc:ID>
-				<cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-				<cbc:PackagingTypeCode>4H</cbc:PackagingTypeCode>
-				<cbc:PackingMaterial>Carbon box</cbc:PackingMaterial>
-
-				<cac:GoodsItem>
-					<cbc:ID>1</cbc:ID>
-					<cbc:Quantity unitCode="EA">72</cbc:Quantity>
-				</cac:GoodsItem>
-			</cac:Package>
-
-			<cac:Package>
-				<cbc:ID>3460</cbc:ID>
-				<cbc:ReturnableMaterialIndicator>true</cbc:ReturnableMaterialIndicator>
-				<cbc:PackagingTypeCode>4H</cbc:PackagingTypeCode>
-				<cbc:PackingMaterial>Carbon box</cbc:PackingMaterial>
-
-				<cac:GoodsItem>
-					<cbc:ID>1</cbc:ID>
-					<cbc:Quantity unitCode="EA">72</cbc:Quantity>
-				</cac:GoodsItem>
-			</cac:Package>
-		</cac:TransportHandlingUnit>
 	</cac:Shipment>
 	
 	<cac:DespatchLine>
@@ -400,19 +280,19 @@
 		</cac:OrderLineReference>
 		
 		<cac:Item>
-			<cbc:Name>Schaktbil och släp med schaktflak</cbc:Name>
+			<cbc:Name>Maskintransportbil med Trailer för maskintransport. </cbc:Name>
 			<cac:SellersItemIdentification>
 				<cbc:ID>212611</cbc:ID>
 			</cac:SellersItemIdentification>
 
 			<cac:CommodityClassification>
-				<cbc:ItemClassificationCode listID="ZZZ" listVersionID="4.5" name="SA">18220000000</cbc:ItemClassificationCode>
+				<cbc:ItemClassificationCode listID="ZZZ" listVersionID="4.5" name="SA">17300000000</cbc:ItemClassificationCode>
 			</cac:CommodityClassification>
 
 			<cac:AdditionalItemProperty>
 				<cbc:Name>NA</cbc:Name>
 				<cbc:NameCode listID="IPNC">Price</cbc:NameCode>
-				<cbc:Value>975.00</cbc:Value>
+				<cbc:Value>1975.00</cbc:Value>
 				<cbc:ValueQualifier>CON</cbc:ValueQualifier>
 			</cac:AdditionalItemProperty>
 
