@@ -3031,6 +3031,12 @@
                   <Value type="EXAMPLE">Acute toxicity</Value>
                </Element>
                <Element cardinality="0..1">
+                  <Term>cbc:HazardousCategoryCode</Term>
+                  <Name>Hazardous Category Code</Name>
+                  <Description>A code signifying a kind of hazard for a material. </Description>
+                  <Value type="EXAMPLE">123</Value>
+               </Element>
+               <Element cardinality="0..1">
                   <Term>cbc:HazardClassID</Term>
                   <Name>Haszardous hazard class Identifier</Name>
                   <Description>Identifies a hazard class applicable to dangerous goods as
@@ -3065,6 +3071,41 @@
                      <Reference type="CODE_LIST">UNECERec20</Reference>
                      <Value type="EXAMPLE">MTQ</Value>
                   </Attribute>
+               </Element>
+               <Element cardinality="0..n">
+                  <Term>cac:HazardousGoodsTransit</Term>
+                  <Name>Hazardous Goods Transit </Name>
+                  <Description>Information related to the transit of this kind of hazardous goods. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:PackingCriteriaCode</Term>
+                     <Name>Packing Criteria Code </Name>
+                     <Description>A code signifying the packaging requirement for transportation of the hazardous goods as assigned by IATA, IMDB, ADR, RID etc. </Description>
+                     <Value type="EXAMPLE">123</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:EmergencyTemperature</Term>
+                  <Name>Emergency Temperature </Name>
+                  <Description>The threshold temperature at which emergency procedures apply in the handling of temperature-controlled goods. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:AttributeID</Term>
+                     <Name>Attribute ID </Name>
+                     <Description>An identifier for this temperature measurement. </Description>
+                     <Value type="EXAMPLE">ABC</Value>
+                  </Element>
+                  <Element cardinality="1..1">
+                     <Term>cbc:Measure</Term>
+                     <Name>Measure </Name>
+                     <Description>The value of this temperature measurement. </Description>
+                     <Value type="EXAMPLE">78</Value>
+                     <Attribute usage="Mandatory">
+                        <Term>unitCode</Term>
+                        <Name>Measure unit of measure</Name>
+                        <Description>The unit of measure that applies to the Emergency Temperature.</Description>
+                        <Reference type="CODE_LIST">UNECERec20</Reference>
+                        <Value type="EXAMPLE">CEL</Value>
+                     </Attribute>
+                  </Element>
                </Element>
             </Element>
             <Element cardinality="0..n">
