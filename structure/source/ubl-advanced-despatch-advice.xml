@@ -1810,6 +1810,11 @@
 					<?Description The name of the category of hazard that applies to the Item. ?>
 					<?Cardinality 0..1?>
 				</cbc:CategoryName>
+				<cbc:HazardousCategoryCode>123
+					<?Name Hazardous Category Code?>
+					<?Description A code signifying a kind of hazard for a material. ?>
+					<?Cardinality 0..1?>
+				</cbc:HazardousCategoryCode>
 				<cbc:HazardClassID>Code</cbc:HazardClassID>
 				<cbc:NetWeightMeasure unitCode="KGM">123
 					<?Name Net Weight Measure ?>
@@ -1829,6 +1834,35 @@
 					<?unitCode-Description The unit of measure that applies to the Net Volume.?>
 					<?unitCode-usage Mandatory?>
 				</cbc:NetVolumeMeasure>
+				<cac:HazardousGoodsTransit>
+					<?Name Hazardous Goods Transit ?>
+					<?Description Information related to the transit of this kind of hazardous goods. ?>
+					<?Cardinality 0..n?>
+					<cbc:PackingCriteriaCode>123
+						<?Name Packing Criteria Code ?>
+						<?Description A code signifying the packaging requirement for transportation of the hazardous goods as assigned by IATA, IMDB, ADR, RID etc. ?>
+						<?Cardinality 1..1?>
+					</cbc:PackingCriteriaCode>
+				</cac:HazardousGoodsTransit>
+				<cac:EmergencyTemperature>
+					<?Name Emergency Temperature ?>
+					<?Description The threshold temperature at which emergency procedures apply in the handling of temperature-controlled goods. ?>
+					<?Cardinality 0..1?>
+					<cbc:AttributeID>ABC
+						<?Name Attribute ID ?>
+						<?Description An identifier for this temperature measurement. ?>
+						<?Cardinality 1..1?>
+					</cbc:AttributeID>
+					<cbc:Measure unitCode="CEL">78
+						<?Name Measure ?>
+						<?Description The value of this temperature measurement. ?>
+						<?Cardinality 1..1?>
+						<?unitCode-CodeList UNECERec20?>
+						<?unitCode-Name Measure unit of measure?>
+						<?unitCode-Description The unit of measure that applies to the Emergency Temperature.?>
+						<?unitCode-usage Mandatory?>
+					</cbc:Measure>
+				</cac:EmergencyTemperature>
 			</cac:HazardousItem>
 			
 			<cac:AdditionalItemProperty>
