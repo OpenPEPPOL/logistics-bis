@@ -74,7 +74,7 @@
 	     <Element cardinality="0..1">
          <Term>cbc:Note</Term>
          <Name>Dispatch note</Name>
-         <Description>A textual note for the dispatch as whole. Used for Transport Information.</Description>
+         <Description>A textual note for the dispatch as whole. </Description>
          <DataType>Text</DataType>
          <Reference type="BUSINESS_TERM">tir16-088</Reference>
          <Value type="EXAMPLE">Text</Value>
@@ -83,6 +83,7 @@
 	     <Element cardinality="0..n">
          <Term>cac:OrderReference</Term>
          <Name>Order reference information</Name>
+         <Description>Can be included here or at Line level. </Description>
          <Element>
             <Term>cbc:ID</Term>
             <Name>Order reference</Name>
@@ -97,7 +98,7 @@
 	     <Element cardinality="0..n">
          <Term>cac:AdditionalDocumentReference</Term>
          <Name>Additional document reference</Name>
-         <Description>Reference to additional documents relevant for this Despatch advice. Can be used for additional BEAst information on header level.</Description>
+         <Description>Reference to additional documents relevant for this Despatch advice. Can also be used for additional information on header level.</Description>
          <Element>
             <Term>cbc:ID</Term>
             <Name>Identity of the reference</Name>
@@ -2993,7 +2994,7 @@
                   <Attribute usage="Optional">
                      <Term>name</Term>
                      <Name>Clear text name equivalent of classification code</Name>
-                     <Description>The textual equivalent of the code value</Description>
+                     <Description>The name of the Identification scheme identifier when @listID = ZZZ. Must be provided when @listID = ZZZ.</Description>
                      <Value type="EXAMPLE">SBMI</Value>
                   </Attribute>
                </Element>
