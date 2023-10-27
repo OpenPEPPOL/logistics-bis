@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
                 Content:
-                Example for Use-case no 04 in UBL Despatch Adivce for concrete pump service.			
+                Example for Use-case no 04 in Logistics Advanced Despatch Adivce for concrete pump service.			
 -->
 <DespatchAdvice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
@@ -109,17 +109,20 @@
 
 	<cac:Shipment>
 		<cbc:ID>NA</cbc:ID>
+		
 		<cac:ShipmentStage>
 			<cbc:TransportModeCode>3</cbc:TransportModeCode>
 			<cac:TransportMeans>
 				<cac:RoadTransport>
-					<cbc:LicensePlateID>ABC123</cbc:LicensePlateID>
+					<cbc:LicensePlateID>SE-ABC123</cbc:LicensePlateID>
 				</cac:RoadTransport>
 			</cac:TransportMeans>
 		</cac:ShipmentStage>
+		
 		<cac:Delivery>
 			<cbc:ActualDeliveryDate>2023-05-03</cbc:ActualDeliveryDate>
 			<cbc:ActualDeliveryTime>12:50:00</cbc:ActualDeliveryTime>
+			
 			<cac:DeliveryLocation>
 				<cbc:ID schemeID="0007">5560339086</cbc:ID>
 				<cbc:Name>Skanska Slussen SN94</cbc:Name>
@@ -140,13 +143,16 @@
 					</cac:LocationCoordinate>
 				</cac:Address>
 			</cac:DeliveryLocation>
+			
 			<cac:EstimatedDeliveryPeriod>
 				<cbc:StartDate>2023-05-03</cbc:StartDate>
 				<cbc:StartTime>08:00:00</cbc:StartTime>
 			</cac:EstimatedDeliveryPeriod>
+			
 			<cac:Despatch>
 				<cbc:ActualDespatchDate>2023-05-03</cbc:ActualDespatchDate>
 				<cbc:ActualDespatchTime>08:00:00</cbc:ActualDespatchTime>
+				
 				<cac:DespatchAddress>
 					<cbc:ID>5790000435951</cbc:ID>
 					<cbc:StreetName>Drivhjulsvägen 11</cbc:StreetName>
@@ -167,6 +173,7 @@
 		</cac:Delivery>
 
 	</cac:Shipment>
+	
 	<cac:DespatchLine>
 		<cbc:ID>10</cbc:ID>
 		<cbc:DeliveredQuantity unitCode="EA">1</cbc:DeliveredQuantity>
@@ -189,6 +196,7 @@
 			</cac:StandardItemIdentification>
 		</cac:Item>
 	</cac:DespatchLine>
+	
 	<cac:DespatchLine>
 		<cbc:ID>20</cbc:ID>
 		<cbc:DeliveredQuantity unitCode="MTR">12</cbc:DeliveredQuantity>
@@ -211,6 +219,7 @@
 			</cac:StandardItemIdentification>
 		</cac:Item>
 	</cac:DespatchLine>
+	
 	<cac:DespatchLine>
 		<cbc:ID>30</cbc:ID>
 		<cbc:DeliveredQuantity unitCode="EA">1</cbc:DeliveredQuantity>
@@ -232,6 +241,7 @@
 			</cac:StandardItemIdentification>
 		</cac:Item>
 	</cac:DespatchLine>
+	
 	<cac:DespatchLine>
 		<cbc:ID>40</cbc:ID>
 		<cbc:DeliveredQuantity unitCode="MIN">228</cbc:DeliveredQuantity>
@@ -253,6 +263,7 @@
 			</cac:StandardItemIdentification>
 		</cac:Item>
 	</cac:DespatchLine>
+	
 	<cac:DespatchLine>
 		<cbc:ID>50</cbc:ID>
 		<cbc:DeliveredQuantity unitCode="MTQ">27.9</cbc:DeliveredQuantity>

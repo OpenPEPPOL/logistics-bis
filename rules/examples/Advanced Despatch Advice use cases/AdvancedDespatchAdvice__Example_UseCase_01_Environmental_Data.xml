@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
                 Content:
-                This file contains a Example of Milj�data NU! base information in UBL Despatch Adivce.
+                This file contains a Example of Miljödata NU! base information in UBL Despatch Adivce.
 				
 				Change Log:
 				2023-05-05
@@ -65,6 +65,7 @@
 			</cac:Contact>
 		</cac:Party>
 	</cac:DespatchSupplierParty>
+	
 	<cac:DeliveryCustomerParty>
 		<!-- Mandatory, the party that recieves the goods or service -->
 		<cac:Party>
@@ -90,6 +91,7 @@
 			</cac:Contact>
 		</cac:Party>
 	</cac:DeliveryCustomerParty>
+	
 	<cac:BuyerCustomerParty>
 		<!-- BEAst recommends sending BuyerCustomerParty even if it is optional since it is easier for the receiver. -->
 		<cac:Party>
@@ -109,6 +111,7 @@
 			</cac:PartyLegalEntity>
 		</cac:Party>
 	</cac:BuyerCustomerParty>
+	
 	<cac:SellerSupplierParty>
 		<!-- BEAst recommends sending SellerSupplierParty even if it is optional since it is easier for the receiver. -->
 		<cac:Party>
@@ -128,6 +131,8 @@
 			</cac:PartyLegalEntity>
 		</cac:Party>
 	</cac:SellerSupplierParty>
+	
+	
 	<cac:Shipment>
 		<cbc:ID>1</cbc:ID>
 		<!-- Mandatory Shipment number (fraktsedelsnummer) is mapped to this field -->
@@ -138,6 +143,8 @@
 			</cac:EstimatedDeliveryPeriod>
 		</cac:Delivery>
 	</cac:Shipment>
+	
+	
 	<cac:DespatchLine>
 		<cbc:ID>1</cbc:ID>
 		<cbc:DeliveredQuantity unitCode="EA">84</cbc:DeliveredQuantity>
@@ -212,6 +219,7 @@
 			</cac:Dimension>
 		</cac:Item>
 	</cac:DespatchLine>
+	
 	<cac:DespatchLine>
 		<cbc:ID>2</cbc:ID>
 		<cbc:DeliveredQuantity unitCode="EA">30</cbc:DeliveredQuantity>
@@ -243,6 +251,7 @@
 				<cbc:ID schemeID="0160">7318936616442</cbc:ID>
 				<!-- 0160 = GTIN, full list https://docs.peppol.eu/poacc/upgrade-3/codelist/ICD/ -->
 			</cac:StandardItemIdentification>
+			
 			<!-- Machine readable data -->
 			<cac:AdditionalItemProperty>
 				<cbc:Name>EPD Dataset ID</cbc:Name>
@@ -277,6 +286,7 @@
 				<cbc:NameCode listID="IPNC">TrVResourceID</cbc:NameCode>
 				<cbc:Value>123456789</cbc:Value>
 			</cac:AdditionalItemProperty>
+			
 			<cac:Dimension>
 				<cbc:AttributeID>AAF</cbc:AttributeID>
 				<cbc:Measure unitCode="KGM">30.861</cbc:Measure>
