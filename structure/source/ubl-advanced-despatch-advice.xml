@@ -39,16 +39,17 @@
 		<?CodeList DespatchAdviceTypeCode?>
 	</cbc:DespatchAdviceTypeCode>
 	<cbc:Note> Text 
-		<?Description A textual note for the dispatch as whole. Used for Transport Information.?>
+		<?Description A textual note for the dispatch as whole. ?>
 	</cbc:Note>
 	
 	<cac:OrderReference>
+		<?Description Can be included here or at Line level. ?>
 		<cbc:ID>AEG0123456</cbc:ID>
 	</cac:OrderReference>
 	
 	<cac:AdditionalDocumentReference>
 		<?Name Additional document reference?>
-		<?Description Reference to additional documents relevant for this Despatch advice. Can be used for additional BEAst information on header level.?>
+		<?Description Reference to additional documents relevant for this Despatch advice. Can also be used for additional information on header level.?>
 		<?Cardinality 0..n?>
 		<cbc:ID> 7648779 
 			<?Name Identity of the reference?>
@@ -1784,6 +1785,7 @@
 					<?listID-CodeList UNCL7143?>
 					<?listID-usage Mandatory?>
 					<?listID-Description The identification scheme identifier of the Item classification identifier.?>
+					<?name-Description The name of the Identification scheme identifier when @listID = ZZZ. Must be provided when @listID = ZZZ.?>
 					<?Cardinality 1..1?>
 					<?Rule PEPPOL-T120-R040?>
 				</cbc:ItemClassificationCode>
