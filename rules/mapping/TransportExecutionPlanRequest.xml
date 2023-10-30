@@ -9312,16 +9312,16 @@
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">0..1</Data>
+               <Data ss:Type="String">1..1</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">•  •  •  •  •  cac:HazardousItem</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Hazardous Item </Data>
+               <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Description of hazardous item.</Data>
+               <Data ss:Type="String">Contains information on the Hazardous item.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
@@ -9341,19 +9341,19 @@
                <Data ss:Type="String">0..1</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">•  •  •  •  •  •  cbc:UNDGCode</Data>
+               <Data ss:Type="String">•  •  •  •  •  •  cbc:ID</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">UNDGCode </Data>
+               <Data ss:Type="String">Identifier</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The UN code for this kind of hazardous item.</Data>
+               <Data ss:Type="String">An identifier for this hazardous item.</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">ADR</Data>
+               <Data ss:Type="String">123</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:UNDGCode</Data>
+               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:ID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">6</Data>
@@ -9367,19 +9367,19 @@
                <Data ss:Type="String">0..1</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">•  •  •  •  •  •  cbc:HazardClassID</Data>
+               <Data ss:Type="String">•  •  •  •  •  •  cbc:AdditionalIformation</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">UNDGCode </Data>
+               <Data ss:Type="String">Additional Information</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The UN code for this kind of hazardous item.</Data>
+               <Data ss:Type="String">Text providing further information about the hazardous substance.</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">2</Data>
+               <Data ss:Type="String">Information about the hazardous item</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:HazardClassID</Data>
+               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:AdditionalIformation</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">6</Data>
@@ -9390,22 +9390,22 @@
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">0..1</Data>
+               <Data ss:Type="String">1..1</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">•  •  •  •  •  •  cbc:NetWeightMeasure</Data>
+               <Data ss:Type="String">•  •  •  •  •  •  cbc:UNDGCode</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The net weight for the item. Use if the Hazard class ID requires it</Data>
+               <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">40.8</Data>
+               <Data ss:Type="String">ADR</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:NetWeightMeasure</Data>
+               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:UNDGCode</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">6</Data>
@@ -9416,16 +9416,146 @@
          </Row>
          <Row>
             <Cell>
+               <Data ss:Type="String">0..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  cbc:TechnicalName</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Technical Name</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">The full technical name of a specific hazardous substance contained in this goods item.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Corrosive liquid, n.o.s., 8, UN 1760, II (contains Octanoyl chloride)</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:TechnicalName</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">6</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">35900</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  cbc:CategoryName</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Category Name</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">The name of the category of hazard that applies to the Item.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Acute toxicity</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:CategoryName</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">6</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">36000</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  cbc:HazardousCategoryCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Hazardous Category Code</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">A code signifying a kind of hazard for a material.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">123</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:HazardousCategoryCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">6</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">36100</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">1..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  cbc:HazardClassID</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String"/>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String"/>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Code</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:HazardClassID</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">6</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">36200</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  cbc:NetWeightMeasure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Net Weight Measure </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Net weight of the Hazardous item.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">123</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:NetWeightMeasure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">6</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">36300</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
                <Data ss:Type="String">M</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">•  •  •  •  •  •  •  @unitCode</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Latitude degrees unit of measure</Data>
+               <Data ss:Type="String">Measure unit of measure</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The unit of measure that applies to the latitude degrees.</Data>
+               <Data ss:Type="String">The unit of measure that applies to the Net Weight.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">KGM</Data>
@@ -9437,7 +9567,215 @@
                <Data ss:Type="Number">7</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">35900</Data>
+               <Data ss:Type="Number">36400</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  cbc:NetVolumeMeasure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Net Volume Measure </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Net volume of the Hazardous item.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">12.3</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:NetVolumeMeasure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">6</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">36500</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">M</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  •  @unitCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Measure unit of measure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">The unit of measure that applies to the Net Volume.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">MTQ</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:NetVolumeMeasure/unitCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">7</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">36600</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..n</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  cac:HazardousGoodsTransit</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Hazardous Goods Transit </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Information related to the transit of this kind of hazardous goods.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String"/>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:HazardousGoodsTransit</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">6</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">36700</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">1..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  •  cbc:PackingCriteriaCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Packing Criteria Code </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">A code signifying the packaging requirement for transportation of the hazardous goods as assigned by IATA, IMDB, ADR, RID etc.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">123</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:HazardousGoodsTransit/cbc:PackingCriteriaCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">7</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">36800</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  cac:EmergencyTemperature</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Emergency Temperature </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">The threshold temperature at which emergency procedures apply in the handling of temperature-controlled goods.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String"/>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:EmergencyTemperature</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">6</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">36900</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">1..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  •  cbc:AttributeID</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Attribute ID </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">An identifier for this temperature measurement.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">ABC</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:EmergencyTemperature/cbc:AttributeID</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">7</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">37000</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">1..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  •  cbc:Measure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Measure </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">The value of this temperature measurement.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">78</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:EmergencyTemperature/cbc:Measure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">7</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">37100</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">M</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  •  •  @unitCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Measure unit of measure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">The unit of measure that applies to the Emergency Temperature.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">CEL</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:EmergencyTemperature/cbc:Measure/unitCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">8</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">37200</Data>
             </Cell>
          </Row>
       </Table>
