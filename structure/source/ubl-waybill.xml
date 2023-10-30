@@ -3,7 +3,8 @@
 	<?DocumentTerm Waybill?>
 	<?Property key="sch:prefix" PEPPOL-T125?>
 	<?Property key="sch:identifier" T125-basic?>
-	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:waybill:1<?Rule PEPPOL-T125-R001?></cbc:CustomizationID>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:waybill:1<?Rule PEPPOL-T125-R001?>
+	</cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:waybill_only:1
 		<?Description Identifies the BII profile or business process context in which the transaction appears.?>
 		<?Rule PEPPOL-T125-R002?>
@@ -44,7 +45,7 @@
 		<cac:PartyIdentification>
 			<?Name Consignor identification ?>
 			<?Description An identifier for the consignor party. ?>
-			<?Cardinality 0..1?>			
+			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">7300010000001 	
 				<?Name ID ?>
 				<?Description The ID used for identification.?>			
@@ -53,7 +54,7 @@
 				<?Cardinality 1..1?>
 				<?Rule PEPPOL-T125-R031?>
 			</cbc:ID>
-		</cac:PartyIdentification>		
+		</cac:PartyIdentification>
 		<cac:PartyName>
 			<?Name Party name ?>
 			<?Cardinality 0..1?>
@@ -87,24 +88,24 @@
 					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
 					<?Cardinality 0..1?>	
 				</cbc:PostalZone>
-				<cbc:CountrySubentity>Heremouthshire
+			<cbc:CountrySubentity>Heremouthshire
 					<?Name Country subdivision ?>
 					<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
 					<?Cardinality 0..1?>	
 				</cbc:CountrySubentity>
-				<cac:AddressLine>
-					<?Name Address line ?>					
-					<?Cardinality 0..1?>	
-					<cbc:Line>Gate 34
+			<cac:AddressLine>
+				<?Name Address line ?>
+				<?Cardinality 0..1?>
+				<cbc:Line>Gate 34
 						<?Name Address line 3 ?>
 						<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
 						<?Cardinality 1..1?>	
 					</cbc:Line>
-				</cac:AddressLine>
+			</cac:AddressLine>
 			<cac:Country>
 				<?Name Country ?>
 				<?Description The country of the address ?>
-				<?Cardinality 1..1?>	
+				<?Cardinality 1..1?>
 				<cbc:IdentificationCode>DK
 						<?Name Country code ?>
 						<?Cardinality 1..1?>
@@ -121,7 +122,7 @@
 					<?Description The name of the consignor party.?>
 					<?Cardinality 1..1?>
 				</cbc:RegistrationName>
-				<cbc:CompanyID schemeID="0198">13246149
+			<cbc:CompanyID schemeID="0198">13246149
 					<?Name Consignor parties legal registration name ?>
 					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
 					<?Cardinality 0..1?>
@@ -186,7 +187,7 @@
 		<cac:PartyIdentification>
 			<?Name Carrier party identification ?>
 			<?Description An identifier for the Carrier party. ?>
-			<?Cardinality 0..1?>			
+			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">7300010000001 				
 				<?schemeID-CodeList ICD?>
 				<?schemeID-usage Optional?>
@@ -227,20 +228,20 @@
 						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
 						<?Cardinality 0..1?>
 					</cbc:PostalZone>
-					<cbc:CountrySubentity>Heremouthshire
+			<cbc:CountrySubentity>Heremouthshire
 					<?Name Country subdivision ?>
 					<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
 					<?Cardinality 0..1?>	
 				</cbc:CountrySubentity>
-				<cac:AddressLine>
-					<?Name Address line ?>					
-					<?Cardinality 0..1?>	
-					<cbc:Line>Gate 34
+			<cac:AddressLine>
+				<?Name Address line ?>
+				<?Cardinality 0..1?>
+				<cbc:Line>Gate 34
 						<?Name Address line 3 ?>
 						<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
 						<?Cardinality 1..1?>	
 					</cbc:Line>
-				</cac:AddressLine>
+			</cac:AddressLine>
 			<cac:Country>
 				<?Name Country ?>
 				<cbc:IdentificationCode>FI
@@ -308,7 +309,7 @@
 				<?Description The electronic mail of the contact.?>
 				<?Cardinality 0..1?>
 			</cbc:ElectronicMail>
-		</cac:Contact>				
+		</cac:Contact>
 		<cac:Person>
 			<?Name Person?>
 			<?Description The driver or master person for the carrier party.?>
@@ -333,11 +334,11 @@
 	<cac:FreightForwarderParty>
 		<?Name Freight Forwarder party ?>
 		<?Description The party responsible for organizing the shipment, often known as the integrator ?>
-		<?Cardinality 0..1?>		
+		<?Cardinality 0..1?>
 		<cac:PartyIdentification>
 			<?Name Freight Forwarder party identification ?>
 			<?Description An identifier for the Freight Forwarder party. ?>
-			<?Cardinality 0..1?>			
+			<?Cardinality 0..1?>
 			<cbc:ID schemeID="0088">7300010000001				
 				<?schemeID-CodeList ICD?>
 				<?schemeID-usage Optional?>
@@ -378,14 +379,14 @@
 					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
 					<?Cardinality 0..1?>
 				</cbc:PostalZone>
-				<cbc:CountrySubentity>Heremouthshire
+			<cbc:CountrySubentity>Heremouthshire
 				<?Name Country subdivision ?>
 				<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
 				<?Cardinality 0..1?>	
 			</cbc:CountrySubentity>
 			<cac:AddressLine>
-				<?Name Address line ?>					
-				<?Cardinality 0..1?>	
+				<?Name Address line ?>
+				<?Cardinality 0..1?>
 				<cbc:Line>Gate 34
 					<?Name Address line 3 ?>
 					<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
@@ -473,7 +474,6 @@
 			<?Description Free-form text pertinent to this shipment, conveying information that is not contained explicitly in other structures.?>
 			<?Cardinality 0..1?>
 		</cbc:Information>
-			
 		<cac:Consignment>
 			<?Name Consignment information ?>
 			<?Cardinality 1..1?>
@@ -485,7 +485,7 @@
 				<?Name Consignee Consignment identifier ?>				
 				<?Description Consignment identifier assigned by the consignee?>
 				<?Cardinality 0..1?>
-			</cbc:ConsigneeAssignedID>			
+			</cbc:ConsigneeAssignedID>
 			<cbc:ConsignorAssignedID>5678
 				<?Name Consignor Consignment identifier ?>				
 				<?Description Consignment identifier assigned by the consignor?>
@@ -498,14 +498,14 @@
 				<?Rule PEPPOL-T125-R005?>
 				<?Rule PEPPOL-T125-R008?>
 				<?Rule PEPPOL-T125-R040?>
-			</cbc:GrossWeightMeasure>			
+			</cbc:GrossWeightMeasure>
 			<cbc:GrossVolumeMeasure unitCode="MTQ">20
 				<?Name Consignment gross volume ?>
 				<?Description The gross volumen of the consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified. Mandatory if grosswaight or loading lenght is not specified.?>
 				<?Cardinality 0..1?>
 				<?Rule PEPPOL-T125-R006?>
 				<?Rule PEPPOL-T125-R008?>
-			</cbc:GrossVolumeMeasure>			
+			</cbc:GrossVolumeMeasure>
 			<cbc:LoadingLengthMeasure unitCode="MTR">0.4
 				<?Name Loading length measure ?>
 				<?Description The total length in a means of transport or a piece of transport equipment which, given the width and height of the transport means, will accommodate all of the consignments in a single consolidation. Mandatory if grossweight or grossvolumen is not specified?>
@@ -527,7 +527,7 @@
 			<cac:ConsigneeParty>
 				<?Name Delivery party ?>
 				<?Description The party responsible for receiving the goods in the Waybill. ?>
-				<?Cardinality 1..1?>			
+				<?Cardinality 1..1?>
 				<cac:PartyIdentification>
 					<?Name Consignee party identification ?>
 					<?Description An identifier for the consignee party. ?>
@@ -578,8 +578,8 @@
 						<?Cardinality 0..1?>	
 					</cbc:CountrySubentity>
 					<cac:AddressLine>
-						<?Name Address line ?>					
-						<?Cardinality 0..1?>	
+						<?Name Address line ?>
+						<?Cardinality 0..1?>
 						<cbc:Line>Gate 34
 							<?Name Address line 3 ?>
 							<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
@@ -655,7 +655,7 @@
 						<?Cardinality 0..1?>
 					</cbc:ElectronicMail>
 				</cac:Contact>
-			</cac:ConsigneeParty>								
+			</cac:ConsigneeParty>
 			<cac:OriginalDepartureCountry>
 				<?Name Original departure country ?>
 				<?Description The country from which the goods in this consignment were originally exported, without any commercial transaction taking place in intermediate countries. ?>
@@ -677,7 +677,7 @@
 					<?CodeList ISO3166?>
 					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 				</cbc:IdentificationCode>
-			</cac:FinalDestinationCountry>	
+			</cac:FinalDestinationCountry>
 			<cac:PaymentTerms>
 				<?Name Payment terms ?>
 				<?Description The terms of payment between the parties (such as logistics service client, logistics service provider) in a transaction. ?>
@@ -693,8 +693,8 @@
 					<?Description A free text describing this set of payment terms. ?>
 					<?Cardinality 0..1?>
 					<?Rule PEPPOL-T125-R010?>
-				</cbc:Note>			
-			</cac:PaymentTerms>		
+				</cbc:Note>
+			</cac:PaymentTerms>
 			<cac:TransportHandlingUnit>
 				<?Name Transport handling unit ?>
 				<?Description Used to specify the outer most packages, the units that the transporters deals with. ?>
@@ -711,7 +711,7 @@
 					<?CodeList UNECERec21?>
 					<?Cardinality 1..1?>
 				</cbc:TransportHandlingUnitTypeCode>
-				<cbc:HandlingCode listID = "HandlingCode">ZZ
+				<cbc:HandlingCode listID="HandlingCode">ZZ
 					<?Name Handling Code ?>
 					<?Description The handling for this transporthandling unit expressed as a code ?>
 					<?Cardinality 0..1?>
@@ -748,7 +748,7 @@
 						<?CodeList UNCL8053?>
 						<?Cardinality 0..1?>
 					</cbc:TransportEquipmentTypeCode>
-						<cbc:SizeTypeCode>10
+					<cbc:SizeTypeCode>10
 						<?Name Size type code ?>
 						<?Description A code signifying the size and type of this piece of piece of transport equipment. When the piece of transport equipment is a shipping container, it is recommended to use ContainerSizeTypeCode for validation. ?>
 						<?CodeList TRED8155?>
@@ -822,36 +822,34 @@
 					<?unitCode-Name Measure unit of measure ?>
 				</cbc:Measure>
 				</cac:MaximumTemperature>
-			<cac:GoodsItem>
-				<?Name Goods item ?>
-				<?Description A Goods item contained in the transport handling unit.?>
-				<?Cardinality 0..n?>
-				
-				<cbc:Description>Torsk sl u/h fersk fulliset 20kg iso 2-4 kg
+				<cac:GoodsItem>
+					<?Name Goods item ?>
+					<?Description A Goods item contained in the transport handling unit.?>
+					<?Cardinality 0..n?>
+					<cbc:Description>Torsk sl u/h fersk fulliset 20kg iso 2-4 kg
 					<?Name Description ?>
 					<?Description A textual descript this goods item. ?>
 					<?Cardinality 0..1?>
 				</cbc:Description>
-				<cbc:HazardousRiskIndicator>false
+					<cbc:HazardousRiskIndicator>false
 					<?Name Hazardous risk indicator ?>
 					<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 					<?Cardinality 0..1?>
-				</cbc:HazardousRiskIndicator>												
-				<cac:Item>
-					<?Name Item ?>
-					<?Description Description of the product beeing transported. Used for a structurel description of an item. Mandatory if the goods item is a Hazardous items.?>
-					<?Cardinality 0..1?>
-					<cbc:Name>Torsk
+				</cbc:HazardousRiskIndicator>
+					<cac:Item>
+						<?Name Item ?>
+						<?Description Description of the product beeing transported. Used for a structurel description of an item. Mandatory if the goods item is a Hazardous items.?>
+						<?Cardinality 0..1?>
+						<cbc:Name>Torsk
 						<?Name Name?>
 						<?Description The name of the Item. ?>
 						<?Cardinality 0..1?>
-					</cbc:Name>					
-					
-					<cac:CommodityClassification>
-						<?Name Commodity classification?>
-						<?Description To classify when an item number is not sufficient.?>
-						<?Cardinality 0..n?>
-						<cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">
+					</cbc:Name>
+						<cac:CommodityClassification>
+							<?Name Commodity classification?>
+							<?Description To classify when an item number is not sufficient.?>
+							<?Cardinality 0..n?>
+							<cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">
 							KO2012140200 <?Name Item classification code?>
 							<?listID-CodeList UNCL7143?>
 							<?listID-usage Mandatory?>
@@ -860,34 +858,87 @@
 							<?name-usage Optional?>
 							<?Cardinality 1..1?>
 						</cbc:ItemClassificationCode>
-					</cac:CommodityClassification>
-					<cac:HazardousItem>	
-						<?Name Hazardous Item ?>
-						<?Description Description of hazardous item. ?>
-						<?Cardinality 0..1?>
-						<cbc:UNDGCode>ADR
-							<?Name UNDGCode ?>
-							<?Description The UN code for this kind of hazardous item. ?>
-							<?Cardinality 0..1?>
-							<?CodeList UNCL8273?>
-						</cbc:UNDGCode>						
-						<cbc:HazardClassID>2
-							<?Name UNDGCode ?>
-							<?Description The UN code for this kind of hazardous item. ?>
-							<?Cardinality 0..1?>
-							<?CodeList HazardClasses?>
-						</cbc:HazardClassID>
-						<cbc:NetWeightMeasure unitCode="KGM">40.8
-							<?Description The net weight for the item. Use if the Hazard class ID requires it?>
-							<?Cardinality 0..1?>
-							<?unitCode-Name Latitude degrees unit of measure?>
-							<?unitCode-Description The unit of measure that applies to the latitude degrees.?>
-							<?unitCode-usage Mandatory?>
-							<?unitCode-CodeList UNECERec20?>
-						</cbc:NetWeightMeasure> 
-					</cac:HazardousItem>
-				</cac:Item>
-			</cac:GoodsItem>			
+						</cac:CommodityClassification>
+						<cac:HazardousItem>
+							<?Description Contains information on the Hazardous item.?>
+							<cbc:ID>123
+					<?Name Identifier?>
+					<?Description An identifier for this hazardous item. ?>
+					<?Cardinality 0..1?>
+				</cbc:ID>
+							<cbc:AdditionalIformation>Information about the hazardous item
+					<?Name Additional Information?>
+					<?Description Text providing further information about the hazardous substance. ?>
+					<?Cardinality 0..1?>
+				</cbc:AdditionalIformation>
+							<cbc:UNDGCode> ADR <?CodeList UNCL8273?>
+				</cbc:UNDGCode>
+							<cbc:TechnicalName>Corrosive liquid, n.o.s., 8, UN 1760, II (contains Octanoyl chloride)
+					<?Name Technical Name?>
+					<?Description The full technical name of a specific hazardous substance contained in this goods item. ?>
+					<?Cardinality 0..1?>
+				</cbc:TechnicalName>
+							<cbc:CategoryName>Acute toxicity
+					<?Name Category Name?>
+					<?Description The name of the category of hazard that applies to the Item. ?>
+					<?Cardinality 0..1?>
+				</cbc:CategoryName>
+							<cbc:HazardousCategoryCode>123
+					<?Name Hazardous Category Code?>
+					<?Description A code signifying a kind of hazard for a material. ?>
+					<?Cardinality 0..1?>
+				</cbc:HazardousCategoryCode>
+							<cbc:HazardClassID>Code</cbc:HazardClassID>
+							<cbc:NetWeightMeasure unitCode="KGM">123
+					<?Name Net Weight Measure ?>
+					<?Description Net weight of the Hazardous item. ?>
+					<?Cardinality 0..1?>
+					<?unitCode-CodeList UNECERec20?>
+					<?unitCode-Name Measure unit of measure?>
+					<?unitCode-Description The unit of measure that applies to the Net Weight.?>
+					<?unitCode-usage Mandatory?>
+				</cbc:NetWeightMeasure>
+							<cbc:NetVolumeMeasure unitCode="MTQ">12.3
+					<?Name Net Volume Measure ?>
+					<?Description Net volume of the Hazardous item. ?>
+					<?Cardinality 0..1?>
+					<?unitCode-CodeList UNECERec20?>
+					<?unitCode-Name Measure unit of measure?>
+					<?unitCode-Description The unit of measure that applies to the Net Volume.?>
+					<?unitCode-usage Mandatory?>
+				</cbc:NetVolumeMeasure>
+							<cac:HazardousGoodsTransit>
+								<?Name Hazardous Goods Transit ?>
+								<?Description Information related to the transit of this kind of hazardous goods. ?>
+								<?Cardinality 0..n?>
+								<cbc:PackingCriteriaCode>123
+						<?Name Packing Criteria Code ?>
+						<?Description A code signifying the packaging requirement for transportation of the hazardous goods as assigned by IATA, IMDB, ADR, RID etc. ?>
+						<?Cardinality 1..1?>
+					</cbc:PackingCriteriaCode>
+							</cac:HazardousGoodsTransit>
+							<cac:EmergencyTemperature>
+								<?Name Emergency Temperature ?>
+								<?Description The threshold temperature at which emergency procedures apply in the handling of temperature-controlled goods. ?>
+								<?Cardinality 0..1?>
+								<cbc:AttributeID>ABC
+						<?Name Attribute ID ?>
+						<?Description An identifier for this temperature measurement. ?>
+						<?Cardinality 1..1?>
+					</cbc:AttributeID>
+								<cbc:Measure unitCode="CEL">78
+						<?Name Measure ?>
+						<?Description The value of this temperature measurement. ?>
+						<?Cardinality 1..1?>
+						<?unitCode-CodeList UNECERec20?>
+						<?unitCode-Name Measure unit of measure?>
+						<?unitCode-Description The unit of measure that applies to the Emergency Temperature.?>
+						<?unitCode-usage Mandatory?>
+					</cbc:Measure>
+							</cac:EmergencyTemperature>
+						</cac:HazardousItem>
+					</cac:Item>
+				</cac:GoodsItem>
 			</cac:TransportHandlingUnit>
 		</cac:Consignment>
 		<cac:ShipmentStage>
@@ -901,7 +952,6 @@
 				<?CodeList UNECERec19?>
 				<?Rule PEPPOL-T125-R050?>
 			</cbc:TransportModeCode>
-			
 			<cac:TransportMeans>
 				<?Name Transport means ?>
 				<?Description The means of transport used in this shipment stage.?>
@@ -959,7 +1009,7 @@
 				</cac:MaritimeTransport>
 			</cac:TransportMeans>
 		</cac:ShipmentStage>
-		<cac:Delivery>			
+		<cac:Delivery>
 			<cbc:TrackingID>456789</cbc:TrackingID>
 			<cac:DeliveryLocation>
 				<?Name Delivery location?>
@@ -1022,17 +1072,17 @@
 							<?CodeList ISO3166?>
 							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.?>
 						</cbc:IdentificationCode>
-					</cac:Country>					
+					</cac:Country>
 				</cac:Address>
 				<cac:LocationCoordinate>
-						<?Name Location coordinate?>
-						<?Description To specify the coordinates.?>
-						<?Cardinality 0..1?>
-						<cbc:CoordinateSystemCode> EPSG:3857 <?Name Coordinate system code?>
+					<?Name Location coordinate?>
+					<?Description To specify the coordinates.?>
+					<?Cardinality 0..1?>
+					<cbc:CoordinateSystemCode> EPSG:3857 <?Name Coordinate system code?>
 							<?Description Always "EPSG:3857" by definition.?>
 							<?Cardinality 1..1?>
 						</cbc:CoordinateSystemCode>
-						<cbc:LatitudeDegreesMeasure unitCode="DD"> 59.331660358041425 <?Name Latitude degrees?>
+					<cbc:LatitudeDegreesMeasure unitCode="DD"> 59.331660358041425 <?Name Latitude degrees?>
 							<?Description The X coordinate. Use degrees with decimals.?>
 							<?Cardinality 1..1?>
 							<?unitCode-Name Latitude degrees unit of measure?>
@@ -1040,17 +1090,16 @@
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
 						</cbc:LatitudeDegreesMeasure>
-						<cbc:LongitudeDegreesMeasure unitCode="DD"> 18.063363084988005 <?Name Longitude degrees?>
+					<cbc:LongitudeDegreesMeasure unitCode="DD"> 18.063363084988005 <?Name Longitude degrees?>
 							<?Description The Y coordinate. Use degrees with decimals.?>
 							<?Cardinality 1..1?>
 							<?unitCode-Name Longitude degrees unit of measure?>
 							<?unitCode-Description The unit of measure that applies to the longitude degrees.?>
 							<?unitCode-usage Mandatory?>
 							<?unitCode-CodeList UNECERec20?>
-						</cbc:LongitudeDegreesMeasure>						
-					</cac:LocationCoordinate>
+						</cbc:LongitudeDegreesMeasure>
+				</cac:LocationCoordinate>
 			</cac:DeliveryLocation>
-	
 			<cac:EstimatedDeliveryPeriod>
 				<?Name Estimated delivery period?>
 				<?Description The estimated delivery period.?>
@@ -1082,7 +1131,7 @@
 					<?Rule PEPPOL-T125-R017?>
 				</cbc:EndTime>
 			</cac:EstimatedDeliveryPeriod>
-			<cac:Despatch>				
+			<cac:Despatch>
 				<cac:DespatchAddress>
 					<?Description The Despatch Address is the address from where the goods is despatched.?>
 					<cbc:ID> 34456456456456 <?Description An identifier for the location from which the goods and services are despatched. For example a global location number.?>
@@ -1196,10 +1245,10 @@
 						<?Description Delivery terms location. The location to which the delivery terms refer. Used to qualify the delivery terms e.g. "Terms of delivery are FOB Rotterdam"?>
 						<?Cardinality 1..1?>
 					</cbc:ID>
-				</cac:DeliveryLocation>			
-			</cac:DeliveryTerms>			
+				</cac:DeliveryLocation>
+			</cac:DeliveryTerms>
 		</cac:Delivery>
-	</cac:Shipment>			
+	</cac:Shipment>
 	<cac:DocumentReference>
 		<?Name Additional document reference?>
 		<?Description Reference to documents relevant for this Waybill. ?>
@@ -1295,8 +1344,8 @@
 					<?Cardinality 0..1?>	
 				</cbc:CountrySubentity>
 				<cac:AddressLine>
-					<?Name Address line ?>					
-					<?Cardinality 0..1?>	
+					<?Name Address line ?>
+					<?Cardinality 0..1?>
 					<cbc:Line>Gate 34
 						<?Name Address line 3 ?>
 						<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
@@ -1314,7 +1363,7 @@
 						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
 				</cac:Country>
-			</cac:PostalAddress>			
+			</cac:PostalAddress>
 			<cac:Person>
 				<?Name Person ?>
 				<?Description The person who applies the signature on behalf of the Signature Party. ?>
@@ -1330,12 +1379,12 @@
 						<?Description The persons first name. ?>
 						<?Cardinality 0..1?>
 					</cbc:FirstName>
-					<cbc:FamilyName>Sender
+				<cbc:FamilyName>Sender
 						<?Name Family Name ?>
 						<?Description The persons family name. ?>
 						<?Cardinality 1..1?>
 					</cbc:FamilyName>
-					<cbc:JobTitle>Director
+				<cbc:JobTitle>Director
 						<?Name Job title ?>
 						<?Description The persons job title. ?>
 						<?Cardinality 0..1?>
