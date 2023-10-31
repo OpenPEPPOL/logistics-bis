@@ -42,7 +42,7 @@
       </Element>
 	     <Element>
          <Term>cbc:IssueDate</Term>
-         <Name>Dispatch advice issue date</Name>
+         <Name>Advanced Despatch Advice issue date</Name>
          <Description>The date when the Advanced Despatch Advice is issued. Format = "YYYY-MM-DD".
 		Together with ID and IssueTime the IssueDate forms the identity of the Version of the Advanced Despatch Advice. </Description>
          <DataType>Date</DataType>
@@ -51,7 +51,7 @@
       </Element>
 	     <Element cardinality="1..1">
          <Term>cbc:IssueTime</Term>
-         <Name>Dispatch advice issue time</Name>
+         <Name>Advanced Despatch Advice issue time</Name>
          <Description>The time when the Advanced Despatch Advice is issued. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. </Description>
          <DataType>Time</DataType>
          <Reference type="BUSINESS_TERM">tir16-005</Reference>
@@ -73,8 +73,8 @@
       </Element>
 	     <Element cardinality="0..1">
          <Term>cbc:Note</Term>
-         <Name>Dispatch note</Name>
-         <Description>A textual note for the dispatch as whole. </Description>
+         <Name>Despatch note</Name>
+         <Description>A textual note for the despatch as whole. </Description>
          <DataType>Text</DataType>
          <Reference type="BUSINESS_TERM">tir16-088</Reference>
          <Value type="EXAMPLE">Text</Value>
@@ -356,7 +356,7 @@
                   </Element>
                   <Element cardinality="1..1">
                      <Term>cac:Country</Term>
-                     <Name>Contry</Name>
+                     <Name>Country</Name>
                      <Description>The residens country for the despatch party.</Description>
                      <Element>
                         <Term>cbc:IdentificationCode</Term>
@@ -591,11 +591,11 @@
                   </Element>
                   <Element cardinality="1..1">
                      <Term>cac:Country</Term>
-                     <Name>Contry</Name>
+                     <Name>Country</Name>
                      <Description>The residens country for the delivery customer party.</Description>
                      <Element>
                         <Term>cbc:IdentificationCode</Term>
-                        <Name>Contry code</Name>
+                        <Name>Country code</Name>
                         <Value type="EXAMPLE">UK</Value>
                      </Element>
                   </Element>
@@ -805,11 +805,11 @@
                   </Element>
                   <Element cardinality="1..1">
                      <Term>cac:Country</Term>
-                     <Name>Contry</Name>
+                     <Name>Country</Name>
                      <Description>The residens country for the Buyer party.</Description>
                      <Element>
                         <Term>cbc:IdentificationCode</Term>
-                        <Name>Contry code</Name>
+                        <Name>Country code</Name>
                         <Value type="EXAMPLE">UK</Value>
                      </Element>
                   </Element>
@@ -1019,7 +1019,7 @@
                   </Element>
                   <Element cardinality="1..1">
                      <Term>cac:Country</Term>
-                     <Name>Contry</Name>
+                     <Name>Country</Name>
                      <Description>The residens country for the Seller party.</Description>
                      <Element>
                         <Term>cbc:IdentificationCode</Term>
@@ -1433,7 +1433,7 @@
                      </Element>
                      <Element cardinality="1..1">
                         <Term>cac:Country</Term>
-                        <Name>Contry</Name>
+                        <Name>Country</Name>
                         <Description>The residens country for the Carrier party.</Description>
                         <Element>
                            <Term>cbc:IdentificationCode</Term>
@@ -1975,19 +1975,18 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:Despatch</Term>
-               <Name>Actual or expected despatch period</Name>
+               <Name>Shipment despatch time</Name>
                <Element cardinality="0..1">
                   <Term>cbc:ActualDespatchDate</Term>
-                  <Name>Shipment dispatch date</Name>
-                  <Description>The actual or expected date when the shipment was dispatched
-							from the dispatching party.</Description>
+                  <Name>Shipment despatch date</Name>
+                  <Description>The actual or expected date when the shipment was despatched from the despatching party.</Description>
                   <Reference type="BUSINESS_TERM">tir16-072</Reference>
                   <Value type="EXAMPLE">2021-09-25</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:ActualDespatchTime</Term>
                   <Name>Shipment dispatch time</Name>
-                  <Description>The actual or expected date when the shipment was dispatched from the dispatching party. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the despatch was made should be assumed.</Description>
+                  <Description>The actual or expected date when the shipment was despatched from the despatching party. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the despatch was made should be assumed.</Description>
                   <Reference type="BUSINESS_TERM">tir16-073</Reference>
                   <Value type="EXAMPLE">13:00:00+01:00</Value>
                </Element>
@@ -2716,7 +2715,7 @@
          <Name>Despatch advice line</Name>
          <Element>
             <Term>cbc:ID</Term>
-            <Name>Dispatch line identifier</Name>
+            <Name>Despatch line identifier</Name>
             <Description>A indentifier for the individual line in the despatch
 					advice.</Description>
             <Reference type="BUSINESS_TERM">tir16-046</Reference>
@@ -2724,7 +2723,7 @@
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:Note</Term>
-            <Name>Dispatch line note</Name>
+            <Name>Despatch line note</Name>
             <Description>General note regarding the despach advice line. Free-form text applying
 					to the Despatch Line. This element may contain notes or any other similar
 					information that is not contained explicitly in another structure.</Description>
@@ -3305,8 +3304,7 @@
                <Element cardinality="0..1">
                   <Term>cbc:ManufactureDate</Term>
                   <Name>Item manufactured date</Name>
-                  <Description>The manufacturing date of all items listed in this dispatch
-							line.</Description>
+                  <Description>The manufacturing date of all items listed in this despatch line.</Description>
                   <Reference type="BUSINESS_TERM">tir16-079</Reference>
                   <Value type="EXAMPLE">2021-01-01</Value>
                </Element>
@@ -3337,16 +3335,14 @@
                   <Element cardinality="0..1">
                      <Term>cbc:LotNumberID</Term>
                      <Name>Item batch number</Name>
-                     <Description>The batch number that applies to all items in the dispatch
-								line.</Description>
+                     <Description>The batch number that applies to all items in the despatch line.</Description>
                      <Reference type="BUSINESS_TERM">tir16-082</Reference>
                      <Value type="EXAMPLE">546378239</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:ExpiryDate</Term>
                      <Name>Item expiry date</Name>
-                     <Description>The expiry date of all items listed in this dispatch
-								line.</Description>
+                     <Description>The expiry date of all items listed in this despatch line.</Description>
                      <Reference type="BUSINESS_TERM">tir16-081</Reference>
                      <Value type="EXAMPLE">2023-01-01</Value>
                   </Element>
