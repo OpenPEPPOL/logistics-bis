@@ -22,9 +22,11 @@
 	<cbc:ID>5658999</cbc:ID>
 	<cbc:IssueDate>2021-09-10<?Description The date when the Advanced Despatch Advice is issued. Format = "YYYY-MM-DD".
 		Together with ID and IssueTime the IssueDate forms the identity of the Version of the Advanced Despatch Advice. ?>
+	<?Name Advanced Despatch Advice issue date?>
 	</cbc:IssueDate>
 	<cbc:IssueTime>12:00:00+01:00<?Description The time when the Advanced Despatch Advice is issued. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. ?>
 		<?Cardinality 1..1?>
+		<?Name Advanced Despatch Advice issue time?>
 	</cbc:IssueTime>
 	<cbc:DocumentStatusCode>9
 		<?Name Despatch advice status code?>
@@ -39,7 +41,8 @@
 		<?CodeList DespatchAdviceTypeCode?>
 	</cbc:DespatchAdviceTypeCode>
 	<cbc:Note> Text 
-		<?Description A textual note for the dispatch as whole. ?>
+		<?Description A textual note for the despatch as whole. ?>
+		<?Name Despatch note?>
 	</cbc:Note>
 	
 	<cac:OrderReference>
@@ -173,7 +176,7 @@
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 					<cac:Country>
-						<?Name Contry?>
+						<?Name Country?>
 						<?Description The residens country for the despatch party.?>
 						<?Cardinality 1..1?>
 						<cbc:IdentificationCode> UK 
@@ -286,11 +289,11 @@
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 					<cac:Country>
-						<?Name Contry?>
+						<?Name Country?>
 						<?Description The residens country for the delivery customer party.?>
 						<?Cardinality 1..1?>
 						<cbc:IdentificationCode> UK 
-							<?Name Contry code?>
+							<?Name Country code?>
 						</cbc:IdentificationCode>
 					</cac:Country>
 				</cac:RegistrationAddress>
@@ -395,11 +398,11 @@
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 					<cac:Country>
-						<?Name Contry?>
+						<?Name Country?>
 						<?Description The residens country for the Buyer party.?>
 						<?Cardinality 1..1?>
 						<cbc:IdentificationCode>UK
-							<?Name Contry code?>
+							<?Name Country code?>
 						</cbc:IdentificationCode>
 					</cac:Country>
 				</cac:RegistrationAddress>
@@ -504,7 +507,7 @@
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 					<cac:Country>
-						<?Name Contry?>
+						<?Name Country?>
 						<?Description The residens country for the Seller party.?>
 						<?Cardinality 1..1?>
 						<cbc:IdentificationCode>UK
@@ -743,7 +746,7 @@
 							<?Cardinality 0..1?>
 						</cbc:CityName>
 						<cac:Country>
-							<?Name Contry?>
+							<?Name Country?>
 							<?Description The residens country for the Carrier party.?>
 							<?Cardinality 1..1?>
 							<cbc:IdentificationCode>UK
@@ -1153,8 +1156,12 @@
 			</cac:EstimatedDeliveryPeriod>
 			
 			<cac:Despatch>
-				<cbc:ActualDespatchDate>2021-09-25</cbc:ActualDespatchDate>
-				<cbc:ActualDespatchTime>13:00:00+01:00<?Description The actual or expected date when the shipment was dispatched from the dispatching party. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the despatch was made should be assumed.?></cbc:ActualDespatchTime>
+				<cbc:ActualDespatchDate>2021-09-25
+					<?Name Shipment despatch date?>
+					<?Description The actual or expected date when the shipment was despatched from the despatching party.?>
+				</cbc:ActualDespatchDate>
+				<cbc:ActualDespatchTime>13:00:00+01:00<?Description The actual or expected date when the shipment was despatched from the despatching party. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the despatch was made should be assumed.?></cbc:ActualDespatchTime>
+				<?Name Shipment despatch time?>
 				<cac:DespatchAddress>
 					<?Description The Despatch Address is used to define the Ship-from when the Despatch Supplier Party is not. When the Despatch Advice describes a movement, the Despatch Address should be included.?>
 					<cbc:ID>34456456456456 <?Description An identifier for the location to which the goods and services are despatched. For example a global location number.?>
@@ -1670,8 +1677,13 @@
 	
 	
 	<cac:DespatchLine>
-		<cbc:ID>10</cbc:ID>
-		<cbc:Note>Gift</cbc:Note>
+		<cbc:ID>10
+			<?Name Despatch line identifier?>
+		</cbc:ID>
+		<cbc:Note>
+			Gift
+			<?Name Despatch line note?>
+		</cbc:Note>
 		<cbc:DeliveredQuantity unitCode="EA"> 10 
 			<?Rule PEPPOL-T120-R005?>
 			<?Rule PEPPOL-T120-R006?>
@@ -1976,21 +1988,29 @@
 			</cac:ManufacturerParty>
 			<cac:ItemInstance>
 				<?Description Adding information on individual instances of the item.?>
-				<cbc:ManufactureDate>2021-01-01</cbc:ManufactureDate>
+				<cbc:ManufactureDate>2021-01-01
+					<?Description The manufacturing date of all items listed in this despatch line.?>
+				</cbc:ManufactureDate>
 				<cbc:ManufactureTime>06:47:30+01:00
 				<?Name Item manufactured time?>
 					<?Description The time at which this item instance was manufactured. Timezone is optional to use. If omitted, the local timezone where the manufacturing was made should be assumed.?>
 					<?DateType Time?>
 					<?Cardinality 0..1?>
 			    </cbc:ManufactureTime>
-				<cbc:BestBeforeDate>2021-12-01</cbc:BestBeforeDate>
+				<cbc:BestBeforeDate>2021-12-01
+					<?Desccription The best before date of all items listed in this despatch line.?>
+				</cbc:BestBeforeDate>
 				<cbc:SerialID>4558784
 					<?Name Item serial number. ?>
 					<?Description Serial number for item listed in the despatch line..?>
 				</cbc:SerialID>
 				<cac:LotIdentification>
-					<cbc:LotNumberID>546378239</cbc:LotNumberID>
-					<cbc:ExpiryDate>2023-01-01</cbc:ExpiryDate>
+					<cbc:LotNumberID>546378239
+						<?Description The batch number that applies to all items in the despatch line.?>
+					</cbc:LotNumberID>
+					<cbc:ExpiryDate>2023-01-01
+						<?Description The expiry date of all items listed in this despatch line.?>
+					</cbc:ExpiryDate>
 				</cac:LotIdentification>
 			</cac:ItemInstance>
 			<cac:Certificate>
