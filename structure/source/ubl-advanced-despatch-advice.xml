@@ -1160,8 +1160,9 @@
 					<?Name Shipment despatch date?>
 					<?Description The actual or expected date when the shipment was despatched from the despatching party.?>
 				</cbc:ActualDespatchDate>
-				<cbc:ActualDespatchTime>13:00:00+01:00<?Description The actual or expected date when the shipment was despatched from the despatching party. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the despatch was made should be assumed.?></cbc:ActualDespatchTime>
-				<?Name Shipment despatch time?>
+				<cbc:ActualDespatchTime>13:00:00+01:00<?Description The actual or expected date when the shipment was despatched from the despatching party. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the despatch was made should be assumed.?>
+					<?Name Shipment despatch time?>
+				</cbc:ActualDespatchTime>
 				<cac:DespatchAddress>
 					<?Description The Despatch Address is used to define the Ship-from when the Despatch Supplier Party is not. When the Despatch Advice describes a movement, the Despatch Address should be included.?>
 					<cbc:ID>34456456456456 <?Description An identifier for the location to which the goods and services are despatched. For example a global location number.?>
@@ -1986,6 +1987,7 @@
 					</cbc:RegistrationName>
 				</cac:PartyLegalEntity>
 			</cac:ManufacturerParty>
+			
 			<cac:ItemInstance>
 				<?Description Adding information on individual instances of the item.?>
 				<cbc:ManufactureDate>2021-01-01
@@ -1998,7 +2000,7 @@
 					<?Cardinality 0..1?>
 			    </cbc:ManufactureTime>
 				<cbc:BestBeforeDate>2021-12-01
-					<?Desccription The best before date of all items listed in this despatch line.?>
+					<?Description The best before date of all items listed in this despatch line.?>
 				</cbc:BestBeforeDate>
 				<cbc:SerialID>4558784
 					<?Name Item serial number. ?>
