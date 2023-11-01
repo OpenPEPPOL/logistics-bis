@@ -1975,7 +1975,7 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cac:Despatch</Term>
-               <Name>Shipment despatch time</Name>
+               <Name>Actual or expected despatch period</Name>
                <Element cardinality="0..1">
                   <Term>cbc:ActualDespatchDate</Term>
                   <Name>Shipment despatch date</Name>
@@ -1985,7 +1985,7 @@
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:ActualDespatchTime</Term>
-                  <Name>Shipment dispatch time</Name>
+                  <Name>Shipment despatch time</Name>
                   <Description>The actual or expected date when the shipment was despatched from the despatching party. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the despatch was made should be assumed.</Description>
                   <Reference type="BUSINESS_TERM">tir16-073</Reference>
                   <Value type="EXAMPLE">13:00:00+01:00</Value>
@@ -3317,8 +3317,7 @@
                <Element cardinality="0..1">
                   <Term>cbc:BestBeforeDate</Term>
                   <Name>Item best before date</Name>
-                  <Description>The best before date of all items listed in this dispatch
-							line.</Description>
+                  <Description>The best before date of all items listed in this despatch line.</Description>
                   <Reference type="BUSINESS_TERM">tir16-080</Reference>
                   <Value type="EXAMPLE">2021-12-01</Value>
                </Element>

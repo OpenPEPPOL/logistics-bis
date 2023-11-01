@@ -3249,83 +3249,93 @@
 						</cbc:ItemClassificationCode>
 					</cac:CommodityClassification>
 					<cac:HazardousItem>
-				<?Description Contains information on the Hazardous item.?>
-				<cbc:ID>123
-					<?Name Identifier?>
-					<?Description An identifier for this hazardous item. ?>
-					<?Cardinality 0..1?>
-				</cbc:ID>
-				<cbc:AdditionalIformation>Information about the hazardous item
-					<?Name Additional Information?>
-					<?Description Text providing further information about the hazardous substance. ?>
-					<?Cardinality 0..1?>
-				</cbc:AdditionalIformation>
-				<cbc:UNDGCode> ADR <?CodeList UNCL8273?>
-				</cbc:UNDGCode>
-				<cbc:TechnicalName>Corrosive liquid, n.o.s., 8, UN 1760, II (contains Octanoyl chloride)
-					<?Name Technical Name?>
-					<?Description The full technical name of a specific hazardous substance contained in this goods item. ?>
-					<?Cardinality 0..1?>
-				</cbc:TechnicalName>
-				<cbc:CategoryName>Acute toxicity
-					<?Name Category Name?>
-					<?Description The name of the category of hazard that applies to the Item. ?>
-					<?Cardinality 0..1?>
-				</cbc:CategoryName>
-				<cbc:HazardousCategoryCode>123
-					<?Name Hazardous Category Code?>
-					<?Description A code signifying a kind of hazard for a material. ?>
-					<?Cardinality 0..1?>
-				</cbc:HazardousCategoryCode>
-				<cbc:HazardClassID>Code</cbc:HazardClassID>
-				<cbc:NetWeightMeasure unitCode="KGM">123
-					<?Name Net Weight Measure ?>
-					<?Description Net weight of the Hazardous item. ?>
-					<?Cardinality 0..1?>
-					<?unitCode-CodeList UNECERec20?>
-					<?unitCode-Name Measure unit of measure?>
-					<?unitCode-Description The unit of measure that applies to the Net Weight.?>
-					<?unitCode-usage Mandatory?>
-				</cbc:NetWeightMeasure>
-				<cbc:NetVolumeMeasure unitCode="MTQ">12.3
-					<?Name Net Volume Measure ?>
-					<?Description Net volume of the Hazardous item. ?>
-					<?Cardinality 0..1?>
-					<?unitCode-CodeList UNECERec20?>
-					<?unitCode-Name Measure unit of measure?>
-					<?unitCode-Description The unit of measure that applies to the Net Volume.?>
-					<?unitCode-usage Mandatory?>
-				</cbc:NetVolumeMeasure>
-				<cac:HazardousGoodsTransit>
-					<?Name Hazardous Goods Transit ?>
-					<?Description Information related to the transit of this kind of hazardous goods. ?>
-					<?Cardinality 0..n?>
-					<cbc:PackingCriteriaCode>123
-						<?Name Packing Criteria Code ?>
-						<?Description A code signifying the packaging requirement for transportation of the hazardous goods as assigned by IATA, IMDB, ADR, RID etc. ?>
-						<?Cardinality 1..1?>
-					</cbc:PackingCriteriaCode>
-				</cac:HazardousGoodsTransit>
-				<cac:EmergencyTemperature>
-					<?Name Emergency Temperature ?>
-					<?Description The threshold temperature at which emergency procedures apply in the handling of temperature-controlled goods. ?>
-					<?Cardinality 0..1?>
-					<cbc:AttributeID>ABC
-						<?Name Attribute ID ?>
-						<?Description An identifier for this temperature measurement. ?>
-						<?Cardinality 1..1?>
-					</cbc:AttributeID>
-					<cbc:Measure unitCode="CEL">78
-						<?Name Measure ?>
-						<?Description The value of this temperature measurement. ?>
-						<?Cardinality 1..1?>
-						<?unitCode-CodeList UNECERec20?>
-						<?unitCode-Name Measure unit of measure?>
-						<?unitCode-Description The unit of measure that applies to the Emergency Temperature.?>
-						<?unitCode-usage Mandatory?>
-					</cbc:Measure>
-				</cac:EmergencyTemperature>
-			</cac:HazardousItem>
+						<?Name Hazardous item information?>
+						<?Description Contains information on the Hazardous item. ?>
+						<?Cardinality 0..n?>
+						<cbc:ID>123
+							<?Name Identifier?>
+							<?Description An identifier for this hazardous item. ?>
+							<?Cardinality 0..1?>
+						</cbc:ID>
+						<cbc:AdditionalIformation>Information about the hazardous item
+							<?Name Additional Information?>
+							<?Description Text providing further information about the hazardous substance. ?>
+							<?Cardinality 0..1?>
+						</cbc:AdditionalIformation>
+						<cbc:UNDGCode>ADR 
+							<?CodeList UNCL8273?>
+							<?Name Hazardous item UNDG code?>
+							<?Description The identifier assigned to transportable hazardous goods by the United Nations, expressed as a code. ?>
+							<?Cardinality 0..1?>
+						</cbc:UNDGCode>
+						<cbc:TechnicalName>Corrosive liquid, n.o.s., 8, UN 1760, II (contains Octanoyl chloride)
+							<?Name Technical Name?>
+							<?Description The full technical name of a specific hazardous substance contained in this goods item. ?>
+							<?Cardinality 0..1?>
+						</cbc:TechnicalName>
+						<cbc:CategoryName>Acute toxicity
+							<?Name Category Name?>
+							<?Description The name of the category of hazard that applies to the Item. ?>
+							<?Cardinality 0..1?>
+						</cbc:CategoryName>
+						<cbc:HazardousCategoryCode>123
+							<?Name Hazardous Category Code?>
+							<?Description A code signifying a kind of hazard for a material. ?>
+							<?Cardinality 0..1?>
+						</cbc:HazardousCategoryCode>
+						<cbc:HazardClassID>Code
+							<?Name Haszardous hazard class Identifier?>
+							<?Description dentifies a hazard class applicable to dangerous goods as defined by the relevant regulation authority, such as the IMDG Class Number of the SOLAS Convention ofIMO and the ADR/RID Class Number for the road/rail environment. ?>
+							<?Cardinality 0..1?>
+						</cbc:HazardClassID>
+						<cbc:NetWeightMeasure unitCode="KGM">123
+							<?Name Net Weight Measure ?>
+							<?Description Net weight of the Hazardous item. ?>
+							<?Cardinality 0..1?>
+							<?unitCode-CodeList UNECERec20?>
+							<?unitCode-Name Measure unit of measure?>
+							<?unitCode-Description The unit of measure that applies to the Net Weight.?>
+							<?unitCode-usage Mandatory?>
+						</cbc:NetWeightMeasure>
+						<cbc:NetVolumeMeasure unitCode="MTQ">12.3
+							<?Name Net Volume Measure ?>
+							<?Description Net volume of the Hazardous item. ?>
+							<?Cardinality 0..1?>
+							<?unitCode-CodeList UNECERec20?>
+							<?unitCode-Name Measure unit of measure?>
+							<?unitCode-Description The unit of measure that applies to the Net Volume.?>
+							<?unitCode-usage Mandatory?>
+						</cbc:NetVolumeMeasure>
+						<cac:HazardousGoodsTransit>
+							<?Name Hazardous Goods Transit ?>
+							<?Description Information related to the transit of this kind of hazardous goods. ?>
+							<?Cardinality 0..n?>
+							<cbc:PackingCriteriaCode>123
+								<?Name Packing Criteria Code ?>
+								<?Description A code signifying the packaging requirement for transportation of the hazardous goods as assigned by IATA, IMDB, ADR, RID etc. ?>
+								<?Cardinality 1..1?>
+							</cbc:PackingCriteriaCode>
+						</cac:HazardousGoodsTransit>
+						<cac:EmergencyTemperature>
+							<?Name Emergency Temperature ?>
+							<?Description The threshold temperature at which emergency procedures apply in the handling of temperature-controlled goods. ?>
+							<?Cardinality 0..1?>
+							<cbc:AttributeID>ABC
+								<?Name Attribute ID ?>
+								<?Description An identifier for this temperature measurement. ?>
+								<?Cardinality 1..1?>
+							</cbc:AttributeID>
+							<cbc:Measure unitCode="CEL">78
+								<?Name Measure ?>
+								<?Description The value of this temperature measurement. ?>
+								<?Cardinality 1..1?>
+								<?unitCode-CodeList UNECERec20?>
+								<?unitCode-Name Measure unit of measure?>
+								<?unitCode-Description The unit of measure that applies to the Emergency Temperature.?>
+								<?unitCode-usage Mandatory?>
+							</cbc:Measure>
+						</cac:EmergencyTemperature>
+					</cac:HazardousItem>
 				</cac:Item>
 			</cac:GoodsItem>
 		</cac:TransportHandlingUnit>
