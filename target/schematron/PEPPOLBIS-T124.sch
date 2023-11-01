@@ -2181,9 +2181,7 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cbc:Quantity">
          <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B66901">Attribute 'unitCode' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item">
-         <assert test="cac:HazardousItem" flag="fatal" id="PEPPOL-T124-B67101">Element 'cac:HazardousItem' MUST be provided.</assert>
-      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:CommodityClassification">
          <assert test="cbc:ItemClassificationCode"
@@ -2201,10 +2199,7 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:CommodityClassification/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T124-B67302">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem">
-         <assert test="cbc:UNDGCode" flag="fatal" id="PEPPOL-T124-B67801">Element 'cbc:UNDGCode' MUST be provided.</assert>
-         <assert test="cbc:HazardClassID" flag="fatal" id="PEPPOL-T124-B67802">Element 'cbc:HazardClassID' MUST be provided.</assert>
-      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:ID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:AdditionalIformation"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:AdditionalIformation/*">
@@ -2253,10 +2248,10 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T124-B69203">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B67803">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B67801">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B67102">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B67101">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T124-B66501">Document MUST NOT contain elements not part of the data model.</assert>

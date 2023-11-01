@@ -2108,8 +2108,9 @@
                         </Attribute>
                      </Element>
                   </Element>
-                  <Element>
+                  <Element cardinality="0..n">
                      <Term>cac:HazardousItem</Term>
+                     <Name>Hazardous item information</Name>
                      <Description>Contains information on the Hazardous item. </Description>
                      <Element cardinality="0..1">
                         <Term>cbc:ID</Term>
@@ -2123,8 +2124,10 @@
                         <Description>Text providing further information about the hazardous substance. </Description>
                         <Value type="EXAMPLE">Information about the hazardous item</Value>
                      </Element>
-                     <Element>
+                     <Element cardinality="0..1">
                         <Term>cbc:UNDGCode</Term>
+                        <Name>Hazardous item UNDG code</Name>
+                        <Description>The identifier assigned to transportable hazardous goods by the United Nations, expressed as a code. </Description>
                         <Reference type="CODE_LIST">UNCL8273</Reference>
                         <Value type="EXAMPLE">ADR</Value>
                      </Element>
@@ -2146,8 +2149,10 @@
                         <Description>A code signifying a kind of hazard for a material. </Description>
                         <Value type="EXAMPLE">123</Value>
                      </Element>
-                     <Element>
+                     <Element cardinality="0..1">
                         <Term>cbc:HazardClassID</Term>
+                        <Name>Haszardous hazard class Identifier</Name>
+                        <Description>dentifies a hazard class applicable to dangerous goods as defined by the relevant regulation authority, such as the IMDG Class Number of the SOLAS Convention ofIMO and the ADR/RID Class Number for the road/rail environment. </Description>
                         <Value type="EXAMPLE">Code</Value>
                      </Element>
                      <Element cardinality="0..1">
