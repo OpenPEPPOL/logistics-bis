@@ -3249,7 +3249,9 @@
 						</cbc:ItemClassificationCode>
 					</cac:CommodityClassification>
 					<cac:HazardousItem>
+						<?Name Hazardous item information?>
 						<?Description Contains information on the Hazardous item. ?>
+						<?Cardinality 0..n?>
 						<cbc:ID>123
 							<?Name Identifier?>
 							<?Description An identifier for this hazardous item. ?>
@@ -3260,7 +3262,11 @@
 							<?Description Text providing further information about the hazardous substance. ?>
 							<?Cardinality 0..1?>
 						</cbc:AdditionalIformation>
-						<cbc:UNDGCode> ADR <?CodeList UNCL8273?>
+						<cbc:UNDGCode>ADR 
+							<?CodeList UNCL8273?>
+							<?Name Hazardous item UNDG code?>
+							<?Description The identifier assigned to transportable hazardous goods by the United Nations, expressed as a code. ?>
+							<?Cardinality 0..1?>
 						</cbc:UNDGCode>
 						<cbc:TechnicalName>Corrosive liquid, n.o.s., 8, UN 1760, II (contains Octanoyl chloride)
 							<?Name Technical Name?>
@@ -3277,7 +3283,11 @@
 							<?Description A code signifying a kind of hazard for a material. ?>
 							<?Cardinality 0..1?>
 						</cbc:HazardousCategoryCode>
-						<cbc:HazardClassID>Code</cbc:HazardClassID>
+						<cbc:HazardClassID>Code
+							<?Name Haszardous hazard class Identifier?>
+							<?Description dentifies a hazard class applicable to dangerous goods as defined by the relevant regulation authority, such as the IMDG Class Number of the SOLAS Convention ofIMO and the ADR/RID Class Number for the road/rail environment. ?>
+							<?Cardinality 0..1?>
+						</cbc:HazardClassID>
 						<cbc:NetWeightMeasure unitCode="KGM">123
 							<?Name Net Weight Measure ?>
 							<?Description Net weight of the Hazardous item. ?>
