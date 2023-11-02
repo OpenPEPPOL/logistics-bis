@@ -1250,10 +1250,7 @@
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem"/>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:ID"/>
-      <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:AdditionalIformation"/>
-      <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:AdditionalIformation/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T123-B35801">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
+      <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:AdditionalInformation"/>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:UNDGCode">
          <assert test="(some $code in $clUNCL8273 satisfies $code = normalize-space(text()))"
                  flag="fatal"
