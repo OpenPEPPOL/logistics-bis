@@ -113,70 +113,70 @@
    </pattern>
     <pattern>
 
-	     <rule context="/*">
-		       <assert id="PEPPOL-COMMON-R003"
+      <rule context="/*">
+        <assert id="PEPPOL-COMMON-R003"
                  test="not(@*:schemaLocation)"
                  flag="warning">Document SHOULD not contain schema location.</assert>
 
-	     </rule>
+      </rule>
 
-	     <rule context="cbc:IssueDate | cbc:DueDate | cbc:TaxPointDate | cbc:StartDate | cbc:EndDate | cbc:ActualDeliveryDate">
-		       <assert id="PEPPOL-COMMON-R030"
+      <rule context="cbc:IssueDate | cbc:DueDate | cbc:TaxPointDate | cbc:StartDate | cbc:EndDate | cbc:ActualDeliveryDate">
+        <assert id="PEPPOL-COMMON-R030"
                  test="(string(.) castable as xs:date) and (string-length(.) = 10)"
                  flag="fatal">A date must be formatted YYYY-MM-DD.</assert>
-	     </rule>
+      </rule>
 
-	
-	     <rule context="cbc:EndpointID[@schemeID = '0088'] | cac:PartyIdentification/cbc:ID[@schemeID = '0088'] | cbc:CompanyID[@schemeID = '0088']">
-		       <assert id="PEPPOL-COMMON-R040"
+    
+      <rule context="cbc:EndpointID[@schemeID = '0088'] | cac:PartyIdentification/cbc:ID[@schemeID = '0088'] | cbc:CompanyID[@schemeID = '0088']">
+        <assert id="PEPPOL-COMMON-R040"
                  test="matches(normalize-space(), '^[0-9]+$') and u:gln(normalize-space())"
                  flag="fatal">GLN must have a valid format according to GS1 rules.</assert>
-	     </rule>
-	     <rule context="cbc:EndpointID[@schemeID = '0192'] | cac:PartyIdentification/cbc:ID[@schemeID = '0192'] | cbc:CompanyID[@schemeID = '0192']">
-		       <assert id="PEPPOL-COMMON-R041"
+      </rule>
+      <rule context="cbc:EndpointID[@schemeID = '0192'] | cac:PartyIdentification/cbc:ID[@schemeID = '0192'] | cbc:CompanyID[@schemeID = '0192']">
+        <assert id="PEPPOL-COMMON-R041"
                  test="matches(normalize-space(), '^[0-9]{9}$') and u:mod11(normalize-space())"
                  flag="fatal">Norwegian organization number MUST be stated in the correct format.</assert>
-	     </rule>
-	     <rule context="cbc:EndpointID[@schemeID = '0208'] | cac:PartyIdentification/cbc:ID[@schemeID = '0208'] | cbc:CompanyID[@schemeID = '0208']">
-		       <assert id="PEPPOL-COMMON-R043"
+      </rule>
+      <rule context="cbc:EndpointID[@schemeID = '0208'] | cac:PartyIdentification/cbc:ID[@schemeID = '0208'] | cbc:CompanyID[@schemeID = '0208']">
+         <assert id="PEPPOL-COMMON-R043"
                  test="matches(normalize-space(), '^[0-9]{10}$') and u:mod97-0208(normalize-space())"
                  flag="fatal">Belgian enterprise number MUST be stated in the correct format.</assert>
-	     </rule>
-	     <rule context="cbc:EndpointID[@schemeID = '0201'] | cac:PartyIdentification/cbc:ID[@schemeID = '0201'] | cbc:CompanyID[@schemeID = '0201']">
-		       <assert id="PEPPOL-COMMON-R044"
+      </rule>	
+      <rule context="cbc:EndpointID[@schemeID = '0201'] | cac:PartyIdentification/cbc:ID[@schemeID = '0201'] | cbc:CompanyID[@schemeID = '0201']">
+         <assert id="PEPPOL-COMMON-R044"
                  test="u:checkCodiceIPA(normalize-space())"
                  flag="warning">IPA Code (Codice Univoco Unità Organizzativa) must be stated in the correct format</assert>
-	     </rule>
-	     <rule context="cbc:EndpointID[@schemeID = '0210'] | cac:PartyIdentification/cbc:ID[@schemeID = '0210'] | cbc:CompanyID[@schemeID = '0210']">
-		       <assert id="PEPPOL-COMMON-R045"
+      </rule>
+      <rule context="cbc:EndpointID[@schemeID = '0210'] | cac:PartyIdentification/cbc:ID[@schemeID = '0210'] | cbc:CompanyID[@schemeID = '0210']">
+         <assert id="PEPPOL-COMMON-R045"
                  test="u:checkCF(normalize-space())"
                  flag="warning">Tax Code (Codice Fiscale) must be stated in the correct format</assert>
-	     </rule>
-	     <rule context="cbc:EndpointID[@schemeID = '9907']">
-		       <assert id="PEPPOL-COMMON-R046"
+      </rule>
+      <rule context="cbc:EndpointID[@schemeID = '9907']">
+         <assert id="PEPPOL-COMMON-R046"
                  test="u:checkCF(normalize-space())"
                  flag="warning">Tax Code (Codice Fiscale) must be stated in the correct format</assert>
-	     </rule>
-	     <rule context="cbc:EndpointID[@schemeID = '0211'] | cac:PartyIdentification/cbc:ID[@schemeID = '0211'] | cbc:CompanyID[@schemeID = '0211']">
-		       <assert id="PEPPOL-COMMON-R047"
+      </rule>
+      <rule context="cbc:EndpointID[@schemeID = '0211'] | cac:PartyIdentification/cbc:ID[@schemeID = '0211'] | cbc:CompanyID[@schemeID = '0211']">
+         <assert id="PEPPOL-COMMON-R047"
                  test="u:checkPIVAseIT(normalize-space())"
                  flag="warning">Italian VAT Code (Partita Iva) must be stated in the correct format</assert>
-	     </rule>
-	     <rule context="cbc:EndpointID[@schemeID = '9906']">
-		       <assert id="PEPPOL-COMMON-R048"
+      </rule>
+      <rule context="cbc:EndpointID[@schemeID = '9906']">
+         <assert id="PEPPOL-COMMON-R048"
                  test="u:checkPIVAseIT(normalize-space())"
                  flag="warning">Italian VAT Code (Partita Iva) must be stated in the correct format</assert>
-	     </rule>
-	     <rule context="cbc:EndpointID[@schemeID = '0007'] | cac:PartyIdentification/cbc:ID[@schemeID = '0007'] | cbc:CompanyID[@schemeID = '0007']">
-		       <assert id="PEPPOL-COMMON-R049"
+      </rule>
+      <rule context="cbc:EndpointID[@schemeID = '0007'] | cac:PartyIdentification/cbc:ID[@schemeID = '0007'] | cbc:CompanyID[@schemeID = '0007']">
+         <assert id="PEPPOL-COMMON-R049"
                  test="string-length(normalize-space()) = 10 and string(number(normalize-space())) != 'NaN'"
-                 flag="warning">Swedish organization number MUST be stated in the correct format.</assert>
-	     </rule>
-	     <rule context="cbc:EndpointID[@schemeID = '0151'] | cac:PartyIdentification/cbc:ID[@schemeID = '0151'] | cbc:CompanyID[@schemeID = '0151']">
-		       <assert id="PEPPOL-COMMON-R050"
-                 test="u:abn(normalize-space())"
+                 flag="fatal">Swedish organization number MUST be stated in the correct format.</assert>     
+      </rule> 
+      <rule context="cbc:EndpointID[@schemeID = '0151'] | cac:PartyIdentification/cbc:ID[@schemeID = '0151'] | cbc:CompanyID[@schemeID = '0151']">
+         <assert id="PEPPOL-COMMON-R050"
+                 test="matches(normalize-space(), '^[0-9]{11}$') and u:abn(normalize-space())"
                  flag="warning">Australian Business Number (ABN) MUST be stated in the correct format.</assert>
-	     </rule>
+      </rule> 
    </pattern>
     <pattern xmlns:ns2="http://www.schematron-quickfix.com/validator/process">
       <let name="clUNECERec20"
@@ -338,14 +338,8 @@
          <assert test="cbc:Name" flag="fatal" id="PEPPOL-T122-B05601">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PartyName/cbc:Name"/>
-      <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PhysicalLocation"/>
-      <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PhysicalLocation/cbc:ID"/>
-      <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PhysicalLocation/cbc:Name"/>
-      <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PhysicalLocation/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T122-B05801">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T122-B06201">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T122-B05801">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cbc:StreetName"/>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cbc:AdditionalStreetName"/>
@@ -353,18 +347,24 @@
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cbc:PostalZone"/>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cbc:CountrySubentity"/>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T122-B06801">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T122-B06401">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T122-B07001">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T122-B06601">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode"/>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T122-B07002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T122-B06602">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T122-B06202">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T122-B05802">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PhysicalLocation"/>
+      <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PhysicalLocation/cbc:ID"/>
+      <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PhysicalLocation/cbc:Name"/>
+      <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PhysicalLocation/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T122-B06801">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:Contact"/>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:Contact/cbc:Name"/>

@@ -5,7 +5,7 @@
 	<?DocumentTerm WeightStatement?>
 	<?Property key="sch:prefix" PEPPOL-T122?>
 	<?Property key="sch:identifier" T122-basic?>
-	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:weight_statement:1<?Rule PEPPOL-T122-R001?></cbc:CustomizationID>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:weight_statement:1f<?Rule PEPPOL-T122-R001?></cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:weight_statement:1</cbc:ProfileID>
 
 	<cbc:ID>GOA294107
@@ -281,25 +281,6 @@
 				<?Description The name of the weighing party?>
 			</cbc:Name>
 		</cac:PartyName>
-		
-		<cac:PhysicalLocation>
-			<?Name Physical Location?>
-			<?Description The physical location of this party.?>
-			<cbc:ID schemeID=""> 0114-40-019-a
-				<?Name Physical Location ID?>
-				<?Rule PEPPOL-T122-R010?>
-				<?Description Unique ID of the site for the weighing party. If possile an ID that is issued by a authority or similar.?>
-				<?Cardinality 0..1?>
-				<?schemeID-usage Optional?>
-			</cbc:ID>
-			
-			<cbc:Name> Townsend pit
-				<?Name Location name?>
-				<?Rule PEPPOL-T122-R010?>
-				<?Description Physical location name?>
-				<?Cardinality 0..1?>
-			</cbc:Name>
-		</cac:PhysicalLocation>
 
 		<cac:PostalAddress>
 			<?Name Postal address?>
@@ -347,7 +328,26 @@
 				</cbc:IdentificationCode>
 			</cac:Country>
 		</cac:PostalAddress>
-
+		
+		<cac:PhysicalLocation>
+			<?Name Physical Location?>
+			<?Description The physical location of this party.?>
+			<cbc:ID schemeID=""> 0114-40-019-a
+				<?Name Physical Location ID?>
+				<?Rule PEPPOL-T122-R010?>
+				<?Description Unique ID of the site for the weighing party. If possile an ID that is issued by a authority or similar.?>
+				<?Cardinality 0..1?>
+				<?schemeID-usage Optional?>
+			</cbc:ID>
+			
+			<cbc:Name> Townsend pit
+				<?Name Location name?>
+				<?Rule PEPPOL-T122-R010?>
+				<?Description Physical location name?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
+		</cac:PhysicalLocation>
+		
 		<cac:Contact>
 			<?Name Contact person name?>
 			<?Description The contact of the Sender party.?>

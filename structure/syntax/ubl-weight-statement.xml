@@ -19,7 +19,7 @@
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir16-002</Reference>
          <Reference type="RULE">PEPPOL-T122-R001</Reference>
-         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:weight_statement:1</Value>
+         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:weight_statement:1f</Value>
       </Element>
 	     <Element>
          <Term>cbc:ProfileID</Term>
@@ -352,28 +352,6 @@
                <Value type="EXAMPLE">Gravel Pit Ltd.</Value>
             </Element>
          </Element>
-         <Element>
-            <Term>cac:PhysicalLocation</Term>
-            <Name>Physical Location</Name>
-            <Description>The physical location of this party.</Description>
-            <Element cardinality="0..1">
-               <Term>cbc:ID</Term>
-               <Name>Physical Location ID</Name>
-               <Description>Unique ID of the site for the weighing party. If possile an ID that is issued by a authority or similar.</Description>
-               <Reference type="RULE">PEPPOL-T122-R010</Reference>
-               <Value type="EXAMPLE">0114-40-019-a</Value>
-               <Attribute usage="Optional">
-                  <Term>schemeID</Term>
-               </Attribute>
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:Name</Term>
-               <Name>Location name</Name>
-               <Description>Physical location name</Description>
-               <Reference type="RULE">PEPPOL-T122-R010</Reference>
-               <Value type="EXAMPLE">Townsend pit</Value>
-            </Element>
-         </Element>
          <Element cardinality="0..1">
             <Term>cac:PostalAddress</Term>
             <Name>Postal address</Name>
@@ -427,6 +405,28 @@
                   <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.</Description>
                   <Value type="EXAMPLE">SE</Value>
                </Element>
+            </Element>
+         </Element>
+         <Element>
+            <Term>cac:PhysicalLocation</Term>
+            <Name>Physical Location</Name>
+            <Description>The physical location of this party.</Description>
+            <Element cardinality="0..1">
+               <Term>cbc:ID</Term>
+               <Name>Physical Location ID</Name>
+               <Description>Unique ID of the site for the weighing party. If possile an ID that is issued by a authority or similar.</Description>
+               <Reference type="RULE">PEPPOL-T122-R010</Reference>
+               <Value type="EXAMPLE">0114-40-019-a</Value>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+               </Attribute>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:Name</Term>
+               <Name>Location name</Name>
+               <Description>Physical location name</Description>
+               <Reference type="RULE">PEPPOL-T122-R010</Reference>
+               <Value type="EXAMPLE">Townsend pit</Value>
             </Element>
          </Element>
          <Element cardinality="0..1">
