@@ -338,14 +338,8 @@
          <assert test="cbc:Name" flag="fatal" id="PEPPOL-T122-B05601">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PartyName/cbc:Name"/>
-      <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PhysicalLocation"/>
-      <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PhysicalLocation/cbc:ID"/>
-      <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PhysicalLocation/cbc:Name"/>
-      <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PhysicalLocation/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T122-B05801">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T122-B06201">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T122-B05801">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cbc:StreetName"/>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cbc:AdditionalStreetName"/>
@@ -353,18 +347,24 @@
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cbc:PostalZone"/>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cbc:CountrySubentity"/>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T122-B06801">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T122-B06401">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T122-B07001">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T122-B06601">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode"/>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T122-B07002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T122-B06602">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PostalAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T122-B06202">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T122-B05802">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PhysicalLocation"/>
+      <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PhysicalLocation/cbc:ID"/>
+      <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PhysicalLocation/cbc:Name"/>
+      <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:PhysicalLocation/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T122-B06801">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:Contact"/>
       <rule context="/ubl:WeightStatement/cac:WeighingParty/cac:Contact/cbc:Name"/>
