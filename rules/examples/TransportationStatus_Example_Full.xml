@@ -24,7 +24,7 @@
          <cbc:TransportEventTypeCode>1</cbc:TransportEventTypeCode>
          <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
          <cac:CurrentStatus>
-            <cbc:ConditionCode schemeID="zzz">4</cbc:ConditionCode>
+            <cbc:ConditionCode listID="zzz">4</cbc:ConditionCode>
             <cbc:Description>Description</cbc:Description>
             <cbc:StatusReasonCode listID="zzz">80</cbc:StatusReasonCode>
             <cbc:StatusReason>Prolonged coffebreak</cbc:StatusReason>      
@@ -74,57 +74,11 @@
       <cac:TransportHandlingUnit>
          <cbc:ID>CON_THU_1</cbc:ID>
          <cac:Status>
-            <cbc:ConditionCode schemeID="zzz">4</cbc:ConditionCode>
+            <cbc:ConditionCode listID="zzz">4</cbc:ConditionCode>
             <cbc:Description>Description</cbc:Description>      
          </cac:Status>    
       </cac:TransportHandlingUnit>  
    </cac:Consignment>
-   <cac:DocumentReference>
-      <cbc:ID>7648779</cbc:ID>
-      <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
-      <cbc:DocumentType>Delivery soecification</cbc:DocumentType>
-      <cac:Attachment>
-         <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
-         <cac:ExternalReference>
-            <cbc:URI>www.beast.se</cbc:URI>      
-         </cac:ExternalReference>    
-      </cac:Attachment>  
-   </cac:DocumentReference>
-   <cac:Signature>
-      <cbc:ID>3453</cbc:ID>
-      <cbc:ValidationDate>2021-09-29</cbc:ValidationDate>
-      <cbc:ValidationTime>09:49:00+01:00</cbc:ValidationTime>
-      <cac:SignatoryParty>
-         <cac:PartyName>
-            <cbc:Name>HUS Hospital</cbc:Name>      
-         </cac:PartyName>
-         <cac:PostalAddress>
-            <cbc:StreetName>Topeliuksenkatu 5</cbc:StreetName>
-            <cbc:AdditionalStreetName>Purchasing</cbc:AdditionalStreetName>
-            <cbc:CityName>Helsinki</cbc:CityName>
-            <cbc:PostalZone>00260</cbc:PostalZone>
-            <cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
-            <cac:AddressLine>
-               <cbc:Line>Gate 34</cbc:Line>        
-            </cac:AddressLine>
-            <cac:Country>
-               <cbc:IdentificationCode>FI</cbc:IdentificationCode>        
-            </cac:Country>      
-         </cac:PostalAddress>
-         <cac:Person>
-            <cbc:ID schemeID="zzz">45976</cbc:ID>
-            <cbc:FirstName>Valiry</cbc:FirstName>
-            <cbc:FamilyName>Sender</cbc:FamilyName>
-            <cbc:JobTitle>Director</cbc:JobTitle>      
-         </cac:Person>    
-      </cac:SignatoryParty>
-      <cac:DigitalSignatureAttachment>
-         <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
-         <cac:ExternalReference>
-            <cbc:URI>www.beast.se</cbc:URI>      
-         </cac:ExternalReference>    
-      </cac:DigitalSignatureAttachment>  
-   </cac:Signature>
    <cac:TransportEvent>
       <cbc:IdentificationID>1234</cbc:IdentificationID>
       <cbc:OccurrenceDate>2023-06-06</cbc:OccurrenceDate>
@@ -132,7 +86,7 @@
       <cbc:TransportEventTypeCode>1</cbc:TransportEventTypeCode>
       <cbc:CompletionIndicator>true</cbc:CompletionIndicator>
       <cac:CurrentStatus>
-         <cbc:ConditionCode schemeID="zzz">4</cbc:ConditionCode>
+         <cbc:ConditionCode listID="zzz">4</cbc:ConditionCode>
          <cbc:Description>Description</cbc:Description>
          <cbc:StatusReasonCode listID="zzz">80</cbc:StatusReasonCode>
          <cbc:StatusReason>Prolonged coffebreak</cbc:StatusReason>    
@@ -179,6 +133,52 @@
          <cbc:EndTime>12:00:00+01:00</cbc:EndTime>    
       </cac:Period>  
    </cac:TransportEvent>
+   <cac:DocumentReference>
+      <cbc:ID>7648779</cbc:ID>
+      <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+      <cbc:DocumentType>Delivery soecification</cbc:DocumentType>
+      <cac:Attachment>
+         <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+         <cac:ExternalReference>
+            <cbc:URI>www.beast.se</cbc:URI>      
+         </cac:ExternalReference>    
+      </cac:Attachment>  
+   </cac:DocumentReference>
+   <cac:Signature>
+      <cbc:ID>3453</cbc:ID>
+      <cbc:ValidationDate>2021-09-29</cbc:ValidationDate>
+      <cbc:ValidationTime>09:49:00+01:00</cbc:ValidationTime>
+      <cac:SignatoryParty>
+         <cac:PartyName>
+            <cbc:Name>HUS Hospital</cbc:Name>      
+         </cac:PartyName>
+         <cac:PostalAddress>
+            <cbc:StreetName>Topeliuksenkatu 5</cbc:StreetName>
+            <cbc:AdditionalStreetName>Purchasing</cbc:AdditionalStreetName>
+            <cbc:CityName>Helsinki</cbc:CityName>
+            <cbc:PostalZone>00260</cbc:PostalZone>
+            <cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
+            <cac:AddressLine>
+               <cbc:Line>Gate 34</cbc:Line>        
+            </cac:AddressLine>
+            <cac:Country>
+               <cbc:IdentificationCode>FI</cbc:IdentificationCode>        
+            </cac:Country>      
+         </cac:PostalAddress>
+         <cac:Person>
+            <cbc:ID schemeID="zzz">45976</cbc:ID>
+            <cbc:FirstName>Valiry</cbc:FirstName>
+            <cbc:FamilyName>Sender</cbc:FamilyName>
+            <cbc:JobTitle>Director</cbc:JobTitle>      
+         </cac:Person>    
+      </cac:SignatoryParty>
+      <cac:DigitalSignatureAttachment>
+         <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+         <cac:ExternalReference>
+            <cbc:URI>www.beast.se</cbc:URI>      
+         </cac:ExternalReference>    
+      </cac:DigitalSignatureAttachment>  
+   </cac:Signature>
    <cac:SenderParty>
       <cbc:EndpointID schemeID="0198">41955619</cbc:EndpointID>
       <cac:PartyIdentification>
