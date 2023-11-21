@@ -1821,7 +1821,7 @@
 				<?Cardinality 0..1?>
 				<?Rule PEPPOL-T124-R007?>
 			</cbc:SpecialTerms>
-			<cac:Location>
+			<cac:DeliveryLocation>
 				<?Name Location of attchaed to the delivery terms ?>
 				<?Description The location where the pickup takes place.?>
 				<?Cardinality 0..1?>
@@ -1838,7 +1838,7 @@
 				<?Description The name of the location.?>
 				<?Cardinality 0..1?>
 				</cbc:Name>
-			</cac:Location>
+			</cac:DeliveryLocation>
 		</cac:DeliveryTerms>
 		<cac:PaymentTerms>
 			<?Name Payment terms ?>
@@ -1873,7 +1873,7 @@
 				<?CodeList FreightAllowanceChargeReasonCode?>
 				<?listID-usage Mandatory?>
 			</cbc:AllowanceChargeReasonCode>
-			<cbc:Amount>100
+			<cbc:Amount currency="EUR">100
 				<?Name Amount ?>
 				<?Description The amount for this allowance or charge. ?>
 				<?Cardinality 1..1?>			
@@ -1903,7 +1903,7 @@
 					<?Description An identifier for the sender party as known to the receiver party. ?>
 					<?Cardinality 0..1?>
 					<cbc:ID schemeID="0088">7300010000001 	
-					<?Name ID ?>
+						<?Name ID ?>
 						<?Cardinality 1..1?>			
 						<?schemeID-CodeList ICD?>
 						<?schemeID-usage Optional?>			
