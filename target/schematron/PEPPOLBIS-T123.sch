@@ -1000,7 +1000,7 @@
                  id="PEPPOL-T123-B26801">Value MUST be part of code list 'Freight Allowance-Charge Reason Code'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:FreightAllowanceCharge/cbc:Amount">
-         <assert test="@currency" flag="fatal" id="PEPPOL-T123-B26901">Attribute 'currency' MUST be present.</assert>
+         <assert test="@currencyID" flag="fatal" id="PEPPOL-T123-B26901">Attribute 'currencyID' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:FreightAllowanceCharge/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B26604">Document MUST NOT contain elements not part of the data model.</assert>
