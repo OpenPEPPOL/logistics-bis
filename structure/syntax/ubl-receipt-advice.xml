@@ -71,6 +71,29 @@
          <Reference type="RULE">PEPPOL-T128-R023</Reference>
          <Reference type="CODE_LIST">ReceiptAdviceTypeCode</Reference>
          <Value type="EXAMPLE">S</Value>
+      </Element>	
+	     <Element cardinality="0..1">
+         <Term>cbc:RejectReasonCode</Term>
+         <Name>Reject Reason Code</Name>
+         <Description>The reason for a rejection, expressed as a code. </Description>
+         <Reference type="RULE">PEPPOL-T128-R005</Reference>
+         <Reference type="CODE_LIST">RejectReasonCode</Reference>
+         <Value type="EXAMPLE">1</Value>
+      </Element>
+	     <Element cardinality="0..1">
+         <Term>cbc:RejectReason</Term>
+         <Name>Reject Reason</Name>
+         <Description>The reason for a rejection, expressed as text.</Description>
+         <Reference type="RULE">PEPPOL-T128-R006</Reference>
+         <Value type="EXAMPLE">Wrong item delivered.</Value>
+      </Element>
+	     <Element cardinality="0..1">
+         <Term>cbc:RejectActionCode</Term>
+         <Name>Reject Action Code</Name>
+         <Description>A code signifying the action that the delivery party wishes the despatch party to take as the result of a rejection.</Description>
+         <Reference type="RULE">PEPPOL-T128-R004</Reference>
+         <Reference type="CODE_LIST">ReceiptAdviceActionCode</Reference>
+         <Value type="EXAMPLE">1</Value>
       </Element>
 	     <Element cardinality="0..1">
          <Term>cbc:Note</Term>
@@ -1290,6 +1313,11 @@
                <Name>Name</Name>
                <Description>The name of the item. </Description>
                <Value type="EXAMPLE">Beeswax</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:ItemTypeCode</Term>
+               <Name>Item type code</Name>
+               <Description>The type of the type relevant for the delivery, e.g. service, goods, tickets, subscriptions. </Description>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:BuyersItemIdentification</Term>

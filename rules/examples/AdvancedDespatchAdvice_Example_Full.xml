@@ -13,6 +13,15 @@
    <cac:OrderReference>
       <cbc:ID>AEG0123456</cbc:ID>  
    </cac:OrderReference>
+   <cac:ProjectReference>
+      <cbc:ID>56545A</cbc:ID>
+      <cac:WorkPhaseReference>
+         <cbc:WorkPhaseCode listID="zzz">324532453</cbc:WorkPhaseCode>
+         <cbc:WorkPhase/>
+         <cbc:StartDate>2021-09-25</cbc:StartDate>
+         <cbc:EndDate>2021-09-25</cbc:EndDate>    
+      </cac:WorkPhaseReference>  
+   </cac:ProjectReference>
    <cac:AdditionalDocumentReference>
       <cbc:ID>7648779</cbc:ID>
       <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
@@ -285,42 +294,10 @@
                </cac:IdentityDocumentReference>        
             </cac:Person>      
          </cac:CarrierParty>
-         <cac:OriginalDespatchTransportationService>
-            <cbc:TransportServiceCode>FuelReport</cbc:TransportServiceCode>
-            <cac:TransportEquipment>
-               <cbc:TransportEquipmentTypeCode listID="FuelGroup"
-                                               listAgencyID="Trafikverket"
-                                               listVersionID="2023:1">HVO</cbc:TransportEquipmentTypeCode>
-               <cbc:Description>HVO Diesel</cbc:Description>
-               <cac:MeasurementDimension>
-                  <cbc:AttributeID>FuelConsumption</cbc:AttributeID>
-                  <cbc:Measure unitCode="LTR">115.6</cbc:Measure>
-                  <cbc:Description>StandardEstimate</cbc:Description>          
-               </cac:MeasurementDimension>
-               <cac:ProviderParty>
-                  <cac:PartyIdentification>
-                     <cbc:ID schemeID="0088">7300010000001</cbc:ID>            
-                  </cac:PartyIdentification>
-                  <cac:PartyName>
-                     <cbc:Name>Preem</cbc:Name>            
-                  </cac:PartyName>          
-               </cac:ProviderParty>
-               <cac:GoodsItem>
-                  <cac:Item>
-                     <cac:SellersItemIdentification>
-                        <cbc:ID>123</cbc:ID>              
-                     </cac:SellersItemIdentification>
-                     <cac:StandardItemIdentification>
-                        <cbc:ID schemeID="0160">1234567891234</cbc:ID>              
-                     </cac:StandardItemIdentification>            
-                  </cac:Item>          
-               </cac:GoodsItem>        
-            </cac:TransportEquipment>
-            <cac:EnvironmentalEmission>
-               <cbc:EnvironmentalEmissionTypeCode listID="UN785" name="Carbon Dioxide">CO2</cbc:EnvironmentalEmissionTypeCode>
-               <cbc:ValueMeasure unitCode="MGM">2.8</cbc:ValueMeasure>        
-            </cac:EnvironmentalEmission>      
-         </cac:OriginalDespatchTransportationService>    
+         <cac:EnvironmentalEmission>
+            <cbc:EnvironmentalEmissionTypeCode listID="UN785" name="Carbon Dioxide">CO2</cbc:EnvironmentalEmissionTypeCode>
+            <cbc:ValueMeasure unitCode="MGM">2.8</cbc:ValueMeasure>      
+         </cac:EnvironmentalEmission>    
       </cac:Consignment>
       <cac:ShipmentStage>
          <cbc:TransportModeCode>3</cbc:TransportModeCode>
@@ -408,7 +385,29 @@
             <cac:DeliveryLocation>
                <cbc:ID>Kalmar</cbc:ID>        
             </cac:DeliveryLocation>      
-         </cac:DeliveryTerms>    
+         </cac:DeliveryTerms>
+         <cac:FuelConsumption>
+            <cbc:FuelTypeCode listID="FuelGroup"
+                              listAgencyID="Trafikverket"
+                              listVersionID="2023:1">HVO</cbc:FuelTypeCode>
+            <cbc:FuelConsumptionMeasure unitCode="LTR">400</cbc:FuelConsumptionMeasure>
+            <cac:FuelMetering>
+               <cbc:TypeID>RenewableFuel</cbc:TypeID>
+               <cbc:Value>true</cbc:Value>        
+            </cac:FuelMetering>
+            <cac:EnvironmentalEmission>
+               <cbc:EnvironmentalEmissionTypeCode listID="UN785" name="Carbon Dioxide">CO2</cbc:EnvironmentalEmissionTypeCode>
+               <cbc:ValueMeasure unitCode="MGM">2.8</cbc:ValueMeasure>        
+            </cac:EnvironmentalEmission>
+            <cac:FuelProviderParty>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeID="0088">7300010000001</cbc:ID>          
+               </cac:PartyIdentification>
+               <cac:PartyName>
+                  <cbc:Name>Preem</cbc:Name>          
+               </cac:PartyName>        
+            </cac:FuelProviderParty>      
+         </cac:FuelConsumption>    
       </cac:Delivery>
       <cac:TransportHandlingUnit>
          <cbc:ID>11111222222222</cbc:ID>
@@ -442,7 +441,21 @@
             <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
             <cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78</cbc:DeclaredStatisticsValueAmount>
             <cbc:Quantity unitCode="EA">6</cbc:Quantity>
-            <cbc:TraceID schemeID="sgtin">345699634527</cbc:TraceID>      
+            <cbc:TraceID schemeID="sgtin">345699634527</cbc:TraceID>
+            <cac:DespatchLineReference>
+               <cbc:LineID/>        
+            </cac:DespatchLineReference>
+            <cac:AdditionalDocumentReference>
+               <cbc:ID>7648779</cbc:ID>
+               <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+               <cbc:DocumentType>FreightPayersCustomerNumber</cbc:DocumentType>
+               <cac:Attachment>
+                  <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+                  <cac:ExternalReference>
+                     <cbc:URI>www.beast.se</cbc:URI>            
+                  </cac:ExternalReference>          
+               </cac:Attachment>        
+            </cac:AdditionalDocumentReference>      
          </cac:GoodsItem>
          <cac:Package>
             <cbc:ID>3453</cbc:ID>
@@ -464,7 +477,21 @@
                      <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
                      <cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78</cbc:DeclaredStatisticsValueAmount>
                      <cbc:Quantity unitCode="EA">6</cbc:Quantity>
-                     <cbc:TraceID schemeID="urn:epc:sgid">345699634527</cbc:TraceID>            
+                     <cbc:TraceID schemeID="urn:epc:sgid">345699634527</cbc:TraceID>
+                     <cac:DespatchLineReference>
+                        <cbc:LineID/>              
+                     </cac:DespatchLineReference>
+                     <cac:AdditionalDocumentReference>
+                        <cbc:ID>7648779</cbc:ID>
+                        <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+                        <cbc:DocumentType>FreightPayersCustomerNumber</cbc:DocumentType>
+                        <cac:Attachment>
+                           <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+                           <cac:ExternalReference>
+                              <cbc:URI>www.beast.se</cbc:URI>                  
+                           </cac:ExternalReference>                
+                        </cac:Attachment>              
+                     </cac:AdditionalDocumentReference>            
                   </cac:GoodsItem>
                   <cac:MeasurementDimension>
                      <cbc:AttributeID>LN</cbc:AttributeID>
@@ -476,7 +503,21 @@
                   <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
                   <cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78</cbc:DeclaredStatisticsValueAmount>
                   <cbc:Quantity unitCode="EA">6</cbc:Quantity>
-                  <cbc:TraceID schemeID="urn:epc:sgid">345699634527</cbc:TraceID>          
+                  <cbc:TraceID schemeID="urn:epc:sgid">345699634527</cbc:TraceID>
+                  <cac:DespatchLineReference>
+                     <cbc:LineID/>            
+                  </cac:DespatchLineReference>
+                  <cac:AdditionalDocumentReference>
+                     <cbc:ID>7648779</cbc:ID>
+                     <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+                     <cbc:DocumentType>FreightPayersCustomerNumber</cbc:DocumentType>
+                     <cac:Attachment>
+                        <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+                        <cac:ExternalReference>
+                           <cbc:URI>www.beast.se</cbc:URI>                
+                        </cac:ExternalReference>              
+                     </cac:Attachment>            
+                  </cac:AdditionalDocumentReference>          
                </cac:GoodsItem>
                <cac:MeasurementDimension>
                   <cbc:AttributeID>LN</cbc:AttributeID>
@@ -488,7 +529,21 @@
                <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
                <cbc:DeclaredStatisticsValueAmount currencyID="EUR">23044.78</cbc:DeclaredStatisticsValueAmount>
                <cbc:Quantity unitCode="EA">6</cbc:Quantity>
-               <cbc:TraceID schemeID="urn:epc:sgid">345699634527</cbc:TraceID>        
+               <cbc:TraceID schemeID="urn:epc:sgid">345699634527</cbc:TraceID>
+               <cac:DespatchLineReference>
+                  <cbc:LineID/>          
+               </cac:DespatchLineReference>
+               <cac:AdditionalDocumentReference>
+                  <cbc:ID>7648779</cbc:ID>
+                  <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
+                  <cbc:DocumentType>FreightPayersCustomerNumber</cbc:DocumentType>
+                  <cac:Attachment>
+                     <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+                     <cac:ExternalReference>
+                        <cbc:URI>www.beast.se</cbc:URI>              
+                     </cac:ExternalReference>            
+                  </cac:Attachment>          
+               </cac:AdditionalDocumentReference>        
             </cac:GoodsItem>
             <cac:MeasurementDimension>
                <cbc:AttributeID>LN</cbc:AttributeID>
@@ -503,6 +558,7 @@
       <cbc:DeliveredQuantity unitCode="EA">10</cbc:DeliveredQuantity>
       <cbc:OutstandingQuantity unitCode="EA">2</cbc:OutstandingQuantity>
       <cbc:OutstandingReason>Text</cbc:OutstandingReason>
+      <cbc:AccountingCost/>
       <cac:OrderLineReference>
          <cbc:LineID>1</cbc:LineID>
          <cbc:SalesOrderLineID>10</cbc:SalesOrderLineID>
@@ -524,6 +580,7 @@
       </cac:DocumentReference>
       <cac:Item>
          <cbc:Name>Beeswax</cbc:Name>
+         <cbc:ItemTypeCode/>
          <cac:BuyersItemIdentification>
             <cbc:ID>6578489</cbc:ID>      
          </cac:BuyersItemIdentification>
@@ -544,6 +601,8 @@
             <cbc:ID>123</cbc:ID>
             <cbc:AdditionalIformation>Information about the hazardous item</cbc:AdditionalIformation>
             <cbc:UNDGCode>ADR</cbc:UNDGCode>
+            <cbc:UNPackingGroup>4GV/X10/S/10/NO/M4733</cbc:UNPackingGroup>
+            <cbc:TunneRestrictionCode listID="UNCL8461">B1000C</cbc:TunneRestrictionCode>
             <cbc:TechnicalName>Corrosive liquid, n.o.s., 8, UN 1760, II (contains Octanoyl chloride)</cbc:TechnicalName>
             <cbc:CategoryName>Acute toxicity</cbc:CategoryName>
             <cbc:HazardousCategoryCode>123</cbc:HazardousCategoryCode>
