@@ -29,7 +29,27 @@
 		<?Cardinality 1..1?>
 		<?CodeList ReceiptAdviceTypeCode?>
 		<?Rule PEPPOL-T128-R023?>
-	</cbc:ReceiptAdviceTypeCode>
+	</cbc:ReceiptAdviceTypeCode>	
+	<cbc:RejectReasonCode>1
+		<?Rule PEPPOL-T128-R005?>
+		<?Name Reject Reason Code?>
+		<?Description The reason for a rejection, expressed as a code. ?>
+		<?Cardinality 0..1?>
+		<?CodeList RejectReasonCode?>
+	</cbc:RejectReasonCode>
+	<cbc:RejectReason>Wrong item delivered.
+		<?Rule PEPPOL-T128-R006?>
+		<?Name Reject Reason?>
+		<?Description The reason for a rejection, expressed as text.?>
+		<?Cardinality 0..1?>
+	</cbc:RejectReason>
+	<cbc:RejectActionCode>1
+		<?Rule PEPPOL-T128-R004?>
+		<?Name Reject Action Code?>
+		<?Description A code signifying the action that the delivery party wishes the despatch party to take as the result of a rejection.?>
+		<?Cardinality 0..1?>
+		<?CodeList ReceiptAdviceActionCode?>
+	</cbc:RejectActionCode>
 	<cbc:Note>Delivery ok
 		<?Name Note. ?>
 		<?Description A textual note for the delivery as whole.?>
@@ -427,8 +447,7 @@
 						<?Cardinality 0..1?>
 						<?Rule PEPPOL-T128-R026?>
 					</cbc:StatusReason>
-				</cac:Status>
-			
+				</cac:Status>			
 				<cac:CarrierParty>
 					<cac:PartyIdentification>
 						<?Name Party identification?>
@@ -669,6 +688,11 @@
 				<?Description The name of the item. ?>
 				<?Cardinality 1..1?>
 			</cbc:Name>
+			<cbc:ItemTypeCode>
+				<?Name Item type code?>
+				<?Description The type of the type relevant for the delivery, e.g. service, goods, tickets, subscriptions. ?>
+				<?Cardinality 0..1?>
+			</cbc:ItemTypeCode>
 			<cac:BuyersItemIdentification>
 				<?Name Buyer's item Identification. ?>
 				<?Description The identity on the item assigned by the buyer. ?>
