@@ -530,6 +530,48 @@
 				<?CodeList UNECERec21?>
 				<?Cardinality 1..1?>
 			</cbc:TransportHandlingUnitTypeCode>
+			<cac:TransportEquipment>
+				<?Name Transport equipment?>
+				<?Description Used to specify Transport Equipment details associated with this Transport Handling Unit.?>
+				<?Cardinality 0..n?>
+				<cbc:ID> 34563444 
+					<?Name Identifier transport equipment?>
+					<?Description An id for the physical transport equipment e.g. a container number.?>
+					<?Cardinality 1..1?>
+				</cbc:ID>
+				<cbc:TransportEquipmentTypeCode>CN 
+					<?Name Tranport equipment type code?>
+					<?Description An code specifying the type of equipment.?>
+					<?CodeList UNCL8053?>
+					<?Cardinality 0..1?>
+				</cbc:TransportEquipmentTypeCode>
+				<cbc:SizeTypeCode> 10 
+					<?Name Size type code?>
+					<?Description A code signifying the size and type of this piece of piece of transport equipment. When the piece of transport equipment is a shipping container, it is recommended to use ContainerSizeTypeCode for validation.?>
+					<?CodeList TRED8155?>
+					<?Cardinality 0..1?>
+				</cbc:SizeTypeCode>
+			</cac:TransportEquipment>	
+			<cac:GoodsItem>
+				<?Name Goods Item?>
+				<?Description Description of the goods item in this transport handling unit.?>
+				<?Cardinality 0..1?>
+				<cbc:ID>
+					<?Name ID?>
+					<?Description Identification of the Goods Item.?>
+					<?Cardinality 0..1?>	
+				</cbc:ID>
+				<cac:ReceiptLineReference>
+					<?Name Receipt Line Reference?>
+					<?Description Reference to the receipt line.?>
+					<?Cardinality 1..1?>
+					<cbc:LineID>345345
+						<?Name Receipt line ID?>
+						<?Description Identification of the receipt line.?>
+						<?Cardinality 1..1?>
+					</cbc:LineID>
+				</cac:ReceiptLineReference>
+			</cac:GoodsItem>
 			<cac:Status>
 				<?Name Status of the Transport Handling Unit. ?>
 				<?Description The Status of this Transport Handling Unit. ?>
@@ -556,6 +598,68 @@
 					<?Rule PEPPOL-T128-R028?>
 				</cbc:StatusReason>
 			</cac:Status>
+			<cac:Package>
+				<?Name Package information?>
+				<?Description A package contained in the Transport Handling Unit.?>
+				<?Cardinality 0..n?>
+				<cbc:ID> 3453 <?Name Package identifier?>
+					<?Description The Id of the package for instance a SSCC.?>
+					<?Cardinality 0..1?>
+					<?schemeID-usage Optional?>
+				</cbc:ID>				
+				<cbc:PackagingTypeCode>CT 
+					<?Name Packaging type code?>
+					<?Description A code signifying a level of packaging.?>
+					<?CodeList UNECERec21?>
+					<?Cardinality 1..1?>
+				</cbc:PackagingTypeCode>
+				<cac:GoodsItem>
+					<?Name Goods Item?>
+					<?Description Description of the goods item in this package.?>
+					<?Cardinality 0..1?>
+					<cbc:ID>
+						<?Name ID?>
+						<?Description Identification of the Goods Item.?>
+						<?Cardinality 0..1?>	
+					</cbc:ID>
+					<cac:ReceiptLineReference>
+						<?Name Receipt Line Reference?>
+						<?Description Reference to the receipt line.?>
+						<?Cardinality 1..1?>
+						<cbc:LineID>345345
+							<?Name Receipt line ID?>
+							<?Description Identification of the receipt line.?>
+							<?Cardinality 1..1?>
+						</cbc:LineID>
+					</cac:ReceiptLineReference>
+				</cac:GoodsItem>
+				<cac:Status>
+					<?Name Status of the Package. ?>
+					<?Description The Status of this Package. ?>
+					<?Cardinality 1..1?>
+					<cbc:ConditionCode>CA
+						<?Name ConditionCode?>
+						<?Description A code describing the status of the Package. ?>
+						<?Cardinality 1..1?>
+						<?CodeList UNCL4343_T128?>
+						<?Rule PEPPOL-T128-R027?>
+						<?Rule PEPPOL-T128-R028?>
+					</cbc:ConditionCode>
+					<cbc:StatusReasonCode>3
+						<?Name Status Reason Code?>
+						<?Description The reason for this status condition or position, expressed as a code. ?>
+						<?Cardinality 0..1?>
+						<?CodeList TransportHandlingUnitReason?>
+						<?Rule PEPPOL-T128-R027?>
+					</cbc:StatusReasonCode>
+					<cbc:StatusReason>Pallet broken. See attached photo.
+						<?Name Status Reason ?>
+						<?Description The reason for this status condition or position, expressed as a text. ?>
+						<?Cardinality 0..1?>
+						<?Rule PEPPOL-T128-R028?>
+					</cbc:StatusReason>
+				</cac:Status>		
+			</cac:Package>
 		</cac:TransportHandlingUnit>
 	</cac:Shipment>
 	
