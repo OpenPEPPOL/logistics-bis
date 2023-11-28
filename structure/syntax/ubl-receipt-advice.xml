@@ -1129,6 +1129,52 @@
                <Reference type="CODE_LIST">UNECERec21</Reference>
                <Value type="EXAMPLE">AG</Value>
             </Element>
+            <Element cardinality="0..n">
+               <Term>cac:TransportEquipment</Term>
+               <Name>Transport equipment</Name>
+               <Description>Used to specify Transport Equipment details associated with this Transport Handling Unit.</Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:ID</Term>
+                  <Name>Identifier transport equipment</Name>
+                  <Description>An id for the physical transport equipment e.g. a container number.</Description>
+                  <Value type="EXAMPLE">34563444</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:TransportEquipmentTypeCode</Term>
+                  <Name>Tranport equipment type code</Name>
+                  <Description>An code specifying the type of equipment.</Description>
+                  <Reference type="CODE_LIST">UNCL8053</Reference>
+                  <Value type="EXAMPLE">CN</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:SizeTypeCode</Term>
+                  <Name>Size type code</Name>
+                  <Description>A code signifying the size and type of this piece of piece of transport equipment. When the piece of transport equipment is a shipping container, it is recommended to use ContainerSizeTypeCode for validation.</Description>
+                  <Reference type="CODE_LIST">TRED8155</Reference>
+                  <Value type="EXAMPLE">10</Value>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:GoodsItem</Term>
+               <Name>Goods Item</Name>
+               <Description>Description of the goods item in this transport handling unit.</Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:ID</Term>
+                  <Name>ID</Name>
+                  <Description>Identification of the Goods Item.</Description>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cac:ReceiptLineReference</Term>
+                  <Name>Receipt Line Reference</Name>
+                  <Description>Reference to the receipt line.</Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:LineID</Term>
+                     <Name>Receipt line ID</Name>
+                     <Description>Identification of the receipt line.</Description>
+                     <Value type="EXAMPLE">345345</Value>
+                  </Element>
+               </Element>
+            </Element>
             <Element cardinality="1..1">
                <Term>cac:Status</Term>
                <Name>Status of the Transport Handling Unit. </Name>
@@ -1156,6 +1202,74 @@
                   <Description>The reason for this status condition or position, expressed as a text. </Description>
                   <Reference type="RULE">PEPPOL-T128-R028</Reference>
                   <Value type="EXAMPLE">Pallet broken. See attached photo.</Value>
+               </Element>
+            </Element>
+            <Element cardinality="0..n">
+               <Term>cac:Package</Term>
+               <Name>Package information</Name>
+               <Description>A package contained in the Transport Handling Unit.</Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:ID</Term>
+                  <Name>Package identifier</Name>
+                  <Description>The Id of the package for instance a SSCC.</Description>
+                  <Value type="EXAMPLE">3453</Value>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cbc:PackagingTypeCode</Term>
+                  <Name>Packaging type code</Name>
+                  <Description>A code signifying a level of packaging.</Description>
+                  <Reference type="CODE_LIST">UNECERec21</Reference>
+                  <Value type="EXAMPLE">CT</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:GoodsItem</Term>
+                  <Name>Goods Item</Name>
+                  <Description>Description of the goods item in this package.</Description>
+                  <Element cardinality="0..1">
+                     <Term>cbc:ID</Term>
+                     <Name>ID</Name>
+                     <Description>Identification of the Goods Item.</Description>
+                  </Element>
+                  <Element cardinality="1..1">
+                     <Term>cac:ReceiptLineReference</Term>
+                     <Name>Receipt Line Reference</Name>
+                     <Description>Reference to the receipt line.</Description>
+                     <Element cardinality="1..1">
+                        <Term>cbc:LineID</Term>
+                        <Name>Receipt line ID</Name>
+                        <Description>Identification of the receipt line.</Description>
+                        <Value type="EXAMPLE">345345</Value>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cac:Status</Term>
+                  <Name>Status of the Package. </Name>
+                  <Description>The Status of this Package. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:ConditionCode</Term>
+                     <Name>ConditionCode</Name>
+                     <Description>A code describing the status of the Package. </Description>
+                     <Reference type="RULE">PEPPOL-T128-R027</Reference>
+                     <Reference type="RULE">PEPPOL-T128-R028</Reference>
+                     <Reference type="CODE_LIST">UNCL4343_T128</Reference>
+                     <Value type="EXAMPLE">CA</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StatusReasonCode</Term>
+                     <Name>Status Reason Code</Name>
+                     <Description>The reason for this status condition or position, expressed as a code. </Description>
+                     <Reference type="RULE">PEPPOL-T128-R027</Reference>
+                     <Reference type="CODE_LIST">TransportHandlingUnitReason</Reference>
+                     <Value type="EXAMPLE">3</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StatusReason</Term>
+                     <Name>Status Reason </Name>
+                     <Description>The reason for this status condition or position, expressed as a text. </Description>
+                     <Reference type="RULE">PEPPOL-T128-R028</Reference>
+                     <Value type="EXAMPLE">Pallet broken. See attached photo.</Value>
+                  </Element>
                </Element>
             </Element>
          </Element>
