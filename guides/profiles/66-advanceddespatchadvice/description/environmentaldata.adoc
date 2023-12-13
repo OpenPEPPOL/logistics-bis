@@ -39,7 +39,6 @@ Contains the possible values for the Description element when the AttributeID is
 |====
 
 .Definitions of the EngineType values. Contains the possible values for the Description element when the AttributeID is EngineType.
-
 [cols="2,4",options="header",stripes=even]
 |====
 |EngineType |Definition
@@ -57,8 +56,7 @@ Contains the possible values for the Description element when the AttributeID is
 |Hybrid     |Hybrid
 |====
 
-Example:
-
+.Example:
 [source, xml, indent=0]
 ----
 include::{snippet-dir}/snippet-30-4.xml[tags=fuel]
@@ -83,7 +81,7 @@ For all other AttributeIDs, the element Measure is used instead of Description.
 |PM          |Amount of emission of particulate matter.
 |====
 
-Example:
+.Example:
 [source, xml, indent=0]
 ----
 include::{snippet-dir}/snippet-30-4.xml[tags=environmentalemission]
@@ -109,7 +107,7 @@ The GWP GHG value per kilogram can be either a generic value from an authority o
 To be able to calculate product climate data the related CO~2~ value and the weight of products are needed. 
 The net weight per item is the recommended way to provide the weight information to the customer. See related information here: link:{ada-dir}/cac-DespatchLine/cac-Item/cac-Dimension/[cac-Dimension]
 
-Example:
+.Example:
 [source, xml, indent=0]
 ----
 include::{snippet-dir}/snippet-30-1.xml[tags=itemnetweight]
@@ -118,8 +116,7 @@ Item identifiers are used for the receiver to understand what article has been r
 In some cases, the authority has specific requirements carbon accounting in regards to where the products are beeing used. This requirement can be fulfilled by the use of Buyers item identification. See related information here: 
 link:{ada-dir}/cac-DespatchLine/cac-Item/cac-BuyersItemIdentification/[cac:BuyersItemIdentification]
 
-Example:
-
+.Example:
 [source, xml, indent=0]
 ----
 include::{snippet-dir}/snippet-30-1.xml[tags=buyersitemidentification]
@@ -143,8 +140,7 @@ The list id IPNC is a reference to the code list link:{codelist-ItemPropertyName
 
 If no suitable generic value can be found in the resource lists, it is recommended to use 'NA' to indicate that there are no applicable resources available for the item.
 
-Example:
-
+.Example:
 [source, xml, indent=0]
 ----
 include::{snippet-dir}/snippet-30-4.xml[tags=genericproductclimatedata]
@@ -186,8 +182,7 @@ Please note that "GWP-GHG" and "GWP-IOBC" are interchangable terms and can be us
 
 See <<reference-to-other-documents>> for more info how to link or attach the PDF.
 
-Example:
-
+.Example:
 [source, xml, indent=0]
 ----
 include::{snippet-dir}/snippet-30-4.xml[tags=epd]
