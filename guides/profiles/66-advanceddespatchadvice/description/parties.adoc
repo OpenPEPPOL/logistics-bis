@@ -9,7 +9,7 @@ The same actor may play more than one role depending on the handling routine.
 The Despatch Party is the person or organization who provides (despatch) the goods or services. The role is carried out by the supplier or on behalf of the supplier. (Despatch Party is sometimes known as the Consignor). The Despatch Party is mandatory information in the Despatch Advice message.
 Defines the company that provides the goods or the service. It also defines the sender of the Despatch Advice. Should the ship-from address differ from DespatchSupplierParty, the real ship-from address must be sent in DespatchAddress.
 
-Example:
+.Example:
 [source, xml, indent=0]
 ----
 include::{snippet-dir}/snippet-30-1.xml[tags=despatchsupplier]
@@ -24,7 +24,7 @@ The Consignee is mandatory information in the Despatch Advice message.
 It also is the receiver of the Despatch Advice.
 Should the ship-to address be different from the DeliveryCustomerParty, the real ship-to address must be sent in DeliveryLocation.
 
-Example:
+.Example:
 [source, xml, indent=0]
 ----
 include::{snippet-dir}/snippet-30-1.xml[tags=deliverycustomer]
@@ -37,7 +37,7 @@ The buyer is the legal person or organization who buys or purchases the goods or
 
 The Buyer is optional information in the Despatch Advice message.
 
-Example:
+.Example:
 [source, xml, indent=0]
 ----
 include::{snippet-dir}/snippet-30-1.xml[tags=buyer]
@@ -50,7 +50,7 @@ include::{snippet-dir}/snippet-30-1.xml[tags=buyer]
 The seller is the legal person or organization who sells goods or services to the customer.
 The Seller is optional information in the Despatch Advice message.
 
-Example:
+.Example:
 [source, xml, indent=0]
 ----
 include::{snippet-dir}/snippet-30-1.xml[tags=seller]
@@ -63,8 +63,7 @@ include::{snippet-dir}/snippet-30-1.xml[tags=seller]
 The party who will eventually receive and consume the goods and on whose behalf the buyer makes the purchase.
 The Originator Party is optional information in the Despatch Advice message. For 3PL shipments, this party defines the final receiver of the goods.
 
-Example:
-
+.Example:
 [source, xml, indent=0]
 ----
 include::{snippet-dir}/snippet-30-1.xml[tags=originator]
@@ -76,8 +75,7 @@ include::{snippet-dir}/snippet-30-1.xml[tags=originator]
 
 This is the party that executes the transport when the Despatch Advice shows a delivery of goods. In other cases this party may be omitted.
 
-Example:
-
+.Example:
 [source, xml, indent=0]
 ----
 include::{snippet-dir}/snippet-30-1.xml[tags=carrier]
