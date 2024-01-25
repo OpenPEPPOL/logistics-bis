@@ -513,11 +513,11 @@
 			</cbc:TransportHandlingUnitTypeCode>
 			<cac:Status>
 				<?Name Status of the Transport Handling Unit. ?>
-				<?Description To report if there are any claims related to this Transport Handling Unit. If omitted, default is that the THU is received ok and with no damage or claim related to it. ?>
+				<?Description The Status of this Transport Handling Unit. ?>
 				<?Cardinality 1..1?>
 				<cbc:ConditionCode>CA
 					<?Name ConditionCode?>
-					<?Description A code describing the status of the TransportHandlingUnit. ?>
+					<?Description A code describing the status of the Transport Handling Unit. ?>
 					<?Cardinality 1..1?>
 					<?CodeList UNCL4343_T128?>
 					<?Rule PEPPOL-T128-R027?>
@@ -655,7 +655,7 @@
 			<?Cardinality 1..1?>
 			<cbc:LineID>1
 				<?Name Line ID?>
-				<?Description The identity of the Despatch Advice line number referred to. ?>
+				<?Description The identity of the Despatch Advice line number referred to. Use NA if this is not relevant, like reporting having received something that was not in the Despatch Advice with the shipment, since the ID is Mandatory to use. ?>
 				<?Cardinality 1..1?>
 			</cbc:LineID>
 		</cac:DespatchLineReference>

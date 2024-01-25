@@ -288,11 +288,13 @@
          <cac:OriginalDespatchTransportationService>
             <cbc:TransportServiceCode>FuelReport</cbc:TransportServiceCode>
             <cac:TransportEquipment>
-               <cbc:TransportEquipmentTypeCode>Diesel</cbc:TransportEquipmentTypeCode>
-               <cbc:Description>Forrest diesel mix</cbc:Description>
+               <cbc:TransportEquipmentTypeCode listID="FuelGroup"
+                                               listAgencyID="Trafikverket"
+                                               listVersionID="2023:1">HVO</cbc:TransportEquipmentTypeCode>
+               <cbc:Description>HVO Diesel</cbc:Description>
                <cac:MeasurementDimension>
                   <cbc:AttributeID>FuelConsumption</cbc:AttributeID>
-                  <cbc:Measure unitCode="KGM">123</cbc:Measure>
+                  <cbc:Measure unitCode="LTR">115.6</cbc:Measure>
                   <cbc:Description>StandardEstimate</cbc:Description>          
                </cac:MeasurementDimension>
                <cac:ProviderParty>
@@ -316,7 +318,7 @@
             </cac:TransportEquipment>
             <cac:EnvironmentalEmission>
                <cbc:EnvironmentalEmissionTypeCode listID="UN785" name="Carbon Dioxide">CO2</cbc:EnvironmentalEmissionTypeCode>
-               <cbc:ValueMeasure unitCode="MGM">10</cbc:ValueMeasure>        
+               <cbc:ValueMeasure unitCode="MGM">2.8</cbc:ValueMeasure>        
             </cac:EnvironmentalEmission>      
          </cac:OriginalDespatchTransportationService>    
       </cac:Consignment>
@@ -328,7 +330,7 @@
                <cbc:AircraftID>JA8088</cbc:AircraftID>        
             </cac:AirTransport>
             <cac:RoadTransport>
-               <cbc:LicensePlateID>DF10958</cbc:LicensePlateID>        
+               <cbc:LicensePlateID>DK-DF10958;DK-DF23314</cbc:LicensePlateID>        
             </cac:RoadTransport>
             <cac:RailTransport>
                <cbc:TrainID>12014</cbc:TrainID>
@@ -380,7 +382,7 @@
             <cbc:ActualDespatchDate>2021-09-25</cbc:ActualDespatchDate>
             <cbc:ActualDespatchTime>13:00:00+01:00</cbc:ActualDespatchTime>
             <cac:DespatchAddress>
-               <cbc:ID>34456456456456</cbc:ID>
+               <cbc:ID schemeID="0088">34456456456456</cbc:ID>
                <cbc:StreetName>Avon Way</cbc:StreetName>
                <cbc:AdditionalStreetName>way 2</cbc:AdditionalStreetName>
                <cbc:CityName>Bridgtow</cbc:CityName>
@@ -497,9 +499,9 @@
    </cac:Shipment>
    <cac:DespatchLine>
       <cbc:ID>10</cbc:ID>
-      <cbc:Note>Mrs Green agreed to waive charge</cbc:Note>
-      <cbc:DeliveredQuantity unitCode="C62">10</cbc:DeliveredQuantity>
-      <cbc:OutstandingQuantity unitCode="C62">2</cbc:OutstandingQuantity>
+      <cbc:Note>Gift</cbc:Note>
+      <cbc:DeliveredQuantity unitCode="EA">10</cbc:DeliveredQuantity>
+      <cbc:OutstandingQuantity unitCode="EA">2</cbc:OutstandingQuantity>
       <cbc:OutstandingReason>Text</cbc:OutstandingReason>
       <cac:OrderLineReference>
          <cbc:LineID>1</cbc:LineID>
@@ -539,16 +541,29 @@
             <cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">KO2012140200</cbc:ItemClassificationCode>      
          </cac:CommodityClassification>
          <cac:HazardousItem>
+            <cbc:ID>123</cbc:ID>
+            <cbc:AdditionalInformation>Information about the hazardous item</cbc:AdditionalInformation>
             <cbc:UNDGCode>ADR</cbc:UNDGCode>
+            <cbc:TechnicalName>Corrosive liquid, n.o.s., 8, UN 1760, II (contains Octanoyl chloride)</cbc:TechnicalName>
+            <cbc:CategoryName>Acute toxicity</cbc:CategoryName>
+            <cbc:HazardousCategoryCode>123</cbc:HazardousCategoryCode>
             <cbc:HazardClassID>Code</cbc:HazardClassID>
-            <cbc:NetWeightMeasure unitCode="KGM">123</cbc:NetWeightMeasure>      
+            <cbc:NetWeightMeasure unitCode="KGM">123</cbc:NetWeightMeasure>
+            <cbc:NetVolumeMeasure unitCode="MTQ">12.3</cbc:NetVolumeMeasure>
+            <cac:HazardousGoodsTransit>
+               <cbc:PackingCriteriaCode>123</cbc:PackingCriteriaCode>        
+            </cac:HazardousGoodsTransit>
+            <cac:EmergencyTemperature>
+               <cbc:AttributeID>ABC</cbc:AttributeID>
+               <cbc:Measure unitCode="CEL">78</cbc:Measure>        
+            </cac:EmergencyTemperature>      
          </cac:HazardousItem>
          <cac:AdditionalItemProperty>
             <cbc:ID schemeDataURI="sdfdf" schemeID="ISO22057" schemeVersionID="2022">77e416eb-a363-4258-a04e-171d843a6460</cbc:ID>
             <cbc:Name>Rigidity</cbc:Name>
             <cbc:NameCode listID="IPNC">EPDNumber</cbc:NameCode>
             <cbc:Value>NEPD-1717-700-SE</cbc:Value>
-            <cbc:ValueQuantity unitCode="C62">15.00</cbc:ValueQuantity>
+            <cbc:ValueQuantity unitCode="EA">15.00</cbc:ValueQuantity>
             <cbc:ValueQualifier>descr</cbc:ValueQualifier>      
          </cac:AdditionalItemProperty>
          <cac:ManufacturerParty>

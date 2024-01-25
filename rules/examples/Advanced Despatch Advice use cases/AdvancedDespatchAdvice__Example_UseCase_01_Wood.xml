@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
                 Content:
-                Example for Use-case no 01 in UBL Despatch Adivce for wood.
+                Example for Use-case no 01 in Logistics Advanced Despatch Adivce for wood.
 				
 				Change Log:
 				2023-05-15
@@ -59,6 +59,7 @@
 			</cac:Contact>
 		</cac:Party>
 	</cac:DespatchSupplierParty>
+	
 	<cac:DeliveryCustomerParty>
 		<!-- Mandatory, the party that recieves the goods or service -->
 		<cac:Party>
@@ -84,6 +85,7 @@
 			</cac:Contact>
 		</cac:Party>
 	</cac:DeliveryCustomerParty>
+	
 	<cac:BuyerCustomerParty>
 		<!-- BEAst recommends sending BuyerCustomerParty even if it is optional since it is easier for the receiver. -->
 		<cac:Party>
@@ -103,6 +105,7 @@
 			</cac:PartyLegalEntity>
 		</cac:Party>
 	</cac:BuyerCustomerParty>
+	
 	<cac:SellerSupplierParty>
 		<!-- It is recommended sending SellerSupplierParty even if it is optional since it is easier for the receiver. -->
 		<cac:Party>
@@ -122,6 +125,8 @@
 			</cac:PartyLegalEntity>
 		</cac:Party>
 	</cac:SellerSupplierParty>
+	
+	
 	<cac:Shipment>
 		<cbc:ID>1</cbc:ID>
 		<!-- Mandatory Shipment number (fraktsedelsnummer) is mapped to this field -->
@@ -132,6 +137,8 @@
 			</cac:EstimatedDeliveryPeriod>
 		</cac:Delivery>
 	</cac:Shipment>
+	
+	
 	<cac:DespatchLine>
 		<cbc:ID>1</cbc:ID>
 		<cbc:DeliveredQuantity unitCode="EA">84</cbc:DeliveredQuantity>
@@ -209,6 +216,7 @@
 					</cac:PartyName>
 				</cac:IssuerParty>
 			</cac:Certificate>
+			
 			<cac:Certificate>
 				<cbc:ID>SE-N8639</cbc:ID>
 				<cbc:CertificateTypeCode>ISPM15</cbc:CertificateTypeCode>
@@ -219,6 +227,7 @@
 					</cac:PartyName>
 				</cac:IssuerParty>
 			</cac:Certificate>
+			
 			<cac:Certificate>
 				<cbc:ID>2018-SKM-PEFC-211</cbc:ID>
 				<cbc:CertificateTypeCode>PEFC</cbc:CertificateTypeCode>
@@ -230,6 +239,7 @@
 					</cac:PartyName>
 				</cac:IssuerParty>
 			</cac:Certificate>
+			
 			<cac:Dimension>
 				<cbc:AttributeID>AAF</cbc:AttributeID>
 				<cbc:Measure unitCode="KGM">14.4096</cbc:Measure>

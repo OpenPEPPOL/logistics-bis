@@ -1,13 +1,18 @@
 [[commodity-classification]]
 = Commodity classification
 
-Here you can add classification of the item. It can be the classification for customs purpose, 
-but also a classification of waste or other classifications.
+Item classifications refer to the categorization or grouping of products or services based on various attributes such as type, purpose, industry standards, or any other relevant criteria. 
+These classifications help in organizing and managing the vast array of items that a company might need to procure and follow up upon.
 
-Besides the classification code you need to provide information about the code in the attributes. 
-In @listID you need to refer to a valid code in codelist UNCL7143. If there is none that matches, you can use ZZZ.
-If you use ZZZ as @listID, you can in @listVersionID provide further information about the origin of the code.
-The @name attribute is the key to the classification code. 
+When procurement data is categorized based on item classifications and article numbers, it becomes easier to generate reports and conduct data analysis. This can help organizations identify spending patterns, track inventory levels, and make informed decisions about procurement strategies.
+
+image:images/classification.png[image,width=662,height=428]
+
+Besides the classification code itself, you need to include information on which code-list it belongs to. This you primarily do by referring to a @listID.
+The @listID is linked to UNCL7143. Select the correct @listID there. You may also specify the version in @listVersionID.
+If you use a codelist that is not in UNCL7143 you do like this:
+1. Use "ZZZ" as the @listID.
+2. Define the name of your codelist in attribute @name. You may also specify the version in @listVersionID.
 
 .Example - to classify the item according to BEAst's codelist over SBMI items:
 [source, xml, indent=0]

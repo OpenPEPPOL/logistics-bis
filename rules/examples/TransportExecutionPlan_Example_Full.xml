@@ -464,10 +464,10 @@
       <cac:DeliveryTerms>
          <cbc:ID>DAP</cbc:ID>
          <cbc:SpecialTerms>DAP</cbc:SpecialTerms>
-         <cac:Location>
+         <cac:DeliveryLocation>
             <cbc:ID schemeID="0088">5790000435951</cbc:ID>
             <cbc:Name>CPH</cbc:Name>      
-         </cac:Location>    
+         </cac:DeliveryLocation>    
       </cac:DeliveryTerms>
       <cac:PaymentTerms>
          <cbc:ID>DAP</cbc:ID>
@@ -476,7 +476,7 @@
       <cac:FreightAllowanceCharge>
          <cbc:ChargeIndicator>true</cbc:ChargeIndicator>
          <cbc:AllowanceChargeReasonCode>1</cbc:AllowanceChargeReasonCode>
-         <cbc:Amount>100</cbc:Amount>    
+         <cbc:Amount currencyID="EUR">100</cbc:Amount>    
       </cac:FreightAllowanceCharge>
       <cac:MainCarriageShipmentStage>
          <cbc:TransportModeCode>4</cbc:TransportModeCode>
@@ -812,9 +812,22 @@
                   <cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">KO2012140200</cbc:ItemClassificationCode>          
                </cac:CommodityClassification>
                <cac:HazardousItem>
+                  <cbc:ID>123</cbc:ID>
+                  <cbc:AdditionalInformation>Information about the hazardous item</cbc:AdditionalInformation>
                   <cbc:UNDGCode>ADR</cbc:UNDGCode>
-                  <cbc:HazardClassID>2</cbc:HazardClassID>
-                  <cbc:NetWeightMeasure unitCode="KGM">40.8</cbc:NetWeightMeasure>          
+                  <cbc:TechnicalName>Corrosive liquid, n.o.s., 8, UN 1760, II (contains Octanoyl chloride)</cbc:TechnicalName>
+                  <cbc:CategoryName>Acute toxicity</cbc:CategoryName>
+                  <cbc:HazardousCategoryCode>123</cbc:HazardousCategoryCode>
+                  <cbc:HazardClassID>Code</cbc:HazardClassID>
+                  <cbc:NetWeightMeasure unitCode="KGM">123</cbc:NetWeightMeasure>
+                  <cbc:NetVolumeMeasure unitCode="MTQ">12.3</cbc:NetVolumeMeasure>
+                  <cac:HazardousGoodsTransit>
+                     <cbc:PackingCriteriaCode>123</cbc:PackingCriteriaCode>            
+                  </cac:HazardousGoodsTransit>
+                  <cac:EmergencyTemperature>
+                     <cbc:AttributeID>ABC</cbc:AttributeID>
+                     <cbc:Measure unitCode="CEL">78</cbc:Measure>            
+                  </cac:EmergencyTemperature>          
                </cac:HazardousItem>        
             </cac:Item>      
          </cac:GoodsItem>    

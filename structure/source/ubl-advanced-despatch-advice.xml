@@ -22,9 +22,11 @@
 	<cbc:ID>5658999</cbc:ID>
 	<cbc:IssueDate>2021-09-10<?Description The date when the Advanced Despatch Advice is issued. Format = "YYYY-MM-DD".
 		Together with ID and IssueTime the IssueDate forms the identity of the Version of the Advanced Despatch Advice. ?>
+	<?Name Advanced Despatch Advice issue date?>
 	</cbc:IssueDate>
 	<cbc:IssueTime>12:00:00+01:00<?Description The time when the Advanced Despatch Advice is issued. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. ?>
 		<?Cardinality 1..1?>
+		<?Name Advanced Despatch Advice issue time?>
 	</cbc:IssueTime>
 	<cbc:DocumentStatusCode>9
 		<?Name Despatch advice status code?>
@@ -39,16 +41,18 @@
 		<?CodeList DespatchAdviceTypeCode?>
 	</cbc:DespatchAdviceTypeCode>
 	<cbc:Note> Text 
-		<?Description A textual note for the dispatch as whole. Used for Transport Information.?>
+		<?Description A textual note for the despatch as whole. ?>
+		<?Name Despatch note?>
 	</cbc:Note>
 	
 	<cac:OrderReference>
+		<?Description Can be included here or at Line level. ?>
 		<cbc:ID>AEG0123456</cbc:ID>
 	</cac:OrderReference>
 	
 	<cac:AdditionalDocumentReference>
 		<?Name Additional document reference?>
-		<?Description Reference to additional documents relevant for this Despatch advice. Can be used for additional BEAst information on header level.?>
+		<?Description Reference to additional documents relevant for this Despatch advice. Can also be used for additional information on header level.?>
 		<?Cardinality 0..n?>
 		<cbc:ID> 7648779 
 			<?Name Identity of the reference?>
@@ -172,7 +176,7 @@
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 					<cac:Country>
-						<?Name Contry?>
+						<?Name Country?>
 						<?Description The residens country for the despatch party.?>
 						<?Cardinality 1..1?>
 						<cbc:IdentificationCode> UK 
@@ -285,11 +289,11 @@
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 					<cac:Country>
-						<?Name Contry?>
+						<?Name Country?>
 						<?Description The residens country for the delivery customer party.?>
 						<?Cardinality 1..1?>
 						<cbc:IdentificationCode> UK 
-							<?Name Contry code?>
+							<?Name Country code?>
 						</cbc:IdentificationCode>
 					</cac:Country>
 				</cac:RegistrationAddress>
@@ -394,11 +398,11 @@
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 					<cac:Country>
-						<?Name Contry?>
+						<?Name Country?>
 						<?Description The residens country for the Buyer party.?>
 						<?Cardinality 1..1?>
 						<cbc:IdentificationCode>UK
-							<?Name Contry code?>
+							<?Name Country code?>
 						</cbc:IdentificationCode>
 					</cac:Country>
 				</cac:RegistrationAddress>
@@ -503,7 +507,7 @@
 						<?Cardinality 0..1?>
 					</cbc:CityName>
 					<cac:Country>
-						<?Name Contry?>
+						<?Name Country?>
 						<?Description The residens country for the Seller party.?>
 						<?Cardinality 1..1?>
 						<cbc:IdentificationCode>UK
@@ -742,7 +746,7 @@
 							<?Cardinality 0..1?>
 						</cbc:CityName>
 						<cac:Country>
-							<?Name Contry?>
+							<?Name Country?>
 							<?Description The residens country for the Carrier party.?>
 							<?Cardinality 1..1?>
 							<cbc:IdentificationCode>UK
@@ -795,12 +799,21 @@
 					<?Name Transport equipment?>
 					<?Description Used to specify fuel consumption. To be repeated for all fuel types used.?>
 					<?Cardinality 0..n?>
-					<cbc:TransportEquipmentTypeCode> Diesel 
+					<cbc:TransportEquipmentTypeCode listID="FuelGroup" listAgencyID="Trafikverket" listVersionID="2023:1"> HVO 
 						<?Name Tranport equipment type code?>
 						<?Description Used to specify the type of fuel.?>
 						<?Cardinality 0..1?>
+						<?listID-Name List Identifier?>
+						<?listID-Description Identifies the codelist. ?>
+						<?listID-usage Optional?>
+						<?listAgencyID-Name List Agency Identifier?>
+						<?listAgencyID-Description Identifies the Agency that issues the Type-code. ?>
+						<?listAgencyID-usage Optional?>
+						<?listVersionID-Name List Version Identifier?>
+						<?listVersionID-Description Identifies the version of the List. ?>
+						<?listVersionID-usage Optional?>
 					</cbc:TransportEquipmentTypeCode>
-					<cbc:Description> Forrest diesel mix 
+					<cbc:Description> HVO Diesel 
 						<?Name Description?>
 						<?Description Fuel description.?>
 						<?Cardinality 0..1?>
@@ -811,10 +824,10 @@
 						<?Cardinality 0..n?>
 						<cbc:AttributeID> FuelConsumption 
 							<?Name Attribute identifier?>
-							<?Description To define the type of measurement. EnergyContent = T6428, ConversionFactor = T6429, FuelConsumption = T6374, DrivingDistance = T6380, DrivingTime = T6381, FuelMeasurementMethod = T6728, EngineType = T6379, RenewableFuel = T6382.?>
+							<?Description To define the type of measurement. EnergyContent, ConversionFactor, FuelConsumption, DrivingDistance, DrivingTime, FuelMeasurementMethod, EngineType, RenewableFuel.?>
 							<?Cardinality 1..1?>
 						</cbc:AttributeID>
-						<cbc:Measure unitCode="KGM"> 123 
+						<cbc:Measure unitCode="LTR"> 115.6 
 							<?Name Measure?>
 							<?Description The measured value. Used for EnergyContent, ConversionFactor, FuelConsumption, DrivingDistance, DrivingTime and RenewableFuel. unitCode refers to T6706.?>
 							<?Cardinality 0..1?>
@@ -824,7 +837,7 @@
 						</cbc:Measure>
 						<cbc:Description> StandardEstimate 
 							<?Name Attribute value?>
-							<?Description Description of the attribute when there is no value to measure. Used for FuelMeasurementMethod and EngineType. Possible values are for FuelMeasurementMethod: "AutomaticMeasurement", "StandardEstimate", "ManualMeasurement" and for EngineType: "Euro2", "Euro3", "Euro4", "Euro5", "Euro6", "EuroStep2", "EuroStep3A", "EuroStep3B", "EuroStep4".?>
+							<?Description Description of the attribute when there is no value to measure. Used for FuelMeasurementMethod and EngineType. Possible values are for FuelMeasurementMethod: "AutomaticMeasurement", "StandardEstimate", "ManualMeasurement" and for EngineType: "Euro2", "Euro3", "Euro4", "Euro5", "Euro6", "EuroStep2", "EuroStep3A", "EuroStep3B", "EuroStep4", "EV", "FuelCell", "Hybrid".?>
 							<?Cardinality 0..1?>
 						</cbc:Description>
 					</cac:MeasurementDimension>
@@ -903,7 +916,7 @@
 						<?name-Name Name of environmental emissions type?>
 						<?name-usage Optional?>
 					</cbc:EnvironmentalEmissionTypeCode>
-					<cbc:ValueMeasure unitCode="MGM"> 10 
+					<cbc:ValueMeasure unitCode="MGM"> 2.8 
 						<?Name Value of measurement?>
 						<?Description The value of the emission. Refers to Carbon Dioxide/Nitrogen Oxide/Particulate Matter/Hydro Carbon.?>
 						<?Cardinality 1..1?>
@@ -949,9 +962,9 @@
 					<?Name Road transport?>
 					<?Description Description of a truck or a vehicle transporting the goods. Use only if Transport mode code is set to road transport?>
 					<?Cardinality 0..1?>
-					<cbc:LicensePlateID> DF10958 
+					<cbc:LicensePlateID> DK-DF10958;DK-DF23314 
 						<?Name License plate identifier transport?>
-						<?Description The licence plate(s) identifying the vehicle seperated by semicolon if there are more than one?>
+						<?Description The licence plate(s) identifying the vehicle seperated by semicolon if there are more than one. ?>
 						<?Cardinality 1..1?>
 					</cbc:LicensePlateID>
 				</cac:RoadTransport>
@@ -1143,11 +1156,19 @@
 			</cac:EstimatedDeliveryPeriod>
 			
 			<cac:Despatch>
-				<cbc:ActualDespatchDate>2021-09-25</cbc:ActualDespatchDate>
-				<cbc:ActualDespatchTime>13:00:00+01:00<?Description The actual or expected date when the shipment was dispatched from the dispatching party. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the despatch was made should be assumed.?></cbc:ActualDespatchTime>
+				<cbc:ActualDespatchDate>2021-09-25
+					<?Name Shipment despatch date?>
+					<?Description The actual or expected date when the shipment was despatched from the despatching party.?>
+				</cbc:ActualDespatchDate>
+				<cbc:ActualDespatchTime>13:00:00+01:00<?Description The actual or expected date when the shipment was despatched from the despatching party. Format = "hh:mm:ss+timezone". Timezone is optional to use. If omitted, the local timezone where the despatch was made should be assumed.?>
+					<?Name Shipment despatch time?>
+				</cbc:ActualDespatchTime>
 				<cac:DespatchAddress>
 					<?Description The Despatch Address is used to define the Ship-from when the Despatch Supplier Party is not. When the Despatch Advice describes a movement, the Despatch Address should be included.?>
-					<cbc:ID>34456456456456 <?Description An identifier for the location to which the goods and services are despatched. For example a global location number.?>
+					<cbc:ID schemeID="0088">34456456456456 <?Description An identifier for the location to which the goods and services are despatched. For example a global location number.?>
+						<?schemeID-Name Scheme identifier?>
+						<?schemeID-usage Optional?>
+						<?schemeID-CodeList ICD?>
 					</cbc:ID>
 					<cbc:StreetName>Avon Way</cbc:StreetName>
 					<cbc:AdditionalStreetName>way 2</cbc:AdditionalStreetName>
@@ -1403,7 +1424,7 @@
 				</cbc:Quantity>
 				<cbc:TraceID schemeID="sgtin"> 345699634527 
 					<?Name Trace identifier?>
-					<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID.?>
+					<?Description An identifier to use for different purposes. Specify in schemeID which type of Trace ID you use. ?>
 					<?Cardinality 0..1?>
 					<?schemeID-Name Scheme identifier?>
 					<?schemeID-usage Optional?>
@@ -1517,7 +1538,7 @@
 							</cbc:Quantity>
 							<cbc:TraceID schemeID="urn:epc:sgid"> 345699634527 
 								<?Name Trace identifier?>
-								<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID.?>
+								<?Description An identifier to use for different purposes. Specify in schemeID which type of Trace ID you use.?>
 								<?Cardinality 0..1?>
 								<?schemeID-Name Scheme identifier?>
 								<?schemeID-usage Optional?>
@@ -1575,7 +1596,7 @@
 						</cbc:Quantity>
 						<cbc:TraceID schemeID="urn:epc:sgid"> 345699634527 
 							<?Name Trace identifier?>
-							<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID.?>
+							<?Description An identifier to use for different purposes. Specify in schemeID which type of Trace ID you use.?>
 							<?Cardinality 0..1?>
 							<?schemeID-Name Scheme identifier?>
 							<?schemeID-usage Optional?>
@@ -1630,7 +1651,7 @@
 					</cbc:Quantity>
 					<cbc:TraceID schemeID="urn:epc:sgid"> 345699634527 
 						<?Name Trace identifier?>
-						<?Description An identifier for use in tracing this goods item, such as the EPC number used in RFID.?>
+						<?Description An identifier to use for different purposes. Specify in schemeID which type of Trace ID you use.?>
 						<?Cardinality 0..1?>
 						<?schemeID-Name Scheme identifier?>
 						<?schemeID-usage Optional?>
@@ -1660,13 +1681,18 @@
 	
 	
 	<cac:DespatchLine>
-		<cbc:ID>10</cbc:ID>
-		<cbc:Note>Mrs Green agreed to waive charge</cbc:Note>
-		<cbc:DeliveredQuantity unitCode="C62"> 10 
+		<cbc:ID>10
+			<?Name Despatch line identifier?>
+		</cbc:ID>
+		<cbc:Note>
+			Gift
+			<?Name Despatch line note?>
+		</cbc:Note>
+		<cbc:DeliveredQuantity unitCode="EA"> 10 
 			<?Rule PEPPOL-T120-R005?>
 			<?Rule PEPPOL-T120-R006?>
 		</cbc:DeliveredQuantity>
-		<cbc:OutstandingQuantity unitCode="C62">2<?Rule PEPPOL-T120-R007?></cbc:OutstandingQuantity>
+		<cbc:OutstandingQuantity unitCode="EA">2<?Rule PEPPOL-T120-R007?></cbc:OutstandingQuantity>
 		<cbc:OutstandingReason>Text<?Rule PEPPOL-T120-R007?></cbc:OutstandingReason>	
 		<cac:OrderLineReference>
 			<cbc:LineID>1</cbc:LineID>
@@ -1736,9 +1762,11 @@
 			<cbc:Name>Beeswax <?Rule PEPPOL-T120-R004?>
 			</cbc:Name>
 			<cac:BuyersItemIdentification>
+				<?Description Identifying information for this item, assigned by the buyer.?>
 				<cbc:ID>6578489</cbc:ID>
 			</cac:BuyersItemIdentification>
 			<cac:SellersItemIdentification>
+				<?Description Identifying information for this item, assigned by the seller.?>
 				<?Rule PEPPOL-T120-R003?>
 				<cbc:ID> 17589683 
 					<?Rule PEPPOL-T120-R003?>
@@ -1768,18 +1796,46 @@
 				<?Name Commodity classification?>
 				<?Description To classify when an item number is not sufficient.?>
 				<?Cardinality 0..n?>
-				<cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">
-					KO2012140200 <?Name Item classification code?>
+				<cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">KO2012140200 
+					<?Name Item classification code?>
 					<?listID-CodeList UNCL7143?>
 					<?listID-usage Mandatory?>
 					<?listID-Description The identification scheme identifier of the Item classification identifier.?>
+					<?name-Description The name of the Identification scheme identifier when @listID = ZZZ. Must be provided when @listID = ZZZ.?>
 					<?Cardinality 1..1?>
+					<?Rule PEPPOL-T120-R040?>
 				</cbc:ItemClassificationCode>
 			</cac:CommodityClassification>
 			
 			<cac:HazardousItem>
+				<?Description Contains information on the Hazardous item. ?>
+				<cbc:ID>123
+					<?Name Identifier?>
+					<?Description An identifier for this hazardous item. ?>
+					<?Cardinality 0..1?>
+				</cbc:ID>
+				<cbc:AdditionalInformation>Information about the hazardous item
+					<?Name Additional Information?>
+					<?Description Text providing further information about the hazardous substance. ?>
+					<?Cardinality 0..1?>
+				</cbc:AdditionalInformation>
 				<cbc:UNDGCode> ADR <?CodeList UNCL8273?>
 				</cbc:UNDGCode>
+				<cbc:TechnicalName>Corrosive liquid, n.o.s., 8, UN 1760, II (contains Octanoyl chloride)
+					<?Name Technical Name?>
+					<?Description The full technical name of a specific hazardous substance contained in this goods item. ?>
+					<?Cardinality 0..1?>
+				</cbc:TechnicalName>
+				<cbc:CategoryName>Acute toxicity
+					<?Name Category Name?>
+					<?Description The name of the category of hazard that applies to the Item. ?>
+					<?Cardinality 0..1?>
+				</cbc:CategoryName>
+				<cbc:HazardousCategoryCode>123
+					<?Name Hazardous Category Code?>
+					<?Description A code signifying a kind of hazard for a material. ?>
+					<?Cardinality 0..1?>
+				</cbc:HazardousCategoryCode>
 				<cbc:HazardClassID>Code</cbc:HazardClassID>
 				<cbc:NetWeightMeasure unitCode="KGM">123
 					<?Name Net Weight Measure ?>
@@ -1790,6 +1846,44 @@
 					<?unitCode-Description The unit of measure that applies to the Net Weight.?>
 					<?unitCode-usage Mandatory?>
 				</cbc:NetWeightMeasure>
+				<cbc:NetVolumeMeasure unitCode="MTQ">12.3
+					<?Name Net Volume Measure ?>
+					<?Description Net volume of the Hazardous item. ?>
+					<?Cardinality 0..1?>
+					<?unitCode-CodeList UNECERec20?>
+					<?unitCode-Name Measure unit of measure?>
+					<?unitCode-Description The unit of measure that applies to the Net Volume.?>
+					<?unitCode-usage Mandatory?>
+				</cbc:NetVolumeMeasure>
+				<cac:HazardousGoodsTransit>
+					<?Name Hazardous Goods Transit ?>
+					<?Description Information related to the transit of this kind of hazardous goods. ?>
+					<?Cardinality 0..n?>
+					<cbc:PackingCriteriaCode>123
+						<?Name Packing Criteria Code ?>
+						<?Description A code signifying the packaging requirement for transportation of the hazardous goods as assigned by IATA, IMDB, ADR, RID etc. ?>
+						<?Cardinality 1..1?>
+					</cbc:PackingCriteriaCode>
+				</cac:HazardousGoodsTransit>
+				<cac:EmergencyTemperature>
+					<?Name Emergency Temperature ?>
+					<?Description The threshold temperature at which emergency procedures apply in the handling of temperature-controlled goods. ?>
+					<?Cardinality 0..1?>
+					<cbc:AttributeID>ABC
+						<?Name Attribute ID ?>
+						<?Description An identifier for this temperature measurement. ?>
+						<?Cardinality 1..1?>
+					</cbc:AttributeID>
+					<cbc:Measure unitCode="CEL">78
+						<?Name Measure ?>
+						<?Description The value of this temperature measurement. ?>
+						<?Cardinality 1..1?>
+						<?unitCode-CodeList UNECERec20?>
+						<?unitCode-Name Measure unit of measure?>
+						<?unitCode-Description The unit of measure that applies to the Emergency Temperature.?>
+						<?unitCode-usage Mandatory?>
+					</cbc:Measure>
+				</cac:EmergencyTemperature>
 			</cac:HazardousItem>
 			
 			<cac:AdditionalItemProperty>
@@ -1810,7 +1904,7 @@
 					<?listID-Description An identifier for the code list used for the Name code, this is bilaterally agreed?>
 				</cbc:NameCode>
 				<cbc:Value>NEPD-1717-700-SE</cbc:Value>
-				<cbc:ValueQuantity unitCode="C62">15.00</cbc:ValueQuantity>
+				<cbc:ValueQuantity unitCode="EA">15.00</cbc:ValueQuantity>
 				<cbc:ValueQualifier>descr</cbc:ValueQualifier>
 			</cac:AdditionalItemProperty>
 			
@@ -1896,27 +1990,37 @@
 					</cbc:RegistrationName>
 				</cac:PartyLegalEntity>
 			</cac:ManufacturerParty>
+			
 			<cac:ItemInstance>
-				<cbc:ManufactureDate>2021-01-01</cbc:ManufactureDate>
+				<?Description Adding information on individual instances of the item.?>
+				<cbc:ManufactureDate>2021-01-01
+					<?Description The manufacturing date of all items listed in this despatch line.?>
+				</cbc:ManufactureDate>
 				<cbc:ManufactureTime>06:47:30+01:00
 				<?Name Item manufactured time?>
 					<?Description The time at which this item instance was manufactured. Timezone is optional to use. If omitted, the local timezone where the manufacturing was made should be assumed.?>
 					<?DateType Time?>
 					<?Cardinality 0..1?>
 			    </cbc:ManufactureTime>
-				<cbc:BestBeforeDate>2021-12-01</cbc:BestBeforeDate>
+				<cbc:BestBeforeDate>2021-12-01
+					<?Description The best before date of all items listed in this despatch line.?>
+				</cbc:BestBeforeDate>
 				<cbc:SerialID>4558784
 					<?Name Item serial number. ?>
 					<?Description Serial number for item listed in the despatch line..?>
 				</cbc:SerialID>
 				<cac:LotIdentification>
-					<cbc:LotNumberID>546378239</cbc:LotNumberID>
-					<cbc:ExpiryDate>2023-01-01</cbc:ExpiryDate>
+					<cbc:LotNumberID>546378239
+						<?Description The batch number that applies to all items in the despatch line.?>
+					</cbc:LotNumberID>
+					<cbc:ExpiryDate>2023-01-01
+						<?Description The expiry date of all items listed in this despatch line.?>
+					</cbc:ExpiryDate>
 				</cac:LotIdentification>
 			</cac:ItemInstance>
 			<cac:Certificate>
 				<?Name Certificate?>
-				<?Description Used for referring to the Certificate for Wooden products.?>
+				<?Description Used for referring to the Certificates for the product.?>
 				<?Cardinality 0..n?>
 				<cbc:ID> 6655223 
 					<?Name Identity of the certificate?>
