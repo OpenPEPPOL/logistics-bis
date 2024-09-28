@@ -1,0 +1,40 @@
+= Version 1.1
+[horizontal]
+Release date:: 2024-11-xx
+
+[NOTE]
+====
+This is the first release update of the Peppol Logistics standard. This time only minor changes are included.
+====
+
+== New BIS documents
+* No BIS documents are added in this release.
+
+== Updated BIS documents
+* PEPPOL BIS Transport Execution Plan with Request
+* PEPPOL BIS Transport Execution Plan only
+* PEPPOL BIS Transportation Status with Request
+* PEPPOL BIS Transportation Status only
+
+== New transactions
+* No new transactions are added in this release.
+
+== Updated Transactions
+* Peppol Transport Execution Plan Request 1.1 (T123)
+* Peppol Transport Execution Plan 1.1 (T124)
+* Peppol Transportation Status Request 1.1 (T126)
+* Peppol Transportation Status 1.1 (T127)
+
+=== Codes
+Three new codelists are added:
+* TransportHandlingUnitIDType	Added to specify which type of Transport Handling Unit ID that is used. It is linked to @schemeID under cac:TransportHandlingUnit/cbc:ID.
+* ConsignmentIDType             Added to specify which type of Consignment ID that is used. It is linked to @schemeID under cac:Consignment/cbc:ID
+* ShipmentIDType                Added to specify which type of Shipment ID that is used. It is linked to @schemeID under cac:Shipment/cbc:ID.
+
+== Changes
+* Attribute @schemeID added to cbc:ID under cac:Shipment and a codelist is attached to @schemeID. A description how to use GS1 GSIN is also added, both in description and in BIS document.
+* Attribute @schemeID added to cbc:ID under cac:Consignment and a codelist is attached to @schemeID. A description how to use GS1 GINC is also added, both in description and in BIS document.
+* Attribute @schemeID added to cbc:ID under cac:TransportHandlingUnit and a codelist is attached to @schemeID. A description how to use GS1 SSCC is also added, both in description and in BIS document.
+* Usecase examples are changed accordingly.
+
+
