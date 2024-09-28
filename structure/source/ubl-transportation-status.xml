@@ -49,18 +49,25 @@
 	</cbc:TransportExecutionStatusCode>
 	<cac:Consignment>
 		<?Name Consignment information ?>
-		<?Description The consignment related to this Transportation Status.?>
+		<?Description An identifiable collection of goods items sent from one party (the Despatch Party) to another party (the Consignee) via one or more modes of transport.?>
 		<?Cardinality 0..1?>
-		<cbc:ID>12535157654567654
-		<?Name Consignment identifier ?>
-		<?Description Id for the consignment, often a number from the Transport Service Provider. ?>
-		<?Cardinality 1..1?>
+		<cbc:ID schemeID="GINC">735005233GS1TRANSPORT000001
+			<?Name Consignment identifier ?>
+			<?Description Id for the consignment, often a number from the Transport Service provider. If this ID is in the GINC format, it should be indicated in the attribute @schemeID. Use N/A if not applicable.?>
+			<?Cardinality 1..1?>
+			<?schemeID-codelist ConsignmentIDType?>
+			<?schemeID-usage Optional?>
+			<?schemeID-description Used to indicate that the ID is in the GINC (Global Identification Number forConsignment) format. 
+				This number identifies a consignment, which is a logical grouping of goods (one or more logistics units) transferred to a
+				freight forwarder to be transported for a specific journey. The consignment number must be allocated by a freight forwarder 
+				(or a carrier acting as a freight forwarder) or a consignor, but only if prior agreement of the freight
+				forwarder is given.?>
 		</cbc:ID>
 		<cac:Status>
 			<?Name Status ?>
-			<?Description Staus related to the consignment as a whole. ?>
+			<?Description Status related to the consignment as a whole. ?>
 			<?Cardinality 1..1?>
-			<cbc:ConditionCode listID="zzz">4
+			<cbc:ConditionCode listID="ZZZ">4
 				<?Name Status ?>
 				<?Description Specifies the status condition of the related object.  ?>
 				<?Cardinality 0..1?>
@@ -210,7 +217,7 @@
 						<?Name Person ?>
 						<?Description The person who applies the signature on behalf of the signatory party. ?>
 						<?Cardinality 1..1?>
-						<cbc:ID schemeID="zzz">45976	
+						<cbc:ID schemeID="ZZZ">45976	
 						<?Name Person ID ?>
 						<?Description The ID for a person. The type of ID can be specified in a schemeID. ?>
 						<?schemeID-usage Optional?>
@@ -498,7 +505,7 @@
 			<?Name Status ?>
 			<?Description Staus related to the consignment as a whole. ?>
 			<?Cardinality 0..1?>
-			<cbc:ConditionCode schemeID="zzz">4
+			<cbc:ConditionCode schemeID="ZZZ">4
 					<?Name Status ?>
 					<?Description Specifies the status condition of the related object.  ?>
 					<?Cardinality 0..1?>
@@ -508,7 +515,7 @@
 					<?Description Description of the status. ?>
 					<?Cardinality 1..1?>
 				</cbc:Description>
-			<cbc:StatusReasonCode listID="zzz">80
+			<cbc:StatusReasonCode listID="ZZZ">80
 					<?Name Status Reason code?>
 					<?Description The reason of the status expressed as a code. ?>
 					<?Cardinality 0..1?>
@@ -602,7 +609,7 @@
 					<?Name Person ?>
 					<?Description The person who applies the signature on behalf of the signatory party. ?>
 					<?Cardinality 1..1?>
-					<cbc:ID schemeID="zzz">45976	
+					<cbc:ID schemeID="ZZZ">45976	
 						<?Name Person ID ?>
 						<?Description The ID for a person. The type of ID can be specified in a schemeID. ?>
 						<?schemeID-usage Optional?>
