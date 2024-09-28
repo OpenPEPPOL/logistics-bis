@@ -1096,8 +1096,14 @@
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>Identifier transport handling unit</Name>
-               <Description>The SSCC identification code of this Transport Handling Unit.</Description>
-               <Value type="EXAMPLE">11111222222222</Value>
+               <Description>The Transport Handling Unit is identified with a Serial Shipping Container Code (SSCC). 
+				The GS1 identification key used to identify logistics units. The key comprises an extension digit, GS1 Company Prefix, serial reference and check digit.</Description>
+               <Value type="EXAMPLE">173500538500000016</Value>
+               <Attribute>
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">TransportHandlingUnitIDType</Reference>
+                  <Value type="EXAMPLE">SSCC</Value>
+               </Attribute>
             </Element>
             <Element cardinality="1..1">
                <Term>cbc:TransportHandlingUnitTypeCode</Term>
