@@ -92,17 +92,21 @@
 	     <Element cardinality="0..1">
          <Term>cac:Consignment</Term>
          <Name>Consignment information </Name>
-         <Description>The consignment related to this Transportation Status.</Description>
+         <Description>An identifiable collection of goods items sent from one party (the Despatch Party) to another party (the Consignee) via one or more modes of transport.</Description>
          <Element cardinality="1..1">
             <Term>cbc:ID</Term>
             <Name>Consignment identifier </Name>
-            <Description>Id for the consignment, often a number from the Transport Service Provider. </Description>
-            <Value type="EXAMPLE">12535157654567654</Value>
+            <Description>Id for the consignment, often a number from the Transport Service provider. If this ID is in the GINC format, it should be indicated in the attribute @schemeID. Use N/A if not applicable.</Description>
+            <Value type="EXAMPLE">735005233GS1TRANSPORT000001</Value>
+            <Attribute usage="Optional">
+               <Term>schemeID</Term>
+               <Value type="EXAMPLE">GINC</Value>
+            </Attribute>
          </Element>
          <Element cardinality="1..1">
             <Term>cac:Status</Term>
             <Name>Status </Name>
-            <Description>Staus related to the consignment as a whole. </Description>
+            <Description>Status related to the consignment as a whole. </Description>
             <Element cardinality="0..1">
                <Term>cbc:ConditionCode</Term>
                <Name>Status </Name>
@@ -110,7 +114,7 @@
                <Value type="EXAMPLE">4</Value>
                <Attribute usage="Mandatory">
                   <Term>listID</Term>
-                  <Value type="EXAMPLE">zzz</Value>
+                  <Value type="EXAMPLE">ZZZ</Value>
                </Attribute>
             </Element>
             <Element cardinality="1..1">
@@ -294,7 +298,7 @@
                         <Value type="EXAMPLE">45976</Value>
                         <Attribute usage="Optional">
                            <Term>schemeID</Term>
-                           <Value type="EXAMPLE">zzz</Value>
+                           <Value type="EXAMPLE">ZZZ</Value>
                         </Attribute>
                      </Element>
                      <Element cardinality="0..1">
@@ -672,7 +676,7 @@
                <Value type="EXAMPLE">4</Value>
                <Attribute>
                   <Term>schemeID</Term>
-                  <Value type="EXAMPLE">zzz</Value>
+                  <Value type="EXAMPLE">ZZZ</Value>
                </Attribute>
             </Element>
             <Element cardinality="1..1">
@@ -688,7 +692,7 @@
                <Value type="EXAMPLE">80</Value>
                <Attribute usage="Mandatory">
                   <Term>listID</Term>
-                  <Value type="EXAMPLE">zzz</Value>
+                  <Value type="EXAMPLE">ZZZ</Value>
                </Attribute>
             </Element>
             <Element cardinality="0..1">
@@ -800,7 +804,7 @@
                      <Value type="EXAMPLE">45976</Value>
                      <Attribute usage="Optional">
                         <Term>schemeID</Term>
-                        <Value type="EXAMPLE">zzz</Value>
+                        <Value type="EXAMPLE">ZZZ</Value>
                      </Attribute>
                   </Element>
                   <Element cardinality="0..1">

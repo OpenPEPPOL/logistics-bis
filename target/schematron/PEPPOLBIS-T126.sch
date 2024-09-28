@@ -439,17 +439,17 @@
       <rule context="/ubl:TransportationStatusRequest/cac:Consignment/cac:TransportEvent/cbc:TransportEventTypeCode">
          <assert test="(some $code in $clTransportEventTypeCode satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T126-B08601">Value MUST be part of code list 'Transport Event Type Code (openPEPPOL)'.</assert>
+                 id="PEPPOL-T126-B08701">Value MUST be part of code list 'Transport Event Type Code (openPEPPOL)'.</assert>
       </rule>
       <rule context="/ubl:TransportationStatusRequest/cac:Consignment/cac:TransportEvent/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T126-B08401">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T126-B08501">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportationStatusRequest/cac:Consignment/cac:TransportHandlingUnit">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T126-B08701">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T126-B08801">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportationStatusRequest/cac:Consignment/cac:TransportHandlingUnit/cbc:ID"/>
       <rule context="/ubl:TransportationStatusRequest/cac:Consignment/cac:TransportHandlingUnit/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T126-B08702">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T126-B08802">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportationStatusRequest/cac:Consignment/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T126-B08202">Document MUST NOT contain elements not part of the data model.</assert>

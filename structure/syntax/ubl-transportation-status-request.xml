@@ -479,12 +479,16 @@
 	     <Element cardinality="0..1">
          <Term>cac:Consignment</Term>
          <Name>Consignment information </Name>
-         <Description>The consignment related to this Transportation Status.</Description>
+         <Description>An identifiable collection of goods items sent from one party (the Despatch Party) to another party (the Consignee) via one or more modes of transport.</Description>
          <Element cardinality="1..1">
             <Term>cbc:ID</Term>
             <Name>Consignment identifier </Name>
-            <Description>Id for the consignment, often a number from the transport service provider. </Description>
-            <Value type="EXAMPLE">12535157654567654</Value>
+            <Description>Id for the consignment, often a number from the Transport Service provider. If this ID is in the GINC format, it should be indicated in the attribute @schemeID. Use N/A if not applicable.</Description>
+            <Value type="EXAMPLE">735005233GS1TRANSPORT000001</Value>
+            <Attribute usage="Optional">
+               <Term>schemeID</Term>
+               <Value type="EXAMPLE">GINC</Value>
+            </Attribute>
          </Element>
          <Element cardinality="0..n">
             <Term>cac:TransportEvent</Term>
