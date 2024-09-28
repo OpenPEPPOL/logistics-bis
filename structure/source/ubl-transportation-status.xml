@@ -275,12 +275,18 @@
 			<?Name Transport handling Unit ?>
 			<?Description The transport handling unit refered to in this Transportation Status. ?>
 			<?Cardinality 0..n?>
-			<cbc:ID>CON_THU_1</cbc:ID>
+			<cbc:ID schemeID="SSCC">173500538500000016
+				<?Name Identifier transport handling unit ?>
+				<?Description The SSCC identification code of this transport handling unit. Use the attribute @schemeID to identify that the ID is a SSCC ID. ?>
+				<?Cardinality 1..1?>
+				<?schemeID-usage Optional?>
+				<?schemeID-codelist TransportHandlingUnitIDType?>
+			</cbc:ID>
 			<cac:Status>
 				<?Name Status ?>
 				<?Description Status related to the transport handling unit. ?>
 				<?Cardinality 0..1?>
-				<cbc:ConditionCode schemeID="zzz">4
+				<cbc:ConditionCode schemeID="ZZZ">4
 					<?Name Status ?>
 					<?Description Specifies the status condition of the related object.  ?>
 					<?Cardinality 0..1?>
