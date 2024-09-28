@@ -30,6 +30,7 @@
          <Reference type="RULE">PEPPOL-T124-R002</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1</Value>
       </Element>
+	
 	     <Element>
          <Term>cbc:ID</Term>
          <Name>Document identifier</Name>
@@ -3760,8 +3761,12 @@
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>Identifier transport handling unit </Name>
-               <Description>The SSCC identification code of this Transport Handling Unit. </Description>
-               <Value type="EXAMPLE">11111222222222</Value>
+               <Description>The SSCC identification code of this Transport Handling Unit. Use the attribute @schemeID to identify that the ID is a SSCC ID.</Description>
+               <Value type="EXAMPLE">173500538500000016</Value>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Value type="EXAMPLE">SSCC</Value>
+               </Attribute>
             </Element>
             <Element cardinality="1..1">
                <Term>cbc:TransportHandlingUnitTypeCode</Term>

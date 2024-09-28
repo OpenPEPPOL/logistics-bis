@@ -379,9 +379,15 @@
             <Term>cac:TransportHandlingUnit</Term>
             <Name>Transport handling Unit </Name>
             <Description>The transport handling unit refered to in this Transportation Status. </Description>
-            <Element>
+            <Element cardinality="1..1">
                <Term>cbc:ID</Term>
-               <Value type="EXAMPLE">CON_THU_1</Value>
+               <Name>Identifier transport handling unit </Name>
+               <Description>The SSCC identification code of this transport handling unit. Use the attribute @schemeID to identify that the ID is a SSCC ID. </Description>
+               <Value type="EXAMPLE">173500538500000016</Value>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Value type="EXAMPLE">SSCC</Value>
+               </Attribute>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:Status</Term>
@@ -394,7 +400,7 @@
                   <Value type="EXAMPLE">4</Value>
                   <Attribute>
                      <Term>schemeID</Term>
-                     <Value type="EXAMPLE">zzz</Value>
+                     <Value type="EXAMPLE">ZZZ</Value>
                   </Attribute>
                </Element>
                <Element cardinality="1..1">
