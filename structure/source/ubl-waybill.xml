@@ -713,11 +713,13 @@
 				<?Name Transport handling unit ?>
 				<?Description Used to specify the outer most packages, the units that the transporters deals with. ?>
 				<?Cardinality 0..n?>
-				<cbc:ID>11111222222222
+				<cbc:ID schemeID="SSCC">173500538500000016
 					<?Name Identifier transport handling unit ?>
-					<?Description The SSCC identification code of this Transport Handling Unit. ?>
+					<?Description The Transport Handling Unit is identified with a Serial Shipping Container Code (SSCC). The GS1 identification key used to 
+					identify logistics units. The key comprises an extension digit, GS1 Company Prefix, serial reference and check digit. ?>
 					<?Cardinality 1..1?>
 					<?schemeID-usage Optional?>
+					<?schemeID-CodeList TransportHandlingUnitIDType?>
 				</cbc:ID>
 				<cbc:TransportHandlingUnitTypeCode>AG
 					<?Name Handling unit type code ?>
