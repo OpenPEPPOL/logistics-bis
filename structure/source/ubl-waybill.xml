@@ -464,10 +464,16 @@
 	</cac:FreightForwarderParty>
 	<cac:Shipment>
 		<?Name Shipping Order ID ?>
-		<?Description The shipment for this Waybill.?>
+		<?Description A contractual arrangement whereby an identifiable collection of goods items is to be transported from one party 
+		(usually a Supplier) to another party (usually a Customer)?>
 		<?Cardinality 1..1?>
-		<cbc:ID>1
-			<?Description Identifies a shipment. Freight forwarders reference number.?>
+		<cbc:ID schemeID="GSIN">73500538500000019
+			<?Description Identifies a shipment. Freight forwarders reference number. If this ID is in the GSIN format, it should be indicated in the attribute @schemeID.?>
+			<?schemeID-CodeList ShipmentIDType?>
+			<?schemeID-usage Optional?>
+			<?schemeID-Description Used to indicate that the ID is in the GSIN format. The Global Shipment Identification Number (GSIN) is a number that 
+			identifies a shipment and is assigned by the seller of goods. The goods shipper collects one or more logistic units for transportation to a 
+			recipient. A GSIN is assigned to this group of logistic units to identify them as a shipment. ?>
 		</cbc:ID>
 		<cbc:Information>hank at arriving
 			<?Description Free-form text pertinent to this shipment, conveying information that is not contained explicitly in other structures.?>
@@ -476,10 +482,18 @@
 			
 		<cac:Consignment>
 			<?Name Consignment information ?>
+			<?Description An identifiable collection of goods items sent from one party (the Despatch Party) to another party (the Consignee) via one or more modes of transport.?>
 			<?Cardinality 1..1?>
-			<cbc:ID>12535157654567654
+			<cbc:ID schemeID="GINC">735005233GS1TRANSPORT000001
 				<?Name Consignment identifier ?>
+				<?Description If this ID is in the GINC format, it should be indicated in the attribute @schemeID.?>
 				<?Cardinality 1..1?>
+				<?schemeID-CodeList ConsignmentIDType?>
+				<?schemeID-usage Optional?>
+				<?schemeID-Description Used to indicate that the ID is in the GINC (Global Identification Number for Consignment) format. 
+				This number identifies a consignment, which is a logical grouping of goods (one or more logistics units) transferred to a
+				freight forwarder to be transported for a specific journey. The consignment number must be allocated by a freight forwarder 
+				(or a carrier acting as a freight forwarder) or a consignor, but only if prior agreement of the freight forwarder is given. ?>
 			</cbc:ID>
 			<cbc:ConsigneeAssignedID>1234
 				<?Name Consignee Consignment identifier ?>				
