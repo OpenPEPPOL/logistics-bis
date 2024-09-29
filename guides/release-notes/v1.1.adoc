@@ -11,6 +11,7 @@ This is the first release update of the Peppol Logistics standard. This time onl
 * No BIS documents are added in this release.
 
 == Updated BIS documents
+* PEPPOL BIS Advanced Despatch Advice Only 1.3
 * PEPPOL BIS Advanced Despatch Advice with Receipt Advice 1.1
 * PEPPOL BIS Weight Statement 1.3
 * PEPPOL BIS Transport Execution Plan with Request 1.1
@@ -19,10 +20,11 @@ This is the first release update of the Peppol Logistics standard. This time onl
 * PEPPOL BIS Transportation Status with Request 1.1
 * PEPPOL BIS Transportation Status only 1.1
 
-== New transactions
+== New Transactions
 * No transactions are added in this release.
 
 == Updated Transactions
+* Peppol Advanced Despatch Advice 1.3 (T120)
 * Peppol Weight Statement 1.3 (T122)
 * Peppol Transport Execution Plan Request 1.1 (T123)
 * Peppol Transport Execution Plan 1.1 (T124)
@@ -31,18 +33,36 @@ This is the first release update of the Peppol Logistics standard. This time onl
 * Peppol Transportation Status 1.1 (T127)
 * Peppol Receipt Advice 1.1 (T128)
 
-== Codes - Three new codelists are added:
+== New Codelists
 * TransportHandlingUnitIDType	Added to specify which type of Transport Handling Unit ID that is used. It is linked to @schemeID under cac:TransportHandlingUnit/cbc:ID.
 * ConsignmentIDType             Added to specify which type of Consignment ID that is used. It is linked to @schemeID under cac:Consignment/cbc:ID
 * ShipmentIDType                Added to specify which type of Shipment ID that is used. It is linked to @schemeID under cac:Shipment/cbc:ID.
+
+== Updated Codelists
+* No codelists are changed in this release.
+
+== New Rules
+* No rules are added in this release.
+
+== Updated Rules
+* No rules are changed in this release.
+
+== Request For Change (RFC) that are included/solved in Release 1.1
+* LLC-1		Add option to set an attribute on the Transport Handling Unit ID when SSCC identities are used in Transport Execution Plan Request (TEPR), Transport Execution Plan (TEP), Transportation Status Request (TSR) and Transportation Status (TS).
+* LLC-3		Receipt Advice - Add option to set an attribute on the Transport Handling Unit ID when SSCC identities are used.
+* LLC-4		Add option to use and identify globally unique identities on Consignment in Transport Execution Plan Request (TEPR), Transport Execution Plan (TEP), Transportation Status Request (TSR) and Transportation Status (TS).
+* LLC-5		Waybill - Add option to use and identify globally unique identities on Shipment and Consignment.
+* LLC-6		Waybill - Add option to set an attribute on the Transport Handling Unit ID when SSCC identities are used.
+* LLC-7		Weight Statement - Add option to use and identify globally unique identities on Shipment.
+* LLC-9		Change "Euro Step" to "Euro Stage"
+* LLC-10	Advanced Despatch Advice - Add option to use and identify globally unique identities on Shipment and Consignment.
+* LLC-11	Advanced Despatch Advice - Add option to set an attribute on the Transport Handling Unit ID when SSCC identities are used.
+* LLC-12	Recipt Advice - Add option to use and identify globally unique identities on Shipment and Consignment
 
 == Changes that are a part of Release 1.1
 * Attribute @schemeID added to cbc:ID under cac:Shipment and a codelist is attached to @schemeID. A description how to use GS1 GSIN is also added, both in description and in BIS document.
 * Attribute @schemeID added to cbc:ID under cac:Consignment and a codelist is attached to @schemeID. A description how to use GS1 GINC is also added, both in description and in BIS document.
 * Attribute @schemeID added to cbc:ID under cac:TransportHandlingUnit and a codelist is attached to @schemeID. A description how to use GS1 SSCC is also added, both in description and in BIS document.
+* "Euro Step" is changed to "Euro Stage" which is the correct name on engine types when reporting fuel consumption in the Advanced Despatch Advice.
 * Usecase examples are changed accordingly.
-
-== Request For Change (RFC) that are included in Release 1.1
-  LLC-1, LLC-3, LLC-4, LLC-5, LLC-6, LLC-7, LLC-9, LLC-10, LLC-11, LLC-12.
-
 

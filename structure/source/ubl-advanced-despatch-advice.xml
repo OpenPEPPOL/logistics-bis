@@ -574,8 +574,17 @@
 	
 	<cac:Shipment>
 		<?Cardinality 1..1?>
-		<cbc:ID> 1 
-			<?Description Identifies a shipment. Freight forwarders reference number.?>
+		<?Description A contractual arrangement whereby an identifiable collection of goods items is to be transported from one party (usually a Supplier) 
+		to another party (usually a Customer) ?>
+		<cbc:ID schemeID="GSIN">73500538500000019
+			<?Description Identifies a shipment. Freight forwarders reference number. If this ID is in the GSIN format, it should be indicated in the 
+			attribute @schemeID. Use NA as a dummy value if the ID is unknown.?>
+			<?Cardinality 1..1?>
+			<?schemeID-CodeList ShipmentIDType?>
+			<?schemeID-usage Optional?>
+			<?schemeID-Description Used to indicate that the ID is in the GSIN format. The Global Shipment Identification Number (GSIN) is a number that 
+			identifies a shipment and is assigned by the seller of goods. The goods shipper collects one or more logistic units for transportation to a 
+			recipient. A GSIN is assigned to this group of logistic units to identify them as a shipment. ?>
 		</cbc:ID>
 		<cbc:Information> text 
 			<?Description Used by Logistics for Supplier Remark.?>
@@ -603,8 +612,17 @@
 		</cbc:DeclaredStatisticsValueAmount>
 		
 		<cac:Consignment>
-			<cbc:ID> NA 
-				<?Description Use a dummy value since this element is mandatory.?>
+			<?Description An identifiable collection of goods items sent from one party (the Despatch Party) to another party (the Consignee) via one or more modes of transport.?>
+			<cbc:ID schemeID="GINC">735005233GS1TRANSPORT000001
+				<?Description If this ID is in the GINC format, it should be indicated in the attribute @schemeID. 
+				Use NA as a dummy value if the ID is unknown.?>
+				<?Cardinality 1..1?>
+				<?schemeID-CodeList ConsignmentIDType?>
+				<?schemeID-usage Optional?>
+				<?schemeID-Description Used to indicate that the ID is in the GINC (Global Identification Number for Consignment) format. 
+				This number identifies a consignment, which is a logical grouping of goods (one or more logistics units) transferred to a
+				freight forwarder to be transported for a specific journey. The consignment number must be allocated by a freight forwarder 
+				(or a carrier acting as a freight forwarder) or a consignor, but only if prior agreement of the freight forwarder is given. ?>
 			</cbc:ID>
 			<cbc:HazardousRiskIndicator> false 
 				<?Name Hazardous risk indicator?>

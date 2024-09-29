@@ -35,7 +35,6 @@
 	</cac:OrderReference>
 
 	<cac:DespatchSupplierParty>
-		<!-- Mandatory, the party that despatcheds the goods or provides service -->
 		<cac:Party>
 			<cbc:EndpointID schemeID="0007">5561043539</cbc:EndpointID>
 			<cac:PartyIdentification>
@@ -60,7 +59,6 @@
 		</cac:Party>
 	</cac:DespatchSupplierParty>
 	<cac:DeliveryCustomerParty>
-		<!-- Mandatory, the party that recieves the goods or service -->
 		<cac:Party>
 			<cbc:EndpointID schemeID="0088">7300009058334</cbc:EndpointID>
 			<cac:PartyIdentification>
@@ -85,7 +83,6 @@
 		</cac:Party>
 	</cac:DeliveryCustomerParty>
 	<cac:BuyerCustomerParty>
-		<!-- BEAst recommends sending BuyerCustomerParty even if it is optional since it is easier for the receiver. -->
 		<cac:Party>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0007">5560608837</cbc:ID>
@@ -104,7 +101,6 @@
 		</cac:Party>
 	</cac:BuyerCustomerParty>
 	<cac:SellerSupplierParty>
-		<!-- BEAst recommends sending SellerSupplierParty even if it is optional since it is easier for the receiver. -->
 		<cac:Party>
 			<cac:PartyIdentification>
 				<cbc:ID schemeID="0007">5561043539</cbc:ID>
@@ -123,8 +119,7 @@
 		</cac:Party>
 	</cac:SellerSupplierParty>
 	<cac:Shipment>
-		<cbc:ID>1</cbc:ID>
-		<!-- Mandatory Shipment number (fraktsedelsnummer) is mapped to this field -->
+		<cbc:ID schemeID="GSIN">73500538500000019</cbc:ID>
 		<cac:Delivery>
 			<cac:EstimatedDeliveryPeriod>
 				<cbc:StartDate>2022-11-23</cbc:StartDate>
