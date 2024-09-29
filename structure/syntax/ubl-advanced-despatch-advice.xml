@@ -1545,13 +1545,15 @@
                      <Element cardinality="1..1">
                         <Term>cbc:AttributeID</Term>
                         <Name>Attribute identifier</Name>
-                        <Description>To define the type of measurement. EnergyContent = T6428, ConversionFactor = T6429, FuelConsumption = T6374, DrivingDistance = T6380, DrivingTime = T6381, FuelMeasurementMethod = T6728, EngineType = T6379, RenewableFuel = T6382.</Description>
+                        <Description>To define the type of measurement. EnergyContent = T6428, ConversionFactor = T6429, FuelConsumption = T6374, 
+							DrivingDistance = T6380, DrivingTime = T6381, FuelMeasurementMethod = T6728, EngineType = T6379, RenewableFuel = T6382.</Description>
                         <Value type="EXAMPLE">FuelConsumption</Value>
                      </Element>
                      <Element cardinality="0..1">
                         <Term>cbc:Measure</Term>
                         <Name>Measure</Name>
-                        <Description>The measured value. Used for EnergyContent, ConversionFactor, FuelConsumption, DrivingDistance, DrivingTime and RenewableFuel. unitCode refers to T6706.</Description>
+                        <Description>The measured value. Used for EnergyContent, ConversionFactor, FuelConsumption, DrivingDistance, DrivingTime 
+							and RenewableFuel. unitCode refers to T6706.</Description>
                         <Value type="EXAMPLE">123</Value>
                         <Attribute>
                            <Term>unitCode</Term>
@@ -1564,7 +1566,9 @@
                      <Element cardinality="0..1">
                         <Term>cbc:Description</Term>
                         <Name>Attribute value</Name>
-                        <Description>Description of the attribute when there is no value to measure. Used for FuelMeasurementMethod and EngineType. Possible values are for FuelMeasurementMethod: "AutomaticMeasurement", "StandardEstimate", "ManualMeasurement" and for EngineType: "Euro2", "Euro3", "Euro4", "Euro5", "Euro6", "EuroStep2", "EuroStep3A", "EuroStep3B", "EuroStep4".</Description>
+                        <Description>Description of the attribute when there is no value to measure. Used for FuelMeasurementMethod and EngineType. 
+							Possible values are for FuelMeasurementMethod: "AutomaticMeasurement", "StandardEstimate", "ManualMeasurement" and for 
+							EngineType: "Euro2", "Euro3", "Euro4", "Euro5", "Euro6", "EuroStage2", "EuroStage3A", "EuroStage3B", "EuroStage4".</Description>
                         <Value type="EXAMPLE">StandardEstimate</Value>
                      </Element>
                   </Element>
