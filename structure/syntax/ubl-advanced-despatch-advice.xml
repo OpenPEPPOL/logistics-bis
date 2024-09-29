@@ -2163,13 +2163,20 @@
          <Element cardinality="0..n">
             <Term>cac:TransportHandlingUnit</Term>
             <Name>Transport handling unit</Name>
-            <Description>Used to specify how the goods is packed.</Description>
+            <Description>A description of individual handling units in which the line items are packed. An item of any composition established for 
+			transport and/or storage that needs to be managed through the supply chain.</Description>
             <Reference type="RULE">PEPPOL-T120-R017</Reference>
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>Identifier transport handling unit</Name>
-               <Description>The SSCC identification code of this Transport Handling Unit.</Description>
-               <Value type="EXAMPLE">11111222222222</Value>
+               <Description>The Transport Handling Unit is identified with a Serial Shipping Container Code (SSCC). The GS1 identification key 
+				used to identify logistics units. The key comprises an extension digit, GS1 Company Prefix, serial reference and check digit.</Description>
+               <Value type="EXAMPLE">173500538500000016</Value>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">TransportHandlingUnitIDType</Reference>
+                  <Value type="EXAMPLE">SSCC</Value>
+               </Attribute>
             </Element>
             <Element cardinality="1..1">
                <Term>cbc:TransportHandlingUnitTypeCode</Term>
@@ -2387,8 +2394,13 @@
                <Element cardinality="0..1">
                   <Term>cbc:ID</Term>
                   <Name>Package identifier</Name>
-                  <Description>The Id of the package for instance a SSCC.</Description>
-                  <Value type="EXAMPLE">3453</Value>
+                  <Description>The Package may be identified with a Serial Shipping Container Code (SSCC). The GS1 identification key used to identify 
+					logistics units. The key comprises an extension digit, GS1 Company Prefix, serial reference and check digit.</Description>
+                  <Value type="EXAMPLE">173500538500000023</Value>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Value type="EXAMPLE">SSCC</Value>
+                  </Attribute>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:ReturnableMaterialIndicator</Term>
