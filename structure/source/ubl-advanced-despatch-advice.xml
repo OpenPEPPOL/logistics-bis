@@ -1256,13 +1256,16 @@
 		<cac:TransportHandlingUnit>
 			<?Rule PEPPOL-T120-R017?>
 			<?Name Transport handling unit?>
-			<?Description Used to specify how the goods is packed.?>
+			<?Description A description of individual handling units in which the line items are packed. An item of any composition established for 
+			transport and/or storage that needs to be managed through the supply chain.?>
 			<?Cardinality 0..n?>
-			<cbc:ID>11111222222222 
+			<cbc:ID schemeID="SSCC">173500538500000016
 				<?Name Identifier transport handling unit?>
-				<?Description The SSCC identification code of this Transport Handling Unit.?>
+				<?Description The Transport Handling Unit is identified with a Serial Shipping Container Code (SSCC). The GS1 identification key 
+				used to identify logistics units. The key comprises an extension digit, GS1 Company Prefix, serial reference and check digit.?>
 				<?Cardinality 1..1?>
 				<?schemeID-usage Optional?>
+				<?schemeID-CodeList TransportHandlingUnitIDType?>
 			</cbc:ID>
 			<cbc:TransportHandlingUnitTypeCode> AG 
 				<?Name Handling unit type code?>
@@ -1431,8 +1434,10 @@
 				<?Name Package information?>
 				<?Description A package contained in the Transport Handling Unit.?>
 				<?Cardinality 0..n?>
-				<cbc:ID> 3453 <?Name Package identifier?>
-					<?Description The Id of the package for instance a SSCC.?>
+				<cbc:ID schemeID="SSCC">173500538500000023 
+					<?Name Package identifier?>
+					<?Description The Package may be identified with a Serial Shipping Container Code (SSCC). The GS1 identification key used to identify 
+					logistics units. The key comprises an extension digit, GS1 Company Prefix, serial reference and check digit.?>
 					<?Cardinality 0..1?>
 					<?schemeID-usage Optional?>
 				</cbc:ID>
