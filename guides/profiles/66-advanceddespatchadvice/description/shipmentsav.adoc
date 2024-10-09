@@ -1,0 +1,42 @@
+[[shipment]]
+= Shipment
+
+Description of the actual shipment that contains the goods that is being despatched.
+
+[[shipment-id]]
+== Shipment ID
+
+Normally the Freight Forwarder’s identity of the shipment should be used. If the ID is a GS1 GSID (Global Shipment Identification Number), it should be 
+indicated by the attribute @schemeID. If it is not, the attribute can be omitted. The Global Shipment Identification Number (GSIN) is a number that 
+identifies a shipment and is assigned by the seller of goods. The goods shipper collects one or more logistic units for transportation to a recipient. 
+A GSIN is assigned to this group of logistic units to identify them as a shipment.
+
+In some uses of the Despath Advice, there is no unique identifier assigned to the shipment. 
+However, the UBL syntax requires the Shipment ID.
+Consequently, to be able to use elements such as GrossWeightMeasure or CarrierParty, the Shipment/ID must be filled in.
+To cater for scenarios where no ID exist a dummy value must be applied.
+The dummy value must consist of the characters **NA**.
+
+Example:
+
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-30-1.xml[tags=shipment]
+----
+
+[[vehicle-ID]] 
+== Vehicle ID
+
+In some uses of the Despath Advice, there is a need to report the licence plate number or machine number, i.e. the vehicle ID.
+
+If you need to specify more than one license plate, use a semi-colon (;) between the license plate id:s.
+For foreign license plates, set the countrycode in front of the license plate id, with a dash between. See example.
+If no countrycode is provided, a domestic license plate is assumed.
+If a license plate is unknow, use "UNKNOWN" as the license plate id.
+If a license plate is not relevant, use "NA" as the license plate id.
+
+.Example:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-30-1.xml[tags=vehicleid]
+----
