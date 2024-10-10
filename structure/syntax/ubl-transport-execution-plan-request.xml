@@ -729,10 +729,22 @@
 	     <Element cardinality="1..1">
          <Term>cac:Consignment</Term>
          <Name>Consignment information </Name>
+         <Description>An identifiable collection of goods items sent from one party (the Despatch Party) to another party (the Consignee) via one or more 
+			modes of transport.</Description>
          <Element cardinality="1..1">
             <Term>cbc:ID</Term>
             <Name>Consignment identifier </Name>
-            <Value type="EXAMPLE">12535157654567654</Value>
+            <Description>Id for the consignment, often a number from the Transport Service provider. If this ID is in the GINC format, it should be 
+				indicated in the attribute @schemeID. Use N/A if not applicable.</Description>
+            <Value type="EXAMPLE">735005233GS1TRANSPORT000001</Value>
+            <Attribute usage="Optional">
+               <Term>schemeID</Term>
+               <Description>Used to indicate that the ID is in the GINC (Global Identification Number for Consignment) format. This number 
+				identifies a consignment, which is a logical grouping of goods (one or more logistics units) transferred to a freight forwarder to be 
+				transported for a specific journey. The consignment number must be allocated by a freight forwarder (or a carrier acting as a
+				freight forwarder) or a consignor, but only if prior agreement of the freight forwarder is given.</Description>
+               <Value type="EXAMPLE">GINC</Value>
+            </Attribute>
          </Element>
          <Element cardinality="0..1">
             <Term>cbc:ConsigneeAssignedID</Term>
@@ -1909,8 +1921,14 @@
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>Identifier transport handling unit </Name>
-               <Description>The SSCC identification code of this Transport Handling Unit. </Description>
-               <Value type="EXAMPLE">11111222222222</Value>
+               <Description>The Transport Handling Unit is identified with a Serial Shipping Container Code (SSCC). The GS1 identification key used to 
+					identify logistics units. The key comprises an extension digit, GS1 Company Prefix, serial reference and check digit. </Description>
+               <Value type="EXAMPLE">173500538500000016</Value>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">TransportHandlingUnitIDType</Reference>
+                  <Value type="EXAMPLE">SSCC</Value>
+               </Attribute>
             </Element>
             <Element cardinality="1..1">
                <Term>cbc:TransportHandlingUnitTypeCode</Term>
