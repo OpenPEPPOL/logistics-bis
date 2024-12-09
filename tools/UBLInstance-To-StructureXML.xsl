@@ -459,20 +459,6 @@
 					</xsl:if>
 				</xsl:for-each>
 			</xsl:when-->
-				<xsl:when test="$varElementTextNodeValue != ''">
-					<Value type="EXAMPLE">
-						<xsl:value-of select="fn:normalize-space($varElementTextNodeValue)"/>
-					</Value>
-				</xsl:when>
-				<xsl:when test="$varUblElement/nsPep:Element/nsPep:Value[@type = 'EXAMPLE'] != ''">
-					<Value type="EXAMPLE">
-						<xsl:value-of select="$varUblElement/nsPep:Element/nsPep:Value[@type = 'EXAMPLE']"/>
-					</Value>
-				</xsl:when>
-			</xsl:choose>
-			<xsl:for-each select="@*">
-				<xsl:variable name="varAttrName" select="fn:name(.)"/>
-				<xsl:variable name="varUblElementAttribute" select="$varUblElement/nsPep:Element/nsPep:Attribute[nsPep:Term = $varAttrName]"/>
 				<!--xsl:message>
 				<xsl:value-of select="concat($varElementName, ': ', $varAttrName)"/>: <xsl:value-of select="."/>
 			</xsl:message-->
@@ -623,6 +609,21 @@
 						</xsl:when>
 					</xsl:choose>
 				</Attribute>
+				<xsl:when test="$varElementTextNodeValue != ''">
+					<Value type="EXAMPLE">
+						<xsl:value-of select="fn:normalize-space($varElementTextNodeValue)"/>
+					</Value>
+				</xsl:when>
+				<xsl:when test="$varUblElement/nsPep:Element/nsPep:Value[@type = 'EXAMPLE'] != ''">
+					<Value type="EXAMPLE">
+						<xsl:value-of select="$varUblElement/nsPep:Element/nsPep:Value[@type = 'EXAMPLE']"/>
+					</Value>
+				</xsl:when>
+			</xsl:choose>
+			<xsl:for-each select="@*">
+				<xsl:variable name="varAttrName" select="fn:name(.)"/>
+				<xsl:variable name="varUblElementAttribute" select="$varUblElement/nsPep:Element/nsPep:Attribute[nsPep:Term = $varAttrName]"/>
+
 			</xsl:for-each>
 			<xsl:apply-templates select="*" mode="therest"/>
 		</Element>
