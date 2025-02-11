@@ -16,10 +16,10 @@ The table below shows which information that can be sent, and by repeating the g
 [cols="2,4",options="header",stripes=even]
 |====
 |AttributeID           |Definition
-|ConversionFactor      |Conversion and emission factor CO~2~ equivalent for calculating CO~2~ according to the fuel specified in the group. 
+|ConversionFactor      |Used for calculation of GWP-GHG [CO~2~-eq] from the total use energy (“EnergyContent”) 
 |DrivingDistance       |Driving distance in kilometers that has been used for the assignment.
 |DrivingTime           |Driving time in hours that has been used for the assignment.
-|EnergyContent         |Amount of energy content (KWh) in the fuel specified in the group.
+|EnergyContent         |Total amount of energy content in the fuel specified in the group.
 |EngineType            |Environment class for the type of engine that has been used for the assignment.
 |FuelConsumption       |The consumed amount of fuel in the assignment.
 |FuelMeasurementMethod |The method that the fuel consumption has been measured. 
@@ -78,7 +78,7 @@ For all other AttributeIDs, the element Measure is used instead of Description.
 |AttributeID |Definition
 |CO2         |Amount of fossil CO~2~-eq based on a life cycle perspective, well to wheel, according to EN15804 amendment version A1
 |CO2_WtW_vA2 |Amount of fossil CO~2~-eq based on a life cycle perspective, well to wheel, according to EN15804 amendment version A2
-|CO2_WtW_vA3 |Amount of fossil CO~2~-eq based on a life cycle perspective, well to wheel, according to EN15804 amendment version A3 
+|CO2_WtW_vA3 |Amount of fossil CO~2~-eq based on a life cycle perspective, well to wheel, according to EN15804 amendment version A2 and characterization factors according to EF 3.1 
 |HC          |Amount of emission of hydro carbon for the assignment.
 |NOX         |Amount of emission of nitroge oxide for the assignment.
 |PM          |Amount of emission of particulate matter.
@@ -161,11 +161,11 @@ Please note that "GWP-GHG" and "GWP-IOBC" are interchangable terms and can be us
 [cols="1,1,1,3",options="header",stripes=even]
 |====
 |Name |NameCode |listID |Definition
-|EPD Dataset ID |EPDDatasetID |IPNC |The EPD dataset id gives the digital reference to a produkt type in the EDP
+|EPD Dataset ID |EPDDatasetID |IPNC |The EPD dataset id gives the digital reference to a product type in the EDP
 |EPD Dataset URL |EPDDataSetURL |IPNC |URL to fetch the machine readable digital information from a source assigned by the supplier
 |GWP GHG A1-3 vA1 EPD value  |GWP-GHG_A1-3_vA1 |IPNC |Global warming potential green house gases for process A1-3 100 EPD calculated per kilograms (unitCode="KGM") according to EN15804 amendment version A1
 |GWP GHG A1-3 vA2 EPD value  |GWP-GHG_A1-3_vA2 |IPNC |Global warming potential green house gases for process A1-3 100 EPD calculated per kilo grams (unitCode="KGM") according to EN15804 amendment version A2
-|GWP GHG A1-3 vA3 EPD value  |GWP-GHG_A1-3_vA3 |IPNC |Global warming potential green house gases for process A1-3 100 EPD calculated per kilo grams (unitCode="KGM") according to EN15804 amendment version A3
+|GWP GHG A1-3 vA3 EPD value  |GWP-GHG_A1-3_vA3 |IPNC |Global warming potential green house gases for process A1-3 100 EPD calculated per kilo grams (unitCode="KGM") according to EN15804 amendment version A2 and characterization factors according to EF 3.1
 |Mother EPD ID |MotherEPDID |IPNC |If a daughter EPD is utilized, the identifier of the corresponding mother EPD should be provided in this element.
 |====
 
