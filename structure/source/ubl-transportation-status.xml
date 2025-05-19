@@ -47,15 +47,25 @@
 		<?Cardinality 1..1?>
 		<?CodeList TransportationStatusCode?>
 	</cbc:TransportExecutionStatusCode>
+	
 	<cac:Consignment>
 		<?Name Consignment information ?>
-		<?Description The consignment related to this Transportation Status.?>
+		<?Description An identifiable collection of goods items sent from one party (the Despatch Party) to another party (the Consignee) via one or more 
+			modes of transport.?>
 		<?Cardinality 0..1?>
-		<cbc:ID>12535157654567654
-		<?Name Consignment identifier ?>
-		<?Description Id for the consignment, often a number from the Transport Service Provider. ?>
-		<?Cardinality 1..1?>
+		<cbc:ID schemeID="GINC">735005233GS1TRANSPORT000001
+			<?Name Consignment identifier ?>
+			<?Description Id for the consignment, often a number from the Transport Service provider. If this ID is in the GINC format, it should be 
+				indicated in the attribute @schemeID. Use N/A if not applicable.?>
+			<?schemeID-Description Used to indicate that the ID is in the GINC (Global Identification Number for Consignment) format. This number 
+				identifies a consignment, which is a logical grouping of goods (one or more logistics units) transferred to a freight forwarder to be 
+				transported for a specific journey. The consignment number must be allocated by a freight forwarder (or a carrier acting as a
+				freight forwarder) or a consignor, but only if prior agreement of the freight forwarder is given.?>
+			<?schemeID-usage Optional?>
+			<?schemeID-CodeList ConsignmentIDType?>
+			<?Cardinality 1..1?>
 		</cbc:ID>
+		
 		<cac:Status>
 			<?Name Status ?>
 			<?Description Staus related to the consignment as a whole. ?>
@@ -72,6 +82,7 @@
 				<?Cardinality 1..1?>
 			</cbc:Description>
 		</cac:Status>
+		
 		<cac:TransportEvent>
 			<?Name Transport Event ?>
 			<?Description A transport event associated to this Transportation Status. ?>
@@ -102,6 +113,7 @@
 				<?Description A code specifying the requested transport event type. ?>
 				<?Cardinality 0..1?>
 			</cbc:CompletionIndicator>
+			
 			<cac:CurrentStatus>
 				<?Name Status ?>
 				<?Description Staus related to the consignment as a whole. ?>
@@ -129,22 +141,25 @@
 					<?Cardinality 0..1?>
 				</cbc:StatusReason>
 			</cac:CurrentStatus>
+			
 			<cac:Signature>
 				<?Name Signature?>
 				<?Description A signature applied to this transport event. ?>
 				<?Cardinality 0..1?>
 				<cbc:ID>3453
-				<?Name Identifier Signature ?>
-				<?Description The Id of the Signature.?>
-				<?Cardinality 1..1?>						
-			</cbc:ID>
+					<?Name Identifier Signature ?>
+					<?Description The Id of the Signature.?>
+					<?Cardinality 1..1?>						
+				</cbc:ID>
 				<cbc:ValidationDate>2021-09-29
-				<?Description The date upon which this signature was verified. Format = "YYYY-MM-DD". ?>
-				<?Cardinality 0..1?>
-			</cbc:ValidationDate>
-				<cbc:ValidationTime>09:49:00+01:00<?Description The local time at which this signature was verified. Format = "hh:mm:ss". ?>
-				<?Cardinality 0..1?>
-			</cbc:ValidationTime>
+					<?Description The date upon which this signature was verified. Format = "YYYY-MM-DD". ?>
+					<?Cardinality 0..1?>
+				</cbc:ValidationDate>
+				<cbc:ValidationTime>09:49:00+01:00
+					<?Description The local time at which this signature was verified. Format = "hh:mm:ss". ?>
+					<?Cardinality 0..1?>
+				</cbc:ValidationTime>
+				
 				<cac:SignatoryParty>
 					<?Name Signature party ?>
 					<?Description The party signing this event. ?>
@@ -234,6 +249,7 @@
 						</cbc:JobTitle>
 					</cac:Person>
 				</cac:SignatoryParty>
+				
 				<cac:DigitalSignatureAttachment>
 					<?Name Attachment?>
 					<?Cardinality 0..1?>
@@ -254,6 +270,7 @@
 					</cac:ExternalReference>
 				</cac:DigitalSignatureAttachment>
 			</cac:Signature>
+			
 			<cac:Period>
 				<?Name Period?>
 				<?Description The updated period for this transport event. Unse only if the event has not occured. ?>
@@ -272,11 +289,19 @@
 				</cbc:EndTime>
 			</cac:Period>
 		</cac:TransportEvent>
+		
 		<cac:TransportHandlingUnit>
 			<?Name Transport handling Unit ?>
 			<?Description The transport handling unit refered to in this Transportation Status. ?>
 			<?Cardinality 0..n?>
-			<cbc:ID>CON_THU_1</cbc:ID>
+			<cbc:ID schemeID="SSCC">173500538500000016
+				<?Name Identifier transport handling unit ?>
+				<?Description The Transport Handling Unit is identified with a Serial Shipping Container Code (SSCC). The GS1 identification key used to 
+					identify logistics units. The key comprises an extension digit, GS1 Company Prefix, serial reference and check digit. ?>
+				<?Cardinality 1..1?>
+				<?schemeID-usage Optional?>
+				<?schemeID-CodeList TransportHandlingUnitIDType?>
+			</cbc:ID>
 			<cac:Status>
 				<?Name Status ?>
 				<?Description Status related to the transport handling unit. ?>
@@ -295,6 +320,7 @@
 			</cac:Status>
 		</cac:TransportHandlingUnit>
 	</cac:Consignment>
+	
 	<cac:TransportEvent>
 		<?Name Transport Event ?>
 		<?Description A transport event related to this Transportation Status.?>
@@ -320,10 +346,11 @@
 			<?CodeList TransportEventTypeCode?>
 		</cbc:TransportEventTypeCode>
 		<cbc:CompletionIndicator>true
-				<?Name Completion Indicator ?>
-				<?Description A code specifying the requested transport event type. ?>
-				<?Cardinality 0..1?>
-			</cbc:CompletionIndicator>
+			<?Name Completion Indicator ?>
+			<?Description A code specifying the requested transport event type. ?>
+			<?Cardinality 0..1?>
+		</cbc:CompletionIndicator>
+		
 		<cac:CurrentStatus>
 			<?Name Status ?>
 			<?Description Staus related to the consignment as a whole. ?>
@@ -333,24 +360,25 @@
 					<?Description Specifies the status condition of the related object.  ?>
 					<?Cardinality 0..1?>
 					<?listID-usage Mandatory?>
-				</cbc:ConditionCode>
+			</cbc:ConditionCode>
 			<cbc:Description>Description
 					<?Name Status ?>
 					<?Description Description of the status. ?>
 					<?Cardinality 1..1?>
-				</cbc:Description>
+			</cbc:Description>
 			<cbc:StatusReasonCode listID="zzz">80
 					<?Name Status Reason code?>
 					<?Description The reason of the status expressed as a code. ?>
 					<?Cardinality 0..1?>
 					<?listID-usage Mandatory?>
-				</cbc:StatusReasonCode>
+			</cbc:StatusReasonCode>
 			<cbc:StatusReason>Prolonged coffebreak
 					<?Name Status Reason?>
 					<?Description The reason for this status expressed as text. ?>
 					<?Cardinality 0..1?>
 				</cbc:StatusReason>
 		</cac:CurrentStatus>
+		
 		<cac:Signature>
 			<?Name Signature?>
 			<?Description A signature applied to this transport event. ?>
@@ -367,6 +395,7 @@
 			<cbc:ValidationTime>09:49:00+01:00<?Description The local time at which this signature was verified.. Format = "hh:mm:ss". ?>
 				<?Cardinality 0..1?>
 			</cbc:ValidationTime>
+			
 			<cac:SignatoryParty>
 				<?Name Signature party ?>
 				<?Description The party signing this event. ?>
@@ -456,6 +485,7 @@
 						</cbc:JobTitle>
 				</cac:Person>
 			</cac:SignatoryParty>
+			
 			<cac:DigitalSignatureAttachment>
 				<?Name Attachment?>
 				<?Cardinality 0..1?>
@@ -476,24 +506,26 @@
 				</cac:ExternalReference>
 			</cac:DigitalSignatureAttachment>
 		</cac:Signature>
+		
 		<cac:Period>
-				<?Name Period?>
-				<?Description The updated period for this transport event. Unse only if the event has not occured. ?>
+			<?Name Period?>
+			<?Description The updated period for this transport event. Unse only if the event has not occured. ?>
+			<?Cardinality 0..1?>
+			<cbc:StartDate>2021-09-25<?Description The start date of the period. ?>
 				<?Cardinality 0..1?>
-				<cbc:StartDate>2021-09-25<?Description The start date of the period. ?>
-					<?Cardinality 0..1?>
-				</cbc:StartDate>
-				<cbc:StartTime>12:00:00+01:00<?Description The start time of the period. ?>
-					<?Cardinality 0..1?>
-				</cbc:StartTime>
-				<cbc:EndDate>2021-09-27<?Description The end date of the period. ?>
-					<?Cardinality 0..1?>
-				</cbc:EndDate>
-				<cbc:EndTime>12:00:00+01:00<?Description The end time of the period. ?>
-					<?Cardinality 0..1?>
-				</cbc:EndTime>
-			</cac:Period>
+			</cbc:StartDate>
+			<cbc:StartTime>12:00:00+01:00<?Description The start time of the period. ?>
+				<?Cardinality 0..1?>
+			</cbc:StartTime>
+			<cbc:EndDate>2021-09-27<?Description The end date of the period. ?>
+				<?Cardinality 0..1?>
+			</cbc:EndDate>
+			<cbc:EndTime>12:00:00+01:00<?Description The end time of the period. ?>
+				<?Cardinality 0..1?>
+			</cbc:EndTime>
+		</cac:Period>
 	</cac:TransportEvent>
+	
 	<cac:DocumentReference>
 		<?Name Document reference?>
 		<?Description Reference to additional documents relevant for this Transportation Status such as pictures of damages. ?>
@@ -532,6 +564,7 @@
 			</cac:ExternalReference>
 		</cac:Attachment>
 	</cac:DocumentReference>
+	
 	<cac:Signature>
 		<?Name Signature?>
 		<?Description A signature applied to this Transportation Status. ?>
@@ -638,6 +671,7 @@
 					</cbc:JobTitle>
 			</cac:Person>
 		</cac:SignatoryParty>
+		
 		<cac:DigitalSignatureAttachment>
 			<?Name Attachment?>
 			<?Cardinality 0..1?>
@@ -658,6 +692,7 @@
 			</cac:ExternalReference>
 		</cac:DigitalSignatureAttachment>
 	</cac:Signature>
+	
 	<cac:SenderParty>
 		<?Name Sender party ?>
 		<?Description The party sending the Transportation Status. ?>
@@ -815,6 +850,7 @@
 			</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:SenderParty>
+	
 	<cac:ReceiverParty>
 		<?Name Receiver Party ?>
 		<?Description The party receiving the Transportation Status. ?>
@@ -977,6 +1013,7 @@
 			</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:ReceiverParty>
+	
 	<cac:TransportationStatusRequestDocumentReference>
 		<?Name Additional document reference?>
 		<?Description Reference to a Transportation Status Request. ?>
@@ -996,6 +1033,7 @@
 			<?Cardinality 0..1?>
 		</cbc:IssueTime>
 	</cac:TransportationStatusRequestDocumentReference>
+	
 	<cac:TransportExecutionPlanDocumentReference>
 		<?Name Additional document reference?>
 		<?Description Reference to a Transport Execution Plan. ?>

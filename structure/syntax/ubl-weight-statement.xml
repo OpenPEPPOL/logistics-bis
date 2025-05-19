@@ -74,7 +74,6 @@
             <Term>cbc:EndpointID</Term>
             <Name>Senders electronic address</Name>
             <Description>Identifies the senders partys electronic address</Description>
-            <Value type="EXAMPLE">7300010000001</Value>
             <Attribute usage="Mandatory">
                <Term>schemeID</Term>
                <Name>Scheme identifier</Name>
@@ -82,6 +81,7 @@
                <Reference type="CODE_LIST">eas</Reference>
                <Value type="EXAMPLE">0088</Value>
             </Attribute>
+            <Value type="EXAMPLE">7300010000001</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:PartyIdentification</Term>
@@ -92,7 +92,6 @@
                <Name>Sender party identity</Name>
                <Description>The identifier of the Sender party</Description>
                <Reference type="RULE">PEPPOL-T122-R011</Reference>
-               <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Mandatory">
                   <Term>schemeID</Term>
                   <Name>Scheme identifier</Name>
@@ -100,6 +99,7 @@
                   <Reference type="CODE_LIST">ICD</Reference>
                   <Value type="EXAMPLE">0088</Value>
                </Attribute>
+               <Value type="EXAMPLE">7300010000001</Value>
             </Element>
          </Element>
          <Element cardinality="0..1">
@@ -200,7 +200,6 @@
             <Term>cbc:EndpointID</Term>
             <Name>Receiver electronic address</Name>
             <Description>Identifies the receivers partys electronic address</Description>
-            <Value type="EXAMPLE">1251513513245</Value>
             <Attribute usage="Mandatory">
                <Term>schemeID</Term>
                <Name>Scheme identifier</Name>
@@ -208,6 +207,7 @@
                <Reference type="CODE_LIST">eas</Reference>
                <Value type="EXAMPLE">0088</Value>
             </Attribute>
+            <Value type="EXAMPLE">1251513513245</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:PartyIdentification</Term>
@@ -218,7 +218,6 @@
                <Name>Receiver identity</Name>
                <Description>The identifier of the receiver party</Description>
                <Reference type="RULE">PEPPOL-T122-R012</Reference>
-               <Value type="EXAMPLE">1251513513245</Value>
                <Attribute usage="Mandatory">
                   <Term>schemeID</Term>
                   <Name>Scheme identifier</Name>
@@ -226,6 +225,7 @@
                   <Reference type="CODE_LIST">ICD</Reference>
                   <Value type="EXAMPLE">0088</Value>
                </Attribute>
+               <Value type="EXAMPLE">1251513513245</Value>
             </Element>
          </Element>
          <Element cardinality="0..1">
@@ -331,7 +331,6 @@
                <Name>Weighing party identity</Name>
                <Description>The identifier of the Weighing party</Description>
                <Reference type="RULE">PEPPOL-T122-R013</Reference>
-               <Value type="EXAMPLE">5790000435951</Value>
                <Attribute usage="Mandatory">
                   <Term>schemeID</Term>
                   <Name>Scheme identifier</Name>
@@ -339,6 +338,7 @@
                   <Reference type="CODE_LIST">ICD</Reference>
                   <Value type="EXAMPLE">0088</Value>
                </Attribute>
+               <Value type="EXAMPLE">5790000435951</Value>
             </Element>
          </Element>
          <Element cardinality="0..1">
@@ -416,10 +416,10 @@
                <Name>Physical Location ID</Name>
                <Description>Unique ID of the site for the weighing party. If possile an ID that is issued by a authority or similar.</Description>
                <Reference type="RULE">PEPPOL-T122-R010</Reference>
-               <Value type="EXAMPLE">0114-40-019-a</Value>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
                </Attribute>
+               <Value type="EXAMPLE">0114-40-019-a</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cbc:Name</Term>
@@ -466,7 +466,6 @@
                <Name>Shipping party identity</Name>
                <Description>The identifier of the shippping party</Description>
                <Reference type="RULE">PEPPOL-T122-R014</Reference>
-               <Value type="EXAMPLE">5790000435951</Value>
                <Attribute usage="Mandatory">
                   <Term>schemeID</Term>
                   <Name>Scheme identifier</Name>
@@ -474,6 +473,7 @@
                   <Reference type="CODE_LIST">ICD</Reference>
                   <Value type="EXAMPLE">0088</Value>
                </Attribute>
+               <Value type="EXAMPLE">5790000435951</Value>
             </Element>
          </Element>
          <Element cardinality="0..1">
@@ -570,12 +570,22 @@
 	     <Element cardinality="1..1">
          <Term>cac:Shipment</Term>
          <Name>Shipment information</Name>
+         <Description>A contractual arrangement whereby an identifiable collection of goods items is to be transported from one party (usually a Supplier) 
+		to another party (usually a Customer). </Description>
          <Element cardinality="1..1">
             <Term>cbc:ID</Term>
             <Name>Shipment identity</Name>
-            <Description>Use NA if no specific shipment ID is available</Description>
+            <Description>If this ID is in the GSIN format, it should be indicated in the attribute @schemeID. Use NA if no specific shipment ID is available</Description>
             <Reference type="BUSINESS_TERM">tir16-038</Reference>
-            <Value type="EXAMPLE">NA</Value>
+            <Attribute usage="Optional">
+               <Term>schemeID</Term>
+               <Description>Used to indicate that the ID is in the GSIN format. The Global Shipment Identification Number (GSIN) is a number that 
+				identifies a shipment and is assigned by the seller of goods. The goods shipper collects one or more logistic units for transportation to a 
+				recipient. A GSIN is assigned to this group of logistic units to identify them as a shipment.</Description>
+               <Reference type="CODE_LIST">ShipmentIDType</Reference>
+               <Value type="EXAMPLE">GSIN</Value>
+            </Attribute>
+            <Value type="EXAMPLE">73500538500000019</Value>
          </Element>
          <Element cardinality="1..n">
             <Term>cac:GoodsItem</Term>
@@ -626,13 +636,13 @@
                      <Name>Item standard identifier</Name>
                      <Description>Global Trade Item Number (GTIN) or other standardized identification. Associates the item with its identification according to a standard system.</Description>
                      <Reference type="RULE">PEPPOL-T122-R003</Reference>
-                     <Value type="EXAMPLE">1234567891234</Value>
                      <Attribute usage="Mandatory">
                         <Term>schemeID</Term>
                         <Name>Scheme identifier</Name>
                         <Description>The identification scheme identifier of the Item standard identifier</Description>
                         <Value type="EXAMPLE">0160</Value>
                      </Attribute>
+                     <Value type="EXAMPLE">1234567891234</Value>
                   </Element>
                </Element>
                <Element cardinality="0..n">
@@ -643,7 +653,6 @@
                      <Term>cbc:ItemClassificationCode</Term>
                      <Name>Item classification code</Name>
                      <Description>A code for classifying the item by its type or nature. Classification codes are used to allow grouping of similar items for a various purposes e.g. public procurement (CPV), e-Commerce (UNSPSC) etc.</Description>
-                     <Value type="EXAMPLE">KO2012140200</Value>
                      <Attribute usage="Mandatory">
                         <Term>listID</Term>
                         <Name>Item classification identifier identification scheme identifier</Name>
@@ -663,6 +672,7 @@
                         <Description>The textual equivalent of the code value</Description>
                         <Value type="EXAMPLE">SBMI</Value>
                      </Attribute>
+                     <Value type="EXAMPLE">KO2012140200</Value>
                   </Element>
                </Element>
             </Element>
@@ -681,7 +691,6 @@
                   <Term>cbc:Measure</Term>
                   <Name>Measure</Name>
                   <Description>For the measure.</Description>
-                  <Value type="EXAMPLE">12.3</Value>
                   <Attribute>
                      <Term>unitCode</Term>
                      <Name>Measure unit of measure</Name>
@@ -689,6 +698,7 @@
                      <Reference type="CODE_LIST">UNECERec20</Reference>
                      <Value type="EXAMPLE">TNE</Value>
                   </Attribute>
+                  <Value type="EXAMPLE">12.3</Value>
                </Element>
             </Element>
          </Element>

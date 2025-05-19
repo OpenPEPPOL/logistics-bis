@@ -471,10 +471,17 @@
 	
 	<cac:Shipment>
 		<?Cardinality 1..1?>
-		<cbc:ID> NA
+		<?Description A contractual arrangement whereby an identifiable collection of goods items is to be transported from one party (usually a Supplier) 
+		to another party (usually a Customer). ?>
+		<cbc:ID schemeID="GSIN">73500538500000019
 			<?Name Shipment identity?>
 			<?Cardinality 1..1?>
-			<?Description Use NA if no specific shipment ID is available?>
+			<?Description If this ID is in the GSIN format, it should be indicated in the attribute @schemeID. Use NA if no specific shipment ID is available?>
+			<?schemeID-Description Used to indicate that the ID is in the GSIN format. The Global Shipment Identification Number (GSIN) is a number that 
+				identifies a shipment and is assigned by the seller of goods. The goods shipper collects one or more logistic units for transportation to a 
+				recipient. A GSIN is assigned to this group of logistic units to identify them as a shipment.?>
+			<?schemeID-usage Optional?>
+			<?schemeID-CodeList ShipmentIDType?>
 		</cbc:ID>
 		
 		<cac:GoodsItem>
@@ -534,8 +541,7 @@
 					<?Name Commodity classification?>
 					<?Description To classify when an item number is not sufficient.?>
 					<?Cardinality 0..n?>
-					<cbc:ItemClassificationCode listID="ZZZ" listVersionID="4.0" name="SBMI">
-						KO2012140200
+					<cbc:ItemClassificationCode listID="ZZZ" listVersionID="4.0" name="SBMI">KO2012140200
 						<?Name Item classification code?>
 						<?Description A code for classifying the item by its type or nature. Classification codes are used to allow grouping of similar items for a various purposes e.g. public procurement (CPV), e-Commerce (UNSPSC) etc.?>
 						<?Cardinality 1..1?>
