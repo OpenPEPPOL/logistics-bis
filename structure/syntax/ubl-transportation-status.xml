@@ -75,11 +75,11 @@
          <Name>Transportation Status Type Code</Name>
          <Description>The type of status being reported.</Description>
          <Reference type="CODE_LIST">TransportationStatusTypeCode</Reference>
-         <Value type="EXAMPLE">3</Value>
          <Attribute usage="Optional">
             <Term>listID</Term>
             <Value type="EXAMPLE">TrStatus1</Value>
          </Attribute>
+         <Value type="EXAMPLE">3</Value>
       </Element>
 	
 	     <Element cardinality="1..1">
@@ -89,15 +89,27 @@
          <Reference type="CODE_LIST">TransportationStatusCode</Reference>
          <Value type="EXAMPLE">35</Value>
       </Element>
+	
 	     <Element cardinality="0..1">
          <Term>cac:Consignment</Term>
          <Name>Consignment information </Name>
-         <Description>The consignment related to this Transportation Status.</Description>
+         <Description>An identifiable collection of goods items sent from one party (the Despatch Party) to another party (the Consignee) via one or more 
+			modes of transport.</Description>
          <Element cardinality="1..1">
             <Term>cbc:ID</Term>
             <Name>Consignment identifier </Name>
-            <Description>Id for the consignment, often a number from the Transport Service Provider. </Description>
-            <Value type="EXAMPLE">12535157654567654</Value>
+            <Description>Id for the consignment, often a number from the Transport Service provider. If this ID is in the GINC format, it should be 
+				indicated in the attribute @schemeID. Use N/A if not applicable.</Description>
+            <Attribute usage="Optional">
+               <Term>schemeID</Term>
+               <Description>Used to indicate that the ID is in the GINC (Global Identification Number for Consignment) format. This number 
+				identifies a consignment, which is a logical grouping of goods (one or more logistics units) transferred to a freight forwarder to be 
+				transported for a specific journey. The consignment number must be allocated by a freight forwarder (or a carrier acting as a
+				freight forwarder) or a consignor, but only if prior agreement of the freight forwarder is given.</Description>
+               <Reference type="CODE_LIST">ConsignmentIDType</Reference>
+               <Value type="EXAMPLE">GINC</Value>
+            </Attribute>
+            <Value type="EXAMPLE">735005233GS1TRANSPORT000001</Value>
          </Element>
          <Element cardinality="1..1">
             <Term>cac:Status</Term>
@@ -107,11 +119,11 @@
                <Term>cbc:ConditionCode</Term>
                <Name>Status </Name>
                <Description>Specifies the status condition of the related object.  </Description>
-               <Value type="EXAMPLE">4</Value>
                <Attribute usage="Mandatory">
                   <Term>listID</Term>
                   <Value type="EXAMPLE">zzz</Value>
                </Attribute>
+               <Value type="EXAMPLE">4</Value>
             </Element>
             <Element cardinality="1..1">
                <Term>cbc:Description</Term>
@@ -163,11 +175,11 @@
                   <Term>cbc:ConditionCode</Term>
                   <Name>Status </Name>
                   <Description>Specifies the status condition of the related object.  </Description>
-                  <Value type="EXAMPLE">4</Value>
                   <Attribute usage="Mandatory">
                      <Term>listID</Term>
                      <Value type="EXAMPLE">zzz</Value>
                   </Attribute>
+                  <Value type="EXAMPLE">4</Value>
                </Element>
                <Element cardinality="1..1">
                   <Term>cbc:Description</Term>
@@ -179,11 +191,11 @@
                   <Term>cbc:StatusReasonCode</Term>
                   <Name>Status Reason code</Name>
                   <Description>The reason of the status expressed as a code. </Description>
-                  <Value type="EXAMPLE">80</Value>
                   <Attribute usage="Mandatory">
                      <Term>listID</Term>
                      <Value type="EXAMPLE">zzz</Value>
                   </Attribute>
+                  <Value type="EXAMPLE">80</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:StatusReason</Term>
@@ -291,11 +303,11 @@
                         <Term>cbc:ID</Term>
                         <Name>Person ID </Name>
                         <Description>The ID for a person. The type of ID can be specified in a schemeID. </Description>
-                        <Value type="EXAMPLE">45976</Value>
                         <Attribute usage="Optional">
                            <Term>schemeID</Term>
                            <Value type="EXAMPLE">zzz</Value>
                         </Attribute>
+                        <Value type="EXAMPLE">45976</Value>
                      </Element>
                      <Element cardinality="0..1">
                         <Term>cbc:FirstName</Term>
@@ -325,7 +337,6 @@
                      <Term>cbc:EmbeddedDocumentBinaryObject</Term>
                      <Name>Embedded binary object</Name>
                      <Description>The referenced document can here be inserted as a binary object.</Description>
-                     <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>
                      <Attribute>
                         <Term>mimeCode</Term>
                         <Reference type="CODE_LIST">MimeCode</Reference>
@@ -335,6 +346,7 @@
                         <Term>filename</Term>
                         <Value type="EXAMPLE">Hours-spent.pdf</Value>
                      </Attribute>
+                     <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cac:ExternalReference</Term>
@@ -379,9 +391,17 @@
             <Term>cac:TransportHandlingUnit</Term>
             <Name>Transport handling Unit </Name>
             <Description>The transport handling unit refered to in this Transportation Status. </Description>
-            <Element>
+            <Element cardinality="1..1">
                <Term>cbc:ID</Term>
-               <Value type="EXAMPLE">CON_THU_1</Value>
+               <Name>Identifier transport handling unit </Name>
+               <Description>The Transport Handling Unit is identified with a Serial Shipping Container Code (SSCC). The GS1 identification key used to 
+					identify logistics units. The key comprises an extension digit, GS1 Company Prefix, serial reference and check digit. </Description>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">TransportHandlingUnitIDType</Reference>
+                  <Value type="EXAMPLE">SSCC</Value>
+               </Attribute>
+               <Value type="EXAMPLE">173500538500000016</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:Status</Term>
@@ -391,11 +411,11 @@
                   <Term>cbc:ConditionCode</Term>
                   <Name>Status </Name>
                   <Description>Specifies the status condition of the related object.  </Description>
-                  <Value type="EXAMPLE">4</Value>
                   <Attribute usage="Mandatory">
                      <Term>listID</Term>
                      <Value type="EXAMPLE">zzz</Value>
                   </Attribute>
+                  <Value type="EXAMPLE">4</Value>
                </Element>
                <Element cardinality="1..1">
                   <Term>cbc:Description</Term>
@@ -406,6 +426,7 @@
             </Element>
          </Element>
       </Element>
+	
 	     <Element cardinality="0..n">
          <Term>cac:TransportEvent</Term>
          <Name>Transport Event </Name>
@@ -449,11 +470,11 @@
                <Term>cbc:ConditionCode</Term>
                <Name>Status </Name>
                <Description>Specifies the status condition of the related object.  </Description>
-               <Value type="EXAMPLE">4</Value>
                <Attribute usage="Mandatory">
                   <Term>listID</Term>
                   <Value type="EXAMPLE">zzz</Value>
                </Attribute>
+               <Value type="EXAMPLE">4</Value>
             </Element>
             <Element cardinality="1..1">
                <Term>cbc:Description</Term>
@@ -465,11 +486,11 @@
                <Term>cbc:StatusReasonCode</Term>
                <Name>Status Reason code</Name>
                <Description>The reason of the status expressed as a code. </Description>
-               <Value type="EXAMPLE">80</Value>
                <Attribute usage="Mandatory">
                   <Term>listID</Term>
                   <Value type="EXAMPLE">zzz</Value>
                </Attribute>
+               <Value type="EXAMPLE">80</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cbc:StatusReason</Term>
@@ -577,11 +598,11 @@
                      <Term>cbc:ID</Term>
                      <Name>Person ID </Name>
                      <Description>The ID for a person. The type of ID can be specified in a schemeID. </Description>
-                     <Value type="EXAMPLE">45976</Value>
                      <Attribute usage="Optional">
                         <Term>schemeID</Term>
                         <Value type="EXAMPLE">zzz</Value>
                      </Attribute>
+                     <Value type="EXAMPLE">45976</Value>
                   </Element>
                   <Element cardinality="0..1">
                      <Term>cbc:FirstName</Term>
@@ -611,7 +632,6 @@
                   <Term>cbc:EmbeddedDocumentBinaryObject</Term>
                   <Name>Embedded binary object</Name>
                   <Description>The referenced document can here be inserted as a binary object.</Description>
-                  <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>
                   <Attribute>
                      <Term>mimeCode</Term>
                      <Reference type="CODE_LIST">MimeCode</Reference>
@@ -621,6 +641,7 @@
                      <Term>filename</Term>
                      <Value type="EXAMPLE">Hours-spent.pdf</Value>
                   </Attribute>
+                  <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:ExternalReference</Term>
@@ -661,6 +682,7 @@
             </Element>
          </Element>
       </Element>
+	
 	     <Element cardinality="0..n">
          <Term>cac:DocumentReference</Term>
          <Name>Document reference</Name>
@@ -692,7 +714,6 @@
                <Term>cbc:EmbeddedDocumentBinaryObject</Term>
                <Name>Embedded binary object</Name>
                <Description>The referenced document can here be inserted as a binary object.</Description>
-               <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>
                <Attribute>
                   <Term>mimeCode</Term>
                   <Reference type="CODE_LIST">MimeCode</Reference>
@@ -702,6 +723,7 @@
                   <Term>filename</Term>
                   <Value type="EXAMPLE">Hours-spent.pdf</Value>
                </Attribute>
+               <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:ExternalReference</Term>
@@ -716,6 +738,7 @@
             </Element>
          </Element>
       </Element>
+	
 	     <Element cardinality="0..1">
          <Term>cac:Signature</Term>
          <Name>Signature</Name>
@@ -815,11 +838,11 @@
                   <Term>cbc:ID</Term>
                   <Name>Person ID </Name>
                   <Description>The ID for a person. The type of ID can be specified in a schemeID. </Description>
-                  <Value type="EXAMPLE">45976</Value>
                   <Attribute usage="Optional">
                      <Term>schemeID</Term>
                      <Value type="EXAMPLE">zzz</Value>
                   </Attribute>
+                  <Value type="EXAMPLE">45976</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cbc:FirstName</Term>
@@ -849,7 +872,6 @@
                <Term>cbc:EmbeddedDocumentBinaryObject</Term>
                <Name>Embedded binary object</Name>
                <Description>The referenced document can here be inserted as a binary object.</Description>
-               <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>
                <Attribute>
                   <Term>mimeCode</Term>
                   <Reference type="CODE_LIST">MimeCode</Reference>
@@ -859,6 +881,7 @@
                   <Term>filename</Term>
                   <Value type="EXAMPLE">Hours-spent.pdf</Value>
                </Attribute>
+               <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:ExternalReference</Term>
@@ -873,6 +896,7 @@
             </Element>
          </Element>
       </Element>
+	
 	     <Element cardinality="1..1">
          <Term>cac:SenderParty</Term>
          <Name>Sender party </Name>
@@ -881,7 +905,6 @@
             <Term>cbc:EndpointID</Term>
             <Name>Sender party electronic address </Name>
             <Description>The endpoint for the sender party. </Description>
-            <Value type="EXAMPLE">41955619</Value>
             <Attribute usage="Mandatory">
                <Term>schemeID</Term>
                <Name>Scheme identifier</Name>
@@ -889,6 +912,7 @@
                <Reference type="CODE_LIST">eas</Reference>
                <Value type="EXAMPLE">0198</Value>
             </Attribute>
+            <Value type="EXAMPLE">41955619</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:PartyIdentification</Term>
@@ -898,12 +922,12 @@
                <Term>cbc:ID</Term>
                <Name>ID </Name>
                <Reference type="RULE">PEPPOL-T127-R031</Reference>
-               <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
                   <Reference type="CODE_LIST">ICD</Reference>
                   <Value type="EXAMPLE">0088</Value>
                </Attribute>
+               <Value type="EXAMPLE">7300010000001</Value>
             </Element>
          </Element>
          <Element cardinality="0..1">
@@ -1006,7 +1030,6 @@
                <Term>cbc:CompanyID</Term>
                <Name>Sender parties legal registration name </Name>
                <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
-               <Value type="EXAMPLE">SC234567</Value>
                <Attribute>
                   <Term>schemeID</Term>
                   <Name>Scheme identifier </Name>
@@ -1014,6 +1037,7 @@
                   <Reference type="CODE_LIST">ICD</Reference>
                   <Value type="EXAMPLE">0089</Value>
                </Attribute>
+               <Value type="EXAMPLE">SC234567</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:RegistrationAddress</Term>
@@ -1062,6 +1086,7 @@
             </Element>
          </Element>
       </Element>
+	
 	     <Element cardinality="1..1">
          <Term>cac:ReceiverParty</Term>
          <Name>Receiver Party </Name>
@@ -1070,7 +1095,6 @@
             <Term>cbc:EndpointID</Term>
             <Name>Receiver party electronic address </Name>
             <Description>The endpoint id for the receiver party. </Description>
-            <Value type="EXAMPLE">10154596</Value>
             <Attribute usage="Mandatory">
                <Term>schemeID</Term>
                <Name>Scheme identifier</Name>
@@ -1078,6 +1102,7 @@
                <Reference type="CODE_LIST">eas</Reference>
                <Value type="EXAMPLE">0198</Value>
             </Attribute>
+            <Value type="EXAMPLE">10154596</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:PartyIdentification</Term>
@@ -1087,12 +1112,12 @@
                <Term>cbc:ID</Term>
                <Name>ID</Name>
                <Reference type="RULE">PEPPOL-T127-R032</Reference>
-               <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
                   <Reference type="CODE_LIST">ICD</Reference>
                   <Value type="EXAMPLE">0088</Value>
                </Attribute>
+               <Value type="EXAMPLE">7300010000001</Value>
             </Element>
          </Element>
          <Element cardinality="0..1">
@@ -1196,7 +1221,6 @@
                <Term>cbc:CompanyID</Term>
                <Name>Receiver parties legal registration name </Name>
                <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
-               <Value type="EXAMPLE">SC234567</Value>
                <Attribute>
                   <Term>schemeID</Term>
                   <Name>Scheme identifier </Name>
@@ -1204,6 +1228,7 @@
                   <Reference type="CODE_LIST">ICD</Reference>
                   <Value type="EXAMPLE">0089</Value>
                </Attribute>
+               <Value type="EXAMPLE">SC234567</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:RegistrationAddress</Term>
@@ -1252,6 +1277,7 @@
             </Element>
          </Element>
       </Element>
+	
 	     <Element cardinality="0..1">
          <Term>cac:TransportationStatusRequestDocumentReference</Term>
          <Name>Additional document reference</Name>
@@ -1275,6 +1301,7 @@
             <Value type="EXAMPLE">07:49:00+01:00</Value>
          </Element>
       </Element>
+	
 	     <Element cardinality="0..1">
          <Term>cac:TransportExecutionPlanDocumentReference</Term>
          <Name>Additional document reference</Name>

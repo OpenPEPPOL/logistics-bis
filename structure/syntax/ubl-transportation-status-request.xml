@@ -61,11 +61,11 @@
          <Term>cbc:ShippingOrderID</Term>
          <Name>Shipping Order ID </Name>
          <Description>An identifier (in the form of a reference number) of the Shipping Order or Forwarding Instruction associated with this shipment. </Description>
-         <Value type="EXAMPLE">KHN23-44044</Value>
          <Attribute usage="Optional">
             <Term>schemeID</Term>
             <Value type="EXAMPLE">zzz</Value>
          </Attribute>
+         <Value type="EXAMPLE">KHN23-44044</Value>
       </Element>
 	     <Element cardinality="1..1">
          <Term>cbc:TransportationStatusTypeCode</Term>
@@ -82,7 +82,6 @@
             <Term>cbc:EndpointID</Term>
             <Name>Sender party electronic address </Name>
             <Description>The endpoint for the sender party. </Description>
-            <Value type="EXAMPLE">41955619</Value>
             <Attribute usage="Mandatory">
                <Term>schemeID</Term>
                <Name>Scheme identifier</Name>
@@ -90,6 +89,7 @@
                <Reference type="CODE_LIST">eas</Reference>
                <Value type="EXAMPLE">0198</Value>
             </Attribute>
+            <Value type="EXAMPLE">41955619</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:PartyIdentification</Term>
@@ -99,12 +99,12 @@
                <Term>cbc:ID</Term>
                <Name>ID </Name>
                <Reference type="RULE">PEPPOL-T126-R031</Reference>
-               <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
                   <Reference type="CODE_LIST">ICD</Reference>
                   <Value type="EXAMPLE">0088</Value>
                </Attribute>
+               <Value type="EXAMPLE">7300010000001</Value>
             </Element>
          </Element>
          <Element cardinality="0..1">
@@ -207,7 +207,6 @@
                <Term>cbc:CompanyID</Term>
                <Name>Sender parties legal registration name </Name>
                <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
-               <Value type="EXAMPLE">SC234567</Value>
                <Attribute>
                   <Term>schemeID</Term>
                   <Name>Scheme identifier </Name>
@@ -215,6 +214,7 @@
                   <Reference type="CODE_LIST">ICD</Reference>
                   <Value type="EXAMPLE">0089</Value>
                </Attribute>
+               <Value type="EXAMPLE">SC234567</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:RegistrationAddress</Term>
@@ -271,7 +271,6 @@
             <Term>cbc:EndpointID</Term>
             <Name>Receiver party electronic address </Name>
             <Description>The endpoint id for the receiver party. </Description>
-            <Value type="EXAMPLE">10154596</Value>
             <Attribute usage="Mandatory">
                <Term>schemeID</Term>
                <Name>Scheme identifier</Name>
@@ -279,6 +278,7 @@
                <Reference type="CODE_LIST">eas</Reference>
                <Value type="EXAMPLE">0198</Value>
             </Attribute>
+            <Value type="EXAMPLE">10154596</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:PartyIdentification</Term>
@@ -288,12 +288,12 @@
                <Term>cbc:ID</Term>
                <Name>ID</Name>
                <Reference type="RULE">PEPPOL-T126-R032</Reference>
-               <Value type="EXAMPLE">7300010000001</Value>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
                   <Reference type="CODE_LIST">ICD</Reference>
                   <Value type="EXAMPLE">0088</Value>
                </Attribute>
+               <Value type="EXAMPLE">7300010000001</Value>
             </Element>
          </Element>
          <Element cardinality="0..1">
@@ -397,7 +397,6 @@
                <Term>cbc:CompanyID</Term>
                <Name>Receiver parties legal registration name </Name>
                <Description>The official name of the party as registered with the relevant fiscal authority. </Description>
-               <Value type="EXAMPLE">SC234567</Value>
                <Attribute>
                   <Term>schemeID</Term>
                   <Name>Scheme identifier </Name>
@@ -405,6 +404,7 @@
                   <Reference type="CODE_LIST">ICD</Reference>
                   <Value type="EXAMPLE">0089</Value>
                </Attribute>
+               <Value type="EXAMPLE">SC234567</Value>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:RegistrationAddress</Term>
@@ -479,12 +479,23 @@
 	     <Element cardinality="0..1">
          <Term>cac:Consignment</Term>
          <Name>Consignment information </Name>
-         <Description>The consignment related to this Transportation Status.</Description>
+         <Description>An identifiable collection of goods items sent from one party (the Despatch Party) to another party (the Consignee) via one or more 
+			modes of transport.</Description>
          <Element cardinality="1..1">
             <Term>cbc:ID</Term>
             <Name>Consignment identifier </Name>
-            <Description>Id for the consignment, often a number from the transport service provider. </Description>
-            <Value type="EXAMPLE">12535157654567654</Value>
+            <Description>Id for the consignment, often a number from the Transport Service provider. If this ID is in the GINC format, it should be 
+				indicated in the attribute @schemeID. Use N/A if not applicable.</Description>
+            <Attribute usage="Optional">
+               <Term>schemeID</Term>
+               <Description>Used to indicate that the ID is in the GINC (Global Identification Number for Consignment) format. This number 
+				identifies a consignment, which is a logical grouping of goods (one or more logistics units) transferred to a freight forwarder to be 
+				transported for a specific journey. The consignment number must be allocated by a freight forwarder (or a carrier acting as a
+				freight forwarder) or a consignor, but only if prior agreement of the freight forwarder is given.</Description>
+               <Reference type="CODE_LIST">ConsignmentIDType</Reference>
+               <Value type="EXAMPLE">GINC</Value>
+            </Attribute>
+            <Value type="EXAMPLE">735005233GS1TRANSPORT000001</Value>
          </Element>
          <Element cardinality="0..n">
             <Term>cac:TransportEvent</Term>
@@ -511,12 +522,14 @@
             <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>Identifier transport handling unit </Name>
-               <Description>The SSCC identification code of this transport handling unit. </Description>
-               <Value type="EXAMPLE">11111222222222</Value>
+               <Description>The Transport Handling Unit is identified with a Serial Shipping Container Code (SSCC). The GS1 identification key used to 
+					identify logistics units. The key comprises an extension digit, GS1 Company Prefix, serial reference and check digit. </Description>
                <Attribute usage="Optional">
                   <Term>schemeID</Term>
-                  <Value type="EXAMPLE">sscc</Value>
+                  <Reference type="CODE_LIST">TransportHandlingUnitIDType</Reference>
+                  <Value type="EXAMPLE">SSCC</Value>
                </Attribute>
+               <Value type="EXAMPLE">173500538500000016</Value>
             </Element>
          </Element>
       </Element>
