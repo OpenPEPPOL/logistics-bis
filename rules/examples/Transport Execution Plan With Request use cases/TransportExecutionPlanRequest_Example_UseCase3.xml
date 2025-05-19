@@ -8,6 +8,7 @@
    <cbc:IssueDate>2021-09-29</cbc:IssueDate>
    <cbc:IssueTime>09:49:00+02:00</cbc:IssueTime>
    <cbc:DocumentStatusCode>9</cbc:DocumentStatusCode>   
+	
    <cac:TransportUserParty>
 		<cbc:EndpointID schemeID="0007">2321000180</cbc:EndpointID>
 		<cac:PartyIdentification>
@@ -30,6 +31,7 @@
 			<cbc:ElectronicMail>info.bromma@beijerbygg.se</cbc:ElectronicMail>
 		</cac:Contact>		
    </cac:TransportUserParty>
+	
    <cac:TransportServiceProviderParty>
       <cbc:EndpointID schemeID="0088">5790001963576</cbc:EndpointID>      
       <cac:PartyName>
@@ -53,6 +55,7 @@
          <cbc:ElectronicMail>ce@byggespeditoren.se</cbc:ElectronicMail>    
       </cac:Contact>  
    </cac:TransportServiceProviderParty>
+	
    <cac:PayeeParty>
       <cac:PartyIdentification>
 		<cbc:ID schemeID="0007">5560339086</cbc:ID>
@@ -69,20 +72,24 @@
 			<cbc:RegistrationName>Skanska Sverige AB</cbc:RegistrationName>
 		</cac:PartyLegalEntity>
    </cac:PayeeParty>  
+	
    <cac:MainTransportationService>
       <cbc:TransportServiceCode>3</cbc:TransportServiceCode>
       <cbc:TransportationServiceDescription>Transport from door to door</cbc:TransportationServiceDescription>  
    </cac:MainTransportationService>
+	
    <cac:AdditionalTransportationService>
       <cbc:TransportServiceCode>12</cbc:TransportServiceCode>
       <cbc:TransportationServiceDescription>Insurance</cbc:TransportationServiceDescription>  
    </cac:AdditionalTransportationService>
+	
    <cac:Consignment>
-      <cbc:ID>12535157654567654</cbc:ID>     
-      <cbc:GrossWeightMeasure unitCode="KGM">2460</cbc:GrossWeightMeasure>
+	   <cbc:ID schemeID="GINC">735005233GS1TRANSPORT000001</cbc:ID>
+	   <cbc:GrossWeightMeasure unitCode="KGM">2460</cbc:GrossWeightMeasure>
 	  <cbc:GrossVolumeMeasure unitCode="MTQ">3.10</cbc:GrossVolumeMeasure>      
       <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
       <cbc:TotalTransportHandlingUnitQuantity unitCode="EA">2</cbc:TotalTransportHandlingUnitQuantity>
+	   
       <cac:RequestedPickupTransportEvent>
          <cbc:IdentificationID>21412312412</cbc:IdentificationID>
          <cac:Location>            
@@ -103,6 +110,7 @@
             <cbc:EndTime>13:00:00+02:00</cbc:EndTime>      
          </cac:Period>    
       </cac:RequestedPickupTransportEvent>
+	   
       <cac:RequestedDeliveryTransportEvent>
          <cbc:IdentificationID>625435485674654132</cbc:IdentificationID>
          <cac:Location>
@@ -127,6 +135,7 @@
             <cbc:EndTime>11:00:00+01:00</cbc:EndTime>      
          </cac:Period>    
       </cac:RequestedDeliveryTransportEvent>
+	   
       <cac:ConsigneeParty>
          <cac:PartyIdentification>
 			<cbc:ID schemeID="0007">5560339086</cbc:ID>
@@ -148,6 +157,7 @@
 			<cbc:ElectronicMail>some.email@skanska.se</cbc:ElectronicMail>
 		</cac:Contact>
       </cac:ConsigneeParty>
+	   
       <cac:ConsignorParty>
          <cac:PartyIdentification>
 				<cbc:ID schemeID="0007">5560125220</cbc:ID>
@@ -169,24 +179,28 @@
 				<cbc:ElectronicMail>info.bromma@beijerbygg.se</cbc:ElectronicMail>
 			</cac:Contact>    
       </cac:ConsignorParty>
+	   
       <cac:OriginalDepartureCountry>
          <cbc:IdentificationCode>SE</cbc:IdentificationCode>    
       </cac:OriginalDepartureCountry>
       <cac:FinalDestinationCountry>
          <cbc:IdentificationCode>SE</cbc:IdentificationCode>    
       </cac:FinalDestinationCountry>
+	   
       <cac:DeliveryTerms>
          <cbc:ID>DAP</cbc:ID>           
       </cac:DeliveryTerms>
       <cac:PaymentTerms>         
          <cbc:Note>Please send invoice via Peppol to payee party</cbc:Note>    
-      </cac:PaymentTerms>      
+      </cac:PaymentTerms>   
+	   
       <cac:MainCarriageShipmentStage>
          <cbc:TransportModeCode>3</cbc:TransportModeCode>                            
       </cac:MainCarriageShipmentStage>
+	   
       <cac:TransportHandlingUnit>
-			<cbc:ID>11111222222222</cbc:ID>
-			<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+		  <cbc:ID schemeID="SSCC">173500538500000016</cbc:ID>
+		  <cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
 			<cbc:ShippingMarks>900206705</cbc:ShippingMarks>			
 			<cac:MeasurementDimension>
 				<cbc:AttributeID>AAB</cbc:AttributeID>
@@ -201,8 +215,9 @@
 				<cbc:Description>Stolpförankring galvaniserad</cbc:Description>				
 			</cac:GoodsItem>					
 		</cac:TransportHandlingUnit>		
+	   
 		<cac:TransportHandlingUnit>
-			<cbc:ID>111113333333</cbc:ID>
+			<cbc:ID schemeID="SSCC">173500538500000016</cbc:ID>
 			<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
 			<cbc:ShippingMarks>900206705</cbc:ShippingMarks>
 			<cac:MeasurementDimension>

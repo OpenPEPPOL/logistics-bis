@@ -317,6 +317,7 @@
 				</xsl:when>
 			</xsl:choose>
 			<!-- Fetch description from Peppol instead of url  with prefixes for Peppol and BEAst documentation -->
+			<!-- Process Description -->
 			<xsl:choose>
 				<xsl:when test="./processing-instruction('Description')">
 					<Description>
@@ -364,6 +365,7 @@
         <xsl:value-of select="'&quot;>Peppol Documentation&lt;/a>'"/>
         </Description>
         -->
+			<!-- Process Data Type -->
 			<xsl:choose>
 				<xsl:when test="./processing-instruction('DataType')">
 					<DataType>
@@ -376,6 +378,7 @@
 					</DataType>
 				</xsl:when>
 			</xsl:choose>
+			<!-- Process Business Term -->
 			<xsl:choose>
 				<xsl:when test="./processing-instruction('BusinessTerm')">
 					<xsl:for-each select="./processing-instruction('BusinessTerm')">
@@ -392,6 +395,7 @@
 					</xsl:for-each>
 				</xsl:otherwise>
 			</xsl:choose>
+			<!-- Process Rule -->
 			<xsl:choose>
 				<xsl:when test="./processing-instruction('Rule')">
 					<xsl:for-each select="./processing-instruction('Rule')">
@@ -408,6 +412,7 @@
 					</xsl:for-each>
 				</xsl:otherwise>
 			</xsl:choose>
+			<!-- Process Code List -->
 			<xsl:choose>
 				<xsl:when test="./processing-instruction('CodeList')">
 					<xsl:for-each select="./processing-instruction('CodeList')">
@@ -424,52 +429,9 @@
 					</xsl:for-each>
 				</xsl:otherwise>
 			</xsl:choose>
-			<!--Reference type="URL">
-				<xsl:call-template name="findElement">
-					<xsl:with-param name="paramAnscestorNodes" select="$varAnscestorNodes"/>
-					<xsl:with-param name="paramAnscestorCount" select="count(ancestor-or-self::*)-1"/>
-					<xsl:with-param name="paramCurrentIndex" select="1"/>
-					<xsl:with-param name="paramElement" select="$varTopElement"/>
-					<xsl:with-param name="paramReferenceBaseUrl" select="$varUblBaseUrl"/>
-					<xsl:with-param name="paramReferenceRelativeFile" select="$varUblXmlReferenceFile"/>
-					<xsl:with-param name="paramPrintReferenceUrlOnly" select="true()"/>
-				</xsl:call-template>
-			</Reference>
-			<Reference type="DOC_URL">
-				<xsl:value-of select="$varUblDocBaseUrl"/>
-				<xsl:call-template name="buildDocUrl">
-					<xsl:with-param name="paramBaseUri" select="$varUblDocBaseUrl"/>
-					<xsl:with-param name="paramRelativeUri" select="$varAnscestorNodes"/>
-				</xsl:call-template>
-			</Reference>
-			<Property>
-				<xsl:attribute name="name">
-					<xsl:value-of select="'UBL_HEADER'"/>
-				</xsl:attribute>
-				<xsl:value-of select="$varUblElement/nsPep:Element/nsPep:Name"/>
-			</Property-->
-			<xsl:variable name="varElementTextNodeValue" select="./text()[normalize-space()][1]"/>
-			<xsl:choose>
-				<!--xsl:when test="count(*) = 0 and ./text() != ''">
-				<xsl:for-each select="./text()">
-					<xsl:if test="fn:normalize-space(./text()) != ''">
-					<Value type="EXAMPLE">
-						<xsl:value-of select="fn:normalize-space($varElementTextNodeValue)"/>
-					</Value>
-					</xsl:if>
-				</xsl:for-each>
-			</xsl:when-->
-				<xsl:when test="$varElementTextNodeValue != ''">
-					<Value type="EXAMPLE">
-						<xsl:value-of select="fn:normalize-space($varElementTextNodeValue)"/>
-					</Value>
-				</xsl:when>
-				<xsl:when test="$varUblElement/nsPep:Element/nsPep:Value[@type = 'EXAMPLE'] != ''">
-					<Value type="EXAMPLE">
-						<xsl:value-of select="$varUblElement/nsPep:Element/nsPep:Value[@type = 'EXAMPLE']"/>
-					</Value>
-				</xsl:when>
-			</xsl:choose>
+
+
+			<!-- Process Attribute -->
 			<xsl:for-each select="@*">
 				<xsl:variable name="varAttrName" select="fn:name(.)"/>
 				<xsl:variable name="varUblElementAttribute" select="$varUblElement/nsPep:Element/nsPep:Attribute[nsPep:Term = $varAttrName]"/>
@@ -624,6 +586,54 @@
 					</xsl:choose>
 				</Attribute>
 			</xsl:for-each>
+
+			<!--Reference type="URL">
+				<xsl:call-template name="findElement">
+					<xsl:with-param name="paramAnscestorNodes" select="$varAnscestorNodes"/>
+					<xsl:with-param name="paramAnscestorCount" select="count(ancestor-or-self::*)-1"/>
+					<xsl:with-param name="paramCurrentIndex" select="1"/>
+					<xsl:with-param name="paramElement" select="$varTopElement"/>
+					<xsl:with-param name="paramReferenceBaseUrl" select="$varUblBaseUrl"/>
+					<xsl:with-param name="paramReferenceRelativeFile" select="$varUblXmlReferenceFile"/>
+					<xsl:with-param name="paramPrintReferenceUrlOnly" select="true()"/>
+				</xsl:call-template>
+			</Reference>
+			<Reference type="DOC_URL">
+				<xsl:value-of select="$varUblDocBaseUrl"/>
+				<xsl:call-template name="buildDocUrl">
+					<xsl:with-param name="paramBaseUri" select="$varUblDocBaseUrl"/>
+					<xsl:with-param name="paramRelativeUri" select="$varAnscestorNodes"/>
+				</xsl:call-template>
+			</Reference>
+			<Property>
+				<xsl:attribute name="name">
+					<xsl:value-of select="'UBL_HEADER'"/>
+				</xsl:attribute>
+				<xsl:value-of select="$varUblElement/nsPep:Element/nsPep:Name"/>
+			</Property-->
+			<!-- Process Value -->
+			<xsl:variable name="varElementTextNodeValue" select="./text()[normalize-space()][1]"/>
+			<xsl:choose>
+				<!--xsl:when test="count(*) = 0 and ./text() != ''">
+				<xsl:for-each select="./text()">
+					<xsl:if test="fn:normalize-space(./text()) != ''">
+					<Value type="EXAMPLE">
+						<xsl:value-of select="fn:normalize-space($varElementTextNodeValue)"/>
+					</Value>
+					</xsl:if>
+				</xsl:for-each>
+			</xsl:when-->
+				<xsl:when test="$varElementTextNodeValue != ''">
+					<Value type="EXAMPLE">
+						<xsl:value-of select="fn:normalize-space($varElementTextNodeValue)"/>
+					</Value>
+				</xsl:when>
+				<xsl:when test="$varUblElement/nsPep:Element/nsPep:Value[@type = 'EXAMPLE'] != ''">
+					<Value type="EXAMPLE">
+						<xsl:value-of select="$varUblElement/nsPep:Element/nsPep:Value[@type = 'EXAMPLE']"/>
+					</Value>
+				</xsl:when>
+			</xsl:choose>
 			<xsl:apply-templates select="*" mode="therest"/>
 		</Element>
 	</xsl:template>

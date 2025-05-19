@@ -12,11 +12,12 @@ image:images/PackingStructure.png[image,width=662,height=428]
 [[transport-handling-unit-id]]
 == Transport Handling Unit ID
 
-Serial shipping container code (SSCC) issued by GS1 should be used to identify the transport handling unit.
-Note that the same physical handling unit may contain items from different despatch lines.
+Serial shipping container code (SSCC) issued by GS1 should be used to identify the transport handling unit. If the ID has the format of an SSCC, the
+attribute @schemeID should be included to indicate it.
+Note that the same physical handling unit may contain items from different despatch lines. 
 Besides the ID you also need to provide a Type-code of the THU from the code-list.
 
-.Example:
+.Example: 
 [source, xml, indent=0]
 ----
 include::{snippet-dir}/snippet-30-1.xml[tags=transporthandling]
@@ -49,7 +50,8 @@ include::{snippet-dir}/snippet-30-1.xml[tags=goodsitemTHU]
 [[package]]
 == Package
 
-If the THU contains any package, you specify that here.	You may give an ID on this package too, but it is optional.
+If the THU contains any package, you specify that here.	You may give an ID on this package too, but it is optional. If the ID has the format of an SSCC, the
+attribute @schemeID should be included to indicate it.
 The type-code, however, you need to give.
 Like for the THU you also can describe what is inside the package. There can be items and/or smaller packages.
 

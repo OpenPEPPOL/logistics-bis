@@ -221,11 +221,11 @@
 			</cac:PartyIdentification>
 			<cac:PartyName>
 				<?Name Party name?>
-				<?Description The name of the Delivery Customer Party.?>
+				<?Description The name of the Delivery Receiver Party.?>
 				<?Cardinality 0..1?>
-				<cbc:Name> Sender inc. 
-					<?Name Name of the fuel supplier?>
-					<?Description The Despatch Supplier.?>
+				<cbc:Name> Receiver inc. 
+					<?Name Name of the Delivery Receiver Party?>
+					<?Description The Delivery Receiver.?>
 					<?Cardinality 1..1?>
 					<?Rule PEPPOL-T120-R108?>
 				</cbc:Name>
@@ -247,11 +247,11 @@
 			</cac:PostalAddress>
 			<cac:PartyTaxScheme>
 				<?Name Party tax scheme?>
-				<?Description The tax information about the Delivery Party.?>
+				<?Description The tax information about the Delivery Receiver Party.?>
 				<?Cardinality 0..1?>
 				<cbc:CompanyID> GB523859989 
 					<?Name Company ID?>
-					<?Description The Delivery Party Value Added Tax identifer.?>
+					<?Description The Delivery Receiver Party Value Added Tax identifer.?>
 					<?Cardinality 1..1?>
 				</cbc:CompanyID>
 				<cac:TaxScheme>
@@ -269,7 +269,7 @@
 				<cbc:RegistrationName> Sender inc. 
 					<?Cardinality 1..1?>
 					<?Name Consignee party's Legal name. ?>
-					<?Description The Legal Name of the Receiving party. ?>
+					<?Description The Legal Name of the Delivery Receiving party. ?>
 				</cbc:RegistrationName>
 				<cbc:CompanyID schemeID="0089"> GB523859989 
 					<?Name Delivery customers parties legal registration ID. ?>
@@ -301,7 +301,7 @@
 
 			<cac:Contact>
 				<?Name Contact person name?>
-				<?Description The contact of the Delivery customer party.?>
+				<?Description The contact of the Delivery Receiver party.?>
 				<?Cardinality 0..1?>
 				<cbc:Name> Mrs Bouquet 
 					<?Name Contact name?>
@@ -578,14 +578,20 @@
 	
 	<cac:Shipment>
 		<?Cardinality 1..1?>
-		<cbc:ID> 1 
-			<?Description Identifies a shipment. Freight forwarders reference number.?>
+		<?Description A contractual arrangement whereby an identifiable collection of goods items is to be transported from one party (usually a Supplier) to another party (usually a Customer)?>
+		<cbc:ID schemeID="GSIN">73500538500000019
+			<?Description Identifies a shipment. Freight forwarders reference number. If this ID is in the GSIN format, it should be indicated in the attribute @schemeID. Use NA as a dummy value if the ID is unknown.?>
+			<?schemeID-usage optional?>
+			<?schemeID-CodeList ShipmentIDType?>
+			<?schemeID-Description Used to indicate that the ID is in the GSIN format. The Global Shipment Identification Number (GSIN) is a number that 
+			identifies a shipment and is assigned by the seller of goods. The goods shipper collects one or more logistic units for transportation to 
+			a recipient. A GSIN is assigned to this group of logistic units to identify them as a shipment.?>
 		</cbc:ID>
 		<cbc:Information> text 
 			<?Description Used by Logistics for Supplier Remark.?>
 		</cbc:Information>
 		<cbc:GrossWeightMeasure unitCode="KGM"> 1030 
-			<?Description The gross weight of the despatch as a whole. Must be equal the the weight specified for the included transport handling unites if this is specified?>
+			<?Description The gross weight of the despatch as a whole. Must be equal the the weight specified for the included transport handling units if this is specified?>
 			<?Rule PEPPOL-T120-R018?>
 		</cbc:GrossWeightMeasure>
 		<cbc:GrossVolumeMeasure unitCode="MTQ"> 1.456 
@@ -607,8 +613,16 @@
 		</cbc:DeclaredStatisticsValueAmount>
 		
 		<cac:Consignment>
-			<cbc:ID> NA 
-				<?Description Use a dummy value since this element is mandatory.?>
+			<?Description An identifiable collection of goods items sent from one party (the Despatch Party) to another party (the Consignee) via one or more modes of transport.?>
+			<cbc:ID schemeID="GINC">735005233GS1TRANSPORT000001
+				<?Description If this ID is in the GINC format, it should be indicated in the attribute @schemeID. Use NA as a dummy value if the ID is unknown.?>
+				<?schemeID-usage optional?>
+				<?schemeID-CodeList ConsignmentIDType?>
+				<?schemeID-Description Used to indicate that the ID is in the GINC (Global Identification Number for Consignment) format. This number 
+				identifies a consignment, which is a logical grouping of goods (one or more logistics units) transferred to a freight forwarder to be 
+				transported for a specific journey. The consignment number must be allocated by a freight forwarder (or a carrier acting as a freight 
+				forwarder) or a consignor, but only if prior agreement of the freight forwarder is given. ?>
+
 			</cbc:ID>
 			<cbc:HazardousRiskIndicator> false 
 				<?Name Hazardous risk indicator?>
@@ -799,7 +813,7 @@
 					<?Name Transport equipment?>
 					<?Description Used to specify fuel consumption. To be repeated for all fuel types used.?>
 					<?Cardinality 0..n?>
-					<cbc:TransportEquipmentTypeCode listID="FuelGroup" listAgencyID="Trafikverket" listVersionID="2023:1"> HVO 
+					<cbc:TransportEquipmentTypeCode listID="ClimateDatabase" listAgencyID="Boverket" listVersionID="02.05.000">6000000017
 						<?Name Tranport equipment type code?>
 						<?Description Used to specify the type of fuel.?>
 						<?Cardinality 0..1?>
@@ -813,7 +827,7 @@
 						<?listVersionID-Description Identifies the version of the List. ?>
 						<?listVersionID-usage Optional?>
 					</cbc:TransportEquipmentTypeCode>
-					<cbc:Description> HVO Diesel 
+					<cbc:Description> HVO100 
 						<?Name Description?>
 						<?Description Fuel description.?>
 						<?Cardinality 0..1?>
@@ -837,7 +851,10 @@
 						</cbc:Measure>
 						<cbc:Description> StandardEstimate 
 							<?Name Attribute value?>
-							<?Description Description of the attribute when there is no value to measure. Used for FuelMeasurementMethod and EngineType. Possible values are for FuelMeasurementMethod: "AutomaticMeasurement", "StandardEstimate", "ManualMeasurement" and for EngineType: "Euro2", "Euro3", "Euro4", "Euro5", "Euro6", "EuroStep2", "EuroStep3A", "EuroStep3B", "EuroStep4", "EV", "FuelCell", "Hybrid".?>
+							<?Description Description of the attribute when there is no value to measure. Used for FuelMeasurementMethod and EngineType. 
+							Possible values are for FuelMeasurementMethod: "AutomaticMeasurement", "StandardEstimate", "ManualMeasurement" and for 
+							EngineType: "Euro2", "Euro3", "Euro4", "Euro5", "Euro6", "Euro7", "EuroStageII", "EuroStageIIIA", "EuroStageIIIB", "EuroStageIV", 
+							"EuroStageV", "EV", "FuelCell", "Hybrid" and "PHEV".?>
 							<?Cardinality 0..1?>
 						</cbc:Description>
 					</cac:MeasurementDimension>
@@ -1259,13 +1276,16 @@
 		<cac:TransportHandlingUnit>
 			<?Rule PEPPOL-T120-R017?>
 			<?Name Transport handling unit?>
-			<?Description Used to specify how the goods is packed.?>
+			<?Description A description of individual handling units in which the line items are packed. An item of any composition established for 
+			transport and/or storage that needs to be managed through the supply chain.?>
 			<?Cardinality 0..n?>
-			<cbc:ID>11111222222222 
+			<cbc:ID schemeID="SSCC">173500538500000016
 				<?Name Identifier transport handling unit?>
-				<?Description The SSCC identification code of this Transport Handling Unit.?>
+				<?Description The Transport Handling Unit is identified with a Serial Shipping Container Code (SSCC). The GS1 identification key used to identify logistics units. 
+				The key comprises an extension digit, GS1 Company Prefix, serial reference and check digit.?>
 				<?Cardinality 1..1?>
 				<?schemeID-usage Optional?>
+				<?schemeID-CodeList TransportHandlingUnitIDType?>
 			</cbc:ID>
 			<cbc:TransportHandlingUnitTypeCode> AG 
 				<?Name Handling unit type code?>
@@ -1434,10 +1454,13 @@
 				<?Name Package information?>
 				<?Description A package contained in the Transport Handling Unit.?>
 				<?Cardinality 0..n?>
-				<cbc:ID> 3453 <?Name Package identifier?>
-					<?Description The Id of the package for instance a SSCC.?>
+				<cbc:ID schemeID="SSCC">173500538500000023
+					<?Name Package identifier?>
+					<?Description The Package may be identified with a Serial Shipping Container Code (SSCC). The GS1 identification key used to 
+					identify logistics units. The key comprises an extension digit, GS1 Company Prefix, serial reference and check digit.?>
 					<?Cardinality 0..1?>
 					<?schemeID-usage Optional?>
+					<?schemeID-CodeList TransportHandlingUnitIDType?>
 				</cbc:ID>
 				<cbc:ReturnableMaterialIndicator> true 
 					<?Name Returnable material indicator?>
@@ -1887,7 +1910,7 @@
 			</cac:HazardousItem>
 			
 			<cac:AdditionalItemProperty>
-				<cbc:ID schemeDataURI="sdfdf" schemeID="ISO22057" schemeVersionID="2022">	77e416eb-a363-4258-a04e-171d843a6460 
+				<cbc:ID schemeDataURI="https://define.cobuilder.no/77e416eb-a363-4258-a04e-171d843a6460/2022/" schemeID="ISO22057" schemeVersionID="2022">	77e416eb-a363-4258-a04e-171d843a6460 
 					<?Description ID of the property if assigned by an Agency?>
 					<?Cardinality 0..1?>
 					<?schemeDataURI-Name Scheme Data URI?>
