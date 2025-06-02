@@ -2,7 +2,7 @@
 <!--
                 Content:
                 Example for Use-case no 6 in Logistics Advanced Despatch Advice for concrete.
-				
+					2024-08-22: Update with more properties
 			
 -->
 <DespatchAdvice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -190,10 +190,13 @@
 			</cac:Despatch>
 		</cac:Delivery>
 
+
 	</cac:Shipment>
 	<cac:DespatchLine>
 		<cbc:ID>10</cbc:ID>
-		<cbc:DeliveredQuantity unitCode="MTQ">3.5</cbc:DeliveredQuantity>
+		<cbc:DeliveredQuantity unitCode="MTQ">7</cbc:DeliveredQuantity>
+		<cbc:OutstandingQuantity unitCode="MTQ">4.5</cbc:OutstandingQuantity>
+		<cbc:OutstandingReason>Kommer i senare bilar</cbc:OutstandingReason>
 
 		<cac:OrderLineReference>
 			<cbc:LineID>1</cbc:LineID>
@@ -289,7 +292,7 @@
 					schemeDataURI="">tbd</cbc:ID>
 				<cbc:Name>Start unloading time</cbc:Name>
 				<cbc:NameCode listID="SSEN206">StartUnloadingTime</cbc:NameCode>
-				<cbc:Value>2023-05-03T09:03:00</cbc:Value>
+				<cbc:Value>2023-05-03T12:40:00</cbc:Value>
 			</cac:AdditionalItemProperty>
 
 			<cac:AdditionalItemProperty>
@@ -436,6 +439,72 @@
 				<cbc:Value>NA</cbc:Value>
 				<cbc:ValueQuantity unitCode="KMQ">87.5</cbc:ValueQuantity>
 			</cac:AdditionalItemProperty>
+			
+			<cac:AdditionalItemProperty>
+				<cbc:ID schemeID="Define:SwedishDataDictionary" schemeVersionID="">tbd</cbc:ID>
+				<cbc:Name>Ordered Quantity</cbc:Name>
+				<cbc:NameCode listID="SvenskBetong">OrderedQuantity</cbc:NameCode>
+				<cbc:Value>NA</cbc:Value>
+				<cbc:ValueQuantity unitCode="KMQ">28</cbc:ValueQuantity>
+			</cac:AdditionalItemProperty>
+			
+			<cac:AdditionalItemProperty>
+				<cbc:ID schemeID="Define:SwedishDataDictionary" schemeVersionID="">tbd</cbc:ID>
+				<cbc:Name>Target Density</cbc:Name>
+				<cbc:NameCode listID="SvenskBetong">TargetDensity</cbc:NameCode>
+				<cbc:Value>2350 kg/m3</cbc:Value>
+				<cbc:ValueQuantity unitCode="G18">2350</cbc:ValueQuantity>
+			</cac:AdditionalItemProperty>
+			
+			<cac:AdditionalItemProperty>
+				<cbc:ID schemeID="Define:SwedishDataDictionary" schemeVersionID="">tbd</cbc:ID>
+				<cbc:Name>Cement Content</cbc:Name>
+				<cbc:NameCode listID="SSEN206">CementContent</cbc:NameCode>
+				<cbc:Value>300 Kg/m3</cbc:Value>
+				<cbc:ValueQuantity unitCode="G18">300</cbc:ValueQuantity>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:ID schemeID="Define:SwedishDataDictionary" schemeVersionID="">tbd</cbc:ID>
+				<cbc:Name>Target Slump</cbc:Name>
+				<cbc:NameCode listID="SSEN206">TargetSlump</cbc:NameCode>
+				<cbc:Value>200 mm</cbc:Value>
+				<cbc:ValueQuantity unitCode="MMT">200</cbc:ValueQuantity>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:ID schemeID="Define:SwedishDataDictionary" schemeVersionID="">tbd</cbc:ID>
+				<cbc:Name>Target VCT</cbc:Name>
+				<cbc:NameCode listID="SSEN206">TargetVCT</cbc:NameCode>
+				<cbc:Value>0.5</cbc:Value>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:ID schemeID="Define:SwedishDataDictionary" schemeVersionID="">tbd</cbc:ID>
+				<cbc:Name>Actual VCT</cbc:Name>
+				<cbc:NameCode listID="SSEN206">ActualVCT</cbc:NameCode>
+				<cbc:Value>0.49</cbc:Value>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:ID schemeID="Define:SwedishDataDictionary" schemeVersionID="">tbd</cbc:ID>
+				<cbc:Name>Addition orgin</cbc:Name>
+				<cbc:NameCode listID="SS137003">AdditionOrgin</cbc:NameCode>
+				<cbc:Value>Oxelesund</cbc:Value>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:ID schemeID="Define:SwedishDataDictionary" schemeVersionID="">tbd</cbc:ID>
+				<cbc:Name>Cement Orgin</cbc:Name>
+				<cbc:NameCode listID="SS137003">CementOrgin</cbc:NameCode>
+				<cbc:Value>Slite</cbc:Value>
+			</cac:AdditionalItemProperty>
+
+			<cac:ManufacturerParty>
+				<cac:PartyName>
+					<cbc:Name>Swerock Bredden fabriken</cbc:Name>
+				</cac:PartyName>
+			</cac:ManufacturerParty>
 
 			<cac:ItemInstance>
 				<cbc:ManufactureDate>2023-05-03</cbc:ManufactureDate>
