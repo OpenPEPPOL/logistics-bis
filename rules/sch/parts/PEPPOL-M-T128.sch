@@ -46,10 +46,7 @@
 		<assert id="PEPPOL-T128-R022" test="not(cac:Delivery/cac:DeliveryTerms) or ((cac:Delivery/cac:DeliveryTerms/cbc:ID) or (cac:Delivery/cac:DeliveryTerms/cbc:SpecialTerms))" flag="fatal">Either ID or special terms need to be specified in Delivery terms</assert>
 	</rule>
 	<rule context="cbc:ReceiptAdviceTypeCode">
-		<assert id="PEPPOL-T128-R023" test="((normalize-space(.) = 'D') and not(//cac:Shipment/cbc:ID) and (//cac:DespatchDocumentReference/cbc:DocumentStatusCode))" flag="fatal">When ReceiptAdvice is a response to Advanced Despatch Advice (D), it MUST contain a Status on the Referred Despatch Advice but it MUST NOT contain any Shipment group.</assert>
-	</rule>
-	<rule context="cbc:ReceiptAdviceTypeCode">
-		<assert id="PEPPOL-T128-R223" test="((normalize-space(.) = 'S') and (//cac:Shipment/cbc:ID) and not (//cac:DespatchDocumentReference/cbc:DocumentStatusCode))" flag="fatal">When it is a response to a recived shipment/service (S), it SHALL include the Shipment group but MUST NOT contain any Status on the Referred Despatch Advice. </assert>
+		<assert id="PEPPOL-T128-R023" test="((normalize-space(.) = 'D') and not(//cac:Shipment/cbc:ID) and (//cac:DespatchDocumentReference/cbc:DocumentStatusCode)) or ((normalize-space(.) = 'S') and (//cac:Shipment/cbc:ID) and not (//cac:DespatchDocumentReference/cbc:DocumentStatusCode) )" flag="fatal">When ReceiptAdvice is a response to Advanced Despatch Advice (D), it MUST contain a Status on the Referred Despatch Advice but it MUST NOT contain any Shipment group. When it is a response to a recived shipment/service (S), it SHALL include the Shipment group but MUST NOT contain any Status on the Referred Despatch Advice. </assert>
 	</rule>
 	<rule context="cac:Shipment/cac:Consignment/cac:Status">
 		<assert id="PEPPOL-T128-R025" test="((normalize-space(cbc:ConditionCode) &gt;= 'AQ') and (cbc:StatusReasonCode)) or ((normalize-space(cbc:ConditionCode) &lt;= 'AQ') and not(cbc:StatusReasonCode))" flag="fatal">If the Consignment is Conditionally Accepted or Rejected (CA/RE), a status reason code SHALL be provided. </assert>
