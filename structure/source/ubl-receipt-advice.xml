@@ -59,6 +59,19 @@
 			<?Name The time the Advanced Despatch Advice was issued.?>
 			<?Description The time when the Advanced Despatch Advice was issued. Format = "HH:MM:SS+timezone". Timezone is optional to use. If omitted, the local timezone where the document was issued should be assumed. ?>
 		</cbc:IssueTime>
+		<cbc:DocumentStatusCode>RE
+			<?Name Document Status Code?>
+			<?Description To be used when the Receipt Advice is a response to the received Advanced Despatch Advice.
+			The status Code describes whether the Advanced Despatch Advice is accepted or if it is rejected due to errors, and the supplier should send a new. ?>
+			<?Cardinality 0..1?>
+			<?CodeList UNCL4343_T128?>
+			<?Rule PEPPOL-T128-R023?>
+		</cbc:DocumentStatusCode>
+		<cbc:DocumentDescription>Incorrect Identity of the buyer.
+			<?Name Document Status Description?>
+			<?Description Text to describe the reason for the rejection. ?>
+			<?Cardinality 0..1?>
+		</cbc:DocumentDescription>
 	</cac:DespatchDocumentReference>
 	
 	<cac:AdditionalDocumentReference>
