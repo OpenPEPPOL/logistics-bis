@@ -19,6 +19,7 @@
 	<rule context="ubl:TransportationStatusRequest/cac:SenderParty">
 		<assert id="PEPPOL-T126-R031" test="cac:PartyName or cac:PartyIdentification" flag="fatal"> [PEPPOL-T126-R031] Party must include either a party name or a party identification.</assert>
 	</rule>
+	
 	<rule context="ubl:TransportationStatusRequest/cac:ReceiverParty">
 		<assert id="PEPPOL-T126-R032" test="cac:PartyName or cac:PartyIdentification" flag="fatal"> [PEPPOL-T126-R032] Party must include either a party name or a party identification.</assert>
 	</rule>

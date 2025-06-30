@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ubl:TransportExecutionPlanRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<ubl:TransportExecutionPlanRequest	xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlanRequest-2" 
+									xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" 
+									xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 	<?DocumentTerm TransportExecutionPlanRequest?>
 	<?Property key="sch:prefix" PEPPOL-T123?>
 	<?Property key="sch:identifier" T123-basic?>
 	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan_request:1<?Rule PEPPOL-T123-R001?></cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1
-		<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Transport Execution Plan Request. One profile is used when a request is expected, the other is used when no request message is expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1".?>
+		<?Description Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined 
+			for the Transport Execution Plan Request. One profile is used when a request is expected, the other is used when no request message is 
+			expected. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1" 
+			and "urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1".?>
 		<?Rule PEPPOL-T123-R002?>
 	</cbc:ProfileID>
+	
 	<cbc:ID>141278571829041241241</cbc:ID>
-	<cbc:IssueDate>2021-09-29<?Description The date when the Transport Execution Plan Request is issued. Format = "YYYY-MM-DD". ?>
+	<cbc:IssueDate>2021-09-29
+		<?Description The date when the Transport Execution Plan Request is issued. Format = "YYYY-MM-DD". ?>
 	</cbc:IssueDate>
 	<cbc:IssueTime>09:49:00+02:00
 		<?Description The time when the Transport Execution Plan Request is issued. ?>
@@ -27,9 +34,11 @@
 		<?Description Remarks from the transport user regarding the transport operations referenced in the Transport Execution Plan Request.?>
 		<?Cardinality 0..1?>		
 	</cbc:TransportUserRemarks>
+	
 	<cac:TransportUserParty>
 		<?Name Transport user party ?>
-		<?Description The party requesting the transport services referenced in the Transport Execution Plan Request and the sender of the Transport Execution Plan. ?>
+		<?Description The party requesting the transport services referenced in the Transport Execution Plan Request and the sender of the 
+			Transport Execution Plan. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0198">41955619
 			<?Name Sender party electronic address ?>
@@ -71,7 +80,8 @@
 			</cbc:StreetName>
 			<cbc:AdditionalStreetName>way 1
 				<?Name Address line 2 ?>
-				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>				
+				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. 
+					Common use are secondary house number in a complex or in a building. ?>				
 				<?Cardinality 0..1?>
 			</cbc:AdditionalStreetName>
 			<cbc:CityName>Køge
@@ -81,7 +91,8 @@
 			</cbc:CityName>
 			<cbc:PostalZone>4600
 				<?Name Post code ?>
-				<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+				<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a 
+					ZIP code or Post Code. ?>
 				<?Cardinality 0..1?>
 			</cbc:PostalZone>
 			<cbc:CountrySubentity>Region Hovedstaden
@@ -104,7 +115,9 @@
 					<?Name Country code ?>
 					<?Cardinality 1..1?>
 					<?CodeList ISO3166?>
-					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance 
+						agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 
+						representation. ?>
 				</cbc:IdentificationCode>
 			</cac:Country>
 		</cac:PostalAddress>
@@ -161,7 +174,9 @@
 						<?Name Country code ?>
 						<?Cardinality 1..1?>
 						<?CodeList ISO3166?>
-						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 
+							Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according 
+							to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:RegistrationAddress>
@@ -187,9 +202,11 @@
 				</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:TransportUserParty>
+	
 	<cac:TransportServiceProviderParty>
 		<?Name Transport service provider party ?>
-		<?Description The party providing the transport services referenced in the Transport Execution Plan Request. The receiver of the Transport Execution Plan. ?>
+		<?Description The party providing the transport services referenced in the Transport Execution Plan Request. The receiver of the 
+			Transport Execution Plan. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0198">85955619
 			<?Name Sender party electronic address ?>
@@ -231,7 +248,8 @@
 			</cbc:StreetName>
 			<cbc:AdditionalStreetName>way 1
 				<?Name Address line 2 ?>
-				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>				
+				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. 
+					Common use are secondary house number in a complex or in a building. ?>				
 				<?Cardinality 0..1?>
 			</cbc:AdditionalStreetName>
 			<cbc:CityName>Greve
@@ -241,7 +259,8 @@
 			</cbc:CityName>
 			<cbc:PostalZone>2670
 				<?Name Post code ?>
-				<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+				<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a 
+					ZIP code or Post Code. ?>
 				<?Cardinality 0..1?>
 			</cbc:PostalZone>
 			<cbc:CountrySubentity>Region Sjælland
@@ -262,7 +281,9 @@
 					<?Name Country code ?>
 					<?Cardinality 1..1?>
 					<?CodeList ISO3166?>
-					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 
+						Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to 
+						the alpha-2 representation. ?>
 				</cbc:IdentificationCode>
 			</cac:Country>
 		</cac:PostalAddress>
@@ -319,7 +340,9 @@
 						<?Name Country code ?>
 						<?Cardinality 1..1?>
 						<?CodeList ISO3166?>
-						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 
+							Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according 
+							to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:RegistrationAddress>
@@ -345,6 +368,7 @@
 			</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:TransportServiceProviderParty>
+	
 	<cac:PayeeParty>
 		<?Name Payee party ?>
 		<?Description The party that will pay for the transport service(s) referred to in a Transport Execution Plan. ?>
@@ -380,7 +404,8 @@
 			</cbc:StreetName>
 			<cbc:AdditionalStreetName>way 1
 				<?Name Address line 2 ?>
-				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>				
+				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. 
+					Common use are secondary house number in a complex or in a building. ?>				
 				<?Cardinality 0..1?>
 			</cbc:AdditionalStreetName>
 			<cbc:CityName>Køge
@@ -390,7 +415,8 @@
 			</cbc:CityName>
 			<cbc:PostalZone>4600
 				<?Name Post code ?>
-				<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+				<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a 
+					ZIP code or Post Code. ?>
 				<?Cardinality 0..1?>
 			</cbc:PostalZone>
 			<cbc:CountrySubentity>Region Hovedstaden
@@ -413,7 +439,9 @@
 					<?Name Country code ?>
 					<?Cardinality 1..1?>
 					<?CodeList ISO3166?>
-					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 
+						Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to 
+						the alpha-2 representation. ?>
 				</cbc:IdentificationCode>
 			</cac:Country>
 		</cac:PostalAddress>
@@ -470,7 +498,9 @@
 						<?Name Country code ?>
 						<?Cardinality 1..1?>
 						<?CodeList ISO3166?>
-						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 
+						Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according 
+						to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:RegistrationAddress>
@@ -496,6 +526,7 @@
 				</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:PayeeParty>
+	
 	<cac:AdditionalDocumentReference>
 		<?Name Additional document reference?>
 		<?Description Reference to additional documents relevant for this Transport Execution Plan Request. ?>
@@ -516,7 +547,8 @@
 		<cac:Attachment>
 			<?Name Attachment?>
 			<?Cardinality 0..1?>
-			<?Description Group to describe an attached document. An attachment can refer to an external document or be included with the document being exchanged.?>
+			<?Description Group to describe an attached document. An attachment can refer to an external document or be included with the 
+				document being exchanged.?>
 			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">
 				aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw== <?Name Embedded binary object?>
 				<?Cardinality 0..1?>
@@ -533,6 +565,7 @@
 			</cac:ExternalReference>
 		</cac:Attachment>
 	</cac:AdditionalDocumentReference>
+	
 	<cac:MainTransportationService>
 		<?Name Main Transportatin Service?>
 		<?Cardinality 1..1?>
@@ -552,10 +585,12 @@
 			<?Description Text describing the transportation service.?>
 		</cbc:TransportationServiceDescription>
 	</cac:MainTransportationService>
+	
 	<cac:AdditionalTransportationService>
 		<?Name Additional Transportatin Service?>
 		<?Cardinality 0..n?>
-		<?Description A description of an additional transportation service referenced in the Transport Execution Plan Request. Can only be used in conjunction with a main transportation service.?>
+		<?Description A description of an additional transportation service referenced in the Transport Execution Plan Request. Can only be 
+			used in conjunction with a main transportation service.?>
 		<cbc:TransportServiceCode>12
 			<?Name Main Transportatin Service Code?>
 			<?Cardinality 1..1?>
@@ -571,10 +606,11 @@
 			<?Description Text describing the transportation service.?>
 		</cbc:TransportationServiceDescription>
 	</cac:AdditionalTransportationService>
+	
 	<cac:Consignment>
 		<?Name Consignment information ?>
-		<?Description An identifiable collection of goods items sent from one party (the Despatch Party) to another party (the Consignee) via one or more 
-			modes of transport.?>
+		<?Description An identifiable collection of goods items sent from one party (the Despatch Party) to another party (the Consignee) via 
+			one or more modes of transport.?>
 		<?Cardinality 1..1?>
 		<cbc:ID schemeID="GINC">735005233GS1TRANSPORT000001
 			<?Name Consignment identifier ?>
@@ -600,27 +636,31 @@
 		</cbc:ConsignorAssignedID>
 		<cbc:GrossWeightMeasure unitCode="KGM">1030
 			<?Name Consignment gross weight ?> 
-			<?Description The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included transport handling unites if this is specified?>
+			<?Description The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included 
+				transport handling unites if this is specified?>
 			<?Cardinality 0..1?>			
 			<?Rule PEPPOL-T123-R005?>
 			<?Rule PEPPOL-T123-R008?>
 		</cbc:GrossWeightMeasure>
 		<cbc:GrossVolumeMeasure unitCode="MTQ">20
 			<?Name Consignment gross volume ?>
-			<?Description The gross volumen of the consignment. Must be greather or equal the the volumen specified for the included transport handling unites if this is specified?>
+			<?Description The gross volumen of the consignment. Must be greather or equal the the volumen specified for the included 
+				transport handling unites if this is specified?>
 			<?Cardinality 0..1?>
 			<?Rule PEPPOL-T123-R006?>
 			<?Rule PEPPOL-T123-R008?>
 		</cbc:GrossVolumeMeasure>
 		<cbc:LoadingLengthMeasure unitCode="MTR">0.4
 			<?Name Loading length measure ?>
-			<?Description The total length in a means of transport or a piece of transport equipment which, given the width and height of the transport means, will accommodate all of the consignments in a single consolidation.?>
+			<?Description The total length in a means of transport or a piece of transport equipment which, given the width and height of the 
+				transport means, will accommodate all of the consignments in a single consolidation.?>
 			<?Cardinality 0..1?>
 			<?Rule PEPPOL-T123-R008?>
 		</cbc:LoadingLengthMeasure>
 		<cbc:HazardousRiskIndicator>false
 			<?Name Hazardous risk indicator ?>
-			<?Description An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).?>
+			<?Description An indication that the transported goods in this consignment are subject to an international regulation concerning the 
+				carriage of dangerous goods (true) or not (false).?>
 			<?Cardinality 0..1?>
 		</cbc:HazardousRiskIndicator>
 		<cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1
@@ -630,9 +670,11 @@
 			<?Rule PEPPOL-T123-R003?>
 			<?Rule PEPPOL-T123-R004?>
 		</cbc:TotalTransportHandlingUnitQuantity>
+		
 		<cac:RequestedPickupTransportEvent>
 			<?Name Requested pickup transport event ?>
-			<?Description The pickup of this consignment requested by the party requesting a transportation service (the transport user). Mandatory if the Requested delivery transport event is not specified.?>
+			<?Description The pickup of this consignment requested by the party requesting a transportation service (the transport user). 
+				Mandatory if the Requested delivery transport event is not specified.?>
 			<?Cardinality 0..1?>
 			<?Rule PEPPOL-T123-R021?>
 			<cbc:IdentificationID>21412312412
@@ -640,6 +682,7 @@
 				<?Description An identifier for this pickup transport event within an agreed event identification scheme. ?>
 				<?Cardinality 0..1?>
 			</cbc:IdentificationID>
+			
 			<cac:Location>
 				<?Name Location of requested pickup ?>
 				<?Description The location where the pickup takes place.?>
@@ -669,7 +712,8 @@
 					<cbc:AdditionalStreetName>Purchasing
 						<?Name Address line 2 ?>
 						<?Cardinality 0..1?>
-						<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
+						<?Description An additional address line in a postal address that can be used to give further details supplementing the 
+							main line. Common use are secondary house number in a complex or in a building. ?>
 					</cbc:AdditionalStreetName>
 					<cbc:CityName>Køge
 						<?Name City ?>
@@ -679,7 +723,8 @@
 					<cbc:PostalZone>4600
 						<?Name Post code ?>
 						<?Cardinality 0..1?>
-						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+						<?Description The identifier for an addressable group of properties according to the relevant national postal service, 
+							such as a ZIP code or Post Code. ?>
 					</cbc:PostalZone>
 					<cbc:CountrySubentity>Region Hovedstaden
 						<?Name Country subdivision ?>
@@ -692,7 +737,8 @@
 						<cbc:Line>3rd Floor, Room 5
 							<?Name Address line 3 ?>
 							<?Cardinality 1..1?>
-							<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
+							<?Description An additional address line in an address that can be used to give further details supplementing the 
+								main line. ?>
 						</cbc:Line>
 					</cac:AddressLine>
 					<cac:Country>
@@ -702,7 +748,9 @@
 							<?Name Country code ?>
 							<?Cardinality 1..1?>
 							<?CodeList ISO3166?>
-							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 
+								Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be 
+								according to the alpha-2 representation. ?>
 						</cbc:IdentificationCode>
 					</cac:Country>
 					<cac:LocationCoordinate>
@@ -744,6 +792,7 @@
 					</cac:LocationCoordinate>
 				</cac:Address>
 			</cac:Location>
+			
 			<cac:Period>
 				<?Name Period ?>
 				<?Description The period within the pickup event takes place.?>
@@ -780,9 +829,11 @@
 				</cbc:EndTime>
 			</cac:Period>
 		</cac:RequestedPickupTransportEvent>
+		
 		<cac:RequestedDeliveryTransportEvent>
 			<?Name Requested delivery transport event ?>
-			<?Description The delivery of this consignment requested by the party requesting a transportation service (the transport user). Mandatory if the requested pickup transpoinrt event is not present.?>
+			<?Description The delivery of this consignment requested by the party requesting a transportation service (the transport user). 
+				Mandatory if the requested pickup transpoinrt event is not present.?>
 			<?Cardinality 0..1?>
 			<?Rule PEPPOL-T123-R021?>
 			<cbc:IdentificationID>625435485674654132
@@ -790,6 +841,7 @@
 				<?Description An identifier for this delivery transport event within an agreed event identification scheme. ?>
 				<?Cardinality 0..1?>
 			</cbc:IdentificationID>
+			
 			<cac:Location>
 				<?Name Location of requested delivery ?>
 				<?Description The location of the requested delivery.?>
@@ -819,7 +871,8 @@
 					<cbc:AdditionalStreetName>Ved lufthavnen
 						<?Name Address line 2 ?>
 						<?Cardinality 0..1?>
-						<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
+						<?Description An additional address line in a postal address that can be used to give further details supplementing the 
+							main line. Common use are secondary house number in a complex or in a building. ?>
 					</cbc:AdditionalStreetName>
 					<cbc:CityName>Kastrup
 						<?Name City ?>
@@ -829,7 +882,8 @@
 					<cbc:PostalZone>2770
 						<?Name Post code ?>
 						<?Cardinality 0..1?>
-						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+						<?Description The identifier for an addressable group of properties according to the relevant national postal service, 
+							such as a ZIP code or Post Code. ?>
 					</cbc:PostalZone>
 					<cbc:CountrySubentity>Region Hovedstaden
 						<?Name Country subdivision ?>
@@ -842,7 +896,8 @@
 						<cbc:Line>3rd Floor, Room 5
 							<?Name Address line 3 ?>
 							<?Cardinality 1..1?>
-							<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
+							<?Description An additional address line in an address that can be used to give further details supplementing the 
+								main line. ?>
 						</cbc:Line>
 					</cac:AddressLine>
 					<cac:Country>
@@ -852,7 +907,9 @@
 							<?Name Country code ?>
 							<?Cardinality 1..1?>
 							<?CodeList ISO3166?>
-							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 
+								Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be 
+								according to the alpha-2 representation. ?>
 						</cbc:IdentificationCode>
 					</cac:Country>
 					<cac:LocationCoordinate>
@@ -894,6 +951,7 @@
 					</cac:LocationCoordinate>
 				</cac:Address>
 			</cac:Location>
+			
 			<cac:Period>
 				<?Name Period ?>
 				<?Description The period within the delivery event takes place.?>
@@ -930,6 +988,7 @@
 				</cbc:EndTime>
 			</cac:Period>
 		</cac:RequestedDeliveryTransportEvent>
+		
 		<cac:ConsigneeParty>
 			<?Name Consignee party ?>
 			<?Description The party responsible for receiveing the goods. ?>
@@ -965,7 +1024,8 @@
 				</cbc:StreetName>
 				<cbc:AdditionalStreetName>way 1
 				<?Name Address line 2 ?>
-				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>				
+				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. 
+					Common use are secondary house number in a complex or in a building. ?>				
 				<?Cardinality 0..1?>
 			</cbc:AdditionalStreetName>
 				<cbc:CityName>Helsinki
@@ -975,7 +1035,8 @@
 				</cbc:CityName>
 				<cbc:PostalZone>00260
 					<?Name Post code ?>
-					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+					<?Description The identifier for an addressable group of properties according to the relevant national postal service, 
+						such as a ZIP code or Post Code. ?>
 					<?Cardinality 0..1?>
 				</cbc:PostalZone>
 				<cbc:CountrySubentity>Heremouthshire
@@ -998,7 +1059,9 @@
 						<?Name Country code ?>
 						<?Cardinality 1..1?>
 						<?CodeList ISO3166?>
-						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 
+							Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be 
+							according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
@@ -1035,7 +1098,9 @@
 							<?Name Country code ?>
 							<?Cardinality 1..1?>
 							<?CodeList ISO3166?>
-							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 
+								Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be 
+								according to the alpha-2 representation. ?>
 						</cbc:IdentificationCode>
 					</cac:Country>
 				</cac:RegistrationAddress>
@@ -1061,6 +1126,7 @@
 				</cbc:ElectronicMail>
 			</cac:Contact>
 		</cac:ConsigneeParty>
+		
 		<cac:ConsignorParty>
 			<?Name Consignor Party ?>
 			<?Description The party responsible for sending the goods. ?>
@@ -1096,7 +1162,8 @@
 				</cbc:StreetName>
 				<cbc:AdditionalStreetName>way 1
 				<?Name Address line 2 ?>
-				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>				
+				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. 
+					Common use are secondary house number in a complex or in a building. ?>				
 				<?Cardinality 0..1?>
 			</cbc:AdditionalStreetName>
 				<cbc:CityName>Køge
@@ -1106,7 +1173,8 @@
 				</cbc:CityName>
 				<cbc:PostalZone>4600
 					<?Name Post code ?>
-					<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+					<?Description The identifier for an addressable group of properties according to the relevant national postal service, 
+						such as a ZIP code or Post Code. ?>
 					<?Cardinality 0..1?>
 				</cbc:PostalZone>
 				<cbc:CountrySubentity>Heremouthshire
@@ -1130,7 +1198,9 @@
 						<?Name Country code ?>
 						<?Cardinality 1..1?>
 						<?CodeList ISO3166?>
-						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 
+							Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be 
+							according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:PostalAddress>
@@ -1193,15 +1263,19 @@
 				</cbc:ElectronicMail>
 			</cac:Contact>
 		</cac:ConsignorParty>
+		
 		<cac:OriginalDepartureCountry>
 			<?Name Original departure country ?>
-			<?Description The country from which the goods in this consignment were originally exported, without any commercial transaction taking place in intermediate countries. ?>
+			<?Description The country from which the goods in this consignment were originally exported, without any commercial transaction 
+				taking place in intermediate countries. ?>
 			<?Cardinality 0..1?>
 			<cbc:IdentificationCode>DK
 				<?Name Country code ?>
 				<?Cardinality 0..1?>
 				<?CodeList ISO3166?>
-				<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+				<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance 
+					agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the 
+					alpha-2 representation. ?>
 			</cbc:IdentificationCode>
 		</cac:OriginalDepartureCountry>
 		<cac:FinalDestinationCountry>
@@ -1212,12 +1286,16 @@
 				<?Name Country code ?>
 				<?Cardinality 0..1?>
 				<?CodeList ISO3166?>
-				<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+				<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 
+					Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to 
+					the alpha-2 representation. ?>
 			</cbc:IdentificationCode>
 		</cac:FinalDestinationCountry>
+		
 		<cac:DeliveryTerms>
 			<?Name Delivery terms ?>
-			<?Description The conditions agreed upon between a seller and a buyer with regard to the delivery of goods and/or services (e.g., CIF, FOB, or EXW from the INCOTERMS Terms of Delivery). ?>
+			<?Description The conditions agreed upon between a seller and a buyer with regard to the delivery of goods and/or services 
+				(e.g., CIF, FOB, or EXW from the INCOTERMS Terms of Delivery). ?>
 			<?Cardinality 0..1?>
 			<cbc:ID>DAP
 				<?Name Delivery terms identification ?>
@@ -1250,9 +1328,11 @@
 				</cbc:Name>
 			</cac:DeliveryLocation>
 		</cac:DeliveryTerms>
+		
 		<cac:PaymentTerms>
 			<?Name Payment terms ?>
-			<?Description The terms of payment between the parties (such as logistics service client, logistics service provider) in a transaction as related to the reqested transport service. ?>
+			<?Description The terms of payment between the parties (such as logistics service client, logistics service provider) in a 
+				transaction as related to the reqested transport service. ?>
 			<?Cardinality 0..1?>
 			<cbc:ID>DAP
 				<?Name Payment terms identification ?>
@@ -1267,9 +1347,12 @@
 				<?Rule PEPPOL-T123-R010?>
 			</cbc:Note>
 		</cac:PaymentTerms>
+		
 		<cac:FreightAllowanceCharge>
 			<?Name Freight Allowance Charge ?>
-			<?Description A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the contract of carriage for this consignment. In addition to transport costs, this may include such elements as packing, documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.?>
+			<?Description A cost incurred by the shipper in moving goods, by whatever means, from one place to another under the terms of the 
+				contract of carriage for this consignment. In addition to transport costs, this may include such elements as packing, 
+				documentation, loading, unloading, and insurance to the extent that they relate to the freight costs.?>
 			<?Cardinality 0..n?>
 			<cbc:ChargeIndicator>true
 				<?Name ChargeIndication ?>
@@ -1289,6 +1372,7 @@
 				<?Cardinality 1..1?>			
 			</cbc:Amount>
 		</cac:FreightAllowanceCharge>
+		
 		<cac:MainCarriageShipmentStage>
 			<?Name Main carriage shipment stage ?>
 			<?Description The shipment stage during main carriage. ?>
@@ -1301,9 +1385,11 @@
 			</cbc:TransportModeCode>
 			<cbc:HazardousRiskIndicator>false
 				<?Name Hazardous risk indicator ?>
-				<?Description An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+				<?Description An indication that the transported goods in this consignment are subject to an international regulation 
+					concerning the carriage of dangerous goods (true) or not (false). ?>
 				<?Cardinality 0..1?>
 			</cbc:HazardousRiskIndicator>
+			
 			<cac:RequestedDepartureTransportEvent>
 				<?Name Requested departure transport event ?>
 				<?Description The departure requested by the party requesting a transportation service. ?>
@@ -1313,6 +1399,7 @@
 					<?Description An identifier for this departure transport event within an agreed event identification scheme. ?>
 					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
+				
 				<cac:Location>
 					<?Name Shipment departure location ?>
 					<?Description The location where the departure of this shipment stage takes place. ?>
@@ -1342,7 +1429,8 @@
 						<cbc:AdditionalStreetName>Purchasing
 						<?Name Address line 2 ?>
 						<?Cardinality 0..1?>
-						<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
+						<?Description An additional address line in a postal address that can be used to give further details supplementing 
+							the main line. Common use are secondary house number in a complex or in a building. ?>
 					</cbc:AdditionalStreetName>
 						<cbc:CityName>Bridgtow
 						<?Name City ?>
@@ -1352,7 +1440,8 @@
 						<cbc:PostalZone>ZZ99 1ZZ
 						<?Name Post code ?>
 						<?Cardinality 0..1?>
-						<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+						<?Description The identifier for an addressable group of properties according to the relevant national postal service, 
+							such as a ZIP code or Post Code. ?>
 					</cbc:PostalZone>
 						<cbc:CountrySubentity>Avon
 						<?Name Country subdivision ?>
@@ -1365,7 +1454,8 @@
 							<cbc:Line>3rd Floor, Room 5
 							<?Name Address line 3 ?>
 							<?Cardinality 1..1?>
-							<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
+							<?Description An additional address line in an address that can be used to give further details supplementing the 
+								main line. ?>
 						</cbc:Line>
 						</cac:AddressLine>
 						<cac:Country>
@@ -1375,7 +1465,9 @@
 								<?Name Country code ?>
 								<?Cardinality 1..1?>
 								<?CodeList ISO3166?>
-								<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+								<?Description A code that identifies the country. The lists of valid countries are registered with the 
+									ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
+									Codes must be according to the alpha-2 representation. ?>
 							</cbc:IdentificationCode>
 						</cac:Country>
 						<cac:LocationCoordinate>
@@ -1417,6 +1509,7 @@
 						</cac:LocationCoordinate>
 					</cac:Address>
 				</cac:Location>
+				
 				<cac:Period>
 					<?Name Period ?>
 					<?Description The period within the departure of this transport event takes place. ?>
@@ -1453,6 +1546,7 @@
 					</cbc:EndTime>
 				</cac:Period>
 			</cac:RequestedDepartureTransportEvent>
+			
 			<cac:RequestedArrivalTransportEvent>
 				<?Name Requested arrival transport event ?>
 				<?Description The arrival requested by the party requesting a transportation service. ?>
@@ -1462,6 +1556,7 @@
 					<?Description An identifier for this arrival transport event within an agreed event identification scheme. ?>
 					<?Cardinality 0..1?>
 				</cbc:IdentificationID>
+				
 				<cac:Location>
 					<?Name Arrival location ?>
 					<?Description The location where the arrival takes place.?>
@@ -1495,7 +1590,8 @@
 						</cbc:CityName>
 						<cbc:PostalZone>01530
 							<?Name Post code ?>
-							<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code. ?>
+							<?Description The identifier for an addressable group of properties according to the relevant national postal service, 
+								such as a ZIP code or Post Code. ?>
 							<?Cardinality 0..1?>
 						</cbc:PostalZone>
 						<cac:Country>
@@ -1505,11 +1601,14 @@
 								<?Name Country code ?>
 								<?Cardinality 1..1?>
 								<?CodeList ISO3166?>
-								<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
+								<?Description A code that identifies the country. The lists of valid countries are registered with the 
+									ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
+									Codes must be according to the alpha-2 representation. ?>
 							</cbc:IdentificationCode>
 						</cac:Country>
 					</cac:Address>
 				</cac:Location>
+				
 				<cac:Period>
 					<?Name Period ?>
 					<?Description The period within the departure of this transport event takes place. ?>
@@ -1547,21 +1646,23 @@
 				</cac:Period>
 			</cac:RequestedArrivalTransportEvent>
 		</cac:MainCarriageShipmentStage>
+		
 		<cac:TransportHandlingUnit>
 			<?Name Transport handling unit ?>
 			<?Description Used to specify how the goods is packed. ?>
 			<?Cardinality 0..n?>
 			<cbc:ID schemeID="SSCC">173500538500000016
 				<?Name Identifier transport handling unit ?>
-				<?Description The Transport Handling Unit is identified with a Serial Shipping Container Code (SSCC). The GS1 identification key used to 
-					identify logistics units. The key comprises an extension digit, GS1 Company Prefix, serial reference and check digit. ?>
+				<?Description The Transport Handling Unit is identified with a Serial Shipping Container Code (SSCC). The GS1 identification key 
+					used to identify logistics units. The key comprises an extension digit, GS1 Company Prefix, serial reference and check digit. ?>
 				<?Cardinality 1..1?>
 				<?schemeID-usage Optional?>
 				<?schemeID-CodeList TransportHandlingUnitIDType?>
 			</cbc:ID>
 			<cbc:TransportHandlingUnitTypeCode>AG
 				<?Name Handling unit type code ?>
-				<?Description Type of Transport Handling Unit. Use UN/ECE Recommendation 21 with addition of the codes used by "Retursystem Byggpall". ?>
+				<?Description Type of Transport Handling Unit. Use UN/ECE Recommendation 21 with addition of the codes used by 
+					"Retursystem Byggpall". ?>
 				<?CodeList UNECERec21?>
 				<?Cardinality 1..1?>				
 				<?name-Description Textual description of the transport handling unit type code. ?>
@@ -1581,7 +1682,8 @@
 			</cbc:HandlingInstructions>
 			<cbc:HazardousRiskIndicator>false
 				<?Name Handling unit hazardous indicator ?>
-				<?Description An indicator that the materials contained in this transport handling unit are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+				<?Description An indicator that the materials contained in this transport handling unit are subject to an international 
+					regulation concerning the carriage of dangerous goods (true) or not (false). ?>
 				<?Cardinality 0..1?>
 			</cbc:HazardousRiskIndicator>
 			<cbc:ShippingMarks>Keep dry
@@ -1589,6 +1691,7 @@
 				<?Description Free-form description of the marks and numbers on this transport handling unit. ?>
 				<?Cardinality 0..1?>
 			</cbc:ShippingMarks>
+			
 			<cac:TransportEquipment>
 				<?Name Transport equipment ?>
 				<?Description Used to specify Transport Equipment details associated with this Transport Handling Unit. ?>
@@ -1606,7 +1709,8 @@
 				</cbc:TransportEquipmentTypeCode>
 				<cbc:SizeTypeCode>10
 					<?Name Size type code ?>
-					<?Description A code signifying the size and type of this piece of piece of transport equipment. When the piece of transport equipment is a shipping container, it is recommended to use ContainerSizeTypeCode for validation. ?>
+					<?Description A code signifying the size and type of this piece of piece of transport equipment. When the piece of transport 
+						equipment is a shipping container, it is recommended to use ContainerSizeTypeCode for validation. ?>
 					<?CodeList TRED8155?>
 					<?Cardinality 0..1?>
 				</cbc:SizeTypeCode>
@@ -1626,6 +1730,7 @@
 					<?Cardinality 0..1?>
 				</cbc:PowerIndicator>
 			</cac:TransportEquipment>
+			
 			<cac:MeasurementDimension>
 				<?Name Measurement dimension ?>
 				<?Description Used to specify any measurement of the Transport Handling Unit. ?>
@@ -1644,6 +1749,7 @@
 					<?unitCode-CodeList UNECERec20?>
 				</cbc:Measure>
 			</cac:MeasurementDimension>
+			
 			<cac:MinimumTemperature>
 				<?Name Minimum temperature ?>
 				<?Description Used to specify the minimal temperature for the transport handling unit under the transport. ?>
@@ -1678,6 +1784,7 @@
 					<?unitCode-Name Measure unit of measure ?>
 				</cbc:Measure>
 			</cac:MaximumTemperature>
+			
 			<cac:GoodsItem>
 				<?Name Goods item ?>
 				<?Description A Goods item contained in the transport handling unit.?>
@@ -1694,9 +1801,11 @@
 				</cbc:Description>
 				<cbc:HazardousRiskIndicator>false
 					<?Name Hazardous risk indicator ?>
-					<?Description An indication that the transported goods item is subject to an international regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+					<?Description An indication that the transported goods item is subject to an international regulation concerning the 
+						carriage of dangerous goods (true) or not (false). ?>
 					<?Cardinality 0..1?>
 				</cbc:HazardousRiskIndicator>
+				
 				<cac:Item>
 					<?Name Item ?>
 					<?Description Description of the product beeing transported. ?>
@@ -1718,6 +1827,7 @@
 							<?Cardinality 1..1?>
 						</cbc:ItemClassificationCode>
 					</cac:CommodityClassification>
+					
 					<cac:HazardousItem>
 						<?Name Hazardous item information?>
 						<?Description Contains information on the Hazardous item. ?>
@@ -1755,7 +1865,9 @@
 						</cbc:HazardousCategoryCode>
 						<cbc:HazardClassID>Code
 							<?Name Haszardous hazard class Identifier?>
-							<?Description dentifies a hazard class applicable to dangerous goods as defined by the relevant regulation authority, such as the IMDG Class Number of the SOLAS Convention ofIMO and the ADR/RID Class Number for the road/rail environment. ?>
+							<?Description dentifies a hazard class applicable to dangerous goods as defined by the relevant regulation authority, 
+								such as the IMDG Class Number of the SOLAS Convention ofIMO and the ADR/RID Class Number for the road/rail 
+								environment. ?>
 							<?Cardinality 0..1?>
 						</cbc:HazardClassID>
 						<cbc:NetWeightMeasure unitCode="KGM">123
@@ -1782,13 +1894,15 @@
 							<?Cardinality 0..n?>
 							<cbc:PackingCriteriaCode>123
 								<?Name Packing Criteria Code ?>
-								<?Description A code signifying the packaging requirement for transportation of the hazardous goods as assigned by IATA, IMDB, ADR, RID etc. ?>
+								<?Description A code signifying the packaging requirement for transportation of the hazardous goods as assigned by 
+									IATA, IMDB, ADR, RID etc. ?>
 								<?Cardinality 1..1?>
 							</cbc:PackingCriteriaCode>
 						</cac:HazardousGoodsTransit>
 						<cac:EmergencyTemperature>
 							<?Name Emergency Temperature ?>
-							<?Description The threshold temperature at which emergency procedures apply in the handling of temperature-controlled goods. ?>
+							<?Description The threshold temperature at which emergency procedures apply in the handling of temperature-controlled 
+								goods. ?>
 							<?Cardinality 0..1?>
 							<cbc:AttributeID>ABC
 								<?Name Attribute ID ?>
