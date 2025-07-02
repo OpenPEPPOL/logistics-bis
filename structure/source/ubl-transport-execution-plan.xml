@@ -1018,18 +1018,29 @@
 
 		<cac:CustomsDeclaration>
 			<?Name Customs Declaration?>
-			<?Descrition A class describing identifiers or references relating to customs procedures. ?>
+			<?Description A class describing identifiers or references relating to customs procedures. ?>
 			<?Cardinality 0..1?>
 			<cbc:ID>CD-765897
 				<?Name Identity?>
-				<?Descrition An identifier associated with customs related procedures. ?>
+				<?Description An identifier associated with customs related procedures. ?>
 				<?Cardinality 1..1?>
 			</cbc:ID>
 			<cbc:FunctionCode>CDH
 				<?Name Function Code?>
-				<?Descrition A code describing the function of this customs declaration. ?>
+				<?Description A code describing the function of this customs declaration. ?>
 				<?Cardinality 0..1?>
 			</cbc:FunctionCode>
+			
+			<cac:ValidityPeriod>
+				<?Name Validity Period?>
+				<?Description The period during which this customs declaration is valid. ?>
+				<?Cardinality 0..1?>
+				<StartDate>2025-07-01
+					<?Name Start Date?>
+					<?Description The first date of the period. ?>
+					<?Cardinality 1..1?>
+				</StartDate>
+			</cac:ValidityPeriod>
 
 			<cac:CustomsParty>
 				<?Name Customs party ?>
@@ -2303,7 +2314,7 @@
 			<cac:Location>
 				<?Name Location of the event ?>
 				<?Description The location where the event takes place.?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:ID schemeID="0088">5790000435951
 					<?Name Identity of the  event location ?>
 					<?Description Identifies the event location. ?>
@@ -2350,6 +2361,8 @@
 					</cbc:CountrySubentity>
 					<cac:AddressLine>
 						<?Name Address line ?>
+						<?Description An additional address line in an address that can be used to give further details supplementing the 
+								main line. ?>
 						<?Cardinality 0..1?>
 						<cbc:Line>3rd Floor, Room 5
 							<?Name Address line 3 ?>
@@ -2360,6 +2373,7 @@
 					</cac:AddressLine>
 					<cac:Country>
 						<?Name Country ?>
+						<?Description Country code of the Location. ?>
 						<?Cardinality 0..1?>
 						<cbc:IdentificationCode>DK
 							<?Name Country code ?>
