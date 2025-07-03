@@ -15,13 +15,17 @@ A Transport Execution Plan may also be forwarded to a Freight Forwarder or a Car
 == Business processes in scope
 The processes covered by this profile are:
 
-* The *Transport Execution Plan Request* is sent by the Transport User to request confirmation that the Transport Service Provider can provide the required service and confirm a price for the service.
+* The *Transport Execution Plan Request* is sent by the Transport User to request a transportation service. 
 
-* The *Transport Execution Plan* is sent by the Transport Service Provider about the despatch and required delivery service for the goods being sent. Additionally, it can convey details about the goods for cross checking with the order and ultimately the Transport Execution Plan is used for declaring how the despatched goods are to be transported and how they are packed.
+* The *Application Response* is sent by the Transport Service Provider (typically) to confirm or reject that the transportation service can be delivered.
 
-* The *Transport Execution Plan* may be sent by either the Transport User or the Transport Service Provider to change an existing plan.
+* The *Transportation Status Request* is sent from the Transport service provider or the Transport User with the event status 125 (no status) and a description of a question regarding the transportation status he needs an answer for.
 
-* The *Transport Execution Plan* may be sent by either the Transport User or the Transport Service Provider to cancel an existing plan. A cancellation must be accepted by the opposit part before it is effectuated.
+* The *Transportation Status* is sent fron the opponent (Transport service provider or the Transport User) with the event status 125 (no status) and a description as the answer.
+
+* The *Transport Execution Plan* is sent by the Transport Service Provider about the despatch, required delivery service for the goods being sent or other requested transportation service as a final confimation. Additionally, it can convey details about the goods for cross checking with the order and ultimately the Transport Execution Plan is used for declaring how the despatched goods are to be transported and how they are packed.
+
+
 
 
 The main activities supported by this message are:
