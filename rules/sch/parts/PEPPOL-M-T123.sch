@@ -56,7 +56,6 @@
 	<rule context="ubl:TransportExecutionPlanRequest/cac:Consignment/cac:ConsignorParty">
 		<assert id="PEPPOL-T123-R035" test="cac:PartyName or cac:PartyIdentification" flag="fatal"> [PEPPOL-T123-R035] Party must include either a party name or a party identification.</assert>
 	</rule>
-	
 
 </pattern>
 

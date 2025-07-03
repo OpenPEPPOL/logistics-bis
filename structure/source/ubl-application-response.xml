@@ -1,60 +1,37 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ubl:TransportationStatusRequest
- xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatusRequest-2"
- xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
- xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-	<?DocumentTerm TransportationStatusRequest?>
-	<?Property key="sch:prefix" PEPPOL-T126?>
-	<?Property key="sch:identifier" T126-basic?>
-	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transportation_status_request:1
-		<?Rule PEPPOL-T126-R001?></cbc:CustomizationID>
-	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1
-		<?Name Profile ID?>
-		<?Description Identifies the Peppol profile or business process context in which the transaction appears.?>
-		<?Rule PEPPOL-T126-R002?>
-		<?Cardinality 1..1?>
-	</cbc:ProfileID>
+<?xml version="1.0" encoding="UTF-8"?>
+<ApplicationResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2"
+					 xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+					 xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	<?DocumentTerm ApplicationResponse?>
+	<?Property key="sch:prefix" PEPPOL-T129?>
+	<?Property key="sch:identifier" T129-basic?>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:application_response:1</cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_request_response_and_dialog:1</cbc:ProfileID>
+
 	<cbc:ProfileExecutionID>XZ-4532
 		<?Name Profile Execution ID?>
 		<?Description Identifies an instance of executing a profile, to associate all transactions in a collaboration.?>
 		<?Cardinality 0..1?>
 	</cbc:ProfileExecutionID>
-
-	<cbc:ID>TSR_1</cbc:ID>
-	<cbc:IssueDate>2011-10-06
+	<cbc:ID>DN12345
+		<?Name Document ID?>
+		<?Description Identifies this Application Response.?>
+		<?Cardinality 1..1?>
+	</cbc:ID>
+	<cbc:IssueDate>2021-08-15
 		<?Name Issue Date?>
-		<?Description The date when the Transportation Status Request was issued. Format = "YYYY-MM-DD". ?>
+		<?Description The date when the Application Response was issued. Format = "YYYY-MM-DD". ?>
 		<?Cardinality 1..1?>
 	</cbc:IssueDate>
-	<cbc:IssueTime>09:29:30+02:00
+	<cbc:IssueTime>12:00:00
 		<?Name Issue Time?>
-		<?Description The time when the Transportation Status Request was issued. ?>
-		<?Rule PEPPOL-T123-R018?>
+		<?Description The time when the Application Response was issued. Format = "hh:mm:ss". ?>
 		<?Cardinality 1..1?>
 	</cbc:IssueTime>
-	<cbc:Description>Description
-		<?Name Status Request Description ?>
-		<?Description Description of the Status Request. ?>
-		<?Cardinality 0..1?>
-	</cbc:Description>
-	<cbc:ShippingOrderID schemeID = "ZZZ">KHN23-44044
-		<?Name Shipping Order ID ?>
-		<?Description An identifier (in the form of a reference number) of the Shipping Order or Forwarding Instruction associated with this 
-			shipment. ?>
-		<?Cardinality 1..1?>
-		<?schemeID-usage Optional?>
-	</cbc:ShippingOrderID>
-	<cbc:TransportationStatusTypeCode>3
-		<?Name Transportation Status Type Code?>
-		<?Description The type of status being requested.?>
-		<?Cardinality 1..1?>
-		<?CodeList TransportationStatusTypeCode?>
-		<?listID-usage Optional?>
-	</cbc:TransportationStatusTypeCode>
-	
+
 	<cac:SenderParty>
 		<?Name Sender party ?>
-		<?Description The party sending the Transportation Status Request. ?>
+		<?Description The party sending the Application Response. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0198">41955619
 			<?Name Sender party electronic address ?>
@@ -69,22 +46,22 @@
 			<?Name Sender party identification ?>
 			<?Description An identifier for the sender party as known to the receiver party. ?>
 			<?Cardinality 0..1?>
-			<cbc:ID schemeID="0088"> 7300010000001 	
+			<cbc:ID schemeID="0088">7300010000001
 				<?Name ID ?>
-				<?Cardinality 1..1?>			
+				<?Description An identifier for the sender party as known to the receiver party. ?>
+				<?Cardinality 1..1?>
 				<?schemeID-CodeList ICD?>
-				<?schemeID-usage Optional?>			
-				<?Rule PEPPOL-T126-R031?>
+				<?schemeID-usage Optional?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
 			<?Name Party name ?>
+			<?Description The name of the sender party. ?>
 			<?Cardinality 0..1?>
 			<cbc:Name>Leman
 				<?Name Sender party name?>
 				<?Description The name of the sender party. ?>
 				<?Cardinality 1..1?>
-				<?Rule PEPPOL-T126-R031?>
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
@@ -99,7 +76,7 @@
 			<cbc:AdditionalStreetName>Greve Landsby
 				<?Name Address line 2 ?>
 				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. 
-					Common use are secondary house number in a complex or in a building. ?>				
+					Common use are secondary house number in a complex or in a building. ?>
 				<?Cardinality 0..1?>
 			</cbc:AdditionalStreetName>
 			<cbc:CityName>Greve
@@ -122,17 +99,22 @@
 				<?Name Address line 3 ?>
 				<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
 				<?Cardinality 0..1?>
-				<cbc:Line>Bygning 5</cbc:Line>
+				<cbc:Line>Bygning 5
+					<?Name Address line 3 ?>
+					<?Description An additional address line in an address that can be used to give further details supplementing the main line. ?>
+					<?Cardinality 1..1?>
+				</cbc:Line>
 			</cac:AddressLine>
 			<cac:Country>
 				<?Name Country ?>
+				<?Description Country of the sender party. ?>
 				<cbc:IdentificationCode>DK
 					<?Name Country code ?>
 					<?Cardinality 1..1?>
 					<?CodeList ISO3166?>
-					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance 
-						agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the 
-						alpha-2 representation. ?>
+					<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 
+						Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be 
+						according to the alpha-2 representation. ?>
 				</cbc:IdentificationCode>
 			</cac:Country>
 		</cac:PostalAddress>
@@ -142,7 +124,7 @@
 			<?Cardinality 0..1?>
 			<cbc:CompanyID>GB325456788
 				<?Name Company ID ?>
-				<?Description The sender party value added tax identifer. ?>
+				<?Description The Sender Party Value Added Tax identifer. ?>
 				<?Cardinality 1..1?>
 			</cbc:CompanyID>
 			<cac:TaxScheme>
@@ -157,6 +139,7 @@
 		</cac:PartyTaxScheme>
 		<cac:PartyLegalEntity>
 			<?Name Party legal entity ?>
+			<?Description The official identity, name and address of the Sender Party. ?>
 			<cbc:RegistrationName>Consortial
 				<?Name Sender party name?>
 				<?Description The name of the sender party. ?>
@@ -173,6 +156,7 @@
 			</cbc:CompanyID>
 			<cac:RegistrationAddress>
 				<?Name Legal address ?>
+				<?Description The official address of the party as registered with the relevant fiscal authority. ?>
 				<?Cardinality 0..1?>
 				<cbc:CityName>Farthing
 					<?Name City name ?>
@@ -187,9 +171,7 @@
 						<?Name Country code ?>
 						<?Cardinality 1..1?>
 						<?CodeList ISO3166?>
-						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 
-							Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be 
-							according to the alpha-2 representation. ?>
+						<?Description A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation. ?>
 					</cbc:IdentificationCode>
 				</cac:Country>
 			</cac:RegistrationAddress>
@@ -199,26 +181,26 @@
 			<?Description The contact of the sender party. ?>
 			<?Cardinality 0..1?>
 			<cbc:Name>Mr Sender
-					<?Name Contact name ?>
-					<?Description The contact name. ?>
-					<?Cardinality 0..1?>
-				</cbc:Name>
+				<?Name Contact name ?>
+				<?Description The contact name. ?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
 			<cbc:Telephone>0158 1233714
-					<?Name Contact telephone number ?>
-					<?Description The phone number of the contact. ?>
-					<?Cardinality 0..1?>
-				</cbc:Telephone>
+				<?Name Contact telephone number ?>
+				<?Description The phone number of the contact. ?>
+				<?Cardinality 0..1?>
+			</cbc:Telephone>
 			<cbc:ElectronicMail>sender@consignor-company.co.uk
-					<?Name Contact email address ?>
-					<?Description The electronic mail of the contact. ?>
-					<?Cardinality 0..1?>
+				<?Name Contact email address ?>
+				<?Description The electronic mail of the contact. ?>
+				<?Cardinality 0..1?>
 			</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:SenderParty>
-	
+
 	<cac:ReceiverParty>
 		<?Name Receiver Party ?>
-		<?Description The party receiving the Transportation Status Request. ?>
+		<?Description The party receiving the Application Response. ?>
 		<?Cardinality 1..1?>
 		<cbc:EndpointID schemeID="0198">10154596
 			<?Name Receiver party electronic address ?>
@@ -231,24 +213,24 @@
 		</cbc:EndpointID>
 		<cac:PartyIdentification>
 			<?Name Receiver party identification ?>
-			<?Description An identifier for the sender party as known to the sender party. ?>
+			<?Description An identifier for the receiver party. ?>
 			<?Cardinality 0..1?>
-			<cbc:ID schemeID="0088">7300010000001 		
+			<cbc:ID schemeID="0088">7300010000001
 				<?Name ID?>
-				<?Cardinality 1..1?>					
+				<?Description An identifier for the receiver party as known to the sender party. ?>
+				<?Cardinality 1..1?>
 				<?schemeID-CodeList ICD?>
-				<?schemeID-usage Optional?>			
-				<?Rule PEPPOL-T126-R032?>
+				<?schemeID-usage Optional?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
 			<?Name Party name ?>
+			<?Description The name of the receiver party. ?>
 			<?Cardinality 0..1?>
 			<cbc:Name>DHL Express
 				<?Name Receiver party name ?>
 				<?Description The name of the receiver party. ?>
 				<?Cardinality 1..1?>
-				<?Rule PEPPOL-T126-R032?>
 			</cbc:Name>
 		</cac:PartyName>
 		<cac:PostalAddress>
@@ -263,7 +245,7 @@
 			<cbc:AdditionalStreetName>Indkørsel 5
 				<?Name Address line 2 ?>
 				<?Description An additional address line in a postal address that can be used to give further details supplementing the main line. 
-					Common use are secondary house number in a complex or in a building. ?>				
+					Common use are secondary house number in a complex or in a building. ?>
 				<?Cardinality 0..1?>
 			</cbc:AdditionalStreetName>
 			<cbc:CityName>Vallensbæk Landsby
@@ -292,6 +274,7 @@
 			</cac:AddressLine>
 			<cac:Country>
 				<?Name Country ?>
+				<?Description Country of the receiver party. ?>
 				<?Cardinality 1..1?>
 				<cbc:IdentificationCode>DK
 					<?Name Country code ?>
@@ -308,10 +291,10 @@
 			<?Description The tax information about the receiver party. ?>
 			<?Cardinality 0..1?>
 			<cbc:CompanyID>GB325456788
-					<?Name Company ID ?>
-					<?Description The receiver party value added tax identifer. ?>
-					<?Cardinality 1..1?>
-				</cbc:CompanyID>
+				<?Name Company ID ?>
+				<?Description The Receiver Party Value Added Tax identifer. ?>
+				<?Cardinality 1..1?>
+			</cbc:CompanyID>
 			<cac:TaxScheme>
 				<?Name Tax scheme ?>
 				<?Cardinality 1..1?>
@@ -319,7 +302,7 @@
 					<?Name Tax scheme identifier ?>
 					<?Description Tax scheme identifier. E.g. "VAT" or "GST". ?>
 					<?Cardinality 1..1?>
-					</cbc:ID>
+				</cbc:ID>
 			</cac:TaxScheme>
 		</cac:PartyTaxScheme>
 		<cac:PartyLegalEntity>
@@ -332,16 +315,17 @@
 				<?Cardinality 1..1?>
 			</cbc:RegistrationName>
 			<cbc:CompanyID schemeID="0089">SC234567
-					<?Name Receiver parties legal registration name ?>
-					<?Description The official name of the party as registered with the relevant fiscal authority. ?>
-					<?Cardinality 0..1?>
-					<?schemeID-Name Scheme identifier ?>
-					<?schemeID-Description The identification scheme identifier of the receiver parties legal registration identifier ?>
-					<?schemeID-Usage optional?>
-					<?schemeID-CodeList ICD?>
-				</cbc:CompanyID>
+				<?Name Receiver parties legal registration name ?>
+				<?Description The official name of the party as registered with the relevant fiscal authority. ?>
+				<?Cardinality 0..1?>
+				<?schemeID-Name Scheme identifier ?>
+				<?schemeID-Description The identification scheme identifier of the receiver parties legal registration identifier ?>
+				<?schemeID-Usage optional?>
+				<?schemeID-CodeList ICD?>
+			</cbc:CompanyID>
 			<cac:RegistrationAddress>
 				<?Name Legal address ?>
+				<?Description The official address of the party as registered with the relevant fiscal authority. ?>
 				<?Cardinality 0..1?>
 				<cbc:CityName>Farthing
 					<?Name City name ?>
@@ -376,7 +360,7 @@
 				<?Name Contact telephone number ?>
 				<?Description The phone number of the contact. ?>
 				<?Cardinality 0..1?>
-				</cbc:Telephone>
+			</cbc:Telephone>
 			<cbc:ElectronicMail>msreceiver@tplogistics.co.uk
 				<?Name Contact email address ?>
 				<?Description The electronic mail of the contact. ?>
@@ -384,118 +368,59 @@
 			</cbc:ElectronicMail>
 		</cac:Contact>
 	</cac:ReceiverParty>
-	
-	<cac:TransportExecutionPlanDocumentReference>
-		<?Name Additional document reference?>
-		<?Description Reference to a Transport Execution Plan. ?>
-		<?Cardinality 0..1?>
-		<cbc:ID>7648779
-			<?Name Identity of the reference?>
-			<?Description The reference number of added document?>
-		</cbc:ID>
-		<cbc:IssueDate>2021-09-29
-			<?Name Issue Date?>
-			<?Description The Issue Date when the Transport Execution Plan was issued ?>
-			<?Cardinality 0..1?>
-		</cbc:IssueDate>
-		<cbc:IssueTime>07:49:00+02:00
-			<?Name Issue Time?>
-			<?Description The Issue time when the Transport Execution Plan was issued ?>
-			<?Cardinality 0..1?>
-		</cbc:IssueTime>
-	</cac:TransportExecutionPlanDocumentReference>
-	
-	<cac:Consignment>
-		<?Name Consignment information ?>
-		<?Description An identifiable collection of goods items sent from one party (the Despatch Party) to another party (the Consignee) via 
-			one or more modes of transport.?>
-		<?Cardinality 0..1?>
-		<cbc:ID schemeID="GINC">735005233GS1TRANSPORT000001
-			<?Name Consignment identifier ?>
-			<?Description Id for the consignment, often a number from the Transport Service provider. If this ID is in the GINC format, it should be 
-				indicated in the attribute @schemeID. Use N/A if not applicable.?>
-			<?schemeID-Description Used to indicate that the ID is in the GINC (Global Identification Number for Consignment) format. This number 
-				identifies a consignment, which is a logical grouping of goods (one or more logistics units) transferred to a freight forwarder to be 
-				transported for a specific journey. The consignment number must be allocated by a freight forwarder (or a carrier acting as a
-				freight forwarder) or a consignor, but only if prior agreement of the freight forwarder is given.?>
-			<?schemeID-usage Optional?>
-			<?schemeID-CodeList ConsignmentIDType?>
+
+	<cac:DocumentResponse>
+		<?Name Document Response ?>
+		<?Description A response to a document. ?>
+		<?Cardinality 1..n?>
+		<cac:Response>
+			<?Name Response ?>
+			<?Description A response to the document as a whole. ?>
 			<?Cardinality 1..1?>
-		</cbc:ID>
-		
-		<cac:TransportEvent>
-				<?Name Transport event ?>
-				<?Description A transport event in this consignment a status is requested for.?>
-				<?Cardinality 0..n?>
-			<cbc:IdentificationID>21412312412
-				<?Name Identifier pickup transport event ?>
-				<?Description An identifier for this pickup transport event within an agreed event identification scheme. ?>
-				<?Cardinality 0..1?>
-			</cbc:IdentificationID>
-			<cbc:TransportEventTypeCode>1
-				<?Name Transport Event Type Code ?>
-				<?Description A code specifying the requested transport event type. ?>
-				<?Cardinality 0..1?>
-				<?CodeList TransportEventTypeCode?>
-			</cbc:TransportEventTypeCode>
-		</cac:TransportEvent>
-		
-		<cac:TransportHandlingUnit>
-			<?Name Transport handling unit ?>
-			<?Description A transport handling unit from which a status is requested. ?>
-			<?Cardinality 0..n?>
-			<cbc:ID schemeID="SSCC">173500538500000016
-				<?Name Identifier transport handling unit ?>
-				<?Description The Transport Handling Unit is identified with a Serial Shipping Container Code (SSCC). The GS1 identification key 
-					used to identify logistics units. The key comprises an extension digit, GS1 Company Prefix, serial reference and check digit. ?>
+			<cbc:ResponseCode>RE
+				<?Name Response Code ?>
+				<?Description A code signifying the type of response. ?>
 				<?Cardinality 1..1?>
-				<?schemeID-usage Optional?>
-				<?schemeID-CodeList TransportHandlingUnitIDType?>
+				<?CodeList UNCL4343_T128?>
+			</cbc:ResponseCode>
+			<cbc:Description>Rejected due to incorrect price.
+				<?Name Description ?>
+				<?Description 	Text describing this response. ?>
+				<?Cardinality 0..n?>
+			</cbc:Description>
+		</cac:Response>
+		
+		<cac:DocumentReference>
+			<?Name Document Reference ?>
+			<?Description A reference to the document responded to. ?>
+			<?Cardinality 1..1 ?>
+			<cbc:ID>DN12345
+				<?Name Document ID ?>
+				<?Description The identity of the document responded to. ?>
+				<?Cardinality 1..1 ?>
 			</cbc:ID>
-		</cac:TransportHandlingUnit>
-	</cac:Consignment>
-
-	<cac:DocumentReference>
-		<?Name Document reference?>
-		<?Description Reference to additional documents relevant for this Transportation Status Request. ?>
-		<?Cardinality 0..n?>
-		<cbc:ID>7648779
-			<?Name Identity of the reference?>
-			<?Description The reference number of added document?>
-		</cbc:ID>
-		<cbc:DocumentTypeCode>380 
-			<?Name Document type code?>
-			<?Description The type of reference. Must me part of UNCL1001?>
-			<?Cardinality 0..1?>
-			<?CodeList UNCL1001?>
-		</cbc:DocumentTypeCode>
-		<cbc:DocumentType>Delivery specification
-			<?Name Document type?>
-			<?Description The type of reference that cannot be specified by a code?>
-			<?Cardinality 0..1?>
-		</cbc:DocumentType>
-		<cac:Attachment>
-			<?Name Attachment?>
-			<?Cardinality 0..1?>
-			<?Description Group to describe an attached document. An attachment can refer to an external document or be included with the 
-				document being exchanged.?>
-			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">
-				aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw== 
-				<?Name Embedded binary object?>
+			<cbc:IssueDate>2016-08-15
+				<?Name Issue Date ?>
+				<?Description The Date the document was issued on. ?>
+				<?Cardinality 0..1 ?>
+			</cbc:IssueDate>
+			<cbc:IssueTime>12:00:00
+				<?Name Issue Time ?>
+				<?Description The Time the document was issued on. ?>
+				<?Cardinality 0..1 ?>
+			</cbc:IssueTime>
+			<cbc:DocumentTypeCode>351
+				<?Name Document type code?>
+				<?Description The type of document. Must me part of UNCL1001. At least one of Document Type Code and Document Type must be used. ?>
 				<?Cardinality 0..1?>
-				<?mimeCode-CodeList MimeCode?>
-				<?Description The referenced document can here be inserted as a binary object.?>
-			</cbc:EmbeddedDocumentBinaryObject>
-			<cac:ExternalReference>
-				<?Name External reference?>
-				<?Description A reference to an attached document that is external to the document(s) being exchanged.?>
+				<?CodeList UNCL1001?>
+			</cbc:DocumentTypeCode>
+			<cbc:DocumentType>ASN
+				<?Name Document type?>
+				<?Description The type of document that cannot be specified by a code. At least one of Document Type Code and Document Type must 
+								be used. ?>
 				<?Cardinality 0..1?>
-				<cbc:URI>www.beast.se 
-					<?Name Address to internet resource?>
-					<?Description The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource.?>
-				</cbc:URI>
-			</cac:ExternalReference>
-		</cac:Attachment>
-	</cac:DocumentReference>
-
-</ubl:TransportationStatusRequest>
+			</cbc:DocumentType>
+		</cac:DocumentReference>
+	</cac:DocumentResponse>
+</ApplicationResponse>
