@@ -642,6 +642,15 @@
 			<?Description ID or reference used by the consignor to identify this consignment.?>
 			<?Cardinality 0..1?>			
 		</cbc:ConsignorAssignedID>
+		<cbc:DeclaredCustomsValueAmount currencyId="EUR">900
+			<?Name Declared Customs Value Amount ?>
+			<?Description 	The total declared value for customs purposes of all the goods in this consignment, regardless of whether they 
+							are subject to the same customs procedure, tariff/statistical categorization, country information, or duty regime.?>
+			<?Cardinality 0..1?>
+			<?currencyID-Name Currency identifier?>
+			<?currencyID-Description Currency identifier.?>
+			<?currencyID-CodeList ISO4217?>
+		</cbc:DeclaredCustomsValueAmount>
 		<cbc:GrossWeightMeasure unitCode="KGM">1030
 			<?Name Consignment gross weight ?> 
 			<?Description The gross weight of the consignment as a whole. Must be equal the sum of the gross weight specified for the included 
