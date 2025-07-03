@@ -62,8 +62,13 @@
 		<Path>structure/syntax/ubl-receipt-advice.xml</Path>
 		<Title>Receipt Advice 1.1 (T128)</Title>
 	</Resource>
-  
-    <!-- Rules -->
+	<Resource>
+		<Type>Structure-1</Type>
+		<Path>structure/syntax/ubl-application-response.xml</Path>
+		<Title>Application Response 1.0 (T129)</Title>
+	</Resource>
+
+	<!-- Rules -->
     <Resource>
         <Identifier>common</Identifier>
         <Type>native:Schematron</Type>
@@ -86,7 +91,7 @@
         <Identifier>T123</Identifier>
         <Type>native:Schematron</Type>
         <Path>rules/sch/parts/PEPPOL-M-T123.sch</Path>
-        <Title>Business rules for Transport Execution Plan Request transaction 2.0</Title>
+        <Title>Business rules for Transport Execution Plan Request transaction 1.2</Title>
     </Resource>
     <Resource>
         <Identifier>T124</Identifier>
@@ -118,8 +123,14 @@
 		<Path>rules/sch/parts/PEPPOL-M-T128.sch</Path>
 		<Title>Business rules for Receipt Advice transaction 1.1</Title>
 	</Resource>
+	<Resource>
+		<Identifier>T129</Identifier>
+		<Type>native:Schematron</Type>
+		<Path>rules/sch/parts/PEPPOL-M-T129.sch</Path>
+		<Title>Business rules for Application Response transaction 1.0</Title>
+	</Resource>
 
-    <!-- Code lists -->
+	<!-- Code lists -->
 
     <Resource>
         <Type>CodeList-1</Type>
@@ -341,7 +352,11 @@
 		<Type>Namespace-1</Type>
 		<Path>structure/namespace/ubl-receipt-advice.xml</Path>
 	</Resource>
-    <Resource>
+	<Resource>
+		<Type>Namespace-1</Type>
+		<Path>structure/namespace/ubl-application-response.xml</Path>
+	</Resource>
+	<Resource>
         <Type>Namespace-1</Type>
         <Path>structure/namespace/ubl-invoice.xml</Path>
     </Resource>
