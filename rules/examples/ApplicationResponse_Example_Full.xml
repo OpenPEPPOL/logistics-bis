@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ubl:TransportationStatusRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatusRequest-2"
-                                 xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                                 xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-   <cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transportation_status_request:1</cbc:CustomizationID>
-   <cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1</cbc:ProfileID>
+<ApplicationResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2"
+                     xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                     xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+   <cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:application_response:1</cbc:CustomizationID>
+   <cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_request_response_and_dialog:1</cbc:ProfileID>
    <cbc:ProfileExecutionID>XZ-4532</cbc:ProfileExecutionID>
-   <cbc:ID>TSR_1</cbc:ID>
-   <cbc:IssueDate>2011-10-06</cbc:IssueDate>
-   <cbc:IssueTime>09:29:30+02:00</cbc:IssueTime>
-   <cbc:Description>Description</cbc:Description>
-   <cbc:ShippingOrderID schemeID="ZZZ">KHN23-44044</cbc:ShippingOrderID>
-   <cbc:TransportationStatusTypeCode>3</cbc:TransportationStatusTypeCode>
+   <cbc:ID>DN12345</cbc:ID>
+   <cbc:IssueDate>2021-08-15</cbc:IssueDate>
+   <cbc:IssueTime>12:00:00</cbc:IssueTime>
    <cac:SenderParty>
       <cbc:EndpointID schemeID="0198">41955619</cbc:EndpointID>
       <cac:PartyIdentification>
@@ -97,30 +94,17 @@
          <cbc:ElectronicMail>msreceiver@tplogistics.co.uk</cbc:ElectronicMail>    
       </cac:Contact>  
    </cac:ReceiverParty>
-   <cac:TransportExecutionPlanDocumentReference>
-      <cbc:ID>7648779</cbc:ID>
-      <cbc:IssueDate>2021-09-29</cbc:IssueDate>
-      <cbc:IssueTime>07:49:00+02:00</cbc:IssueTime>  
-   </cac:TransportExecutionPlanDocumentReference>
-   <cac:Consignment>
-      <cbc:ID schemeID="GINC">735005233GS1TRANSPORT000001</cbc:ID>
-      <cac:TransportEvent>
-         <cbc:IdentificationID>21412312412</cbc:IdentificationID>
-         <cbc:TransportEventTypeCode>1</cbc:TransportEventTypeCode>    
-      </cac:TransportEvent>
-      <cac:TransportHandlingUnit>
-         <cbc:ID schemeID="SSCC">173500538500000016</cbc:ID>    
-      </cac:TransportHandlingUnit>  
-   </cac:Consignment>
-   <cac:DocumentReference>
-      <cbc:ID>7648779</cbc:ID>
-      <cbc:DocumentTypeCode>380</cbc:DocumentTypeCode>
-      <cbc:DocumentType>Delivery specification</cbc:DocumentType>
-      <cac:Attachment>
-         <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
-         <cac:ExternalReference>
-            <cbc:URI>www.beast.se</cbc:URI>      
-         </cac:ExternalReference>    
-      </cac:Attachment>  
-   </cac:DocumentReference>
-</ubl:TransportationStatusRequest>
+   <cac:DocumentResponse>
+      <cac:Response>
+         <cbc:ResponseCode>RE</cbc:ResponseCode>
+         <cbc:Description>Rejected due to incorrect price.</cbc:Description>    
+      </cac:Response>
+      <cac:DocumentReference>
+         <cbc:ID>DN12345</cbc:ID>
+         <cbc:IssueDate>2016-08-15</cbc:IssueDate>
+         <cbc:IssueTime>12:00:00</cbc:IssueTime>
+         <cbc:DocumentTypeCode>351</cbc:DocumentTypeCode>
+         <cbc:DocumentType>ASN</cbc:DocumentType>    
+      </cac:DocumentReference>  
+   </cac:DocumentResponse>
+</ApplicationResponse>

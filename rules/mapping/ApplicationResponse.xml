@@ -85,7 +85,7 @@
                <Data ss:Type="String">1..1</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">ubl:TransportationStatusRequest</Data>
+               <Data ss:Type="String">ApplicationResponse</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
@@ -97,7 +97,7 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest</Data>
+               <Data ss:Type="String">/ApplicationResponse</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">0</Data>
@@ -120,10 +120,10 @@
                <Data ss:Type="String">Identifies the specification of content and rules that apply to the transaction.</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">urn:fdc:peppol.eu:logistics:trns:transportation_status_request:1</Data>
+               <Data ss:Type="String">urn:fdc:peppol.eu:logistics:trns:application_response:1</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cbc:CustomizationID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cbc:CustomizationID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">1</Data>
@@ -140,16 +140,16 @@
                <Data ss:Type="String">•  cbc:ProfileID</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Profile ID</Data>
+               <Data ss:Type="String">Business process type identifier</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Identifies the Peppol profile or business process context in which the transaction appears.</Data>
+               <Data ss:Type="String">Identifies the BII profile or business process context in which the transaction appears.</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1</Data>
+               <Data ss:Type="String">urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_request_response_and_dialog:1</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cbc:ProfileID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cbc:ProfileID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">1</Data>
@@ -175,7 +175,7 @@
                <Data ss:Type="String">XZ-4532</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cbc:ProfileExecutionID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cbc:ProfileExecutionID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">1</Data>
@@ -192,16 +192,16 @@
                <Data ss:Type="String">•  cbc:ID</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Document identifier</Data>
+               <Data ss:Type="String">Document ID</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">An transaction instance must contain an identifier. The identifier enables positive referencing the document instance for various purposes including referencing between transactions that are part of the same process.</Data>
+               <Data ss:Type="String">Identifies this Application Response.</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">TSR_1</Data>
+               <Data ss:Type="String">DN12345</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cbc:ID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cbc:ID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">1</Data>
@@ -221,13 +221,13 @@
                <Data ss:Type="String">Issue Date</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The date when the Transportation Status Request was issued. Format = "YYYY-MM-DD".</Data>
+               <Data ss:Type="String">The date when the Application Response was issued. Format = "YYYY-MM-DD".</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">2011-10-06</Data>
+               <Data ss:Type="String">2021-08-15</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cbc:IssueDate</Data>
+               <Data ss:Type="String">/ApplicationResponse/cbc:IssueDate</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">1</Data>
@@ -247,123 +247,19 @@
                <Data ss:Type="String">Issue Time</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The time when the Transportation Status Request was issued.</Data>
+               <Data ss:Type="String">The time when the Application Response was issued. Format = "hh:mm:ss".</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">09:29:30+02:00</Data>
+               <Data ss:Type="String">12:00:00</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cbc:IssueTime</Data>
+               <Data ss:Type="String">/ApplicationResponse/cbc:IssueTime</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">1</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">600</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">0..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  cbc:Description</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Status Request Description </Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Description of the Status Request.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Description</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cbc:Description</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">700</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">1..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  cbc:ShippingOrderID</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Shipping Order ID </Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">An identifier (in the form of a reference number) of the Shipping Order or Forwarding Instruction associated with this shipment.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">KHN23-44044</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cbc:ShippingOrderID</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">800</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">O</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  @schemeID</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String"/>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String"/>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">ZZZ</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cbc:ShippingOrderID/schemeID</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">2</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">900</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">1..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  cbc:TransportationStatusTypeCode</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Transportation Status Type Code</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">The type of status being requested.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">3</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cbc:TransportationStatusTypeCode</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">1000</Data>
             </Cell>
          </Row>
          <Row>
@@ -377,19 +273,19 @@
                <Data ss:Type="String">Sender party </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The party sending the Transportation Status Request.</Data>
+               <Data ss:Type="String">The party sending the Application Response.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">1</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">1100</Data>
+               <Data ss:Type="Number">700</Data>
             </Cell>
          </Row>
          <Row>
@@ -409,13 +305,13 @@
                <Data ss:Type="String">41955619</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cbc:EndpointID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cbc:EndpointID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">1200</Data>
+               <Data ss:Type="Number">800</Data>
             </Cell>
          </Row>
          <Row>
@@ -435,13 +331,13 @@
                <Data ss:Type="String">0198</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cbc:EndpointID/schemeID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cbc:EndpointID/schemeID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">1300</Data>
+               <Data ss:Type="Number">900</Data>
             </Cell>
          </Row>
          <Row>
@@ -461,13 +357,13 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyIdentification</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyIdentification</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">1400</Data>
+               <Data ss:Type="Number">1000</Data>
             </Cell>
          </Row>
          <Row>
@@ -481,19 +377,19 @@
                <Data ss:Type="String">ID </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">An identifier for the sender party as known to the receiver party.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">7300010000001</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyIdentification/cbc:ID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyIdentification/cbc:ID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">1500</Data>
+               <Data ss:Type="Number">1100</Data>
             </Cell>
          </Row>
          <Row>
@@ -513,13 +409,13 @@
                <Data ss:Type="String">0088</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyIdentification/cbc:ID/schemeID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyIdentification/cbc:ID/schemeID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">1600</Data>
+               <Data ss:Type="Number">1200</Data>
             </Cell>
          </Row>
          <Row>
@@ -533,19 +429,19 @@
                <Data ss:Type="String">Party name </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">The name of the sender party.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyName</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyName</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">1700</Data>
+               <Data ss:Type="Number">1300</Data>
             </Cell>
          </Row>
          <Row>
@@ -565,13 +461,13 @@
                <Data ss:Type="String">Leman</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyName/cbc:Name</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyName/cbc:Name</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">1800</Data>
+               <Data ss:Type="Number">1400</Data>
             </Cell>
          </Row>
          <Row>
@@ -591,13 +487,13 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PostalAddress</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PostalAddress</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">1900</Data>
+               <Data ss:Type="Number">1500</Data>
             </Cell>
          </Row>
          <Row>
@@ -617,13 +513,13 @@
                <Data ss:Type="String">Ventrupvej 6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PostalAddress/cbc:StreetName</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PostalAddress/cbc:StreetName</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">2000</Data>
+               <Data ss:Type="Number">1600</Data>
             </Cell>
          </Row>
          <Row>
@@ -643,13 +539,13 @@
                <Data ss:Type="String">Greve Landsby</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PostalAddress/cbc:AdditionalStreetName</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PostalAddress/cbc:AdditionalStreetName</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">2100</Data>
+               <Data ss:Type="Number">1700</Data>
             </Cell>
          </Row>
          <Row>
@@ -669,13 +565,13 @@
                <Data ss:Type="String">Greve</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PostalAddress/cbc:CityName</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PostalAddress/cbc:CityName</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">2200</Data>
+               <Data ss:Type="Number">1800</Data>
             </Cell>
          </Row>
          <Row>
@@ -695,13 +591,13 @@
                <Data ss:Type="String">2670</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PostalAddress/cbc:PostalZone</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PostalAddress/cbc:PostalZone</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">2300</Data>
+               <Data ss:Type="Number">1900</Data>
             </Cell>
          </Row>
          <Row>
@@ -721,13 +617,13 @@
                <Data ss:Type="String">Region Sjælland</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PostalAddress/cbc:CountrySubentity</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PostalAddress/cbc:CountrySubentity</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">2400</Data>
+               <Data ss:Type="Number">2000</Data>
             </Cell>
          </Row>
          <Row>
@@ -747,13 +643,13 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PostalAddress/cac:AddressLine</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PostalAddress/cac:AddressLine</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">2500</Data>
+               <Data ss:Type="Number">2100</Data>
             </Cell>
          </Row>
          <Row>
@@ -764,22 +660,22 @@
                <Data ss:Type="String">•  •  •  •  cbc:Line</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Address line 3 </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">An additional address line in an address that can be used to give further details supplementing the main line.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">Bygning 5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PostalAddress/cac:AddressLine/cbc:Line</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PostalAddress/cac:AddressLine/cbc:Line</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">2600</Data>
+               <Data ss:Type="Number">2200</Data>
             </Cell>
          </Row>
          <Row>
@@ -793,19 +689,19 @@
                <Data ss:Type="String">Country </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Country of the sender party.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PostalAddress/cac:Country</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PostalAddress/cac:Country</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">2700</Data>
+               <Data ss:Type="Number">2300</Data>
             </Cell>
          </Row>
          <Row>
@@ -825,13 +721,13 @@
                <Data ss:Type="String">DK</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">2800</Data>
+               <Data ss:Type="Number">2400</Data>
             </Cell>
          </Row>
          <Row>
@@ -851,13 +747,13 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyTaxScheme</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyTaxScheme</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">2900</Data>
+               <Data ss:Type="Number">2500</Data>
             </Cell>
          </Row>
          <Row>
@@ -871,19 +767,19 @@
                <Data ss:Type="String">Company ID </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The sender party value added tax identifer.</Data>
+               <Data ss:Type="String">The Sender Party Value Added Tax identifer.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">GB325456788</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyTaxScheme/cbc:CompanyID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyTaxScheme/cbc:CompanyID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">3000</Data>
+               <Data ss:Type="Number">2600</Data>
             </Cell>
          </Row>
          <Row>
@@ -903,13 +799,13 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyTaxScheme/cac:TaxScheme</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyTaxScheme/cac:TaxScheme</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">3100</Data>
+               <Data ss:Type="Number">2700</Data>
             </Cell>
          </Row>
          <Row>
@@ -929,13 +825,13 @@
                <Data ss:Type="String">VAT</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">3200</Data>
+               <Data ss:Type="Number">2800</Data>
             </Cell>
          </Row>
          <Row>
@@ -949,19 +845,19 @@
                <Data ss:Type="String">Party legal entity </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">The official identity, name and address of the Sender Party.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyLegalEntity</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyLegalEntity</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">3300</Data>
+               <Data ss:Type="Number">2900</Data>
             </Cell>
          </Row>
          <Row>
@@ -981,13 +877,13 @@
                <Data ss:Type="String">Consortial</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyLegalEntity/cbc:RegistrationName</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyLegalEntity/cbc:RegistrationName</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">3400</Data>
+               <Data ss:Type="Number">3000</Data>
             </Cell>
          </Row>
          <Row>
@@ -1007,13 +903,13 @@
                <Data ss:Type="String">SC234567</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyLegalEntity/cbc:CompanyID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyLegalEntity/cbc:CompanyID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">3500</Data>
+               <Data ss:Type="Number">3100</Data>
             </Cell>
          </Row>
          <Row>
@@ -1033,13 +929,13 @@
                <Data ss:Type="String">0089</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyLegalEntity/cbc:CompanyID/schemeID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyLegalEntity/cbc:CompanyID/schemeID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">3600</Data>
+               <Data ss:Type="Number">3200</Data>
             </Cell>
          </Row>
          <Row>
@@ -1053,19 +949,19 @@
                <Data ss:Type="String">Legal address </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">The official address of the party as registered with the relevant fiscal authority.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyLegalEntity/cac:RegistrationAddress</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyLegalEntity/cac:RegistrationAddress</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">3700</Data>
+               <Data ss:Type="Number">3300</Data>
             </Cell>
          </Row>
          <Row>
@@ -1085,13 +981,13 @@
                <Data ss:Type="String">Farthing</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">3800</Data>
+               <Data ss:Type="Number">3400</Data>
             </Cell>
          </Row>
          <Row>
@@ -1111,13 +1007,13 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">3900</Data>
+               <Data ss:Type="Number">3500</Data>
             </Cell>
          </Row>
          <Row>
@@ -1137,13 +1033,13 @@
                <Data ss:Type="String">GB</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">4000</Data>
+               <Data ss:Type="Number">3600</Data>
             </Cell>
          </Row>
          <Row>
@@ -1163,13 +1059,13 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:Contact</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:Contact</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">4100</Data>
+               <Data ss:Type="Number">3700</Data>
             </Cell>
          </Row>
          <Row>
@@ -1189,13 +1085,13 @@
                <Data ss:Type="String">Mr Sender</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:Contact/cbc:Name</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:Contact/cbc:Name</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">4200</Data>
+               <Data ss:Type="Number">3800</Data>
             </Cell>
          </Row>
          <Row>
@@ -1215,13 +1111,13 @@
                <Data ss:Type="String">0158 1233714</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:Contact/cbc:Telephone</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:Contact/cbc:Telephone</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">4300</Data>
+               <Data ss:Type="Number">3900</Data>
             </Cell>
          </Row>
          <Row>
@@ -1241,13 +1137,13 @@
                <Data ss:Type="String">sender@consignor-company.co.uk</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:SenderParty/cac:Contact/cbc:ElectronicMail</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:SenderParty/cac:Contact/cbc:ElectronicMail</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">4400</Data>
+               <Data ss:Type="Number">4000</Data>
             </Cell>
          </Row>
          <Row>
@@ -1261,19 +1157,19 @@
                <Data ss:Type="String">Receiver Party </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The party receiving the Transportation Status Request.</Data>
+               <Data ss:Type="String">The party receiving the Application Response.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">1</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">4500</Data>
+               <Data ss:Type="Number">4100</Data>
             </Cell>
          </Row>
          <Row>
@@ -1293,13 +1189,13 @@
                <Data ss:Type="String">10154596</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cbc:EndpointID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cbc:EndpointID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">4600</Data>
+               <Data ss:Type="Number">4200</Data>
             </Cell>
          </Row>
          <Row>
@@ -1319,13 +1215,13 @@
                <Data ss:Type="String">0198</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cbc:EndpointID/schemeID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cbc:EndpointID/schemeID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">4700</Data>
+               <Data ss:Type="Number">4300</Data>
             </Cell>
          </Row>
          <Row>
@@ -1339,19 +1235,19 @@
                <Data ss:Type="String">Receiver party identification </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">An identifier for the sender party as known to the sender party.</Data>
+               <Data ss:Type="String">An identifier for the receiver party.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyIdentification</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyIdentification</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">4800</Data>
+               <Data ss:Type="Number">4400</Data>
             </Cell>
          </Row>
          <Row>
@@ -1365,19 +1261,19 @@
                <Data ss:Type="String">ID</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">An identifier for the receiver party as known to the sender party.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">7300010000001</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyIdentification/cbc:ID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyIdentification/cbc:ID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">4900</Data>
+               <Data ss:Type="Number">4500</Data>
             </Cell>
          </Row>
          <Row>
@@ -1397,13 +1293,13 @@
                <Data ss:Type="String">0088</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyIdentification/cbc:ID/schemeID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyIdentification/cbc:ID/schemeID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">5000</Data>
+               <Data ss:Type="Number">4600</Data>
             </Cell>
          </Row>
          <Row>
@@ -1417,19 +1313,19 @@
                <Data ss:Type="String">Party name </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">The name of the receiver party.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyName</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyName</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">5100</Data>
+               <Data ss:Type="Number">4700</Data>
             </Cell>
          </Row>
          <Row>
@@ -1449,13 +1345,13 @@
                <Data ss:Type="String">DHL Express</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyName/cbc:Name</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyName/cbc:Name</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">5200</Data>
+               <Data ss:Type="Number">4800</Data>
             </Cell>
          </Row>
          <Row>
@@ -1475,13 +1371,13 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PostalAddress</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PostalAddress</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">5300</Data>
+               <Data ss:Type="Number">4900</Data>
             </Cell>
          </Row>
          <Row>
@@ -1501,13 +1397,13 @@
                <Data ss:Type="String">Jydekrogen 14</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PostalAddress/cbc:StreetName</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PostalAddress/cbc:StreetName</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">5400</Data>
+               <Data ss:Type="Number">5000</Data>
             </Cell>
          </Row>
          <Row>
@@ -1527,13 +1423,13 @@
                <Data ss:Type="String">Indkørsel 5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PostalAddress/cbc:AdditionalStreetName</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PostalAddress/cbc:AdditionalStreetName</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">5500</Data>
+               <Data ss:Type="Number">5100</Data>
             </Cell>
          </Row>
          <Row>
@@ -1553,13 +1449,13 @@
                <Data ss:Type="String">Vallensbæk Landsby</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PostalAddress/cbc:CityName</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PostalAddress/cbc:CityName</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">5600</Data>
+               <Data ss:Type="Number">5200</Data>
             </Cell>
          </Row>
          <Row>
@@ -1579,13 +1475,13 @@
                <Data ss:Type="String">2625</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PostalAddress/cbc:PostalZone</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PostalAddress/cbc:PostalZone</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">5700</Data>
+               <Data ss:Type="Number">5300</Data>
             </Cell>
          </Row>
          <Row>
@@ -1605,13 +1501,13 @@
                <Data ss:Type="String">Region Hovedstaden</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PostalAddress/cbc:CountrySubentity</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PostalAddress/cbc:CountrySubentity</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">5800</Data>
+               <Data ss:Type="Number">5400</Data>
             </Cell>
          </Row>
          <Row>
@@ -1631,13 +1527,13 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PostalAddress/cac:AddressLine</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PostalAddress/cac:AddressLine</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">5900</Data>
+               <Data ss:Type="Number">5500</Data>
             </Cell>
          </Row>
          <Row>
@@ -1657,13 +1553,13 @@
                <Data ss:Type="String">Bygning 5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PostalAddress/cac:AddressLine/cbc:Line</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PostalAddress/cac:AddressLine/cbc:Line</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">6000</Data>
+               <Data ss:Type="Number">5600</Data>
             </Cell>
          </Row>
          <Row>
@@ -1677,19 +1573,19 @@
                <Data ss:Type="String">Country </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Country of the receiver party.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PostalAddress/cac:Country</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PostalAddress/cac:Country</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">6100</Data>
+               <Data ss:Type="Number">5700</Data>
             </Cell>
          </Row>
          <Row>
@@ -1709,13 +1605,13 @@
                <Data ss:Type="String">DK</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">6200</Data>
+               <Data ss:Type="Number">5800</Data>
             </Cell>
          </Row>
          <Row>
@@ -1735,13 +1631,13 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyTaxScheme</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyTaxScheme</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">6300</Data>
+               <Data ss:Type="Number">5900</Data>
             </Cell>
          </Row>
          <Row>
@@ -1755,19 +1651,19 @@
                <Data ss:Type="String">Company ID </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The receiver party value added tax identifer.</Data>
+               <Data ss:Type="String">The Receiver Party Value Added Tax identifer.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">GB325456788</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyTaxScheme/cbc:CompanyID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyTaxScheme/cbc:CompanyID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">6400</Data>
+               <Data ss:Type="Number">6000</Data>
             </Cell>
          </Row>
          <Row>
@@ -1787,13 +1683,13 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyTaxScheme/cac:TaxScheme</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyTaxScheme/cac:TaxScheme</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">6500</Data>
+               <Data ss:Type="Number">6100</Data>
             </Cell>
          </Row>
          <Row>
@@ -1813,13 +1709,13 @@
                <Data ss:Type="String">VAT</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">6600</Data>
+               <Data ss:Type="Number">6200</Data>
             </Cell>
          </Row>
          <Row>
@@ -1839,13 +1735,13 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyLegalEntity</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyLegalEntity</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">6700</Data>
+               <Data ss:Type="Number">6300</Data>
             </Cell>
          </Row>
          <Row>
@@ -1865,13 +1761,13 @@
                <Data ss:Type="String">Consortial</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyLegalEntity/cbc:RegistrationName</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyLegalEntity/cbc:RegistrationName</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">6800</Data>
+               <Data ss:Type="Number">6400</Data>
             </Cell>
          </Row>
          <Row>
@@ -1891,13 +1787,13 @@
                <Data ss:Type="String">SC234567</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyLegalEntity/cbc:CompanyID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyLegalEntity/cbc:CompanyID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">6900</Data>
+               <Data ss:Type="Number">6500</Data>
             </Cell>
          </Row>
          <Row>
@@ -1917,13 +1813,13 @@
                <Data ss:Type="String">0089</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyLegalEntity/cbc:CompanyID/schemeID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyLegalEntity/cbc:CompanyID/schemeID</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">7000</Data>
+               <Data ss:Type="Number">6600</Data>
             </Cell>
          </Row>
          <Row>
@@ -1937,19 +1833,19 @@
                <Data ss:Type="String">Legal address </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">The official address of the party as registered with the relevant fiscal authority.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyLegalEntity/cac:RegistrationAddress</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyLegalEntity/cac:RegistrationAddress</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">7100</Data>
+               <Data ss:Type="Number">6700</Data>
             </Cell>
          </Row>
          <Row>
@@ -1969,13 +1865,13 @@
                <Data ss:Type="String">Farthing</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">7200</Data>
+               <Data ss:Type="Number">6800</Data>
             </Cell>
          </Row>
          <Row>
@@ -1995,13 +1891,13 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">7300</Data>
+               <Data ss:Type="Number">6900</Data>
             </Cell>
          </Row>
          <Row>
@@ -2021,13 +1917,13 @@
                <Data ss:Type="String">GB</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">7400</Data>
+               <Data ss:Type="Number">7000</Data>
             </Cell>
          </Row>
          <Row>
@@ -2047,13 +1943,13 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:Contact</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:Contact</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">7500</Data>
+               <Data ss:Type="Number">7100</Data>
             </Cell>
          </Row>
          <Row>
@@ -2073,13 +1969,13 @@
                <Data ss:Type="String">Mrs Receiver</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:Contact/cbc:Name</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:Contact/cbc:Name</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">7600</Data>
+               <Data ss:Type="Number">7200</Data>
             </Cell>
          </Row>
          <Row>
@@ -2099,13 +1995,13 @@
                <Data ss:Type="String">0158 1233714</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:Contact/cbc:Telephone</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:Contact/cbc:Telephone</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">7700</Data>
+               <Data ss:Type="Number">7300</Data>
             </Cell>
          </Row>
          <Row>
@@ -2125,7 +2021,111 @@
                <Data ss:Type="String">msreceiver@tplogistics.co.uk</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:ReceiverParty/cac:Contact/cbc:ElectronicMail</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:ReceiverParty/cac:Contact/cbc:ElectronicMail</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">3</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">7400</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">1..n</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  cac:DocumentResponse</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Document Response </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">A response to a document.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String"/>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ApplicationResponse/cac:DocumentResponse</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">7500</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">1..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  cac:Response</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Response </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">A response to the document as a whole.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String"/>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ApplicationResponse/cac:DocumentResponse/cac:Response</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">2</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">7600</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">1..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  cbc:ResponseCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Response Code </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">A code signifying the type of response.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">RE</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ApplicationResponse/cac:DocumentResponse/cac:Response/cbc:ResponseCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">3</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">7700</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..n</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  cbc:Description</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Description </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Text describing this response.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Rejected due to incorrect price.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ApplicationResponse/cac:DocumentResponse/cac:Response/cbc:Description</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
@@ -2136,25 +2136,25 @@
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">0..1</Data>
+               <Data ss:Type="String">1..1 </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">•  cac:TransportExecutionPlanDocumentReference</Data>
+               <Data ss:Type="String">•  •  cac:DocumentReference</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Additional document reference</Data>
+               <Data ss:Type="String">Document Reference </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Reference to a Transport Execution Plan.</Data>
+               <Data ss:Type="String">A reference to the document responded to.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:TransportExecutionPlanDocumentReference</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:DocumentResponse/cac:DocumentReference</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">1</Data>
+               <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">7900</Data>
@@ -2162,25 +2162,25 @@
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">1..1</Data>
+               <Data ss:Type="String">1..1 </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">•  •  cbc:ID</Data>
+               <Data ss:Type="String">•  •  •  cbc:ID</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Identity of the reference</Data>
+               <Data ss:Type="String">Document ID </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The reference number of added document</Data>
+               <Data ss:Type="String">The identity of the document responded to.</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">7648779</Data>
+               <Data ss:Type="String">DN12345</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:TransportExecutionPlanDocumentReference/cbc:ID</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:DocumentResponse/cac:DocumentReference/cbc:ID</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">2</Data>
+               <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">8000</Data>
@@ -2188,25 +2188,25 @@
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">0..1</Data>
+               <Data ss:Type="String">0..1 </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">•  •  cbc:IssueDate</Data>
+               <Data ss:Type="String">•  •  •  cbc:IssueDate</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Issue Date</Data>
+               <Data ss:Type="String">Issue Date </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The Issue Date when the Transport Execution Plan was issued</Data>
+               <Data ss:Type="String">The Date the document was issued on.</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">2021-09-29</Data>
+               <Data ss:Type="String">2016-08-15</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:TransportExecutionPlanDocumentReference/cbc:IssueDate</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:DocumentResponse/cac:DocumentReference/cbc:IssueDate</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">2</Data>
+               <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">8100</Data>
@@ -2214,25 +2214,25 @@
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">0..1</Data>
+               <Data ss:Type="String">0..1 </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">•  •  cbc:IssueTime</Data>
+               <Data ss:Type="String">•  •  •  cbc:IssueTime</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Issue Time</Data>
+               <Data ss:Type="String">Issue Time </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The Issue time when the Transport Execution Plan was issued</Data>
+               <Data ss:Type="String">The Time the document was issued on.</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">07:49:00+02:00</Data>
+               <Data ss:Type="String">12:00:00</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:TransportExecutionPlanDocumentReference/cbc:IssueTime</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:DocumentResponse/cac:DocumentReference/cbc:IssueTime</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">2</Data>
+               <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">8200</Data>
@@ -2243,22 +2243,22 @@
                <Data ss:Type="String">0..1</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">•  cac:Consignment</Data>
+               <Data ss:Type="String">•  •  •  cbc:DocumentTypeCode</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Consignment information </Data>
+               <Data ss:Type="String">Document type code</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">An identifiable collection of goods items sent from one party (the Despatch Party) to another party (the Consignee) via one or more modes of transport.</Data>
+               <Data ss:Type="String">The type of document. Must me part of UNCL1001. At least one of Document Type Code and Document Type must be used.</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">351</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:Consignment</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:DocumentResponse/cac:DocumentReference/cbc:DocumentTypeCode</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">1</Data>
+               <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">8300</Data>
@@ -2266,470 +2266,28 @@
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">1..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  cbc:ID</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Consignment identifier </Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Id for the consignment, often a number from the Transport Service provider. If this ID is in the GINC format, it should be indicated in the attribute @schemeID. Use N/A if not applicable.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">735005233GS1TRANSPORT000001</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:Consignment/cbc:ID</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">2</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">8400</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">O</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  •  @schemeID</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String"/>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Used to indicate that the ID is in the GINC (Global Identification Number for Consignment) format. This number identifies a consignment, which is a logical grouping of goods (one or more logistics units) transferred to a freight forwarder to be transported for a specific journey. The consignment number must be allocated by a freight forwarder (or a carrier acting as a freight forwarder) or a consignor, but only if prior agreement of the freight forwarder is given.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">GINC</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:Consignment/cbc:ID/schemeID</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">3</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">8500</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">0..n</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  cac:TransportEvent</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Transport event </Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">A transport event in this consignment a status is requested for.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String"/>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:Consignment/cac:TransportEvent</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">2</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">8600</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
                <Data ss:Type="String">0..1</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">•  •  •  cbc:IdentificationID</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Identifier pickup transport event </Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">An identifier for this pickup transport event within an agreed event identification scheme.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">21412312412</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:Consignment/cac:TransportEvent/cbc:IdentificationID</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">3</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">8700</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">0..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  •  cbc:TransportEventTypeCode</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Transport Event Type Code </Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">A code specifying the requested transport event type.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:Consignment/cac:TransportEvent/cbc:TransportEventTypeCode</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">3</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">8800</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">0..n</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  cac:TransportHandlingUnit</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Transport handling unit </Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">A transport handling unit from which a status is requested.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String"/>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:Consignment/cac:TransportHandlingUnit</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">2</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">8900</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">1..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  •  cbc:ID</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Identifier transport handling unit </Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">The Transport Handling Unit is identified with a Serial Shipping Container Code (SSCC). The GS1 identification key used to identify logistics units. The key comprises an extension digit, GS1 Company Prefix, serial reference and check digit.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">173500538500000016</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:Consignment/cac:TransportHandlingUnit/cbc:ID</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">3</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">9000</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">O</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  •  •  @schemeID</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String"/>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String"/>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">SSCC</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:Consignment/cac:TransportHandlingUnit/cbc:ID/schemeID</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">4</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">9100</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">0..n</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  cac:DocumentReference</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Document reference</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Reference to additional documents relevant for this Transportation Status Request.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String"/>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:DocumentReference</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">9200</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">1..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  cbc:ID</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Identity of the reference</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">The reference number of added document</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">7648779</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:DocumentReference/cbc:ID</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">2</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">9300</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">0..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  cbc:DocumentTypeCode</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Document type code</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">The type of reference. Must me part of UNCL1001</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">380</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:DocumentReference/cbc:DocumentTypeCode</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">2</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">9400</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">0..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  cbc:DocumentType</Data>
+               <Data ss:Type="String">•  •  •  cbc:DocumentType</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">Document type</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">The type of reference that cannot be specified by a code</Data>
+               <Data ss:Type="String">The type of document that cannot be specified by a code. At least one of Document Type Code and Document Type must be used.</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Delivery specification</Data>
+               <Data ss:Type="String">ASN</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:DocumentReference/cbc:DocumentType</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">2</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">9500</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">0..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  cac:Attachment</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Attachment</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Group to describe an attached document. An attachment can refer to an external document or be included with the document being exchanged.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String"/>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:DocumentReference/cac:Attachment</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">2</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">9600</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">0..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  •  cbc:EmbeddedDocumentBinaryObject</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Embedded binary object</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">The referenced document can here be inserted as a binary object.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:DocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject</Data>
+               <Data ss:Type="String">/ApplicationResponse/cac:DocumentResponse/cac:DocumentReference/cbc:DocumentType</Data>
             </Cell>
             <Cell>
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">9700</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">M</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  •  •  @mimeCode</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String"/>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String"/>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">application/pdf</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:DocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject/mimeCode</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">4</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">9800</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">M</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  •  •  @filename</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String"/>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String"/>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Hours-spent.pdf</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:DocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject/filename</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">4</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">9900</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">0..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  •  cac:ExternalReference</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">External reference</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">A reference to an attached document that is external to the document(s) being exchanged.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String"/>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:DocumentReference/cac:Attachment/cac:ExternalReference</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">3</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">10000</Data>
-            </Cell>
-         </Row>
-         <Row>
-            <Cell>
-               <Data ss:Type="String">1..1</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">•  •  •  •  cbc:URI</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">Address to internet resource</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource.</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">www.beast.se</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="String">/ubl:TransportationStatusRequest/cac:DocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">4</Data>
-            </Cell>
-            <Cell>
-               <Data ss:Type="Number">10100</Data>
+               <Data ss:Type="Number">8400</Data>
             </Cell>
          </Row>
       </Table>

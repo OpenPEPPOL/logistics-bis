@@ -230,40 +230,42 @@
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cbc:CustomizationID"/>
       <rule context="/ubl:TransportExecutionPlan/cbc:ProfileID"/>
+      <rule context="/ubl:TransportExecutionPlan/cbc:ProfileExecutionID"/>
       <rule context="/ubl:TransportExecutionPlan/cbc:ID"/>
       <rule context="/ubl:TransportExecutionPlan/cbc:IssueDate"/>
       <rule context="/ubl:TransportExecutionPlan/cbc:IssueTime"/>
       <rule context="/ubl:TransportExecutionPlan/cbc:DocumentStatusCode">
          <assert test="(some $code in $clDocumentStatusCode satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B00701">Value MUST be part of code list 'Document status code (openPEPPOL)'.</assert>
+                 id="PEPPOL-T124-B00801">Value MUST be part of code list 'Document status code (openPEPPOL)'.</assert>
       </rule>
+      <rule context="/ubl:TransportExecutionPlan/cbc:Note"/>
       <rule context="/ubl:TransportExecutionPlan/cbc:TransportUserRemarks"/>
       <rule context="/ubl:TransportExecutionPlan/cbc:TransportServiceProviderRemarks"/>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty">
-         <assert test="cbc:EndpointID" flag="fatal" id="PEPPOL-T124-B01001">Element 'cbc:EndpointID' MUST be provided.</assert>
-         <assert test="cac:PartyLegalEntity" flag="fatal" id="PEPPOL-T124-B01002">Element 'cac:PartyLegalEntity' MUST be provided.</assert>
+         <assert test="cbc:EndpointID" flag="fatal" id="PEPPOL-T124-B01201">Element 'cbc:EndpointID' MUST be provided.</assert>
+         <assert test="cac:PartyLegalEntity" flag="fatal" id="PEPPOL-T124-B01202">Element 'cac:PartyLegalEntity' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cbc:EndpointID">
-         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B01101">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B01301">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $cleas satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B01102">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
+                 id="PEPPOL-T124-B01302">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyIdentification">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B01301">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B01501">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyIdentification/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B01401">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B01601">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyName">
-         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B01601">Element 'cbc:Name' MUST be provided.</assert>
+         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B01801">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyName/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PostalAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B01801">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B02001">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PostalAddress/cbc:StreetName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PostalAddress/cbc:AdditionalStreetName"/>
@@ -271,100 +273,100 @@
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PostalAddress/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PostalAddress/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PostalAddress/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B02401">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B02601">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PostalAddress/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PostalAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B02601">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B02801">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B02701">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B02901">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PostalAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B02602">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B02802">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PostalAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B01802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B02002">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyTaxScheme">
-         <assert test="cbc:CompanyID" flag="fatal" id="PEPPOL-T124-B02801">Element 'cbc:CompanyID' MUST be provided.</assert>
-         <assert test="cac:TaxScheme" flag="fatal" id="PEPPOL-T124-B02802">Element 'cac:TaxScheme' MUST be provided.</assert>
+         <assert test="cbc:CompanyID" flag="fatal" id="PEPPOL-T124-B03001">Element 'cbc:CompanyID' MUST be provided.</assert>
+         <assert test="cac:TaxScheme" flag="fatal" id="PEPPOL-T124-B03002">Element 'cac:TaxScheme' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyTaxScheme/cbc:CompanyID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyTaxScheme/cac:TaxScheme">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B03001">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B03201">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyTaxScheme/cac:TaxScheme/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B03002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B03202">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyTaxScheme/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B02803">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B03003">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyLegalEntity">
-         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B03201">Element 'cbc:RegistrationName' MUST be provided.</assert>
+         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B03401">Element 'cbc:RegistrationName' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyLegalEntity/cbc:RegistrationName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyLegalEntity/cbc:CompanyID">
-         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B03401">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B03601">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B03402">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B03602">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyLegalEntity/cac:RegistrationAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B03601">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B03801">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country"/>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B03901">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B04101">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B03801">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B04001">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyLegalEntity/cac:RegistrationAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B03602">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B03802">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:PartyLegalEntity/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B03202">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B03402">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:Contact"/>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:Contact/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:Contact/cbc:Telephone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:Contact/cbc:ElectronicMail"/>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/cac:Contact/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B04001">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B04201">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:SenderParty/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B01003">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B01203">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty">
-         <assert test="cbc:EndpointID" flag="fatal" id="PEPPOL-T124-B04401">Element 'cbc:EndpointID' MUST be provided.</assert>
-         <assert test="cac:PartyIdentification" flag="fatal" id="PEPPOL-T124-B04402">Element 'cac:PartyIdentification' MUST be provided.</assert>
-         <assert test="cac:PartyLegalEntity" flag="fatal" id="PEPPOL-T124-B04403">Element 'cac:PartyLegalEntity' MUST be provided.</assert>
+         <assert test="cbc:EndpointID" flag="fatal" id="PEPPOL-T124-B04601">Element 'cbc:EndpointID' MUST be provided.</assert>
+         <assert test="cac:PartyIdentification" flag="fatal" id="PEPPOL-T124-B04602">Element 'cac:PartyIdentification' MUST be provided.</assert>
+         <assert test="cac:PartyLegalEntity" flag="fatal" id="PEPPOL-T124-B04603">Element 'cac:PartyLegalEntity' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cbc:EndpointID">
-         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B04501">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B04701">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $cleas satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B04502">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
+                 id="PEPPOL-T124-B04702">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyIdentification"/>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyIdentification/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B04801">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B05001">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyName">
-         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B05001">Element 'cbc:Name' MUST be provided.</assert>
+         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B05201">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyName/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PostalAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B05201">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B05401">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PostalAddress/cbc:StreetName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PostalAddress/cbc:AdditionalStreetName"/>
@@ -372,94 +374,94 @@
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PostalAddress/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PostalAddress/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PostalAddress/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B05801">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B06001">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PostalAddress/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PostalAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B06001">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B06201">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B06101">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B06301">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PostalAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B06002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B06202">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PostalAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B05202">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B05402">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyTaxScheme">
-         <assert test="cbc:CompanyID" flag="fatal" id="PEPPOL-T124-B06201">Element 'cbc:CompanyID' MUST be provided.</assert>
-         <assert test="cac:TaxScheme" flag="fatal" id="PEPPOL-T124-B06202">Element 'cac:TaxScheme' MUST be provided.</assert>
+         <assert test="cbc:CompanyID" flag="fatal" id="PEPPOL-T124-B06401">Element 'cbc:CompanyID' MUST be provided.</assert>
+         <assert test="cac:TaxScheme" flag="fatal" id="PEPPOL-T124-B06402">Element 'cac:TaxScheme' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyTaxScheme/cbc:CompanyID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyTaxScheme/cac:TaxScheme">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B06401">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B06601">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyTaxScheme/cac:TaxScheme/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B06402">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B06602">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyTaxScheme/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B06203">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B06403">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyLegalEntity">
-         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B06601">Element 'cbc:RegistrationName' MUST be provided.</assert>
+         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B06801">Element 'cbc:RegistrationName' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyLegalEntity/cbc:RegistrationName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyLegalEntity/cbc:CompanyID">
-         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B06801">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B07001">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B06802">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B07002">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyLegalEntity/cac:RegistrationAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B07001">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B07201">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country"/>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B07301">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B07501">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B07201">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B07401">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyLegalEntity/cac:RegistrationAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B07002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B07202">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:PartyLegalEntity/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B06602">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B06802">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:Contact"/>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:Contact/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:Contact/cbc:Telephone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:Contact/cbc:ElectronicMail"/>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/cac:Contact/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B07401">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B07601">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:ReceiverParty/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B04404">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B04604">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty">
-         <assert test="cac:PartyLegalEntity" flag="fatal" id="PEPPOL-T124-B07801">Element 'cac:PartyLegalEntity' MUST be provided.</assert>
+         <assert test="cac:PartyLegalEntity" flag="fatal" id="PEPPOL-T124-B08001">Element 'cac:PartyLegalEntity' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyIdentification">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B07901">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B08101">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyIdentification/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B08001">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B08201">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyName">
-         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B08201">Element 'cbc:Name' MUST be provided.</assert>
+         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B08401">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyName/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PostalAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B08401">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B08601">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PostalAddress/cbc:StreetName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PostalAddress/cbc:AdditionalStreetName"/>
@@ -467,94 +469,94 @@
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PostalAddress/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PostalAddress/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PostalAddress/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B09001">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B09201">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PostalAddress/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PostalAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B09201">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B09401">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B09301">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B09501">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PostalAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B09202">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B09402">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PostalAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B08402">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B08602">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyTaxScheme">
-         <assert test="cbc:CompanyID" flag="fatal" id="PEPPOL-T124-B09401">Element 'cbc:CompanyID' MUST be provided.</assert>
-         <assert test="cac:TaxScheme" flag="fatal" id="PEPPOL-T124-B09402">Element 'cac:TaxScheme' MUST be provided.</assert>
+         <assert test="cbc:CompanyID" flag="fatal" id="PEPPOL-T124-B09601">Element 'cbc:CompanyID' MUST be provided.</assert>
+         <assert test="cac:TaxScheme" flag="fatal" id="PEPPOL-T124-B09602">Element 'cac:TaxScheme' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyTaxScheme/cbc:CompanyID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyTaxScheme/cac:TaxScheme">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B09601">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B09801">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyTaxScheme/cac:TaxScheme/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B09602">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B09802">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyTaxScheme/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B09403">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B09603">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyLegalEntity">
-         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B09801">Element 'cbc:RegistrationName' MUST be provided.</assert>
+         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B10001">Element 'cbc:RegistrationName' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyLegalEntity/cbc:RegistrationName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyLegalEntity/cbc:CompanyID">
-         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B10001">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B10201">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B10002">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B10202">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyLegalEntity/cac:RegistrationAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B10201">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B10401">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B10501">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B10701">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B10401">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B10601">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyLegalEntity/cac:RegistrationAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B10202">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B10402">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:PartyLegalEntity/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B09802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B10002">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:Contact"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:Contact/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:Contact/cbc:Telephone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:Contact/cbc:ElectronicMail"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/cac:Contact/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B10601">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B10801">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportUserParty/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B07802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B08002">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty">
-         <assert test="cac:PartyLegalEntity" flag="fatal" id="PEPPOL-T124-B11001">Element 'cac:PartyLegalEntity' MUST be provided.</assert>
+         <assert test="cac:PartyLegalEntity" flag="fatal" id="PEPPOL-T124-B11201">Element 'cac:PartyLegalEntity' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyIdentification">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B11101">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B11301">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyIdentification/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B11201">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B11401">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyName">
-         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B11401">Element 'cbc:Name' MUST be provided.</assert>
+         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B11601">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyName/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PostalAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B11601">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B11801">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PostalAddress/cbc:StreetName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PostalAddress/cbc:AdditionalStreetName"/>
@@ -562,97 +564,97 @@
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PostalAddress/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PostalAddress/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PostalAddress/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B12201">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B12401">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PostalAddress/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PostalAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B12401">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B12601">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B12501">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B12701">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PostalAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B12402">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B12602">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PostalAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B11602">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B11802">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyTaxScheme">
-         <assert test="cbc:CompanyID" flag="fatal" id="PEPPOL-T124-B12601">Element 'cbc:CompanyID' MUST be provided.</assert>
-         <assert test="cac:TaxScheme" flag="fatal" id="PEPPOL-T124-B12602">Element 'cac:TaxScheme' MUST be provided.</assert>
+         <assert test="cbc:CompanyID" flag="fatal" id="PEPPOL-T124-B12801">Element 'cbc:CompanyID' MUST be provided.</assert>
+         <assert test="cac:TaxScheme" flag="fatal" id="PEPPOL-T124-B12802">Element 'cac:TaxScheme' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyTaxScheme/cbc:CompanyID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyTaxScheme/cac:TaxScheme">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B12801">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B13001">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyTaxScheme/cac:TaxScheme/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B12802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B13002">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyTaxScheme/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B12603">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B12803">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyLegalEntity">
-         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B13001">Element 'cbc:RegistrationName' MUST be provided.</assert>
+         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B13201">Element 'cbc:RegistrationName' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyLegalEntity/cbc:RegistrationName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyLegalEntity/cbc:CompanyID">
-         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B13201">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B13401">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B13202">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B13402">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyLegalEntity/cac:RegistrationAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B13401">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B13601">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B13601">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B13801">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B13701">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B13901">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B13602">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B13802">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyLegalEntity/cac:RegistrationAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B13402">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B13602">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:PartyLegalEntity/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B13002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B13202">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:Contact"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:Contact/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:Contact/cbc:Telephone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:Contact/cbc:ElectronicMail"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/cac:Contact/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B13801">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B14001">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportServiceProviderParty/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B11002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B11202">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty">
-         <assert test="cac:PartyLegalEntity" flag="fatal" id="PEPPOL-T124-B14201">Element 'cac:PartyLegalEntity' MUST be provided.</assert>
+         <assert test="cac:PartyLegalEntity" flag="fatal" id="PEPPOL-T124-B14401">Element 'cac:PartyLegalEntity' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyIdentification">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B14301">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B14501">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyIdentification/cbc:ID">
-         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B14401">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B14601">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B14402">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B14602">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyName">
-         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B14601">Element 'cbc:Name' MUST be provided.</assert>
+         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B14801">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyName/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PostalAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B14801">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B15001">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PostalAddress/cbc:StreetName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PostalAddress/cbc:AdditionalStreetName"/>
@@ -660,189 +662,320 @@
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PostalAddress/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PostalAddress/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PostalAddress/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B15401">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B15601">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PostalAddress/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PostalAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B15601">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B15801">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B15701">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B15901">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PostalAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B15602">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B15802">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PostalAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B14802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B15002">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyTaxScheme">
-         <assert test="cbc:CompanyID" flag="fatal" id="PEPPOL-T124-B15801">Element 'cbc:CompanyID' MUST be provided.</assert>
-         <assert test="cac:TaxScheme" flag="fatal" id="PEPPOL-T124-B15802">Element 'cac:TaxScheme' MUST be provided.</assert>
+         <assert test="cbc:CompanyID" flag="fatal" id="PEPPOL-T124-B16001">Element 'cbc:CompanyID' MUST be provided.</assert>
+         <assert test="cac:TaxScheme" flag="fatal" id="PEPPOL-T124-B16002">Element 'cac:TaxScheme' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyTaxScheme/cbc:CompanyID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyTaxScheme/cac:TaxScheme">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B16001">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B16201">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyTaxScheme/cac:TaxScheme/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B16002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B16202">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyTaxScheme/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B15803">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B16003">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyLegalEntity">
-         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B16201">Element 'cbc:RegistrationName' MUST be provided.</assert>
+         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B16401">Element 'cbc:RegistrationName' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyLegalEntity/cbc:RegistrationName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyLegalEntity/cbc:CompanyID">
-         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B16401">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B16601">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B16402">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B16602">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyLegalEntity/cac:RegistrationAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B16601">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B16801">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country"/>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B16901">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B17101">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B16801">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B17001">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyLegalEntity/cac:RegistrationAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B16602">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B16802">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:PartyLegalEntity/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B16202">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B16402">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:Contact"/>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:Contact/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:Contact/cbc:Telephone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:Contact/cbc:ElectronicMail"/>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/cac:Contact/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B17001">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B17201">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:BillToParty/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B14202">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B14402">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportExecutionPlanRequestDocumentReference">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B17401">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B17601">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportExecutionPlanRequestDocumentReference/cbc:ID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportExecutionPlanRequestDocumentReference/cbc:IssueDate"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportExecutionPlanRequestDocumentReference/cbc:IssueTime"/>
       <rule context="/ubl:TransportExecutionPlan/cac:TransportExecutionPlanRequestDocumentReference/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B17402">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B17602">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:AdditionalDocumentReference">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B17801">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B18001">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:AdditionalDocumentReference/cbc:ID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:AdditionalDocumentReference/cbc:DocumentTypeCode">
          <assert test="(some $code in $clUNCL1001 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B18001">Value MUST be part of code list 'Document name code, full list (UNCL1001)'.</assert>
+                 id="PEPPOL-T124-B18201">Value MUST be part of code list 'Document name code, full list (UNCL1001)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:AdditionalDocumentReference/cbc:DocumentType"/>
       <rule context="/ubl:TransportExecutionPlan/cac:AdditionalDocumentReference/cac:Attachment"/>
       <rule context="/ubl:TransportExecutionPlan/cac:AdditionalDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject">
-         <assert test="@mimeCode" flag="fatal" id="PEPPOL-T124-B18301">Attribute 'mimeCode' MUST be present.</assert>
+         <assert test="@mimeCode" flag="fatal" id="PEPPOL-T124-B18501">Attribute 'mimeCode' MUST be present.</assert>
          <assert test="not(@mimeCode) or (some $code in $clMimeCode satisfies $code = @mimeCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B18302">Value MUST be part of code list 'Mime code (IANA Subset)'.</assert>
-         <assert test="@filename" flag="fatal" id="PEPPOL-T124-B18303">Attribute 'filename' MUST be present.</assert>
+                 id="PEPPOL-T124-B18502">Value MUST be part of code list 'Mime code (IANA Subset)'.</assert>
+         <assert test="@filename" flag="fatal" id="PEPPOL-T124-B18503">Attribute 'filename' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference">
-         <assert test="cbc:URI" flag="fatal" id="PEPPOL-T124-B18601">Element 'cbc:URI' MUST be provided.</assert>
+         <assert test="cbc:URI" flag="fatal" id="PEPPOL-T124-B18801">Element 'cbc:URI' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI"/>
       <rule context="/ubl:TransportExecutionPlan/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B18602">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B18802">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:AdditionalDocumentReference/cac:Attachment/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B18201">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B18401">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:AdditionalDocumentReference/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B17802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B18002">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:MainTransportationService">
          <assert test="cbc:TransportServiceCode"
                  flag="fatal"
-                 id="PEPPOL-T124-B18801">Element 'cbc:TransportServiceCode' MUST be provided.</assert>
+                 id="PEPPOL-T124-B19001">Element 'cbc:TransportServiceCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:MainTransportationService/cbc:TransportServiceCode">
          <assert test="(some $code in $clTransportServiceCode satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B18901">Value MUST be part of code list 'Transport Service Code (openPEPPOL)'.</assert>
+                 id="PEPPOL-T124-B19101">Value MUST be part of code list 'Transport Service Code (openPEPPOL)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:MainTransportationService/cbc:TransportationServiceDescription"/>
       <rule context="/ubl:TransportExecutionPlan/cac:MainTransportationService/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B18802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B19002">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:AdditionalTransportationService">
          <assert test="cbc:TransportServiceCode"
                  flag="fatal"
-                 id="PEPPOL-T124-B19101">Element 'cbc:TransportServiceCode' MUST be provided.</assert>
+                 id="PEPPOL-T124-B19301">Element 'cbc:TransportServiceCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:AdditionalTransportationService/cbc:TransportServiceCode">
          <assert test="(some $code in $clTransportServiceCode satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B19201">Value MUST be part of code list 'Transport Service Code (openPEPPOL)'.</assert>
+                 id="PEPPOL-T124-B19401">Value MUST be part of code list 'Transport Service Code (openPEPPOL)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:AdditionalTransportationService/cbc:TransportationServiceDescription"/>
       <rule context="/ubl:TransportExecutionPlan/cac:AdditionalTransportationService/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B19102">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B19302">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B19401">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B19601">Element 'cbc:ID' MUST be provided.</assert>
          <assert test="cac:PlannedPickupTransportEvent"
                  flag="fatal"
-                 id="PEPPOL-T124-B19402">Element 'cac:PlannedPickupTransportEvent' MUST be provided.</assert>
+                 id="PEPPOL-T124-B19602">Element 'cac:PlannedPickupTransportEvent' MUST be provided.</assert>
          <assert test="cac:PlannedDeliveryTransportEvent"
                  flag="fatal"
-                 id="PEPPOL-T124-B19403">Element 'cac:PlannedDeliveryTransportEvent' MUST be provided.</assert>
-         <assert test="cac:ConsigneeParty" flag="fatal" id="PEPPOL-T124-B19404">Element 'cac:ConsigneeParty' MUST be provided.</assert>
-         <assert test="cac:ConsignorParty" flag="fatal" id="PEPPOL-T124-B19405">Element 'cac:ConsignorParty' MUST be provided.</assert>
+                 id="PEPPOL-T124-B19603">Element 'cac:PlannedDeliveryTransportEvent' MUST be provided.</assert>
+         <assert test="cac:ConsigneeParty" flag="fatal" id="PEPPOL-T124-B19604">Element 'cac:ConsigneeParty' MUST be provided.</assert>
+         <assert test="cac:ConsignorParty" flag="fatal" id="PEPPOL-T124-B19605">Element 'cac:ConsignorParty' MUST be provided.</assert>
          <assert test="cac:MainCarriageShipmentStage"
                  flag="fatal"
-                 id="PEPPOL-T124-B19406">Element 'cac:MainCarriageShipmentStage' MUST be provided.</assert>
+                 id="PEPPOL-T124-B19606">Element 'cac:MainCarriageShipmentStage' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clConsignmentIDType satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B19501">Value MUST be part of code list 'Type of Consignment ID (openPEPPOL)'.</assert>
+                 id="PEPPOL-T124-B19701">Value MUST be part of code list 'Type of Consignment ID (openPEPPOL)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cbc:ConsigneeAssignedID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cbc:ConsignorAssignedID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cbc:GrossWeightMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B19901">Attribute 'unitCode' MUST be present.</assert>
-      </rule>
-      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cbc:GrossVolumeMeasure">
          <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B20101">Attribute 'unitCode' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cbc:LoadingLengthMeasure">
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cbc:GrossVolumeMeasure">
          <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B20301">Attribute 'unitCode' MUST be present.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cbc:LoadingLengthMeasure">
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B20501">Attribute 'unitCode' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cbc:HazardousRiskIndicator"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cbc:TotalTransportHandlingUnitQuantity">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B20601">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B20801">Attribute 'unitCode' MUST be present.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration">
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B21001">Element 'cbc:ID' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cbc:ID"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cbc:FunctionCode"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cbc:FunctionCode/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B21201">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:ValidityPeriod">
+         <assert test="StartDate" flag="fatal" id="PEPPOL-T124-B21301">Element 'StartDate' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:ValidityPeriod/StartDate"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:ValidityPeriod/StartDate/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B21401">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:ValidityPeriod/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B21302">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty">
+         <assert test="cac:PartyLegalEntity" flag="fatal" id="PEPPOL-T124-B21501">Element 'cac:PartyLegalEntity' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyIdentification">
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B21601">Element 'cbc:ID' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyIdentification/cbc:ID">
+         <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
+                 flag="fatal"
+                 id="PEPPOL-T124-B21701">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyName">
+         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B21901">Element 'cbc:Name' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyName/cbc:Name"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PostalAddress">
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B22101">Element 'cac:Country' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PostalAddress/cbc:StreetName"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PostalAddress/cbc:AdditionalStreetName"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PostalAddress/cbc:CityName"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PostalAddress/cbc:PostalZone"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PostalAddress/cbc:CountrySubentity"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PostalAddress/cac:AddressLine">
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B22701">Element 'cbc:Line' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PostalAddress/cac:AddressLine/cbc:Line"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PostalAddress/cac:Country">
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B22901">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
+         <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
+                 flag="fatal"
+                 id="PEPPOL-T124-B23001">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PostalAddress/cac:Country/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B22902">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PostalAddress/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B22102">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyTaxScheme">
+         <assert test="cbc:CompanyID" flag="fatal" id="PEPPOL-T124-B23101">Element 'cbc:CompanyID' MUST be provided.</assert>
+         <assert test="cac:TaxScheme" flag="fatal" id="PEPPOL-T124-B23102">Element 'cac:TaxScheme' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyTaxScheme/cbc:CompanyID"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyTaxScheme/cac:TaxScheme">
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B23301">Element 'cbc:ID' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyTaxScheme/cac:TaxScheme/cbc:ID"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyTaxScheme/cac:TaxScheme/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B23302">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyTaxScheme/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B23103">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyLegalEntity">
+         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B23501">Element 'cbc:RegistrationName' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyLegalEntity/cbc:RegistrationName"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyLegalEntity/cbc:CompanyID">
+         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B23701">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
+                 flag="fatal"
+                 id="PEPPOL-T124-B23702">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyLegalEntity/cac:RegistrationAddress">
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B23901">Element 'cac:Country' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country">
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B24101">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
+         <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
+                 flag="fatal"
+                 id="PEPPOL-T124-B24201">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B24102">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyLegalEntity/cac:RegistrationAddress/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B23902">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyLegalEntity/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B23502">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:Contact"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:Contact/cbc:Name"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:Contact/cbc:Telephone"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:Contact/cbc:ElectronicMail"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:Contact/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B24301">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B21502">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:AdditionalDocumentReference">
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B24701">Element 'cbc:ID' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:AdditionalDocumentReference/cbc:ID"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:AdditionalDocumentReference/cbc:DocumentTypeCode">
+         <assert test="(some $code in $clUNCL1001 satisfies $code = normalize-space(text()))"
+                 flag="fatal"
+                 id="PEPPOL-T124-B24901">Value MUST be part of code list 'Document name code, full list (UNCL1001)'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:AdditionalDocumentReference/cbc:DocumentType"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:AdditionalDocumentReference/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B24702">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B21002">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent">
-         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B20801">Element 'cac:Location' MUST be provided.</assert>
-         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B20802">Element 'cac:Period' MUST be provided.</assert>
+         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B25101">Element 'cac:Location' MUST be provided.</assert>
+         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B25102">Element 'cac:Period' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cbc:IdentificationID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B21101">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B25401">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address"/>
@@ -852,56 +985,56 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B22001">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B26301">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address/cac:Country"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B22301">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B26601">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B22201">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B26501">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate">
          <assert test="cbc:CoordinateSystemCode"
                  flag="fatal"
-                 id="PEPPOL-T124-B22401">Element 'cbc:CoordinateSystemCode' MUST be provided.</assert>
+                 id="PEPPOL-T124-B26701">Element 'cbc:CoordinateSystemCode' MUST be provided.</assert>
          <assert test="cbc:LatitudeDegreesMeasure"
                  flag="fatal"
-                 id="PEPPOL-T124-B22402">Element 'cbc:LatitudeDegreesMeasure' MUST be provided.</assert>
+                 id="PEPPOL-T124-B26702">Element 'cbc:LatitudeDegreesMeasure' MUST be provided.</assert>
          <assert test="cbc:LongitudeDegreesMeasure"
                  flag="fatal"
-                 id="PEPPOL-T124-B22403">Element 'cbc:LongitudeDegreesMeasure' MUST be provided.</assert>
+                 id="PEPPOL-T124-B26703">Element 'cbc:LongitudeDegreesMeasure' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:CoordinateSystemCode"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:LatitudeDegreesMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B22601">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B26901">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B22602">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B26902">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:LongitudeDegreesMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B22801">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B27101">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B22802">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B27102">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:AltitudeMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B23001">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B27301">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B23002">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B27302">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B22404">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B26704">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B21401">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B25701">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B21001">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B25301">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Period"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Period/cbc:StartDate"/>
@@ -909,21 +1042,21 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Period/cbc:EndDate"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Period/cbc:EndTime"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Period/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B23201">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B27501">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedPickupTransportEvent/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B20803">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B25103">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent">
-         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B23701">Element 'cac:Location' MUST be provided.</assert>
-         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B23702">Element 'cac:Period' MUST be provided.</assert>
+         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B28001">Element 'cac:Location' MUST be provided.</assert>
+         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B28002">Element 'cac:Period' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cbc:IdentificationID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B24001">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B28301">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address"/>
@@ -933,56 +1066,56 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B24901">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B29201">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address/cac:Country"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B25201">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B29501">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B25101">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B29401">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate">
          <assert test="cbc:CoordinateSystemCode"
                  flag="fatal"
-                 id="PEPPOL-T124-B25301">Element 'cbc:CoordinateSystemCode' MUST be provided.</assert>
+                 id="PEPPOL-T124-B29601">Element 'cbc:CoordinateSystemCode' MUST be provided.</assert>
          <assert test="cbc:LatitudeDegreesMeasure"
                  flag="fatal"
-                 id="PEPPOL-T124-B25302">Element 'cbc:LatitudeDegreesMeasure' MUST be provided.</assert>
+                 id="PEPPOL-T124-B29602">Element 'cbc:LatitudeDegreesMeasure' MUST be provided.</assert>
          <assert test="cbc:LongitudeDegreesMeasure"
                  flag="fatal"
-                 id="PEPPOL-T124-B25303">Element 'cbc:LongitudeDegreesMeasure' MUST be provided.</assert>
+                 id="PEPPOL-T124-B29603">Element 'cbc:LongitudeDegreesMeasure' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:CoordinateSystemCode"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:LatitudeDegreesMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B25501">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B29801">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B25502">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B29802">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:LongitudeDegreesMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B25701">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B30001">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B25702">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B30002">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:AltitudeMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B25901">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B30201">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B25902">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B30202">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B25304">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B29604">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B24301">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B28601">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B23901">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B28201">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period/cbc:StartDate"/>
@@ -990,21 +1123,21 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period/cbc:EndDate"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period/cbc:EndTime"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Period/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B26101">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B30401">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:RequestedDeliveryTransportEvent/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B23703">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B28003">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent">
-         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B26601">Element 'cac:Location' MUST be provided.</assert>
-         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B26602">Element 'cac:Period' MUST be provided.</assert>
+         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B30901">Element 'cac:Location' MUST be provided.</assert>
+         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B30902">Element 'cac:Period' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cbc:IdentificationID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B26901">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B31201">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cac:Address"/>
@@ -1014,56 +1147,56 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cac:Address/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cac:Address/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cac:Address/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B27801">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B32101">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cac:Address/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cac:Address/cac:Country"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cac:Address/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B28101">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B32401">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cac:Address/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B28001">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B32301">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate">
          <assert test="cbc:CoordinateSystemCode"
                  flag="fatal"
-                 id="PEPPOL-T124-B28201">Element 'cbc:CoordinateSystemCode' MUST be provided.</assert>
+                 id="PEPPOL-T124-B32501">Element 'cbc:CoordinateSystemCode' MUST be provided.</assert>
          <assert test="cbc:LatitudeDegreesMeasure"
                  flag="fatal"
-                 id="PEPPOL-T124-B28202">Element 'cbc:LatitudeDegreesMeasure' MUST be provided.</assert>
+                 id="PEPPOL-T124-B32502">Element 'cbc:LatitudeDegreesMeasure' MUST be provided.</assert>
          <assert test="cbc:LongitudeDegreesMeasure"
                  flag="fatal"
-                 id="PEPPOL-T124-B28203">Element 'cbc:LongitudeDegreesMeasure' MUST be provided.</assert>
+                 id="PEPPOL-T124-B32503">Element 'cbc:LongitudeDegreesMeasure' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:CoordinateSystemCode"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:LatitudeDegreesMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B28401">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B32701">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B28402">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B32702">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:LongitudeDegreesMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B28601">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B32901">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B28602">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B32902">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:AltitudeMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B28801">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B33101">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B28802">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B33102">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B28204">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B32504">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/cac:Address/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B27201">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B31501">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Location/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B26801">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B31101">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Period"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Period/cbc:StartDate"/>
@@ -1071,21 +1204,21 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Period/cbc:EndDate"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Period/cbc:EndTime"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/cac:Period/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B29001">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B33301">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedPickupTransportEvent/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B26603">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B30903">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent">
-         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B29501">Element 'cac:Location' MUST be provided.</assert>
-         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B29502">Element 'cac:Period' MUST be provided.</assert>
+         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B33801">Element 'cac:Location' MUST be provided.</assert>
+         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B33802">Element 'cac:Period' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cbc:IdentificationID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B29801">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B34101">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cac:Address"/>
@@ -1095,56 +1228,56 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cac:Address/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cac:Address/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cac:Address/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B30701">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B35001">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cac:Address/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cac:Address/cac:Country"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cac:Address/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B31001">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B35301">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cac:Address/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B30901">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B35201">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate">
          <assert test="cbc:CoordinateSystemCode"
                  flag="fatal"
-                 id="PEPPOL-T124-B31101">Element 'cbc:CoordinateSystemCode' MUST be provided.</assert>
+                 id="PEPPOL-T124-B35401">Element 'cbc:CoordinateSystemCode' MUST be provided.</assert>
          <assert test="cbc:LatitudeDegreesMeasure"
                  flag="fatal"
-                 id="PEPPOL-T124-B31102">Element 'cbc:LatitudeDegreesMeasure' MUST be provided.</assert>
+                 id="PEPPOL-T124-B35402">Element 'cbc:LatitudeDegreesMeasure' MUST be provided.</assert>
          <assert test="cbc:LongitudeDegreesMeasure"
                  flag="fatal"
-                 id="PEPPOL-T124-B31103">Element 'cbc:LongitudeDegreesMeasure' MUST be provided.</assert>
+                 id="PEPPOL-T124-B35403">Element 'cbc:LongitudeDegreesMeasure' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:CoordinateSystemCode"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:LatitudeDegreesMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B31301">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B35601">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B31302">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B35602">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:LongitudeDegreesMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B31501">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B35801">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B31502">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B35802">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:AltitudeMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B31701">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B36001">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B31702">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B36002">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B31104">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B35404">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/cac:Address/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B30101">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B34401">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Location/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B29701">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B34001">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Period"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Period/cbc:StartDate"/>
@@ -1152,26 +1285,26 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Period/cbc:EndDate"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Period/cbc:EndTime"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/cac:Period/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B31901">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B36201">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PlannedDeliveryTransportEvent/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B29503">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B33803">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PartyIdentification">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B32501">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B36801">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PartyIdentification/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B32601">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B36901">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PartyName">
-         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B32801">Element 'cbc:Name' MUST be provided.</assert>
+         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B37101">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PartyName/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PostalAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B33001">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B37301">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PostalAddress/cbc:StreetName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PostalAddress/cbc:AdditionalStreetName"/>
@@ -1179,79 +1312,79 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PostalAddress/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PostalAddress/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PostalAddress/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B33601">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B37901">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PostalAddress/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PostalAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B33801">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B38101">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B33901">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B38201">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PostalAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B33802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B38102">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PostalAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B33002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B37302">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PartyLegalEntity">
-         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B34001">Element 'cbc:RegistrationName' MUST be provided.</assert>
+         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B38301">Element 'cbc:RegistrationName' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PartyLegalEntity/cbc:RegistrationName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PartyLegalEntity/cbc:CompanyID">
-         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B34201">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B38501">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B34202">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B38502">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PartyLegalEntity/cac:RegistrationAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B34401">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B38701">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B34601">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B38901">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B34701">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B39001">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B34602">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B38902">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PartyLegalEntity/cac:RegistrationAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B34402">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B38702">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:PartyLegalEntity/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B34002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B38302">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:Contact"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:Contact/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:Contact/cbc:Telephone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:Contact/cbc:ElectronicMail"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/cac:Contact/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B34801">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B39101">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsigneeParty/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B32401">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B36701">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PartyIdentification">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B35301">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B39601">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PartyIdentification/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B35401">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B39701">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PartyName">
-         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B35601">Element 'cbc:Name' MUST be provided.</assert>
+         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B39901">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PartyName/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PostalAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B35801">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B40101">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PostalAddress/cbc:StreetName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PostalAddress/cbc:AdditionalStreetName"/>
@@ -1259,81 +1392,257 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PostalAddress/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PostalAddress/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PostalAddress/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B36401">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B40701">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PostalAddress/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PostalAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B36601">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B40901">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B36701">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B41001">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PostalAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B36602">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B40902">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PostalAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B35802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B40102">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PartyLegalEntity">
-         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B36801">Element 'cbc:RegistrationName' MUST be provided.</assert>
+         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B41101">Element 'cbc:RegistrationName' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PartyLegalEntity/cbc:RegistrationName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PartyLegalEntity/cbc:CompanyID">
-         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B37001">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B41301">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B37002">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B41302">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PartyLegalEntity/cac:RegistrationAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B37201">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B41501">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B37501">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B41801">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B37401">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B41701">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PartyLegalEntity/cac:RegistrationAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B37202">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B41502">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:PartyLegalEntity/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B36802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B41102">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:Contact"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:Contact/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:Contact/cbc:Telephone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:Contact/cbc:ElectronicMail"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/cac:Contact/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B37601">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B41901">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:ConsignorParty/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B35201">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B39501">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PartyIdentification">
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B42401">Element 'cbc:ID' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PartyIdentification/cbc:ID">
+         <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
+                 flag="fatal"
+                 id="PEPPOL-T124-B42501">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PartyName">
+         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B42701">Element 'cbc:Name' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PartyName/cbc:Name"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PostalAddress">
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B42901">Element 'cac:Country' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cbc:StreetName"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cbc:AdditionalStreetName"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cbc:CityName"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cbc:PostalZone"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cbc:CountrySubentity"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cac:AddressLine">
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B43501">Element 'cbc:Line' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cac:AddressLine/cbc:Line"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cac:Country">
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B43701">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
+         <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
+                 flag="fatal"
+                 id="PEPPOL-T124-B43801">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cac:Country/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B43702">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PostalAddress/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B42902">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PartyLegalEntity">
+         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B43901">Element 'cbc:RegistrationName' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PartyLegalEntity/cbc:RegistrationName"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PartyLegalEntity/cbc:CompanyID">
+         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B44101">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
+                 flag="fatal"
+                 id="PEPPOL-T124-B44102">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress">
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B44301">Element 'cac:Country' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country">
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B44501">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
+         <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
+                 flag="fatal"
+                 id="PEPPOL-T124-B44601">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B44502">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B44302">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:PartyLegalEntity/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B43902">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:Contact"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:Contact/cbc:Name"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:Contact/cbc:Telephone"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:Contact/cbc:ElectronicMail"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:Contact/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B44701">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:Person">
+         <assert test="cac:IdentityDocumentReference"
+                 flag="fatal"
+                 id="PEPPOL-T124-B45101">Element 'cac:IdentityDocumentReference' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:Person/cac:IdentityDocumentReference">
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B45201">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:DocumentType" flag="fatal" id="PEPPOL-T124-B45202">Element 'cbc:DocumentType' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:Person/cac:IdentityDocumentReference/cbc:ID"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:Person/cac:IdentityDocumentReference/cbc:DocumentType"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:Person/cac:IdentityDocumentReference/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B45203">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/cac:Person/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B45102">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CarrierParty/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B42301">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OriginalDepartureCountry">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B38001">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B45501">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OriginalDepartureCountry/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B38101">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B45601">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OriginalDepartureCountry/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B38002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B45502">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:FinalDestinationCountry"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:FinalDestinationCountry/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B38301">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B45801">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:FinalDestinationCountry/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B38201">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B45701">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent">
+         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B45901">Element 'cac:Period' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cbc:ID">
+         <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
+                 flag="fatal"
+                 id="PEPPOL-T124-B46101">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cbc:Name"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cbc:StreetName"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cbc:AdditionalStreetName"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cbc:CityName"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cbc:PostalZone"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cbc:CountrySubentity"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cac:AddressLine">
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B47001">Element 'cbc:Line' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cac:AddressLine/cbc:Line"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cac:Country"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cac:Country/cbc:IdentificationCode">
+         <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
+                 flag="fatal"
+                 id="PEPPOL-T124-B47301">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cac:Country/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B47201">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cac:LocationCoordinate">
+         <assert test="cbc:CoordinateSystemCode"
+                 flag="fatal"
+                 id="PEPPOL-T124-B47401">Element 'cbc:CoordinateSystemCode' MUST be provided.</assert>
+         <assert test="cbc:LatitudeDegreesMeasure"
+                 flag="fatal"
+                 id="PEPPOL-T124-B47402">Element 'cbc:LatitudeDegreesMeasure' MUST be provided.</assert>
+         <assert test="cbc:LongitudeDegreesMeasure"
+                 flag="fatal"
+                 id="PEPPOL-T124-B47403">Element 'cbc:LongitudeDegreesMeasure' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:CoordinateSystemCode"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:LatitudeDegreesMeasure">
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B47601">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
+                 flag="fatal"
+                 id="PEPPOL-T124-B47602">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:LongitudeDegreesMeasure">
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B47801">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
+                 flag="fatal"
+                 id="PEPPOL-T124-B47802">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:AltitudeMeasure">
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B48001">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
+                 flag="fatal"
+                 id="PEPPOL-T124-B48002">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B47404">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B46401">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Location/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B46001">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Period"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Period/cbc:StartDate"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Period/cbc:StartTime"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Period/cbc:EndDate"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Period/cbc:EndTime"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/cac:Period/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B48201">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportEvent/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B45902">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:DeliveryTerms"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:DeliveryTerms/cbc:ID"/>
@@ -1342,64 +1651,64 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:DeliveryTerms/cac:DeliveryLocation/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B38801">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B49101">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:DeliveryTerms/cac:DeliveryLocation/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:DeliveryTerms/cac:DeliveryLocation/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B38701">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B49001">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:DeliveryTerms/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B38401">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B48701">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PaymentTerms"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PaymentTerms/cbc:ID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PaymentTerms/cbc:Note"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PaymentTerms/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B39101">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B49401">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:FreightAllowanceCharge">
-         <assert test="cbc:ChargeIndicator" flag="fatal" id="PEPPOL-T124-B39401">Element 'cbc:ChargeIndicator' MUST be provided.</assert>
+         <assert test="cbc:ChargeIndicator" flag="fatal" id="PEPPOL-T124-B49701">Element 'cbc:ChargeIndicator' MUST be provided.</assert>
          <assert test="cbc:AllowanceChargeReasonCode"
                  flag="fatal"
-                 id="PEPPOL-T124-B39402">Element 'cbc:AllowanceChargeReasonCode' MUST be provided.</assert>
-         <assert test="cbc:Amount" flag="fatal" id="PEPPOL-T124-B39403">Element 'cbc:Amount' MUST be provided.</assert>
+                 id="PEPPOL-T124-B49702">Element 'cbc:AllowanceChargeReasonCode' MUST be provided.</assert>
+         <assert test="cbc:Amount" flag="fatal" id="PEPPOL-T124-B49703">Element 'cbc:Amount' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:FreightAllowanceCharge/cbc:ChargeIndicator"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:FreightAllowanceCharge/cbc:AllowanceChargeReasonCode">
          <assert test="(some $code in $clFreightAllowanceChargeReasonCode satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B39601">Value MUST be part of code list 'Freight Allowance-Charge Reason Code'.</assert>
+                 id="PEPPOL-T124-B49901">Value MUST be part of code list 'Freight Allowance-Charge Reason Code'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:FreightAllowanceCharge/cbc:Amount">
-         <assert test="@currencyID" flag="fatal" id="PEPPOL-T124-B39701">Attribute 'currencyID' MUST be present.</assert>
+         <assert test="@currencyID" flag="fatal" id="PEPPOL-T124-B50001">Attribute 'currencyID' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:FreightAllowanceCharge/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B39404">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B49704">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage">
-         <assert test="cbc:TransportModeCode" flag="fatal" id="PEPPOL-T124-B39901">Element 'cbc:TransportModeCode' MUST be provided.</assert>
+         <assert test="cbc:TransportModeCode" flag="fatal" id="PEPPOL-T124-B50201">Element 'cbc:TransportModeCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cbc:TransportModeCode">
          <assert test="(some $code in $clUNECERec19 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B40001">Value MUST be part of code list 'Recommendation 19 (UN/ECE) Transport Modes'.</assert>
+                 id="PEPPOL-T124-B50301">Value MUST be part of code list 'Recommendation 19 (UN/ECE) Transport Modes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cbc:HazardousRiskIndicator"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PartyIdentification">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B40301">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B50601">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PartyIdentification/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B40401">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B50701">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PartyName">
-         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B40601">Element 'cbc:Name' MUST be provided.</assert>
+         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B50901">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PartyName/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B40801">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B51101">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cbc:StreetName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cbc:AdditionalStreetName"/>
@@ -1407,95 +1716,95 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B41401">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B51701">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B41601">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B51901">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B41701">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B52001">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B41602">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B51902">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B40802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B51102">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity">
-         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B41801">Element 'cbc:RegistrationName' MUST be provided.</assert>
+         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B52101">Element 'cbc:RegistrationName' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cbc:RegistrationName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cbc:CompanyID">
-         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B42001">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B52301">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B42002">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B52302">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B42201">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B52501">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B42401">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B52701">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B42501">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B52801">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B42402">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B52702">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B42202">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B52502">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B41802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B52102">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:Contact"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:Contact/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:Contact/cbc:Telephone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:Contact/cbc:ElectronicMail"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:Contact/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B42601">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B52901">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:Person">
          <assert test="cac:IdentityDocumentReference"
                  flag="fatal"
-                 id="PEPPOL-T124-B43001">Element 'cac:IdentityDocumentReference' MUST be provided.</assert>
+                 id="PEPPOL-T124-B53301">Element 'cac:IdentityDocumentReference' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:Person/cac:IdentityDocumentReference">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B43101">Element 'cbc:ID' MUST be provided.</assert>
-         <assert test="cbc:DocumentType" flag="fatal" id="PEPPOL-T124-B43102">Element 'cbc:DocumentType' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B53401">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:DocumentType" flag="fatal" id="PEPPOL-T124-B53402">Element 'cbc:DocumentType' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:Person/cac:IdentityDocumentReference/cbc:ID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:Person/cac:IdentityDocumentReference/cbc:DocumentType"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:Person/cac:IdentityDocumentReference/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B43103">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B53403">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/cac:Person/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B43002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B53302">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:CarrierParty/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B40201">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B50501">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent">
-         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B43401">Element 'cac:Location' MUST be provided.</assert>
-         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B43402">Element 'cac:Period' MUST be provided.</assert>
+         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B53701">Element 'cac:Location' MUST be provided.</assert>
+         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B53702">Element 'cac:Period' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cbc:IdentificationID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B43701">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B54001">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B44001">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B54301">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cbc:StreetName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cbc:AdditionalStreetName"/>
@@ -1503,58 +1812,58 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B44601">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B54901">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B44801">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B55101">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B44901">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B55201">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B44802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B55102">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate">
          <assert test="cbc:CoordinateSystemCode"
                  flag="fatal"
-                 id="PEPPOL-T124-B45001">Element 'cbc:CoordinateSystemCode' MUST be provided.</assert>
+                 id="PEPPOL-T124-B55301">Element 'cbc:CoordinateSystemCode' MUST be provided.</assert>
          <assert test="cbc:LatitudeDegreesMeasure"
                  flag="fatal"
-                 id="PEPPOL-T124-B45002">Element 'cbc:LatitudeDegreesMeasure' MUST be provided.</assert>
+                 id="PEPPOL-T124-B55302">Element 'cbc:LatitudeDegreesMeasure' MUST be provided.</assert>
          <assert test="cbc:LongitudeDegreesMeasure"
                  flag="fatal"
-                 id="PEPPOL-T124-B45003">Element 'cbc:LongitudeDegreesMeasure' MUST be provided.</assert>
+                 id="PEPPOL-T124-B55303">Element 'cbc:LongitudeDegreesMeasure' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:CoordinateSystemCode"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:LatitudeDegreesMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B45201">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B55501">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B45202">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B55502">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:LongitudeDegreesMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B45401">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B55701">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B45402">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B55702">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:AltitudeMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B45601">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B55901">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B45602">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B55902">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B45004">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B55304">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B44002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B54302">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B43601">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B53901">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Period"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Period/cbc:StartDate"/>
@@ -1562,46 +1871,46 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Period/cbc:EndDate"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Period/cbc:EndTime"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Period/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B45801">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B56101">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedDepartureTransportEvent/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B43403">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B53703">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent">
-         <assert test="cbc:IdentificationID" flag="fatal" id="PEPPOL-T124-B46301">Element 'cbc:IdentificationID' MUST be provided.</assert>
-         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B46302">Element 'cac:Location' MUST be provided.</assert>
-         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B46303">Element 'cac:Period' MUST be provided.</assert>
+         <assert test="cbc:IdentificationID" flag="fatal" id="PEPPOL-T124-B56601">Element 'cbc:IdentificationID' MUST be provided.</assert>
+         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B56602">Element 'cac:Location' MUST be provided.</assert>
+         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B56603">Element 'cac:Period' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cbc:IdentificationID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B46601">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B56901">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B46901">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B57201">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cbc:StreetName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cbc:CityName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B47301">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B57601">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B47401">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B57701">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B47302">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B57602">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B46902">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B57202">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B46501">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B56801">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Period"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Period/cbc:StartDate"/>
@@ -1609,37 +1918,37 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Period/cbc:EndDate"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Period/cbc:EndTime"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Period/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B47501">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B57801">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/cac:PlannedArrivalTransportEvent/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B46304">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B56604">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:MainCarriageShipmentStage/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B39902">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B50202">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage">
-         <assert test="cbc:TransportModeCode" flag="fatal" id="PEPPOL-T124-B48001">Element 'cbc:TransportModeCode' MUST be provided.</assert>
+         <assert test="cbc:TransportModeCode" flag="fatal" id="PEPPOL-T124-B58301">Element 'cbc:TransportModeCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cbc:TransportModeCode">
          <assert test="(some $code in $clUNECERec19 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B48101">Value MUST be part of code list 'Recommendation 19 (UN/ECE) Transport Modes'.</assert>
+                 id="PEPPOL-T124-B58401">Value MUST be part of code list 'Recommendation 19 (UN/ECE) Transport Modes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PartyIdentification">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B48301">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B58601">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PartyIdentification/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B48401">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B58701">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PartyName">
-         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B48601">Element 'cbc:Name' MUST be provided.</assert>
+         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B58901">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PartyName/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B48801">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B59101">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cbc:StreetName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cbc:AdditionalStreetName"/>
@@ -1647,95 +1956,95 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B49401">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B59701">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B49601">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B59901">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B49701">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B60001">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B49602">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B59902">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B48802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B59102">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity">
-         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B49801">Element 'cbc:RegistrationName' MUST be provided.</assert>
+         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B60101">Element 'cbc:RegistrationName' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cbc:RegistrationName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cbc:CompanyID">
-         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B50001">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B60301">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B50002">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B60302">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B50201">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B60501">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B50401">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B60701">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B50501">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B60801">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B50402">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B60702">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B50202">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B60502">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B49802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B60102">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:Contact"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:Contact/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:Contact/cbc:Telephone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:Contact/cbc:ElectronicMail"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:Contact/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B50601">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B60901">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:Person">
          <assert test="cac:IdentityDocumentReference"
                  flag="fatal"
-                 id="PEPPOL-T124-B51001">Element 'cac:IdentityDocumentReference' MUST be provided.</assert>
+                 id="PEPPOL-T124-B61301">Element 'cac:IdentityDocumentReference' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:Person/cac:IdentityDocumentReference">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B51101">Element 'cbc:ID' MUST be provided.</assert>
-         <assert test="cbc:DocumentType" flag="fatal" id="PEPPOL-T124-B51102">Element 'cbc:DocumentType' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B61401">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:DocumentType" flag="fatal" id="PEPPOL-T124-B61402">Element 'cbc:DocumentType' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:Person/cac:IdentityDocumentReference/cbc:ID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:Person/cac:IdentityDocumentReference/cbc:DocumentType"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:Person/cac:IdentityDocumentReference/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B51103">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B61403">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/cac:Person/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B51002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B61302">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:CarrierParty/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B48201">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B58501">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent">
-         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B51401">Element 'cac:Location' MUST be provided.</assert>
-         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B51402">Element 'cac:Period' MUST be provided.</assert>
+         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B61701">Element 'cac:Location' MUST be provided.</assert>
+         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B61702">Element 'cac:Period' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cbc:IdentificationID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B51701">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B62001">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B52001">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B62301">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cbc:StreetName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cbc:AdditionalStreetName"/>
@@ -1743,58 +2052,58 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B52601">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B62901">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B52801">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B63101">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B52901">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B63201">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B52802">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B63102">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate">
          <assert test="cbc:CoordinateSystemCode"
                  flag="fatal"
-                 id="PEPPOL-T124-B53001">Element 'cbc:CoordinateSystemCode' MUST be provided.</assert>
+                 id="PEPPOL-T124-B63301">Element 'cbc:CoordinateSystemCode' MUST be provided.</assert>
          <assert test="cbc:LatitudeDegreesMeasure"
                  flag="fatal"
-                 id="PEPPOL-T124-B53002">Element 'cbc:LatitudeDegreesMeasure' MUST be provided.</assert>
+                 id="PEPPOL-T124-B63302">Element 'cbc:LatitudeDegreesMeasure' MUST be provided.</assert>
          <assert test="cbc:LongitudeDegreesMeasure"
                  flag="fatal"
-                 id="PEPPOL-T124-B53003">Element 'cbc:LongitudeDegreesMeasure' MUST be provided.</assert>
+                 id="PEPPOL-T124-B63303">Element 'cbc:LongitudeDegreesMeasure' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:CoordinateSystemCode"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:LatitudeDegreesMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B53201">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B63501">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B53202">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B63502">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:LongitudeDegreesMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B53401">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B63701">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B53402">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B63702">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:AltitudeMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B53601">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B63901">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B53602">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B63902">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B53004">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B63304">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B52002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B62302">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B51601">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B61901">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Period"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Period/cbc:StartDate"/>
@@ -1802,46 +2111,46 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Period/cbc:EndDate"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Period/cbc:EndTime"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Period/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B53801">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B64101">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedDepartureTransportEvent/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B51403">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B61703">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent">
-         <assert test="cbc:IdentificationID" flag="fatal" id="PEPPOL-T124-B54301">Element 'cbc:IdentificationID' MUST be provided.</assert>
-         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B54302">Element 'cac:Location' MUST be provided.</assert>
-         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B54303">Element 'cac:Period' MUST be provided.</assert>
+         <assert test="cbc:IdentificationID" flag="fatal" id="PEPPOL-T124-B64601">Element 'cbc:IdentificationID' MUST be provided.</assert>
+         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B64602">Element 'cac:Location' MUST be provided.</assert>
+         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B64603">Element 'cac:Period' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cbc:IdentificationID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B54601">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B64901">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B54901">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B65201">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cbc:StreetName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cbc:CityName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B55301">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B65601">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B55401">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B65701">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B55302">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B65602">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B54902">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B65202">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B54501">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B64801">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Period"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Period/cbc:StartDate"/>
@@ -1849,38 +2158,38 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Period/cbc:EndDate"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Period/cbc:EndTime"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Period/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B55501">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B65801">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/cac:PlannedArrivalTransportEvent/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B54304">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B64604">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:PreCarriageShipmentStage/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B48002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B58302">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage">
-         <assert test="cbc:TransportModeCode" flag="fatal" id="PEPPOL-T124-B56001">Element 'cbc:TransportModeCode' MUST be provided.</assert>
+         <assert test="cbc:TransportModeCode" flag="fatal" id="PEPPOL-T124-B66301">Element 'cbc:TransportModeCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cbc:TransportModeCode">
          <assert test="(some $code in $clUNECERec19 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B56101">Value MUST be part of code list 'Recommendation 19 (UN/ECE) Transport Modes'.</assert>
+                 id="PEPPOL-T124-B66401">Value MUST be part of code list 'Recommendation 19 (UN/ECE) Transport Modes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cbc:HazardousRiskIndicator"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PartyIdentification">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B56401">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B66701">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PartyIdentification/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B56501">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B66801">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PartyName">
-         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B56701">Element 'cbc:Name' MUST be provided.</assert>
+         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T124-B67001">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PartyName/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B56901">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B67201">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cbc:StreetName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cbc:AdditionalStreetName"/>
@@ -1888,95 +2197,95 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B57501">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B67801">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B57701">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B68001">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B57801">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B68101">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B57702">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B68002">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PostalAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B56902">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B67202">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity">
-         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B57901">Element 'cbc:RegistrationName' MUST be provided.</assert>
+         <assert test="cbc:RegistrationName" flag="fatal" id="PEPPOL-T124-B68201">Element 'cbc:RegistrationName' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cbc:RegistrationName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cbc:CompanyID">
-         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B58101">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="@schemeID" flag="fatal" id="PEPPOL-T124-B68401">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B58102">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B68402">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B58301">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B68601">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cbc:CityName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B58501">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B68801">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B58601">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B68901">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B58502">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B68802">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B58302">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B68602">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:PartyLegalEntity/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B57902">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B68202">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:Contact"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:Contact/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:Contact/cbc:Telephone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:Contact/cbc:ElectronicMail"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:Contact/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B58701">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B69001">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:Person">
          <assert test="cac:IdentityDocumentReference"
                  flag="fatal"
-                 id="PEPPOL-T124-B59101">Element 'cac:IdentityDocumentReference' MUST be provided.</assert>
+                 id="PEPPOL-T124-B69401">Element 'cac:IdentityDocumentReference' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:Person/cac:IdentityDocumentReference">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B59201">Element 'cbc:ID' MUST be provided.</assert>
-         <assert test="cbc:DocumentType" flag="fatal" id="PEPPOL-T124-B59202">Element 'cbc:DocumentType' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B69501">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:DocumentType" flag="fatal" id="PEPPOL-T124-B69502">Element 'cbc:DocumentType' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:Person/cac:IdentityDocumentReference/cbc:ID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:Person/cac:IdentityDocumentReference/cbc:DocumentType"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:Person/cac:IdentityDocumentReference/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B59203">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B69503">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/cac:Person/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B59102">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B69402">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:CarrierParty/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B56301">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B66601">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent">
-         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B59501">Element 'cac:Location' MUST be provided.</assert>
-         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B59502">Element 'cac:Period' MUST be provided.</assert>
+         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B69801">Element 'cac:Location' MUST be provided.</assert>
+         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B69802">Element 'cac:Period' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cbc:IdentificationID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B59801">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B70101">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B60101">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B70401">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cbc:StreetName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cbc:AdditionalStreetName"/>
@@ -1984,58 +2293,58 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cbc:CountrySubentity"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:AddressLine">
-         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B60701">Element 'cbc:Line' MUST be provided.</assert>
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B71001">Element 'cbc:Line' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:AddressLine/cbc:Line"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B60901">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B71201">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B61001">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B71301">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B60902">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B71202">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate">
          <assert test="cbc:CoordinateSystemCode"
                  flag="fatal"
-                 id="PEPPOL-T124-B61101">Element 'cbc:CoordinateSystemCode' MUST be provided.</assert>
+                 id="PEPPOL-T124-B71401">Element 'cbc:CoordinateSystemCode' MUST be provided.</assert>
          <assert test="cbc:LatitudeDegreesMeasure"
                  flag="fatal"
-                 id="PEPPOL-T124-B61102">Element 'cbc:LatitudeDegreesMeasure' MUST be provided.</assert>
+                 id="PEPPOL-T124-B71402">Element 'cbc:LatitudeDegreesMeasure' MUST be provided.</assert>
          <assert test="cbc:LongitudeDegreesMeasure"
                  flag="fatal"
-                 id="PEPPOL-T124-B61103">Element 'cbc:LongitudeDegreesMeasure' MUST be provided.</assert>
+                 id="PEPPOL-T124-B71403">Element 'cbc:LongitudeDegreesMeasure' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:CoordinateSystemCode"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:LatitudeDegreesMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B61301">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B71601">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B61302">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B71602">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:LongitudeDegreesMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B61501">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B71801">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B61502">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B71802">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/cbc:AltitudeMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B61701">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B72001">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B61702">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B72002">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/cac:LocationCoordinate/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B61104">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B71404">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/cac:Address/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B60102">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B70402">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Location/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B59701">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B70001">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Period"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Period/cbc:StartDate"/>
@@ -2043,46 +2352,46 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Period/cbc:EndDate"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Period/cbc:EndTime"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/cac:Period/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B61901">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B72201">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedDepartureTransportEvent/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B59503">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B69803">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent">
-         <assert test="cbc:IdentificationID" flag="fatal" id="PEPPOL-T124-B62401">Element 'cbc:IdentificationID' MUST be provided.</assert>
-         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B62402">Element 'cac:Location' MUST be provided.</assert>
-         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B62403">Element 'cac:Period' MUST be provided.</assert>
+         <assert test="cbc:IdentificationID" flag="fatal" id="PEPPOL-T124-B72701">Element 'cbc:IdentificationID' MUST be provided.</assert>
+         <assert test="cac:Location" flag="fatal" id="PEPPOL-T124-B72702">Element 'cac:Location' MUST be provided.</assert>
+         <assert test="cac:Period" flag="fatal" id="PEPPOL-T124-B72703">Element 'cac:Period' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cbc:IdentificationID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B62701">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+                 id="PEPPOL-T124-B73001">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address">
-         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B63001">Element 'cac:Country' MUST be provided.</assert>
+         <assert test="cac:Country" flag="fatal" id="PEPPOL-T124-B73301">Element 'cac:Country' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cbc:StreetName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cbc:CityName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cbc:PostalZone"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cac:Country">
-         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B63401">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B73701">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B63501">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T124-B73801">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/cac:Country/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B63402">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B73702">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/cac:Address/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B63002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B73302">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Location/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B62601">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B72901">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Period"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Period/cbc:StartDate"/>
@@ -2090,126 +2399,127 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Period/cbc:EndDate"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Period/cbc:EndTime"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/cac:Period/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B63601">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B73901">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/cac:PlannedArrivalTransportEvent/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B62404">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B72704">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OnCarriageShipmentStage/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B56002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B66302">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B64101">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B74401">Element 'cbc:ID' MUST be provided.</assert>
          <assert test="cbc:TransportHandlingUnitTypeCode"
                  flag="fatal"
-                 id="PEPPOL-T124-B64102">Element 'cbc:TransportHandlingUnitTypeCode' MUST be provided.</assert>
+                 id="PEPPOL-T124-B74402">Element 'cbc:TransportHandlingUnitTypeCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clTransportHandlingUnitIDType satisfies $code = @schemeID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B64201">Value MUST be part of code list 'Type of Transport Handling Unit ID (openPEPPOL)'.</assert>
+                 id="PEPPOL-T124-B74501">Value MUST be part of code list 'Type of Transport Handling Unit ID (openPEPPOL)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cbc:TransportHandlingUnitTypeCode">
          <assert test="(some $code in $clUNECERec21 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B64401">Value MUST be part of code list 'Recommendation 21 (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B74701">Value MUST be part of code list 'Recommendation 21 (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cbc:HandlingCode"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cbc:HandlingInstructions"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cbc:HazardousRiskIndicator"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cbc:ShippingMarks"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:TransportEquipment">
-         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B64901">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B75201">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:TransportEquipment/cbc:ID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:TransportEquipment/cbc:TransportEquipmentTypeCode">
          <assert test="(some $code in $clUNCL8053 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B65101">Value MUST be part of code list 'Transport equipment type code (UNCL8053) '.</assert>
+                 id="PEPPOL-T124-B75401">Value MUST be part of code list 'Transport equipment type code (UNCL8053) '.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:TransportEquipment/cbc:SizeTypeCode">
          <assert test="(some $code in $clTRED8155 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B65201">Value MUST be part of code list 'Size type code (TRED8155)'.</assert>
+                 id="PEPPOL-T124-B75501">Value MUST be part of code list 'Size type code (TRED8155)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:TransportEquipment/cbc:RefrigerationOnIndicator"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:TransportEquipment/cbc:Description"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:TransportEquipment/cbc:PowerIndicator"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:TransportEquipment/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B64902">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B75202">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:MeasurementDimension">
-         <assert test="cbc:AttributeID" flag="fatal" id="PEPPOL-T124-B65601">Element 'cbc:AttributeID' MUST be provided.</assert>
-         <assert test="cbc:Measure" flag="fatal" id="PEPPOL-T124-B65602">Element 'cbc:Measure' MUST be provided.</assert>
+         <assert test="cbc:AttributeID" flag="fatal" id="PEPPOL-T124-B75901">Element 'cbc:AttributeID' MUST be provided.</assert>
+         <assert test="cbc:Measure" flag="fatal" id="PEPPOL-T124-B75902">Element 'cbc:Measure' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:MeasurementDimension/cbc:AttributeID">
          <assert test="(some $code in $clUNCL6313-T120 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B65701">Value MUST be part of code list 'Measured attribute code for despatch advice (UNCL6313 Subset) T120'.</assert>
+                 id="PEPPOL-T124-B76001">Value MUST be part of code list 'Measured attribute code for despatch advice (UNCL6313 Subset) T120'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:MeasurementDimension/cbc:Measure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B65801">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B76101">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B65802">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B76102">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:MeasurementDimension/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B65603">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B75903">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:MinimumTemperature">
-         <assert test="cbc:AttributeID" flag="fatal" id="PEPPOL-T124-B66001">Element 'cbc:AttributeID' MUST be provided.</assert>
-         <assert test="cbc:Measure" flag="fatal" id="PEPPOL-T124-B66002">Element 'cbc:Measure' MUST be provided.</assert>
+         <assert test="cbc:AttributeID" flag="fatal" id="PEPPOL-T124-B76301">Element 'cbc:AttributeID' MUST be provided.</assert>
+         <assert test="cbc:Measure" flag="fatal" id="PEPPOL-T124-B76302">Element 'cbc:Measure' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:MinimumTemperature/cbc:AttributeID">
          <assert test="(some $code in $clUNCL6313-T120 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B66101">Value MUST be part of code list 'Measured attribute code for despatch advice (UNCL6313 Subset) T120'.</assert>
+                 id="PEPPOL-T124-B76401">Value MUST be part of code list 'Measured attribute code for despatch advice (UNCL6313 Subset) T120'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:MinimumTemperature/cbc:Measure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B66201">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B76501">Attribute 'unitCode' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:MinimumTemperature/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B66003">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B76303">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:MaximumTemperature">
-         <assert test="cbc:AttributeID" flag="fatal" id="PEPPOL-T124-B66401">Element 'cbc:AttributeID' MUST be provided.</assert>
-         <assert test="cbc:Measure" flag="fatal" id="PEPPOL-T124-B66402">Element 'cbc:Measure' MUST be provided.</assert>
+         <assert test="cbc:AttributeID" flag="fatal" id="PEPPOL-T124-B76701">Element 'cbc:AttributeID' MUST be provided.</assert>
+         <assert test="cbc:Measure" flag="fatal" id="PEPPOL-T124-B76702">Element 'cbc:Measure' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:MaximumTemperature/cbc:AttributeID">
          <assert test="(some $code in $clUNCL6313-T120 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B66501">Value MUST be part of code list 'Measured attribute code for despatch advice (UNCL6313 Subset) T120'.</assert>
+                 id="PEPPOL-T124-B76801">Value MUST be part of code list 'Measured attribute code for despatch advice (UNCL6313 Subset) T120'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:MaximumTemperature/cbc:Measure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B66601">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B76901">Attribute 'unitCode' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:MaximumTemperature/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B66403">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B76703">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cbc:ID"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cbc:SequenceNumberID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cbc:Description"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cbc:HazardousRiskIndicator"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cbc:Quantity">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B67201">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B77601">Attribute 'unitCode' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cbc:Name"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:CommodityClassification">
          <assert test="cbc:ItemClassificationCode"
                  flag="fatal"
-                 id="PEPPOL-T124-B67601">Element 'cbc:ItemClassificationCode' MUST be provided.</assert>
+                 id="PEPPOL-T124-B78001">Element 'cbc:ItemClassificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:CommodityClassification/cbc:ItemClassificationCode">
-         <assert test="@listID" flag="fatal" id="PEPPOL-T124-B67701">Attribute 'listID' MUST be present.</assert>
+         <assert test="@listID" flag="fatal" id="PEPPOL-T124-B78101">Attribute 'listID' MUST be present.</assert>
          <assert test="not(@listID) or (some $code in $clUNCL7143 satisfies $code = @listID)"
                  flag="fatal"
-                 id="PEPPOL-T124-B67702">Value MUST be part of code list 'Item type identification code (UNCL7143)'.</assert>
-         <assert test="@listVersionID" flag="fatal" id="PEPPOL-T124-B67703">Attribute 'listVersionID' MUST be present.</assert>
-         <assert test="@name" flag="fatal" id="PEPPOL-T124-B67704">Attribute 'name' MUST be present.</assert>
+                 id="PEPPOL-T124-B78102">Value MUST be part of code list 'Item type identification code (UNCL7143)'.</assert>
+         <assert test="@listVersionID" flag="fatal" id="PEPPOL-T124-B78103">Attribute 'listVersionID' MUST be present.</assert>
+         <assert test="@name" flag="fatal" id="PEPPOL-T124-B78104">Attribute 'name' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:CommodityClassification/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B67602">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B78002">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:ID"/>
@@ -2217,59 +2527,148 @@
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:UNDGCode">
          <assert test="(some $code in $clUNCL8273 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T124-B68401">Value MUST be part of code list 'Dangerous goods regulations code (UNCL8273)'.</assert>
+                 id="PEPPOL-T124-B78801">Value MUST be part of code list 'Dangerous goods regulations code (UNCL8273)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:TechnicalName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:CategoryName"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:HazardousCategoryCode"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:HazardClassID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:NetWeightMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B68901">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B79301">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B68902">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B79302">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:NetVolumeMeasure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B69101">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B79501">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B69102">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B79502">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:HazardousGoodsTransit">
-         <assert test="cbc:PackingCriteriaCode" flag="fatal" id="PEPPOL-T124-B69301">Element 'cbc:PackingCriteriaCode' MUST be provided.</assert>
+         <assert test="cbc:PackingCriteriaCode" flag="fatal" id="PEPPOL-T124-B79701">Element 'cbc:PackingCriteriaCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:HazardousGoodsTransit/cbc:PackingCriteriaCode"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:HazardousGoodsTransit/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B69302">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B79702">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:EmergencyTemperature">
-         <assert test="cbc:AttributeID" flag="fatal" id="PEPPOL-T124-B69501">Element 'cbc:AttributeID' MUST be provided.</assert>
-         <assert test="cbc:Measure" flag="fatal" id="PEPPOL-T124-B69502">Element 'cbc:Measure' MUST be provided.</assert>
+         <assert test="cbc:AttributeID" flag="fatal" id="PEPPOL-T124-B79901">Element 'cbc:AttributeID' MUST be provided.</assert>
+         <assert test="cbc:Measure" flag="fatal" id="PEPPOL-T124-B79902">Element 'cbc:Measure' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:EmergencyTemperature/cbc:AttributeID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:EmergencyTemperature/cbc:Measure">
-         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B69701">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B80101">Attribute 'unitCode' MUST be present.</assert>
          <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
                  flag="fatal"
-                 id="PEPPOL-T124-B69702">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+                 id="PEPPOL-T124-B80102">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:EmergencyTemperature/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B69503">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B79903">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/cac:HazardousItem/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B68101">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B78501">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/cac:Item/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B67401">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B77801">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:GoodsItem/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B66801">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B77101">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:ShipmentDocumentReference">
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B80301">Element 'cbc:ID' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:ShipmentDocumentReference/cbc:ID"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:ShipmentDocumentReference/cbc:DocumentTypeCode"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:ShipmentDocumentReference/cbc:DocumentType"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/cac:ShipmentDocumentReference/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B80302">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:TransportHandlingUnit/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B64103">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B74403">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cbc:ID">
+         <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
+                 flag="fatal"
+                 id="PEPPOL-T124-B80801">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cbc:Name"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cbc:StreetName"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cbc:AdditionalStreetName"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cbc:CityName"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cbc:PostalZone"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cbc:CountrySubentity"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cac:AddressLine">
+         <assert test="cbc:Line" flag="fatal" id="PEPPOL-T124-B81701">Element 'cbc:Line' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cac:AddressLine/cbc:Line"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cac:Country">
+         <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T124-B81901">Element 'cbc:IdentificationCode' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cac:Country/cbc:IdentificationCode">
+         <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
+                 flag="fatal"
+                 id="PEPPOL-T124-B82001">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cac:Country/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B81902">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cac:LocationCoordinate">
+         <assert test="cbc:CoordinateSystemCode"
+                 flag="fatal"
+                 id="PEPPOL-T124-B82101">Element 'cbc:CoordinateSystemCode' MUST be provided.</assert>
+         <assert test="cbc:LatitudeDegreesMeasure"
+                 flag="fatal"
+                 id="PEPPOL-T124-B82102">Element 'cbc:LatitudeDegreesMeasure' MUST be provided.</assert>
+         <assert test="cbc:LongitudeDegreesMeasure"
+                 flag="fatal"
+                 id="PEPPOL-T124-B82103">Element 'cbc:LongitudeDegreesMeasure' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cac:LocationCoordinate/cbc:CoordinateSystemCode"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cac:LocationCoordinate/cbc:LatitudeDegreesMeasure">
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B82301">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
+                 flag="fatal"
+                 id="PEPPOL-T124-B82302">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cac:LocationCoordinate/cbc:LongitudeDegreesMeasure">
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B82501">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
+                 flag="fatal"
+                 id="PEPPOL-T124-B82502">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cac:LocationCoordinate/cbc:AltitudeMeasure">
+         <assert test="@unitCode" flag="fatal" id="PEPPOL-T124-B82701">Attribute 'unitCode' MUST be present.</assert>
+         <assert test="not(@unitCode) or (some $code in $clUNECERec20 satisfies $code = @unitCode)"
+                 flag="fatal"
+                 id="PEPPOL-T124-B82702">Value MUST be part of code list 'Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cac:LocationCoordinate/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B82104">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B81101">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:OfficeOfEntryLocation/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B80701">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:DocumentReference">
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T124-B82901">Element 'cbc:ID' MUST be provided.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:DocumentReference/cbc:ID"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:DocumentReference/cbc:DocumentTypeCode">
+         <assert test="(some $code in $clUNCL1001 satisfies $code = normalize-space(text()))"
+                 flag="fatal"
+                 id="PEPPOL-T124-B83101">Value MUST be part of code list 'Document name code, full list (UNCL1001)'.</assert>
+      </rule>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:DocumentReference/cbc:DocumentType"/>
+      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:DocumentReference/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B82902">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B19407">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T124-B19607">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlan/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T124-B00113">Document MUST NOT contain elements not part of the data model.</assert>
