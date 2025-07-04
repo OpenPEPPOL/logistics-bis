@@ -12,8 +12,15 @@ The transport event supports an event-oriented document exchange. It represents 
 * Transport Event (general)
 
 The difference in requested and actual is that the requested event comes from the Transport user and the actual event comes from the Transport service provider. 
+
 An example of a transport event is shown below:
 [source, xml, indent=0]
 ----
-include::{snippet-dir}/snippet-1.xml[tags=planned-pickup-transport-event]
+include::{snippet-dir2}/snippet-1.xml[tags=planned-pickup-transport-event]
+----
+
+For other general events like board crossing (event code = 13), for instance in instructions to issue customs declarations, the general event class can use. An example of this is shown below:
+[source, xml, indent=0]
+----
+include::{snippet-dir}/snippet-2.xml[tags=transport-event]
 ----
