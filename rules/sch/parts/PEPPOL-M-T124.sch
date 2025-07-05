@@ -8,8 +8,8 @@
 	</rule>
 	<rule context="cbc:ProfileID">
 		<assert id="PEPPOL-T124-R002"
-		  test="some $p in tokenize('urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1 urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1', '\s') satisfies $p = normalize-space(.)"
-		  flag="fatal">ProfileID SHALL have the value 'urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1' or 'urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1'.</assert>
+		  test="(normalize-space(.) = 'urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1' or 'urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1' or 'urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1')"
+	 	  flag="fatal">ProfileID SHALL have the value 'urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1' or 'urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1' or 'urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1'.</assert>
 	</rule>
 	<rule context="cac:Consignment">
 		<assert id="PEPPOL-T124-R003" test="not(cbc:TotalTransportHandlingUnitQuantity) or number(cbc:TotalTransportHandlingUnitQuantity) &gt;= 0" flag="warning">[PEPPOL-T124-R003]Total transport handling unit quantity SHALL not be negative</assert>

@@ -8,8 +8,8 @@
 	</rule>
 	<rule context="cbc:ProfileID">
 		<assert id="PEPPOL-T127-R002"
-		  test="some $p in tokenize('urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1 urn:fdc:peppol.eu:logistics:bis:transportation_status_only:1', '\s') satisfies $p = normalize-space(.)"
-		  flag="fatal">Specification identifier SHALL start with the value 'urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1' or 'urn:fdc:peppol.eu:logistics:bis:transportation_status_only:1'.</assert>
+		  test="(normalize-space(.) = 'urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1' 'urn:fdc:peppol.eu:logistics:bis:transportation_status_only:1' or 'urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1')"
+		  flag="fatal">ProfileID SHALL have the value 'urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1' 'urn:fdc:peppol.eu:logistics:bis:transportation_status_only:1' or 'urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1'.</assert>
 	</rule>
 	
 	<rule context="ubl:TransportationStatus/cbc:IssueTime">
