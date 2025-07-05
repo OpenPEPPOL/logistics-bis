@@ -8,7 +8,7 @@
 
 	<rule context="cbc:ProfileID">
 		<assert id="PEPPOL-T123-R002"
-				test="(normalize-space(.) = ('urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1') or ('urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1'))"
+				test=" = ('urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1') or ('urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1'))"
 				flag="fatal">ProfileID SHALL have the value 'urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1' or 'urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1'.</assert>
 	</rule>
 
