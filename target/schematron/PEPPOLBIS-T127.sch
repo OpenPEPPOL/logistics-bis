@@ -839,7 +839,7 @@
 	     </rule>
 	     <rule context="cbc:ProfileID">
 		       <assert id="PEPPOL-T127-R002"
-                 test="(normalize-space(.) = 'urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1' 'urn:fdc:peppol.eu:logistics:bis:transportation_status_only:1' or 'urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1')"
+                 test="(normalize-space(.) = 'urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1' or 'urn:fdc:peppol.eu:logistics:bis:transportation_status_only:1' or 'urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1')"
                  flag="fatal">ProfileID SHALL have the value 'urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1' 'urn:fdc:peppol.eu:logistics:bis:transportation_status_only:1' or 'urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1'.</assert>
 	     </rule>
 	
