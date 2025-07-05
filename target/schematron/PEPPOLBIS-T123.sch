@@ -1764,9 +1764,9 @@
                  flag="fatal">CustomizationID SHALL have the value 'urn:fdc:peppol.eu:logistics:trns:transport_execution_plan_request:1'.</assert>
 	     </rule>
 
-	     <rule context="cbc:ProfileID">
+	     <rule context="ubl:TransportExecutionPlanRequest">
 		       <assert id="PEPPOL-T123-R002"
-                 test=" (= ('urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1') or ('urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1'))"
+                 test=" (ProfileID = ('urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1') or ('urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1'))"
                  flag="fatal">ProfileID SHALL have the value 'urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1' or 'urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1'.</assert>
 	     </rule>
 
