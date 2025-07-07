@@ -840,9 +840,6 @@
       </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cbc:ID"/>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cbc:FunctionCode"/>
-      <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cbc:FunctionCode/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T124-B21201">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TransportExecutionPlan/cac:Consignment/cac:CustomsDeclaration/cac:ValidityPeriod">
          <assert test="StartDate" flag="fatal" id="PEPPOL-T124-B21301">Element 'StartDate' MUST be provided.</assert>
       </rule>
