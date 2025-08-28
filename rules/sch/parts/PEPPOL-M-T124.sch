@@ -63,7 +63,7 @@
 				or (cac:Consignment/cac:PlannedPickupTransportEvent)"
 				flag="fatal">[PEPPOL-T124-R040] cac:Consignment/cac:PlannedPickupTransportEvent must be present when cac:MainTransportationService = "4", "22", "23" or "24".</assert>
 		<assert id="PEPPOL-T124-R041" test="not(cac:MainTransportationService/cbc:TransportServiceCode = ('4', '22', '23', '24')) 
-				or (cac:Consignment/PlannedDeliveryTransportEvent)"
+				or (cac:Consignment/cac:PlannedDeliveryTransportEvent)"
 				flag="fatal">[PEPPOL-T124-R041] cac:Consignment/cac:PlannedDeliveryTransportEvent must be present when cac:MainTransportationService = "4", "22", "23" or "24".</assert>
 		<assert id="PEPPOL-T124-R042" test="not(cac:MainTransportationService/cbc:TransportServiceCode = ('4', '22', '23', '24')) 
 				or (cac:Consignment/cac:MainCarriageShipmentStage)"
