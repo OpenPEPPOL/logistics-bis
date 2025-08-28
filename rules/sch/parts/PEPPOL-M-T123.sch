@@ -24,7 +24,6 @@
 		<assert id="PEPPOL-T123-R007" test="not(cac:DeliveryTerms) or ((cac:DeliveryTerms/cbc:ID) or (cac:DeliveryTerms/cbc:SpecialTerms))" flag="warning">[PEPPOL-T123-R007] Either ID or special terms need to be specified in Delivery terms</assert>
 		<assert id="PEPPOL-T123-R008" test="(cbc:GrossWeightMeasure) or (cbc:GrossVolumeMeasure) or (cbc:LoadingLengthMeasure)" flag="warning">[PEPPOL-T123-R008] Either gross weight, gross volume or loading length must be specified</assert>
 		<assert id="PEPPOL-T123-R010" test="not(cac:PaymentTerms) or cac:PaymentTerms/cbc:ID or cac:PaymentTerms/cbc:Note"	flag="warning">[PEPPOL-T123-R010] When Payment terms is specified, either the ID or the note must be specified</assert>
-		<assert id="PEPPOL-T123-R021" test="cac:RequestedPickupTransportEvent or cac:RequestedDeliveryTransportEvent"	flag="fatal">[PEPPOL-T123-R021] At least one of Requested Pickup Transport Event or Requested Delivery Transport Event has to be specified</assert>			
 	</rule>
 	
 	<rule context="cac:Period">
@@ -48,6 +47,9 @@
 		<assert id="PEPPOL-T123-R032" test="cac:PartyName or cac:PartyIdentification" flag="fatal"> [PEPPOL-T123-R032] Party must include either a party name or a party identification.</assert>
 	</rule>
 	<rule context="ubl:TransportExecutionPlanRequest">
+		<assert id="PEPPOL-T123-R021" test="not(cac:MainTransportationService/cbc:TransportServiceCode = ('4', '22', '23', '24')) 
+				or cac:Consignment/cac:RequestedPickupTransportEvent or cac:Consignment/cac:RequestedDeliveryTransportEvent"	
+				flag="fatal">[PEPPOL-T123-R021] At least one of Requested Pickup Transport Event or Requested Delivery Transport Event has to be specified for cac:MainTransportationService/cac:TransportServiceCode "4", "22", "23" and "24"</assert>
 		<assert id="PEPPOL-T123-R033" test="not(cac:PayeeParty) or cac:PayeeParty/cac:PartyName or cac:PayeeParty/cac:PartyIdentification" flag="fatal"> [PEPPOL-T123-R033] Party must include either a party name or a party identification.</assert>
 	</rule>
 	<rule context="ubl:TransportExecutionPlanRequest/cac:Consignment/cac:ConsigneeParty">

@@ -918,6 +918,7 @@
 		<?Cardinality 1..1?>
 		<?Description A description of the main transportation service referenced in the Transport Execution Plan.?>
 		<cbc:TransportServiceCode>4
+			<?Rule PEPPOL-T124-R010?>
 			<?Name Main Transportatin Service Code?>
 			<?Cardinality 1..1?>
 			<?Description A code signifying the extent of this transportation service (e.g., door-to-door, port-to-port).?>
@@ -1536,7 +1537,8 @@
 			<?Name Planned pickup transport event ?>
 			<?Description The pickup of this consignment planned by the party responsible for providing the transportation service 
 				(the transport service provider)?>
-			<?Cardinality 1..1?>
+			<?Cardinality 0..1?>
+			<?Rule PEPPOL-T124-R040?>
 			<cbc:IdentificationID>21412312412
 				<?Name Identifier pickup transport event ?>
 				<?Description An identifier for this pickup transport event within an agreed event identification scheme. ?>
@@ -1689,7 +1691,8 @@
 		<cac:PlannedDeliveryTransportEvent>
 			<?Name Requested delivery transport event ?>
 			<?Description The delivery of this consignment requested by the party requesting a transportation service (the transport user).?>
-			<?Cardinality 1..1?>
+			<?Cardinality 0..1?>
+			<?Rule PEPPOL-T124-R040?>
 			<cbc:IdentificationID>625435485674654132
 				<?Name Identifier delivery transport event ?>
 				<?Description An identifier for this delivery transport event within an agreed event identification scheme. ?>
@@ -2545,7 +2548,8 @@
 		<cac:MainCarriageShipmentStage>
 			<?Name Main carriage shipment stage ?>
 			<?Description The shipment stage during main carriage. ?>
-			<?Cardinality 1..1?>
+			<?Cardinality 0..1?>
+			<?Rule PEPPOL-T124-R040?>
 			<cbc:TransportModeCode>4
 				<?Name Transport mode code?>
 				<?Description A code signifying the method of transport used for this shipment stage. ?>
