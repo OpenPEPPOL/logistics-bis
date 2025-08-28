@@ -1139,6 +1139,7 @@
             <Term>cbc:TransportServiceCode</Term>
             <Name>Main Transportatin Service Code</Name>
             <Description>A code signifying the extent of this transportation service (e.g., door-to-door, port-to-port).</Description>
+            <Reference type="RULE">PEPPOL-T124-R010</Reference>
             <Reference type="CODE_LIST">TransportServiceCode</Reference>
             <Value type="EXAMPLE">4</Value>
          </Element>
@@ -1864,11 +1865,12 @@
                </Element>
             </Element>
          </Element>
-         <Element cardinality="1..1">
+         <Element cardinality="0..1">
             <Term>cac:PlannedPickupTransportEvent</Term>
             <Name>Planned pickup transport event </Name>
             <Description>The pickup of this consignment planned by the party responsible for providing the transportation service 
 				(the transport service provider)</Description>
+            <Reference type="RULE">PEPPOL-T124-R040</Reference>
             <Element cardinality="0..1">
                <Term>cbc:IdentificationID</Term>
                <Name>Identifier pickup transport event </Name>
@@ -2049,10 +2051,11 @@
                </Element>
             </Element>
          </Element>
-         <Element cardinality="1..1">
+         <Element cardinality="0..1">
             <Term>cac:PlannedDeliveryTransportEvent</Term>
             <Name>Requested delivery transport event </Name>
             <Description>The delivery of this consignment requested by the party requesting a transportation service (the transport user).</Description>
+            <Reference type="RULE">PEPPOL-T124-R040</Reference>
             <Element cardinality="0..1">
                <Term>cbc:IdentificationID</Term>
                <Name>Identifier delivery transport event </Name>
@@ -3044,10 +3047,11 @@
                <Value type="EXAMPLE">100</Value>
             </Element>
          </Element>
-         <Element cardinality="1..1">
+         <Element cardinality="0..1">
             <Term>cac:MainCarriageShipmentStage</Term>
             <Name>Main carriage shipment stage </Name>
             <Description>The shipment stage during main carriage. </Description>
+            <Reference type="RULE">PEPPOL-T124-R040</Reference>
             <Element cardinality="1..1">
                <Term>cbc:TransportModeCode</Term>
                <Name>Transport mode code</Name>
