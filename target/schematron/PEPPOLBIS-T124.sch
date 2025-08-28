@@ -2763,7 +2763,7 @@
                  test="not(cac:BillToParty) or cac:BillToParty/cac:PartyName or cac:BillToParty/cac:PartyIdentification"
                  flag="fatal"> [PEPPOL-T124-R035] Party must include either a party name or a party identification.</assert>
 		       <assert id="PEPPOL-T124-R040"
-                 test="not(cac:MainTransportationService/cbc:TransportServiceCode = ('4', '22', '23', '24'))      or (cac:Consignment/cac:PlannedPickupTransportEvent cac:Consignment/PlannedDeliveryTransportEvent cac:Consignment/cac:MainCarriageShipmentStage)"
+                 test="not(cac:MainTransportationService/cbc:TransportServiceCode = ('4', '22', '23', '24'))      or (cac:Consignment/cac:PlannedPickupTransportEvent and cac:Consignment/PlannedDeliveryTransportEvent and cac:Consignment/cac:MainCarriageShipmentStage)"
                  flag="fatal">[PEPPOL-T124-R040] cac:Consignment/cac:PlannedPickupTransportEvent, cac:Consignment/cac:PlannedDeliveryTransportEvent 
 				and cac:Consignment/cac:MainCarriageShipmentStage must be present when cac:MainTransportationService = "4", "22", "23" or "24".</assert>
 	     </rule>
