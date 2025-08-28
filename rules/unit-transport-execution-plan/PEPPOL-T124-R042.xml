@@ -3,11 +3,11 @@
 	<assert>
 		<description>Verify that the Planned Pickup Transport Event, Planned Delivery Transport Event and Main Carriage Shipment Stage are being 
 		specified for the Consignment when the Transport Service Code is "4", "22", "23" or "24". </description>
-		<scope>PEPPOL-T124-R040</scope>
+		<scope>PEPPOL-T124-R042</scope>
 	</assert>
 	<test id="1">
 		<assert>
-			<success>PEPPOL-T124-R040</success>
+			<success>PEPPOL-T124-R042</success>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -31,7 +31,7 @@
 
 	<test id="2">
 		<assert>
-			<success>PEPPOL-T124-R040</success>
+			<success>PEPPOL-T124-R042</success>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -52,7 +52,7 @@
 
 	<test id="3">
 		<assert>
-			<success>PEPPOL-T124-R040</success>
+			<success>PEPPOL-T124-R042</success>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -73,7 +73,7 @@
 
 	<test id="4">
 		<assert>
-			<success>PEPPOL-T124-R040</success>
+			<success>PEPPOL-T124-R042</success>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -94,7 +94,7 @@
 
 	<test id="5">
 		<assert>
-			<success>PEPPOL-T124-R040</success>
+			<success>PEPPOL-T124-R042</success>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -110,7 +110,7 @@
 
 	<test id="6">
 		<assert>
-			<error>PEPPOL-T124-R040</error>
+			<error>PEPPOL-T124-R042</error>
 		</assert>
 		<ubl:TransportExecutionPlan xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportExecutionPlan-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
@@ -119,12 +119,12 @@
 				<cbc:TransportServiceCode>4</cbc:TransportServiceCode>
 			</cac:MainTransportationService>
 			<cac:Consignment>
+				<cac:PlannedPickupTransportEvent>
+					<cbc:IdentificationID>21412312412</cbc:IdentificationID>
+				</cac:PlannedPickupTransportEvent>
 				<cac:PlannedDeliveryTransportEvent>
 					<cbc:IdentificationID>625435485674654132</cbc:IdentificationID>
 				</cac:PlannedDeliveryTransportEvent>
-				<cac:MainCarriageShipmentStage>
-					<cbc:TransportModeCode>3</cbc:TransportModeCode>
-				</cac:MainCarriageShipmentStage>
 			</cac:Consignment>
 		</ubl:TransportExecutionPlan>
 	</test>
