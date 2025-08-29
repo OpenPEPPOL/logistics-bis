@@ -8,7 +8,7 @@
    <cbc:ID>e2663b86-79cf-11f0-8de9-0242ac120002</cbc:ID>
    <cbc:IssueDate>2025-05-09</cbc:IssueDate>
    <cbc:IssueTime>09:49:00+02:00</cbc:IssueTime>
-   <cbc:Note>Some notes from the requester</cbc:Note>
+   <cbc:Note>Some notes from the receiver</cbc:Note>
    <cac:SenderParty>
       <cbc:EndpointID schemeID="0198">85955619</cbc:EndpointID>
       <cac:PartyIdentification>
@@ -47,24 +47,20 @@
          <cbc:RegistrationName>Transport provider A/S</cbc:RegistrationName>			
       </cac:PartyLegalEntity>		
    </cac:TransportServiceProviderParty>   
-   <cac:AdditionalDocumentReference>
-      <cbc:ID>inv-123456</cbc:ID>		
-      <cbc:DocumentType>SenderInvoiceReference</cbc:DocumentType>
-      <cac:Attachment>
-         <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="ArrivalNotice.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
-         <cac:ExternalReference>
-            <cbc:URI>https://documents.semantic.biz?documentID=d1b34d9d-8020-49a2-a43c-75f5518d77e6</cbc:URI>
-         </cac:ExternalReference>
-      </cac:Attachment>
-   </cac:AdditionalDocumentReference>			
+	<cac:AdditionalDocumentReference>
+		<cbc:ID>inv-123456</cbc:ID>		
+		<cbc:DocumentType>SenderInvoiceReference</cbc:DocumentType>
+		<cac:Attachment>
+         <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="DigitalMOMaster.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+		</cac:Attachment>
+	</cac:AdditionalDocumentReference>		
 	<cac:MainTransportationService>
 		<cbc:TransportServiceCode>19</cbc:TransportServiceCode>
-		<cbc:TransportationServiceDescription>ArrivalNotice</cbc:TransportationServiceDescription>
-	</cac:MainTransportationService>   
+		<cbc:TransportationServiceDescription>DigitalMOMaster</cbc:TransportationServiceDescription>
+	</cac:MainTransportationService>	
 	<cac:Consignment>
-		<cbc:ID>12535157654567654</cbc:ID>		
+		<cbc:ID>1</cbc:ID>				
 		<cbc:GrossWeightMeasure unitCode="KGM">103</cbc:GrossWeightMeasure>				
-		<cbc:TotalTransportHandlingUnitQuantity unitCode="EA">1</cbc:TotalTransportHandlingUnitQuantity>
       <cac:ConsigneeParty>			
          <cac:PartyName>
             <cbc:Name>Importer AS</cbc:Name>				
@@ -78,15 +74,13 @@
       <cac:TransportHandlingUnit>
 			<cbc:ID>11111222222222</cbc:ID>
 			<cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>			
-			<cac:TransportEquipment>
-				<cbc:ID>1234567</cbc:ID>
-				<cbc:TransportEquipmentTypeCode>CN</cbc:TransportEquipmentTypeCode>				
-			</cac:TransportEquipment>			
-		   <cac:GoodsItem>
-				<cbc:ID>10</cbc:ID>
-            <cbc:SequenceNumberID>234</cbc:SequenceNumberID>
-            <cbc:Description>Torsk sl u/h fersk fulliset 20kg iso 2-4 kg</cbc:Description>
+			<cac:GoodsItem>				
+				<cbc:Description>Torsk sl u/h fersk fulliset 20kg iso 2-4 kg</cbc:Description>				
 			</cac:GoodsItem>
 		</cac:TransportHandlingUnit>						
+		<cac:DocumentReference>
+			<cbc:ID>43452326</cbc:ID>
+			<cbc:DocumentType>N741</cbc:DocumentType>
+		</cac:DocumentReference>			  
 	</cac:Consignment>
 </ubl:TransportExecutionPlan>
