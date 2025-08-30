@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ubl:TransportationStatusRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TransportationStatusRequest-2"
+                                 xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                                 xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+   <cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:transportation_status_request:1</cbc:CustomizationID>
+   <cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1</cbc:ProfileID>
+   <cbc:ProfileExecutionID>341c5b68-79d0-11f0-8de9-0242ac120002</cbc:ProfileExecutionID>
+   <cbc:ID>49ce4692-79d0-11f0-8de9-0242ac120002</cbc:ID>
+   <cbc:IssueDate>2025-06-06</cbc:IssueDate>
+   <cbc:IssueTime>09:29:30+02:00</cbc:IssueTime>
+   <cbc:Description>A have a question for a dialog</cbc:Description>
+   <cbc:ShippingOrderID>1234</cbc:ShippingOrderID>
+   <cbc:TransportationStatusTypeCode>3</cbc:TransportationStatusTypeCode>
+   <cac:SenderParty>
+      <cbc:EndpointID schemeID="0198">41955619</cbc:EndpointID>
+      <cac:PartyIdentification>
+         <cbc:ID>41955619</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyLegalEntity>
+			<cbc:RegistrationName>Transport UserParty A/S</cbc:RegistrationName>			
+		</cac:PartyLegalEntity>
+		<cac:Contact>			
+         <cbc:Telephone>004710233714</cbc:Telephone>
+         <cbc:ElectronicMail>msreceiver@tplogistics.no</cbc:ElectronicMail>    
+      </cac:Contact>
+   </cac:SenderParty>
+   <cac:ReceiverParty>
+		<cbc:EndpointID schemeID="0198">85955619</cbc:EndpointID>
+      <cac:PartyIdentification>
+         <cbc:ID>85955619</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyLegalEntity>
+			<cbc:RegistrationName>Transport provider A/S</cbc:RegistrationName>			
+		</cac:PartyLegalEntity>
+   </cac:ReceiverParty>
+   <cac:DocumentReference>
+		<cbc:ID>inv-123456</cbc:ID>		
+		<cbc:DocumentType>SenderInvoiceReference</cbc:DocumentType>
+		<cac:Attachment>
+			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="ArivalNotice.pdf"><?attachment.content?>aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>			
+		</cac:Attachment>
+   </cac:DocumentReference>
+</ubl:TransportationStatusRequest>
