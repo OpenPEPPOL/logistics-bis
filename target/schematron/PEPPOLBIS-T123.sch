@@ -128,20 +128,35 @@
 
     
       <rule context="cbc:EndpointID[@schemeID = '0088'] | cac:PartyIdentification/cbc:ID[@schemeID = '0088'] | cbc:CompanyID[@schemeID = '0088']">
-        <assert id="PEPPOL-COMMON-R040"
+         <assert id="PEPPOL-COMMON-R040"
                  test="matches(normalize-space(), '^[0-9]+$') and u:gln(normalize-space())"
                  flag="fatal">GLN must have a valid format according to GS1 rules.</assert>
       </rule>
       <rule context="cbc:EndpointID[@schemeID = '0192'] | cac:PartyIdentification/cbc:ID[@schemeID = '0192'] | cbc:CompanyID[@schemeID = '0192']">
-        <assert id="PEPPOL-COMMON-R041"
+         <assert id="PEPPOL-COMMON-R041"
                  test="matches(normalize-space(), '^[0-9]{9}$') and u:mod11(normalize-space())"
                  flag="fatal">Norwegian organization number MUST be stated in the correct format.</assert>
+      </rule>
+      <rule context="cbc:EndpointID[@schemeID = '0184'] | cac:PartyIdentification/cbc:ID[@schemeID = '0184'] | cbc:CompanyID[@schemeID = '0184']">
+         <assert id="PEPPOL-COMMON-R042"
+                 test="(string-length(string()) = 10 and substring(string(), 1, 2) = 'DK' and string-length(translate(substring(string(), 3, 8), '1234567890', '')) = 0)                or               (string-length(string()) = 8) and (string-length(translate(substring(string(), 1, 8),'1234567890', '')) = 0)"
+                 flag="fatal">Danish organization number (CVR) MUST be stated in the correct format.</assert>
+      </rule>
+      <rule context="cbc:EndpointID[@schemeID = '0096'] | cac:PartyIdentification/cbc:ID[@schemeID = '0096'] | cbc:CompanyID[@schemeID = '0096']">
+         <assert id="PEPPOL-COMMON-R052"
+                 test="(string-length(string()) = 10) and (string-length(translate(substring(string(), 1, 10),'1234567890', '')) = 0)"
+                 flag="warning">Danish chamber of commerce number (P) MUST be stated in the correct format.</assert>
+      </rule>
+      <rule context="cbc:EndpointID[@schemeID = '0198'] | cac:PartyIdentification/cbc:ID[@schemeID = '0198'] | cbc:CompanyID[@schemeID = '0198']">
+         <assert id="PEPPOL-COMMON-R053"
+                 test="(string-length(string()) = 10 and substring(string(), 1, 2) = 'DK' and string-length(translate(substring(string(), 3, 8), '1234567890', '')) = 0)"
+                 flag="warning">Danish ERSTORG number (SE) MUST be stated in the correct format.</assert>
       </rule>
       <rule context="cbc:EndpointID[@schemeID = '0208'] | cac:PartyIdentification/cbc:ID[@schemeID = '0208'] | cbc:CompanyID[@schemeID = '0208']">
          <assert id="PEPPOL-COMMON-R043"
                  test="matches(normalize-space(), '^[0-9]{10}$') and u:mod97-0208(normalize-space())"
                  flag="fatal">Belgian enterprise number MUST be stated in the correct format.</assert>
-      </rule>	
+      </rule>
       <rule context="cbc:EndpointID[@schemeID = '0201'] | cac:PartyIdentification/cbc:ID[@schemeID = '0201'] | cbc:CompanyID[@schemeID = '0201']">
          <assert id="PEPPOL-COMMON-R044"
                  test="u:checkCodiceIPA(normalize-space())"
@@ -162,21 +177,17 @@
                  test="u:checkPIVAseIT(normalize-space())"
                  flag="warning">Italian VAT Code (Partita Iva) must be stated in the correct format</assert>
       </rule>
-      <rule context="cbc:EndpointID[@schemeID = '9906']">
-         <assert id="PEPPOL-COMMON-R048"
-                 test="u:checkPIVAseIT(normalize-space())"
-                 flag="warning">Italian VAT Code (Partita Iva) must be stated in the correct format</assert>
-      </rule>
+    
       <rule context="cbc:EndpointID[@schemeID = '0007'] | cac:PartyIdentification/cbc:ID[@schemeID = '0007'] | cbc:CompanyID[@schemeID = '0007']">
          <assert id="PEPPOL-COMMON-R049"
-                 test="string-length(normalize-space()) = 10 and string(number(normalize-space())) != 'NaN'"
-                 flag="fatal">Swedish organization number MUST be stated in the correct format.</assert>     
-      </rule> 
+                 test="string-length(normalize-space()) = 10 and string(number(normalize-space())) != 'NaN' and u:checkSEOrgnr(normalize-space())"
+                 flag="fatal">Swedish organization number MUST be stated in the correct format.</assert>
+      </rule>
       <rule context="cbc:EndpointID[@schemeID = '0151'] | cac:PartyIdentification/cbc:ID[@schemeID = '0151'] | cbc:CompanyID[@schemeID = '0151']">
          <assert id="PEPPOL-COMMON-R050"
                  test="matches(normalize-space(), '^[0-9]{11}$') and u:abn(normalize-space())"
-                 flag="warning">Australian Business Number (ABN) MUST be stated in the correct format.</assert>
-      </rule> 
+                 flag="fatal">Australian Business Number (ABN) MUST be stated in the correct format.</assert>
+      </rule>
    </pattern>
     <pattern xmlns:ns2="http://www.schematron-quickfix.com/validator/process">
       <let name="clDocumentStatusCode" value="tokenize('1 5 9 22', '\s')"/>
