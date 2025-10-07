@@ -4,16 +4,24 @@ on:
     branches:
       - main
 
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: Checkout source code (to access sync_sch.sh script)
       - name: Checkout source code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
+      # Step 2: Run the Sync Script
+      - name: Sync from Peppol repos
+        run: ./sync_repos.sh
+
+      # Step 3: Build Spec
       - name: Build Spec
         run: bash ./build.sh
 
+      # Step 4: Commit generated files
       - name: Commit the generated files
         uses: EndBug/add-and-commit@v9
         with:
@@ -23,9 +31,12 @@ jobs:
           add: '["**/*.xml", "**/*.sch"]'
           push: true
 
-      - name: Branch name
-        run: echo Deploying ${GITHUB_REF#refs/heads/}
 
+      # Step 5: Branch name for deployment
+      - name: Branch name
+        run: echo Deploying on ${{ secrets.AWS_S3_PATH }}
+
+      # Step 6: Deploy on S3
       - name: Deploy on S3
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
