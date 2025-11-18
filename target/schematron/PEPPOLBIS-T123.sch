@@ -221,16 +221,16 @@
       <let name="clUNCL8273"
            value="tokenize('ADR ADS ADT ADU ADY ADZ ADV ADW ADX AEA AEB AGS ANR ARD CFR COM GVE GVS ICA IMD RGE RID UI ZZZ', '\s')"/>
       <let name="clISO4217"
-           value="tokenize('AED AFN ALL AMD ANG AOA ARS AUD AWG AZN BAM BBD BDT BGN BHD BIF BMD BND BOB BOV BRL BSD BTN BWP BYN BZD CAD CDF CHE CHF CHW CLF CLP CNY COP COU CRC CUP CVE CZK DJF DKK DOP DZD EGP ERN ETB EUR FJD FKP GBP GEL GHS GIP GMD GNF GTQ GYD HKD HNL HTG HUF IDR ILS INR IQD IRR ISK JMD JOD JPY KES KGS KHR KMF KPW KRW KWD KYD KZT LAK LBP LKR LRD LSL LYD MAD MDL MGA MKD MMK MNT MOP MRU MUR MVR MWK MXN MXV MYR MZN NAD NGN NIO NOK NPR NZD OMR PAB PEN PGK PHP PKR PLN PYG QAR RON RSD RUB RWF SAR SBD SCR SDG SEK SGD SHP SLE SOS SRD SSP STN SVC SYP SZL THB TJS TMT TND TOP TRY TTD TWD TZS UAH UGX USD USN UYI UYU UYW UZS VED VES VND VUV WST XAF XAG XAU XBA XBB XBC XBD XCD XDR XOF XPD XPF XPT XSU XTS XUA YER ZAR ZMW ZWG XXX', '\s')"/>
+           value="tokenize('AED AFN ALL AMD ANG AOA ARS AUD AWG AZN BAM BBD BDT BGN BHD BIF BMD BND BOB BOV BRL BSD BTN BWP BYN BZD CAD CDF CHE CHF CHW CLF CLP CNY COP COU CRC CUP CVE CZK DJF DKK DOP DZD EGP ERN ETB EUR FJD FKP GBP GEL GHS GIP GMD GNF GTQ GYD HKD HNL HTG HUF IDR ILS INR IQD IRR ISK JMD JOD JPY KES KGS KHR KMF KPW KRW KWD KYD KZT LAK LBP LKR LRD LSL LYD MAD MDL MGA MKD MMK MNT MOP MRU MUR MVR MWK MXN MXV MYR MZN NAD NGN NIO NOK NPR NZD OMR PAB PEN PGK PHP PKR PLN PYG QAR RON RSD RUB RWF SAR SBD SCR SDG SEK SGD SHP SLE SOS SRD SSP STN SVC SYP SZL THB TJS TMT TND TOP TRY TTD TWD TZS UAH UGX USD USN UYI UYU UYW UZS VED VES VND VUV WST XAF XAG XAU XBA XBB XBC XBD XCD XDR XOF XPD XPF XPT XSU XTS XUA YER ZAR ZMW ZWG XXX CNH', '\s')"/>
       <let name="clTRED8155"
            value="tokenize('1 2 6 7 9 10 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45', '\s')"/>
       <let name="clTransportServiceCode"
            value="tokenize('1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25', '\s')"/>
       <let name="clConsignmentIDType" value="tokenize('GINC', '\s')"/>
       <let name="clICD"
-           value="tokenize('0002 0003 0004 0005 0006 0007 0008 0009 0010 0011 0012 0013 0014 0015 0016 0017 0018 0019 0020 0021 0022 0023 0024 0025 0026 0027 0028 0029 0030 0031 0032 0033 0034 0035 0036 0037 0038 0039 0040 0041 0042 0043 0044 0045 0046 0047 0048 0049 0050 0051 0052 0053 0054 0055 0056 0057 0058 0059 0060 0061 0062 0063 0064 0065 0066 0067 0068 0069 0070 0071 0072 0073 0074 0075 0076 0077 0078 0079 0080 0081 0082 0083 0084 0085 0086 0087 0088 0089 0090 0091 0093 0094 0095 0096 0097 0098 0099 0100 0101 0102 0104 0105 0106 0107 0108 0109 0110 0111 0112 0113 0114 0115 0116 0117 0118 0119 0120 0121 0122 0123 0124 0125 0126 0127 0128 0129 0130 0131 0132 0133 0134 0135 0136 0137 0138 0139 0140 0141 0142 0143 0144 0145 0146 0147 0148 0149 0150 0151 0152 0153 0154 0155 0156 0157 0158 0159 0160 0161 0162 0163 0164 0165 0166 0167 0168 0169 0170 0171 0172 0173 0174 0175 0176 0177 0178 0179 0180 0183 0184 0185 0186 0187 0188 0189 0190 0191 0192 0193 0194 0195 0196 0197 0198 0199 0200 0201 0202 0203 0204 0205 0206 0207 0208 0209 0210 0211 0212 0213 0214 0215 0216 0217 0218 0219 0220 0221 0222 0223 0224 0225 0226 0227 0228 0229 0230 0231 0232 0233 0234 0235 0236 0237 0238 0239 0240', '\s')"/>
+           value="tokenize('0002 0003 0004 0005 0006 0007 0008 0009 0010 0011 0012 0013 0014 0015 0016 0017 0018 0019 0020 0021 0022 0023 0024 0025 0026 0027 0028 0029 0030 0031 0032 0033 0034 0035 0036 0037 0038 0039 0040 0041 0042 0043 0044 0045 0046 0047 0048 0049 0050 0051 0052 0053 0054 0055 0056 0057 0058 0059 0060 0061 0062 0063 0064 0065 0066 0067 0068 0069 0070 0071 0072 0073 0074 0075 0076 0077 0078 0079 0080 0081 0082 0083 0084 0085 0086 0087 0088 0089 0090 0091 0093 0094 0095 0096 0097 0098 0099 0100 0101 0102 0104 0105 0106 0107 0108 0109 0110 0111 0112 0113 0114 0115 0116 0117 0118 0119 0120 0121 0122 0123 0124 0125 0126 0127 0128 0129 0130 0131 0132 0133 0134 0135 0136 0137 0138 0139 0140 0141 0142 0143 0144 0145 0146 0147 0148 0149 0150 0151 0152 0153 0154 0155 0156 0157 0158 0159 0160 0161 0162 0163 0164 0165 0166 0167 0168 0169 0170 0171 0172 0173 0174 0175 0176 0177 0178 0179 0180 0183 0184 0185 0186 0187 0188 0189 0190 0191 0192 0193 0194 0195 0196 0197 0198 0199 0200 0201 0202 0203 0204 0205 0206 0207 0208 0209 0210 0211 0212 0213 0214 0215 0216 0217 0218 0219 0220 0221 0222 0223 0224 0225 0226 0227 0228 0229 0230 0231 0232 0233 0234 0235 0236 0237 0238 0239 0240 0241 0242 0243 0244', '\s')"/>
       <let name="cleas"
-           value="tokenize('0002 0007 0009 0037 0060 0088 0096 0097 0106 0130 0135 0142 0151 0177 0183 0184 0188 0190 0191 0192 0193 0195 0196 0198 0199 0200 0201 0202 0204 0208 0209 0210 0211 0212 0213 0215 0216 0218 0221 0230 0235 9910 9913 9914 9915 9918 9919 9920 9922 9923 9924 9925 9926 9927 9928 9929 9930 9931 9932 9933 9934 9935 9936 9937 9938 9939 9940 9941 9942 9943 9944 9945 9946 9947 9948 9949 9950 9951 9952 9953 9957 9959 0147 0154 0158 0170 0194 0203 0205 0217 0225 0240', '\s')"/>
+           value="tokenize('0002 0007 0009 0037 0060 0088 0096 0097 0106 0130 0135 0142 0151 0177 0183 0184 0188 0190 0191 0192 0193 0195 0196 0198 0199 0200 0201 0202 0204 0208 0209 0210 0211 0212 0213 0215 0216 0218 0221 0230 0235 9910 9913 9914 9915 9918 9919 9920 9922 9923 9924 9925 9926 9927 9928 9929 9930 9931 9932 9933 9934 9935 9936 9937 9938 9939 9940 9941 9942 9943 9944 9945 9946 9947 9948 9949 9950 9951 9952 9953 9957 9959 0147 0154 0158 0170 0194 0203 0205 0217 0225 0240 0244', '\s')"/>
       <let name="clUNCL6313-T120"
            value="tokenize('AAF AAA AAB AAW AAX ABT ACV HT LN WD TC AAO ABJ T', '\s')"/>
       <let name="clUNCL8053"
@@ -314,7 +314,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:TransportUserParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B02801">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B02801">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:TransportUserParty/cac:PostalAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B02702">Document MUST NOT contain elements not part of the data model.</assert>
@@ -357,7 +357,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:TransportUserParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B04001">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B04001">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:TransportUserParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B03902">Document MUST NOT contain elements not part of the data model.</assert>
@@ -418,7 +418,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:TransportServiceProviderParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B06201">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B06201">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:TransportServiceProviderParty/cac:PostalAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B06102">Document MUST NOT contain elements not part of the data model.</assert>
@@ -461,7 +461,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:TransportServiceProviderParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B07401">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B07401">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:TransportServiceProviderParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B07302">Document MUST NOT contain elements not part of the data model.</assert>
@@ -515,7 +515,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:PayeeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B09401">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B09401">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:PayeeParty/cac:PostalAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B09302">Document MUST NOT contain elements not part of the data model.</assert>
@@ -558,7 +558,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:PayeeParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B10601">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B10601">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:PayeeParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B10502">Document MUST NOT contain elements not part of the data model.</assert>
@@ -714,7 +714,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B16301">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B16301">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PostalAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B16202">Document MUST NOT contain elements not part of the data model.</assert>
@@ -757,7 +757,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B17501">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B17501">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:CustomsDeclaration/cac:CustomsParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B17402">Document MUST NOT contain elements not part of the data model.</assert>
@@ -822,7 +822,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B19901">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B19901">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:RequestedPickupTransportEvent/cac:Location/cac:Address/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B19802">Document MUST NOT contain elements not part of the data model.</assert>
@@ -905,7 +905,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B22801">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B22801">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:RequestedDeliveryTransportEvent/cac:Location/cac:Address/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B22702">Document MUST NOT contain elements not part of the data model.</assert>
@@ -991,7 +991,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:ConsigneeParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B25701">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B25701">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:ConsigneeParty/cac:PostalAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B25602">Document MUST NOT contain elements not part of the data model.</assert>
@@ -1019,7 +1019,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:ConsigneeParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B26501">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B26501">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:ConsigneeParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B26402">Document MUST NOT contain elements not part of the data model.</assert>
@@ -1071,7 +1071,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:ConsignorParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B28501">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B28501">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:ConsignorParty/cac:PostalAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B28402">Document MUST NOT contain elements not part of the data model.</assert>
@@ -1099,7 +1099,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:ConsignorParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B29301">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B29301">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:ConsignorParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B29202">Document MUST NOT contain elements not part of the data model.</assert>
@@ -1151,7 +1151,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B31301">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B31301">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:CarrierParty/cac:PostalAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B31202">Document MUST NOT contain elements not part of the data model.</assert>
@@ -1179,7 +1179,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B32101">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B32101">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:CarrierParty/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B32002">Document MUST NOT contain elements not part of the data model.</assert>
@@ -1221,7 +1221,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:OriginalDepartureCountry/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B33101">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B33101">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:OriginalDepartureCountry/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B33001">Document MUST NOT contain elements not part of the data model.</assert>
@@ -1230,7 +1230,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:FinalDestinationCountry/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B33301">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B33301">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:FinalDestinationCountry/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B33201">Document MUST NOT contain elements not part of the data model.</assert>
@@ -1259,7 +1259,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B34801">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B34801">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:TransportEvent/cac:Location/cac:Address/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B34701">Document MUST NOT contain elements not part of the data model.</assert>
@@ -1417,7 +1417,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:MainCarriageShipmentStage/cac:RequestedDepartureTransportEvent/cac:Location/cac:Address/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B40601">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B40601">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:MainCarriageShipmentStage/cac:RequestedDepartureTransportEvent/cac:Location/cac:Address/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B40502">Document MUST NOT contain elements not part of the data model.</assert>
@@ -1494,7 +1494,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:MainCarriageShipmentStage/cac:RequestedArrivalTransportEvent/cac:Location/cac:Address/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B43101">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B43101">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:MainCarriageShipmentStage/cac:RequestedArrivalTransportEvent/cac:Location/cac:Address/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B43002">Document MUST NOT contain elements not part of the data model.</assert>
@@ -1719,7 +1719,7 @@
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T123-B51101">Value MUST be part of code list 'Country codes (ISO 3166-1:Alpha2)'.</assert>
+                 id="PEPPOL-T123-B51101">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
       </rule>
       <rule context="/ubl:TransportExecutionPlanRequest/cac:Consignment/cac:OfficeOfEntryLocation/cac:Address/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T123-B51002">Document MUST NOT contain elements not part of the data model.</assert>
