@@ -20,6 +20,7 @@
     <Documentation path="profiles/72-transportationstatus_w_request/">- Transportation Status with Request 1.1</Documentation>
     <Documentation path="profiles/73-transportationstatus/">- Transportation Status Only 1.1</Documentation>
 	<Documentation path="profiles/74-AdvancedTransportExecutionPlan/">- Advanced Transport Execution Plan 1.0</Documentation>
+	<Documentation path="profiles/75-wastemovement/">- Peppol BIS Waste Movement 0.1 </Documentation>
 
 	<!-- Syntax -->
     <Resource>
@@ -66,6 +67,11 @@
 		<Type>Structure-1</Type>
 		<Path>structure/syntax/ubl-application-response.xml</Path>
 		<Title>Peppol Logistics Application Response 1.0 (T129)</Title>
+	</Resource>
+	<Resource>
+		<Type>Structure-1</Type>
+		<Path>structure/syntax/ubl-waste-movement.xml</Path>
+		<Title>Peppol Waste Movement 0.1 (T131)</Title>
 	</Resource>
 
 	<!-- Rules -->
@@ -128,6 +134,12 @@
 		<Type>native:Schematron</Type>
 		<Path>rules/sch/parts/PEPPOL-M-T129.sch</Path>
 		<Title>Business rules for Peppol Logistics Application Response transaction 1.0</Title>
+	</Resource>
+	<Resource>
+		<Identifier>T128</Identifier>
+		<Type>native:Schematron</Type>
+		<Path>rules/sch/parts/PEPPOL-M-T131.sch</Path>
+		<Title>Business rules for Waste Movement Transaction 0.1</Title>
 	</Resource>
 
 	<!-- Code lists -->
