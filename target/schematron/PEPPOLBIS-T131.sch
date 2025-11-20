@@ -715,9 +715,6 @@
          <assert test="cac:CommodityClassification"
                  flag="fatal"
                  id="PEPPOL-T131-B19602">Element 'cac:CommodityClassification' MUST be provided.</assert>
-         <assert test="cac:AdditionalItemProperty"
-                 flag="fatal"
-                 id="PEPPOL-T131-B19603">Element 'cac:AdditionalItemProperty' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cbc:Description"/>
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cbc:Name"/>
@@ -781,7 +778,7 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B21406">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T131-B19604">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T131-B19603">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B19202">Document MUST NOT contain elements not part of the data model.</assert>
