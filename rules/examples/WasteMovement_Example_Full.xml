@@ -1,2014 +1,430 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
-   <Term>WasteMovement</Term>
-   <Property key="sch:prefix">PEPPOL-T131</Property>
-   <Property key="sch:identifier">T131-basic</Property>
-   <Namespace prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:WasteMovement-2</Namespace>
-   <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
-   <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
-   <Document>
-      <Term>ubl:WasteMovement</Term>
-      <Element>
-         <Term>cbc:CustomizationID</Term>
-         <Name>Specification identification</Name>
-         <Description>Identifies the specification of content and rules that apply to the transaction.</Description>
-         <DataType>Identifier</DataType>
-         <Reference type="BUSINESS_TERM">tir16-002</Reference>
-         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:waste_movement_document:1</Value>    
-      </Element>
-      <Element>
-         <Term>cbc:ProfileID</Term>
-         <Name>Business process type identifier</Name>
-         <Description>Identifies the BII profile or business process context in which the transaction appears.</Description>
-         <DataType>Identifier</DataType>
-         <Reference type="BUSINESS_TERM">tir16-001</Reference>
-         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:waste_movement_document:1</Value>    
-      </Element>
-      <Element cardinality="1..1">
-         <Term>cbc:ID</Term>
-         <Name>Document Identity</Name>
-         <Description>Waste Movement document identity</Description>
-         <DataType>Identifier</DataType>
-         <Reference type="BUSINESS_TERM">tir16-003</Reference>
-         <Value type="EXAMPLE">5658999</Value>    
-      </Element>
-      <Element cardinality="1..1">
-         <Term>cbc:IssueDate</Term>
-         <Name>Document Issue Date</Name>
-         <Description>Document creation Date.</Description>
-         <DataType>Date</DataType>
-         <Reference type="BUSINESS_TERM">tir16-004</Reference>
-         <Value type="EXAMPLE">2025-09-10</Value>    
-      </Element>
-      <Element cardinality="0..1">
-         <Term>cbc:IssueTime</Term>
-         <Name>Document Issue Time</Name>
-         <Description>Document creation Time.</Description>
-         <DataType>Time</DataType>
-         <Reference type="BUSINESS_TERM">tir16-005</Reference>
-         <Value type="EXAMPLE">12:00:00</Value>    
-      </Element>
-      <Element cardinality="0..1">
-         <Term>cbc:WasteMovementTypeCode</Term>
-         <Name>Waste Movement Type Code</Name>
-         <Description>Waste Movement Type Code.</Description>
-         <Value type="EXAMPLE">S3</Value>    
-      </Element>
-      <Element cardinality="0..1">
-         <Term>cbc:SequenceID</Term>
-         <Name>Sequence ID</Name>
-         <Description>Sequence no of this shipment referring to the same Waste Notification.</Description>
-         <Value type="EXAMPLE">3</Value>    
-      </Element>
-      <Element cardinality="0..1">
-         <Term>cbc:TotalMovementNumeric</Term>
-         <Name>Total Movement Numeric</Name>
-         <Description>Total no of shipments referring to the same Waste Notification.</Description>
-         <Value type="EXAMPLE">4</Value>    
-      </Element>
-      <Element cardinality="0..n">
-         <Term>cac:Signature</Term>
-         <Name>Signature</Name>
-         <Description>To attach signatures to this document.</Description>
-         <Element cardinality="1..1">
-            <Term>cbc:ID</Term>
-            <Name>Signature ID.</Name>
-            <Description>Used to specify the role of the signing person. Can be "Sender", "Carrier", "Receiver".</Description>
-            <Value type="EXAMPLE">Sender</Value>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cbc:Note</Term>
-            <Name>Note.</Name>
-            <Description>To include any textual information.</Description>
-            <Value type="EXAMPLE">Text</Value>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cbc:ValidationDate</Term>
-            <Name>Validation date.</Name>
-            <Description>Validation date.</Description>
-            <Value type="EXAMPLE">2025-09-10</Value>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cbc:ValidationTime</Term>
-            <Name>Validation time.</Name>
-            <Description>Validation time.</Description>
-            <Value type="EXAMPLE">12:00:00</Value>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cbc:SignatureMethod</Term>
-            <Name>Signature Method.</Name>
-            <Description>Text to describe the signature method.</Description>
-            <Value type="EXAMPLE">Manual</Value>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:SignatoryParty</Term>
-            <Name>Signatory Party</Name>
-            <Description>Describes the party that is signing.</Description>
-            <Element cardinality="0..1">
-               <Term>cac:PartyIdentification</Term>
-               <Name>Party identification</Name>
-               <Description>Identifies the party that is signing.</Description>
-               <Element cardinality="1..1">
-                  <Term>cbc:ID</Term>
-                  <Name>Party ID</Name>
-                  <Description>Identifies the party that is signing.</Description>
-                  <Attribute>
-                     <Term>schemeID</Term>
-                     <Value type="EXAMPLE">0088</Value>            
-                  </Attribute>
-                  <Value type="EXAMPLE">7300010000001</Value>          
-               </Element>        
-            </Element>
-            <Element cardinality="1..1">
-               <Term>cac:PartyName</Term>
-               <Name>Party name</Name>
-               <Description>The name of the party that is signing.</Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:Name</Term>
-                  <Name>Party Name</Name>
-                  <Description>The name of the party that is signing.</Description>
-                  <Value type="EXAMPLE">Name of signing party.</Value>          
-               </Element>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:Contact</Term>
-               <Name>Signature Person</Name>
-               <Description>Defines the person that is signing.</Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:ID</Term>
-                  <Name>ID of signature person, ID06 card number or similar</Name>
-                  <Description>The identity of the signing person.</Description>
-                  <Value type="EXAMPLE">12345</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:Name</Term>
-                  <Name>Name of the signing person.</Name>
-                  <Description>Name of the signing person.</Description>
-                  <Value type="EXAMPLE">Anders Johansson</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:Telephone</Term>
-                  <Name>Telephone for the signing person.</Name>
-                  <Description>Telephone no to the signing person.</Description>
-                  <Value type="EXAMPLE">0158 1233714</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:ElectronicMail</Term>
-                  <Name>E-mail address of the signing person.</Name>
-                  <Description>E-mail address for the signing person.</Description>
-                  <Value type="EXAMPLE">Anders.Johansson@company.com</Value>          
-               </Element>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:DigitalSignatureAttachment</Term>
-            <Name>Digital Signature Attachment</Name>
-            <Description>To include the actual signature.</Description>
-            <Element>
-               <Term>cbc:EmbeddedDocumentBinaryObject</Term>
-               <Name>Embedded Binary object.</Name>
-               <Description>The referenced document (signature) can here be inserted as a binary object. filename is the name of the attachment when stored as a document.</Description>
-               <Attribute>
-                  <Term>mimeCode</Term>
-                  <Reference type="CODE_LIST">MimeCode</Reference>
-                  <Value type="EXAMPLE">application/pdf</Value>          
-               </Attribute>
-               <Attribute>
-                  <Term>filename</Term>
-                  <Value type="EXAMPLE">Signature_112233.pdf</Value>          
-               </Attribute>
-               <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:ExternalReference</Term>
-               <Name>External reference</Name>
-               <Description>Link to the signature that is available externally.</Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:URI</Term>
-                  <Name>URI</Name>
-                  <Description>Link to the signature that is available externally.</Description>          
-               </Element>        
-            </Element>      
-         </Element>    
-      </Element>
-      <Element cardinality="1..1">
-         <Term>cac:SenderParty</Term>
-         <Name>The sender of the Movement Document</Name>
-         <Description>This party defines the company that signs and sends the Waste Movement Document.</Description>
-         <Element cardinality="1..1">
-            <Term>cbc:EndpointID</Term>
-            <Name>Endpoint ID</Name>
-            <Description>The identity used to send the Waste Movement Document electronically..</Description>
-            <Attribute usage="Mandatory">
-               <Term>schemeID</Term>
-               <Reference type="CODE_LIST">eas</Reference>
-               <Value type="EXAMPLE">0088</Value>        
-            </Attribute>
-            <Value type="EXAMPLE">7300010000001</Value>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyIdentification</Term>
-            <Name>Party Identification</Name>
-            <Description>This identity defines the company that signs and sends the Waste Movement Document.</Description>
-            <Element cardinality="1..1 1..1">
-               <Term>cbc:ID</Term>
-               <Name>Identity</Name>
-               <Description>This identity identifies the company that signs and sends the Waste Movement Document.</Description>
-               <Attribute>
-                  <Term>schemeID</Term>
-                  <Reference type="CODE_LIST">ICD</Reference>
-                  <Value type="EXAMPLE">0088</Value>          
-               </Attribute>
-               <Value type="EXAMPLE">7300010000001</Value>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyName</Term>
-            <Name>Party Name</Name>
-            <Description>Party name.</Description>
-            <Element cardinality="1..1">
-               <Term>cbc:Name</Term>
-               <Name>Party Name</Name>
-               <Description>The name of this party.</Description>
-               <Value type="EXAMPLE">Party name</Value>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PostalAddress</Term>
-            <Name>Postal address</Name>
-            <Description>Postal address of the sender party</Description>
-            <Element cardinality="0..1">
-               <Term>cbc:StreetName</Term>
-               <Name>Address line 1.</Name>
-               <Description>The main address line in a postal address usually the street name and number.</Description>
-               <Value type="EXAMPLE">Busy Street</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:AdditionalStreetName</Term>
-               <Name>Address line 2.</Name>
-               <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.</Description>
-               <Value type="EXAMPLE">Department ABC</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:CityName</Term>
-               <Name>City.</Name>
-               <Description>The common name of the city where the postal address is. The name is written in full rather than as a code.</Description>
-               <Value type="EXAMPLE">Farthing</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:PostalZone</Term>
-               <Name>Post code.</Name>
-               <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.</Description>
-               <Value type="EXAMPLE">AA99 1BB</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:CountrySubentity</Term>
-               <Name>Country subdivision.</Name>
-               <Description>TFor specifying a region, county, state, province etc. within a country by using text.</Description>
-               <Value type="EXAMPLE">Heremouthshire</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:AddressLine</Term>
-               <Name>Address line</Name>
-               <Description>One more address line that can be used to provide the full address.</Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:Line</Term>
-                  <Name>Address line 3.</Name>
-                  <Description>An additional address line in an address that can be used to give further details supplementing the main line.</Description>
-                  <Value type="EXAMPLE">The Roundabout</Value>          
-               </Element>        
-            </Element>
-            <Element cardinality="1..1">
-               <Term>cac:Country</Term>
-               <Name>Country</Name>
-               <Description>Country code.</Description>
-               <Element cardinality="1..1">
-                  <Term>cbc:IdentificationCode</Term>
-                  <Name>Country code</Name>
-                  <Description>A code that identifies the country.The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.</Description>
-                  <Reference type="CODE_LIST">ISO3166</Reference>
-                  <Value type="EXAMPLE">GB</Value>          
-               </Element>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:Contact</Term>
-            <Name>Contact</Name>
-            <Description>The primary contact for this party.</Description>
-            <Element cardinality="0..1">
-               <Term>cbc:Name</Term>
-               <Name>Name</Name>
-               <Description>The name of the contact person.</Description>
-               <Value type="EXAMPLE">Mrs Bouquet</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:Telephone</Term>
-               <Name>Telephone number</Name>
-               <Description>A phone number for the contact person. If the person has a direct number, this is that number.</Description>
-               <Value type="EXAMPLE">0158 1233714</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:ElectronicMail</Term>
-               <Name>Contact email address.</Name>
-               <Description>The e-mail address for the contact person. If the person has a direct e-mail this is that email.</Description>
-               <Value type="EXAMPLE">bouquet@fpconsortial.co.uk</Value>        
-            </Element>      
-         </Element>    
-      </Element>
-      <Element cardinality="1..1">
-         <Term>cac:ReceiverParty</Term>
-         <Name>Receiver information</Name>
-         <Description>This party defines the company that receives the Waste Movement document.</Description>
-         <Element cardinality="1..1">
-            <Term>cbc:EndpointID</Term>
-            <Name>Receiver party electronic address.</Name>
-            <Description>Identifies the consignee party's electronic address</Description>
-            <Attribute usage="Mandatory">
-               <Term>schemeID</Term>
-               <Reference type="CODE_LIST">eas</Reference>
-               <Value type="EXAMPLE">0088</Value>        
-            </Attribute>
-            <Value type="EXAMPLE">5798000000124</Value>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyIdentification</Term>
-            <Name>Party Identification</Name>
-            <Description>This party identifies the company that receives the Waste Movement Document.</Description>
-            <Element cardinality="1..1">
-               <Term>cbc:ID</Term>
-               <Name>Receiver party identifier.</Name>
-               <Description>The receiving party identifier.</Description>
-               <Attribute usage="Mandatory">
-                  <Term>schemeID</Term>
-                  <Reference type="CODE_LIST">ICD</Reference>
-                  <Value type="EXAMPLE">0088</Value>          
-               </Attribute>
-               <Value type="EXAMPLE">5790000435951</Value>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyName</Term>
-            <Name>Party Name</Name>
-            <Description>Party name.</Description>
-            <Element cardinality="1..1">
-               <Term>cbc:Name</Term>
-               <Name>Party Name</Name>
-               <Description>The name of this party.</Description>
-               <Value type="EXAMPLE">Party name</Value>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PostalAddress</Term>
-            <Name>Postal address</Name>
-            <Description>Postal address of the receiver</Description>
-            <Element cardinality="0..1">
-               <Term>cbc:StreetName</Term>
-               <Name>Address line 1</Name>
-               <Description>The main address line in a postal address usually the street name and number.</Description>
-               <Value type="EXAMPLE">Avon Way</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:AdditionalStreetName</Term>
-               <Name>Address line 2</Name>
-               <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.</Description>
-               <Value type="EXAMPLE">Big projects</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:CityName</Term>
-               <Name>City</Name>
-               <Description>The common name of the city where the postal address is. The name is written in full rather than as a code.</Description>
-               <Value type="EXAMPLE">Bridgtow</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:PostalZone</Term>
-               <Name>Post code</Name>
-               <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.</Description>
-               <Value type="EXAMPLE">ZZ99 1ZZ</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:CountrySubentity</Term>
-               <Name>Country subdivision</Name>
-               <Description>For specifying a region, county, state, province etc. within a country by using text.</Description>
-               <Value type="EXAMPLE">Avon</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:AddressLine</Term>
-               <Name>Address line</Name>
-               <Description>One more address line that can be used to provide the full address.</Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:Line</Term>
-                  <Name>Address line 3</Name>
-                  <Description>Used for any other additional address information.</Description>
-                  <Value type="EXAMPLE">3rd Floor, Room 5</Value>          
-               </Element>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:Country</Term>
-               <Name>Country</Name>
-               <Description>The country where this part is.</Description>
-               <Element cardinality="1..1">
-                  <Term>cbc:IdentificationCode</Term>
-                  <Name>Country code</Name>
-                  <Description>A code that identifies the country.The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.</Description>
-                  <Reference type="CODE_LIST">ISO3166</Reference>
-                  <Value type="EXAMPLE">GB</Value>          
-               </Element>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:Contact</Term>
-            <Name>Delivery Contact information</Name>
-            <Description>Contact information</Description>
-            <Element cardinality="0..1">
-               <Term>cbc:Name</Term>
-               <Name>Contact person name</Name>
-               <Description>The name of the contact person.</Description>
-               <Value type="EXAMPLE">Mr Fred Churchill</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:Telephone</Term>
-               <Name>Contact telephone number</Name>
-               <Description>A phone number for the contact person. If the person has a direct number, this is that number.</Description>
-               <Value type="EXAMPLE">0127 2653214</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:ElectronicMail</Term>
-               <Name>Contact email address</Name>
-               <Description>The e-mail address for the contact person. If the person has a direct e-mail this is that email.</Description>
-               <Value type="EXAMPLE">fred@iytcorporation.gov.uk</Value>        
-            </Element>      
-         </Element>    
-      </Element>
-      <Element cardinality="1..1">
-         <Term>cac:NotifierParty</Term>
-         <Name>The Notifier Party</Name>
-         <Description>This party defines the company that responsible for the Waste Movement.</Description>
-         <Element cardinality="1..1">
-            <Term>cbc:EndpointID</Term>
-            <Name>Endpoint ID</Name>
-            <Description>The digital address of this party.</Description>
-            <Attribute usage="Mandatory">
-               <Term>schemeID</Term>
-               <Reference type="CODE_LIST">eas</Reference>
-               <Value type="EXAMPLE">0088</Value>        
-            </Attribute>
-            <Value type="EXAMPLE">7300010000001</Value>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyIdentification</Term>
-            <Name>Party Identification</Name>
-            <Description>This identity defines the company that is responsible for the Waste Movement.</Description>
-            <Element cardinality="1..1 1..1">
-               <Term>cbc:ID</Term>
-               <Name>Identity</Name>
-               <Description>This identity identifies the company that is responsible for the Waste Movement.</Description>
-               <Attribute>
-                  <Term>schemeID</Term>
-                  <Reference type="CODE_LIST">ICD</Reference>
-                  <Value type="EXAMPLE">0088</Value>          
-               </Attribute>
-               <Value type="EXAMPLE">7300010000001</Value>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyName</Term>
-            <Name>Party Name</Name>
-            <Description>Party name.</Description>
-            <Element cardinality="1..1">
-               <Term>cbc:Name</Term>
-               <Name>Party Name</Name>
-               <Description>The name of this party.</Description>
-               <Value type="EXAMPLE">Party name</Value>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PostalAddress</Term>
-            <Name>Postal address</Name>
-            <Description>Postal address of this party</Description>
-            <Element cardinality="0..1">
-               <Term>cbc:StreetName</Term>
-               <Name>Address line 1.</Name>
-               <Description>The main address line in a postal address usually the street name and number.</Description>
-               <Value type="EXAMPLE">Busy Street</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:AdditionalStreetName</Term>
-               <Name>Address line 2.</Name>
-               <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.</Description>
-               <Value type="EXAMPLE">Department ABC</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:CityName</Term>
-               <Name>City.</Name>
-               <Description>The common name of the city where the postal address is. The name is written in full rather than as a code.</Description>
-               <Value type="EXAMPLE">Farthing</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:PostalZone</Term>
-               <Name>Post code.</Name>
-               <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.</Description>
-               <Value type="EXAMPLE">AA99 1BB</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:CountrySubentity</Term>
-               <Name>Country subdivision.</Name>
-               <Description>TFor specifying a region, county, state, province etc. within a country by using text.</Description>
-               <Value type="EXAMPLE">Heremouthshire</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:AddressLine</Term>
-               <Name>Address line</Name>
-               <Description>One more address line that can be used to provide the full address.</Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:Line</Term>
-                  <Name>Address line 3.</Name>
-                  <Description>An additional address line in an address that can be used to give further details supplementing the main line.</Description>
-                  <Value type="EXAMPLE">The Roundabout</Value>          
-               </Element>        
-            </Element>
-            <Element cardinality="1..1">
-               <Term>cac:Country</Term>
-               <Name>Country</Name>
-               <Description>Country code.</Description>
-               <Element cardinality="1..1">
-                  <Term>cbc:IdentificationCode</Term>
-                  <Name>Country code</Name>
-                  <Description>A code that identifies the country.The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.</Description>
-                  <Reference type="CODE_LIST">ISO3166</Reference>
-                  <Value type="EXAMPLE">GB</Value>          
-               </Element>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:Contact</Term>
-            <Name>Contact</Name>
-            <Description>The primary contact for this party.</Description>
-            <Element cardinality="0..1">
-               <Term>cbc:Name</Term>
-               <Name>Name</Name>
-               <Description>The name of the contact person.</Description>
-               <Value type="EXAMPLE">Mrs Bouquet</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:Telephone</Term>
-               <Name>Telephone number</Name>
-               <Description>A phone number for the contact person. If the person has a direct number, this is that number.</Description>
-               <Value type="EXAMPLE">0158 1233714</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:ElectronicMail</Term>
-               <Name>Contact email address.</Name>
-               <Description>The e-mail address for the contact person. If the person has a direct e-mail this is that email.</Description>
-               <Value type="EXAMPLE">bouquet@fpconsortial.co.uk</Value>        
-            </Element>      
-         </Element>    
-      </Element>
-      <Element cardinality="0..1">
-         <Term>cac:DisposalFacilityParty</Term>
-         <Name>The Disposal Facility Party</Name>
-         <Description>This party defines the company that receiving the Waste for Disposal. Always include this party or the RecoveryFacilityParty, but never both.</Description>
-         <Element cardinality="1..1">
-            <Term>cbc:EndpointID</Term>
-            <Name>Endpoint ID</Name>
-            <Description>The digital address of this party.</Description>
-            <Attribute usage="Mandatory">
-               <Term>schemeID</Term>
-               <Reference type="CODE_LIST">eas</Reference>
-               <Value type="EXAMPLE">0088</Value>        
-            </Attribute>
-            <Value type="EXAMPLE">7300010000001</Value>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyIdentification</Term>
-            <Name>Party Identification</Name>
-            <Description>This identity defines the company that will receive the waste for Disposal.</Description>
-            <Element cardinality="1..1 1..1">
-               <Term>cbc:ID</Term>
-               <Name>Identity</Name>
-               <Description>This identity identifies the company that will receive the waste for Disposal.</Description>
-               <Attribute>
-                  <Term>schemeID</Term>
-                  <Reference type="CODE_LIST">ICD</Reference>
-                  <Value type="EXAMPLE">0088</Value>          
-               </Attribute>
-               <Value type="EXAMPLE">7300010000001</Value>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyName</Term>
-            <Name>Party Name</Name>
-            <Description>Party name.</Description>
-            <Element cardinality="1..1">
-               <Term>cbc:Name</Term>
-               <Name>Party Name</Name>
-               <Description>The name of this party.</Description>
-               <Value type="EXAMPLE">Party name</Value>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PostalAddress</Term>
-            <Name>Postal address</Name>
-            <Description>Postal address of this party</Description>
-            <Element cardinality="0..1">
-               <Term>cbc:StreetName</Term>
-               <Name>Address line 1.</Name>
-               <Description>The main address line in a postal address usually the street name and number.</Description>
-               <Value type="EXAMPLE">Busy Street</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:AdditionalStreetName</Term>
-               <Name>Address line 2.</Name>
-               <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.</Description>
-               <Value type="EXAMPLE">Department ABC</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:CityName</Term>
-               <Name>City.</Name>
-               <Description>The common name of the city where the postal address is. The name is written in full rather than as a code.</Description>
-               <Value type="EXAMPLE">Farthing</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:PostalZone</Term>
-               <Name>Post code.</Name>
-               <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.</Description>
-               <Value type="EXAMPLE">AA99 1BB</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:CountrySubentity</Term>
-               <Name>Country subdivision.</Name>
-               <Description>TFor specifying a region, county, state, province etc. within a country by using text.</Description>
-               <Value type="EXAMPLE">Heremouthshire</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:AddressLine</Term>
-               <Name>Address line</Name>
-               <Description>One more address line that can be used to provide the full address.</Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:Line</Term>
-                  <Name>Address line 3.</Name>
-                  <Description>An additional address line in an address that can be used to give further details supplementing the main line.</Description>
-                  <Value type="EXAMPLE">The Roundabout</Value>          
-               </Element>        
-            </Element>
-            <Element cardinality="1..1">
-               <Term>cac:Country</Term>
-               <Name>Country</Name>
-               <Description>Country code.</Description>
-               <Element cardinality="1..1">
-                  <Term>cbc:IdentificationCode</Term>
-                  <Name>Country code</Name>
-                  <Description>A code that identifies the country.The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.</Description>
-                  <Reference type="CODE_LIST">ISO3166</Reference>
-                  <Value type="EXAMPLE">GB</Value>          
-               </Element>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:Contact</Term>
-            <Name>Contact</Name>
-            <Description>The primary contact for this party.</Description>
-            <Element cardinality="0..1">
-               <Term>cbc:Name</Term>
-               <Name>Name</Name>
-               <Description>The name of the contact person.</Description>
-               <Value type="EXAMPLE">Mrs Bouquet</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:Telephone</Term>
-               <Name>Telephone number</Name>
-               <Description>A phone number for the contact person. If the person has a direct number, this is that number.</Description>
-               <Value type="EXAMPLE">0158 1233714</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:ElectronicMail</Term>
-               <Name>Contact email address.</Name>
-               <Description>The e-mail address for the contact person. If the person has a direct e-mail this is that email.</Description>
-               <Value type="EXAMPLE">bouquet@fpconsortial.co.uk</Value>        
-            </Element>      
-         </Element>    
-      </Element>
-      <Element cardinality="0..1">
-         <Term>cac:RecoveryFacilityParty</Term>
-         <Name>The Disposal Facility Party</Name>
-         <Description>This party defines the company that receiving the Waste for Recovery. Always include this party or the DisposalFacilityParty, but never both.</Description>
-         <Element cardinality="1..1">
-            <Term>cbc:EndpointID</Term>
-            <Name>Endpoint ID</Name>
-            <Description>The digital address of this party.</Description>
-            <Attribute usage="Mandatory">
-               <Term>schemeID</Term>
-               <Reference type="CODE_LIST">eas</Reference>
-               <Value type="EXAMPLE">0088</Value>        
-            </Attribute>
-            <Value type="EXAMPLE">7300010000001</Value>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyIdentification</Term>
-            <Name>Party Identification</Name>
-            <Description>This identity defines the company that will receive the waste for Recovery.</Description>
-            <Element cardinality="1..1 1..1">
-               <Term>cbc:ID</Term>
-               <Name>Identity</Name>
-               <Description>This identity identifies the company that will receive the waste for Recovery.</Description>
-               <Attribute>
-                  <Term>schemeID</Term>
-                  <Reference type="CODE_LIST">ICD</Reference>
-                  <Value type="EXAMPLE">0088</Value>          
-               </Attribute>
-               <Value type="EXAMPLE">7300010000001</Value>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyName</Term>
-            <Name>Party Name</Name>
-            <Description>Party name.</Description>
-            <Element cardinality="1..1">
-               <Term>cbc:Name</Term>
-               <Name>Party Name</Name>
-               <Description>The name of this party.</Description>
-               <Value type="EXAMPLE">Party name</Value>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PostalAddress</Term>
-            <Name>Postal address</Name>
-            <Description>Postal address of this party</Description>
-            <Element cardinality="0..1">
-               <Term>cbc:StreetName</Term>
-               <Name>Address line 1.</Name>
-               <Description>The main address line in a postal address usually the street name and number.</Description>
-               <Value type="EXAMPLE">Busy Street</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:AdditionalStreetName</Term>
-               <Name>Address line 2.</Name>
-               <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.</Description>
-               <Value type="EXAMPLE">Department ABC</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:CityName</Term>
-               <Name>City.</Name>
-               <Description>The common name of the city where the postal address is. The name is written in full rather than as a code.</Description>
-               <Value type="EXAMPLE">Farthing</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:PostalZone</Term>
-               <Name>Post code.</Name>
-               <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.</Description>
-               <Value type="EXAMPLE">AA99 1BB</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:CountrySubentity</Term>
-               <Name>Country subdivision.</Name>
-               <Description>TFor specifying a region, county, state, province etc. within a country by using text.</Description>
-               <Value type="EXAMPLE">Heremouthshire</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:AddressLine</Term>
-               <Name>Address line</Name>
-               <Description>One more address line that can be used to provide the full address.</Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:Line</Term>
-                  <Name>Address line 3.</Name>
-                  <Description>An additional address line in an address that can be used to give further details supplementing the main line.</Description>
-                  <Value type="EXAMPLE">The Roundabout</Value>          
-               </Element>        
-            </Element>
-            <Element cardinality="1..1">
-               <Term>cac:Country</Term>
-               <Name>Country</Name>
-               <Description>Country code.</Description>
-               <Element cardinality="1..1">
-                  <Term>cbc:IdentificationCode</Term>
-                  <Name>Country code</Name>
-                  <Description>A code that identifies the country.The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.</Description>
-                  <Reference type="CODE_LIST">ISO3166</Reference>
-                  <Value type="EXAMPLE">GB</Value>          
-               </Element>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:Contact</Term>
-            <Name>Contact</Name>
-            <Description>The primary contact for this party.</Description>
-            <Element cardinality="0..1">
-               <Term>cbc:Name</Term>
-               <Name>Name</Name>
-               <Description>The name of the contact person.</Description>
-               <Value type="EXAMPLE">Mrs Bouquet</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:Telephone</Term>
-               <Name>Telephone number</Name>
-               <Description>A phone number for the contact person. If the person has a direct number, this is that number.</Description>
-               <Value type="EXAMPLE">0158 1233714</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:ElectronicMail</Term>
-               <Name>Contact email address.</Name>
-               <Description>The e-mail address for the contact person. If the person has a direct e-mail this is that email.</Description>
-               <Value type="EXAMPLE">bouquet@fpconsortial.co.uk</Value>        
-            </Element>      
-         </Element>    
-      </Element>
-      <Element cardinality="1..1">
-         <Term>cac:WasteProducerParty</Term>
-         <Name>The Notifier Party</Name>
-         <Description>This party defines the company that produced the waste.</Description>
-         <Element cardinality="1..1">
-            <Term>cbc:EndpointID</Term>
-            <Name>Endpoint ID</Name>
-            <Description>The digital address of this party.</Description>
-            <Attribute usage="Mandatory">
-               <Term>schemeID</Term>
-               <Reference type="CODE_LIST">eas</Reference>
-               <Value type="EXAMPLE">0088</Value>        
-            </Attribute>
-            <Value type="EXAMPLE">7300010000001</Value>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyIdentification</Term>
-            <Name>Party Identification</Name>
-            <Description>This identity defines the company that produced the waste.</Description>
-            <Element cardinality="1..1 1..1">
-               <Term>cbc:ID</Term>
-               <Name>Identity</Name>
-               <Description>This identity identifies the company that produced the waste.</Description>
-               <Attribute>
-                  <Term>schemeID</Term>
-                  <Reference type="CODE_LIST">ICD</Reference>
-                  <Value type="EXAMPLE">0088</Value>          
-               </Attribute>
-               <Value type="EXAMPLE">7300010000001</Value>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PartyName</Term>
-            <Name>Party Name</Name>
-            <Description>Party name.</Description>
-            <Element cardinality="1..1">
-               <Term>cbc:Name</Term>
-               <Name>Party Name</Name>
-               <Description>The name of this party.</Description>
-               <Value type="EXAMPLE">Party name</Value>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:PostalAddress</Term>
-            <Name>Postal address</Name>
-            <Description>Postal address of this party</Description>
-            <Element cardinality="0..1">
-               <Term>cbc:StreetName</Term>
-               <Name>Address line 1.</Name>
-               <Description>The main address line in a postal address usually the street name and number.</Description>
-               <Value type="EXAMPLE">Busy Street</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:AdditionalStreetName</Term>
-               <Name>Address line 2.</Name>
-               <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.</Description>
-               <Value type="EXAMPLE">Department ABC</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:CityName</Term>
-               <Name>City.</Name>
-               <Description>The common name of the city where the postal address is. The name is written in full rather than as a code.</Description>
-               <Value type="EXAMPLE">Farthing</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:PostalZone</Term>
-               <Name>Post code.</Name>
-               <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.</Description>
-               <Value type="EXAMPLE">AA99 1BB</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:CountrySubentity</Term>
-               <Name>Country subdivision.</Name>
-               <Description>TFor specifying a region, county, state, province etc. within a country by using text.</Description>
-               <Value type="EXAMPLE">Heremouthshire</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:AddressLine</Term>
-               <Name>Address line</Name>
-               <Description>One more address line that can be used to provide the full address.</Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:Line</Term>
-                  <Name>Address line 3.</Name>
-                  <Description>An additional address line in an address that can be used to give further details supplementing the main line.</Description>
-                  <Value type="EXAMPLE">The Roundabout</Value>          
-               </Element>        
-            </Element>
-            <Element cardinality="1..1">
-               <Term>cac:Country</Term>
-               <Name>Country</Name>
-               <Description>Country code.</Description>
-               <Element cardinality="1..1">
-                  <Term>cbc:IdentificationCode</Term>
-                  <Name>Country code</Name>
-                  <Description>A code that identifies the country.The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.</Description>
-                  <Reference type="CODE_LIST">ISO3166</Reference>
-                  <Value type="EXAMPLE">GB</Value>          
-               </Element>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:Contact</Term>
-            <Name>Contact</Name>
-            <Description>The primary contact for this party.</Description>
-            <Element cardinality="0..1">
-               <Term>cbc:Name</Term>
-               <Name>Name</Name>
-               <Description>The name of the contact person.</Description>
-               <Value type="EXAMPLE">Mrs Bouquet</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:Telephone</Term>
-               <Name>Telephone number</Name>
-               <Description>A phone number for the contact person. If the person has a direct number, this is that number.</Description>
-               <Value type="EXAMPLE">0158 1233714</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:ElectronicMail</Term>
-               <Name>Contact email address.</Name>
-               <Description>The e-mail address for the contact person. If the person has a direct e-mail this is that email.</Description>
-               <Value type="EXAMPLE">bouquet@fpconsortial.co.uk</Value>        
-            </Element>      
-         </Element>    
-      </Element>
-      <Element cardinality="1..1">
-         <Term>cac:Shipment</Term>
-         <Name>Shipment</Name>
-         <Description>Shipment information</Description>
-         <Element cardinality="0..1">
-            <Term>cbc:ID</Term>
-            <Name>Identity</Name>
-            <Description>Identifies a shipment.</Description>
-            <Reference type="BUSINESS_TERM">tir16-038</Reference>
-            <Value type="EXAMPLE">1</Value>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:Consignment</Term>
-            <Name>Consignment</Name>
-            <Description>Consignment information</Description>
-            <Element cardinality="1..1">
-               <Term>cbc:ID</Term>
-               <Name>Identity</Name>
-               <Description>An association to Consignment covering the shipment. Unique number assigned to goods, both for import and export.</Description>
-               <Reference type="BUSINESS_TERM">tir16-040</Reference>
-               <Value type="EXAMPLE">NA</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:HazardousRiskIndicator</Term>
-               <Name>Hazardous Risk Indicator.</Name>
-               <Description>An indication that the transported goods in this consignment are subject to an international regulation concerning the carriage of dangerous goods (true) or not (false).</Description>
-               <Value type="EXAMPLE">false</Value>        
-            </Element>
-            <Element cardinality="0..n">
-               <Term>cac:DocumentReference</Term>
-               <Name>Document Reference</Name>
-               <Description>A reference to a document related to or relevant for this consignment.</Description>
-               <Element cardinality="1..1">
-                  <Term>cbc:ID</Term>
-                  <Name>Identity</Name>
-                  <Description>The identity of the referenced document.</Description>
-                  <Value type="EXAMPLE">123</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:DocumentTypeCode</Term>
-                  <Name>Document Type Code</Name>
-                  <Description>The Type code of the referenced document.</Description>
-                  <Value type="EXAMPLE">A</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:DocumentType</Term>
-                  <Name>Document Type</Name>
-                  <Description>The Type (text) of the referenced document.</Description>
-                  <Value type="EXAMPLE">Project Reference</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:Attachment</Term>
-                  <Name>Attachment</Name>
-                  <Description>The referenced document as an attachment to the document from which it is referenced.</Description>
-                  <Element cardinality="0..1">
-                     <Term>cbc:EmbeddedDocumentBinaryObject</Term>
-                     <Name>Embedded binary object</Name>
-                     <Description>The referenced document can here be inserted as a binary object.</Description>
-                     <Attribute>
-                        <Term>mimeCode</Term>
-                        <Value type="EXAMPLE">application/pdf</Value>              
-                     </Attribute>
-                     <Attribute>
-                        <Term>filename</Term>
-                        <Value type="EXAMPLE">Hours-spent.pdf</Value>              
-                     </Attribute>
-                     <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cac:ExternalReference</Term>
-                     <Name>External reference</Name>
-                     <Description>A reference to an attached document that is external to the document(s) being exchanged.</Description>
-                     <Element cardinality="0..1">
-                        <Term>cbc:URI</Term>
-                        <Name>Address to internet resource</Name>
-                        <Description>The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource.</Description>
-                        <Value type="EXAMPLE">www.beast.se</Value>              
-                     </Element>            
-                  </Element>          
-               </Element>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..n">
-            <Term>cac:GoodsItem</Term>
-            <Name>Goods Item.</Name>
-            <Description>A goods item included in this shipment.</Description>
-            <Element cardinality="0..1">
-               <Term>cbc:ID</Term>
-               <Name>Line number identity</Name>
-               <Description>Line Number.</Description>
-               <Value type="EXAMPLE">1</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:Quantity</Term>
-               <Name>Delivered quantity</Name>
-               <Description>The quantity delivered.</Description>
-               <Attribute usage="Mandatory">
-                  <Term>unitCode</Term>
-                  <Reference type="CODE_LIST">UNECERec20</Reference>
-                  <Value type="EXAMPLE">TNE</Value>          
-               </Attribute>
-               <Value type="EXAMPLE">10.3</Value>        
-            </Element>
-            <Element cardinality="1..1">
-               <Term>cac:Item</Term>
-               <Name>Item information</Name>
-               <Description>Item information.</Description>
-               <Element cardinality="1..1">
-                  <Term>cbc:Name</Term>
-                  <Name>Item name</Name>
-                  <Description>A short name for an item.</Description>
-                  <Value type="EXAMPLE">beeswax</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:BuyersItemIdentification</Term>
-                  <Name>Buyer's item identification</Name>
-                  <Description>Buyer's item identification.</Description>
-                  <Element cardinality="0..1">
-                     <Term>cbc:ID</Term>
-                     <Name>Buyers item identification</Name>
-                     <Description>An identifier, assigned by the buyer, for the item. Associates the item with its identification according to the buyer's system.</Description>
-                     <Value type="EXAMPLE">6578489</Value>            
-                  </Element>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:SellersItemIdentification</Term>
-                  <Name>Seller's item identification</Name>
-                  <Description>Seller's item identification.</Description>
-                  <Element cardinality="0..1">
-                     <Term>cbc:ID</Term>
-                     <Name>Seller's item identification</Name>
-                     <Description>An identifier, assigned by the seller, for the item. Associates the item with its identification according to the seller's system.</Description>
-                     <Value type="EXAMPLE">17589683</Value>            
-                  </Element>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:StandardItemIdentification</Term>
-                  <Name>Standard item identification</Name>
-                  <Description>Standard item identification. Only one Standard Item Number can be used per line.</Description>
-                  <Element cardinality="0..1">
-                     <Term>cbc:ID</Term>
-                     <Name>Standard item identification</Name>
-                     <Description>An item identifier based on a registered scheme. Associates the item with its identification according to a standard system.</Description>
-                     <Attribute usage="Mandatory">
-                        <Term>schemeID</Term>
-                        <Reference type="CODE_LIST">ICD</Reference>
-                        <Value type="EXAMPLE">0160</Value>              
-                     </Attribute>
-                     <Value type="EXAMPLE">1234567891234</Value>            
-                  </Element>          
-               </Element>
-               <Element>
-                  <Term>cac:CommodityClassification</Term>
-                  <Element>
-                     <Term>cbc:ItemClassificationCode</Term>
-                     <Attribute>
-                        <Term>listID</Term>
-                        <Description>Logistics: For Item Classification Codes that are found in UNCL7143, select the correct code and leave listVersionID and name empty. For construction specific list that are not a part of UNCL7143 yet ListID must always be "ZZZ" and listVersionID "BEAST:4.0", i.e. mutually agreed. Peppol:</Description>
-                        <Value type="EXAMPLE">ZZZ</Value>              
-                     </Attribute>
-                     <Attribute>
-                        <Term>listVersionID</Term>
-                        <Value type="EXAMPLE">3.0.2</Value>              
-                     </Attribute>
-                     <Attribute>
-                        <Term>name</Term>
-                        <Description>Logistics: If construction specific lists are used, name specifies which of them is used. Possible names are: "SBMI", "SA", "AI", “ME” and "CoClass”. "SBMI" = Sveriges Bergmaterialindustrier, "SA" = Sveriges Åkeriföretag, "AI" = Återvinningsindustrierna, “ME” = Maskinentreprenörerna. Peppol:</Description>
-                        <Value type="EXAMPLE">SBMI</Value>              
-                     </Attribute>
-                     <Value type="EXAMPLE">KO2012140200</Value>            
-                  </Element>          
-               </Element>
-               <Element cardinality="0..n">
-                  <Term>cac:HazardousItem</Term>
-                  <Name>Hazardous Item.</Name>
-                  <Description>Information pertaining to this item as a hazardous item.</Description>
-                  <Element cardinality="0..1">
-                     <Term>cbc:UNDGCode</Term>
-                     <Name>UNDG Code.</Name>
-                     <Description>The UN code for this kind of hazardous item.</Description>
-                     <Value type="EXAMPLE">ADR</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:HazardClassID</Term>
-                     <Name>Hazard Class ID.</Name>
-                     <Description>An identifier for the hazard class applicable to this hazardous item as defined by the relevant</Description>
-                     <Value type="EXAMPLE">Code</Value>            
-                  </Element>          
-               </Element>        
-            </Element>      
-         </Element>
-         <Element cardinality="1..n">
-            <Term>cac:ShipmentStage</Term>
-            <Name>Shipment Stage</Name>
-            <Description>Describes the step of the transport. To be repeated if more than ome step is needed.</Description>
-            <Element cardinality="1..1">
-               <Term>cbc:ID</Term>
-               <Name>Shipment Stage identifier</Name>
-               <Description>Sequence number of the Shipment Stage.</Description>
-               <DataType>Identifier</DataType>
-               <Value type="EXAMPLE">1</Value>        
-            </Element>
-            <Element cardinality="1..1">
-               <Term>cac:CarrierParty</Term>
-               <Name>Carrier Party</Name>
-               <Description>The party executing the transport in the Shipment Stage</Description>
-               <Element cardinality="1..1">
-                  <Term>cbc:EndpointID</Term>
-                  <Name>Carrier's electronic address</Name>
-                  <Description>Identifies the carrier party's electronic address</Description>
-                  <Attribute usage="Mandatory">
-                     <Term>schemeID</Term>
-                     <Name>Scheme identifier</Name>
-                     <Description>Scheme identifier for electronic address</Description>
-                     <Reference type="CODE_LIST">eas</Reference>
-                     <Value type="EXAMPLE">0088</Value>            
-                  </Attribute>
-                  <Value type="EXAMPLE">5790000435951</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:PartyIdentification</Term>
-                  <Name>Party Identification</Name>
-                  <Description>An identifier for this party.</Description>
-                  <Element cardinality="1..1">
-                     <Term>cbc:ID</Term>
-                     <Name>Carrier party identity</Name>
-                     <Description>The identifier of the Carrier party</Description>
-                     <Attribute usage="Mandatory">
-                        <Term>schemeID</Term>
-                        <Name>Scheme identifier</Name>
-                        <Description>Scheme identifier for party identification</Description>
-                        <Reference type="CODE_LIST">ICD</Reference>
-                        <Value type="EXAMPLE">0088</Value>              
-                     </Attribute>
-                     <Value type="EXAMPLE">5790000435951</Value>            
-                  </Element>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:PartyName</Term>
-                  <Name>Party Name</Name>
-                  <Description>The name of the Carrier party</Description>
-                  <Element cardinality="1..1">
-                     <Term>cbc:Name</Term>
-                     <Name>Carrier name</Name>
-                     <Description>The name of the Carrier party</Description>
-                     <Value type="EXAMPLE">Transportören AB</Value>            
-                  </Element>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:PostalAddress</Term>
-                  <Name>Postal address</Name>
-                  <Description>The address for the Carrier.</Description>
-                  <Element cardinality="0..1">
-                     <Term>cbc:StreetName</Term>
-                     <Name>Address line 1</Name>
-                     <Description>The main address line in a postal address usually the street name and number.</Description>
-                     <Value type="EXAMPLE">Avon Way</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:AdditionalStreetName</Term>
-                     <Name>Address line 2</Name>
-                     <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.</Description>
-                     <Value type="EXAMPLE">way 2</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:CityName</Term>
-                     <Name>City</Name>
-                     <Description>The common name of the city where the postal address is. The name is written in full rather than as a code.</Description>
-                     <Value type="EXAMPLE">Bridgtow</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:PostalZone</Term>
-                     <Name>Post code</Name>
-                     <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.</Description>
-                     <Value type="EXAMPLE">ZZ99 1ZZ</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:CountrySubentity</Term>
-                     <Name>Country subdivision</Name>
-                     <Description>For specifying a region, county, state, province etc. within a country by using text.</Description>
-                     <Value type="EXAMPLE">Avon</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cac:AddressLine</Term>
-                     <Name>Address line</Name>
-                     <Element cardinality="1..1">
-                        <Term>cbc:Line</Term>
-                        <Name>Address line 3</Name>
-                        <Description>An additional address line in an address that can be used to give further details supplementing the main line.</Description>
-                        <Value type="EXAMPLE">3rd Floor, Room 5</Value>              
-                     </Element>            
-                  </Element>
-                  <Element>
-                     <Term>cac:Country</Term>
-                     <Name>Country</Name>
-                     <Element>
-                        <Term>cbc:IdentificationCode</Term>
-                        <Name>Country code</Name>
-                        <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.</Description>
-                        <Value type="EXAMPLE">GB</Value>              
-                     </Element>            
-                  </Element>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:Contact</Term>
-                  <Name>Contact person name</Name>
-                  <Description>The contact of the Carrier party.</Description>
-                  <Element cardinality="0..1">
-                     <Term>cbc:Name</Term>
-                     <Name>Contact name</Name>
-                     <Description>The contact name.</Description>
-                     <Value type="EXAMPLE">Mr Fred Churchill</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:Telephone</Term>
-                     <Name>Contact telephone number</Name>
-                     <Description>The phone number of the contact.</Description>
-                     <Value type="EXAMPLE">0127 2653214</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:ElectronicMail</Term>
-                     <Name>Contact email address</Name>
-                     <Description>The electronic mail of the contact.</Description>
-                     <Value type="EXAMPLE">fred@iytcorporation.gov.uk</Value>            
-                  </Element>          
-               </Element>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:TransportMeans</Term>
-               <Name>Transport means</Name>
-               <Description>The means of transport used in this shipment stage.</Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:TransportMeansTypeCode</Term>
-                  <Name>Transport means type code</Name>
-                  <Description>The means of transport used in this shipment stage.</Description>
-                  <Reference type="CODE_LIST">UNECERec28</Reference>
-                  <Value type="EXAMPLE">3</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:AirTransport</Term>
-                  <Name>Air transport</Name>
-                  <Description>An aircraft used in this shipment stage.</Description>
-                  <Element cardinality="1..1">
-                     <Term>cbc:AircraftID</Term>
-                     <Name>Air transport identifier</Name>
-                     <Description>An identifer for a specific aircraft.</Description>
-                     <Value type="EXAMPLE">JA8088</Value>            
-                  </Element>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:RoadTransport</Term>
-                  <Name>Road transport</Name>
-                  <Description>Description of a truck or a vehicle transporting the goods. Use only if Transport mode code is set to road transport</Description>
-                  <Element cardinality="1..1">
-                     <Term>cbc:LicensePlateID</Term>
-                     <Name>License plate identifier transport</Name>
-                     <Description>The licence plate(s) identifying the vehicle seperated by semicolon if there are more than one</Description>
-                     <Value type="EXAMPLE">DF10958</Value>            
-                  </Element>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:RailTransport</Term>
-                  <Name>Rail transport</Name>
-                  <Description>Equipment used for rail transport in this shipment stage.</Description>
-                  <Element cardinality="1..1">
-                     <Term>cbc:TrainID</Term>
-                     <Name>Train identifier</Name>
-                     <Description>An identifier for the train used as the means of transport.</Description>
-                     <Value type="EXAMPLE">12014</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:RailCarID</Term>
-                     <Name>Rail car identifier</Name>
-                     <Description>An identifier for the rail car on the train used as the means of transport..</Description>
-                     <Value type="EXAMPLE">50 63 20-33 801-5</Value>            
-                  </Element>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:MaritimeTransport</Term>
-                  <Name>Maritime transport</Name>
-                  <Description>Description of a truck or a vehicle transporting the goods. Use only if TransportModeCode is set to maritime transport.</Description>
-                  <Element cardinality="1..1">
-                     <Term>cbc:VesselID</Term>
-                     <Name>Vessel identifier</Name>
-                     <Description>The registred identifier of the vessel</Description>
-                     <Value type="EXAMPLE">wrt34663</Value>            
-                  </Element>          
-               </Element>        
-            </Element>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:Delivery</Term>
-            <Name>Delivery information</Name>
-            <Description>Delivery information</Description>
-            <Element cardinality="1..1">
-               <Term>cac:DeliveryLocation</Term>
-               <Name>Delivery location</Name>
-               <Description>The location where the goods is delivered.</Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:ID</Term>
-                  <Description>Identifies the delivery location.</Description>
-                  <Attribute usage="Optional">
-                     <Term>schemeID</Term>
-                     <Name>Scheme identifier</Name>
-                     <Reference type="CODE_LIST">ICD</Reference>
-                     <Value type="EXAMPLE">0088</Value>            
-                  </Attribute>
-                  <Value type="EXAMPLE">5790000435951</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:Name</Term>
-                  <Name>Name of the delivery location</Name>
-                  <Description>The name of the delivery location.</Description>
-                  <Value type="EXAMPLE">Deponin i Bridgtow AB</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:Address</Term>
-                  <Name>Address of the delivery location</Name>
-                  <Description>The address of the delivery location.</Description>
-                  <Element cardinality="0..1 0..1">
-                     <Term>cbc:StreetName</Term>
-                     <Description>The main address line in a postal address usually the street name and number.</Description>
-                     <Value type="EXAMPLE">Avon Way</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:AdditionalStreetName</Term>
-                     <Name>Address line 2</Name>
-                     <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.</Description>
-                     <Value type="EXAMPLE">Purchasing</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:CityName</Term>
-                     <Name>City</Name>
-                     <Description>The common name of the city where the postal address is. The name is written in full rather than as a code.</Description>
-                     <Value type="EXAMPLE">Bridgtow</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:PostalZone</Term>
-                     <Name>Post code</Name>
-                     <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.</Description>
-                     <Value type="EXAMPLE">ZZ99 1ZZ</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:CountrySubentity</Term>
-                     <Name>Country subdivision</Name>
-                     <Description>For specifying a region, county, state, province etc. within a country by using text.</Description>
-                     <Value type="EXAMPLE">Avon</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cac:AddressLine</Term>
-                     <Name>Address line</Name>
-                     <Element cardinality="0..1">
-                        <Term>cbc:Line</Term>
-                        <Name>Address line 3</Name>
-                        <Description>An additional address line in an address that can be used to give further details supplementing the main line.</Description>
-                        <Value type="EXAMPLE">3rd Floor, Room 5</Value>              
-                     </Element>            
-                  </Element>
-                  <Element cardinality="1..1">
-                     <Term>cac:Country</Term>
-                     <Name>Country</Name>
-                     <Element cardinality="1..1">
-                        <Term>cbc:IdentificationCode</Term>
-                        <Name>Country code</Name>
-                        <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.</Description>
-                        <Reference type="CODE_LIST">ISO3166</Reference>
-                        <Value type="EXAMPLE">GB</Value>              
-                     </Element>            
-                  </Element>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:LocationCoordinate</Term>
-                  <Name>Location coordinate</Name>
-                  <Description>To specify the coordinates.</Description>
-                  <Element cardinality="1..1">
-                     <Term>cbc:CoordinateSystemCode</Term>
-                     <Name>Coordinate system code</Name>
-                     <Description>Always "EPSG:3857" by definition.</Description>
-                     <Value type="EXAMPLE">EPSG:3857</Value>            
-                  </Element>
-                  <Element cardinality="1..1">
-                     <Term>cbc:LatitudeDegreesMeasure</Term>
-                     <Name>Latitude degrees</Name>
-                     <Description>The X coordinate. Use degrees with decimals.</Description>
-                     <Attribute usage="Mandatory">
-                        <Term>unitCode</Term>
-                        <Name>Latitude degrees unit of measure</Name>
-                        <Description>The unit of measure that applies to the latitude degrees.</Description>
-                        <Reference type="CODE_LIST">UNECERec20</Reference>
-                        <Value type="EXAMPLE">DD</Value>              
-                     </Attribute>
-                     <Value type="EXAMPLE">59.331660358041425</Value>            
-                  </Element>
-                  <Element cardinality="1..1">
-                     <Term>cbc:LongitudeDegreesMeasure</Term>
-                     <Name>Longitude degrees</Name>
-                     <Description>The Y coordinate. Use degrees with decimals.</Description>
-                     <Attribute usage="Mandatory">
-                        <Term>unitCode</Term>
-                        <Name>Longitude degrees unit of measure</Name>
-                        <Description>The unit of measure that applies to the longitude degrees.</Description>
-                        <Reference type="CODE_LIST">UNECERec20</Reference>
-                        <Value type="EXAMPLE">DD</Value>              
-                     </Attribute>
-                     <Value type="EXAMPLE">18.063363084988005</Value>            
-                  </Element>          
-               </Element>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:DeliveryParty</Term>
-               <Name>Delivery Party.</Name>
-               <Description>The Party receiving e shipment.</Description>
-               <Element cardinality="1..1">
-                  <Term>cbc:EndpointID</Term>
-                  <Name>Endpoint ID</Name>
-                  <Description>The identity used to send the Movement Document electronically.</Description>
-                  <Attribute usage="Mandatory">
-                     <Term>schemeID</Term>
-                     <Reference type="CODE_LIST">eas</Reference>
-                     <Value type="EXAMPLE">0088</Value>            
-                  </Attribute>
-                  <Value type="EXAMPLE">5790000435951</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:PartyIdentification</Term>
-                  <Name>Party Identification</Name>
-                  <Description>Party identification</Description>
-                  <Element cardinality="1..1">
-                     <Term>cbc:ID</Term>
-                     <Name>Identity of the Delivery Party.</Name>
-                     <Description>Identifies the Delivery Party.</Description>
-                     <Reference type="BUSINESS_TERM">tir01-101</Reference>
-                     <Attribute usage="Optional">
-                        <Term>schemeID</Term>
-                        <Name>Deliver party registration identifier identification scheme identifier</Name>
-                        <Description>The identification scheme identifier of the deliverparty identifier.</Description>
-                        <Reference type="CODE_LIST">ICD</Reference>
-                        <Value type="EXAMPLE">0088</Value>              
-                     </Attribute>
-                     <Value type="EXAMPLE">5790000435951</Value>            
-                  </Element>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:PartyName</Term>
-                  <Name>Party Name</Name>
-                  <Description>Party Name</Description>
-                  <Element cardinality="1..1">
-                     <Term>cbc:Name</Term>
-                     <Name>Name of the Consignee.</Name>
-                     <Description>The name of the Consignee.</Description>
-                     <DataType>Text</DataType>
-                     <Reference type="BUSINESS_TERM">tir01-102</Reference>
-                     <Value type="EXAMPLE">Name</Value>            
-                  </Element>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:PostalAddress</Term>
-                  <Name>Postal Address of Consignee.</Name>
-                  <Description>Postal Address.</Description>
-                  <Element cardinality="0..1">
-                     <Term>cbc:StreetName</Term>
-                     <Name>Street Name for Consignee.</Name>
-                     <Description>Street name.</Description>
-                     <DataType>Text</DataType>
-                     <Reference type="BUSINESS_TERM">tir01-p029</Reference>
-                     <Value type="EXAMPLE">Avon Way</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:AdditionalStreetName</Term>
-                     <Name>Additional Street Name for Consignee.</Name>
-                     <Description>Additional street name.</Description>
-                     <DataType>Text</DataType>
-                     <Reference type="BUSINESS_TERM">tir01-p030</Reference>
-                     <Value type="EXAMPLE">Purchasing</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:CityName</Term>
-                     <Name>City Name for Consignee.</Name>
-                     <Description>Name of city.</Description>
-                     <DataType>Text</DataType>
-                     <Reference type="BUSINESS_TERM">tir01-p031</Reference>
-                     <Value type="EXAMPLE">Bridgtow</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:PostalZone</Term>
-                     <Name>Postal Zone for Consignee.</Name>
-                     <Description>Zip-code.</Description>
-                     <DataType>Text</DataType>
-                     <Reference type="BUSINESS_TERM">tir01-p032</Reference>
-                     <Value type="EXAMPLE">ZZ99 1ZZ</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:CountrySubentity</Term>
-                     <Name>Country SubEntity for Consignee.</Name>
-                     <Description>Country Sub-entity.</Description>
-                     <DataType>Text</DataType>
-                     <Reference type="BUSINESS_TERM">tir01-p033</Reference>
-                     <Value type="EXAMPLE">Avon</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cac:AddressLine</Term>
-                     <Name>Address Line for Consignee.</Name>
-                     <Description>Additional address line.</Description>
-                     <Element cardinality="0..1">
-                        <Term>cbc:Line</Term>
-                        <Name>Address Line for Consignee.</Name>
-                        <Description>Used for any other additional address information.</Description>
-                        <DataType>Text</DataType>
-                        <Reference type="BUSINESS_TERM">tir01-p034</Reference>
-                        <Value type="EXAMPLE">3rd Floor, Room 5</Value>              
-                     </Element>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cac:Country</Term>
-                     <Name>Country for Consignee.</Name>
-                     <Description>Country.</Description>
-                     <Element cardinality="0..1">
-                        <Term>cbc:IdentificationCode</Term>
-                        <Name>Country Code for Consignee.</Name>
-                        <Description>Country code.</Description>
-                        <DataType>Code</DataType>
-                        <Reference type="BUSINESS_TERM">tir01-p035</Reference>
-                        <Reference type="CODE_LIST">ISO3166</Reference>
-                        <Value type="EXAMPLE">GB</Value>              
-                     </Element>            
-                  </Element>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:Contact</Term>
-                  <Name>Consignee Contact information</Name>
-                  <Description>Contact information</Description>
-                  <Element cardinality="0..1">
-                     <Term>cbc:Name</Term>
-                     <Name>Contact person name</Name>
-                     <Description>The name of the contact person.</Description>
-                     <DataType>Text</DataType>
-                     <Reference type="BUSINESS_TERM">tir01-103</Reference>
-                     <Value type="EXAMPLE">Mr Fred Churchill</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:Telephone</Term>
-                     <Name>Contact telephone number</Name>
-                     <Description>A phone number for the contact person. If the person has a direct number, this is that number.</Description>
-                     <DataType>Text</DataType>
-                     <Reference type="BUSINESS_TERM">tir01-104</Reference>
-                     <Value type="EXAMPLE">0127 2653214</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:ElectronicMail</Term>
-                     <Name>Contact email address</Name>
-                     <Description>The e-mail address for the contact person. If the person has a direct e-mail this is that email.</Description>
-                     <DataType>Text</DataType>
-                     <Reference type="BUSINESS_TERM">tir01-106</Reference>
-                     <Value type="EXAMPLE">fred@iytcorporation.gov.uk</Value>            
-                  </Element>          
-               </Element>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:Despatch</Term>
-               <Name>Despatch information</Name>
-               <Description>The despatch (pickup) associated with this delivery.</Description>
-               <Element cardinality="1..1">
-                  <Term>cbc:ActualDespatchDate</Term>
-                  <Name>Despatch date</Name>
-                  <Description>The actual date of despatch.</Description>
-                  <Reference type="BUSINESS_TERM">tir16-072</Reference>
-                  <Value type="EXAMPLE">2025-09-10</Value>          
-               </Element>
-               <Element cardinality="1..1">
-                  <Term>cac:DespatchLocation</Term>
-                  <Name>Despatch location</Name>
-                  <Description>The location from where the goods is despatched.</Description>
-                  <Element cardinality="0..1">
-                     <Term>cbc:ID</Term>
-                     <Name>Identity of the delivery location</Name>
-                     <Description>Identifies the delivery location.</Description>
-                     <Attribute usage="Optional">
-                        <Term>schemeID</Term>
-                        <Name>Scheme identifier</Name>
-                        <Reference type="CODE_LIST">ICD</Reference>
-                        <Value type="EXAMPLE">0088</Value>              
-                     </Attribute>
-                     <Value type="EXAMPLE">5790000435951</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cbc:Name</Term>
-                     <Name>Name of the despatch location</Name>
-                     <Description>The name of the despatch location.</Description>
-                     <Value type="EXAMPLE">Grävaren i Bridgtow AB</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cac:Address</Term>
-                     <Name>Address of the despatch location</Name>
-                     <Description>The address of the despatch location.</Description>
-                     <Element cardinality="0..1">
-                        <Term>cbc:StreetName</Term>
-                        <Name>Address line 1</Name>
-                        <Description>The main address line in a postal address usually the street name and number.</Description>
-                        <Value type="EXAMPLE">Avon Way</Value>              
-                     </Element>
-                     <Element cardinality="0..1">
-                        <Term>cbc:AdditionalStreetName</Term>
-                        <Name>Address line 2</Name>
-                        <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.</Description>
-                        <Value type="EXAMPLE">way 2</Value>              
-                     </Element>
-                     <Element cardinality="0..1">
-                        <Term>cbc:CityName</Term>
-                        <Name>City</Name>
-                        <Description>The common name of the city where the postal address is. The name is written in full rather than as a code.</Description>
-                        <Value type="EXAMPLE">Bridgtow</Value>              
-                     </Element>
-                     <Element cardinality="0..1">
-                        <Term>cbc:PostalZone</Term>
-                        <Name>Post code</Name>
-                        <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.</Description>
-                        <Value type="EXAMPLE">ZZ99 1ZZ</Value>              
-                     </Element>
-                     <Element cardinality="0..1">
-                        <Term>cbc:CountrySubentity</Term>
-                        <Name>Country subdivision</Name>
-                        <Description>For specifying a region, county, state, province etc. within a country by using text.</Description>
-                        <Value type="EXAMPLE">Avon</Value>              
-                     </Element>
-                     <Element cardinality="0..1">
-                        <Term>cac:AddressLine</Term>
-                        <Name>Address line</Name>
-                        <Element cardinality="0..1">
-                           <Term>cbc:Line</Term>
-                           <Name>Address line 3</Name>
-                           <Description>An additional address line in an address that can be used to give further details supplementing the main line.</Description>
-                           <Value type="EXAMPLE">The Roundabout</Value>                
-                        </Element>              
-                     </Element>
-                     <Element cardinality="1..1">
-                        <Term>cac:Country</Term>
-                        <Name>Country</Name>
-                        <Element cardinality="1..1">
-                           <Term>cbc:IdentificationCode</Term>
-                           <Name>Country code</Name>
-                           <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.</Description>
-                           <Reference type="CODE_LIST">ISO3166</Reference>
-                           <Value type="EXAMPLE">GB</Value>                
-                        </Element>              
-                     </Element>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cac:LocationCoordinate</Term>
-                     <Name>Location coordinate</Name>
-                     <Description>To specify the coordinates.</Description>
-                     <Element cardinality="1..1">
-                        <Term>cbc:CoordinateSystemCode</Term>
-                        <Name>Coordinate system code</Name>
-                        <Description>Always "EPSG:3857" by definition.</Description>
-                        <Value type="EXAMPLE">EPSG:3857</Value>              
-                     </Element>
-                     <Element cardinality="1..1">
-                        <Term>cbc:LatitudeDegreesMeasure</Term>
-                        <Name>Latitude degrees</Name>
-                        <Description>The X coordinate. Use degrees with decimals.</Description>
-                        <Attribute usage="Mandatory">
-                           <Term>unitCode</Term>
-                           <Name>Latitude degrees unit of measure</Name>
-                           <Description>The unit of measure that applies to the latitude degrees.</Description>
-                           <Value type="EXAMPLE">DD</Value>                
-                        </Attribute>
-                        <Value type="EXAMPLE">59.33169866504851</Value>              
-                     </Element>
-                     <Element cardinality="1..1">
-                        <Term>cbc:LongitudeDegreesMeasure</Term>
-                        <Name>Longitude degrees</Name>
-                        <Description>The Y coordinate. Use degrees with decimals.</Description>
-                        <Attribute usage="Mandatory">
-                           <Term>unitCode</Term>
-                           <Name>Longitude degrees unit of measure</Name>
-                           <Description>The unit of measure that applies to the longitude degrees.</Description>
-                           <Reference type="CODE_LIST">UNECERec20</Reference>
-                           <Value type="EXAMPLE">DD</Value>                
-                        </Attribute>
-                        <Value type="EXAMPLE">18.063330898492403</Value>              
-                     </Element>            
-                  </Element>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:DespatchParty</Term>
-                  <Name>Despatch Party</Name>
-                  <Description>The party despatching the goods.</Description>
-                  <Element cardinality="1..1">
-                     <Term>cbc:EndpointID</Term>
-                     <Name>Endpoint ID</Name>
-                     <Description>The identity used to send the Movement Document electronically.</Description>
-                     <Attribute usage="Mandatory">
-                        <Term>schemeID</Term>
-                        <Reference type="CODE_LIST">eas</Reference>
-                        <Value type="EXAMPLE">0088</Value>              
-                     </Attribute>
-                     <Value type="EXAMPLE">5790000435951</Value>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cac:PartyIdentification</Term>
-                     <Name>Party Identification</Name>
-                     <Description>Party identification</Description>
-                     <Element cardinality="1..1">
-                        <Term>cbc:ID</Term>
-                        <Name>Identity of the Despatching Party.</Name>
-                        <Description>Identifies the Despatching Party.</Description>
-                        <Attribute>
-                           <Term>schemeID</Term>
-                           <Reference type="CODE_LIST">ICD</Reference>
-                           <Value type="EXAMPLE">0088</Value>                
-                        </Attribute>
-                        <Value type="EXAMPLE">5790000435951</Value>              
-                     </Element>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cac:PartyName</Term>
-                     <Name>Party Name</Name>
-                     <Description>Party Name</Description>
-                     <Element cardinality="1..1">
-                        <Term>cbc:Name</Term>
-                        <Name>Name of the Consignor.</Name>
-                        <Description>The name of the Consignor.</Description>
-                        <Value type="EXAMPLE">Name</Value>              
-                     </Element>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cac:PostalAddress</Term>
-                     <Name>Address of the Consignor.</Name>
-                     <Description>The address of the Consignor.</Description>
-                     <Element cardinality="0..1">
-                        <Term>cbc:StreetName</Term>
-                        <Name>Address line 1</Name>
-                        <Description>The name of the street, road, avenue, way, etc. to which the number of the building is attached.</Description>
-                        <Value type="EXAMPLE">Avon Way</Value>              
-                     </Element>
-                     <Element cardinality="0..1">
-                        <Term>cbc:AdditionalStreetName</Term>
-                        <Name>Address line 2</Name>
-                        <Description>An additional street name used to further clarify the address.</Description>
-                        <Value type="EXAMPLE">way 2</Value>              
-                     </Element>
-                     <Element cardinality="0..1">
-                        <Term>cbc:CityName</Term>
-                        <Name>City</Name>
-                        <Description>The common name of the city where the postal address is. The name is written in full rather than as a code.</Description>
-                        <Value type="EXAMPLE">Bridgtow</Value>              
-                     </Element>
-                     <Element cardinality="0..1">
-                        <Term>cbc:PostalZone</Term>
-                        <Name>Post code</Name>
-                        <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.</Description>
-                        <Value type="EXAMPLE">ZZ99 1ZZ</Value>              
-                     </Element>
-                     <Element cardinality="0..1">
-                        <Term>cbc:CountrySubentity</Term>
-                        <Name>Country subdivision</Name>
-                        <Description>For specifying a region, county, state, province etc. within a country by using text.</Description>
-                        <Value type="EXAMPLE">Avon</Value>              
-                     </Element>
-                     <Element cardinality="0..1">
-                        <Term>cac:AddressLine</Term>
-                        <Name>Address line 3</Name>
-                        <Description>Additional address information.</Description>
-                        <Element cardinality="0..1">
-                           <Term>cbc:Line</Term>
-                           <Name>Address line 3</Name>
-                           <Description>Used for any other additional address information</Description>
-                           <Value type="EXAMPLE">3rd Floor, Room 5</Value>                
-                        </Element>              
-                     </Element>
-                     <Element cardinality="0..1">
-                        <Term>cac:Country</Term>
-                        <Name>Country for Consignor.</Name>
-                        <Description>Country.</Description>
-                        <Element cardinality="0..1">
-                           <Term>cbc:IdentificationCode</Term>
-                           <Name>Country code.</Name>
-                           <Description>Country Code.</Description>
-                           <Value type="EXAMPLE">GB</Value>                
-                        </Element>              
-                     </Element>            
-                  </Element>
-                  <Element cardinality="0..1">
-                     <Term>cac:Contact</Term>
-                     <Name>Consignor Contact information</Name>
-                     <Description>Contact information</Description>
-                     <Element cardinality="0..1">
-                        <Term>cbc:Name</Term>
-                        <Name>Contact person name</Name>
-                        <Description>The name of the contact person.</Description>
-                        <Value type="EXAMPLE">Mr Fred Churchill</Value>              
-                     </Element>
-                     <Element cardinality="0..1">
-                        <Term>cbc:Telephone</Term>
-                        <Name>Contact telephone number</Name>
-                        <Description>A phone number for the contact person. If the person has a direct number, this is that number.</Description>
-                        <Value type="EXAMPLE">0127 2653214</Value>              
-                     </Element>
-                     <Element cardinality="0..1">
-                        <Term>cbc:ElectronicMail</Term>
-                        <Name>Contact email address</Name>
-                        <Description>The e-mail address for the contact person. If the person has a direct e-mail this is that email.</Description>
-                        <Value type="EXAMPLE">fred@iytcorporation.gov.uk</Value>              
-                     </Element>            
-                  </Element>          
-               </Element>        
-            </Element>      
-         </Element>    
-      </Element>
-      <Element cardinality="0..n">
-         <Term>cac:WeightStatementDocumentReference</Term>
-         <Name>Reference to Weight Statement documents</Name>
-         <Description>Reference to Weight Statement documents relevant for this Waste Movement.</Description>
-         <Element cardinality="1..1">
-            <Term>cbc:ID</Term>
-            <Name>Identity of the referenced document</Name>
-            <Description>The reference number of the Weight Statement</Description>
-            <Value type="EXAMPLE">76767543</Value>      
-         </Element>
-         <Element cardinality="0..1">
-            <Term>cac:Attachment</Term>
-            <Name>Attachment</Name>
-            <Description>Group to describe an attached document. An attachment can refer to an external document or be included with the document being exchanged.</Description>
-            <Element cardinality="0..1">
-               <Term>cbc:EmbeddedDocumentBinaryObject</Term>
-               <Name>Embedded binary object</Name>
-               <Description>The referenced document can here be inserted as a binary object.</Description>
-               <Attribute>
-                  <Term>mimeCode</Term>
-                  <Reference type="CODE_LIST">MimeCode</Reference>
-                  <Value type="EXAMPLE">application/pdf</Value>          
-               </Attribute>
-               <Attribute>
-                  <Term>filename</Term>
-                  <Value type="EXAMPLE">VS112233.pdf</Value>          
-               </Attribute>
-               <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:ExternalReference</Term>
-               <Name>External reference</Name>
-               <Description>A reference to an attached document that is external to the document(s) being exchanged.</Description>
-               <Element>
-                  <Term>cbc:URI</Term>
-                  <Name>Address to internet resource</Name>
-                  <Description>The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource.</Description>
-                  <Value type="EXAMPLE">www.beast.se</Value>          
-               </Element>        
-            </Element>      
-         </Element>    
-      </Element>
-      <Element cardinality="0..n">
-         <Term>cac:DocumentDistribution</Term>
-         <Name>Document Distribution</Name>
-         <Description>Identifies the parties that request to receive a copy of the final version of the Waste Movement document</Description>
-         <Element cardinality="1..1">
-            <Term>cac:Party</Term>
-            <Name>Document Distribution party</Name>
-            <Description>The party requesting a copy of this document.</Description>
-            <Element cardinality="1..1">
-               <Term>cbc:EndpointID</Term>
-               <Name>Endpoint ID</Name>
-               <Description>An identifier for the end point of the routing service for the party (e.g., EAN Location Number, GLN).</Description>
-               <Attribute usage="Mandatory">
-                  <Term>schemeID</Term>
-                  <Reference type="CODE_LIST">eas</Reference>
-                  <Value type="EXAMPLE">0088</Value>          
-               </Attribute>
-               <Value type="EXAMPLE">5790000435951</Value>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:PartyIdentification</Term>
-               <Name>Document Distribution party identification</Name>
-               <Description>An identifier for the party.</Description>
-               <Element cardinality="1..1">
-                  <Term>cbc:ID</Term>
-                  <Attribute usage="Optional">
-                     <Term>schemeID</Term>
-                     <Reference type="CODE_LIST">ICD</Reference>
-                     <Value type="EXAMPLE">0088</Value>            
-                  </Attribute>
-                  <Value type="EXAMPLE">5790000435951</Value>          
-               </Element>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:PartyName</Term>
-               <Name>Party name</Name>
-               <Element>
-                  <Term>cbc:Name</Term>
-                  <Name>Document Distribution party name</Name>
-                  <Description>The name of the party.</Description>
-                  <Value type="EXAMPLE">Transportören AB</Value>          
-               </Element>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:PostalAddress</Term>
-               <Name>Postal address</Name>
-               <Description>The postal address of the party.</Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:StreetName</Term>
-                  <Name>Address line 1</Name>
-                  <Description>The main address line in a postal address usually the street name and number.</Description>
-                  <Value type="EXAMPLE">Tietotie 9</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:AdditionalStreetName</Term>
-                  <Name>Address line 2</Name>
-                  <Description>An additional address line in a postal address that can be used to give further details supplementing the main line. Common use are secondary house number in a complex or in a building.</Description>
-                  <Value type="EXAMPLE">Purchasing</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:CityName</Term>
-                  <Name>City</Name>
-                  <Description>The common name of the city where the postal address is. The name is written in full rather than as a code.</Description>
-                  <Value type="EXAMPLE">Vantaa</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:PostalZone</Term>
-                  <Name>Post code</Name>
-                  <Description>The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.</Description>
-                  <Value type="EXAMPLE">4600</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:CountrySubentity</Term>
-                  <Name>Country subdivision</Name>
-                  <Description>For specifying a region, county, state, province etc. within a country by using text.</Description>
-                  <Value type="EXAMPLE">Heremouthshire</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cac:AddressLine</Term>
-                  <Name>Address line</Name>
-                  <Element cardinality="1..1">
-                     <Term>cbc:Line</Term>
-                     <Name>Address line 3</Name>
-                     <Description>An additional address line in an address that can be used to give further details supplementing the main line.</Description>
-                     <Value type="EXAMPLE">Gate 34</Value>            
-                  </Element>          
-               </Element>
-               <Element>
-                  <Term>cac:Country</Term>
-                  <Name>Country</Name>
-                  <Element cardinality="1..1">
-                     <Term>cbc:IdentificationCode</Term>
-                     <Name>Country code</Name>
-                     <Description>A code that identifies the country. The lists of valid countries are registered with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". Codes must be according to the alpha-2 representation.</Description>
-                     <Reference type="CODE_LIST">ISO3166</Reference>
-                     <Value type="EXAMPLE">FI</Value>            
-                  </Element>          
-               </Element>        
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cac:Contact</Term>
-               <Name>Contact</Name>
-               <Description>The contact of the party.</Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:Name</Term>
-                  <Name>Contact name</Name>
-                  <Description>The contact name.</Description>
-                  <Value type="EXAMPLE">Mrs Bouquet</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:Telephone</Term>
-                  <Name>Contact email telephone</Name>
-                  <Description>The phone number of the contact.</Description>
-                  <Value type="EXAMPLE">0158 1233714</Value>          
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:ElectronicMail</Term>
-                  <Name>Contact email address</Name>
-                  <Description>The electronic mail of the contact.</Description>
-                  <Value type="EXAMPLE">bouquet@fpconsortial.co.uk</Value>          
-               </Element>        
-            </Element>      
-         </Element>    
-      </Element>  
-   </Document>
-</Structure>
+<ubl:WasteMovement xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:WasteMovement-2"
+                   xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                   xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+   <cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:waste_movement_document:1</cbc:CustomizationID>
+   <cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:waste_movement_document:1</cbc:ProfileID>
+   <cbc:ID>5658999</cbc:ID>
+   <cbc:IssueDate>2025-09-10</cbc:IssueDate>
+   <cbc:IssueTime>12:00:00</cbc:IssueTime>
+   <cbc:WasteMovementTypeCode>S3</cbc:WasteMovementTypeCode>
+   <cbc:SequenceID>3</cbc:SequenceID>
+   <cbc:TotalMovementNumeric>4</cbc:TotalMovementNumeric>
+   <cac:Signature>
+      <cbc:ID>Sender</cbc:ID>
+      <cbc:Note>Text</cbc:Note>
+      <cbc:ValidationDate>2025-09-10</cbc:ValidationDate>
+      <cbc:ValidationTime>12:00:00</cbc:ValidationTime>
+      <cbc:SignatureMethod>Manual</cbc:SignatureMethod>
+      <cac:SignatoryParty>
+         <cac:PartyIdentification>
+            <cbc:ID schemeID="0088">7300010000001</cbc:ID>      
+         </cac:PartyIdentification>
+         <cac:PartyName>
+            <cbc:Name>Name of signing party.</cbc:Name>      
+         </cac:PartyName>
+         <cac:Contact>
+            <cbc:ID>12345</cbc:ID>
+            <cbc:Name>Anders Johansson</cbc:Name>
+            <cbc:Telephone>0158 1233714</cbc:Telephone>
+            <cbc:ElectronicMail>Anders.Johansson@company.com</cbc:ElectronicMail>      
+         </cac:Contact>    
+      </cac:SignatoryParty>
+      <cac:DigitalSignatureAttachment>
+         <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Signature_112233.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+         <cac:ExternalReference>
+            <cbc:URI/>      
+         </cac:ExternalReference>    
+      </cac:DigitalSignatureAttachment>  
+   </cac:Signature>
+   <cac:SenderParty>
+      <cbc:EndpointID schemeID="0088">7300010000001</cbc:EndpointID>
+      <cac:PartyIdentification>
+         <cbc:ID schemeID="0088">7300010000001</cbc:ID>    
+      </cac:PartyIdentification>
+      <cac:PartyName>
+         <cbc:Name>Party name</cbc:Name>    
+      </cac:PartyName>
+      <cac:PostalAddress>
+         <cbc:StreetName>Busy Street</cbc:StreetName>
+         <cbc:AdditionalStreetName>Department ABC</cbc:AdditionalStreetName>
+         <cbc:CityName>Farthing</cbc:CityName>
+         <cbc:PostalZone>AA99 1BB</cbc:PostalZone>
+         <cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
+         <cac:AddressLine>
+            <cbc:Line>The Roundabout</cbc:Line>      
+         </cac:AddressLine>
+         <cac:Country>
+            <cbc:IdentificationCode>GB</cbc:IdentificationCode>      
+         </cac:Country>    
+      </cac:PostalAddress>
+      <cac:Contact>
+         <cbc:Name>Mrs Bouquet</cbc:Name>
+         <cbc:Telephone>0158 1233714</cbc:Telephone>
+         <cbc:ElectronicMail>bouquet@fpconsortial.co.uk</cbc:ElectronicMail>    
+      </cac:Contact>  
+   </cac:SenderParty>
+   <cac:ReceiverParty>
+      <cbc:EndpointID schemeID="0088">5798000000124</cbc:EndpointID>
+      <cac:PartyIdentification>
+         <cbc:ID schemeID="0088">5790000435951</cbc:ID>    
+      </cac:PartyIdentification>
+      <cac:PartyName>
+         <cbc:Name>Party name</cbc:Name>    
+      </cac:PartyName>
+      <cac:PostalAddress>
+         <cbc:StreetName>Avon Way</cbc:StreetName>
+         <cbc:AdditionalStreetName>Big projects</cbc:AdditionalStreetName>
+         <cbc:CityName>Bridgtow</cbc:CityName>
+         <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+         <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+         <cac:AddressLine>
+            <cbc:Line>3rd Floor, Room 5</cbc:Line>      
+         </cac:AddressLine>
+         <cac:Country>
+            <cbc:IdentificationCode>GB</cbc:IdentificationCode>      
+         </cac:Country>    
+      </cac:PostalAddress>
+      <cac:Contact>
+         <cbc:Name>Mr Fred Churchill</cbc:Name>
+         <cbc:Telephone>0127 2653214</cbc:Telephone>
+         <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>    
+      </cac:Contact>  
+   </cac:ReceiverParty>
+   <cac:NotifierParty>
+      <cbc:EndpointID schemeID="0088">7300010000001</cbc:EndpointID>
+      <cac:PartyIdentification>
+         <cbc:ID schemeID="0088">7300010000001</cbc:ID>    
+      </cac:PartyIdentification>
+      <cac:PartyName>
+         <cbc:Name>Party name</cbc:Name>    
+      </cac:PartyName>
+      <cac:PostalAddress>
+         <cbc:StreetName>Busy Street</cbc:StreetName>
+         <cbc:AdditionalStreetName>Department ABC</cbc:AdditionalStreetName>
+         <cbc:CityName>Farthing</cbc:CityName>
+         <cbc:PostalZone>AA99 1BB</cbc:PostalZone>
+         <cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
+         <cac:AddressLine>
+            <cbc:Line>The Roundabout</cbc:Line>      
+         </cac:AddressLine>
+         <cac:Country>
+            <cbc:IdentificationCode>GB</cbc:IdentificationCode>      
+         </cac:Country>    
+      </cac:PostalAddress>
+      <cac:Contact>
+         <cbc:Name>Mrs Bouquet</cbc:Name>
+         <cbc:Telephone>0158 1233714</cbc:Telephone>
+         <cbc:ElectronicMail>bouquet@fpconsortial.co.uk</cbc:ElectronicMail>    
+      </cac:Contact>  
+   </cac:NotifierParty>
+   <cac:DisposalFacilityParty>
+      <cbc:EndpointID schemeID="0088">7300010000001</cbc:EndpointID>
+      <cac:PartyIdentification>
+         <cbc:ID schemeID="0088">7300010000001</cbc:ID>    
+      </cac:PartyIdentification>
+      <cac:PartyName>
+         <cbc:Name>Party name</cbc:Name>    
+      </cac:PartyName>
+      <cac:PostalAddress>
+         <cbc:StreetName>Busy Street</cbc:StreetName>
+         <cbc:AdditionalStreetName>Department ABC</cbc:AdditionalStreetName>
+         <cbc:CityName>Farthing</cbc:CityName>
+         <cbc:PostalZone>AA99 1BB</cbc:PostalZone>
+         <cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
+         <cac:AddressLine>
+            <cbc:Line>The Roundabout</cbc:Line>      
+         </cac:AddressLine>
+         <cac:Country>
+            <cbc:IdentificationCode>GB</cbc:IdentificationCode>      
+         </cac:Country>    
+      </cac:PostalAddress>
+      <cac:Contact>
+         <cbc:Name>Mrs Bouquet</cbc:Name>
+         <cbc:Telephone>0158 1233714</cbc:Telephone>
+         <cbc:ElectronicMail>bouquet@fpconsortial.co.uk</cbc:ElectronicMail>    
+      </cac:Contact>  
+   </cac:DisposalFacilityParty>
+   <cac:RecoveryFacilityParty>
+      <cbc:EndpointID schemeID="0088">7300010000001</cbc:EndpointID>
+      <cac:PartyIdentification>
+         <cbc:ID schemeID="0088">7300010000001</cbc:ID>    
+      </cac:PartyIdentification>
+      <cac:PartyName>
+         <cbc:Name>Party name</cbc:Name>    
+      </cac:PartyName>
+      <cac:PostalAddress>
+         <cbc:StreetName>Busy Street</cbc:StreetName>
+         <cbc:AdditionalStreetName>Department ABC</cbc:AdditionalStreetName>
+         <cbc:CityName>Farthing</cbc:CityName>
+         <cbc:PostalZone>AA99 1BB</cbc:PostalZone>
+         <cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
+         <cac:AddressLine>
+            <cbc:Line>The Roundabout</cbc:Line>      
+         </cac:AddressLine>
+         <cac:Country>
+            <cbc:IdentificationCode>GB</cbc:IdentificationCode>      
+         </cac:Country>    
+      </cac:PostalAddress>
+      <cac:Contact>
+         <cbc:Name>Mrs Bouquet</cbc:Name>
+         <cbc:Telephone>0158 1233714</cbc:Telephone>
+         <cbc:ElectronicMail>bouquet@fpconsortial.co.uk</cbc:ElectronicMail>    
+      </cac:Contact>  
+   </cac:RecoveryFacilityParty>
+   <cac:WasteProducerParty>
+      <cbc:EndpointID schemeID="0088">7300010000001</cbc:EndpointID>
+      <cac:PartyIdentification>
+         <cbc:ID schemeID="0088">7300010000001</cbc:ID>    
+      </cac:PartyIdentification>
+      <cac:PartyName>
+         <cbc:Name>Party name</cbc:Name>    
+      </cac:PartyName>
+      <cac:PostalAddress>
+         <cbc:StreetName>Busy Street</cbc:StreetName>
+         <cbc:AdditionalStreetName>Department ABC</cbc:AdditionalStreetName>
+         <cbc:CityName>Farthing</cbc:CityName>
+         <cbc:PostalZone>AA99 1BB</cbc:PostalZone>
+         <cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
+         <cac:AddressLine>
+            <cbc:Line>The Roundabout</cbc:Line>      
+         </cac:AddressLine>
+         <cac:Country>
+            <cbc:IdentificationCode>GB</cbc:IdentificationCode>      
+         </cac:Country>    
+      </cac:PostalAddress>
+      <cac:Contact>
+         <cbc:Name>Mrs Bouquet</cbc:Name>
+         <cbc:Telephone>0158 1233714</cbc:Telephone>
+         <cbc:ElectronicMail>bouquet@fpconsortial.co.uk</cbc:ElectronicMail>    
+      </cac:Contact>  
+   </cac:WasteProducerParty>
+   <cac:Shipment>
+      <cbc:ID>1</cbc:ID>
+      <cac:Consignment>
+         <cbc:ID>NA</cbc:ID>
+         <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+         <cac:DocumentReference>
+            <cbc:ID>123</cbc:ID>
+            <cbc:DocumentTypeCode>A</cbc:DocumentTypeCode>
+            <cbc:DocumentType>Project Reference</cbc:DocumentType>
+            <cac:Attachment>
+               <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+               <cac:ExternalReference>
+                  <cbc:URI>www.beast.se</cbc:URI>          
+               </cac:ExternalReference>        
+            </cac:Attachment>      
+         </cac:DocumentReference>    
+      </cac:Consignment>
+      <cac:GoodsItem>
+         <cbc:ID>1</cbc:ID>
+         <cbc:Quantity unitCode="TNE">10.3</cbc:Quantity>
+         <cac:Item>
+            <cbc:Name>beeswax</cbc:Name>
+            <cac:BuyersItemIdentification>
+               <cbc:ID>6578489</cbc:ID>        
+            </cac:BuyersItemIdentification>
+            <cac:SellersItemIdentification>
+               <cbc:ID>17589683</cbc:ID>        
+            </cac:SellersItemIdentification>
+            <cac:StandardItemIdentification>
+               <cbc:ID schemeID="0160">1234567891234</cbc:ID>        
+            </cac:StandardItemIdentification>
+            <cac:CommodityClassification>
+               <cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">KO2012140200</cbc:ItemClassificationCode>        
+            </cac:CommodityClassification>
+            <cac:HazardousItem>
+               <cbc:UNDGCode>ADR</cbc:UNDGCode>
+               <cbc:HazardClassID>Code</cbc:HazardClassID>        
+            </cac:HazardousItem>      
+         </cac:Item>    
+      </cac:GoodsItem>
+      <cac:ShipmentStage>
+         <cbc:ID>1</cbc:ID>
+         <cac:CarrierParty>
+            <cbc:EndpointID schemeID="0088">5790000435951</cbc:EndpointID>
+            <cac:PartyIdentification>
+               <cbc:ID schemeID="0088">5790000435951</cbc:ID>        
+            </cac:PartyIdentification>
+            <cac:PartyName>
+               <cbc:Name>Transportören AB</cbc:Name>        
+            </cac:PartyName>
+            <cac:PostalAddress>
+               <cbc:StreetName>Avon Way</cbc:StreetName>
+               <cbc:AdditionalStreetName>way 2</cbc:AdditionalStreetName>
+               <cbc:CityName>Bridgtow</cbc:CityName>
+               <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+               <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+               <cac:AddressLine>
+                  <cbc:Line>3rd Floor, Room 5</cbc:Line>          
+               </cac:AddressLine>
+               <cac:Country>
+                  <cbc:IdentificationCode>GB</cbc:IdentificationCode>          
+               </cac:Country>        
+            </cac:PostalAddress>
+            <cac:Contact>
+               <cbc:Name>Mr Fred Churchill</cbc:Name>
+               <cbc:Telephone>0127 2653214</cbc:Telephone>
+               <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>        
+            </cac:Contact>      
+         </cac:CarrierParty>
+         <cac:TransportMeans>
+            <cbc:TransportMeansTypeCode>3</cbc:TransportMeansTypeCode>
+            <cac:AirTransport>
+               <cbc:AircraftID>JA8088</cbc:AircraftID>        
+            </cac:AirTransport>
+            <cac:RoadTransport>
+               <cbc:LicensePlateID>DF10958</cbc:LicensePlateID>        
+            </cac:RoadTransport>
+            <cac:RailTransport>
+               <cbc:TrainID>12014</cbc:TrainID>
+               <cbc:RailCarID>50 63 20-33 801-5</cbc:RailCarID>        
+            </cac:RailTransport>
+            <cac:MaritimeTransport>
+               <cbc:VesselID>wrt34663</cbc:VesselID>        
+            </cac:MaritimeTransport>      
+         </cac:TransportMeans>    
+      </cac:ShipmentStage>
+      <cac:Delivery>
+         <cac:DeliveryLocation>
+            <cbc:ID schemeID="0088">5790000435951</cbc:ID>
+            <cbc:Name>Deponin i Bridgtow AB</cbc:Name>
+            <cac:Address>
+               <cbc:StreetName>Avon Way</cbc:StreetName>
+               <cbc:AdditionalStreetName>Purchasing</cbc:AdditionalStreetName>
+               <cbc:CityName>Bridgtow</cbc:CityName>
+               <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+               <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+               <cac:AddressLine>
+                  <cbc:Line>3rd Floor, Room 5</cbc:Line>          
+               </cac:AddressLine>
+               <cac:Country>
+                  <cbc:IdentificationCode>GB</cbc:IdentificationCode>          
+               </cac:Country>        
+            </cac:Address>
+            <cac:LocationCoordinate>
+               <cbc:CoordinateSystemCode>EPSG:3857</cbc:CoordinateSystemCode>
+               <cbc:LatitudeDegreesMeasure unitCode="DD">59.331660358041425</cbc:LatitudeDegreesMeasure>
+               <cbc:LongitudeDegreesMeasure unitCode="DD">18.063363084988005</cbc:LongitudeDegreesMeasure>        
+            </cac:LocationCoordinate>      
+         </cac:DeliveryLocation>
+         <cac:DeliveryParty>
+            <cbc:EndpointID schemeID="0088">5790000435951</cbc:EndpointID>
+            <cac:PartyIdentification>
+               <cbc:ID schemeID="0088">5790000435951</cbc:ID>        
+            </cac:PartyIdentification>
+            <cac:PartyName>
+               <cbc:Name>Name</cbc:Name>        
+            </cac:PartyName>
+            <cac:PostalAddress>
+               <cbc:StreetName>Avon Way</cbc:StreetName>
+               <cbc:AdditionalStreetName>Purchasing</cbc:AdditionalStreetName>
+               <cbc:CityName>Bridgtow</cbc:CityName>
+               <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+               <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+               <cac:AddressLine>
+                  <cbc:Line>3rd Floor, Room 5</cbc:Line>          
+               </cac:AddressLine>
+               <cac:Country>
+                  <cbc:IdentificationCode>GB</cbc:IdentificationCode>          
+               </cac:Country>        
+            </cac:PostalAddress>
+            <cac:Contact>
+               <cbc:Name>Mr Fred Churchill</cbc:Name>
+               <cbc:Telephone>0127 2653214</cbc:Telephone>
+               <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>        
+            </cac:Contact>      
+         </cac:DeliveryParty>
+         <cac:Despatch>
+            <cbc:ActualDespatchDate>2025-09-10</cbc:ActualDespatchDate>
+            <cac:DespatchLocation>
+               <cbc:ID schemeID="0088">5790000435951</cbc:ID>
+               <cbc:Name>Grävaren i Bridgtow AB</cbc:Name>
+               <cac:Address>
+                  <cbc:StreetName>Avon Way</cbc:StreetName>
+                  <cbc:AdditionalStreetName>way 2</cbc:AdditionalStreetName>
+                  <cbc:CityName>Bridgtow</cbc:CityName>
+                  <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+                  <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+                  <cac:AddressLine>
+                     <cbc:Line>The Roundabout</cbc:Line>            
+                  </cac:AddressLine>
+                  <cac:Country>
+                     <cbc:IdentificationCode>GB</cbc:IdentificationCode>            
+                  </cac:Country>          
+               </cac:Address>
+               <cac:LocationCoordinate>
+                  <cbc:CoordinateSystemCode>EPSG:3857</cbc:CoordinateSystemCode>
+                  <cbc:LatitudeDegreesMeasure unitCode="DD">59.33169866504851</cbc:LatitudeDegreesMeasure>
+                  <cbc:LongitudeDegreesMeasure unitCode="DD">18.063330898492403</cbc:LongitudeDegreesMeasure>          
+               </cac:LocationCoordinate>        
+            </cac:DespatchLocation>
+            <cac:DespatchParty>
+               <cbc:EndpointID schemeID="0088">5790000435951</cbc:EndpointID>
+               <cac:PartyIdentification>
+                  <cbc:ID schemeID="0088">5790000435951</cbc:ID>          
+               </cac:PartyIdentification>
+               <cac:PartyName>
+                  <cbc:Name>Name</cbc:Name>          
+               </cac:PartyName>
+               <cac:PostalAddress>
+                  <cbc:StreetName>Avon Way</cbc:StreetName>
+                  <cbc:AdditionalStreetName>way 2</cbc:AdditionalStreetName>
+                  <cbc:CityName>Bridgtow</cbc:CityName>
+                  <cbc:PostalZone>ZZ99 1ZZ</cbc:PostalZone>
+                  <cbc:CountrySubentity>Avon</cbc:CountrySubentity>
+                  <cac:AddressLine>
+                     <cbc:Line>3rd Floor, Room 5</cbc:Line>            
+                  </cac:AddressLine>
+                  <cac:Country>
+                     <cbc:IdentificationCode>GB</cbc:IdentificationCode>            
+                  </cac:Country>          
+               </cac:PostalAddress>
+               <cac:Contact>
+                  <cbc:Name>Mr Fred Churchill</cbc:Name>
+                  <cbc:Telephone>0127 2653214</cbc:Telephone>
+                  <cbc:ElectronicMail>fred@iytcorporation.gov.uk</cbc:ElectronicMail>          
+               </cac:Contact>        
+            </cac:DespatchParty>      
+         </cac:Despatch>    
+      </cac:Delivery>  
+   </cac:Shipment>
+   <cac:WeightStatementDocumentReference>
+      <cbc:ID>76767543</cbc:ID>
+      <cac:Attachment>
+         <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="VS112233.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+         <cac:ExternalReference>
+            <cbc:URI>www.beast.se</cbc:URI>      
+         </cac:ExternalReference>    
+      </cac:Attachment>  
+   </cac:WeightStatementDocumentReference>
+   <cac:DocumentDistribution>
+      <cac:Party>
+         <cbc:EndpointID schemeID="0088">5790000435951</cbc:EndpointID>
+         <cac:PartyIdentification>
+            <cbc:ID schemeID="0088">5790000435951</cbc:ID>      
+         </cac:PartyIdentification>
+         <cac:PartyName>
+            <cbc:Name>Transportören AB</cbc:Name>      
+         </cac:PartyName>
+         <cac:PostalAddress>
+            <cbc:StreetName>Tietotie 9</cbc:StreetName>
+            <cbc:AdditionalStreetName>Purchasing</cbc:AdditionalStreetName>
+            <cbc:CityName>Vantaa</cbc:CityName>
+            <cbc:PostalZone>4600</cbc:PostalZone>
+            <cbc:CountrySubentity>Heremouthshire</cbc:CountrySubentity>
+            <cac:AddressLine>
+               <cbc:Line>Gate 34</cbc:Line>        
+            </cac:AddressLine>
+            <cac:Country>
+               <cbc:IdentificationCode>FI</cbc:IdentificationCode>        
+            </cac:Country>      
+         </cac:PostalAddress>
+         <cac:Contact>
+            <cbc:Name>Mrs Bouquet</cbc:Name>
+            <cbc:Telephone>0158 1233714</cbc:Telephone>
+            <cbc:ElectronicMail>bouquet@fpconsortial.co.uk</cbc:ElectronicMail>      
+         </cac:Contact>    
+      </cac:Party>  
+   </cac:DocumentDistribution>
+</ubl:WasteMovement>
