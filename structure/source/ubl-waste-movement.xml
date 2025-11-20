@@ -26,7 +26,7 @@
 		<?Cardinality 0..1?>
 	</cbc:IssueTime>
 	
-	<cbc:WasteMovementTypeCode>S3
+	<cbc:WasteMovementTypeCode>DS3
 		<?Name Waste Movement Type Code?>
 		<?Description Waste Movement Type Code. ?>
 		<?Cardinality 0..1?>
@@ -849,6 +849,16 @@
 			<?Name Identity ?>
 			<?Cardinality 0..1?>
 		</cbc:ID>
+		<cbc:Information>Text
+			<?Description Additional Information. ?>
+			<?Name Information ?>
+			<?Cardinality 0..n?>
+		</cbc:Information>
+		<cbc:TotalTransportHandlingUnitQuantity>1
+			<?Description The number of pieces of transport handling equipment (pallets, boxes, cases, etc.) in this shipment. ?>
+			<?Name Total Transport Handling Unit Quantity ?>
+			<?Cardinality 0..1?>
+		</cbc:TotalTransportHandlingUnitQuantity>
 
 		<cac:Consignment>
 			<?Description Consignment information ?>
@@ -866,6 +876,58 @@
 				<?Cardinality 0..1?>
 				<?Name Hazardous Risk Indicator. ?>
 			</cbc:HazardousRiskIndicator>
+			<cbc:HandlingCode>D123
+				<?Description The handling required for this consignment, expressed as a code. ?>
+				<?Name Handling Code ?>
+				<?Cardinality 0..1?>
+			</cbc:HandlingCode>
+
+			<cac:Status>
+				<?Description A class to describe the condition or position of the waste. ?>
+				<?Name Status ?>
+				<?Cardinality 0..n?>
+				<cbc:ConditionCode>XX
+					<?Description Specifies the status condition of the waste. ?>
+					<?Name Condition Code ?>
+					<?Cardinality 0..1?>
+				</cbc:ConditionCode>
+				<cbc:ReferenceDate>2025-09-15
+					<?Description Date of Disposal/Recovery. ?>
+					<?Name Reference Date ?>
+					<?Cardinality 0..1?>
+				</cbc:ReferenceDate>
+				<cbc:StatusReasonCode>YY
+					<?Description The reason for this status condition or position, expressed as a code. ?>
+					<?Name Status Reason Code ?>
+					<?Cardinality 0..1?>
+				</cbc:StatusReasonCode>
+			</cac:Status>
+
+			<cac:TransportHandlingUnit>
+				<?Name Transport handling unit?>
+				<?Description A description of individual handling units in which the line items are packed. An item of any 
+				composition established for transport and/or storage that needs to be managed through the supply chain.?>
+				<?Cardinality 0..1?>
+				<cbc:TransportHandlingUnitTypeCode>AG
+					<?Name Handling unit type code?>
+					<?Description Type of Transport Handling Unit. Use UN/ECE Recommendation 21. ?>
+					<?CodeList UNECERec21?>
+					<?Cardinality 1..1?>
+				</cbc:TransportHandlingUnitTypeCode>
+				<cbc:HandlingCode listID="TRED4079">1
+					<?Name Handling Code?>
+					<?Description The handling for this transporthandling unit expressed as a code?>
+					<?Cardinality 0..1?>
+					<?listID-Name Identifier for codelist for handling code?>
+					<?listID-Description An identifier for the codelist used for the handling code?>
+					<?listID-usage Mandatory?>
+				</cbc:HandlingCode>
+				<cbc:HandlingInstructions>To be set vertical
+					<?Name Handling instructions?>
+					<?Description The handling for this transporthandling unit expressed as a text?>
+					<?Cardinality 0..1?>
+				</cbc:HandlingInstructions>
+			</cac:TransportHandlingUnit>
 			
 			<cac:DocumentReference>
 				<?Description A reference to a document related to or relevant for this consignment. ?>
@@ -934,6 +996,11 @@
 				<?Name Item information ?>
 				<?Description Item information. ?>
 				<?Cardinality 1..1?>
+				<cbc:Description>
+					<?Description Designation and Composition of the Waste. ?>
+					<?Name Description ?>
+					<?Cardinality 0..n?>
+				</cbc:Description>
 				<cbc:Name>beeswax
 					<?Description A short name for an item. ?>
 					<?Name Item name ?>
@@ -997,6 +1064,29 @@
 						<?Cardinality 0..1?>
 					</cbc:HazardClassID>
 				</cac:HazardousItem>
+
+				<cac:AdditionalItemProperty>
+					<cbc:ID schemeDataURI="https://define.cobuilder.no/77e416eb-a363-4258-a04e-171d843a6460/2022/" schemeID="ISO22057" schemeVersionID="2022">
+						77e416eb-a363-4258-a04e-171d843a6460
+						<?Description ID of the property if assigned by an Agency?>
+						<?Cardinality 0..1?>
+						<?schemeDataURI-Name Scheme Data URI?>
+						<?schemeDataURI-usage Optional?>
+						<?schemeID-Name Scheme identifier?>
+						<?schemeID-usage Optional?>
+						<?schemeVersionID-Name Scheme version identifier?>
+						<?schemeVersionID-usage Optional?>
+					</cbc:ID>
+					<cbc:Name>Rigidity</cbc:Name>
+					<cbc:NameCode listID="IPNC">EPDNumber
+						<?listID-usage Mandatory?>
+						<?listID-Name Name code list id.?>
+						<?listID-Description An identifier for the code list used for the Name code, this is bilaterally agreed?>
+					</cbc:NameCode>
+					<cbc:Value>NEPD-1717-700-SE</cbc:Value>
+					<cbc:ValueQuantity unitCode="EA">15.00</cbc:ValueQuantity>
+					<cbc:ValueQualifier>descr</cbc:ValueQualifier>
+				</cac:AdditionalItemProperty>
 			</cac:Item>
 		</cac:GoodsItem>
 
@@ -1146,7 +1236,7 @@
 				<?Description The means of transport used in this shipment stage.?>
 				<?Cardinality 0..1?>
 
-				<cbc:TransportMeansTypeCode>3
+				<cbc:TransportMeansTypeCode>31
 					<?Name Transport means type code?>
 					<?Description The means of transport used in this shipment stage.?>
 					<?Cardinality 0..1?>
@@ -1212,6 +1302,20 @@
 			<?Description Delivery information ?>
 			<?Name Delivery information ?>
 			<?Cardinality 0..1?>
+
+			<cbc:Quantity unitCode="TNE">10.3
+				<?Description The quantity received. ?>
+				<?Name Received quantity ?>
+				<?Cardinality 0..1?>
+				<?unitCode-CodeList UNECERec20?>
+				<?unitCode-usage Mandatory?>
+			</cbc:Quantity>
+
+			<cbc:ActualDeliveryDate>2025-09-10
+				<?Description The actual date of delivery. ?>
+				<?Name Delivery date ?>
+				<?Cardinality 0..1?>
+			</cbc:ActualDeliveryDate>
 
 			<cac:DeliveryLocation>
 				<?Name Delivery location?>
@@ -1675,6 +1779,56 @@
 			</cac:Despatch>
 		</cac:Delivery>
 	</cac:Shipment>
+
+	<cac:WasteNotificationDocumentReference>
+		<?Name Reference to the Waste Notification documents?>
+		<?Description Reference to the Waste Notification documents relevant for this Waste Movement. ?>
+		<?Cardinality 0..1?>
+
+		<cbc:ID>12121212
+			<?Name Identity of the referenced document?>
+			<?Cardinality 1..1?>
+			<?Description The reference number of the Waste Notification?>
+		</cbc:ID>
+</cac:WasteNotificationDocumentReference>
+
+	<cac:DocumentReference>
+		<?Name Reference to relevant documents?>
+		<?Description Reference to any documents relevant for this Waste Movement. ?>
+		<?Cardinality 0..n?>
+
+		<cbc:ID>765444465
+			<?Name Identity of the referenced document?>
+			<?Cardinality 1..1?>
+			<?Description The reference number of the document?>
+		</cbc:ID>
+
+		<cac:Attachment>
+			<?Name Attachment?>
+			<?Cardinality 0..1?>
+			<?Description Group to describe an attached document. An attachment can refer to an external document or be included 
+			with the document being exchanged.?>
+
+			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="VS112233.pdf">
+				aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==
+				<?Name Embedded binary object?>
+				<?Cardinality 0..1?>
+				<?mimeCode-CodeList MimeCode?>
+				<?Description The referenced document can here be inserted as a binary object.?>
+			</cbc:EmbeddedDocumentBinaryObject>
+
+			<cac:ExternalReference>
+				<?Name External reference?>
+				<?Description A reference to an attached document that is external to the document(s) being exchanged.?>
+				<?Cardinality 0..1?>
+
+				<cbc:URI>www.beast.se
+					<?Name Address to internet resource?>
+					<?Description The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource.?>
+				</cbc:URI>
+			</cac:ExternalReference>
+		</cac:Attachment>
+	</cac:DocumentReference>
 
 	<cac:WeightStatementDocumentReference>
 		<?Name Reference to Weight Statement documents?>
