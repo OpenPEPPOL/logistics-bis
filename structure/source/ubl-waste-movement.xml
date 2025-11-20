@@ -5,8 +5,8 @@
 	<?DocumentTerm WasteMovement?>
 	<?Property key="sch:prefix" PEPPOL-T131?>
 	<?Property key="sch:identifier" T131-basic?>
-	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:waste_movement_document:1</cbc:CustomizationID>
-	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:waste_movement_document:1</cbc:ProfileID>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:waste-movement:1</cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:waste-movement:1</cbc:ProfileID>
 
 	<cbc:ID>5658999
 		<?Name Document Identity?>
@@ -140,7 +140,7 @@
 				<?Name External reference ?>
 				<?Description Link to the signature that is available externally. ?>
 				<?Cardinality 0..1?>
-				<cbc:URI>
+				<cbc:URI>www.beast.se
 					<?Name URI ?>
 					<?Description Link to the signature that is available externally. ?>
 					<?Cardinality 0..1?>
@@ -996,7 +996,7 @@
 				<?Name Item information ?>
 				<?Description Item information. ?>
 				<?Cardinality 1..1?>
-				<cbc:Description>
+				<cbc:Description>Text
 					<?Description Designation and Composition of the Waste. ?>
 					<?Name Description ?>
 					<?Cardinality 0..n?>
@@ -1006,6 +1006,7 @@
 					<?Name Item name ?>
 					<?Cardinality 1..1?>
 				</cbc:Name>
+				
 				<cac:BuyersItemIdentification>
 					<?Description Buyer's item identification. ?>
 					<?Name Buyer's item identification ?>
@@ -1066,8 +1067,8 @@
 				</cac:HazardousItem>
 
 				<cac:AdditionalItemProperty>
-					<cbc:ID schemeDataURI="https://define.cobuilder.no/77e416eb-a363-4258-a04e-171d843a6460/2022/" schemeID="ISO22057" schemeVersionID="2022">
-						77e416eb-a363-4258-a04e-171d843a6460
+					<cbc:ID schemeDataURI="https://define.cobuilder.no/77e416eb-a363-4258-a04e-171d843a6460/2022/" 
+							schemeID="ISO22057" schemeVersionID="2022">77e416eb-a363-4258-a04e-171d843a6460
 						<?Description ID of the property if assigned by an Agency?>
 						<?Cardinality 0..1?>
 						<?schemeDataURI-Name Scheme Data URI?>
