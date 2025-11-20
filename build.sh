@@ -75,7 +75,7 @@ docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entry
 echo "Generating example: ApplicationResponse"
 docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-application-response.xml -xsl:/src/tools/remove-pi.xsl -o:/src/rules/examples/ApplicationResponse_Example_Full.xml  -ext:on --allow-external-functions:on
 echo "Generating example: Waste Movement"
-docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/syntax/ubl-waste-movement.xml -xsl:/src/tools/remove-pi.xsl -o:/src/rules/examples/WasteMovement_Example_Full.xml  -ext:on --allow-external-functions:on
+docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/generated:/target --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/source/ubl-waste-movement.xml -xsl:/src/tools/remove-pi.xsl -o:/src/rules/examples/WasteMovement_Example_Full.xml  -ext:on --allow-external-functions:on
 
 
 # Structure
