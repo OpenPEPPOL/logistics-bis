@@ -61,7 +61,7 @@
          <Term>cbc:WasteMovementTypeCode</Term>
          <Name>Waste Movement Type Code</Name>
          <Description>Waste Movement Type Code. </Description>
-         <Value type="EXAMPLE">S3</Value>
+         <Value type="EXAMPLE">DS3</Value>
       </Element>
 
 	     <Element cardinality="0..1">
@@ -1003,6 +1003,20 @@
             <Reference type="BUSINESS_TERM">tir16-038</Reference>
             <Value type="EXAMPLE">1</Value>
          </Element>
+         <Element cardinality="0..n">
+            <Term>cbc:Information</Term>
+            <Name>Information </Name>
+            <Description>Additional Information. </Description>
+            <Reference type="BUSINESS_TERM">tir16-039</Reference>
+            <Value type="EXAMPLE">Text</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:TotalTransportHandlingUnitQuantity</Term>
+            <Name>Total Transport Handling Unit Quantity </Name>
+            <Description>The number of pieces of transport handling equipment (pallets, boxes, cases, etc.) in this shipment. </Description>
+            <Reference type="BUSINESS_TERM">tir16-p002</Reference>
+            <Value type="EXAMPLE">1</Value>
+         </Element>
          <Element cardinality="0..1">
             <Term>cac:Consignment</Term>
             <Name>Consignment </Name>
@@ -1021,6 +1035,66 @@
                <Description>An indication that the transported goods in this consignment are subject to an international 
 				regulation concerning the carriage of dangerous goods (true) or not (false). </Description>
                <Value type="EXAMPLE">false</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:HandlingCode</Term>
+               <Name>Handling Code </Name>
+               <Description>The handling required for this consignment, expressed as a code. </Description>
+               <Value type="EXAMPLE">D123</Value>
+            </Element>
+            <Element cardinality="0..n">
+               <Term>cac:Status</Term>
+               <Name>Status </Name>
+               <Description>A class to describe the condition or position of the waste. </Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:ConditionCode</Term>
+                  <Name>Condition Code </Name>
+                  <Description>Specifies the status condition of the waste. </Description>
+                  <Value type="EXAMPLE">XX</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:ReferenceDate</Term>
+                  <Name>Reference Date </Name>
+                  <Description>Date of Disposal/Recovery. </Description>
+                  <Value type="EXAMPLE">2025-09-15</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:StatusReasonCode</Term>
+                  <Name>Status Reason Code </Name>
+                  <Description>The reason for this status condition or position, expressed as a code. </Description>
+                  <Value type="EXAMPLE">YY</Value>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:TransportHandlingUnit</Term>
+               <Name>Transport handling unit</Name>
+               <Description>A description of individual handling units in which the line items are packed. An item of any 
+				composition established for transport and/or storage that needs to be managed through the supply chain.</Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:TransportHandlingUnitTypeCode</Term>
+                  <Name>Handling unit type code</Name>
+                  <Description>Type of Transport Handling Unit. Use UN/ECE Recommendation 21. </Description>
+                  <Reference type="CODE_LIST">UNECERec21</Reference>
+                  <Value type="EXAMPLE">AG</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:HandlingCode</Term>
+                  <Name>Handling Code</Name>
+                  <Description>The handling for this transporthandling unit expressed as a code</Description>
+                  <Attribute usage="Mandatory">
+                     <Term>listID</Term>
+                     <Name>Identifier for codelist for handling code</Name>
+                     <Description>An identifier for the codelist used for the handling code</Description>
+                     <Value type="EXAMPLE">TRED4079</Value>
+                  </Attribute>
+                  <Value type="EXAMPLE">1</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:HandlingInstructions</Term>
+                  <Name>Handling instructions</Name>
+                  <Description>The handling for this transporthandling unit expressed as a text</Description>
+                  <Value type="EXAMPLE">To be set vertical</Value>
+               </Element>
             </Element>
             <Element cardinality="0..n">
                <Term>cac:DocumentReference</Term>
@@ -1101,6 +1175,11 @@
                <Term>cac:Item</Term>
                <Name>Item information </Name>
                <Description>Item information. </Description>
+               <Element cardinality="0..n">
+                  <Term>cbc:Description</Term>
+                  <Name>Description </Name>
+                  <Description>Designation and Composition of the Waste. </Description>
+               </Element>
                <Element cardinality="1..1">
                   <Term>cbc:Name</Term>
                   <Name>Item name </Name>
@@ -1183,6 +1262,59 @@ Peppol: </Description>
                      <Name>Hazard Class ID. </Name>
                      <Description>An identifier for the hazard class applicable to this hazardous item as defined by the relevant </Description>
                      <Value type="EXAMPLE">Code</Value>
+                  </Element>
+               </Element>
+               <Element>
+                  <Term>cac:AdditionalItemProperty</Term>
+                  <Element cardinality="0..1">
+                     <Term>cbc:ID</Term>
+                     <Description>ID of the property if assigned by an Agency</Description>
+                     <Attribute usage="Optional">
+                        <Term>schemeDataURI</Term>
+                        <Name>Scheme Data URI</Name>
+                        <Value type="EXAMPLE">https://define.cobuilder.no/77e416eb-a363-4258-a04e-171d843a6460/2022/</Value>
+                     </Attribute>
+                     <Attribute usage="Optional">
+                        <Term>schemeID</Term>
+                        <Name>Scheme identifier</Name>
+                        <Value type="EXAMPLE">ISO22057</Value>
+                     </Attribute>
+                     <Attribute usage="Optional">
+                        <Term>schemeVersionID</Term>
+                        <Name>Scheme version identifier</Name>
+                        <Value type="EXAMPLE">2022</Value>
+                     </Attribute>
+                     <Value type="EXAMPLE">77e416eb-a363-4258-a04e-171d843a6460</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Value type="EXAMPLE">Rigidity</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:NameCode</Term>
+                     <Attribute usage="Mandatory">
+                        <Term>listID</Term>
+                        <Name>Name code list id.</Name>
+                        <Description>An identifier for the code list used for the Name code, this is bilaterally agreed</Description>
+                        <Value type="EXAMPLE">IPNC</Value>
+                     </Attribute>
+                     <Value type="EXAMPLE">EPDNumber</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:Value</Term>
+                     <Value type="EXAMPLE">NEPD-1717-700-SE</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:ValueQuantity</Term>
+                     <Attribute>
+                        <Term>unitCode</Term>
+                        <Value type="EXAMPLE">EA</Value>
+                     </Attribute>
+                     <Value type="EXAMPLE">15.00</Value>
+                  </Element>
+                  <Element>
+                     <Term>cbc:ValueQualifier</Term>
+                     <Value type="EXAMPLE">descr</Value>
                   </Element>
                </Element>
             </Element>
@@ -1337,7 +1469,7 @@ Peppol: </Description>
                   <Name>Transport means type code</Name>
                   <Description>The means of transport used in this shipment stage.</Description>
                   <Reference type="CODE_LIST">UNECERec28</Reference>
-                  <Value type="EXAMPLE">3</Value>
+                  <Value type="EXAMPLE">31</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:AirTransport</Term>
@@ -1397,6 +1529,23 @@ Peppol: </Description>
             <Term>cac:Delivery</Term>
             <Name>Delivery information </Name>
             <Description>Delivery information </Description>
+            <Element cardinality="0..1">
+               <Term>cbc:Quantity</Term>
+               <Name>Received quantity </Name>
+               <Description>The quantity received. </Description>
+               <Attribute usage="Mandatory">
+                  <Term>unitCode</Term>
+                  <Reference type="CODE_LIST">UNECERec20</Reference>
+                  <Value type="EXAMPLE">TNE</Value>
+               </Attribute>
+               <Value type="EXAMPLE">10.3</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:ActualDeliveryDate</Term>
+               <Name>Delivery date </Name>
+               <Description>The actual date of delivery. </Description>
+               <Value type="EXAMPLE">2025-09-10</Value>
+            </Element>
             <Element cardinality="1..1">
                <Term>cac:DeliveryLocation</Term>
                <Name>Delivery location</Name>
@@ -1922,6 +2071,62 @@ Peppol: </Description>
                         <Value type="EXAMPLE">fred@iytcorporation.gov.uk</Value>
                      </Element>
                   </Element>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+
+	     <Element cardinality="0..1">
+         <Term>cac:WasteNotificationDocumentReference</Term>
+         <Name>Reference to the Waste Notification documents</Name>
+         <Description>Reference to the Waste Notification documents relevant for this Waste Movement. </Description>
+         <Element cardinality="1..1">
+            <Term>cbc:ID</Term>
+            <Name>Identity of the referenced document</Name>
+            <Description>The reference number of the Waste Notification</Description>
+            <Value type="EXAMPLE">12121212</Value>
+         </Element>
+      </Element>
+
+	     <Element cardinality="0..n">
+         <Term>cac:DocumentReference</Term>
+         <Name>Reference to relevant documents</Name>
+         <Description>Reference to any documents relevant for this Waste Movement. </Description>
+         <Element cardinality="1..1">
+            <Term>cbc:ID</Term>
+            <Name>Identity of the referenced document</Name>
+            <Description>The reference number of the document</Description>
+            <Value type="EXAMPLE">765444465</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:Attachment</Term>
+            <Name>Attachment</Name>
+            <Description>Group to describe an attached document. An attachment can refer to an external document or be included 
+			with the document being exchanged.</Description>
+            <Element cardinality="0..1">
+               <Term>cbc:EmbeddedDocumentBinaryObject</Term>
+               <Name>Embedded binary object</Name>
+               <Description>The referenced document can here be inserted as a binary object.</Description>
+               <Attribute>
+                  <Term>mimeCode</Term>
+                  <Reference type="CODE_LIST">MimeCode</Reference>
+                  <Value type="EXAMPLE">application/pdf</Value>
+               </Attribute>
+               <Attribute>
+                  <Term>filename</Term>
+                  <Value type="EXAMPLE">VS112233.pdf</Value>
+               </Attribute>
+               <Value type="EXAMPLE">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:ExternalReference</Term>
+               <Name>External reference</Name>
+               <Description>A reference to an attached document that is external to the document(s) being exchanged.</Description>
+               <Element>
+                  <Term>cbc:URI</Term>
+                  <Name>Address to internet resource</Name>
+                  <Description>The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource.</Description>
+                  <Value type="EXAMPLE">www.beast.se</Value>
                </Element>
             </Element>
          </Element>

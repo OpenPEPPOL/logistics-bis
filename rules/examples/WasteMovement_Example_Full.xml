@@ -7,7 +7,7 @@
    <cbc:ID>5658999</cbc:ID>
    <cbc:IssueDate>2025-09-10</cbc:IssueDate>
    <cbc:IssueTime>12:00:00</cbc:IssueTime>
-   <cbc:WasteMovementTypeCode>S3</cbc:WasteMovementTypeCode>
+   <cbc:WasteMovementTypeCode>DS3</cbc:WasteMovementTypeCode>
    <cbc:SequenceID>3</cbc:SequenceID>
    <cbc:TotalMovementNumeric>4</cbc:TotalMovementNumeric>
    <cac:Signature>
@@ -201,9 +201,22 @@
    </cac:WasteProducerParty>
    <cac:Shipment>
       <cbc:ID>1</cbc:ID>
+      <cbc:Information>Text</cbc:Information>
+      <cbc:TotalTransportHandlingUnitQuantity>1</cbc:TotalTransportHandlingUnitQuantity>
       <cac:Consignment>
          <cbc:ID>NA</cbc:ID>
          <cbc:HazardousRiskIndicator>false</cbc:HazardousRiskIndicator>
+         <cbc:HandlingCode>D123</cbc:HandlingCode>
+         <cac:Status>
+            <cbc:ConditionCode>XX</cbc:ConditionCode>
+            <cbc:ReferenceDate>2025-09-15</cbc:ReferenceDate>
+            <cbc:StatusReasonCode>YY</cbc:StatusReasonCode>      
+         </cac:Status>
+         <cac:TransportHandlingUnit>
+            <cbc:TransportHandlingUnitTypeCode>AG</cbc:TransportHandlingUnitTypeCode>
+            <cbc:HandlingCode listID="TRED4079">1</cbc:HandlingCode>
+            <cbc:HandlingInstructions>To be set vertical</cbc:HandlingInstructions>      
+         </cac:TransportHandlingUnit>
          <cac:DocumentReference>
             <cbc:ID>123</cbc:ID>
             <cbc:DocumentTypeCode>A</cbc:DocumentTypeCode>
@@ -220,6 +233,7 @@
          <cbc:ID>1</cbc:ID>
          <cbc:Quantity unitCode="TNE">10.3</cbc:Quantity>
          <cac:Item>
+            <cbc:Description/>
             <cbc:Name>beeswax</cbc:Name>
             <cac:BuyersItemIdentification>
                <cbc:ID>6578489</cbc:ID>        
@@ -236,7 +250,17 @@
             <cac:HazardousItem>
                <cbc:UNDGCode>ADR</cbc:UNDGCode>
                <cbc:HazardClassID>Code</cbc:HazardClassID>        
-            </cac:HazardousItem>      
+            </cac:HazardousItem>
+            <cac:AdditionalItemProperty>
+               <cbc:ID schemeDataURI="https://define.cobuilder.no/77e416eb-a363-4258-a04e-171d843a6460/2022/"
+                       schemeID="ISO22057"
+                       schemeVersionID="2022">77e416eb-a363-4258-a04e-171d843a6460</cbc:ID>
+               <cbc:Name>Rigidity</cbc:Name>
+               <cbc:NameCode listID="IPNC">EPDNumber</cbc:NameCode>
+               <cbc:Value>NEPD-1717-700-SE</cbc:Value>
+               <cbc:ValueQuantity unitCode="EA">15.00</cbc:ValueQuantity>
+               <cbc:ValueQualifier>descr</cbc:ValueQualifier>        
+            </cac:AdditionalItemProperty>      
          </cac:Item>    
       </cac:GoodsItem>
       <cac:ShipmentStage>
@@ -269,7 +293,7 @@
             </cac:Contact>      
          </cac:CarrierParty>
          <cac:TransportMeans>
-            <cbc:TransportMeansTypeCode>3</cbc:TransportMeansTypeCode>
+            <cbc:TransportMeansTypeCode>31</cbc:TransportMeansTypeCode>
             <cac:AirTransport>
                <cbc:AircraftID>JA8088</cbc:AircraftID>        
             </cac:AirTransport>
@@ -286,6 +310,8 @@
          </cac:TransportMeans>    
       </cac:ShipmentStage>
       <cac:Delivery>
+         <cbc:Quantity unitCode="TNE">10.3</cbc:Quantity>
+         <cbc:ActualDeliveryDate>2025-09-10</cbc:ActualDeliveryDate>
          <cac:DeliveryLocation>
             <cbc:ID schemeID="0088">5790000435951</cbc:ID>
             <cbc:Name>Deponin i Bridgtow AB</cbc:Name>
@@ -389,6 +415,18 @@
          </cac:Despatch>    
       </cac:Delivery>  
    </cac:Shipment>
+   <cac:WasteNotificationDocumentReference>
+      <cbc:ID>12121212</cbc:ID>  
+   </cac:WasteNotificationDocumentReference>
+   <cac:DocumentReference>
+      <cbc:ID>765444465</cbc:ID>
+      <cac:Attachment>
+         <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="VS112233.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+         <cac:ExternalReference>
+            <cbc:URI>www.beast.se</cbc:URI>      
+         </cac:ExternalReference>    
+      </cac:Attachment>  
+   </cac:DocumentReference>
    <cac:WeightStatementDocumentReference>
       <cbc:ID>76767543</cbc:ID>
       <cac:Attachment>
