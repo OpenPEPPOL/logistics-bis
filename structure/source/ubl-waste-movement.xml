@@ -32,17 +32,17 @@
 		<?Cardinality 0..1?>
 	</cbc:WasteMovementTypeCode>
 
-	<cbc:SequenceID>3
-		<?Name Sequence ID?>
+	<cbc:SequenceNumberID>3
+		<?Name Sequence Number ID?>
 		<?Description Sequence no of this shipment referring to the same Waste Notification. ?>
 		<?Cardinality 0..1?>
-	</cbc:SequenceID>
+	</cbc:SequenceNumberID>
 	
-	<cbc:TotalMovementNumeric>4
-		<?Name Total Movement Numeric?>
+	<cbc:ConsignmentQuantity>4
+		<?Name Consignment Quantity?>
 		<?Description Total no of shipments referring to the same Waste Notification. ?>
 		<?Cardinality 0..1?>
-	</cbc:TotalMovementNumeric>
+	</cbc:ConsignmentQuantity>
 
 	<cac:Signature>
 		<?Name Signature ?>
@@ -1795,7 +1795,47 @@
 			<?Cardinality 1..1?>
 			<?Description The reference number of the Waste Notification?>
 		</cbc:ID>
-</cac:WasteNotificationDocumentReference>
+	</cac:WasteNotificationDocumentReference>
+
+	<cac:WeightStatementDocumentReference>
+		<?Name Reference to Weight Statement documents?>
+		<?Description Reference to Weight Statement documents relevant for this Waste Movement. ?>
+		<?Cardinality 0..n?>
+
+		<cbc:ID>
+			76767543
+			<?Name Identity of the referenced document?>
+			<?Cardinality 1..1?>
+			<?Description The reference number of the Weight Statement?>
+		</cbc:ID>
+
+		<cac:Attachment>
+			<?Name Attachment?>
+			<?Cardinality 0..1?>
+			<?Description Group to describe an attached document. An attachment can refer to an external document or be included 
+			with the document being exchanged.?>
+
+			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="VS112233.pdf">
+				aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==
+				<?Name Embedded binary object?>
+				<?Cardinality 0..1?>
+				<?mimeCode-CodeList MimeCode?>
+				<?Description The referenced document can here be inserted as a binary object.?>
+			</cbc:EmbeddedDocumentBinaryObject>
+
+			<cac:ExternalReference>
+				<?Name External reference?>
+				<?Description A reference to an attached document that is external to the document(s) being exchanged.?>
+				<?Cardinality 0..1?>
+
+				<cbc:URI>
+					www.beast.se
+					<?Name Address to internet resource?>
+					<?Description The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource.?>
+				</cbc:URI>
+			</cac:ExternalReference>
+		</cac:Attachment>
+	</cac:WeightStatementDocumentReference>
 
 	<cac:DocumentReference>
 		<?Name Reference to relevant documents?>
@@ -1834,43 +1874,6 @@
 			</cac:ExternalReference>
 		</cac:Attachment>
 	</cac:DocumentReference>
-
-	<cac:WeightStatementDocumentReference>
-		<?Name Reference to Weight Statement documents?>
-		<?Description Reference to Weight Statement documents relevant for this Waste Movement. ?>
-		<?Cardinality 0..n?>
-
-		<cbc:ID>76767543
-			<?Name Identity of the referenced document?>
-			<?Cardinality 1..1?>
-			<?Description The reference number of the Weight Statement?>	
-		</cbc:ID>
-		
-		<cac:Attachment>
-			<?Name Attachment?>
-			<?Cardinality 0..1?>
-			<?Description Group to describe an attached document. An attachment can refer to an external document or be included 
-			with the document being exchanged.?>
-
-			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="VS112233.pdf">
-				aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==
-				<?Name Embedded binary object?>
-				<?Cardinality 0..1?>
-				<?mimeCode-CodeList MimeCode?>
-				<?Description The referenced document can here be inserted as a binary object.?>		
-			</cbc:EmbeddedDocumentBinaryObject>
-			
-			<cac:ExternalReference>
-				<?Name External reference?>
-				<?Description A reference to an attached document that is external to the document(s) being exchanged.?>
-				<?Cardinality 0..1?>
-
-				<cbc:URI>www.beast.se
-					<?Name Address to internet resource?>
-					<?Description The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource.?>			</cbc:URI>
-			</cac:ExternalReference>
-		</cac:Attachment>
-	</cac:WeightStatementDocumentReference>
 
 	<cac:DocumentDistribution>
 		<?Name Document Distribution ?>
