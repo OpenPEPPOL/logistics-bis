@@ -65,15 +65,15 @@
       </Element>
 
 	     <Element cardinality="0..1">
-         <Term>cbc:SequenceID</Term>
-         <Name>Sequence ID</Name>
+         <Term>cbc:SequenceNumberID</Term>
+         <Name>Sequence Number ID</Name>
          <Description>Sequence no of this shipment referring to the same Waste Notification. </Description>
          <Value type="EXAMPLE">3</Value>
       </Element>
 	
 	     <Element cardinality="0..1">
-         <Term>cbc:TotalMovementNumeric</Term>
-         <Name>Total Movement Numeric</Name>
+         <Term>cbc:ConsignmentQuantity</Term>
+         <Name>Consignment Quantity</Name>
          <Description>Total no of shipments referring to the same Waste Notification. </Description>
          <Value type="EXAMPLE">4</Value>
       </Element>
@@ -2093,14 +2093,14 @@ Peppol: </Description>
       </Element>
 
 	     <Element cardinality="0..n">
-         <Term>cac:DocumentReference</Term>
-         <Name>Reference to relevant documents</Name>
-         <Description>Reference to any documents relevant for this Waste Movement. </Description>
+         <Term>cac:WeightStatementDocumentReference</Term>
+         <Name>Reference to Weight Statement documents</Name>
+         <Description>Reference to Weight Statement documents relevant for this Waste Movement. </Description>
          <Element cardinality="1..1">
             <Term>cbc:ID</Term>
             <Name>Identity of the referenced document</Name>
-            <Description>The reference number of the document</Description>
-            <Value type="EXAMPLE">765444465</Value>
+            <Description>The reference number of the Weight Statement</Description>
+            <Value type="EXAMPLE">76767543</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:Attachment</Term>
@@ -2137,14 +2137,14 @@ Peppol: </Description>
       </Element>
 
 	     <Element cardinality="0..n">
-         <Term>cac:WeightStatementDocumentReference</Term>
-         <Name>Reference to Weight Statement documents</Name>
-         <Description>Reference to Weight Statement documents relevant for this Waste Movement. </Description>
+         <Term>cac:DocumentReference</Term>
+         <Name>Reference to relevant documents</Name>
+         <Description>Reference to any documents relevant for this Waste Movement. </Description>
          <Element cardinality="1..1">
             <Term>cbc:ID</Term>
             <Name>Identity of the referenced document</Name>
-            <Description>The reference number of the Weight Statement</Description>
-            <Value type="EXAMPLE">76767543</Value>
+            <Description>The reference number of the document</Description>
+            <Value type="EXAMPLE">765444465</Value>
          </Element>
          <Element cardinality="0..1">
             <Term>cac:Attachment</Term>

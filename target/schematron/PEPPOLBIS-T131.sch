@@ -247,11 +247,8 @@
       <rule context="/ubl:WasteMovement/cbc:WasteMovementTypeCode/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B00701">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:WasteMovement/cbc:SequenceID"/>
-      <rule context="/ubl:WasteMovement/cbc:TotalMovementNumeric"/>
-      <rule context="/ubl:WasteMovement/cbc:TotalMovementNumeric/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T131-B00901">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
+      <rule context="/ubl:WasteMovement/cbc:SequenceNumberID"/>
+      <rule context="/ubl:WasteMovement/cbc:ConsignmentQuantity"/>
       <rule context="/ubl:WasteMovement/cac:Signature">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T131-B01001">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
@@ -1123,54 +1120,54 @@
       <rule context="/ubl:WasteMovement/cac:WasteNotificationDocumentReference/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B35102">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:WasteMovement/cac:DocumentReference">
+      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T131-B35301">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:WasteMovement/cac:DocumentReference/cbc:ID"/>
-      <rule context="/ubl:WasteMovement/cac:DocumentReference/cac:Attachment"/>
-      <rule context="/ubl:WasteMovement/cac:DocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject">
+      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference/cbc:ID"/>
+      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference/cac:Attachment"/>
+      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject">
          <assert test="@mimeCode" flag="fatal" id="PEPPOL-T131-B35601">Attribute 'mimeCode' MUST be present.</assert>
          <assert test="not(@mimeCode) or (some $code in $clMimeCode satisfies $code = @mimeCode)"
                  flag="fatal"
                  id="PEPPOL-T131-B35602">Value MUST be part of code list 'Mime code (IANA Subset)'.</assert>
          <assert test="@filename" flag="fatal" id="PEPPOL-T131-B35603">Attribute 'filename' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:WasteMovement/cac:DocumentReference/cac:Attachment/cac:ExternalReference">
+      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference/cac:Attachment/cac:ExternalReference">
          <assert test="cbc:URI" flag="fatal" id="PEPPOL-T131-B35901">Element 'cbc:URI' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:WasteMovement/cac:DocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI"/>
-      <rule context="/ubl:WasteMovement/cac:DocumentReference/cac:Attachment/cac:ExternalReference/*">
+      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI"/>
+      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference/cac:Attachment/cac:ExternalReference/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B35902">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:WasteMovement/cac:DocumentReference/cac:Attachment/*">
+      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference/cac:Attachment/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B35501">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:WasteMovement/cac:DocumentReference/*">
+      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B35302">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference">
+      <rule context="/ubl:WasteMovement/cac:DocumentReference">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T131-B36101">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference/cbc:ID"/>
-      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference/cac:Attachment"/>
-      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject">
+      <rule context="/ubl:WasteMovement/cac:DocumentReference/cbc:ID"/>
+      <rule context="/ubl:WasteMovement/cac:DocumentReference/cac:Attachment"/>
+      <rule context="/ubl:WasteMovement/cac:DocumentReference/cac:Attachment/cbc:EmbeddedDocumentBinaryObject">
          <assert test="@mimeCode" flag="fatal" id="PEPPOL-T131-B36401">Attribute 'mimeCode' MUST be present.</assert>
          <assert test="not(@mimeCode) or (some $code in $clMimeCode satisfies $code = @mimeCode)"
                  flag="fatal"
                  id="PEPPOL-T131-B36402">Value MUST be part of code list 'Mime code (IANA Subset)'.</assert>
          <assert test="@filename" flag="fatal" id="PEPPOL-T131-B36403">Attribute 'filename' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference/cac:Attachment/cac:ExternalReference">
+      <rule context="/ubl:WasteMovement/cac:DocumentReference/cac:Attachment/cac:ExternalReference">
          <assert test="cbc:URI" flag="fatal" id="PEPPOL-T131-B36701">Element 'cbc:URI' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI"/>
-      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference/cac:Attachment/cac:ExternalReference/*">
+      <rule context="/ubl:WasteMovement/cac:DocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI"/>
+      <rule context="/ubl:WasteMovement/cac:DocumentReference/cac:Attachment/cac:ExternalReference/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B36702">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference/cac:Attachment/*">
+      <rule context="/ubl:WasteMovement/cac:DocumentReference/cac:Attachment/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B36301">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:WasteMovement/cac:WeightStatementDocumentReference/*">
+      <rule context="/ubl:WasteMovement/cac:DocumentReference/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B36102">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:WasteMovement/cac:DocumentDistribution">
