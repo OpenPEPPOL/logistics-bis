@@ -15,6 +15,7 @@
 	<testfolder>unit-receipt-advice</testfolder>
 	<testfolder>unit-application-response</testfolder>
 	<testfolder>unit-waste-movement</testfolder>
+	<testfolder>unit-waste-notification</testfolder>
 
 	<!-- example and snippet folders -->
 	<testfolder>examples</testfolder>
@@ -29,6 +30,7 @@
 	<testfolder>snippets/receipt-advice</testfolder>
 	<testfolder>snippets/application-response</testfolder>
 	<testfolder>snippets/waste-movement</testfolder>
+	<testfolder>snippets/waste-notification</testfolder>
 
 	<!-- base config -->
 	<configuration>
@@ -100,7 +102,14 @@
 		<inherit>ubl-applicationresponse-2.1</inherit>
 		<file source="sch/PEPPOLBIS-T129.sch" path="xsl/PEPPOLBIS-T129.xsl"/>
 	</configuration>
-	
+
+	<configuration>
+		<identifier>peppolbis-T130-base-1.0</identifier>
+		<title>Waste Notification (T130)</title>
+		<inherit>ubl-waste-notification-2.5</inherit>
+		<file source="sch/PEPPOLBIS-T130.sch" path="xsl/PEPPOLBIS-T130.xsl"/>
+	</configuration>
+
 	<configuration>
 		<identifier>peppolbis-T131-base-1.0</identifier>
 		<title>Waste Movement (T131)</title>

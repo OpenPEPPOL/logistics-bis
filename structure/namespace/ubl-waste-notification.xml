@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Namespace xmlns="urn:fdc:difi.no:2017:vefa:structure:Namespace-1">
-	<Identifier prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:WasteMovement-2</Identifier>
+	<Identifier prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:WasteNotification-2</Identifier>
 	<Version>2.5</Version>
 	<Include prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Include>
 	<Include prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Include>
 	<Include prefix="ext">urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2</Include>
-	<Element name="WasteMovement">
+	<Element name="WasteNotification">
 		<Ref card="0..1">ext:UBLExtensions</Ref>
 		<Ref card="0..1">cbc:UBLVersionID</Ref>
 		<Ref card="0..1">cbc:CustomizationID</Ref>
@@ -15,20 +15,17 @@
 		<Ref card="0..1">cbc:UUID</Ref>
 		<Ref card="1..1">cbc:IssueDate</Ref>
 		<Ref card="0..1">cbc:IssueTime</Ref>
-		<Ref card="0..1">cbc:WasteMovementTypeCode</Ref>
-		<Ref card="0..1">cbc:SequenceNumberID</Ref>
+		<Ref card="0..1">cbc:WasteNotificationTypeCode</Ref>
 		<Ref card="0..1">cbc:ConsignmentQuantity</Ref>
 		<Ref card="0..n">cac:Signature</Ref>
 		<Ref card="1..1">cac:SenderParty</Ref>
 		<Ref card="1..1">cac:ReceiverParty</Ref>
 		<Ref card="1..1">cac:NotifierParty</Ref>
+		<Ref card="1..n">cac:CustomsParty</Ref>
 		<Ref card="0..1">cac:DisposalFacilityParty</Ref>
 		<Ref card="0..1">cac:RecoveryFacilityParty</Ref>
 		<Ref card="1..1">cac:WasteProducerParty</Ref>
 		<Ref card="1..1">cac:Shipment</Ref>
-		<Ref card="0..1">cac:WasteNotificationDocumentReference</Ref>
-		<Ref card="0..n">cac:WeightStatementDocumentReference</Ref>
 		<Ref card="0..n">cac:DocumentReference</Ref>
-		<Ref card="0..n">cac:DocumentDistribution</Ref>
 	</Element>
 </Namespace>

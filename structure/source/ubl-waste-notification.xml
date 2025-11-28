@@ -1,0 +1,1936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ubl:WasteNotification xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:WasteNotification-2"
+	xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+	<?DocumentTerm WasteNotification?>
+	<?Property key="sch:prefix" PEPPOL-T130?>
+	<?Property key="sch:identifier" T130-basic?>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:logistics:trns:waste-movement:1</cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:logistics:bis:waste-movement:1</cbc:ProfileID>
+
+	<cbc:ID>5658999
+		<?Name Document Identity?>
+		<?Description Waste Notification document identity?>
+		<?Cardinality 1..1?>
+	</cbc:ID>
+
+	<cbc:IssueDate>2025-09-10
+		<?Name Document Issue Date?>
+		<?Description Document creation Date. ?>
+		<?Cardinality 1..1?>
+	</cbc:IssueDate>
+	
+	<cbc:IssueTime>12:00:00
+		<?Name Document Issue Time?>
+		<?Description Document creation Time. ?>
+		<?Cardinality 0..1?>
+	</cbc:IssueTime>
+	
+	<cbc:WasteNotificationTypeCode>X3
+		<?Name Waste Notification Type Code?>
+		<?Description Waste Notification Type Code. ?>
+		<?Cardinality 0..1?>
+	</cbc:WasteNotificationTypeCode>
+
+	<cbc:ConsignmentQuantity>4
+		<?Name Consignment Quantity?>
+		<?Description Estimated total no of shipments for this Waste Notification. ?>
+		<?Cardinality 0..1?>
+	</cbc:ConsignmentQuantity>
+
+	<cac:Signature>
+		<?Name Signature ?>
+		<?Description To attach signatures to this document. ?>
+		<?Cardinality 0..n?>
+		<cbc:ID>Sender
+			<?Name Signature ID. ?>
+			<?Description Used to specify the role of the signing person. ?>
+			<?Cardinality 1..1?>
+		</cbc:ID>
+		<cbc:Note>Text
+			<?Name Note. ?>
+			<?Description To include any textual information. ?>
+			<?Cardinality 0..1?>
+		</cbc:Note>
+		<cbc:ValidationDate>2025-09-10
+			<?Name Validation date. ?>
+			<?Description Validation date. ?>
+			<?Cardinality 0..1?>
+		</cbc:ValidationDate>
+		<cbc:ValidationTime>12:00:00
+			<?Name Validation time. ?>
+			<?Description Validation time. ?>
+			<?Cardinality 0..1?>
+		</cbc:ValidationTime>
+		<cbc:SignatureMethod>Manual
+			<?Name Signature Method. ?>
+			<?Description Text to describe the signature method. ?>
+			<?Cardinality 0..1?>
+		</cbc:SignatureMethod>
+		
+		<cac:SignatoryParty>
+			<?Name Signatory Party ?>
+			<?Description Describes the party that is signing. ?>
+			<?Cardinality 0..1?>
+			<cac:PartyIdentification>
+				<?Name Party identification?>
+				<?Description Identifies the party that is signing. ?>
+				<?Cardinality 0..1?>
+				<cbc:ID schemeID="0088">7300010000001
+					<?Name Party ID ?>
+					<?Description Identifies the party that is signing. ?>
+					<?Cardinality 1..1?>
+				</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<?Name Party name?>
+				<?Description The name of the party that is signing. ?>
+				<?Cardinality 1..1?>
+				<cbc:Name>Name of signing party.
+					<?Name Party Name ?>
+					<?Description The name of the party that is signing. ?>
+					<?Cardinality 0..1?>
+				</cbc:Name>
+			</cac:PartyName>
+			<cac:Contact>
+				<?Name Signature Person ?>
+				<?Description Defines the person that is signing.  ?>
+				<?Cardinality 0..1?>
+				<cbc:ID>12345
+					<?Name ID of signature person, ID06 card number or similar ?>
+					<?Description The identity of the signing person.  ?>
+					<?Cardinality 0..1?>
+				</cbc:ID>
+				<cbc:Name>Anders Johansson
+					<?Name Name of the signing person. ?>
+					<?Description Name of the signing person. ?>
+					<?Cardinality 0..1?>
+				</cbc:Name>
+				<cbc:Telephone>0158 1233714
+					<?Name Telephone for the signing person. ?>
+					<?Description Telephone no to the signing person. ?>
+					<?Cardinality 0..1?>
+				</cbc:Telephone>
+				<cbc:ElectronicMail>Anders.Johansson@company.com
+					<?Name E-mail address of the signing person. ?>
+					<?Description E-mail address for the signing person. ?>
+					<?Cardinality 0..1?>
+				</cbc:ElectronicMail>
+			</cac:Contact>
+		</cac:SignatoryParty>
+		
+		<cac:DigitalSignatureAttachment>
+			<?Name Digital Signature Attachment ?>
+			<?Description To include the actual signature. ?>
+			<?Cardinality 0..1?>
+			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Signature_112233.pdf">
+				aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==
+				<?Name Embedded Binary object. ?>
+				<?mimeCode-CodeList MimeCode?>
+				<?Description The referenced document (signature) can here be inserted as a binary object. filename is the name 
+				of the attachment when stored as a document. ?>
+			</cbc:EmbeddedDocumentBinaryObject>
+			<cac:ExternalReference>
+				<?Name External reference ?>
+				<?Description Link to the signature that is available externally. ?>
+				<?Cardinality 0..1?>
+				<cbc:URI>www.beast.se
+					<?Name URI ?>
+					<?Description Link to the signature that is available externally. ?>
+					<?Cardinality 0..1?>
+				</cbc:URI>
+			</cac:ExternalReference>
+		</cac:DigitalSignatureAttachment>
+	</cac:Signature>
+	
+	<cac:SenderParty>
+		<?Description This party defines the company that signs and sends the Waste Notification Document. ?>
+		<?Name The sender of the Notification Document?>
+		<?Cardinality 1..1?>
+		<cbc:EndpointID schemeID="0088">7300010000001
+			<?schemeID-usage Mandatory?>
+			<?schemeID-CodeList eas?>
+			<?Description The identity used to send the Waste Notification Document electronically.. ?>
+			<?Name Endpoint ID?>
+			<?Cardinality 1..1?>
+		</cbc:EndpointID>
+		<cac:PartyIdentification>
+			<?Description This identity defines the company that signs and sends the Waste Notification Document. ?>
+			<?Name Party Identification?>
+			<?Cardinality 0..1?>
+			<cbc:ID schemeID="0088">7300010000001
+				<?Name Identity?>
+				<?Cardinality 1..1?>
+				<?Description This identity identifies the company that signs and sends the Waste Notification Document. ?>
+				<?schemeID-CodeList ICD?>
+				<?Cardinality 1..1?>
+			</cbc:ID>
+		</cac:PartyIdentification>
+			
+		<cac:PartyName>
+			<?Description Party name. ?>
+			<?Name Party Name?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Party name
+				<?Name Party Name?>
+				<?Cardinality 1..1?>
+				<?Description The name of this party. ?>
+			</cbc:Name>
+		</cac:PartyName>
+
+		<cac:PostalAddress>
+			<?Description Postal address of the sender party ?>
+			<?Name Postal address?>
+			<?Cardinality 0..1?>
+			<cbc:StreetName>Busy Street
+				<?Name Address line 1. ?>
+				<?Cardinality 0..1?>
+				<?Description The main address line in a postal address usually the street name and number. ?>
+			</cbc:StreetName>
+			<cbc:AdditionalStreetName>Department ABC
+				<?Description An additional address line in a postal address that can be used to give further details 
+				supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
+				<?Name Address line 2. ?>
+				<?Cardinality 0..1?>
+			</cbc:AdditionalStreetName>
+			<cbc:CityName>Farthing
+				<?Description The common name of the city where the postal address is. The name is written in full rather 
+				than as a code. ?>
+				<?Name City. ?>
+				<?Cardinality 0..1?>
+			</cbc:CityName>
+			<cbc:PostalZone>AA99 1BB
+				<?Description The identifier for an addressable group of properties according to the relevant national 
+				postal service, such as a ZIP code or Post Code. ?>
+				<?Name Post code. ?>
+				<?Cardinality 0..1?>
+			</cbc:PostalZone>
+			<cbc:CountrySubentity>Heremouthshire
+				<?Description TFor specifying a region, county, state, province etc. within a country by using text. ?>
+				<?Name Country subdivision. ?>
+				<?Cardinality 0..1?>
+			</cbc:CountrySubentity>
+			<cac:AddressLine>
+				<?Description One more address line that can be used to provide the full address. ?>
+				<?Name Address line?>
+				<?Cardinality 0..1?>
+				<cbc:Line>The Roundabout
+					<?Description An additional address line in an address that can be used to give further details 
+					supplementing the main line. ?>
+					<?Name Address line 3. ?>
+					<?Cardinality 0..1?>
+				</cbc:Line>
+			</cac:AddressLine>
+			<cac:Country>
+				<?Description Country code. ?>
+				<?Name Country?>
+				<?Cardinality 1..1?>
+				<cbc:IdentificationCode>GB
+					<?Description A code that identifies the country.The lists of valid countries are registered with the 
+					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
+					Codes must be according to the alpha-2 representation. ?>
+					<?Name Country code?>
+					<?CodeList ISO3166?>
+					<?Cardinality 1..1?>
+				</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+
+		<cac:Contact>
+			<?Description The primary contact for this party. ?>
+			<?Name Contact?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Mrs Bouquet
+				<?Description The name of the contact person. ?>
+				<?Name Name?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
+			<cbc:Telephone>0158 1233714
+				<?Description A phone number for the contact person. If the person has a direct number, this is that number. ?>
+				<?Name Telephone number?>
+				<?Cardinality 0..1?>
+			</cbc:Telephone>
+			<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
+				<?Description The e-mail address for the contact person. If the person has a direct e-mail this is that email. ?>
+				<?Name Contact email address. ?>
+				<?Cardinality 0..1?>
+			</cbc:ElectronicMail>
+		</cac:Contact>
+	</cac:SenderParty>
+	
+	<cac:ReceiverParty>
+		<?Name Receiver information ?>
+		<?Cardinality 1..1?>
+		<?Description This party defines the company that receives the Waste Notification document. ?>
+		<cbc:EndpointID schemeID="0088">5798000000124
+			<?Description Identifies the consignee party's electronic address ?>
+			<?Name Receiver party electronic address. ?>
+			<?Cardinality 1..1?>
+			<?schemeID-usage Mandatory?>
+			<?schemeID-CodeList eas?>
+		</cbc:EndpointID>
+		<cac:PartyIdentification>
+			<?Description This party identifies the company that receives the Waste Notification Document. ?>
+			<?Name Party Identification ?>
+			<?Cardinality 0..1?>
+			<cbc:ID schemeID="0088">5790000435951
+				<?Description The receiving party identifier. ?>
+				<?schemeID-usage Mandatory?>
+				<?schemeID-CodeList ICD?>
+				<?Name Receiver party identifier. ?>
+				<?Cardinality 1..1?>
+			</cbc:ID>
+		</cac:PartyIdentification>
+
+		<cac:PartyName>
+			<?Description Party name. ?>
+			<?Name Party Name?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Party name
+				<?Name Party Name?>
+				<?Cardinality 1..1?>
+				<?Description The name of this party. ?>
+			</cbc:Name>
+		</cac:PartyName>
+
+		<cac:PostalAddress>
+			<?Description Postal address of the receiver ?>
+			<?Name Postal address?>
+			<?Cardinality 0..1?>
+			<cbc:StreetName>Avon Way
+				<?Description The main address line in a postal address usually the street name and number. ?>
+				<?Name Address line 1 ?>
+				<?Cardinality 0..1?>
+			</cbc:StreetName>
+			<cbc:AdditionalStreetName>Big projects
+				<?Description An additional address line in a postal address that can be used to give further details 
+				supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
+				<?Name Address line 2 ?>
+				<?Cardinality 0..1?>
+			</cbc:AdditionalStreetName>
+			<cbc:CityName>Bridgtow
+				<?Description The common name of the city where the postal address is. The name is written in full rather 
+				than as a code. ?>
+				<?Name City ?>
+				<?Cardinality 0..1?>
+			</cbc:CityName>
+			<cbc:PostalZone>ZZ99 1ZZ
+				<?Description The identifier for an addressable group of properties according to the relevant national postal 
+				service, such as a ZIP code or Post Code. ?>
+				<?Name Post code ?>
+				<?Cardinality 0..1?>
+			</cbc:PostalZone>
+			<cbc:CountrySubentity>Avon
+				<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
+				<?Name Country subdivision ?>
+				<?Cardinality 0..1?>
+			</cbc:CountrySubentity>
+			<cac:AddressLine>
+				<?Description One more address line that can be used to provide the full address. ?>
+				<?Name Address line ?>
+				<?Cardinality 0..1?>
+				<cbc:Line>3rd Floor, Room 5
+					<?Description Used for any other additional address information. ?>
+					<?Name Address line 3 ?>
+					<?Cardinality 0..1?>
+				</cbc:Line>
+			</cac:AddressLine>
+			<cac:Country>
+				<?Description The country where this part is. ?>
+				<?Name Country ?>
+				<?Cardinality 0..1?>
+				<cbc:IdentificationCode>GB
+					<?Description A code that identifies the country.The lists of valid countries are registered with the 
+					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
+					Codes must be according to the alpha-2 representation. ?>
+					<?Name Country code ?>
+					<?Cardinality 1..1?>
+					<?CodeList ISO3166?>
+				</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+			
+		<cac:Contact>
+			<?Description Contact information ?>
+			<?Name Delivery Contact information ?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Mr Fred Churchill
+				<?Description The name of the contact person. ?>
+				<?Name Contact person name ?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
+			<cbc:Telephone>0127 2653214
+				<?Description A phone number for the contact person. If the person has a direct number, this is that number. ?>
+				<?Name Contact telephone number ?>
+				<?Cardinality 0..1?>
+			</cbc:Telephone>
+			<cbc:ElectronicMail>fred@iytcorporation.gov.uk
+				<?Description The e-mail address for the contact person. If the person has a direct e-mail this is that email. ?>
+				<?Name Contact email address ?>
+				<?Cardinality 0..1?>
+			</cbc:ElectronicMail>
+		</cac:Contact>
+	</cac:ReceiverParty>
+
+	<cac:NotifierParty>
+		<?Description This party defines the company that responsible for the Waste Notification. ?>
+		<?Name The Notifier Party?>
+		<?Cardinality 1..1?>
+		<cbc:EndpointID schemeID="0088">7300010000001
+			<?schemeID-usage Mandatory?>
+			<?schemeID-CodeList eas?>
+			<?Description The digital address of this party. ?>
+			<?Name Endpoint ID?>
+			<?Cardinality 1..1?>
+		</cbc:EndpointID>
+		<cac:PartyIdentification>
+			<?Description This identity defines the company that is responsible for the Waste Notification. ?>
+			<?Name Party Identification?>
+			<?Cardinality 0..1?>
+			<cbc:ID schemeID="0088">7300010000001
+				<?Name Identity?>
+				<?Cardinality 1..1?>
+				<?Description This identity identifies the company that is responsible for the Waste Notification. ?>
+				<?schemeID-CodeList ICD?>
+				<?Cardinality 1..1?>
+			</cbc:ID>
+		</cac:PartyIdentification>
+
+		<cac:PartyName>
+			<?Description Party name. ?>
+			<?Name Party Name?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Party name
+				<?Name Party Name?>
+				<?Cardinality 1..1?>
+				<?Description The name of this party. ?>
+			</cbc:Name>
+		</cac:PartyName>
+
+		<cac:PostalAddress>
+			<?Description Postal address of this party ?>
+			<?Name Postal address?>
+			<?Cardinality 0..1?>
+			<cbc:StreetName>Busy Street
+				<?Name Address line 1. ?>
+				<?Cardinality 0..1?>
+				<?Description The main address line in a postal address usually the street name and number. ?>
+			</cbc:StreetName>
+			<cbc:AdditionalStreetName>Department ABC
+				<?Description An additional address line in a postal address that can be used to give further details 
+				supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
+				<?Name Address line 2. ?>
+				<?Cardinality 0..1?>
+			</cbc:AdditionalStreetName>
+			<cbc:CityName>Farthing
+				<?Description The common name of the city where the postal address is. The name is written in full rather 
+				than as a code. ?>
+				<?Name City. ?>
+				<?Cardinality 0..1?>
+			</cbc:CityName>
+			<cbc:PostalZone>AA99 1BB
+				<?Description The identifier for an addressable group of properties according to the relevant national 
+				postal service, such as a ZIP code or Post Code. ?>
+				<?Name Post code. ?>
+				<?Cardinality 0..1?>
+			</cbc:PostalZone>
+			<cbc:CountrySubentity>Heremouthshire
+				<?Description TFor specifying a region, county, state, province etc. within a country by using text. ?>
+				<?Name Country subdivision. ?>
+				<?Cardinality 0..1?>
+			</cbc:CountrySubentity>
+			<cac:AddressLine>
+				<?Description One more address line that can be used to provide the full address. ?>
+				<?Name Address line?>
+				<?Cardinality 0..1?>
+				<cbc:Line>The Roundabout
+					<?Description An additional address line in an address that can be used to give further details 
+					supplementing the main line. ?>
+					<?Name Address line 3. ?>
+					<?Cardinality 0..1?>
+				</cbc:Line>
+			</cac:AddressLine>
+			<cac:Country>
+				<?Description Country code. ?>
+				<?Name Country?>
+				<?Cardinality 1..1?>
+				<cbc:IdentificationCode>GB
+					<?Description A code that identifies the country.The lists of valid countries are registered with the 
+					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
+					Codes must be according to the alpha-2 representation. ?>
+					<?Name Country code?>
+					<?CodeList ISO3166?>
+					<?Cardinality 1..1?>
+				</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+
+		<cac:Contact>
+			<?Description The primary contact for this party. ?>
+			<?Name Contact?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Mrs Bouquet
+				<?Description The name of the contact person. ?>
+				<?Name Name?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
+			<cbc:Telephone>0158 1233714
+				<?Description A phone number for the contact person. If the person has a direct number, this is that number. ?>
+				<?Name Telephone number?>
+				<?Cardinality 0..1?>
+			</cbc:Telephone>
+			<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
+				<?Description The e-mail address for the contact person. If the person has a direct e-mail this is that email. ?>
+				<?Name Contact email address. ?>
+				<?Cardinality 0..1?>
+			</cbc:ElectronicMail>
+		</cac:Contact>
+	</cac:NotifierParty>
+
+	<cac:CustomsParty>
+		<?Description This party defines the Authority in each country involved that must give a consent to the waste movement. ?>
+		<?Name The Customs Party?>
+		<?Cardinality 1..n?>
+		<cbc:EndpointID schemeID="0088">7300010000001
+			<?schemeID-usage Mandatory?>
+			<?schemeID-CodeList eas?>
+			<?Description The digital address of this party. ?>
+			<?Name Endpoint ID?>
+			<?Cardinality 0..1?>
+		</cbc:EndpointID>
+		<cac:PartyIdentification>
+			<?Description This identity defines the Authority in each country involved that must give a consent to the waste 
+			movement. ?>
+			<?Name Party Identification?>
+			<?Cardinality 0..1?>
+			<cbc:ID schemeID="0088">7300010000001
+				<?Name Identity?>
+				<?Cardinality 1..1?>
+				<?Description This identity identifies the Authority in each country involved that must give a consent to the 
+				waste movement. ?>
+				<?schemeID-CodeList ICD?>
+				<?Cardinality 1..1?>
+			</cbc:ID>
+		</cac:PartyIdentification>
+
+		<cac:PartyName>
+			<?Description Party name. ?>
+			<?Name Party Name?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Party name
+				<?Name Party Name?>
+				<?Cardinality 1..1?>
+				<?Description The name of this party. ?>
+			</cbc:Name>
+		</cac:PartyName>
+
+		<cac:PostalAddress>
+			<?Description Postal address of this party ?>
+			<?Name Postal address?>
+			<?Cardinality 0..1?>
+			<cbc:StreetName>Busy Street
+				<?Name Address line 1. ?>
+				<?Cardinality 0..1?>
+				<?Description The main address line in a postal address usually the street name and number. ?>
+			</cbc:StreetName>
+			<cbc:AdditionalStreetName>Department ABC
+				<?Description An additional address line in a postal address that can be used to give further details 
+				supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
+				<?Name Address line 2. ?>
+				<?Cardinality 0..1?>
+			</cbc:AdditionalStreetName>
+			<cbc:CityName>Farthing
+				<?Description The common name of the city where the postal address is. The name is written in full rather 
+				than as a code. ?>
+				<?Name City. ?>
+				<?Cardinality 0..1?>
+			</cbc:CityName>
+			<cbc:PostalZone>AA99 1BB
+				<?Description The identifier for an addressable group of properties according to the relevant national 
+				postal service, such as a ZIP code or Post Code. ?>
+				<?Name Post code. ?>
+				<?Cardinality 0..1?>
+			</cbc:PostalZone>
+			<cbc:CountrySubentity>Heremouthshire
+				<?Description TFor specifying a region, county, state, province etc. within a country by using text. ?>
+				<?Name Country subdivision. ?>
+				<?Cardinality 0..1?>
+			</cbc:CountrySubentity>
+			<cac:AddressLine>
+				<?Description One more address line that can be used to provide the full address. ?>
+				<?Name Address line?>
+				<?Cardinality 0..1?>
+				<cbc:Line>The Roundabout
+					<?Description An additional address line in an address that can be used to give further details 
+					supplementing the main line. ?>
+					<?Name Address line 3. ?>
+					<?Cardinality 0..1?>
+				</cbc:Line>
+			</cac:AddressLine>
+			<cac:Country>
+				<?Description Country code. ?>
+				<?Name Country?>
+				<?Cardinality 1..1?>
+				<cbc:IdentificationCode>GB
+					<?Description A code that identifies the country.The lists of valid countries are registered with the 
+					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
+					Codes must be according to the alpha-2 representation. ?>
+					<?Name Country code?>
+					<?CodeList ISO3166?>
+					<?Cardinality 1..1?>
+				</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+
+		<cac:Contact>
+			<?Description The primary contact for this party. ?>
+			<?Name Contact?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Mrs Bouquet
+				<?Description The name of the contact person. ?>
+				<?Name Name?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
+			<cbc:Telephone>0158 1233714
+				<?Description A phone number for the contact person. If the person has a direct number, this is that number. ?>
+				<?Name Telephone number?>
+				<?Cardinality 0..1?>
+			</cbc:Telephone>
+			<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
+				<?Description The e-mail address for the contact person. If the person has a direct e-mail this is that email. ?>
+				<?Name Contact email address. ?>
+				<?Cardinality 0..1?>
+			</cbc:ElectronicMail>
+		</cac:Contact>
+	</cac:CustomsParty>
+
+	<cac:DisposalFacilityParty>
+		<?Description This party defines the company that receiving the Waste for Disposal. Always include this party or the
+		RecoveryFacilityParty, but never both.?>
+		<?Name The Disposal Facility Party?>
+		<?Cardinality 0..1?>
+		<cbc:EndpointID schemeID="0088">7300010000001
+			<?schemeID-usage Mandatory?>
+			<?schemeID-CodeList eas?>
+			<?Description The digital address of this party. ?>
+			<?Name Endpoint ID?>
+			<?Cardinality 1..1?>
+		</cbc:EndpointID>
+		<cac:PartyIdentification>
+			<?Description This identity defines the company that will receive the waste for Disposal. ?>
+			<?Name Party Identification?>
+			<?Cardinality 0..1?>
+			<cbc:ID schemeID="0088">7300010000001
+				<?Name Identity?>
+				<?Cardinality 1..1?>
+				<?Description This identity identifies the company that will receive the waste for Disposal. ?>
+				<?schemeID-CodeList ICD?>
+				<?Cardinality 1..1?>
+			</cbc:ID>
+		</cac:PartyIdentification>
+
+		<cac:PartyName>
+			<?Description Party name. ?>
+			<?Name Party Name?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Party name
+				<?Name Party Name?>
+				<?Cardinality 1..1?>
+				<?Description The name of this party. ?>
+			</cbc:Name>
+		</cac:PartyName>
+
+		<cac:PostalAddress>
+			<?Description Postal address of this party ?>
+			<?Name Postal address?>
+			<?Cardinality 0..1?>
+			<cbc:StreetName>Busy Street
+				<?Name Address line 1. ?>
+				<?Cardinality 0..1?>
+				<?Description The main address line in a postal address usually the street name and number. ?>
+			</cbc:StreetName>
+			<cbc:AdditionalStreetName>Department ABC
+				<?Description An additional address line in a postal address that can be used to give further details 
+				supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
+				<?Name Address line 2. ?>
+				<?Cardinality 0..1?>
+			</cbc:AdditionalStreetName>
+			<cbc:CityName>Farthing
+				<?Description The common name of the city where the postal address is. The name is written in full rather 
+				than as a code. ?>
+				<?Name City. ?>
+				<?Cardinality 0..1?>
+			</cbc:CityName>
+			<cbc:PostalZone>AA99 1BB
+				<?Description The identifier for an addressable group of properties according to the relevant national 
+				postal service, such as a ZIP code or Post Code. ?>
+				<?Name Post code. ?>
+				<?Cardinality 0..1?>
+			</cbc:PostalZone>
+			<cbc:CountrySubentity>Heremouthshire
+				<?Description TFor specifying a region, county, state, province etc. within a country by using text. ?>
+				<?Name Country subdivision. ?>
+				<?Cardinality 0..1?>
+			</cbc:CountrySubentity>
+			<cac:AddressLine>
+				<?Description One more address line that can be used to provide the full address. ?>
+				<?Name Address line?>
+				<?Cardinality 0..1?>
+				<cbc:Line>The Roundabout
+					<?Description An additional address line in an address that can be used to give further details 
+					supplementing the main line. ?>
+					<?Name Address line 3. ?>
+					<?Cardinality 0..1?>
+				</cbc:Line>
+			</cac:AddressLine>
+			<cac:Country>
+				<?Description Country code. ?>
+				<?Name Country?>
+				<?Cardinality 1..1?>
+				<cbc:IdentificationCode>GB
+					<?Description A code that identifies the country.The lists of valid countries are registered with the 
+					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
+					Codes must be according to the alpha-2 representation. ?>
+					<?Name Country code?>
+					<?CodeList ISO3166?>
+					<?Cardinality 1..1?>
+				</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+
+		<cac:Contact>
+			<?Description The primary contact for this party. ?>
+			<?Name Contact?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Mrs Bouquet
+				<?Description The name of the contact person. ?>
+				<?Name Name?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
+			<cbc:Telephone>0158 1233714
+				<?Description A phone number for the contact person. If the person has a direct number, this is that number. ?>
+				<?Name Telephone number?>
+				<?Cardinality 0..1?>
+			</cbc:Telephone>
+			<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
+				<?Description The e-mail address for the contact person. If the person has a direct e-mail this is that email. ?>
+				<?Name Contact email address. ?>
+				<?Cardinality 0..1?>
+			</cbc:ElectronicMail>
+		</cac:Contact>
+	</cac:DisposalFacilityParty>
+
+	<cac:RecoveryFacilityParty>
+		<?Description This party defines the company that receiving the Waste for Recovery. Always include this party or the
+		DisposalFacilityParty, but never both.?>
+		<?Name The Disposal Facility Party?>
+		<?Cardinality 0..1?>
+		<cbc:EndpointID schemeID="0088">7300010000001
+			<?schemeID-usage Mandatory?>
+			<?schemeID-CodeList eas?>
+			<?Description The digital address of this party. ?>
+			<?Name Endpoint ID?>
+			<?Cardinality 1..1?>
+		</cbc:EndpointID>
+		<cac:PartyIdentification>
+			<?Description This identity defines the company that will receive the waste for Recovery. ?>
+			<?Name Party Identification?>
+			<?Cardinality 0..1?>
+			<cbc:ID schemeID="0088">7300010000001
+				<?Name Identity?>
+				<?Cardinality 1..1?>
+				<?Description This identity identifies the company that will receive the waste for Recovery. ?>
+				<?schemeID-CodeList ICD?>
+				<?Cardinality 1..1?>
+			</cbc:ID>
+		</cac:PartyIdentification>
+
+		<cac:PartyName>
+			<?Description Party name. ?>
+			<?Name Party Name?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Party name
+				<?Name Party Name?>
+				<?Cardinality 1..1?>
+				<?Description The name of this party. ?>
+			</cbc:Name>
+		</cac:PartyName>
+
+		<cac:PostalAddress>
+			<?Description Postal address of this party ?>
+			<?Name Postal address?>
+			<?Cardinality 0..1?>
+			<cbc:StreetName>Busy Street
+				<?Name Address line 1. ?>
+				<?Cardinality 0..1?>
+				<?Description The main address line in a postal address usually the street name and number. ?>
+			</cbc:StreetName>
+			<cbc:AdditionalStreetName>Department ABC
+				<?Description An additional address line in a postal address that can be used to give further details 
+				supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
+				<?Name Address line 2. ?>
+				<?Cardinality 0..1?>
+			</cbc:AdditionalStreetName>
+			<cbc:CityName>Farthing
+				<?Description The common name of the city where the postal address is. The name is written in full rather 
+				than as a code. ?>
+				<?Name City. ?>
+				<?Cardinality 0..1?>
+			</cbc:CityName>
+			<cbc:PostalZone>AA99 1BB
+				<?Description The identifier for an addressable group of properties according to the relevant national 
+				postal service, such as a ZIP code or Post Code. ?>
+				<?Name Post code. ?>
+				<?Cardinality 0..1?>
+			</cbc:PostalZone>
+			<cbc:CountrySubentity>Heremouthshire
+				<?Description TFor specifying a region, county, state, province etc. within a country by using text. ?>
+				<?Name Country subdivision. ?>
+				<?Cardinality 0..1?>
+			</cbc:CountrySubentity>
+			<cac:AddressLine>
+				<?Description One more address line that can be used to provide the full address. ?>
+				<?Name Address line?>
+				<?Cardinality 0..1?>
+				<cbc:Line>The Roundabout
+					<?Description An additional address line in an address that can be used to give further details 
+					supplementing the main line. ?>
+					<?Name Address line 3. ?>
+					<?Cardinality 0..1?>
+				</cbc:Line>
+			</cac:AddressLine>
+			<cac:Country>
+				<?Description Country code. ?>
+				<?Name Country?>
+				<?Cardinality 1..1?>
+				<cbc:IdentificationCode>GB
+					<?Description A code that identifies the country.The lists of valid countries are registered with the 
+					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
+					Codes must be according to the alpha-2 representation. ?>
+					<?Name Country code?>
+					<?CodeList ISO3166?>
+					<?Cardinality 1..1?>
+				</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+
+		<cac:Contact>
+			<?Description The primary contact for this party. ?>
+			<?Name Contact?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Mrs Bouquet
+				<?Description The name of the contact person. ?>
+				<?Name Name?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
+			<cbc:Telephone>0158 1233714
+				<?Description A phone number for the contact person. If the person has a direct number, this is that number. ?>
+				<?Name Telephone number?>
+				<?Cardinality 0..1?>
+			</cbc:Telephone>
+			<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
+				<?Description The e-mail address for the contact person. If the person has a direct e-mail this is that email. ?>
+				<?Name Contact email address. ?>
+				<?Cardinality 0..1?>
+			</cbc:ElectronicMail>
+		</cac:Contact>
+	</cac:RecoveryFacilityParty>
+
+	<cac:WasteProducerParty>
+		<?Description This party defines the company that produced the waste. ?>
+		<?Name The Notifier Party?>
+		<?Cardinality 1..1?>
+		<cbc:EndpointID schemeID="0088">7300010000001
+			<?schemeID-usage Mandatory?>
+			<?schemeID-CodeList eas?>
+			<?Description The digital address of this party. ?>
+			<?Name Endpoint ID?>
+			<?Cardinality 1..1?>
+		</cbc:EndpointID>
+		<cac:PartyIdentification>
+			<?Description This identity defines the company that produced the waste. ?>
+			<?Name Party Identification?>
+			<?Cardinality 0..1?>
+			<cbc:ID schemeID="0088">7300010000001
+				<?Name Identity?>
+				<?Cardinality 1..1?>
+				<?Description This identity identifies the company that produced the waste. ?>
+				<?schemeID-CodeList ICD?>
+				<?Cardinality 1..1?>
+			</cbc:ID>
+		</cac:PartyIdentification>
+
+		<cac:PartyName>
+			<?Description Party name. ?>
+			<?Name Party Name?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Party name
+				<?Name Party Name?>
+				<?Cardinality 1..1?>
+				<?Description The name of this party. ?>
+			</cbc:Name>
+		</cac:PartyName>
+
+		<cac:PostalAddress>
+			<?Description Postal address of this party ?>
+			<?Name Postal address?>
+			<?Cardinality 0..1?>
+			<cbc:StreetName>Busy Street
+				<?Name Address line 1. ?>
+				<?Cardinality 0..1?>
+				<?Description The main address line in a postal address usually the street name and number. ?>
+			</cbc:StreetName>
+			<cbc:AdditionalStreetName>Department ABC
+				<?Description An additional address line in a postal address that can be used to give further details 
+				supplementing the main line. Common use are secondary house number in a complex or in a building. ?>
+				<?Name Address line 2. ?>
+				<?Cardinality 0..1?>
+			</cbc:AdditionalStreetName>
+			<cbc:CityName>Farthing
+				<?Description The common name of the city where the postal address is. The name is written in full rather 
+				than as a code. ?>
+				<?Name City. ?>
+				<?Cardinality 0..1?>
+			</cbc:CityName>
+			<cbc:PostalZone>AA99 1BB
+				<?Description The identifier for an addressable group of properties according to the relevant national 
+				postal service, such as a ZIP code or Post Code. ?>
+				<?Name Post code. ?>
+				<?Cardinality 0..1?>
+			</cbc:PostalZone>
+			<cbc:CountrySubentity>Heremouthshire
+				<?Description TFor specifying a region, county, state, province etc. within a country by using text. ?>
+				<?Name Country subdivision. ?>
+				<?Cardinality 0..1?>
+			</cbc:CountrySubentity>
+			<cac:AddressLine>
+				<?Description One more address line that can be used to provide the full address. ?>
+				<?Name Address line?>
+				<?Cardinality 0..1?>
+				<cbc:Line>The Roundabout
+					<?Description An additional address line in an address that can be used to give further details 
+					supplementing the main line. ?>
+					<?Name Address line 3. ?>
+					<?Cardinality 0..1?>
+				</cbc:Line>
+			</cac:AddressLine>
+			<cac:Country>
+				<?Description Country code. ?>
+				<?Name Country?>
+				<?Cardinality 1..1?>
+				<cbc:IdentificationCode>GB
+					<?Description A code that identifies the country.The lists of valid countries are registered with the 
+					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
+					Codes must be according to the alpha-2 representation. ?>
+					<?Name Country code?>
+					<?CodeList ISO3166?>
+					<?Cardinality 1..1?>
+				</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+
+		<cac:Contact>
+			<?Description The primary contact for this party. ?>
+			<?Name Contact?>
+			<?Cardinality 0..1?>
+			<cbc:Name>Mrs Bouquet
+				<?Description The name of the contact person. ?>
+				<?Name Name?>
+				<?Cardinality 0..1?>
+			</cbc:Name>
+			<cbc:Telephone>0158 1233714
+				<?Description A phone number for the contact person. If the person has a direct number, this is that number. ?>
+				<?Name Telephone number?>
+				<?Cardinality 0..1?>
+			</cbc:Telephone>
+			<cbc:ElectronicMail>bouquet@fpconsortial.co.uk
+				<?Description The e-mail address for the contact person. If the person has a direct e-mail this is that email. ?>
+				<?Name Contact email address. ?>
+				<?Cardinality 0..1?>
+			</cbc:ElectronicMail>
+		</cac:Contact>
+	</cac:WasteProducerParty>
+
+	<cac:Shipment>
+		<?Description Shipment information ?>
+		<?Name Shipment ?>
+		<?Cardinality 1..1?>
+		<cbc:ID>1
+			<?Description Identifies a shipment. ?>
+			<?Name Identity ?>
+			<?Cardinality 0..1?>
+		</cbc:ID>
+		<cbc:Information>Text
+			<?Description Additional Information. ?>
+			<?Name Information ?>
+			<?Cardinality 0..n?>
+		</cbc:Information>
+		<cbc:TotalTransportHandlingUnitQuantity>1
+			<?Description The number of pieces of transport handling equipment (pallets, boxes, cases, etc.) in this shipment. ?>
+			<?Name Total Transport Handling Unit Quantity ?>
+			<?Cardinality 0..1?>
+		</cbc:TotalTransportHandlingUnitQuantity>
+
+		<cac:Consignment>
+			<?Description Consignment information ?>
+			<?Name Consignment ?>
+			<?Cardinality 0..1?>
+			<cbc:ID>NA
+				<?Description An association to Consignment covering the shipment. Unique number assigned to goods, both for 
+				import and export. ?>
+				<?Name Identity ?>
+				<?Cardinality 1..1?>
+			</cbc:ID>
+			<cbc:HazardousRiskIndicator>false
+				<?Description An indication that the transported goods in this consignment are subject to an international 
+				regulation concerning the carriage of dangerous goods (true) or not (false). ?>
+				<?Cardinality 0..1?>
+				<?Name Hazardous Risk Indicator. ?>
+			</cbc:HazardousRiskIndicator>
+			<cbc:HandlingCode>D123
+				<?Description The handling required for this consignment, expressed as a code. ?>
+				<?Name Handling Code ?>
+				<?Cardinality 0..1?>
+			</cbc:HandlingCode>
+
+			<cac:Status>
+				<?Description A class to describe the condition or position of the waste. ?>
+				<?Name Status ?>
+				<?Cardinality 0..n?>
+				<cbc:ConditionCode>XX
+					<?Description Specifies the status condition of the waste. ?>
+					<?Name Condition Code ?>
+					<?Cardinality 0..1?>
+				</cbc:ConditionCode>
+				<cbc:ReferenceDate>2025-09-15
+					<?Description Date of Disposal/Recovery. ?>
+					<?Name Reference Date ?>
+					<?Cardinality 0..1?>
+				</cbc:ReferenceDate>
+				<cbc:StatusReasonCode>YY
+					<?Description The reason for this status condition or position, expressed as a code. ?>
+					<?Name Status Reason Code ?>
+					<?Cardinality 0..1?>
+				</cbc:StatusReasonCode>
+			</cac:Status>
+
+			<cac:TransportHandlingUnit>
+				<?Name Transport handling unit?>
+				<?Description A description of individual handling units in which the line items are packed. An item of any 
+				composition established for transport and/or storage that needs to be managed through the supply chain.?>
+				<?Cardinality 0..1?>
+				<cbc:TransportHandlingUnitTypeCode>AG
+					<?Name Handling unit type code?>
+					<?Description Type of Transport Handling Unit. Use UN/ECE Recommendation 21. ?>
+					<?CodeList UNECERec21?>
+					<?Cardinality 1..1?>
+				</cbc:TransportHandlingUnitTypeCode>
+				<cbc:HandlingCode listID="TRED4079">1
+					<?Name Handling Code?>
+					<?Description The handling for this transporthandling unit expressed as a code?>
+					<?Cardinality 0..1?>
+					<?listID-Name Identifier for codelist for handling code?>
+					<?listID-Description An identifier for the codelist used for the handling code?>
+					<?listID-usage Mandatory?>
+				</cbc:HandlingCode>
+				<cbc:HandlingInstructions>To be set vertical
+					<?Name Handling instructions?>
+					<?Description The handling for this transporthandling unit expressed as a text?>
+					<?Cardinality 0..1?>
+				</cbc:HandlingInstructions>
+			</cac:TransportHandlingUnit>
+			
+			<cac:DocumentReference>
+				<?Description A reference to a document related to or relevant for this consignment. ?>
+				<?Name Document Reference ?>
+				<?Cardinality 0..n?>
+				<cbc:ID>123
+					<?Description The identity of the referenced document. ?>
+					<?Name Identity ?>
+					<?Cardinality 1..1?>
+				</cbc:ID>
+				
+				<cbc:DocumentTypeCode>A
+					<?Description The Type code of the referenced document. ?>
+					<?Name Document Type Code ?>
+					<?Cardinality 0..1?>
+				</cbc:DocumentTypeCode>
+				
+				<cbc:DocumentType>Project Reference
+					<?Description The Type (text) of the referenced document. ?>
+					<?Name Document Type ?>
+					<?Cardinality 0..1?>
+				</cbc:DocumentType>
+				
+				<cac:Attachment>
+					<?Description The referenced document as an attachment to the document from which it is referenced. ?>
+					<?Name Attachment ?>
+					<?Cardinality 0..1?>
+					<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Hours-spent.pdf">
+						aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==
+						<?Description The referenced document can here be inserted as a binary object. ?>
+						<?Name Embedded binary object?>
+						<?Cardinality 0..1?>
+					</cbc:EmbeddedDocumentBinaryObject>
+					<cac:ExternalReference>
+						<?Description A reference to an attached document that is external to the document(s) being exchanged. ?>
+						<?Name External reference ?>
+						<?Cardinality 0..1?>
+						<cbc:URI>www.beast.se
+							<?Description The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource. ?>
+							<?Name Address to internet resource?>
+							<?Cardinality 0..1?>
+						</cbc:URI>
+					</cac:ExternalReference>
+				</cac:Attachment>				
+			</cac:DocumentReference>
+		</cac:Consignment>
+		
+		<cac:GoodsItem>
+			<?Name Goods Item. ?>
+			<?Description A goods item included in this shipment. ?>
+			<?Cardinality 0..n?>
+			<cbc:ID>1
+				<?Description Line Number. ?>
+				<?Name Line number identity ?>
+				<?Cardinality 0..1?>
+			</cbc:ID>
+			<cbc:Quantity unitCode="TNE">10.3
+				<?Description The quantity delivered. ?>
+				<?Name Delivered quantity ?>
+				<?Cardinality 0..1?>
+				<?unitCode-CodeList UNECERec20?>
+				<?unitCode-usage Mandatory?>
+			</cbc:Quantity>
+
+			<cac:Item>
+				<?Name Item information ?>
+				<?Description Item information. ?>
+				<?Cardinality 1..1?>
+				<cbc:Description>Text
+					<?Description Designation and Composition of the Waste. ?>
+					<?Name Description ?>
+					<?Cardinality 0..n?>
+				</cbc:Description>
+				<cbc:Name>beeswax
+					<?Description A short name for an item. ?>
+					<?Name Item name ?>
+					<?Cardinality 1..1?>
+				</cbc:Name>
+				
+				<cac:BuyersItemIdentification>
+					<?Description Buyer's item identification. ?>
+					<?Name Buyer's item identification ?>
+					<?Cardinality 0..1?>
+					<cbc:ID>6578489
+						<?Description An identifier, assigned by the buyer, for the item. Associates the item with its identification according to the buyer's system. ?>
+						<?Name Buyers item identification ?>
+						<?Cardinality 0..1?>
+					</cbc:ID>
+				</cac:BuyersItemIdentification>
+
+				<cac:SellersItemIdentification>
+					<?Description Seller's item identification. ?>
+					<?Name Seller's item identification ?>
+					<?Cardinality 0..1?>
+					<cbc:ID>17589683
+						<?Description An identifier, assigned by the seller, for the item. Associates the item with its identification according to the seller's system. ?>
+						<?Name Seller's item identification ?>
+						<?Cardinality 0..1?>
+					</cbc:ID>
+				</cac:SellersItemIdentification>
+
+				<cac:StandardItemIdentification>
+					<?Description Standard item identification. Only one Standard Item Number can be used per line. ?>
+					<?Name Standard item identification ?>
+					<?Cardinality 0..1?>
+					<cbc:ID schemeID="0160">1234567891234
+						<?Description An item identifier based on a registered scheme. Associates the item with its identification according to a standard system. ?>
+						<?Name Standard item identification ?>
+						<?Cardinality 0..1?>
+						<?schemeID-CodeList ICD?>
+						<?schemeID-usage Mandatory?>
+					</cbc:ID>
+				</cac:StandardItemIdentification>
+
+				<cac:CommodityClassification>
+					<cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">KO2012140200
+						<?listID-DescriptionAddFirst For Item Classification Codes that are found in UNCL7143, select the correct code and leave listVersionID and name empty. For construction specific list that are not a part of UNCL7143 yet ListID must always be "ZZZ" and listVersionID "BEAST:4.0", i.e. mutually agreed. ?>
+						<?name-DescriptionAddFirst If construction specific lists are used, name specifies which of them is used. Possible names are: "SBMI", "SA", "AI", “ME” and "CoClass”. "SBMI" = Sveriges Bergmaterialindustrier, "SA" = Sveriges Åkeriföretag, "AI" = Återvinningsindustrierna, “ME” = Maskinentreprenörerna. ?>
+						<?DescriptionAddFirst Used to classify the material when the item number is not sufficient (T6466), to inform about the source of classification standard (T6467) and to provide standard branch codes for the items. The Reference to Article Class (T6466) is the ItemClassificationCode, listID = "ZZZ", listVersionID = BEAST:4.0" and name is Source to Classification (T6467). ?>
+					</cbc:ItemClassificationCode>
+				</cac:CommodityClassification>
+
+				<cac:HazardousItem>
+					<?Description Information pertaining to this item as a hazardous item. ?>
+					<?Name Hazardous Item. ?>
+					<?Cardinality 0..n?>
+					<cbc:UNDGCode>ADR
+						<?Description The UN code for this kind of hazardous item. ?>
+						<?Name UNDG Code. ?>
+						<?Cardinality 0..1?>
+					</cbc:UNDGCode>
+					<cbc:HazardClassID>Code
+						<?Description An identifier for the hazard class applicable to this hazardous item as defined by the relevant ?>
+						<?Name Hazard Class ID. ?>
+						<?Cardinality 0..1?>
+					</cbc:HazardClassID>
+				</cac:HazardousItem>
+
+				<cac:AdditionalItemProperty>
+					<?Name Additional Item Property?>
+					<?Cardinality 0..n?>
+					<?Description An additional property of this item. ?>
+
+					<cbc:ID schemeDataURI="https://define.cobuilder.no/77e416eb-a363-4258-a04e-171d843a6460/2022/" 
+							schemeID="ISO22057" schemeVersionID="2022">77e416eb-a363-4258-a04e-171d843a6460
+						<?Description ID of the property if assigned by an Agency?>
+						<?Cardinality 0..1?>
+						<?schemeDataURI-Name Scheme Data URI?>
+						<?schemeDataURI-usage Optional?>
+						<?schemeID-Name Scheme identifier?>
+						<?schemeID-usage Optional?>
+						<?schemeVersionID-Name Scheme version identifier?>
+						<?schemeVersionID-usage Optional?>
+					</cbc:ID>
+					<cbc:Name>Rigidity</cbc:Name>
+					<cbc:NameCode listID="IPNC">EPDNumber
+						<?listID-usage Mandatory?>
+						<?listID-Name Name code list id.?>
+						<?listID-Description An identifier for the code list used for the Name code, this is bilaterally agreed?>
+					</cbc:NameCode>
+					<cbc:Value>NEPD-1717-700-SE</cbc:Value>
+					<cbc:ValueQuantity unitCode="EA">15.00</cbc:ValueQuantity>
+					<cbc:ValueQualifier>descr</cbc:ValueQualifier>
+				</cac:AdditionalItemProperty>
+			</cac:Item>
+		</cac:GoodsItem>
+
+		<cac:ShipmentStage>
+			<?Name Shipment Stage?>
+			<?Cardinality 1..n?>
+			<?Description Describes the step of the transport. To be repeated if more than ome step is needed. ?>
+
+			<cbc:ID>1
+				<?Name Shipment Stage identifier?>
+				<?Description Sequence number of the Shipment Stage.?>
+				<?Cardinality 1..1?>
+				<?DataType Identifier?>
+			</cbc:ID>
+
+			<cac:CarrierParty>
+				<?Name Carrier Party?>
+				<?Cardinality 1..1?>
+				<?Description The party executing the transport in the Shipment Stage?>
+				
+				<cbc:EndpointID schemeID="0088">5790000435951
+					<?Name Carrier's electronic address?>
+					<?Cardinality 1..1?>
+					<?Description Identifies the carrier party's electronic address?>
+					<?schemeID-Name Scheme identifier?>
+					<?schemeID-Description Scheme identifier for electronic address?>
+					<?schemeID-usage Mandatory?>
+					<?schemeID-CodeList eas?>
+				</cbc:EndpointID>
+
+				<cac:PartyIdentification>
+					<?Name Party Identification?>
+					<?Cardinality 0..1?>
+					<?Description An identifier for this party.?>
+					
+					<cbc:ID schemeID="0088">5790000435951
+						<?Name Carrier party identity?>
+						<?Cardinality 1..1?>
+						<?Description The identifier of the Carrier party?>
+						<?schemeID-Name Scheme identifier?>
+						<?schemeID-Description Scheme identifier for party identification?>
+						<?schemeID-usage Mandatory?>
+						<?schemeID-CodeList ICD?>
+					</cbc:ID>
+				</cac:PartyIdentification>
+
+				<cac:PartyName>
+					<?Name Party Name?>
+					<?Cardinality 0..1?>
+					<?Description The name of the Carrier party?>
+
+					<cbc:Name>Transportören AB
+						<?Name Carrier name?>
+						<?Cardinality 1..1?>
+						<?Description The name of the Carrier party?>
+					</cbc:Name>
+				</cac:PartyName>
+
+				<cac:PostalAddress>
+					<?Name Postal address?>
+					<?Description The address for the Carrier.?>
+					<?Cardinality 0..1?>
+					
+					<cbc:StreetName>Avon Way
+						<?Name Address line 1?>
+						<?Description The main address line in a postal address usually the street name and number.?>
+						<?Cardinality 0..1?>
+					</cbc:StreetName>
+					
+					<cbc:AdditionalStreetName>way 2
+						<?Name Address line 2?>
+						<?Description An additional address line in a postal address that can be used to give further details 
+						supplementing the main line. Common use are secondary house number in a complex or in a building.?>
+						<?Cardinality 0..1?>
+					</cbc:AdditionalStreetName>
+					
+					<cbc:CityName>Bridgtow
+						<?Name City?>
+						<?Description The common name of the city where the postal address is. The name is written in full rather 
+						than as a code.?>
+						<?Cardinality 0..1?>
+					</cbc:CityName>
+					
+					<cbc:PostalZone>ZZ99 1ZZ
+						<?Name Post code?>
+						<?Description The identifier for an addressable group of properties according to the relevant national 
+						postal service, such as a ZIP code or Post Code.?>
+						<?Cardinality 0..1?>
+					</cbc:PostalZone>
+					
+					<cbc:CountrySubentity>Avon
+						<?Name Country subdivision?>
+						<?Description For specifying a region, county, state, province etc. within a country by using text.?>
+						<?Cardinality 0..1?>
+					</cbc:CountrySubentity>
+					
+					<cac:AddressLine>
+						<?Name Address line?>
+						<?Cardinality 0..1?>
+
+						<cbc:Line>3rd Floor, Room 5
+							<?Name Address line 3?>
+							<?Description An additional address line in an address that can be used to give further details supplementing the main line.?>
+							<?Cardinality 1..1?>
+						</cbc:Line>
+					</cac:AddressLine>
+					
+					<cac:Country>
+						<?Name Country?>
+
+						<cbc:IdentificationCode>GB
+							<?Name Country code?>
+							<?Description A code that identifies the country. The lists of valid countries are registered 
+							with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and 
+							their subdivisions". Codes must be according to the alpha-2 representation.?>
+						</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:PostalAddress>
+
+				<cac:Contact>
+					<?Name Contact person name?>
+					<?Description The contact of the Carrier party.?>
+					<?Cardinality 0..1?>
+
+					<cbc:Name>Mr Fred Churchill
+						<?Name Contact name?>
+						<?Description The contact name.?>
+						<?Cardinality 0..1?>
+					</cbc:Name>
+					
+					<cbc:Telephone>0127 2653214
+						<?Name Contact telephone number?>
+						<?Description The phone number of the contact.?>
+						<?Cardinality 0..1?>
+					</cbc:Telephone>
+					
+					<cbc:ElectronicMail>fred@iytcorporation.gov.uk
+						<?Name Contact email address?>
+						<?Description The electronic mail of the contact.?>
+						<?Cardinality 0..1?>
+					</cbc:ElectronicMail>
+				</cac:Contact>
+			</cac:CarrierParty>
+
+			<cac:TransportMeans>
+				<?Name Transport means ?>
+				<?Description The means of transport used in this shipment stage.?>
+				<?Cardinality 0..1?>
+
+				<cbc:TransportMeansTypeCode>31
+					<?Name Transport means type code?>
+					<?Description The means of transport used in this shipment stage.?>
+					<?Cardinality 0..1?>
+					<?CodeList UNECERec28?>
+				</cbc:TransportMeansTypeCode>
+				
+				<cac:AirTransport>
+					<?Name Air transport ?>
+					<?Description An aircraft used in this shipment stage.?>
+					<?Cardinality 0..1?>
+					<cbc:AircraftID>JA8088
+						<?Name Air transport identifier ?>
+						<?Description An identifer for a specific aircraft.?>
+						<?Cardinality 1..1?>
+					</cbc:AircraftID>
+				</cac:AirTransport>
+
+				<cac:RoadTransport>
+					<?Name Road transport ?>
+					<?Description Description of a truck or a vehicle transporting the goods. Use only if Transport mode code is 
+					set to road transport?>
+					<?Cardinality 0..1?>
+					
+					<cbc:LicensePlateID>DF10958
+						<?Name License plate identifier transport ?>
+						<?Description The licence plate(s) identifying the vehicle seperated by semicolon if there are more than one?>
+						<?Cardinality 1..1?>
+					</cbc:LicensePlateID>
+				</cac:RoadTransport>
+				
+				<cac:RailTransport>
+					<?Name Rail transport ?>
+					<?Description Equipment used for rail transport in this shipment stage.?>
+					<?Cardinality 0..1?>
+					<cbc:TrainID>12014
+						<?Name Train identifier ?>
+						<?Description An identifier for the train used as the means of transport.?>
+						<?Cardinality 1..1?>
+					</cbc:TrainID>
+					
+					<cbc:RailCarID>50 63 20-33 801-5
+						<?Name Rail car identifier ?>
+						<?Description An identifier for the rail car on the train used as the means of transport..?>
+						<?Cardinality 0..1?>
+					</cbc:RailCarID>
+				</cac:RailTransport>
+				
+				<cac:MaritimeTransport>
+					<?Name Maritime transport ?>
+					<?Description Description of a truck or a vehicle transporting the goods. Use only if TransportModeCode is 
+					set to maritime transport. ?>
+					<?Cardinality 0..1?>
+					<cbc:VesselID>wrt34663
+						<?Name Vessel identifier ?>
+						<?Description The registred identifier of the vessel?>
+						<?Cardinality 1..1?>
+					</cbc:VesselID>
+				</cac:MaritimeTransport>
+			</cac:TransportMeans>
+		</cac:ShipmentStage>
+
+		<cac:Delivery>
+			<?Description Delivery information ?>
+			<?Name Delivery information ?>
+			<?Cardinality 0..1?>
+
+			<cbc:Quantity unitCode="TNE">10.3
+				<?Description The quantity received. ?>
+				<?Name Received quantity ?>
+				<?Cardinality 0..1?>
+				<?unitCode-CodeList UNECERec20?>
+				<?unitCode-usage Mandatory?>
+			</cbc:Quantity>
+
+			<cbc:ActualDeliveryDate>2025-09-10
+				<?Description The actual date of delivery. ?>
+				<?Name Delivery date ?>
+				<?Cardinality 0..1?>
+			</cbc:ActualDeliveryDate>
+
+			<cac:DeliveryLocation>
+				<?Name Delivery location?>
+				<?Description The location where the goods is delivered.?>
+				<?Cardinality 1..1?>
+
+				<cbc:ID schemeID="0088">5790000435951
+					<?Description Identifies the delivery location.?>
+					<?Cardinality 0..1?>
+					<?schemeID-Name Scheme identifier?>
+					<?schemeID-usage Optional?>
+					<?schemeID-CodeList ICD?>
+				</cbc:ID>
+				
+				<cbc:Name>Deponin i Bridgtow AB
+					<?Name Name of the delivery location?>
+					<?Description The name of the delivery location.?>
+					<?Cardinality 0..1?>			
+				</cbc:Name>
+
+				<cac:Address>
+					<?Name Address of the delivery location?>
+					<?Description The address of the delivery location.?>
+					<?Cardinality 0..1?>
+
+					<cbc:StreetName>Avon Way
+						<?Cardinality 0..1?>
+						<?Description The main address line in a postal address usually the street name and number.?>
+						<?Cardinality 0..1?>
+					</cbc:StreetName>
+					
+					<cbc:AdditionalStreetName>Purchasing
+						<?Name Address line 2?>
+						<?Cardinality 0..1?>
+						<?Description An additional address line in a postal address that can be used to give further details 
+						supplementing the main line. Common use are secondary house number in a complex or in a building.?>
+					</cbc:AdditionalStreetName>
+					
+					<cbc:CityName>Bridgtow
+						<?Name City?>
+						<?Cardinality 0..1?>
+						<?Description The common name of the city where the postal address is. The name is written in full 
+						rather than as a code.?>
+					</cbc:CityName>
+					
+					<cbc:PostalZone>ZZ99 1ZZ
+						<?Name Post code?>
+						<?Cardinality 0..1?>
+						<?Description The identifier for an addressable group of properties according to the relevant national 
+						postal service, such as a ZIP code or Post Code.?>
+					</cbc:PostalZone>
+					
+					<cbc:CountrySubentity>Avon
+						<?Name Country subdivision?>
+						<?Cardinality 0..1?>
+						<?Description For specifying a region, county, state, province etc. within a country by using text.?>
+					</cbc:CountrySubentity>
+					
+					<cac:AddressLine>
+						<?Name Address line?>
+						<?Cardinality 0..1?>
+
+						<cbc:Line>3rd Floor, Room 5
+							<?Name Address line 3?>
+							<?Cardinality 0..1?>
+							<?Description An additional address line in an address that can be used to give further details 
+							supplementing the main line.?>
+						</cbc:Line>
+					</cac:AddressLine>
+					
+					<cac:Country>
+						<?Name Country?>
+						<?Cardinality 1..1?>
+
+						<cbc:IdentificationCode>GB
+							<?Name Country code?>
+							<?Cardinality 1..1?>
+							<?CodeList ISO3166?>
+							<?Description A code that identifies the country. The lists of valid countries are registered with 
+							the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their 
+							subdivisions". Codes must be according to the alpha-2 representation.?>				
+						</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:Address>
+
+				<cac:LocationCoordinate>
+					<?Name Location coordinate?>
+					<?Description To specify the coordinates.?>
+					<?Cardinality 0..1?>
+
+					<cbc:CoordinateSystemCode>EPSG:3857
+						<?Name Coordinate system code?>
+						<?Description Always "EPSG:3857" by definition.?>
+						<?Cardinality 1..1?>				
+					</cbc:CoordinateSystemCode>
+					
+					<cbc:LatitudeDegreesMeasure unitCode="DD">59.331660358041425
+						<?Name Latitude degrees?>
+						<?Description The X coordinate. Use degrees with decimals.?>
+						<?Cardinality 1..1?>
+						<?unitCode-Name Latitude degrees unit of measure?>
+						<?unitCode-Description The unit of measure that applies to the latitude degrees.?>
+						<?unitCode-usage Mandatory?>
+						<?unitCode-CodeList UNECERec20?>			
+					</cbc:LatitudeDegreesMeasure>
+					
+					<cbc:LongitudeDegreesMeasure unitCode="DD">18.063363084988005
+						<?Name Longitude degrees?>
+						<?Description The Y coordinate. Use degrees with decimals.?>
+						<?Cardinality 1..1?>
+						<?unitCode-Name Longitude degrees unit of measure?>
+						<?unitCode-Description The unit of measure that applies to the longitude degrees.?>
+						<?unitCode-usage Mandatory?>
+						<?unitCode-CodeList UNECERec20?>				
+					</cbc:LongitudeDegreesMeasure>
+				</cac:LocationCoordinate>
+			</cac:DeliveryLocation>
+
+			<cac:DeliveryParty>
+				<?Name Delivery Party. ?>
+				<?Description The Party receiving e shipment. ?>
+				<?Cardinality 0..1?>
+				<cbc:EndpointID schemeID="0088">5790000435951
+					<?schemeID-usage Mandatory?>
+					<?schemeID-CodeList eas?>
+					<?Description The identity used to send the Movement Document electronically. ?>
+					<?Name Endpoint ID?>
+					<?Cardinality 1..1?>
+				</cbc:EndpointID>
+				<cac:PartyIdentification>
+					<?Description Party identification ?>
+					<?Name Party Identification ?>
+					<?Cardinality 0..1?>
+					<cbc:ID schemeID="0088">5790000435951
+						<?Name Identity of the Delivery Party. ?>
+						<?Description Identifies the Delivery Party. ?>
+						<?schemeID-CodeList ICD?>
+						<?Cardinality 1..1?>
+					</cbc:ID>
+				</cac:PartyIdentification>
+
+				<cac:PartyName>
+					<?Description Party Name ?>
+					<?Name Party Name ?>
+					<?Cardinality 0..1?>
+					<cbc:Name>Name
+						<?Name Name of the Consignee. ?>
+						<?Description The name of the Consignee. ?>
+						<?Cardinality 1..1?>
+					</cbc:Name>
+				</cac:PartyName>
+
+				<cac:PostalAddress>
+					<?Name Postal Address of Consignee. ?>
+					<?Description Postal Address. ?>
+					<?Cardinality 0..1?>
+					<cbc:StreetName>Avon Way
+						<?Name Street Name for Consignee. ?>
+						<?Cardinality 0..1?>
+						<?Description Street name. ?>
+					</cbc:StreetName>
+					<cbc:AdditionalStreetName>Purchasing
+						<?Name Additional Street Name for Consignee. ?>
+						<?Cardinality 0..1?>
+						<?Description Additional street name. ?>
+					</cbc:AdditionalStreetName>
+					<cbc:CityName>Bridgtow
+						<?Name City Name for Consignee. ?>
+						<?Cardinality 0..1?>
+						<?Description Name of city. ?>
+					</cbc:CityName>
+					<cbc:PostalZone>ZZ99 1ZZ
+						<?Name Postal Zone for Consignee. ?>
+						<?Cardinality 0..1?>
+						<?Description Zip-code. ?>
+					</cbc:PostalZone>
+					<cbc:CountrySubentity>Avon
+						<?Name Country SubEntity for Consignee. ?>
+						<?Cardinality 0..1?>
+						<?Description Country Sub-entity. ?>
+					</cbc:CountrySubentity>
+					<cac:AddressLine>
+						<?Name Address Line for Consignee. ?>
+						<?Cardinality 0..1?>
+						<?Description Additional address line. ?>
+						<cbc:Line>3rd Floor, Room 5
+							<?Name Address Line for Consignee. ?>
+							<?Cardinality 0..1?>
+							<?Description Used for any other additional address information. ?>
+						</cbc:Line>
+					</cac:AddressLine>
+					<cac:Country>
+						<?Name Country for Consignee. ?>
+						<?Cardinality 0..1?>
+						<?Description Country. ?>
+						<cbc:IdentificationCode>GB
+							<?Name Country Code for Consignee. ?>
+							<?Cardinality 0..1?>
+							<?CodeList ISO3166?>
+							<?Description Country code. ?>
+						</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:PostalAddress>
+				
+				<cac:Contact>
+					<?Description Contact information ?>
+					<?Name Consignee Contact information ?>
+					<?Cardinality 0..1?>
+					<cbc:Name>Mr Fred Churchill
+						<?Description The name of the contact person. ?>
+						<?Name Contact person name ?>
+						<?Cardinality 0..1?>
+					</cbc:Name>
+					<cbc:Telephone>0127 2653214
+						<?Description A phone number for the contact person. If the person has a direct number, this is that number. ?>
+						<?Name Contact telephone number ?>
+						<?Cardinality 0..1?>
+					</cbc:Telephone>
+					<cbc:ElectronicMail>fred@iytcorporation.gov.uk
+						<?Description The e-mail address for the contact person. If the person has a direct e-mail this is that email. ?>
+						<?Name Contact email address ?>
+						<?Cardinality 0..1?>
+					</cbc:ElectronicMail>
+				</cac:Contact>
+			</cac:DeliveryParty>
+
+			<cac:Despatch>
+				<?Description The despatch (pickup) associated with this delivery. ?>
+				<?Name Despatch information ?>
+				<?Cardinality 0..1?>
+
+				<cbc:ActualDespatchDate>2025-09-10
+					<?Description The actual date of despatch. ?>
+					<?Name Despatch date ?>
+					<?Cardinality 1..1?>
+				</cbc:ActualDespatchDate>
+				
+				<cac:DespatchLocation>
+					<?Name Despatch location?>
+					<?Description The location from where the goods is despatched.?>
+					<?Cardinality 1..1?>
+
+					<cbc:ID schemeID="0088">5790000435951
+						<?Name Identity of the delivery location?>
+						<?Description Identifies the delivery location.?>
+						<?Cardinality 0..1?>
+						<?schemeID-Name Scheme identifier?>
+						<?schemeID-usage Optional?>
+						<?schemeID-CodeList ICD?>			
+					</cbc:ID>
+					
+					<cbc:Name>Grävaren i Bridgtow AB
+						<?Name Name of the despatch location?>
+						<?Description The name of the despatch location.?>
+					<?Cardinality 0..1?>			
+					</cbc:Name>
+
+					<cac:Address>
+						<?Name Address of the despatch location?>
+						<?Description The address of the despatch location.?>
+						<?Cardinality 0..1?>
+
+						<cbc:StreetName>Avon Way
+							<?Name Address line 1?>
+							<?Cardinality 0..1?>
+							<?Description The main address line in a postal address usually the street name and number.?>
+						</cbc:StreetName>
+						
+						<cbc:AdditionalStreetName>way 2
+							<?Name Address line 2?>
+							<?Cardinality 0..1?>
+							<?Description An additional address line in a postal address that can be used to give further details 
+							supplementing the main line. Common use are secondary house number in a complex or in a building.?>
+						</cbc:AdditionalStreetName>
+						
+						<cbc:CityName>Bridgtow
+							<?Name City?>
+							<?Cardinality 0..1?>
+							<?Description The common name of the city where the postal address is. The name is written in full 
+							rather than as a code.?>
+						</cbc:CityName>
+						
+						<cbc:PostalZone>ZZ99 1ZZ
+							<?Name Post code?>
+							<?Cardinality 0..1?>
+							<?Description The identifier for an addressable group of properties according to the relevant national 
+							postal service, such as a ZIP code or Post Code.?>
+						</cbc:PostalZone>
+						
+						<cbc:CountrySubentity>Avon
+							<?Name Country subdivision?>
+							<?Cardinality 0..1?>
+							<?Description For specifying a region, county, state, province etc. within a country by using text.?>
+						</cbc:CountrySubentity>
+						
+						<cac:AddressLine>
+							<?Name Address line?>
+							<?Cardinality 0..1?>
+
+							<cbc:Line>The Roundabout
+								<?Name Address line 3?>
+								<?Cardinality 0..1?>
+								<?Description An additional address line in an address that can be used to give further details 
+								supplementing the main line.?>
+							</cbc:Line>
+						</cac:AddressLine>
+						
+						<cac:Country>
+							<?Name Country?>
+							<?Cardinality 1..1?>
+
+							<cbc:IdentificationCode>GB
+								<?Name Country code?>
+								<?Cardinality 1..1?>
+								<?CodeList ISO3166?>
+								<?Description A code that identifies the country. The lists of valid countries are registered with the 
+								ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their 
+								subdivisions". Codes must be according to the alpha-2 representation.?>			
+							</cbc:IdentificationCode>
+						</cac:Country>
+					</cac:Address>
+
+					<cac:LocationCoordinate>
+						<?Name Location coordinate?>
+						<?Description To specify the coordinates.?>
+						<?Cardinality 0..1?>
+
+						<cbc:CoordinateSystemCode>EPSG:3857
+							<?Name Coordinate system code?>
+							<?Description Always "EPSG:3857" by definition.?>
+							<?Cardinality 1..1?>		
+						</cbc:CoordinateSystemCode>
+						
+						<cbc:LatitudeDegreesMeasure unitCode="DD">59.33169866504851
+							<?Name Latitude degrees?>
+							<?Description The X coordinate. Use degrees with decimals.?>
+							<?Cardinality 1..1?>
+							<?unitCode-Name Latitude degrees unit of measure?>
+							<?unitCode-Description The unit of measure that applies to the latitude degrees.?>
+							<?unitCode-usage Mandatory?>		
+						</cbc:LatitudeDegreesMeasure>
+						
+						<cbc:LongitudeDegreesMeasure unitCode="DD">18.063330898492403
+							<?Name Longitude degrees?>
+							<?Description The Y coordinate. Use degrees with decimals.?>
+							<?Cardinality 1..1?>
+							<?unitCode-Name Longitude degrees unit of measure?>
+							<?unitCode-Description The unit of measure that applies to the longitude degrees.?>
+							<?unitCode-usage Mandatory?>
+							<?unitCode-CodeList UNECERec20?>		
+						</cbc:LongitudeDegreesMeasure>
+					</cac:LocationCoordinate>
+				</cac:DespatchLocation>
+
+				<cac:DespatchParty>
+					<?Description The party despatching the goods. ?>
+					<?Name Despatch Party ?>
+					<?Cardinality 0..1?>
+					<cbc:EndpointID schemeID="0088">5790000435951
+						<?schemeID-usage Mandatory?>
+						<?schemeID-CodeList eas?>
+						<?Description The identity used to send the Movement Document electronically. ?>
+						<?Name Endpoint ID?>
+						<?Cardinality 1..1?>
+					</cbc:EndpointID>
+
+					<cac:PartyIdentification>
+						<?Description Party identification ?>
+						<?Name Party Identification ?>
+						<?Cardinality 0..1?>
+						<cbc:ID schemeID="0088">5790000435951
+							<?Name Identity of the Despatching Party. ?>
+							<?Description Identifies the Despatching Party. ?>
+							<?schemeID-CodeList ICD?>
+							<?Cardinality 1..1?>
+						</cbc:ID>
+					</cac:PartyIdentification>
+					<cac:PartyName>
+						<?Description Party Name ?>
+						<?Name Party Name ?>
+						<?Cardinality 0..1?>
+						<cbc:Name>Name
+							<?Name Name of the Consignor. ?>
+							<?Description The name of the Consignor. ?>
+							<?Cardinality 1..1?>
+						</cbc:Name>
+					</cac:PartyName>
+
+					<cac:PostalAddress>
+						<?Name Address of the Consignor. ?>
+						<?Description The address of the Consignor. ?>
+						<?Cardinality 0..1?>
+						<cbc:StreetName>Avon Way
+							<?Description The name of the street, road, avenue, way, etc. to which the number of the building is attached.  ?>
+							<?Name Address line 1 ?>
+							<?Cardinality 0..1?>
+						</cbc:StreetName>
+						<cbc:AdditionalStreetName>way 2
+							<?Description An additional street name used to further clarify the address.  ?>
+							<?Name Address line 2 ?>
+							<?Cardinality 0..1?>
+						</cbc:AdditionalStreetName>
+						<cbc:CityName>Bridgtow
+							<?Description The common name of the city where the postal address is. The name is written in full rather than as a code. ?>
+							<?Name City ?>
+							<?Cardinality 0..1?>
+						</cbc:CityName>
+						<cbc:PostalZone>ZZ99 1ZZ
+							<?Description The identifier for an addressable group of properties according to the relevant national postal service, such as a ZIP code or Post Code.  ?>
+							<?Name Post code ?>
+							<?Cardinality 0..1?>
+						</cbc:PostalZone>
+						<cbc:CountrySubentity>Avon
+							<?Description For specifying a region, county, state, province etc. within a country by using text. ?>
+							<?Name Country subdivision ?>
+							<?Cardinality 0..1?>
+						</cbc:CountrySubentity>
+						<cac:AddressLine>
+							<?Description Additional address information. ?>
+							<?Name Address line 3 ?>
+							<?Cardinality 0..1?>
+							<cbc:Line>3rd Floor, Room 5
+								<?Description Used for any other additional address information ?>
+								<?Name Address line 3 ?>
+								<?Cardinality 0..1?>
+							</cbc:Line>
+						</cac:AddressLine>
+						<cac:Country>
+							<?Name Country for Consignor. ?>
+							<?Cardinality 0..1?>
+							<?Description Country. ?>
+							<cbc:IdentificationCode>GB
+								<?Description Country Code.  ?>
+								<?Name Country code. ?>
+								<?Cardinality 0..1?>
+							</cbc:IdentificationCode>
+						</cac:Country>
+					</cac:PostalAddress>
+
+					<cac:Contact>
+						<?Description Contact information ?>
+						<?Name Consignor Contact information ?>
+						<?Cardinality 0..1?>
+						<cbc:Name>Mr Fred Churchill
+							<?Description The name of the contact person. ?>
+							<?Name Contact person name ?>
+							<?Cardinality 0..1?>
+						</cbc:Name>
+						<cbc:Telephone>0127 2653214
+							<?Description A phone number for the contact person. If the person has a direct number, this is that number. ?>
+							<?Name Contact telephone number ?>
+							<?Cardinality 0..1?>
+						</cbc:Telephone>
+						<cbc:ElectronicMail>fred@iytcorporation.gov.uk
+							<?Description The e-mail address for the contact person. If the person has a direct e-mail this is that email. ?>
+							<?Name Contact email address ?>
+							<?Cardinality 0..1?>
+						</cbc:ElectronicMail>
+					</cac:Contact>
+				</cac:DespatchParty>
+			</cac:Despatch>
+		</cac:Delivery>
+	</cac:Shipment>
+
+	<cac:DocumentReference>
+		<?Name Reference to relevant documents?>
+		<?Description Reference to any documents relevant for this Waste Notification. ?>
+		<?Cardinality 0..n?>
+
+		<cbc:ID>765444465
+			<?Name Identity of the referenced document?>
+			<?Cardinality 1..1?>
+			<?Description The reference number of the document?>
+		</cbc:ID>
+
+		<cac:Attachment>
+			<?Name Attachment?>
+			<?Cardinality 0..1?>
+			<?Description Group to describe an attached document. An attachment can refer to an external document or be included 
+			with the document being exchanged.?>
+
+			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="VS112233.pdf">
+				aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==
+				<?Name Embedded binary object?>
+				<?Cardinality 0..1?>
+				<?mimeCode-CodeList MimeCode?>
+				<?Description The referenced document can here be inserted as a binary object.?>
+			</cbc:EmbeddedDocumentBinaryObject>
+
+			<cac:ExternalReference>
+				<?Name External reference?>
+				<?Description A reference to an attached document that is external to the document(s) being exchanged.?>
+				<?Cardinality 0..1?>
+
+				<cbc:URI>www.beast.se
+					<?Name Address to internet resource?>
+					<?Description The Uniform Resource Identifier (URI) that identifies the external object as an Internet resource.?>
+				</cbc:URI>
+			</cac:ExternalReference>
+		</cac:Attachment>
+	</cac:DocumentReference>
+</ubl:WasteNotification>
