@@ -225,7 +225,7 @@
             <Term>cac:PartyIdentification</Term>
             <Name>Party Identification</Name>
             <Description>This identity defines the company that signs and sends the Waste Movement Document. </Description>
-            <Element cardinality="1..1 1..1">
+            <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>Identity</Name>
                <Description>This identity identifies the company that signs and sends the Waste Movement Document. </Description>
@@ -297,7 +297,7 @@
                   <Value type="EXAMPLE">The Roundabout</Value>
                </Element>
             </Element>
-            <Element cardinality="1..1">
+            <Element cardinality="0..1">
                <Term>cac:Country</Term>
                <Name>Country</Name>
                <Description>Country code. </Description>
@@ -471,7 +471,7 @@
          <Term>cac:NotifierParty</Term>
          <Name>The Notifier Party</Name>
          <Description>This party defines the company that responsible for the Waste Movement. </Description>
-         <Element cardinality="1..1">
+         <Element cardinality="0..1">
             <Term>cbc:EndpointID</Term>
             <Name>Endpoint ID</Name>
             <Description>The digital address of this party. </Description>
@@ -486,7 +486,7 @@
             <Term>cac:PartyIdentification</Term>
             <Name>Party Identification</Name>
             <Description>This identity defines the company that is responsible for the Waste Movement. </Description>
-            <Element cardinality="1..1 1..1">
+            <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>Identity</Name>
                <Description>This identity identifies the company that is responsible for the Waste Movement. </Description>
@@ -558,7 +558,7 @@
                   <Value type="EXAMPLE">The Roundabout</Value>
                </Element>
             </Element>
-            <Element cardinality="1..1">
+            <Element cardinality="0..1">
                <Term>cac:Country</Term>
                <Name>Country</Name>
                <Description>Country code. </Description>
@@ -603,7 +603,7 @@
          <Name>The Disposal Facility Party</Name>
          <Description>This party defines the company that receiving the Waste for Disposal. Always include this party or the
 		RecoveryFacilityParty, but never both.</Description>
-         <Element cardinality="1..1">
+         <Element cardinality="0..1">
             <Term>cbc:EndpointID</Term>
             <Name>Endpoint ID</Name>
             <Description>The digital address of this party. </Description>
@@ -618,7 +618,7 @@
             <Term>cac:PartyIdentification</Term>
             <Name>Party Identification</Name>
             <Description>This identity defines the company that will receive the waste for Disposal. </Description>
-            <Element cardinality="1..1 1..1">
+            <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>Identity</Name>
                <Description>This identity identifies the company that will receive the waste for Disposal. </Description>
@@ -690,7 +690,7 @@
                   <Value type="EXAMPLE">The Roundabout</Value>
                </Element>
             </Element>
-            <Element cardinality="1..1">
+            <Element cardinality="0..1">
                <Term>cac:Country</Term>
                <Name>Country</Name>
                <Description>Country code. </Description>
@@ -735,7 +735,7 @@
          <Name>The Disposal Facility Party</Name>
          <Description>This party defines the company that receiving the Waste for Recovery. Always include this party or the
 		DisposalFacilityParty, but never both.</Description>
-         <Element cardinality="1..1">
+         <Element cardinality="0..1">
             <Term>cbc:EndpointID</Term>
             <Name>Endpoint ID</Name>
             <Description>The digital address of this party. </Description>
@@ -822,7 +822,7 @@
                   <Value type="EXAMPLE">The Roundabout</Value>
                </Element>
             </Element>
-            <Element cardinality="1..1">
+            <Element cardinality="0..1">
                <Term>cac:Country</Term>
                <Name>Country</Name>
                <Description>Country code. </Description>
@@ -866,7 +866,7 @@
          <Term>cac:WasteProducerParty</Term>
          <Name>The Notifier Party</Name>
          <Description>This party defines the company that produced the waste. </Description>
-         <Element cardinality="1..1">
+         <Element cardinality="0..1">
             <Term>cbc:EndpointID</Term>
             <Name>Endpoint ID</Name>
             <Description>The digital address of this party. </Description>
@@ -881,7 +881,7 @@
             <Term>cac:PartyIdentification</Term>
             <Name>Party Identification</Name>
             <Description>This identity defines the company that produced the waste. </Description>
-            <Element cardinality="1..1 1..1">
+            <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>Identity</Name>
                <Description>This identity identifies the company that produced the waste. </Description>
@@ -953,7 +953,7 @@
                   <Value type="EXAMPLE">The Roundabout</Value>
                </Element>
             </Element>
-            <Element cardinality="1..1">
+            <Element cardinality="0..1">
                <Term>cac:Country</Term>
                <Name>Country</Name>
                <Description>Country code. </Description>
@@ -1066,7 +1066,7 @@
                   <Value type="EXAMPLE">YY</Value>
                </Element>
             </Element>
-            <Element cardinality="0..1">
+            <Element cardinality="0..n">
                <Term>cac:TransportHandlingUnit</Term>
                <Name>Transport handling unit</Name>
                <Description>A description of individual handling units in which the line items are packed. An item of any 
