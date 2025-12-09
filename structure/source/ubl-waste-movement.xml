@@ -169,7 +169,6 @@
 				<?Cardinality 1..1?>
 				<?Description This identity identifies the company that signs and sends the Waste Movement Document. ?>
 				<?schemeID-CodeList ICD?>
-				<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 			
@@ -230,7 +229,7 @@
 			<cac:Country>
 				<?Description Country code. ?>
 				<?Name Country?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:IdentificationCode>GB
 					<?Description A code that identifies the country.The lists of valid countries are registered with the 
 					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
@@ -387,7 +386,7 @@
 			<?schemeID-CodeList eas?>
 			<?Description The digital address of this party. ?>
 			<?Name Endpoint ID?>
-			<?Cardinality 1..1?>
+			<?Cardinality 0..1?>
 		</cbc:EndpointID>
 		<cac:PartyIdentification>
 			<?Description This identity defines the company that is responsible for the Waste Movement. ?>
@@ -398,7 +397,6 @@
 				<?Cardinality 1..1?>
 				<?Description This identity identifies the company that is responsible for the Waste Movement. ?>
 				<?schemeID-CodeList ICD?>
-				<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 
@@ -459,7 +457,7 @@
 			<cac:Country>
 				<?Description Country code. ?>
 				<?Name Country?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:IdentificationCode>GB
 					<?Description A code that identifies the country.The lists of valid countries are registered with the 
 					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
@@ -503,7 +501,7 @@
 			<?schemeID-CodeList eas?>
 			<?Description The digital address of this party. ?>
 			<?Name Endpoint ID?>
-			<?Cardinality 1..1?>
+			<?Cardinality 0..1?>
 		</cbc:EndpointID>
 		<cac:PartyIdentification>
 			<?Description This identity defines the company that will receive the waste for Disposal. ?>
@@ -514,7 +512,6 @@
 				<?Cardinality 1..1?>
 				<?Description This identity identifies the company that will receive the waste for Disposal. ?>
 				<?schemeID-CodeList ICD?>
-				<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 
@@ -575,7 +572,7 @@
 			<cac:Country>
 				<?Description Country code. ?>
 				<?Name Country?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:IdentificationCode>GB
 					<?Description A code that identifies the country.The lists of valid countries are registered with the 
 					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
@@ -619,7 +616,7 @@
 			<?schemeID-CodeList eas?>
 			<?Description The digital address of this party. ?>
 			<?Name Endpoint ID?>
-			<?Cardinality 1..1?>
+			<?Cardinality 0..1?>
 		</cbc:EndpointID>
 		<cac:PartyIdentification>
 			<?Description This identity defines the company that will receive the waste for Recovery. ?>
@@ -691,7 +688,7 @@
 			<cac:Country>
 				<?Description Country code. ?>
 				<?Name Country?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:IdentificationCode>GB
 					<?Description A code that identifies the country.The lists of valid countries are registered with the 
 					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
@@ -734,7 +731,7 @@
 			<?schemeID-CodeList eas?>
 			<?Description The digital address of this party. ?>
 			<?Name Endpoint ID?>
-			<?Cardinality 1..1?>
+			<?Cardinality 0..1?>
 		</cbc:EndpointID>
 		<cac:PartyIdentification>
 			<?Description This identity defines the company that produced the waste. ?>
@@ -745,7 +742,6 @@
 				<?Cardinality 1..1?>
 				<?Description This identity identifies the company that produced the waste. ?>
 				<?schemeID-CodeList ICD?>
-				<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 
@@ -806,7 +802,7 @@
 			<cac:Country>
 				<?Description Country code. ?>
 				<?Name Country?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:IdentificationCode>GB
 					<?Description A code that identifies the country.The lists of valid countries are registered with the 
 					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
@@ -907,7 +903,7 @@
 				<?Name Transport handling unit?>
 				<?Description A description of individual handling units in which the line items are packed. An item of any 
 				composition established for transport and/or storage that needs to be managed through the supply chain.?>
-				<?Cardinality 0..1?>
+				<?Cardinality 0..n?>
 				<cbc:TransportHandlingUnitTypeCode>AG
 					<?Name Handling unit type code?>
 					<?Description Type of Transport Handling Unit. Use UN/ECE Recommendation 21. ?>
