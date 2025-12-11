@@ -799,6 +799,130 @@
             </Element>
          </Element>
          <Element cardinality="0..1">
+            <Term>cac:PhysicalLocation</Term>
+            <Name>Physical Location</Name>
+            <Description>Site of Waste Disposal </Description>
+            <Element cardinality="0..1">
+               <Term>cbc:ID</Term>
+               <Name>Identity of the location.</Name>
+               <Description>Identifies the location where the waste will be disposed of.</Description>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Name>Scheme identifier</Name>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0088</Value>
+               </Attribute>
+               <Value type="EXAMPLE">5790000435951</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:Name</Term>
+               <Name>Name of the location</Name>
+               <Description>The name of the location where the waste will be disposed of.</Description>
+               <Value type="EXAMPLE">Grävaren i Bridgtow AB</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:Address</Term>
+               <Name>Address of the location</Name>
+               <Description>The address of the location where the waste will be disposed of.</Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:StreetName</Term>
+                  <Name>Address line 1</Name>
+                  <Description>The main address line in a postal address usually the street name and number.</Description>
+                  <Value type="EXAMPLE">Avon Way</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:AdditionalStreetName</Term>
+                  <Name>Address line 2</Name>
+                  <Description>An additional address line in a postal address that can be used to give further details 
+							supplementing the main line. Common use are secondary house number in a complex or in a building.</Description>
+                  <Value type="EXAMPLE">way 2</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:CityName</Term>
+                  <Name>City</Name>
+                  <Description>The common name of the city where the postal address is. The name is written in full 
+							rather than as a code.</Description>
+                  <Value type="EXAMPLE">Bridgtow</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:PostalZone</Term>
+                  <Name>Post code</Name>
+                  <Description>The identifier for an addressable group of properties according to the relevant national 
+							postal service, such as a ZIP code or Post Code.</Description>
+                  <Value type="EXAMPLE">ZZ99 1ZZ</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:CountrySubentity</Term>
+                  <Name>Country subdivision</Name>
+                  <Description>For specifying a region, county, state, province etc. within a country by using text.</Description>
+                  <Value type="EXAMPLE">Avon</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:AddressLine</Term>
+                  <Name>Address line</Name>
+                  <Description>An additional address line in an address that can be used to give further details 
+								supplementing the main line.</Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:Line</Term>
+                     <Name>Address line 3</Name>
+                     <Description>An additional address line in an address that can be used to give further details 
+								supplementing the main line.</Description>
+                     <Value type="EXAMPLE">The Roundabout</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:Country</Term>
+                  <Name>Country for Location. </Name>
+                  <Description>Country. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:IdentificationCode</Term>
+                     <Name>Country code</Name>
+                     <Description>A code that identifies the country. The lists of valid countries are registered with the 
+								ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their 
+								subdivisions". Codes must be according to the alpha-2 representation.</Description>
+                     <Reference type="CODE_LIST">ISO3166</Reference>
+                     <Value type="EXAMPLE">GB</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:LocationCoordinate</Term>
+               <Name>Location coordinate</Name>
+               <Description>To specify the coordinates.</Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:CoordinateSystemCode</Term>
+                  <Name>Coordinate system code</Name>
+                  <Description>Always "EPSG:3857" by definition.</Description>
+                  <Value type="EXAMPLE">EPSG:3857</Value>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cbc:LatitudeDegreesMeasure</Term>
+                  <Name>Latitude degrees</Name>
+                  <Description>The X coordinate. Use degrees with decimals.</Description>
+                  <Attribute usage="Mandatory">
+                     <Term>unitCode</Term>
+                     <Name>Latitude degrees unit of measure</Name>
+                     <Description>The unit of measure that applies to the latitude degrees.</Description>
+                     <Value type="EXAMPLE">DD</Value>
+                  </Attribute>
+                  <Value type="EXAMPLE">59.33169866504851</Value>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cbc:LongitudeDegreesMeasure</Term>
+                  <Name>Longitude degrees</Name>
+                  <Description>The Y coordinate. Use degrees with decimals.</Description>
+                  <Attribute usage="Mandatory">
+                     <Term>unitCode</Term>
+                     <Name>Longitude degrees unit of measure</Name>
+                     <Description>The unit of measure that applies to the longitude degrees.</Description>
+                     <Reference type="CODE_LIST">UNECERec20</Reference>
+                     <Value type="EXAMPLE">DD</Value>
+                  </Attribute>
+                  <Value type="EXAMPLE">18.063330898492403</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
             <Term>cac:Contact</Term>
             <Name>Contact</Name>
             <Description>The primary contact for this party. </Description>
@@ -916,6 +1040,130 @@
 					Codes must be according to the alpha-2 representation. </Description>
                   <Reference type="CODE_LIST">ISO3166</Reference>
                   <Value type="EXAMPLE">GB</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PhysicalLocation</Term>
+            <Name>Physical Location</Name>
+            <Description>Site of Waste Recovery </Description>
+            <Element cardinality="0..1">
+               <Term>cbc:ID</Term>
+               <Name>Identity of the location.</Name>
+               <Description>Identifies the location where the waste will be recovered.</Description>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Name>Scheme identifier</Name>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0088</Value>
+               </Attribute>
+               <Value type="EXAMPLE">5790000435951</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:Name</Term>
+               <Name>Name of the location</Name>
+               <Description>The name of the location where the waste will be recovered.</Description>
+               <Value type="EXAMPLE">Grävaren i Bridgtow AB</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:Address</Term>
+               <Name>Address of the location</Name>
+               <Description>The address of the location where the waste will be recovered.</Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:StreetName</Term>
+                  <Name>Address line 1</Name>
+                  <Description>The main address line in a postal address usually the street name and number.</Description>
+                  <Value type="EXAMPLE">Avon Way</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:AdditionalStreetName</Term>
+                  <Name>Address line 2</Name>
+                  <Description>An additional address line in a postal address that can be used to give further details 
+							supplementing the main line. Common use are secondary house number in a complex or in a building.</Description>
+                  <Value type="EXAMPLE">way 2</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:CityName</Term>
+                  <Name>City</Name>
+                  <Description>The common name of the city where the postal address is. The name is written in full 
+							rather than as a code.</Description>
+                  <Value type="EXAMPLE">Bridgtow</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:PostalZone</Term>
+                  <Name>Post code</Name>
+                  <Description>The identifier for an addressable group of properties according to the relevant national 
+							postal service, such as a ZIP code or Post Code.</Description>
+                  <Value type="EXAMPLE">ZZ99 1ZZ</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:CountrySubentity</Term>
+                  <Name>Country subdivision</Name>
+                  <Description>For specifying a region, county, state, province etc. within a country by using text.</Description>
+                  <Value type="EXAMPLE">Avon</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:AddressLine</Term>
+                  <Name>Address line</Name>
+                  <Description>An additional address line in an address that can be used to give further details 
+								supplementing the main line.</Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:Line</Term>
+                     <Name>Address line 3</Name>
+                     <Description>An additional address line in an address that can be used to give further details 
+								supplementing the main line.</Description>
+                     <Value type="EXAMPLE">The Roundabout</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:Country</Term>
+                  <Name>Country for Location. </Name>
+                  <Description>Country. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:IdentificationCode</Term>
+                     <Name>Country code</Name>
+                     <Description>A code that identifies the country. The lists of valid countries are registered with the 
+								ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their 
+								subdivisions". Codes must be according to the alpha-2 representation.</Description>
+                     <Reference type="CODE_LIST">ISO3166</Reference>
+                     <Value type="EXAMPLE">GB</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:LocationCoordinate</Term>
+               <Name>Location coordinate</Name>
+               <Description>To specify the coordinates.</Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:CoordinateSystemCode</Term>
+                  <Name>Coordinate system code</Name>
+                  <Description>Always "EPSG:3857" by definition.</Description>
+                  <Value type="EXAMPLE">EPSG:3857</Value>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cbc:LatitudeDegreesMeasure</Term>
+                  <Name>Latitude degrees</Name>
+                  <Description>The X coordinate. Use degrees with decimals.</Description>
+                  <Attribute usage="Mandatory">
+                     <Term>unitCode</Term>
+                     <Name>Latitude degrees unit of measure</Name>
+                     <Description>The unit of measure that applies to the latitude degrees.</Description>
+                     <Value type="EXAMPLE">DD</Value>
+                  </Attribute>
+                  <Value type="EXAMPLE">59.33169866504851</Value>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cbc:LongitudeDegreesMeasure</Term>
+                  <Name>Longitude degrees</Name>
+                  <Description>The Y coordinate. Use degrees with decimals.</Description>
+                  <Attribute usage="Mandatory">
+                     <Term>unitCode</Term>
+                     <Name>Longitude degrees unit of measure</Name>
+                     <Description>The unit of measure that applies to the longitude degrees.</Description>
+                     <Reference type="CODE_LIST">UNECERec20</Reference>
+                     <Value type="EXAMPLE">DD</Value>
+                  </Attribute>
+                  <Value type="EXAMPLE">18.063330898492403</Value>
                </Element>
             </Element>
          </Element>
@@ -1040,6 +1288,130 @@
             </Element>
          </Element>
          <Element cardinality="0..1">
+            <Term>cac:PhysicalLocation</Term>
+            <Name>Physical Location</Name>
+            <Description>Site of Waste Generation </Description>
+            <Element cardinality="0..1">
+               <Term>cbc:ID</Term>
+               <Name>Identity of the location.</Name>
+               <Description>Identifies the location where the waste was generated.</Description>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Name>Scheme identifier</Name>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0088</Value>
+               </Attribute>
+               <Value type="EXAMPLE">5790000435951</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:Name</Term>
+               <Name>Name of the location</Name>
+               <Description>The name of the location where the waste was generated.</Description>
+               <Value type="EXAMPLE">Grävaren i Bridgtow AB</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:Address</Term>
+               <Name>Address of the location</Name>
+               <Description>The address of the location where the waste was generated.</Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:StreetName</Term>
+                  <Name>Address line 1</Name>
+                  <Description>The main address line in a postal address usually the street name and number.</Description>
+                  <Value type="EXAMPLE">Avon Way</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:AdditionalStreetName</Term>
+                  <Name>Address line 2</Name>
+                  <Description>An additional address line in a postal address that can be used to give further details 
+							supplementing the main line. Common use are secondary house number in a complex or in a building.</Description>
+                  <Value type="EXAMPLE">way 2</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:CityName</Term>
+                  <Name>City</Name>
+                  <Description>The common name of the city where the postal address is. The name is written in full 
+							rather than as a code.</Description>
+                  <Value type="EXAMPLE">Bridgtow</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:PostalZone</Term>
+                  <Name>Post code</Name>
+                  <Description>The identifier for an addressable group of properties according to the relevant national 
+							postal service, such as a ZIP code or Post Code.</Description>
+                  <Value type="EXAMPLE">ZZ99 1ZZ</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:CountrySubentity</Term>
+                  <Name>Country subdivision</Name>
+                  <Description>For specifying a region, county, state, province etc. within a country by using text.</Description>
+                  <Value type="EXAMPLE">Avon</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:AddressLine</Term>
+                  <Name>Address line</Name>
+                  <Description>An additional address line in an address that can be used to give further details 
+								supplementing the main line.</Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:Line</Term>
+                     <Name>Address line 3</Name>
+                     <Description>An additional address line in an address that can be used to give further details 
+								supplementing the main line.</Description>
+                     <Value type="EXAMPLE">The Roundabout</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:Country</Term>
+                  <Name>Country for Location. </Name>
+                  <Description>Country. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:IdentificationCode</Term>
+                     <Name>Country code</Name>
+                     <Description>A code that identifies the country. The lists of valid countries are registered with the 
+								ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their 
+								subdivisions". Codes must be according to the alpha-2 representation.</Description>
+                     <Reference type="CODE_LIST">ISO3166</Reference>
+                     <Value type="EXAMPLE">GB</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:LocationCoordinate</Term>
+               <Name>Location coordinate</Name>
+               <Description>To specify the coordinates.</Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:CoordinateSystemCode</Term>
+                  <Name>Coordinate system code</Name>
+                  <Description>Always "EPSG:3857" by definition.</Description>
+                  <Value type="EXAMPLE">EPSG:3857</Value>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cbc:LatitudeDegreesMeasure</Term>
+                  <Name>Latitude degrees</Name>
+                  <Description>The X coordinate. Use degrees with decimals.</Description>
+                  <Attribute usage="Mandatory">
+                     <Term>unitCode</Term>
+                     <Name>Latitude degrees unit of measure</Name>
+                     <Description>The unit of measure that applies to the latitude degrees.</Description>
+                     <Value type="EXAMPLE">DD</Value>
+                  </Attribute>
+                  <Value type="EXAMPLE">59.33169866504851</Value>
+               </Element>
+               <Element cardinality="1..1">
+                  <Term>cbc:LongitudeDegreesMeasure</Term>
+                  <Name>Longitude degrees</Name>
+                  <Description>The Y coordinate. Use degrees with decimals.</Description>
+                  <Attribute usage="Mandatory">
+                     <Term>unitCode</Term>
+                     <Name>Longitude degrees unit of measure</Name>
+                     <Description>The unit of measure that applies to the longitude degrees.</Description>
+                     <Reference type="CODE_LIST">UNECERec20</Reference>
+                     <Value type="EXAMPLE">DD</Value>
+                  </Attribute>
+                  <Value type="EXAMPLE">18.063330898492403</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
             <Term>cac:Contact</Term>
             <Name>Contact</Name>
             <Description>The primary contact for this party. </Description>
@@ -1108,34 +1480,17 @@
 				regulation concerning the carriage of dangerous goods (true) or not (false). </Description>
                <Value type="EXAMPLE">false</Value>
             </Element>
+            <Element cardinality="0..n">
+               <Term>cbc:SpecialServiceInstructions</Term>
+               <Name>Technology Employed </Name>
+               <Description>Technology employed for Recovery/Disposal. </Description>
+               <Value type="EXAMPLE">Text</Value>
+            </Element>
             <Element cardinality="0..1">
                <Term>cbc:HandlingCode</Term>
                <Name>Handling Code </Name>
                <Description>The handling required for this waste, expressed as a code (D-code/R-code). </Description>
                <Value type="EXAMPLE">D123</Value>
-            </Element>
-            <Element cardinality="0..n">
-               <Term>cac:Status</Term>
-               <Name>Status </Name>
-               <Description>A class to describe the condition or position of the waste. </Description>
-               <Element cardinality="0..1">
-                  <Term>cbc:ConditionCode</Term>
-                  <Name>Condition Code </Name>
-                  <Description>Specifies the status condition of the waste. </Description>
-                  <Value type="EXAMPLE">XX</Value>
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:ReferenceDate</Term>
-                  <Name>Reference Date </Name>
-                  <Description>Date of Disposal/Recovery. </Description>
-                  <Value type="EXAMPLE">2025-09-15</Value>
-               </Element>
-               <Element cardinality="0..1">
-                  <Term>cbc:StatusReasonCode</Term>
-                  <Name>Status Reason Code </Name>
-                  <Description>The reason for this status condition or position, expressed as a code. </Description>
-                  <Value type="EXAMPLE">YY</Value>
-               </Element>
             </Element>
             <Element cardinality="0..1">
                <Term>cac:TransportHandlingUnit</Term>
@@ -1258,6 +1613,12 @@
                   <Name>Item name </Name>
                   <Description>A short name for an item. </Description>
                   <Value type="EXAMPLE">beeswax</Value>
+               </Element>
+               <Element cardinality="0..n">
+                  <Term>cbc:AdditionalInformation</Term>
+                  <Name>Additional information </Name>
+                  <Description>Process of the waste generation. </Description>
+                  <Value type="EXAMPLE">Text</Value>
                </Element>
                <Element cardinality="0..1">
                   <Term>cac:BuyersItemIdentification</Term>
@@ -1648,23 +2009,6 @@
             <Term>cac:Delivery</Term>
             <Name>Delivery information </Name>
             <Description>Delivery information </Description>
-            <Element cardinality="0..1">
-               <Term>cbc:Quantity</Term>
-               <Name>Received quantity </Name>
-               <Description>The quantity received. </Description>
-               <Attribute usage="Mandatory">
-                  <Term>unitCode</Term>
-                  <Reference type="CODE_LIST">UNECERec20</Reference>
-                  <Value type="EXAMPLE">TNE</Value>
-               </Attribute>
-               <Value type="EXAMPLE">10.3</Value>
-            </Element>
-            <Element cardinality="0..1">
-               <Term>cbc:ActualDeliveryDate</Term>
-               <Name>Delivery date </Name>
-               <Description>The actual date of delivery. </Description>
-               <Value type="EXAMPLE">2025-09-10</Value>
-            </Element>
             <Element cardinality="1..1">
                <Term>cac:DeliveryLocation</Term>
                <Name>Delivery location</Name>
@@ -1931,13 +2275,6 @@
                <Name>Despatch information </Name>
                <Description>The despatch (pickup) associated with this delivery. </Description>
                <Element cardinality="1..1">
-                  <Term>cbc:ActualDespatchDate</Term>
-                  <Name>Despatch date </Name>
-                  <Description>The actual date of despatch. </Description>
-                  <Reference type="BUSINESS_TERM">tir16-072</Reference>
-                  <Value type="EXAMPLE">2025-09-10</Value>
-               </Element>
-               <Element cardinality="1..1">
                   <Term>cac:DespatchLocation</Term>
                   <Name>Despatch location</Name>
                   <Description>The location from where the goods is despatched.</Description>
@@ -2171,6 +2508,23 @@
                         <Description>The e-mail address for the contact person. If the person has a direct e-mail this is that email. </Description>
                         <Value type="EXAMPLE">fred@iytcorporation.gov.uk</Value>
                      </Element>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:EstimatedDespatchPeriod</Term>
+                  <Name>Estimated Despatch Period </Name>
+                  <Description>Intended period for shipments. </Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:StartDate</Term>
+                     <Name>Start Date </Name>
+                     <Description>Start date of the period. </Description>
+                     <Value type="EXAMPLE">2025-12-01</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:EndDate</Term>
+                     <Name>End Date </Name>
+                     <Description>End date of the period. </Description>
+                     <Value type="EXAMPLE">2025-12-23</Value>
                   </Element>
                </Element>
             </Element>
