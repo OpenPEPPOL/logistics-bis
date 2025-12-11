@@ -257,6 +257,10 @@
       <rule context="/ubl:WasteMovement/cbc:ConsignmentQuantity"/>
       <rule context="/ubl:WasteMovement/cac:Signature">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T131-B01001">Element 'cbc:ID' MUST be provided.</assert>
+         <assert test="cac:SignatoryParty" flag="fatal" id="PEPPOL-T131-B01002">Element 'cac:SignatoryParty' MUST be provided.</assert>
+         <assert test="cac:DigitalSignatureAttachment"
+                 flag="fatal"
+                 id="PEPPOL-T131-B01003">Element 'cac:DigitalSignatureAttachment' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:WasteMovement/cac:Signature/cbc:ID"/>
       <rule context="/ubl:WasteMovement/cac:Signature/cbc:Note"/>
@@ -304,7 +308,7 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B02701">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:WasteMovement/cac:Signature/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T131-B01002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T131-B01004">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:WasteMovement/cac:SenderParty">
          <assert test="cbc:EndpointID" flag="fatal" id="PEPPOL-T131-B03301">Element 'cbc:EndpointID' MUST be provided.</assert>

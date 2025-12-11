@@ -91,7 +91,6 @@
       </cac:Contact>  
    </cac:ReceiverParty>
    <cac:NotifierParty>
-      <cbc:EndpointID schemeID="0088">7300010000001</cbc:EndpointID>
       <cac:PartyIdentification>
          <cbc:ID schemeID="0088">7300010000001</cbc:ID>    
       </cac:PartyIdentification>
@@ -118,7 +117,6 @@
       </cac:Contact>  
    </cac:NotifierParty>
    <cac:CustomsParty>
-      <cbc:EndpointID schemeID="0088">7300010000001</cbc:EndpointID>
       <cac:PartyIdentification>
          <cbc:ID schemeID="0088">7300010000001</cbc:ID>    
       </cac:PartyIdentification>
@@ -145,7 +143,6 @@
       </cac:Contact>  
    </cac:CustomsParty>
    <cac:DisposalFacilityParty>
-      <cbc:EndpointID schemeID="0088">7300010000001</cbc:EndpointID>
       <cac:PartyIdentification>
          <cbc:ID schemeID="0088">7300010000001</cbc:ID>    
       </cac:PartyIdentification>
@@ -172,7 +169,6 @@
       </cac:Contact>  
    </cac:DisposalFacilityParty>
    <cac:RecoveryFacilityParty>
-      <cbc:EndpointID schemeID="0088">7300010000001</cbc:EndpointID>
       <cac:PartyIdentification>
          <cbc:ID schemeID="0088">7300010000001</cbc:ID>    
       </cac:PartyIdentification>
@@ -199,7 +195,6 @@
       </cac:Contact>  
    </cac:RecoveryFacilityParty>
    <cac:WasteProducerParty>
-      <cbc:EndpointID schemeID="0088">7300010000001</cbc:EndpointID>
       <cac:PartyIdentification>
          <cbc:ID schemeID="0088">7300010000001</cbc:ID>    
       </cac:PartyIdentification>
@@ -274,8 +269,22 @@
                <cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">KO2012140200</cbc:ItemClassificationCode>        
             </cac:CommodityClassification>
             <cac:HazardousItem>
+               <cbc:ID>123</cbc:ID>
+               <cbc:AdditionalInformation>Information about the hazardous item</cbc:AdditionalInformation>
                <cbc:UNDGCode>ADR</cbc:UNDGCode>
-               <cbc:HazardClassID>Code</cbc:HazardClassID>        
+               <cbc:TechnicalName>Corrosive liquid, n.o.s., 8, UN 1760, II (contains Octanoyl chloride)</cbc:TechnicalName>
+               <cbc:CategoryName>Acute toxicity</cbc:CategoryName>
+               <cbc:HazardousCategoryCode>123</cbc:HazardousCategoryCode>
+               <cbc:HazardClassID>Code</cbc:HazardClassID>
+               <cbc:NetWeightMeasure unitCode="KGM">123</cbc:NetWeightMeasure>
+               <cbc:NetVolumeMeasure unitCode="MTQ">12.3</cbc:NetVolumeMeasure>
+               <cac:HazardousGoodsTransit>
+                  <cbc:PackingCriteriaCode>123</cbc:PackingCriteriaCode>          
+               </cac:HazardousGoodsTransit>
+               <cac:EmergencyTemperature>
+                  <cbc:AttributeID>ABC</cbc:AttributeID>
+                  <cbc:Measure unitCode="CEL">78</cbc:Measure>          
+               </cac:EmergencyTemperature>        
             </cac:HazardousItem>
             <cac:AdditionalItemProperty>
                <cbc:ID schemeDataURI="https://define.cobuilder.no/77e416eb-a363-4258-a04e-171d843a6460/2022/"
@@ -285,14 +294,13 @@
                <cbc:NameCode listID="IPNC">EPDNumber</cbc:NameCode>
                <cbc:Value>NEPD-1717-700-SE</cbc:Value>
                <cbc:ValueQuantity unitCode="EA">15.00</cbc:ValueQuantity>
-               <cbc:ValueQualifier>descr</cbc:ValueQualifier>        
+               <cbc:ValueQualifier>Climate Data</cbc:ValueQualifier>        
             </cac:AdditionalItemProperty>      
          </cac:Item>    
       </cac:GoodsItem>
       <cac:ShipmentStage>
          <cbc:ID>1</cbc:ID>
          <cac:CarrierParty>
-            <cbc:EndpointID schemeID="0088">5790000435951</cbc:EndpointID>
             <cac:PartyIdentification>
                <cbc:ID schemeID="0088">5790000435951</cbc:ID>        
             </cac:PartyIdentification>
@@ -319,20 +327,7 @@
             </cac:Contact>      
          </cac:CarrierParty>
          <cac:TransportMeans>
-            <cbc:TransportMeansTypeCode>31</cbc:TransportMeansTypeCode>
-            <cac:AirTransport>
-               <cbc:AircraftID>JA8088</cbc:AircraftID>        
-            </cac:AirTransport>
-            <cac:RoadTransport>
-               <cbc:LicensePlateID>DF10958</cbc:LicensePlateID>        
-            </cac:RoadTransport>
-            <cac:RailTransport>
-               <cbc:TrainID>12014</cbc:TrainID>
-               <cbc:RailCarID>50 63 20-33 801-5</cbc:RailCarID>        
-            </cac:RailTransport>
-            <cac:MaritimeTransport>
-               <cbc:VesselID>wrt34663</cbc:VesselID>        
-            </cac:MaritimeTransport>      
+            <cbc:TransportMeansTypeCode>31</cbc:TransportMeansTypeCode>      
          </cac:TransportMeans>    
       </cac:ShipmentStage>
       <cac:Delivery>
@@ -361,7 +356,6 @@
             </cac:LocationCoordinate>      
          </cac:DeliveryLocation>
          <cac:DeliveryParty>
-            <cbc:EndpointID schemeID="0088">5790000435951</cbc:EndpointID>
             <cac:PartyIdentification>
                <cbc:ID schemeID="0088">5790000435951</cbc:ID>        
             </cac:PartyIdentification>
@@ -412,7 +406,6 @@
                </cac:LocationCoordinate>        
             </cac:DespatchLocation>
             <cac:DespatchParty>
-               <cbc:EndpointID schemeID="0088">5790000435951</cbc:EndpointID>
                <cac:PartyIdentification>
                   <cbc:ID schemeID="0088">5790000435951</cbc:ID>          
                </cac:PartyIdentification>
