@@ -3306,7 +3306,7 @@
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">1..1 1..1</Data>
+               <Data ss:Type="String">1..1</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">•  •  •  cbc:ID</Data>
@@ -5412,16 +5412,16 @@
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">1..1</Data>
+               <Data ss:Type="String">0..n</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">•  •  •  •  cac:CommodityClassification</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Commodity classification</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">To classify when an item number is not sufficient.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
@@ -5444,7 +5444,7 @@
                <Data ss:Type="String">•  •  •  •  •  cbc:ItemClassificationCode</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Item classification code</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
@@ -5473,7 +5473,7 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Logistics: For Item Classification Codes that are found in UNCL7143, select the correct code and leave listVersionID and name empty. For construction specific list that are not a part of UNCL7143 yet ListID must always be "ZZZ" and listVersionID "BEAST:4.0", i.e. mutually agreed. Peppol:</Data>
+               <Data ss:Type="String">The identification scheme identifier of the Item classification identifier.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">ZZZ</Data>
@@ -5525,7 +5525,7 @@
                <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Logistics: If construction specific lists are used, name specifies which of them is used. Possible names are: "SBMI", "SA", "AI", “ME” and "CoClass”. "SBMI" = Sveriges Bergmaterialindustrier, "SA" = Sveriges Åkeriföretag, "AI" = Återvinningsindustrierna, “ME” = Maskinentreprenörerna. Peppol:</Data>
+               <Data ss:Type="String">The name of the Identification scheme identifier when @listID = ZZZ. Must be provided when @listID = ZZZ.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">SBMI</Data>
@@ -5542,16 +5542,16 @@
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">0..n</Data>
+               <Data ss:Type="String">1..1</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">•  •  •  •  cac:HazardousItem</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Hazardous Item. </Data>
+               <Data ss:Type="String"/>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Information pertaining to this item as a hazardous item.</Data>
+               <Data ss:Type="String">Contains information on the Hazardous item.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
@@ -5571,10 +5571,62 @@
                <Data ss:Type="String">0..1</Data>
             </Cell>
             <Cell>
+               <Data ss:Type="String">•  •  •  •  •  cbc:ID</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Identifier</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">An identifier for this hazardous item.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">123</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:ID</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">5</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">21100</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  cbc:AdditionalInformation</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Additional Information</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Text providing further information about the hazardous substance.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Information about the hazardous item</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:AdditionalInformation</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">5</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">21200</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..1</Data>
+            </Cell>
+            <Cell>
                <Data ss:Type="String">•  •  •  •  •  cbc:UNDGCode</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">UNDG Code. </Data>
+               <Data ss:Type="String">UN Code</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">The UN code for this kind of hazardous item.</Data>
@@ -5589,7 +5641,85 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">21100</Data>
+               <Data ss:Type="Number">21300</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  cbc:TechnicalName</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Technical Name</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">The full technical name of a specific hazardous substance contained in this goods item.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Corrosive liquid, n.o.s., 8, UN 1760, II (contains Octanoyl chloride)</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:TechnicalName</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">5</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">21400</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  cbc:CategoryName</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Category Name</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">The name of the category of hazard that applies to the Item.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Acute toxicity</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:CategoryName</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">5</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">21500</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  cbc:HazardousCategoryCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Hazardous Category Code</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">A code signifying a kind of hazard for a material.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">123</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:HazardousCategoryCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">5</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">21600</Data>
             </Cell>
          </Row>
          <Row>
@@ -5600,10 +5730,10 @@
                <Data ss:Type="String">•  •  •  •  •  cbc:HazardClassID</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Hazard Class ID. </Data>
+               <Data ss:Type="String">Hazard Class ID</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">An identifier for the hazard class applicable to this hazardous item as defined by the relevant</Data>
+               <Data ss:Type="String">An identifier for the hazard class applicable to this hazardous item as defined by the relevant regulation authority (e.g., the IMDG Class Number of the SOLAS Convention of IMO and the ADR/RID Class Number for the road/rail environment).</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">Code</Data>
@@ -5615,7 +5745,267 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">21200</Data>
+               <Data ss:Type="Number">21700</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  cbc:NetWeightMeasure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Net Weight Measure </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Net weight of the Hazardous item.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">123</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:NetWeightMeasure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">5</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">21800</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">M</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  @unitCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Measure unit of measure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">The unit of measure that applies to the Net Weight.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">KGM</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:NetWeightMeasure/unitCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">6</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">21900</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  cbc:NetVolumeMeasure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Net Volume Measure </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Net volume of the Hazardous item.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">12.3</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:NetVolumeMeasure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">5</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">22000</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">M</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  @unitCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Measure unit of measure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">The unit of measure that applies to the Net Volume.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">MTQ</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cac:HazardousItem/cbc:NetVolumeMeasure/unitCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">6</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">22100</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..n</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  cac:HazardousGoodsTransit</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Hazardous Goods Transit </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Information related to the transit of this kind of hazardous goods.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String"/>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:HazardousGoodsTransit</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">5</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">22200</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">1..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  cbc:PackingCriteriaCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Packing Criteria Code </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">A code signifying the packaging requirement for transportation of the hazardous goods as assigned by IATA, IMDB, ADR, RID etc.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">123</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:HazardousGoodsTransit/cbc:PackingCriteriaCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">6</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">22300</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  cac:EmergencyTemperature</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Emergency Temperature </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">The threshold temperature at which emergency procedures apply in the handling of temperature-controlled goods.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String"/>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:EmergencyTemperature</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">5</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">22400</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">1..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  cbc:AttributeID</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Attribute ID </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">An identifier for this temperature measurement.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">ABC</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:EmergencyTemperature/cbc:AttributeID</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">6</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">22500</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">1..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  cbc:Measure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Measure </Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">The value of this temperature measurement.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">78</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:EmergencyTemperature/cbc:Measure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">6</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">22600</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">M</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  •  •  •  •  •  @unitCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Measure unit of measure</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">The unit of measure that applies to the Emergency Temperature.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">CEL</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cac:HazardousItem/cac:EmergencyTemperature/cbc:Measure/unitCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">7</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">22700</Data>
             </Cell>
          </Row>
          <Row>
@@ -5641,7 +6031,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">21300</Data>
+               <Data ss:Type="Number">22800</Data>
             </Cell>
          </Row>
          <Row>
@@ -5667,7 +6057,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">21400</Data>
+               <Data ss:Type="Number">22900</Data>
             </Cell>
          </Row>
          <Row>
@@ -5693,7 +6083,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">21500</Data>
+               <Data ss:Type="Number">23000</Data>
             </Cell>
          </Row>
          <Row>
@@ -5719,7 +6109,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">21600</Data>
+               <Data ss:Type="Number">23100</Data>
             </Cell>
          </Row>
          <Row>
@@ -5745,7 +6135,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">21700</Data>
+               <Data ss:Type="Number">23200</Data>
             </Cell>
          </Row>
          <Row>
@@ -5756,10 +6146,10 @@
                <Data ss:Type="String">•  •  •  •  •  cbc:Name</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Name </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">The Name of the Item Property.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">Rigidity</Data>
@@ -5771,21 +6161,21 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">21800</Data>
+               <Data ss:Type="Number">23300</Data>
             </Cell>
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">1..1</Data>
+               <Data ss:Type="String">0..1</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">•  •  •  •  •  cbc:NameCode</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Item Property code </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Code for the item property according to a property code system.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">EPDNumber</Data>
@@ -5797,7 +6187,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">21900</Data>
+               <Data ss:Type="Number">23400</Data>
             </Cell>
          </Row>
          <Row>
@@ -5823,7 +6213,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">22000</Data>
+               <Data ss:Type="Number">23500</Data>
             </Cell>
          </Row>
          <Row>
@@ -5834,10 +6224,10 @@
                <Data ss:Type="String">•  •  •  •  •  cbc:Value</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Value </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">The Value of the Item Property.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">NEPD-1717-700-SE</Data>
@@ -5849,21 +6239,21 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">22100</Data>
+               <Data ss:Type="Number">23600</Data>
             </Cell>
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">1..1</Data>
+               <Data ss:Type="String">0..1</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">•  •  •  •  •  cbc:ValueQuantity</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Item property unit of measure </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">The unit of measure in which the property value is stated, if relevant. May not be relevant when properties are descriptive.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">15.00</Data>
@@ -5875,7 +6265,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">22200</Data>
+               <Data ss:Type="Number">23700</Data>
             </Cell>
          </Row>
          <Row>
@@ -5901,24 +6291,24 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">22300</Data>
+               <Data ss:Type="Number">23800</Data>
             </Cell>
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">1..1</Data>
+               <Data ss:Type="String">0..1</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">•  •  •  •  •  cbc:ValueQualifier</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Property classification </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Standardized and predefined classification of items properties.</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">descr</Data>
+               <Data ss:Type="String">Climate Data</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cac:Item/cac:AdditionalItemProperty/cbc:ValueQualifier</Data>
@@ -5927,7 +6317,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">22400</Data>
+               <Data ss:Type="Number">23900</Data>
             </Cell>
          </Row>
          <Row>
@@ -5953,7 +6343,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">22500</Data>
+               <Data ss:Type="Number">24000</Data>
             </Cell>
          </Row>
          <Row>
@@ -5979,7 +6369,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">22600</Data>
+               <Data ss:Type="Number">24100</Data>
             </Cell>
          </Row>
          <Row>
@@ -6005,7 +6395,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">22700</Data>
+               <Data ss:Type="Number">24200</Data>
             </Cell>
          </Row>
          <Row>
@@ -6031,7 +6421,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">22800</Data>
+               <Data ss:Type="Number">24300</Data>
             </Cell>
          </Row>
          <Row>
@@ -6057,7 +6447,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">22900</Data>
+               <Data ss:Type="Number">24400</Data>
             </Cell>
          </Row>
          <Row>
@@ -6083,7 +6473,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">23000</Data>
+               <Data ss:Type="Number">24500</Data>
             </Cell>
          </Row>
          <Row>
@@ -6109,7 +6499,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">23100</Data>
+               <Data ss:Type="Number">24600</Data>
             </Cell>
          </Row>
          <Row>
@@ -6135,7 +6525,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">23200</Data>
+               <Data ss:Type="Number">24700</Data>
             </Cell>
          </Row>
          <Row>
@@ -6161,7 +6551,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">23300</Data>
+               <Data ss:Type="Number">24800</Data>
             </Cell>
          </Row>
          <Row>
@@ -6187,7 +6577,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">23400</Data>
+               <Data ss:Type="Number">24900</Data>
             </Cell>
          </Row>
          <Row>
@@ -6213,7 +6603,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">23500</Data>
+               <Data ss:Type="Number">25000</Data>
             </Cell>
          </Row>
          <Row>
@@ -6239,7 +6629,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">23600</Data>
+               <Data ss:Type="Number">25100</Data>
             </Cell>
          </Row>
          <Row>
@@ -6265,7 +6655,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">23700</Data>
+               <Data ss:Type="Number">25200</Data>
             </Cell>
          </Row>
          <Row>
@@ -6291,7 +6681,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">23800</Data>
+               <Data ss:Type="Number">25300</Data>
             </Cell>
          </Row>
          <Row>
@@ -6317,7 +6707,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">23900</Data>
+               <Data ss:Type="Number">25400</Data>
             </Cell>
          </Row>
          <Row>
@@ -6343,7 +6733,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">24000</Data>
+               <Data ss:Type="Number">25500</Data>
             </Cell>
          </Row>
          <Row>
@@ -6357,7 +6747,7 @@
                <Data ss:Type="String">Address line</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">An additional address line in an address that can be used to give further details supplementing the main line.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
@@ -6369,7 +6759,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">24100</Data>
+               <Data ss:Type="Number">25600</Data>
             </Cell>
          </Row>
          <Row>
@@ -6395,12 +6785,12 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">24200</Data>
+               <Data ss:Type="Number">25700</Data>
             </Cell>
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">1..1</Data>
+               <Data ss:Type="String">0..1</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">•  •  •  •  •  cac:Country</Data>
@@ -6409,7 +6799,7 @@
                <Data ss:Type="String">Country</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Country code.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
@@ -6421,7 +6811,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">24300</Data>
+               <Data ss:Type="Number">25800</Data>
             </Cell>
          </Row>
          <Row>
@@ -6447,7 +6837,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">24400</Data>
+               <Data ss:Type="Number">25900</Data>
             </Cell>
          </Row>
          <Row>
@@ -6473,7 +6863,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">24500</Data>
+               <Data ss:Type="Number">26000</Data>
             </Cell>
          </Row>
          <Row>
@@ -6499,7 +6889,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">24600</Data>
+               <Data ss:Type="Number">26100</Data>
             </Cell>
          </Row>
          <Row>
@@ -6525,7 +6915,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">24700</Data>
+               <Data ss:Type="Number">26200</Data>
             </Cell>
          </Row>
          <Row>
@@ -6551,7 +6941,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">24800</Data>
+               <Data ss:Type="Number">26300</Data>
             </Cell>
          </Row>
          <Row>
@@ -6577,7 +6967,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">24900</Data>
+               <Data ss:Type="Number">26400</Data>
             </Cell>
          </Row>
          <Row>
@@ -6603,7 +6993,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">25000</Data>
+               <Data ss:Type="Number">26500</Data>
             </Cell>
          </Row>
          <Row>
@@ -6629,7 +7019,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">25100</Data>
+               <Data ss:Type="Number">26600</Data>
             </Cell>
          </Row>
          <Row>
@@ -6655,7 +7045,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">25200</Data>
+               <Data ss:Type="Number">26700</Data>
             </Cell>
          </Row>
          <Row>
@@ -6681,7 +7071,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">25300</Data>
+               <Data ss:Type="Number">26800</Data>
             </Cell>
          </Row>
          <Row>
@@ -6707,7 +7097,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">25400</Data>
+               <Data ss:Type="Number">26900</Data>
             </Cell>
          </Row>
          <Row>
@@ -6733,7 +7123,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">25500</Data>
+               <Data ss:Type="Number">27000</Data>
             </Cell>
          </Row>
          <Row>
@@ -6759,7 +7149,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">25600</Data>
+               <Data ss:Type="Number">27100</Data>
             </Cell>
          </Row>
          <Row>
@@ -6785,7 +7175,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">25700</Data>
+               <Data ss:Type="Number">27200</Data>
             </Cell>
          </Row>
          <Row>
@@ -6811,7 +7201,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">25800</Data>
+               <Data ss:Type="Number">27300</Data>
             </Cell>
          </Row>
          <Row>
@@ -6837,7 +7227,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">25900</Data>
+               <Data ss:Type="Number">27400</Data>
             </Cell>
          </Row>
          <Row>
@@ -6863,7 +7253,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">26000</Data>
+               <Data ss:Type="Number">27500</Data>
             </Cell>
          </Row>
          <Row>
@@ -6889,7 +7279,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">26100</Data>
+               <Data ss:Type="Number">27600</Data>
             </Cell>
          </Row>
          <Row>
@@ -6915,7 +7305,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">26200</Data>
+               <Data ss:Type="Number">27700</Data>
             </Cell>
          </Row>
          <Row>
@@ -6941,7 +7331,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">26300</Data>
+               <Data ss:Type="Number">27800</Data>
             </Cell>
          </Row>
          <Row>
@@ -6967,7 +7357,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">26400</Data>
+               <Data ss:Type="Number">27900</Data>
             </Cell>
          </Row>
          <Row>
@@ -6993,7 +7383,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">26500</Data>
+               <Data ss:Type="Number">28000</Data>
             </Cell>
          </Row>
          <Row>
@@ -7019,7 +7409,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">26600</Data>
+               <Data ss:Type="Number">28100</Data>
             </Cell>
          </Row>
          <Row>
@@ -7045,7 +7435,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">26700</Data>
+               <Data ss:Type="Number">28200</Data>
             </Cell>
          </Row>
          <Row>
@@ -7071,18 +7461,18 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">26800</Data>
+               <Data ss:Type="Number">28300</Data>
             </Cell>
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">0..1 0..1</Data>
+               <Data ss:Type="String">0..1</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">•  •  •  •  •  cbc:StreetName</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Name of the street</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">The main address line in a postal address usually the street name and number.</Data>
@@ -7097,7 +7487,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">26900</Data>
+               <Data ss:Type="Number">28400</Data>
             </Cell>
          </Row>
          <Row>
@@ -7123,7 +7513,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">27000</Data>
+               <Data ss:Type="Number">28500</Data>
             </Cell>
          </Row>
          <Row>
@@ -7149,7 +7539,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">27100</Data>
+               <Data ss:Type="Number">28600</Data>
             </Cell>
          </Row>
          <Row>
@@ -7175,7 +7565,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">27200</Data>
+               <Data ss:Type="Number">28700</Data>
             </Cell>
          </Row>
          <Row>
@@ -7201,7 +7591,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">27300</Data>
+               <Data ss:Type="Number">28800</Data>
             </Cell>
          </Row>
          <Row>
@@ -7215,7 +7605,7 @@
                <Data ss:Type="String">Address line</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">An additional address line in an address that can be used to give further details supplementing the main line.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
@@ -7227,7 +7617,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">27400</Data>
+               <Data ss:Type="Number">28900</Data>
             </Cell>
          </Row>
          <Row>
@@ -7253,12 +7643,12 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">27500</Data>
+               <Data ss:Type="Number">29000</Data>
             </Cell>
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">1..1</Data>
+               <Data ss:Type="String">0..1</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">•  •  •  •  •  cac:Country</Data>
@@ -7267,7 +7657,7 @@
                <Data ss:Type="String">Country</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Country code.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
@@ -7279,7 +7669,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">27600</Data>
+               <Data ss:Type="Number">29100</Data>
             </Cell>
          </Row>
          <Row>
@@ -7305,7 +7695,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">27700</Data>
+               <Data ss:Type="Number">29200</Data>
             </Cell>
          </Row>
          <Row>
@@ -7331,7 +7721,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">27800</Data>
+               <Data ss:Type="Number">29300</Data>
             </Cell>
          </Row>
          <Row>
@@ -7357,7 +7747,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">27900</Data>
+               <Data ss:Type="Number">29400</Data>
             </Cell>
          </Row>
          <Row>
@@ -7383,7 +7773,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">28000</Data>
+               <Data ss:Type="Number">29500</Data>
             </Cell>
          </Row>
          <Row>
@@ -7409,7 +7799,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">28100</Data>
+               <Data ss:Type="Number">29600</Data>
             </Cell>
          </Row>
          <Row>
@@ -7435,7 +7825,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">28200</Data>
+               <Data ss:Type="Number">29700</Data>
             </Cell>
          </Row>
          <Row>
@@ -7461,7 +7851,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">28300</Data>
+               <Data ss:Type="Number">29800</Data>
             </Cell>
          </Row>
          <Row>
@@ -7487,7 +7877,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">28400</Data>
+               <Data ss:Type="Number">29900</Data>
             </Cell>
          </Row>
          <Row>
@@ -7513,7 +7903,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">28500</Data>
+               <Data ss:Type="Number">30000</Data>
             </Cell>
          </Row>
          <Row>
@@ -7539,7 +7929,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">28600</Data>
+               <Data ss:Type="Number">30100</Data>
             </Cell>
          </Row>
          <Row>
@@ -7565,7 +7955,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">28700</Data>
+               <Data ss:Type="Number">30200</Data>
             </Cell>
          </Row>
          <Row>
@@ -7591,7 +7981,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">28800</Data>
+               <Data ss:Type="Number">30300</Data>
             </Cell>
          </Row>
          <Row>
@@ -7618,7 +8008,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">28900</Data>
+               <Data ss:Type="Number">30400</Data>
             </Cell>
          </Row>
          <Row>
@@ -7644,7 +8034,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">29000</Data>
+               <Data ss:Type="Number">30500</Data>
             </Cell>
          </Row>
          <Row>
@@ -7670,7 +8060,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">29100</Data>
+               <Data ss:Type="Number">30600</Data>
             </Cell>
          </Row>
          <Row>
@@ -7696,7 +8086,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">29200</Data>
+               <Data ss:Type="Number">30700</Data>
             </Cell>
          </Row>
          <Row>
@@ -7722,7 +8112,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">29300</Data>
+               <Data ss:Type="Number">30800</Data>
             </Cell>
          </Row>
          <Row>
@@ -7748,7 +8138,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">29400</Data>
+               <Data ss:Type="Number">30900</Data>
             </Cell>
          </Row>
          <Row>
@@ -7774,7 +8164,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">29500</Data>
+               <Data ss:Type="Number">31000</Data>
             </Cell>
          </Row>
          <Row>
@@ -7800,7 +8190,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">29600</Data>
+               <Data ss:Type="Number">31100</Data>
             </Cell>
          </Row>
          <Row>
@@ -7826,7 +8216,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">29700</Data>
+               <Data ss:Type="Number">31200</Data>
             </Cell>
          </Row>
          <Row>
@@ -7852,7 +8242,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">29800</Data>
+               <Data ss:Type="Number">31300</Data>
             </Cell>
          </Row>
          <Row>
@@ -7878,7 +8268,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">29900</Data>
+               <Data ss:Type="Number">31400</Data>
             </Cell>
          </Row>
          <Row>
@@ -7904,7 +8294,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">30000</Data>
+               <Data ss:Type="Number">31500</Data>
             </Cell>
          </Row>
          <Row>
@@ -7930,7 +8320,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">30100</Data>
+               <Data ss:Type="Number">31600</Data>
             </Cell>
          </Row>
          <Row>
@@ -7956,7 +8346,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">30200</Data>
+               <Data ss:Type="Number">31700</Data>
             </Cell>
          </Row>
          <Row>
@@ -7982,7 +8372,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">30300</Data>
+               <Data ss:Type="Number">31800</Data>
             </Cell>
          </Row>
          <Row>
@@ -8008,7 +8398,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">30400</Data>
+               <Data ss:Type="Number">31900</Data>
             </Cell>
          </Row>
          <Row>
@@ -8034,7 +8424,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">30500</Data>
+               <Data ss:Type="Number">32000</Data>
             </Cell>
          </Row>
          <Row>
@@ -8060,7 +8450,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">30600</Data>
+               <Data ss:Type="Number">32100</Data>
             </Cell>
          </Row>
          <Row>
@@ -8086,7 +8476,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">30700</Data>
+               <Data ss:Type="Number">32200</Data>
             </Cell>
          </Row>
          <Row>
@@ -8112,7 +8502,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">30800</Data>
+               <Data ss:Type="Number">32300</Data>
             </Cell>
          </Row>
          <Row>
@@ -8138,7 +8528,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">30900</Data>
+               <Data ss:Type="Number">32400</Data>
             </Cell>
          </Row>
          <Row>
@@ -8164,7 +8554,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">31000</Data>
+               <Data ss:Type="Number">32500</Data>
             </Cell>
          </Row>
          <Row>
@@ -8190,7 +8580,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">31100</Data>
+               <Data ss:Type="Number">32600</Data>
             </Cell>
          </Row>
          <Row>
@@ -8216,7 +8606,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">31200</Data>
+               <Data ss:Type="Number">32700</Data>
             </Cell>
          </Row>
          <Row>
@@ -8242,7 +8632,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">31300</Data>
+               <Data ss:Type="Number">32800</Data>
             </Cell>
          </Row>
          <Row>
@@ -8268,7 +8658,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">31400</Data>
+               <Data ss:Type="Number">32900</Data>
             </Cell>
          </Row>
          <Row>
@@ -8294,7 +8684,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">31500</Data>
+               <Data ss:Type="Number">33000</Data>
             </Cell>
          </Row>
          <Row>
@@ -8320,7 +8710,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">31600</Data>
+               <Data ss:Type="Number">33100</Data>
             </Cell>
          </Row>
          <Row>
@@ -8346,7 +8736,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">31700</Data>
+               <Data ss:Type="Number">33200</Data>
             </Cell>
          </Row>
          <Row>
@@ -8360,7 +8750,7 @@
                <Data ss:Type="String">Address line</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">An additional address line in an address that can be used to give further details supplementing the main line.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
@@ -8372,7 +8762,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">31800</Data>
+               <Data ss:Type="Number">33300</Data>
             </Cell>
          </Row>
          <Row>
@@ -8398,21 +8788,21 @@
                <Data ss:Type="Number">7</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">31900</Data>
+               <Data ss:Type="Number">33400</Data>
             </Cell>
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">1..1</Data>
+               <Data ss:Type="String">0..1</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">•  •  •  •  •  •  cac:Country</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String">Country</Data>
+               <Data ss:Type="String">Country for Despatch Location. </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Country.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
@@ -8424,7 +8814,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">32000</Data>
+               <Data ss:Type="Number">33500</Data>
             </Cell>
          </Row>
          <Row>
@@ -8450,7 +8840,7 @@
                <Data ss:Type="Number">7</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">32100</Data>
+               <Data ss:Type="Number">33600</Data>
             </Cell>
          </Row>
          <Row>
@@ -8476,7 +8866,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">32200</Data>
+               <Data ss:Type="Number">33700</Data>
             </Cell>
          </Row>
          <Row>
@@ -8502,7 +8892,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">32300</Data>
+               <Data ss:Type="Number">33800</Data>
             </Cell>
          </Row>
          <Row>
@@ -8528,7 +8918,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">32400</Data>
+               <Data ss:Type="Number">33900</Data>
             </Cell>
          </Row>
          <Row>
@@ -8554,7 +8944,7 @@
                <Data ss:Type="Number">7</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">32500</Data>
+               <Data ss:Type="Number">34000</Data>
             </Cell>
          </Row>
          <Row>
@@ -8580,7 +8970,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">32600</Data>
+               <Data ss:Type="Number">34100</Data>
             </Cell>
          </Row>
          <Row>
@@ -8606,7 +8996,7 @@
                <Data ss:Type="Number">7</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">32700</Data>
+               <Data ss:Type="Number">34200</Data>
             </Cell>
          </Row>
          <Row>
@@ -8632,7 +9022,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">32800</Data>
+               <Data ss:Type="Number">34300</Data>
             </Cell>
          </Row>
          <Row>
@@ -8658,7 +9048,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">32900</Data>
+               <Data ss:Type="Number">34400</Data>
             </Cell>
          </Row>
          <Row>
@@ -8684,7 +9074,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">33000</Data>
+               <Data ss:Type="Number">34500</Data>
             </Cell>
          </Row>
          <Row>
@@ -8710,7 +9100,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">33100</Data>
+               <Data ss:Type="Number">34600</Data>
             </Cell>
          </Row>
          <Row>
@@ -8736,7 +9126,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">33200</Data>
+               <Data ss:Type="Number">34700</Data>
             </Cell>
          </Row>
          <Row>
@@ -8762,7 +9152,7 @@
                <Data ss:Type="Number">7</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">33300</Data>
+               <Data ss:Type="Number">34800</Data>
             </Cell>
          </Row>
          <Row>
@@ -8788,7 +9178,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">33400</Data>
+               <Data ss:Type="Number">34900</Data>
             </Cell>
          </Row>
          <Row>
@@ -8814,7 +9204,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">33500</Data>
+               <Data ss:Type="Number">35000</Data>
             </Cell>
          </Row>
          <Row>
@@ -8840,7 +9230,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">33600</Data>
+               <Data ss:Type="Number">35100</Data>
             </Cell>
          </Row>
          <Row>
@@ -8866,7 +9256,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">33700</Data>
+               <Data ss:Type="Number">35200</Data>
             </Cell>
          </Row>
          <Row>
@@ -8892,7 +9282,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">33800</Data>
+               <Data ss:Type="Number">35300</Data>
             </Cell>
          </Row>
          <Row>
@@ -8918,7 +9308,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">33900</Data>
+               <Data ss:Type="Number">35400</Data>
             </Cell>
          </Row>
          <Row>
@@ -8944,7 +9334,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">34000</Data>
+               <Data ss:Type="Number">35500</Data>
             </Cell>
          </Row>
          <Row>
@@ -8970,7 +9360,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">34100</Data>
+               <Data ss:Type="Number">35600</Data>
             </Cell>
          </Row>
          <Row>
@@ -8996,7 +9386,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">34200</Data>
+               <Data ss:Type="Number">35700</Data>
             </Cell>
          </Row>
          <Row>
@@ -9022,7 +9412,7 @@
                <Data ss:Type="Number">7</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">34300</Data>
+               <Data ss:Type="Number">35800</Data>
             </Cell>
          </Row>
          <Row>
@@ -9048,7 +9438,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">34400</Data>
+               <Data ss:Type="Number">35900</Data>
             </Cell>
          </Row>
          <Row>
@@ -9074,7 +9464,7 @@
                <Data ss:Type="Number">7</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">34500</Data>
+               <Data ss:Type="Number">36000</Data>
             </Cell>
          </Row>
          <Row>
@@ -9100,7 +9490,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">34600</Data>
+               <Data ss:Type="Number">36100</Data>
             </Cell>
          </Row>
          <Row>
@@ -9126,7 +9516,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">34700</Data>
+               <Data ss:Type="Number">36200</Data>
             </Cell>
          </Row>
          <Row>
@@ -9152,7 +9542,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">34800</Data>
+               <Data ss:Type="Number">36300</Data>
             </Cell>
          </Row>
          <Row>
@@ -9178,7 +9568,7 @@
                <Data ss:Type="Number">6</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">34900</Data>
+               <Data ss:Type="Number">36400</Data>
             </Cell>
          </Row>
          <Row>
@@ -9204,7 +9594,7 @@
                <Data ss:Type="Number">1</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">35000</Data>
+               <Data ss:Type="Number">36500</Data>
             </Cell>
          </Row>
          <Row>
@@ -9230,7 +9620,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">35100</Data>
+               <Data ss:Type="Number">36600</Data>
             </Cell>
          </Row>
          <Row>
@@ -9256,7 +9646,7 @@
                <Data ss:Type="Number">1</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">35200</Data>
+               <Data ss:Type="Number">36700</Data>
             </Cell>
          </Row>
          <Row>
@@ -9282,7 +9672,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">35300</Data>
+               <Data ss:Type="Number">36800</Data>
             </Cell>
          </Row>
          <Row>
@@ -9308,7 +9698,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">35400</Data>
+               <Data ss:Type="Number">36900</Data>
             </Cell>
          </Row>
          <Row>
@@ -9334,7 +9724,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">35500</Data>
+               <Data ss:Type="Number">37000</Data>
             </Cell>
          </Row>
          <Row>
@@ -9360,7 +9750,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">35600</Data>
+               <Data ss:Type="Number">37100</Data>
             </Cell>
          </Row>
          <Row>
@@ -9386,7 +9776,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">35700</Data>
+               <Data ss:Type="Number">37200</Data>
             </Cell>
          </Row>
          <Row>
@@ -9412,7 +9802,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">35800</Data>
+               <Data ss:Type="Number">37300</Data>
             </Cell>
          </Row>
          <Row>
@@ -9438,7 +9828,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">35900</Data>
+               <Data ss:Type="Number">37400</Data>
             </Cell>
          </Row>
          <Row>
@@ -9464,7 +9854,7 @@
                <Data ss:Type="Number">1</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">36000</Data>
+               <Data ss:Type="Number">37500</Data>
             </Cell>
          </Row>
          <Row>
@@ -9490,7 +9880,59 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">36100</Data>
+               <Data ss:Type="Number">37600</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  cbc:DocumentTypeCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Document type code</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">The type of reference. Must me part of UNCL1001. At least one of Document Type Code and Document Type must be used.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">380</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:DocumentReference/cbc:DocumentTypeCode</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">2</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">37700</Data>
+            </Cell>
+         </Row>
+         <Row>
+            <Cell>
+               <Data ss:Type="String">0..1</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">•  •  cbc:DocumentType</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">Document type</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">The type of reference that cannot be specified by a code. At least one of Document Type Code and Document Type must be used.</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">FreightPayersCustomerNumber</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="String">/ubl:WasteMovement/cac:DocumentReference/cbc:DocumentType</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">2</Data>
+            </Cell>
+            <Cell>
+               <Data ss:Type="Number">37800</Data>
             </Cell>
          </Row>
          <Row>
@@ -9516,7 +9958,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">36200</Data>
+               <Data ss:Type="Number">37900</Data>
             </Cell>
          </Row>
          <Row>
@@ -9542,7 +9984,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">36300</Data>
+               <Data ss:Type="Number">38000</Data>
             </Cell>
          </Row>
          <Row>
@@ -9568,7 +10010,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">36400</Data>
+               <Data ss:Type="Number">38100</Data>
             </Cell>
          </Row>
          <Row>
@@ -9594,7 +10036,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">36500</Data>
+               <Data ss:Type="Number">38200</Data>
             </Cell>
          </Row>
          <Row>
@@ -9620,7 +10062,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">36600</Data>
+               <Data ss:Type="Number">38300</Data>
             </Cell>
          </Row>
          <Row>
@@ -9646,7 +10088,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">36700</Data>
+               <Data ss:Type="Number">38400</Data>
             </Cell>
          </Row>
          <Row>
@@ -9672,7 +10114,7 @@
                <Data ss:Type="Number">1</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">36800</Data>
+               <Data ss:Type="Number">38500</Data>
             </Cell>
          </Row>
          <Row>
@@ -9698,7 +10140,7 @@
                <Data ss:Type="Number">2</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">36900</Data>
+               <Data ss:Type="Number">38600</Data>
             </Cell>
          </Row>
          <Row>
@@ -9724,7 +10166,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">37000</Data>
+               <Data ss:Type="Number">38700</Data>
             </Cell>
          </Row>
          <Row>
@@ -9750,7 +10192,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">37100</Data>
+               <Data ss:Type="Number">38800</Data>
             </Cell>
          </Row>
          <Row>
@@ -9776,7 +10218,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">37200</Data>
+               <Data ss:Type="Number">38900</Data>
             </Cell>
          </Row>
          <Row>
@@ -9802,7 +10244,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">37300</Data>
+               <Data ss:Type="Number">39000</Data>
             </Cell>
          </Row>
          <Row>
@@ -9828,7 +10270,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">37400</Data>
+               <Data ss:Type="Number">39100</Data>
             </Cell>
          </Row>
          <Row>
@@ -9854,7 +10296,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">37500</Data>
+               <Data ss:Type="Number">39200</Data>
             </Cell>
          </Row>
          <Row>
@@ -9880,7 +10322,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">37600</Data>
+               <Data ss:Type="Number">39300</Data>
             </Cell>
          </Row>
          <Row>
@@ -9906,7 +10348,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">37700</Data>
+               <Data ss:Type="Number">39400</Data>
             </Cell>
          </Row>
          <Row>
@@ -9932,7 +10374,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">37800</Data>
+               <Data ss:Type="Number">39500</Data>
             </Cell>
          </Row>
          <Row>
@@ -9958,7 +10400,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">37900</Data>
+               <Data ss:Type="Number">39600</Data>
             </Cell>
          </Row>
          <Row>
@@ -9984,7 +10426,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">38000</Data>
+               <Data ss:Type="Number">39700</Data>
             </Cell>
          </Row>
          <Row>
@@ -10010,7 +10452,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">38100</Data>
+               <Data ss:Type="Number">39800</Data>
             </Cell>
          </Row>
          <Row>
@@ -10036,7 +10478,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">38200</Data>
+               <Data ss:Type="Number">39900</Data>
             </Cell>
          </Row>
          <Row>
@@ -10050,7 +10492,7 @@
                <Data ss:Type="String">Address line </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">An additional address line in an address that can be used to give further details supplementing the main line.</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
@@ -10062,7 +10504,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">38300</Data>
+               <Data ss:Type="Number">40000</Data>
             </Cell>
          </Row>
          <Row>
@@ -10088,12 +10530,12 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">38400</Data>
+               <Data ss:Type="Number">40100</Data>
             </Cell>
          </Row>
          <Row>
             <Cell>
-               <Data ss:Type="String">1..1</Data>
+               <Data ss:Type="String">0..1</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String">•  •  •  •  cac:Country</Data>
@@ -10102,7 +10544,7 @@
                <Data ss:Type="String">Country </Data>
             </Cell>
             <Cell>
-               <Data ss:Type="String"/>
+               <Data ss:Type="String">Country for Distribution party. .</Data>
             </Cell>
             <Cell>
                <Data ss:Type="String"/>
@@ -10114,7 +10556,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">38500</Data>
+               <Data ss:Type="Number">40200</Data>
             </Cell>
          </Row>
          <Row>
@@ -10140,7 +10582,7 @@
                <Data ss:Type="Number">5</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">38600</Data>
+               <Data ss:Type="Number">40300</Data>
             </Cell>
          </Row>
          <Row>
@@ -10166,7 +10608,7 @@
                <Data ss:Type="Number">3</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">38700</Data>
+               <Data ss:Type="Number">40400</Data>
             </Cell>
          </Row>
          <Row>
@@ -10192,7 +10634,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">38800</Data>
+               <Data ss:Type="Number">40500</Data>
             </Cell>
          </Row>
          <Row>
@@ -10218,7 +10660,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">38900</Data>
+               <Data ss:Type="Number">40600</Data>
             </Cell>
          </Row>
          <Row>
@@ -10244,7 +10686,7 @@
                <Data ss:Type="Number">4</Data>
             </Cell>
             <Cell>
-               <Data ss:Type="Number">39000</Data>
+               <Data ss:Type="Number">40700</Data>
             </Cell>
          </Row>
       </Table>
