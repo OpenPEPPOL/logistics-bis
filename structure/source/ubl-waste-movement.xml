@@ -627,7 +627,6 @@
 				<?Cardinality 1..1?>
 				<?Description This identity identifies the company that will receive the waste for Recovery. ?>
 				<?schemeID-CodeList ICD?>
-				<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 
@@ -1039,34 +1038,113 @@
 				</cac:StandardItemIdentification>
 
 				<cac:CommodityClassification>
+					<?Name Commodity classification?>
+					<?Description To classify when an item number is not sufficient.?>
+					<?Cardinality 0..n?>
 					<cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">KO2012140200
-						<?listID-DescriptionAddFirst For Item Classification Codes that are found in UNCL7143, select the correct code and leave listVersionID and name empty. For construction specific list that are not a part of UNCL7143 yet ListID must always be "ZZZ" and listVersionID "BEAST:4.0", i.e. mutually agreed. ?>
-						<?name-DescriptionAddFirst If construction specific lists are used, name specifies which of them is used. Possible names are: "SBMI", "SA", "AI", “ME” and "CoClass”. "SBMI" = Sveriges Bergmaterialindustrier, "SA" = Sveriges Åkeriföretag, "AI" = Återvinningsindustrierna, “ME” = Maskinentreprenörerna. ?>
-						<?DescriptionAddFirst Used to classify the material when the item number is not sufficient (T6466), to inform about the source of classification standard (T6467) and to provide standard branch codes for the items. The Reference to Article Class (T6466) is the ItemClassificationCode, listID = "ZZZ", listVersionID = BEAST:4.0" and name is Source to Classification (T6467). ?>
+						<?Name Item classification code?>
+						<?listID-CodeList UNCL7143?>
+						<?listID-usage Mandatory?>
+						<?listID-Description The identification scheme identifier of the Item classification identifier.?>
+						<?name-Description The name of the Identification scheme identifier when @listID = ZZZ. Must be provided 
+						when @listID = ZZZ.?>
+						<?Cardinality 1..1?>
 					</cbc:ItemClassificationCode>
 				</cac:CommodityClassification>
 
 				<cac:HazardousItem>
-					<?Description Information pertaining to this item as a hazardous item. ?>
-					<?Name Hazardous Item. ?>
-					<?Cardinality 0..n?>
-					<cbc:UNDGCode>ADR
+					<?Description Contains information on the Hazardous item. ?>
+					<cbc:ID>123
+						<?Name Identifier?>
+						<?Description An identifier for this hazardous item. ?>
+						<?Cardinality 0..1?>
+					</cbc:ID>
+					<cbc:AdditionalInformation>Information about the hazardous item
+						<?Name Additional Information?>
+						<?Description Text providing further information about the hazardous substance. ?>
+						<?Cardinality 0..1?>
+					</cbc:AdditionalInformation>
+					<cbc:UNDGCode>ADR 
+						<?CodeList UNCL8273?>
+						<?Name UN Code?>
 						<?Description The UN code for this kind of hazardous item. ?>
-						<?Name UNDG Code. ?>
 						<?Cardinality 0..1?>
 					</cbc:UNDGCode>
+					<cbc:TechnicalName>Corrosive liquid, n.o.s., 8, UN 1760, II (contains Octanoyl chloride)
+						<?Name Technical Name?>
+						<?Description The full technical name of a specific hazardous substance contained in this goods item. ?>
+						<?Cardinality 0..1?>
+					</cbc:TechnicalName>
+					<cbc:CategoryName>Acute toxicity
+						<?Name Category Name?>
+						<?Description The name of the category of hazard that applies to the Item. ?>
+						<?Cardinality 0..1?>
+					</cbc:CategoryName>
+					<cbc:HazardousCategoryCode>123
+						<?Name Hazardous Category Code?>
+						<?Description A code signifying a kind of hazard for a material. ?>
+						<?Cardinality 0..1?>
+					</cbc:HazardousCategoryCode>
 					<cbc:HazardClassID>Code
-						<?Description An identifier for the hazard class applicable to this hazardous item as defined by the relevant ?>
-						<?Name Hazard Class ID. ?>
+						<?Name Hazard Class ID?>
+						<?Description An identifier for the hazard class applicable to this hazardous item as defined by the 
+						relevant regulation authority (e.g., the IMDG Class Number of the SOLAS Convention of IMO and the 
+						ADR/RID Class Number for the road/rail environment). ?>
 						<?Cardinality 0..1?>
 					</cbc:HazardClassID>
+					<cbc:NetWeightMeasure unitCode="KGM">123
+						<?Name Net Weight Measure ?>
+						<?Description Net weight of the Hazardous item. ?>
+						<?Cardinality 0..1?>
+						<?unitCode-CodeList UNECERec20?>
+						<?unitCode-Name Measure unit of measure?>
+						<?unitCode-Description The unit of measure that applies to the Net Weight.?>
+						<?unitCode-usage Mandatory?>
+					</cbc:NetWeightMeasure>
+					<cbc:NetVolumeMeasure unitCode="MTQ">12.3
+						<?Name Net Volume Measure ?>
+						<?Description Net volume of the Hazardous item. ?>
+						<?Cardinality 0..1?>
+						<?unitCode-CodeList UNECERec20?>
+						<?unitCode-Name Measure unit of measure?>
+						<?unitCode-Description The unit of measure that applies to the Net Volume.?>
+						<?unitCode-usage Mandatory?>
+					</cbc:NetVolumeMeasure>
+					<cac:HazardousGoodsTransit>
+						<?Name Hazardous Goods Transit ?>
+						<?Description Information related to the transit of this kind of hazardous goods. ?>
+						<?Cardinality 0..n?>
+						<cbc:PackingCriteriaCode>123
+							<?Name Packing Criteria Code ?>
+							<?Description A code signifying the packaging requirement for transportation of the hazardous goods as assigned by IATA, IMDB, ADR, RID etc. ?>
+							<?Cardinality 1..1?>
+						</cbc:PackingCriteriaCode>
+					</cac:HazardousGoodsTransit>
+					<cac:EmergencyTemperature>
+						<?Name Emergency Temperature ?>
+						<?Description The threshold temperature at which emergency procedures apply in the handling of temperature-controlled goods. ?>
+						<?Cardinality 0..1?>
+						<cbc:AttributeID>ABC
+							<?Name Attribute ID ?>
+							<?Description An identifier for this temperature measurement. ?>
+							<?Cardinality 1..1?>
+						</cbc:AttributeID>
+						<cbc:Measure unitCode="CEL">78
+							<?Name Measure ?>
+							<?Description The value of this temperature measurement. ?>
+							<?Cardinality 1..1?>
+							<?unitCode-CodeList UNECERec20?>
+							<?unitCode-Name Measure unit of measure?>
+							<?unitCode-Description The unit of measure that applies to the Emergency Temperature.?>
+							<?unitCode-usage Mandatory?>
+						</cbc:Measure>
+					</cac:EmergencyTemperature>
 				</cac:HazardousItem>
 
 				<cac:AdditionalItemProperty>
 					<?Name Additional Item Property?>
 					<?Cardinality 0..n?>
 					<?Description An additional property of this item. ?>
-
 					<cbc:ID schemeDataURI="https://define.cobuilder.no/77e416eb-a363-4258-a04e-171d843a6460/2022/" 
 							schemeID="ISO22057" schemeVersionID="2022">77e416eb-a363-4258-a04e-171d843a6460
 						<?Description ID of the property if assigned by an Agency?>
@@ -1078,15 +1156,35 @@
 						<?schemeVersionID-Name Scheme version identifier?>
 						<?schemeVersionID-usage Optional?>
 					</cbc:ID>
-					<cbc:Name>Rigidity</cbc:Name>
+					<cbc:Name>Rigidity
+						<?Name Name ?>
+						<?Description The Name of the Item Property. ?>
+						<?Cardinality 1..1?>
+					</cbc:Name>
 					<cbc:NameCode listID="IPNC">EPDNumber
+						<?Name Item Property code ?>
+						<?Description Code for the item property according to a property code system. ?>
+						<?Cardinality 0..1?>
 						<?listID-usage Mandatory?>
 						<?listID-Name Name code list id.?>
 						<?listID-Description An identifier for the code list used for the Name code, this is bilaterally agreed?>
 					</cbc:NameCode>
-					<cbc:Value>NEPD-1717-700-SE</cbc:Value>
-					<cbc:ValueQuantity unitCode="EA">15.00</cbc:ValueQuantity>
-					<cbc:ValueQualifier>descr</cbc:ValueQualifier>
+					<cbc:Value>NEPD-1717-700-SE
+						<?Name Value ?>
+						<?Description The Value of the Item Property. ?>
+						<?Cardinality 1..1?>
+					</cbc:Value>
+					<cbc:ValueQuantity unitCode="EA">15.00
+						<?Name Item property unit of measure ?>
+						<?Description The unit of measure in which the property value is stated, if relevant. May not be relevant 
+						when properties are descriptive. ?>
+						<?Cardinality 0..1?>
+					</cbc:ValueQuantity>
+					<cbc:ValueQualifier>Climate Data
+						<?Name Property classification ?>
+						<?Description Standardized and predefined classification of items properties. ?>
+						<?Cardinality 0..1?>
+					</cbc:ValueQualifier>
 				</cac:AdditionalItemProperty>
 			</cac:Item>
 		</cac:GoodsItem>
@@ -1107,7 +1205,6 @@
 				<?Name Carrier Party?>
 				<?Cardinality 1..1?>
 				<?Description The party executing the transport in the Shipment Stage?>
-				
 				<cbc:EndpointID schemeID="0088">5790000435951
 					<?Name Carrier's electronic address?>
 					<?Cardinality 1..1?>
@@ -1186,18 +1283,22 @@
 					
 					<cac:AddressLine>
 						<?Name Address line?>
+						<?Description An additional address line in an address that can be used to give further details 
+						supplementing the main line.?>
 						<?Cardinality 0..1?>
 
 						<cbc:Line>3rd Floor, Room 5
 							<?Name Address line 3?>
-							<?Description An additional address line in an address that can be used to give further details supplementing the main line.?>
+							<?Description An additional address line in an address that can be used to give further details 
+							supplementing the main line.?>
 							<?Cardinality 1..1?>
 						</cbc:Line>
 					</cac:AddressLine>
 					
 					<cac:Country>
+						<?Description Country code. ?>
 						<?Name Country?>
-
+						<?Cardinality 0..1?>
 						<cbc:IdentificationCode>GB
 							<?Name Country code?>
 							<?Description A code that identifies the country. The lists of valid countries are registered 
@@ -1343,7 +1444,7 @@
 					<?Cardinality 0..1?>
 
 					<cbc:StreetName>Avon Way
-						<?Cardinality 0..1?>
+						<?Name Name of the street?>
 						<?Description The main address line in a postal address usually the street name and number.?>
 						<?Cardinality 0..1?>
 					</cbc:StreetName>
@@ -1377,6 +1478,8 @@
 					
 					<cac:AddressLine>
 						<?Name Address line?>
+						<?Description An additional address line in an address that can be used to give further details 
+							supplementing the main line.?>
 						<?Cardinality 0..1?>
 
 						<cbc:Line>3rd Floor, Room 5
@@ -1388,9 +1491,9 @@
 					</cac:AddressLine>
 					
 					<cac:Country>
+						<?Description Country code. ?>
 						<?Name Country?>
-						<?Cardinality 1..1?>
-
+						<?Cardinality 0..1?>
 						<cbc:IdentificationCode>GB
 							<?Name Country code?>
 							<?Cardinality 1..1?>
@@ -1614,6 +1717,8 @@
 						
 						<cac:AddressLine>
 							<?Name Address line?>
+							<?Description An additional address line in an address that can be used to give further details 
+								supplementing the main line.?>
 							<?Cardinality 0..1?>
 
 							<cbc:Line>The Roundabout
@@ -1625,8 +1730,9 @@
 						</cac:AddressLine>
 						
 						<cac:Country>
-							<?Name Country?>
-							<?Cardinality 1..1?>
+							<?Name Country for Despatch Location. ?>
+							<?Cardinality 0..1?>
+							<?Description Country. ?>
 
 							<cbc:IdentificationCode>GB
 								<?Name Country code?>
@@ -1843,6 +1949,21 @@
 			<?Cardinality 1..1?>
 			<?Description The reference number of the document?>
 		</cbc:ID>
+		
+		<cbc:DocumentTypeCode>380
+			<?Name Document type code?>
+			<?Description The type of reference. Must me part of UNCL1001. At least one of Document Type Code and Document Type 
+			must be used. ?>
+			<?Cardinality 0..1?>
+			<?CodeList UNCL1001?>
+		</cbc:DocumentTypeCode>
+		
+		<cbc:DocumentType>FreightPayersCustomerNumber
+			<?Name Document type?>
+			<?Description The type of reference that cannot be specified by a code. At least one of Document Type Code and 
+			Document Type must be used. ?>
+			<?Cardinality 0..1?>
+		</cbc:DocumentType>
 
 		<cac:Attachment>
 			<?Name Attachment?>
@@ -1909,6 +2030,7 @@
 				<cbc:Name>Transportören AB
 					<?Name Document Distribution party name?>
 					<?Description The name of the party. ?>
+					<?Cardinality 1..1?>
 				</cbc:Name>
 			</cac:PartyName>
 
@@ -1952,6 +2074,8 @@
 				
 				<cac:AddressLine>
 					<?Name Address line ?>
+					<?Description An additional address line in an address that can be used to give further details 
+						supplementing the main line. ?>
 					<?Cardinality 0..1?>
 					
 					<cbc:Line>Gate 34
@@ -1964,7 +2088,9 @@
 				
 				<cac:Country>
 					<?Name Country ?>
-					
+					<?Cardinality 0..1?>
+					<?Description Country for Distribution party. . ?>
+
 					<cbc:IdentificationCode>FI
 						<?Name Country code ?>
 						<?Cardinality 1..1?>
