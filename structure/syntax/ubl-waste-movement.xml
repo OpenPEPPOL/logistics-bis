@@ -131,11 +131,11 @@
                   <Value type="EXAMPLE">7300010000001</Value>
                </Element>
             </Element>
-            <Element cardinality="1..1">
+            <Element cardinality="0..1">
                <Term>cac:PartyName</Term>
                <Name>Party name</Name>
                <Description>The name of the party that is signing. </Description>
-               <Element cardinality="0..1">
+               <Element cardinality="1..1">
                   <Term>cbc:Name</Term>
                   <Name>Party Name </Name>
                   <Description>The name of the party that is signing. </Description>
@@ -176,7 +176,7 @@
             <Term>cac:DigitalSignatureAttachment</Term>
             <Name>Digital Signature Attachment </Name>
             <Description>To include the actual signature. </Description>
-            <Element>
+            <Element cardinality="0..1">
                <Term>cbc:EmbeddedDocumentBinaryObject</Term>
                <Name>Embedded Binary object. </Name>
                <Description>The referenced document (signature) can here be inserted as a binary object. filename is the name 
@@ -196,7 +196,7 @@
                <Term>cac:ExternalReference</Term>
                <Name>External reference </Name>
                <Description>Link to the signature that is available externally. </Description>
-               <Element cardinality="0..1">
+               <Element cardinality="1..1">
                   <Term>cbc:URI</Term>
                   <Name>URI </Name>
                   <Description>Link to the signature that is available externally. </Description>
@@ -289,7 +289,7 @@
                <Term>cac:AddressLine</Term>
                <Name>Address line</Name>
                <Description>One more address line that can be used to provide the full address. </Description>
-               <Element cardinality="0..1">
+               <Element cardinality="1..1">
                   <Term>cbc:Line</Term>
                   <Name>Address line 3. </Name>
                   <Description>An additional address line in an address that can be used to give further details 
@@ -420,7 +420,7 @@
                <Term>cac:AddressLine</Term>
                <Name>Address line </Name>
                <Description>One more address line that can be used to provide the full address. </Description>
-               <Element cardinality="0..1">
+               <Element cardinality="1..1">
                   <Term>cbc:Line</Term>
                   <Name>Address line 3 </Name>
                   <Description>Used for any other additional address information. </Description>
@@ -550,7 +550,7 @@
                <Term>cac:AddressLine</Term>
                <Name>Address line</Name>
                <Description>One more address line that can be used to provide the full address. </Description>
-               <Element cardinality="0..1">
+               <Element cardinality="1..1">
                   <Term>cbc:Line</Term>
                   <Name>Address line 3. </Name>
                   <Description>An additional address line in an address that can be used to give further details 
@@ -682,7 +682,7 @@
                <Term>cac:AddressLine</Term>
                <Name>Address line</Name>
                <Description>One more address line that can be used to provide the full address. </Description>
-               <Element cardinality="0..1">
+               <Element cardinality="1..1">
                   <Term>cbc:Line</Term>
                   <Name>Address line 3. </Name>
                   <Description>An additional address line in an address that can be used to give further details 
@@ -814,7 +814,7 @@
                <Term>cac:AddressLine</Term>
                <Name>Address line</Name>
                <Description>One more address line that can be used to provide the full address. </Description>
-               <Element cardinality="0..1">
+               <Element cardinality="1..1">
                   <Term>cbc:Line</Term>
                   <Name>Address line 3. </Name>
                   <Description>An additional address line in an address that can be used to give further details 
@@ -945,7 +945,7 @@
                <Term>cac:AddressLine</Term>
                <Name>Address line</Name>
                <Description>One more address line that can be used to provide the full address. </Description>
-               <Element cardinality="0..1">
+               <Element cardinality="1..1">
                   <Term>cbc:Line</Term>
                   <Name>Address line 3. </Name>
                   <Description>An additional address line in an address that can be used to give further details 
@@ -1040,7 +1040,7 @@
             <Element cardinality="0..1">
                <Term>cbc:HandlingCode</Term>
                <Name>Handling Code </Name>
-               <Description>The handling required for this consignment, expressed as a code. </Description>
+               <Description>The Disposal/Recovery action code - D-code/R-code. </Description>
                <Value type="EXAMPLE">D123</Value>
             </Element>
             <Element cardinality="0..n">
@@ -1151,11 +1151,11 @@
                </Element>
             </Element>
          </Element>
-         <Element cardinality="0..n">
+         <Element cardinality="1..n">
             <Term>cac:GoodsItem</Term>
             <Name>Goods Item. </Name>
             <Description>A goods item included in this shipment. </Description>
-            <Element cardinality="0..1">
+            <Element cardinality="1..1">
                <Term>cbc:ID</Term>
                <Name>Line number identity </Name>
                <Description>Line Number. </Description>
@@ -1163,8 +1163,8 @@
             </Element>
             <Element cardinality="0..1">
                <Term>cbc:Quantity</Term>
-               <Name>Delivered quantity </Name>
-               <Description>The quantity delivered. </Description>
+               <Name>Waste quantity </Name>
+               <Description>The waste quantity. </Description>
                <Attribute usage="Mandatory">
                   <Term>unitCode</Term>
                   <Reference type="CODE_LIST">UNECERec20</Reference>
@@ -1192,7 +1192,7 @@
                   <Term>cac:BuyersItemIdentification</Term>
                   <Name>Buyer's item identification </Name>
                   <Description>Buyer's item identification. </Description>
-                  <Element cardinality="0..1">
+                  <Element cardinality="1..1">
                      <Term>cbc:ID</Term>
                      <Name>Buyers item identification </Name>
                      <Description>An identifier, assigned by the buyer, for the item. Associates the item with its identification according to the buyer's system. </Description>
@@ -1203,7 +1203,7 @@
                   <Term>cac:SellersItemIdentification</Term>
                   <Name>Seller's item identification </Name>
                   <Description>Seller's item identification. </Description>
-                  <Element cardinality="0..1">
+                  <Element cardinality="1..1">
                      <Term>cbc:ID</Term>
                      <Name>Seller's item identification </Name>
                      <Description>An identifier, assigned by the seller, for the item. Associates the item with its identification according to the seller's system. </Description>
@@ -1214,7 +1214,7 @@
                   <Term>cac:StandardItemIdentification</Term>
                   <Name>Standard item identification </Name>
                   <Description>Standard item identification. Only one Standard Item Number can be used per line. </Description>
-                  <Element cardinality="0..1">
+                  <Element cardinality="1..1">
                      <Term>cbc:ID</Term>
                      <Name>Standard item identification </Name>
                      <Description>An item identifier based on a registered scheme. Associates the item with its identification according to a standard system. </Description>
@@ -1239,11 +1239,11 @@
                         <Reference type="CODE_LIST">UNCL7143</Reference>
                         <Value type="EXAMPLE">ZZZ</Value>
                      </Attribute>
-                     <Attribute>
+                     <Attribute usage="Optional">
                         <Term>listVersionID</Term>
                         <Value type="EXAMPLE">3.0.2</Value>
                      </Attribute>
-                     <Attribute>
+                     <Attribute usage="Optional">
                         <Term>name</Term>
                         <Description>The name of the Identification scheme identifier when @listID = ZZZ. Must be provided 
 						when @listID = ZZZ.</Description>
@@ -1252,8 +1252,9 @@
                      <Value type="EXAMPLE">KO2012140200</Value>
                   </Element>
                </Element>
-               <Element>
+               <Element cardinality="0..n">
                   <Term>cac:HazardousItem</Term>
+                  <Name>Hazardous Item</Name>
                   <Description>Contains information on the Hazardous item. </Description>
                   <Element cardinality="0..1">
                      <Term>cbc:ID</Term>
