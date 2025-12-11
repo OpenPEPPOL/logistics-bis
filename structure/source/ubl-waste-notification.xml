@@ -71,7 +71,7 @@
 		<cac:SignatoryParty>
 			<?Name Signatory Party ?>
 			<?Description Describes the party that is signing. ?>
-			<?Cardinality 0..1?>
+			<?Cardinality 1..1?>
 			<cac:PartyIdentification>
 				<?Name Party identification?>
 				<?Description Identifies the party that is signing. ?>
@@ -85,13 +85,14 @@
 			<cac:PartyName>
 				<?Name Party name?>
 				<?Description The name of the party that is signing. ?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:Name>Name of signing party.
 					<?Name Party Name ?>
 					<?Description The name of the party that is signing. ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:Name>
 			</cac:PartyName>
+			
 			<cac:Contact>
 				<?Name Signature Person ?>
 				<?Description Defines the person that is signing.  ?>
@@ -122,13 +123,14 @@
 		<cac:DigitalSignatureAttachment>
 			<?Name Digital Signature Attachment ?>
 			<?Description To include the actual signature. ?>
-			<?Cardinality 0..1?>
+			<?Cardinality 1..1?>
 			<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Signature_112233.pdf">
 				aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9wZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==
 				<?Name Embedded Binary object. ?>
 				<?mimeCode-CodeList MimeCode?>
 				<?Description The referenced document (signature) can here be inserted as a binary object. filename is the name 
 				of the attachment when stored as a document. ?>
+				<?Cardinality 0..1?>
 			</cbc:EmbeddedDocumentBinaryObject>
 			<cac:ExternalReference>
 				<?Name External reference ?>
@@ -137,7 +139,7 @@
 				<cbc:URI>www.beast.se
 					<?Name URI ?>
 					<?Description Link to the signature that is available externally. ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:URI>
 			</cac:ExternalReference>
 		</cac:DigitalSignatureAttachment>
@@ -163,7 +165,6 @@
 				<?Cardinality 1..1?>
 				<?Description This identity identifies the company that signs and sends the Waste Notification Document. ?>
 				<?schemeID-CodeList ICD?>
-				<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 			
@@ -218,13 +219,13 @@
 					<?Description An additional address line in an address that can be used to give further details 
 					supplementing the main line. ?>
 					<?Name Address line 3. ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:Line>
 			</cac:AddressLine>
 			<cac:Country>
 				<?Description Country code. ?>
 				<?Name Country?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:IdentificationCode>GB
 					<?Description A code that identifies the country.The lists of valid countries are registered with the 
 					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
@@ -332,7 +333,7 @@
 				<cbc:Line>3rd Floor, Room 5
 					<?Description Used for any other additional address information. ?>
 					<?Name Address line 3 ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:Line>
 			</cac:AddressLine>
 			<cac:Country>
@@ -376,13 +377,6 @@
 		<?Description This party defines the company that responsible for the Waste Notification. ?>
 		<?Name The Notifier Party?>
 		<?Cardinality 1..1?>
-		<cbc:EndpointID schemeID="0088">7300010000001
-			<?schemeID-usage Mandatory?>
-			<?schemeID-CodeList eas?>
-			<?Description The digital address of this party. ?>
-			<?Name Endpoint ID?>
-			<?Cardinality 1..1?>
-		</cbc:EndpointID>
 		<cac:PartyIdentification>
 			<?Description This identity defines the company that is responsible for the Waste Notification. ?>
 			<?Name Party Identification?>
@@ -392,7 +386,6 @@
 				<?Cardinality 1..1?>
 				<?Description This identity identifies the company that is responsible for the Waste Notification. ?>
 				<?schemeID-CodeList ICD?>
-				<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 
@@ -447,13 +440,13 @@
 					<?Description An additional address line in an address that can be used to give further details 
 					supplementing the main line. ?>
 					<?Name Address line 3. ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:Line>
 			</cac:AddressLine>
 			<cac:Country>
 				<?Description Country code. ?>
 				<?Name Country?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:IdentificationCode>GB
 					<?Description A code that identifies the country.The lists of valid countries are registered with the 
 					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
@@ -491,13 +484,6 @@
 		<?Description This party defines the Authority in each country involved that must give a consent to the waste movement. ?>
 		<?Name The Customs Party?>
 		<?Cardinality 1..n?>
-		<cbc:EndpointID schemeID="0088">7300010000001
-			<?schemeID-usage Mandatory?>
-			<?schemeID-CodeList eas?>
-			<?Description The digital address of this party. ?>
-			<?Name Endpoint ID?>
-			<?Cardinality 0..1?>
-		</cbc:EndpointID>
 		<cac:PartyIdentification>
 			<?Description This identity defines the Authority in each country involved that must give a consent to the waste 
 			movement. ?>
@@ -509,7 +495,6 @@
 				<?Description This identity identifies the Authority in each country involved that must give a consent to the 
 				waste movement. ?>
 				<?schemeID-CodeList ICD?>
-				<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 
@@ -564,13 +549,13 @@
 					<?Description An additional address line in an address that can be used to give further details 
 					supplementing the main line. ?>
 					<?Name Address line 3. ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:Line>
 			</cac:AddressLine>
 			<cac:Country>
 				<?Description Country code. ?>
 				<?Name Country?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:IdentificationCode>GB
 					<?Description A code that identifies the country.The lists of valid countries are registered with the 
 					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
@@ -609,13 +594,6 @@
 		RecoveryFacilityParty, but never both.?>
 		<?Name The Disposal Facility Party?>
 		<?Cardinality 0..1?>
-		<cbc:EndpointID schemeID="0088">7300010000001
-			<?schemeID-usage Mandatory?>
-			<?schemeID-CodeList eas?>
-			<?Description The digital address of this party. ?>
-			<?Name Endpoint ID?>
-			<?Cardinality 1..1?>
-		</cbc:EndpointID>
 		<cac:PartyIdentification>
 			<?Description This identity defines the company that will receive the waste for Disposal. ?>
 			<?Name Party Identification?>
@@ -625,7 +603,6 @@
 				<?Cardinality 1..1?>
 				<?Description This identity identifies the company that will receive the waste for Disposal. ?>
 				<?schemeID-CodeList ICD?>
-				<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 
@@ -680,13 +657,13 @@
 					<?Description An additional address line in an address that can be used to give further details 
 					supplementing the main line. ?>
 					<?Name Address line 3. ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:Line>
 			</cac:AddressLine>
 			<cac:Country>
 				<?Description Country code. ?>
 				<?Name Country?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:IdentificationCode>GB
 					<?Description A code that identifies the country.The lists of valid countries are registered with the 
 					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
@@ -725,13 +702,6 @@
 		DisposalFacilityParty, but never both.?>
 		<?Name The Disposal Facility Party?>
 		<?Cardinality 0..1?>
-		<cbc:EndpointID schemeID="0088">7300010000001
-			<?schemeID-usage Mandatory?>
-			<?schemeID-CodeList eas?>
-			<?Description The digital address of this party. ?>
-			<?Name Endpoint ID?>
-			<?Cardinality 1..1?>
-		</cbc:EndpointID>
 		<cac:PartyIdentification>
 			<?Description This identity defines the company that will receive the waste for Recovery. ?>
 			<?Name Party Identification?>
@@ -741,7 +711,6 @@
 				<?Cardinality 1..1?>
 				<?Description This identity identifies the company that will receive the waste for Recovery. ?>
 				<?schemeID-CodeList ICD?>
-				<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 
@@ -796,13 +765,13 @@
 					<?Description An additional address line in an address that can be used to give further details 
 					supplementing the main line. ?>
 					<?Name Address line 3. ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:Line>
 			</cac:AddressLine>
 			<cac:Country>
 				<?Description Country code. ?>
 				<?Name Country?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:IdentificationCode>GB
 					<?Description A code that identifies the country.The lists of valid countries are registered with the 
 					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
@@ -840,13 +809,6 @@
 		<?Description This party defines the company that produced the waste. ?>
 		<?Name The Notifier Party?>
 		<?Cardinality 1..1?>
-		<cbc:EndpointID schemeID="0088">7300010000001
-			<?schemeID-usage Mandatory?>
-			<?schemeID-CodeList eas?>
-			<?Description The digital address of this party. ?>
-			<?Name Endpoint ID?>
-			<?Cardinality 1..1?>
-		</cbc:EndpointID>
 		<cac:PartyIdentification>
 			<?Description This identity defines the company that produced the waste. ?>
 			<?Name Party Identification?>
@@ -856,7 +818,6 @@
 				<?Cardinality 1..1?>
 				<?Description This identity identifies the company that produced the waste. ?>
 				<?schemeID-CodeList ICD?>
-				<?Cardinality 1..1?>
 			</cbc:ID>
 		</cac:PartyIdentification>
 
@@ -911,13 +872,13 @@
 					<?Description An additional address line in an address that can be used to give further details 
 					supplementing the main line. ?>
 					<?Name Address line 3. ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:Line>
 			</cac:AddressLine>
 			<cac:Country>
 				<?Description Country code. ?>
 				<?Name Country?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:IdentificationCode>GB
 					<?Description A code that identifies the country.The lists of valid countries are registered with the 
 					ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their subdivisions". 
@@ -988,7 +949,7 @@
 				<?Name Hazardous Risk Indicator. ?>
 			</cbc:HazardousRiskIndicator>
 			<cbc:HandlingCode>D123
-				<?Description The handling required for this consignment, expressed as a code. ?>
+				<?Description The handling required for this waste, expressed as a code (D-code/R-code). ?>
 				<?Name Handling Code ?>
 				<?Cardinality 0..1?>
 			</cbc:HandlingCode>
@@ -1096,8 +1057,8 @@
 				<?Cardinality 0..1?>
 			</cbc:ID>
 			<cbc:Quantity unitCode="TNE">10.3
-				<?Description The quantity delivered. ?>
-				<?Name Delivered quantity ?>
+				<?Description The quantity to be moved. ?>
+				<?Name Waste quantity ?>
 				<?Cardinality 0..1?>
 				<?unitCode-CodeList UNECERec20?>
 				<?unitCode-usage Mandatory?>
@@ -1125,7 +1086,7 @@
 					<cbc:ID>6578489
 						<?Description An identifier, assigned by the buyer, for the item. Associates the item with its identification according to the buyer's system. ?>
 						<?Name Buyers item identification ?>
-						<?Cardinality 0..1?>
+						<?Cardinality 1..1?>
 					</cbc:ID>
 				</cac:BuyersItemIdentification>
 
@@ -1136,7 +1097,7 @@
 					<cbc:ID>17589683
 						<?Description An identifier, assigned by the seller, for the item. Associates the item with its identification according to the seller's system. ?>
 						<?Name Seller's item identification ?>
-						<?Cardinality 0..1?>
+						<?Cardinality 1..1?>
 					</cbc:ID>
 				</cac:SellersItemIdentification>
 
@@ -1147,34 +1108,118 @@
 					<cbc:ID schemeID="0160">1234567891234
 						<?Description An item identifier based on a registered scheme. Associates the item with its identification according to a standard system. ?>
 						<?Name Standard item identification ?>
-						<?Cardinality 0..1?>
+						<?Cardinality 1..1?>
 						<?schemeID-CodeList ICD?>
 						<?schemeID-usage Mandatory?>
 					</cbc:ID>
 				</cac:StandardItemIdentification>
 
 				<cac:CommodityClassification>
+					<?Name Commodity classification?>
+					<?Description To classify when an item number is not sufficient.?>
+					<?Cardinality 0..n?>
 					<cbc:ItemClassificationCode listID="ZZZ" listVersionID="3.0.2" name="SBMI">KO2012140200
-						<?listID-DescriptionAddFirst For Item Classification Codes that are found in UNCL7143, select the correct code and leave listVersionID and name empty. For construction specific list that are not a part of UNCL7143 yet ListID must always be "ZZZ" and listVersionID "BEAST:4.0", i.e. mutually agreed. ?>
-						<?name-DescriptionAddFirst If construction specific lists are used, name specifies which of them is used. Possible names are: "SBMI", "SA", "AI", “ME” and "CoClass”. "SBMI" = Sveriges Bergmaterialindustrier, "SA" = Sveriges Åkeriföretag, "AI" = Återvinningsindustrierna, “ME” = Maskinentreprenörerna. ?>
-						<?DescriptionAddFirst Used to classify the material when the item number is not sufficient (T6466), to inform about the source of classification standard (T6467) and to provide standard branch codes for the items. The Reference to Article Class (T6466) is the ItemClassificationCode, listID = "ZZZ", listVersionID = BEAST:4.0" and name is Source to Classification (T6467). ?>
+						<?Name Item classification code?>
+						<?listID-CodeList UNCL7143?>
+						<?listID-usage Mandatory?>
+						<?listID-Description The identification scheme identifier of the Item classification identifier.?>
+						<?listVersionID-usage Optional?>
+						<?name-usage Optional?>
+						<?name-Description The name of the Identification scheme identifier when @listID = ZZZ. Must be provided 
+						when @listID = ZZZ.?>
+						<?Cardinality 1..1?>
 					</cbc:ItemClassificationCode>
 				</cac:CommodityClassification>
 
 				<cac:HazardousItem>
-					<?Description Information pertaining to this item as a hazardous item. ?>
-					<?Name Hazardous Item. ?>
+					<?Description Contains information on the Hazardous item. ?>
 					<?Cardinality 0..n?>
+					<?Name Hazardous Item?>
+					<cbc:ID>123
+						<?Name Identifier?>
+						<?Description An identifier for this hazardous item. ?>
+						<?Cardinality 0..1?>
+					</cbc:ID>
+					<cbc:AdditionalInformation>Information about the hazardous item
+						<?Name Additional Information?>
+						<?Description Text providing further information about the hazardous substance. ?>
+						<?Cardinality 0..1?>
+					</cbc:AdditionalInformation>
 					<cbc:UNDGCode>ADR
+						<?CodeList UNCL8273?>
+						<?Name UN Code?>
 						<?Description The UN code for this kind of hazardous item. ?>
-						<?Name UNDG Code. ?>
 						<?Cardinality 0..1?>
 					</cbc:UNDGCode>
+					<cbc:TechnicalName>Corrosive liquid, n.o.s., 8, UN 1760, II (contains Octanoyl chloride)
+						<?Name Technical Name?>
+						<?Description The full technical name of a specific hazardous substance contained in this goods item. ?>
+						<?Cardinality 0..1?>
+					</cbc:TechnicalName>
+					<cbc:CategoryName>Acute toxicity
+						<?Name Category Name?>
+						<?Description The name of the category of hazard that applies to the Item. ?>
+						<?Cardinality 0..1?>
+					</cbc:CategoryName>
+					<cbc:HazardousCategoryCode>123
+						<?Name Hazardous Category Code?>
+						<?Description A code signifying a kind of hazard for a material. ?>
+						<?Cardinality 0..1?>
+					</cbc:HazardousCategoryCode>
 					<cbc:HazardClassID>Code
-						<?Description An identifier for the hazard class applicable to this hazardous item as defined by the relevant ?>
-						<?Name Hazard Class ID. ?>
+						<?Name Hazard Class ID?>
+						<?Description An identifier for the hazard class applicable to this hazardous item as defined by the 
+						relevant regulation authority (e.g., the IMDG Class Number of the SOLAS Convention of IMO and the 
+						ADR/RID Class Number for the road/rail environment). ?>
 						<?Cardinality 0..1?>
 					</cbc:HazardClassID>
+					<cbc:NetWeightMeasure unitCode="KGM">123
+						<?Name Net Weight Measure ?>
+						<?Description Net weight of the Hazardous item. ?>
+						<?Cardinality 0..1?>
+						<?unitCode-CodeList UNECERec20?>
+						<?unitCode-Name Measure unit of measure?>
+						<?unitCode-Description The unit of measure that applies to the Net Weight.?>
+						<?unitCode-usage Mandatory?>
+					</cbc:NetWeightMeasure>
+					<cbc:NetVolumeMeasure unitCode="MTQ">12.3
+						<?Name Net Volume Measure ?>
+						<?Description Net volume of the Hazardous item. ?>
+						<?Cardinality 0..1?>
+						<?unitCode-CodeList UNECERec20?>
+						<?unitCode-Name Measure unit of measure?>
+						<?unitCode-Description The unit of measure that applies to the Net Volume.?>
+						<?unitCode-usage Mandatory?>
+					</cbc:NetVolumeMeasure>
+					<cac:HazardousGoodsTransit>
+						<?Name Hazardous Goods Transit ?>
+						<?Description Information related to the transit of this kind of hazardous goods. ?>
+						<?Cardinality 0..n?>
+						<cbc:PackingCriteriaCode>123
+							<?Name Packing Criteria Code ?>
+							<?Description A code signifying the packaging requirement for transportation of the hazardous goods as assigned by IATA, IMDB, ADR, RID etc. ?>
+							<?Cardinality 1..1?>
+						</cbc:PackingCriteriaCode>
+					</cac:HazardousGoodsTransit>
+					<cac:EmergencyTemperature>
+						<?Name Emergency Temperature ?>
+						<?Description The threshold temperature at which emergency procedures apply in the handling of temperature-controlled goods. ?>
+						<?Cardinality 0..1?>
+						<cbc:AttributeID>ABC
+							<?Name Attribute ID ?>
+							<?Description An identifier for this temperature measurement. ?>
+							<?Cardinality 1..1?>
+						</cbc:AttributeID>
+						<cbc:Measure unitCode="CEL">78
+							<?Name Measure ?>
+							<?Description The value of this temperature measurement. ?>
+							<?Cardinality 1..1?>
+							<?unitCode-CodeList UNECERec20?>
+							<?unitCode-Name Measure unit of measure?>
+							<?unitCode-Description The unit of measure that applies to the Emergency Temperature.?>
+							<?unitCode-usage Mandatory?>
+						</cbc:Measure>
+					</cac:EmergencyTemperature>
 				</cac:HazardousItem>
 
 				<cac:AdditionalItemProperty>
@@ -1193,15 +1238,35 @@
 						<?schemeVersionID-Name Scheme version identifier?>
 						<?schemeVersionID-usage Optional?>
 					</cbc:ID>
-					<cbc:Name>Rigidity</cbc:Name>
+					<cbc:Name>Rigidity
+						<?Name Name ?>
+						<?Description The Name of the Item Property. ?>
+						<?Cardinality 1..1?>
+					</cbc:Name>
 					<cbc:NameCode listID="IPNC">EPDNumber
+						<?Name Item Property code ?>
+						<?Description Code for the item property according to a property code system. ?>
+						<?Cardinality 0..1?>
 						<?listID-usage Mandatory?>
 						<?listID-Name Name code list id.?>
 						<?listID-Description An identifier for the code list used for the Name code, this is bilaterally agreed?>
 					</cbc:NameCode>
-					<cbc:Value>NEPD-1717-700-SE</cbc:Value>
-					<cbc:ValueQuantity unitCode="EA">15.00</cbc:ValueQuantity>
-					<cbc:ValueQualifier>descr</cbc:ValueQualifier>
+					<cbc:Value>NEPD-1717-700-SE
+						<?Name Value ?>
+						<?Description The Value of the Item Property. ?>
+						<?Cardinality 1..1?>
+					</cbc:Value>
+					<cbc:ValueQuantity unitCode="EA">15.00
+						<?Name Item property unit of measure ?>
+						<?Description The unit of measure in which the property value is stated, if relevant. May not be relevant 
+						when properties are descriptive. ?>
+						<?Cardinality 0..1?>
+					</cbc:ValueQuantity>
+					<cbc:ValueQualifier>Climate Data
+						<?Name Property classification ?>
+						<?Description Standardized and predefined classification of items properties. ?>
+						<?Cardinality 0..1?>
+					</cbc:ValueQualifier>
 				</cac:AdditionalItemProperty>
 			</cac:Item>
 		</cac:GoodsItem>
@@ -1223,16 +1288,6 @@
 				<?Cardinality 1..1?>
 				<?Description The party executing the transport in the Shipment Stage?>
 				
-				<cbc:EndpointID schemeID="0088">5790000435951
-					<?Name Carrier's electronic address?>
-					<?Cardinality 1..1?>
-					<?Description Identifies the carrier party's electronic address?>
-					<?schemeID-Name Scheme identifier?>
-					<?schemeID-Description Scheme identifier for electronic address?>
-					<?schemeID-usage Mandatory?>
-					<?schemeID-CodeList eas?>
-				</cbc:EndpointID>
-
 				<cac:PartyIdentification>
 					<?Name Party Identification?>
 					<?Cardinality 0..1?>
@@ -1311,13 +1366,16 @@
 					</cac:AddressLine>
 					
 					<cac:Country>
+						<?Description Country code. ?>
 						<?Name Country?>
+						<?Cardinality 0..1?>
 
 						<cbc:IdentificationCode>GB
 							<?Name Country code?>
 							<?Description A code that identifies the country. The lists of valid countries are registered 
 							with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and 
 							their subdivisions". Codes must be according to the alpha-2 representation.?>
+							<?Cardinality 1..1?>
 						</cbc:IdentificationCode>
 					</cac:Country>
 				</cac:PostalAddress>
@@ -1355,62 +1413,9 @@
 				<cbc:TransportMeansTypeCode>31
 					<?Name Transport means type code?>
 					<?Description The means of transport used in this shipment stage.?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 					<?CodeList UNECERec28?>
 				</cbc:TransportMeansTypeCode>
-				
-				<cac:AirTransport>
-					<?Name Air transport ?>
-					<?Description An aircraft used in this shipment stage.?>
-					<?Cardinality 0..1?>
-					<cbc:AircraftID>JA8088
-						<?Name Air transport identifier ?>
-						<?Description An identifer for a specific aircraft.?>
-						<?Cardinality 1..1?>
-					</cbc:AircraftID>
-				</cac:AirTransport>
-
-				<cac:RoadTransport>
-					<?Name Road transport ?>
-					<?Description Description of a truck or a vehicle transporting the goods. Use only if Transport mode code is 
-					set to road transport?>
-					<?Cardinality 0..1?>
-					
-					<cbc:LicensePlateID>DF10958
-						<?Name License plate identifier transport ?>
-						<?Description The licence plate(s) identifying the vehicle seperated by semicolon if there are more than one?>
-						<?Cardinality 1..1?>
-					</cbc:LicensePlateID>
-				</cac:RoadTransport>
-				
-				<cac:RailTransport>
-					<?Name Rail transport ?>
-					<?Description Equipment used for rail transport in this shipment stage.?>
-					<?Cardinality 0..1?>
-					<cbc:TrainID>12014
-						<?Name Train identifier ?>
-						<?Description An identifier for the train used as the means of transport.?>
-						<?Cardinality 1..1?>
-					</cbc:TrainID>
-					
-					<cbc:RailCarID>50 63 20-33 801-5
-						<?Name Rail car identifier ?>
-						<?Description An identifier for the rail car on the train used as the means of transport..?>
-						<?Cardinality 0..1?>
-					</cbc:RailCarID>
-				</cac:RailTransport>
-				
-				<cac:MaritimeTransport>
-					<?Name Maritime transport ?>
-					<?Description Description of a truck or a vehicle transporting the goods. Use only if TransportModeCode is 
-					set to maritime transport. ?>
-					<?Cardinality 0..1?>
-					<cbc:VesselID>wrt34663
-						<?Name Vessel identifier ?>
-						<?Description The registred identifier of the vessel?>
-						<?Cardinality 1..1?>
-					</cbc:VesselID>
-				</cac:MaritimeTransport>
 			</cac:TransportMeans>
 		</cac:ShipmentStage>
 
@@ -1496,15 +1501,16 @@
 
 						<cbc:Line>3rd Floor, Room 5
 							<?Name Address line 3?>
-							<?Cardinality 0..1?>
+							<?Cardinality 1..1?>
 							<?Description An additional address line in an address that can be used to give further details 
 							supplementing the main line.?>
 						</cbc:Line>
 					</cac:AddressLine>
 					
 					<cac:Country>
+						<?Description Country code. ?>
 						<?Name Country?>
-						<?Cardinality 1..1?>
+						<?Cardinality 0..1?>
 
 						<cbc:IdentificationCode>GB
 							<?Name Country code?>
@@ -1554,13 +1560,6 @@
 				<?Name Delivery Party. ?>
 				<?Description The Party receiving e shipment. ?>
 				<?Cardinality 0..1?>
-				<cbc:EndpointID schemeID="0088">5790000435951
-					<?schemeID-usage Mandatory?>
-					<?schemeID-CodeList eas?>
-					<?Description The identity used to send the Movement Document electronically. ?>
-					<?Name Endpoint ID?>
-					<?Cardinality 1..1?>
-				</cbc:EndpointID>
 				<cac:PartyIdentification>
 					<?Description Party identification ?>
 					<?Name Party Identification ?>
@@ -1619,7 +1618,7 @@
 						<?Description Additional address line. ?>
 						<cbc:Line>3rd Floor, Room 5
 							<?Name Address Line for Consignee. ?>
-							<?Cardinality 0..1?>
+							<?Cardinality 1..1?>
 							<?Description Used for any other additional address information. ?>
 						</cbc:Line>
 					</cac:AddressLine>
@@ -1729,19 +1728,22 @@
 						
 						<cac:AddressLine>
 							<?Name Address line?>
+							<?Description An additional address line in an address that can be used to give further details 
+								supplementing the main line.?>
 							<?Cardinality 0..1?>
 
 							<cbc:Line>The Roundabout
 								<?Name Address line 3?>
-								<?Cardinality 0..1?>
+								<?Cardinality 1..1?>
 								<?Description An additional address line in an address that can be used to give further details 
 								supplementing the main line.?>
 							</cbc:Line>
 						</cac:AddressLine>
 						
 						<cac:Country>
-							<?Name Country?>
-							<?Cardinality 1..1?>
+							<?Name Country code. ?>
+							<?Cardinality 0..1?>
+							<?Description Country. ?>
 
 							<cbc:IdentificationCode>GB
 								<?Name Country code?>
@@ -1790,13 +1792,6 @@
 					<?Description The party despatching the goods. ?>
 					<?Name Despatch Party ?>
 					<?Cardinality 0..1?>
-					<cbc:EndpointID schemeID="0088">5790000435951
-						<?schemeID-usage Mandatory?>
-						<?schemeID-CodeList eas?>
-						<?Description The identity used to send the Movement Document electronically. ?>
-						<?Name Endpoint ID?>
-						<?Cardinality 1..1?>
-					</cbc:EndpointID>
 
 					<cac:PartyIdentification>
 						<?Description Party identification ?>
@@ -1856,7 +1851,7 @@
 							<cbc:Line>3rd Floor, Room 5
 								<?Description Used for any other additional address information ?>
 								<?Name Address line 3 ?>
-								<?Cardinality 0..1?>
+								<?Cardinality 1..1?>
 							</cbc:Line>
 						</cac:AddressLine>
 						<cac:Country>
@@ -1866,7 +1861,7 @@
 							<cbc:IdentificationCode>GB
 								<?Description Country Code.  ?>
 								<?Name Country code. ?>
-								<?Cardinality 0..1?>
+								<?Cardinality 1..1?>
 							</cbc:IdentificationCode>
 						</cac:Country>
 					</cac:PostalAddress>
