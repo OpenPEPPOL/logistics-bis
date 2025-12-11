@@ -698,7 +698,8 @@
       </rule>
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:GoodsItem">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T131-B19201">Element 'cbc:ID' MUST be provided.</assert>
-         <assert test="cac:Item" flag="fatal" id="PEPPOL-T131-B19202">Element 'cac:Item' MUST be provided.</assert>
+         <assert test="cbc:Quantity" flag="fatal" id="PEPPOL-T131-B19202">Element 'cbc:Quantity' MUST be provided.</assert>
+         <assert test="cac:Item" flag="fatal" id="PEPPOL-T131-B19203">Element 'cac:Item' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cbc:ID"/>
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/cbc:Quantity">
@@ -821,7 +822,7 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B19602">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:GoodsItem/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T131-B19203">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T131-B19204">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:ShipmentStage">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T131-B24101">Element 'cbc:ID' MUST be provided.</assert>
@@ -981,9 +982,7 @@
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:Delivery/cac:DeliveryLocation/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B28001">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:WasteMovement/cac:Shipment/cac:Delivery/cac:DeliveryParty">
-         <assert test="cbc:EndpointID" flag="fatal" id="PEPPOL-T131-B30001">Element 'cbc:EndpointID' MUST be provided.</assert>
-      </rule>
+      <rule context="/ubl:WasteMovement/cac:Shipment/cac:Delivery/cac:DeliveryParty"/>
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:Delivery/cac:DeliveryParty/cbc:EndpointID">
          <assert test="@schemeID" flag="fatal" id="PEPPOL-T131-B30101">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $cleas satisfies $code = @schemeID)"
@@ -1030,7 +1029,7 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B31801">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:Delivery/cac:DeliveryParty/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T131-B30002">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T131-B30001">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:Delivery/cac:Despatch">
          <assert test="cbc:ActualDespatchDate" flag="fatal" id="PEPPOL-T131-B32201">Element 'cbc:ActualDespatchDate' MUST be provided.</assert>
@@ -1093,9 +1092,7 @@
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:Delivery/cac:Despatch/cac:DespatchLocation/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B32401">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:WasteMovement/cac:Shipment/cac:Delivery/cac:Despatch/cac:DespatchParty">
-         <assert test="cbc:EndpointID" flag="fatal" id="PEPPOL-T131-B34401">Element 'cbc:EndpointID' MUST be provided.</assert>
-      </rule>
+      <rule context="/ubl:WasteMovement/cac:Shipment/cac:Delivery/cac:Despatch/cac:DespatchParty"/>
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:Delivery/cac:Despatch/cac:DespatchParty/cbc:EndpointID">
          <assert test="@schemeID" flag="fatal" id="PEPPOL-T131-B34501">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $cleas satisfies $code = @schemeID)"
@@ -1139,7 +1136,7 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B36201">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:Delivery/cac:Despatch/cac:DespatchParty/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T131-B34402">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T131-B34401">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:WasteMovement/cac:Shipment/cac:Delivery/cac:Despatch/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T131-B32203">Document MUST NOT contain elements not part of the data model.</assert>
