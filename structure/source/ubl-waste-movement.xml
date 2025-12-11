@@ -48,26 +48,31 @@
 		<?Name Signature ?>
 		<?Description To attach signatures to this document. ?>
 		<?Cardinality 0..n?>
+		
 		<cbc:ID>Sender
 			<?Name Signature ID. ?>
 			<?Description Used to specify the role of the signing person. Can be "Sender", "Carrier", "Receiver". ?>
 			<?Cardinality 1..1?>
 		</cbc:ID>
+		
 		<cbc:Note>Text
 			<?Name Note. ?>
 			<?Description To include any textual information. ?>
 			<?Cardinality 0..1?>
 		</cbc:Note>
+		
 		<cbc:ValidationDate>2025-09-10
 			<?Name Validation date. ?>
 			<?Description Validation date. ?>
 			<?Cardinality 0..1?>
 		</cbc:ValidationDate>
+		
 		<cbc:ValidationTime>12:00:00
 			<?Name Validation time. ?>
 			<?Description Validation time. ?>
 			<?Cardinality 0..1?>
 		</cbc:ValidationTime>
+		
 		<cbc:SignatureMethod>Manual
 			<?Name Signature Method. ?>
 			<?Description Text to describe the signature method. ?>
@@ -78,6 +83,7 @@
 			<?Name Signatory Party ?>
 			<?Description Describes the party that is signing. ?>
 			<?Cardinality 0..1?>
+			
 			<cac:PartyIdentification>
 				<?Name Party identification?>
 				<?Description Identifies the party that is signing. ?>
@@ -88,35 +94,41 @@
 					<?Cardinality 1..1?>
 				</cbc:ID>
 			</cac:PartyIdentification>
+			
 			<cac:PartyName>
 				<?Name Party name?>
 				<?Description The name of the party that is signing. ?>
-				<?Cardinality 1..1?>
+				<?Cardinality 0..1?>
 				<cbc:Name>Name of signing party.
 					<?Name Party Name ?>
 					<?Description The name of the party that is signing. ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:Name>
 			</cac:PartyName>
+			
 			<cac:Contact>
 				<?Name Signature Person ?>
 				<?Description Defines the person that is signing.  ?>
 				<?Cardinality 0..1?>
+				
 				<cbc:ID>12345
 					<?Name ID of signature person, ID06 card number or similar ?>
 					<?Description The identity of the signing person.  ?>
 					<?Cardinality 0..1?>
 				</cbc:ID>
+				
 				<cbc:Name>Anders Johansson
 					<?Name Name of the signing person. ?>
 					<?Description Name of the signing person. ?>
 					<?Cardinality 0..1?>
 				</cbc:Name>
+				
 				<cbc:Telephone>0158 1233714
 					<?Name Telephone for the signing person. ?>
 					<?Description Telephone no to the signing person. ?>
 					<?Cardinality 0..1?>
 				</cbc:Telephone>
+				
 				<cbc:ElectronicMail>Anders.Johansson@company.com
 					<?Name E-mail address of the signing person. ?>
 					<?Description E-mail address for the signing person. ?>
@@ -135,6 +147,7 @@
 				<?mimeCode-CodeList MimeCode?>
 				<?Description The referenced document (signature) can here be inserted as a binary object. filename is the name 
 				of the attachment when stored as a document. ?>
+				<?Cardinality 0..1?>
 			</cbc:EmbeddedDocumentBinaryObject>
 			<cac:ExternalReference>
 				<?Name External reference ?>
@@ -143,7 +156,7 @@
 				<cbc:URI>www.beast.se
 					<?Name URI ?>
 					<?Description Link to the signature that is available externally. ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:URI>
 			</cac:ExternalReference>
 		</cac:DigitalSignatureAttachment>
@@ -223,7 +236,7 @@
 					<?Description An additional address line in an address that can be used to give further details 
 					supplementing the main line. ?>
 					<?Name Address line 3. ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:Line>
 			</cac:AddressLine>
 			<cac:Country>
@@ -337,7 +350,7 @@
 				<cbc:Line>3rd Floor, Room 5
 					<?Description Used for any other additional address information. ?>
 					<?Name Address line 3 ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:Line>
 			</cac:AddressLine>
 			<cac:Country>
@@ -451,7 +464,7 @@
 					<?Description An additional address line in an address that can be used to give further details 
 					supplementing the main line. ?>
 					<?Name Address line 3. ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:Line>
 			</cac:AddressLine>
 			<cac:Country>
@@ -566,7 +579,7 @@
 					<?Description An additional address line in an address that can be used to give further details 
 					supplementing the main line. ?>
 					<?Name Address line 3. ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:Line>
 			</cac:AddressLine>
 			<cac:Country>
@@ -681,7 +694,7 @@
 					<?Description An additional address line in an address that can be used to give further details 
 					supplementing the main line. ?>
 					<?Name Address line 3. ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:Line>
 			</cac:AddressLine>
 			<cac:Country>
@@ -795,7 +808,7 @@
 					<?Description An additional address line in an address that can be used to give further details 
 					supplementing the main line. ?>
 					<?Name Address line 3. ?>
-					<?Cardinality 0..1?>
+					<?Cardinality 1..1?>
 				</cbc:Line>
 			</cac:AddressLine>
 			<cac:Country>
@@ -872,7 +885,7 @@
 				<?Name Hazardous Risk Indicator. ?>
 			</cbc:HazardousRiskIndicator>
 			<cbc:HandlingCode>D123
-				<?Description The handling required for this consignment, expressed as a code. ?>
+				<?Description The Disposal/Recovery action code - D-code/R-code. ?>
 				<?Name Handling Code ?>
 				<?Cardinality 0..1?>
 			</cbc:HandlingCode>
@@ -973,15 +986,15 @@
 		<cac:GoodsItem>
 			<?Name Goods Item. ?>
 			<?Description A goods item included in this shipment. ?>
-			<?Cardinality 0..n?>
+			<?Cardinality 1..n?>
 			<cbc:ID>1
 				<?Description Line Number. ?>
 				<?Name Line number identity ?>
-				<?Cardinality 0..1?>
+				<?Cardinality 1..1?>
 			</cbc:ID>
 			<cbc:Quantity unitCode="TNE">10.3
-				<?Description The quantity delivered. ?>
-				<?Name Delivered quantity ?>
+				<?Description The waste quantity. ?>
+				<?Name Waste quantity ?>
 				<?Cardinality 0..1?>
 				<?unitCode-CodeList UNECERec20?>
 				<?unitCode-usage Mandatory?>
@@ -1009,7 +1022,7 @@
 					<cbc:ID>6578489
 						<?Description An identifier, assigned by the buyer, for the item. Associates the item with its identification according to the buyer's system. ?>
 						<?Name Buyers item identification ?>
-						<?Cardinality 0..1?>
+						<?Cardinality 1..1?>
 					</cbc:ID>
 				</cac:BuyersItemIdentification>
 
@@ -1020,7 +1033,7 @@
 					<cbc:ID>17589683
 						<?Description An identifier, assigned by the seller, for the item. Associates the item with its identification according to the seller's system. ?>
 						<?Name Seller's item identification ?>
-						<?Cardinality 0..1?>
+						<?Cardinality 1..1?>
 					</cbc:ID>
 				</cac:SellersItemIdentification>
 
@@ -1031,7 +1044,7 @@
 					<cbc:ID schemeID="0160">1234567891234
 						<?Description An item identifier based on a registered scheme. Associates the item with its identification according to a standard system. ?>
 						<?Name Standard item identification ?>
-						<?Cardinality 0..1?>
+						<?Cardinality 1..1?>
 						<?schemeID-CodeList ICD?>
 						<?schemeID-usage Mandatory?>
 					</cbc:ID>
@@ -1046,6 +1059,8 @@
 						<?listID-CodeList UNCL7143?>
 						<?listID-usage Mandatory?>
 						<?listID-Description The identification scheme identifier of the Item classification identifier.?>
+						<?listVersionID-usage Optional?>
+						<?name-usage Optional?>
 						<?name-Description The name of the Identification scheme identifier when @listID = ZZZ. Must be provided 
 						when @listID = ZZZ.?>
 						<?Cardinality 1..1?>
@@ -1054,6 +1069,8 @@
 
 				<cac:HazardousItem>
 					<?Description Contains information on the Hazardous item. ?>
+					<?Cardinality 0..n?>
+					<?Name Hazardous Item?>
 					<cbc:ID>123
 						<?Name Identifier?>
 						<?Description An identifier for this hazardous item. ?>
