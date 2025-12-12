@@ -484,6 +484,13 @@
 		<?Description This party defines the Authority in each country involved that must give a consent to the waste movement. ?>
 		<?Name The Customs Party?>
 		<?Cardinality 1..n?>
+
+		<cbc:IndustryClassificationCode>E
+			<?Description To describe if this "Competent Authority" is for Export (E), Transit (T) or Import (I). ?>
+			<?Name Industry Classification Code?>
+			<?Cardinality 1..1?>
+		</cbc:IndustryClassificationCode>
+		
 		<cac:PartyIdentification>
 			<?Description This identity defines the Authority in each country involved that must give a consent to the waste 
 			movement. ?>
@@ -1320,6 +1327,48 @@
 				<?Cardinality 0..1?>
 			</cbc:HandlingCode>
 
+			<cac:OriginalDepartureCountry>
+				<?Description Original Departure Country. ?>
+				<?Name Original Departure Country ?>
+				<?Cardinality 0..1?>
+				<cbc:IdentificationCode>SE
+					<?Name Country code?>
+					<?Cardinality 1..1?>
+					<?CodeList ISO3166?>
+					<?Description A code that identifies the country. The lists of valid countries are registered with the 
+								ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their 
+								subdivisions". Codes must be according to the alpha-2 representation.?>
+				</cbc:IdentificationCode>
+			</cac:OriginalDepartureCountry>
+			
+			<cac:FinalDestinationCountry>
+				<?Description Final Destination Country. ?>
+				<?Name Final Destination Country ?>
+				<?Cardinality 0..1?>
+				<cbc:IdentificationCode>BY
+					<?Name Country code?>
+					<?Cardinality 1..1?>
+					<?CodeList ISO3166?>
+					<?Description A code that identifies the country. The lists of valid countries are registered with the 
+								ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their 
+								subdivisions". Codes must be according to the alpha-2 representation.?>
+				</cbc:IdentificationCode>
+			</cac:FinalDestinationCountry>
+			
+			<cac:TransitCountry>
+				<?Description Transit Country. ?>
+				<?Name Transit Country ?>
+				<?Cardinality 0..n?>
+				<cbc:IdentificationCode>PL
+					<?Name Country code?>
+					<?Cardinality 1..1?>
+					<?CodeList ISO3166?>
+					<?Description A code that identifies the country. The lists of valid countries are registered with the 
+								ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their 
+								subdivisions". Codes must be according to the alpha-2 representation.?>
+				</cbc:IdentificationCode>
+			</cac:TransitCountry>
+
 			<cac:TransportHandlingUnit>
 				<?Name Transport handling unit?>
 				<?Description A description of individual handling units in which the line items are packed. An item of any 
@@ -1345,7 +1394,58 @@
 					<?Cardinality 0..1?>
 				</cbc:HandlingInstructions>
 			</cac:TransportHandlingUnit>
+
+			<cac:OfficeOfImportLocation>
+				<?Name Office of Import Location?>
+				<?Description Location where the waste arrives to the importing country. ?>
+				<?Cardinality 0..1?>
+				<cbc:ID schemeID="0088">7300010000001
+					<?Name Identity?>
+					<?Cardinality 1..1?>
+					<?Description This identity identifies the location where the waste arrives to the importing country. ?>
+					<?schemeID-CodeList ICD?>
+				</cbc:ID>
+				<cbc:Name>Border crossing in Brest.
+					<?Name Name of the location?>
+					<?Description The name of the location where the waste arrives to the importing country.?>
+					<?Cardinality 0..1?>
+				</cbc:Name>
+			</cac:OfficeOfImportLocation>
+
+			<cac:OfficeOfExportLocation>
+				<?Name Office of Export Location?>
+				<?Description Location where the waste leaves the exporting country. ?>
+				<?Cardinality 0..1?>
+					<cbc:ID schemeID="0088">7300010000001
+						<?Name Identity?>
+						<?Cardinality 1..1?>
+						<?Description This identity identifies the location where the waste leaves the exporting country. ?>
+						<?schemeID-CodeList ICD?>
+					</cbc:ID>
+				<cbc:Name>Border crossing in Ystad.
+					<?Name Name of the location?>
+					<?Description The name of the location where the waste leaves the exporting country.?>
+					<?Cardinality 0..1?>
+				</cbc:Name>
+			</cac:OfficeOfExportLocation>
 			
+			<cac:OfficeOfTransitLocation>
+				<?Name Office of Transit Location?>
+				<?Description Location where the waste arrives to a transit country. ?>
+				<?Cardinality 0..1?>
+				<cbc:ID schemeID="0088">7300010000001
+					<?Name Identity?>
+					<?Cardinality 1..1?>
+					<?Description This identity identifies the location where the waste arrives to a transit country. ?>
+					<?schemeID-CodeList ICD?>
+				</cbc:ID>
+				<cbc:Name>Border crossing in Swinoujscie.
+					<?Name Name of the location?>
+					<?Description The name of the location where the waste arrives to a transit country.?>
+					<?Cardinality 0..1?>
+				</cbc:Name>
+			</cac:OfficeOfTransitLocation>
+
 			<cac:DocumentReference>
 				<?Description A reference to a document related to or relevant for this consignment. ?>
 				<?Name Document Reference ?>
