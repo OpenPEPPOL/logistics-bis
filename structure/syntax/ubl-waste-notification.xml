@@ -584,6 +584,12 @@
          <Term>cac:CustomsParty</Term>
          <Name>The Customs Party</Name>
          <Description>This party defines the Authority in each country involved that must give a consent to the waste movement. </Description>
+         <Element cardinality="1..1">
+            <Term>cbc:IndustryClassificationCode</Term>
+            <Name>Industry Classification Code</Name>
+            <Description>To describe if this "Competent Authority" is for Export (E), Transit (T) or Import (I). </Description>
+            <Value type="EXAMPLE">E</Value>
+         </Element>
          <Element cardinality="0..1">
             <Term>cac:PartyIdentification</Term>
             <Name>Party Identification</Name>
@@ -1493,6 +1499,48 @@
                <Value type="EXAMPLE">D123</Value>
             </Element>
             <Element cardinality="0..1">
+               <Term>cac:OriginalDepartureCountry</Term>
+               <Name>Original Departure Country </Name>
+               <Description>Original Departure Country. </Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:IdentificationCode</Term>
+                  <Name>Country code</Name>
+                  <Description>A code that identifies the country. The lists of valid countries are registered with the 
+								ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their 
+								subdivisions". Codes must be according to the alpha-2 representation.</Description>
+                  <Reference type="CODE_LIST">ISO3166</Reference>
+                  <Value type="EXAMPLE">SE</Value>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:FinalDestinationCountry</Term>
+               <Name>Final Destination Country </Name>
+               <Description>Final Destination Country. </Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:IdentificationCode</Term>
+                  <Name>Country code</Name>
+                  <Description>A code that identifies the country. The lists of valid countries are registered with the 
+								ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their 
+								subdivisions". Codes must be according to the alpha-2 representation.</Description>
+                  <Reference type="CODE_LIST">ISO3166</Reference>
+                  <Value type="EXAMPLE">BY</Value>
+               </Element>
+            </Element>
+            <Element cardinality="0..n">
+               <Term>cac:TransitCountry</Term>
+               <Name>Transit Country </Name>
+               <Description>Transit Country. </Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:IdentificationCode</Term>
+                  <Name>Country code</Name>
+                  <Description>A code that identifies the country. The lists of valid countries are registered with the 
+								ISO 3166-1 Maintenance agency, "Codes for the representation of names of countries and their 
+								subdivisions". Codes must be according to the alpha-2 representation.</Description>
+                  <Reference type="CODE_LIST">ISO3166</Reference>
+                  <Value type="EXAMPLE">PL</Value>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
                <Term>cac:TransportHandlingUnit</Term>
                <Name>Transport handling unit</Name>
                <Description>A description of individual handling units in which the line items are packed. An item of any 
@@ -1521,6 +1569,72 @@
                   <Name>Handling instructions</Name>
                   <Description>The handling for this transporthandling unit expressed as a text</Description>
                   <Value type="EXAMPLE">To be set vertical</Value>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:OfficeOfImportLocation</Term>
+               <Name>Office of Import Location</Name>
+               <Description>Location where the waste arrives to the importing country. </Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:ID</Term>
+                  <Name>Identity</Name>
+                  <Description>This identity identifies the location where the waste arrives to the importing country. </Description>
+                  <Attribute>
+                     <Term>schemeID</Term>
+                     <Reference type="CODE_LIST">ICD</Reference>
+                     <Value type="EXAMPLE">0088</Value>
+                  </Attribute>
+                  <Value type="EXAMPLE">7300010000001</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:Name</Term>
+                  <Name>Name of the location</Name>
+                  <Description>The name of the location where the waste arrives to the importing country.</Description>
+                  <Value type="EXAMPLE">Border crossing in Brest.</Value>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:OfficeOfExportLocation</Term>
+               <Name>Office of Export Location</Name>
+               <Description>Location where the waste leaves the exporting country. </Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:ID</Term>
+                  <Name>Identity</Name>
+                  <Description>This identity identifies the location where the waste leaves the exporting country. </Description>
+                  <Attribute>
+                     <Term>schemeID</Term>
+                     <Reference type="CODE_LIST">ICD</Reference>
+                     <Value type="EXAMPLE">0088</Value>
+                  </Attribute>
+                  <Value type="EXAMPLE">7300010000001</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:Name</Term>
+                  <Name>Name of the location</Name>
+                  <Description>The name of the location where the waste leaves the exporting country.</Description>
+                  <Value type="EXAMPLE">Border crossing in Ystad.</Value>
+               </Element>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cac:OfficeOfTransitLocation</Term>
+               <Name>Office of Transit Location</Name>
+               <Description>Location where the waste arrives to a transit country. </Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:ID</Term>
+                  <Name>Identity</Name>
+                  <Description>This identity identifies the location where the waste arrives to a transit country. </Description>
+                  <Attribute>
+                     <Term>schemeID</Term>
+                     <Reference type="CODE_LIST">ICD</Reference>
+                     <Value type="EXAMPLE">0088</Value>
+                  </Attribute>
+                  <Value type="EXAMPLE">7300010000001</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:Name</Term>
+                  <Name>Name of the location</Name>
+                  <Description>The name of the location where the waste arrives to a transit country.</Description>
+                  <Value type="EXAMPLE">Border crossing in Swinoujscie.</Value>
                </Element>
             </Element>
             <Element cardinality="0..n">
