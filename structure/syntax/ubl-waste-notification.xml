@@ -1575,7 +1575,7 @@
                <Term>cac:OfficeOfImportLocation</Term>
                <Name>Office of Import Location</Name>
                <Description>Location where the waste arrives to the importing country. </Description>
-               <Element cardinality="1..1">
+               <Element cardinality="0..1">
                   <Term>cbc:ID</Term>
                   <Name>Identity</Name>
                   <Description>This identity identifies the location where the waste arrives to the importing country. </Description>
@@ -1597,7 +1597,7 @@
                <Term>cac:OfficeOfExportLocation</Term>
                <Name>Office of Export Location</Name>
                <Description>Location where the waste leaves the exporting country. </Description>
-               <Element cardinality="1..1">
+               <Element cardinality="0..1">
                   <Term>cbc:ID</Term>
                   <Name>Identity</Name>
                   <Description>This identity identifies the location where the waste leaves the exporting country. </Description>
@@ -1619,7 +1619,7 @@
                <Term>cac:OfficeOfTransitLocation</Term>
                <Name>Office of Transit Location</Name>
                <Description>Location where the waste arrives to a transit country. </Description>
-               <Element cardinality="1..1">
+               <Element cardinality="0..1">
                   <Term>cbc:ID</Term>
                   <Name>Identity</Name>
                   <Description>This identity identifies the location where the waste arrives to a transit country. </Description>
@@ -1691,7 +1691,7 @@
                </Element>
             </Element>
          </Element>
-         <Element cardinality="0..n">
+         <Element cardinality="1..n">
             <Term>cac:GoodsItem</Term>
             <Name>Goods Item. </Name>
             <Description>A goods item included in this shipment. </Description>
@@ -1710,7 +1710,7 @@
                   <Reference type="CODE_LIST">UNECERec20</Reference>
                   <Value type="EXAMPLE">TNE</Value>
                </Attribute>
-               <Value type="EXAMPLE">10.3</Value>
+               <Value type="EXAMPLE">120.3</Value>
             </Element>
             <Element cardinality="1..1">
                <Term>cac:Item</Term>
