@@ -1401,7 +1401,7 @@
 				<?Cardinality 0..1?>
 				<cbc:ID schemeID="0088">7300010000001
 					<?Name Identity?>
-					<?Cardinality 1..1?>
+					<?Cardinality 0..1?>
 					<?Description This identity identifies the location where the waste arrives to the importing country. ?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
@@ -1418,7 +1418,7 @@
 				<?Cardinality 0..1?>
 					<cbc:ID schemeID="0088">7300010000001
 						<?Name Identity?>
-						<?Cardinality 1..1?>
+						<?Cardinality 0..1?>
 						<?Description This identity identifies the location where the waste leaves the exporting country. ?>
 						<?schemeID-CodeList ICD?>
 					</cbc:ID>
@@ -1435,7 +1435,7 @@
 				<?Cardinality 0..1?>
 				<cbc:ID schemeID="0088">7300010000001
 					<?Name Identity?>
-					<?Cardinality 1..1?>
+					<?Cardinality 0..1?>
 					<?Description This identity identifies the location where the waste arrives to a transit country. ?>
 					<?schemeID-CodeList ICD?>
 				</cbc:ID>
@@ -1495,13 +1495,13 @@
 		<cac:GoodsItem>
 			<?Name Goods Item. ?>
 			<?Description A goods item included in this shipment. ?>
-			<?Cardinality 0..n?>
+			<?Cardinality 1..n?>
 			<cbc:ID>1
 				<?Description Line Number. ?>
 				<?Name Line number identity ?>
 				<?Cardinality 0..1?>
 			</cbc:ID>
-			<cbc:Quantity unitCode="TNE">10.3
+			<cbc:Quantity unitCode="TNE">120.3
 				<?Description The quantity to be moved. ?>
 				<?Name Waste quantity ?>
 				<?Cardinality 0..1?>
