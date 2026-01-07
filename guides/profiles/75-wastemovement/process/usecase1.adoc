@@ -2,18 +2,18 @@
 == Use case 1 – Border-crossing transport of waste.
 
 When moving waste across borders, authorities in all involved countries must often be informed in advance, and each country must confirm 
-that the movement is allowed - give their consent. For this a Waste Notification document is used. A Waste Notification document
+that the movement is allowed - give their consent. For this a Notification document is used. A Notification document
 can cover multiple shipments. 
-The Waste Producer (or his/her representative) sends this Waste Notification document to the Despatching country's authorities. This 
+The Waste Producer (or his/her representative) sends this Notification document to the Despatching country's authorities. This 
 authority will then forward the document to the Authorities in all involved countries - Destination country and all Transit countries.
 Before starting any transportation of the waste, all countries must confirm their consent.
 
-When all involved countries have given their consent to moving the waste, a Waste Movement document must follow each transport. It is 
-created by the Waste Producer (or his/her authorized party) and signed by him/her after loading the waste. The Waste Movement document 
+When all involved countries have given their consent to moving the waste, a Movement document must follow each transport. It is 
+created by the Waste Producer (or his/her authorized party) and signed by him/her after loading the waste. The Movement document 
 is then sent to the Carrier party, which forwards it to the driver. The driver also signs the document before starting the transport.
-If the transport includes multiple steps, the Waste Movement Document must be forwarded, and signed, by each involved Carrier Party.
-If using a digital Waste Movement Document, the involved parties' applications must be enabled to display the Waste Movement Document,
-with all given consents from the Waste Notification document, upon request.
+If the transport includes multiple steps, the Movement Document must be forwarded, and signed, by each involved Carrier Party.
+If using a digital Movement Document, the involved parties' applications must be enabled to display the Movement Document,
+with all given consents from the Notification document, upon request.
 
 [cols="1,5",options="header",]
 |====
@@ -21,45 +21,45 @@ with all given consents from the Waste Notification document, upon request.
 |*Use Case Name* |Border-crossing transport of waste.
 |*Use Case Description* a|
 Describes a complete process to move waste from the Despatch location to a Disposal/Recovery facility when movement is crossing 
-two borders within the EU.
+borders within the EU.
 This process is divided in two phases - Preparation and Execution.
-Before actually moving any waste all involved countries must give their consent. To request this consent, a Waste Notification
+Before actually moving any waste all involved countries must give their consent. To request this consent, a Notification
 document is sent to the Despatching country's authorities and by them distributed to all involved countries' authorities.
-One Waste Notification document can cover multiple shipments if the waste is the same in all.
+One Notification document can cover multiple shipments if the waste is the same in all.
 Before starting the Execution phase a consent must be received from all involved countries. The Responses - the consent - come with 
-stamps and signatures. This use-case assumes that digital versions of both the Waste Notification document and the Response is used.
+stamps and signatures. This use-case assumes that digital versions of both the Notification document and the Response is used.
 
-During the Execution phase each shipment must be followed by a Waste Movement document. It is created by the Waste Producer party 
+During the Execution phase each shipment must be followed by a Movement document. It is created by the Waste Producer party 
 (or his/her representative) after loading the waste and sent to the Carrier party, the driver of the vehicle. Both signs the document
 before the waste leaves the Despatch Location.
-If multiple transport stages are involved in the movement, each Carrier party must sign the Waste Movement document.
-The Receiving party has from the Carrier taking the last step of the transport received the Waste Movement document. Also the Receiver
+If multiple transport stages are involved in the movement, each Carrier party must sign the Movement document.
+The Receiving party has from the Carrier taking the last step of the transport received the Movement document. Also the Receiver
 will sign it as a confirmation of taking over the responsibility.
 
-A reference to the Waste Notification document, information about Type of Waste, Quantity/Weight, Despatch address and Destination is 
-required in the Waste Movement document.
-When the Waste Movement Document is signed also by the Receiver - the Disposal facility - it normally should be returned to the 
+A reference to the Notification document, information about Type of Waste, Quantity/Weight, Despatch address and Destination is 
+required in the Movement document.
+When the Movement Document is signed also by the Receiver - the Disposal/Recovery facility - it normally should be returned to the 
 Waste Producer Party as a confirmation of that the waste has arrived to the correct place and that responsibility is taken over.
 
-The use of a Waste Movement document is normally a requirement from authorities, but using a digital Waste Movement document also adds 
+The use of a Movement document is normally a requirement from authorities, but using a digital Movement document also adds 
 benefits for parties using it. The transmission of information about the content of the transport - type of waste, quantity/weight 
-destination etc - in the Waste Movement document will improve data quality and decrease manual work since no manual entry will be 
+destination etc - in the Movement document will improve data quality and decrease manual work since no manual entry will be 
 required if receiving a digital version of it.
 
-Another benefit of using a digital Waste Movement Document is that a receiver can not accept waste that is not destined to that 
-Disposal facility. If the driver went to the wrong facility, he will not be allowed to unload the waste there since the receiver has 
-not received the Waste Movement document.
+Another benefit of using a digital Movement Document is that a receiver can not accept waste that is not destined to that 
+Disposal facility without breaking the traceability. If the driver went to the wrong facility, he/she can not unload the 
+waste there since the receiver has not received the Movement document.
 
 |*Parties involved, Preparation Stage* a|
 Sender (In UBL: SenderParty) (Is different depending on which step in the process we now are in. See flow description below.)
 
 Receiver (In UBL: ReceiverParty) (Is also different depending on the step in process. See flow description below.)
 
-Waste Producer (In UBL: WasteProducerParty) (Responsible for the waste and issuer of the original Waste Movement Document.)
+Waste Producer (In UBL: WasteProducerParty) (Responsible for the waste and issuer of the original Notification Document.)
 
 Notifier (In UBL: NotifierParty) (Responsible for the waste or his/her representative.)
 
-Customs (In UBL: CustomsParty) (Customs in all involved countries.)
+Customs (In UBL: CustomsParty) (The "Competent Authorities", granting the consent for the move, in all involved countries.)
 
 Disposal Facility (In UBL: DisposalFacilityParty) (The Receiver of the Waste.)
 or Recovery Facility (In UBL: RecoveryFacilityParty) (Also the Receiver of the Waste. Use the one that is relevant in this case.)
@@ -67,22 +67,24 @@ or Recovery Facility (In UBL: RecoveryFacilityParty) (Also the Receiver of the W
 Carrier party (In UBL: CarrierParty) (All carriers must be included.)
 
 |*Pre conditions, Preparation Phase* a|
-In good time before Execution of the Movement, the Request for Consent (Waste Notification document) must be prepared and sent to
+In good time before Execution of the Movement, the Request for Consent (Notification document) must be prepared and sent to
 Authorities by the Waste Producer or his/her representative.
 
 |*Post conditions, Preparation Phase* a|
-Authorities in all involved countries have received the Waste Notification document and returned their consent to the Movement.
+Authorities in all involved countries have received the Notification document and returned their consent to the movement.
 
 |*Assumptions, Preparation Phase* a|
 . The waste is requested to be moved from Sweden, via Poland to Slovakia.
 . Three transportation legs will be used - Truck from Despatch address to harbour, Ship from Sweden to Poland, Truck from harbour to
 Destination.
-. All three countries give their consent to the Movement.
+. All three countries give their consent to the movement.
 
 |*The flow, Preparation Phase* a|
-. The Waste Producer creates the Waste Notification document and sends it to Swedish Authorities.
-. Swedish Authorities receives the Waste Notification document and forwards it to Polish and Slovakian authorities.
-. Polish and Slovakian authorities receive the Waste Notification document and returns to Swedish authorities their consent.
+. The Waste Producer creates the Notification document and sends it to Swedish Authorities.
+. Swedish Authorities receives the Notification document and forwards it to Polish and Slovakian authorities.
+. A receipt confirmation is also returned to the sender of the Notification document.
+. Polish and Slovakian authorities receive the Notification document and returns to Swedish authorities a receipt confirmation.
+. When ready, their consent is then returned to the Swedish authorities.
 . Swedish authorities receive the Responses and adds their consent to the movement and sends the positive response from all back
 to the Waste Producer.
 
@@ -98,15 +100,15 @@ Receiver (In UBL: ReceiverParty) (Is also different depending on the step in pro
 
 Notifier (In UBL: NotifierParty) (Responsible for the waste or his/her representative.)
 
-Waste Producer (In UBL: WasteProducerParty) (Responsible for the waste and issuer of the original Waste Movement Document.)
+Waste Producer (In UBL: WasteProducerParty) (Responsible for the waste and issuer of the original Movement Document.)
 
 Disposal Facility (In UBL: DisposalFacilityParty) (The Receiver of the Waste.)
 or Recovery Facility (In UBL: RecoveryFacilityParty) (Also the Receiver of the Waste. Use the one that is relevant in this case.)
 
 Carrier party (In UBL: CarrierParty) (All carriers must be included.)
 
-Document Distribution party (In UBL: Party) (Involved parties that wish to receive a copy of the final version of the Waste 
-Movement document may add themselves as a party here before sending the Waste Movement document on to next party in line.)
+Document Distribution party (In UBL: Party) (Involved parties that wish to receive a copy of the final version of the 
+Movement document may add themselves as a party here before sending the Movement document on to next party in line.)
 
 |*Pre conditions, Execution Phase* a|
 . A consent have been received from all involved countries.
@@ -114,11 +116,11 @@ Movement document may add themselves as a party here before sending the Waste Mo
 . An agreement of shipping the Waste from Umeå harbour to Gdansk i Poland is made with Carrier B.
 . An agreement of shipping the Waste from Gdansk in Poland to the Destination outside Kosice in Slovakia is made with Carrier C.
 . An agreement of taking care of and recycle the waste is made with Recovery Facility A.
-. Use of a digital Waste Movement document based on a digital Waste Notification document and digital response documents for the consent.
+. Use of a digital Movement document based on a digital Notification document and digital response documents for the consent.
 . All involved Carriers' applications can display all required information from all documents on previous line.
 
 |*Post conditions, Execution Phase* a|
-. The Waste Producer want to have the final version of the Waste Movement document returned after it has been signed by the Receiver.
+. The Waste Producer want to have the final version of the Movement document returned after it has been signed by the Receiver.
 
 |*Assumptions, Execution Phase* a|
 . The waste is requested to be moved from Sweden, via Poland to Slovakia.
@@ -127,20 +129,20 @@ Destination.
 . All three countries give their consent to the Movement.
 
 |*The flow, Execution Phase* a|
-. After loading the waste, the Waste on the truck Producer or his/her representative creates the Waste Movement document, signs it and 
+. After loading the waste on the truck, the Waste Producer or his/her representative creates the Movement document, signs it and 
 sends it to Carrier A.
 . Carrier A's application forwards the document to the Truck Driver, who signs the document before leaving the Despatch Location.
 . After signing it, he/she sends it on to Carrier B.
-. Carrier B receives the document, and after having taken over the waste from Carrrier A, he/she signs the Waste Movement document and 
+. Carrier B receives the document, and after having taken over the waste from Carrrier A, he/she signs the Movement document and 
 sends it on to Carrier C.
 . Carrier C receives the document, and after having taken over the waste from Carrier B, he/she signs the document and sends it on to
 the Recovery Facility - the Receiver of the waste.
-. When passing the three borders, the Waste Movement document together with the consents from the Waste Notification document have been 
+. When passing the three borders, the Movement document together with the consents from the Notification document have been 
 shown to the Customs authorities in a digital form.
-. The Receiver of the waste makes any required changes in the Waste Movement document, signs it and returns it to the Waste Producer 
+. The Receiver of the waste makes any required changes in the Movement document, signs it and returns it to the Waste Producer 
 as a confirmation of having taken over the responsibility.
 . The Waste Producer receives the final version of the Waste Movement document with signatures from all involved parties. Copies of the
-final version of the Waste Movement document are sent to the parties having requested to get one.
+final version of the Movement document are sent to the parties having requested to get one.
 
 |*Result, Execution Phase* a|
 . The Authorities demands are fulfilled.
@@ -153,7 +155,7 @@ final version of the Waste Movement document are sent to the parties having requ
 in a dangerous environment.
 .. All involved parties will have the same, correct, information about the waste movement.
 .. It will not be possible to unload the waste in the wrong facility.
-.. All required information can be retrieved from the Waste Movement document and nothing need to be manually entered 
+.. All required information can be retrieved from the Movement document and nothing need to be manually entered 
 (unless you need to change something).
 
 

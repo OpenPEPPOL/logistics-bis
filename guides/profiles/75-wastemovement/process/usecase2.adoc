@@ -1,36 +1,36 @@
 [[use-case-2-waste]]
-== Use case 2 – A Swedish domestic transport of polluted waste.
-A Waste Movement Document is required by Authorities to follow the waste from loading to unloading.
+== Use case 2 – A Swedish domestic transport of Hazardous Waste.
+A Movement document is required by Authorities to follow the waste from loading to unloading.
 
 
-When moving polluted waste within the borders of a country, authorities must not always be informed in advance, but depending on quantity
+When moving Hazardous Waste within the borders of Sweden, authorities must not always be informed in advance, but depending on quantity
 and type of waste there are situations where a pre-registration is required.
-Anyway, a Waste Movement document must follow the waste from start to end of the movement, and at all times during the movement the
-authorities can request to see it. If using a digital Waste Movement Document, the involved parties' applications must be enabled to 
-display the Waste Movement Document upon request.
+Anyway, a Movement document must follow the waste from start to end of the movement, and at all times during the movement the
+authorities can request to see it. If using a digital Movement document, the involved parties' applications must be enabled to 
+display the Movement Document upon request.
 
 [cols="1,5",options="header",]
 |====
 |*Use Case number* |2
-|*Use Case Name* |Swedish domestic transport of polluted waste.
+|*Use Case Name* |Swedish domestic transport of Hazardous Waste.
 |*Use Case Description* a|
-Describes a complete process to move polluted waste from the Despatch location to a Disposal facility when movement is within 
+Describes a complete process to move Hazardous Waste from the Despatch location to a Disposal/Recovery facility when movement is within 
 the borders of Sweden.
-Involved parties must add a signature to the common Waste Movement Document - Waste Producer Party (Despatching party), 
+Involved parties must add a signature to the common Movement Document - Waste Producer Party (Despatching party), 
 Transporting Party and the Receiving Party.
-Information about Type of Waste, Quantity/Weight, Despatch address and Destination is required in the Waste Movement document.
-When the Waste Movement Document is signed also by the Receiver - the Disposal facility - it normally should be returned to the 
-Waste Producer Party as a confirmation of that the polluted waste has arrived to the correct place and that responsibility is taken over.
+Information about Type of Waste, Quantity/Weight, Despatch address and Destination is required in the Movement document.
+When the Movement document is signed also by the Receiver - the Disposal/Recovery facility - it normally should be returned to the 
+Waste Producer Party as a confirmation of that the Hazardous Waste has arrived to the correct place and that responsibility is taken over.
 
-The use of a Waste Movement document is normally a requirement from authorities, but using a digital Waste Movement document also adds 
+The use of a Movement document is normally a requirement from authorities, but using a digital Movement document also adds 
 benefits for parties using it. The transmission of information about the content of the transport - type of waste, quantity/weight 
-destination etc - in the Waste Movement document will improve data quality and decrease manual work since no manual entry will be 
+destination etc - in the Movement document will improve data quality and decrease manual work since no manual entry will be 
 required if receiving a digital version of it.
 
-Another benefit of using a digital Waste Movement Document is that a receiver can not by mistake accept waste that is not destined to 
+Another benefit of using a digital Movement Document is that a receiver can not by mistake accept waste that is not destined to 
 that Disposal facility without knowing it and without breaking the traceability. If the driver went to the wrong facility, the receiver 
-does not have the Waste Movement document to sign and forward. If unloading anyway, the Waste Movement document stays unsigned with the
-receiver that was supposed to receive the waste, and the Responsible party will new receive it in return.
+does not have the Movement document to sign and forward. If unloading anyway, the Movement document stays unsigned with the
+receiver that was supposed to receive the waste, and the Responsible party will not receive it in return.
 
 
 |*Parties involved* a|
@@ -38,45 +38,47 @@ Sender (In UBL: SenderParty) (Is different depending on which step in the proces
 
 Receiver (In UBL: ReceiverParty) (Is also different depending on the step in process. See flow description below.)
 
-Waste Producer (In UBL: WasteProducerParty) (Responsible for the waste and issuer of the original Waste Movement Document.)
+Waste Producer (In UBL: WasteProducerParty) (Responsible for the waste and issuer of the original Movement document.)
 
-Notifier (In UBL: NotifierParty) (Responsible for the waste or his/her representative.)
+Notifier (In UBL: NotifierParty) (Responsible for the Waste or his/her representative.)
 
 Disposal Facility (In UBL: DisposalFacilityParty) (The Receiver of the Waste.)
 
 Carrier party (In UBL: CarrierParty) 
 
-Document Distribution party (In UBL: Party) (Involved parties that wish to receive a copy of the final version of the Waste 
-Movement document may add themselves as a party here before sending the Waste Movement document on to next party in line.)
+Document Distribution party (In UBL: Party) (Involved parties that wish to receive a copy of the final version of the 
+Movement document may add themselves as a party here before sending the Movement document on to next party in line.)
 
 |*Pre conditions* a|
-The Waste Movement document is created and signed by the Waste Producer Party or someone he/she has authorized to do it. It is created 
-as a result of loading the truck that is about to move the polluted waste.
-The Waste Movement document is sent to the driver of the truck and signed by this driver before he leaves.
+The Movement document is created and signed by the Waste Producer Party or someone he/she has authorized to do it. It is created 
+as a result of loading the truck that is about to move the Hazardous Waste.
+The Movement document is sent to the driver of the truck and signed by this driver before he leaves.
 
 |*Post conditions* a|
-The Waste receiver - the Disposal facility - will receive the Waste Movement Document from the driver of the truck once signed by him/her.
-When the document is finished, the receiver will return it to the Waste Producer - the responsible party.
+The Waste receiver - the Disposal/Recovery facility - will receive the Movement Document from the driver of the truck once signed by 
+him/her. When the document is finished, the receiver will return it to the Waste Producer - the responsible party.
 
 |*Assumptions* a|
-. The Waste Producer and the Carrier has an agreement about moving the polluted waste.
-. The Waste Producer and the Disposal Facility has an agreement of taking care of and responsibility over the Waste.
-. The Sender and Receiver of the Waste Movement Document may or may not have any business relationship with eachother. The Waste Movement
-Document must be possible to transfer in both situations.
+. The Waste Producer and the Carrier has an agreement about moving the Hazardous Waste.
+. The Waste Producer and the Disposal Facility has an agreement of taking care of the Waste.
+. The Sender and Receiver of the Movement document may or may not have any business relationship with eachother. The Movement
+document must be possible to transfer in both situations.
 
 
 |*The flow* a|
-. A truck arrives to the Despatch Location to load the polluted waste.
-. The Waste Producer (or a party authorized by him) loads the truck, creates a Waste Movement document, signs it and sends it to 
+. A truck arrives to the Despatch Location to load the Hazardous Waste.
+. The Waste Producer (or a party authorized by him/her) loads the truck, creates a Movement document, signs it and sends it to 
 the Carrier Party, which immediately forwards the document to the driver.
-. The driver from the Carrier Party signs the Waste Movement document before leaving the Despatch Location and sends it on to the 
-Receiver - the Disposal Facility. 
+. The driver from the Carrier Party signs the Movement document before leaving the Despatch Location and sends it on to the 
+Receiver - the Disposal/Recovery Facility. 
 . The driver must be able to display the document if authorities request to see it during transport.
-. The Disposal Facility must have a received signed document before accepting the polluted waste. The quantity/weight until now is
-estimated but now, before unloading, the real quantity/weight must be determined and update the Waste Movement Document.
-. Sometimes the type of waste is re-classified by the Receiver, and also that information should update the Waste Movement document.
-. When all amendments are made, the Waste Movement document is returned to the Waste Producer - the Responsible Party.
-. All involved parties in the process can add themselves as in-copy receiver of the final version of the Waste Movement document.
+. The Disposal/Recovery Facility must have a received signed Movement document before accepting the Hazardous Waste to keep the 
+traceability chain unbroken. 
+The quantity/weight until now is estimated but now, before unloading, the real quantity/weight must be determined and update the 
+Movement Document.
+. Sometimes the type of waste is re-classified by the Receiver, and also that information should update the Movement document.
+. When all amendments are made, the final version of the Movement document is returned to the Waste Producer - the Responsible Party.
+. All involved parties in the process can add themselves as in-copy receiver of the final version of the Movement document.
 The Waste Producer will send out copies to all parties having requested that.
 
 
@@ -91,7 +93,7 @@ The Waste Producer will send out copies to all parties having requested that.
 in a dangerous environment.
 .. All involved parties will have the same, correct, information about the waste movement.
 .. It will not be possible to unload the waste in the wrong facility.
-.. All required information can be retrieved from the Waste Movement document and nothing need to be manually entered 
+.. All required information can be retrieved from the Movement document and nothing need to be manually entered 
 (unless you need to change something).
 
 
