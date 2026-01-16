@@ -69,8 +69,30 @@ include::{snippet-dir}/snippet-30-4.xml[tags=fuel]
 == Environmental Emission
 
 Caculated envionmental emissions related to the transport or other related service that consumes fuel.
-
 For all other AttributeIDs, the element Measure is used instead of Description.
+
+The Environmental Emission section is used to report emissions linked to fuel   
+consumption during transport. The value provided in cbc:Measure within   
+cac:EnvironmentalEmission should represent the emissions per unit of fuel (for   
+example, grams of CO₂ per liter of diesel).  
+
+To determine the total emissions for the transport activity, the receiver must multiply:  
+• The emission factor (cbc:Measure in cac:EnvironmentalEmission) by  
+• The total fuel consumed (cbc:Measure in the corresponding MeasurementDimension with cbc:AttributeID = "FuelConsumption").  
+
+Formula:  
+Total Emissions=Emission Factor × Fuel Consumption   
+Where, for instance, emission factor is in gCO₂/liter and fuel consumption is in liters.
+
+This method aligns Environmental Emission reporting with how Product Climate   
+Data is handled elsewhere in the Advanced Despatch Advice and ensures   
+consistency across environmental calculations.  
+
+Example how to calculate total CO₂ emissions: 115.6 liters × 2650 g CO₂/liter = 306340 g CO₂  
+
+.Clarification:  
+This calculation method should be followed for all types of Environmental Emission   
+codes (e.g., CO₂, NOX, PM, HC), ensuring harmonized and verifiable emission reporting in the Advanced Despatch Advice.  
 
 .Definitions of the EnvironmentalEmissionTypeCode:s.
 [cols="1,5",options="header",stripes=even]
