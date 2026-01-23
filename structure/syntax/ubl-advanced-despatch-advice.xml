@@ -24,9 +24,13 @@
 	     <Element>
          <Term>cbc:ProfileID</Term>
          <Name>Business process type identifier</Name>
-         <Description>Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the Advanced Despatch Advice. One profile is used when the receiver of the Despatch Advice is expected to return a response message, the other is used when no response message is used. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1" and "urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1"</Description>
+         <Description>Identifies the BII profile or business process context in which the transaction appears. There are two ProfileIDs defined for the 
+		Advanced Despatch Advice. One profile is used when the receiver of the Despatch Advice is expected to return a response message, the other is used 
+		when no response message is used. Possible choices are: "urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1" 
+		and "urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1"</Description>
          <DataType>Identifier</DataType>
          <Reference type="BUSINESS_TERM">tir16-001</Reference>
+         <Reference type="RULE">PEPPOL-T120-R002</Reference>
          <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1</Value>
       </Element>
 	
@@ -2842,7 +2846,6 @@
                   <Description>Identifies the order that the reference order line belongs
 							to.</Description>
                   <Reference type="BUSINESS_TERM">tir16-p010</Reference>
-                  <Reference type="RULE">PEPPOL-T120-R002</Reference>
                   <Value type="EXAMPLE">AEG012345</Value>
                </Element>
                <Element cardinality="0..1">
