@@ -4,7 +4,7 @@
     <ns prefix="cbc" uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"/>
     <ns prefix="cac" uri="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"/>
     <ns prefix="ext" uri="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"/>
-    <ns prefix="ubl"uri="urn:oasis:names:specification:ubl:schema:xsd:UnsubscribeFromProcedureRequest-2"/>
+    <ns prefix="ubl" uri="urn:oasis:names:specification:ubl:schema:xsd:UnsubscribeFromProcedureRequest-2"/>
     <ns uri="http://www.w3.org/2001/XMLSchema" prefix="xs"/>
     <ns uri="utils" prefix="u"/>
 
