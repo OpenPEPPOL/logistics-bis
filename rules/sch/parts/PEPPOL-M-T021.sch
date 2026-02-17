@@ -1,4 +1,6 @@
-﻿    <pattern>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://purl.oclc.org/dsdl/schematron">
+    <pattern>
         <rule context="*">
             <report id="PEPPOL-T021-S002" flag="fatal" test="normalize-space(.) = '' and not(*)"
                 >[PEPPOL-T021-S002] An Unsubscribe from Procedure document MUST NOT contain empty

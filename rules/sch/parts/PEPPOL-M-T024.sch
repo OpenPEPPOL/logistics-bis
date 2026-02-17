@@ -1,4 +1,5 @@
-﻿    <pattern>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://purl.oclc.org/dsdl/schematron">  <pattern>
         <rule context="*">
             <report id="PEPPOL-T024-S002" flag="fatal" test="normalize-space(.) = '' and not(*)" >[PEPPOL-T024-S002] A Call For Tenders document MUST NOT contain empty elements.</report>
         </rule>

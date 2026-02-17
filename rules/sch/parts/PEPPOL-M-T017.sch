@@ -1,4 +1,5 @@
-﻿    <pattern>
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://purl.oclc.org/dsdl/schematron"> <pattern>
         <rule context="//*[not(*) and not(normalize-space())]">
             <assert id="PEPPOL-T017-R001" test="false()" flag="fatal">Document MUST not contain empty elements.</assert>
         </rule>
