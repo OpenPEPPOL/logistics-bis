@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ApplicationResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2"
+                     xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                     xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+    <!-- tag::ublVersionID[] -->
+    <cbc:UBLVersionID>2.2</cbc:UBLVersionID> <!--.-->
+    <!-- end::ublVersionID[] -->
+    <!-- tag::customizationID[] -->
+    <cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t018:1.1</cbc:CustomizationID> <!--.-->
+    <!-- end::customizationID[] -->
+    <!-- tag::profileID[] -->
+    <cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p010:1.1</cbc:ProfileID> <!--.-->
+    <!-- end::profileID[] -->
+    <!-- tag::id[] -->
+    <cbc:ID>123e4567-e89b-12d3-a456-426614174000</cbc:ID> <!--.-->
+    <!-- end::id[] -->
+    <!-- tag::issueDateTime[] -->
+    <cbc:IssueDate>2021-07-18</cbc:IssueDate> <!--.-->
+    <cbc:IssueTime>14:44:33+01:00</cbc:IssueTime> <!--.-->
+    <!-- end::issueDateTime[] -->
+    <!-- tag::senderParty[] -->
+    <cac:SenderParty>
+        <cbc:EndpointID schemeID="9930">DE122268496</cbc:EndpointID> <!--.-->
+    </cac:SenderParty>
+    <!-- end::senderParty[] -->
+    <!-- tag::receiverParty[] -->
+    <cac:ReceiverParty>
+        <cbc:EndpointID schemeID="9946">500820007</cbc:EndpointID> <!--.-->
+    </cac:ReceiverParty>
+    <!-- end::receiverParty[] -->
+    <!-- tag::documentResponse[] -->
+    <cac:DocumentResponse>
+        <!-- tag::response[] -->
+        <cac:Response>
+            <cbc:ResponseCode>RE</cbc:ResponseCode> <!--.-->
+            <cbc:Description>Rejected</cbc:Description> <!--.-->
+        </cac:Response>
+        <!-- end::response[] -->
+        <!-- tag::documentReference[] -->
+        <cac:DocumentReference>
+            <cbc:ID>4e3517fd-724d-44fc-b90b-5743c33ff68e</cbc:ID> <!--.-->
+            <cbc:DocumentTypeCode>urn:fdc:peppol.eu:prac:trns:t013:1.1</cbc:DocumentTypeCode> <!--.-->
+        </cac:DocumentReference>
+        <!-- end::documentReference[] -->
+        <!-- tag::lineResponse[] -->
+        <cac:LineResponse>
+            <!-- tag::lineReference[] -->
+            <cac:LineReference>
+                <cbc:LineID>/TenderWithdrawal/cac:TenderDocumentReference/cbc:ID</cbc:LineID> <!--.-->
+            </cac:LineReference>
+            <!-- end::lineReference[] -->
+            <!-- tag::lineResponseResponse[] -->
+            <cac:Response>
+                <cbc:ResponseCode>RE</cbc:ResponseCode> <!--.-->
+                <cbc:Description>A Tender Document Reference Identifier MUST have a schemeURI attribute.</cbc:Description> <!--.-->
+                <cac:Status>
+                    <cbc:StatusReasonCode>BV</cbc:StatusReasonCode> <!--.-->
+                </cac:Status>
+            </cac:Response>
+            <!-- end::lineResponseResponse[] -->
+        </cac:LineResponse>
+        <!-- end::lineResponse[] -->
+    </cac:DocumentResponse>
+    <!-- end::documentResponse[] -->
+</ApplicationResponse>

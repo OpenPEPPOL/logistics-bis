@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ApplicationResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2"
+                     xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                     xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+    <!--tag::ubl-version[] -->
+    <cbc:UBLVersionID>2.2</cbc:UBLVersionID> <!--.-->
+    <!--end::ubl-version[] -->
+    <!--tag::specification-id[] -->
+    <cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t016:1.2</cbc:CustomizationID>
+    <!--end::specification-id[] -->
+    <!--tag::business-process-id[] -->
+    <cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p008:1.2</cbc:ProfileID>
+    <!--end::business-process-id[] -->
+    <!--tag::response-id[] -->
+    <cbc:ID>123e4567-e89b-12d3-a456-426614174000</cbc:ID> <!--.-->
+    <!--end::response-id[] -->
+    <!--tag::response-issue-date[] -->
+    <cbc:IssueDate>2021-07-18</cbc:IssueDate> <!--.-->
+    <!--end::response-issue-date[] -->
+    <!--tag::response-issue-time[] -->
+    <cbc:IssueTime>14:44:33+01:00</cbc:IssueTime> <!--.-->
+    <!--end::response-issue-time[] -->
+    <!--tag::sender-info[] -->
+    <cac:SenderParty>
+        <cbc:EndpointID schemeID="9930">DE122268496</cbc:EndpointID> <!--.-->
+    </cac:SenderParty>
+    <!--end::sender-info[] -->
+    <!--tag::receiver-info[] -->
+    <cac:ReceiverParty>
+        <cbc:EndpointID schemeID="9946">500820007</cbc:EndpointID> <!--.-->
+    </cac:ReceiverParty>
+    <!--end::receiver-info[] -->
+    <cac:DocumentResponse>
+        <!--tag::response-information[] -->
+        <cac:Response>
+            <cbc:ResponseCode>RE</cbc:ResponseCode> <!--.-->
+            <cbc:Description>Rejected due to validation error</cbc:Description> <!--.-->
+            <cbc:EffectiveDate>2021-07-20</cbc:EffectiveDate> <!--.-->
+            <cbc:EffectiveTime>09:00:00+01:00</cbc:EffectiveTime> <!--.-->
+            <cac:Status>
+                <cbc:ConditionCode>FCST</cbc:ConditionCode> <!--.-->
+            </cac:Status>
+        </cac:Response>
+        <!--end::response-information[] -->
+        <!--tag::document-reference[] -->
+        <cac:DocumentReference>
+            <cbc:ID>4e3517fd-724d-44fc-b90b-5743c33ff68e</cbc:ID> <!--.-->
+            <cbc:UUID>53EB9F20-EE12-474F-9424-78FC604E8FAE</cbc:UUID> <!--.-->
+            <cbc:DocumentTypeCode>CN</cbc:DocumentTypeCode> <!--.-->
+            <cbc:VersionID>1</cbc:VersionID> <!--.-->
+        </cac:DocumentReference>
+        <!--end::document-reference[] -->
+        <cac:LineResponse>
+            <!--tag::line-reference[] -->
+            <cac:LineReference>
+                <cbc:LineID>
+                    /ContractNotice/cac:ContractingParty[1]/cac:Party[1]/cac:PostalAddress[1]/cbc:CountrySubentityCode[1]
+                </cbc:LineID> <!--.-->
+                <cac:DocumentReference> <!--.-->
+                    <cbc:ID>53EB9F20-EE12-474F-9424-78FC604E8FAE</cbc:ID> <!--.-->
+                </cac:DocumentReference>
+            </cac:LineReference>
+            <!--end::line-reference[] -->
+            <!--tag::line-response-code-info[] -->
+            <cac:Response>
+                <cbc:ResponseCode>RE</cbc:ResponseCode> <!--.-->
+                <cbc:Description>Validation gives error [Rule ID] - Organisation country subdivision (BT-500) MUST be
+                    coded using http://publications.europa.eu/resource/authority/nuts code list
+                    - Link to eForms schematrons https://github.com/OP-TED/eForms-SDK/tree/main/schematrons
+                </cbc:Description> <!--.-->
+                <cac:Status>
+                    <cbc:StatusReasonCode>BV</cbc:StatusReasonCode> <!--.-->
+                </cac:Status>
+            </cac:Response>
+            <!--end::line-response-code-info[] -->
+        </cac:LineResponse>
+    </cac:DocumentResponse>
+</ApplicationResponse>
