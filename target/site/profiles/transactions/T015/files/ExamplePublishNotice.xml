@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- tag::submit-objects-request[] -->
+<lcm:SubmitObjectsRequest
+        id="4e3517fd-724d-44fc-b90b-5743c33ff68e"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+        xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xsi:schemaLocation="
+        urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0
+        http://docs.oasis-open.org/regrep/regrep-core/v4.0/csd01/xsd/rim.xsd
+        urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0
+        http://docs.oasis-open.org/regrep/regrep-core/v4.0/os/xsd/lcm.xsd"
+        mode="CreateOrVersion"
+>
+    <!-- tag::specification-identification[] -->
+    <rim:Slot name="SpecificationIdentification"> <!--.-->
+        <rim:SlotValue xsi:type="rim:StringValueType">
+            <rim:Value>urn:fdc:peppol.eu:prac:trns:t015:1.2</rim:Value> <!--.-->
+        </rim:SlotValue>
+    </rim:Slot>
+    <!-- end::specification-identification[] -->
+    <!-- tag::business-process-type-identifier[] -->
+    <rim:Slot name="BusinessProcessTypeIdentifier"> <!--.-->
+        <rim:SlotValue xsi:type="rim:StringValueType">
+            <rim:Value>urn:fdc:peppol.eu:prac:bis:p008:1.2</rim:Value> <!--.-->
+        </rim:SlotValue>
+    </rim:Slot>
+    <!-- end::business-process-type-identifier[] -->
+    <!-- tag::issue-date-time[] -->
+    <rim:Slot name="IssueDateTime"> <!--.-->
+        <rim:SlotValue xsi:type="rim:DateTimeValueType"> <!--.-->
+            <rim:Value>2020-02-14T19:20:30+01:00</rim:Value> <!--.-->
+        </rim:SlotValue>
+    </rim:Slot>
+    <!-- end::issue-date-time[] -->
+    <!-- tag::sender-electronic-address[] -->
+    <rim:Slot name="SenderElectronicAddress" type="EAS"> <!--.-->
+        <rim:SlotValue xsi:type="rim:StringValueType"> <!--.-->
+            <rim:Value>9930:DE122268496</rim:Value> <!--.-->
+        </rim:SlotValue>
+    </rim:Slot>
+    <!-- end::sender-electronic-address[] -->
+    <!-- tag::receiver-electronic-address[] -->
+    <rim:Slot name="ReceiverElectronicAddress" type="EAS"> <!--.-->
+        <rim:SlotValue xsi:type="rim:StringValueType"> <!--.-->
+            <rim:Value>9946:500820007</rim:Value> <!--.-->
+        </rim:SlotValue>
+    </rim:Slot>
+    <!-- end::receiver-electronic-address[] -->
+    <!-- tag::publication-requested[] -->
+    <rim:Slot name="PublicationRequested"> <!--.-->
+        <rim:SlotValue xsi:type="rim:BooleanValueType"> <!--.-->
+            <rim:Value>true</rim:Value>
+        </rim:SlotValue>
+    </rim:Slot>
+    <!-- end::publication-requested[] -->
+    <!-- tag::registry-object-list[] -->
+    <rim:RegistryObjectList> <!--.-->
+        <rim:RegistryObject
+                lid="2C621D47-112D-42D4-B6F8-57392464C3E7"
+                id="53EB9F20-EE12-474F-9424-78FC604E8FAE"
+                xsi:type="rim:ExtrinsicObjectType"> <!--.-->
+            <!-- tag::document-type-code[] -->
+            <rim:Slot name="UBLDocumentSchema" type="ublDocumentSchema"> <!--.-->
+                <rim:SlotValue xsi:type="rim:StringValueType">
+                    <rim:Value>CN</rim:Value>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- end::document-type-code[] -->
+            <!-- tag::publication-date[] -->
+            <rim:Slot name="NoticePublicationDatePreferred"> <!--.-->
+                <rim:SlotValue xsi:type="rim:DateTimeValueType">
+                    <rim:Value>2020-02-14T19:20:30+01:00</rim:Value> <!--.-->
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- end::publication-date[] -->
+            <!-- tag::notice-version[] -->
+            <rim:Slot name="NoticeVersion"> <!--.-->
+                <rim:SlotValue xsi:type="rim:IntegerValueType"> <!--.-->
+                    <rim:Value>1</rim:Value>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- end::notice-version[] -->
+            <!-- tag::eforms-version[] -->
+            <rim:Slot name="eFormsVersion"> <!--.-->
+                <rim:SlotValue xsi:type="rim:StringValueType"> <!--.-->
+                    <rim:Value>eforms-sdk-1.2</rim:Value>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- end::eforms-version[] -->
+            <!-- tag::information-about-buyer[] -->
+            <rim:Slot name="BuyerInformation">
+                <!-- tag::buyer-party-identification[] -->
+                <rim:Slot name="BuyerPartyIdentification" type="ICD"> <!--.-->
+                    <rim:SlotValue xsi:type="rim:StringValueType"> <!--.-->
+                        <rim:Value>0204:991-1234512345-06</rim:Value>
+                    </rim:SlotValue>
+                </rim:Slot>
+                <!-- end::buyer-party-identification[] -->
+                <!-- tag::buyer-electronic-address[] -->
+                <rim:Slot name="BuyerElectronicAddress" type="EAS"> <!--.-->
+                    <rim:SlotValue xsi:type="rim:StringValueType"> <!--.-->
+                        <rim:Value>9946:500820007</rim:Value> <!--.-->
+                    </rim:SlotValue>
+                </rim:Slot>
+                <!-- end::buyer-electronic-address[] -->
+            </rim:Slot>
+            <!-- end::information-about-buyer[] -->
+            <!-- tag::additional-document-reference[] -->
+            <rim:Slot name="AdditionalDocumentReference" type="SomeStatistics"> <!--.-->
+                <rim:SlotValue xsi:type="rim:StringValueType">
+                    <rim:Value>./12f5017b-e5fa-404b-bfa1-849c721b2c83.eform.xml</rim:Value> <!--.-->
+                </rim:SlotValue>
+            </rim:Slot>
+            <rim:Slot name="AdditionalDocumentReference" type="EvenMoreStats"> <!--.-->
+                <rim:SlotValue xsi:type="rim:StringValueType">
+                    <rim:Value>./d2c79a1a-af4c-409f-b4c5-f2460e32cfb8.eform.xml</rim:Value>
+                </rim:SlotValue>
+            </rim:Slot>
+            <!-- end::additional-document-reference[] -->
+            <rim:RepositoryItemRef xlink:href="./53EB9F20-EE12-474F-9424-78FC604E8FAE.eform.xml"/> <!--.-->
+        </rim:RegistryObject>
+    </rim:RegistryObjectList>
+    <!-- end::registry-object-list[] -->
+</lcm:SubmitObjectsRequest>
+        <!-- end::submit-objects-request[] -->
+
