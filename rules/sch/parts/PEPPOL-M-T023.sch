@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://purl.oclc.org/dsdl/schematron">
     <pattern>
         <rule context="*">
             <report id="PEPPOL-T023-R001" flag="fatal" test="normalize-space(.) = '' and not(*)">A Qualification Response document MUST NOT contain empty elements.</report>
@@ -90,3 +92,4 @@
             <report id="PEPPOL-T023-R044" flag="warning" test="(not(cac:ProcurementProjectLot))">If a Qualification Response Resolution has to be expressed for more than one lot in a procurement, the appropriate lot identifier SHOULD be named.</report>
         </rule>
     </pattern>
+</schema>

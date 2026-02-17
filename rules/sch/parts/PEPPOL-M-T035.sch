@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://purl.oclc.org/dsdl/schematron">
 <!-- PEPPOL-M-T035: Pre-Award Catalogue Request Business Rules -->
     <pattern>
         <rule context="*">
@@ -47,4 +49,4 @@
             <assert id="PEPPOL-T035-R008" flag="fatal" test="(cbc:EndpointID)">[PEPPOL-T035-R008]
                 A Receiver party MUST have an endpoint identifier</assert>
         </rule>
-    </pattern>
+    </pattern></schema>

@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://purl.oclc.org/dsdl/schematron">
 <pattern>
     <rule context="*">
         <assert id="PEPPOL-T008-S001" flag="fatal" test="not(normalize-space(.) = '' and not(*))">A tendering answers document MUST NOT contain empty elements.</assert>
@@ -109,3 +111,4 @@
         <assert id="PEPPOL-T008-R029" flag="fatal" test="count(./cbc:Description) = 1">One question MUST be given.</assert>
     </rule>
 </pattern>
+</schema>

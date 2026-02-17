@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://purl.oclc.org/dsdl/schematron">
     <pattern>
         <rule context="*">
             <report id="PEPPOL-T004-S002" flag="fatal" test="normalize-space(.) = '' and not(*)" >[PEPPOL-T004-S002] A Call For Tenders document MUST NOT contain empty elements.</report>
@@ -346,3 +348,4 @@
                     flag="fatal" id="CL-T83-R005">[CL-T83-R005]-A country identification code must be coded using ISO 3166, alpha 2 codes</assert>
         </rule>
     </pattern>
+</schema>

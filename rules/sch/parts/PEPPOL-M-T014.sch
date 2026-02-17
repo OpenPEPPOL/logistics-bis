@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://purl.oclc.org/dsdl/schematron">
     <pattern>
         <rule context="*">
             <assert id="PEPPOL-T45-S002" flag="fatal" test="normalize-space(.) != ''">A Tender Withdrawal
@@ -236,3 +238,4 @@
             </assert>
         </rule>
     </pattern>
+</schema>
