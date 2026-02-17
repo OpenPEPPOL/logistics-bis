@@ -1,0 +1,46 @@
+[[use-case-1-positive-response]]
+= Use Case 1 – Positive response
+
+This use case is a message response containing no errors, i.e. a positive response.
+
+[cols="2s,6",options="header"]
+|====
+|Use Case number
+|1
+|Use Case Name
+|Positive response
+
+|Use Case Description
+|This use case is a response based on a business document with no errors, i.e. a positive response.
+
+|Parties involved
+|BusinessDocumentSender, TMR Receiver +
+BusinessDocumentReceiver, TMR Sender
+
+|Status Code
+|AP
+
+|Possible Status Reason Codes
+|none
+
+|Assumptions
+a|
+.  The BusinessDocumentReceiver has received an electronic business document from the BusinessDocumentSender.
+.  The BusinessDocumentReceiver has validated the business document from the BusinessDocumentSender.
+.  The result of the validation is OK, no fatal errors or business concerns.
+
+|The flow
+a|
+.  The BusinessDocumentSender has prepared and sent an electronic business document to the BusinessDocumentReceiver.
+.  The BusinessDocumentReceiver has received the business document.
+.  The BusinessDocumentReceiver has validated the business document.
+.  The TMR Sender has sent a TMR back to the BusinessDocumentSender.
+.  The TMR Receiver has received and processed the TMR.
+
+|Result
+a|
+.  The TMR helped the BusinessDocumentSender to confirm that the business document was received and validated with no errors by the BusinessDocumentReceiver.
+
+|XML example file
+|See Appendix A for a sample file illustrating Use Case 1.
+|====

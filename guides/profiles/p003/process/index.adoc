@@ -1,0 +1,35 @@
+
+= Business process
+
+The {link-bpmn}[BPMN] diagram shows the choreography of the business process implemented by the {name-profile}. The choreography of business collaborations defines the sequence of interactions when the profile is run within its context.
+
+
+image::bpmn003.png[align="center", width=800]
+
+[cols="2,10", options="header"]
+.Business process
+|===
+| Category | Description
+| Description | An economic operator prepares and then submits a tender to a contracting body, as a response to a call for tender. The tender is to be encrypted according to defined business needs, as specified in thhe Call for Tender. The process of encryption and decryption has to be considered as conformant to the profile. +
+
+The Tender must contain documents as defined by the procedure, e.g. an ESPD, Pre-award catalogue and other structured and unstructured document that the contracting authority requires in the Tender. The contracting body notifies the economic operator of having received the Tender. +
+
+The contracting body notifies the economic operator of having received the Tender.
+
+| Pre-conditions | A contracting body has issued a call for tender to potential applicants.
+| Post-conditions | Tenders have been received by the contracting body and are to be evaluated by him. Tender reception has been notified to the economic operators.
+|===
+
+[cols="3,2,7", options="header"]
+.Role description
+|===
+| Activity | Role involved | Description
+| Send Tender | Economic operator | The economic operator has prepared his offer and submits the signed and encrypted tender documents.
+| Receive Tender | Contracting body | The contracting body receives the bid, but doesn’t look at the content of the bid before the deadline for submission has passed. The bid is kept secure in a tender box.
+| Confirm tender reception | Contracting body | The contracting body sends the economic operator an acknowledgement with time stamp of reception and hash code of the bid.
+| Receive tender receipt notification | Economic operator | The economic operator receives the electronic tender reception notification document
+|===
+
+
+include::implementation-guidelines.adoc[]
+

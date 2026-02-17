@@ -1,0 +1,49 @@
+
+[cols="2,10a", options="header"]
+.Transaction business requirements of T005
+|===
+| ID | Requirement
+| tbr90-001 | The CEN/BII profile and transaction names and versions shall be identified.
+| tbr90-002 | The economic operator shall be identified.
+| tbr90-003 | The contracting body shall be identified.
+| tbr90-004 | The sending date and time (and time zone) of the message shall be stated.
+| tbr90-005 | The message shall have a message ID and may refer to message ID’s of previously submitted
+tenders.
+| tbr90-006 | The message shall contain the following information about the business opportunity:
+
+* Call for tenders ID and version
+* Procurement Reference number
+| tbr90-007 | The  message  shall  contain  either  credentials  issued  by  the  Contracting  Body,  or  the  following information about the business:
+
+* Economic operator ID
+* Economic operator ID type
+* Economic operator name
+* Economic operator legal form
+* Registration number in the professional registry
+* Economic operator registration country code
+* Economic operator postal address (standard address elements)
+* Contacting details (standard contact person elements)
+| tbr90-008 | The message shall contain the following information about the tender:
+
+* Tender ID
+* Tender signature
+| tbr90-009 | The message shall contain one or more (unstructured) tender documents.
+| tbr90-010 | The message may contain the following information about the tender:
+
+* Lot ID
+* Language
+| tbr90-011 | The message shall contain metadata of each of the documents that are attached to the tender:
+
+* ID
+* Document type (Mime code)
+* Document description
+* Name
+* Size
+* Hash
+* Hash method
+* Encryption Information / certificate
+* The package to which the document belongs
+* Lot ID (if the document is specific to a lot)
+| tbr90-012 | The message shall identify the tender documents. It may identify the language of the packaged documents.
+| tbr90-013 | If imposed by the contracting body, the tender documents must be signed as specified by the contracting body
+|===

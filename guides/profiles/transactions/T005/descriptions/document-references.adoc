@@ -1,0 +1,62 @@
+
+= Document references
+
+== Procurement project identifier
+
+The identifier specified by the buyer as a reference number for all documents in the procurement process. It is also known as procurement project identifier, procurement reference number or contract folder identifier. In UBL this element is mapped to the cbc:ContractFolderID class.
+
+[source,xml,indent=0]
+----
+include::../{xml-doc-file}[tags=ContractFolderID]
+----
+
+
+==	Call for tender reference
+
+A reference to the call for tender as issued by the contracting body. Creates a link between the tender and its call for tender. In the UBL mapping this is represented using the cac:DocumentReference class.
+[source,xml,indent=0]
+----
+include::../{xml-doc-file}[tags=DocumentReference1]
+----
+
+== Attached documents and tender encryption
+
+The class cac:DocumentReference is used to attach the tender documents or their references. If the Call For Tenders (CfT) business document provided an encryption certificate, the tender documents MUST be encrypted by the economic operator using that certificate.
+
+The example below shows the attached and encrypted tender document and its hash and algorithm. Encrypted tender documents must use the file extension .p7m in  _<cbc:Filename></cbc:Filename>_. The attached tender document in this example is an unstructured .pdf file.
+
+[source,xml,indent=0]
+----
+include::../{xml-doc-file}[tags=DocumentReference2]
+----
+
+== Document Type Code
+
+The type of business document must also be included in the document reference element. Document Type
+Code is coded according to code list 1001 issued by UN/CEFACT. For a complete list of all
+the document types, see https://service.unece.org/trade/untdid/d99a/uncl/uncl1001.htm[UNCL 1001]. In this message the following codes are used:
+
+* 310 (Offer/quotation): Tender reference
+* 311 (Request for quote): Call for tender reference
+* 916 (Related document): ESPD response
+
+
+[source,xml,indent=0]
+.Document Type Code
+----
+include::../{xml-doc-file}[tags=DocumentTypeCode]
+----
+
+
+== ESPD response
+
+ESPD response can be given as either structured or unstructured information, based on what is asked for in the call for tenders. The transaction T005 does not prescribe a specific ESPD version to be used. The use of other ESPD versions than those used in T004 may result into incompatibilities. Thus, it should be described by the Contracting authority in the Tendering Documents which ESPD version is used and how it can be returned by Economic Operators.
+
+[source,xml]
+.Example provided ESPD response (structured)
+----
+include::../{xml-doc-file}[tags=Provided_ESPD]
+----
+<1>  Codevalue used for ESPD response must be 916 (Related document)
+<2>  DocumentDescription should be "ESPD Response"
+<3>  Name of the structured ESPD file

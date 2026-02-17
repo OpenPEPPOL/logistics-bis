@@ -1,0 +1,33 @@
+//ToDo
+= Business requirements
+
+For the {link-peppol} BIS all {link-peppol} business requirements are applicable as documented in {link-BII107}. When adopting {name-profile} implementers must comply to these requirements.
+
+[cols="2,10", options="header"]
+|===
+| Req. ID
+| Requirement statement
+| br107-001
+| At most one Tendering Message Response can be sent per received message.
+| br107-002
+| If supported by both sender and receiver, the receiver MUST send a Tendering Message Response whenever he detects errors in the business document that prevents him from processing it.
+| br107-003
+| If supported by both sender and receiver, the receiver SHOULD (as a good practice) send a Tendering Message Response whenever he detects warnings in the business document that do not prevents him from processing it, but that may violate agreed business rules.
+| br107-004
+| If supported by both sender and receiver, the receiver MAY (as a good practice) send a Tendering Message Response when the business document received was processed successfully.
+| br107-005
+| If supported by both sender and receiver, the business partners SHOULD agree to exchange Tendering Message Responses for all Tendering transactions.
+| br107-006
+| The Tendering Message Response SHOULD convey either an “accept” or a “reject” or a "conditionally accept" of the instance received. If accepted, no errors should be reported. If rejected or "conditionally accepted" the reason may be stated.
+| br107-007
+| A rejection implies that the instance will not be further processed by the receiver.
+| br107-008
+| The Tendering Message Response can be used by its sender to report a business level rejection (e.g. a processing exception due to an expired deadline) of a previously received business document (e.g. tender) that is conformant to PEPPOL BIS.
+| br107-009
+| The specification assumes that any service provider or tendering platform acts on behalf of either the sender or the receiver.
+| br107-010
+| The Tendering Message Response should provide for coded responses in order to facilitate the automated processing of the Tendering Message Response.
+| br107-011
+| The Tendering Message Response should provide for coded status reasons in order to facilitate the understanding of the reasons why the processing of a document has failed and created an exception.
+
+|===

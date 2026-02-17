@@ -1,0 +1,54 @@
+
+= Transaction business and information requirements
+
+The PEPPOL transaction "{name-transaction}" is a structured electronic business document for providing metadata of qualification information requested by a contracting body in a call for tenders. By submitting a qualification document the economic operator is legally responsible for the correctness of the information provided.
+
+The transaction "{name-transaction}" inherits from the {link-bii3} profile
+
+* {name-profile-org}
+
+The following table describe the transaction business and information requirements of "{name-transaction}".
+
+[cols="2,10a", options="header"]
+.Transaction business requirements of {name-transaction}
+|===
+| ID | Requirement
+| tbr86-001 | The message shall indicate that it is about "economic operator sends his tender for the procurement project to contracting body" (message type identifier = profile name and version)
+| tbr86-002 | The economic operator shall be identified.
+| tbr86-003 | The contracting body shall be identified.
+| tbr86-004 | The sending date and time (and time zone) of the message shall be stated.
+| tbr86-005 | The message shall have a message ID and may refer to message ID’s of previously submitted qualification.
+| tbr86-006 | The message shall contain the following information about the business opportunity:
+
+* Call for tenders ID and version
+* Procurement Reference number
+| tbr86-007 | The message shall contain either credentials issued by the contracting body, or the following information about the business:
+
+* Economic operator ID
+* Economic operator ID type
+* Economic operator name
+* Economic operator legal form
+* Registration number in the professional registry
+* Economic operator registration country code
+* Economic operator postal address (standard address elements)
+* Contacting details (standard contact person elements)
+| tbr86-008 | The message shall contain information to identify the qualification.
+| tbr86-009 | The message shall contain one or more (unstructured) qualification documents.
+| tbr86-010 | The message may contain information about the Lot IDs to which the qualification documents refer to.
+| tbr86-011 | The message shall contain metadata of each of the qualification documents that are attached to the tender:
+
+* ID
+* Document type (Mime code)
+* Document description
+* Name
+* Language
+* Size
+* Hash
+* Hash method
+* Encryption Information / certificate
+* The package to which the document belongs
+* Lot ID (if the document is specific to a lot)
+| tbr86-012 | If imposed by the contracting body, the qualification documents must be signed as specified by the contracting body
+|===
+
+

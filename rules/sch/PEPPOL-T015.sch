@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
+    <title>PEPPOL business and syntax rules for publish notice</title>
+
+    <ns prefix="rim" uri="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"/>
+    <ns prefix="lcm" uri="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"/>
+    <ns prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance"/>
+    <ns prefix="xlink" uri="http://www.w3.org/1999/xlink"/>
+    <ns uri="http://www.w3.org/2001/XMLSchema" prefix="xs"/>
+    <ns uri="utils" prefix="u"/>
+
+    <!-- Functions -->
+    <xi:include href="parts/function/gln.xml"/>
+    <xi:include href="parts/function/slack.xml"/>
+    <xi:include href="parts/function/mod11.xml"/>
+	<xi:include href="parts/function/checkCodiceIPA.xml"/>
+	<xi:include href="parts/function/addPIVA.xml"/>
+	<xi:include href="parts/function/checkCF.xml"/>
+	<xi:include href="parts/function/checkCF16.xml"/>
+	<xi:include href="parts/function/checkPIVA.xml"/>
+	<xi:include href="parts/function/checkPIVAseIT.xml"/>
+	<xi:include href="parts/function/mod97-0208.xml"/>
+    <xi:include href="parts/function/abn.xml"/>       
+	<xi:include href="parts/function/checkSEOrgnr.xml"/>
+
+    <!-- Rules -->
+    <include href="parts/common/empty-elements.sch"/>
+    <include href="parts/common/rules.sch"/>
+    <include href="../../target/generated/T015-basic.sch"/>
+
+    <include href="parts/PEPPOL-M-T015.sch"/>
+
+</schema>

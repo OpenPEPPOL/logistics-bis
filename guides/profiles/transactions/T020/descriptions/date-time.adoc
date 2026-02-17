@@ -1,0 +1,30 @@
+
+= Date and time
+
+Issue date/time and the registered date/time must be sent.
+
+Issue date and received date are both xs:date data type, and the date is specified as "YYYY-MM-DD" where:
+
+* YYYY - four digit year
+* MM - two digit month(01 to 12)
+* DD - two digit day(0)
+
+Issue time and received time are both xs:time data type, and the time is specified as "hh:mm:ss" where:
+
+* hh - two digits of hour (00 to 23) (am/pm NOT allowed).
+* mm - two digits of minute(00 to 59)
+* ss - two digits of second(00 to 59)
+* TZD - time zone designator (Z or +hh:mm or -hh:mm)
+
+The registered date and time are the times, where the qualification was actually received and its delivery was registered while the issue date and time refer to the issuance of the qualification receipt notification.
+
+NOTE: The issue time and registered time must specify the time zone.
+
+[source,xml,indent=0]
+.Example of Issue date/time and Registered date/time
+
+----
+include::../files/QualificationResponse-doc.xml[tags=IssueDateTime]
+
+include::../files/QualificationResponse-doc.xml[tags=RegisteredDateTime]
+----

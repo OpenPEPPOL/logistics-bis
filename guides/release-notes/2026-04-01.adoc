@@ -1,0 +1,50 @@
+= Changelog for April release 2026
+*Release date 2024-04-01*
+
+=== P012 - New Profile - Qualification Response 1.0
+* New T023 - Qualification Response (Version 1.0)
+
+=== P013 - New Profile - Invitation to Tender 1.0
+* New T024 - Invitation to Tender (Version 1.0)
+
+=== P035 - Pre-Award Catalogue - Business Requirements Update
+
+* Update of P36 - Pre-Award Catalogue (Version 1.0): Profile ID changed from "urn:www.cenbii.eu:profile:bii35:ver3.0" to "urn:fdc:peppol.eu:prac:bis:p035:1.0"
+* New T035 Pre-Award Catalogue Request (Version 1.1): Customization ID "urn:fdc:peppol.eu:prac:trns:t035:1.0"
+* Update of T036 Pre-Award Catalogue (New Version 1.1): Customization ID changed from "urn:www.cenbii.eu:transaction:biitrdm068:ver3.0:extended:urn:www.peppol.eu:bis:peppol35a:ver1.0" to "urn:fdc:peppol.eu:prac:bis:p036:1.0"
+
+Business requirement identifiers for T036 Pre-Award Catalogue have been updated from op-t68-xxx to op-t36-xxx to align with the transaction identifier T036. This change affects all business requirements in both the transaction documentation and the profile documentation. The previous version used op-t68 identifiers which were confusing and inconsistent with the transaction naming convention.
+
+Updated requirement IDs:
+
+* General business requirements: op-t36-001 to op-t36-004 (previously op-t68-001 to op-t68-004)
+* Metadata requirements: op-t36-011 to op-t36-022 (previously op-t68-011 to op-t68-022)
+* Catalogue line requirements: op-t36-030 to op-t36-037 (previously op-t68-030 to op-t68-037)
+* Item requirements: op-t36-040 to op-t36-061 (previously op-t68-040 to op-t68-061)
+* Item property requirements: op-t36-070 to op-t36-075 (previously op-t68-070 to op-t68-075)
+
+=== Business Rules and Syntax Mapping
+
+**Update of T14 - Tender Withdrawal Notification (New Version 1.2):** Change the cardinality of cac:TenderDocumentReference in T014 from 1..1 to 1..n. TenderDocumentReference SHOULD NOT be used "more than once" was changed to "more than twice". Corresponding description were added as defined by the transaction to use code 13 for REM evidence and 310 for Tender reference. Fixed value 23 (typo - should be 13) was removed to allow for both values.
+
+=== Codelist
+**Update of SubmissionMethodCode (new version: 2026-04-01)**: Updating Codelist for SubmissionMethodCode with value "Paper and/or electronic submission". Also, the corresponding business term and descriptions have been updated
+
+=== New Peppol BIS Pre-award guide: Notification & Two-Stage Procedures
+
+The new guideline describes the choreography to execute two-stage procedures using Peppol. Thus, the
+notification and two-stage procedure guideline is a procedural specification. The guideline does not define
+individual transactions, but it refers to the already established Peppol BISs and standards, in which the
+transactions and the transaction information requirements are listed and defined.
+
+=== Editorial changes
+
+* Update description on the use of Additional document reference and Encryption Certificate in T004 and syntax mapping. Providing further examples.
+
+* Update context of PEPPOL Business Rule PEPPOL-T015-R022 (Schematron Rule Context was correct but assignment in Syntax mapping was not correct)
+
+* Update context of PEPPOL Business Rule PEPPOL-T015-R022 (Schematron Rule Context was correct but assignment in Syntax mapping was not correct)
+
+* Updated XML example for NUTS codes and CPV codes (Main /Additional commodity classification) in T004 and provided reference to the corresponding codelists of the publication office
+
+

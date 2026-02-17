@@ -3,237 +3,404 @@
 	<package url="http://docs.peppol.eu/poacc/upgrade/3.0/">PEPPOL BIS Upgrade 3.0</package>
 
 	<!-- unit testing -->
-	<!--testfolder>unit-common</testfolder-->
-	<testfolder>unit-advanced-despatch-advice</testfolder>
-	<!--<testfolder>unit-despatch-advice-w-response</testfolder>-->
-	<testfolder>unit-weight-statement</testfolder>
-	<testfolder>unit-transport-execution-plan-request</testfolder>
-	<testfolder>unit-transport-execution-plan</testfolder>
-	<testfolder>unit-waybill</testfolder>
-	<testfolder>unit-transportation-status-request</testfolder>
-	<testfolder>unit-transportation-status</testfolder>
-	<testfolder>unit-receipt-advice</testfolder>
-	<testfolder>unit-application-response</testfolder>
+	<testfolder>unit-common</testfolder>
 
 	<!-- example and snippet folders -->
 	<testfolder>examples</testfolder>
-	<testfolder>snippets/advanceddespatch</testfolder>
-	<!-- <testfolder>snippets/despatch-response</testfolder>-->
-	<testfolder>snippets/weightstatement</testfolder>
-	<testfolder>snippets/transport-execution-plan-request</testfolder>
-	<testfolder>snippets/transport-execution-plan</testfolder>
-	<testfolder>snippets/waybill</testfolder>
-	<testfolder>snippets/transportation-status-request</testfolder>
-	<testfolder>snippets/transportation-status</testfolder>
-	<testfolder>snippets/receipt-advice</testfolder>
-	<testfolder>snippets/application-response</testfolder>
+	<testfolder>snippets</testfolder>
 
-	<!-- base config -->
-	<configuration>
-		<identifier>peppolbis-T120-base-1.1</identifier>
-		<title>Advanced Despach Advice 1.0 (T120)</title>
-		<inherit>ubl-despatchadvice-2.1</inherit>
-		<file source="sch/PEPPOLBIS-T120.sch" path="xsl/PEPPOLBIS-T120.xsl"/>
-	</configuration>
-
-	<!--<configuration>
-		<identifier>peppolbis-T121-base-1.1</identifier>
-		<title>Despach Advice Response 1.0 (T121)</title>
-		<inherit>ubl-applicationresponse-2.1</inherit>
-		<file source="sch/PEPPOLBIS-T121.sch" path="xsl/PEPPOLBIS-T121.xsl"/>
-	</configuration>-->
+	<!-- ============================================================================================ -->
+	<!-- T001-T002: P001 - Procurement procedure subscription 1.2 -->
+	<!-- ============================================================================================ -->
 	
+	<!-- T001 base config -->
 	<configuration>
-		<identifier>peppolbis-T122-base-1.1</identifier>
-		<title>Weight Statement (T122)</title>
-		<inherit>ubl-weightstatement-2.3</inherit>
-		<file source="sch/PEPPOLBIS-T122.sch" path="xsl/PEPPOLBIS-T122.xsl"/>
+		<identifier>peppolbis-t001-base-1.2</identifier>
+		<title>PEPPOL Expression of Interest Request (T001)</title>
+		<inherit>ubl-expression-of-interest-request-2.1</inherit>
+		<file source="sch/PEPPOL-T001.sch" path="xsl/PEPPOL-T001.xsl" />
 	</configuration>
 
+	<!-- T002 base config -->
 	<configuration>
-		<identifier>peppolbis-T123-base-1.0</identifier>
-		<title>Transport Execution Plan Request (T123)</title>
-		<inherit>ubl-transport-execution-plan-request-2.4</inherit>
-		<file source="sch/PEPPOLBIS-T123.sch" path="xsl/PEPPOLBIS-T123.xsl"/>
+		<identifier>peppolbis-t002-base-1.2</identifier>
+		<title>PEPPOL Expression of Interest Response (T002)</title>
+		<inherit>ubl-expression-of-interest-response-2.1</inherit>
+		<file source="sch/PEPPOL-T002.sch" path="xsl/PEPPOL-T002.xsl" />
 	</configuration>
 
+	<!-- T021 base config -->
 	<configuration>
-		<identifier>peppolbis-T124-base-1.0</identifier>
-		<title>Transport Execution Plan (T124)</title>
-		<inherit>ubl-transport-execution-plan-2.4</inherit>
-		<file source="sch/PEPPOLBIS-T124.sch" path="xsl/PEPPOLBIS-T124.xsl"/>
+		<identifier>peppolbis-t021-base-1.2</identifier>
+		<title>PEPPOL Unsubscribe From Procedure Request (T021)</title>
+		<inherit>ubl-unsubscribe-from-procedure-request-2.1</inherit>
+		<file source="sch/PEPPOL-T021.sch" path="xsl/PEPPOL-T021.xsl" />
 	</configuration>
 
+	<!-- T022 base config -->
 	<configuration>
-		<identifier>peppolbis-T125-base-1.0</identifier>
-		<title>Waybill (T125)</title>
-		<inherit>ubl-waybill-2.3</inherit>
-		<file source="sch/PEPPOLBIS-T125.sch" path="xsl/PEPPOLBIS-T125.xsl"/>
+		<identifier>peppolbis-t022-base-1.2</identifier>
+		<title>PEPPOL Unsubscribe From Procedure Response (T022)</title>
+		<inherit>ubl-unsubscribe-from-procedure-response-2.1</inherit>
+		<file source="sch/PEPPOL-T022.sch" path="xsl/PEPPOL-T022.xsl" />
 	</configuration>
 
-	<configuration>
-		<identifier>peppolbis-T126-base-1.0</identifier>
-		<title>Transportation Status Request (T126)</title>
-		<inherit>ubl-transportation-status-request-2.3</inherit>
-		<file source="sch/PEPPOLBIS-T126.sch" path="xsl/PEPPOLBIS-T126.xsl"/>
-	</configuration>
-
-	<configuration>
-		<identifier>peppolbis-T127-base-1.0</identifier>
-		<title>Transportation Status (T127)</title>
-		<inherit>ubl-transportation-status-2.3</inherit>
-		<file source="sch/PEPPOLBIS-T127.sch" path="xsl/PEPPOLBIS-T127.xsl"/>
-	</configuration>
-
-	<configuration>
-		<identifier>peppolbis-T128-base-1.0</identifier>
-		<title>Receipt Advice (T128)</title>
-		<inherit>ubl-receipt-advice-2.3</inherit>
-		<file source="sch/PEPPOLBIS-T128.sch" path="xsl/PEPPOLBIS-T128.xsl"/>
-	</configuration>
-
-	<configuration>
-		<identifier>peppolbis-T129-base-1.0</identifier>
-		<title>Application Response 1.0 (T129)</title>
-		<inherit>ubl-applicationresponse-2.1</inherit>
-		<file source="sch/PEPPOLBIS-T129.sch" path="xsl/PEPPOLBIS-T129.xsl"/>
-	</configuration>
-
-	<!-- profile config -->
-	<configuration>
-		<identifier>peppolbis-120-only</identifier>
-		<title>Advanced Despatch Advice Only 1.1</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:despatch_advice_only:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1</customizationId>
-		<inherit>peppolbis-T120-base-1.1</inherit>
-	</configuration>
-
-	<!--Configuration>
-		<identifier>peppolbis-121-response</identifier>
-		<title>Advanced Despatch Advice with Receipt Advice</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:advanced_despatch_advice:1</customizationId>
-		<inherit>peppolbis-T121-base-1.1</inherit>
-	</Configuration-->
-
-	<!--<configuration>
-		<identifier>peppolbis-121</identifier>
-		<title>Logistics Despatch Advice Response</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_response:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:despatch_advice_response:1</customizationId>
-		<inherit>peppolbis-T121-base-1.1</inherit>
-	</configuration>-->
-
-	<configuration>
-		<identifier>peppolbis-122</identifier>
-		<title>Weight Statement</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:weight_statement:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:weight_statement:1</customizationId>
-		<inherit>peppolbis-T122-base-1.1</inherit>
-	</configuration>
-
-	<configuration>
-		<identifier>peppolbis-123-request</identifier>
-		<title>Transport Execution Plan with Request</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan_request:1</customizationId>
-		<inherit>peppolbis-T123-base-1.0</inherit>
-	</configuration>
-
-	<configuration>
-		<identifier>peppolbis-123-advanced</identifier>
-		<title>Advanced Transport Execution Plan</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan_request:1</customizationId>
-		<inherit>peppolbis-T123-base-1.0</inherit>
-	</configuration>
-
-	<configuration>
-		<identifier>peppolbis-124-request</identifier>
-		<title>Transport Execution Plan with Request</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_w_request:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1</customizationId>
-		<inherit>peppolbis-T124-base-1.0</inherit>
-	</configuration>
+	<!-- ============================================================================================ -->
+	<!-- T003-T004: P002 - Procurement document access 1.2 -->
+	<!-- ============================================================================================ -->
 	
+	<!-- T003 base config -->
 	<configuration>
-		<identifier>peppolbis-124-only</identifier>
-		<title>Transport Execution Plan Only</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:transport_execution_plan_only:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1</customizationId>
-		<inherit>peppolbis-T124-base-1.0</inherit>
+		<identifier>peppolbis-t003-base-1.2</identifier>
+		<title>PEPPOL Tender Status Request (T003)</title>
+		<inherit>ubl-tender-status-request-2.1</inherit>
+		<file source="sch/PEPPOL-T003.sch" path="xsl/PEPPOL-T003.xsl" />
 	</configuration>
 
+	<!-- T004 base config -->
 	<configuration>
-		<identifier>peppolbis-124-advanced</identifier>
-		<title>Advanced Transport Execution Plan</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:transport_execution_plan:1</customizationId>
-		<inherit>peppolbis-T124-base-1.0</inherit>
+		<identifier>peppolbis-t004-base-1.2</identifier>
+		<title>PEPPOL Call For Tenders (T004)</title>
+		<inherit>ubl-call-for-tenders-2.1</inherit>
+		<file source="sch/PEPPOL-T004.sch" path="xsl/PEPPOL-T004.xsl" />
 	</configuration>
 
+	<!-- ============================================================================================ -->
+	<!-- T005-T006: P003 - Tender Submission 1.2 -->
+	<!-- ============================================================================================ -->
+	
+	<!-- T005 base config -->
 	<configuration>
-		<identifier>peppolbis-125</identifier>
-		<title>Waybill</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:waybill_only:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:waybill:1</customizationId>
-		<inherit>peppolbis-T125-base-1.0</inherit>
+		<identifier>peppolbis-t005-base-1.2</identifier>
+		<title>PEPPOL Submit Tender (T005)</title>
+		<inherit>ubl-tender-2.1</inherit>
+		<file source="sch/PEPPOL-T005.sch" path="xsl/PEPPOL-T005.xsl" />
 	</configuration>
 
+	<!-- T006 base config -->
 	<configuration>
-		<identifier>peppolbis-126-request</identifier>
-		<title>Transportation Status with Request</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:transportation_status_request:1</customizationId>
-		<inherit>peppolbis-T126-base-1.0</inherit>
+		<identifier>peppolbis-t006-base-1.2</identifier>
+		<title>PEPPOL Tender Receipt (T006)</title>
+		<inherit>ubl-tender-receipt-2.1</inherit>
+		<file source="sch/PEPPOL-T006.sch" path="xsl/PEPPOL-T006.xsl" />
 	</configuration>
 
+	<!-- ============================================================================================ -->
+	<!-- T007-T008: P004 - Call for Tenders Question and Answers 1.1 -->
+	<!-- ============================================================================================ -->
+	
+	<!-- T007 base config -->
 	<configuration>
-		<identifier>peppolbis-126-advanced</identifier>
-		<title>Advanced Transport Execution Plan</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:transportation_status_request:1</customizationId>
-		<inherit>peppolbis-T126-base-1.0</inherit>
+		<identifier>peppolbis-t007-base-1.1</identifier>
+		<title>PEPPOL Tendering Questions (T007)</title>
+		<inherit>ubl-enquiry-2.1</inherit>
+		<file source="sch/PEPPOL-T007.sch" path="xsl/PEPPOL-T007.xsl" />
 	</configuration>
 
+	<!-- T008 base config -->
 	<configuration>
-		<identifier>peppolbis-127-only</identifier>
-		<title>Transportation Status Only</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:transportation_status_only:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:transportation_status:1</customizationId>
-		<inherit>peppolbis-T127-base-1.0</inherit>
+		<identifier>peppolbis-t008-base-1.1</identifier>
+		<title>PEPPOL Tendering Answers (T008)</title>
+		<inherit>ubl-enquiry-response-2.1</inherit>
+		<file source="sch/PEPPOL-T008.sch" path="xsl/PEPPOL-T008.xsl" />
 	</configuration>
 
+	<!-- ============================================================================================ -->
+	<!-- T009-T010: P005 - Tender Clarification 1.1 -->
+	<!-- ============================================================================================ -->
+	
+	<!-- T009 base config -->
 	<configuration>
-		<identifier>peppolbis-127-request</identifier>
-		<title>Transportation Status with Request</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:transportation_status_w_request:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:transportation_status:1</customizationId>
-		<inherit>peppolbis-T127-base-1.0</inherit>
+		<identifier>peppolbis-t009-base-1.1</identifier>
+		<title>PEPPOL Tender Clarification Request (T009)</title>
+		<inherit>ubl-enquiry-2.1</inherit>
+		<file source="sch/PEPPOL-T009.sch" path="xsl/PEPPOL-T009.xsl" />
 	</configuration>
 
+	<!-- T010 base config -->
 	<configuration>
-		<identifier>peppolbis-127-advanced</identifier>
-		<title>Advanced Transport Execution Plan</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:transportation_status:1</customizationId>
-		<inherit>peppolbis-T127-base-1.0</inherit>
+		<identifier>peppolbis-t010-base-1.1</identifier>
+		<title>PEPPOL Tender Clarification (T010)</title>
+		<inherit>ubl-enquiry-response-2.1</inherit>
+		<file source="sch/PEPPOL-T010.sch" path="xsl/PEPPOL-T010.xsl" />
 	</configuration>
 
+	<!-- ============================================================================================ -->
+	<!-- T011-T012: P006 - Search Notices 1.2 (ebXML) -->
+	<!-- ============================================================================================ -->
+	
+	<!-- T011 base config -->
 	<configuration>
-		<identifier>peppolbis-128-w-despatch-advice</identifier>
-		<title>Receipt Advice</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:despatch_advice_w_receipt_advice:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:receipt_advice:1</customizationId>
-		<inherit>peppolbis-T128-base-1.0</inherit>
+		<identifier>peppolbis-t011-base-1.2</identifier>
+		<title>PEPPOL Search Notice Request (T011)</title>
+		<inherit>ebxml-query-4.0</inherit>
+		<file source="sch/PEPPOL-T011.sch" path="xsl/PEPPOL-T011.xsl" />
 	</configuration>
 
+	<!-- T012 base config -->
 	<configuration>
-		<identifier>peppolbis-129-advanced</identifier>
-		<title>Advanced Transport Execution Plan</title>
-		<profileId>urn:fdc:peppol.eu:logistics:bis:advanced_transport_execution_plan:1</profileId>
-		<customizationId>urn:fdc:peppol.eu:logistics:trns:application_response:1</customizationId>
-		<inherit>peppolbis-T129-base-1.0</inherit>
+		<identifier>peppolbis-t012-base-1.2</identifier>
+		<title>PEPPOL Search Notice Response (T012)</title>
+		<inherit>ebxml-query-4.0</inherit>
+		<file source="sch/PEPPOL-T012.sch" path="xsl/PEPPOL-T012.xsl" />
+	</configuration>
+
+	<!-- ============================================================================================ -->
+	<!-- T013-T014: P007 - Tender Withdrawal 1.1 -->
+	<!-- ============================================================================================ -->
+	
+	<!-- T013 base config -->
+	<configuration>
+		<identifier>peppolbis-t013-base-1.1</identifier>
+		<title>PEPPOL Tender Withdrawal Request (T013)</title>
+		<inherit>ubl-tender-withdrawal-2.1</inherit>
+		<file source="sch/PEPPOL-T013.sch" path="xsl/PEPPOL-T013.xsl" />
+	</configuration>
+
+	<!-- T014 base config -->
+	<configuration>
+		<identifier>peppolbis-t014-base-1.2</identifier>
+		<title>PEPPOL Tender Withdrawal Response (T014)</title>
+		<inherit>ubl-tender-receipt-2.1</inherit>
+		<file source="sch/PEPPOL-T014.sch" path="xsl/PEPPOL-T014.xsl" />
+	</configuration>
+
+	<!-- ============================================================================================ -->
+	<!-- T015-T016: P008 - Publish Notice 1.2 -->
+	<!-- ============================================================================================ -->
+	
+	<!-- T015 base config -->
+	<configuration>
+		<identifier>peppolbis-t015-base-1.2</identifier>
+		<title>PEPPOL Publish Notice (T015)</title>
+		<inherit>ebxml-lcm-4.0</inherit>
+		<file source="sch/PEPPOL-T015.sch" path="xsl/PEPPOL-T015.xsl" />
+	</configuration>
+
+	<!-- T016 base config -->
+	<configuration>
+		<identifier>peppolbis-t016-base-1.2</identifier>
+		<title>PEPPOL Notice Publication Response (T016)</title>
+		<inherit>ubl-application-response-2.1</inherit>
+		<file source="sch/PEPPOL-T016.sch" path="xsl/PEPPOL-T016.xsl" />
+	</configuration>
+
+	<!-- ============================================================================================ -->
+	<!-- T017: P009 - Notify Awarding 1.1 -->
+	<!-- ============================================================================================ -->
+	
+	<!-- T017 base config -->
+	<configuration>
+		<identifier>peppolbis-t017-base-1.1</identifier>
+		<title>PEPPOL Awarding Notification (T017)</title>
+		<inherit>ubl-awarded-notification-2.1</inherit>
+		<file source="sch/PEPPOL-T017.sch" path="xsl/PEPPOL-T017.xsl" />
+	</configuration>
+
+	<!-- ============================================================================================ -->
+	<!-- T018: P010 - Tendering Message Response 1.1 -->
+	<!-- ============================================================================================ -->
+	
+	<!-- T018 base config -->
+	<configuration>
+		<identifier>peppolbis-t018-base-1.1</identifier>
+		<title>PEPPOL Tendering Message Response (T018)</title>
+		<inherit>ubl-application-response-2.1</inherit>
+		<file source="sch/PEPPOL-T018.sch" path="xsl/PEPPOL-T018.xsl" />
+	</configuration>
+
+	<!-- ============================================================================================ -->
+	<!-- T019-T020: P011 - Tenderer Qualification 1.1 -->
+	<!-- ============================================================================================ -->
+	
+	<!-- T019 base config -->
+	<configuration>
+		<identifier>peppolbis-t019-base-1.1</identifier>
+		<title>PEPPOL Qualification (T019)</title>
+		<inherit>ubl-tenderer-qualification-2.1</inherit>
+		<file source="sch/PEPPOL-T019.sch" path="xsl/PEPPOL-T019.xsl" />
+	</configuration>
+
+	<!-- T020 base config -->
+	<configuration>
+		<identifier>peppolbis-t020-base-1.1</identifier>
+		<title>PEPPOL Qualification Reception Confirmation (T020)</title>
+		<inherit>ubl-tender-receipt-2.1</inherit>
+		<file source="sch/PEPPOL-T020.sch" path="xsl/PEPPOL-T020.xsl" />
+	</configuration>
+
+	<!-- ============================================================================================ -->
+	<!-- T023: P012 - Qualification Response 1.0 -->
+	<!-- ============================================================================================ -->
+	
+	<!-- T023 base config -->
+	<configuration>
+		<identifier>peppolbis-t023-base-1.0</identifier>
+		<title>PEPPOL Qualification Response (T023)</title>
+		<inherit>ubl-tenderer-qualification-response-2.1</inherit>
+		<file source="sch/PEPPOL-T023.sch" path="xsl/PEPPOL-T023.xsl" />
+	</configuration>
+
+	<!-- ============================================================================================ -->
+	<!-- T024: P013 - Invitation to Tender 1.0 -->
+	<!-- ============================================================================================ -->
+	
+	<!-- T024 base config -->
+	<configuration>
+		<identifier>peppolbis-t024-base-1.0</identifier>
+		<title>PEPPOL Invitation to Tender (T024)</title>
+		<inherit>ubl-call-for-tenders-2.1</inherit>
+		<file source="sch/PEPPOL-T024.sch" path="xsl/PEPPOL-T024.xsl" />
+	</configuration>
+
+	<!-- ============================================================================================ -->
+	<!-- T035-T036: P035 - Pre-Award Catalogue 1.1 -->
+	<!-- ============================================================================================ -->
+	
+	<!-- T035 base config -->
+	<configuration>
+		<identifier>peppolbis-t035-base-1.1</identifier>
+		<title>PEPPOL Pre-Award Catalogue Request (T035)</title>
+		<inherit>ubl-catalogue-request-2.1</inherit>
+		<file source="sch/PEPPOL-T035.sch" path="xsl/PEPPOL-T035.xsl" />
+	</configuration>
+
+	<!-- T036 base config -->
+	<configuration>
+		<identifier>peppolbis-t036-base-1.1</identifier>
+		<title>PEPPOL Pre-Award Catalogue (T036)</title>
+		<inherit>ubl-catalogue-2.1</inherit>
+		<file source="sch/PEPPOL-T036.sch" path="xsl/PEPPOL-T036.xsl" />
+	</configuration>
+
+	<!-- ============================================================================================ -->
+	<!-- PROFILE CONFIGURATIONS -->
+	<!-- ============================================================================================ -->
+
+	<!-- P001: Procurement procedure subscription 1.2 -->
+	<configuration>
+		<identifier>peppolbis-p001-1.2</identifier>
+		<title>PEPPOL BIS Procurement procedure subscription 1.2</title>
+		<profileId>urn:fdc:peppol.eu:prac:bis:t001_t002:ver1.2</profileId>
+		<customizationId>urn:fdc:peppol.eu:prac:trns:t001:1.2</customizationId>
+		<inherit>peppolbis-t001-base-1.2</inherit>
+	</configuration>
+
+	<!-- P002: Procurement document access 1.2 -->
+	<configuration>
+		<identifier>peppolbis-p002-1.2</identifier>
+		<title>PEPPOL BIS Procurement document access 1.2</title>
+		<profileId>urn:fdc:peppol.eu:prac:bis:t003_t004:ver1.2</profileId>
+		<customizationId>urn:fdc:peppol.eu:prac:trns:t003:1.2</customizationId>
+		<inherit>peppolbis-t003-base-1.2</inherit>
+	</configuration>
+
+	<!-- P003: Tender Submission 1.2 -->
+	<configuration>
+		<identifier>peppolbis-p003-1.2</identifier>
+		<title>PEPPOL BIS Tender Submission 1.2</title>
+		<profileId>urn:fdc:peppol.eu:prac:bis:t005_t006:ver1.2</profileId>
+		<customizationId>urn:fdc:peppol.eu:prac:trns:t005:1.2</customizationId>
+		<inherit>peppolbis-t005-base-1.2</inherit>
+	</configuration>
+
+	<!-- P004: Call for Tenders Question and Answers 1.1 -->
+	<configuration>
+		<identifier>peppolbis-p004-1.1</identifier>
+		<title>PEPPOL BIS Call for Tenders Question and Answers 1.1</title>
+		<profileId>urn:fdc:peppol.eu:prac:bis:t007_t008:ver1.1</profileId>
+		<customizationId>urn:fdc:peppol.eu:prac:trns:t007:1.1</customizationId>
+		<inherit>peppolbis-t007-base-1.1</inherit>
+	</configuration>
+
+	<!-- P005: Tender Clarification 1.1 -->
+	<configuration>
+		<identifier>peppolbis-p005-1.1</identifier>
+		<title>PEPPOL BIS Tender Clarification 1.1</title>
+		<profileId>urn:fdc:peppol.eu:prac:bis:t009_t010:ver1.1</profileId>
+		<customizationId>urn:fdc:peppol.eu:prac:trns:t009:1.1</customizationId>
+		<inherit>peppolbis-t009-base-1.1</inherit>
+	</configuration>
+
+	<!-- P006: Search Notices 1.2 -->
+	<configuration>
+		<identifier>peppolbis-p006-1.2</identifier>
+		<title>PEPPOL BIS Search Notices 1.2</title>
+		<profileId>urn:fdc:peppol.eu:prac:bis:t011_t012:ver1.2</profileId>
+		<customizationId>urn:fdc:peppol.eu:prac:trns:t011:1.2</customizationId>
+		<inherit>peppolbis-t011-base-1.2</inherit>
+	</configuration>
+
+	<!-- P007: Tender Withdrawal 1.1 -->
+	<configuration>
+		<identifier>peppolbis-p007-1.1</identifier>
+		<title>PEPPOL BIS Tender Withdrawal 1.1</title>
+		<profileId>urn:fdc:peppol.eu:prac:bis:t013_t014:ver1.1</profileId>
+		<customizationId>urn:fdc:peppol.eu:prac:trns:t013:1.1</customizationId>
+		<inherit>peppolbis-t013-base-1.1</inherit>
+	</configuration>
+
+	<!-- P008: Publish Notice 1.2 -->
+	<configuration>
+		<identifier>peppolbis-p008-1.2</identifier>
+		<title>PEPPOL BIS Publish Notice 1.2</title>
+		<profileId>urn:fdc:peppol.eu:prac:bis:t015_t016:ver1.2</profileId>
+		<customizationId>urn:fdc:peppol.eu:prac:trns:t015:1.2</customizationId>
+		<inherit>peppolbis-t015-base-1.2</inherit>
+	</configuration>
+
+	<!-- P009: Notify Awarding 1.1 -->
+	<configuration>
+		<identifier>peppolbis-p009-1.1</identifier>
+		<title>PEPPOL BIS Notify Awarding 1.1</title>
+		<profileId>urn:fdc:peppol.eu:prac:bis:t017:ver1.1</profileId>
+		<customizationId>urn:fdc:peppol.eu:prac:trns:t017:1.1</customizationId>
+		<inherit>peppolbis-t017-base-1.1</inherit>
+	</configuration>
+
+	<!-- P010: Tendering Message Response 1.1 -->
+	<configuration>
+		<identifier>peppolbis-p010-1.1</identifier>
+		<title>PEPPOL BIS Tendering Message Response 1.1</title>
+		<profileId>urn:fdc:peppol.eu:prac:bis:t018:ver1.1</profileId>
+		<customizationId>urn:fdc:peppol.eu:prac:trns:t018:1.1</customizationId>
+		<inherit>peppolbis-t018-base-1.1</inherit>
+	</configuration>
+
+	<!-- P011: Tenderer Qualification 1.1 -->
+	<configuration>
+		<identifier>peppolbis-p011-1.1</identifier>
+		<title>PEPPOL BIS Tenderer Qualification 1.1</title>
+		<profileId>urn:fdc:peppol.eu:prac:bis:t019_t020:ver1.1</profileId>
+		<customizationId>urn:fdc:peppol.eu:prac:trns:t019:1.1</customizationId>
+		<inherit>peppolbis-t019-base-1.1</inherit>
+	</configuration>
+
+	<!-- P012: Qualification Response 1.0 -->
+	<configuration>
+		<identifier>peppolbis-p012-1.0</identifier>
+		<title>PEPPOL BIS Qualification Response 1.0</title>
+		<profileId>urn:fdc:peppol.eu:prac:bis:t023:ver1.0</profileId>
+		<customizationId>urn:fdc:peppol.eu:prac:trns:t023:1.0</customizationId>
+		<inherit>peppolbis-t023-base-1.0</inherit>
+	</configuration>
+
+	<!-- P013: Invitation to Tender 1.0 -->
+	<configuration>
+		<identifier>peppolbis-p013-1.0</identifier>
+		<title>PEPPOL BIS Invitation to Tender 1.0</title>
+		<profileId>urn:fdc:peppol.eu:prac:bis:t024:ver1.0</profileId>
+		<customizationId>urn:fdc:peppol.eu:prac:trns:t024:1.0</customizationId>
+		<inherit>peppolbis-t024-base-1.0</inherit>
+	</configuration>
+
+	<!-- P035: Pre-Award Catalogue 1.1 -->
+	<configuration>
+		<identifier>peppolbis-p035-1.1</identifier>
+		<title>PEPPOL BIS Pre-Award Catalogue 1.1</title>
+		<profileId>urn:fdc:peppol.eu:prac:bis:t035_t036:ver1.1</profileId>
+		<customizationId>urn:www.cenbii.eu:transaction:biitrdm068:ver3.0:extended:urn:www.peppol.eu:bis:peppol35a:ver1.0</customizationId>
+		<inherit>peppolbis-t035-base-1.1</inherit>
 	</configuration>
 
 </buildConfigurations>

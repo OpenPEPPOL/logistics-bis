@@ -1,0 +1,199 @@
+[[descriptions]]
+= Description of selected parts of the transaction
+
+The transaction including business terms, business rules and code lists are based upon the definitions of {name-transaction-org} described in {name-profile-org}.
+
+
+== Identifier
+
+=== UBL Version Identifier
+
+Requires UBL version 2.2.
+
+[source,xml,indent=0]
+.Example of UBL Version Identifier
+....
+include::../files/NotifyAwarding.xml[tags=ublVersionID]
+....
+<.> Has to be 2.2, to correspondent to the used UBL version
+
+=== Document Identifier
+
+The identifier enables positive referencing the transaction instance for various purposes including referencing between transactions that are part of the same process. Must be expressed as a UUID.
+
+[source,xml,indent=0]
+.Example of document identifier
+....
+include::../files/NotifyAwarding.xml[tags=id]
+....
+<.> A transaction instance must contain an identifier, being a number expressed in uuid syntax
+
+=== Contract Folder ID
+
+The identifier specified by the buyer as a reference number for all documents in the procurement process. It is also known as procurement project identifier, procurement reference number or contract folder identifier. In UBL this element is mapped to the cbc:ContractFolderID class.
+
+[source,xml,indent=0]
+.Example of document identifier
+....
+include::../files/NotifyAwarding.xml[tags=contractFolderID]
+....
+<.> A reference number expressed in uuid syntax
+
+== Document Issue date and time
+
+Document issue date/time must be sent.
+
+Document issue date is a xsi:date data type and is specified as "YYYY-MM-DD" where:
+
+* YYYY - four digit year
+* MM - two digit month (01 to 12)
+* DD - two digit day (0)
+
+Document issue time is a xsi:time data type and is specified as "hh:mm:ss" where:
+
+* hh - two digits of hour (00 to 23) (am/pm NOT allowed).
+* mm - two digits of minute (00 to 59)
+* ss - two digits of second (00 to 59)
+* TZD - time zone designator (Z or +hh:mm or -hh:mm)
+
+The document issue date and time refer to the date when of the issuance notification for awarding.
+
+NOTE: The document issue time must specify the time zone.
+
+[source,xml,indent=0]
+.Example of document issue date and time
+....
+include::../files/NotifyAwarding.xml[tags=issueDateTime]
+....
+<.> Format for the date has to be yyyy-mm-dd
+<.> Format for the time has to be hh:mm:ssTZD, granularity down to seconds and timezone
+
+
+== Party identification
+
+=== Contracting Body
+
+The contracting body is the contracting authority or contracting entity who is buying supplies, services or tendering works.
+
+[source,xml,indent=0]
+.Example of sender party
+....
+include::../files/NotifyAwarding.xml[tags=senderParty]
+....
+<.> Identifies the contracting party's electronic address and the scheme identifier for the electronic address
+<.> The national identifier of a contracting body as it is legally registered (e.g. VAT identification, such as KBO)
+<.> The name of the contracting body as it is registered
+
+=== Economic Operator
+
+The party who is supposed to process the Notification of Awarding.
+
+[source,xml,indent=0]
+.Example of receiver party
+....
+include::../files/NotifyAwarding.xml[tags=receiverParty]
+....
+<.> Identifies the receivers party's electronic address and the scheme identifier for the electronic address
+<.> Can be the registration number in the professional registry. An identifier that identifies the economic operator, such
+as a legal registration identifier.
+<.> The name of the economic operator
+
+== Reason of non award/ Grounds for awarding
+
+Textual description of the reason for not awarding the tender or the grounds for awarding an
+specific contract or a framework agreement. For reasons of non award the following code list may be helpful: https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/non-award-justification[Non award justification]
+
+[source,xml,indent=0]
+.Example of reason of non award
+....
+include::../files/NotifyAwarding.xml[tags=note]
+....
+<.> Text field for the reason of awarding/non awarding
+
+== Tender Document Reference and awarding result
+
+Machine readable code to easily identify the result of the tendering procedure for the corresponding document.
+
+[source,xml,indent=0]
+.Example of tender document reference
+....
+include::../files/NotifyAwarding.xml[tags=tenderReference]
+....
+<.> ID for the referenced tender document
+<.> Code for the result of the tendering procedure, listID must be "awardCode"
+
+== Tender Result
+
+This sections contains all the information about the outcome of the tender, containing the date of the award, the date of the stand still period, the winning party and the resulting contract.
+
+The tender result wraps all the subsections below into one xml tag.
+
+=== Tender Result Code
+
+The tender result code indicates weather the tendering procedure was successful and a winner was chosen, or if the tender was not awarded at all.
+
+[source,xml,indent=0]
+.Example of tender result code
+....
+include::../files/NotifyAwarding.xml[tags=tenderResultCode]
+....
+<.> Code for the result of the tendering procedure, listID has to be _"http://publications.europa.eu/resource/authority/winner-selection-status"_
+
+=== Awarded Date and Time
+
+The date and time on which the contract has been awarded. For the specification on how to use the date and time fields see the section above for the issue date and time.
+
+[source,xml,indent=0]
+.Example of awarded date and time
+....
+include::../files/NotifyAwarding.xml[tags=awardDateTime]
+....
+<.> Format for the date has to be yyyy-mm-dd
+<.> Format for the time has to be hh:mm:ssTZD, granularity down to seconds and timezone
+
+=== Start Date
+
+Final date for the stand still period. For optional use in the transaction.
+
+[source,xml,indent=0]
+.Example of start date
+....
+include::../files/NotifyAwarding.xml[tags=startDate]
+....
+<.> Format for the date has to be yyyy-mm-dd
+
+=== Contract
+
+Optional information about the contract, which is bound to the award.
+
+[source,xml,indent=0]
+.Example of contract reference
+....
+include::../files/NotifyAwarding.xml[tags=contract]
+....
+<.> An identifier that can be used to reference the attached document, such as an unique identifier.
+<.> The External Reference to the ASICC Container, should consist of the file name, type (Mime Code) and the URI
+
+=== Awarded Tendered Project
+
+Optional reference to the specific lot which the notification is about. Only to be used if there were lots to be awarded differently.
+
+[source,xml,indent=0]
+.Example of awarded tendered project
+....
+include::../files/NotifyAwarding.xml[tags=awardedTenderedProject]
+....
+<.> An identifier for the lot
+
+=== Winning Party
+
+Information about all the winning parties. This tag can be used multiple times, but doesn't have to be included. It should be used to add more detailed information about the winning economic operators of the tendering procedure.
+
+[source,xml,indent=0]
+.Example of Winning Party
+....
+include::../files/NotifyAwarding.xml[tags=winningParty]
+....
+<.> The rank of the economic operator
+<.> The name of the economic operator
+<.> The registration country code of the economic operator, listID attribute is mandatory and must use values from https://docs.peppol.eu/poacc/upgrade-3/codelist/ISO3166/[Country Codes (ISO 3166-1:Alpha2)]

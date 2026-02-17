@@ -1,0 +1,57 @@
+
+= PEPPOL Identifiers
+
+PEPPOL has defined a Policy for Using Identifiers that specifies how to use identifiers in both its transport infrastructure and within the documents exchanged across that infrastructure. It also introduces principles for any identifiers used in the PEPPOL environment. The e-Tendering pilot adopts and extends the PEPPOL Policy in the following ways:
+
+== Party Identifiers used in  ebXML RegRep documents
+The `@type` attribute must be populated in all instances of the ID element when used within a `rim:Slot` container for Sender Identification and Receiver Identification.
+
+Example of usage in Sender Electronic Address Identifier and Receiver Electronic Address Identifier:
+
+[source,xml,indent=0]
+.Example of using the contracting body's electronic address identifier in `cac:SenderParty`
+----
+<cac:SenderParty>
+    <cbc:EndpointID schemeID="9946">500820007</cbc:EndpointID>
+</cac:SenderParty>
+
+----
+[source,xml,indent=0]
+.Example of using the economic operator's electronic address identifier in `cac:ReceiverParty`
+----
+<cac:ReceiverParty>
+    <cbc:EndpointID schemeID="9930">DE122268496</cbc:EndpointID>
+</cac:ReceiverParty>
+
+----
+
+== Document Identifiers
+
+=== Profile ID
+The PEPPOL Profile ID identifies what business process a given message is part of, and are connected to one business process, and may contain multiple document types. The Profile ID must be put in the element `/cbc:ProfileID`
+
+Valid profile identifiers are described in the profile BIS documents. See {link-main-site}. The following example illustrates the usage of Business Process Type Identifiers in OASIS ebXML RegRep Version 4.0 documents:
+
+[source,xml,indent=0]
+.Example of usage of Business Process Type Identifiers in `cbc:ProfileID`
+----
+<cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p010:1.0</cbc:ProfileID>
+
+----
+
+=== Customization ID
+
+ProfileID identifies what business process a given message is part of, and are connected to one business process, and may contain multiple document types.
+
+Valid profile identifiers are described in the profile BIS documents. See
+
+[source,xml,indent=0]
+.Example of usage of Specification Identification in `rim:Slot`
+----
+<cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t01:1.0</cbc:CustomizationID>
+
+----
+
+Which customization identification should be used, is based on which transaction is sent, and the extension identification for BIS documents.
+
+NOTE: For implementers, please note that the process identifiers in the document instance MUST correspond to the http://docs.oasis-open.org/bdxr/bdx-smp/v1.0/cs03/bdx-smp-v1.0-cs03.pdf[SMP] process identifier.

@@ -1,0 +1,57 @@
+= Business process
+
+The {link-bpmn}[BPMN] diagram shows the choreography of the business process implemented by the {name-profile}. The choreography of business collaborations defines the sequence of interactions when the profile is run within its context.
+
+
+image::../images/InvitationToTender.svg[align="center", width=800]
+
+
+
+[cols="3,9", options="header"]
+|===
+| Category
+| Description
+| Description
+| The contracting body sends an electronic Invitation to Tender document containing the information required for the economic operator to participate in a tendering process.
+The contracting body may send a formal Invitation to Tender as an attachment to the Invitation to Tender document.
+The economic operator evaluates the information given with the Invitation to Tender and decides whether to submit an tender or not.
+If the economic operator accepts the invitation and submits a tender the business process continuous through the external process Tender Submission.
+If the economic operator rejects the invitation, no notification needs to be sent back to the contracting body.
+
+| Pre-conditions
+| The contracting body has pre-selected a list of candidate economic operators (shortlist).
+
+| Post-conditions
+| The economic operator has received the Invitation to Tender and can proceed to prepare and submit the tender.
+
+| Remarks
+| The Invitation to Tender is typically used in negotiated procedure and restricted procedures where the economic operator could not view the call for tenders information and a list of selected economic operators is created at a first step.
+|===
+
+
+[cols="3,2,7", options="header"]
+|===
+| Activity
+| Role involved
+| Description
+| Send Invitation to Tender
+| Contracting body
+| The contracting body sends an Invitation to Tender to an economic operator.
+| Receive Invitation to Tender
+| Economic operator
+| The economic operator receives the Invitation to Tender, enabling him to prepare a bid.
+| Send Invitation to Tender Status Inquiry
+| Economic Operator
+| The economic operator (regularly) asks for Tender Document Status changes.
+| Receive Invitation to Tender Status Inquiry
+| Contracting body
+| The contracting body receives an Invitation to Tender status update request from the Economic operator.
+| Sent current version of the Invitation to Tender
+| Contracting body
+| The contracting body sends the current version of the to the Economic operator.
+|===
+
+
+include::implementation-guidelines.adoc[]
+
+

@@ -1,0 +1,1360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+    <Term>SearchNoticeRequest</Term>
+    <Name>Search Notice Request (T011)</Name>
+
+    <Namespace prefix="query">urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0</Namespace>
+    <Namespace prefix="rim">urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0</Namespace>
+    <Namespace prefix="xsi">http://www.w3.org/2001/XMLSchema-instance</Namespace>
+
+    <Document>
+        <Term>query:QueryRequest</Term>
+        <Name>Search Notice Request, root element</Name>
+        <Description>The Search Notice Request is a query transaction that requests notices using either a set of
+            criteria for notices usually based on the eTendering Service Providers or Economic Operators ambitions and
+            capabilities.
+        </Description>
+        <Reference type="RULE">PEPPOL-T011-R001</Reference>
+        <Reference type="RULE">PEPPOL-T011-R002</Reference>
+        <Reference type="RULE">PEPPOL-T011-R003</Reference>
+        <Reference type="RULE">PEPPOL-T011-R004</Reference>
+        <Reference type="RULE">PEPPOL-T011-R005</Reference>
+        <Reference type="RULE">PEPPOL-T011-R006</Reference>
+        <Reference type="RULE">PEPPOL-T011-R077</Reference>
+        <Reference type="RULE">PEPPOL-T011-R078</Reference>
+        <Reference type="RULE">PEPPOL-T011-R079</Reference>
+        <Reference type="RULE">PEPPOL-T011-R080</Reference>
+        <Attribute usage="OPTIONAL">
+            <Term>startIndex</Term>
+            <Name>Start index</Name>
+            <Description>The Search Notice Request and Response support the ability to iterate over a large result set
+                matching a query by allowing multiple QueryRequest requests to be submitted in succession such that each
+                query requests a different subset of results within the result set. This feature enables the server to
+                handle queries that match a very large result set, in a scalable manner. This attribute is used to
+                indicate which result must be returned as the first result when iterating over a large result set. The
+                default value is 0, which returns the result set starting with index 0 (first result).
+            </Description>
+            <DataType>integer</DataType>
+            <Value type="DEFAULT">0</Value>
+        </Attribute>
+        <Attribute usage="OPTIONAL">
+            <Term>maxResults</Term>
+            <Name>Maximum number of results</Name>
+            <Description>This attribute specifies a limit on the maximum number of results the sender wishes the query
+                to return. A receiver of the request MUST return a result set whose size is less than or equal to the
+                maxResults parameter depending upon whether enough results are available starting at startIndex. If the
+                default value -1 is used, the receiver SHOULD return all the results.
+            </Description>
+            <DataType>integer</DataType>
+            <Value type="DEFAULT">-1</Value>
+        </Attribute>
+        <Attribute>
+            <Term>id</Term>
+            <Name>Search notice request identifier</Name>
+            <Description>Specifies the unique identifier for an Identifiable Search Notice Request. In case of different
+                start index for same QueryRequest is used it is possible to use the same Search Notice Request
+                Identifier.
+            </Description>
+        </Attribute>
+        <Element>
+            <Term>rim:Slot@name=SpecificationIdentification</Term>
+            <Name>Specification identification</Name>
+            <Description>An identification of the specification containing the total set of rules regarding semantic
+                content, cardinalities and business rules to which the data contained in the instance document conforms.
+            </Description>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">SpecificationIdentification</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotValue</Term>
+                <Reference type="RULE">PEPPOL-T011-R010</Reference>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Value type="FIXED">rim:StringValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Reference type="RULE">PEPPOL-T011-R011</Reference>
+                    <Value type="FIXED">urn:fdc:peppol.eu:prac:trns:t011:1.2</Value>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>rim:Slot@name=BusinessProcessTypeIdentifier</Term>
+            <Name>Business process type identifier</Name>
+            <Description>Identifies the business process context in which the transaction appears. It enables the
+                receiver to process the document in an appropriate way.
+            </Description>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">BusinessProcessTypeIdentifier</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotValue</Term>
+                <Reference type="RULE">PEPPOL-T011-R010</Reference>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Value type="FIXED">rim:StringValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Reference type="RULE">PEPPOL-T011-R012</Reference>
+                    <Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p006:1.2</Value>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>rim:Slot@name=IssueDateTime</Term>
+            <Name>Issue date time</Name>
+            <Description>The issue date and time when the Serch Notice request is issued. The issue date time must have
+                granularity of seconds, and include time zone information.
+            </Description>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">IssueDateTime</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotValue</Term>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Value type="FIXED">rim:DateTimeValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Reference type="RULE">PEPPOL-T011-R058</Reference>
+                    <DataType>rim:DateTimeValueType</DataType>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>rim:Slot@name=SenderElectronicAddress</Term>
+            <Name>Contracting body electronic address</Name>
+            <Description>The electronic address of the contracting body.</Description>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">SenderElectronicAddress</Value>
+            </Attribute>
+            <Attribute>
+                <Term>type</Term>
+                <Reference type="RULE">PEPPOL-T011-R081</Reference>
+                <Value type="FIXED">EAS</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotValue</Term>
+                <Reference type="RULE">PEPPOL-T011-R010</Reference>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Value type="FIXED">rim:StringValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Name>Contracting body electronic address identifier</Name>
+                    <Description>Scheme identifier:Identification for the contracting body</Description>
+                    <Reference type="RULE">PEPPOL-T011-R013</Reference>
+                    <Reference type="CODE_LIST">EAS</Reference>
+                    <DataType>rim:StringValueType</DataType>
+                    <Value type="EXAMPLE">9930:DE122268496</Value>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>rim:Slot@name=ReceiverElectronicAddress</Term>
+            <Name>Economic operator electronic address</Name>
+            <Description>The electronic address of the economic operator.</Description>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">ReceiverElectronicAddress</Value>
+            </Attribute>
+            <Attribute>
+                <Term>type</Term>
+                <Reference type="RULE">PEPPOL-T011-R081</Reference>
+                <Value type="FIXED">EAS</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotValue</Term>
+                <Reference type="RULE">PEPPOL-T011-R010</Reference>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Value type="FIXED">rim:StringValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Name>Economic operator party electronic address identifier</Name>
+                    <Description>Scheme identifier:Identification for the economic operator</Description>
+                    <Reference type="CODE_LIST">EAS</Reference>
+                    <Value type="EXAMPLE">9946:500820007</Value>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>query:ResponseOption</Term>
+            <Name>Response option</Name>
+            <Description>An element to control the type and structure of results within the corresponding QueryResponse.
+                For the Search Notice Request it is required that the notices are included as repository Items to the
+                QueryResponse. This is indicated through the returnType "LeafClassWithRepositoryItem".
+            </Description>
+            <Reference type="RULE">PEPPOL-T011-R007</Reference>
+            <Reference type="RULE">PEPPOL-T011-R008</Reference>
+            <Reference type="RULE">PEPPOL-T011-R009</Reference>
+            <Attribute>
+                <Term>returnType</Term>
+                <Value type="FIXED">LeafClassWithRepositoryItem</Value>
+            </Attribute>
+        </Element>
+        <Element>
+            <Term>query:Query</Term>
+            <Name>Query</Name>
+            <Description>The definition of the query and its parameters. This is indicated through the
+                queryDefinition="SearchNotice".
+            </Description>
+            <Reference type="RULE">PEPPOL-T011-R014</Reference>
+            <Reference type="RULE">PEPPOL-T011-R015</Reference>
+            <Reference type="RULE">PEPPOL-T011-R016</Reference>
+            <Reference type="RULE">PEPPOL-T011-R017</Reference>
+            <Reference type="RULE">PEPPOL-T011-R018</Reference>
+            <Reference type="RULE">PEPPOL-T011-R019</Reference>
+            <Reference type="RULE">PEPPOL-T011-R020</Reference>
+            <Reference type="RULE">PEPPOL-T011-R021</Reference>
+            <Reference type="RULE">PEPPOL-T011-R022</Reference>
+            <Reference type="RULE">PEPPOL-T011-R023</Reference>
+            <Reference type="RULE">PEPPOL-T011-R024</Reference>
+            <Reference type="RULE">PEPPOL-T011-R025</Reference>
+            <Reference type="RULE">PEPPOL-T011-R026</Reference>
+            <Reference type="RULE">PEPPOL-T011-R027</Reference>
+            <Reference type="RULE">PEPPOL-T011-R028</Reference>
+            <Reference type="RULE">PEPPOL-T011-R029</Reference>
+            <Reference type="RULE">PEPPOL-T011-R030</Reference>
+            <Reference type="RULE">PEPPOL-T011-R031</Reference>
+            <Reference type="RULE">PEPPOL-T011-R032</Reference>
+            <Reference type="RULE">PEPPOL-T011-R033</Reference>
+            <Attribute>
+                <Term>queryDefinition</Term>
+                <Value type="FIXED">SearchNotice</Value>
+            </Attribute>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=Keywords</Term>
+                <Name>Keywords</Name>
+                <Description>Used to specify searchable keywords and/or synonyms over the entire notice.</Description>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">Keywords</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:SlotValue</Term>
+                    <Reference type="RULE">PEPPOL-T011-R010</Reference>
+                    <Attribute>
+                        <Term>xsi:type</Term>
+                        <Value type="FIXED">rim:StringValueType</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:Value</Term>
+                        <DataType>rim:StringValueType</DataType>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=FormType</Term>
+                <Name>Form type</Name>
+                <Description>Used to search for specific form types like planning, competition, direct award
+                    pre-notification etc.
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-03</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">FormType</Value>
+                </Attribute>
+                <Attribute>
+                    <Term>type</Term>
+                    <Reference type="RULE">PEPPOL-T011-R035</Reference>
+                    <Value type="FIXED">http://publications.europa.eu/resource/authority/form-type</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:SlotValue</Term>
+                    <Attribute>
+                        <Term>xsi:type</Term>
+                        <Reference type="RULE">PEPPOL-T011-R034</Reference>
+                        <Value type="FIXED">rim:CollectionValueType</Value>
+                    </Attribute>
+                    <Element cardinality="1..n">
+                        <Term>rim:Element</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Name>Form type code</Name>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=NoticeType</Term>
+                <Name>Notice type</Name>
+                <Description>Used to search for specific notice types (BT-02) [e.g. PIN only] for notice categories
+                    [e.g. Prior Information Notice]. A given form type (BT-03) [e.g. Planning] regroups multiple notice
+                    types [e.g. PIN only and PIN time limit].
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-02</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">NoticeType</Value>
+                </Attribute>
+                <Attribute>
+                    <Term>type</Term>
+                    <Reference type="RULE">PEPPOL-T011-R036</Reference>
+                    <Value type="FIXED">http://publications.europa.eu/resource/authority/notice-type</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:SlotValue</Term>
+                    <Attribute>
+                        <Term>xsi:type</Term>
+                        <Reference type="RULE">PEPPOL-T011-R034</Reference>
+                        <Value type="FIXED">rim:CollectionValueType</Value>
+                    </Attribute>
+                    <Element cardinality="1..n">
+                        <Term>rim:Element</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Name>Notice type code</Name>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..n">
+                <Term>rim:Slot@name=Classification</Term>
+                <Name>Classification</Name>
+                <Description>Used to search upon the values of designated classification systems (BT-26) being either
+                    main (BT-262) or additional commodities classifications (BT-263). Currently, only the "CPV" and
+                    "SupplementaryCPV" values are considered.
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-26</Reference>
+                <Reference type="BUSINESS_TERM">eForms BT-262</Reference>
+                <Reference type="BUSINESS_TERM">eForms BT-263</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">Classification</Value>
+                </Attribute>
+                <Attribute>
+                    <Term>type</Term>
+                    <Description>
+                        http://publications.europa.eu/resource/authority/cpv/cpv
+                        or
+                        http://publications.europa.eu/resource/authority/cpv/cpvsuppl
+                    </Description>
+                    <Reference type="RULE">PEPPOL-T011-R037</Reference>
+                    <Value type="EXAMPLE">http://publications.europa.eu/resource/authority/cpv/cpv</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:SlotValue</Term>
+                    <Attribute>
+                        <Term>xsi:type</Term>
+                        <Reference type="RULE">PEPPOL-T011-R034</Reference>
+                        <Value type="FIXED">rim:CollectionValueType</Value>
+                    </Attribute>
+                    <Element cardinality="1..n">
+                        <Term>rim:Element</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=ContractNature</Term>
+                <Name>Contract nature</Name>
+                <Description>Used to search upon the values of main natures (BT-23) and additional natures (BT-531) of a
+                    notice.
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-23</Reference>
+                <Reference type="BUSINESS_TERM">eForms BT-531</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">ContractNature</Value>
+                </Attribute>
+                <Attribute>
+                    <Term>type</Term>
+                    <Reference type="RULE">PEPPOL-T011-R038</Reference>
+                    <Value type="FIXED">http://publications.europa.eu/resource/authority/contract-nature</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:SlotValue</Term>
+                    <Attribute>
+                        <Term>xsi:type</Term>
+                        <Reference type="RULE">PEPPOL-T011-R034</Reference>
+                        <Value type="FIXED">rim:CollectionValueType</Value>
+                    </Attribute>
+                    <Element cardinality="1..n">
+                        <Term>rim:Element</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Name>Contract nature code</Name>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=PlaceOfPerformance</Term>
+                <Name>Place of performance</Name>
+                <Description>Used to search upon the values of a country subentity code (BT-5071) according to the
+                    Nomenclature of territorial units for statistics (NUTS).
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-5071</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">PlaceOfPerformance</Value>
+                </Attribute>
+                <Attribute>
+                    <Term>type</Term>
+                    <Reference type="RULE">PEPPOL-T011-R039</Reference>
+                    <Value type="FIXED">http://publications.europa.eu/resource/authority/nuts</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:SlotValue</Term>
+                    <Attribute>
+                        <Term>xsi:type</Term>
+                        <Reference type="RULE">PEPPOL-T011-R034</Reference>
+                        <Value type="FIXED">rim:CollectionValueType</Value>
+                    </Attribute>
+                    <Element cardinality="1..n">
+                        <Term>rim:Element</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Name>NUTS code</Name>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=EstimatedValue</Term>
+                <Name>Estimated value</Name>
+                <Description>An abstract class that defines a container for search attributes related to estimated
+                    overall contract amount. Can be used to specify a minimum, maximum, range value or a currency for
+                    the procurement. The results correspond to the amounts indicated in the fields Estimated Value
+                    (BT-27).
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-27</Reference>
+                <Reference type="RULE">PEPPOL-T011-R040</Reference>
+                <Reference type="RULE">PEPPOL-T011-R041</Reference>
+                <Reference type="RULE">PEPPOL-T011-R042</Reference>
+                <Reference type="RULE">PEPPOL-T011-R043</Reference>
+                <Reference type="RULE">PEPPOL-T011-R044</Reference>
+                <Reference type="RULE">PEPPOL-T011-R045</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">EstimatedValue</Value>
+                </Attribute>
+                <Element cardinality="0..1">
+                    <Term>rim:Slot@name=Minimum</Term>
+                    <Name>Minimum</Name>
+                    <Description>Used to search upon minimum contract amount indicated by the Estimated Value (BT-27).
+                    </Description>
+                    <Reference type="BUSINESS_TERM">eForms BT-27</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">Minimum</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Reference type="RULE">PEPPOL-T011-R046</Reference>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:IntegerValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <DataType>rim:IntegerValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>rim:Slot@name=Maximum</Term>
+                    <Name>Maximum</Name>
+                    <Description>Used to search upon maximum contract amount indicated by the Estimated Value (BT-27).
+                    </Description>
+                    <Reference type="BUSINESS_TERM">eForms BT-27</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">Maximum</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Reference type="RULE">PEPPOL-T011-R046</Reference>
+                            <Value type="FIXED">rim:IntegerValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <DataType>rim:IntegerValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>rim:Slot@name=Currency</Term>
+                    <Name>Currency</Name>
+                    <Description>Used to search upon currencies used to describe the Estimated Value (BT-27)
+                    </Description>
+                    <Reference type="BUSINESS_TERM">eForms BT-27</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">Currency</Value>
+                    </Attribute>
+                    <Attribute>
+                        <Term>type</Term>
+                        <Name>List identifier</Name>
+                        <Description>The type is used to assign the list identifier attribute.</Description>
+                        <Reference type="RULE">PEPPOL-T011-R047</Reference>
+                        <Value type="FIXED">http://publications.europa.eu/resource/authority/currency</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Reference type="RULE">PEPPOL-T011-R034</Reference>
+                            <Value type="FIXED">rim:CollectionValueType</Value>
+                        </Attribute>
+                        <Element cardinality="1..n">
+                            <Term>rim:Element</Term>
+                            <Attribute>
+                                <Term>xsi:type</Term>
+                                <Reference type="RULE">PEPPOL-T011-R048</Reference>
+                                <Value type="FIXED">rim:StringValueType</Value>
+                            </Attribute>
+                            <Element>
+                                <Term>rim:Value</Term>
+                                <Name>Currency code</Name>
+                                <DataType>rim:StringValueType</DataType>
+                            </Element>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=ProcedureType</Term>
+                <Name>Procedure type</Name>
+                <Description>Used to search upon type of procurement procedure (BT-105) according to the types given in
+                    the procurement Directives.
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-105</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">ProcedureType</Value>
+                </Attribute>
+                <Attribute>
+                    <Term>type</Term>
+                    <Name>List identifier</Name>
+                    <Description>The type is used to assign the list identifier attribute.</Description>
+                    <Reference type="RULE">PEPPOL-T011-R049</Reference>
+                    <Value type="FIXED">http://publications.europa.eu/resource/authority/procurement-procedure-type
+                    </Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:SlotValue</Term>
+                    <Attribute>
+                        <Term>xsi:type</Term>
+                        <Reference type="RULE">PEPPOL-T011-R034</Reference>
+                        <Value type="FIXED">rim:CollectionValueType</Value>
+                    </Attribute>
+                    <Element cardinality="1..n">
+                        <Term>rim:Element</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Name>Procurement procedure type code</Name>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=SubmissionLanguage</Term>
+                <Name>Submission language</Name>
+                <Description>Used to search upon the languages that may be used to submit tenders (BT-97).</Description>
+                <Reference type="BUSINESS_TERM">eForms BT-97</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">SubmissionLanguage</Value>
+                </Attribute>
+                <Attribute>
+                    <Term>type</Term>
+                    <Reference type="RULE">PEPPOL-T011-R050</Reference>
+                    <Value type="FIXED">http://publications.europa.eu/resource/authority/language</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:SlotValue</Term>
+                    <Attribute>
+                        <Term>xsi:type</Term>
+                        <Reference type="RULE">PEPPOL-T011-R034</Reference>
+                        <Value type="FIXED">rim:CollectionValueType</Value>
+                    </Attribute>
+                    <Element cardinality="1..n">
+                        <Term>rim:Element</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Name>Language code</Name>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <!-- dates -->
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=PublicationDate</Term>
+                <Name>Publication date</Name>
+                <Description>
+                    An abstract class that defines a container for search attributes related to the Publication Date
+                    Preferred (BT-738) for notices and for planning notices to specify when the competition notice will
+                    be published (BT-127). Can be used to specify a start date, end date or a time range.
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-738</Reference>
+                <Reference type="BUSINESS_TERM">eForms BT-127</Reference>
+                <Reference type="RULE">PEPPOL-T011-R051</Reference>
+                <Reference type="RULE">PEPPOL-T011-R052</Reference>
+                <Reference type="RULE">PEPPOL-T011-R053</Reference>
+                <Reference type="RULE">PEPPOL-T011-R054</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">PublicationDate</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Slot@name=StartDate</Term>
+                    <Name>Start date</Name>
+                    <Description>Used to search upon the start date.</Description>
+                    <Reference type="RULE">PEPPOL-T011-R055</Reference>
+                    <Reference type="RULE">PEPPOL-T011-R056</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">StartDate</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:DateTimeValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Reference type="RULE">PEPPOL-T011-R058</Reference>
+                            <DataType>rim:DateTimeValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element>
+                    <Term>rim:Slot@name=EndDate</Term>
+                    <Name>End date</Name>
+                    <Description>Used to search upon the end date.</Description>
+                    <Reference type="RULE">PEPPOL-T011-R055</Reference>
+                    <Reference type="RULE">PEPPOL-T011-R056</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">EndDate</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:DateTimeValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Reference type="RULE">PEPPOL-T011-R058</Reference>
+                            <DataType>rim:DateTimeValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=DeadlineReceiptTenders</Term>
+                <Name>Deadline receipt tenders</Name>
+                <Description>
+                    An abstract class that defines a container for search attributes related to the deadline for tender
+                    reception (BT-131). Can be used to specify a start date, end date or a time range .
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-131</Reference>
+                <Reference type="RULE">PEPPOL-T011-R051</Reference>
+                <Reference type="RULE">PEPPOL-T011-R052</Reference>
+                <Reference type="RULE">PEPPOL-T011-R053</Reference>
+                <Reference type="RULE">PEPPOL-T011-R054</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">DeadlineReceiptTenders</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Slot</Term>
+                    <Name>Start date</Name>
+                    <Description>Used to search upon the start date.</Description>
+                    <Reference type="RULE">PEPPOL-T011-R055</Reference>
+                    <Reference type="RULE">PEPPOL-T011-R056</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">StartDate</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:DateTimeValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Reference type="RULE">PEPPOL-T011-R058</Reference>
+                            <DataType>rim:DateTimeValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element>
+                    <Term>rim:Slot</Term>
+                    <Name>End date</Name>
+                    <Description>Used to search upon the end date.</Description>
+                    <Reference type="RULE">PEPPOL-T011-R055</Reference>
+                    <Reference type="RULE">PEPPOL-T011-R056</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">EndDate</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:DateTimeValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Reference type="RULE">PEPPOL-T011-R058</Reference>
+                            <DataType>rim:DateTimeValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=AdditionalInformationDeadline</Term>
+                <Name>Additional information deadline</Name>
+                <Description>
+                    An abstract class that defines a container for search attributes related to the the deadline to
+                    request for additional information (BT-13). Can be used to specify a start date, end date or a time
+                    range.
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-13</Reference>
+                <Reference type="RULE">PEPPOL-T011-R051</Reference>
+                <Reference type="RULE">PEPPOL-T011-R052</Reference>
+                <Reference type="RULE">PEPPOL-T011-R053</Reference>
+                <Reference type="RULE">PEPPOL-T011-R054</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">AdditionalInformationDeadline</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Slot</Term>
+                    <Name>Start date</Name>
+                    <Description>Used to search upon the start date.</Description>
+                    <Reference type="RULE">PEPPOL-T011-R055</Reference>
+                    <Reference type="RULE">PEPPOL-T011-R056</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">StartDate</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:DateTimeValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Reference type="RULE">PEPPOL-T011-R058</Reference>
+                            <DataType>rim:DateTimeValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element>
+                    <Term>rim:Slot</Term>
+                    <Name>End date</Name>
+                    <Description>Used to search upon the end date.</Description>
+                    <Reference type="RULE">PEPPOL-T011-R055</Reference>
+                    <Reference type="RULE">PEPPOL-T011-R056</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">EndDate</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:DateTimeValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Reference type="RULE">PEPPOL-T011-R058</Reference>
+                            <DataType>rim:DateTimeValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=DeadlineReceiptRequests</Term>
+                <Name>Deadline receipt requests</Name>
+                <Description>
+                    An abstract class that defines a container for search attributes related to the deadline for
+                    reception of requests to participate (BT-1311). Can be used to specify a start date, end date or a
+                    time range.
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-1311</Reference>
+                <Reference type="RULE">PEPPOL-T011-R051</Reference>
+                <Reference type="RULE">PEPPOL-T011-R052</Reference>
+                <Reference type="RULE">PEPPOL-T011-R053</Reference>
+                <Reference type="RULE">PEPPOL-T011-R054</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">DeadlineReceiptRequests</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Slot</Term>
+                    <Name>Start date</Name>
+                    <Description>Used to search upon the start date.</Description>
+                    <Reference type="RULE">PEPPOL-T011-R055</Reference>
+                    <Reference type="RULE">PEPPOL-T011-R056</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">StartDate</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:DateTimeValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Reference type="RULE">PEPPOL-T011-R058</Reference>
+                            <DataType>rim:DateTimeValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element>
+                    <Term>rim:Slot</Term>
+                    <Name>End date</Name>
+                    <Description>Used to search upon the end date.</Description>
+                    <Reference type="RULE">PEPPOL-T011-R055</Reference>
+                    <Reference type="RULE">PEPPOL-T011-R056</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">EndDate</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:DateTimeValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Reference type="RULE">PEPPOL-T011-R058</Reference>
+                            <DataType>rim:DateTimeValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=NoticeIdentifier</Term>
+                <Name>Notice identifier</Name>
+                <Description>Used to search for notice identifiers (BT-701) allowing to uniquely distinguishing notices
+                    amongst all other existing ones.
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-701</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">NoticeIdentifier</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:SlotValue</Term>
+                    <Attribute>
+                        <Term>xsi:type</Term>
+                        <Value type="FIXED">rim:CollectionValueType</Value>
+                    </Attribute>
+                    <Element cardinality="1..n">
+                        <Term>rim:Element</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=ProcedureIdentifier</Term>
+                <Name>Procedure identifier</Name>
+                <Description>Used to search for procedure identifiers (BT-04) allowing to uniquely distinguishing
+                    procurement procedures.
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-04</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">ProcedureIdentifier</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:SlotValue</Term>
+                    <Attribute>
+                        <Term>xsi:type</Term>
+                        <Value type="FIXED">rim:CollectionValueType</Value>
+                    </Attribute>
+                    <Element cardinality="1..n">
+                        <Term>rim:Element</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=ProcedureLegalBasis</Term>
+                <Name>Procedure legal basis</Name>
+                <Description>Used to search for legal references. The code indicates the EU Directive under which a
+                    notice is published.
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-01</Reference>
+                <Reference type="CODE_LIST">legalBasis</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">ProcedureLegalBasis</Value>
+                </Attribute>
+                <Attribute>
+                    <Term>type</Term>
+                    <Value type="FIXED">http://publications.europa.eu/resource/authority/legal-basis</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:SlotValue</Term>
+                    <Attribute>
+                        <Term>xsi:type</Term>
+                        <Value type="FIXED">rim:CollectionValueType</Value>
+                    </Attribute>
+                    <Element cardinality="1..n">
+                        <Term>rim:Element</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Name>Procedure legal basis code</Name>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:slot@name=ReservedParticipation</Term>
+                <Name>Reserved participation</Name>
+                <Description>Used to search for notices that express a participation restriction (BT-71); e.g. only
+                    tenderers with specific social missions may tender.
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-71</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">ReservedParticipation</Value>
+                </Attribute>
+                <Attribute>
+                    <Term>type</Term>
+                    <Reference type="RULE">PEPPOL-T011-R059</Reference>
+                    <Value type="FIXED">http://publications.europa.eu/resource/authority/reserved-procurement</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:SlotValue</Term>
+                    <Attribute>
+                        <Term>xsi:type</Term>
+                        <Reference type="RULE">PEPPOL-T011-R034</Reference>
+                        <Value type="FIXED">rim:CollectionValueType</Value>
+                    </Attribute>
+                    <Element cardinality="1..n">
+                        <Term>rim:Element</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Name>Reserved participation code</Name>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=SuitableForSMEs</Term>
+                <Name>Suitable for SMEs</Name>
+                <Description>Used to search for notices that indicate that a tender participation is suitability for
+                    SMEs (BT-726)
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-726</Reference>
+                <Element>
+                    <Term>rim:SlotValue</Term>
+                    <Attribute>
+                        <Term>xsi:type</Term>
+                        <Reference type="RULE">PEPPOL-T011-R060</Reference>
+                        <Value type="FIXED">rim:BooleanValueType</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:Value</Term>
+                        <DataType>rim:BooleanValueType</DataType>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=WinnerEconomicOperatorName</Term>
+                <Name>Winner economic operator name</Name>
+                <Description>Used to search for the winning organisation name (BT-500) to whom a contract has been
+                    awarded.
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-500</Reference>
+                <Element>
+                    <Term>rim:SlotValue</Term>
+                    <Reference type="RULE">PEPPOL-T011-R010</Reference>
+                    <Attribute>
+                        <Term>xsi:type</Term>
+                        <Value type="FIXED">rim:StringValueType</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:Value</Term>
+                        <DataType>rim:StringValueType</DataType>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>rim:Slot@name=AwardCriterionType</Term>
+                <Name>Award criterion type</Name>
+                <Description>Used to search for the awarding criterion type code (BT-539) that is used to assess the
+                    tenders.
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BT-539</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">AwardCriterionType</Value>
+                </Attribute>
+                <Attribute>
+                    <Term>type</Term>
+                    <Reference type="RULE">PEPPOL-T011-R061</Reference>
+                    <Value type="FIXED">http://publications.europa.eu/resource/authority/award-criterion-type</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:SlotValue</Term>
+                    <Attribute>
+                        <Term>xsi:type</Term>
+                        <Reference type="RULE">PEPPOL-T011-R034</Reference>
+                        <Value type="FIXED">rim:CollectionValueType</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:Element</Term>
+                        <Attribute>
+                            <Term>type</Term>
+                            <Value type="FIXED">xsi:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Name>Award criterion type code</Name>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..n">
+                <Term>rim:Slot@name=BuyerInformation</Term>
+                <Name>Buyer information</Name>
+                <Description>Used to search for the awarding criterion type code (BT-539) that is used to assess the
+                    tenders.
+                </Description>
+                <Reference type="BUSINESS_TERM">eForms BG-3</Reference>
+                <Reference type="RULE">PEPPOL-T011-R062</Reference>
+                <Reference type="RULE">PEPPOL-T011-R063</Reference>
+                <Reference type="RULE">PEPPOL-T011-R064</Reference>
+                <Reference type="RULE">PEPPOL-T011-R065</Reference>
+                <Reference type="RULE">PEPPOL-T011-R067</Reference>
+                <Reference type="RULE">PEPPOL-T011-R068</Reference>
+                <Reference type="RULE">PEPPOL-T011-R069</Reference>
+                <Reference type="RULE">PEPPOL-T011-R070</Reference>
+                <Reference type="RULE">PEPPOL-T011-R071</Reference>
+                <Reference type="RULE">PEPPOL-T011-R072</Reference>
+                <Attribute>
+                    <Term>name</Term>
+                    <Value type="FIXED">BuyerInformation</Value>
+                </Attribute>
+                <Element cardinality="0..1">
+                    <Term>rim:Slot@name=Name</Term>
+                    <Name>Name</Name>
+                    <Description>Used to search for the contracting party organisation name (BT-500).</Description>
+                    <Reference type="BUSINESS_TERM">eForms BT-500</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">Name</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Reference type="RULE">PEPPOL-T011-R010</Reference>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <DataType>rim:StringValueType</DataType>
+                            <Value type="EXAMPLE">Beschaffungsamt des BMI</Value>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>rim:Slot@name=OrganisationNumber</Term>
+                    <Name>Organisation number</Name>
+                    <Description>Used to search for the contracting party organisation identifier (BT-501).
+                    </Description>
+                    <Reference type="BUSINESS_TERM">eForms BT-501</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">OrganisationNumber</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Reference type="RULE">PEPPOL-T011-R010</Reference>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>rim:Slot@name=City</Term>
+                    <Name>City</Name>
+                    <Description>Used to search for the contracting party organisation identifier (BT-501).
+                    </Description>
+                    <Reference type="BUSINESS_TERM">eForms BT-513</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">City</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Reference type="RULE">PEPPOL-T011-R010</Reference>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>rim:Slot@name=PostCode</Term>
+                    <Name>Post code</Name>
+                    <Description>Used to search for the contracting party organisation post code (BT-512).</Description>
+                    <Reference type="BUSINESS_TERM">eForms BT-512</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">PostCode</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Reference type="RULE">PEPPOL-T011-R010</Reference>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>rim:Slot@name=OrganizationCountrySubdivision</Term>
+                    <Name>Organization country subdivision</Name>
+                    <Description>Used to search for the contracting party organisation country subdivision (BT-500)
+                        according to the Nomenclature of territorial units for statistics (NUTS).
+                    </Description>
+                    <Reference type="BUSINESS_TERM">eForms BT-507</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">OrganizationCountrySubdivision</Value>
+                    </Attribute>
+                    <Attribute>
+                        <Term>type</Term>
+                        <Reference type="RULE">PEPPOL-T011-R073</Reference>
+                        <Value type="FIXED">http://publications.europa.eu/resource/authority/nuts</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Reference type="RULE">PEPPOL-T011-R034</Reference>
+                            <Value type="FIXED">rim:CollectionValueType</Value>
+                        </Attribute>
+                        <Element cardinality="1..n">
+                            <Term>rim:Element</Term>
+                            <Attribute>
+                                <Term>xsi:type</Term>
+                                <Value type="FIXED">rim:StringValueType</Value>
+                            </Attribute>
+                            <Element>
+                                <Term>rim:Value</Term>
+                                <Name>NUTS code</Name>
+                                <DataType>rim:StringValueType</DataType>
+                            </Element>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>rim:Slot@name=CountryCode</Term>
+                    <Name>Country code</Name>
+                    <Description>Used to search for the contracting party country code (BT-514) according to country
+                        codes.
+                    </Description>
+                    <Reference type="BUSINESS_TERM">eForms BT-514</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">CountryCode</Value>
+                    </Attribute>
+                    <Attribute>
+                        <Term>type</Term>
+                        <Reference type="RULE">PEPPOL-T011-R074</Reference>
+                        <Value type="FIXED">http://publications.europa.eu/resource/authority/country</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Reference type="RULE">PEPPOL-T011-R034</Reference>
+                            <Value type="FIXED">rim:CollectionValueType</Value>
+                        </Attribute>
+                        <Element cardinality="1..n">
+                            <Term>rim:Element</Term>
+                            <Attribute>
+                                <Term>xsi:type</Term>
+                                <Value type="FIXED">rim:StringValueType</Value>
+                            </Attribute>
+                            <Element>
+                                <Term>rim:Value</Term>
+                                <Name>Country code</Name>
+                                <DataType>rim:StringValueType</DataType>
+                            </Element>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>rim:Slot@name=LegalType</Term>
+                    <Name>Legal type</Name>
+                    <Description>Used to search for the contracting party type code (BT-11) according to legal type
+                        codes.
+                    </Description>
+                    <Reference type="BUSINESS_TERM">eForms BT-11</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">LegalType</Value>
+                    </Attribute>
+                    <Attribute>
+                        <Term>type</Term>
+                        <Reference type="RULE">PEPPOL-T011-R075</Reference>
+                        <Value type="FIXED">http://publications.europa.eu/resource/authority/buyer-legal-type</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Reference type="RULE">PEPPOL-T011-R034</Reference>
+                            <Value type="FIXED">rim:CollectionValueType</Value>
+                        </Attribute>
+                        <Element cardinality="1..n">
+                            <Term>rim:Element</Term>
+                            <Attribute>
+                                <Term>xsi:type</Term>
+                                <Value type="FIXED">rim:StringValueType</Value>
+                            </Attribute>
+                            <Element>
+                                <Term>rim:Value</Term>
+                                <Name>Buyer legal type code</Name>
+                                <DataType>rim:StringValueType</DataType>
+                            </Element>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>rim:Slot@name=MainActivity</Term>
+                    <Name>Main activity</Name>
+                    <Description>Used to search for the contracting activity type code (BT-610) of the buyer according
+                        to main activity codes.
+                    </Description>
+                    <Reference type="BUSINESS_TERM">eForms BT-610</Reference>
+                    <Attribute>
+                        <Term>MainActivity</Term>
+                        <Value type="FIXED">MainActivity</Value>
+                    </Attribute>
+                    <Attribute>
+                        <Term>type</Term>
+                        <Reference type="RULE">PEPPOL-T011-R076</Reference>
+                        <Value type="FIXED">http://publications.europa.eu/resource/authority/main-activity</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Reference type="RULE">PEPPOL-T011-R034</Reference>
+                            <Value type="FIXED">rim:CollectionValueType</Value>
+                        </Attribute>
+                        <Element cardinality="1..n">
+                            <Term>rim:Element</Term>
+                            <Attribute>
+                                <Term>xsi:type</Term>
+                                <Value type="FIXED">rim:StringValueType</Value>
+                            </Attribute>
+                            <Element>
+                                <Term>rim:Value</Term>
+                                <Name>Main activity code</Name>
+                                <DataType>rim:StringValueType</DataType>
+                            </Element>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+        </Element>
+    </Document>
+</Structure>

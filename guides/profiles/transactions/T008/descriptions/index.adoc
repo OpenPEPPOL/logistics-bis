@@ -1,0 +1,68 @@
+[[descriptions]]
+= Description of selected parts of the transaction
+
+The transaction including business terms, business rules and code lists are based upon the definitions of {name-transaction-org} described in {name-profile-org}.
+
+== AdditionalDocumentReferences and Attachments
+
+The `EnquiryResponse` element should be build as follows to answering questions:
+
+. The ParentDocumentReference must have an `cbc:ID` having the attribute `schemeName` set to `ContractFolderID` and the value has to be the contract folder id.
+. An `EnquiryResponse` element can have multiple `cac:AdditionalDocumentReference` refer to the procurement procedure, a LotsGroup, a lot or a part.
+. Answers have to be put in an `cac:Attachment` element. The question to be answered has to be placed at the beginning of the answer. The attachment can have one or more `cbc:Description` elements or refer to a file in the ASiC-e by using the `cbc:FileName` element.
+. Each `cbc:Description` element contains only a question with its answer.
+. The relation between `cac:AdditionalDocumentReference` and `cac:Attachment` is done by a `cbc:XPath` element in the `cac:AdditionalDocumentReference`
+. The `cbc:XPath` can only contain references to an `cac:Attachment` and has to match the following expression: `/EnquiryResponse/cac:Attachment[number]` where number represents a 1-base index in the list of the attachments.
+
+The following are examples of combining question and its answer in a transaction with different parts of the procurement procedure.
+
+=== Answering a common question about a procurement procedure
+
+If you have to answer questions only about the procurement procedure, a reference to the question in the attachments can be placed in the `cac:AdditionalDocumentReference` with the `cbc:ID` having the `schemeName` set to `ContractFolderID`.
+
+[source,xml,indent=0]
+....
+include::../files/TenderingAnswers-doc.xml[tags=ref-contract-folder-id;refer-questions-procurement-procedure;questions-procurement-procedure]
+....
+<.> The Contract Folder ID of the procurement procedure.
+<.> The Contract Folder ID of the procurement procedure to indicate a common questions regarding the procedure.
+<.> A reference to an element where a question with its answer is located. The number in square brackets is the position in the list of attachments. The position starts with 1 (1-based indexing).
+<.> The questions and answers are placed in an attachment element. Each question and its associated answer must be put in a description element.
+
+=== Answering a question about a group of lots of a procurement procedure
+
+If you have to answer questions about a group of lots, you have to add an `cac:AdditionalDocumentReference` with an `cbc:ID` having an attribute `schemeName` set to `LotsGroup` and the value represents the Group of Lots ID.
+Add as many questions as needed and refer the `cac:Attachment` with the `cbc:XPath` element.
+
+[source,xml,indent=0]
+....
+include::../files/TenderingAnswers-doc.xml[tags=ref-contract-folder-id;multiple-questions-group-of-lots;question-group-of-lots]
+....
+<.> The Contract Folder ID of the procurement procedure.
+<.> Referencing a group of lots.
+<.> A reference to a question and answer.
+
+=== Answering a question about several lots in a procurement procedure
+
+If you have to answer one question regarding several lots, you have to add an `cac:AdditionalDocumentReference` for each lot containing an `cbc:ID` with an attribute `schemeName` set to `Lot` and a value representing the Lot ID.
+Add an `cac:Attachment` with the question and its associated answer. Reference this attachment with a `cbc:XPath` element in each `cac:AdditionalDocumentReference` element.
+
+[source,xml,indent=0]
+....
+include::../files/TenderingAnswers-doc.xml[tags=ref-contract-folder-id;refer-one-question-for-multiple-lots;one-question-for-multiple-lots]
+....
+<.> The Contract Folder ID of the procurement procedure.
+<.> Referencing a lot.
+<.> Referencing another lot.
+<.> Referencing the same question and answer (note the same index in square bracket).
+
+== Reference to multiple attachments
+
+It's possible to reference multiple `cac:Attachment` elements from an `cac:AdditionalDocumentReference`.
+
+[source,xml,indent=0]
+....
+include::../files/TenderingAnswers-doc.xml[tags=refer-multiple-attachments;multiple-attachments]
+....
+<.> Indicating an question and answer to lot LOT-0006.
+<.> Two XPath elements to reference the questions and answers or a files.

@@ -1,158 +1,446 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project xmlns="urn:fdc:difi.no:2017:vefa:structure:Project-1">
-    <Name>Peppol Logistics - Release 1.2 </Name>
+    <Name>PEPPOL Pre-Award - April 2026 Release</Name>
 
-	<!-- Introduction -->
-
-	<!-- Introduction -->
-	<Documentation path="">INTRODUCTION</Documentation>
-	<Documentation path="compliance/">BIS compliance</Documentation>
-	<Documentation path="release-notes/">Release notes</Documentation>
-
-    <!-- BIS documents -->
+    <!-- Introduction -->
+    <Documentation path="compliance/">BIS compliance</Documentation>
+    <Documentation path="release-notes/">Release notes</Documentation>
     <Documentation path="">BIS DOCUMENTS</Documentation>
-    <Documentation path="profiles/66-advanceddespatchadvice/">- Advanced Despatch Advice Only 1.4</Documentation>
-	<Documentation path="profiles/67-advanceddespatchadvice_w_receiptadvice/">- Advanced Despatch Advice with Receipt Advice 1.1</Documentation>
-    <Documentation path="profiles/68-weightstatement/">- Weight Statement 1.3</Documentation>
-    <Documentation path="profiles/69-transportexecutionplan_w_request/">- Transport Execution Plan with Request 1.1</Documentation>
-    <Documentation path="profiles/70-transportexecutionplan/">- Transport Execution Plan Only 1.1</Documentation>
-    <Documentation path="profiles/71-waybill/">- Waybill 1.1</Documentation>
-    <Documentation path="profiles/72-transportationstatus_w_request/">- Transportation Status with Request 1.1</Documentation>
-    <Documentation path="profiles/73-transportationstatus/">- Transportation Status Only 1.1</Documentation>
-	<Documentation path="profiles/74-AdvancedTransportExecutionPlan/">- Advanced Transport Execution Plan 1.0</Documentation>
-    <Documentation path="profiles/p035/">- Peppol BIS Pre-Award Catalogue (P035) -
+
+    <Documentation path="changelog/">Release Notes - April 2026</Documentation>
+    <Documentation path="profiles/p001/">P001 - Procurement procedure subscription - 1.2</Documentation>
+    <Documentation path="profiles/transactions/T001/">T001 - Subscribe to Procedure 1.2</Documentation>
+    <Documentation path="profiles/transactions/T002/">T002 - Subscribe to Procedure Confirmation
+        1.2</Documentation>
+    <Documentation path="profiles/transactions/T021/">T021 - Unsubscribe from Procedure 1.2</Documentation>
+    <Documentation path="profiles/transactions/T022/">T022 - Unsubscribe from Procedure
+        Confirmation 1.2</Documentation>
+
+    <Documentation path="profiles/p002/">P002 - Procurement document access - 1.2</Documentation>
+    <Documentation path="profiles/transactions/T003/">T003 - Tender Status Request 1.2</Documentation>
+    <Documentation path="profiles/transactions/T004/">T004 - Call for Tenders 1.2</Documentation>
+
+    <Documentation path="profiles/p003/">P003 - Tender Submission - 1.2</Documentation>
+    <Documentation path="profiles/transactions/T005/">T005 - Tender 1.2</Documentation>
+    <Documentation path="profiles/transactions/T006/">T006 - Tender Reception Notification 1.2</Documentation>
+
+    <Documentation path="profiles/p004/">P004 - Call for Tenders Question and Answers -
         1.1</Documentation>
-    <Documentation path="profiles/transactions/CatalogueRequest/">- . .Peppol BIS Pre-Award
-        Catalogue Request (T035)</Documentation>
-    <Documentation path="profiles/transactions/Catalogue/">- . .Peppol BIS Pre-Award
-        Catalogue (T036)</Documentation>
+    <Documentation path="profiles/transactions/T007/">T007 - Tendering Questions 1.1</Documentation>
+    <Documentation path="profiles/transactions/T008/">T008 - Tendering Answers 1.1</Documentation>
+
+    <Documentation path="profiles/p005/">P005 - Tender Clarification - 1.1</Documentation>
+    <Documentation path="profiles/transactions/T009/">T009 - Tender Clarification Request 1.1</Documentation>
+    <Documentation path="profiles/transactions/T010/">T010 - Tender Clarification 1.1</Documentation>
+    <Documentation path="profiles/p006/">P006 - Search Notices - 1.2</Documentation>
+    <Documentation path="profiles/transactions/T011/">T011 - Search Notice Request 1.2</Documentation>
+    <Documentation path="profiles/transactions/T012/">T012 - Search Notice Response 1.2</Documentation>
+    <Documentation path="profiles/p007/">P007 - Tender Withdrawal - 1.1</Documentation>
+    <Documentation path="profiles/transactions/T013/">T013 - Tender Withdrawal 1.1</Documentation>
+    <Documentation path="profiles/transactions/T014/">T014 - Tender Withdrawal Notification 1.2</Documentation>
+
+    <Documentation path="profiles/p008/">P008 - Publish Notice - 1.2</Documentation>
+    <Documentation path="profiles/transactions/T015/">T015 - Publish Notice 1.2</Documentation>
+    <Documentation path="profiles/transactions/T016/">T016 - Notice Publication Response 1.2</Documentation>
+    <Documentation path="profiles/p009/">P009 - Notify Awarding - 1.1</Documentation>
+    <Documentation path="profiles/transactions/T017/">T017 - Awarding Notification 1.1</Documentation>
+    <Documentation path="profiles/p010/">P010 - Tendering Message Response - 1.0</Documentation>
+    <Documentation path="profiles/transactions/T018/">T018 - Tendering Message Response 1.0</Documentation>
+    <Documentation path="profiles/p011/">P011 - Tenderer Qualification - 1.0</Documentation>
+    <Documentation path="profiles/transactions/T019/">T019 - Qualification - 1.1</Documentation>
+    <Documentation path="profiles/transactions/T020/">T020 - Qualification Reception Confirmation -
+        1.1</Documentation>
+    <Documentation path="profiles/p012/">P012 - Qualification Response - 1.0</Documentation>
+    <Documentation path="profiles/transactions/T023/">T023 - Qualification Response 1.0</Documentation>
+
+    <Documentation path="profiles/p013/">P013 - Invitation to Tender - 1.0</Documentation>
+    <Documentation path="profiles/transactions/T024/">T024 - Invitation to Tender 1.0</Documentation>
+    <Documentation path="profiles/transactions/T025/">T025 - Tender Status Request 1.2</Documentation>
+
+    <Documentation path="profiles/p035/">P035 - Pre-Award Catalogue - 1.1</Documentation>
+    <Documentation path="profiles/transactions/T035/">T035 Pre-Award Catalogue Request</Documentation>
+    <Documentation path="profiles/transactions/T036/">T036 Pre-Award Catalogue</Documentation>
+
 
     <!-- Syntax -->
     <Resource>
         <Type>Structure-1</Type>
-        <Path>structure/syntax/ubl-advanced-despatch-advice.xml</Path>
-        <Title>Peppol Advanced Despatch Advice 1.3 (T120)</Title>
+        <Path>structure/syntax/ubl-expression-of-interest-request.xml</Path>
+        <Title>Syntax Mapping T001 - Expression Of Interest Request 1.2</Title>
     </Resource>
     <Resource>
         <Type>Structure-1</Type>
-        <Path>structure/syntax/ubl-weight-statement.xml</Path>
-        <Title>Peppol Weight Statement 1.3 (T122)</Title>
+        <Path>structure/syntax/ubl-expression-of-interest-response.xml</Path>
+        <Title>Syntax Mapping T002 - Expression Of Interest Response 1.2</Title>
     </Resource>
     <Resource>
         <Type>Structure-1</Type>
-        <Path>structure/syntax/ubl-transport-execution-plan-request.xml</Path>
-        <Title>Peppol Transport Execution Plan Request 1.2 (T123)</Title>
+        <Path>structure/syntax/ubl-tender-status-request.xml</Path>
+        <Title>Syntax Mapping T003 - Tender Status Request 1.2</Title>
     </Resource>
     <Resource>
         <Type>Structure-1</Type>
-        <Path>structure/syntax/ubl-transport-execution-plan.xml</Path>
-        <Title>Peppol Transport Execution Plan 1.2 (T124)</Title>
+        <Path>structure/syntax/ubl-call-for-tenders.xml</Path>
+        <Title>Syntax Mapping T004 - Call for Tenders 1.2</Title>
     </Resource>
-	<Resource>
-		<Type>Structure-1</Type>
-		<Path>structure/syntax/ubl-waybill.xml</Path>
-		<Title>Peppol Waybill 1.1 (T125)</Title>
-	</Resource>
-	<Resource>
-		<Type>Structure-1</Type>
-		<Path>structure/syntax/ubl-transportation-status-request.xml</Path>
-		<Title>Peppol Transportation Status Request 1.2 (T126)</Title>
-	</Resource>
-	<Resource>
-		<Type>Structure-1</Type>
-		<Path>structure/syntax/ubl-transportation-status.xml</Path>
-		<Title>Peppol Transportation Status 1.2 (T127)</Title>
-	</Resource>
-	<Resource>
-		<Type>Structure-1</Type>
-		<Path>structure/syntax/ubl-receipt-advice.xml</Path>
-		<Title>Peppol Receipt Advice 1.1 (T128)</Title>
-	</Resource>
-	<Resource>
-		<Type>Structure-1</Type>
-		<Path>structure/syntax/ubl-application-response.xml</Path>
-		<Title>Peppol Logistics Application Response 1.0 (T129)</Title>
-	</Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-submit-tender.xml</Path>
+        <Title>Syntax Mapping T005 - Tender 1.2</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-tender-receipt.xml</Path>
+        <Title>Syntax Mapping T006 - Tender Receipt 1.2</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-tendering-questions.xml</Path>
+        <Title>Syntax Mapping T007 - Tendering Questions 1.1</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-tendering-answers.xml</Path>
+        <Title>Syntax Mapping T008 - Tendering Answers 1.1</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-tender-clarification-request.xml</Path>
+        <Title>Syntax Mapping T009 - Tender Clarification Request 1.1</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-tender-clarification.xml</Path>
+        <Title>Syntax Mapping T010 - Tender Clarification 1.1</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ebxml-search-notice-request.xml</Path>
+        <Title>Syntax Mapping T011 - Search Notice Request 1.2</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ebxml-search-notice-response.xml</Path>
+        <Title>Syntax Mapping T012 - Search Notice Response 1.2</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-tender-withdrawal-request.xml</Path>
+        <Title>Syntax Mapping T013 - Tender Withdrawal 1.1</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-tender-withdrawal-response.xml</Path>
+        <Title>Syntax Mapping T014 - Tender Withdrawal Notification 1.2</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-publish-notice.xml</Path>
+        <Title>Syntax Mapping T015 - Publish Notice 1.2</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-publish-notice-response.xml</Path>
+        <Title>Syntax Mapping T016 - Notice Publication Response 1.2</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-notify-awarding.xml</Path>
+        <Title>Syntax Mapping T017 - Awarding Notification 1.1</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-tendering-message-response.xml</Path>
+        <Title>Syntax Mapping T018 - Tendering Message Response 1.1</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-qualification.xml</Path>
+        <Title>Syntax Mapping T019 - Qualification 1.1</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-qualification-reception-confirmation.xml</Path>
+        <Title>Syntax Mapping T020 - Qualification Reception Confirmation 1.1</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-unsubscribe-from-procedure-request.xml</Path>
+        <Title>Syntax Mapping T021 - Unsubscribe From Procedure Request 1.2</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-unsubscribe-from-procedure-response.xml</Path>
+        <Title>Syntax Mapping T022 - Unsubscribe From Procedure Response 1.2</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-qualification-response.xml</Path>
+        <Title>Syntax Mapping T023 - Qualification Response 1.0</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-invitation-to-tender.xml</Path>
+        <Title>Syntax Mapping T024 - Invitation to Tender 1.0</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-pre-award-catalogue-request.xml</Path>
+        <Title>Syntax Mapping T035 - Pre-Award Catalogue Request</Title>
+    </Resource>
+    <Resource>
+        <Type>Structure-1</Type>
+        <Path>structure/syntax/ubl-pre-award-catalogue.xml</Path>
+        <Title>Syntax Mapping T036 - Pre-Award Catalogue</Title>
+    </Resource>
+
 
     <!-- Rules -->
     <Resource>
-        <Identifier>common</Identifier>
+        <Identifier>T001</Identifier>
         <Type>native:Schematron</Type>
-        <Path>rules/sch/parts/common.sch</Path>
-        <Title>Common rules</Title>
+        <Path>rules/peppol-procurement-procedure-subscription/PEPPOL-T001.sch</Path>
+        <Title>PEPPOL T001 rules - Subscribe to Procuedure 1.2</Title>
     </Resource>
     <Resource>
-        <Identifier>T120</Identifier>
+        <Identifier>T002</Identifier>
         <Type>native:Schematron</Type>
-        <Path>rules/sch/parts/PEPPOL-M-T120.sch</Path>
-        <Title>Business rules for Peppol Advanced Despatch Advice transaction 1.3</Title>
+        <Path>rules/peppol-procurement-procedure-subscription/PEPPOL-T002.sch</Path>
+        <Title>PEPPOL T002 rules - Subscribe to Procedure Confirmation 1.2</Title>
     </Resource>
     <Resource>
-        <Identifier>T122</Identifier>
+        <Identifier>T021</Identifier>
         <Type>native:Schematron</Type>
-        <Path>rules/sch/parts/PEPPOL-M-T122.sch</Path>
-        <Title>Business rules for Peppol Weight Statement transaction 1.3</Title>
+        <Path>rules/peppol-procurement-procedure-subscription/PEPPOL-T021.sch</Path>
+        <Title>PEPPOL T021 rules - Unsubscribe from Procedure 1.2</Title>
     </Resource>
     <Resource>
-        <Identifier>T123</Identifier>
+        <Identifier>T022</Identifier>
         <Type>native:Schematron</Type>
-        <Path>rules/sch/parts/PEPPOL-M-T123.sch</Path>
-        <Title>Business rules for Peppol Transport Execution Plan Request transaction 1.2</Title>
+        <Path>rules/peppol-procurement-procedure-subscription/PEPPOL-T022.sch</Path>
+        <Title>PEPPOL T022 rules - Unsubscribe from Procedure Confirmation 1.2</Title>
     </Resource>
     <Resource>
-        <Identifier>T124</Identifier>
+        <Identifier>T003</Identifier>
         <Type>native:Schematron</Type>
-        <Path>rules/sch/parts/PEPPOL-M-T124.sch</Path>
-        <Title>Business rules for Peppol Transport Execution Plan transaction 1.2</Title>
+        <Path>rules/peppol-tender-status-inquiry/PEPPOL-T003.sch</Path>
+        <Title>PEPPOL T003 rules - Tender Status Inquiry 1.2</Title>
     </Resource>
-	<Resource>
-		<Identifier>T125</Identifier>
-		<Type>native:Schematron</Type>
-		<Path>rules/sch/parts/PEPPOL-M-T125.sch</Path>
-		<Title>Business rules for Peppol Waybill transaction 1.1</Title>
-	</Resource>
-	<Resource>
-		<Identifier>T126</Identifier>
-		<Type>native:Schematron</Type>
-		<Path>rules/sch/parts/PEPPOL-M-T126.sch</Path>
-		<Title>Business rules for Peppol Transportation Status Request transaction 1.2</Title>
-	</Resource>
-	<Resource>
-		<Identifier>T127</Identifier>
-		<Type>native:Schematron</Type>
-		<Path>rules/sch/parts/PEPPOL-M-T127.sch</Path>
-		<Title>Business rules for Peppol Transportation Status transaction 1.2</Title>
-	</Resource>
-	<Resource>
-		<Identifier>T128</Identifier>
-		<Type>native:Schematron</Type>
-		<Path>rules/sch/parts/PEPPOL-M-T128.sch</Path>
-		<Title>Business rules for Peppol Receipt Advice transaction 1.1</Title>
-	</Resource>
-	<Resource>
-		<Identifier>T129</Identifier>
-		<Type>native:Schematron</Type>
-		<Path>rules/sch/parts/PEPPOL-M-T129.sch</Path>
-		<Title>Business rules for Peppol Logistics Application Response transaction 1.0</Title>
-	</Resource>
+    <Resource>
+        <Identifier>T004</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-call-for-tender/PEPPOL-T004.sch</Path>
+        <Title>PEPPOL T004 rules - Call for Tenders 1.2</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T005</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-tender/PEPPOL-T005.sch</Path>
+        <Title>PEPPOL T005 rules - Tender 1.2</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T006</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-tender/PEPPOL-T006.sch</Path>
+        <Title>PEPPOL T006 rules - Tender Reception Notification 1.2</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T007</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-call-for-tender-question-and-answers/PEPPOL-T007.sch</Path>
+        <Title>PEPPOL T007 rules - Tendering Questions 1.1</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T008</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-call-for-tender-question-and-answers/PEPPOL-T008.sch</Path>
+        <Title>PEPPOL T008 rules - Tendering Answers 1.1</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T009</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/tender-clarification/PEPPOL-T009.sch</Path>
+        <Title>PEPPOL T009 rules - Tender Clarification Request 1.1</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T010</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/tender-clarification/PEPPOL-T010.sch</Path>
+        <Title>PEPPOL T010 rules - Tender Clarification 1.1</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T011</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-search-notice/PEPPOL-T011.sch</Path>
+        <Title>PEPPOL T011 rules - Search Notice Request 1.2</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T012</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-search-notice/PEPPOL-T012.sch</Path>
+        <Title>PEPPOL T012 rules - Search Notice Response 1.2</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T013</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-tender-withdrawal/PEPPOL-T013.sch</Path>
+        <Title>PEPPOL T013 rules - Tender Withdrawal 1.1</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T014</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-tender-withdrawal/PEPPOL-T014.sch</Path>
+        <Title>PEPPOL T014 rules - Tender Withdrawal Notification 1.2</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T015</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-publish-notice/PEPPOL-T015.sch</Path>
+        <Title>PEPPOL T015 rules - Publish Notice 1.2</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T016</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-publish-notice/PEPPOL-T016.sch</Path>
+        <Title>PEPPOL T016 rules - Notice Publication Response 1.2</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T017</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-notify-awarding/PEPPOL-T017.sch</Path>
+        <Title>PEPPOL T017 rules - Awarding Notification 1.1</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T018</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-tendering-message-response/PEPPOL-T018.sch</Path>
+        <Title>PEPPOL T018 rules - Tendering Message Response 1.1</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T019</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-qualification/PEPPOL-T019.sch</Path>
+        <Title>PEPPOL T019 rules - Qualification 1.1</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T020</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-qualification/PEPPOL-T020.sch</Path>
+        <Title>PEPPOL T020 rules - Qualification Reception Confirmation 1.1</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T023</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-qualification/PEPPOL-T023.sch</Path>
+        <Title>PEPPOL T023 rules - Qualification Response 1.0</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T024</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-invitation-to-tender/PEPPOL-T024.sch</Path>
+        <Title>PEPPOL T024 rules - Invitation to Tender 1.0</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T035</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-pre-award-catalogue/PEPPOL-T035.sch</Path>
+        <Title>PEPPOL T035 rules - Pre-Award Catalogue Request 1.0</Title>
+    </Resource>
+    <Resource>
+        <Identifier>T036</Identifier>
+        <Type>native:Schematron</Type>
+        <Path>rules/peppol-pre-award-catalogue/PEPPOL-T036.sch</Path>
+        <Title>PEPPOL T036 rules - Pre-Award Catalogue 1.0</Title>
+    </Resource>
 
     <!-- Code lists -->
-
     <Resource>
         <Type>CodeList-1</Type>
-        <Path>structure/codelist/UNCL4343_T128.xml</Path>
+        <Path>structure/codelist/addCond.xml</Path>
     </Resource>
-	<Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/ConsignmentStatusReason.xml</Path>
-	</Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/awardCode.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/contractType.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/docStatus.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/docType.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/eas.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/icd.xml</Path>
+    </Resource>
     <Resource>
         <Type>CodeList-1</Type>
         <Path>structure/codelist/ISO3166-1_Alpha2.xml</Path>
     </Resource>
     <Resource>
         <Type>CodeList-1</Type>
-        <Path>structure/codelist/ISO4217_2015.xml</Path>
+        <Path>structure/codelist/legalBasis.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/messageResponseCode.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/noticeResponse.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/procedureType.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/procurementType.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/publicationCondition.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/statusReason.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/statusReasonSubset.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/submissionMethod.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/tendererRole.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/ublDocumentSchema.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/uncl1001.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/UNCL5305.xml</Path>
+    </Resource>
+    <Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/UNCL5387.xml</Path>
     </Resource>
     <Resource>
         <Type>CodeList-1</Type>
@@ -160,214 +448,62 @@
     </Resource>
     <Resource>
         <Type>CodeList-1</Type>
-        <Path>structure/codelist/DespatchAdviceTypeCode.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>CodeList-1</Type>
-        <Path>structure/codelist/UNCL1001.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>CodeList-1</Type>
-        <Path>structure/codelist/DocumentStatusCode.xml</Path>
-    </Resource>
-    <Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/eas.xml</Path>
-	</Resource>
-    <Resource>
-        <Type>CodeList-1</Type>
-        <Path>structure/codelist/FreightAllowanceChargeReasonCode.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>CodeList-1</Type>
-        <Path>structure/codelist/HandlingCode.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>CodeList-1</Type>
-        <Path>structure/codelist/TRED4079.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>CodeList-1</Type>
-        <Path>structure/codelist/HazardClasses.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>CodeList-1</Type>
-        <Path>structure/codelist/ICD.xml</Path>
-    </Resource>
-	<Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/ItemPropertyNameCode.xml</Path>
-	</Resource>	
-    <Resource>
-        <Type>CodeList-1</Type>
-        <Path>structure/codelist/UNCL7143.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>CodeList-1</Type>
-        <Path>structure/codelist/UNCL6313-T120.xml</Path>
-    </Resource>
-	<Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/UNCL6313-T122.xml</Path>
-	</Resource>
-    <Resource>
-        <Type>CodeList-1</Type>
-        <Path>structure/codelist/MimeCode.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>CodeList-1</Type>
         <Path>structure/codelist/UNECERec20-11e.xml</Path>
     </Resource>
     <Resource>
         <Type>CodeList-1</Type>
-        <Path>structure/codelist/UNECERec21-9e.xml</Path>
-    </Resource>
-     <Resource>
-        <Type>CodeList-1</Type>
-        <Path>structure/codelist/UNECERec19.xml</Path>		                         
-	 </Resource>
-	 <Resource>
-        <Type>CodeList-1</Type>
-        <Path>structure/codelist/UNECERec28.xml</Path>		                         
-	 </Resource>
-    <Resource>
-        <Type>CodeList-1</Type>
-        <Path>structure/codelist/TRED8155.xml</Path>
+        <Path>structure/codelist/TransactionConditions.xml</Path>
     </Resource>
     <Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/ReceiptAdviceTypeCode.xml</Path>
-	</Resource>
-	<Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/ReceiptAdviceActionCode.xml</Path>
-	</Resource>
-	<Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/RejectReasonCode.xml</Path>
-	</Resource>
-	<Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/TransportHandlingUnitReason.xml</Path>
-	</Resource>
-	<Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/TransportServiceCode.xml</Path>
-	</Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/UNCL6313.xml</Path>
+    </Resource>
     <Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/UNCL8053.xml</Path>
-	</Resource>
-    <Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/TransportationStatusCode.xml</Path>
-	</Resource>
-    <Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/TransportationStatusTypeCode.xml</Path>
-	</Resource>
-    <Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/TransportEventTypeCode.xml</Path>
-	</Resource>
-	<Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/WeightStatementTypeCode.xml</Path>
-	</Resource>
-	<Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/ShipmentIDType.xml</Path>
-	</Resource>
-	<Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/ConsignmentIDType.xml</Path>
-	</Resource>
-	<Resource>
-		<Type>CodeList-1</Type>
-		<Path>structure/codelist/TransportHandlingUnitIDType.xml</Path>
-	</Resource>
+        <Type>CodeList-1</Type>
+        <Path>structure/codelist/UNCL7143.xml</Path>
+    </Resource>
 
-    <!-- Files -->
+    <!--Resource> Word and pdf files are not efficient way  to maintain guides, and they are not updated. They are also not directly related to the syntax and rules in this release, but rather to the overall pre-award process. For these reasons, we have decided to remove them from the project. We will consider adding them back in the future if we find a better way to maintain and update them, and if they are directly related to the syntax and rules in this release.
+        <Type>native:File</Type>
+        <Path>guides/BIS-eDelivery-guide-for-pre-award-v1.3.pdf</Path>
+        <Title>eDelivery Guide For Pre-award</Title>
+        <Description>The eDelivery Guide for Pre-award</Description>
+        <Property key="download">BIS-eDelivery-guide-for-pre-award-v1.3.pdf</Property>
+    </Resource>
     <Resource>
         <Type>native:File</Type>
-        <Path>project.xml</Path>
-        <Title>Example files (Appendix A)</Title>
-        <Property key="download">Examples.zip</Property>
-        <Property key="filename">Examples.zip</Property>
+        <Path>guides/BIS-eDocuments-guide-for-pre-award-v1.3.pdf</Path>
+        <Title>eDocuments Guide For Pre-award</Title>
+        <Description>The eDocuments Guide for Pre-award</Description>
+        <Property key="download">BIS-eDocuments-guide-for-pre-award-v1.3.pdf</Property>
     </Resource>
+    <Resource>
+        <Type>native:File</Type>
+        <Path>guides/Peppol-BIS-pre-award-guide_Notification-and-Open-Procedure-v1.0.pdf</Path>
+        <Title>Peppol BIS pre-award guide - Notification and Open Procedure</Title>
+        <Description>The Peppol BIS pre-award guide - Notification and Open Procedure</Description>
+        <Property key="download">Peppol-BIS-pre-award-guide_Notification-and-Open-Procedure-v1.0.pdf</Property>
+    </Resource>
+    <Resource>
+        <Type>native:File</Type>
+        <Path>guides/Peppol-BIS-pre-award-guide_Notification-and-Two-Stage-Procedures-v1.0.pdf</Path>
+        <Title>Peppol BIS pre-award guide - Notification and Two-Stage Procedures</Title>
+        <Description>The Peppol BIS pre-award guide - Notification and Two-Stage Procedures</Description>
+        <Property key="download">
+            Peppol-BIS-pre-award-guide_Notification-and-Two-Stage-Procedures-v1.0.pdf</Property>
+    </Resource -->
     <Resource>
         <Type>native:File</Type>
         <Path>project.xml</Path>
         <Title>Schematron files</Title>
-        <Property key="download">Schematron.zip</Property>
-        <Property key="filename">Schematron.zip</Property>
-    </Resource>
-	<Resource>
-		<Type>native:File</Type>
-		<Path>project.xml</Path>
-		<Title>Mapping documents (Extract zip and open in Excel)</Title>
-		<Property key="download">Mapping.zip</Property>
-		<Property key="filename">Mapping.zip</Property>
-	</Resource>
-    <!-- Namespaces -->
-    <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/ubl-order.xml</Path>
+        <Property key="download">schematrons.zip</Property>
+        <Property key="filename">schematrons.zip</Property>
     </Resource>
     <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/ubl-order-response.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/ubl-despatch-advice.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/ubl-application-response.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/ubl-catalogue.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/ubl-weight-statement.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/ubl-transport-execution-plan-request.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/ubl-transport-execution-plan.xml</Path>
-    </Resource>
-    	<Resource>
-		<Type>Namespace-1</Type>
-		<Path>structure/namespace/ubl-waybill.xml</Path>
-	</Resource>
-	<Resource>
-		<Type>Namespace-1</Type>
-		<Path>structure/namespace/ubl-transportation-status-request.xml</Path>
-	</Resource>
-	<Resource>
-		<Type>Namespace-1</Type>
-		<Path>structure/namespace/ubl-transportation-status.xml</Path>
-	</Resource>
-	<Resource>
-		<Type>Namespace-1</Type>
-		<Path>structure/namespace/ubl-receipt-advice.xml</Path>
-	</Resource>
-	<Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/ubl-invoice.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/ubl-cac.xml</Path>
-    </Resource>
-    <Resource>
-        <Type>Namespace-1</Type>
-        <Path>structure/namespace/ubl-cbc.xml</Path>
+        <Type>native:File</Type>
+        <Path>project.xml</Path>
+        <Title>Code lists</Title>
+        <Property key="download">codelists.zip</Property>
+        <Property key="filename">codelists.zip</Property>
     </Resource>
 </Project>

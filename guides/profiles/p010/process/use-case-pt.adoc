@@ -1,0 +1,50 @@
+[[use-case-4-negative-response-process-termination]]
+= Use Case 4 – Negative response – Process termination
+
+This use case is a message level response which can be used to terminate a search request to not receive further results.
+
+[cols="2s,6",options="header"]
+|====
+|Use Case number
+|4
+
+|Use Case Name
+|Process termination
+
+|Use Case Description
+|This use case is a TMR based on a search notice, whose results are no longer requested.
+
+|Parties involved
+|SearchNoticeSender, TMR Sender +
+SearchNoticeReceiver, TMR Receiver
+
+|Status Code
+|RE
+
+|Possible Status Reason Codes
+|PT
+
+|Assumptions
+a|
+.  The SearchNoticeReceiver has received an electronic search notice from the SearchNoticeSender.
+.  The SearchNoticeReceiver has validated the search notice from the SearchNoticeSender.
+.  The SearchNoticeReceiver has sent results matching the search from the SearchNoticeSender.
+.  The SearchNoticeSender received sufficient results from the SearchNoticeReceiver.
+
+|The flow
+a|
+.  The SearchNoticeSender has prepared and sent an electronic search notice to the SearchNoticeReceiver.
+.  The SearchNoticeReceiver has received the search notice.
+.  The SearchNoticeReceiver has validated the search notice.
+.  The SearchNoticeReceiver sent page wise search results to the SearchNoticeSender.
+.  The TMR Sender has sent a TMR back to the SearchNoticeReceiver with the request to terminate the page wise search results.
+.  The TMR Receiver has received and processed the TMR and performed appropriate action to terminate the process.
+
+|Result
+a|
+.  The TMR helped the SearchNoticeSender to confirm that the search was concluded, and it does not need more results.
+The SearchNoticeReceiver must take appropriate action to stop the sending of search results.
+
+|XML example file
+|See Appendix A for a sample file illustrating Use Case 4.
+|====

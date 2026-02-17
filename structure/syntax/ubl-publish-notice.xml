@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+    <Term>PublishNotice</Term>
+    <Name>Publish Notice (T015)</Name>
+
+    <Namespace prefix="lcm">urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0</Namespace>
+    <Namespace prefix="rim">urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0</Namespace>
+    <Namespace prefix="xsi">http://www.w3.org/2001/XMLSchema-instance</Namespace>
+
+    <Document>
+        <Term>lcm:SubmitObjectsRequest</Term>
+        <Name>Publish Notice, root element</Name>
+        <Description>The Publish Notice is a transaction which sends notices and their attachments as new notices or
+            updates to already known notices to the publication offices.
+        </Description>
+        <Reference type="RULE">PEPPOL-T015-R001</Reference>
+        <Reference type="RULE">PEPPOL-T015-R002</Reference>
+        <Reference type="RULE">PEPPOL-T015-R003</Reference>
+        <Reference type="RULE">PEPPOL-T015-R004</Reference>
+        <Reference type="RULE">PEPPOL-T015-R005</Reference>
+        <Reference type="RULE">PEPPOL-T015-R006</Reference>
+        <Reference type="RULE">PEPPOL-T015-R020</Reference>
+        <Reference type="RULE">PEPPOL-T015-R037</Reference>
+        <Reference type="RULE">PEPPOL-T015-R038</Reference>
+        <Reference type="RULE">PEPPOL-T015-R039</Reference>
+        <Reference type="RULE">PEPPOL-T015-R040</Reference>
+        <Attribute>
+            <Term>id</Term>
+            <Name>Publish notice identifier</Name>
+            <Description>Specifies the unique identifier for an Identifiable Publish Notice.</Description>
+        </Attribute>
+        <Attribute>
+            <Term>mode</Term>
+            <Name>Mode</Name>
+            <Description>Mode for the publishment of the notice, regarding if it is new or a change to an already
+                existing notice. If a notice does not exist, the publishing office MUST create it as a new notice.
+                If a notice already exists,the publishing office MUST not alter the existing object and instead it MUST
+                create a new version of the existing object using the state of the submitted notice. So it is ensured
+                that the old notice will not be overwritten but stays readable as an outdated version.
+            </Description>
+            <Reference type="RULE">PEPPOL-T015-R012</Reference>
+            <DataType>String</DataType>
+            <Value type="FIXED">CreateOrVersion</Value>
+        </Attribute>
+        <Element>
+            <Term>rim:Slot@name=SpecificationIdentification</Term>
+            <Name>Specification identification</Name>
+            <Description>Specifies the unique identifier for an the Request to publish a notice.
+            </Description>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">SpecificationIdentification</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotValue</Term>
+                <Description>An abstract class that defines a container for a string value.</Description>
+                <Reference type="RULE">PEPPOL-T015-R008</Reference>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Value type="FIXED">rim:StringValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Description>The value of the Slot instance.</Description>
+                    <Reference type="RULE">PEPPOL-T015-R009</Reference>
+                    <Value type="FIXED">urn:fdc:peppol.eu:prac:trns:t015:1.2</Value>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>rim:Slot@name=BusinessProcessTypeIdentifier</Term>
+            <Name>Business process type identifier</Name>
+            <Description>Identifies the business process context in which the transaction appears. It enables the
+                receiver to process the document in an appropriate way.
+            </Description>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">BusinessProcessTypeIdentifier</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotValue</Term>
+                <Description>An abstract class that defines a container for a string value.</Description>
+                <Reference type="RULE">PEPPOL-T015-R008</Reference>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Value type="FIXED">rim:StringValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Description>The value of the Slot instance.</Description>
+                    <Reference type="RULE">PEPPOL-T015-R010</Reference>
+                    <Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p008:1.2</Value>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>rim:Slot@name=IssueDateTime</Term>
+            <Name>Issue date time</Name>
+            <Description>The issue date and time when the Publish Notice is issued. The issue date time must have
+                granularity of seconds, and include time zone information.
+            </Description>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">IssueDateTime</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotValue</Term>
+                <Description>An abstract class that defines a container for a string value.</Description>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Reference type="RULE">PEPPOL-T015-R033</Reference>
+                    <Reference type="RULE">PEPPOL-T015-R034</Reference>
+                    <Value type="FIXED">rim:DateTimeValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Description>The value of the Slot instance.</Description>
+                    <DataType>rim:DateTimeValueType</DataType>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>rim:Slot@name=SenderElectronicAddress</Term>
+            <Name>Contracting body electronic address identifier</Name>
+            <Description>The electronic address of the contracting body.</Description>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">SenderElectronicAddress</Value>
+            </Attribute>
+            <Attribute>
+                <Term>type</Term>
+                <Reference type="RULE">PEPPOL-T015-R026</Reference>
+                <Value type="FIXED">EAS</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotValue</Term>
+                <Description>An abstract class that defines a container for a string value.</Description>
+                <Reference type="RULE">PEPPOL-T015-R008</Reference>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Value type="FIXED">rim:StringValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Name>Contracting body electronic address identifier</Name>
+                    <Description>Scheme identifier:Identification for the contracting body</Description>
+                    <Reference type="CODE_LIST">EAS</Reference>
+                    <Value type="EXAMPLE">9930:DE122268496</Value>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>rim:Slot@name=ReceiverElectronicAddress</Term>
+            <Name>Economic operator electronic address</Name>
+            <Description>The electronic address of the economic operator.</Description>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">ReceiverElectronicAddress</Value>
+            </Attribute>
+            <Attribute>
+                <Term>type</Term>
+                <Reference type="RULE">PEPPOL-T015-R026</Reference>
+                <Value type="FIXED">EAS</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotValue</Term>
+                <Description>An abstract class that defines a container for a string value.</Description>
+                <Reference type="RULE">PEPPOL-T015-R008</Reference>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Value type="FIXED">rim:StringValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Name>Economic operator electronic address identifier</Name>
+                    <Description>Scheme identifier:Identification for the economic operator</Description>
+                    <Reference type="CODE_LIST">EAS</Reference>
+                    <Value type="EXAMPLE">9946:500820007</Value>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>rim:Slot@name=PublicationRequested</Term>
+            <Name>Publication requested</Name>
+            <Description>This indicator shows if the attached notice needs to be published or if it only needs to be
+                validated by the publication body. The check by the publication body can help the contracting party to
+                determine the validity of the notice with regard to a possible publication.
+            </Description>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">PublicationRequested</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotValue</Term>
+                <Description>An abstract class that defines a container for a string value.</Description>
+                <Reference type="RULE">PEPPOL-T015-R021</Reference>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Value type="FIXED">rim:BooleanValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Description>The value of the Slot instance.</Description>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>rim:Slot@name=NoticePublicationDatePreferred</Term>
+            <Name>Issue date time</Name>
+            <Description>The "Notice Publication Date Preferred" is the date on which the buyer wishes the notice to be
+                published. It can be used to help the buyer respect the requirements that exist
+                between publications at national and European levels.
+            </Description>
+            <Reference type="BUSINESS_TERM">BT-738</Reference>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">NoticePublicationDatePreferred</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotValue</Term>
+                <Description>An abstract class that defines a container for a string value.</Description>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Reference type="RULE">PEPPOL-T015-R033</Reference>
+                    <Reference type="RULE">PEPPOL-T015-R034</Reference>
+                    <Value type="FIXED">rim:DateTimeValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Description>The value of the Slot instance.</Description>
+                    <DataType>rim:DateTimeValueType</DataType>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>rim:RegistryObjectList</Term>
+            <Name>Registry object list</Name>
+            <Description>The Registry Object List contains the information to be published. It describes the notice
+                instances that need to be published.
+            </Description>
+            <Reference type="RULE">PEPPOL-T015-R007</Reference>
+            <Element>
+                <Term>rim:RegistryObject</Term>
+                <Name>Registry object</Name>
+                <Description>The Registery Object returns a notice instance that matches the Search Notice Request.
+                </Description>
+                <Attribute>
+                    <Term>lid</Term>
+                    <Name>Procedure identifier</Name>
+                    <Description>The Procedure Identifier (BT-04) allows distinguishing procurement procedures and shall
+                        be
+                        globally unique. It identifies the procurement procedure the notice belongs to. In PEPPOL the
+                        Procedure Identifier is also named "Reference Number" or "ContractFolderID". In the later
+                        eTendering process the element is used to find the right procedure for a Procurement Procedure
+                        Subscription (P001).
+                    </Description>
+                    <Reference type="BUSINESS_TERM">BT-04</Reference>
+                </Attribute>
+                <Attribute>
+                    <Term>id</Term>
+                    <Name>Notice identifier</Name>
+                    <Description>Specifies the notice identifier (BT-701) allowing to uniquely distinguishing the notice
+                        amongst all other existing ones contained within the query.
+                    </Description>
+                    <Reference type="BUSINESS_TERM">BT-701</Reference>
+                </Attribute>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Value type="FIXED">rim:ExtrinsicObjectType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Slot@name=UBLDocumentSchema</Term>
+                    <Name>UBL document schema</Name>
+                    <Description>Used to identify the UBL document type of the referenced notice which are associated to
+                        the corresponding UBL namespaces.
+                    </Description>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">UBLDocumentSchema</Value>
+                    </Attribute>
+                    <Attribute>
+                        <Term>List Identifier</Term>
+                        <Description>UBL Document Schema</Description>
+                        <Reference type="RULE">PEPPOL-T015-R016</Reference>
+                        <Value type="FIXED">ublDocumentSchema</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Description>An abstract class that defines a container for a string value.</Description>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Reference type="RULE">PEPPOL-T015-R008</Reference>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Description>The value of the Slot instance.</Description>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element>
+                    <Term>rim:Slot@name=NoticeVersion</Term>
+                    <Name>Notice version</Name>
+                    <Description>Version of the notice (BT-757) which shall be published. 01 for initial version. Any
+                        new version should have a higher version number than any previous one. Use consecutive numbers
+                        made of 2 digits. If this is not the first iteration of the notice choose a higher number than
+                        one, ideally counting up from the last version which was published.
+                    </Description>
+                    <Reference type="BUSINESS_TERM">BT-757</Reference>
+                    <Reference type="RULE">PEPPOL-T015-R036</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">NoticeVersion</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Description>An abstract class that defines a container for an integer value.</Description>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:IntegerValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Description>The value of the Slot instance.</Description>
+                            <Reference type="RULE">PEPPOL-T015-R013</Reference>
+                            <DataType>rim:IntegerValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element>
+                    <Term>rim:Slot@name=CustomizationID</Term>
+                    <Name>eForms version</Name>
+                    <Description>This element identifies the customization used for the notice. Identification is based
+                        on the complete set (schemas+rules) limited to the major and minor version numbers.
+                    </Description>
+                    <Reference type="RULE">PEPPOL-T015-R008</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">CustomizationID</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Description>An abstract class that defines a container for a string value.</Description>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Description>The value of the Slot instance.</Description>
+                            <Reference type="RULE">PEPPOL-T015-R022</Reference>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element>
+                    <Term>rim:Slot@name=BuyerInformation</Term>
+                    <Name>Buyer information</Name>
+                    <Description>The information about the buyer (BG-3) includes different types of identification
+                        elements to disclose a way to identify the buyer and its location without immediately opening
+                        the attached published notice.
+                    </Description>
+                    <Reference type="BUSINESS_TERM">BG-3</Reference>
+                    <Reference type="RULE">PEPPOL-T015-R018</Reference>
+                    <Reference type="RULE">PEPPOL-T015-R019</Reference>
+                    <Reference type="RULE">PEPPOL-T015-R025</Reference>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">BuyerInformation</Value>
+                    </Attribute>
+                    <Element cardinality="0..1">
+                        <Term>rim:Slot@name=BuyerPartyIdentification</Term>
+                        <Name>Buyer party identification</Name>
+                        <Description>An identification for the buyer party according to ISO 6523 ICD list.</Description>
+                        <Reference type="RULE">PEPPOL-T015-R023</Reference>
+                        <Attribute>
+                            <Term>name</Term>
+                            <Value type="FIXED">BuyerPartyIdentification</Value>
+                        </Attribute>
+                        <Attribute>
+                            <Term>type</Term>
+                            <Value type="FIXED">ICD</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:SlotValue</Term>
+                            <Description>An abstract class that defines a container for a string value.</Description>
+                            <Attribute>
+                                <Term>xsi:type</Term>
+                                <Reference type="RULE">PEPPOL-T015-R009</Reference>
+                                <Value type="FIXED">rim:CollectionValueType</Value>
+                            </Attribute>
+                            <Element>
+                                <Term>rim:Element</Term>
+                                <Attribute>
+                                    <Term>xsi:type</Term>
+                                    <Reference type="RULE">PEPPOL-T015-R008</Reference>
+                                    <Value type="FIXED">rim:StringValueType</Value>
+                                </Attribute>
+                                <Element>
+                                    <Term>rim:Value</Term>
+                                    <Description>Scheme identifier:Party Identification for the buyer.</Description>
+                                    <Reference type="CODE_LIST">ICD</Reference>
+                                    <Reference type="RULE">PEPPOL-T015-R042</Reference>
+                                    <DataType>rim:StringValueType</DataType>
+                                    <Value type="EXAMPLE">0204:991-1234512345-06</Value>
+                                </Element>
+                            </Element>
+                        </Element>
+                    </Element>
+                    <Element cardinality="0..1">
+                        <Term>rim:Slot@name=BuyerElectronicAddress</Term>
+                        <Name>Buyer electronic address</Name>
+                        <Description>The electronic address of the buyer.</Description>
+                        <Reference type="RULE">PEPPOL-T015-R024</Reference>
+                        <Attribute>
+                            <Term>name</Term>
+                            <Value type="FIXED">BuyerElectronicAddress</Value>
+                        </Attribute>
+                        <Attribute>
+                            <Term>type</Term>
+                            <Value type="FIXED">EAS</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:SlotValue</Term>
+                            <Description>An abstract class that defines a container for a string value.</Description>
+                            <Attribute>
+                                <Term>xsi:type</Term>
+                                <Reference type="RULE">PEPPOL-T015-R008</Reference>
+                                <Value type="FIXED">rim:StringValueType</Value>
+                            </Attribute>
+                            <Element>
+                                <Term>rim:Value</Term>
+                                <Name>Buyer electronic address identifier</Name>
+                                <Description>Scheme identifier:Identification for the buyer</Description>
+                                <Reference type="RULE">PEPPOL-T015-R014</Reference>
+                                <Reference type="RULE">PEPPOL-T015-R041</Reference>
+                                <Reference type="CODE_LIST">EAS</Reference>
+                                <DataType>rim:StringValueType</DataType>
+                                <Value type="EXAMPLE">9930:DE122268496</Value>
+                            </Element>
+                        </Element>
+                    </Element>
+                    <Element cardinality="0..n">
+                        <Term>rim:Slot@name=AdditionalDocumentReference</Term>
+                        <Name>Additional document reference</Name>
+                        <Description>The Additional Document Reference specifies a reference to an additional file that
+                            is included to the local ASiC-E container (Associated Signature Container Extended)
+                            repository.
+                        </Description>
+                        <Attribute>
+                            <Term>name</Term>
+                            <Value type="FIXED">AdditionalDocumentReference</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:SlotValue</Term>
+                            <Description>An abstract class that defines a container for a string value.</Description>
+                            <Attribute>
+                                <Term>xsi:type</Term>
+                                <Reference type="RULE">PEPPOL-T015-R008</Reference>
+                                <Value type="FIXED">rim:StringValueType</Value>
+                            </Attribute>
+                            <Element>
+                                <Term>rim:Value</Term>
+                                <Description>The value of the Slot instance.</Description>
+                                <DataType>rim:StringValueType</DataType>
+                            </Element>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element>
+                    <Term>rim:RepositoryItemRef</Term>
+                    <Name>Repository item reference</Name>
+                    <Description>The Repository Item Reference specifies a reference to the XML notice that is included
+                        to the local ASiC-E container (Associated Signature Container Extended) repository.
+                    </Description>
+                    <Attribute>
+                        <Term>xlink</Term>
+                        <Name>Local identifier</Name>
+                        <Description>This element uses xlink:href to specify local XML notice of the ASiC-E container as
+                            repository item.
+                        </Description>
+                        <Reference type="RULE">PEPPOL-T015-R015</Reference>
+                    </Attribute>
+                </Element>
+            </Element>
+        </Element>
+    </Document>
+</Structure>

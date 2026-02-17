@@ -1,0 +1,50 @@
+
+= PEPPOL identifiers
+
+PEPPOL has defined a Policy for Using Identifiers that specifies how to use identifiers in both its transport infrastructure and within the documents exchanged across that infrastructure. It also introduces principles for any identifiers used in the PEPPOL environment.
+
+== Profile identification
+
+[IMPORTANT]
+All transactions within this profile uses the following profile identifier
+
+The value of the *Element* `cbc:ProfileID` for all transactions of this profile must be
+_urn:fdc:peppol.eu:prac:bis:p001:1.2_
+
+== Specification identification
+
+In the table below you will find the values to be used as the specification identifier (*Element* `cbc:CustomizationID`)  for the different transactions of this profile.
+
+[cols="2*2,2*4", options="header"]
+.Specification identifiers for the transactions
+|===
+
+| TransactionID | Transaction name | Short Description | *Element* `cbc:CustomizationID`
+
+| T001
+| Subscribe to Procedure
+| EO shows his interest in the procurement project
+| _urn:fdc:peppol.eu:prac:trns:t001:1.2_
+
+
+| T002
+| Subscribe to Procedure Confirmation
+| CA sends acknowledgement to EO including all documents
+| _urn:fdc:peppol.eu:prac:trns:t002:1.2_
+
+| T021
+| Unsubscribe from Procedure
+| EO wants to unsubscribe from the procurement project
+| _urn:fdc:peppol.eu:prac:trns:t021:1.2_
+
+| T022
+| Unsubscribe from Procedure Confirmation
+| CA sends unsubscription acknowledgement to EO
+| _urn:fdc:peppol.eu:prac:trns:t022:1.2_
+
+|===
+
+[NOTE]
+For implementers, please note that the process identifiers in the document instance MUST correspond to the http://docs.oasis-open.org/bdxr/bdx-smp/v1.0/cs03/bdx-smp-v1.0-cs03.pdf[SMP] process identifier.
+
+

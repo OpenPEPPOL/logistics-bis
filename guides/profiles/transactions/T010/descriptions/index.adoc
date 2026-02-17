@@ -1,0 +1,43 @@
+[[descriptions]]
+= Description of selected parts of the transaction
+
+The transaction including business terms, business rules and code lists are based upon the definitions of {name-transaction-org} described in {name-profile-org}.
+
+== AdditionalDocumentReferences and Attachments
+
+The `EnquiryResponse` element should be build as follows to answering questions:
+
+. The ParentDocumentReference must have an `cbc:ID` having the attribute `schemeName` set to `ContractFolderID` and the value has to be the contract folder id.
+. An `EnquiryResponse` element can have multiple `cac:AdditionalDocumentReference` refer to the procurement procedure, a LotsGroup, a lot or a part.
+. Answers have to be put in an `cac:Attachment` element. The question to be answered has to be placed at the beginning of the answer. The attachment can have one or more `cbc:Description` elements or refer to a file in the ASiC-e by using the `cbc:FileName` element.
+. Each `cbc:Description` element contains only a question with its answer.
+. The relation between `cac:AdditionalDocumentReference` and `cac:Attachment` is done by a `cbc:XPath` element in the `cac:AdditionalDocumentReference`
+. The `cbc:XPath` can only contain references to an `cac:Attachment` and has to match the following expression: `/EnquiryResponse/cac:Attachment[number]` where number represents a 1-base index in the list of the attachments.
+
+The following are examples of combining question and its answer in a transaction with different parts of the procurement procedure.
+
+=== Answer a clarification request
+
+If you have to answer a clarification request, a reference to the question in the attachments can be placed in the `cac:AdditionalDocumentReference` with the `cbc:ID` having the `schemeName` set to `ContractFolderID`.
+
+[source,xml,indent=0]
+....
+include::../files/TenderClarification-doc.xml[tags=ref-contract-folder-id;ref-answer;answer]
+....
+<.> The Contract Folder ID of the procurement procedure.
+<.> The Contract Folder ID of the procurement procedure to indicate a common questions regarding the procedure.
+<.> A reference to an element where one or more questions are located. The number in square brackets is the position in the list of attachments. The position starts with 1 (1-based indexing).
+<.> The questions and answers are placed in an `cac:Attachment` element. Each question and its associated answer must be put in a 'cbc:Description' element.
+
+=== Respond with a file
+
+If an additional file should be sent to clarify an answer, it is possible to refer to an attachment pointing to a file within the ASiC-e.
+
+[source,xml,indent=0]
+....
+include::../files/TenderClarification-doc.xml[tags=ref-contract-folder-id;ref-file;file]
+....
+
+<.> The Contract Folder ID of the procurement procedure.
+<.> Referencing to the attachment in the `EnquiryResponse`
+<.> Referencing to a file within the ASiC-e

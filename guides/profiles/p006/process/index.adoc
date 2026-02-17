@@ -1,0 +1,44 @@
+
+= Business process
+
+The {link-bpmn}[BPMN] diagram shows the choreography of the business process implemented by the {name-profile}. The choreography of business collaborations defines the sequence of interactions when the profile is run within its context.
+
+image::processSearchNotice.png[align="center", width=1000]
+
+The process starts by the requester preparing a Search Notice Request, based on his ambitions and capabilities. He then sends the query to the provider. The provider interprets the query and assembles a package with notices that fulfill the query conditions. The package consists of a list of notice objects containing the notice metadata and a local reference to the actual XML notice contained within the ASiC-E Container as defined by {link-eDocument}. The XML notices included to the ASiC-E must be formatted according to {eforms-specs} and expressed by the {ubl-pin}, {ubl-cn} and {ubl-can}. The notices are put into the ASiC-E Container. If the result is zero notices found, then a package will be sent indicating that no notice corresponding to the search criteria were found.
+
+The Search Notice Request (QueryRequest) and Search Notice Response (QueryResponse) are facilitated by {regrep}, a standard defining service interfaces, protocols and information model for an integrated registry and repository. Both transactions are therefore described by {ebrim}. As three types of UBL notices exist, Contract Notice (CN), Prior Information Notice (PIN) and Contract Award Notice (CAN), three notices types may be included to the package as a result of the process. Each of them may be repeated, depending on the number of notices found for the query. The notices included in the results are in an agreed XML syntax format following the rules of {eforms-specs} and the corresponding UBL syntaxes.
+
+image::structureNotice.png[align="center", width=600]
+
+The figure above illustrates the overall composition of a Search Notice Request or Search Notice Response composed of the SBDH, the ASiC-E Container, the Query Protocol and the Payloads based on eFORMs and UBL.
+
+[cols="2,10", options="header"]
+.Business process
+|===
+| Category | Description
+| Description | A requester searches for relevant notices on a given platform.
+
+| Pre-conditions | The requester can make a Search Notices Request using the search criteria that are defined in this profile.
+| Post-conditions | The requester has received the result of his search: notice metadata and notices in xml based on {eforms-specs}.
+| Remarks | As a search can have a result containing zero notices, the result transaction must permit the information "totalResultCount = 0".
+
+|===
+
+[cols="3,2,7", options="header"]
+.Role description
+|===
+| Activity | Role involved | Description
+| Prepare query | Requester  | The requester prepares a Search Notice Request using the defined search criteria.
+| Send query | Requester  | The requester sends the prepared Search Notice Request to the provider.
+| Receive query | Provider | The provider receives a structured Search Notice Request.
+| Process query | Provider | The provider processes the Search Notice Request.
+| Assemble notice metadata and notices | Provider | The provider assembles the notice metadata and the related notices in the format of {eforms-specs}. If no results the provider indicates this in the "totalResultCount=0".
+| Package result | Provider | All notice metadata and notices are assembled and grouped together in a package.
+| Send result | Provider | The provider sends the package to the requester.
+| Receive result | Requester | The requester receives the package of results.
+|===
+
+
+include::implementation-guidelines.adoc[]
+

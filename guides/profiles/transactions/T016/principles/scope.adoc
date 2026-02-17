@@ -1,0 +1,49 @@
+
+= Notice Publication Response Principles
+
+The Message Level Response is intended to inform the issuer of the following situations
+
+1. The received notice transaction or the notice payload contained errors according to the relevant conformance rules.
+* The notice will not be processed any further.
+
+2. The received notice transaction and the notice payload passed the validation of conformance rules without any fatal errors.
+* The notice will be processed further.
+
+ 3. The received notice transaction or the notice payload are not validated for conformance but the receiver acknowledges that it has been received and identified as a business message.
+* The notice will be processed further.
+
+Furthermore, the transaction uses two levels of validation. The first one is the notice transaction itself, referenced with the `cbc:ID` tag.
+The second level is the notice which is included as payload and referenced with the `cbc:UUID`.
+
+[source,xml,indent=0]
+.Example of usage of Document Reference
+----
+ <cac:DocumentReference>
+            <cbc:ID>4e3517fd-724d-44fc-b90b-5743c33ff68e</cbc:ID>
+            <cbc:UUID>53EB9F20-EE12-474F-9424-78FC604E8FAE</cbc:UUID>
+            <cbc:DocumentTypeCode>CN</cbc:DocumentTypeCode>
+            <cbc:VersionID>1</cbc:VersionID>
+</cac:DocumentReference>
+----
+
+Errors can occur and can be documented in detail at both levels, the notice transaction and the notice payload.
+
+== The following errors are within the scope for a negative/rejecting Message Level Response:
+
+* XML schema validation error
+* Standard Compliance violations (e.g. empty elements not being allowed by UBL)
+* Validation error of type fatal error
+* Validation error of type warning. Warnings alone must NOT cause rejection of the business document (but they may be reported in addition to fatal errors)
+* Wrong version of business document (Will be handled like validation error of type fatal error)
+
+== The following errors are outside the scope of the message level response:
+
+* Unknown sender (in scope of transport acknowledgement)
+* Unknown receiver (in scope of transport acknowledgement)
+* Wrong version of envelope (in scope of transport acknowledgement)
+* XML schema validation error – envelope (in scope of transport acknowledgement)
+* XML not well formed (in scope of transport acknowledgement)
+* Non supported encoding (in scope of transport acknowledgement)
+
+
+

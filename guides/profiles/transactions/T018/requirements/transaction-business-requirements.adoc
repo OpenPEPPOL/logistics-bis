@@ -1,0 +1,22 @@
+
+
+[cols="2,10a", options="header"]
+.Transaction business requirements of {name-transaction}
+|===
+| ID | Requirement
+| tbr71-001	| It must be possible to give the response message a unique identifier. The identifier is issued by the sender and can be used to uniquely identify a message instance.
+| tbr71-002 | It must be possible to state the date and time when the response message is issued. The date should always be given but the time (hours, minutes and seconds) should be optional to use.
+| tbr71-003 | It must be possible to state a free text note. Used to inform the receiver about information that is not explicitly given in any dedicated structure. The information is meant to be manually read/assessed by the receiver.
+| tbr71-004 | It must be possible to specify the Party sending the response.
+| tbr71-005 | It must be possible to specify the Party receiving the response.
+| tbr71-006 | It must be possible to specify the Response to at previously received message referring to the document including the document type and document identifier and version.
+| tbr71-007	| It must be possible to give the response as a code. A response code list is required in order to facilitate automated process of message responses.
+| tbr71-008	| It must be possible to give an optional description possibly in several languages.
+| tbr71-009	| It must be possible to give response for one or more lines in the previously received document. This includes response code and response description.
+| tbr71-010	| A response document must be able to clearly indicate whether the received document was accepted or not.
+| tbr71-011	| It must be possible to sign the response document in order to provide for non-repudiation.
+| tbr71-012	| It must be possible to specify the type of acceptation and/or rejection of the document. The allowed types are "accepted", "conditionally accepted" and "rejected".
+| tbr71-013	| The message should allow the identification of more than one error.
+| tbr71-014	| The message should allow for XPath statements to indicate the location of the errors in the received instance.
+|===
+

@@ -1,0 +1,34 @@
+
+= PEPPOL identifiers
+
+PEPPOL has defined a Policy for Using Identifiers that specifies how to use identifiers in both its transport infrastructure and within the documents exchanged across that infrastructure. It also introduces principles for any identifiers used in the PEPPOL environment.
+
+== Profile identification
+
+[IMPORTANT]
+All transactions within this profile uses the following profile identifier
+
+The value of the *Element* `cbc:ProfileID` for all transactions of this profile must be
+_urn:fdc:peppol.eu:prac:bis:p010:1.1_
+
+== Specification identification
+
+In the table below you will find the values to be used as the specification identifier (*Element* `cbc:CustomizationID`)  for the different transactions of this profile.
+
+[cols="2*2,2*4", options="header"]
+.Specification identifiers for the transactions
+|===
+
+| TransactionID | Transaction name | Short Description | *Element* `cbc:CustomizationID`
+
+| T018
+| Tendering Message Response
+| The receiver of a business document sends a Tendering Message Response to the sender of the business document.
+| _urn:fdc:peppol.eu:prac:trns:t018:1.1_
+
+
+|===
+
+[NOTE]
+For implementers, please note that the process identifiers in the document instance MUST correspond to the http://docs.oasis-open.org/bdxr/bdx-smp/v1.0/cs03/bdx-smp-v1.0-cs03.pdf[SMP] process identifier.
+

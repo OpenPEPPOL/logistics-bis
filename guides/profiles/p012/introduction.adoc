@@ -1,0 +1,36 @@
+// TODO replace with rejection
+
+[preface]
+= Introduction to openPEPPOL and BIS
+
+This {link-peppol} BIS provides a set of specifications for implementing a {link-peppol} business process. The document is concerned with clarifying requirements for ensuring interoperability of pan-European Public eProcurement and provides guidelines for the support and implementation of these requirements. This document is based on work done by {link-bii3}.
+
+.Relationship between BII profiles and PEPPOL BIS
+image::../../../shared/images/BII_relationship.png[align="center", width=600]
+
+The {name-profile} describes electronic messaging support for the business process of sending a response to the qualification of an economic operator by a contracting authority. If the qualification request has to be rejected, a rejection response is obligatory. In therms of sending a positive response to the qualification, the qualification response is optional and could be replaced by directly sending out the invitation to tender. Good communication practice should favour a positive response to those qualification requests that are not directly followed by an invitation to tender. The qualification response is intended for use by businesses and purchasing authorities in procedures where access to participation is restricted to qualified economic operators. The key aspects covered by this BIS are:
+
+    * Pre-condition: An economic operator has submitted their qualification documents to a contracting authority as specified in the Call for Tender documents using PEPPOL BIS {P011}. The contracting authority evaluates the qualification information and needs to report their decision, positive or negative, to the economic operator.
+    * Optional: In case of a positive qualification response the contracting authority may continue with the tendering process without sending a positive qualification response before. When invitations to tender do directly follow the qualification decisions, sending out the invitation to submit a tender (not in scope of this BIS) covered by PEPPOL BIS {P013} is another form of positive responding to the qualification request of the selected economic operators.
+    * In scope: PEPPOL BIS {P012} is essential to inform those economic operators who have been rejected from the tendering process following the qualification. This PEPPOL BIS {P012} provides capabilities to inform an economic operator that his qualification has been rejected and that the economic operator is excluded from the procedure by the contracting authority.
+
+In an open procedure this profile is *not* used but the qualification is sent together with the tender, an economic operator submits. In open procedures evaluation results are communicated in PEPPOL BIS {P009}.
+
+The purpose of this document is to facilitate an efficient implementation and increased use of electronic collaboration regarding the tendering process based on these formats.
+
+== Audience
+
+The audience for this document is organizations wishing to be PEPPOL enabled for exchanging electronic pre-award catalogues, and/or their ICT-suppliers. These organizations may be:
+
+     * Service providers
+     * Contracting Authorities (CA)
+     * Economic Operators (EO)
+     * Software Developers
+
+More specifically, roles addressed are the following:
+
+    * ICT Architects
+    * ICT Developers
+    * Business Experts
+
+For further information on PEPPOL/OpenPEPPOL, please see {link-common}

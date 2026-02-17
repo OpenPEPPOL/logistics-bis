@@ -1,0 +1,57 @@
+
+= Document references
+
+== Procurement project identifier
+
+The identifier specified by the buyer as a reference number for all documents in the procurement process. It is also known as procurement project identifier, procurement reference number or contract folder identifier. In UBL this element is mapped to the cbc:ContractFolderID class.
+
+[source,xml,indent=0]
+----
+include::../{xml-doc-file}[tags=ContractFolderID]
+----
+
+
+==	Call for tender reference
+
+A reference to the call for tender as issued by the contracting body. Creates a link between the tender and its call for tender. In the UBL mapping this is represented using the cac:DocumentReference class.
+[source,xml,indent=0]
+----
+include::../{xml-doc-file}[tags=DocumentReference1]
+----
+
+== Attached documents
+
+The class cac:DocumentReference is used to attach the tender documents or their references.
+
+Example below shows the attached tender document and its hash and algorithm. The attached tender document is in this example unstructured.
+
+[source,xml,indent=0]
+----
+include::../{xml-doc-file}[tags=DocumentReference2]
+----
+
+== Document Type Code
+
+The type of business document must also be included in the document reference element. Document Type
+Code is coded according to code list 1001 issued by UN/CEFACT. For a complete list of all
+the document types, see {link-un-ece-1001}.
+
+[source,xml,indent=0]
+.Document Type Code
+----
+include::../{xml-doc-file}[tags=DocumentTypeCode]
+----
+
+
+== ESPD response
+
+ESPD response can be given as either structured or unstructured information, based on what is asked for in the call for tenders. ESPD response can be used in profile 54y and 54xy. See <<profiles, profile chapter>> for more details.
+
+[source,xml]
+.Example provided ESPD response (structured)
+----
+include::../{xml-doc-file}[tags=Provided_ESPD]
+----
+<1>  Codevalue used for ESPD response
+<2>  DocumentDescription should be "ESPD Response"
+<3>  Name of the structured ESPD file

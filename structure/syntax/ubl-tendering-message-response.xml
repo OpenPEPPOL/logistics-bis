@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+    <Term>TenderingMessageResponse</Term>
+    <Name>Tendering Message Response (T018)</Name>
+
+    <Namespace prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2</Namespace>
+    <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
+    <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
+
+    <Document>
+        <Term>ubl:ApplicationResponse</Term>
+        <Name>Notice publication response, root element</Name>
+        <Reference type="RULE">PEPPOL-T018-R001</Reference>
+        <Reference type="RULE">PEPPOL-T018-R002</Reference>
+        <Reference type="RULE">PEPPOL-T018-R003</Reference>
+        <Reference type="RULE">PEPPOL-T018-R004</Reference>
+        <Reference type="RULE">PEPPOL-T018-R005</Reference>
+        <Reference type="RULE">PEPPOL-T018-R006</Reference>
+        <Reference type="RULE">PEPPOL-T018-R007</Reference>
+        <Reference type="RULE">PEPPOL-T018-R008</Reference>
+        <Reference type="RULE">PEPPOL-T018-R009</Reference>
+        <Reference type="RULE">PEPPOL-T018-R010</Reference>
+        <Reference type="RULE">PEPPOL-T018-R011</Reference>
+        <Reference type="RULE">PEPPOL-T018-R049</Reference>
+        <Element>
+            <Term>cbc:UBLVersionID</Term>
+            <Name>UBL version identifier</Name>
+            <Description>Requires UBL version 2.2</Description>
+            <Reference type="RULE">PEPPOL-T018-R012</Reference>
+            <DataType>Identifier</DataType>
+            <Value type="FIXED">2.2</Value>
+        </Element>
+        <Element>
+            <Term>cbc:CustomizationID</Term>
+            <Name>Specification identification</Name>
+            <Description>Identifies the specification of content and rules that apply to the
+                transaction.
+            </Description>
+            <Reference type="BUSINESS_TERM">tir65-006</Reference>
+            <Reference type="RULE">PEPPOL-T018-R013</Reference>
+            <DataType>Identifier</DataType>
+            <Value type="EXAMPLE">urn:fdc:peppol.eu:prac:trns:t018:1.1</Value>
+        </Element>
+        <Element>
+            <Term>cbc:ProfileID</Term>
+            <Name>Business process type identifier</Name>
+            <Description>Identifies the BII profile or business process context in which the
+                transaction appears.
+            </Description>
+            <Reference type="BUSINESS_TERM">tir65-005</Reference>
+            <Reference type="RULE">PEPPOL-T018-R014</Reference>
+            <DataType>Identifier</DataType>
+            <Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p010:1.1</Value>
+        </Element>
+        <Element>
+            <Term>cbc:ID</Term>
+            <Name>Response identifier</Name>
+            <Description>A transaction instance must contain an identifier. The identifier enables
+                positive referencing the transaction instance for various purposes including
+                referencing between transactions that are part of the same process. Must be expressed as a UUID.
+            </Description>
+            <Reference type="BUSINESS_TERM">tir65-001</Reference>
+            <DataType>Identifier</DataType>
+            <Value type="EXAMPLE">123e4567-e89b-12d3-a456-426614174000</Value>
+        </Element>
+        <Element>
+            <Term>cbc:IssueDate</Term>
+            <Name>Response issue date</Name>
+            <Description>The date on which the transaction instance was issued. Format "YYYY-MM-DD"</Description>
+            <Reference type="BUSINESS_TERM">tir65-002</Reference>
+            <DataType>Date</DataType>
+            <Value type="EXAMPLE">2018-05-18</Value>
+        </Element>
+        <Element cardinality="0..1">
+            <Term>cbc:IssueTime</Term>
+            <Name>Response issue time</Name>
+            <Description>The time at which the transaction instance was issued. Format "hh:mm:ss</Description>
+            <Reference type="BUSINESS_TERM">tir65-003</Reference>
+            <Reference type="RULE">PEPPOL-T018-R015</Reference>
+            <Reference type="RULE">PEPPOL-T018-R016</Reference>
+            <DataType>Time</DataType>
+            <Value type="EXAMPLE">14:44:33+01:00</Value>
+        </Element>
+        <Element>
+            <Term>cac:SenderParty</Term>
+            <Name>Sender information</Name>
+            <Description>The party sending an electronic Tendering Message Response back to the sending party of the
+                business document.</Description>
+            <Element>
+                <Term>cbc:EndpointID</Term>
+                <Name>Contracting body electronic address identifier</Name>
+                <Description>Electronic address of the sending party.</Description>
+                <Reference type="BUSINESS_TERM">tir65-009</Reference>
+                <Reference type="RULE">PEPPOL-T018-R017</Reference>
+                <Reference type="RULE">PEPPOL-T018-R020</Reference>
+                <Attribute>
+                    <Term>schemeID</Term>
+                    <Name>Scheme identifier</Name>
+                    <Description>Scheme identifier for the electronic address</Description>
+                    <Reference type="CODE_LIST">EAS</Reference>
+                    <Reference type="RULE">PEPPOL-T018-R018</Reference>
+                    <Reference type="RULE">PEPPOL-T018-R019</Reference>
+                    <Value type="EXAMPLE">9930</Value>
+                </Attribute>
+                <DataType>Identifier</DataType>
+                <Value type="EXAMPLE">DE122268496</Value>
+            </Element>
+        </Element>
+        <Element>
+            <Term>cac:ReceiverParty</Term>
+            <Name>Receiver information</Name>
+            <Description>The party, an electronic Tendering Message Response was addressed to, and who is supposed to
+                process the Tendering Message Response. This is the same party as the sender of the business document.</Description>
+            <Reference type="RULE">PEPPOL-T018-R021</Reference>
+            <Reference type="RULE">PEPPOL-T018-R024</Reference>
+            <Element>
+                <Term>cbc:EndpointID</Term>
+                <Name>Economic operator electronic address identifier</Name>
+                <Description>Electronic address of the receiving party</Description>
+                <Reference type="BUSINESS_TERM">tir65-011</Reference>
+                <Attribute>
+                    <Term>schemeID</Term>
+                    <Name>Scheme identifier</Name>
+                    <Description>Scheme identifier for the electronic address</Description>
+                    <Reference type="CODE_LIST">EAS</Reference>
+                    <Reference type="RULE">PEPPOL-T018-R022</Reference>
+                    <Reference type="RULE">PEPPOL-T018-R023</Reference>
+                    <Value type="EXAMPLE">9946</Value>
+                </Attribute>
+                <DataType>Identifier</DataType>
+                <Value type="EXAMPLE">500820007</Value>
+            </Element>
+        </Element>
+        <Element>
+            <Term>cac:DocumentResponse</Term>
+            <Name>Document response</Name>
+            <Description>The tendering response is used to indicate the result of business document validation. The element
+                'cac:DocumentResponse/cac:Response/cbc:ResponseCode' MUST contain the overall result code.
+            </Description>
+            <Reference type="RULE">PEPPOL-T018-R025</Reference>
+            <Reference type="RULE">PEPPOL-T018-R026</Reference>
+            <Reference type="RULE">PEPPOL-T018-R048</Reference>
+            <Element>
+                <Term>cac:Response</Term>
+                <Name>Response information</Name>
+                <Reference type="RULE">PEPPOL-T018-R027</Reference>
+                <Reference type="RULE">PEPPOL-T018-R028</Reference>
+                <Reference type="RULE">PEPPOL-T018-R030</Reference>
+                <Element>
+                    <Term>cbc:ResponseCode</Term>
+                    <Name>Message response code</Name>
+                    <Description>An indicator stating whether the referenced message was cleared through validation and
+                        advanced to the next step in the process. A "rejection" states that the request was not
+                        processed because of identified issues. "Conditionally accepted" indicates that the request may not be
+                        correctly handled because of warnings indicated in the message. "Accepted" indicates that the tendering message
+                        will be processed as anticipated.
+                    </Description>
+                    <Reference type="BUSINESS_TERM">tir65-021</Reference>
+                    <Reference type="RULE">PEPPOL-T018-R029</Reference>
+                    <Reference type="CODE_LIST">messageResponse</Reference>
+                    <Value type="EXAMPLE">RE</Value>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>cbc:Description</Term>
+                    <Name>Response textual notes</Name>
+                    <Description>Used to make any comments or instructions relevant to the response. The use of this
+                        element may require manual assessment by the receiver. Standard should be the full name of the
+                        used Message Response Code.
+                    </Description>
+                    <Reference type="BUSINESS_TERM">tir65-020</Reference>
+                    <DataType>Text</DataType>
+                    <Value type="EXAMPLE">Rejected</Value>
+                </Element>
+            </Element>
+            <Element>
+                <Term>cac:DocumentReference</Term>
+                <Name>Document reference</Name>
+                <Description>
+                    The document reference is used to provide a reference to the tendering message on
+                    which the Tendering Message Response is based. The Tendering Message Response message may only
+                    cover exactly one business document. The element 'cac:DocumentResponse/cac:DocumentReference/cbc:ID'
+                    MUST contain the instance identifier of the notice of the original business document.
+                </Description>
+                <Reference type="RULE">PEPPOL-T018-R031</Reference>
+                <Reference type="RULE">PEPPOL-T018-R032</Reference>
+                <Reference type="RULE">PEPPOL-T018-R033</Reference>
+                <Element>
+                    <Term>cbc:ID</Term>
+                    <Name>Tendering message identifier</Name>
+                    <Description>Specifies the unique identifier of the container on which the Tendering Message
+                        Response is based.</Description>
+                    <Reference type="BUSINESS_TERM">tir65-018</Reference>
+                    <Reference type="RULE">PEPPOL-T018-R035</Reference>
+                    <DataType>Identifier</DataType>
+                    <Value type="EXAMPLE">4e3517fd-724d-44fc-b90b-5743c33ff68e</Value>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>cbc:DocumentTypeCode</Term>
+                    <Name>PEPPOL transaction schema</Name>
+                    <Description>An identification of the transaction on which the tendering message is based upon.
+                    </Description>
+                    <Reference type="BUSINESS_TERM">tir65-022</Reference>
+                    <Reference type="RULE">PEPPOL-T018-R036</Reference>
+                    <Reference type="RULE">PEPPOL-T018-R037</Reference>
+                    <Value type="EXAMPLE">urn:fdc:peppol.eu:prac:trns:t010:1.1</Value>
+                </Element>
+            </Element>
+            <Element cardinality="0..n">
+                <Term>cac:LineResponse</Term>
+                <Name>Line response information</Name>
+                <Description>A response to a particular line in the document. If the document response is negative
+                    (code='RE|CA'), the line response element is used to specify the errors in the business
+                    document.
+                </Description>
+                <Reference type="RULE">PEPPOL-T018-R036</Reference>
+                <Reference type="RULE">PEPPOL-T018-R037</Reference>
+                <Reference type="RULE">PEPPOL-T018-R047</Reference>
+                <Element>
+                    <Term>cac:LineReference</Term>
+                    <Name>Line reference</Name>
+                    <Description>Identifies the line in the business document to which the reported issue applies.
+                    </Description>
+                    <Reference type="RULE">PEPPOL-T018-R038</Reference>
+                    <Reference type="RULE">PEPPOL-T018-R039</Reference>
+                    <Element>
+                        <Term>cbc:LineID</Term>
+                        <Name>Section identifier</Name>
+                        <Description>
+                            Identifies the section of the tendering message to which the reported issue applies.
+                            The LineID element must be used to indicate where in the notice the error occurred by using
+                            XPath to reference the element causing the error. To cater for scenarios where it is not
+                            possible to provide XPath, a dummy value must be applied. The dummy value must consist of
+                            the standard header of the tendering message, depending on its type. This is due to that the
+                            LineID element is mandatory in the ApplicationResponse message in UBL 2.1 on which the TMR
+                            message is based.
+                        </Description>
+                        <DataType>Identifier</DataType>
+                        <Value type="EXAMPLE">/TenderWithdrawal/cbc:CustomizationID</Value>
+                    </Element>
+                </Element>
+            </Element>
+            <Element>
+                <Term>cac:Response</Term>
+                <Name>Line response information</Name>
+                <Reference type="RULE">PEPPOL-T018-R040</Reference>
+                <Reference type="RULE">PEPPOL-T018-R041</Reference>
+                <Reference type="RULE">PEPPOL-T018-R042</Reference>
+                <Element cardinality="0..1">
+                    <Term>cbc:ResponseCode</Term>
+                    <Name>Line response code</Name>
+                    <Description>A code stating whether the referenced line was accepted or rejected.</Description>
+                    <Reference type="RULE">PEPPOL-T018-R043</Reference>
+                    <Reference type="CODE_LIST">messageResponse</Reference>
+                    <DataType>Code</DataType>
+                    <Value type="EXAMPLE">RE</Value>
+                </Element>
+                <Element>
+                    <Term>cbc:Description</Term>
+                    <Name>Issue description</Name>
+                    <Description>The description of the issue identified in the transaction document. If applicable
+                        this should be the error message from the schematron or syntax validation. If not the
+                        description of the used status reason code should be used.
+                    </Description>
+                    <DataType>Text</DataType>
+                    <Value type="EXAMPLE">Error associated with a syntax violation that indicates a problem that leads
+                        to the
+                        rejection of the referenced message.
+                    </Value>
+                </Element>
+                <Element>
+                    <Term>cac:Status</Term>
+                    <Name>Status details</Name>
+                    <Reference type="RULE">PEPPOL-T018-R044</Reference>
+                    <Reference type="RULE">PEPPOL-T018-R046</Reference>
+                    <Element>
+                        <Term>cbc:StatusReasonCode</Term>
+                        <Name>Issue type code</Name>
+                        <Description>A codified version of the issue description that describes
+                            the nature of the issue e.g. Syntax violation, Business rule
+                            violation, etc.
+                        </Description>
+                        <Reference type="RULE">PEPPOL-T018-R045</Reference>
+                        <Reference type="CODE_LIST">statusReason</Reference>
+                        <DataType>Code</DataType>
+                        <Value type="EXAMPLE">BV</Value>
+                    </Element>
+                </Element>
+            </Element>
+        </Element>
+    </Document>
+</Structure>

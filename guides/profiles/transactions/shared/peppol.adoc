@@ -1,0 +1,56 @@
+
+= PEPPOL Identifiers
+
+PEPPOL has defined a https://docs.peppol.eu/edelivery/policies/PEPPOL-EDN-Policy-for-use-of-identifiers-4.0-2019-01-28.pdf[Policy for use of Identifiers] that specifies how to use identifiers in both its transport infrastructure and within the documents exchanged across that infrastructure. It also introduces principles for any identifiers used in the PEPPOL environment. The e-Tendering pilot adopts and extends the PEPPOL Policy in the following ways:
+
+== Party Identifiers used in business (UBL) documents
+All party identifiers (cac:PartyIdentification/cbc:ID) have an optional scheme identifier attribute '@schemeID'. If used, the value shall be chosen from the code list https://docs.peppol.eu/pracc/codelist/ICD/[ICD codes].
+
+
+[source,xml,indent=0]
+.Examples of usage in cac:PartyIdentification
+----
+<cac:PartyIdentification>
+	<cbc:ID schemeID="0088">5790000435968</cbc:ID> <!--.-->
+</cac:PartyIdentification>
+----
+<.> schemeID attribute is optional, but when used, the codes must be from https://docs.peppol.eu/pracc/codelist/ICD/[ICD codes]
+
+== Electronic address identifier used in business (UBL) documents
+All electronic address identifiers (cbc:EndpointID/@schemeID) use the Electronic Address Scheme code list (EAS), maintained by CEF (https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/Code+lists#Codelists-1[CEF Code lists]).
+
+Valid values are found here: https://docs.peppol.eu/pracc/codelist/EAS/[EAS codes].
+
+[source,xml,indent=0]
+.Examples of usage in cbc:EndpointID
+----
+<cbc:EndpointID schemeID="0184">DK87654321</cbc:EndpointID> <!--.-->
+----
+<.> schemeID attribute is mandatory and must use values from https://docs.peppol.eu/pracc/codelist/EAS/[EAS codes]
+
+== Document Identifiers used in business (UBL) documents
+
+=== UBL Version ID
+
+This transaction model is using the UBL 2.2 syntax. The namespace of the XML-message does only communicate the major version number. Since it is important for the receiver to also know what minor version of the syntax that is used, the element UBLVersionID must be stated with the value 2.2:
+
+[source,xml,indent=0]
+.Examples of usage in PartyIdentification and EndpointID
+----
+<cbc:UBLVersionID>2.2</cbc:UBLVersionID>
+----
+
+=== Profile ID
+ProfileID identifies what business process a given message is part of, and are connected to one business process, and may contain multiple document types.
+
+Valid profile identifiers are described in the Syntax mapping for {name-trans-short} - {link-mapping} - and the corresponding BIS document, see {link-main-site}.
+
+=== Customization ID
+
+The PEPPOL Customization ID identifies the specification of content and rules that apply to the transaction. Profiles are connected to one business process (ProfileID), and may contain multiple transactions. Valid document instances shall contain corresponding ProfileID and CustomizationID.
+
+
+
+NOTE: CustomizationID is a string without spaces. Which customization identification should be used, is based on which transaction is sent.
+
+NOTE: For implementers, please note that the process identifiers in the document instance MUST correspond to the http://docs.oasis-open.org/bdxr/bdx-smp/v1.0/cs03/bdx-smp-v1.0-cs03.pdf[SMP] process identifier.

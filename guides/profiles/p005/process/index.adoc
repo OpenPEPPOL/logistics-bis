@@ -1,0 +1,33 @@
+
+= Business process
+
+The {link-bpmn}[BPMN] diagram shows the choreography of the business process implemented by the {name-profile}. The choreography of business collaborations defines the sequence of interactions when the profile is run within its context.
+
+image::processTC.png[align="center", width=800]
+
+[cols="2,10", options="header"]
+.Business process
+|===
+| Category | Description
+| Description | As the tender is not clear, the contracting body asks the economic operator to clarify his tender.
+
+The economic operator answers the questions and sends the answers to the contracting body.
+
+| Pre-conditions | The contracting body has opened the tender.
+| Post-conditions | The tender has been clarified.
+|===
+
+[cols="3,2,7", options="header"]
+.Role description
+|===
+| Activity | Role involved | Description
+| Send Tender clarification request | Contracting body | The contracting body sends questions to the economic operator.
+| Send Tender clarification request | Economic operator | The economic operator receives the tender questions.
+| Clarify tender | Economic operator | The economic operator formulates clarifications.
+| Send tender clarification | Economic operator | The economic operator sends the answers to the contracting body.
+| Receive tender clarification | Contracting body | The contracting body receives the tender clarification.
+|===
+
+
+include::implementation-guidelines.adoc[]
+

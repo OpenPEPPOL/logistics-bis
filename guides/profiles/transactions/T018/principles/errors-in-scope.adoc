@@ -1,0 +1,27 @@
+
+= Errors in scope for a negative/rejecting Message Level Response:
+
+*Syntax and business rule violation*
+
+* XML schema validation error
+
+* Standard Compliance violations (e.g. empty elements not being allowed by UBL 2.1)
+
+* Validation error of type fatal error
+
+* Validation error of type warning. Warnings alone must NOT cause rejection of the business document (but they may be reported in addition to fatal errors)
+
+* Wrong version of business document (Will be handled like validation error of type fatal error)
+
+*Processing expections*
+
+* Wrong values and references (after database look-up) (e.g. wrong receiver, reference to procedure not found, ...)
+
+* Wrong transaction flow (e.g. Tender Status Inquiry transaction is sent before the Subscribe to Procedure transaction)
+
+* Expired deadlines (e.g. The tender submission deadline has expired before the retrieval of a Tender.)
+
+* Missing authorizations and authentications (e.g. A Tender is submitted for an economic operator that is not subscribed for the procedure.)
+
+* Process terminations (e.g. A Search Notice Response sent in several replies is aborted by the recipient because searched information has already been found.)
+

@@ -1,0 +1,30 @@
+
+= Implementation guidelines
+
+{name-profile} is based on work done by {link-bii3}, and business rules and code lists used are inherited from the following {link-bii3} and {link-ubl-22} documents:
+
+urn:oasis:names:specification:ubl:schema:xsd:ExpressionOfInterestRequest-2
+urn:oasis:names:specification:ubl:schema:xsd:ExpressionOfInterestResponse-2
+urn:oasis:names:specification:ubl:schema:xsd:UnsubscribeFromProcedureRequest-2
+urn:oasis:names:specification:ubl:schema:xsd:UnsubscribeFromProcedureResponse-2
+
+The Subscribe to procedure business process includes 4 transactions. The syntax mapping has been added for {link-profile} based on UBL 2.2. The syntax mapping  is based on the following documents:
+
+* {link-profile} describing a process providing electronic messaging support for the business process of answering questions of economic operators about a call for tenders.
+* {eoi-request}: A transaction whereby an Economic Operator (the tenderer) makes an Expression Of Interest in a Call For Tenders to a Contracting Authority. The transaction refers to {link-profile} - Trdm081 Subscribe to Procedure.
+* {eoi-response}: A transaction whereby a Contracting Authority accepts receiving an Expression Of Interest from an Economic Operator (the tenderer). The transaction refers to {link-profile} - Trdm082 Subscribe to Procedure Confirmation
+* {ufp-request}: A transaction whereby an Economic Operator (the tenderer) wants to Unsubscribe From Procedure and sends it to Contracting Authority. The transaction refers to {link-profile} - Trdm106 Unsubscribe to Procedure.
+* {ufp-response}: A transaction whereby a Contracting Authority accepts receiving an Unsubscribe From Procedure from an Economic Operator (the tenderer) and sends a confirmation. The transaction refers to {link-profile} - Trdm107 Unsubscribe to Procedure Confirmation.
+
+
+{link-peppol} {name-profile} business process includes 4 transactions:
+
+* link:../../transactions/T001/index.html[T001 Subscribe to Procedure]
+* link:../../transactions/T002/index.html[T002 Subscribe to Procedure Confirmation]
+* link:../../transactions/T021/index.html[T021 Unsubscribe from Procedure]
+* link:../../transactions/T022/index.html[T022 Unsubscribe from Procedure Confirmation]
+
+[NOTE]
+====
+T021 and T022 are currently optional transactions for any implementation of this PEPPOL profile.
+====

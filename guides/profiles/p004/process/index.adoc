@@ -1,0 +1,35 @@
+
+= Business process
+
+The {link-bpmn}[BPMN] diagram shows the choreography of the business process implemented by the {name-profile}. The choreography of business collaborations defines the sequence of interactions when the profile is run within its context.
+
+image::processQA.png[align="center", width=800]
+
+[cols="2,10", options="header"]
+.Business process
+|===
+| Category | Description
+| Description | An economic operator has questions regarding the call for tenders and send the questions electronically to the contracting body.
+
+The contracting body answers the questions and sends the answers to all economic operators that have expressed interest in the tendering procedure. The contracting body updates the Call for Tenders accordingly and send it to all economic operators that subscribed to the procedure.
+
+| Pre-conditions | The contract notice of a tendering procedure has been published.
+| Post-conditions | (Potential) questions have been answered.
+| Remarks | All economic operators that have expressed interest must receive the answers. The answers shall not contain any means to identify economic operators that issued questions. The PEPPOL transaction "Call for Tender (T004)" has to be updated according to the given answers and it must be also resend to all subscribed economic operators.
+
+|===
+
+[cols="3,2,7", options="header"]
+.Role description
+|===
+| Activity | Role involved | Description
+| Send Call for tenders questions | Economic operator | The economic operator sends questions to the contracting body.
+| Receive Call for tenders questions | Contracting body | The contracting body receives the call for tenders questions.
+| Answer questions | Contracting body | The contracting body formulates answers to the questions.
+| Send Call for tenders answers | Contracting body | The contracting body sends answers to all subscribed economic operators.
+| Receive Call for tenders answers | Economic operator | The economic operator receives the call for tenders answers.
+|===
+
+
+include::implementation-guidelines.adoc[]
+

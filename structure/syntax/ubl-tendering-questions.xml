@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+    <Term>TenderingQuestions</Term>
+    <Name>Tendering Questions (T007)</Name>
+    <Namespace prefix="t007">urn:oasis:names:specification:ubl:schema:xsd:Enquiry-2</Namespace>
+    <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
+    <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
+    <Document>
+        <Term>t007:Enquiry</Term>
+        <Name>Tendering Questions transaction model.</Name>
+        <Reference type="RULE">PEPPOL-T007-R001</Reference>
+        <Reference type="RULE">PEPPOL-T007-R002</Reference>
+        <Reference type="RULE">PEPPOL-T007-R003</Reference>
+        <Reference type="RULE">PEPPOL-T007-R004</Reference>
+        <Reference type="RULE">PEPPOL-T007-R005</Reference>
+        <Reference type="RULE">PEPPOL-T007-R006</Reference>
+        <Reference type="RULE">PEPPOL-T007-R007</Reference>
+        <Reference type="RULE">PEPPOL-T007-R008</Reference>
+        <Reference type="RULE">PEPPOL-T007-R009</Reference>
+        <Reference type="RULE">PEPPOL-T007-S001</Reference>
+        <Reference type="RULE">PEPPOL-T007-S002</Reference>
+        <Reference type="RULE">PEPPOL-T007-S003</Reference>
+        <Reference type="RULE">PEPPOL-T007-S004</Reference>
+        <Reference type="RULE">PEPPOL-T007-S005</Reference>
+        <Reference type="RULE">PEPPOL-T007-S006</Reference>
+        <Reference type="RULE">PEPPOL-T007-S007</Reference>
+        <Element>
+            <Term>cbc:UBLVersionID</Term>
+            <Name>UBL version identifier</Name>
+            <Description>Requires UBL version 2.2</Description>
+            <Reference type="RULE">PEPPOL-T007-R010</Reference>
+            <Reference type="RULE">PEPPOL-T007-S008</Reference>
+            <Value type="FIXED">2.2</Value>
+        </Element>
+        <Element>
+            <Term>cbc:CustomizationID</Term>
+            <Name>Specification identification</Name>
+            <Description>An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.</Description>
+            <Reference type="RULE">PEPPOL-T007-R011</Reference>
+            <Reference type="RULE">PEPPOL-T007-S009</Reference>
+            <DataType>Identifier</DataType>
+            <Value type="FIXED">urn:fdc:peppol.eu:prac:trns:t007:1.1</Value>
+        </Element>
+        <Element>
+            <Term>cbc:ProfileID</Term>
+            <Name>Business process type identifier</Name>
+            <Description>Identifies the business process context in which the transaction appears. It enables the buyer to process the document in an appropriate way.</Description>
+            <Reference type="RULE">PEPPOL-T007-R012</Reference>
+            <Reference type="RULE">PEPPOL-T007-S010</Reference>
+            <DataType>Identifier</DataType>
+            <Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p004:1.1</Value>
+        </Element>
+        <Element>
+            <Term>cbc:ID</Term>
+            <Name>Document identifier</Name>
+            <Description>Identifies the tendering questions as issued by the economic operator. Must be expressed as a UUID</Description>
+            <Reference type="RULE">PEPPOL-T007-R013</Reference>
+            <Reference type="RULE">PEPPOL-T007-R014</Reference>
+            <Reference type="RULE">PEPPOL-T007-S011</Reference>
+            <Attribute>
+                <Term>schemeURI</Term>
+                <Name>Scheme identifier</Name>
+                <Reference type="RULE">PEPPOL-T007-R015</Reference>
+                <Value type="FIXED">urn:uuid</Value>
+            </Attribute>
+            <DataType>Identifier</DataType>
+        </Element>
+        <Element>
+            <Term>cbc:IssueDate</Term>
+            <Name>Document issue date</Name>
+            <Description>The date on which the tendering questions is issued.</Description>
+            <DataType>Date</DataType>
+        </Element>
+        <Element>
+            <Term>cbc:IssueTime</Term>
+            <Name>Document issue time</Name>
+            <Description>The time when the tendering questions is issued. The issue time must have granularity of seconds, and include time zone information.</Description>
+            <Reference type="RULE">PEPPOL-T007-R016</Reference>
+            <Reference type="RULE">PEPPOL-T007-R017</Reference>
+            <DataType>Time</DataType>
+        </Element>
+        <Element>
+            <Term>cac:RequestorParty</Term>
+            <Name>The economic operator</Name>
+            <Description>Party information of the economic operator</Description>
+            <Reference type="RULE">PEPPOL-T007-R018</Reference>
+            <Reference type="RULE">PEPPOL-T007-R019</Reference>
+            <Reference type="RULE">PEPPOL-T007-S012</Reference>
+            <Reference type="RULE">PEPPOL-T007-S013</Reference>
+            <Reference type="RULE">PEPPOL-T007-S014</Reference>
+            <Element>
+                <Term>cbc:EndpointID</Term>
+                <Name>Economic operator electronic address identifier</Name>
+                <Description>The electronic address of the economic operator.</Description>
+                <Reference type="RULE">PEPPOL-T007-R020</Reference>
+                <Reference type="RULE">PEPPOL-T007-S015</Reference>
+                <Attribute>
+                    <Term>schemeID</Term>
+                    <Name>Scheme identifier</Name>
+                    <Reference type="RULE">PEPPOL-T007-R021</Reference>
+                    <Reference type="CODE_LIST">EAS</Reference>
+                    <Value type="EXAMPLE">9946</Value>
+                </Attribute>
+                <DataType>Identifier</DataType>
+                <Value type="EXAMPLE">500820007</Value>
+            </Element>
+            <Element>
+                <Term>cac:PartyIdentification</Term>
+                <Name>Party identification</Name>
+                <Element>
+                    <Term>cbc:ID</Term>
+                    <Name>Economic operator identifier</Name>
+                    <Description>An identifier that identifies the economic operator, such as a legal registration identifier. Can be the registration number in the professional registry.</Description>
+                    <Reference type="RULE">PEPPOL-T007-R022</Reference>
+                    <Reference type="RULE">PEPPOL-T007-S016</Reference>
+                    <Attribute>
+                        <Term>schemeID</Term>
+                        <Name>Scheme identifier</Name>
+                        <Reference type="RULE">PEPPOL-T007-R023</Reference>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0088</Value>
+                    </Attribute>
+                    <DataType>Identifier</DataType>
+                    <Value type="EXAMPLE">7300010000001</Value>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>cac:PartyName</Term>
+                <Name>Party name</Name>
+                <Element>
+                    <Term>cbc:Name</Term>
+                    <Name>Economic operator name</Name>
+                    <Description>The name of the economic operator.</Description>
+                    <DataType>Text</DataType>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>cac:ResponderParty</Term>
+            <Name>The contracting body</Name>
+            <Description>Party information of the contracting body</Description>
+            <Reference type="RULE">PEPPOL-T007-R024</Reference>
+            <Reference type="RULE">PEPPOL-T007-S017</Reference>
+            <Reference type="RULE">PEPPOL-T007-S018</Reference>
+            <Reference type="RULE">PEPPOL-T007-S019</Reference>
+            <Element>
+                <Term>cbc:EndpointID</Term>
+                <Name>Contracting body electronic address identifier</Name>
+                <Description>Electronic address of the contracting body.</Description>
+                <Reference type="RULE">PEPPOL-T007-R025</Reference>
+                <Attribute>
+                    <Term>schemeID</Term>
+                    <Name>Scheme identifier</Name>
+                    <Reference type="RULE">PEPPOL-T007-R026</Reference>
+                    <Reference type="RULE">PEPPOL-T007-S020</Reference>
+                    <Reference type="CODE_LIST">EAS</Reference>
+                    <Value type="EXAMPLE">9930</Value>
+                </Attribute>
+                <DataType>Identifier</DataType>
+                <Value type="EXAMPLE">DE122268496</Value>
+            </Element>
+            <Element>
+                <Term>cac:PartyIdentification</Term>
+                <Name>Party identification</Name>
+                <Element>
+                    <Term>cbc:ID</Term>
+                    <Name>Contracting body identifier</Name>
+                    <Description>The national identifier of a contracting body as it is legally registered (e.g. VAT identification, such as KBO)</Description>
+                    <Reference type="RULE">PEPPOL-T007-R027</Reference>
+                    <Reference type="RULE">PEPPOL-T007-S021</Reference>
+                    <Attribute>
+                        <Term>schemeID</Term>
+                        <Name>Scheme identifier</Name>
+                        <Reference type="RULE">PEPPOL-T007-R028</Reference>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0204</Value>
+                    </Attribute>
+                    <DataType>Identifier</DataType>
+                    <Value type="EXAMPLE">991-1234512345-06</Value>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>cac:PartyName</Term>
+                <Name>Party name</Name>
+                <Element>
+                    <Term>cbc:Name</Term>
+                    <Name>Contracting body name</Name>
+                    <Description>The name of the contracting body as it is registered.</Description>
+                    <DataType>Text</DataType>
+                </Element>
+            </Element>
+        </Element>
+        <Element cardinality="1..n">
+            <Term>cac:AdditionalDocumentReference</Term>
+            <Name>Additional document references.</Name>
+            <Description>Additional document reference is used for identifying the procurement procedure and the
+                questions for the procurement project. The ContractFolderID must be at least provided.
+                Additional references may be included to locate the questions for LotGroups or Lots.
+            </Description>
+            <Reference type="RULE">PEPPOL-T007-R029</Reference>
+            <Element>
+                <Term>cbc:ID</Term>
+                <Name>Document identifier</Name>
+                <Description>Used as a link to the call for tenders (also known as procurement project identifier,
+                    procurement reference number or contract folder identifier). The contract folder ID must be at
+                    least provided. Element can be repeated and also used as an identifier to the LotGroups and Lots
+                    to which the tendering question applies. XPath expressions are
+                     used to locate the questions.</Description>
+                <Attribute>
+                    <Term>schemeName</Term>
+                    <Name>Scheme name</Name>
+                    <Description>Valid values are ContractFolderID, LotGroup or Lot.</Description>
+                </Attribute>
+                <DataType>Identifier</DataType>
+            </Element>
+            <Element cardinality="1..n">
+                <Term>cbc:XPath</Term>
+                <Name>Reference to an cac:Attachment</Name>
+                <Description>An xpath expression to reference an cac:Attachment where questions can be described or
+                    referenced to an attached file within the ASiC-e.</Description>
+                <Reference type="RULE">PEPPOL-T007-R030</Reference>
+                <DataType>cbc:XPathType</DataType>
+            </Element>
+            <DataType>cbc:DocumentReference</DataType>
+        </Element>
+        <Element cardinality="1..n">
+            <Term>cac:Attachment</Term>
+            <Name>Attachment</Name>
+            <Description>An attached tendering request or files which must be referenced by an cac:AdditionalDocumentReference</Description>
+            <Element>
+                <Term>cac:ExternalReference</Term>
+                <Name>External reference</Name>
+                <Description>An external reference to place your questions or add an attachment to express questions in more detail.</Description>
+                <Reference type="RULE">PEPPOL-T007-R031</Reference>
+                <Element cardinality="0..1">
+                    <Term>cbc:MimeCode</Term>
+                    <Name>Mime code of the file</Name>
+                    <Description>A code signifying the mime type of the external object.</Description>
+                    <DataType>cbc:MimeCodeType</DataType>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>cbc:FileName</Term>
+                    <Name>A reference to an ASiC-e attachment.</Name>
+                    <Description>A file reference within the ASiC-e which may contain additional information to express questions in more detail.</Description>
+                    <DataType>cbc:FileNameType</DataType>
+                </Element>
+                <Element cardinality="1..1">
+                    <Term>cbc:Description</Term>
+                    <Name>Tendering request</Name>
+                    <Description>The tendering request about the procurement procedure.</Description>
+                    <DataType>cbc:DescriptionType</DataType>
+                </Element>
+                <DataType>cac:ExternalReferenceType</DataType>
+            </Element>
+            <DataType>cac:AttachmentType</DataType>
+        </Element>
+    </Document>
+</Structure>

@@ -1,0 +1,33 @@
+=	Description of the attachment of documents
+
+Using this transaction, the information of the tendering process and the details of the procurement project are described in unstructured files. The Invitation to Tender reference the unstructured files. Thus, it is possible to access them in the ASiC-E Container (see {link-eDocument}).
+
+The `cac:AdditionalDocumentReference` class contains references to all the files for the tenderers to prepare their bids. The mandatory `cbc:ID` element contains an identifier of the file, and the `cac:DocumentStatusCode` is used to inform the tenderers about the action that has to be done with the current document. If a `cac:Attachment` is provided, the `cac:ExternalReference` shall contain the `cbc:FileName` and `cbc:MimeCode` using defined media types of e.g.link:ftp://ftp.cen.eu/public/CWAs/BII2/CWA16558/CWA16558-Annex-G-BII-CodeLists-V2_0_4.pdf[IANA]
+
+Find below an example on how to define a document reference that provides a document that is provided by the contracting authority and must not be returned. In this example, the contents of the coded elements DocumentTypeCode and DocumentStatusCode have been defined following the coded values of `documentTypeCode`:
+
+* The code `Provided` or `Pro` is used to indicate that a document is provided as part of an Invitation to Tender or tender. It must include a physical attachment. The value `No Return (NR)` of the codelist `documentStatusCode` indicates that the document must not be returned during the bid or tender (e.g. the encryption certificate to encrypt a tender)
+
+[source,xml,indent=0]
+.Additional document reference
+
+----
+include::../{xml-doc-file}[tags=AdditionalDocumentReference2]
+
+----
+
+In contrast to this a document reference could be also established as follows:
+
+* The code `Required` or `Req` is used to indicate that a document must be created by the economic operator and submitted as part of the bid or tender. It therefore does not use the component `cac:Attachment`. As documents that are classified as `Required` must be returned, they cannot use the value `No Return (NR)` of the codelist `documentStatusCode`. The remaining values of that codelist however, could indicate that document MUST be returned but no signature is required (e.g. `Return without signature (RWOS)`) or that an advanced signature is required.
+
+----
+include::../{xml-doc-file}[tags=AdditionalDocumentReference5]
+
+----
+
+Another example shows how the contracting authority may provide a document template for product classification and pricing that needs to be filled out and returned by the economic operator.
+
+----
+include::../{xml-doc-file}[tags=AdditionalDocumentReference6]
+
+----

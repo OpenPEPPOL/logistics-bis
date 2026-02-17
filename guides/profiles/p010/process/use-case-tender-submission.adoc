@@ -1,0 +1,49 @@
+[[use-case-5-positive-response-tender-submission-warning]]
+= Use Case 5 – Positive response – Tender Submission warning
+
+This case should be used for the tender submission. Due to legal framework conditions, there is a constraint to tolerate errors to a certain extent when receiving a tender, even if from a technical point of view, the message might have to be rejected. Especially tender rejections have to be kept to a minimum and must be based on valid reasons. These have to withstand judicial review.
+
+[cols="2s,6",options="header"]
+|====
+|Use Case number
+|5
+
+|Use Case Name
+|Tender Submission Warning
+
+|Use Case Description
+|This use case is a TMR based on a tender submission, which was received after the deadline had passed.
+
+|Parties involved
+|TenderSubmissionSender, TMR Receiver +
+TenderSubmissionReceiver, TMR Sender
+
+|Status Code
+|CA
+
+|Possible Status Reason Codes
+|DL
+
+|Assumptions
+a|
+.  The TenderSubmissionReceiver has received an electronic business document from the TenderSubmissionSender.
+.  The TenderSubmissionReceiver has validated the business document from the TenderSubmissionSender.
+.  The result of the validation is not OK due to the deadline for submission laying in the past.
+
+|The flow
+a|
+.  The TenderSubmissionSender has prepared and sent an electronic tender submission document to the TenderSubmissionReceiver.
+.  The TenderSubmissionReceiver has received the tender submission document.
+.  The TenderSubmissionReceiver has validated and found possible errors the tender submission document.
+.  The TMR Sender has sent a TMR back to the TMR Receiver.
+.  The TMR Receiver has received and processed the TMR.
+
+|Result
+a|
+.  The TMR helped the TenderSubmissionSender to confirm that the business document was received by the TenderSubmissionReceiver.
+. The TenderSubmissionReceiver may take action to evaluate if the tender submission can be processed as intended.
+. The TenderSubmissionSender may take appropriate action to correct and resend the business document.
+
+|XML example file
+|See Appendix A for a sample file illustrating Use Case 5.
+|====

@@ -1,0 +1,166 @@
+[[descriptions]]
+= Description of selected parts of the transaction
+
+The transaction including business terms, business rules and code lists are based upon the definitions of {name-transaction-org} described in:
+
+{name-profile-org}.
+
+== Identifier
+
+=== UBL Version Identifier
+
+Requires UBL version 2.2.
+
+[source,xml,indent=0]
+.Example of UBL Version Identifier
+....
+include::../files/ExampleNoticePublicationResponse.xml[tags=ubl-version]
+....
+<.> Has to be 2.2, to correspondent to the used UBL version
+
+=== Response Identifier
+
+The identifier enables positive referencing the transaction instance for various purposes including referencing between transactions that are part of the same process. Must be expressed as a UUID.
+
+[source,xml,indent=0]
+.Example of response identifier
+....
+include::../files/ExampleNoticePublicationResponse.xml[tags=response-id]
+....
+<.> A transaction instance must contain an identifier, being a number
+
+== Response issue date and time
+
+Response issue date/time must be sent.
+
+Response issue date is a xsi:date data type and is specified as "YYYY-MM-DD" where:
+
+* YYYY - four digit year
+* MM - two digit month (01 to 12)
+* DD - two digit day (0)
+
+Response issue time is a xsi:time data type and is specified as "hh:mm:ss" where:
+
+* hh - two digits of hour (00 to 23) (am/pm NOT allowed).
+* mm - two digits of minute (00 to 59)
+* ss - two digits of second (00 to 59)
+* TZD - time zone designator (Z or +hh:mm or -hh:mm)
+
+The response issue date and time refer to the date when of the issuance of the response.
+
+NOTE: The response issue time must specify the time zone.
+
+[source,xml,indent=0]
+.Example of response issue date
+....
+include::../files/ExampleNoticePublicationResponse.xml[tags=response-issue-date]
+....
+<.> Format for the date has to be yyyy-mm-dd
+
+[source,xml,indent=0]
+.Example of response issue time
+....
+include::../files/ExampleNoticePublicationResponse.xml[tags=response-issue-time]
+....
+<.> Format for the time has to be hh:mm:ssTZD, granularity down to seconds and timezone
+
+== Party identification
+
+=== Sender Party
+
+The party sending an Notice Publication Response message back to the sending party that initiated the request to publish a notice.
+
+[source,xml,indent=0]
+.Example of sender party
+....
+include::../files/ExampleNoticePublicationResponse.xml[tags=sender-info]
+....
+<.> Identifies the senders party's electronic address and the scheme identifier for the electronic address
+
+=== Receiver Party
+
+The party who is supposed to process the Notice Publication Response. This is the same party that initiated the request to publish a notice.
+
+[source,xml,indent=0]
+.Example of receiver party
+....
+include::../files/ExampleNoticePublicationResponse.xml[tags=receiver-info]
+....
+<.> Identifies the receivers party's electronic address and the scheme identifier for the electronic address
+
+== Document response
+
+The notice response is used to indicate the result of business document validation. The element 'cac:DocumentResponse/cac:Response/cbc:ResponseCode' MUST contain the overall result code. The element 'cac:DocumentResponse/cac:Response/cac:Status/cbc:ConditionCode' MUST contain a condition related to the publication of the notice.
+
+=== Response
+
+A "rejection" states that the notice was not processed because of identified issues. "Conditionally accepted" indicates that the publication of the notice is done with warnings indicated in the message. "Accepted" indicates that the notice will be published at a certain time.  "Published" indicates that the notice has been published at a certain time.
+
+The value "test" is used to indicate that the notice has be only used for the purpose to check its validity and not its publication. The value "test" is also used in case of negative validation responses. The value "forecast" is used to indicate a planned publication date in the future. The value "effective" is used to indicate an actual publication date.
+
+[source,xml,indent=0]
+.Example of response
+....
+include::../files/ExampleNoticePublicationResponse.xml[tags=response-information]
+....
+<.> An indicator stating whether the referenced message was cleared through validation and advanced to the next step in the process. Refer to codelist notice response.
+<.> Used to make any comments or instructions relevant to the response. The use of this element requires manual assessment by the receiver.
+<.> The date upon which this notice is published.
+<.> The time upon which this notice is published.
+<.> Specifies the condition related to the publication of the notice.
+
+
+=== Document reference
+
+The document reference is used to provide references to notice request transaction and the notice payload. Thus, the transaction uses two levels of validation. The first one is the notice transaction itself, referenced with the `cbc:ID tag`. The second level is the notice which is included as payload and referenced with the `cbc:UUID`.
+
+[source,xml,indent=0]
+.Example of document reference
+....
+include::../files/ExampleNoticePublicationResponse.xml[tags=document-reference]
+....
+<.> Specifies the unique identifier of the container that describes the request to publish a notice on which the Notice Publication Response is based, expressed in uuid syntax.
+<.> Specifies the notice identifier (BT-701) allowing to uniquely distinguishing the notice, expressed in uuid syntax.
+<.> An identification of the UBL document schema of the notice being referred to, expressed as a code. Refer to the code list UBLDocumentSchema.
+<.> An identification of the version of the underlying notice (BT-757).
+
+=== Line response
+
+A response to a particular line in the notice transaction or notice payload. If the document response is negative (code='RE'), the line response element is used to specify the errors in the notice.
+
+The line response contains the line reference and the line response information
+
+==== Line reference
+
+Identifies the line in the notice transaction or notice payload to which the reported issue applies.
+
+The LineID element must be used to indicate where in the notice the error occurred by using XPath to reference the element causing the error. To cater for scenarios where it is not possible to provide XPath, a dummy value must be applied. The dummy value must consist of the characters NA. This is due to that the LineID element is mandatory in the ApplicationResponse message in UBL 2.1 on which the notice response transaction is based.
+
+Line responses may be given for the container that describes the request to publish a notice or they can be related to the referenced notice within the container.
+
+[source,xml,indent=0]
+.Example of line reference
+....
+include::../files/ExampleNoticePublicationResponse.xml[tags=line-reference]
+....
+<.> Identifies the section of the notice to which the reported issue applies.
+<.> A reference to the document containing the referenced line.
+<.> Specifies the unique document identifier to which the line response is related, expressed in uuid syntax.
+* The ID from `cac:DocumentResponse/cac:DocumentReference/cbc:ID` must be used to reference the notice transaction.
+* The ID from `cac:DocumentResponse/cac:DocumentReference/cbc:UUID` must be used to reference the notice payload.
+
+Must either use the See in comparsion the uuid in the response, which is represents the same documente hence uses the same ID seen at number 2
+
+==== Line response information
+
+Line response information provides details about a given validation error.
+
+[source,xml,indent=0]
+.Example of line response
+....
+include::../files/ExampleNoticePublicationResponse.xml[tags=line-response-code-info]
+....
+<.> A code stating whether the referenced line was accepted or rejected.
+<.> The description of the issue identified in the transaction document.
+<.> A codified verison of the issue description that describes the nature of the issue e.g. Syntax violation, Business rule violation, etc. Refer to the code list status reason.
+

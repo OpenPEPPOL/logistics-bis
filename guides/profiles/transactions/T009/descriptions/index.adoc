@@ -1,0 +1,39 @@
+[[descriptions]]
+= Descriptions of selected parts of the transaction
+
+The transaction including business terms, business rules and code lists are based upon the definitions of {name-transaction-org} described in {name-profile-org}.
+
+== AdditionalDocumentReferences and Attachments
+
+The `Enquiry` element should be build as follows:
+
+. The first `cac:AdditionalDocumentReference` within the `Enquiry` must have an `cbc:ID` having the attribute `schemeName` set to `ContractFolderID` and the value has to be the contract folder id.
+. An `Enquiry` element can have multiple `cac:AdditionalDocumentReference` refer to a LotsGroup, a lot or a part.
+. All questions are placed in an `cac:Attachment` element. The attachment can have one or more questions within the `cbc:Description` element or refer to a file in the ASiC-e by using the `cbc:FileName` element.
+. The relation between `cac:AdditionalDocumentReference` and `cac:Attachment` is done by a `cbc:XPath` element in the `cac:AdditionalDocumentReference`
+. The `cbc:XPath` can only contain references to an `cac:Attachment` and has to match the following expression: `/Enquiry/cac:Attachment[number]` where number represents a 1-base index in the list of the attachments.
+
+This ruleset gives the most flexible relation between question or attachments to a special part of a procurement procedure.
+The following are examples of combining questions in a transaction with different parts of the procurement procedure.
+
+=== Question
+
+A simple question to clarify a tender has to look like this:
+
+[source,xml,indent=0]
+....
+include::../files/TenderClarificationRequest-doc.xml[tags=contract-folder-id;question-contract-folder-id]
+....
+<.> The Contract Folder ID of the procurement procedure.
+<.> A reference to an element where one or more questions are located. The number in square brackets is the position in the list of attachments. The position starts with 1 (1-based indexing).
+<.> The Questions are placed in an `cac:Attachment` element.
+
+=== Send an attached file within ASiC-e
+
+[source,xml,indent=0]
+....
+include::../files/TenderClarificationRequest-doc.xml[tags=lot;question-lot]
+....
+<.> The Lot ID of the procurement procedure.
+<.> A reference to an element where one or more questions or external files are located. The number in square brackets is the position in the list of attachments. The position starts with 1 (1-based indexing).
+<.> A reference to a file within the ASiC-e.

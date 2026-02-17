@@ -1,0 +1,32 @@
+
+= Document References and Qualification Encryption
+
+The class cac:DocumentReference is used to point to the Call for Tender and to attach the qualification documents. If the Call For Tenders (CfT) business document provided an encryption certificate, the qualification documents MUST be encrypted by the economic operator using that certificate.
+
+The example below shows the attached and encrypted qualification document and its hash and algorithm. Encrypted qualification documents must use the file extension .p7m in  _<cbc:Filename></cbc:Filename>_. The attached qualification document in this example is an unstructured .pdf file.
+
+[source,xml,indent=0]
+----
+include::../files/Qualification-doc.xml[tags=AdditionalDocumentReference]
+----
+<.> ID of the referenced qualification document
+<.> The type of business document must also be included in the document reference element. In this case the code 916 is used to reference to a qualification document. Document Type
+Code is coded according to code list 1001 issued by UN/CEFACT ( see https://service.unece.org/trade/untdid/d99a/uncl/uncl1001.htm[UNCL 1001]). In this message the following codes are allowed:
+* 311 (Request for quote): Call for tender reference
+* 916 (Related document): Qualification document (e.g. ESPD response)
+<.> XPath reference to the party to whom this qualification document belongs
+<.> Code indicating the language of the qualification document
+<.> Version of the referenced qualification document, must be an integer
+<.> Free textual description of the qualification document
+<.> The actual document that is attached
+<.> URI identifying the attached qualification document in the ASiC-E Container
+<.> Hash value to prove the integrity of the attached qualification document
+<.> Used hash algorithm, must be 'http://www.w3.org/2001/04/xmlenc#sha256</'
+<.> Mime code of the attachment
+<.> File name of the attachment. Encrypted qualification documents must use the file extension .p7m in  _<cbc:Filename></cbc:Filename>_.
+<.> Size of the attachment
+<.> Another Document Reference pointing to the Call for Tender
+<.> ID of the Call for Tenders document
+<.> The type of business document must also be included in the document reference element. In this case the code 311 is used to reference to the Call for Tender. Document Type Code is coded according to code list 1001 issued by UN/CEFACT ( see https://service.unece.org/trade/untdid/d99a/uncl/uncl1001.htm[UNCL 1001]). In this message the following codes are allowed:
+* 311 (Request for quote): Call for tender reference
+* 916 (Related document): Qualification document (e.g. ESPD response)

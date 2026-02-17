@@ -1,0 +1,68 @@
+= Changelog for March release 2023
+
+== Profiles P001 - P011
+
+*Release date 2023-03-01*
+
+=== P001 - New transactions to unsubscribe from a procedure - 1.2
+T021 - Unsubscribe from procedure and T022 - Unsubscribe from procedure confirmation were added as new eTendering transactions. The transactions provide electronic messaging support for the process to unsubscribe from a procedure. Profile identifiers and Transaction identifers of T001 and T002 have been raised to 1.2.0 due to the new profile feature.
+
+=== P006 Change of rim:ValueType in Estimated Values of T011
+
+The xsi:type of the rim:Slot[@name='Minimum'] and rim:Slot[@name='Maximum'] of rim:Slot[@name='EstimatedValue'] in T011 was changed from rim:FloatValueType to rim:IntegerValueType. The corresponding Business Rule PEPPOL-T011-R046 has been adjusted.
+
+=== P008 - New field for publication date - 1.2
+New field _NoticePublicationDatePreferred_ added in T015 to support eForms usage. Corresponding Business Rules have been added.
+
+
+=== New BIS P010 - Tendering Message Response - 1.1
+The BIS P010 Tendering Message Response - 1.1 was added as a new eTendering profile. The profile provides electronic messaging support for the process to notify of errors in the provided message to the sender. The profile can only be used to communicate technical difficulties.
+
+=== New BIS P011 - Qualification - 1.1
+The BIS P011 Qualification - 1.1 was added as a new eTendering profile. The profile provides electronic messaging support for the business process of qualifying for a tendering process in a restricted procedure. The profile is executed between a contracting body or his representative and a publication body to announce business opportunities.
+
+=== New Peppol BIS pre-award guide - Notification and Open Procedure v1.0
+The new guideline describes the choreography to execute open procedures using Peppol. Thus, the Notification & Open Procedure Guideline is a procedural specification. The guideline does not define individual transactions but it refers to Peppol several BISs and underlying standards, in which the transactions and the transaction information requirements are listed and defined.
+
+=== CENBII schematrons rules integrated with PEPPOL rules
+CENBII T004 rules, CENBII T005 rules, CENBII T006 rules have been integrated into a new set of PEPPOL rules. Rules have been renamed, removed or modified.
+
+* Reworking use of pattern schema
+* Removal of CENBII Schematrons
+* Applied code list rules to peppol schematrons
+* Removed references to CENBII rules in syntax mapping
+
+
+=== Version numbers of BIS P001 - P003, P006 and P008 raised to 1.2
+Since the new transactions in P001, the removal of the CENBII schematrons, a changed rim:ValueType in P006 and the new field in P008 are breaking changes, the version number of profiles, transactions and rules has been raised from 1.1.0 to 1.2.0.
+
+=== Editorial changes
+
+*Updated BIS eDelivery guide for pre-award - Version 1.3*
+
+* update 2. References
+* update use of 4.2 Party IdentifiersIdentification used in business (UBL) documents in Pre-Award
+* update of 4.4	Profile ID, Customization ID and DocumentID. Adding new identifiers due to new profiles, transactions, revisions and changes. Improving/correcting examples given in SBDH Profile for identifiers (section 6.2). Integrating section 7 with 4.4. Removing section 7
+* Editorial changes in section 4.5 about use of CEN BII and PEPPOL for normative reasons
+* additional note on the use of REM Evidence in Pre-Award in section 5.1
+
+*Updated BIS eDocuments guide for pre-award - Version 1.3*
+
+* including additional explanatory section and ASiC example on the use of ASIC containers and signing of PEPPOL documents with PEPPOL PKI
+* update of chapter 6 Encryption of Tender and Qualificaton documents
+* update of links and references
+
+
+*P001 - P011*
+
+* Update the section "Associated notification and tendering procedures" to match with Open Procedure and eDelivery guideline
+* Fix of broken links and references
+* Update descriptions on the use of UBL versions
+* Rework of structure of profiles
+* Rework of structure of transactions
+* Update of graphics and examples (P006)
+* Rework of Syntax Mapping for T005 to better illustrate different types of Document references
+* Inclusion of additional information sections about Tender Encryption in P002, P003, P011 and T004, T005, T019
+* Moving examples and data models from annex and chapter 6 to new chapter 3 in all transaction T001 - T022
+
+

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+	<Term>UnsubscribeFromProcedureResponse</Term>
+	<Name>UnsubscribeFromProcedureResponse (T022)</Name>
+	<Namespace prefix="t022">urn:oasis:names:specification:ubl:schema:xsd:UnsubscribeFromProcedureResponse-2</Namespace>
+	<Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
+	<Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
+	<Document>
+		<Term>t022:UnsubscribeFromProcedureResponse</Term>
+		<Name>Unsubscribe From Procedure Response, root element</Name>
+		<Element>
+			<Term>cbc:UBLVersionID</Term>
+			<Name>UBL version identifier</Name>
+			<Reference type="RULE">PEPPOL-T022-R024</Reference>
+			<Reference type="RULE">PEPPOL-T022-R029</Reference>
+			<DataType>Identifier</DataType>
+			<Value type="FIXED">2.2</Value>
+		</Element>
+		<Element>
+			<Term>cbc:CustomizationID</Term>
+			<Name>Customization identifier</Name>
+			<Description>Identifies the specification of content and rules that apply to the transaction.</Description>
+			<Reference type="RULE">PEPPOL-T022-R001</Reference>
+			<Reference type="RULE">PEPPOL-T022-R002</Reference>
+			<Reference type="BUSINESS_TERM">tir107-007</Reference>
+			<DataType>Identifier</DataType>
+			<Value type="FIXED">urn:fdc:peppol.eu:prac:trns:t022:1.2</Value>
+		</Element>
+		<Element>
+			<Term>cbc:ProfileID</Term>
+			<Name>Profile identifier</Name>
+			<Description>Identifies the BII profile or business process context in which the transaction appears.</Description>
+			<Reference type="RULE">PEPPOL-T022-R003</Reference>
+			<Reference type="RULE">PEPPOL-T022-R004</Reference>
+			<Reference type="BUSINESS_TERM">tir107-006</Reference>
+			<DataType>Identifier</DataType>
+			<Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p001:1.2</Value>
+		</Element>
+		<Element>
+			<Term>cbc:ID</Term>
+			<Name>Response identifier</Name>
+			<Description>An identifier that is suitable for identifying or referencing a document, MUST be expressed in a UUID syntax (RFC 4122).</Description>
+			<Reference type="RULE">PEPPOL-T022-R005</Reference>
+			<Reference type="RULE">PEPPOL-T022-R008</Reference>
+			<Reference type="BUSINESS_TERM">tir107-001</Reference>
+			<Attribute>
+				<Term>schemeURI</Term>
+				<Name>Scheme identifier</Name>
+				<Reference type="RULE">PEPPOL-T022-R006</Reference>
+				<Reference type="RULE">PEPPOL-T022-R007</Reference>
+				<Value type="FIXED">urn:uuid</Value>
+			</Attribute>
+			<DataType>Identifier</DataType>
+		</Element>
+		<Element>
+			<Term>cbc:ContractFolderID</Term>
+			<Name>Reference number</Name>
+			<Description>An identifier that is specified by the buyer and used as a reference number for all documents in the procurement process. It is also known as procurement project identifier, procurement reference number or contract folder identifier.</Description>
+			<Reference type="RULE">PEPPOL-T022-R009</Reference>
+			<Reference type="BUSINESS_TERM">tir107-025</Reference>
+			<DataType>Identifier</DataType>
+		</Element>
+		<Element>
+			<Term>cbc:IssueDate</Term>
+			<Name>Response issue date</Name>
+			<Description>The date on which transaction is issued.</Description>
+			<Reference type="RULE">PEPPOL-T022-R010</Reference>
+			<Reference type="BUSINESS_TERM">tir107-002</Reference>
+			<DataType>Date</DataType>
+		</Element>
+		<Element>
+			<Term>cbc:IssueTime</Term>
+			<Name>Response issue time</Name>
+			<Description>The time at which the transaction instance was issued.The issue time must have granularity of seconds, and include time zone information.</Description>
+			<Reference type="RULE">PEPPOL-T022-R011</Reference>
+			<Reference type="RULE">PEPPOL-T022-R012</Reference>
+			<Reference type="RULE">PEPPOL-T022-R013</Reference>
+			<Reference type="BUSINESS_TERM">tir107-003</Reference>
+			<DataType>Time</DataType>
+		</Element>
+			<Element cardinality="0..1">
+			<Term>cac:UnsubscribeToProcedureDocumentReference</Term>
+			<Name>Unsubscribe to procedure document reference</Name>
+			<Element>
+				<Term>cbc:ID</Term>
+				<Name>Unsubscribe to procedure document identifier</Name>
+				<Description>An identifier that is suitable for identifying or referencing an unsubscribe to procedure document. Use the UUID of the received unsubscribe to procedure document.</Description>
+				<Reference type="BUSINESS_TERM">tir82-004</Reference>
+				<Reference type="RULE">PEPPOL-T022-R027</Reference>
+				<Attribute>
+					<Term>schemeURI</Term>
+					<Name>Scheme identifier</Name>
+					<Reference type="RULE">PEPPOL-T022-R025</Reference>
+					<Reference type="RULE">PEPPOL-T022-R026</Reference>
+					<Value type="FIXED">urn:uuid</Value>
+				</Attribute>
+				<DataType>Identifier</DataType>
+			</Element>
+		</Element>
+		<Element>
+			<Term>cac:EconomicOperatorParty</Term>
+			<Name>Economic operator</Name>
+			<Element>
+				<Term>cac:Party</Term>
+				<Name>Party information</Name>
+				<Element>
+					<Term>cbc:EndpointID</Term>
+					<Name>Economic operator electronic address identifier</Name>
+					<Description>Electronic address of the economic operator.</Description>
+					<Reference type="RULE">PEPPOL-T022-R022</Reference>
+					<Attribute>
+						<Term>schemeID</Term>
+						<Name>Electronic address identifier</Name>
+						<Reference type="RULE">PEPPOL-T022-R021</Reference>
+						<Reference type="CODE_LIST">EAS</Reference>
+						<Value type="EXAMPLE">9946</Value>
+					</Attribute>
+					<DataType>Identifier</DataType>
+					<Value type="EXAMPLE">500820007</Value>
+				</Element>
+				<Element>
+					<Term>cac:PartyIdentification</Term>
+					<Name>Party identification</Name>
+					<Reference type="RULE">PEPPOL-T022-R015</Reference>
+					<Element>
+						<Term>cbc:ID</Term>
+						<Name>Economic operator identifier</Name>
+						<Description>An identifier that identifies the economic operator, such as a legal registration identifier. Can be the registration number in the professional registry.</Description>
+						<Reference type="RULE">PEPPOL-T022-R017</Reference>
+						<Reference type="BUSINESS_TERM">tir107-012</Reference>
+						<Attribute>
+							<Term>schemeID</Term>
+							<Name>Economic operator identifier</Name>
+							<Reference type="RULE">PEPPOL-T022-R016</Reference>
+							<Reference type="CODE_LIST">ICD</Reference>
+							<Value type="EXAMPLE">0088</Value>
+						</Attribute>
+						<DataType>Identifier</DataType>
+						<Value type="EXAMPLE">7300010000001</Value>
+					</Element>
+				</Element>
+			</Element>
+		</Element>
+		<Element>
+			<Term>cac:ContractingParty</Term>
+			<Name>Contracting body</Name>
+			<Element>
+				<Term>cac:Party</Term>
+				<Name>Party information</Name>
+				<Element>
+					<Term>cbc:EndpointID</Term>
+					<Name>Contracting body electronic address identifier</Name>
+					<Description>Electronic address of the contracting body.</Description>
+					<Reference type="RULE">PEPPOL-T022-R014</Reference>
+					<Reference type="RULE">PEPPOL-T022-R022</Reference>
+					<Reference type="BUSINESS_TERM">tir107-010</Reference>
+					<Attribute>
+						<Term>schemeID</Term>
+						<Name>Electronic address identifier</Name>
+						<Reference type="RULE">PEPPOL-T022-R021</Reference>
+						<Reference type="CODE_LIST">EAS</Reference>
+						<Value type="EXAMPLE">9930</Value>
+					</Attribute>
+					<DataType>Identifier</DataType>
+					<Value type="EXAMPLE">DE122268496</Value>
+				</Element>
+				<Element>
+					<Term>cac:PartyIdentification</Term>
+					<Name>Party identification</Name>
+					<Reference type="RULE">PEPPOL-T022-R014</Reference>
+					<Element>
+						<Term>cbc:ID</Term>
+						<Name>Contracting body identifier</Name>
+						<Description>The national identifier of a contracting body as it is legally registered (e.g. VAT identification, such as KBO)</Description>
+						<Reference type="BUSINESS_TERM">tir107-009</Reference>
+						<Attribute>
+							<Term>schemeID</Term>
+							<Name>Contracting body identifier</Name>
+							<Reference type="CODE_LIST">ICD</Reference>
+							<Value type="EXAMPLE">0204</Value>
+						</Attribute>
+						<DataType>Identifier</DataType>
+						<Value type="EXAMPLE">991-1234512345-06</Value>
+					</Element>
+				</Element>
+				<Element cardinality="0..1">
+					<Term>cac:PartyName</Term>
+					<Name>Party name</Name>
+					<Element>
+						<Term>cbc:Name</Term>
+						<Name>Contracting body name</Name>
+						<Description>The name of the contracting body as it is registered.</Description>
+						<Reference type="BUSINESS_TERM">tir107-008</Reference>
+						<DataType>Text</DataType>
+					</Element>
+				</Element>
+			</Element>
+		</Element>
+		<Element cardinality="0..n">
+			<Term>cac:ProcurementProjectLotReference</Term>
+			<Name>Requested lot</Name>
+			<Element cardinality="0..1">
+				<Term>cbc:ID</Term>
+				<Name>Lot identifier</Name>
+				<Description>An identifier for the lot.</Description>
+				<Reference type="RULE">PEPPOL-T022-R023</Reference>
+				<Reference type="BUSINESS_TERM">tir107-026</Reference>
+				<DataType>Identifier</DataType>
+			</Element>
+		</Element>
+	</Document>
+</Structure>

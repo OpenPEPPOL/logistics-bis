@@ -1,0 +1,65 @@
+
+= Business process
+
+The {link-bpmn}[BPMN] diagram shows the choreography of the business process implemented by the {name-profile}. The choreography of business collaborations defines the sequence of interactions when the profile is run within its context.
+
+image::../images/p001bpmn.png[align="center", width=800]
+
+[cols="3,9", options="header"]
+|===
+| Category
+| Description
+| Description
+| An economic operator expresses his interest in a procurement project of the contracting body, who will keep the economic operator informed about updates.
+| Pre-conditions
+| An economic operator has found an interesting business opportunity in a list of published notices. The economic operator knows the procurement project ID and contracting body ID of this business opportunity.
+| Post-conditions
+| The economic operator is subscribed to the procurement project. The contracting body knows this economic operator is interested.
+|===
+
+
+[cols="3,2,7", options="header"]
+|===
+| Activity
+| Role involved
+| Description
+
+| Express interest in business opportunity
+| Economic operator
+| An economic operator has found an interesting business opportunity in a long list of published notices. He expresses his interest and subscribes to the tendering procedure by sending the expression of interest.
+
+| Receive procurement procedure subscription request
+| Contracting body
+| The contracting body receives the expression of interest. The contracting body puts the economic operator on the list of interested economic operators in this procurement project.
+
+| Confirm procurement procedure subscription response
+| Contracting body
+| The contracting body sends the economic operator a confirmation message that he is on the list of interested economic operators in this procurement project.
+
+| Receive procurement procedure subscription confirmation
+| Economic operator
+| The economic operator receives the subscription confirmation
+
+| Unsubscribe from procedure
+| Economic operator
+| An economic operator unsubscribes to the tendering procedure.
+
+| Receive procurement procedure unsubscription
+| Contracting body
+| The contracting body receives the unsubscription
+
+| Confirm procurement procedure unsubscription
+| Contracting body
+| The contracting body sends the economic operator a confirmation message that he has been unsubscribed from this procurement project.
+
+| Receive unsubscription confirmation
+| Economic operator
+| The economic operator receives the unsubscription confirmation.
+
+|===
+
+
+
+include::implementation-guidelines.adoc[]
+
+

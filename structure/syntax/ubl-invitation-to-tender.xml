@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+    <Term>InvitationToTender</Term>
+
+    <Name>Invitation To Tender (T024)</Name>
+    <Namespace prefix="t024">urn:oasis:names:specification:ubl:schema:xsd:CallForTenders-2</Namespace>
+    <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
+    <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
+    <Document>
+
+        <Term>t024:CallForTenders</Term>
+        <Name>Invitation To Tender, root element</Name>
+
+        <Element>
+            <Term>cbc:UBLVersionID</Term>
+            <Name>UBL version identifier</Name>
+            <Description>Requires UBL version 2.2</Description>
+            <Reference type="RULE">PEPPOL-T024-R001</Reference>
+            <Reference type="RULE">PEPPOL-T024-R040</Reference>
+            <Value type="FIXED">2.2</Value>
+        </Element>
+
+        <Element>
+            <Term>cbc:CustomizationID</Term>
+            <Name>Specification identification</Name>
+            <Description>An identification of the specification containing the total set of rules regarding semantic
+                content, cardinalities and business rules to which the data contained in the instance document conforms.
+            </Description>
+            <Reference type="RULE">PEPPOL-T024-R002</Reference>
+            <DataType>Identifier</DataType>
+            <Value type="FIXED">
+                urn:fdc:peppol.eu:prac:trns:t024:1.0
+            </Value>
+        </Element>
+
+        <Element>
+            <Term>cbc:ProfileID</Term>
+            <Name>Business process type identifier</Name>
+            <Description>Identifies the business process context in which the transaction appears. It enables the buyer
+                to process the document in an appropriate way.
+            </Description>
+            <Reference type="RULE">PEPPOL-T024-R003</Reference>
+            <DataType>Identifier</DataType>
+            <Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p013:1.0</Value>
+        </Element>
+
+        <Element>
+            <Term>cbc:ID</Term>
+            <Name>Invitation to tender identifier</Name>
+            <Description>Identifies the invitation to tender as issued by the contracting body. Must be expressed as a UUID
+            </Description>
+            <Reference type="RULE">PEPPOL-T024-R006</Reference>
+            <Attribute>
+                <Term>schemeURI</Term>
+                <Name>Scheme identifier</Name>
+                <Reference type="RULE">PEPPOL-T024-R004</Reference>
+                <Reference type="RULE">PEPPOL-T024-R005</Reference>
+                <Value type="FIXED">urn:uuid</Value>
+            </Attribute>
+            <DataType>Identifier</DataType>
+        </Element>
+
+        <Element>
+            <Term>cbc:ContractFolderID</Term>
+            <Name>Reference number</Name>
+            <Description>An identifier that is specified by the buyer and used as a reference number for all documents
+                in the procurement process. It is also known as procurement project identifier, procurement reference
+                number or contract folder identifier.
+            </Description>
+            <DataType>Identifier</DataType>
+        </Element>
+
+        <Element>
+            <Term>cbc:IssueDate</Term>
+            <Name>Invitation to tender issue date</Name>
+            <Description>The date on which the invitation to tender is issued.</Description>
+            <DataType>Date</DataType>
+        </Element>
+
+        <Element cardinality="1..1">
+            <Term>cbc:IssueTime</Term>
+            <Name>Invitation to tender issue time</Name>
+            <Description>The time when the invitation to tender is issued. The issue time must have granularity of seconds,
+                and include time zone information
+            </Description>
+            <Reference type="RULE">PEPPOL-T024-R007</Reference>
+            <Reference type="RULE">PEPPOL-T024-R008</Reference>
+            <Reference type="RULE">PEPPOL-T024-R009</Reference>
+            <DataType>Time</DataType>
+        </Element>
+
+        <Element>
+            <Term>cbc:VersionID</Term>
+            <Name>Invitation to tender version</Name>
+            <Description>Identifies the version of the invitation to tender.</Description>
+            <Reference type="RULE">PEPPOL-T024-R038</Reference>
+            <DataType>Identifier</DataType>
+        </Element>
+
+        <Element cardinality="0..n">
+            <Term>cac:AdditionalDocumentReference</Term>
+            <Name>Additional document reference</Name>
+            <Description>Additional document reference are used for different document references, required document,
+                provided document.
+                To reference several types, the additional document should be repeated for each type.
+            </Description>
+
+            <Element>
+                <Term>cbc:ID</Term>
+                <Name>Document identifier</Name>
+                <Description>Identification of the document reference</Description>
+                <Reference type="RULE">PEPPOL-T024-R024</Reference>
+                <DataType>Identifier</DataType>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:IssueDate</Term>
+                <Name>Document issue date</Name>
+                <Description>Date when the referred document was issued.</Description>
+                <DataType>Date</DataType>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:DocumentTypeCode</Term>
+                <Name>Document type code</Name>
+                <Description>A code specifying the type of the document, valid codes are PROVIDED or REQUIRED
+                </Description>
+                <Reference type="RULE">PEPPOL-T024-R019</Reference>
+                <Reference type="CODE_LIST">docType</Reference>
+                <Attribute>
+                    <Term>listID</Term>
+                    <Name>List identifier</Name>
+                    <Reference type="RULE">PEPPOL-T024-R017</Reference>
+                    <Reference type="RULE">PEPPOL-T024-R018</Reference>
+                    <Value type="FIXED">urn:eu:esens:cenbii:documentType</Value>
+                </Attribute>
+                <DataType>Code</DataType>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:LocaleCode</Term>
+                <Name>Provided document language</Name>
+                <Description>Language of a document that is provided as part of an invitation to tender.</Description>
+                <Reference type="RULE">PEPPOL-T024-R016</Reference>
+                <Attribute>
+                    <Term>listID</Term>
+                    <Name>List identifier</Name>
+                    <Reference type="RULE">PEPPOL-T024-R014</Reference>
+                    <Reference type="RULE">PEPPOL-T024-R015</Reference>
+                    <Value type="FIXED">ISO639-1</Value>
+                </Attribute>
+                <DataType>Code</DataType>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:VersionID</Term>
+                <Name>Provided document version</Name>
+                <Description>Version of a document that is provided as part of the invitation to tender.
+                </Description>
+                <DataType>Text</DataType>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:DocumentStatusCode</Term>
+                <Name>Provided document to be returned indicator</Name>
+                <Description>Indicates that the provided document in the invitation to tender has to be returned as part of
+                    the tender.
+                </Description>
+                <Reference type="RULE">PEPPOL-T024-R022</Reference>
+                <Reference type="RULE">PEPPOL-T024-R023</Reference>
+                <Reference type="CODE_LIST">docStatus</Reference>
+                <Attribute>
+                    <Term>listID</Term>
+                    <Name>List identifier</Name>
+                    <Reference type="RULE">PEPPOL-T024-R020</Reference>
+                    <Reference type="RULE">PEPPOL-T024-R021</Reference>
+                    <Value type="FIXED">urn:eu:esens:cenbii:documentStatusType</Value>
+                </Attribute>
+                <DataType>Indicator</DataType>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:DocumentDescription</Term>
+                <Name>Document description</Name>
+                <Description>A description of the required or provided document, or if DocumentTypeCode ="PROVIDED" the
+                    description should reference to one or more lots the economic operator is applying for.
+                    The original lot definition is part of the invitation to tender document.
+                    The Qualification instance only references the corresponding IDs in order to establish the
+                    connection to the invitation to tender information.
+                </Description>
+                <Reference type="RULE">PEPPOL-T024-R030</Reference>
+                <DataType>Text</DataType>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cac:Attachment</Term>
+                <Name>Attachment information</Name>
+				<Reference type="RULE">PEPPOL-T024-R036</Reference>
+                <Element>
+                    <Term>cac:ExternalReference</Term>
+                    <Name>External reference information</Name>
+                    <Element cardinality="0..1">
+                        <Term>cbc:URI</Term>
+                        <Name>Provided document url</Name>
+                        <Description>A public URL where a document provided in the invitation to tender can be downloaded
+                            or a URI to the document provided inside the ASIC-E package or any other type of package.
+                        </Description>
+                        <Reference type="RULE">PEPPOL-T024-R035</Reference>
+                        <DataType>Identifier</DataType>
+                    </Element>
+
+                    <Element cardinality="0..1">
+                        <Term>cbc:MimeCode</Term>
+                        <Name>Document mime type code</Name>
+                        <Description>A code specifying the type of the document. The mime type of the file that and allows finding the correct application to open the document at the download sink. MUST be 'application/pkix-cert' for the encryption certificate. </Description>
+                        <DataType>Code</DataType>
+                    </Element>
+
+                    <Element cardinality="0..1">
+                        <Term>cbc:FileName</Term>
+                        <Name>Provided document name</Name>
+                        <Description>Name of a document that is provided as part of the invitation to tender. The extension of the file MUST be 'cer' for the encryption certificate.
+                        </Description>
+                        <Reference type="RULE">PEPPOL-T024-R035</Reference>
+                        <DataType>Text</DataType>
+                    </Element>
+
+                </Element>
+            </Element>
+
+
+        </Element>
+
+        <Element>
+            <Term>cac:ContractingParty</Term>
+            <Name>Contracting body</Name>
+
+            <Element>
+                <Term>cac:Party</Term>
+                <Name>Party information</Name>
+
+                <Element>
+                    <Term>cbc:EndpointID</Term>
+                    <Name>Contracting body electronic address identifier</Name>
+                    <Description>Electronic address of the contracting body.</Description>
+                    <Reference type="RULE">PEPPOL-T024-R034</Reference>
+                    <Attribute>
+                        <Term>schemeID</Term>
+                        <Name>Scheme identifier</Name>
+						<Reference type="RULE">PEPPOL-T024-R012</Reference>
+						<Reference type="RULE">PEPPOL-T024-R013</Reference>
+                        <Reference type="CODE_LIST">EAS</Reference>
+                        <Value type="EXAMPLE">9930</Value>
+                    </Attribute>
+                    <DataType>Identifier</DataType>
+                    <Value type="EXAMPLE">DE122268496</Value>
+                </Element>
+
+
+                <Element>
+                    <Term>cac:PartyIdentification</Term>
+                    <Name>Party identification</Name>
+					<Reference type="RULE">PEPPOL-T024-R034</Reference>
+                    <Element>
+                        <Term>cbc:ID</Term>
+                        <Name>Contracting body identifier</Name>
+                        <Description>The national identifier of a contracting body as it is legally registered (e.g. VAT
+                            identification, such as KBO)
+                        </Description>
+                        <Attribute>
+                            <Term>schemeID</Term>
+                            <Name>Scheme identifier</Name>
+							<Reference type="RULE">PEPPOL-T024-R010</Reference>
+							<Reference type="RULE">PEPPOL-T024-R011</Reference>
+                            <Reference type="CODE_LIST">ICD</Reference>
+                            <Value type="EXAMPLE">0204</Value>
+                        </Attribute>
+                        <DataType>Identifier</DataType>
+                        <Value type="EXAMPLE">991-1234512345-06</Value>
+                    </Element>
+                </Element>
+
+                <Element cardinality="0..1">
+                    <Term>cac:PartyName</Term>
+                    <Name>Party name</Name>
+                    <Element>
+                        <Term>cbc:Name</Term>
+                        <Name>Contracting body name</Name>
+                        <Description>The name of the contracting body as it is registered.</Description>
+                        <DataType>Text</DataType>
+                    </Element>
+                </Element>
+
+                <Element cardinality="0..1">
+                    <Term>cac:PartyLegalEntity</Term>
+                    <Name>Party legal entity</Name>
+
+                    <Element>
+                        <Term>cac:RegistrationAddress</Term>
+                        <Name>Registration address</Name>
+
+                        <Element>
+                            <Term>cac:Country</Term>
+                            <Name>Country</Name>
+                            <Element>
+                                <Term>cbc:IdentificationCode</Term>
+                                <Name>Country of registration</Name>
+                                <Description>The country where the party is registered. The country should always be
+                                    given by using ISO code 3166 alpha 2
+                                </Description>
+                                <Reference type="RULE">CL-T83-R005</Reference>
+                                <Reference type="CODE_LIST">ISO3166-1:Alpha2</Reference>
+                                <Attribute>
+                                    <Term>listID</Term>
+                                    <Name>List identifier</Name>
+                                    <Value type="FIXED">ISO3166-1:Alpha2</Value>
+                                </Attribute>
+                                <DataType>Code</DataType>
+                            </Element>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+        </Element>
+        <Element cardinality="1..1">
+            <Term>cac:ReceiverParty</Term>
+            <Name>Economic operator</Name>
+            <Description>Any natural or legal person or public entity or group of such persons and/or entities,
+                including any temporary association of undertakings, which offers the execution of works and/or a work,
+                the supply of products or the provision of services on the market.
+            </Description>
+            <Element cardinality="1..1">
+                <Term>cbc:EndpointID</Term>
+                <Name>Economic operator electronic address identifier</Name>
+                <Description>Electronic address of the economic operator.</Description>
+				<Reference type="RULE">PEPPOL-T024-R534</Reference>
+                <Attribute>
+                    <Term>schemeID</Term>
+                    <Name>Scheme identifier for electronic address identifier</Name>
+					<Reference type="RULE">PEPPOL-T024-R012</Reference>
+					<Reference type="RULE">PEPPOL-T024-R013</Reference>
+                </Attribute>
+                <DataType>Identifier</DataType>
+            </Element>
+            <Element cardinality="1..1">
+                <Term>cbc:IndustryClassificationCode</Term>
+                <Name>Economic operator role</Name>
+                <Description>The role of the economic operator when bidding from a consortium (main contractor, subcontractor , additional).</Description>
+                <Reference type="CODE_LIST">tendererRole</Reference>
+                <Attribute>
+                    <Term>listID</Term>
+                    <Name>List identifier</Name>
+                    <Reference type="RULE">PEPPOL-T024-R041</Reference>
+                    <Reference type="RULE">PEPPOL-T024-S360</Reference>
+                    <Value type="FIXED">tendererRole</Value>
+                </Attribute>
+                <DataType>Identifier</DataType>
+            </Element>
+            <Element>
+                <Term>cac:PartyIdentification</Term>
+                <Name>Party identification</Name>
+				<Reference type="RULE">PEPPOL-T024-R534</Reference>
+                <Element>
+                    <Term>cbc:ID</Term>
+                    <Name>Economic operator identifier</Name>
+                    <Description>An identifier that identifies the economic operator, such as a legal registration
+                        identifier.
+                    </Description>
+                    <Attribute>
+                        <Term>schemeID</Term>
+                        <Name>Scheme identifier for party identifier</Name>
+						<Reference type="RULE">PEPPOL-T024-R010</Reference>
+						<Reference type="RULE">PEPPOL-T024-R011</Reference>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0088</Value>
+                    </Attribute>
+                    <DataType>Identifier</DataType>
+                    <Value type="EXAMPLE">7300010000001</Value>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>cac:PartyName</Term>
+                <Name>Party name</Name>
+                <Element>
+                    <Term>cbc:Name</Term>
+                    <Name>Economic operator name</Name>
+                    <Description>The name of the economic operator.</Description>
+                    <DataType>Text</DataType>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>cac:PostalAddress</Term>
+                <Name>Postal address</Name>
+                <Element cardinality="0..1">
+                    <Term>cbc:StreetName</Term>
+                    <Name>Address line 1</Name>
+                    <Description>The main address line in an address.</Description>
+                    <DataType>Text</DataType>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>cbc:AdditionalStreetName</Term>
+                    <Name>Address line 2</Name>
+                    <Description>An additional address line in an address that can be used to give further details
+                        supplementing the main line.
+                    </Description>
+                    <DataType>Text</DataType>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>cbc:CityName</Term>
+                    <Name>City</Name>
+                    <Description>The common name of a city where the address is located.</Description>
+                    <DataType>Text</DataType>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>cbc:PostalZone</Term>
+                    <Name>Post code</Name>
+                    <Description>The identifier for an addressable group of properties according to the relevant postal
+                        service, such as a ZIP code or Post Code.
+                    </Description>
+                    <DataType>Text</DataType>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>cbc:CountrySubentity</Term>
+                    <Name>Country subdivision</Name>
+                    <Description>The subdivision of a country such as region, county, state, province etc.</Description>
+                    <DataType>Text</DataType>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>cac:Country</Term>
+                    <Name>Country</Name>
+                    <Element>
+                        <Term>cbc:IdentificationCode</Term>
+                        <Name>Country code</Name>
+                        <Description>A code that identifies the country.</Description>
+                        <Reference type="RULE">CL-T83-R005</Reference>
+                        <Reference type="CODE_LIST">ISO3166-1:Alpha2</Reference>
+                        <Attribute>
+                            <Term>listID</Term>
+                            <Name>List identifier for country code</Name>
+                        </Attribute>
+                        <DataType>Code</DataType>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>cac:PartyLegalEntity</Term>
+                <Name>Party legal entity</Name>
+
+                <Element cardinality="0..1">
+                    <Term>cbc:CompanyLegalForm</Term>
+                    <Name>Economic operator legal form</Name>
+                    <Description>A textual description of the legal form of the economic operator.</Description>
+                    <DataType>Text</DataType>
+                </Element>
+
+                <Element cardinality="0..1">
+                    <Term>cac:RegistrationAddress</Term>
+                    <Name>Legal registration address</Name>
+
+                    <Element cardinality="0..1">
+                        <Term>cac:Country</Term>
+                        <Name>Country</Name>
+                        <Element>
+                            <Term>cbc:IdentificationCode</Term>
+                            <Name>Economic operator registration country code</Name>
+                            <Description>The registration country code of the economic operator.</Description>
+                            <Reference type="RULE">CL-T83-R005</Reference>
+                            <Reference type="CODE_LIST">ISO3166-1:Alpha2</Reference>
+                            <Attribute>
+                                <Term>listID</Term>
+                                <Name>List identifier for country code</Name>
+                            </Attribute>
+                            <DataType>Code</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+            </Element>
+            <Element cardinality="0..1">
+                <Term>cac:Contact</Term>
+                <Name>Contact information</Name>
+
+                <Element cardinality="0..1">
+                    <Term>cbc:Name</Term>
+                    <Name>Contact point</Name>
+                    <Description>The name of the contact point.</Description>
+                    <DataType>Text</DataType>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>cbc:Telephone</Term>
+                    <Name>Contact telephone number</Name>
+                    <Description>A phone number for the contact point.</Description>
+                    <DataType>Text</DataType>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>cbc:Telefax</Term>
+                    <Name>Contact fax number</Name>
+                    <Description>A fax number for the contact point.</Description>
+                    <DataType>Text</DataType>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>cbc:ElectronicMail</Term>
+                    <Name>Contact email address</Name>
+                    <Description>An e-mail address for the contact point.</Description>
+                    <DataType>Text</DataType>
+                </Element>
+            </Element>
+        </Element>
+
+        <Element>
+            <Term>cac:TenderingTerms</Term>
+            <Name>Tendering terms</Name>
+
+            <Element cardinality="0..1">
+                <Term>cbc:MaximumVariantQuantity</Term>
+                <Name>Maximum number of variants to submit</Name>
+                <Description>Maximum number of variants a tenderer can submit.</Description>
+				<Reference type="RULE">PEPPOL-T024-R032</Reference>
+                <DataType>Numeric</DataType>
+            </Element>
+
+
+            <Element>
+                <Term>cbc:VariantConstraintIndicator</Term>
+                <Name>Variants indicator</Name>
+                <Description>Indicates if variants are accepted in the tender. Use true when variants are allowed.
+                </Description>
+                <DataType>Indicator</DataType>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:Note</Term>
+                <Name>Required number of copies</Name>
+                <Description>Required number of paper copies to submit if using postal submission.</Description>
+				<Reference type="RULE">PEPPOL-T024-R031</Reference>
+                <DataType>Numeric</DataType>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:AdditionalConditions</Term>
+                <Name>Overall expected level of tender signature</Name>
+                <Description>Expected level of signature to be used by the tenderer when submitting the tenders.
+                </Description>
+				<Reference type="RULE">PEPPOL-T024-R033</Reference>
+                <Reference type="CODE_LIST">addCond</Reference>
+                <DataType>Text</DataType>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cac:ProcurementLegislationDocumentReference</Term>
+                <Name>Procurement legislation information</Name>
+
+                <Element>
+                    <Term>cbc:ID</Term>
+                    <Name>Procurement legislation information document reference identifier</Name>
+                    <Description>An identifier for the document reference</Description>
+                    <DataType>Identifier</DataType>
+                </Element>
+
+                <Element>
+                    <Term>cbc:DocumentDescription</Term>
+                    <Name>Legal references</Name>
+                    <Description>Textual description of references to specific legislation</Description>
+                    <DataType>Text</DataType>
+                </Element>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cac:CallForTendersDocumentReference</Term>
+                <Name>Invitation to tenders document reference</Name>
+
+                <Element>
+                    <Term>cbc:ID</Term>
+                    <Name>Invitation to tender previous identifier</Name>
+                    <Description>Identifies a previously issued invitation to tender when updated by the contracting body,
+                        expressed as a UUID
+                    </Description>
+					<Reference type="RULE">PEPPOL-T024-R027</Reference>
+                    <Attribute>
+                        <Term>schemeURI</Term>
+                        <Name>Scheme identifier</Name>
+						<Reference type="RULE">PEPPOL-T024-R025</Reference>
+						<Reference type="RULE">PEPPOL-T024-R026</Reference>
+                        <Value type="FIXED">urn:uuid</Value>
+                    </Attribute>
+                    <DataType>Identifier</DataType>
+                </Element>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cac:TenderRecipientParty</Term>
+                <Name>Tender recipient party</Name>
+
+                <Element>
+                    <Term>cbc:EndpointID</Term>
+                    <Name>PEPPOL address for submission of tenders</Name>
+                    <Description>The PEPPOL Address (Participant Identifier) to which tenders
+                        shall be submitted. This endpoint ID MUST be used only when different
+                        from the Contracting Authority Endpoint ID.
+                    </Description>
+                    <Attribute>
+                        <Term>schemeID</Term>
+                        <Name>Scheme identifier</Name>
+						<Reference type="RULE">PEPPOL-T024-R012</Reference>
+						<Reference type="RULE">PEPPOL-T024-R013</Reference>
+                        <Reference type="CODE_LIST">EAS</Reference>
+                        <Value type="EXAMPLE">9946</Value>
+                    </Attribute>
+                    <DataType>Identifier</DataType>
+                    <Value type="EXAMPLE">500820007</Value>
+                </Element>
+            </Element>
+        </Element>
+
+
+        <Element>
+            <Term>cac:TenderingProcess</Term>
+            <Name>Tendering process</Name>
+
+            <Element>
+                <Term>cbc:ProcedureCode</Term>
+                <Name>Procedure type</Name>
+                <Description>A code specifying the type of this tendering process. The coded version of the description
+                    of procedure. (E.g.) Open procedure, negotiated etc.
+                </Description>
+                <Reference type="CODE_LIST">procedureType</Reference>
+                <Reference type="RULE">CL-T83-R001</Reference>
+                <Attribute>
+                    <Term>listID</Term>
+                    <Name>List identifier</Name>
+                    <Value type="FIXED">PR_PROC</Value>
+                </Attribute>
+				<DataType>Code</DataType>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:ContractingSystemCode</Term>
+                <Name>Type of contract to establish</Name>
+                <Description>Specifies that the aim of the awarding process is to establish a public contract or to
+                    setup a framework agreement or a dynamic purchasing system. For framework agreement and DPS,
+                    indicates whether the new contract will be based on an already established framework agreement or
+                    dynamic purchasing system or not.
+                </Description>
+                <Reference type="RULE">PEPPOL-T024-R039</Reference>
+                <Reference type="CODE_LIST">contractType</Reference>
+                <Attribute>
+                    <Term>listID</Term>
+                    <Name>List identifier</Name>
+                    <Value type="FIXED">CONTRACT_TYPE</Value>
+                </Attribute>
+				<DataType>Code</DataType>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cbc:SubmissionMethodCode</Term>
+                <Name>Backup for electronic submission indicator</Name>
+                <Description>Indicator whether postal submission of the tender is merely a backup for the electronic
+                    submission
+                </Description>
+                <Reference type="CODE_LIST">submissionMethod</Reference>
+                <Attribute>
+                    <Term>listID</Term>
+                    <Name>List identifier</Name>
+                    <Value type="FIXED">BII_SUBMISSION</Value>
+                </Attribute>
+				<DataType>Indicator</DataType>
+            </Element>
+
+            <Element>
+                <Term>cac:TenderSubmissionDeadlinePeriod</Term>
+                <Name>Tender submission deadline period</Name>
+
+                <Element cardinality="1..1">
+                    <Term>cbc:EndDate</Term>
+                    <Name>Tender submission deadline</Name>
+                    <Description>Time limit for receipt of tenders (open procedures) or requests to participate
+                        (restricted procedures, competitive procedures with negotiation, dynamic purchasing systems,
+                        competitive dialogues, innovation partnerships)
+                    </Description>
+					<DataType>Date</DataType>
+                </Element>
+
+                <Element cardinality="0..1">
+                    <Term>cbc:EndTime</Term>
+                    <Name>Tender submission deadline</Name>
+                    <Description>Time limit for receipt of tenders (open procedures) or requests to participate
+                        (restricted procedures, competitive procedures with negotiation, dynamic purchasing systems,
+                        competitive dialogues, innovation partnerships)
+                    </Description>
+					<Reference type="RULE">PEPPOL-T024-R028</Reference>
+                    <DataType>Date</DataType>
+                </Element>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cac:ParticipationRequestReceptionPeriod</Term>
+                <Name>Participation request reception period</Name>
+				<Reference type="RULE">PEPPOL-T024-R037</Reference>
+
+                <Element>
+                    <Term>cbc:EndDate</Term>
+                    <Name>Request for participation deadline</Name>
+                    <Description>The date and time before which documents are available for access or may be requested
+                        and before which requests to participate must be received.
+                    </Description>
+					<DataType>Date</DataType>
+                </Element>
+                <Element cardinality="0..1">
+                    <Term>cbc:EndTime</Term>
+                    <Name>Request for participation deadline</Name>
+                    <Description>The date and time before which documents are available for access or may be requested
+                        and before which requests to participate must be received.
+                    </Description>
+					<Reference type="RULE">PEPPOL-T024-R028</Reference>
+                    <DataType>Date</DataType>
+                </Element>
+            </Element>
+
+
+        </Element>
+        <Element>
+            <Term>cac:ProcurementProject</Term>
+            <Name>Procurement project</Name>
+
+            <Element>
+                <Term>cbc:Name</Term>
+                <Name>Procurement project name</Name>
+                <Description>Title attributed to the contract by the contracting body.</Description>
+                <DataType>Text</DataType>
+            </Element>
+
+            <Element>
+                <Term>cbc:Description</Term>
+                <Name>Procurement project description</Name>
+                <Description>A textual description of this Procurement project.</Description>
+                <DataType>Text</DataType>
+            </Element>
+
+            <Element>
+                <Term>cbc:ProcurementTypeCode</Term>
+                <Name>Procurement project type</Name>
+                <Description>Type of contract (Works, Supplies or Services).</Description>
+                <Reference type="CODE_LIST">procurementType</Reference>
+                <Reference type="RULE">CL-T83-R002</Reference>
+                <Attribute>
+                    <Term>listID</Term>
+                    <Name>List identifier</Name>
+                    <Value type="FIXED">PROJECT_TYPE</Value>
+                </Attribute>
+                <DataType>Code</DataType>
+            </Element>
+
+            <Element>
+                <Term>cac:MainCommodityClassification</Term>
+                <Name>Main commodity classification</Name>
+
+                <Element>
+                    <Term>cbc:ItemClassificationCode</Term>
+                    <Name>CPV-Code</Name>
+                    <Description>Classification code of goods, works and services commonly used in procurement.
+                    </Description>
+                    <Attribute>
+                        <Term>listID</Term>
+                        <Name>List identifier</Name>
+                        <Value type="FIXED">CPV</Value>
+                    </Attribute>
+					<DataType>Code</DataType>
+                </Element>
+            </Element>
+
+            <Element cardinality="0..n">
+                <Term>cac:AdditionalCommodityClassification</Term>
+                <Name>Additional Commodity Classification</Name>
+
+                <Element>
+                    <Term>cbc:ItemClassificationCode</Term>
+                    <Name>CPV-Code</Name>
+                    <Description>A secondary classification code of goods, works and services to help contracting bodies describe the subject matter of
+                        contracts comprehensively.
+                    </Description>
+                    <Attribute>
+                        <Term>listID</Term>
+                        <Name>List identifier</Name>
+                        <Value type="FIXED">CPV</Value>
+                    </Attribute>
+					<DataType>Code</DataType>
+                </Element>
+            </Element>
+
+            <Element cardinality="1..n">
+                <Term>cac:RealizedLocation</Term>
+                <Name>Realized location</Name>
+
+                <Element>
+                    <Term>cbc:ID</Term>
+                    <Name>Procurement project location NUTS code</Name>
+                    <Description>The identification with the NUTS code of the project location.</Description>
+                    <Attribute>
+                        <Term>schemeID</Term>
+                        <Name>Scheme identifier</Name>
+                        <Value type="FIXED">NUTS</Value>
+                    </Attribute>
+					<DataType>Code</DataType>
+                </Element>
+            </Element>
+        </Element>
+
+        <Element cardinality="0..n">
+            <Term>cac:ProcurementProjectLot</Term>
+            <Name>Procurement project lot</Name>
+
+            <Element>
+                <Term>cbc:ID</Term>
+                <Name>Lot identifier</Name>
+                <Description>An identifier for the lot.</Description>
+				<Reference type="RULE">PEPPOL-T024-R029</Reference>
+                <DataType>Identifier</DataType>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cac:ProcurementProject</Term>
+                <Name>Procurement project</Name>
+
+                <Element>
+                    <Term>cbc:Name</Term>
+                    <Name>Lot name</Name>
+                    <Description>The title of the lot</Description>
+                    <DataType>Text</DataType>
+                </Element>
+            </Element>
+        </Element>
+    </Document>
+</Structure>

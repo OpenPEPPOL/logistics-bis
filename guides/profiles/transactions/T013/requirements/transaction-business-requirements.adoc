@@ -1,0 +1,35 @@
+
+
+The transaction "{name-transaction}" must be sent to the contracting authority when the economic operator has submitted a tender and decided to withdraw the tender. After "{name-transaction}", the bid of the Economic Operator is not evaluated. The tender may be resubmitted if the submission deadline has not passed.
+
+NOTE: Please note that the transaction "{name-transaction}" has to be sent to contracting authorities when an existing tender is withdrawn. The "{name-transaction}" for an existing Tender (T005) can be sent before or after submitting an updated Tender (T005). After the submission of a new Tender (T005) the old tender should be withdrawn with the "{name-transaction}" .
+
+
+[cols="2,10a", options="header"]
+.Transaction business requirements of {name-transaction}
+|===
+| ID | Requirement
+|tbr89-001| The business process, specification names and versions shall be identified.
+|tbr89-002| The economic operator shall be identified.
+|tbr89-003| The contracting body shall be identified.
+|tbr89-004| The creation date and time of the message shall be specified.
+|tbr89-005| Each message shall have a message ID.
+|tbr89-006| The message shall contain the Procurement Reference number.
+|tbr89-007| The message shall contain either credentials issued by the Contracting Body, or the following information about the business:
+
+* Economic operator ID type
+* Economic operator name
+* Economic operator registration country code
+* Economic operator postal address (standard address elements)
+* Contacting details (standard contact person elements)
+
+|tbr89-008| The message shall contain the following information about the qualification or tender:
+
+* ID
+* Hash
+* signature
+
+|tbr89-009| The message shall contain the ID of the Tender Reception Notification.
+|tbr89-011| The message shall clearly state the Economic Operator wants to withdraw the offer.
+
+|===

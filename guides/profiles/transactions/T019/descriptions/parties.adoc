@@ -1,0 +1,54 @@
+= Parties
+
+== Economic operator
+
+The economic operator is the party submitting the qualification, and is any natural or legal person or public entity or group of such persons and/or entities, including any temporary association of undertakings, which offers the execution of works and/or a work, the supply of products or the provision of services on the market. In case there is a group of economic operators there is always one main economic operator and an unspecified number of additional economic operator qualifying for a contract
+
+
+[source,xml,indent=0]
+.Economic operator is represented in UBL 2.2 using the TendererParty
+----
+include::../files/Qualification-doc.xml[tags=MainQualifyingParty]
+----
+
+<.> Identifies the main economics operator's electronic address and the scheme identifier for the electronic address
+<.> The national identifier of a economic operator as it is legally registered (e.g. VAT identification, such as KBO)
+<.> Name of the economic operator, as registered
+<.> Postal address of the economic operator
+<.> Legal form of the economic operator
+<.> Details to the country of the economic operator, with accompanying code list
+<.> Further contact details to the economic operator
+<.> Additional economic operators that belong to a group of economic operators can be added using cac:AdditionalQualifyingParty/cac:Party.
+
+The response to a T19 - Qualification, a T020 - Qualification Reception Confirmation must be returned to the Main Qualifying Party.
+
+== Contracting Body
+
+The contracting body is the contracting authority or contracting entity who is buying supplies, services or tendering works.
+
+[source,xml,indent=0]
+.Example
+
+----
+include::../files/Qualification-doc.xml[tags=ContractingParty]
+----
+<.> Identifies the contracting party's electronic address and the scheme identifier for the electronic address
+<.> The national identifier of a contracting body as it is legally registered (e.g. VAT identification, such as KBO)
+<.> The name of the contracting body as it is registered
+
+
+== Referenced lots
+
+The lots to which the (group of) economic operator(s) is interested can be referenced.
+
+[source,xml,indent=0]
+----
+include::../files/Qualification-doc.xml[tags=InterestedProcurementProjectLot]
+----
+
+<.> UUID identifier to the call for tender. The lot number (in this case lot 1) is included after the UUID and follows double colons
+<.> UUID identifier to the call for tender. The lot number (in this case lot 3) is included after the UUID and follows double colons
+
+
+
+

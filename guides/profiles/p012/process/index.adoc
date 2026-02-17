@@ -1,0 +1,28 @@
+
+= Business process and use cases
+
+The {link-bpmn}[BPMN] diagram shows the choreography of the business process implemented by the {name-profile}. The choreography of business collaborations defines the sequence of interactions when the profile is run within its context.
+
+image::../images/bpmnQualificationResponse.svg[align="center", width=800]
+
+[cols="2,10", options="header"]
+.Business process
+|===
+| Category | Description
+| Description | The contracting body sends the rejection of the qualification to the economic operator that submitted a qualification which was not accepted by the contracting authority. In case of accepting the submitted qualification, the contracting body may send a qualification response saying that the qualification has been accepted. This would be regarded as good practice when qualifications do not result directly in sending out any invitation to tender.
+
+| Pre-conditions | Economic operators applied for participating in the tendering process and submitted their qualifications.
+| Post-conditions | Those economic operators who received a qualification rejection will not be invited to tender in the next step of the tendering process.
+|===
+
+[cols="3,2,7", options="header"]
+.Role description
+|===
+| Activity | Role involved | Description
+| Send qualification rejection | Contracting body | The contracting body sends an electronic qualification rejection to those economic operators being excluded from the further tendering process due to qualification mismatch.
+| Receive qualification rejection | Economic operator | The economic operator receives the qualification rejection.
+|===
+
+
+include::implementation-guidelines.adoc[]
+

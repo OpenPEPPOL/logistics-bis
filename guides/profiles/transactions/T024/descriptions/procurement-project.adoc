@@ -1,0 +1,40 @@
+= Definition of the procurement project
+
+
+The Invitation to Tender is intended to provide unstructured information of the procurement only to those participants who have been qualified based on a pre-qualification business process or on a pre-selection list of candidate economic operators (shortlist) based on other criteria: e.g. restricted or negotiated procedures as well as participation in a Dynamic Purchasing System. The economic operators are expected to read the provided documents and prepare their tenders following the requirements established as unstructured information.
+The Invitation to Tender message is syntactically identical to the {T004} that is used in open procedures or has been used in the first step of procurement procedures with qualification stages involved.
+
+==	Invitation to Tender without lots
+
+An Invitation to Tender without lots has a single `cac:ProcurementProject` class. The procurement project and all the details of the project are described using the documents attached or referred using the `cac:AdditionalDocumentReference` class.
+
+In this case, the document instance must not contain any `cac:ProcurementProjectLot` class.
+
+
+The example below demonstrates the use of the `cac:ProcurementProject` class for a tendering process without lots. The structured information does not convey economic information. It is used to describe the project, to provide classification codes using the Common Procurement Vocabulary and the location where the project will be executed using the NUTS code.
+The procurement project does not describe the tender deliverables.
+
+
+[source,xml,indent=0]
+.Procurement project
+
+----
+include::../{xml-doc-file}[tags=ProcurementProject]
+
+----
+
+==	Invitation to Tender with lots
+
+When the Invitation to Tender has to be split into lots, the `cac:ProcurementProject` class must define the overall summary of the project and there must be a `cac:ProcurementProjectLot` class per each lot.
+
+The `cac:ProcurementProjectLot` class only requires to define the lot identifier and the name of the Lot. All the details on the lot are described as unstructured documents referred from the `cac:AdditionalDocumentReference` class.
+
+The details of each lot are described using unstructured documents referred in the Invitation to Tender.
+
+[source,xml,indent=0]
+.{name-trans-short} with lots
+
+----
+include::../{xml-doc-file}[tags=ProcurementProjectLot]
+
+----

@@ -1,0 +1,48 @@
+[[use-case-3-positive-response-violation-of-business-rules-warnings]]
+= Use Case 3 – Positive response – violation of business rules warnings
+
+This use case is a message level response containing warnings due to violation business rules.
+
+[cols="2s,6",options="header"]
+|====
+|Use Case number
+|3
+
+|Use Case Name
+|Positive response – violation of business rules warnings
+
+|Use Case Description
+|This use case is a TMR based on a business document containing warnings due to violation of non-fatal business rules.
+
+|Parties involved
+|BusinessDocumentSender, TMR Receiver +
+BusinessDocumentReceiver, TMR Sender
+
+|Status Code
+|CA
+
+|Possible Status Reason Codes
+|BW
+
+|Assumptions
+a|
+.  The BusinessDocumentReceiver has received an electronic business document from the BusinessDocumentSender.
+.  The BusinessDocumentReceiver has validated the business document from the BusinessDocumentSender.
+.  The result of the validation is not OK due to violation of non-fatal business rules.
+
+|The flow
+a|
+.  The BusinessDocumentSender has prepared and sent an electronic business document to the BusinessDocumentReceiver.
+.  The BusinessDocumentReceiver has received the business document.
+.  The BusinessDocumentReceiver has validated and found possible errors the business document.
+.  The TMR Sender has sent a TMR back to the TMR Receiver.
+.  The TMR Receiver has received and processed the TMR and performed appropriate action to anticipate any future rejection of a similar incident.
+
+|Result
+a|
+.  The TMR helped the BusinessDocumentSender to confirm that the business document was received and could be rejected by the BusinessDocumentReceiver.
+. The BusinessDocumentSender may take appropriate action to correct and resend the business document.
+
+|XML example file
+|See Appendix A for a sample file illustrating Use Case 3.
+|====

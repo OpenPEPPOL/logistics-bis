@@ -1,0 +1,33 @@
+
+= Business process
+
+The {link-bpmn}[BPMN] diagram shows the choreography of the business process implemented by the {name-profile}. The choreography of business collaborations defines the sequence of interactions when the profile is run within its context.
+
+image::../images/processTenderWithdrawal.svg[align="center", width="800"]
+
+[cols="2,10", options="header"]
+.Business process
+|===
+| Category | Description
+| Description | An economic operator withdraws an earlier submitted bid in a tendering procedure and receives a tender withdrawal receipt notification.
+
+| Pre-conditions | The economic operator has submitted his tender.
+| Post-conditions | The tender has been withdrawn and will not be evaluated by the contracting body.
+| Remarks | After withdrawal, the economic operator may submit a new or changed tender, if the deadline has not been reached.
+
+|===
+
+[cols="3,2,7", options="header"]
+.Role description
+|===
+| Activity | Role involved | Description
+| Send Tender Withdrawal | Economic operator | The tender withdrawal is sent by the economic operator.
+| Receive Tender Withdrawal | Contracting body | The tender withdrawal is received by the contracting body.
+| Confirm Tender Withdrawal | Contracting body | The contracting body sends a confirmation to the economic operator that the withdrawal has been received.
+| Receive Tender Withdrawal receipt notification | Economic operator | The economic operator receives the confirmation that the tender withdrawal has been received.
+
+|===
+
+
+include::implementation-guidelines.adoc[]
+

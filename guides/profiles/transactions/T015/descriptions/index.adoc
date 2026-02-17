@@ -1,0 +1,159 @@
+[[descriptions]]
+= Description of selected parts of the transaction
+
+The transaction including business terms, business rules and code lists are based upon the definitions of {name-transaction-org} described in:
+
+{name-profile-org}.
+
+== Submit Objects Request
+
+* id indicates the id of the transmission in the form of an UUID
+* mode has to be "_CreateOrVersion_" as it should be possible to both transfer a new submission or an updated version
+
+[source,xml,indent=0]
+.Example of usage of submit objects request basis
+....
+include::../files/ExamplePublishNotice.xml[tags=submit-objects-request;!specification-identification;!business-process-type-identifier;!issue-date-time;!sender-electronic-address;!receiver-electronic-address;!publication-requested;!registry-object-list;!publication-date]
+....
+
+== Issue Date and time (and preferred publication date)
+
+Issue date/time, and the registered date/time must be sent.
+
+Issue date and received date are both xs:date data type, and the date is specified as "YYYY-MM-DD" where:
+
+* YYYY - four digit year
+* MM - two digit month (01 to 12)
+* DD - two digit day (0)
+
+Issue time and received time are both xs:time data type, and the time is specified as "hh:mm:ss" where:
+
+* hh - two digits of hour (00 to 23) (am/pm NOT allowed).
+* mm - two digits of minute (00 to 59)
+* ss - two digits of second (00 to 59)
+* TZD - time zone designator (Z or +hh:mm or -hh:mm)
+
+The issue date and time refer to the actual issuance of the notice.
+
+NOTE: The issue date, and the preferred publication date must specify the time zone.
+
+[source,xml,indent=0]
+.Example of Issue date and time
+....
+include::../files/ExamplePublishNotice.xml[tags=issue-date-time]
+....
+<.> Slot for date and time of issuing of the published notice
+<.> SlotValue type has to be DateTimeValue
+<.> Value tag were the issue date time has to be put, including the time zone
+
+== Sender electronic address
+[source,xml,indent=0]
+....
+include::../files/ExamplePublishNotice.xml[tags=sender-electronic-address]
+....
+<.> The scheme of the endpoint id is clarified in the type attribute of the slot.
+<.> Fill the scheme id and electronic sender address into this slot.
+
+== Receiver electronic address
+[source,xml,indent=0]
+....
+include::../files/ExamplePublishNotice.xml[tags=receiver-electronic-address]
+....
+<.> The scheme of the endpoint id is clarified in the type attribute of the slot.
+<.> Fill the scheme id and electronic receiver address into this slot.
+
+== Publication Requested Indicator
+
+This indicator shows if the attached notice needs to be published or if it only needs to be validated by the publication body. The check by the publication body can help the contracting party to determine the validity of the notice with regard to a possible publication.
+[source,xml,indent=0]
+....
+include::../files/ExamplePublishNotice.xml[tags=publication-requested]
+....
+<.> Slot for the indication of the publication of the attached notices
+<.> SlotValue type has to be BooleanValueType
+
+
+== Registry Object List and Registry Objects (Notice Metadata)
+
+This list contains all the notices, which will be published at once during this transaction. Each notice is represented as one registry object. The Registry Object contains the RepositoryItemRef, which is the reference to the notice itself.
+
+[source,xml,indent=0]
+.Example of usage of the registry object list (abbreviated)
+....
+include::../files/ExamplePublishNotice.xml[tags=registry-object-list;!information-about-buyer;!document-type-code;!notice-version;!additional-document-reference;!eforms-version;!publication-date]
+....
+
+<.> Beginning of the registry object list
+<.> Here you can find the uuids required to identify the Notice and its associated procurement procedures
+** lid: The Procedure Identifier which allows distinguishing procurement procedures globally unique. It identifies the procurement procedure the notice belongs to. In PEPPOL the Procedure Identifier is also named "Reference Number" or "ContractFolderID".
+** id: Specifies the Notice Identifier (BT-701) allowing to uniquely distinguishing the notice amongst all other existing ones contained within the query.
+<.> Reference to the eform.xml file which must be included to the ASiC-E Container (Associated Signature Container Extended) repository (see {link-eDocument}).
+
+=== UBL Document Schema
+
+Used to identify the UBL document schema of the referenced notice which are associated to the corresponding UBL namespaces. Use code according to code list document type issued by PEPPOL. For a complete list of all
+the document types, see tbd.
+
+[source,xml,indent=0]
+.Example of usage of ubl document schema
+....
+include::../files/ExamplePublishNotice.xml[tags=document-type-code]
+....
+<.> The code "_CN_" for status information has to be put into the value tag. The listID as the SlotType is always "_ublDocumentSchema_".
+
+=== Notice Publication Date Preferred (BT-738)
+
+The "Notice Publication Date Preferred" is the date on which the buyer wishes the notice to be published. It can be used to help the buyer respect the requirements that exist between publications at national and European levels. In case the publication of the attached notices should not be the immediate date when sending of this transaction, use the field to enter a preferred publication date. Otherwise, this field should not be included as well as when no publication is preferred.
+[source,xml,indent=0]
+....
+include::../files/ExamplePublishNotice.xml[tags=publication-date]
+....
+<.> Slot for the preferred publication date of the attached notices
+<.> SlotValue type has to be DateTimeValueType (please refer to the general hints about using a dateTime Slot above)
+
+=== Notice Version (BT-757)
+
+Version of the notice which shall be published. If this is not the first iteration of the notice choose a higher number than one, ideally counting up from the last version which was published.
+
+[source,xml,indent=0]
+.Example of usage of notice version
+....
+include::../files/ExamplePublishNotice.xml[tags=notice-version]
+....
+<.> Slot for the notice version
+<.> SlotValue type has to be IntegerValueType, in this case 1 as it is the first version of the notice
+
+=== eForms Version
+
+Version of the used eForms specification for the notice. The format is according to the specification always "eforms-sdk-x.y".
+
+• “eforms-sdk-”: fixed prefix,
+• “x”: major version number (increased everytime backward compatibility is affected),
+• “y”: minor version number
+
+
+[source,xml,indent=0]
+.Example of usage of eForms version
+....
+include::../files/ExamplePublishNotice.xml[tags=eforms-version]
+....
+<.> Slot for the eForms version
+<.> SlotValue type has to be StringValueType, as the format for the version will be always eforms-x.y
+
+=== Additional Document Reference
+
+The Additional Document Reference specifies a reference to an additional file that is included to the local ASiC-E container (Associated Signature Container Extended) repository (see {link-eDocument}). For optional use.
+
+NOTE: The notice stored in a eForms based format must contain all the information of the notice, regardless of the place of publication. Therefore, the attached additional file shall only contain additional information to the notice (like statistical data) that is not part of the notice itself.
+
+[source,xml,indent=0]
+.Example of usage of additional document references
+....
+include::../files/ExamplePublishNotice.xml[tags=additional-document-reference]
+....
+
+<.> Example of an attachment. The type is used for the classification of the attachment (here: "SomeStatistics")
+<.> Path to the file
+<.> If needed, additional attachments can be included as an additional slot (here: "EvenMoreStats")
+
+

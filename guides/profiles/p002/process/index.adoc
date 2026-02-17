@@ -1,0 +1,46 @@
+
+= Business process
+
+The {link-bpmn}[BPMN] diagram shows the choreography of the business process implemented by the {name-profile}. The choreography of business collaborations defines the sequence of interactions when the profile is run within its context.
+
+
+image::../images/tender-status-inquiry.png[align="center", width=800]
+
+
+
+[cols="3,9", options="header"]
+|===
+| Category
+| Description
+| Description
+| An economic operator requests the status of a procurement project from the Contracting body, who provides the economic operator with the latest procurement project metadata.
+| Pre-conditions
+| An economic operator has found an interesting business opportunity in a long list of published notices. The economic operator knows the procurement project ID of this business opportunity.
+| Post-conditions
+| The economic operator is aware of the latest information about the procurement project.
+|===
+
+
+[cols="3,2,7", options="header"]
+|===
+| Activity
+| Role involved
+| Description
+| Send Tender Status Inquiry
+| Economic operator
+| An economic operator has found an interesting business opportunity in a long list of published notices. He would like to know the actual status for this procurement project and sends the tender status inquiry.
+| Receive Tender Status Inquiry
+| Contracting body
+| The contracting body receives the request.
+| Send Call for Tenders
+| Contracting body
+| The contracting body sends the economic operator the latest procurement project meta data.
+| Receive Call for Tenders
+| Economic operator
+| The economic operator receives the latest information about the procurement project.
+|===
+
+
+include::implementation-guidelines.adoc[]
+
+

@@ -1,0 +1,93 @@
+
+= Code list for elements
+
+.The following policies apply to the use of codes for returning the processing status of a transaction via Message Response Codes and Status Reason Codes:
+* There are three Message Response Codes which define the final processing result.
+* There are eleven pre-defined Status Reason Codes which define the reason why a received and reference document could not be processed correctly.
+* Lists of Message Response Codes and Status Reason Codes are fixed and can not be changed bilaterally.
+* Message Response Codes and Status Reason Codes are returned from the receiver of a document to the sender of a document to inform the sender of the document about the final processing results and reasons in case of failure or processing problems.
+
+
+== Message Response Code
+[cols="1h,4"]
+|===
+| Qualifier (listID)
+| Message Response Code
+| Document location
+| `cac:DocumentResponse/cac:Response/cbc:ResponseCode`
+`cac:DocumentResponse/cac:LineResponse/cac:Response/cbc:ResponseCode`
+| Issuer
+| {link-peppol}
+|===
+
+.The columns in the below table shall be understood as follows:
+[horizontal]
+Message Response Code:: The code that defines the final processing result of the referenced and received document, e.g. AP for Accepted.
+
+Name of the Message Response Code:: The name of the code.
+
+Usage of the Message Response Code:: The usage of the code.
+
+Example:: Example of a use case for the code.
+
+Possible Status Reason Code:: Status Reason code which could be used to lead to the Message Response Code.
+
+[IMPORTANT]
+Due to legal framework conditions, there is a constraint to tolerate errors to a certain extent when receiving a tender, even if from a technical point of view, the message might have to be rejected. Especially tender rejections have to be kept to a minimum and must be based on valid reasons. These have to withstand judicial review.
+
+.The Message Response Codes used in a Tendering Message Response message are defined in the table below.
+[cols="1h,1,3,3,1",options="header"]
+|====
+|Message Response Code
+|Name of the Message Response Code
+|Usage of the Message Response Code
+|Example
+|Possible Status Reason Code
+|RE |Rejected |Response code is used when the receiver will not process the referenced message any further. The reason for rejecting the message shall be stated in ´Status Reason´. |The received Tender has been rejected due to a fatal business rule violation (BV) |BV, SV, NF, DL, RF, WT, IR, MA, AE, PT
+|AP |Accepted |Response code is uses when the referenced message has been accepted by the receiver. | The received Tender has been accepted.| none
+|CA |Conditionally accepted |Response code is used when the receiver is accepting the message under conditions stated in ‘Status Reason’ and proceed to continue the process unless disputed by the sender.| The received Tender has only been conditionally accepted due to an expired tender submission deadline. The Contracting Authority is investigating the incident in a separate process. | BW, DL, IR
+|====
+
+== Status Reason Code
+[cols="1h,4"]
+|===
+| Qualifier (listID)
+| Status Reason Code
+| Document location
+| `cac:DocumentResponse/cac:LineResponse/cac:Response/cac:Status/cbc:StatusReasonCode`
+| Issuer
+| {link-peppol}
+|===
+
+.The columns in the below table shall be understood as follows:
+[horizontal]
+Status Reason Code:: The code that defines the reason why a received and reference document could not be processed correctly e.g. BW for Business rule violation, warning.
+
+Name of the Status Reason Code:: The name of the code.
+
+Usage of the Status Reason Code:: The usage of the code.
+
+Example:: Example of a use case for the code.
+
+Possible resulting Message Response Code:: Message Response Codes which could be the results of the usage of the status reason code.
+
+.The Status Reason Codes used in a Tendering Message Response message are defined in the table below.
+[cols="1h,1,3,3,1",options="header"]
+|====
+|Status Reason Code
+|Name of the Status Reason Code
+|Usage of the Status Reason Code
+|Example
+|Possible resulting Message Response Code
+|BV |Business rule violation, fatal |Error associated with a business rule that indicates a problem that leads to the rejection of the referenced message. |A Tenderings Questions transaction does not contain a question. |RE
+|BW |Business rule violation, warning |Warning related to a business rule that indicates a problem but that does not hinder further processing at this point in time.| A Tendering Answers transaction includes a cbc:CopyIndicator that is not required according to the specifications.| CA
+|SV |Syntax violation |Error associated with a syntax violation that indicates a problem that leads to the rejection of the referenced message.| The retrieved Tendering Questions transaction does not adhere to the UBL syntax for Enquiry.| RE
+|NF |Reference not found|Error caused by a document reference given in the received message that could not be found. Leads to the rejection of the received message.| The Tender or procedure to which Tender Withdrawal is referencing was not found.|RE
+|DL |Deadline expired | Error caused by a received message that was not submitted on time. Depending on the procedure availability and elapsed time period, the message may be rejected or conditionally accepted as a result.| The tender submission deadline has expired before the retrieval of a Tender.| RE/CA
+|RF |Request failed |Error caused by a received message that cannot be processed further for technical reasons. Leads to rejection of the received message.| An undefined technical error occurred so that a Call for Tender update could not be processed by the receiver.| RE
+|WT |Wrong transaction flow| Error caused to a received message that was not sent in the expected sequence of the business process. Leads to the rejection of the received message.|A Tender Status Inquiry transaction is sent before the Subscribe to Procedure transaction.|RE
+|IR |Invalid request| Error caused by a received message that cannot be processed further for semantic or business reasons.  The message may be rejected or conditionally accepted as a result.|A Tender that was submitted contains false Contracting Authority information that cannot be processed by the receiver.| RE/CA
+|MA |Missing authorisation|Error caused by a received message that could not be processed further due to a missing authorization or approval for the procedure. Leads to the rejection of the received message.| A Subscribe to Procedure cannot be confirmed because the subscriber has not been approved for the restricted procedure.| RE
+|AE |Authentication exception | Error caused by a received message that could not be processed further due missing authentication or registration for the procedure. Leads to the rejection of the received message.|A Tender is submitted for an economic operator that is not subscribed for the procedure.|RE
+|PT |Process termination | A query response of a Search Notice Request is cancelled or terminated.|A Search Notice Response sent in several replies is aborted by the recipient because searched information has already been found.|RE
+|====

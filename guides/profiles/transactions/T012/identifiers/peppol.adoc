@@ -1,0 +1,89 @@
+
+= PEPPOL Identifiers
+
+PEPPOL has defined a Policy for Using Identifiers that specifies how to use identifiers in both its transport infrastructure and within the documents exchanged across that infrastructure. It also introduces principles for any identifiers used in the PEPPOL environment. The e-Tendering pilot adopts and extends the PEPPOL Policy in the following ways:
+
+== Party Identifiers used in  ebXML RegRep documents
+The `@type` attribute must be populated in all instances of the ID element when used within a `rim:Slot` container for Sender Identification and Receiver Identification.
+
+Example of usage in Sender Electronic Address Identifier and Receiver Electronic Address Identifier:
+
+[source,xml,indent=0]
+.Example of usage of Sender Electronic Address Identifier in `rim:Slot`
+----
+<rim:Slot name="SenderElectronicAddress" type="EAS">
+    <rim:SlotValue xsi:type="rim:StringValueType">
+        <rim:Value>9930:DE122268496</rim:Value>
+    </rim:SlotValue>
+</rim:Slot>
+
+----
+[source,xml,indent=0]
+.Example of usage of Receiver Electronic Address Identifier in `rim:Slot`
+----
+<rim:Slot name="ReceiverElectronicAddress" type="EAS">
+    <rim:SlotValue xsi:type="rim:StringValueType">
+        <rim:Value>9946:500820007</rim:Value>
+    </rim:SlotValue>
+</rim:Slot>
+
+----
+[source,xml,indent=0]
+.Example of usage of the Buyer Electronic Address Identifier in `rim:Slot`
+----
+<rim:Slot name="BuyerElectronicAddress" type="EAS">
+    <rim:SlotValue xsi:type="rim:StringValueType">
+        <rim:Value>9946:500820007</rim:Value>
+    </rim:SlotValue>
+</rim:Slot>
+----
+
+[source,xml,indent=0]
+.Example of usage of Buyer Party Identification in `rim:Slot`
+----
+<rim:Slot name="BuyerPartyIdentification" type="ICD">
+    <rim:SlotValue xsi:type="rim:StringValueType">
+        <rim:Value>0204:991-1234512345-06</rim:Value>
+    </rim:SlotValue>
+</rim:Slot>
+
+----
+
+== Document Identifiers used in ebXML RegRep documents
+
+=== Profile ID
+The PEPPOL Profile ID identifies what business process a given message is part of, and are connected to one business process, and may contain multiple document types. The Profile ID must be put in the element `rim:Slot name="BusinessProcessTypeIdentifier"`
+
+Valid profile identifiers are described in the profile BIS documents. See {link-main-site}. The following example illustrates the usage of Business Process Type Identifiers in OASIS ebXML RegRep Version 4.0 documents:
+
+[source,xml,indent=0]
+.Example of usage of Business Process Type Identifiers in `rim:Slot`
+----
+<rim:Slot name="BusinessProcessTypeIdentifier">
+    <rim:SlotValue xsi:type="rim:StringValueType">
+        <rim:Value>urn:fdc:peppol.eu:prac:bis:p006:1.2</rim:Value>
+	</rim:SlotValue>
+</rim:Slot>
+----
+
+
+
+=== Customization ID
+
+The PEPPOL Customization ID identifies the specification of content and rules that apply to the transaction. This transaction requires several changes to the CEN BII transaction. Following the CEN BII methodology any extension must be communicated by adding an extension ID onto the Customization ID. The Customization ID must be put in the element `rim:Slot name="SpecificationIdentification"`
+
+The following example illustrates the usage of Specification Identification in OASIS ebXML RegRep Version 4.0 documents:
+
+[source,xml,indent=0]
+.Example of usage of Specification Identification in `rim:Slot`
+----
+<rim:Slot name="SpecificationIdentification">
+    <rim:SlotValue xsi:type="rim:StringValueType">
+        <rim:Value>urn:fdc:peppol.eu:prac:trns:t012:1.2</rim:Value>
+    </rim:SlotValue>
+</rim:Slot>
+----
+
+Which customization identification should be used, is based on which transaction is sent, and the extension identification for BIS documents.
+
+NOTE: For implementers, please note that the process identifiers in the document instance MUST correspond to the http://docs.oasis-open.org/bdxr/bdx-smp/v1.0/cs03/bdx-smp-v1.0-cs03.pdf[SMP] process identifier.

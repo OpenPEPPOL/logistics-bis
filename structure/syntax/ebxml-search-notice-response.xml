@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+    <Term>SearchNoticeResponse</Term>
+    <Name>Search Notice Response (T012)</Name>
+
+    <Namespace prefix="query">urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0</Namespace>
+    <Namespace prefix="rim">urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0</Namespace>
+    <Namespace prefix="xsi">http://www.w3.org/2001/XMLSchema-instance</Namespace>
+
+    <Document>
+        <Term>query:QueryResponse</Term>
+        <Name>Search Notice Response, root element</Name>
+        <Description>The Search Notice Response contains a package with the information on zero or more notices. Both
+            the metadata of the notices are included and the full text of the notices in xml.
+        </Description>
+        <Reference type="RULE">PEPPOL-T012-R001</Reference>
+        <Reference type="RULE">PEPPOL-T012-R002</Reference>
+        <Reference type="RULE">PEPPOL-T012-R003</Reference>
+        <Reference type="RULE">PEPPOL-T012-R004</Reference>
+        <Reference type="RULE">PEPPOL-T012-R005</Reference>
+        <Reference type="RULE">PEPPOL-T012-R006</Reference>
+        <Reference type="RULE">PEPPOL-T012-R007</Reference>
+        <Reference type="RULE">PEPPOL-T012-R008</Reference>
+        <Reference type="RULE">PEPPOL-T012-R023</Reference>
+        <Reference type="RULE">PEPPOL-T012-R024</Reference>
+        <Attribute usage="OPTIONAL">
+            <Term>totalResultCount</Term>
+            <Name>Total result count</Name>
+            <Description>This parameter specifies the size of the complete result set matching the query within the
+                server. When this value is unspecified, the client should assume it is the size of the result set
+                contained within the result. When this value is -1, the client should assume that the number of total
+                results is unknown. In this case the client should keep iterating through the remaining result set for
+                the query until no more results are returned. This attribute is described further in the Iterative
+                Queries section.
+            </Description>
+        </Attribute>
+        <Attribute usage="OPTIONAL">
+            <Term>startIndex</Term>
+            <Name>Start index</Name>
+            <Description>This integer value is used to indicate the index for the first result in the result set
+                returned by the query, within the complete result set matching the query. By default, this value is 0.
+            </Description>
+            <Value type="DEFAULT">0</Value>
+        </Attribute>
+        <Attribute>
+            <Term>requestId</Term>
+            <Name>Search notice request identifier</Name>
+            <Description>Specifies the unique identifier for an Identifiable Search Notice Request. In case of different
+                start index for same QueryRequest the requester may use the same Search Notice Request Identfier.
+            </Description>
+        </Attribute>
+        <Element>
+            <Term>rim:Slot@name=SpecificationIdentification</Term>
+            <Name>Specification identification</Name>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">SpecificationIdentification</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotValue</Term>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Reference type="RULE">PEPPOL-T012-R009</Reference>
+                    <Value type="FIXED">rim:StringValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Reference type="RULE">PEPPOL-T012-R010</Reference>
+                    <Value type="FIXED">urn:fdc:peppol.eu:prac:trns:t012:1.2</Value>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>rim:Slot@name=BusinessProcessTypeIdentifier</Term>
+            <Name>Business process type identifier</Name>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">BusinessProcessTypeIdentifier</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotValue</Term>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Reference type="RULE">PEPPOL-T012-R009</Reference>
+                    <Value type="FIXED">rim:StringValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Reference type="RULE">PEPPOL-T012-R011</Reference>
+                    <Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p006:1.2</Value>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>rim:Slot@name=IssueDateTime</Term>
+            <Name>Issue date time</Name>
+            <Description>The issue date and time when the Serch Notice request is issued. The issue date time must have
+                granularity of seconds, and include time zone information.
+            </Description>
+            <Attribute>
+                <Term>name</Term>
+                <Reference type="RULE">PEPPOL-T012-R012</Reference>
+                <Value type="FIXED">IssueDateTime</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotValue</Term>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Value type="FIXED">rim:DateTimeValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Description>The issue date and time of the response</Description>
+                    <Reference type="RULE">PEPPOL-T012-R013</Reference>
+                    <DataType>rim:DateTimeValueType</DataType>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>rim:Slot@name=SenderElectronicAddress</Term>
+            <Name>Contracting body electronic address</Name>
+            <Description>The electronic address of the contracting body.</Description>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">SenderElectronicAddress</Value>
+            </Attribute>
+            <Attribute>
+                <Term>type</Term>
+                <Reference type="RULE">PEPPOL-T012-R029</Reference>
+                <Value type="FIXED">EAS</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotVlaue</Term>
+                <Reference type="RULE">PEPPOL-T012-R009</Reference>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Value type="FIXED">rim:StringValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Name>Contracting body electronic address identifier</Name>
+                    <Description>Scheme identifier:Identification for the contracting body</Description>
+                    <Reference type="RULE">PEPPOL-T012-R014</Reference>
+                    <Reference type="CODE_LIST">EAS</Reference>
+                    <DataType>rim:StringValueType</DataType>
+                    <Value type="EXAMPLE">9930:DE122268496</Value>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>rim:Slot@name=ReceiverElectronicAddress</Term>
+            <Name>Economic operator electronic address</Name>
+            <Description>The electronic address of the economic operator.</Description>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">ReceiverElectronicAddress</Value>
+            </Attribute>
+            <Attribute>
+                <Term>type</Term>
+                <Reference type="RULE">PEPPOL-T012-R029</Reference>
+                <Value type="FIXED">EAS</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotVlaue</Term>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Reference type="RULE">PEPPOL-T012-R009</Reference>
+                    <Value type="FIXED">rim:StringValueType</Value>
+                </Attribute>
+
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Name>Economic operator electronic address identifier</Name>
+                    <Description>Scheme identifier:Identification  for the economic operator</Description>
+                    <Reference type="RULE">PEPPOL-T012-R014</Reference>
+                    <Reference type="CODE_LIST">EAS</Reference>
+                    <DataType>rim:StringValueType</DataType>
+                    <Value type="EXAMPLE">9946:500820007</Value>
+                </Element>
+            </Element>
+        </Element>
+        <Element>
+            <Term>rim:RegistryObjectList</Term>
+            <Name>Registry object list</Name>
+            <Description>The Registry Object List returns the requested Information. It identifies the notice instances
+                that were affected by the Search Notices Request.
+            </Description>
+            <Reference type="RULE">PEPPOL-T012-R015</Reference>
+            <Reference type="RULE">PEPPOL-T012-R016</Reference>
+            <Reference type="RULE">PEPPOL-T012-R017</Reference>
+            <Reference type="RULE">PEPPOL-T012-R018</Reference>
+            <Reference type="RULE">PEPPOL-T012-R019</Reference>
+            <Element cardinality="0..n">
+                <Term>rim:RegistryObject</Term>
+                <Name>Registry object</Name>
+                <Description>The Registery Object returns a notice instance that matches the Search Notice Request.
+                </Description>
+                <Attribute>
+                    <Term>lid</Term>
+                    <Name>Procedure identifier</Name>
+                    <Description>The Procedure Identifier allows distinguishing procurement procedures and shall be
+                        globally unique. It identifies the procurement procedure the notice belongs to. In PEPPOL the
+                        Procedure Identifier is also named "Reference Number" or "ContractFolderID". In the later
+                        eTendering process the element is used to find the right procedure for a Procurement Procedure
+                        Subscription (P001).
+                    </Description>
+                    <Reference type="BUSINESS_TERM">eForms BT-04</Reference>
+                </Attribute>
+                <Attribute>
+                    <Term>id</Term>
+                    <Name>Notice identifier</Name>
+                    <Description>Specifies the notice identifier (BT-701) allowing to uniquely distinguishing the notice
+                        amongst all other existing ones contained within the query.
+                    </Description>
+                    <Reference type="BUSINESS_TERM">eForms BT-701</Reference>
+                </Attribute>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Value type="FIXED">rim:ExtrinsicObjectType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Slot@name=BuyerInformation</Term>
+                    <Name>Buyer information</Name>
+                    <Element cardinality="0..1">
+                        <Term>rim:Slot@name=BuyerPartyIdentification</Term>
+                        <Name>Buyer party identification</Name>
+                        <Description>An identification for the buyer party according to ISO 6523 ICD list.</Description>
+                        <Reference type="RULE">PEPPOL-T012-R026</Reference>
+                        <Attribute>
+                            <Term>name</Term>
+                            <Value type="FIXED">BuyerPartyIdentification</Value>
+                        </Attribute>
+                        <Attribute>
+                            <Term>type</Term>
+                            <Name>List identifier</Name>
+                            <Description>The type is used to assign the list identifier attribute.</Description>
+                            <Value type="FIXED">ICD</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:SlotValue</Term>
+                            <Description>An abstract class that defines a container for a string value.</Description>
+                            <Attribute>
+                                <Term>xsi:type</Term>
+                                <Value type="FIXED">rim:CollectionValueType</Value>
+                            </Attribute>
+                            <Element>
+                                <Term>rim:Element</Term>
+                                <Reference type="RULE">PEPPOL-T012-R020</Reference>
+                                <Attribute>
+                                    <Term>xsi:type</Term>
+                                    <Value type="FIXED">rim:StringValueType</Value>
+                                </Attribute>
+                                <Element>
+                                    <Term>rim:Value</Term>
+                                    <Description>Scheme identifier:Party Identification for the buyer.</Description>
+                                    <Reference type="CODE_LIST">ICD</Reference>
+                                    <Reference type="RULE">PEPPOL-T012-R028</Reference>
+                                    <Reference type="RULE">PEPPOL-T012-R031</Reference>
+                                    <DataType>rim:StringValueType</DataType>
+                                    <Value type="EXAMPLE">0204:991-1234512345-06</Value>
+                                </Element>
+                            </Element>
+                        </Element>
+                    </Element>
+                    <Element cardinality="0..1">
+                        <Term>rim:Slot@name=BuyerElectronicAddress</Term>
+                        <Name>Buyer electronic address identifier</Name>
+                        <Description>The electronic address of the eTendering system which is used by the buyer, contracting authority or contracting entity who is buying
+                            supplies, services or public works using a tendering procedure as described in the applicable
+                            directive (Directives 2014/24/EU, 2014/25/EU). In the later eTendering process the element is
+                            used to find the right eTendering Platform for a Procurement Procedure Subscription (P001).
+                        </Description>
+                        <Reference type="RULE">PEPPOL-T012-R017</Reference>
+                        <Attribute>
+                            <Term>name</Term>
+                            <Value type="FIXED">BuyerElectronicAddress</Value>
+                        </Attribute>
+                        <Attribute>
+                            <Term>type</Term>
+                            <Reference type="RULE">PEPPOL-T012-R029</Reference>
+                            <Value type="FIXED">EAS</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:SlotValue</Term>
+                            <Attribute>
+                                <Term>xsi:type</Term>
+                                <Reference type="RULE">PEPPOL-T012-R020</Reference>
+                                <Value type="FIXED">rim:StringValueType</Value>
+                            </Attribute>
+                            <Element>
+                                <Term>rim:Value</Term>
+                                <Name>Buyer electronic address identifier</Name>
+                                <Description>Scheme identifier:Identification for the buyer</Description>
+                                <Reference type="RULE">PEPPOL-T012-R027</Reference>
+                                <Reference type="RULE">PEPPOL-T012-R030</Reference>
+                                <Reference type="CODE_LIST">EAS</Reference>
+                                <DataType>rim:StringValueType</DataType>
+                                <Value type="EXAMPLE">9930:DE89769595</Value>
+                            </Element>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element>
+                    <Term>rim:Slot@name=UBLDocumentSchema</Term>
+                    <Name>UBL document schema</Name>
+                    <Description>Used to identify the UBL document type of the referenced notice which are associated to
+                        the corresponding UBL namespaces.
+                    </Description>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">UBLDocumentSchema</Value>
+                    </Attribute>
+                    <Attribute>
+                        <Term>type</Term>
+                        <Description>UBL Document Schema</Description>
+                        <Reference type="RULE">PEPPOL-T012-R021</Reference>
+                        <Value type="FIXED">ublDocumentSchema</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Reference type="RULE">PEPPOL-T012-R009</Reference>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element>
+                    <Term>rim:Slot@name=eFormsVersion</Term>
+                    <Name>eForms version</Name>
+                    <Description>Used to identify the version of the eForms specification used for the document.
+                    </Description>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">eFormsVersion</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Reference type="RULE">PEPPOL-T012-R025</Reference>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
+                <Element>
+                    <Term>rim:RepositoryItemRef</Term>
+                    <Name>Repository item reference</Name>
+                    <Description>The Repository Item Reference specifies a reference to the XML notice that is included
+                        to the local ASiC-E container (Associated Signature Container Extended) repository.
+                    </Description>
+                    <Reference type="RULE">PEPPOL-T012-R022</Reference>
+                    <Attribute>
+                        <Term>xlink</Term>
+                        <Name>List identifier</Name>
+                        <Description>This element uses xlink:href to specify local XML notices of the ASiC-E container
+                            as repository items.
+                        </Description>
+                    </Attribute>
+                </Element>
+            </Element>
+        </Element>
+    </Document>
+</Structure>

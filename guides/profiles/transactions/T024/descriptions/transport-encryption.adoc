@@ -1,0 +1,59 @@
+
+= Transport of encryption certificate via any Invitation to Tender
+
+== Introduction
+
+The Invitation to Tender provides the latest updated procurement documents to a qualified economic operator. Sending the Invitation to Tender to an economic operators starts the second step of the restricted procurement procedure. Besides transporting procurement documents it MUST be used to transport the encryption certificate needed by the economic operator to encrypt his tender for submission.
+
+Since the Invitation to Tender is also used to sent out business document changes after a {T003} (by sending a status-update-inquiry), any Invitation to Tender MUST contain the encryption certificate needed by the economic operator to encrypt his tender for submission.
+
+== Encryption certificate
+
+The encryption certificate MUST be transported as an attachment within the Invitation to Tender's ASiC-E Container. The Invitation to Tender business document contains metadata regarding all attachments thus also for the tender encryption certificate.
+
+This encryption certificate metadata is assembled by the UBL container `cac:AdditionalDocumentReference`. In the case of the encryption certificate this container MUST contain the elements and values mentioned in the table below.
+
+To identify the encryption certificate, the UBL MUST contain exactly one `cac:AdditionalDocumentReference`-container as described below. Any other container MUST NOT make use of this value combination.
+
+[cols="3,2,3,4", options="header"]
+|===
+| Business term | Card. | XPath within +
+ cac:AdditionalDocumentReference | Value / Description
+| Required document reference identifier | 1..1 | cbc:ID | Reference identifier of a document that is provided as part of a tender or call for tenders.
+Value supplied by tendering system of the CA. Is not necessarily populated with the filename but rather an internal identifier.
+| Document issue date | 0..1 | cbc:IssueDate |The date on which the tender encryption key has been issued.
+| Document type code | 1..1 | cbc:DocumentTypeCode | Fixed value of “PRO” for "Provided"
+| | | cbc:DocumentTypeCode/@listID | Fixed value of "urn:eu:esens:cenbii:documentType"
+| Provided document version | 0..1 | cbc:VersionID | Version of a document that is provided as part of a tender or call for tenders.
+| Provided document to be returned indicator | 1..1 | cbc:DocumentStatusCode | Fixed value of "NR" for “NO RETURN”
+| | | cbc:DocumentStatusCode/@listID | Fixed value of "urn:eu:esens:cenbii:documentStatusType"
+| Document mime type code | 1..1 | cac:Attachment/cac:ExternalReference/cbc:MimeCode | Fixed value of "application/pkix-cert".
+| Provided document name | 1..1 | cac:Attachment/cac:ExternalReference/cbc:FileName | Name of a document that is provided as part of a tender or call for tenders. The extension of the file MUST be  “.cer”.
+|===
+
+Instead of `Provided document name`, alternatively a `Provided document URI` could be used to reference the encryption certificate.
+
+[cols="3,2,3,4"]
+|===
+
+| Provided document URI | 1..1  | cac:Attachment/cac:ExternalReference/cbc:URI | A URI to the document provided inside the ASIC-E package. The extension of the file MUST be  “cer”.
+|===
+
+
+[source,xml,indent=0]
+.Example of the Invitation to Tender transporting an encryption certificate with cbc:FileName
+
+----
+include::../{xml-doc-file}[tags=AdditionalDocumentReference1]
+
+----
+
+[source,xml,indent=0]
+.Example of the Invitation to Tender transporting an encryption certificate with cbc:URI
+
+----
+include::../{xml-doc-file}[tags=AdditionalDocumentReference4]
+
+----
+
+//http://wiki.ds.unipi.gr/download/attachments/31425187/20170127%20-%20CfT.xml?version=1&modificationDate=1485523756000&api=v2[20170127 - CfT.xml]
