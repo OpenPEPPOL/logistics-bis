@@ -262,7 +262,7 @@
     
     <rule context="ubl:CallForTenders/cac:TenderingProcess/cbc:ContractingSystemCode">
         <report id="PEPPOL-T024-S397" flag="warning" test="./@*[not(name()='listID')]"><value-of select="$syntaxError"/>[PEPPOL-T024-S397] ContractingSystemCode SHOULD NOT have any attributes but listID.</report>
-        <assert id="PEPPOL-T024-R039" flag="fatal" test="not (cbc:ContractingSystemCode in ('1', '2', '3')">[PEPPOL-T024-R039] A Call For Tender is only allowed to use une of the following ContractSystemCodes: 'Public Contract', 'Establishment of a Framework agreement' or 'Setting up a Dynamic Purchasing System'.</assert>        </rule>
+        <assert id="PEPPOL-T024-R039" flag="fatal" test="not (cbc:ContractingSystemCode in ('1', '2', '3'))">[PEPPOL-T024-R039] A Call For Tender is only allowed to use une of the following ContractSystemCodes: 'Public Contract', 'Establishment of a Framework agreement' or 'Setting up a Dynamic Purchasing System'.</assert>        </rule>
     
     <rule context="ubl:CallForTenders/cac:TenderingProcess/cbc:SubmissionMethodCode">
         <report id="PEPPOL-T024-S372" flag="warning" test="./@*[not(name()='listID')]"><value-of select="$syntaxError"/>[PEPPOL-T024-S372] SubmissionMethodCode SHOULD NOT have any attributes but listID.</report>
