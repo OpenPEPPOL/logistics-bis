@@ -1,8 +1,10 @@
 <schema xmlns="http://purl.oclc.org/dsdl/schematron"
+        xmlns:u="utils"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
         xmlns:xi="http://www.w3.org/2001/XInclude"
-        queryBinding="xslt2"
-        schemaVersion="iso">
+        schemaVersion="iso"
+        queryBinding="xslt2">
+        
     <title>eSENS business and syntax rules for Expression of Interest Request</title>
     <ns prefix="cbc"
        uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"/>

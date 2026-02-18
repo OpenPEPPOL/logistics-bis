@@ -4,7 +4,7 @@
         xmlns:xi="http://www.w3.org/2001/XInclude"
         schemaVersion="iso"
         queryBinding="xslt2">
-
+        
     <title>eSENS business and syntax rules for Tender Receipt Notifciation (TRDM045)</title>
     
     <ns uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"

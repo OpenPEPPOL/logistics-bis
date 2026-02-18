@@ -5,7 +5,6 @@
         schemaVersion="iso"
         queryBinding="xslt2">
 
-
     <title>PEPPOL business and syntax rules for notice publication response</title>
 
     <ns prefix="cbc"

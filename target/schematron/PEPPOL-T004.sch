@@ -4,6 +4,7 @@
         xmlns:xi="http://www.w3.org/2001/XInclude"
         schemaVersion="iso"
         queryBinding="xslt2">
+            
     <title>eSENS business and syntax rules for Call for Tenders Light (Tansaction 83)</title>
     <ns prefix="cbc"
        uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"/>

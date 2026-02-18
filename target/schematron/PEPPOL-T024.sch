@@ -1,7 +1,10 @@
 <schema xmlns="http://purl.oclc.org/dsdl/schematron"
+        xmlns:u="utils"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
         xmlns:xi="http://www.w3.org/2001/XInclude"
+        schemaVersion="iso"
         queryBinding="xslt2">
+        
     <title>eSENS business and syntax rules for Invitation to Tender (Tansaction 88)</title>
 
     <ns prefix="cbc"
