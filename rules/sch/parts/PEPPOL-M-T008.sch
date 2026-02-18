@@ -104,4 +104,3 @@
         <assert id="PEPPOL-T008-R029" flag="fatal" test="count(./cbc:Description) = 1">One question MUST be given.</assert>
     </rule>
 </pattern>
-</schema>
