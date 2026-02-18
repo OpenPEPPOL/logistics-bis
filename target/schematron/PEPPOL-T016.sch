@@ -219,9 +219,9 @@
       </rule>
    </pattern>
     <pattern xmlns:ns2="http://www.schematron-quickfix.com/validator/process">
-      <let name="clpublicationCondition" value="tokenize('TST FCST EFF', '\s')"/>
-      <let name="clnoticeResponse" value="tokenize('RE AP CA PU', '\s')"/>
       <let name="clstatusReasonSubset" value="tokenize('BV BW SV', '\s')"/>
+      <let name="clnoticeResponse" value="tokenize('RE AP CA PU', '\s')"/>
+      <let name="clpublicationCondition" value="tokenize('TST FCST EFF', '\s')"/>
       <rule context="/ubl:ApplicationResponse">
          <assert test="cbc:UBLVersionID" flag="fatal" id="PEPPOL-T016-B00101">Element 'cbc:UBLVersionID' MUST be provided.</assert>
          <assert test="cbc:CustomizationID" flag="fatal" id="PEPPOL-T016-B00102">Element 'cbc:CustomizationID' MUST be provided.</assert>
