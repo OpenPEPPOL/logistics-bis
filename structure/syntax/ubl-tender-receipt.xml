@@ -18,25 +18,25 @@
 			<Term>cbc:UBLVersionID</Term>
 			<Name>UBL version ID</Name>
 			<Description>The UBLversion identifier</Description>
+			<DataType>Identifier</DataType>
 			<Reference type="RULE">PEPPOL-T006-R001</Reference>
 			<Reference type="RULE">PEPPOL-T006-R019</Reference>
-			<DataType>Identifier</DataType>
 			<Value type="FIXED">2.2</Value>
 		</Element>
 		<Element>
 			<Term>cbc:CustomizationID</Term>
 			<Name>Specification identification</Name>
 			<Description>An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.</Description>
-			<Reference type="RULE">PEPPOL-T006-R002</Reference>
 			<DataType>Identifier</DataType>
+			<Reference type="RULE">PEPPOL-T006-R002</Reference>
 			<Value type="FIXED">urn:fdc:peppol.eu:prac:trns:t006:1.2</Value>
 		</Element>
 		<Element>
 			<Term>cbc:ProfileID</Term>
 			<Name>Business process type identifier</Name>
 			<Description>Identifies the business process context in which the transaction appears. It enables the buyer to process the document in an appropriate way.</Description>
-			<Reference type="RULE">PEPPOL-T006-R003</Reference>
 			<DataType>Identifier</DataType>
+			<Reference type="RULE">PEPPOL-T006-R003</Reference>
 			<Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p003:1.2</Value>
 		</Element>
 		<Element>
@@ -69,8 +69,8 @@
 			<Term>cbc:IssueTime</Term>
 			<Name>Document issue time</Name>
 			<Description>Time when the document was issued.The issue time must have granularity of seconds, and include time zone information</Description>
-			<Reference type="RULE">PEPPOL-T006-R007</Reference>
 			<DataType>Time</DataType>
+			<Reference type="RULE">PEPPOL-T006-R007</Reference>
 		</Element>
 		<Element>
 			<Term>cbc:RegisteredDate</Term>
@@ -82,8 +82,8 @@
 			<Term>cbc:RegisteredTime</Term>
 			<Name>Document reception time</Name>
 			<Description>The time at which the referenced document was received by the sender of the response.The registered time must have granularity of seconds, and include time zone information</Description>
-			<Reference type="RULE">PEPPOL-T006-R012</Reference>
 			<DataType>Time</DataType>
+			<Reference type="RULE">PEPPOL-T006-R012</Reference>
 		</Element>
 		<Element cardinality="1..n">
 			<Term>cac:TenderDocumentReference</Term>
@@ -93,8 +93,8 @@
 				<Term>cbc:ID</Term>
 				<Name>Document identifier</Name>
 				<Description>Identifier of the recieved tender document, must be the UUID of the received tender.</Description>
-				<Reference type="RULE">PEPPOL-T006-R013</Reference>
 				<DataType>Identifier</DataType>
+				<Reference type="RULE">PEPPOL-T006-R013</Reference>
 			</Element>
 			<Element>
 				<Term>cbc:DocumentTypeCode</Term>
@@ -120,15 +120,15 @@
 						<Term>cbc:DocumentHash</Term>
 						<Name>Document digest</Name>
 						<Description>Digest of the document.</Description>
-						<Reference type="RULE">PEPPOL-T006-R015</Reference>
 						<DataType>Text</DataType>
+						<Reference type="RULE">PEPPOL-T006-R015</Reference>
 					</Element>
 					<Element cardinality="0..1">
 						<Term>cbc:HashAlgorithmMethod</Term>
 						<Name>Document digest method code</Name>
 						<Description>Code that indicates the algorithm used to calculate the hash.</Description>
-						<Reference type="RULE">PEPPOL-T006-R016</Reference>
 						<DataType>Code</DataType>
+						<Reference type="RULE">PEPPOL-T006-R016</Reference>
 						<Value type="FIXED">http://www.w3.org/2001/04/xmlenc#sha256</Value>
 					</Element>
 				</Element>

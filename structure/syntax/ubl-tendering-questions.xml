@@ -39,18 +39,18 @@
             <Term>cbc:CustomizationID</Term>
             <Name>Specification identification</Name>
             <Description>An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.</Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T007-R011</Reference>
             <Reference type="RULE">PEPPOL-T007-S009</Reference>
-            <DataType>Identifier</DataType>
             <Value type="FIXED">urn:fdc:peppol.eu:prac:trns:t007:1.1</Value>
         </Element>
         <Element>
             <Term>cbc:ProfileID</Term>
             <Name>Business process type identifier</Name>
             <Description>Identifies the business process context in which the transaction appears. It enables the buyer to process the document in an appropriate way.</Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T007-R012</Reference>
             <Reference type="RULE">PEPPOL-T007-S010</Reference>
-            <DataType>Identifier</DataType>
             <Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p004:1.1</Value>
         </Element>
         <Element>
@@ -78,9 +78,9 @@
             <Term>cbc:IssueTime</Term>
             <Name>Document issue time</Name>
             <Description>The time when the tendering questions is issued. The issue time must have granularity of seconds, and include time zone information.</Description>
+            <DataType>Time</DataType>
             <Reference type="RULE">PEPPOL-T007-R016</Reference>
             <Reference type="RULE">PEPPOL-T007-R017</Reference>
-            <DataType>Time</DataType>
         </Element>
         <Element>
             <Term>cac:RequestorParty</Term>
@@ -221,8 +221,8 @@
                 <Name>Reference to an cac:Attachment</Name>
                 <Description>An xpath expression to reference an cac:Attachment where questions can be described or
                     referenced to an attached file within the ASiC-e.</Description>
-                <Reference type="RULE">PEPPOL-T007-R030</Reference>
                 <DataType>cbc:XPathType</DataType>
+                <Reference type="RULE">PEPPOL-T007-R030</Reference>
             </Element>
             <DataType>cbc:DocumentReference</DataType>
         </Element>

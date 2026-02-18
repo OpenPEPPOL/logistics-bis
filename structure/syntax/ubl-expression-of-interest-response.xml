@@ -14,29 +14,29 @@
 		<Element>
 			<Term>cbc:UBLVersionID</Term>
 			<Name>UBL version identifier</Name>
+			<DataType>Identifier</DataType>
 			<Reference type="RULE">PEPPOL-T002-R024</Reference>
 			<Reference type="RULE">PEPPOL-T002-R029</Reference>
-			<DataType>Identifier</DataType>
 			<Value type="FIXED">2.2</Value>
 		</Element>
 		<Element>
 			<Term>cbc:CustomizationID</Term>
 			<Name>Customization identifier</Name>
 			<Description>Identifies the specification of content and rules that apply to the transaction.</Description>
+			<DataType>Identifier</DataType>
 			<Reference type="RULE">PEPPOL-T002-R001</Reference>
 			<Reference type="RULE">PEPPOL-T002-R002</Reference>
 			<Reference type="BUSINESS_TERM">tir82-007</Reference>
-			<DataType>Identifier</DataType>
 			<Value type="FIXED">urn:fdc:peppol.eu:prac:trns:t002:1.2</Value>
 		</Element>
 		<Element>
 			<Term>cbc:ProfileID</Term>
 			<Name>Profile identifier</Name>
 			<Description>Identifies the BII profile or business process context in which the transaction appears.</Description>
+			<DataType>Identifier</DataType>
 			<Reference type="RULE">PEPPOL-T002-R003</Reference>
 			<Reference type="RULE">PEPPOL-T002-R004</Reference>
 			<Reference type="BUSINESS_TERM">tir82-006</Reference>
-			<DataType>Identifier</DataType>
 			<Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p001:1.2</Value>
 		</Element>
 		<Element>
@@ -59,27 +59,27 @@
 			<Term>cbc:ContractFolderID</Term>
 			<Name>Reference number</Name>
 			<Description>An identifier that is specified by the buyer and used as a reference number for all documents in the procurement process. It is also known as procurement project identifier, procurement reference number or contract folder identifier.</Description>
+			<DataType>Identifier</DataType>
 			<Reference type="RULE">PEPPOL-T002-R009</Reference>
 			<Reference type="BUSINESS_TERM">tir82-025</Reference>
-			<DataType>Identifier</DataType>
 		</Element>
 		<Element>
 			<Term>cbc:IssueDate</Term>
 			<Name>Response issue date</Name>
 			<Description>The date on which transaction is issued.</Description>
+			<DataType>Date</DataType>
 			<Reference type="RULE">PEPPOL-T002-R010</Reference>
 			<Reference type="BUSINESS_TERM">tir82-002</Reference>
-			<DataType>Date</DataType>
 		</Element>
 		<Element>
 			<Term>cbc:IssueTime</Term>
 			<Name>Response issue time</Name>
 			<Description>The time at which the transaction instance was issued.The issue time must have granularity of seconds, and include time zone information.</Description>
+			<DataType>Time</DataType>
 			<Reference type="RULE">PEPPOL-T002-R011</Reference>
 			<Reference type="RULE">PEPPOL-T002-R012</Reference>
 			<Reference type="RULE">PEPPOL-T002-R013</Reference>
 			<Reference type="BUSINESS_TERM">tir82-003</Reference>
-			<DataType>Time</DataType>
 		</Element>
 		<Element cardinality="0..1">
 			<Term>cbc:TenderLanguageLocaleCode</Term>
@@ -209,8 +209,8 @@
 						<Term>cbc:Name</Term>
 						<Name>Contracting body name</Name>
 						<Description>The name of the contracting body as it is registered.</Description>
-						<Reference type="BUSINESS_TERM">tir82-008</Reference>
 						<DataType>Text</DataType>
+						<Reference type="BUSINESS_TERM">tir82-008</Reference>
 					</Element>
 				</Element>
 			</Element>
@@ -222,9 +222,9 @@
 				<Term>cbc:ID</Term>
 				<Name>Lot identifier</Name>
 				<Description>An identifier for the lot.</Description>
+				<DataType>Identifier</DataType>
 				<Reference type="RULE">PEPPOL-T002-R023</Reference>
 				<Reference type="BUSINESS_TERM">tir82-026</Reference>
-				<DataType>Identifier</DataType>
 			</Element>
 		</Element>
 	</Document>

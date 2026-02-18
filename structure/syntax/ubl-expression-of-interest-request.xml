@@ -15,19 +15,19 @@
         <Element>
             <Term>cbc:UBLVersionID</Term>
             <Name>UBL version identifier</Name>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T001-R033</Reference>
             <Reference type="RULE">PEPPOL-T001-R034</Reference>
-            <DataType>Identifier</DataType>
             <Value type="FIXED">2.2</Value>
         </Element>
         <Element>
             <Term>cbc:CustomizationID</Term>
             <Name>Customization identifier</Name>
             <Description>Identifies the specification of content and rules that apply to the transaction.</Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T001-R001</Reference>
             <Reference type="RULE">PEPPOL-T001-R002</Reference>
             <Reference type="BUSINESS_TERM">tir81-007</Reference>
-            <DataType>Identifier</DataType>
             <Value type="FIXED">
                 urn:fdc:peppol.eu:prac:trns:t001:1.2
             </Value>
@@ -37,10 +37,10 @@
             <Name>Profile identifier</Name>
             <Description>Identifies the BII profile or business process context in which the transaction appears.
             </Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T001-R003</Reference>
             <Reference type="RULE">PEPPOL-T001-R004</Reference>
             <Reference type="BUSINESS_TERM">tir81-006</Reference>
-            <DataType>Identifier</DataType>
             <Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p001:1.2</Value>
         </Element>
         <Element>
@@ -68,17 +68,17 @@
                 in the procurement process. It is also known as procurement project identifier, procurement reference
                 number or contract folder identifier. Used as a link to the call for tenders.
             </Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T001-R009</Reference>
             <Reference type="BUSINESS_TERM">tir81-005</Reference>
-            <DataType>Identifier</DataType>
         </Element>
         <Element>
             <Term>cbc:IssueDate</Term>
             <Name>Expression of interest issue date</Name>
             <Description>The date on which transaction is issued.</Description>
+            <DataType>Date</DataType>
             <Reference type="RULE">PEPPOL-T001-R010</Reference>
             <Reference type="BUSINESS_TERM">tir81-002</Reference>
-            <DataType>Date</DataType>
         </Element>
         <Element>
             <Term>cbc:IssueTime</Term>
@@ -86,11 +86,11 @@
             <Description>Time of issue of Transaction.The issue time must have granularity of seconds, and include time
                 zone information
             </Description>
+            <DataType>Time</DataType>
             <Reference type="RULE">PEPPOL-T001-R011</Reference>
             <Reference type="RULE">PEPPOL-T001-R012</Reference>
             <Reference type="RULE">PEPPOL-T001-R030</Reference>
             <Reference type="BUSINESS_TERM">tir81-003</Reference>
-            <DataType>Time</DataType>
         </Element>
         <Element cardinality="0..1">
             <Term>cbc:PreferredLanguageLocaleCode</Term>
@@ -177,9 +177,9 @@
                         <Term>cbc:Name</Term>
                         <Name>Economic operator name</Name>
                         <Description>The name of the economic operator.</Description>
-						<Reference type="RULE">PEPPOL-T001-R017</Reference>
-                        <Reference type="BUSINESS_TERM">tir81-013</Reference>
 						<DataType>Text</DataType>
+                        <Reference type="RULE">PEPPOL-T001-R017</Reference>
+						<Reference type="BUSINESS_TERM">tir81-013</Reference>
                     </Element>
                 </Element>
                 <Element cardinality="0..1">
@@ -191,8 +191,8 @@
                         <Description>The main address line in an address. Usually the street name and number or post
                             office box
                         </Description>
-                        <Reference type="BUSINESS_TERM">tir81-015</Reference>
-						<DataType>Text</DataType>
+                        <DataType>Text</DataType>
+						<Reference type="BUSINESS_TERM">tir81-015</Reference>
                     </Element>
                     <Element cardinality="0..1">
                         <Term>cbc:AdditionalStreetName</Term>
@@ -206,8 +206,8 @@
                         <Term>cbc:CityName</Term>
                         <Name>City</Name>
                         <Description>The common name of a city where the address is located.</Description>
-                        <Reference type="BUSINESS_TERM">tir81-017</Reference>
-						<DataType>Text</DataType>
+                        <DataType>Text</DataType>
+						<Reference type="BUSINESS_TERM">tir81-017</Reference>
                     </Element>
                     <Element cardinality="0..1">
                         <Term>cbc:PostalZone</Term>
@@ -215,16 +215,16 @@
                         <Description>The identifier for an addressable group of properties according to the relevant
                             postal service, such as a ZIP code or Post Code.
                         </Description>
-						<Reference type="BUSINESS_TERM">tir81-018</Reference>
-                        <DataType>Text</DataType>
+						<DataType>Text</DataType>
+                        <Reference type="BUSINESS_TERM">tir81-018</Reference>
                     </Element>
                     <Element cardinality="0..1">
                         <Term>cbc:CountrySubentity</Term>
                         <Name>Country subdivision</Name>
                         <Description>The subdivision of a country such as region, county, state, province etc.
                         </Description>
-						<Reference type="BUSINESS_TERM">tir81-019</Reference>
-                        <DataType>Text</DataType>
+						<DataType>Text</DataType>
+                        <Reference type="BUSINESS_TERM">tir81-019</Reference>
                     </Element>
                     <Element cardinality="0..1">
                         <Term>cac:Country</Term>
@@ -287,33 +287,33 @@
                         <Term>cbc:Name</Term>
                         <Name>Contact point</Name>
                         <Description>The name of the contact point.</Description>
-						<Reference type="RULE">PEPPOL-T001-R032</Reference>
-                        <Reference type="BUSINESS_TERM">tir81-021</Reference>
 						<DataType>Text</DataType>
+                        <Reference type="RULE">PEPPOL-T001-R032</Reference>
+						<Reference type="BUSINESS_TERM">tir81-021</Reference>
                     </Element>
                     <Element cardinality="0..1">
                         <Term>cbc:Telephone</Term>
                         <Name>Contact telephone number</Name>
                         <Description>TA phone number for the contact point</Description>
-						<Reference type="RULE">PEPPOL-T001-R032</Reference>
-                        <Reference type="BUSINESS_TERM">tir81-023</Reference>
 						<DataType>Text</DataType>
+                        <Reference type="RULE">PEPPOL-T001-R032</Reference>
+						<Reference type="BUSINESS_TERM">tir81-023</Reference>
                     </Element>
                     <Element cardinality="0..1">
                         <Term>cbc:Telefax</Term>
                         <Name>Contact fax number</Name>
                         <Description>A fax number for the contact point.</Description>
-						<Reference type="RULE">PEPPOL-T001-R032</Reference>
-                        <Reference type="BUSINESS_TERM">tir81-022</Reference>
 						<DataType>Text</DataType>
+                        <Reference type="RULE">PEPPOL-T001-R032</Reference>
+						<Reference type="BUSINESS_TERM">tir81-022</Reference>
                     </Element>
                     <Element>
                         <Term>cbc:ElectronicMail</Term>
                         <Name>Contact email address</Name>
                         <Description>An e-mail address for the contact point.</Description>
-						<Reference type="RULE">PEPPOL-T001-R032</Reference>
-                        <Reference type="BUSINESS_TERM">tir81-024</Reference>
 						<DataType>Text</DataType>
+                        <Reference type="RULE">PEPPOL-T001-R032</Reference>
+						<Reference type="BUSINESS_TERM">tir81-024</Reference>
                     </Element>
                 </Element>
             </Element>
@@ -372,9 +372,9 @@
                 <Term>cbc:ID</Term>
                 <Name>Lot identifier</Name>
                 <Description>An identifier for the lot.</Description>
-				<Reference type="RULE">PEPPOL-T001-R029</Reference>
-                <Reference type="BUSINESS_TERM">tir81-026</Reference>
 				<DataType>Identifier</DataType>
+                <Reference type="RULE">PEPPOL-T001-R029</Reference>
+				<Reference type="BUSINESS_TERM">tir81-026</Reference>
             </Element>
         </Element>
     </Document>

@@ -40,9 +40,9 @@
             <Description>An identification of the specification containing the total set of rules regarding semantic
                 content, cardinalities and business rules to which the data contained in the instance document conforms.
             </Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T010-R009</Reference>
             <Reference type="RULE">PEPPOL-T010-S009</Reference>
-            <DataType>Identifier</DataType>
             <Value type="FIXED">
                 urn:fdc:peppol.eu:prac:trns:t010:1.1
             </Value>
@@ -53,9 +53,9 @@
             <Description>Identifies the business process context in which the transaction appears. It enables the buyer
                 to process the document in an appropriate way.
             </Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T010-R010</Reference>
             <Reference type="RULE">PEPPOL-T010-S010</Reference>
-            <DataType>Identifier</DataType>
             <Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p005:1.1</Value>
         </Element>
         <Element>
@@ -90,12 +90,12 @@
             <Description>The time when the Tender Clarification is issued. The issue time must have granularity of
                 seconds, and include time zone information
             </Description>
+            <DataType>Time</DataType>
             <Reference type="RULE">PEPPOL-T010-R016</Reference>
             <Reference type="RULE">PEPPOL-T010-R017</Reference>
             <Reference type="RULE">PEPPOL-T010-S012</Reference>
             <Reference type="RULE">PEPPOL-T010-S013</Reference>
             <Reference type="RULE">PEPPOL-T010-S014</Reference>
-            <DataType>Time</DataType>
         </Element>
         <Element>
             <Term>cac:RequestorParty</Term>
@@ -257,8 +257,8 @@
                 <Term>cbc:XPath</Term>
                 <Name>Reference to an cac:Attachment</Name>
                 <Description>An xpath expression to reference an cac:Attachment where questions can be asked or refer a file within the ASiC-e.</Description>
-                <Reference type="RULE">PEPPOL-T010-R027</Reference>
                 <DataType>cbc:XPathType</DataType>
+                <Reference type="RULE">PEPPOL-T010-R027</Reference>
             </Element>
             <DataType>cbc:DocumentReference</DataType>
         </Element>

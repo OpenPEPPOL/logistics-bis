@@ -15,25 +15,25 @@
 		<Element>
 			<Term>cbc:UBLVersionID</Term>
 			<Name>UBL version identifier</Name>
+			<DataType>Identifier</DataType>
 			<Reference type="RULE">PEPPOL-T005-R001</Reference>
 			<Reference type="RULE">PEPPOL-T005-R021</Reference>
-			<DataType>Identifier</DataType>
 			<Value type="FIXED">2.2</Value>
 		</Element>
 		<Element>
 			<Term>cbc:CustomizationID</Term>
 			<Name>Specification identification</Name>
 			<Description>An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms.</Description>
-			<Reference type="RULE">PEPPOL-T005-R002</Reference>
 			<DataType>Identifier</DataType>
+			<Reference type="RULE">PEPPOL-T005-R002</Reference>
 			<Value type="FIXED">urn:fdc:peppol.eu:prac:trns:t005:1.2</Value>
 		</Element>
 		<Element>
 			<Term>cbc:ProfileID</Term>
 			<Name>Business process type identifier</Name>
 			<Description>Identifies the business process context in which the transaction appears. It enables the buyer to process the document in an appropriate way.</Description>
-			<Reference type="RULE">PEPPOL-T005-R003</Reference>
 			<DataType>Identifier</DataType>
+			<Reference type="RULE">PEPPOL-T005-R003</Reference>
 			<Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p003:1.2</Value>
 		</Element>
 		<Element>
@@ -66,8 +66,8 @@
 			<Term>cbc:IssueTime</Term>
 			<Name>Tender issue time</Name>
 			<Description>The time when the tender is issued by the economic operator. The issue time must have granularity of seconds, and include time zone information</Description>
-			<Reference type="RULE">PEPPOL-T005-R007</Reference>
 			<DataType>Time</DataType>
+			<Reference type="RULE">PEPPOL-T005-R007</Reference>
 		</Element>
 		<Element cardinality="1..n">
 			<Term>cac:DocumentReference</Term>
@@ -77,9 +77,9 @@
 				<Term>cbc:ID</Term>
 				<Name>Document identifier</Name>
 				<Description>A unique reference of the document reference. May point to the tender, call for tenders or related documents like the ESPD response. The cbc:ID of a Call for tenders reference creates a link between the call for tender and the tender.The call for tenders and tenders reference must be a UUID</Description>
+				<DataType>Identifier</DataType>
 				<Reference type="RULE">PEPPOL-T005-R013</Reference>
 				<Reference type="RULE">PEPPOL-T005-R012</Reference>
-				<DataType>Identifier</DataType>
 			</Element>
 			<Element>
 				<Term>cbc:DocumentTypeCode</Term>
@@ -137,15 +137,15 @@
 						<Term>cbc:DocumentHash</Term>
 						<Name>Document digest</Name>
 						<Description>Digest of the document, must be a SHA-256 value</Description>
-						<Reference type="RULE">PEPPOL-T005-R017</Reference>
 						<DataType>Text</DataType>
+						<Reference type="RULE">PEPPOL-T005-R017</Reference>
 					</Element>
 					<Element>
 						<Term>cbc:HashAlgorithmMethod</Term>
 						<Name>Document digest method code</Name>
 						<Description>Code that indicates the algorithm used to calculate the hash.</Description>
-						<Reference type="RULE">PEPPOL-T005-R018</Reference>
 						<DataType>Code</DataType>
+						<Reference type="RULE">PEPPOL-T005-R018</Reference>
 						<Value type="FIXED">http://www.w3.org/2001/04/xmlenc#sha256</Value>
 					</Element>
 					<Element cardinality="0..1">
@@ -158,8 +158,8 @@
 						<Term>cbc:FileName</Term>
 						<Name>Document name</Name>
 						<Description>The file name of the document. Encrypted tender documents MUST use the file extension .p7m and use the encryption certificate provided in the call for tender. </Description>
-						<Reference type="RULE">PEPPOL-T005-R014</Reference>
 						<DataType>Text</DataType>
+						<Reference type="RULE">PEPPOL-T005-R014</Reference>
 					</Element>
 				</Element>
 			</Element>

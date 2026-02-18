@@ -13,29 +13,29 @@
 		<Element>
 			<Term>cbc:UBLVersionID</Term>
 			<Name>UBL version identifier</Name>
+			<DataType>Identifier</DataType>
 			<Reference type="RULE">PEPPOL-T003-R023</Reference>
 			<Reference type="RULE">PEPPOL-T003-R024</Reference>
-			<DataType>Identifier</DataType>
 			<Value type="FIXED">2.2</Value>
 		</Element>
 		<Element>
 			<Term>cbc:CustomizationID</Term>
 			<Name>Specification identification</Name>
 			<Description>An identification of the specification containing the total set of rules regarding semantic content, cardinalities and business rules to which the data contained in the instance document conforms. The identification may include the version of the specification as well as any customizations applied.</Description>
+			<DataType>Identifier</DataType>
 			<Reference type="RULE">PEPPOL-T003-R001</Reference>
 			<Reference type="RULE">PEPPOL-T003-R010</Reference>
 			<Reference type="BUSINESS_TERM">tir97-007</Reference>
-			<DataType>Identifier</DataType>
 			<Value type="FIXED">urn:fdc:peppol.eu:prac:trns:t003:1.2</Value>
 		</Element>
 		<Element>
 			<Term>cbc:ProfileID</Term>
 			<Name>Business process type identifier</Name>
 			<Description>Identifies the business process context in which the transaction appears. It enables the buyer to process the document in an appropriate way.</Description>
+			<DataType>Identifier</DataType>
 			<Reference type="RULE">PEPPOL-T003-R002</Reference>
 			<Reference type="RULE">PEPPOL-T003-R011</Reference>
 			<Reference type="BUSINESS_TERM">tir97-006</Reference>
-			<DataType>Identifier</DataType>
 			<Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p002:1.2</Value>
 		</Element>
 		<Element>
@@ -58,27 +58,27 @@
 			<Term>cbc:ContractFolderID</Term>
 			<Name>Reference number</Name>
 			<Description>An identifier that is specified by the buyer and used as a reference number for all documents in the procurement process. It is also known as procurement project identifier, procurement reference number or contract folder identifier.</Description>
+			<DataType>Identifier</DataType>
 			<Reference type="RULE">PEPPOL-T003-R004</Reference>
 			<Reference type="BUSINESS_TERM">tir97-034</Reference>
-			<DataType>Identifier</DataType>
 		</Element>
 		<Element>
 			<Term>cbc:IssueDate</Term>
 			<Name>Document issue date</Name>
 			<Description>Date when the referred document was issued.</Description>
+			<DataType>Date</DataType>
 			<Reference type="RULE">PEPPOL-T003-R005</Reference>
 			<Reference type="BUSINESS_TERM">tir97-002</Reference>
-			<DataType>Date</DataType>
 		</Element>
 		<Element>
 			<Term>cbc:IssueTime</Term>
 			<Name>Document issue time</Name>
 			<Description>Time when the document was issued. The issue time must have granularity of seconds, and include time zone information</Description>
+			<DataType>Time</DataType>
 			<Reference type="RULE">PEPPOL-T003-R015</Reference>
 			<Reference type="RULE">PEPPOL-T003-R016</Reference>
 			<Reference type="RULE">PEPPOL-T003-R017</Reference>
 			<Reference type="BUSINESS_TERM">tir97-003</Reference>
-			<DataType>Time</DataType>
 		</Element>
 		<Element>
 			<Term>cac:ContractingParty</Term>
@@ -132,8 +132,8 @@
 						<Term>cbc:Name</Term>
 						<Name>Contracting body name</Name>
 						<Description>The name of the contracting body as it is registered.</Description>
-						<Reference type="BUSINESS_TERM">tir97-008</Reference>
 						<DataType>Text</DataType>
+						<Reference type="BUSINESS_TERM">tir97-008</Reference>
 					</Element>
 				</Element>
 			</Element>
@@ -189,9 +189,9 @@
 						<Term>cbc:Name</Term>
 						<Name>Economic operator name</Name>
 						<Description>The name of the economic operator as it is registered.</Description>
+						<DataType>Text</DataType>
 						<Reference type="RULE">PEPPOL-T003-R009</Reference>
 						<Reference type="BUSINESS_TERM">tir97-022</Reference>
-						<DataType>Text</DataType>
 					</Element>
 				</Element>
 			</Element>
@@ -204,9 +204,9 @@
 				<Term>cbc:ID</Term>
 				<Name>Lot identifier</Name>
 				<Description>An identifier for the lot.</Description>
+				<DataType>Identifier</DataType>
 				<Reference type="RULE">PEPPOL-T003-R022</Reference>
 				<Reference type="BUSINESS_TERM">tir97-035</Reference>
-				<DataType>Identifier</DataType>
 			</Element>
 		</Element>
 	</Document>

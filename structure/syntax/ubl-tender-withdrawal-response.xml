@@ -26,9 +26,9 @@
             <Term>cbc:UBLVersionID</Term>
             <Name>UBL version identifier</Name>
             <Description>Requires UBL version 2.2</Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T014-R019</Reference>
             <Reference type="RULE">PEPPOL-T014-S302</Reference>
-            <DataType>Identifier</DataType>
             <Value type="FIXED">2.2</Value>
         </Element>
         <Element>
@@ -37,9 +37,9 @@
             <Description>An identification of the specification containing the total set of rules regarding semantic
                 content, cardinalities and business rules to which the data contained in the instance document conforms.
             </Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T014-R002</Reference>
             <Reference type="RULE">PEPPOL-T014-S303</Reference>
-            <DataType>Identifier</DataType>
             <Value type="FIXED">
                 urn:fdc:peppol.eu:prac:trns:t014:1.1
             </Value>
@@ -50,9 +50,9 @@
             <Description>Identifies the business process context in which the transaction appears. It enables the buyer
                 to process the document in an appropriate way.
             </Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T014-R003</Reference>
             <Reference type="RULE">PEPPOL-T014-S304</Reference>
-            <DataType>Identifier</DataType>
             <Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p007:1.1</Value>
         </Element>
         <Element>
@@ -79,8 +79,8 @@
                 in the procurement process. It is also known as procurement project identifier, procurement reference
                 number or contract folder identifier.
             </Description>
-            <Reference type="RULE">PEPPOL-T014-S309</Reference>
             <DataType>Identifier</DataType>
+            <Reference type="RULE">PEPPOL-T014-S309</Reference>
         </Element>
         <Element>
             <Term>cbc:IssueDate</Term>
@@ -93,8 +93,8 @@
             <Name>Document issue time</Name>
             <Description>Time when the tender withdrawal reception notification was issued.
             </Description>
-            <Reference type="RULE">PEPPOL-T014-R007</Reference>
             <DataType>Time</DataType>
+            <Reference type="RULE">PEPPOL-T014-R007</Reference>
         </Element>
         <Element>
             <Term>cbc:RegisteredDate</Term>
@@ -110,8 +110,8 @@
             <Description>The time at which the tender withdrawal was received by the sender of the tender withdrawal
                 reception notification.
             </Description>
-            <Reference type="RULE">PEPPOL-T014-R012</Reference>
             <DataType>Time</DataType>
+            <Reference type="RULE">PEPPOL-T014-R012</Reference>
         </Element>
         <Element cardinality="1..n">
             <Term>cac:TenderDocumentReference</Term>
@@ -167,9 +167,9 @@
                         <Description>Document digest of a tender document. Used as a reference to the tender document to
                             be withdrawn.
                         </Description>
+                        <DataType>Text</DataType>
                         <Reference type="RULE">PEPPOL-T014-R018</Reference>
                         <Reference type="RULE">PEPPOL-T014-S318</Reference>
-                        <DataType>Text</DataType>
                     </Element>
                     <Element cardinality="0..1">
                         <Term>cbc:HashAlgorithmMethod</Term>
@@ -177,9 +177,9 @@
                         <Description>Code that indicates the algorithm used to calculate the hash. For the tender digest
                             document hash algorithm must be "http://www.w3.org/2001/04/xmlenc#sha256".
                         </Description>
+                        <DataType>Text</DataType>
                         <Reference type="RULE">PEPPOL-T014-R022</Reference>
                         <Reference type="RULE">PEPPOL-T014-S319</Reference>
-                        <DataType>Text</DataType>
                         <Value type="FIXED">http://www.w3.org/2001/04/xmlenc#sha256</Value>
                     </Element>
                     <DataType>External Reference</DataType>

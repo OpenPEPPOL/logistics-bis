@@ -29,8 +29,8 @@
             <Description>An identification of the specification containing the total set of rules regarding semantic
                 content, cardinalities and business rules to which the data contained in the instance document conforms.
             </Description>
-            <Reference type="RULE">PEPPOL-T004-R002</Reference>
             <DataType>Identifier</DataType>
+            <Reference type="RULE">PEPPOL-T004-R002</Reference>
             <Value type="FIXED">
                 urn:fdc:peppol.eu:prac:trns:t004:1.2
             </Value>
@@ -42,8 +42,8 @@
             <Description>Identifies the business process context in which the transaction appears. It enables the buyer
                 to process the document in an appropriate way.
             </Description>
-            <Reference type="RULE">PEPPOL-T004-R003</Reference>
             <DataType>Identifier</DataType>
+            <Reference type="RULE">PEPPOL-T004-R003</Reference>
             <Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p002:1.2</Value>
         </Element>
 
@@ -86,18 +86,18 @@
             <Description>The time when the call for tender is issued. The issue time must have granularity of seconds,
                 and include time zone information
             </Description>
+            <DataType>Time</DataType>
             <Reference type="RULE">PEPPOL-T004-R007</Reference>
             <Reference type="RULE">PEPPOL-T004-R008</Reference>
             <Reference type="RULE">PEPPOL-T004-R009</Reference>
-            <DataType>Time</DataType>
         </Element>
 
         <Element>
             <Term>cbc:VersionID</Term>
             <Name>Call for tender version</Name>
             <Description>Identifies the version of the call for tenders.</Description>
-            <Reference type="RULE">PEPPOL-T004-R038</Reference>
             <DataType>Identifier</DataType>
+            <Reference type="RULE">PEPPOL-T004-R038</Reference>
         </Element>
 
         <Element cardinality="0..n">
@@ -112,8 +112,8 @@
                 <Term>cbc:ID</Term>
                 <Name>Document identifier</Name>
                 <Description>Identification of the document reference</Description>
-                <Reference type="RULE">PEPPOL-T004-R024</Reference>
                 <DataType>Identifier</DataType>
+                <Reference type="RULE">PEPPOL-T004-R024</Reference>
             </Element>
 
             <Element cardinality="0..1">
@@ -191,8 +191,8 @@
                     The Qualification instance only references the corresponding IDs in order to establish the
                     connection to the call for tender information.
                 </Description>
-                <Reference type="RULE">PEPPOL-T004-R030</Reference>
                 <DataType>Text</DataType>
+                <Reference type="RULE">PEPPOL-T004-R030</Reference>
             </Element>
 
             <Element cardinality="0..1">
@@ -208,8 +208,8 @@
                         <Description>A public URL where a document provided in a Call for tender can be downloaded
                             or a URI to the document provided inside the ASIC-E package or any other type of package.
                         </Description>
-                        <Reference type="RULE">PEPPOL-T004-R035</Reference>
                         <DataType>Identifier</DataType>
+                        <Reference type="RULE">PEPPOL-T004-R035</Reference>
                     </Element>
 
                     <Element cardinality="0..1">
@@ -224,8 +224,8 @@
                         <Name>Provided document name</Name>
                         <Description>Name of a document that is provided as part of the Call for Tender. The extension of the file MUST be 'cer' for the encryption certificate.
                         </Description>
-                        <Reference type="RULE">PEPPOL-T004-R035</Reference>
                         <DataType>Text</DataType>
+                        <Reference type="RULE">PEPPOL-T004-R035</Reference>
                     </Element>
 
                 </Element>
@@ -503,8 +503,8 @@
                 <Term>cbc:MaximumVariantQuantity</Term>
                 <Name>Maximum number of variants to submit</Name>
                 <Description>Maximum number of variants a tenderer can submit.</Description>
-				<Reference type="RULE">PEPPOL-T004-R032</Reference>
-                <DataType>Numeric</DataType>
+				<DataType>Numeric</DataType>
+                <Reference type="RULE">PEPPOL-T004-R032</Reference>
             </Element>
 
 
@@ -520,8 +520,8 @@
                 <Term>cbc:Note</Term>
                 <Name>Required number of copies</Name>
                 <Description>Required number of paper copies to submit if using postal submission.</Description>
-				<Reference type="RULE">PEPPOL-T004-R031</Reference>
-                <DataType>Numeric</DataType>
+				<DataType>Numeric</DataType>
+                <Reference type="RULE">PEPPOL-T004-R031</Reference>
             </Element>
 
             <Element cardinality="0..1">
@@ -529,9 +529,9 @@
                 <Name>Overall expected level of tender signature</Name>
                 <Description>Expected level of signature to be used by the tenderer when submitting the tenders.
                 </Description>
-				<Reference type="RULE">PEPPOL-T004-R033</Reference>
+				<DataType>Text</DataType>
+                <Reference type="RULE">PEPPOL-T004-R033</Reference>
                 <Reference type="CODE_LIST">addCond</Reference>
-                <DataType>Text</DataType>
             </Element>
 
             <Element cardinality="0..1">
@@ -673,8 +673,8 @@
                         (restricted procedures, competitive procedures with negotiation, dynamic purchasing systems,
                         competitive dialogues, innovation partnerships)
                     </Description>
-					<Reference type="RULE">PEPPOL-T004-R028</Reference>
-                    <DataType>Date</DataType>
+					<DataType>Date</DataType>
+                    <Reference type="RULE">PEPPOL-T004-R028</Reference>
                 </Element>
             </Element>
 
@@ -697,8 +697,8 @@
                     <Description>The date and time before which documents are available for access or may be requested
                         and before which requests to participate must be received.
                     </Description>
-					<Reference type="RULE">PEPPOL-T004-R028</Reference>
-                    <DataType>Date</DataType>
+					<DataType>Date</DataType>
+                    <Reference type="RULE">PEPPOL-T004-R028</Reference>
                 </Element>
             </Element>
 
@@ -803,8 +803,8 @@
                 <Term>cbc:ID</Term>
                 <Name>Lot identifier</Name>
                 <Description>An identifier for the lot.</Description>
-				<Reference type="RULE">PEPPOL-T004-R029</Reference>
-                <DataType>Identifier</DataType>
+				<DataType>Identifier</DataType>
+                <Reference type="RULE">PEPPOL-T004-R029</Reference>
             </Element>
 
             <Element cardinality="0..1">
