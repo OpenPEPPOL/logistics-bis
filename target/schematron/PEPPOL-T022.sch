@@ -239,24 +239,15 @@
                  flag="fatal"
                  id="PEPPOL-T022-B00201">Element 'cbc:UBLVersionID' MUST contain value '2.2'.</assert>
       </rule>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cbc:UBLVersionID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B00202">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cbc:CustomizationID">
          <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t022:1.2'"
                  flag="fatal"
                  id="PEPPOL-T022-B00301">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t022:1.2'.</assert>
       </rule>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cbc:CustomizationID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B00302">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cbc:ProfileID">
          <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p001:1.2'"
                  flag="fatal"
                  id="PEPPOL-T022-B00401">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p001:1.2'.</assert>
-      </rule>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cbc:ProfileID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B00402">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cbc:ID">
          <assert test="not(@schemeURI) or @schemeURI = 'urn:uuid'"
@@ -264,21 +255,9 @@
                  id="PEPPOL-T022-B00501">Attribute 'schemeURI' MUST contain value 'urn:uuid'</assert>
          <assert test="@schemeURI" flag="fatal" id="PEPPOL-T022-B00502">Attribute 'schemeURI' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cbc:ID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B00503">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cbc:ContractFolderID"/>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cbc:ContractFolderID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B00701">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cbc:IssueDate"/>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cbc:IssueDate/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B00801">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cbc:IssueTime"/>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cbc:IssueTime/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B00901">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:UnsubscribeToProcedureDocumentReference">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T022-B01001">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
@@ -287,9 +266,6 @@
                  flag="fatal"
                  id="PEPPOL-T022-B01101">Attribute 'schemeURI' MUST contain value 'urn:uuid'</assert>
          <assert test="@schemeURI" flag="fatal" id="PEPPOL-T022-B01102">Attribute 'schemeURI' MUST be present.</assert>
-      </rule>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:UnsubscribeToProcedureDocumentReference/cbc:ID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B01103">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:UnsubscribeToProcedureDocumentReference/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T022-B01002">Document MUST NOT contain elements not part of the data model.</assert>
@@ -304,9 +280,6 @@
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:EconomicOperatorParty/cac:Party/cbc:EndpointID">
          <assert test="@schemeID" flag="fatal" id="PEPPOL-T022-B01501">Attribute 'schemeID' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:EconomicOperatorParty/cac:Party/cbc:EndpointID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B01502">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:EconomicOperatorParty/cac:Party/cac:PartyIdentification">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T022-B01701">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
@@ -315,12 +288,6 @@
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
                  id="PEPPOL-T022-B01802">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
-      </rule>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:EconomicOperatorParty/cac:Party/cac:PartyIdentification/cbc:ID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B01803">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:EconomicOperatorParty/cac:Party/cac:PartyIdentification/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B01702">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:EconomicOperatorParty/cac:Party/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T022-B01403">Document MUST NOT contain elements not part of the data model.</assert>
@@ -338,9 +305,6 @@
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ContractingParty/cac:Party/cbc:EndpointID">
          <assert test="@schemeID" flag="fatal" id="PEPPOL-T022-B02201">Attribute 'schemeID' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ContractingParty/cac:Party/cbc:EndpointID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B02202">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ContractingParty/cac:Party/cac:PartyIdentification">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T022-B02401">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
@@ -350,22 +314,10 @@
                  flag="fatal"
                  id="PEPPOL-T022-B02502">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ContractingParty/cac:Party/cac:PartyIdentification/cbc:ID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B02503">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ContractingParty/cac:Party/cac:PartyIdentification/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B02402">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ContractingParty/cac:Party/cac:PartyName">
          <assert test="cbc:Name" flag="fatal" id="PEPPOL-T022-B02701">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ContractingParty/cac:Party/cac:PartyName/cbc:Name"/>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ContractingParty/cac:Party/cac:PartyName/cbc:Name/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B02801">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ContractingParty/cac:Party/cac:PartyName/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B02702">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ContractingParty/cac:Party/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T022-B02103">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
@@ -374,12 +326,6 @@
       </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ProcurementProjectLotReference"/>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ProcurementProjectLotReference/cbc:ID"/>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ProcurementProjectLotReference/cbc:ID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B03001">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ProcurementProjectLotReference/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T022-B02901">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T022-B00111">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
