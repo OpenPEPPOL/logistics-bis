@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T120-base-1.1">
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t036-base-1.1">
 	<assert>
 		<scope>PEPPOL-COMMON-R040</scope>
 	</assert>
@@ -7,7 +7,7 @@
 		<assert>
 			<success>PEPPOL-COMMON-R040</success>
 		</assert>
-		<DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
+		<Catalogue xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 
@@ -17,13 +17,13 @@
 				</cac:Party>
 			</cac:BuyerCustomerParty>
 
-		</DespatchAdvice>
+		</Catalogue>
 	</test>
 	<test id="2">
 		<assert>
 			<error>PEPPOL-COMMON-R040</error>
 		</assert>
-		<DespatchAdvice xmlns="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
+		<Catalogue xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 
@@ -33,6 +33,6 @@
 				</cac:Party>
 			</cac:BuyerCustomerParty>
 
-		</DespatchAdvice>
+		</Catalogue>
 	</test>
 </testSet>
