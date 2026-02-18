@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
 	<Term>TenderReceipt</Term>
-	<Name>Tender Receipt (T006)</Name>
+	<Name>Peppol Tender Receipt (T006)</Name>
 	
-	<Namespace prefix="t006">urn:oasis:names:specification:ubl:schema:xsd:TenderReceipt-2</Namespace>
+	<Property key="sch:prefix">PEPPOL-T006</Property>
+	<Property key="sch:identifier">T006-basic</Property>
+	
+	<Namespace prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:TenderReceipt-2</Namespace>
     <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
     <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
 	
 	<Document>
-		<Term>t006:TenderReceipt</Term>
+		<Term>ubl:TenderReceipt</Term>
 		<Name>Tender receipt, root element</Name>
 		
 		<Element>

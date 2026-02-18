@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
 	<Term>QualificationReceipt</Term>
-	<Name>Qualification Receipt (T020)</Name>
+	<Name>Peppol Qualification Receipt (T020)</Name>
 	
-	<Namespace prefix="t020">urn:oasis:names:specification:ubl:schema:xsd:TenderReceipt-2</Namespace>
+	<Property key="sch:prefix">PEPPOL-T020</Property>
+	<Property key="sch:identifier">T020-basic</Property>
+	
+	<Namespace prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:TenderReceipt-2</Namespace>
     <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
     <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
 	
 	<Document>
-		<Term>t020:TenderReceipt</Term>
+		<Term>ubl:TenderReceipt</Term>
 		<Name>Qualification receipt, root element</Name>
 		
 		<Element>
