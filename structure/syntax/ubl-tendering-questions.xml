@@ -57,6 +57,7 @@
             <Term>cbc:ID</Term>
             <Name>Document identifier</Name>
             <Description>Identifies the tendering questions as issued by the economic operator. Must be expressed as a UUID</Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T007-R013</Reference>
             <Reference type="RULE">PEPPOL-T007-R014</Reference>
             <Reference type="RULE">PEPPOL-T007-S011</Reference>
@@ -66,7 +67,6 @@
                 <Reference type="RULE">PEPPOL-T007-R015</Reference>
                 <Value type="FIXED">urn:uuid</Value>
             </Attribute>
-            <DataType>Identifier</DataType>
         </Element>
         <Element>
             <Term>cbc:IssueDate</Term>
@@ -100,11 +100,11 @@
                 <Attribute>
                     <Term>schemeID</Term>
                     <Name>Scheme identifier</Name>
+                    <DataType>Identifier</DataType>
                     <Reference type="RULE">PEPPOL-T007-R021</Reference>
                     <Reference type="CODE_LIST">EAS</Reference>
                     <Value type="EXAMPLE">9946</Value>
                 </Attribute>
-                <DataType>Identifier</DataType>
                 <Value type="EXAMPLE">500820007</Value>
             </Element>
             <Element>
@@ -114,6 +114,7 @@
                     <Term>cbc:ID</Term>
                     <Name>Economic operator identifier</Name>
                     <Description>An identifier that identifies the economic operator, such as a legal registration identifier. Can be the registration number in the professional registry.</Description>
+                    <DataType>Identifier</DataType>
                     <Reference type="RULE">PEPPOL-T007-R022</Reference>
                     <Reference type="RULE">PEPPOL-T007-S016</Reference>
                     <Attribute>
@@ -123,7 +124,6 @@
                         <Reference type="CODE_LIST">ICD</Reference>
                         <Value type="EXAMPLE">0088</Value>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                     <Value type="EXAMPLE">7300010000001</Value>
                 </Element>
             </Element>
@@ -150,6 +150,7 @@
                 <Term>cbc:EndpointID</Term>
                 <Name>Contracting body electronic address identifier</Name>
                 <Description>Electronic address of the contracting body.</Description>
+                <DataType>Identifier</DataType>
                 <Reference type="RULE">PEPPOL-T007-R025</Reference>
                 <Attribute>
                     <Term>schemeID</Term>
@@ -159,7 +160,6 @@
                     <Reference type="CODE_LIST">EAS</Reference>
                     <Value type="EXAMPLE">9930</Value>
                 </Attribute>
-                <DataType>Identifier</DataType>
                 <Value type="EXAMPLE">DE122268496</Value>
             </Element>
             <Element>
@@ -169,6 +169,7 @@
                     <Term>cbc:ID</Term>
                     <Name>Contracting body identifier</Name>
                     <Description>The national identifier of a contracting body as it is legally registered (e.g. VAT identification, such as KBO)</Description>
+                    <DataType>Identifier</DataType>
                     <Reference type="RULE">PEPPOL-T007-R027</Reference>
                     <Reference type="RULE">PEPPOL-T007-S021</Reference>
                     <Attribute>
@@ -178,7 +179,6 @@
                         <Reference type="CODE_LIST">ICD</Reference>
                         <Value type="EXAMPLE">0204</Value>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                     <Value type="EXAMPLE">991-1234512345-06</Value>
                 </Element>
             </Element>
@@ -209,12 +209,12 @@
                     least provided. Element can be repeated and also used as an identifier to the LotGroups and Lots
                     to which the tendering question applies. XPath expressions are
                      used to locate the questions.</Description>
+                <DataType>Identifier</DataType>
                 <Attribute>
                     <Term>schemeName</Term>
                     <Name>Scheme name</Name>
                     <Description>Valid values are ContractFolderID, LotGroup or Lot.</Description>
                 </Attribute>
-                <DataType>Identifier</DataType>
             </Element>
             <Element cardinality="1..n">
                 <Term>cbc:XPath</Term>
