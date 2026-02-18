@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
 
     <Term>Catalogue</Term>
@@ -1859,8 +1859,8 @@
             <Element>
                 <Term>cac:Item</Term>
                 <Name>Pre award catalogue item details</Name>
-                <Property key="doc">structure/docs/item.adoc</Property>
                 <Reference type="RULE">PEPPOL-T36-R001</Reference>
+                <Property key="doc">structure/docs/item.adoc</Property>
 
                 <Element cardinality="0..1">
                     <Term>cbc:Description</Term>
@@ -1931,7 +1931,7 @@
                     <Name>Buyers item identification</Name>
                     <Element>
                         <Term>cbc:ID</Term>
-                        <Name>Buyer’s item ID</Name>
+                        <Name>Buyers item ID</Name>
                         <Description>Identifier assigned by the buyer.</Description>
                         <Value type="EXAMPLE">BUY-77421</Value>
                     </Element>
@@ -1943,7 +1943,7 @@
 
                     <Element>
                         <Term>cbc:ID</Term>
-                        <Name>Item sellers identifier</Name>
+                        <Name>Sellers item ID</Name>
                         <Description>An identifier, assigned by the seller, for the item. This element is not mandatory
                             because some companies may not have the identifier yer at the time of issuing the pre-award
                             catalogue.
@@ -2129,8 +2129,8 @@
                         <Attribute usage="Optional">
                             <Term>listID</Term>
                             <Name>Code list identifier</Name>
-                            <Value type="EXAMPLE">STI</Value>
                             <Reference type="CODE_LIST">UNCL7143</Reference>
+                            <Value type="EXAMPLE">STI</Value>
                         </Attribute>
 
                         <Attribute usage="Optional">
@@ -2272,8 +2272,6 @@
                         <Term>cbc:ID</Term>
                         <Name>Item property identifier</Name>
                         <Description>A property identifier for the property of the item request.</Description>
-                        <Value type="EXAMPLE">PROP-34</Value>
-
                         <Attribute usage="Optional">
                             <Term>schemeDataURI</Term>
                             <Name>Scheme data URI</Name>
@@ -2293,6 +2291,7 @@
                             <Description>Version of the property scheme.</Description>
                             <Value type="EXAMPLE">1.0</Value>
                         </Attribute>
+                        <Value type="EXAMPLE">PROP-34</Value>
                     </Element>
 
                     <Element>
@@ -2333,10 +2332,7 @@
                     <Element cardinality="0..1">
                         <Term>cbc:ValueQuantity</Term>
                         <Name>Item property unit of measure</Name>
-                        <Description>The quantity of the requested item property.
-                        </Description>
-                        <Value type="EXAMPLE">EA</Value>
-
+                        <Description>The quantity of the requested item property.</Description>
                         <Attribute>
                             <Term>unitCode</Term>
                             <Name>Quantity unit code</Name>
@@ -2350,6 +2346,7 @@
                             <Reference type="CODE_LIST">UNECERec20</Reference>
                             <Value type="EXAMPLE">C62</Value>
                         </Attribute>
+                        <Value type="EXAMPLE">EA</Value>
 
                     </Element>
 
@@ -2414,7 +2411,7 @@
                 <Element cardinality="0..n">
                     <Term>cac:ItemInstance</Term>
                     <Name>Item instance</Name>
-                    <Description>Definition>A trackable, unique instantiation of this item.</Description>
+                    <Description>Definition: A trackable, unique instantiation of this item.</Description>
 
                     <Element cardinality="0..1">
                         <Term>cbc:BestBeforeDate</Term>

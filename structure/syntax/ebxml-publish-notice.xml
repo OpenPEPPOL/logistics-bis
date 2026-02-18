@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
     <Term>PublishNotice</Term>
     <Name>Peppol Publish Notice (T015)</Name>
@@ -41,8 +41,8 @@
                 create a new version of the existing object using the state of the submitted notice. So it is ensured
                 that the old notice will not be overwritten but stays readable as an outdated version.
             </Description>
-            <Reference type="RULE">PEPPOL-T015-R012</Reference>
             <DataType>String</DataType>
+            <Reference type="RULE">PEPPOL-T015-R012</Reference>
             <Value type="FIXED">CreateOrVersion</Value>
         </Attribute>
         <Element>
@@ -326,8 +326,8 @@
                         <Element>
                             <Term>rim:Value</Term>
                             <Description>The value of the Slot instance.</Description>
-                            <Reference type="RULE">PEPPOL-T015-R013</Reference>
                             <DataType>rim:IntegerValueType</DataType>
+                            <Reference type="RULE">PEPPOL-T015-R013</Reference>
                         </Element>
                     </Element>
                 </Element>
@@ -352,8 +352,8 @@
                         <Element>
                             <Term>rim:Value</Term>
                             <Description>The value of the Slot instance.</Description>
-                            <Reference type="RULE">PEPPOL-T015-R022</Reference>
                             <DataType>rim:StringValueType</DataType>
+                            <Reference type="RULE">PEPPOL-T015-R022</Reference>
                         </Element>
                     </Element>
                 </Element>
@@ -403,9 +403,9 @@
                                 <Element>
                                     <Term>rim:Value</Term>
                                     <Description>Scheme identifier:Party Identification for the buyer.</Description>
+                                    <DataType>rim:StringValueType</DataType>
                                     <Reference type="CODE_LIST">ICD</Reference>
                                     <Reference type="RULE">PEPPOL-T015-R042</Reference>
-                                    <DataType>rim:StringValueType</DataType>
                                     <Value type="EXAMPLE">0204:991-1234512345-06</Value>
                                 </Element>
                             </Element>
@@ -436,10 +436,9 @@
                                 <Term>rim:Value</Term>
                                 <Name>Buyer electronic address identifier</Name>
                                 <Description>Scheme identifier:Identification for the buyer</Description>
-                                <Reference type="RULE">PEPPOL-T015-R014</Reference>
+                                <DataType>rim:StringValueType</DataType><Reference type="RULE">PEPPOL-T015-R014</Reference>
                                 <Reference type="RULE">PEPPOL-T015-R041</Reference>
                                 <Reference type="CODE_LIST">EAS</Reference>
-                                <DataType>rim:StringValueType</DataType>
                                 <Value type="EXAMPLE">9930:DE122268496</Value>
                             </Element>
                         </Element>
