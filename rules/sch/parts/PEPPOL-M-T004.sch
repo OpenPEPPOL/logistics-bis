@@ -3,9 +3,7 @@
         <rule context="*">
             <report id="PEPPOL-T004-S002" flag="fatal" test="normalize-space(.) = '' and not(*)" >[PEPPOL-T004-S002] A Call For Tenders document MUST NOT contain empty elements.</report>
         </rule>
-    </pattern>
-
-    <pattern>
+  
         <let name="syntaxError" value="string('[PEPPOL-T004-S003] A Call For Tenders document SHOULD only contain elements and attributes described in the syntax mapping. - ')"/>
         <rule context="ubl:CallForTenders">
             <report id="PEPPOL-T004-S301" flag="warning" test="(ext:UBLExtensions)"><value-of select="$syntaxError"/>[PEPPOL-T004-S301] UBLExtensions SHOULD NOT be used.</report>

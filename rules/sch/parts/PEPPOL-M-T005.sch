@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron">
-        <rule context="*">
-            <report id="PEPPOL-T005-S002" flag="fatal" test="normalize-space(.) = '' and not(*)" >[PEPPOL-T005-S002] A Tender document MUST NOT contain empty elements.</report>
-        </rule>
-    </pattern>
-
-    <pattern>
         <let name="syntaxError" value="string('[PEPPOL-T005-S003] A Tender document SHOULD only contain elements and attributes described in the syntax mapping. - ')"/>
         <rule context="ubl:Tender">
             <assert id="PEPPOL-T005-R001" flag="fatal" test="exists(cbc:UBLVersionID)">[PEPPOL-T005-R001] A Tender MUST have a syntax identifier.</assert>

@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron">
-    <rule context="*">
-        <assert id="PEPPOL-T008-S001" flag="fatal" test="not(normalize-space(.) = '' and not(*))">A tendering answers document MUST NOT contain empty elements.</assert>
-    </rule>
-</pattern>
-
-<pattern>
     <let name="syntaxError" value="string('A tendering answers document SHOULD only contain elements and attributes described in the syntax mapping. - ')" />
     <rule context="ubl:EnquiryResponse">
         <assert id="PEPPOL-T008-R001" flag="fatal" test="(cbc:UBLVersionID)">A tendering answers MUST have a syntax identifier.</assert>

@@ -1,12 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron">
-    <pattern>
         <rule context="*">
             <report id="PEPPOL-T002-S002" flag="fatal" test="normalize-space(.) = '' and not(*)" >[PEPPOL-T002-S002] An Expression of Interest Confirmation document MUST NOT contain empty elements.</report>
         </rule>
-    </pattern>
-    
-    <pattern>
+
         <let name="syntaxError" value="string('[PEPPOL-T002-S003] An Expression of Interest Confirmation SHOULD only contain elements and attributes described in the syntax mapping. - ')"/>
         <rule context="ubl:ExpressionOfInterestResponse">
             <assert id="PEPPOL-T002-R001" flag="fatal" test="(cbc:CustomizationID)">[PEPPOL-T002-R001] An Expression of Interest Confirmation MUST have a customization identifier</assert>

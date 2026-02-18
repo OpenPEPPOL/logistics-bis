@@ -25,9 +25,7 @@
         ">
             <assert id="PEPPOL-T015-R008" flag="fatal" test="rim:SlotValue[@xsi:type='rim:StringValueType']">This SlotValue MUST have a xsi:type rim:StringValueType.</assert>
         </rule>
-    </pattern>
 
-    <pattern>
         <rule context="lcm:SubmitObjectsRequest/rim:Slot[@name='SpecificationIdentification']">
             <assert id="PEPPOL-T015-R009" flag="fatal" test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[normalize-space() = 'urn:fdc:peppol.eu:prac:trns:t015:1.2']">SpecificationIdentification value MUST be 'urn:fdc:peppol.eu:prac:trns:t015:1.2'.</assert>
         </rule>

@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron">
-    <rule context="*">
-        <assert id="PEPPOL-T009-S001" flag="fatal" test="not(normalize-space(.) = '' and not(*))">A tender clarification request document MUST NOT contain empty elements.</assert>
-    </rule>
-</pattern>
-
-<pattern>
     <let name="syntaxError" value="string('A tender clarification request document SHOULD only contain elements and attributes described in the syntax mapping. - ')" />
     <rule context="ubl:Enquiry">
         <assert id="PEPPOL-T009-R001" flag="fatal" test="(cbc:UBLVersionID)">A tender clarification request MUST have a syntax identifier.</assert>

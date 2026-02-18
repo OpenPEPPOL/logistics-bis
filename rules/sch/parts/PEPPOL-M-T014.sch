@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron">
-        <rule context="*">
-            <assert id="PEPPOL-T45-S002" flag="fatal" test="normalize-space(.) != ''">A Tender Withdrawal
-                Receipt Notification document MUST NOT contain empty elements.
-            </assert>
-        </rule>
-    </pattern>
 
-    <pattern>
         <let name="syntaxError"
              value="string('[PEPPOL-T45-S003] A Tender Withdrawal Receipt Notification document SHOULD only contain elements and attributes described in the syntax mapping. - ')"/>
 

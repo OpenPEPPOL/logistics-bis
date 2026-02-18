@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pattern xmlns="http://purl.oclc.org/dsdl/schematron">
+<schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
+
+    <pattern>
         <rule context="query:QueryResponse">
             <assert id="PEPPOL-T012-R001" flag="fatal" test="./@requestId">A Notice QueryResponse MUST have an provide a
                 reference to the QueryRequest Identifier.
