@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://purl.oclc.org/dsdl/schematron">
-    <pattern>
+<pattern xmlns="http://purl.oclc.org/dsdl/schematron">
         <rule context="*">
             <report id="PEPPOL-T019-R001" flag="fatal" test="normalize-space(.) = '' and not(*)">A Qualification document MUST NOT contain empty elements.
             </report>

@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://purl.oclc.org/dsdl/schematron">
-    <pattern>
+<pattern xmlns="http://purl.oclc.org/dsdl/schematron">
         <rule context="*">
             <report id="PEPPOL-T001-S002" flag="fatal" test="normalize-space(.) = '' and not(*)"
                 >[PEPPOL-T001-S002] An Expression of Interest document MUST NOT contain empty

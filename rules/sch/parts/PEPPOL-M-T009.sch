@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://purl.oclc.org/dsdl/schematron">
-<pattern>
+<pattern xmlns="http://purl.oclc.org/dsdl/schematron">
     <rule context="*">
         <assert id="PEPPOL-T009-S001" flag="fatal" test="not(normalize-space(.) = '' and not(*))">A tender clarification request document MUST NOT contain empty elements.</assert>
     </rule>

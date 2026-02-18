@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
-
-    <pattern>
+<pattern xmlns="http://purl.oclc.org/dsdl/schematron">
         <rule context="query:QueryRequest">
             <assert id="PEPPOL-T011-R001" flag="fatal" test="matches(normalize-space(./@id), '^[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}$')">QueryRequest Identifier value MUST be expressed in a UUID syntax (RFC 4122).</assert>
             <assert id="PEPPOL-T011-R002" flag="fatal" test="count(rim:Slot[@name='SpecificationIdentification']) = 1">There MUST be exactly 1 SpecificationIdentification.</assert>
