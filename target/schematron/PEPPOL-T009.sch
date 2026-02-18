@@ -240,9 +240,6 @@
                  flag="fatal"
                  id="PEPPOL-T009-B00201">Element 'cbc:UBLVersionID' MUST contain value '2.2'.</assert>
       </rule>
-      <rule context="/ubl:Enquiry/cbc:UBLVersionID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B00202">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:Enquiry/cbc:CustomizationID">
          <assert test="normalize-space(text()) = '&#xA;                urn:fdc:peppol.eu:prac:trns:t009:1.1&#xA;            '"
                  flag="fatal"
@@ -250,16 +247,10 @@
                 urn:fdc:peppol.eu:prac:trns:t009:1.1
             '.</assert>
       </rule>
-      <rule context="/ubl:Enquiry/cbc:CustomizationID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B00302">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:Enquiry/cbc:ProfileID">
          <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p005:1.1'"
                  flag="fatal"
                  id="PEPPOL-T009-B00401">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p005:1.1'.</assert>
-      </rule>
-      <rule context="/ubl:Enquiry/cbc:ProfileID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B00402">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:Enquiry/cbc:ID">
          <assert test="not(@schemeURI) or @schemeURI = 'urn:uuid'"
@@ -267,26 +258,14 @@
                  id="PEPPOL-T009-B00501">Attribute 'schemeURI' MUST contain value 'urn:uuid'</assert>
          <assert test="@schemeURI" flag="fatal" id="PEPPOL-T009-B00502">Attribute 'schemeURI' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:Enquiry/cbc:ID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B00503">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:Enquiry/cbc:IssueDate"/>
-      <rule context="/ubl:Enquiry/cbc:IssueDate/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B00701">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:Enquiry/cbc:IssueTime"/>
-      <rule context="/ubl:Enquiry/cbc:IssueTime/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B00801">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:Enquiry/cac:RequestorParty">
          <assert test="cbc:EndpointID" flag="fatal" id="PEPPOL-T009-B00901">Element 'cbc:EndpointID' MUST be provided.</assert>
          <assert test="cac:PartyIdentification" flag="fatal" id="PEPPOL-T009-B00902">Element 'cac:PartyIdentification' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:Enquiry/cac:RequestorParty/cbc:EndpointID">
          <assert test="@schemeID" flag="fatal" id="PEPPOL-T009-B01001">Attribute 'schemeID' MUST be present.</assert>
-      </rule>
-      <rule context="/ubl:Enquiry/cac:RequestorParty/cbc:EndpointID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B01002">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:Enquiry/cac:RequestorParty/cac:PartyIdentification">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T009-B01201">Element 'cbc:ID' MUST be provided.</assert>
@@ -297,22 +276,10 @@
                  flag="fatal"
                  id="PEPPOL-T009-B01302">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
-      <rule context="/ubl:Enquiry/cac:RequestorParty/cac:PartyIdentification/cbc:ID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B01303">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/ubl:Enquiry/cac:RequestorParty/cac:PartyIdentification/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B01202">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:Enquiry/cac:RequestorParty/cac:PartyName">
          <assert test="cbc:Name" flag="fatal" id="PEPPOL-T009-B01501">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:Enquiry/cac:RequestorParty/cac:PartyName/cbc:Name"/>
-      <rule context="/ubl:Enquiry/cac:RequestorParty/cac:PartyName/cbc:Name/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B01601">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/ubl:Enquiry/cac:RequestorParty/cac:PartyName/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B01502">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:Enquiry/cac:RequestorParty/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T009-B00903">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
@@ -323,9 +290,6 @@
       <rule context="/ubl:Enquiry/cac:ResponderParty/cbc:EndpointID">
          <assert test="@schemeID" flag="fatal" id="PEPPOL-T009-B01801">Attribute 'schemeID' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:Enquiry/cac:ResponderParty/cbc:EndpointID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B01802">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:Enquiry/cac:ResponderParty/cac:PartyIdentification">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T009-B02001">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
@@ -335,22 +299,10 @@
                  flag="fatal"
                  id="PEPPOL-T009-B02102">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
-      <rule context="/ubl:Enquiry/cac:ResponderParty/cac:PartyIdentification/cbc:ID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B02103">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/ubl:Enquiry/cac:ResponderParty/cac:PartyIdentification/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B02002">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:Enquiry/cac:ResponderParty/cac:PartyName">
          <assert test="cbc:Name" flag="fatal" id="PEPPOL-T009-B02301">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:Enquiry/cac:ResponderParty/cac:PartyName/cbc:Name"/>
-      <rule context="/ubl:Enquiry/cac:ResponderParty/cac:PartyName/cbc:Name/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B02401">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/ubl:Enquiry/cac:ResponderParty/cac:PartyName/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B02302">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:Enquiry/cac:ResponderParty/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T009-B01703">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
@@ -360,13 +312,7 @@
       <rule context="/ubl:Enquiry/cac:AdditionalDocumentReference/cbc:ID">
          <assert test="@schemeName" flag="fatal" id="PEPPOL-T009-B02601">Attribute 'schemeName' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:Enquiry/cac:AdditionalDocumentReference/cbc:ID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B02602">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:Enquiry/cac:AdditionalDocumentReference/cbc:XPath"/>
-      <rule context="/ubl:Enquiry/cac:AdditionalDocumentReference/cbc:XPath/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B02801">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:Enquiry/cac:AdditionalDocumentReference/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T009-B02502">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
@@ -375,25 +321,13 @@
       </rule>
       <rule context="/ubl:Enquiry/cac:Attachment/cac:ExternalReference"/>
       <rule context="/ubl:Enquiry/cac:Attachment/cac:ExternalReference/cbc:MimeCode"/>
-      <rule context="/ubl:Enquiry/cac:Attachment/cac:ExternalReference/cbc:MimeCode/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B03101">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:Enquiry/cac:Attachment/cac:ExternalReference/cbc:FileName"/>
-      <rule context="/ubl:Enquiry/cac:Attachment/cac:ExternalReference/cbc:FileName/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B03201">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:Enquiry/cac:Attachment/cac:ExternalReference/cbc:Description"/>
-      <rule context="/ubl:Enquiry/cac:Attachment/cac:ExternalReference/cbc:Description/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B03301">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:Enquiry/cac:Attachment/cac:ExternalReference/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T009-B03001">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:Enquiry/cac:Attachment/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T009-B02902">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/ubl:Enquiry/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T009-B00112">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
    </pattern>
     <pattern>

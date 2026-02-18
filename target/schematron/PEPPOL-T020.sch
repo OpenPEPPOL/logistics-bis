@@ -243,24 +243,15 @@
                  flag="fatal"
                  id="PEPPOL-T020-B00201">Element 'cbc:UBLVersionID' MUST contain value '2.2'.</assert>
       </rule>
-      <rule context="/ubl:TenderReceipt/cbc:UBLVersionID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B00202">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cbc:CustomizationID">
          <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t020:1.1'"
                  flag="fatal"
                  id="PEPPOL-T020-B00301">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t020:1.1'.</assert>
       </rule>
-      <rule context="/ubl:TenderReceipt/cbc:CustomizationID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B00302">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cbc:ProfileID">
          <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p011:1.1'"
                  flag="fatal"
                  id="PEPPOL-T020-B00401">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p011:1.1'.</assert>
-      </rule>
-      <rule context="/ubl:TenderReceipt/cbc:ProfileID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B00402">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TenderReceipt/cbc:ID">
          <assert test="not(@schemeURI) or @schemeURI = 'urn:uuid'"
@@ -268,61 +259,31 @@
                  id="PEPPOL-T020-B00501">Attribute 'schemeURI' MUST contain value 'urn:uuid'</assert>
          <assert test="@schemeURI" flag="fatal" id="PEPPOL-T020-B00502">Attribute 'schemeURI' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:TenderReceipt/cbc:ID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B00503">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cbc:ContractFolderID"/>
-      <rule context="/ubl:TenderReceipt/cbc:ContractFolderID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B00701">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cbc:IssueDate"/>
-      <rule context="/ubl:TenderReceipt/cbc:IssueDate/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B00801">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cbc:IssueTime"/>
-      <rule context="/ubl:TenderReceipt/cbc:IssueTime/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B00901">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cbc:RegisteredDate"/>
-      <rule context="/ubl:TenderReceipt/cbc:RegisteredDate/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B01001">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cbc:RegisteredTime"/>
-      <rule context="/ubl:TenderReceipt/cbc:RegisteredTime/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B01101">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T020-B01201">Element 'cbc:ID' MUST be provided.</assert>
          <assert test="cbc:DocumentTypeCode" flag="fatal" id="PEPPOL-T020-B01202">Element 'cbc:DocumentTypeCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cbc:ID"/>
-      <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cbc:ID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B01301">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cbc:DocumentTypeCode">
          <assert test="not(@listID) or @listID = 'UNCL1001'"
                  flag="fatal"
                  id="PEPPOL-T020-B01401">Attribute 'listID' MUST contain value 'UNCL1001'</assert>
          <assert test="@listID" flag="fatal" id="PEPPOL-T020-B01402">Attribute 'listID' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cbc:DocumentTypeCode/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B01403">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment">
          <assert test="cac:ExternalReference" flag="fatal" id="PEPPOL-T020-B01601">Element 'cac:ExternalReference' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference"/>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference/cbc:DocumentHash"/>
-      <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference/cbc:DocumentHash/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B01801">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference/cbc:HashAlgorithmMethod">
          <assert test="normalize-space(text()) = 'http://www.w3.org/2001/04/xmlenc#sha256'"
                  flag="fatal"
                  id="PEPPOL-T020-B01901">Element 'cbc:HashAlgorithmMethod' MUST contain value 'http://www.w3.org/2001/04/xmlenc#sha256'.</assert>
-      </rule>
-      <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference/cbc:HashAlgorithmMethod/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B01902">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T020-B01701">Document MUST NOT contain elements not part of the data model.</assert>
@@ -335,9 +296,6 @@
       </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:IssuerParty/cbc:EndpointID">
          <assert test="@schemeID" flag="fatal" id="PEPPOL-T020-B02101">Attribute 'schemeID' MUST be present.</assert>
-      </rule>
-      <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:IssuerParty/cbc:EndpointID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B02102">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:IssuerParty/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T020-B02002">Document MUST NOT contain elements not part of the data model.</assert>
@@ -352,9 +310,6 @@
       <rule context="/ubl:TenderReceipt/cac:SenderParty/cbc:EndpointID">
          <assert test="@schemeID" flag="fatal" id="PEPPOL-T020-B02401">Attribute 'schemeID' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:TenderReceipt/cac:SenderParty/cbc:EndpointID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B02402">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cac:SenderParty/cac:PartyIdentification">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T020-B02601">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
@@ -364,22 +319,10 @@
                  flag="fatal"
                  id="PEPPOL-T020-B02702">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
-      <rule context="/ubl:TenderReceipt/cac:SenderParty/cac:PartyIdentification/cbc:ID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B02703">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/ubl:TenderReceipt/cac:SenderParty/cac:PartyIdentification/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B02602">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cac:SenderParty/cac:PartyName">
          <assert test="cbc:Name" flag="fatal" id="PEPPOL-T020-B02901">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TenderReceipt/cac:SenderParty/cac:PartyName/cbc:Name"/>
-      <rule context="/ubl:TenderReceipt/cac:SenderParty/cac:PartyName/cbc:Name/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B03001">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/ubl:TenderReceipt/cac:SenderParty/cac:PartyName/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B02902">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cac:SenderParty/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T020-B02303">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
@@ -390,9 +333,6 @@
       <rule context="/ubl:TenderReceipt/cac:ReceiverParty/cbc:EndpointID">
          <assert test="@schemeID" flag="fatal" id="PEPPOL-T020-B03201">Attribute 'schemeID' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:TenderReceipt/cac:ReceiverParty/cbc:EndpointID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B03202">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cac:ReceiverParty/cac:PartyIdentification">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T020-B03401">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
@@ -402,22 +342,10 @@
                  flag="fatal"
                  id="PEPPOL-T020-B03502">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
-      <rule context="/ubl:TenderReceipt/cac:ReceiverParty/cac:PartyIdentification/cbc:ID/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B03503">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/ubl:TenderReceipt/cac:ReceiverParty/cac:PartyIdentification/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B03402">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cac:ReceiverParty/cac:PartyName">
          <assert test="cbc:Name" flag="fatal" id="PEPPOL-T020-B03701">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TenderReceipt/cac:ReceiverParty/cac:PartyName/cbc:Name"/>
-      <rule context="/ubl:TenderReceipt/cac:ReceiverParty/cac:PartyName/cbc:Name/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B03801">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/ubl:TenderReceipt/cac:ReceiverParty/cac:PartyName/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T020-B03702">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cac:ReceiverParty/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T020-B03103">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
