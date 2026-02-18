@@ -221,12 +221,6 @@
     
     <pattern>
 
-      <rule context="*">
-        <assert id="PEPPOL-T45-S002" flag="fatal" test="normalize-space(.) != ''">A Tender Withdrawal
-                document MUST NOT contain empty elements.
-            </assert>
-      </rule>
-
       <let name="syntaxError"
            value="string('[PEPPOL-T45-S003] A Tender Withdrawal document SHOULD only contain elements and attributes described in the syntax mapping. - ')"/>
 

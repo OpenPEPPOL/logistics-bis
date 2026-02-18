@@ -222,12 +222,6 @@
     
     <pattern>
 
-      <rule context="*">
-        <assert id="PEPPOL-T007-S001"
-                 flag="fatal"
-                 test="not(normalize-space(.) = '' and not(*))">A tendering questions document MUST NOT contain empty elements.</assert>
-      </rule>
-
       <let name="syntaxError"
            value="string('A tendering questions document SHOULD only contain elements and attributes described in the syntax mapping. - ')"/>
       <rule context="ubl:Enquiry">
