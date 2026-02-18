@@ -3,7 +3,6 @@
         xmlns:xi="http://www.w3.org/2001/XInclude"
         schemaVersion="iso" queryBinding="xslt2">
 
-
     <title>PEPPOL business and syntax rules for notice publication response</title>
 
     <ns prefix="cbc" uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"/>
