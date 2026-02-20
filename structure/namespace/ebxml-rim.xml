@@ -1,5 +1,37 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Namespace xmlns="urn:fdc:difi.no:2017:vefa:structure:Namespace-1">
-<Identifier prefix="rim">urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0</Identifier>
-<Version>4.0</Version>
+    <Identifier prefix="rim">urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0</Identifier>
+    <Version>4.0</Version>
+    <Include prefix="rim">urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0</Include>
+    <Element name="IdentifiableList">
+        <Ref card="0..n">rim:Identifiable</Ref>
+    </Element>
+    <Element name="Notification">
+        <Ref card="0..n">rim:Slot</Ref>
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..1">rim:Description</Ref>
+        <Ref card="0..1">rim:VersionInfo</Ref>
+        <Ref card="0..n">rim:Classification</Ref>
+        <Ref card="0..n">rim:ExternalIdentifier</Ref>
+        <Ref card="0..n">rim:ExternalLink</Ref>
+        <Ref card="1..n">rim:Event</Ref>
+    </Element>
+    <Element name="ObjectRef">
+        <Ref card="0..n">rim:Slot</Ref>
+    </Element>
+    <Element name="ObjectRefList">
+        <Ref card="0..n">rim:ObjectRef</Ref>
+    </Element>
+    <Element name="RegistryObject">
+        <Ref card="0..n">rim:Slot</Ref>
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..1">rim:Description</Ref>
+        <Ref card="0..1">rim:VersionInfo</Ref>
+        <Ref card="0..n">rim:Classification</Ref>
+        <Ref card="0..n">rim:ExternalIdentifier</Ref>
+        <Ref card="0..n">rim:ExternalLink</Ref>
+    </Element>
+    <Element name="RegistryObjectList">
+        <Ref card="0..n">rim:RegistryObject</Ref>
+    </Element>
 </Namespace>
