@@ -1,0 +1,202 @@
+[[requirements]]
+= Pre-award Catalogue transaction business requirements
+
+The table below gives an overview of the transaction business requirements for the pre-award catalogue. The requirements are derived from the {bii3} project on pre-award Catalogue, as well as the catalogue work from TC440.
+
+Please note that several of the requirements refer to the order. This is due to the fact that the pre-award catalogue has been aligned with the post-award catalogue, to make it easier to move from a pre- to a post award catalogue after the contract is signed.
+
+
+.General business requirements
+[cols="1,4", options="header"]
+|====
+|Id
+|Requirement
+
+|op-t36-001
+|The specification on the requested kind of goods and/or services shall be provided in a structured description.
+
+|op-t36-002
+|A pre-award catalogue shall contain the procurement reference number of the call for tenders.
+
+|op-t36-003
+|The transaction shall contain all information necessary for its application i.e. it shall not rely on the availability of external references such as a centralised repository of item information. No external data sources should be needed in order to ease the processing of a pre-award catalogue request.
+
+|op-t36-004
+|It shall be reusable in post-award processes, i.e., a pre-award catalogue shall have information that makes it possible to use as a post-award catalogue, even if some information might be added later in the process. There is a potential difference between the pre-award and the post-award catalogue when it comes to the extent of required information. A "principle of proportionality" means that the information that can be required in relation to a tender and a pre-award catalogue must be in proportion to the offered contract. In a post-award catalogue, after the parties have signed an agreement, more information can be requested by the buyer to describe the products in more details.
+|====
+
+.Metadata requirements
+[cols="1,4", options="header"]
+|====
+|Id
+|Requirement
+
+|op-t36-011
+|The transaction shall be uniquely identifiable.
+
+|op-t36-012
+|The transaction shall contain a reference to the Tender transaction the pre-award catalogue belongs to.
+
+|op-t36-013
+|The transaction shall contain the issue date.
+
+|op-t36-014
+|The transaction may contain the issue time.
+
+|op-t36-015
+|The transaction shall contain a version number indicating updated versions of the pre-award catalogue.
+
+|op-t36-016
+|The issuing catalogue provider shall be identified in the transaction with a name, an address, the country of registration, an endpoint and should include an identifier.
+
+|op-t36-017
+|The corresponding economic operator offering the listed items in the catalogue shall be identified in the transaction with a name, an address, the country of registration, an endpoint and should include an identifier. This might be the same party as the catalogue provider.
+
+|op-t36-018
+|The party receiving the pre-award catalogue (catalogue receiver) shall be identified in the transaction with a name, an address, the country of registration, an endpoint and should include an identifier.
+
+|op-t36-019
+|The contracting authority the pre-award catalogue is offered to shall be identified in the transaction with a name, an address, the country of registration, an endpoint and should include an identifier. This might be the same party as the catalogue receiver.
+
+|op-t36-020
+|The transaction may include contact information to the supplier and customer. E-Mail or internet address at which the procurement documents shall be available for unrestricted and full direct access, free of charge.
+
+|op-t36-021
+|It shall be possible to check the integrity and authentication of the information content and to audit these aspects of the content. It shall be possible to check that the pre-award catalogue is authentic.
+
+|op-t36-022
+|The transaction shall specify in which period of time the pre-award catalogue is valid.
+|====
+
+.Catalogue line requirements
+[cols="1,4", options="header"]
+|====
+|Id
+|Requirement
+
+|op-t36-030
+|A catalogue line is a set of items that can be ordered as such.
+
+|op-t36-031
+|A catalogue line in a pre-award catalogue shall be uniquely identifiable by an identifier, to ensure that the catalogue line can be referenced, e.g., by an id.
+
+|op-t36-032
+|To align with post award catalogue, a pre award catalogue line shall specify how the corresponding items can be ordered.
+
+|op-t36-033
+|To align with post award catalogue, a pre award catalogue shall specify the requirements on the order transaction.
+
+|op-t36-034
+|A catalogue line may specify the warranty conditions on the items
+
+|op-t36-035
+|A catalogue line may specify in which period of time the catalogue line is valid.
+
+|op-t36-036
+|To align with post award catalogue, a pre award catalogue line should provide for an indicator that clearly states whether the line item can be ordered according to the information given in the line.
+
+|op-t36-037
+|A catalogue line should provide for additional information about items in the form of attachments and external references.
+
+|====
+
+
+.Item requirements
+[cols="1,4", options="header"]
+|====
+|Id
+|Requirement
+
+|op-t36-040
+|An item is a specification within a catalogue line of an offer of a product by the economic operator
+
+|op-t36-041
+|An item in a pre-award catalogue shall be uniquely identifiable by a name and an identifier, to ensure that the item can be referenced, e.g., by an id.
+
+|op-t36-042
+|An item may have a description.
+
+|op-t36-043
+|To align with post award catalogue, it shall be possible to specify how an item can be ordered. This includes amongst others allowed units of measure, order sizes, minimal and maximal order sizes. There might exist restrictions from the production process or a need to simplify or limit the costs of the ordering and logistics process, so that the order size is restricted. Thus, the buyer needs information to place a correct order that is not denied by the supplier.
+
+|op-t36-044
+|It shall be possible to specify how the items will be packaged.
+
+|op-t36-045
+|It shall be possible to specify logistic conditions and other needed service information on how the item will be delivered. This includes information on maximum and minimum storage temperature, information needed for cross-border logistics processes. To define the products to be done for each package unit along the supply chain.
+
+|op-t36-046
+|It shall be possible to specify how the item is priced. This includes factors that have influence on the price as well as relationships to other parts of the catalogue that may have impact on the price. The price can be dependent on many factors, e.g., delivery region (down to the city level), allowance, charges, currency, etc.
+
+|op-t36-047
+|It should be possible to specify the period of time an item price is valid. If no validity period is specified, the price is valid until cancelled. The same as in tbr19-003, but on the item level. This allows to have items with different validity periods in the same catalogue. This does not mean, that the item will expire.
+
+|op-t36-048
+|Prices shall not be negative.
+
+|op-t36-049
+|It shall be possible to provide information that helps to search for the item, e.g., keywords or item description used in a full text search.
+
+|op-t36-050
+|It shall be possible to refer an item to the corresponding classes from one or more classification systems.
+
+|op-t36-051
+|An item might be illustrated by attached images.
+
+|op-t36-052
+|An item might include further specifications as attachments.
+
+|op-t36-053
+|It might be specified how the item will be delivered. This includes information on the packaging and the conditions for certain delivery locations.
+
+|op-t36-054
+|An item shall include information that allow to compare the item with other items.
+
+|op-t36-055
+|It should be possible to provide information on the product marking, e.g., to indicate that environmental or social requirements on the item production were followed. Procurement managers need information about environmental marking applicable for a given item in order to ensure that environmental, ecological, food safety and basic human rights aspects were respected. On the other side, sales managers wish to provide this kind of information, e.g., for marketing purposes.
+
+|op-t36-056
+|It should be possible to specify the manufacturer of the item. In particular, for the case where the supplier is different from the manufacturer of the item.
+
+|op-t36-057
+|It should be possible to specify hazard indicators for an item by any indicator system. If an item can be a danger to people or the environment, so called hazardous goods, often legal requirements demand that such items have indicators to indicate the danger that come from this item. Furthermore, such items require special handling in the logistics process
+
+|op-t36-058
+|It shall be possible to specify the semantic relationships with cardinalities between different items in the pre-award catalogue request. In particular, it shall be possible to specify part-of relationships, to specify that not only an item is tendered, but also additional items belonging to it. E.g., items that are accessories for other items or are replacements for defect components of an item. This helps to specify for instance that not only printers are tendered, but also print cartridges.
+
+|op-t36-059
+|It should be possible to specify a delivery location on line level, with address, city, post code, etc., so that all details on each line are dependent on this location, including price, tax and other specifications. Needed to support the buying decision, to see how much has to be paid in the end.
+
+|op-t36-060
+|It should be possible to specify a manufacturing date, a best before date and an expiry date (last date when product may be used or consumed) for an item.
+
+|op-t36-061
+|It should be possible to state the country of origin for an item.
+
+
+|====
+
+.Item property requirements
+[cols="1,4", options="header"]
+|====
+|Id
+|Requirement
+
+|op-t36-070
+|An item property specifies one characteristic of an item, e.g., the colour of an offered pen.
+
+|op-t36-071
+|An item property has to be uniquely identifiable, to ensure that the item property can be referenced.
+
+|op-t36-072
+|An item property may be related to one or more corresponding properties of one or more classification systems. Any kind of classification system having properties might be used.
+
+|op-t36-073
+|If an item property is specified, a specific value may to be specified for this item property. The specified value has to hold true for the corresponding item.
+
+|op-t36-074
+|It shall be possible to specify a range of allowed values for an item property. In order to allow the supplier to offer only values in the range the contracting body needs (e.g. for a RAM memory the contracting body needs values of 1, 2 or 3 GB and no other values, for a maintenance service the action is request within 1 day). The values information allows also a validation check with respect to the offer of the economic operator.
+
+|op-t36-075
+|An item property might be described using free text.
+|====

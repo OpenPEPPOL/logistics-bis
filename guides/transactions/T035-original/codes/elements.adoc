@@ -1,0 +1,167 @@
+[[element-codes]]
+= Code lists for coded elements
+
+
+== Attachment description code
+
+[cols="1,4"]
+|===
+h| Qualifier
+| `UNCL1001` (listID)
+h| Document location
+| `cbc:DocumentTypeCode`
+h| Source codelist
+| link:https://www.unece.org/fileadmin/DAM/trade/untdid/d17a/tred/tred1001.htm[UN/CEFACT code list 1001, D.17A]
+|===
+
+
+== Mime code of attached document
+
+[cols="1,4"]
+|===
+h| Qualifier
+| _None_
+h| Document location
+| `cbc:EmbeddedDocumentBinaryObject/@mimeCode`
+h| Source codelist
+|
+  Subset of link:http://www.iana.org/assignments/media-types[IANA] and link:http://filext.com/file-extension/DWG[AutoCAD file type].
+|===
+
+[cols="1,4"]
+.Code list
+|===
+.1+h| Structured content
+| application/xml
+
+.1+h| Documents
+| application/pdf
+
+.3+h| Images
+| image/png
+| image/jpeg
+| image/tiff
+
+.1+h| Video
+| video/mp4
+
+.4+h| Drawings
+| application/acad
+| application/autocad_dwg
+| application/dwg
+| drawing/dwg
+|===
+
+
+== Country code
+
+[cols="1,4"]
+|===
+h| Qualifier
+| `ISO3166-1:Alpha2` (listID)
+h| Document location
+| `cac:Country/cbc:IdentificationCode` +
+`cac:OriginCountry/cbc:IdentificationCode` +
+h| Source codelist
+| link:http://www.iso.org/iso/home/standards/country_codes.htm[ISO 3166-1]
+|===
+
+== Contract type (procurement project identifier)
+
+[cols="1,4"]
+|===
+h| Qualifier
+| `UNCL1001` (listID)
+h| Document location
+| `cbc:ContractTypeCode`
+h| Source codelist
+| Subset of  link:https://www.unece.org/fileadmin/DAM/trade/untdid/d17a/tred/tred1001.htm[UN/CEFACT code list 1001, D.17A]
+|===
+
+[cols="1,4", options="header"]
+.Code list
+|===
+| Code
+| Description
+
+>| 311
+| Request for quote
+|===
+
+
+== Item price type
+
+[cols="1,4"]
+|===
+h| Qualifier
+| `UNCL5387` (listID)
+h| Document location
+| `cbc:PriceTypeCode`
+h| Source codelist
+| link:https://www.unece.org/fileadmin/DAM/trade/untdid/d17a/tred/tred5387.htm[UN/CEFACT code list 5387, D.17A]
+|===
+
+
+== Unit of measure
+
+[cols="1,4"]
+|===
+h| Qualifier
+| _None_
+h| Document location
+| `cbc:*/@unitCode`
+h| Source codelist
+| link:https://www.unece.org/fileadmin/DAM/cefact/recommendations/rec20/rec20_Rev11e_2015.xls[UN/ECE Recommendation 20, Revision 11 (2015)]
+|===
+
+
+== Currency identifier
+
+[cols="1,4"]
+|===
+h| Qualifier
+| _None_
+h| Document location
+| `cbc:*/@currencyID`
+h| Source codelist
+| link:https://www.iso.org/iso-4217-currency-codes.html[ISO 4217:2015]
+|===
+
+
+== Item VAT category code
+
+[cols="1,4"]
+|===
+h| Qualifier
+| UNCL5305 (schemeID)
+h| Document location
+| `cac:ClassifiedTaxCategory/cbc:ID`
+h| Source codelist
+| Subset of link:https://www.unece.org/fileadmin/DAM/trade/untdid/d17a/tred/tred5305.htm[UN/CEFACT code list 5305]
+|===
+
+
+[cols="1,4", options="header"]
+.Code list
+|===
+| Code
+| Description
+
+| AE
+| Vat Reverse Charge
+
+| E
+| Exempt from Tax
+
+| S
+| Standard rate
+
+| Z
+| Zero rated goods
+
+| H
+| Higher rate
+
+| AA
+| Lower rate
+|===

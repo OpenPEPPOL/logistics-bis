@@ -3,12 +3,16 @@
 
 In the pre-award catalogue request you can provide information on the following parties:
 
-Catalogue request provider:: The party that sends the catalogue request. Information on catalogue request provider is mandatory
-Catalogue request receiver:: The party that receives the catalogue request. Information on catalogue request receiver is mandatory
+* Catalogue request provider:: The party that sends the catalogue request. Information on catalogue request provider is mandatory
+* Catalogue request receiver:: The party that receives the catalogue request. Information on catalogue request receiver is mandatory
+* Catalogue request seller supplier:: Redefined to be the despatch address. Optionally used for services like transportation when the from and to address
+	is needed and when all lines in the catalogue request are from the same address. Can be specified at line level too.
+* Catalogue request contractor customer:: Redefined to be the delivery address. Optionally used when it is relevant for the catalogue request and when
+	all lines in the catalogue request are to the same address. Can be specified at line level too.
 
 
-.Example of a catalogue request provider party
+.Example of a catalogue request provider party. All parties have the same format.
 [source, xml, indent=0]
 ----
-include::../../../../structure/snippets/Request_Example_Germany.xml[tags=request-provider]
+include::../Snippets/Snippet-1.xml[tags=request-provider]
 ----

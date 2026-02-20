@@ -1,0 +1,24 @@
+[[addresses]]
+= Despatch- and Delivery-Address
+
+It is possible to specify in the Catalogue the Despatch- and the Delivery-Addresses both at header and line level. In the same message only one level 
+must be used, not both. 
+
+At Header level the cac:SellerSupplierParty shows the Despatch Address and cac:ContractorCustomerParty shows the Delivery address.  
+At Line level both are presented in cac:ApplicableTerritoryAddress and separated by the cbc:AddressTypeCode. Besides these two address types there 
+can also be other types of addresses. 
+
+The addresses are not always relevant to include in the Catalogue, but they will look like this when used. 
+
+
+.Example of addresses at header level.
+[source, xml, indent=0]
+----
+include::../Snippets/Snippet-1.xml[tags=address-h]
+----
+
+.Example of addresses at line level.
+[source, xml, indent=0]
+----
+include::../Snippets/Snippet-1.xml[tags=address-l]
+----
