@@ -657,9 +657,6 @@
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T015-B04210">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T015-B04102">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/lcm:SubmitObjectsRequest/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T015-B00113">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>

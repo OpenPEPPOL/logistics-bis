@@ -542,9 +542,6 @@
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B03309">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/query:QueryResponse/rim:RegistryObjectList/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B03201">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/query:QueryResponse/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B00109">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>

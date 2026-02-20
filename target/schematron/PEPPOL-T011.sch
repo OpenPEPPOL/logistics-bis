@@ -387,9 +387,6 @@
                  id="PEPPOL-T011-B03201">Attribute 'returnType' MUST contain value 'LeafClassWithRepositoryItem'</assert>
          <assert test="@returnType" flag="fatal" id="PEPPOL-T011-B03202">Attribute 'returnType' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:ResponseOption/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T011-B03203">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/query:QueryRequest/query:Query">
          <assert test="not(@queryDefinition) or @queryDefinition = 'SearchNotice'"
                  flag="fatal"
