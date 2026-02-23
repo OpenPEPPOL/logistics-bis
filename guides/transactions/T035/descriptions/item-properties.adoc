@@ -1,7 +1,16 @@
 [[item_prop]]
 = Additional Item Properties
 
-Additional properties are meant for product properties that cannot be sent in any of the defined elements in PreAward Catalogue. Additional properties consist of the Name of the property and the actual Value.
+== Definition of a property
+In this document the term “property” is mentioned in several places. It is a way to describe the item when an item number is not known or it is not a 
+standard product. 
+The property can be identified by a Name or NameCode that must be known by both sender and receiver, but better is to identify the property with an ID 
+that is defined in a standard public Data Dictionary (DD) and to provide the attributes where to find the DD. 
+It is recommended to use Property identification from standardised Data Dictionaries. 
+
+== Use of properties
+Additional properties are meant for product properties that cannot be sent in any of the defined elements in PreAward Catalogue. Additional properties 
+consist of the Name, NameCode and/or Identity of the property and the requested Value or Range. 
 
 .Example of additional properties:
 * Color
@@ -11,31 +20,4 @@ Stated with amount per 100 g/ml.
 Legal values: True, False
 
 .Example of use in the PreAward Catalogue request message
-====
-
-[source]
-----
-<cac:AdditionalItemProperty>
-  <cbc:Name languageID="en">Color</cbc:Name>
-  <cbc:Value languageID="en">Red</cbc:Value>
-  <cbc:ValueQualifier>Color</cbc:ValueQualifier>
-</cac:AdditionalItemProperty>
-----
-
-[source]
-----
-<cac:AdditionalItemProperty>
-  <cbc:Name>NutritionProtein</cbc:Name>
-  <cbc:ValueQuantity unitCode="GRM" unitCodeListID="UNECERec20">2.5</cbc:ValueQuantity>
-  <cbc:ValueQualifier>Nutrition</cbc:ValueQualifier>
-</cac:AdditionalItemProperty>
-----
-
-[source]
-----
-<cac:AdditionalItemProperty>
-  <cbc:Name>GeneticallyModified</cbc:Name>
-  <cbc:Value>True</cbc:Value>
-</cac:AdditionalItemProperty>
-----
-====
+include::../Snippets/Snippet-1.xml[tags=item-property]

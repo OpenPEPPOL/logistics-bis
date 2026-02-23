@@ -1,0 +1,21 @@
+
+= Reference to the call for tenders (Procurement project identifier)
+
+The pre-award catalogue shall refer to a previous call for tenders with pre-award catalogue request, often called the *procurement project identifier*. The identifier shall be provided in the element  `cac:ReferencedContract/cac:ContractDocumentReference/cbc:ID` with `cac:ReferencedContract/cbc:ContractTypeCode` = 311.
+
+When the referenced call for tenders has lots, the lot identifier shall be sent at line level in the element `cbc:ContractSubdivision`.
+
+.Example on procurement project identifier
+[source, xml, indent=0]
+----
+include::../../../../structure/snippets/Snippet_68.xml[tags=procurement]
+----
+<1>  Code 311 is mandatory
+<2>  The procurement project identifier
+
+.Lot identifier on line level
+[source, xml, indent=0]
+----
+include::../../../../structure/snippets/Snippet_68.xml[tags=lot-ref]
+...
+----

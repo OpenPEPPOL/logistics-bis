@@ -1,3 +1,4 @@
+[[quantities-units]]
 = Quantities and Units
 
 Various quantities and units can be stated in the PreAward Catalogue.
@@ -22,7 +23,7 @@ The largest number of items that can be ordered (most often unlimited).
 Packed quantity (Item/PackQuantity)::
 Number of items on next lower level, e.g. number of Consumer units in a Trading unit.
 
-Consumable unit quantity (Item/PackSizeNumeric)::
+Consumer unit quantity (Item/PackSizeNumeric)::
 Number of Consumer items in the orderable unit. E.g. number of bottles on a Pallet.
 
 Item quantity for component related item(ComponentRelatedItem/Quantity)::
@@ -55,24 +56,7 @@ Quantity of the related component
 [source]
 .Example of catalogue line with line identifier = 4 in the above table
 ----
-<cac:CatalogueLine>
-  <cbc:ID>4</cbc:ID>
-  <cbc:OrderableUnit>EA</cbc:OrderableUnit>
-  <cbc:ContentUnitQuantity unitCode="MLT" unitCodeListID="UNECERec20">250</cbc:ContentUnitQuantity>
-  <cbc:OrderQuantityIncrementNumeric>1</cbc:OrderQuantityIncrementNumeric>
-  <cbc:MinimumOrderQuantity unitCode="EA" unitCodeListID="UNECERec20">1</cbc:MinimumOrderQuantity>
-  <cbc:PackLevelCode listID="GS17009:Peppol">CU</cbc:PackLevelCode>
-  ...
-  <cac:Item>
-    <cbc:Name languageID="en">Shampoo 250 ml</cbc:Name>
-    <cbc:PackSizeNumeric>1</cbc:PackSizeNumeric>
-    <cac:SellersItemIdentification>
-      <cbc:ID>1111</cbc:ID>
-    </cac:SellersItemIdentification>
-  ...
-  </cac:Item>
-  ...
-</cac:CatalogueLine>
+include::../Snippets/Snippet-1.xml[tags=quantity-4]
 ----
 ====
 
@@ -101,33 +85,11 @@ Quantity of the related component
 [source]
 .Example of catalogue line with line identifier = 2 in the above table
 ----
-<cac:CatalogueLine>
-  cbc:ID>8</cbc:ID>
-  <cbc:OrderableUnit>CS</cbc:OrderableUnit>
-  <cbc:ContentUnitQuantity unitCode="EA" unitCodeListID="UNECERec20">2500</cbc:ContentUnitQuantity>
-  <cbc:OrderQuantityIncrementNumeric>1</cbc:OrderQuantityIncrementNumeric>
-  <cbc:MinimumOrderQuantity unitCode="CS" unitCodeListID="UNECERec20">1</cbc:MinimumOrderQuantity>
-  <cbc:PackLevelCode listID="GS17009:Peppol">TU</cbc:PackLevelCode>
-  <cac:ComponentRelatedItem>
-    <cbc:ID>A</cbc:ID>
-    <cbc:Quantity unitCode="EA" unitCodeListID="UNECERec20">5</cbc:Quantity>
-  </cac:ComponentRelatedItem>
-  ...
-  <cac:Item>
-    <cbc:Description languageID="en">5*500 Copy paper</cbc:Description>
-    <cbc:PackQuantity unitCode="CS" unitCodeListID="UNECERec20">5</cbc:PackQuantity>
-    <cbc:PackSizeNumeric>5</cbc:PackSizeNumeric>
-    <cac:SellersItemIdentification>
-      <cbc:ID>AA</cbc:ID>
-    </cac:SellersItemIdentification>
-    ...
-  </cac:Item>
-  ...
-</cac:CatalogueLine>
+include::../Snippets/Snippet-1.xml[tags=quantity-2]
 ----
 ====
 
-
+[[catch]]
 = Catch Weight
 
 To inform that an item is catch weight (ex. Orderable quantity is pcs, but invoiced quantity is kilo, and  where one pcs can be of variable weight), set unit code for content unit to 31 (catch weight) according to UN Recommondations 20. ( <<Unit of measure>> )
@@ -135,9 +97,5 @@ To inform that an item is catch weight (ex. Orderable quantity is pcs, but invoi
 [source]
 .Example
 ----
-<cac:CatalogueLine>
-  <cbc:ID>8</cbc:ID>
-  <cbc:OrderableUnit>EA</cbc:OrderableUnit>
-  <cbc:ContentUnitQuantity unitCode="31" unitCodeListID="UNECERec20">10
-</cbc:ContentUnitQuantity>
+include::../Snippets/Snippet-1.xml[tags=catch]
 ----

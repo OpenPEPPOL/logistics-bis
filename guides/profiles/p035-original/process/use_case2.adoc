@@ -1,0 +1,63 @@
+[[use-case-2]]
+== Use case 2
+
+
+[cols="1,5",options="header",]
+|====
+|*Use Case number* |2
+|*Use Case Name* |RFQ and Quote exchanged between two companies in the Construction area to agree on prices and terms.  
+|*Use Case Description* a|
+RFQ and Quote exchanged between two companies in the Construction area to agree on prices and terms to buy Material for a specific project when a 
+Framework Agreement is already in place. The products are based on wood. 
+
+The Buyer can send the RFQ to more than one Supplier. The only difference in the RFQ would then be the ReceiverParty and the referenced Contract. 
+
+The Buyer specifies in the RFQ the products using Classification and Properties. No item numbers are given in the request in this example. The Supplier 
+then identifies the product with an identity (SellersItemIdentification) in the Quote, and also returns the values of the requested Properties. 
+
+When receiving the Quotes from the Suppliers they can easily be compared to select the best offer. 
+
+|*Parties involved* a|
+Buyer (sender) (In UBL: ProviderParty) 
+
+Seller (receiver) (In UBL: ReceiverParty)
+
+Despatch location (In UBL: SellerSupplierParty)
+
+Delivery location (In UBL: ContractorCustomerParty)
+
+|*Pre conditions* a|
+The Customer want to send a Catalogue Request to selected Suppliers that are relevant for this type of products. 
+A framework contract is already in place between the parties.
+
+|*Post conditions* a|
+The Catalogue Request is received by the selected Suppliers.
+The supplier is supposed to create and send a Catalogue as a result of this.
+
+|*Assumptions* a|
+. A framework contract is in place between the parties.
+. The Supplier can provide the type of products or services requested.
+
+|*The flow* a|
+. The Customer selects which Suppliers they want to send a Catalogue Request to. 
+. The Customer creates a list of products or services they want to purchase.
+. The Customer forms a Catalogue Request and sends it to selected Suppliers.
+. The Supplier receives the Catalogue Request and analyzes the content.
+. The Supplier creates a Catalogue for the requested products containing item identification and price etc.
+. The Supplier sends the Catalogue to the Customer.
+. The Customer receives the Catalogue and starts the evaluation process.
+
+|*Result* a|
+. The Catalogue Request message helped the Supplier to create the Catalogue.
+.. Faster.
+.. With less work.
+.. With less errors and misunderstandings.
+
+. The Catalogue message helped the Customer to select the best offer.
+.. Faster since Suppliers are expected to return the Catalogue quicker.
+.. With less work since all Catalogues are recived in the same format and no manual entry is needed.
+.. With less errors and misunderstandings.
+
+|*XML example file* a|
+See {examples-zip} for a sample file illustrating Use Case 2.
+|====
