@@ -3,23 +3,21 @@
 The “schemeID” attribute shall be populated in all instances of the “ID” element when used within a
 “PartyIdentification”-container and in all instances of the “EndpointID” element when used within a “Party”-
 container.
+This value will be evaluated against codelists, and only if using values that are in the codelist they will be accepted as valid. 
+The codelist used for “EndpointID” is “EAS” (Electronic Address Scheme) and för “ID” in the “PartyIdentification”-container the 
+codelist is “ICD” (ISO 6523).
 
 .Examples of usage in PartyIdentification
 [source, xml]
 ----
-<cac:PartyIdentification>
-  <cbc:ID schemeID="GLN">5790000435968</cbc:ID>
-</cac:PartyIdentification>
+include::../Snippets/Snippet-2.xml[tags=party-id]
 ----
 
-The following examples denote that the Issuing Agency is DK:CVR in the Peppol set of Issuing Agency
+The following examples denote that the Issuing Agency is 0198 in the Peppol set of Issuing Agency
 Codes. This means that the party has the Danish CVR identifier DK87654321.
 
-.Examples of usage in PartyIdentification and Endpoint ID
+.Examples of usage in Endpoint ID
 [source, xml]
 ----
-<cbc:EndpointID schemeID="DK:CVR">DK87654321</cbc:EndpointID>
-<cac:PartyIdentification>
-  <cbc:ID schemeID="DK:CVR">DK87654321</cbc:ID>
-</cac:PartyIdentification>
+include::../Snippets/Snippet-2.xml[tags=epid]
 ----

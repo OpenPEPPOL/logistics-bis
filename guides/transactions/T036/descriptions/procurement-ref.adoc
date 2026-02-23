@@ -1,21 +1,46 @@
+[[procurement-ref]]
+= Reference to the Call for Tenders/Request for Quote (and Project identifier)
 
-= Reference to the call for tenders (Procurement project identifier)
-
-The pre-award catalogue shall refer to a previous call for tenders with pre-award catalogue request, often called the *procurement project identifier*. The identifier shall be provided in the element  `cac:ReferencedContract/cac:ContractDocumentReference/cbc:ID` with `cac:ReferencedContract/cbc:ContractTypeCode` = 311.
+In B2G processes the pre-award catalogue shall refer to a previous call for tenders with pre-award catalogue request, often called 
+the *procurement project identifier*. This Project identifier shall be provided in the element 
+`cac:ReferencedContract/cac:ContractDocumentReference/cbc:ID` with `cac:ReferencedContract/cbc:ContractTypeCode` = 311
+and the reference to the Catalogue Request in cac:ReferencedContract/cbc:ID
 
 When the referenced call for tenders has lots, the lot identifier shall be sent at line level in the element `cbc:ContractSubdivision`.
 
-.Example on procurement project identifier
-[source, xml, indent=0]
-----
-include::../../../../structure/snippets/Snippet_68.xml[tags=procurement]
-----
-<1>  Code 311 is mandatory
-<2>  The procurement project identifier
+In B2B processes the same group and elements are used in a similar way. The reference to a preceding Catalogue Request (RFQ) is the same if one 
+is received, but instead of having a “procurement project identifier”, a Project reference should be sent. If no RFQ is received, 
+the cac:ContractDocumentReference/cbc:ID instead can contain a reference to a Framework Agreement or some other Contract between the parties. 
+The cbc:ContractTypeCode should reflect that if that is the case. 
 
-.Lot identifier on line level
-[source, xml, indent=0]
+[source]
+.Example of procurement project identifier in a B2G process
 ----
-include::../../../../structure/snippets/Snippet_68.xml[tags=lot-ref]
+include::../Snippets/Snippet-1.xml[tags=procurement]
+----
+
+<1>  Reference to the Catalogue Request document id.
+<2>  Code 311 is mandatory
+<3>  The procurement project identifier
+
+[source]
+.Lot identifier on line level
+----
+include::../Snippets/Snippet-1.xml[tags=lot-ref]
+----
 ...
+
+[source]
+.Example of a Project reference in a B2B process
+----
+include::../Snippets/Snippet-1.xml[tags=project]
+----
+
+<1>  Reference to the Catalogue Request document id (311), a Framework Agreement (539) or another Contract (315).
+<2>  Code 311, 315 or 539 depending on type of reference.
+<3>  The Project identifier
+
+[source]
+----
+include::../Snippets/Snippet-1.xml[tags=dummy]
 ----

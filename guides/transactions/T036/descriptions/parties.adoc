@@ -5,12 +5,14 @@ In the pre-award catalogue you can provide information on the following parties:
 
 Catalogue provider:: The party that sends the catalogue. Information on catalogue provider is mandatory
 Receiver:: The party that receives the catalogue. Information on catalogue provider is mandatory
-Supplier:: The party that provides the items specified in the catalogue. Optional, normally only used if supplier is different from provider
-Customer:: The party that might order from the catalogue. Optional, normally only used if customer is different from receiver.
+Despatch address:: Defines the place or address from where the goods och service will depart. If used, no DespatchAddress must be used at line level.
+Delivery address:: Defines the place or address to where the goods arrives or the service is delivered. If used, no DeliveryAddress must be used at 
+line level.
+Despatch- and Delivery addresses are described in chapter 6.6.
 
 
-.Example of provider party
+.Example of provider party. All parties have the same format.
 [source, xml, indent=0]
 ----
-include::../../../../structure/snippets/Snippet_68.xml[tags=provider]
+include::../Snippets/Snippet-1.xml[tags=provider]
 ----

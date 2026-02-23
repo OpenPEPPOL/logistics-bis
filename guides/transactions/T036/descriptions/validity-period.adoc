@@ -1,9 +1,10 @@
+[[validity-period]]
 = Validity period
 
 In the PreAward the following validity periods can be stated:
 
 * Validity period on document level (mandatory), used to state the validity period for the entire PreAward Catalogue.
-* Validity period for a catalogue line
+* Validity period for a catalogue line, used to specify the Delivery Period of the Goods or Services.
 * Validity period for price (See also <<price>>)
 
 WARNING: All validity periods shall have both start date and end date, and the start date shall be earlier than the end date
@@ -14,32 +15,17 @@ Example of validity periods in a PreAward Catalogue:
 [source]
 .Document level (mandatory)
 ----
-include::../../../../structure/snippets//snippet-structure-1.xml[tags=validity-doc]
+include::../Snippets/Snippet-1.xml[tags=period-h]
 ----
 
 [source]
-.Catalogue line
+.Catalogue line (Delivery period)
 ----
-<cac:LineValidityPeriod>
-  <cbc:StartDate>2017-08-01</cbc:StartDate>
-  <cbc:EndDate>2017-12-31</cbc:EndDate>
-</cac:LineValidityPeriod>
+include::../Snippets/Snippet-1.xml[tags=period-l]
 ----
 
 [source]
 .Two different validity period for a given price
 ----
-<cac:RequiredItemLocationQuantity>
-  <cac:Price>
-    <cbc:PriceAmount currencyID="NOK">75.00</cbc:PriceAmount>
-    <cac:ValidityPeriod>
-      <cbc:StartDate>2017-04-01</cbc:StartDate>
-      <cbc:EndDate>2017-04-30</cbc:EndDate>
-    </cac:ValidityPeriod>
-    <cac:ValidityPeriod>
-      <cbc:StartDate>2017-08-01</cbc:StartDate>
-      <cbc:EndDate>2017-08-31</cbc:EndDate>
-    </cac:ValidityPeriod>
-  </cac:Price>
-<cac:RequiredItemLocationQuantity>
+include::../Snippets/Snippet-1.xml[tags=period-p]
 ----

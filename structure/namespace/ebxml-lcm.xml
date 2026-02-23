@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Namespace xmlns="urn:fdc:difi.no:2017:vefa:structure:Namespace-1">
+	<Identifier prefix="lcm">urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0</Identifier>
+	<Version>4.0</Version>
+	<Include prefix="rim">urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0</Include>
+	<Include prefix="rs">urn:oasis:names:tc:ebxml-regrep:xsd:rs:4.0</Include>
+	<Element name="SubmitObjectsRequest">
+		<Ref card="0..n">rim:Slot</Ref>
+		<Ref card="0..1">rim:RegistryObjectList</Ref>
+	</Element>
+	<Element name="UpdateObjectsRequest">
+		<Ref card="0..n">rim:Slot</Ref>
+		<Ref card="0..1">lcm:Query</Ref>
+		<Ref card="0..1">rim:ObjectRefList</Ref>
+		<Ref card="1..n">lcm:UpdateAction</Ref>
+	</Element>
+	<Element name="RemoveObjectsRequest">
+		<Ref card="0..n">rim:Slot</Ref>
+		<Ref card="0..1">lcm:Query</Ref>
+		<Ref card="0..1">rim:ObjectRefList</Ref>
+	</Element>
+</Namespace>
