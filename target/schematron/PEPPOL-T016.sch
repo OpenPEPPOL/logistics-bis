@@ -219,9 +219,11 @@
       </rule>
    </pattern>
     <pattern xmlns:ns2="http://www.schematron-quickfix.com/validator/process">
+      <let name="cleas"
+           value="tokenize('0002 0007 0009 0037 0060 0088 0096 0097 0106 0130 0135 0142 0151 0177 0183 0184 0188 0190 0191 0192 0193 0195 0196 0198 0199 0200 0201 0202 0204 0208 0209 0210 0211 0212 0213 0215 0216 0218 0221 0230 0235 9910 9913 9914 9915 9918 9919 9920 9922 9923 9924 9925 9926 9927 9928 9929 9930 9931 9932 9933 9934 9935 9936 9937 9938 9939 9940 9941 9942 9943 9944 9945 9946 9947 9948 9949 9950 9951 9952 9953 9957 9959 0147 0154 0158 0170 0194 0203 0205 0217 0225 0240 0244', '\s')"/>
       <let name="clnoticeResponse" value="tokenize('RE AP CA PU', '\s')"/>
       <let name="clpublicationCondition" value="tokenize('TST FCST EFF', '\s')"/>
-      <let name="clstatusReasonSubset" value="tokenize('BV BW SV', '\s')"/>
+      <let name="clStatusReason" value="tokenize('BV BW SV', '\s')"/>
       <rule context="/ubl:ApplicationResponse">
          <assert test="cbc:UBLVersionID" flag="fatal" id="PEPPOL-T016-B00101">Element 'cbc:UBLVersionID' MUST be provided.</assert>
          <assert test="cbc:CustomizationID" flag="fatal" id="PEPPOL-T016-B00102">Element 'cbc:CustomizationID' MUST be provided.</assert>
@@ -252,6 +254,9 @@
       </rule>
       <rule context="/ubl:ApplicationResponse/cac:SenderParty/cbc:EndpointID">
          <assert test="@schemeID" flag="fatal" id="PEPPOL-T016-B00901">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="not(@schemeID) or (some $code in $cleas satisfies $code = @schemeID)"
+                 flag="fatal"
+                 id="PEPPOL-T016-B00902">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
       </rule>
       <rule context="/ubl:ApplicationResponse/cac:SenderParty/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T016-B00802">Document MUST NOT contain elements not part of the data model.</assert>
@@ -261,6 +266,9 @@
       </rule>
       <rule context="/ubl:ApplicationResponse/cac:ReceiverParty/cbc:EndpointID">
          <assert test="@schemeID" flag="fatal" id="PEPPOL-T016-B01201">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="not(@schemeID) or (some $code in $cleas satisfies $code = @schemeID)"
+                 flag="fatal"
+                 id="PEPPOL-T016-B01202">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
       </rule>
       <rule context="/ubl:ApplicationResponse/cac:ReceiverParty/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T016-B01102">Document MUST NOT contain elements not part of the data model.</assert>
@@ -342,9 +350,9 @@
          <assert test="cbc:StatusReasonCode" flag="fatal" id="PEPPOL-T016-B03501">Element 'cbc:StatusReasonCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:ApplicationResponse/cac:DocumentResponse/cac:LineResponse/cac:Response/cac:Status/cbc:StatusReasonCode">
-         <assert test="(some $code in $clstatusReasonSubset satisfies $code = normalize-space(text()))"
+         <assert test="(some $code in $clStatusReason satisfies $code = normalize-space(text()))"
                  flag="fatal"
-                 id="PEPPOL-T016-B03601">Value MUST be part of code list 'StatusReasonCodeSubset'.</assert>
+                 id="PEPPOL-T016-B03601">Value MUST be part of code list 'Status reason code (OpenPeppol)'.</assert>
       </rule>
       <rule context="/ubl:ApplicationResponse/cac:DocumentResponse/cac:LineResponse/cac:Response/cac:Status/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T016-B03502">Document MUST NOT contain elements not part of the data model.</assert>

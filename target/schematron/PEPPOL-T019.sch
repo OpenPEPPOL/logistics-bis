@@ -219,8 +219,12 @@
       </rule>
    </pattern>
     <pattern xmlns:ns2="http://www.schematron-quickfix.com/validator/process">
+      <let name="cleas"
+           value="tokenize('0002 0007 0009 0037 0060 0088 0096 0097 0106 0130 0135 0142 0151 0177 0183 0184 0188 0190 0191 0192 0193 0195 0196 0198 0199 0200 0201 0202 0204 0208 0209 0210 0211 0212 0213 0215 0216 0218 0221 0230 0235 9910 9913 9914 9915 9918 9919 9920 9922 9923 9924 9925 9926 9927 9928 9929 9930 9931 9932 9933 9934 9935 9936 9937 9938 9939 9940 9941 9942 9943 9944 9945 9946 9947 9948 9949 9950 9951 9952 9953 9957 9959 0147 0154 0158 0170 0194 0203 0205 0217 0225 0240 0244', '\s')"/>
       <let name="clICD"
            value="tokenize('0002 0003 0004 0005 0006 0007 0008 0009 0010 0011 0012 0013 0014 0015 0016 0017 0018 0019 0020 0021 0022 0023 0024 0025 0026 0027 0028 0029 0030 0031 0032 0033 0034 0035 0036 0037 0038 0039 0040 0041 0042 0043 0044 0045 0046 0047 0048 0049 0050 0051 0052 0053 0054 0055 0056 0057 0058 0059 0060 0061 0062 0063 0064 0065 0066 0067 0068 0069 0070 0071 0072 0073 0074 0075 0076 0077 0078 0079 0080 0081 0082 0083 0084 0085 0086 0087 0088 0089 0090 0091 0093 0094 0095 0096 0097 0098 0099 0100 0101 0102 0104 0105 0106 0107 0108 0109 0110 0111 0112 0113 0114 0115 0116 0117 0118 0119 0120 0121 0122 0123 0124 0125 0126 0127 0128 0129 0130 0131 0132 0133 0134 0135 0136 0137 0138 0139 0140 0141 0142 0143 0144 0145 0146 0147 0148 0149 0150 0151 0152 0153 0154 0155 0156 0157 0158 0159 0160 0161 0162 0163 0164 0165 0166 0167 0168 0169 0170 0171 0172 0173 0174 0175 0176 0177 0178 0179 0180 0183 0184 0185 0186 0187 0188 0189 0190 0191 0192 0193 0194 0195 0196 0197 0198 0199 0200 0201 0202 0203 0204 0205 0206 0207 0208 0209 0210 0211 0212 0213 0214 0215 0216 0217 0218 0219 0220 0221 0222 0223 0224 0225 0226 0227 0228 0229 0230 0231 0232 0233 0234 0235 0236 0237 0238 0239 0240 0241 0242 0243 0244', '\s')"/>
+      <let name="clISO3166"
+           value="tokenize('AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW 1A XI', '\s')"/>
       <rule context="/ubl:TendererQualification">
          <assert test="cbc:UBLVersionID" flag="fatal" id="PEPPOL-T019-B00101">Element 'cbc:UBLVersionID' MUST be provided.</assert>
          <assert test="cbc:CustomizationID" flag="fatal" id="PEPPOL-T019-B00102">Element 'cbc:CustomizationID' MUST be provided.</assert>
@@ -282,6 +286,9 @@
       </rule>
       <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cac:Party/cbc:EndpointID">
          <assert test="@schemeID" flag="fatal" id="PEPPOL-T019-B01601">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="not(@schemeID) or (some $code in $cleas satisfies $code = @schemeID)"
+                 flag="fatal"
+                 id="PEPPOL-T019-B01602">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
       </rule>
       <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cac:Party/cac:PartyIdentification">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T019-B01801">Element 'cbc:ID' MUST be provided.</assert>
@@ -306,7 +313,10 @@
          <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T019-B02901">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
-         <assert test="@listID" flag="fatal" id="PEPPOL-T019-B03001">Attribute 'listID' MUST be present.</assert>
+         <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
+                 flag="fatal"
+                 id="PEPPOL-T019-B03001">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
+         <assert test="@listID" flag="fatal" id="PEPPOL-T019-B03002">Attribute 'listID' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cac:Party/cac:PostalAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T019-B02902">Document MUST NOT contain elements not part of the data model.</assert>
@@ -342,6 +352,9 @@
       </rule>
       <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:AdditionalQualifyingParty/cac:Party/cbc:EndpointID">
          <assert test="@schemeID" flag="fatal" id="PEPPOL-T019-B04101">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="not(@schemeID) or (some $code in $cleas satisfies $code = @schemeID)"
+                 flag="fatal"
+                 id="PEPPOL-T019-B04102">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
       </rule>
       <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:AdditionalQualifyingParty/cac:Party/cac:PartyIdentification">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T019-B04301">Element 'cbc:ID' MUST be provided.</assert>
@@ -366,7 +379,10 @@
          <assert test="cbc:IdentificationCode" flag="fatal" id="PEPPOL-T019-B05401">Element 'cbc:IdentificationCode' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:AdditionalQualifyingParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
-         <assert test="@listID" flag="fatal" id="PEPPOL-T019-B05501">Attribute 'listID' MUST be present.</assert>
+         <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
+                 flag="fatal"
+                 id="PEPPOL-T019-B05501">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
+         <assert test="@listID" flag="fatal" id="PEPPOL-T019-B05502">Attribute 'listID' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:AdditionalQualifyingParty/cac:Party/cac:PostalAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T019-B05402">Document MUST NOT contain elements not part of the data model.</assert>
@@ -402,6 +418,9 @@
       </rule>
       <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:ContractingParty/cac:Party/cbc:EndpointID">
          <assert test="@schemeID" flag="fatal" id="PEPPOL-T019-B06601">Attribute 'schemeID' MUST be present.</assert>
+         <assert test="not(@schemeID) or (some $code in $cleas satisfies $code = @schemeID)"
+                 flag="fatal"
+                 id="PEPPOL-T019-B06602">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
       </rule>
       <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:ContractingParty/cac:Party/cac:PartyIdentification">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T019-B06801">Element 'cbc:ID' MUST be provided.</assert>
@@ -506,24 +525,24 @@
         <assert id="PEPPOL-T019-R013"
                  flag="fatal"
                  test="normalize-space(.) = '2.2'">UBLVersionID value MUST be '2.2'.</assert>
-        <report id="PEPPOL-T019-R014" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>UBLVersionID SHOULD NOT contain any attributes.</report>
+        <assert id="PEPPOL-T019-R014" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>UBLVersionID SHOULD NOT contain any attributes.</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cbc:CustomizationID">
         <assert id="PEPPOL-T019-R015"
                  flag="fatal"
                  test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t019:1.1'">CustomizationID value MUST be 'urn:fdc:peppol.eu:prac:trns:t019:1.1'</assert>
-        <report id="PEPPOL-T019-R016" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>CustomizationID SHOULD NOT contain any attributes.</report>
+        <assert id="PEPPOL-T019-R016" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>CustomizationID SHOULD NOT contain any attributes.</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cbc:ProfileID">
         <assert id="PEPPOL-T019-R017"
                  flag="fatal"
                  test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p011:1.1'">ProfileID value MUST be 'urn:fdc:peppol.eu:prac:bis:p011:1.1'</assert>
-        <report id="PEPPOL-T019-R018" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>ProfileID SHOULD NOT contain any attributes.</report>
+        <assert id="PEPPOL-T019-R018" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>ProfileID SHOULD NOT contain any attributes.</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cbc:ID">
@@ -531,18 +550,18 @@
         <assert id="PEPPOL-T019-R020"
                  flag="fatal"
                  test="normalize-space(./@schemeURI)='urn:uuid'">schemeURI for Submit Tender Identifier MUST be 'urn:uuid'.</assert>
-        <report id="PEPPOL-T019-R021"
+        <assert id="PEPPOL-T019-R021"
                  flag="warning"
                  test="./@*[not(name()='schemeURI')]">
-            <value-of select="$syntaxError"/>A Submit Tender Identifier SHOULD NOT have any attributes but schemeURI</report>
+            <value-of select="$syntaxError"/>A Submit Tender Identifier SHOULD NOT have any attributes but schemeURI</assert>
         <assert id="PEPPOL-T019-R022"
                  flag="fatal"
                  test="matches(normalize-space(.),'^[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}$')">A Submit Tender Identifier MUST be expressed in a UUID syntax (RFC 4122)</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cbc:ContractFolderID">
-        <report id="PEPPOL-T019-R023" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>ContractFolderID SHOULD NOT contain any attributes.</report>
+        <assert id="PEPPOL-T019-R023" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>ContractFolderID SHOULD NOT contain any attributes.</assert>
         <assert id="PEPPOL-T019-R024"
                  flag="fatal"
                  test="matches(normalize-space(.),'^[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}$')">The ContractFolderID MUST be expressed in a UUID syntax (RFC 4122).</assert>
@@ -555,15 +574,15 @@
       </rule>
     
       <rule context="ubl:TendererQualification/cbc:VersionID">
-        <report id="PEPPOL-T019-R026" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>VersionID SHOULD NOT have any attributes.</report>
+        <assert id="PEPPOL-T019-R026" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>VersionID SHOULD NOT have any attributes.</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference">
-        <report id="PEPPOL-T019-R027"
+        <assert id="PEPPOL-T019-R027"
                  flag="warning"
                  test="count(./cbc:DocumentDescription) &gt; 1">
-            <value-of select="$syntaxError"/>DocumentDescription SHOULD NOT be used more than once.</report>
+            <value-of select="$syntaxError"/>DocumentDescription SHOULD NOT be used more than once.</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cbc:ID">
@@ -576,15 +595,15 @@
         <assert id="PEPPOL-T019-R029"
                  flag="fatal"
                  test="normalize-space(./@listID)='UNCL1001'">listID for DocumentTypeCode MUST be 'UNCL1001'.</assert>
-        <report id="PEPPOL-T019-R030"
+        <assert id="PEPPOL-T019-R030"
                  flag="warning"
                  test="./@*[not(name()='listID')]">
-            <value-of select="$syntaxError"/>DocumentTypeCode SHOULD NOT have any attributes but listID</report>
+            <value-of select="$syntaxError"/>DocumentTypeCode SHOULD NOT have any attributes but listID</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cbc:XPath">
-        <report id="PEPPOL-T019-R031" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>XPath SHOULD NOT contain any attributes.</report>
+        <assert id="PEPPOL-T019-R031" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>XPath SHOULD NOT contain any attributes.</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cbc:LocaleCode">
@@ -594,20 +613,20 @@
         <assert id="PEPPOL-T019-R033"
                  flag="fatal"
                  test="matches(normalize-space(.),'^(aa|AA|ab|AB|ae|AE|af|AF|ak|AK|am|AM|an|AN|ar|AR|as|AS|av|AV|ay|AY|az|AZ|ba|BA|be|BE|bg|BG|bh|BH|bi|BI|bm|BM|bn|BN|bo|BO|br|BR|bs|BS|ca|CA|ce|CE|ch|CH|co|CO|cr|CR|cs|CS|cu|CU|cv|CV|cy|CY|da|DA|de|DE|dv|DV|dz|DZ|ee|EE|el|EL|en|EN|eo|EO|es|ES|et|ET|eu|EU|fa|FA|ff|FF|fi|FI|fj|FJ|fo|FO|fr|FR|fy|FY|ga|GA|gd|GD|gl|GL|gn|GN|gu|GU|gv|GV|ha|HA|he|HE|hi|HI|ho|HO|hr|HR|ht|HT|hu|HU|hy|HY|hz|HZ|ia|IA|id|ID|ie|IE|ig|IG|ii|II|ik|IK|io|IO|is|IS|it|IT|iu|IU|ja|JA|jv|JV|ka|KA|kg|KG|ki|KI|kj|KJ|kk|KK|kl|KL|km|KM|kn|KN|ko|KO|kr|KR|ks|KS|ku|KU|kv|KV|kw|KW|ky|KY|la|LA|lb|LB|lg|LG|li|LI|ln|LN|lo|LO|lt|LT|lu|LU|lv|LV|mg|MG|mh|MH|mi|MI|mk|MK|ml|ML|mn|MN|mo|MO|mr|MR|ms|MS|mt|MT|my|MY|na|NA|nb|NB|nd|ND|ne|NE|ng|NG|nl|NL|nn|NN|no|NO|nr|NR|nv|NV|ny|NY|oc|OC|oj|OJ|om|OM|or|OR|os|OS|pa|PA|pi|PI|pl|PL|ps|PS|pt|PT|qu|QU|rm|RM|rn|RN|ro|RO|ru|RU|rw|RW|sa|SA|sc|SC|sd|SD|se|SE|sg|SG|si|SI|sk|SK|sl|SL|sm|SM|sn|SN|so|SO|sq|SQ|sr|SR|ss|SS|st|ST|su|SU|sv|SV|sw|SW|ta|TA|te|TE|tg|TG|th|TH|ti|TI|tk|TK|tl|TL|tn|TN|to|TO|tr|TR|ts|TS|tt|TT|tw|TW|ty|TY|ug|UG|uk|UK|ur|UR|uz|UZ|ve|VE|vi|VI|vo|VO|wa|WA|wo|WO|xh|XH|yi|YI|yo|YO|za|ZA|zh|ZH|zu|ZU)$')">LocalCode MUST be a valid Language Code.</assert>
-        <report id="PEPPOL-T019-R034"
+        <assert id="PEPPOL-T019-R034"
                  flag="warning"
                  test="./@*[not(name()='listID')]">
-            <value-of select="$syntaxError"/>LocaleCode SHOULD NOT have any attributes but listID.</report>
+            <value-of select="$syntaxError"/>LocaleCode SHOULD NOT have any attributes but listID.</assert>
       </rule>
     
       <rule context="ubl:TenderTendererQualification/cac:AdditionalDocumentReference/cbc:VersionID">
-        <report id="PEPPOL-T019-R035" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>VersionID SHOULD NOT contain any attributes.</report>
+        <assert id="PEPPOL-T019-R035" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>VersionID SHOULD NOT contain any attributes.</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cbc:DocumentDescription">
-        <report id="PEPPOL-T019-R036" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>DocumentDescription SHOULD NOT contain any attributes.</report>
+        <assert id="PEPPOL-T019-R036" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>DocumentDescription SHOULD NOT contain any attributes.</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cac:Attachment">
@@ -621,39 +640,39 @@
         <assert id="PEPPOL-T019-R038"
                  flag="fatal"
                  test="matches(normalize-space(.),'^[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}$')">URI for a Qualification Reference external reference attachment MUST be expressed in a UUID syntax (RFC 4122)</assert>
-        <report id="PEPPOL-T019-R039" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>URI SHOULD NOT contain any attributes.</report>
+        <assert id="PEPPOL-T019-R039" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>URI SHOULD NOT contain any attributes.</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:DocumentHash">
         <assert id="PEPPOL-T019-R040"
                  flag="fatal"
                  test="matches(normalize-space(.),'^[a-fA-F0-9]{64}$')">DocumentHash MUST resemble a SHA-256 hash value (32 byte HexString)</assert>
-        <report id="PEPPOL-T019-R041" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>DocumentHash SHOULD NOT contain any attributes.</report>
+        <assert id="PEPPOL-T019-R041" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>DocumentHash SHOULD NOT contain any attributes.</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:HashAlgorithmMethod">
         <assert id="PEPPOL-T019-R042"
                  flag="fatal"
                  test="normalize-space(.)='http://www.w3.org/2001/04/xmlenc#sha256'">HashAlgorithmMethod MUST be 'http://www.w3.org/2001/04/xmlenc#sha256'</assert>
-        <report id="PEPPOL-T019-R043" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>HashAlgorithmMethod SHOULD NOT contain any attributes.</report>
+        <assert id="PEPPOL-T019-R043" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>HashAlgorithmMethod SHOULD NOT contain any attributes.</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:MimeCode">
-        <report id="PEPPOL-T019-R044" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>MimeCode SHOULD NOT contain any attributes.</report>
+        <assert id="PEPPOL-T019-R044" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>MimeCode SHOULD NOT contain any attributes.</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:FileName">
-        <report id="PEPPOL-T019-R045" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>FileNAme SHOULD NOT contain any attributes.</report>
+        <assert id="PEPPOL-T019-R045" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>FileNAme SHOULD NOT contain any attributes.</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:Description">
-        <report id="PEPPOL-T019-R046" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>Description SHOULD NOT contain any attributes.</report>
+        <assert id="PEPPOL-T019-R046" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>Description SHOULD NOT contain any attributes.</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cac:Party">
@@ -674,10 +693,10 @@
                  flag="warning"
                  test="count(./*)-count(./cac:PartyIdentification)-count(./cbc:EndpointID)-count(./cac:PartyName)= 0">
             <value-of select="$syntaxError"/>ContractingParty Party SHOULD NOT contain any elements but EndpointID, PartyIdentification, PartyName</assert>
-        <report id="PEPPOL-T019-R050"
+        <assert id="PEPPOL-T019-R050"
                  flag="warning"
                  test="count(./cac:PartyName) &gt; 1">
-            <value-of select="$syntaxError"/>ContractingParty/Party/PartyName SHOULD NOT be used more than once.</report>
+            <value-of select="$syntaxError"/>ContractingParty/Party/PartyName SHOULD NOT be used more than once.</assert>
         <assert id="PEPPOL-T019-R051"
                  flag="fatal"
                  test="(./cac:PartyIdentification) and (./cbc:EndpointID)">The Contracting Authority MUST be identified by its party and endpoint identifiers.</assert>
@@ -691,8 +710,8 @@
       </rule>
     
       <rule context="ubl:TendererQualification/cac:TendererPartyQualification/cac:ProcurementProjectLot/cbc:ID">
-        <report id="PEPPOL-T019-R053" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>Procurement Project Lot Identifier SHOULD NOT contain any attributes</report>
+        <assert id="PEPPOL-T019-R053" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>Procurement Project Lot Identifier SHOULD NOT contain any attributes</assert>
       </rule>
     
       <rule context="cac:PartyIdentification/cbc:ID">
@@ -700,10 +719,10 @@
         <assert id="PEPPOL-T019-R055"
                  flag="fatal"
                  test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3])))$')">A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
-        <report id="PEPPOL-T019-R056"
+        <assert id="PEPPOL-T019-R056"
                  flag="warning"
                  test="./@*[not(name()='schemeID')]">
-            <value-of select="$syntaxError"/>cac:PartyIdentification/cbc:ID SHOULD NOT have any further attributes but schemeID</report>
+            <value-of select="$syntaxError"/>cac:PartyIdentification/cbc:ID SHOULD NOT have any further attributes but schemeID</assert>
       </rule>
     
       <rule context="cac:Party/cbc:EndpointID">
@@ -713,8 +732,8 @@
       </rule>
     
       <rule context="cbc:Name">
-        <report id="PEPPOL-T019-R058" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>Name SHOULD NOT contain any attributes.</report>
+        <assert id="PEPPOL-T019-R058" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>Name SHOULD NOT contain any attributes.</assert>
       </rule>
     
       <rule context="ubl:TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cac:PostalAddress         | ubl:TendererQualification/cac:TendererPartyQualification/cac:AdditionalQualifyingParty/cac:Party/cac:PostalAddress">
@@ -725,23 +744,23 @@
       </rule>
     
       <rule context="cbc:StreetName">
-        <report id="PEPPOL-T019-R060" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>StreetName SHOULD NOT contain any attributes</report>
+        <assert id="PEPPOL-T019-R060" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>StreetName SHOULD NOT contain any attributes</assert>
       </rule>
     
       <rule context="cbc:CityName">
-        <report id="PEPPOL-T019-R061" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>CityName SHOULD NOT contain any attributes</report>
+        <assert id="PEPPOL-T019-R061" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>CityName SHOULD NOT contain any attributes</assert>
       </rule>
     
       <rule context="cbc:PostalZone">
-        <report id="PEPPOL-T019-R062" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>PostalZone SHOULD NOT contain any attributes</report>
+        <assert id="PEPPOL-T019-R062" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>PostalZone SHOULD NOT contain any attributes</assert>
       </rule>
     
       <rule context="cbc:CountrySubentity">
-        <report id="PEPPOL-T019-R063" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>CountrySubentity SHOULD NOT contain any attributes</report>
+        <assert id="PEPPOL-T019-R063" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>CountrySubentity SHOULD NOT contain any attributes</assert>
       </rule>
     
       <rule context="cac:Country">
@@ -752,18 +771,18 @@
       </rule>
     
       <rule context="cac:Country/cbc:IdentificationCode">
-        <report id="PEPPOL-T019-R065"
+        <assert id="PEPPOL-T019-R065"
                  flag="warning"
                  test="./@*[not(name()='listID')]">
-            <value-of select="$syntaxError"/>Country Identification Code SHOULD NOT contain any attributes but listID</report>
+            <value-of select="$syntaxError"/>Country Identification Code SHOULD NOT contain any attributes but listID</assert>
         <assert id="PEPPOL-T019-R066"
                  flag="fatal"
                  test="normalize-space(./@listID)='ISO3166-1:Alpha2'">listID for IdentificationCode MUST be 'ISO3166-1:Alpha2'.</assert>
       </rule>
     
       <rule context="cac:PartyLegalEntity/cbc:CompanyLegalForm">
-        <report id="PEPPOL-T019-R067" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>CompanyLegalForm SHOULD NOT contain any attributes</report>
+        <assert id="PEPPOL-T019-R067" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>CompanyLegalForm SHOULD NOT contain any attributes</assert>
       </rule>
     
       <rule context="cac:Contact">
@@ -774,18 +793,18 @@
       </rule>
     
       <rule context="cbc:Telephone">
-        <report id="PEPPOL-T019-R069" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>Telephone SHOULD NOT contain any attributes</report>
+        <assert id="PEPPOL-T019-R069" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>Telephone SHOULD NOT contain any attributes</assert>
       </rule>
     
       <rule context="cbc:Telefax">
-        <report id="PEPPOL-T019-R070" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>Telefax SHOULD NOT contain any attributes</report>
+        <assert id="PEPPOL-T019-R070" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>Telefax SHOULD NOT contain any attributes</assert>
       </rule>
     
       <rule context="cbc:ElectronicMail">
-        <report id="PEPPOL-T019-R071" flag="warning" test="./@*">
-            <value-of select="$syntaxError"/>ElectronicMail SHOULD NOT contain any attributes</report>
+        <assert id="PEPPOL-T019-R071" flag="warning" test="./@*">
+            <value-of select="$syntaxError"/>ElectronicMail SHOULD NOT contain any attributes</assert>
       </rule>
    </pattern>
 </schema>
