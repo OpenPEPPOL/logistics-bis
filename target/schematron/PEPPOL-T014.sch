@@ -293,9 +293,6 @@
       </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference"/>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference/cbc:DocumentHash"/>
-      <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference/cbc:DocumentHash/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T014-B01901">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference/cbc:HashAlgorithmMethod">
          <assert test="normalize-space(text()) = 'http://www.w3.org/2001/04/xmlenc#sha256'"
                  flag="fatal"
