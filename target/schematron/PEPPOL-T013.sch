@@ -287,21 +287,21 @@
          <assert test="@schemeURI" flag="fatal" id="PEPPOL-T013-B01202">Attribute 'schemeURI' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TenderWithdrawal/cac:TenderDocumentReference/cac:Attachment">
-         <assert test="cac:External Reference" flag="fatal" id="PEPPOL-T013-B01401">Element 'cac:External Reference' MUST be provided.</assert>
+         <assert test="cac:ExternalReference" flag="fatal" id="PEPPOL-T013-B01401">Element 'cac:ExternalReference' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:TenderWithdrawal/cac:TenderDocumentReference/cac:Attachment/cac:External Reference">
-         <assert test="cbc:Document Hash" flag="fatal" id="PEPPOL-T013-B01501">Element 'cbc:Document Hash' MUST be provided.</assert>
+      <rule context="/ubl:TenderWithdrawal/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference">
+         <assert test="cbc:DocumentHash" flag="fatal" id="PEPPOL-T013-B01501">Element 'cbc:DocumentHash' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:TenderWithdrawal/cac:TenderDocumentReference/cac:Attachment/cac:External Reference/cbc:Document Hash"/>
-      <rule context="/ubl:TenderWithdrawal/cac:TenderDocumentReference/cac:Attachment/cac:External Reference/cbc:Document Hash/*">
+      <rule context="/ubl:TenderWithdrawal/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference/cbc:DocumentHash"/>
+      <rule context="/ubl:TenderWithdrawal/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference/cbc:DocumentHash/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T013-B01601">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:TenderWithdrawal/cac:TenderDocumentReference/cac:Attachment/cac:External Reference/cbc:HashAlgorithmMethod">
+      <rule context="/ubl:TenderWithdrawal/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference/cbc:HashAlgorithmMethod">
          <assert test="normalize-space(text()) = 'http://www.w3.org/2001/04/xmlenc#sha256'"
                  flag="fatal"
                  id="PEPPOL-T013-B01701">Element 'cbc:HashAlgorithmMethod' MUST contain value 'http://www.w3.org/2001/04/xmlenc#sha256'.</assert>
       </rule>
-      <rule context="/ubl:TenderWithdrawal/cac:TenderDocumentReference/cac:Attachment/cac:External Reference/*">
+      <rule context="/ubl:TenderWithdrawal/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T013-B01502">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TenderWithdrawal/cac:TenderDocumentReference/cac:Attachment/*">
