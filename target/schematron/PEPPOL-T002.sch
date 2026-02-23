@@ -266,9 +266,6 @@
                  id="PEPPOL-T002-B01001">Attribute 'listID' MUST contain value 'ISO639-1'</assert>
          <assert test="@listID" flag="fatal" id="PEPPOL-T002-B01002">Attribute 'listID' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:ExpressionOfInterestResponse/cbc:TenderLanguageLocaleCode/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T002-B01003">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/ubl:ExpressionOfInterestResponse/cac:ExpressionOfInterestDocumentReference">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T002-B01201">Element 'cbc:ID' MUST be provided.</assert>
       </rule>

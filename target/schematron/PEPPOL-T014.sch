@@ -289,19 +289,16 @@
          <assert test="@listID" flag="fatal" id="PEPPOL-T014-B01503">Attribute 'listID' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment">
-         <assert test="cac:External Reference" flag="fatal" id="PEPPOL-T014-B01701">Element 'cac:External Reference' MUST be provided.</assert>
+         <assert test="cac:ExternalReference" flag="fatal" id="PEPPOL-T014-B01701">Element 'cac:ExternalReference' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:External Reference"/>
-      <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:External Reference/cbc:Document Hash"/>
-      <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:External Reference/cbc:Document Hash/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T014-B01901">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:External Reference/cbc:HashAlgorithmMethod">
+      <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference"/>
+      <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference/cbc:DocumentHash"/>
+      <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference/cbc:HashAlgorithmMethod">
          <assert test="normalize-space(text()) = 'http://www.w3.org/2001/04/xmlenc#sha256'"
                  flag="fatal"
                  id="PEPPOL-T014-B02001">Element 'cbc:HashAlgorithmMethod' MUST contain value 'http://www.w3.org/2001/04/xmlenc#sha256'.</assert>
       </rule>
-      <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:External Reference/*">
+      <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/cac:ExternalReference/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T014-B01801">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment/*">
