@@ -532,5 +532,10 @@
                  flag="fatal"
                  test="not(count(./cbc:FileName) &gt; 0 and count(./cbc:Description) &gt; 0)">A combination of clarification and file reference is not allowed.</assert>
       </rule>
+	     <rule context="*">
+            <assert id="PEPPOL-T010-S001"
+                 flag="fatal"
+                 test="not(normalize-space(.) = '' and not(*))">A tender clarification document MUST NOT contain empty elements.</assert>
+        </rule>
    </pattern>
 </schema>

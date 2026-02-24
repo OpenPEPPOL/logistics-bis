@@ -524,5 +524,8 @@
       <rule context="/ubl:ApplicationResponse/*">
         <assert test="false()" flag="fatal" id="PEPPOL-T018-R049">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
+	     <rule context="//*[not(*) and not(normalize-space())]">
+            <assert id="PEPPOL-T018-R001" test="false()" flag="fatal">Document MUST not contain empty elements.</assert>
+        </rule>
    </pattern>
 </schema>

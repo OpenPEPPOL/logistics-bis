@@ -620,6 +620,9 @@
             data model.
         </assert>
       </rule>
+	     <rule context="//*[not(*) and not(normalize-space())]">
+            <assert id="PEPPOL-T016-R001" test="false()" flag="fatal">Document MUST not contain empty elements.</assert>
+        </rule>
    </pattern>
 
 </schema>
