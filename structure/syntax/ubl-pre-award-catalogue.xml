@@ -91,7 +91,6 @@
                 <Term>cbc:StartDate</Term>
                 <Name>Period start date</Name>
                 <Description>The date when the period starts.</Description>
-                <Reference type="RULE">BII3-T68-R023</Reference>
                 <Value type="EXAMPLE">2017-06-01</Value>
             </Element>
 
@@ -99,7 +98,6 @@
                 <Term>cbc:EndDate</Term>
                 <Name>Period end date</Name>
                 <Description>The date on which the period ends.</Description>
-                <Reference type="RULE">BII3-T68-R023</Reference>
                 <Value type="EXAMPLE">2017-06-30</Value>
             </Element>
         </Element>
@@ -179,7 +177,6 @@
             <Element cardinality="0..1">
                 <Term>cac:PartyIdentification</Term>
                 <Name>Party identification</Name>
-                <Reference type="RULE">EUGEN-T68-R012</Reference>
 
                 <Element>
                     <Term>cbc:ID</Term>
@@ -203,7 +200,6 @@
             <Element cardinality="0..1">
                 <Term>cac:PartyName</Term>
                 <Name>Party name</Name>
-                <Reference type="RULE">EUGEN-T68-R012</Reference>
 
                 <Element>
                     <Term>cbc:Name</Term>
@@ -428,7 +424,6 @@
             <Element cardinality="0..1">
                 <Term>cac:PartyIdentification</Term>
                 <Name>Party identification</Name>
-                <Reference type="RULE">EUGEN-T68-R012</Reference>
 
                 <Element>
                     <Term>cbc:ID</Term>
@@ -454,7 +449,6 @@
             <Element cardinality="0..1">
                 <Term>cac:PartyName</Term>
                 <Name>Party name</Name>
-                <Reference type="RULE">EUGEN-T68-R012</Reference>
 
                 <Element>
                     <Term>cbc:Name</Term>
@@ -666,7 +660,6 @@
                 <Element cardinality="0..1">
                     <Term>cac:PartyIdentification</Term>
                     <Name>Party identification</Name>
-                    <Reference type="RULE">EUGEN-T68-R012</Reference>
 
                     <Element>
                         <Term>cbc:ID</Term>
@@ -690,7 +683,6 @@
                 <Element cardinality="0..1">
                     <Term>cac:PartyName</Term>
                     <Name>Party name</Name>
-                    <Reference type="RULE">EUGEN-T68-R012</Reference>
 
                     <Element>
                         <Term>cbc:Name</Term>
@@ -907,7 +899,6 @@
                 <Element cardinality="0..1">
                     <Term>cac:PartyIdentification</Term>
                     <Name>Party identification</Name>
-                    <Reference type="RULE">EUGEN-T68-R012</Reference>
 
                     <Element>
                         <Term>cbc:ID</Term>
@@ -931,7 +922,6 @@
                 <Element cardinality="0..1">
                     <Term>cac:PartyName</Term>
                     <Name>Party name</Name>
-                    <Reference type="RULE">EUGEN-T68-R012</Reference>
 
                     <Element>
                         <Term>cbc:Name</Term>
@@ -1207,7 +1197,6 @@
                 <Description>The unit in which the item described in this catalogue line can be ordered. Mandatory if
                     the item is orderable
                 </Description>
-                <Reference type="RULE">EUGEN-T68-R010</Reference>
                 <Value type="EXAMPLE">MLT</Value>
             </Element>
 
@@ -1248,9 +1237,6 @@
                 <Term>cbc:MinimumOrderQuantity</Term>
                 <Name>Minimum order quantity</Name>
                 <Description>The smallest number of items that can be ordered.</Description>
-
-                <Reference type="RULE">BII3-T68-R022</Reference>
-
                 <Attribute>
                     <Term>unitCode</Term>
                     <Name>Quantity Unit. Code</Name>
@@ -1319,13 +1305,11 @@
                 <Description>The requested delivery period for this catalogue line. If used, both start and end date
                     must be present.
                 </Description>
-                <Reference type="RULE">EUGEN-T68-R013</Reference>
 
                 <Element>
                     <Term>cbc:StartDate</Term>
                     <Name>Period start date</Name>
                     <Description>The first day of the delivery period.</Description>
-                    <Reference type="RULE">BII3-T68-R020</Reference>
                     <Value type="EXAMPLE">2017-06-01</Value>
                 </Element>
 
@@ -1333,7 +1317,6 @@
                     <Term>cbc:EndDate</Term>
                     <Name>Period end date</Name>
                     <Description>The last day of the delivery period.</Description>
-                    <Reference type="RULE">BII3-T68-R020</Reference>
                     <Value type="EXAMPLE">2017-06-15</Value>
                 </Element>
             </Element>
@@ -1401,7 +1384,6 @@
                     <Term>cbc:ID</Term>
                     <Name>Item standard identifier</Name>
                     <Description>Indicate the seller's identifier for the related item.</Description>
-                    <Reference type="RULE">EUGEN-T68-R011</Reference>
                     <Value type="EXAMPLE">A</Value>
                 </Element>
 
@@ -1746,14 +1728,11 @@
                     <Element cardinality="0..n">
                         <Term>cac:ValidityPeriod</Term>
                         <Name>Price validity period</Name>
-                        <Reference type="RULE">EUGEN-T68-R014</Reference>
-                        <Reference type="RULE">EUGEN-T68-R015</Reference>
 
                         <Element>
                             <Term>cbc:StartDate</Term>
                             <Name>Period start date</Name>
                             <Description>The date is the first day of the period.</Description>
-                            <Reference type="RULE">BII3-T68-R021</Reference>
                             <Value type="EXAMPLE">2017-06-01</Value>
                         </Element>
 
@@ -1761,7 +1740,6 @@
                             <Term>cbc:EndDate</Term>
                             <Name>Period end date</Name>
                             <Description>The date is the last day of the period.</Description>
-                            <Reference type="RULE">BII3-T68-R021</Reference>
                             <Value type="EXAMPLE">2017-06-15</Value>
                         </Element>
                     </Element>
@@ -1859,7 +1837,6 @@
             <Element>
                 <Term>cac:Item</Term>
                 <Name>Pre award catalogue item details</Name>
-                <Reference type="RULE">PEPPOL-T36-R001</Reference>
                 <Property key="doc">structure/docs/item.adoc</Property>
 
                 <Element cardinality="0..1">
@@ -2301,7 +2278,6 @@
                             value.
                             The definition may be supplemented with the property unit of measure when relevant.
                         </Description>
-                        <Reference type="RULE">BII3-T68-R015</Reference>
                         <Value type="EXAMPLE">Color</Value>
 
                     </Element>
@@ -2325,7 +2301,6 @@
                         <Term>cbc:Value</Term>
                         <Name>Item property value</Name>
                         <Description>The value of the item property</Description>
-                        <Reference type="RULE">BII3-T68-R015</Reference>
                         <Value type="EXAMPLE">Red</Value>
                     </Element>
 
@@ -2576,9 +2551,6 @@
                         <Term>cbc:MinimumMeasure</Term>
                         <Description>The lower margin of the recommended storage temperature range for the item.
                         </Description>
-
-                        <Reference type="RULE">BII3-T68-R018</Reference>
-
                         <Attribute>
                             <Term>unitCode</Term>
                             <Name>Quantity unit code</Name>
@@ -2600,9 +2572,6 @@
                         <Term>cbc:MaximumMeasure</Term>
                         <Description>The upper margin of the recommended storage temperature range for the item.
                         </Description>
-
-                        <Reference type="RULE">BII3-T68-R018</Reference>
-
                         <Attribute>
                             <Term>unitCode</Term>
                             <Name>Quantity unit code</Name>

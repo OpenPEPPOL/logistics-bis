@@ -105,5 +105,9 @@
         <rule context="ubl:Enquiry/cac:Attachment/cac:ExternalReference">
             <assert id="PEPPOL-T007-R031" flag="fatal" test="count(./cbc:Description) = 1">One question MUST be given.</assert>
         </rule>
+		
+		 <rule context="*">
+            <assert id="PEPPOL-T007-S001" flag="fatal" test="not(normalize-space(.) = '' and not(*))">A tendering questions document MUST NOT contain empty elements.</assert>
+        </rule>
 
 </pattern>
