@@ -31,5 +31,4 @@
     <include href="parts/common/rules.sch"/>
     <include href="../../target/generated/T005-basic.sch"/>
     <include href="parts/PEPPOL-M-T005.sch"/>
-	<include href="parts/PEPPOL-M-T005-2.sch"/>
 </schema>

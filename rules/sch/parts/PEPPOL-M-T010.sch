@@ -96,4 +96,7 @@
         <assert id="PEPPOL-T010-R027" flag="fatal" test="count(./cbc:FileName) = 1 or count(./cbc:Description) > 0">At least one clarification or file reference MUST be given.</assert>
         <assert id="PEPPOL-T010-R028" flag="fatal" test="not(count(./cbc:FileName) > 0 and count(./cbc:Description) > 0)">A combination of clarification and file reference is not allowed.</assert>
     </rule>
+	<rule context="*">
+            <assert id="PEPPOL-T010-S001" flag="fatal" test="not(normalize-space(.) = '' and not(*))">A tender clarification document MUST NOT contain empty elements.</assert>
+        </rule>
 </pattern>

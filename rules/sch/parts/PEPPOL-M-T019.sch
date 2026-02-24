@@ -200,4 +200,8 @@
     <rule context="cbc:ElectronicMail">
         <assert id="PEPPOL-T019-R071" flag="warning" test="./@*"><value-of select="$syntaxError"/>ElectronicMail SHOULD NOT contain any attributes</assert>
     </rule>
+	<rule context="*">
+            <report id="PEPPOL-T019-R001" flag="fatal" test="normalize-space(.) = '' and not(*)">A Qualification document MUST NOT contain empty elements.
+            </report>
+        </rule>
 </pattern>
