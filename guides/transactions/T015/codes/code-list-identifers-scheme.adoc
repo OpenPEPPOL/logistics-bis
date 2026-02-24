@@ -2,9 +2,9 @@
 
 == Electronic Address Identifier scheme of Sender and Receiver
 
-All electronic address identifiers are based upon the Electronic Address Scheme code list (EAS), maintained by CEF (link:https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/Code+lists#Codelists-1[CEF Code lists]).
+All electronic address identifiers are based upon the Electronic Address Scheme code list (EAS), maintained by {digital-european-programme}.
 
-Electronic address identifiers have a non optional scheme identifier attribute (`@type`) which must be 'ICD'. Valid scheme values are found here: link:/pracc/codelist/EAS/[EAS codes].
+Electronic address identifiers have a non optional scheme identifier attribute (`@type`) which must be 'ICD'. Valid scheme values are found here: {codelist-EAS}.
 
 [source,xml,indent=0]
 .Example of usage of scheme values for Sender and Receiver Electronic Address Identifier (here 9946) in `rim:Value`
@@ -17,9 +17,9 @@ Electronic address identifiers have a non optional scheme identifier attribute (
 .Code list for identifier schemes used by Sender and Receiver
 |===
 | Business Term | Allowed Scheme | Document location
-| Sender Electronic Address Identifier | schemeID attribute is mandatory and must use values from link:/pracc/codelist/EAS/[EAS codes] | `rim:Slot name="SenderElectronicAddress" @type`
+| Sender Electronic Address Identifier | schemeID attribute is mandatory and must use values from {codelist-EAS} | `rim:Slot name="SenderElectronicAddress" @type`
 
-| Receiver Electronic Address Identifier |schemeID attribute is mandatory and must use values from link:/pracc/codelist/EAS/[EAS codes] | `rim:Slot name="ReceiverElectronicAddress" @type`
+| Receiver Electronic Address Identifier |schemeID attribute is mandatory and must use values from {codelist-EAS} | `rim:Slot name="ReceiverElectronicAddress" @type`
 |===
 
 
@@ -33,7 +33,7 @@ Buyer Party Identification (`rim:Slot name="BuyerPartyIdentification"`)  has an 
 <rim:Value>0088:7300010000001</rim:Value>
 ----
 
-Buyer Electronic Address (`rim:Slot name="BuyerElectronicAddress"`) has an non optional scheme identifier attribute (`@type`) which must be 'EAS'. The scheme value shall be chosen from the code list  link:/pracc/codelist/EAS/[EAS codes].
+Buyer Electronic Address (`rim:Slot name="BuyerElectronicAddress"`) has an non optional scheme identifier attribute (`@type`) which must be 'EAS'. The scheme value shall be chosen from the code list  {codelist-EAS}.
 
 [source,xml,indent=0]
 .Example of usage of EAS scheme value (here 9930)in Buyer Electronic Address  in `rim:Value`
@@ -46,7 +46,7 @@ Buyer Electronic Address (`rim:Slot name="BuyerElectronicAddress"`) has an non o
 .Code list for identifier schemes used by the Buyer
 |===
 | Business Term | Allowed Scheme | Document location
-| Buyer Electronic Address Identifier [Buyer Information (BG-3)]  | schemeID attribute is mandatory and must use values from link:/pracc/codelist/EAS/[EAS codes] | `rim:Slot name="BuyerElectronicAddress" @type`
+| Buyer Electronic Address Identifier [Buyer Information (BG-3)]  | schemeID attribute is mandatory and must use values from {codelist-EAS} | `rim:Slot name="BuyerElectronicAddress" @type`
 
 | Buyer Party Identification [Buyer Information (BG-3)] | schemeID attribute is mandatory and must use values from  {link-icd} | `rim:Slot name="BuyerPartyIdentfication" @type`
 |===
