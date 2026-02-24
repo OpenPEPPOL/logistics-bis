@@ -5,11 +5,11 @@
 .Code list for identifier schemes
 |===
 | Business Term | Allowed Scheme | Applicable Xpath
-| Economic operator electronic address identifier | schemeID attribute is mandatory and must use values from link:/pracc/codelist/EAS/[EAS codes] | cac:SenderParty/cbc:EndpointID/@schemeID
-| Contracting body electronic address identifier | schemeID attribute is mandatory and must use values from link:/pracc/codelist/EAS/[EAS codes] | cac:ReceiverParty/cbc:EndpointID/@schemeID
+| Economic operator electronic address identifier | schemeID attribute is mandatory and must use values from {link-eas} | cac:SenderParty/cbc:EndpointID/@schemeID
+| Contracting body electronic address identifier | schemeID attribute is mandatory and must use values from {link-eas} | cac:ReceiverParty/cbc:EndpointID/@schemeID
 | Economic operator identifier | schemeID attribute is mandatory and must use values from  {link-icd} | cac:SenderParty/cac:PartyIdentification/cbc:ID/@schemeID
 | Contracting body identifier | schemeID attribute is mandatory and must use values from  {link-icd} | cac:ReceiverParty/cac:PartyIdentification/cbc:ID/@schemeID
 | Tender Reference | listID attribute is mandatory and must use values form awardCodeList | cac:MinutesDocumentReference/cbc:DocumentStatusCode/@listID
 | Tender Result Code | listID attribute is mandatory and must use values form http://publications.europa.eu/resource/authority/winner-selection-status[Winner Selection Status] | cac:TenderResult/cbc:TenderResultCode/@listID
-| Country Code | listID attribute is mandatory and must use values from link:/pracc/codelist/ISO3166/[Country Codes (ISO 3166-1:Alpha2)] | cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode/@listID
+| Country Code | listID attribute is mandatory and must use values from {link-iso3166} | cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode/@listID
 |===

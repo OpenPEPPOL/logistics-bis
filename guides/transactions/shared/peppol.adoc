@@ -4,7 +4,7 @@
 Peppol has defined a https://docs.peppol.eu/edelivery/policies/Peppol-EDN-Policy-for-use-of-identifiers-4.0-2019-01-28.pdf[Policy for use of Identifiers] that specifies how to use identifiers in both its transport infrastructure and within the documents exchanged across that infrastructure. It also introduces principles for any identifiers used in the Peppol environment. The e-Tendering pilot adopts and extends the Peppol Policy in the following ways:
 
 == Party Identifiers used in business (UBL) documents
-All party identifiers (cac:PartyIdentification/cbc:ID) have an optional scheme identifier attribute '@schemeID'. If used, the value shall be chosen from the code list https://docs.peppol.eu/pracc/codelist/ICD/[ICD codes].
+All party identifiers (cac:PartyIdentification/cbc:ID) have an optional scheme identifier attribute '@schemeID'. If used, the value shall be chosen from the code list {link-icd} .
 
 
 [source,xml,indent=0]
@@ -14,19 +14,19 @@ All party identifiers (cac:PartyIdentification/cbc:ID) have an optional scheme i
 	<cbc:ID schemeID="0088">5790000435968</cbc:ID> <!--.-->
 </cac:PartyIdentification>
 ----
-<.> schemeID attribute is optional, but when used, the codes must be from https://docs.peppol.eu/pracc/codelist/ICD/[ICD codes]
+<.> schemeID attribute is optional, but when used, the codes must be from {link-icd}
 
 == Electronic address identifier used in business (UBL) documents
 All electronic address identifiers (cbc:EndpointID/@schemeID) use the Electronic Address Scheme code list (EAS), maintained by {digital-european-programme}.
 
-Valid values are found here: https://docs.peppol.eu/pracc/codelist/EAS/[EAS codes].
+Valid values are found here: {link-eas}.
 
 [source,xml,indent=0]
 .Examples of usage in cbc:EndpointID
 ----
 <cbc:EndpointID schemeID="0184">DK87654321</cbc:EndpointID> <!--.-->
 ----
-<.> schemeID attribute is mandatory and must use values from https://docs.peppol.eu/pracc/codelist/EAS/[EAS codes]
+<.> schemeID attribute is mandatory and must use values from {link-eas}
 
 == Document Identifiers used in business (UBL) documents
 
