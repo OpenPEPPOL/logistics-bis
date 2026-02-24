@@ -21,6 +21,7 @@
 :bii-order: ftp://ftp.cen.eu/public/CWAs/BII2/CWA16562/CWA16562-Annex-A-BII-Profile-03-OrderOnly-V2_0_0.pdf[CEN BII2 Profile 03, Order Only]
 :bii-ordering: ftp://ftp.cen.eu/public/CWAs/BII2/CWA16562/CWA16562-Annex-G-BII-Profile-28-Ordering-V1_0_0.pdf[CEN BII2 Profile 28, Ordering]
 :bii-mlr: ftp://ftp.cen.eu/public/CWAs/BII2/CWA16558/CWA16558-Annex-M-BII-Profile-36-MessageLevelResponse-V1_0_0.pdf[CEN BII2 Profile 36, Message Level Response]
+:digital-european-programme: https://ec.europa.eu/digital-single-market/en/digital-europe-programme[Digital European Programme]
 
 //UBL
 :ubl: http://docs.oasis-open.org/ubl/UBL-2.1.html[UBL 2.1]
@@ -43,7 +44,7 @@
 :dir-2009-101: http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:L:2009:258:0011:0019:EN:PDF[Directive 2009/101/EC]
 
 
-//codelists
+// External codelists
 :ISO4217: https://www.iso.org/iso-4217-currency-codes.html[ISO 4217:2015]
 :UNCL2005: http://www.unece.org/fileadmin/DAM/trade/untdid/d16b/tred/tred2005.htm[Subset of UN/CEFACT code list 2005, D.16B]
 :ISO3166: http://www.iso.org/iso/home/standards/country_codes.htm[ISO 3166-1]
@@ -58,25 +59,41 @@
 :UNCL7143: http://www.unece.org/fileadmin/DAM/trade/untdid/d16b/tred/tred7143.htm[UN/CEFACT code list 7143, D.16B]
 :UNCL1001: https://www.unece.org/fileadmin/DAM/trade/untdid/d17a/tred/tred1001.htm[UN/CEFACT code list 1001, D.17A]
 :UNCL4343: https://www.unece.org/fileadmin/DAM/trade/untdid/d17a/tred/tred4343.htm[UN/CEFACT code list 4343, D.17A]
-:link-icd: link:../../codelist/ICD.xml[Identifier scheme code list]
-:link-eas: link:../../codelist/eas.xml[Electronic address scheme code list]
-:link-iso3166: link:../../codelist/ISO3166_Alpha2.xml[ISO 3166 country code list]
-:link-tendererRole: link:../../codelist/TendererRole.xml[Tenderer role code list]
-:link-uncl001: link:../../codelist/UNCL1001.xml[UNCL1001 code list]
-:link-uncl1153: link:../../codelist/UNCL1153.xml[UNCL1153 code list]
-:link-uncl4461: link:../../codelist/UNCL4461.xml[UNCL4461 code list]
-:link-uncl5305: link:../../codelist/UNCL5305.xml[UNCL5305 code list]
-:link-uncl5189: link:../../codelist/UNCL5189.xml[UNCL5189 code list]
-:link-uncl7161: link:../../codelist/UNCL7161.xml[UNCL7161 code list]
-:link-mime: link:../../codelist/MimeCode.xml[Mime code list]  
 
-//internal
-:link-codelist: link:../../codelist/[Code list section]
-:codelist-ICD: link:../../codelist/ICD.xml[ICD codes]
-:codelist-EAS: link:../../codelist/eas.xml[EAS codes]
-:vat-codes: link:../../codelist/UNCL5305.xml[Code list UNCL5305]
-:mime-codes: link:../../codelist/MimeCode.xml[Mime codes]
-:digital-european-programme: https://ec.europa.eu/digital-single-market/en/digital-europe-programme[Digital European Programme]
+// Internal code lists
+// Codelist base path
+:codelist-base: ../../codelist/
+
+// All available codelists
+:link-additionalConditionsCode: link:{codelist-base}addCond[Additional Conditions Code]
+:link-awardCode: link:{codelist-base}awardCode[Award Code]
+:link-contractTypeCode: link:{codelist-base}contractType[Contract Type Code]
+:link-documentStatusCode: link:{codelist-base}docStatus[Document Status Code]
+:link-documentTypeCode: link:{codelist-base}docType[Document Type Code]
+:link-eas: link:{codelist-base}eas[Electronic Address Scheme (EAS)]
+:link-gs1-7009: link:{codelist-base}GS17009[Packaging level code (GS1 7009)]
+:link-icd: link:{codelist-base}ICD[ISO 6523 International Code Designator (ICD)]
+:link-iso3166: link:{codelist-base}ISO3166[ISO 3166-1:Alpha2 Country codes]
+:link-iso4217: link:{codelist-base}ISO4217[ISO 4217 Currency codes]
+:link-legalBasisCode: link:{codelist-base}legalBasis[Legal Basis Code]
+:link-messageResponseCode: link:{codelist-base}messageResponse[Message Response Code]
+:link-mime: link:{codelist-base}MimeCode[Mime code (IANA Subset)]
+:link-noticeResponseCode: link:{codelist-base}noticeResponse[Notice Response Code]
+:link-procedureTypeCode: link:{codelist-base}procedureType[Procedure Type Code]
+:link-procurementTypeCode: link:{codelist-base}procurementType[Procurement Type Code]
+:link-publicationConditionCode: link:{codelist-base}publicationCondition[Publication Condition Code]
+:link-statusReasonCode: link:{codelist-base}statusReason[Status reason code (OpenPeppol)]
+:link-submissionMethodCode: link:{codelist-base}submissionMethod[Submission Method Code]
+:link-tendererRole: link:{codelist-base}tendererRole[Economic Operator Role Codes]
+:link-ublDocumentSchema: link:{codelist-base}ublDocumentSchema[UBL Document Schema]
+:link-uncl001: link:{codelist-base}UNCL1001[Document name code (UNCL1001)]
+:link-uncl5305: link:{codelist-base}UNCL5305[Duty or tax or fee category code (UNCL5305)]
+:link-uncl5387: link:{codelist-base}UNCL5387[Price type codes (UNCL5387)]
+:link-uncl8273: link:{codelist-base}UNCL8273[Dangerous goods regulations code (UNCL8273)]
+:link-unrec20: link:{codelist-base}UNECERec20[Recommendation 20 and 21 codes (UN/ECE)]
+:link-transactionConditionCode: link:{codelist-base}TransactionCondition[Transaction condition code (OpenPeppol)]
+:link-uncl6313: link:{codelist-base}UNCL6313[Measured attribute code (UNCL6313)]
+:link-uncl7143: link:{codelist-base}UNCL7143[Item type identification code (UNCL7143)]
 
 
 //examples
@@ -102,9 +119,6 @@
 :P009: https://docs.peppol.eu/pracc/profiles/p009/index.html[P009 Notify Awarding]
 :P010: https://docs.peppol.eu/pracc/profiles/p010/index.html[P010 Tendering Message Response]
 :P011: https://docs.peppol.eu/pracc/profiles/p011/index.html[P011 Qualification]
-
-//Peppol Transactions Preaward
-:T004: https://docs.peppol.eu/pracc/transactions/T004/index.html[T004 Call for Tenders]
 
 
 //CEN BII3
