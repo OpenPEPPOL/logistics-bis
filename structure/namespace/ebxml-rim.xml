@@ -5,18 +5,97 @@
     <Element name="Identifiable">
     </Element>
     <Element name="Slot">
-        <Ref card="0..n">rim:Slot</Ref>
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=SpecificationIdentification">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=BusinessProcessTypeIdentifier">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=IssueDateTime">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=SenderElectronicAddress">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=ReceiverElectronicAddress">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=PublicationRequested">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=NoticePublicationDatePreferred">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=BuyerInformation">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=BuyerPartyIdentification">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=BuyerElectronicAddress">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=UBLDocumentSchema">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=eFormsVersion">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=NoticeVersion">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=CustomizationID">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=Keywords">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=FormType">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=NoticeType">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=Classification">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=ContractNature">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=PlaceOfPerformance">
+        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:SlotValue</Ref>
+    </Element>
+    <Element name="Slot@name=AdditionalDocumentReference">
+        <Ref card="0..1">rim:Name</Ref>
         <Ref card="0..n">rim:SlotValue</Ref>
     </Element>
     <Element name="SlotValue">
         <Ref card="0..1">rim:Value</Ref>
-        <Ref card="0..n">rim:Element</Ref>
     </Element>
     <Element name="Value" />
-    <Element name="Element">
-        <Ref card="0..1">rim:Value</Ref>
-        <Ref card="0..n">rim:Element</Ref>
-    </Element>
     <Element name="Name" />
     <Element name="Description" />
     <Element name="VersionInfo" />
@@ -55,4 +134,7 @@
     <Element name="RegistryObjectList">
         <Ref card="0..n">rim:RegistryObject</Ref>
     </Element>
+    <Element name="Identifiable" />
+    <Element name="Element" />
+    <Element name="RepositoryItemRef" />
 </Namespace>
