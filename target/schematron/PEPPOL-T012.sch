@@ -259,12 +259,6 @@
                  flag="fatal"
                  id="PEPPOL-T012-B00901">Element 'rim:Value' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t012:1.2'.</assert>
       </rule>
-      <rule context="/query:QueryResponse/rim:Slot@name=SpecificationIdentification/rim:SlotValue/rim:Value/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B00902">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/query:QueryResponse/rim:Slot@name=SpecificationIdentification/rim:SlotValue/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B00704">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/query:QueryResponse/rim:Slot@name=SpecificationIdentification/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B00504">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
@@ -287,12 +281,6 @@
                  flag="fatal"
                  id="PEPPOL-T012-B01401">Element 'rim:Value' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p006:1.2'.</assert>
       </rule>
-      <rule context="/query:QueryResponse/rim:Slot@name=BusinessProcessTypeIdentifier/rim:SlotValue/rim:Value/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B01402">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/query:QueryResponse/rim:Slot@name=BusinessProcessTypeIdentifier/rim:SlotValue/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B01204">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/query:QueryResponse/rim:Slot@name=BusinessProcessTypeIdentifier/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B01004">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
@@ -311,12 +299,6 @@
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T012-B01703">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:Slot@name=IssueDateTime/rim:SlotValue/rim:Value"/>
-      <rule context="/query:QueryResponse/rim:Slot@name=IssueDateTime/rim:SlotValue/rim:Value/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B01901">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/query:QueryResponse/rim:Slot@name=IssueDateTime/rim:SlotValue/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B01704">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/query:QueryResponse/rim:Slot@name=IssueDateTime/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B01504">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
@@ -342,9 +324,6 @@
          <assert test="(some $code in $cleas satisfies $code = normalize-space(text()))"
                  flag="fatal"
                  id="PEPPOL-T012-B02501">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
-      </rule>
-      <rule context="/query:QueryResponse/rim:Slot@name=SenderElectronicAddress/rim:SlotVlaue/rim:Value/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B02502">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:Slot@name=SenderElectronicAddress/rim:SlotVlaue/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B02304">Document MUST NOT contain elements not part of the data model.</assert>
@@ -374,9 +353,6 @@
          <assert test="(some $code in $cleas satisfies $code = normalize-space(text()))"
                  flag="fatal"
                  id="PEPPOL-T012-B03101">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
-      </rule>
-      <rule context="/query:QueryResponse/rim:Slot@name=ReceiverElectronicAddress/rim:SlotVlaue/rim:Value/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B03102">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:Slot@name=ReceiverElectronicAddress/rim:SlotVlaue/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B02904">Document MUST NOT contain elements not part of the data model.</assert>
@@ -434,14 +410,8 @@
                  flag="fatal"
                  id="PEPPOL-T012-B04501">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
-      <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot@name=BuyerInformation/rim:Slot@name=BuyerPartyIdentification/rim:SlotValue/rim:Element/rim:Value/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B04502">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot@name=BuyerInformation/rim:Slot@name=BuyerPartyIdentification/rim:SlotValue/rim:Element/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B04304">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot@name=BuyerInformation/rim:Slot@name=BuyerPartyIdentification/rim:SlotValue/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B04104">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot@name=BuyerInformation/rim:Slot@name=BuyerPartyIdentification/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B03806">Document MUST NOT contain elements not part of the data model.</assert>
@@ -469,12 +439,6 @@
                  flag="fatal"
                  id="PEPPOL-T012-B05101">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
       </rule>
-      <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot@name=BuyerInformation/rim:Slot@name=BuyerElectronicAddress/rim:SlotValue/rim:Value/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B05102">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot@name=BuyerInformation/rim:Slot@name=BuyerElectronicAddress/rim:SlotValue/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B04904">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot@name=BuyerInformation/rim:Slot@name=BuyerElectronicAddress/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B04606">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
@@ -500,12 +464,6 @@
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T012-B05503">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot@name=UBLDocumentSchema/rim:SlotValue/rim:Value"/>
-      <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot@name=UBLDocumentSchema/rim:SlotValue/rim:Value/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B05701">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot@name=UBLDocumentSchema/rim:SlotValue/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B05504">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot@name=UBLDocumentSchema/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B05206">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
@@ -524,12 +482,6 @@
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T012-B06003">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot@name=eFormsVersion/rim:SlotValue/rim:Value"/>
-      <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot@name=eFormsVersion/rim:SlotValue/rim:Value/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B06201">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot@name=eFormsVersion/rim:SlotValue/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B06004">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot@name=eFormsVersion/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B05804">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
