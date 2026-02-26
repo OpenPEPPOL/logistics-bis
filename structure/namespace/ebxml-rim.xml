@@ -5,13 +5,18 @@
     <Element name="Identifiable">
     </Element>
     <Element name="Slot">
-        <Ref card="0..1">rim:Name</Ref>
+        <Ref card="0..n">rim:Slot</Ref>
         <Ref card="0..n">rim:SlotValue</Ref>
     </Element>
     <Element name="SlotValue">
         <Ref card="0..1">rim:Value</Ref>
+        <Ref card="0..n">rim:Element</Ref>
     </Element>
     <Element name="Value" />
+    <Element name="Element">
+        <Ref card="0..1">rim:Value</Ref>
+        <Ref card="0..n">rim:Element</Ref>
+    </Element>
     <Element name="Name" />
     <Element name="Description" />
     <Element name="VersionInfo" />
