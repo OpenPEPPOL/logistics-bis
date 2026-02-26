@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+   Snippet-file used for the PEPPOL BIS, Pre award catalogue request BIS
+
+
+-->
+<ubl:CatalogueRequest
+        xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:CatalogueRequest-2"
+        xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+        xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+        xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+	<cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t035:1.0</cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p035:1.0</cbc:ProfileID>
+	<cbc:ID>99fdd451-87ba-589b-23fc-5173a0192583</cbc:ID>
+	<cbc:IssueDate>2023-02-28</cbc:IssueDate>
+	<cbc:IssueTime>23:00:00.000Z</cbc:IssueTime>
+
+	<cac:ReceiverParty>
+		<!-- tag::epID[] -->
+		<cbc:EndpointID schemeID="0198">DK87654321</cbc:EndpointID>
+		<!-- end::epID[] -->
+
+		<!-- tag::partyID[] -->
+		<cac:PartyIdentification>
+			<cbc:ID schemeID="0088">5790000435968</cbc:ID>
+		</cac:PartyIdentification>
+		<!-- end::partyID[] -->
+	</cac:ReceiverParty>
+
+	<!-- tag::request-provider[] -->
+		<cac:ProviderParty>
+		<cbc:EndpointID schemeID="9958">993-12332123-06</cbc:EndpointID>
+		<cac:PartyIdentification>
+			<cbc:ID schemeID="9958">993-12332123-06</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>UKL Contracting Authority</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Universitätsstraße 1</cbc:StreetName>
+			<cbc:CityName>Koblenz</cbc:CityName>
+			<cbc:PostalZone>56070</cbc:PostalZone>
+			<cbc:CountrySubentity>Rheinland-Pfalz</cbc:CountrySubentity>
+			<cac:Country>
+				<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:Contact>
+			<cbc:Name>John Doe</cbc:Name>
+			<cbc:Telephone>+4915233322111</cbc:Telephone>
+			<cbc:ElectronicMail>jdoe@uni-koblenz.de</cbc:ElectronicMail>
+		</cac:Contact>
+	</cac:ProviderParty>
+	<!-- end::request-provider[] -->
+
+	<!-- tag::addressH[] -->
+	<cac:SellerSupplierParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+			<cbc:ID schemeID="0088">7300010000001</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Despatch from Name</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Industrigatan 6</cbc:StreetName>
+				<cbc:CityName>Malmö</cbc:CityName>
+				<cbc:PostalZone>87654</cbc:PostalZone>
+				<cac:AddressLine>
+					<cbc:Line>Warehouse 1</cbc:Line>
+				</cac:AddressLine>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">SE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+		</cac:Party>
+	</cac:SellerSupplierParty>
+
+	<cac:ContractorCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="ZZZ">23947</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Delivery to Name</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Huvudgatan 56</cbc:StreetName>
+				<cbc:CityName>Lund</cbc:CityName>
+				<cbc:PostalZone>34567</cbc:PostalZone>
+				<cac:AddressLine>
+					<cbc:Line>Building 2</cbc:Line>
+				</cac:AddressLine>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">SE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+		</cac:Party>
+	</cac:ContractorCustomerParty>
+		<!-- end::addressH[] -->
+
+	<!-- tag::version[] -->
+	<cac:RequestedCatalogueReference>
+		<cbc:ID>12345</cbc:ID>
+		<cbc:VersionID>3</cbc:VersionID>
+	</cac:RequestedCatalogueReference>
+	<!-- end::version[] -->
+
+	<!-- tag::reference[] -->
+	<cac:ReferencedContract>
+		<cbc:ID>CT_123</cbc:ID>
+		<cbc:ContractTypeCode>539</cbc:ContractTypeCode>
+		<cac:ContractDocumentReference>
+			<cbc:ID>PROJ_321</cbc:ID>
+		</cac:ContractDocumentReference>
+	</cac:ReferencedContract>
+	<!-- end::reference[] -->
+
+	<!-- tag::terms[] -->
+	<cac:TradingTerms>
+		<cbc:Information>EXW#Ex Works</cbc:Information>
+		<cbc:Reference>INCOTerms</cbc:Reference>
+	</cac:TradingTerms>
+	<!-- end::terms[] -->
+
+	<cac:CatalogueRequestLine>
+		<cbc:ID>86a5b9ea-a27e-887b-9399-82d9c3482db3</cbc:ID>
+
+		<!-- tag::period[] -->
+		<cac:LineValidityPeriod>
+			<cbc:StartDate>2023-01-01</cbc:StartDate>
+			<cbc:EndDate>2023-03-31</cbc:EndDate>
+		</cac:LineValidityPeriod>
+		<!-- end::period[] -->
+
+		<cac:RequiredItemLocationQuantity>
+			<cbc:MinimumQuantity unitCode="C62">100</cbc:MinimumQuantity>
+			<cbc:MaximumQuantity unitCode="C62">100</cbc:MaximumQuantity>
+			<!-- Will be changed in regard to planned Code list! -->
+			
+			<!-- tag::order-interval[] -->
+			<cbc:TradingRestrictions>Quarter-yearly as per contractual agreement</cbc:TradingRestrictions>
+			<!-- end::order-interval[] -->
+			
+			<!-- tag::delivery-location[] -->
+			<cac:ApplicableTerritoryAddress>
+				<cbc:StreetName>Universitätsstraße 1</cbc:StreetName>
+				<cbc:CityName>Koblenz</cbc:CityName>
+				<cbc:PostalZone>56070</cbc:PostalZone>
+				<cbc:CountrySubentity>Rheinland-Pfalz</cbc:CountrySubentity>
+				<cac:Country>
+					<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:ApplicableTerritoryAddress>
+			<!-- end::delivery-location[] -->
+
+			<!-- tag::addressL[] -->
+			<cac:ApplicableTerritoryAddress>
+				<cbc:AddressTypeCode>DEL</cbc:AddressTypeCode>
+				<cbc:StreetName>Universitätsstraße 1</cbc:StreetName>
+				<cbc:CityName>Koblenz</cbc:CityName>
+				<cbc:PostalZone>56070</cbc:PostalZone>
+				<cbc:CountrySubentity>Rheinland-Pfalz</cbc:CountrySubentity>
+				<cac:Country>
+					<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:ApplicableTerritoryAddress>
+			
+			<cac:ApplicableTerritoryAddress>
+				<cbc:AddressTypeCode>DSP</cbc:AddressTypeCode>
+				<cbc:StreetName>Storgatan 12</cbc:StreetName>
+				<cbc:CityName>Kristianstad</cbc:CityName>
+				<cbc:PostalZone>29154</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode>SE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:ApplicableTerritoryAddress>
+			<!-- end::addressL[] -->
+
+			<cac:Price>
+				<cbc:PriceAmount currencyID="EUR">200</cbc:PriceAmount>
+				<cbc:PriceTypeCode>NE</cbc:PriceTypeCode>
+			</cac:Price>
+		</cac:RequiredItemLocationQuantity>
+		
+		<!-- tag::item-price[] -->
+		<cac:RequiredItemLocationQuantity>
+			<cac:Price>
+				<cbc:PriceAmount currencyID="NOK">100.00</cbc:PriceAmount>
+				<cac:ValidityPeriod>
+					<cbc:StartDate>2026-04-26</cbc:StartDate>
+					<cbc:EndDate>2026-05-26</cbc:EndDate>
+				</cac:ValidityPeriod>
+			</cac:Price>
+		</cac:RequiredItemLocationQuantity>
+		<!-- end::item-price[] -->
+
+		<!-- tag::item[] -->
+		<cac:Item>
+			<cbc:Description>SARS-CoV-2 Rapid Antigen Test for the qualitative detection of specific antigens of SARS-CoV-2 present in the human nasopharynx. This test is intended to detect specific antigens from the SARS-CoV-2 virus in individuals suspected of COVID-19.</cbc:Description>
+			<cbc:Name>SARS-CoV-2 Rapid Antigen Self-Test</cbc:Name>
+
+			<!-- tag::attachment[] -->
+			<!-- Attached document via an external reference. -->
+			<cac:ItemSpecificationDocumentReference>
+				<cbc:ID>LK8788</cbc:ID>
+				<cbc:DocumentDescription>Product image</cbc:DocumentDescription>
+				<cac:Attachment>
+					<cac:ExternalReference>
+						<cbc:URI>http://img.trioving.net/Låskasser/LK8788_PRD_FPM_000.JPG</cbc:URI>
+					</cac:ExternalReference>
+				</cac:Attachment>
+			</cac:ItemSpecificationDocumentReference>
+
+			<!-- Attached document via an embedded document. -->
+			<cac:ItemSpecificationDocumentReference>
+				<cbc:ID>LK8788</cbc:ID>
+				<cbc:DocumentDescription>Product image</cbc:DocumentDescription>
+				<cac:Attachment>
+					<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="Productsheet.pdf">aHR0cHM6Ly90ZXN0LXZlZmEuZGlmaS5uby9w
+					ZXBwb2xiaXMvcG9hY2MvYmlsbGluZy8zLjAvYmlzLw==</cbc:EmbeddedDocumentBinaryObject>
+				</cac:Attachment>
+			</cac:ItemSpecificationDocumentReference>
+			<!-- end::attachment[] -->
+
+			<!-- tag::classification[] -->
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="STI">LA23-9</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<!-- end::classification[] -->
+
+			<!-- tag::vat[] -->
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID>S</cbc:ID>
+				<cbc:Percent>25</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<!-- end::vat[] -->
+
+			<!-- tag::item-property[] -->
+			<cac:AdditionalItemProperty>
+				<cbc:ID>1</cbc:ID>
+				<cbc:Name languageID="en">Color</cbc:Name>
+				<cbc:NameCode listID="UNCL7081">35</cbc:NameCode>
+				<cbc:Value languageID="en">Red</cbc:Value>
+				<cbc:ValueQualifier>Color</cbc:ValueQualifier>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:ID>2</cbc:ID>
+				<cbc:Name>NutritionProtein</cbc:Name>
+				<cbc:Value>2 - 3 g/100 ml</cbc:Value>
+				<cbc:ValueQualifier>Nutrition</cbc:ValueQualifier>
+				<cac:ItemPropertyRange>
+					<cbc:MinimumValue>2</cbc:MinimumValue>
+					<cbc:MaximumValue>3</cbc:MaximumValue>
+				</cac:ItemPropertyRange>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:ID>3</cbc:ID>
+				<cbc:Name>GeneticallyModified</cbc:Name>
+				<cbc:Value>False</cbc:Value>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				   <cbc:Name>Thermal transmittance</cbc:Name>
+				   <cbc:NameCode listID="EN14351-1">ThermalTransmittance</cbc:NameCode>
+				   <cbc:Value>NA</cbc:Value>
+				   <cac:ItemPropertyRange>
+					      <cbc:MaximumValue>1.4</cbc:MaximumValue>
+				</cac:ItemPropertyRange>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:ID schemeID="ISO22057" schemeVersionID="2022" schemeDataURI="https://define.cobuilder.no/77e416eb-a363-4258-a04e- 
+			 			171d843a6460/2022/">77e416eb-a363-4258-a04e-171d843a6460</cbc:ID>
+				   <cbc:Name>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</cbc:Name>
+				   <cbc:Value>NA</cbc:Value>
+				   <cbc:ValueQuantity unitCode="MTR">4.30</cbc:ValueQuantity>
+			</cac:AdditionalItemProperty>
+			<!-- end::item-property[] -->
+			
+			<!-- tag::certificate[] -->
+			<cac:Certificate>
+				<cbc:ID>c82d5afb-1040-c878-4575-401308559654</cbc:ID>
+				<cbc:CertificateTypeCode>Enrollment in a register of commercial partnerships</cbc:CertificateTypeCode>
+				<cbc:CertificateType>Occupation and legal form specific certificate for certain reglemented professions.</cbc:CertificateType>
+				<cbc:Remarks>Certificate</cbc:Remarks>
+				<cac:IssuerParty>
+					<cac:PartyName>
+						<cbc:Name>Competent District Court</cbc:Name>
+					</cac:PartyName>
+				</cac:IssuerParty>
+			</cac:Certificate>
+			
+			<cac:Certificate>
+				<cbc:ID>428e17c6-fc16-89c1-d2c2-38b94c4dd486</cbc:ID>
+				<cbc:CertificateTypeCode>Certificate by independent bodies about quality assurance standards or systems</cbc:CertificateTypeCode>
+				<cbc:CertificateType>It is not possible to generally tell if the needed certificate is free of charge or not or to specify the 
+										possible price.</cbc:CertificateType>
+				<cbc:Remarks>Certificate</cbc:Remarks>
+				<cac:IssuerParty>
+					<cac:PartyName>
+						<cbc:Name>Competent Independent Quality Assurance Body</cbc:Name>
+					</cac:PartyName>
+				</cac:IssuerParty>
+			</cac:Certificate>
+			<!-- end::certificate[] -->
+
+			<!-- tag::certificate-2[] -->
+			<cac:Certificate>
+				<cbc:ID>NEO</cbc:ID>
+				<cbc:CertificateTypeCode>EcoLabel</cbc:CertificateTypeCode>
+				<cbc:CertificateType>EcoLabel</cbc:CertificateType>
+				<cac:IssuerParty>
+					<cac:PartyName>
+						<cbc:Name>Svanemerket</cbc:Name>
+					</cac:PartyName>
+				</cac:IssuerParty>
+				<cac:DocumentReference>
+					<cbc:ID>http://www.svanemerket.no/</cbc:ID>
+				</cac:DocumentReference>
+			</cac:Certificate>
+			<!-- end::certificate-2[] -->
+			
+		</cac:Item>
+		<!-- end::item[] -->
+	</cac:CatalogueRequestLine>
+</ubl:CatalogueRequest>
+

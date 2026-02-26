@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Catalogue xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+	xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2">
+	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+	<cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t036:1.00</cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p035:1.0</cbc:ProfileID>
+
+	<!-- tag::version[] -->
+	<cbc:ID>1387</cbc:ID>
+	<cbc:Name>A pre-award catalogue</cbc:Name>
+	<cbc:IssueDate>2026-02-01</cbc:IssueDate>
+	<cbc:VersionID>1</cbc:VersionID>
+	<!-- end::version[] -->
+
+	<!-- tag::period-h[] -->
+	<cac:ValidityPeriod>
+		<cbc:StartDate>2026-08-01</cbc:StartDate>
+		<cbc:EndDate>2026-12-31</cbc:EndDate>
+	</cac:ValidityPeriod>
+	<!-- end::period-h[] -->
+
+	<!-- tag::procurement[] -->
+	<cac:ReferencedContract>
+		<cbc:ID>12345</cbc:ID>	<!--1-->
+		<cbc:ContractTypeCode listID="UNCL1001">311</cbc:ContractTypeCode> <!--2-->
+		<cac:ContractDocumentReference>
+			<cbc:ID>CRT1387</cbc:ID> <!--3-->
+		</cac:ContractDocumentReference>
+	</cac:ReferencedContract>
+	<!-- end::procurement[] -->
+	
+	<!-- tag::project[] -->
+	<cac:ReferencedContract>
+		<cbc:ID>12345</cbc:ID>	<!--1-->
+		<cbc:ContractTypeCode listID="UNCL1001">315</cbc:ContractTypeCode>	<!--2-->
+		<cac:ContractDocumentReference>
+			<cbc:ID>PR-1234</cbc:ID>	<!--3-->
+		</cac:ContractDocumentReference>
+	</cac:ReferencedContract>
+	<!-- end::project[] -->
+
+	<cac:ProviderParty>
+		<!-- tag::epid[] -->
+		<cbc:EndpointID schemeID="0198">DK87654321</cbc:EndpointID>
+		<!-- end::epid[] -->
+		
+		<!-- tag::party-id[] -->
+		<cac:PartyIdentification>
+			<cbc:ID schemeID="0088">5790000435968</cbc:ID>
+		</cac:PartyIdentification>
+		<!-- end::party-id[] -->
+
+		<cac:PartyName>
+			<cbc:Name>ABC Supplier Ltd.</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Elm Street No:1</cbc:StreetName>
+			<cbc:CityName>Gotham</cbc:CityName>
+			<cbc:PostalZone>06800</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode listID="ISO3166-1:Alpha2">DE</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+	</cac:ProviderParty>
+
+	<!-- tag::receiver[] -->
+	<cac:ReceiverParty>
+		<cac:PartyIdentification>
+			<cbc:ID schemeID="ZZZ">14920263491</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>DEF Customer Ltd.</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Sesame Street No:1</cbc:StreetName>
+			<cbc:CityName>Gotham</cbc:CityName>
+			<cbc:PostalZone>06801</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode listID="ISO3166-1:Alpha2">DE</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+	</cac:ReceiverParty>
+	<!-- end::receiver[] -->
+
+	<!-- tag::address-h[] -->
+	<cac:SellerSupplierParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="0088">7300010000001</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Despatch from Name</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Industrigatan 6</cbc:StreetName>
+				<cbc:CityName>Malmö</cbc:CityName>
+				<cbc:PostalZone>87654</cbc:PostalZone>
+				<cac:AddressLine>
+					<cbc:Line>Warehouse 1</cbc:Line>
+				</cac:AddressLine>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">SE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+		</cac:Party>
+	</cac:SellerSupplierParty>
+
+	<cac:ContractorCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeID="ZZZ">23947</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Delivery to Name</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Huvudgatan 56</cbc:StreetName>
+				<cbc:CityName>Lund</cbc:CityName>
+				<cbc:PostalZone>34567</cbc:PostalZone>
+				<cac:AddressLine>
+					<cbc:Line>Building 2</cbc:Line>
+				</cac:AddressLine>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">SE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+		</cac:Party>
+		</cac:ContractorCustomerParty>
+		<!-- end::address-h[] -->
+
+	<!-- tag::terms[] -->
+	<cac:TradingTerms>
+		<cbc:Information>EXW#Ex Works</cbc:Information>
+		<cbc:Reference>INCOTerms</cbc:Reference>
+	</cac:TradingTerms>
+		<!-- end::terms[] -->
+
+	<!-- tag::lot-ref[] -->
+	<cac:CatalogueLine>
+		<cbc:ID>2</cbc:ID>
+		<cbc:ContractSubdivision>32</cbc:ContractSubdivision>
+	<!-- end::lot-ref[] -->
+		
+	<!-- tag::quantity-2[] -->
+		<cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+		<cbc:OrderableUnit>CS</cbc:OrderableUnit>
+		<cbc:ContentUnitQuantity unitCode="EA" unitCodeListID="UNECERec20">2500</cbc:ContentUnitQuantity>
+		<cbc:OrderQuantityIncrementNumeric>1</cbc:OrderQuantityIncrementNumeric>
+		<cbc:MinimumOrderQuantity unitCode="CS" unitCodeListID="UNECERec20">1</cbc:MinimumOrderQuantity>
+		<cbc:PackLevelCode listID="GS17009:PEPPOL">TU</cbc:PackLevelCode>
+		<!-- end::quantity-2[] -->
+
+		<!-- tag::period-l[] -->
+		<cac:LineValidityPeriod>
+			<cbc:StartDate>2026-08-01</cbc:StartDate>
+			<cbc:EndDate>2026-12-31</cbc:EndDate>
+		</cac:LineValidityPeriod>
+		<!-- end::period-l[] -->
+
+		<cac:ItemComparison>
+			<cbc:PriceAmount currencyID="EUR">1.5</cbc:PriceAmount>
+			<cbc:Quantity unitCode="LTR" unitCodeListID="UNECERec20">1</cbc:Quantity>
+		</cac:ItemComparison>
+
+		<!-- tag::component-related[] -->
+		<cac:ComponentRelatedItem>
+			<cbc:ID>556677</cbc:ID>
+			<cbc:Quantity unitCode="C65" unitCodeListID="UNECERec20">1</cbc:Quantity>
+		</cac:ComponentRelatedItem>
+		<!-- end::component-related[] -->
+
+		<!-- tag::required-related[] -->
+		<cac:RequiredRelatedItem>
+			<cbc:ID>556677</cbc:ID>
+			<cbc:Quantity unitCode="C65" unitCodeListID="UNECERec20">1</cbc:Quantity>
+		</cac:RequiredRelatedItem>
+		<!-- end::required-related[] -->
+
+		<!-- tag::complementary-related[] -->
+		<cac:ComplementaryRelatedItem>
+			<cbc:ID>556677</cbc:ID>
+			<cbc:Quantity unitCode="C65" unitCodeListID="UNECERec20">1</cbc:Quantity>
+		</cac:ComplementaryRelatedItem>
+		<!-- end::complementary-related[] -->
+
+		<!-- tag::req_item[] -->
+		
+		<cac:RequiredItemLocationQuantity>
+
+			<!-- tag::address-l[] -->
+			<cac:ApplicableTerritoryAddress>
+				<cbc:AddressTypeCode>DSP</cbc:AddressTypeCode>
+				<cbc:StreetName>Harbour lane 4</cbc:StreetName>
+				<cbc:CityName>London</cbc:CityName>
+				<cbc:PostalZone>21334</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">UK</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:ApplicableTerritoryAddress>
+
+			<cac:ApplicableTerritoryAddress>
+				<cbc:AddressTypeCode>DEL</cbc:AddressTypeCode>
+				<cbc:StreetName>Mainstreet 123</cbc:StreetName>
+				<cbc:CityName>Birmingham</cbc:CityName>
+				<cbc:PostalZone>12334</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">UK</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:ApplicableTerritoryAddress>
+			<!-- end::address-l[] -->
+
+			<!-- tag::period-p[] -->
+			<cac:Price>
+				<cbc:PriceAmount currencyID="NOK">75.00</cbc:PriceAmount>
+				<cac:ValidityPeriod>
+					<cbc:StartDate>2026-04-01</cbc:StartDate>
+					<cbc:EndDate>2026-04-30</cbc:EndDate>
+				</cac:ValidityPeriod>
+				<cac:ValidityPeriod>
+					<cbc:StartDate>2026-08-01</cbc:StartDate>
+					<cbc:EndDate>2026-08-31</cbc:EndDate>
+				</cac:ValidityPeriod>
+			</cac:Price>
+			<!-- end::period-p[] -->
+
+		</cac:RequiredItemLocationQuantity>
+		<!-- tag::req_item[] -->
+
+		<cac:Item>
+			<cbc:Description>Milk standard 3%</cbc:Description>
+			<cbc:PackQuantity unitCode="LTR" unitCodeListID="UNECERec20">10</cbc:PackQuantity>
+			<cbc:PackSizeNumeric>10</cbc:PackSizeNumeric>
+			<cbc:Name>Milk standard 3%</cbc:Name>
+			<cbc:Keyword>Milk</cbc:Keyword>
+			<cbc:BrandName>Branded Milk</cbc:BrandName>
+			
+			<cac:SellersItemIdentification>
+				<cbc:ID>89388789930</cbc:ID>
+			</cac:SellersItemIdentification>
+			
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="GTIN">99023409093843</cbc:ID>
+			</cac:StandardItemIdentification>
+			
+			<!-- tag::attachment-1[] -->
+			<cac:ItemSpecificationDocumentReference>
+				<cbc:ID>2384-34232-342-34-2333</cbc:ID>
+				<cbc:DocumentType>Product sheet</cbc:DocumentType>
+				<cbc:DocumentDescription>Sheet providing specification of products.</cbc:DocumentDescription>
+				<cac:Attachment>
+					<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" fileName="sheet_123"
+						>ZGVmYXVsdA==</cbc:EmbeddedDocumentBinaryObject>
+				</cac:Attachment>
+			</cac:ItemSpecificationDocumentReference>
+			<!-- end::attachment-1[] -->
+
+			<!-- tag::attachment-2[] -->
+			<cac:ItemSpecificationDocumentReference>
+				<cbc:ID>2384-34232-342-34-2333</cbc:ID>
+				<cbc:DocumentType>Product sheet</cbc:DocumentType>
+				<cbc:DocumentDescription>Sheet providing specification of products.</cbc:DocumentDescription>
+				<cac:Attachment>
+					<cac:ExternalReference>
+						<cbc:URI>bis.beast.se</cbc:URI>
+					</cac:ExternalReference>
+				</cac:Attachment>
+			</cac:ItemSpecificationDocumentReference>
+			<!-- end::attachment-2[] -->
+
+			<cac:OriginCountry>
+				<cbc:IdentificationCode listID="ISO3166-1:Alpha2">FR</cbc:IdentificationCode>
+			</cac:OriginCountry>
+			
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="CPV">783xxxxxxxx</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+
+			<!-- tag::haz-item[] -->
+			<cac:HazardousItem>
+				<cbc:ID>123</cbc:ID>
+				<cbc:UNDGCode>ADR</cbc:UNDGCode>
+				<cbc:HazardClassID>0131</cbc:HazardClassID>
+			</cac:HazardousItem>
+			<!-- end::haz-item[] -->
+
+			<!-- tag::vat[] -->
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+				<cbc:Percent>25</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<!-- end::vat[] -->
+			
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Fat % for milk</cbc:Name>
+				<cbc:Value>3%</cbc:Value>
+			</cac:AdditionalItemProperty>
+			
+			<!-- tag::item-property[] -->
+			<cac:AdditionalItemProperty>
+				<cbc:ID>1</cbc:ID>
+				<cbc:Name languageID="en">Color</cbc:Name>
+				<cbc:NameCode listID="UNCL7081">35</cbc:NameCode>
+				<cbc:Value languageID="en">Red</cbc:Value>
+				<cbc:ValueQualifier>Color</cbc:ValueQualifier>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:ID>2</cbc:ID>
+				<cbc:Name>NutritionProtein</cbc:Name>
+				<cbc:Value>2.5 g/100 ml</cbc:Value>
+				<cbc:ValueQuantity unitCode="GRM">2.5</cbc:ValueQuantity>
+				<cbc:ValueQualifier>Nutrition</cbc:ValueQualifier>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:ID>3</cbc:ID>
+				<cbc:Name>GeneticallyModified</cbc:Name>
+				<cbc:Value>False</cbc:Value>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				   <cbc:Name>Thermal transmittance</cbc:Name>
+				   <cbc:NameCode listID="EN14351-1">ThermalTransmittance</cbc:NameCode>
+				   <cbc:Value>NA</cbc:Value>
+				<cbc:ValueQuantity unitCode="D55">1.1</cbc:ValueQuantity>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:ID schemeID="ISO22057" schemeVersionID="2022" schemeDataURI="https://define.cobuilder.no/77e416eb-a363-4258-a04e- 
+			 			171d843a6460/2022/">77e416eb-a363-4258-a04e-171d843a6460</cbc:ID>
+				   <cbc:Name>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</cbc:Name>
+				   <cbc:Value>NA</cbc:Value>
+				   <cbc:ValueQuantity unitCode="MTR">4.30</cbc:ValueQuantity>
+			</cac:AdditionalItemProperty>
+			<!-- end::item-property[] -->
+
+			<!-- tag::item-dates[] -->
+			<cac:ItemInstance>
+				<cbc:BestBeforeDate>2026-12-31</cbc:BestBeforeDate>
+				<cac:LotIdentification>
+					<cbc:ExpiryDate>2026-12-31</cbc:ExpiryDate>
+				</cac:LotIdentification>
+			</cac:ItemInstance>
+			<!-- end::item-dates[] -->
+
+		</cac:Item>
+
+		<cac:CallForTendersLineReference>
+			<cbc:LineID>1</cbc:LineID>
+		</cac:CallForTendersLineReference>
+	</cac:CatalogueLine>
+
+	<!-- tag::quantity-4[] -->
+	<cac:CatalogueLine>
+		<cbc:ID>4</cbc:ID>
+
+		<cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+		<cbc:OrderableUnit>LTR</cbc:OrderableUnit>
+		<cbc:ContentUnitQuantity unitCode="LTR" unitCodeListID="UNECERec20">1</cbc:ContentUnitQuantity>
+		<cbc:OrderQuantityIncrementNumeric>10</cbc:OrderQuantityIncrementNumeric>
+		<cbc:MinimumOrderQuantity unitCode="LTR" unitCodeListID="UNECERec20">100</cbc:MinimumOrderQuantity>
+		<cbc:MaximumOrderQuantity unitCode="LTR" unitCodeListID="UNECERec20">1000</cbc:MaximumOrderQuantity>
+		<cbc:PackLevelCode listID="GS17009:PEPPOL">TU</cbc:PackLevelCode>
+	<!-- end::quantity-4[] -->
+
+		<cac:LineValidityPeriod>
+			<cbc:StartDate>2026-08-01</cbc:StartDate>
+			<cbc:EndDate>2026-12-31</cbc:EndDate>
+		</cac:LineValidityPeriod>
+
+		<!-- tag::item-comparison[] -->
+		<cac:ItemComparison>
+			<cbc:PriceAmount currencyID="EUR">1.5</cbc:PriceAmount>
+			<cbc:Quantity unitCode="LTR" unitCodeListID="UNECERec20">1</cbc:Quantity>
+		</cac:ItemComparison>
+		<!-- end::item-comparison[] -->
+
+		<cac:ComponentRelatedItem>
+			<cbc:ID>556677</cbc:ID>
+			<cbc:Quantity unitCode="C65" unitCodeListID="UNECERec20">1</cbc:Quantity>
+		</cac:ComponentRelatedItem>
+
+		<cac:RequiredRelatedItem>
+			<cbc:ID>556677</cbc:ID>
+			<cbc:Quantity unitCode="C65" unitCodeListID="UNECERec20">1</cbc:Quantity>
+		</cac:RequiredRelatedItem>
+
+		<cac:ComplementaryRelatedItem>
+			<cbc:ID>556677</cbc:ID>
+			<cbc:Quantity unitCode="C65" unitCodeListID="UNECERec20">1</cbc:Quantity>
+		</cac:ComplementaryRelatedItem>
+
+		<cac:RequiredItemLocationQuantity>
+
+			<cac:ApplicableTerritoryAddress>
+				<cbc:AddressTypeCode>DSP</cbc:AddressTypeCode>
+				<cbc:StreetName>Harbour lane 4</cbc:StreetName>
+				<cbc:CityName>London</cbc:CityName>
+				<cbc:PostalZone>21334</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">UK</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:ApplicableTerritoryAddress>
+
+			<cac:ApplicableTerritoryAddress>
+				<cbc:AddressTypeCode>DEL</cbc:AddressTypeCode>
+				<cbc:StreetName>Mainstreet 123</cbc:StreetName>
+				<cbc:CityName>Birmingham</cbc:CityName>
+				<cbc:PostalZone>12334</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">UK</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:ApplicableTerritoryAddress>
+
+			<!-- tag::item-price[] -->
+			<cac:Price>
+				<cbc:PriceAmount currencyID="NOK">75.00</cbc:PriceAmount>
+				<cac:ValidityPeriod>
+					<cbc:StartDate>2026-04-01</cbc:StartDate>
+					<cbc:EndDate>2026-04-30</cbc:EndDate>
+				</cac:ValidityPeriod>
+			</cac:Price>
+			<!-- end::item-price[] -->
+
+		</cac:RequiredItemLocationQuantity>
+
+		<cac:RequiredItemLocationQuantity>
+
+			<!-- tag::allowance[] -->
+			<cac:Price>
+				<cbc:PriceAmount currencyID="NOK">90.00</cbc:PriceAmount>
+				
+				<cac:AllowanceCharge>
+					<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+					<cbc:AllowanceChargeReason>10% Allowance for multi-order as per contractual framework agreement</cbc:AllowanceChargeReason>
+					<cbc:Amount currencyID="NOK">10</cbc:Amount>
+				</cac:AllowanceCharge>
+			</cac:Price>
+			<!-- end::allowance[] -->
+
+		</cac:RequiredItemLocationQuantity>
+
+		<cac:Item>
+			<cbc:Description>Milk standard 3%</cbc:Description>
+			<cbc:PackQuantity unitCode="LTR" unitCodeListID="UNECERec20">10</cbc:PackQuantity>
+			<cbc:PackSizeNumeric>10</cbc:PackSizeNumeric>
+			<cbc:Name>Milk standard 3%</cbc:Name>
+			<cbc:Keyword>Milk</cbc:Keyword>
+			<cbc:BrandName>Branded Milk</cbc:BrandName>
+			<cac:SellersItemIdentification>
+				<cbc:ID>89388789930</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="GTIN">99023409093843</cbc:ID>
+			</cac:StandardItemIdentification>
+			<cac:ItemSpecificationDocumentReference>
+				<cbc:ID>2384-34232-342-34-2333</cbc:ID>
+				<cac:Attachment>
+					<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf"
+						>ZGVmYXVsdA==</cbc:EmbeddedDocumentBinaryObject>
+				</cac:Attachment>
+			</cac:ItemSpecificationDocumentReference>
+			<cac:OriginCountry>
+				<cbc:IdentificationCode listID="ISO3166-1:Alpha2">FR</cbc:IdentificationCode>
+			</cac:OriginCountry>
+
+			<!-- tag::item-class[] -->
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="STI" listVersionID="3.2">783xxxxxxxx</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<!-- end::item-class[] -->
+
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+				<cbc:Percent>25</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Fat % for milk</cbc:Name>
+				<cbc:Value>3%</cbc:Value>
+			</cac:AdditionalItemProperty>
+
+			<!-- tag::cert-2[] -->
+			<cac:Certificate>
+				<cbc:ID>c82d5afb-1040-c878-4575-401308559654</cbc:ID>
+				<cbc:CertificateTypeCode>Enrollment in a register of commercial partnerships</cbc:CertificateTypeCode>
+				<cbc:CertificateType>Occupation and legal form specific certificate for certain reglemented professions.</cbc:CertificateType>
+				<cbc:Remarks>Certificate</cbc:Remarks>
+				<cac:IssuerParty>
+					<cac:PartyName>
+						<cbc:Name>Competent District Court</cbc:Name>
+					</cac:PartyName>
+				</cac:IssuerParty>
+			</cac:Certificate>
+
+			<cac:Certificate>
+				<cbc:ID>428e17c6-fc16-89c1-d2c2-38b94c4dd486</cbc:ID>
+				<cbc:CertificateTypeCode>Certificate by independent bodies about quality assurance standards or systems</cbc:CertificateTypeCode>
+				<cbc:CertificateType>
+					It is not possible to generally tell if the needed certificate is free of charge or not or to specify the
+					possible price.
+				</cbc:CertificateType>
+				<cbc:Remarks>Certificate</cbc:Remarks>
+				<cac:IssuerParty>
+					<cac:PartyName>
+						<cbc:Name>Competent Independent Quality Assurance Body</cbc:Name>
+					</cac:PartyName>
+				</cac:IssuerParty>
+			</cac:Certificate>
+			<!-- end::cert-2[] -->
+			
+			<!-- tag::cert[] -->
+			<cac:Certificate>
+				<cbc:ID>NEO</cbc:ID>
+				<cbc:CertificateTypeCode>EcoLabel</cbc:CertificateTypeCode>
+				<cbc:CertificateType>EcoLabel</cbc:CertificateType>
+				<cac:IssuerParty>
+					<cac:PartyName>
+						<cbc:Name>Svanemerket</cbc:Name>
+					</cac:PartyName>
+				</cac:IssuerParty>
+				<cac:DocumentReference>
+					<cbc:ID>http://www.svanemerket.no/</cbc:ID>
+				</cac:DocumentReference>
+			</cac:Certificate>
+			<!-- end::cert[] -->
+
+		</cac:Item>
+		<cac:CallForTendersLineReference>
+			<cbc:LineID>1</cbc:LineID>
+		</cac:CallForTendersLineReference>
+	</cac:CatalogueLine>
+	
+	<!-- end::catch[] -->
+	<cac:CatalogueLine>
+		<cbc:ID>8</cbc:ID>
+
+		<cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+		<cbc:OrderableUnit>EA</cbc:OrderableUnit>
+		<cbc:ContentUnitQuantity unitCode="31" unitCodeListID="UNECERec20">10</cbc:ContentUnitQuantity>
+		<!-- end::catch[] -->
+
+		<!-- tag::log[] -->
+		<cbc:PackLevelCode listID="GS17009:PEPPOL">TU</cbc:PackLevelCode>
+		<!-- end::log[] -->
+
+		<cac:LineValidityPeriod>
+			<cbc:StartDate>2026-08-01</cbc:StartDate>
+			<cbc:EndDate>2026-12-31</cbc:EndDate>
+		</cac:LineValidityPeriod>
+
+		<cac:ItemComparison>
+			<cbc:PriceAmount currencyID="EUR">1.5</cbc:PriceAmount>
+			<cbc:Quantity unitCode="LTR" unitCodeListID="UNECERec20">1</cbc:Quantity>
+		</cac:ItemComparison>
+
+		<cac:ComponentRelatedItem>
+			<cbc:ID>556677</cbc:ID>
+			<cbc:Quantity unitCode="C65" unitCodeListID="UNECERec20">1</cbc:Quantity>
+		</cac:ComponentRelatedItem>
+
+		<cac:RequiredRelatedItem>
+			<cbc:ID>556677</cbc:ID>
+			<cbc:Quantity unitCode="C65" unitCodeListID="UNECERec20">1</cbc:Quantity>
+		</cac:RequiredRelatedItem>
+
+		<cac:ComplementaryRelatedItem>
+			<cbc:ID>556677</cbc:ID>
+			<cbc:Quantity unitCode="C65" unitCodeListID="UNECERec20">1</cbc:Quantity>
+		</cac:ComplementaryRelatedItem>
+
+		<!-- tag::conditional-price[] -->
+		<cac:RequiredItemLocationQuantity>
+			<cbc:MinimumQuantity unitCode="EA">100</cbc:MinimumQuantity>
+			<cbc:MaximumQuantity unitCode="EA">500</cbc:MaximumQuantity>
+
+			<cac:ApplicableTerritoryAddress>
+				<cbc:AddressTypeCode>DEL</cbc:AddressTypeCode>
+				<cbc:StreetName>Mainstreet 123</cbc:StreetName>
+				<cbc:CityName>Birmingham</cbc:CityName>
+				<cbc:PostalZone>12334</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">UK</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:ApplicableTerritoryAddress>
+
+			<cac:Price>
+				<cbc:PriceAmount currencyID="NOK">75.00</cbc:PriceAmount>
+				<cac:ValidityPeriod>
+					<cbc:StartDate>2026-04-01</cbc:StartDate>
+					<cbc:EndDate>2026-04-30</cbc:EndDate>
+				</cac:ValidityPeriod>
+				<cac:ValidityPeriod>
+					<cbc:StartDate>2026-08-01</cbc:StartDate>
+					<cbc:EndDate>2026-08-31</cbc:EndDate>
+				</cac:ValidityPeriod>
+			</cac:Price>
+		</cac:RequiredItemLocationQuantity>
+		<!-- end::conditional-price[] -->
+
+		<cac:Item>
+			<cbc:Description>Milk standard 3%</cbc:Description>
+			<cbc:PackQuantity unitCode="LTR" unitCodeListID="UNECERec20">10</cbc:PackQuantity>
+			<cbc:PackSizeNumeric>10</cbc:PackSizeNumeric>
+			<cbc:Name>Milk standard 3%</cbc:Name>
+
+			<!-- tag::keyword[] -->
+			<cbc:Keyword>sparkling%natural%water</cbc:Keyword>
+			<!-- end::keyword[] -->
+
+			<cbc:BrandName>Branded Milk</cbc:BrandName>
+			<cac:SellersItemIdentification>
+				<cbc:ID>89388789930</cbc:ID>
+			</cac:SellersItemIdentification>
+			<cac:StandardItemIdentification>
+				<cbc:ID schemeID="GTIN">99023409093843</cbc:ID>
+			</cac:StandardItemIdentification>
+			<cac:ItemSpecificationDocumentReference>
+				<cbc:ID>2384-34232-342-34-2333</cbc:ID>
+				<cac:Attachment>
+					<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf"
+						>ZGVmYXVsdA==</cbc:EmbeddedDocumentBinaryObject>
+				</cac:Attachment>
+			</cac:ItemSpecificationDocumentReference>
+			<cac:OriginCountry>
+				<cbc:IdentificationCode listID="ISO3166-1:Alpha2">FR</cbc:IdentificationCode>
+			</cac:OriginCountry>
+			<cac:CommodityClassification>
+				<cbc:ItemClassificationCode listID="CPV">783xxxxxxxx</cbc:ItemClassificationCode>
+			</cac:CommodityClassification>
+			<cac:ClassifiedTaxCategory>
+				<cbc:ID schemeID="UNCL5305">S</cbc:ID>
+				<cbc:Percent>25</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:ID>VAT</cbc:ID>
+				</cac:TaxScheme>
+			</cac:ClassifiedTaxCategory>
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Fat % for milk</cbc:Name>
+				<cbc:Value>3%</cbc:Value>
+			</cac:AdditionalItemProperty>
+		</cac:Item>
+		<cac:CallForTendersLineReference>
+			<cbc:LineID>1</cbc:LineID>
+		</cac:CallForTendersLineReference>
+	</cac:CatalogueLine>
+</Catalogue>

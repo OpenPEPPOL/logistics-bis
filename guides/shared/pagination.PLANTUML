@@ -1,0 +1,15 @@
+@startuml
+participant User as U
+participant Server as S
+
+U -> S: request: maxResults=100, startIndex=0
+activate S
+activate U
+U <- S: response: totalResultCount=110, startIndex=0, RepositoryList.size=100
+loop until startIndex + RepositoryList.size = totalResultCount
+    U -> S: request: maxResults=100, startIndex=100
+    U <- S: response: totalResultCount=110, startIndex=100, RepositoryList.size=10
+end
+deactivate S
+deactivate U
+@enduml
