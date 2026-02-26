@@ -1,19 +1,35 @@
 
 = Business process
 
-The {link-bpmn}[BPMN] diagram shows the choreography of the business process implemented by the {name-profile}. The choreography of business collaborations defines the sequence of interactions when the profile is run within its context.
+The {link-bpmn}[BPMN] diagram shows the choreography of the business process implemented by the {name-profile}. The choreography of business 
+collaborations defines the sequence of interactions when the profile is run within its context.
 
-image::../images/processPN.svg[align="center", width=1200]
+image::images/processPN.svg[align="center", width=1200]
 
-The process starts with the contracting body issuing a new publication notice. At first, they have to choose the appropriate UBL document schema of the underlying notice (PIN, CN or CAN) which needs to be formatted according to the {eforms-specs}. After that, the publication request will be prepared and send to the publication body. Transaction 'T015 - Publish Notice' is used for the message to the publication body. The publication request can either be made with the intention to publish the notice or it can be sent to the publication body for validation purposes only.
+The process starts with the contracting body issuing a new publication notice. At first, they have to choose the appropriate UBL document schema of 
+the underlying notice (PIN, CN or CAN) which needs to be formatted according to the {eforms-specs}. After that, the publication request will be 
+prepared and send to the publication body. Transaction 'T015 - Publish Notice' is used for the message to the publication body. The publication 
+request can either be made with the intention to publish the notice or it can be sent to the publication body for validation purposes only.
 
-Upon receipt of the publication request, the publication body validates the received T015 message. In case of negative validation results with critical errors, the publication body sends back a negative notice publication response to the contracting body and informs it of the underlying validation errors. Transaction 'T016 - Notice Publication Response' is used for the negative response message to the contracting body. In this case, the contracting body may decide to correct the errors and submit a new publication request.
+Upon receipt of the publication request, the publication body validates the received T015 message. In case of negative validation results with 
+critical errors, the publication body sends back a negative notice publication response to the contracting body and informs it of the underlying 
+validation errors. Transaction 'T016 - Notice Publication Response' is used for the negative response message to the contracting body. In this case, 
+the contracting body may decide to correct the errors and submit a new publication request.
 
-In case of validation without critical errors, the publication body returns a positive notice publication response to the contracting body. In the reply to the notice, the publication authority differentiates between notices without warnings (status = 'accepted') and notices with warnings (status = conditionally accepted). The underlying warnings are in turn flagged in the response. Transaction 'T016 - Notice Publication Response' is used for the positive response message to the contracting body. If the contracting body has only requested the validation of a notice, the process stops at this point. The contracting body may decide to review eventual warnings and/or re-submit the notice with the intention to publish it.
+In case of validation without critical errors, the publication body returns a positive notice publication response to the contracting body. In the 
+reply to the notice, the publication authority differentiates between notices without warnings (status = 'accepted') and notices with warnings 
+(status = conditionally accepted). The underlying warnings are in turn flagged in the response. Transaction 'T016 - Notice Publication Response' 
+is used for the positive response message to the contracting body. If the contracting body has only requested the validation of a notice, the 
+process stops at this point. The contracting body may decide to review eventual warnings and/or re-submit the notice with the intention to publish it.
 
-If the contracting body has requested the publication of a notice, the publication body will, in the case of a positive validation result (status = 'accepted' or 'conditionally accepted'), inform the contracting body about the planned publication date of the notice. Transaction 'T016 - Notice Publication Response' is used for the positive message to the contracting body announcing a publication date. A change of the notice can then only be made by resubmitting the notice with  a new version number.
+If the contracting body has requested the publication of a notice, the publication body will, in the case of a positive validation result 
+(status = 'accepted' or 'conditionally accepted'), inform the contracting body about the planned publication date of the notice. Transaction 
+'T016 - Notice Publication Response' is used for the positive message to the contracting body announcing a publication date. A change of the 
+notice can then only be made by resubmitting the notice with  a new version number.
 
-At the time of publication of a notice, the publication body sends a confirmation to the contracting body containing the actual status 'published' and its publication date. Again 'T016 - Notice Publication Response' is used for the response message to announce the effective publication date and status.
+At the time of publication of a notice, the publication body sends a confirmation to the contracting body containing the actual status 'published' 
+and its publication date. Again 'T016 - Notice Publication Response' is used for the response message to announce the effective publication date 
+and status.
 
 
 [cols="2,10", options="header"]
