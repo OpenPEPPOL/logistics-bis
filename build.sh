@@ -30,11 +30,16 @@ done
 docker run --rm -i \
   -v $PROJECT/target/site/files:/files \
   -v $PROJECT/target/schematron:/schematron \
+  -v $PROJECT/rules/examples:/examples \
   -w /tmp \
   alpine:latest sh -c '
     apk add --no-cache zip
+    echo "Schematron files"
     rm -rf /files/Schematron.zip
     cd /schematron && zip -r /files/Schematron.zip .
+    echo "Example files"
+    rm -rf /files/Examples.zip
+    cd /examples && zip -r /files/Examples.zip .
   '
 
 # Guides
