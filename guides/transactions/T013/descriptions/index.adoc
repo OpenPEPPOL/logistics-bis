@@ -11,7 +11,7 @@ Identifier for the set of rules and transactions for the Tender Withdrawal Recep
 
 [source,xml,indent=0]
 ....
-include::../files/TenderWithdrawal.xml[tags=specification-identification]
+include::{snippets-dir}/TenderWithdrawal.xml[tags=specification-identification]
 ....
 <.> The value for the specification identification is always "_urn:fdc:peppol.eu:prac:trns:t013:1.1_".
 
@@ -22,7 +22,7 @@ Identifier for the business process context of the Tender Withdrawal Reception N
 
 [source,xml,indent=0]
 ....
-include::../files/TenderWithdrawal.xml[tags=business-process-type-identifier]
+include::{snippets-dir}/TenderWithdrawal.xml[tags=business-process-type-identifier]
 ....
 <.> The value for the business process type identifier is always "_urn:fdc:peppol.eu:prac:bis:p007:1.1_".
 
@@ -34,7 +34,7 @@ Identifier of the Tender Withdrawal Reception Notification itself.
 
 [source,xml,indent=0]
 ....
-include::../files/TenderWithdrawal.xml[tags=document-identifier]
+include::{snippets-dir}/TenderWithdrawal.xml[tags=document-identifier]
 ....
 <.> The Document Identifier must be expressed in a UUID syntax (RFC 4122), as stated it has to be stated in the schemeURI.
 
@@ -45,7 +45,7 @@ In UBL the reference number is represented by the ContractFolderID.
 
 [source,xml,indent=0]
 ....
-include::../files/TenderWithdrawal.xml[tags=reference-number]
+include::{snippets-dir}/TenderWithdrawal.xml[tags=reference-number]
 ....
 <.> The Reference Number must be expressed in a UUID syntax (RFC 4122).
 
@@ -57,7 +57,7 @@ The tender reception notification contains the reference to the tender document 
 
 [source,xml,indent=0]
 ....
-include::../files/TenderWithdrawal.xml[tags=received-document-reference]
+include::{snippets-dir}/TenderWithdrawal.xml[tags=received-document-reference]
 ....
 
 <.> DocumentReference Identifier for a Call for Tender Reference must be expressed in a UUID syntax (RFC 4122).
@@ -66,7 +66,7 @@ include::../files/TenderWithdrawal.xml[tags=received-document-reference]
 
 [source,xml,indent=0]
 ....
-include::../files/TenderWithdrawal.xml[tags=document-digest]
+include::{snippets-dir}/TenderWithdrawal.xml[tags=document-digest]
 ....
 <.> Document digest of a tender document. Used as a reference to the tender document to be withdrawn.
 <.> Document hash algorithm must be "_http://www.w3.org/2001/04/xmlenc#sha256_".
@@ -77,7 +77,7 @@ Identifier of the tender reception notification message.
 
 [source,xml,indent=0]
 ....
-include::../files/TenderWithdrawal.xml[tags=tender-notification-document-reference]
+include::{snippets-dir}/TenderWithdrawal.xml[tags=tender-notification-document-reference]
 ....
 <.> Tender Notification Document Reference for a Call for Tender Reference must be expressed in a UUID syntax (RFC 4122).
 
@@ -92,7 +92,7 @@ The contracting authority or contracting entity who is buying supplies, services
 
 [source,xml,indent=0]
 ....
-include::../files/TenderWithdrawal.xml[tags=contracting-party]
+include::{snippets-dir}/TenderWithdrawal.xml[tags=contracting-party]
 ....
 <.> At first the EndpointID with its schemeID has to be clarified. The schemeID is a mandatory attribute of the EndpointID and has to be chosen according to the EndpointID.
 <.> Following the EndpointID the Identification of the Party has to be given in the same manner.
@@ -107,7 +107,7 @@ Any natural or legal person or public entity or group of such persons and/or ent
 .The Economic Operator is represented in UBL 2.2 using the Tenderer Party:
 
 ....
-include::../files/TenderWithdrawal.xml[tags=tenderer-party]
+include::{snippets-dir}/TenderWithdrawal.xml[tags=tenderer-party]
 ....
 <.> Electronic address of the economic operator. At first the EndpointID with its schemeID has to be clarified. The schemeID is an attribute of the EndpointID and has to be chosen according to the EndpointID.
 <.> Following the EndpointID the Identification of the Party has to be given in the same manner.
@@ -127,7 +127,7 @@ Used to provide contacting information for a party in general or a person. Optio
 
 [source,xml,indent=0]
 ....
-include::../files/TenderWithdrawal.xml[tags=tenderer-party-contact]
+include::{snippets-dir}/TenderWithdrawal.xml[tags=tenderer-party-contact]
 ....
 <.> Introduction to the contact. The contact consists of four additional elements.
 <.> The name of the contact point.
@@ -159,7 +159,7 @@ NOTE: The issue time must specify the time zone.
 .Example of Issue date/time and Registered date/time
 
 ....
-include::../files/TenderWithdrawal.xml[tags=document-date-time]
+include::{snippets-dir}/TenderWithdrawal.xml[tags=document-date-time]
 ....
 <.> Date when the referred document was issued by the sending party.
 <.> Time when the referred document was issued by the sending party, granular to seconds and timezone.
@@ -169,6 +169,6 @@ Indicates that the economic operator states that he wants to withdraw the offer 
 
 [source,xml,indent=0]
 ....
-include::../files/TenderWithdrawal.xml[tags=withdraw-offer-indicator]
+include::{snippets-dir}/TenderWithdrawal.xml[tags=withdraw-offer-indicator]
 ....
 <.> Boolean, must be true to act according to the message.
