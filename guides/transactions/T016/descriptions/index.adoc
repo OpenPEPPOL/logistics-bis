@@ -14,7 +14,7 @@ Requires UBL version 2.2.
 [source,xml,indent=0]
 .Example of UBL Version Identifier
 ....
-include::../files/ExampleNoticePublicationResponse.xml[tags=ubl-version]
+include::{snippets-dir}/ExampleNoticePublicationResponse.xml[tags=ubl-version]
 ....
 <.> Has to be 2.2, to correspondent to the used UBL version
 
@@ -25,7 +25,7 @@ The identifier enables positive referencing the transaction instance for various
 [source,xml,indent=0]
 .Example of response identifier
 ....
-include::../files/ExampleNoticePublicationResponse.xml[tags=response-id]
+include::{snippets-dir}/ExampleNoticePublicationResponse.xml[tags=response-id]
 ....
 <.> A transaction instance must contain an identifier, being a number
 
@@ -53,14 +53,14 @@ NOTE: The response issue time must specify the time zone.
 [source,xml,indent=0]
 .Example of response issue date
 ....
-include::../files/ExampleNoticePublicationResponse.xml[tags=response-issue-date]
+include::{snippets-dir}/ExampleNoticePublicationResponse.xml[tags=response-issue-date]
 ....
 <.> Format for the date has to be yyyy-mm-dd
 
 [source,xml,indent=0]
 .Example of response issue time
 ....
-include::../files/ExampleNoticePublicationResponse.xml[tags=response-issue-time]
+include::{snippets-dir}/ExampleNoticePublicationResponse.xml[tags=response-issue-time]
 ....
 <.> Format for the time has to be hh:mm:ssTZD, granularity down to seconds and timezone
 
@@ -73,7 +73,7 @@ The party sending an Notice Publication Response message back to the sending par
 [source,xml,indent=0]
 .Example of sender party
 ....
-include::../files/ExampleNoticePublicationResponse.xml[tags=sender-info]
+include::{snippets-dir}/ExampleNoticePublicationResponse.xml[tags=sender-info]
 ....
 <.> Identifies the senders party's electronic address and the scheme identifier for the electronic address
 
@@ -84,7 +84,7 @@ The party who is supposed to process the Notice Publication Response. This is th
 [source,xml,indent=0]
 .Example of receiver party
 ....
-include::../files/ExampleNoticePublicationResponse.xml[tags=receiver-info]
+include::{snippets-dir}/ExampleNoticePublicationResponse.xml[tags=receiver-info]
 ....
 <.> Identifies the receivers party's electronic address and the scheme identifier for the electronic address
 
@@ -101,7 +101,7 @@ The value "test" is used to indicate that the notice has be only used for the pu
 [source,xml,indent=0]
 .Example of response
 ....
-include::../files/ExampleNoticePublicationResponse.xml[tags=response-information]
+include::{snippets-dir}/ExampleNoticePublicationResponse.xml[tags=response-information]
 ....
 <.> An indicator stating whether the referenced message was cleared through validation and advanced to the next step in the process. Refer to codelist notice response.
 <.> Used to make any comments or instructions relevant to the response. The use of this element requires manual assessment by the receiver.
@@ -117,7 +117,7 @@ The document reference is used to provide references to notice request transacti
 [source,xml,indent=0]
 .Example of document reference
 ....
-include::../files/ExampleNoticePublicationResponse.xml[tags=document-reference]
+include::{snippets-dir}/ExampleNoticePublicationResponse.xml[tags=document-reference]
 ....
 <.> Specifies the unique identifier of the container that describes the request to publish a notice on which the Notice Publication Response is based, expressed in uuid syntax.
 <.> Specifies the notice identifier (BT-701) allowing to uniquely distinguishing the notice, expressed in uuid syntax.
@@ -141,7 +141,7 @@ Line responses may be given for the container that describes the request to publ
 [source,xml,indent=0]
 .Example of line reference
 ....
-include::../files/ExampleNoticePublicationResponse.xml[tags=line-reference]
+include::{snippets-dir}/ExampleNoticePublicationResponse.xml[tags=line-reference]
 ....
 <.> Identifies the section of the notice to which the reported issue applies.
 <.> A reference to the document containing the referenced line.
@@ -158,7 +158,7 @@ Line response information provides details about a given validation error.
 [source,xml,indent=0]
 .Example of line response
 ....
-include::../files/ExampleNoticePublicationResponse.xml[tags=line-response-code-info]
+include::{snippets-dir}/ExampleNoticePublicationResponse.xml[tags=line-response-code-info]
 ....
 <.> A code stating whether the referenced line was accepted or rejected.
 <.> The description of the issue identified in the transaction document.

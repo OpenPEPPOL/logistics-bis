@@ -8,7 +8,7 @@ The transaction including business terms, business rules and code lists are base
 
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeResponse.xml[lines=2..16]
+include::{snippets-dir}/ExampleSearchNoticeResponse.xml[lines=2..16]
 ....
 
 [cols="4,8", options="header"]
@@ -33,7 +33,7 @@ include::../../../shared/pagination.PLANTUML[]
 
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeResponse.xml[tags=specification-identification]
+include::{snippets-dir}/ExampleSearchNoticeResponse.xml[tags=specification-identification]
 ....
 <.> Identifier for the set of rules and transactions for a search notice response.
 <.> The value for the specification identification is always "_urn:fdc:peppol.eu:prac:trns:t012:1.0_", just like in the given example.
@@ -42,7 +42,7 @@ include::../files/ExampleSearchNoticeResponse.xml[tags=specification-identificat
 == Business Process Type Identifier
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeResponse.xml[tags=business-process-type-identifier]
+include::{snippets-dir}/ExampleSearchNoticeResponse.xml[tags=business-process-type-identifier]
 ....
 <.> Identifier for the business process context of the search notice response.
 <.> The value for the business process type identifier is always "_urn:fdc:peppol.eu:prac:bis:p006:1.0_", just like in the given example.
@@ -50,7 +50,7 @@ include::../files/ExampleSearchNoticeResponse.xml[tags=business-process-type-ide
 == Issue Date Time
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeResponse.xml[tags=issue-date-time]
+include::{snippets-dir}/ExampleSearchNoticeResponse.xml[tags=issue-date-time]
 ....
 <.> Date and time when the request was being issued.
 <.> The SlotValue type has to be DateTimeValueType. Stick to the format "_yyyy-mm-ddThh:mm:ss_" and add the timezone in the end (i.e. Z or +01:00). Values for seconds, and the timezone must be given.
@@ -58,7 +58,7 @@ include::../files/ExampleSearchNoticeResponse.xml[tags=issue-date-time]
 == Sender electronic address
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeResponse.xml[tags=sender-electronic-address]
+include::{snippets-dir}/ExampleSearchNoticeResponse.xml[tags=sender-electronic-address]
 ....
 <.> The scheme of the endpoint id is clarified in the type attribute of the slot.
 <.> Fill the scheme id and electronic sender address into this slot.
@@ -66,7 +66,7 @@ include::../files/ExampleSearchNoticeResponse.xml[tags=sender-electronic-address
 == Receiver electronic address
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeResponse.xml[tags=receiver-electronic-address]
+include::{snippets-dir}/ExampleSearchNoticeResponse.xml[tags=receiver-electronic-address]
 ....
 <.> The scheme of the endpoint id is clarified in the type attribute of the slot.
 <.> Fill the scheme id and electronic receiver address into this slot.
@@ -74,7 +74,7 @@ include::../files/ExampleSearchNoticeResponse.xml[tags=receiver-electronic-addre
 == Registry Object List and Registry Objects (Notice Metadata)
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeResponse.xml[tags=registry-object-list]
+include::{snippets-dir}/ExampleSearchNoticeResponse.xml[tags=registry-object-list]
 ....
 <.> The Registry object list contains the registry object, which contains the requested form.
 <.> Here you can find the uuids required to identify the Notice and its associated procurement procedures

@@ -13,7 +13,7 @@ The transaction including business terms, business rules and code lists are base
 [source,xml,indent=0]
 .Example of usage of submit objects request basis
 ....
-include::../files/ExamplePublishNotice.xml[tags=submit-objects-request;!specification-identification;!business-process-type-identifier;!issue-date-time;!sender-electronic-address;!receiver-electronic-address;!publication-requested;!registry-object-list;!publication-date]
+include::{snippets-dir}/ExamplePublishNotice.xml[tags=submit-objects-request;!specification-identification;!business-process-type-identifier;!issue-date-time;!sender-electronic-address;!receiver-electronic-address;!publication-requested;!registry-object-list;!publication-date]
 ....
 
 == Issue Date and time (and preferred publication date)
@@ -40,7 +40,7 @@ NOTE: The issue date, and the preferred publication date must specify the time z
 [source,xml,indent=0]
 .Example of Issue date and time
 ....
-include::../files/ExamplePublishNotice.xml[tags=issue-date-time]
+include::{snippets-dir}/ExamplePublishNotice.xml[tags=issue-date-time]
 ....
 <.> Slot for date and time of issuing of the published notice
 <.> SlotValue type has to be DateTimeValue
@@ -49,7 +49,7 @@ include::../files/ExamplePublishNotice.xml[tags=issue-date-time]
 == Sender electronic address
 [source,xml,indent=0]
 ....
-include::../files/ExamplePublishNotice.xml[tags=sender-electronic-address]
+include::{snippets-dir}/ExamplePublishNotice.xml[tags=sender-electronic-address]
 ....
 <.> The scheme of the endpoint id is clarified in the type attribute of the slot.
 <.> Fill the scheme id and electronic sender address into this slot.
@@ -57,7 +57,7 @@ include::../files/ExamplePublishNotice.xml[tags=sender-electronic-address]
 == Receiver electronic address
 [source,xml,indent=0]
 ....
-include::../files/ExamplePublishNotice.xml[tags=receiver-electronic-address]
+include::{snippets-dir}/ExamplePublishNotice.xml[tags=receiver-electronic-address]
 ....
 <.> The scheme of the endpoint id is clarified in the type attribute of the slot.
 <.> Fill the scheme id and electronic receiver address into this slot.
@@ -67,7 +67,7 @@ include::../files/ExamplePublishNotice.xml[tags=receiver-electronic-address]
 This indicator shows if the attached notice needs to be published or if it only needs to be validated by the publication body. The check by the publication body can help the contracting party to determine the validity of the notice with regard to a possible publication.
 [source,xml,indent=0]
 ....
-include::../files/ExamplePublishNotice.xml[tags=publication-requested]
+include::{snippets-dir}/ExamplePublishNotice.xml[tags=publication-requested]
 ....
 <.> Slot for the indication of the publication of the attached notices
 <.> SlotValue type has to be BooleanValueType
@@ -80,7 +80,7 @@ This list contains all the notices, which will be published at once during this 
 [source,xml,indent=0]
 .Example of usage of the registry object list (abbreviated)
 ....
-include::../files/ExamplePublishNotice.xml[tags=registry-object-list;!information-about-buyer;!document-type-code;!notice-version;!additional-document-reference;!eforms-version;!publication-date]
+include::{snippets-dir}/ExamplePublishNotice.xml[tags=registry-object-list;!information-about-buyer;!document-type-code;!notice-version;!additional-document-reference;!eforms-version;!publication-date]
 ....
 
 <.> Beginning of the registry object list
@@ -97,7 +97,7 @@ the document types, see tbd.
 [source,xml,indent=0]
 .Example of usage of ubl document schema
 ....
-include::../files/ExamplePublishNotice.xml[tags=document-type-code]
+include::{snippets-dir}/ExamplePublishNotice.xml[tags=document-type-code]
 ....
 <.> The code "_CN_" for status information has to be put into the value tag. The listID as the SlotType is always "_ublDocumentSchema_".
 
@@ -106,7 +106,7 @@ include::../files/ExamplePublishNotice.xml[tags=document-type-code]
 The "Notice Publication Date Preferred" is the date on which the buyer wishes the notice to be published. It can be used to help the buyer respect the requirements that exist between publications at national and European levels. In case the publication of the attached notices should not be the immediate date when sending of this transaction, use the field to enter a preferred publication date. Otherwise, this field should not be included as well as when no publication is preferred.
 [source,xml,indent=0]
 ....
-include::../files/ExamplePublishNotice.xml[tags=publication-date]
+include::{snippets-dir}/ExamplePublishNotice.xml[tags=publication-date]
 ....
 <.> Slot for the preferred publication date of the attached notices
 <.> SlotValue type has to be DateTimeValueType (please refer to the general hints about using a dateTime Slot above)
@@ -118,7 +118,7 @@ Version of the notice which shall be published. If this is not the first iterati
 [source,xml,indent=0]
 .Example of usage of notice version
 ....
-include::../files/ExamplePublishNotice.xml[tags=notice-version]
+include::{snippets-dir}/ExamplePublishNotice.xml[tags=notice-version]
 ....
 <.> Slot for the notice version
 <.> SlotValue type has to be IntegerValueType, in this case 1 as it is the first version of the notice
@@ -135,7 +135,7 @@ Version of the used eForms specification for the notice. The format is according
 [source,xml,indent=0]
 .Example of usage of eForms version
 ....
-include::../files/ExamplePublishNotice.xml[tags=eforms-version]
+include::{snippets-dir}/ExamplePublishNotice.xml[tags=eforms-version]
 ....
 <.> Slot for the eForms version
 <.> SlotValue type has to be StringValueType, as the format for the version will be always eforms-x.y
@@ -149,7 +149,7 @@ NOTE: The notice stored in a eForms based format must contain all the informatio
 [source,xml,indent=0]
 .Example of usage of additional document references
 ....
-include::../files/ExamplePublishNotice.xml[tags=additional-document-reference]
+include::{snippets-dir}/ExamplePublishNotice.xml[tags=additional-document-reference]
 ....
 
 <.> Example of an attachment. The type is used for the classification of the attachment (here: "SomeStatistics")

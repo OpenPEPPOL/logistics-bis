@@ -9,7 +9,7 @@ The Search Notice Request and Response support the ability to iterate over a lar
 
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[lines=2..14]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[lines=2..14]
 ....
 
 [cols="4,8", options="header"]
@@ -35,7 +35,7 @@ include::../../../shared/pagination.PLANTUML[]
 == Specification Identification
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=specification-identification]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=specification-identification]
 ....
 <.> Identifier for the set of rules and transactions for a search notice request.
 <.> The value for the specification identification is always "_urn:fdc:peppol.eu:prac:trns:t011:1.1_", just like in the given example.
@@ -43,7 +43,7 @@ include::../files/ExampleSearchNoticeRequest.xml[tags=specification-identificati
 == Business Process Type Identifier
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=business-process-type-identifier]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=business-process-type-identifier]
 ....
 <.> Identifier for the business process context of the search notice response.
 <.> The value for the business process type identifier is always "_urn:fdc:peppol.eu:prac:bis:p006:1.1_", just like in the given example.
@@ -51,7 +51,7 @@ include::../files/ExampleSearchNoticeRequest.xml[tags=business-process-type-iden
 == Issue Date Time
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=issue-date-time]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=issue-date-time]
 ....
 <.> Date and time when the request was being issued.
 <.> The SlotValue type has to be DateTimeValueType. Stick to the format "_yyyy-mm-ddThh:mm:ss_" and add the timezone in the end (i.e. Z or +01:00). Values for seconds, and the timezone must be given.
@@ -59,7 +59,7 @@ include::../files/ExampleSearchNoticeRequest.xml[tags=issue-date-time]
 == Sender electronic address
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=sender-electronic-address]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=sender-electronic-address]
 ....
 <.> The endpoint id is clarified in the type attribute of the slot.
 <.> Fill the electronic sender address into this slot.
@@ -67,7 +67,7 @@ include::../files/ExampleSearchNoticeRequest.xml[tags=sender-electronic-address]
 == Receiver electronic address
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=receiver-electronic-address]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=receiver-electronic-address]
 ....
 <.> The endpoint id is clarified in the type attribute of the slot.
 <.> Fill the electronic receiver address into this slot
@@ -75,21 +75,21 @@ include::../files/ExampleSearchNoticeRequest.xml[tags=receiver-electronic-addres
 == Response Option
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=response-option]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=response-option]
 ....
 <.> You have to include the response option with its default option "_LeafClassWithRepositoryItem_" to allow for the response to include the required repository items.
 
 == Query and Query Parameters
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=queryDefinition]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=queryDefinition]
 ....
 <.> You have to use the fixed value "_SearchNotice_" as Query Definition.
 
 === Keywords
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=keywords]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=keywords]
 ....
 <.> All keywords are collected as one single string. Enter the keywords for the search as expecting it from a searchbar. Select keywords for any parameter of the search as if searching for a specific procedure.
 
@@ -98,7 +98,7 @@ This slot is optional and can only be included once.
 === Form Type
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=form-type]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=form-type]
 ....
 <.> Select the type from the given collection. Into the type-attribute of the slot is to fill with the listID "_http://publications.europa.eu/resource/authority/form-type_".
 
@@ -107,7 +107,7 @@ The type of the slotValue is a CollectionValueType, so you can enter more than o
 === Notice Type
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=notice-type]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=notice-type]
 ....
 <.> Just like the form type, you may select the notice type, you want to search for. The ID of the list has to be "_http://publications.europa.eu/resource/authority/notice-type_" in the type attribute of the slot.
 
@@ -116,7 +116,7 @@ The type of the slotValue is a CollectionValueType, so you can enter more than o
 === Classification
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=classification]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=classification]
 ....
 <.> The classification consists of the type of classification and the value. The type of classification is filled into the type-attribute in form of your listID ("_http://publications.europa.eu/resource/authority/cpv/cpv_" or "_http://publications.europa.eu/resource/authority/cpv/cpvsuppl_").
 Therefore, the type of your classification has to be the same for each element. Into the value tag goes the selected CPV or CPVsuppl code for the search request.
@@ -127,7 +127,7 @@ The type of the slotValue is a CollectionValueType, so you can enter more than o
 === Contract Nature
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=contract-nature]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=contract-nature]
 ....
 <.> The type of the slotValue is a CollectionValueType, so you can enter more than one element. The listID "_http://publications.europa.eu/resource/authority/contract-nature_" has to be filled into the type-attribute of the slot.
 <.> Each element has its own type, i.e. StringValueType, that you have to declare.
@@ -138,7 +138,7 @@ This slot is optional and can only be included once.
 === Place of Performance
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=place-of-performance]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=place-of-performance]
 ....
 <.> The type of the slotValue is a CollectionValueType, so you can enter more than one element. The listID "_http://publications.europa.eu/resource/authority/nuts_" has to be filled into the type-attribute of the slot. Each location is added in form of a standard NUTS-Code.
 
@@ -147,7 +147,7 @@ This slot is optional and can only be included once.
 === Estimated Value
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tag=estimatedValue]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tag=estimatedValue]
 ....
 <.> The slot for the estimated tender value consists of four different slots, which can all be added to specify the tender value. The slot as a whole is optional, as are each of the three slots in it.
 <.> The first one is minimum, the minimal tender value you are looking for. It has to be declared as an integer.
@@ -159,7 +159,7 @@ This slot is optional and can only be included once. If Estimated Value is inclu
 === Procedure Type
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=procedure-type]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=procedure-type]
 ....
 <.> The type of the slotValue is a CollectionValueType, so you can enter more than one element. The listID "_http://publications.europa.eu/resource/authority/procurement-procedure-type_" has to be filled into the type-attribute of the slot. The value of the slot is chosen from the list.
 
@@ -168,7 +168,7 @@ This slot is optional and can only be included once.
 === Submission language
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=submission-language]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=submission-language]
 ....
 <.> The type of the slotValue is a CollectionValueType, so you can enter more than one element. The listID "_http://publications.europa.eu/resource/authority/language_" has to be filled into the type-attribute of the slot. The value of the slot is chosen from the list.
 
@@ -177,7 +177,7 @@ This slot is optional and can only be included once.
 === Publication Date
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=publication-date]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=publication-date]
 ....
 <.> The first of four date slots. Here you can search for the date of publication. The slot can consist of up to two slots, each of a DateTimeValueType.
 <.> The first slot can be filled with a potential start date and time of the publication. With the DateTimeValueType in mind you can declare the desired date in the standard DateTime format ("_yyyy-mm-ddThh:mm:ss_", the timezone in the end (i.e. Z or +01:00)). Values for seconds, and the timezone must be given.
@@ -188,7 +188,7 @@ This slot is optional and can only be included once.
 === Deadline Receipt Tenders
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=deadline-receipt-tenders]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=deadline-receipt-tenders]
 ....
 <.> The second of four date slots. Here you can search for the deadline of receipt tenders. The slot can consist of up to two slots, each of a DateTimeValueType.
 <.> The first slot can be filled with a potential start date and time for the deadline for receipt tenders. With the DateTimeValueType in mind you can declare the desired date in the standard DateTime format ("_yyyy-mm-ddThh:mm:ss_", the timezone in the end (i.e. Z or +01:00)). Values for seconds, and the timezone must be given.
@@ -199,7 +199,7 @@ This slot is optional and can only be included once.
 === Additional Information Deadline
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=additional-information-deadline]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=additional-information-deadline]
 ....
 <.> The third of four date slots. Here you can search for the deadline of additional information. The slot can consist of up to two slots, each of a DateTimeValueType.
 <.> The first slot can be filled with a potential start date and time for the deadline of additional information. With the DateTimeValueType in mind you can declare the desired date in the standard DateTime format ("_yyyy-mm-ddThh:mm:ss_", the timezone in the end (i.e. Z or +01:00)). Values for seconds, and the timezone must be given.
@@ -210,7 +210,7 @@ This slot is optional and can only be included once.
 === Deadline Receipt Requests
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=deadline-receipt-requests]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=deadline-receipt-requests]
 ....
 <.> The last of the four date slots. Here you can search for the deadline of receipt requests. The slot can consist of up to two slots, each of a DateTimeValueType.
 <.> The first slot can be filled with a potential start date and time for the deadline of receipt requests. With the DateTimeValueType in mind you can declare the desired date in the standard DateTime format ("_yyyy-mm-ddThh:mm:ss_", the timezone in the end (i.e. Z or +01:00)). Values for seconds, and the timezone must be given.
@@ -221,7 +221,7 @@ This slot is optional and can only be included once.
 === Notice Identifier
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=notice-identifier]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=notice-identifier]
 ....
 <.> The type of the slotValue is a CollectionValueType, so you can enter more than one element. The UUID is matching with the id you get in your response.
 
@@ -230,7 +230,7 @@ This slot is optional and can only be included once.
 === Procedure Identifier
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=procedure-identifier]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=procedure-identifier]
 ....
 <.> The type of the slotValue is a CollectionValueType, so you can enter more than one element. The UUID is matching with the logical id you get in your response.
 
@@ -239,7 +239,7 @@ This slot is optional and can only be included once.
 === Procedure legal basis
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=procedure-legal-basis]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=procedure-legal-basis]
 ....
 <.> The type of the slotValue is a CollectionValueType, so you can enter more than one element. The listID "legalBasis" has to be filled into the type-attribute of the slot. The value of the slot is chosen from the list.  Insert the id of the legal base from which you draw the procedure.
 
@@ -248,7 +248,7 @@ This slot is optional and can only be included once.
 === Reserved Participation
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=reserved-participation]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=reserved-participation]
 ....
 <.> The type of the slotValue is a CollectionValueType, so you can enter more than one element. The listID "_http://publications.europa.eu/resource/authority/reserved-procurement_" has to be filled into the type-attribute of the slot. The value of the slot is chosen from the list. Choose if the procedure is only accessible for certain types of companies.
 
@@ -257,7 +257,7 @@ This slot is optional and can only be included once.
 === Suitable for SMEs
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=suitable-for-smes]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=suitable-for-smes]
 ....
 <.> As this slotValue is a boolean, please only insert true or false, if the procedure has to be suitable for small or medium-sized economic operators.
 
@@ -266,7 +266,7 @@ This slot is optional and can only be included once.
 === Winner economic operator name
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=winner-economic-operator-name]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=winner-economic-operator-name]
 ....
 <.> Insert the official name of the company which won the procedure.
 
@@ -275,7 +275,7 @@ This slot is optional and can only be included once.
 === Award criterion type
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=award-criterion-type]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=award-criterion-type]
 ....
 <.> The type of the slotValue is a CollectionValueType, so you can enter more than one element. The listID "_http://publications.europa.eu/resource/authority/award-criterion-type_" has to be filled into the type-attribute of the slot. The value of the slot is chosen from the list. Some values cannot be combined with each other, so be careful in selecting each.
 
@@ -284,7 +284,7 @@ This slot is optional and can only be included once.
 === Buyer Information
 [source,xml,indent=0]
 ....
-include::../files/ExampleSearchNoticeRequest.xml[tags=information-about-buyer]
+include::{snippets-dir}/ExampleSearchNoticeRequest.xml[tags=information-about-buyer]
 ....
 <.> This slot collects all the information about the buyer.
 <.> Name of the buying company.
