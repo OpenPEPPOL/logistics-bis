@@ -562,22 +562,22 @@
       <rule context="/query:QueryRequest/query:Query/rim:Slot@name=EstimatedValue/rim:Slot@name=Minimum/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B08304">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot@name=EstimatedValue/rim:Slot@name=Maximum">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot@name=EstimatedValue/rim:Slot[@name='Maximum']">
          <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T011-B08801">Element 'rim:SlotValue' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'Maximum'"
                  flag="fatal"
                  id="PEPPOL-T011-B08802">Attribute 'name' MUST contain value 'Maximum'</assert>
          <assert test="@name" flag="fatal" id="PEPPOL-T011-B08803">Attribute 'name' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot@name=EstimatedValue/rim:Slot@name=Maximum/rim:SlotValue">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot@name=EstimatedValue/rim:Slot[@name='Maximum']/rim:SlotValue">
          <assert test="rim:Value" flag="fatal" id="PEPPOL-T011-B09001">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:IntegerValueType'"
                  flag="fatal"
                  id="PEPPOL-T011-B09002">Attribute 'xsi:type' MUST contain value 'rim:IntegerValueType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B09003">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot@name=EstimatedValue/rim:Slot@name=Maximum/rim:SlotValue/rim:Value"/>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot@name=EstimatedValue/rim:Slot@name=Maximum/*">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot@name=EstimatedValue/rim:Slot[@name='Maximum']/rim:SlotValue/rim:Value"/>
+      <rule context="/query:QueryRequest/query:Query/rim:Slot@name=EstimatedValue/rim:Slot[@name='Maximum']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B08804">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot@name=EstimatedValue/rim:Slot@name=Currency">

@@ -351,9 +351,6 @@
                  flag="fatal"
                  id="PEPPOL-T012-B03101">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
       </rule>
-      <rule context="/query:QueryResponse/rim:Slot@name=ReceiverElectronicAddress/rim:SlotValue/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T012-B02904">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/query:QueryResponse/rim:Slot@name=ReceiverElectronicAddress/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B02606">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
