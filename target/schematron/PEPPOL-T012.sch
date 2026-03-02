@@ -303,7 +303,7 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B01504">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:Slot@name=SenderElectronicAddress">
-         <assert test="rim:SlotVlaue" flag="fatal" id="PEPPOL-T012-B02001">Element 'rim:SlotVlaue' MUST be provided.</assert>
+         <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T012-B02001">Element 'rim:SlotValue' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'SenderElectronicAddress'"
                  flag="fatal"
                  id="PEPPOL-T012-B02002">Attribute 'name' MUST contain value 'SenderElectronicAddress'</assert>
@@ -313,26 +313,26 @@
                  id="PEPPOL-T012-B02004">Attribute 'type' MUST contain value 'eas'</assert>
          <assert test="@type" flag="fatal" id="PEPPOL-T012-B02005">Attribute 'type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryResponse/rim:Slot@name=SenderElectronicAddress/rim:SlotVlaue">
+      <rule context="/query:QueryResponse/rim:Slot@name=SenderElectronicAddress/rim:SlotValue">
          <assert test="rim:Value" flag="fatal" id="PEPPOL-T012-B02301">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:StringValueType'"
                  flag="fatal"
                  id="PEPPOL-T012-B02302">Attribute 'xsi:type' MUST contain value 'rim:StringValueType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T012-B02303">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryResponse/rim:Slot@name=SenderElectronicAddress/rim:SlotVlaue/rim:Value">
+      <rule context="/query:QueryResponse/rim:Slot@name=SenderElectronicAddress/rim:SlotValue/rim:Value">
          <assert test="(some $code in $cleas satisfies $code = normalize-space(text()))"
                  flag="fatal"
                  id="PEPPOL-T012-B02501">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
       </rule>
-      <rule context="/query:QueryResponse/rim:Slot@name=SenderElectronicAddress/rim:SlotVlaue/*">
+      <rule context="/query:QueryResponse/rim:Slot@name=SenderElectronicAddress/rim:SlotValue/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B02304">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:Slot@name=SenderElectronicAddress/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B02006">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:Slot@name=ReceiverElectronicAddress">
-         <assert test="rim:SlotVlaue" flag="fatal" id="PEPPOL-T012-B02601">Element 'rim:SlotVlaue' MUST be provided.</assert>
+         <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T012-B02601">Element 'rim:SlotValue' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'ReceiverElectronicAddress'"
                  flag="fatal"
                  id="PEPPOL-T012-B02602">Attribute 'name' MUST contain value 'ReceiverElectronicAddress'</assert>
@@ -342,19 +342,19 @@
                  id="PEPPOL-T012-B02604">Attribute 'type' MUST contain value 'eas'</assert>
          <assert test="@type" flag="fatal" id="PEPPOL-T012-B02605">Attribute 'type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryResponse/rim:Slot@name=ReceiverElectronicAddress/rim:SlotVlaue">
+      <rule context="/query:QueryResponse/rim:Slot@name=ReceiverElectronicAddress/rim:SlotValue">
          <assert test="rim:Value" flag="fatal" id="PEPPOL-T012-B02901">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:StringValueType'"
                  flag="fatal"
                  id="PEPPOL-T012-B02902">Attribute 'xsi:type' MUST contain value 'rim:StringValueType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T012-B02903">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryResponse/rim:Slot@name=ReceiverElectronicAddress/rim:SlotVlaue/rim:Value">
+      <rule context="/query:QueryResponse/rim:Slot@name=ReceiverElectronicAddress/rim:SlotValue/rim:Value">
          <assert test="(some $code in $cleas satisfies $code = normalize-space(text()))"
                  flag="fatal"
                  id="PEPPOL-T012-B03101">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
       </rule>
-      <rule context="/query:QueryResponse/rim:Slot@name=ReceiverElectronicAddress/rim:SlotVlaue/*">
+      <rule context="/query:QueryResponse/rim:Slot@name=ReceiverElectronicAddress/rim:SlotValue/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B02904">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:Slot@name=ReceiverElectronicAddress/*">
