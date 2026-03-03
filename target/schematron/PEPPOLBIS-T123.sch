@@ -212,7 +212,7 @@
       </rule>
    </pattern>
     <pattern xmlns:ns2="http://www.schematron-quickfix.com/validator/process">
-      <let name="clDocumentStatusCode" value="tokenize('1 5 9 22', '\s')"/>
+      <let name="clDocumentStatusCode" value="tokenize('1 5 9 22 55', '\s')"/>
       <let name="clMimeCode"
            value="tokenize('application/pdf image/png image/jpeg image/tiff application/acad application/dwg drawing/dwg application/vnd.openxmlformats-officedocument.spreadsheetml.sheet application/vnd.oasis.opendocument.spreadsheet', '\s')"/>
       <let name="clFreightAllowanceChargeReasonCode" value="tokenize('1 2', '\s')"/>
