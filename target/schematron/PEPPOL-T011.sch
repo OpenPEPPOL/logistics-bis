@@ -947,7 +947,7 @@
       <rule context="/query:QueryRequest/query:Query/rim:Slot@name=ProcedureLegalBasis/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B17907">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:slot@name=ReservedParticipation">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot@name=ReservedParticipation">
          <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T011-B18701">Element 'rim:SlotValue' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'ReservedParticipation'"
                  flag="fatal"
@@ -958,25 +958,25 @@
                  id="PEPPOL-T011-B18704">Attribute 'type' MUST contain value 'http://publications.europa.eu/resource/authority/reserved-procurement'</assert>
          <assert test="@type" flag="fatal" id="PEPPOL-T011-B18705">Attribute 'type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:slot@name=ReservedParticipation/rim:SlotValue">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot@name=ReservedParticipation/rim:SlotValue">
          <assert test="rim:Element" flag="fatal" id="PEPPOL-T011-B19001">Element 'rim:Element' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:CollectionValueType'"
                  flag="fatal"
                  id="PEPPOL-T011-B19002">Attribute 'xsi:type' MUST contain value 'rim:CollectionValueType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B19003">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:slot@name=ReservedParticipation/rim:SlotValue/rim:Element">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot@name=ReservedParticipation/rim:SlotValue/rim:Element">
          <assert test="rim:Value" flag="fatal" id="PEPPOL-T011-B19201">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:StringValueType'"
                  flag="fatal"
                  id="PEPPOL-T011-B19202">Attribute 'xsi:type' MUST contain value 'rim:StringValueType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B19203">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:slot@name=ReservedParticipation/rim:SlotValue/rim:Element/rim:Value"/>
-      <rule context="/query:QueryRequest/query:Query/rim:slot@name=ReservedParticipation/rim:SlotValue/rim:Element/*">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot@name=ReservedParticipation/rim:SlotValue/rim:Element/rim:Value"/>
+      <rule context="/query:QueryRequest/query:Query/rim:Slot@name=ReservedParticipation/rim:SlotValue/rim:Element/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B19204">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:slot@name=ReservedParticipation/*">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot@name=ReservedParticipation/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B18706">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot@name=SuitableForSMEs">
