@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ubl:CatalogueRequest
+        xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:CatalogueRequest-2"
+        xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+        xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+        xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+	
+	<cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t035:1.0</cbc:CustomizationID>
+	<cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p035:1.0</cbc:ProfileID>
+	
+	<cbc:ID>654321</cbc:ID>
+	<cbc:IssueDate>2024-08-01</cbc:IssueDate>
+
+	<cac:ValidityPeriod>
+		<cbc:StartDate>2024-08-01</cbc:StartDate>
+		<cbc:EndDate>2024-08-31</cbc:EndDate>
+	</cac:ValidityPeriod>
+	
+	<cac:ReceiverParty>
+		<cbc:EndpointID schemeID="0007">5569999999</cbc:EndpointID>
+		<cac:PartyIdentification>
+			<cbc:ID schemeID="0007">5569999999</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>Elitfönster</cbc:Name>
+		</cac:PartyName>
+		<cac:PartyTaxScheme>
+			<cbc:CompanyID>SE556999999901</cbc:CompanyID>
+			<cac:TaxScheme>
+				<cbc:ID>VAT</cbc:ID>
+			</cac:TaxScheme>
+		</cac:PartyTaxScheme>
+		<cac:PartyLegalEntity>
+			<cbc:RegistrationName>Elitfönster AB</cbc:RegistrationName>
+			<cac:RegistrationAddress>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">SE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:RegistrationAddress>
+		</cac:PartyLegalEntity>
+	</cac:ReceiverParty>
+
+	<cac:ProviderParty>
+		<cbc:EndpointID schemeID="0007">5561111111</cbc:EndpointID>
+		<cac:PartyIdentification>
+			<cbc:ID schemeID="0007">5561111111</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>Kund AB</cbc:Name>
+		</cac:PartyName>
+		<cac:PostalAddress>
+			<cbc:StreetName>Kundgatan 1</cbc:StreetName>
+			<cbc:CityName>Vetlanda</cbc:CityName>
+			<cbc:PostalZone>574 33</cbc:PostalZone>
+			<cac:Country>
+				<cbc:IdentificationCode listID="ISO3166-1:Alpha2">SE</cbc:IdentificationCode>
+			</cac:Country>
+		</cac:PostalAddress>
+		<cac:PartyTaxScheme>
+			<cbc:CompanyID>SE556111111101</cbc:CompanyID>
+			<cac:TaxScheme>
+				<cbc:ID>VAT</cbc:ID>
+			</cac:TaxScheme>
+		</cac:PartyTaxScheme>
+		<cac:PartyLegalEntity>
+			<cbc:RegistrationName>Kund AB</cbc:RegistrationName>
+			<cbc:CompanyID schemeID="0007">5561111111</cbc:CompanyID>
+			<cac:RegistrationAddress>
+				<cbc:CityName>Vetlanda</cbc:CityName>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1:Alpha2">SE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:RegistrationAddress>
+		</cac:PartyLegalEntity>
+		<cac:Contact>
+			<cbc:Name>Erik Nilsson</cbc:Name>
+		</cac:Contact>
+	</cac:ProviderParty>
+
+	<cac:ReferencedContract>
+		<cbc:ID>NA</cbc:ID>
+		<cac:ContractDocumentReference>
+			<cbc:ID>634522</cbc:ID>
+		</cac:ContractDocumentReference>
+	</cac:ReferencedContract>
+
+	<cac:CatalogueRequestLine>
+		<cbc:ID>1</cbc:ID>
+		
+		<cac:RequiredItemLocationQuantity>
+			<cbc:MinimumQuantity unitCode="EA">1</cbc:MinimumQuantity>
+			<cbc:MaximumQuantity unitCode="EA">1</cbc:MaximumQuantity>
+		</cac:RequiredItemLocationQuantity>
+
+		<cac:Item>
+			<cbc:Name>Elitfönster Original Alu Objekt, fast karm</cbc:Name>
+
+			<cac:BuyersItemIdentification>
+				<cbc:ID>FF12</cbc:ID>
+			</cac:BuyersItemIdentification>
+
+			<cac:ItemSpecificationDocumentReference>
+				<cbc:ID>Drawing_123</cbc:ID>
+				<cbc:DocumentType>Drawing</cbc:DocumentType>
+				<cac:Attachment>
+					<cac:ExternalReference>
+						<cbc:URI>xxxxxxxxxxxxx</cbc:URI>
+					</cac:ExternalReference>
+				</cac:Attachment>
+			</cac:ItemSpecificationDocumentReference>
+
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Frame width</cbc:Name>
+				<cbc:NameCode listID="EN12519">FrameWidth</cbc:NameCode>
+				<cbc:Value>NA</cbc:Value>
+				<cbc:ValueQuantity unitCode="MMT">480</cbc:ValueQuantity>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Frame height</cbc:Name>
+				<cbc:NameCode listID="EN12519">FrameHeight</cbc:NameCode>
+				<cbc:Value>NA</cbc:Value>
+				<cbc:ValueQuantity unitCode="MMT">1380</cbc:ValueQuantity>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Thermal transmittance</cbc:Name>
+				<cbc:NameCode listID="EN14351-1">ThermalTransmittance</cbc:NameCode>
+				<cbc:Value>NA</cbc:Value>
+				<cac:ItemPropertyRange>
+					<cbc:MaximumValue>1.4</cbc:MaximumValue>
+				</cac:ItemPropertyRange>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Airborne sound reduction index</cbc:Name>
+				<cbc:NameCode listID="EN14351-1">AirborneSoundReductionIndex</cbc:NameCode>
+				<cbc:Value>NA</cbc:Value>
+				<cac:ItemPropertyRange>
+					<cbc:MinimumValue>32</cbc:MinimumValue>
+				</cac:ItemPropertyRange>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Light transmittance</cbc:Name>
+				<cbc:NameCode listID="EN14351-1">LightTransmittance</cbc:NameCode>
+				<cbc:Value>NA</cbc:Value>
+				<cac:ItemPropertyRange>
+					<cbc:MinimumValue>70</cbc:MinimumValue>
+				</cac:ItemPropertyRange>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Finish colour - interior</cbc:Name>
+				<cbc:NameCode listID="ZZZ">FinishColour?Interior</cbc:NameCode>
+				<cbc:Value>NCS-S 0502-Y</cbc:Value>
+			</cac:AdditionalItemProperty>
+
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Finish colour - exterior</cbc:Name>
+				<cbc:NameCode listID="ZZZ">FinishColour?Exterior</cbc:NameCode>
+				<cbc:Value>NCS S 0502-Y AL</cbc:Value>
+			</cac:AdditionalItemProperty>
+			
+			<cac:AdditionalItemProperty>
+				<cbc:Name>Fire resistance</cbc:Name>
+				<cbc:NameCode listID="EN13501-2">FireResistance</cbc:NameCode>
+				<cbc:Value>EI30</cbc:Value>
+			</cac:AdditionalItemProperty>
+
+		</cac:Item>
+	</cac:CatalogueRequestLine>
+
+</ubl:CatalogueRequest>

@@ -15,7 +15,7 @@ The identifier enables positive referencing the transaction instance for various
 [source,xml,indent=0]
 .Example of qualification response document identifier
 ....
-include::../files/QualificationResponse.xml[tags=ID]
+include::{examples-dir}/QualificationResponse.xml[tags=ID]
 ....
 <.> A transaction instance must contain an identifier, being expressed in uuid syntax
 
@@ -44,7 +44,7 @@ NOTE: The response issue time must specify the time zone.
 [source,xml,indent=0]
 .Example of response issue date and time
 ....
-include::../files/QualificationResponse.xml[tags=IssueDateTime]
+include::{examples-dir}/QualificationResponse.xml[tags=IssueDateTime]
 ....
 <.> Format for the date has to be yyyy-mm-dd
 <.> Format for the time has to be hh:mm:ssTZD, granularity down to seconds and timezone
@@ -60,7 +60,7 @@ The sender party corresponds to the contracting body.
 [source,xml,indent=0]
 .Example of contracting body as sender party
 ....
-include::../files/QualificationResponse.xml[tags=SenderParty]
+include::{examples-dir}/QualificationResponse.xml[tags=SenderParty]
 ....
 <.> Identifies the contracting body's electronic address and the scheme identifier for the electronic address
 <.> Identifies the contracting body itself and the scheme identifier to resolve sender party's identifier
@@ -74,7 +74,7 @@ The receiver party corresponds to the economic operator who handed in the Qualif
 [source,xml,indent=0]
 .Example of economic operator as receiver party
 ....
-include::../files/QualificationResponse.xml[tags=ReceiverParty]
+include::{examples-dir}/QualificationResponse.xml[tags=ReceiverParty]
 ....
 <.> Identifies the economic operator's electronic address and the scheme identifier for the electronic address
 <.> Identifies the economic operator and the scheme identifier to resolve the receiver party's identifier
@@ -88,7 +88,7 @@ The Response Document Reference contains a reference to the original Qualificati
 [source,xml,indent=0]
 .Example of Response Document Reference
 ....
-include::../files/QualificationResponse.xml[tags=ResolutionDocumentReference]
+include::{examples-dir}/QualificationResponse.xml[tags=ResolutionDocumentReference]
 ....
 <.> The response document reference must contain an identifier, being expressed in uuid syntax.
 
@@ -102,7 +102,7 @@ The qualification response resolution is the central part of any qualification r
 [source,xml,indent=0]
 .Example of Qualification Response Resolution
 ....
-include::../files/QualificationResponse.xml[tags=QualificationResolution]
+include::{examples-dir}/QualificationResponse.xml[tags=QualificationResolution]
 ....
 <.> Names the qualification result. If the result ist *false*, it states that the economic operator is not allowed to attend the further procurement process and the qualification response can alo be named as qualification rejection. Any qualification rejection is required to be answered. A positive answer resulting in *true* may also be given, but is not necessarily requested.
 <.> If the qualification response contains a qualification rejection, the reason for rejection must be explained in one or more resolution elements. The qualification rejection resolution is expected be te described in plain text. At least one reason for rejection element must be provided. A positive answer may be sent without a specific resolution element.

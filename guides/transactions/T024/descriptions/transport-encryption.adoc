@@ -3,17 +3,23 @@
 
 == Introduction
 
-The Invitation to Tender provides the latest updated procurement documents to a qualified economic operator. Sending the Invitation to Tender to an economic operators starts the second step of the restricted procurement procedure. Besides transporting procurement documents it MUST be used to transport the encryption certificate needed by the economic operator to encrypt his tender for submission.
+The Invitation to Tender provides the latest updated procurement documents to a qualified economic operator. Sending the Invitation to 
+Tender to an economic operators starts the second step of the restricted procurement procedure. Besides transporting procurement 
+documents it MUST be used to transport the encryption certificate needed by the economic operator to encrypt his tender for submission.
 
-Since the Invitation to Tender is also used to sent out business document changes after a {T003} (by sending a status-update-inquiry), any Invitation to Tender MUST contain the encryption certificate needed by the economic operator to encrypt his tender for submission.
+Since the Invitation to Tender is also used to sent out business document changes after a {T003} (by sending a status-update-inquiry), 
+any Invitation to Tender MUST contain the encryption certificate needed by the economic operator to encrypt his tender for submission.
 
 == Encryption certificate
 
-The encryption certificate MUST be transported as an attachment within the Invitation to Tender's ASiC-E Container. The Invitation to Tender business document contains metadata regarding all attachments thus also for the tender encryption certificate.
+The encryption certificate MUST be transported as an attachment within the Invitation to Tender's ASiC-E Container. The Invitation to 
+Tender business document contains metadata regarding all attachments thus also for the tender encryption certificate.
 
-This encryption certificate metadata is assembled by the UBL container `cac:AdditionalDocumentReference`. In the case of the encryption certificate this container MUST contain the elements and values mentioned in the table below.
+This encryption certificate metadata is assembled by the UBL container `cac:AdditionalDocumentReference`. In the case of the encryption 
+certificate this container MUST contain the elements and values mentioned in the table below.
 
-To identify the encryption certificate, the UBL MUST contain exactly one `cac:AdditionalDocumentReference`-container as described below. Any other container MUST NOT make use of this value combination.
+To identify the encryption certificate, the UBL MUST contain exactly one `cac:AdditionalDocumentReference`-container as described below. 
+Any other container MUST NOT make use of this value combination.
 
 [cols="3,2,3,4", options="header"]
 |===
@@ -36,7 +42,8 @@ Instead of `Provided document name`, alternatively a `Provided document URI` cou
 [cols="3,2,3,4"]
 |===
 
-| Provided document URI | 1..1  | cac:Attachment/cac:ExternalReference/cbc:URI | A URI to the document provided inside the ASIC-E package. The extension of the file MUST be  “cer”.
+| Provided document URI | 1..1  | cac:Attachment/cac:ExternalReference/cbc:URI | A URI to the document provided inside the ASIC-E 
+package. The extension of the file MUST be  “cer”.
 |===
 
 
@@ -44,7 +51,7 @@ Instead of `Provided document name`, alternatively a `Provided document URI` cou
 .Example of the Invitation to Tender transporting an encryption certificate with cbc:FileName
 
 ----
-include::../{xml-doc-file}[tags=AdditionalDocumentReference1]
+include::{xml-snippets-file}[tags=AdditionalDocumentReference1]
 
 ----
 
@@ -52,7 +59,7 @@ include::../{xml-doc-file}[tags=AdditionalDocumentReference1]
 .Example of the Invitation to Tender transporting an encryption certificate with cbc:URI
 
 ----
-include::../{xml-doc-file}[tags=AdditionalDocumentReference4]
+include::{xml-snippets-file}[tags=AdditionalDocumentReference4]
 
 ----
 
