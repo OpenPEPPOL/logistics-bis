@@ -251,16 +251,16 @@
          <assert test="not(@*:schemaLocation)" flag="fatal" id="PEPPOL-T035-B00109">Document MUST not contain schema location.</assert>
       </rule>
       <rule context="/ubl:CatalogueRequest/cbc:CustomizationID">
-         <assert test="normalize-space(text()) = '&#xA;                urn:www.cenbii.eu:transaction:biitrdm068:ver3.0:extended:urn:www.peppol.eu:bis:peppol35a:ver1.0&#xA;            '"
+         <assert test="normalize-space(text()) = '&#xA;                urn:fdc:peppol.eu:prac:trns:t035:1&#xA;            '"
                  flag="fatal"
                  id="PEPPOL-T035-B00201">Element 'cbc:CustomizationID' MUST contain value '
-                urn:www.cenbii.eu:transaction:biitrdm068:ver3.0:extended:urn:www.peppol.eu:bis:peppol35a:ver1.0
+                urn:fdc:peppol.eu:prac:trns:t035:1
             '.</assert>
       </rule>
       <rule context="/ubl:CatalogueRequest/cbc:ProfileID">
-         <assert test="normalize-space(text()) = 'urn:www.cenbii.eu:profile:bii35:ver3.0'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p035'"
                  flag="fatal"
-                 id="PEPPOL-T035-B00301">Element 'cbc:ProfileID' MUST contain value 'urn:www.cenbii.eu:profile:bii35:ver3.0'.</assert>
+                 id="PEPPOL-T035-B00301">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p035'.</assert>
       </rule>
       <rule context="/ubl:CatalogueRequest/cbc:ID"/>
       <rule context="/ubl:CatalogueRequest/cbc:IssueDate"/>
