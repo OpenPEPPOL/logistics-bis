@@ -252,11 +252,9 @@
                  id="PEPPOL-T013-B00201">Element 'cbc:UBLVersionID' MUST contain value '2.2'.</assert>
       </rule>
       <rule context="/ubl:TenderWithdrawal/cbc:CustomizationID">
-         <assert test="normalize-space(text()) = '&#xA;                urn:fdc:peppol.eu:prac:trns:t013:1.1&#xA;            '"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t013:1.1'"
                  flag="fatal"
-                 id="PEPPOL-T013-B00301">Element 'cbc:CustomizationID' MUST contain value '
-                urn:fdc:peppol.eu:prac:trns:t013:1.1
-            '.</assert>
+                 id="PEPPOL-T013-B00301">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t013:1.1'.</assert>
       </rule>
       <rule context="/ubl:TenderWithdrawal/cbc:ProfileID">
          <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p007:1.1'"
