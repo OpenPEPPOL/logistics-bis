@@ -230,7 +230,7 @@
         <assert id="PEPPOL-T021-R019" flag="fatal" test="./@listID">[PEPPOL-T021-R019]
             Country/IdentificationCode MUST have a list identifier attribute.</assert>
         <assert id="PEPPOL-T021-R020" flag="fatal"
-            test="normalize-space(./@listID) = 'ISO3166-1:Alpha2'">[PEPPOL-T021-R020] List
+            test="normalize-space(./@listID) = 'ISO3166'">[PEPPOL-T021-R020] List
             identifier for country code must be "ISO3166-1:Alpha2".</assert>
         <report id="PEPPOL-T021-S335" flag="warning" test="./@*[not(name() = 'listID')]"
             ><value-of select="$syntaxError"/>[PEPPOL-T021-S335] Country/IdentificationCode
