@@ -43,9 +43,7 @@
             <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T010-R009</Reference>
             <Reference type="RULE">PEPPOL-T010-S009</Reference>
-            <Value type="FIXED">
-                urn:fdc:peppol.eu:prac:trns:t010:1.1
-            </Value>
+            <Value type="FIXED">urn:fdc:peppol.eu:prac:trns:t010:1.1</Value>
         </Element>
         <Element>
             <Term>cbc:ProfileID</Term>
@@ -64,6 +62,7 @@
             <Description>Identifies the Tender Clarification as issued by the contracting body. Must be expressed as a
                 UUID
             </Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T010-R011</Reference>
             <Reference type="RULE">PEPPOL-T010-R012</Reference>
             <Reference type="RULE">PEPPOL-T010-R013</Reference>
@@ -76,7 +75,6 @@
                 <Reference type="RULE">PEPPOL-T010-R015</Reference>
                 <Value type="FIXED">urn:uuid</Value>
             </Attribute>
-            <DataType>Identifier</DataType>
         </Element>
         <Element>
             <Term>cbc:IssueDate</Term>
@@ -108,6 +106,7 @@
                 <Term>cbc:EndpointID</Term>
                 <Name>Contracting body electronic address identifier</Name>
                 <Description>Electronic address of the contracting body.</Description>
+                <DataType>Identifier</DataType>
                 <Reference type="RULE">PEPPOL-T010-R018</Reference>
                 <Reference type="RULE">PEPPOL-T010-S015</Reference>
                 <Attribute>
@@ -117,7 +116,6 @@
                     <Reference type="CODE_LIST">eas</Reference>
                     <Value type="EXAMPLE">9930</Value>
                 </Attribute>
-                <DataType>Identifier</DataType>
                 <Value type="EXAMPLE">DE122268496</Value>
             </Element>
             <Element>
@@ -129,6 +127,7 @@
                     <Description>The national identifier of a contracting body as it is legally registered (e.g. VAT
                         identification, such as KBO)
                     </Description>
+                    <DataType>Identifier</DataType>
                     <Reference type="RULE">PEPPOL-T010-R020</Reference>
                     <Reference type="RULE">PEPPOL-T010-S016</Reference>
                     <Attribute>
@@ -137,7 +136,6 @@
                         <Reference type="RULE">PEPPOL-T010-R021</Reference>
                         <Reference type="CODE_LIST">ICD</Reference>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                 </Element>
             </Element>
             <Element cardinality="0..1">
@@ -168,6 +166,7 @@
                 <Term>cbc:EndpointID</Term>
                 <Name>The economic operator electronic address identifier</Name>
                 <Description>Electronic address of the economic operator.</Description>
+                <DataType>Identifier</DataType>
                 <Reference type="RULE">PEPPOL-T010-R023</Reference>
                 <Reference type="RULE">PEPPOL-T010-S020</Reference>
                 <Attribute>
@@ -177,7 +176,6 @@
                     <Reference type="CODE_LIST">eas</Reference>
                     <Value type="EXAMPLE">9946</Value>
                 </Attribute>
-                <DataType>Identifier</DataType>
                 <Value type="EXAMPLE">500820007</Value>
             </Element>
             <Element>
@@ -189,6 +187,7 @@
                     <Description>An identifier that identifies the economic operator, such as a legal registration
                         identifier.
                     </Description>
+                    <DataType>Identifier</DataType>
                     <Reference type="RULE">PEPPOL-T010-R025</Reference>
                     <Reference type="RULE">PEPPOL-T010-S021</Reference>
                     <Attribute>
@@ -198,7 +197,6 @@
                         <Reference type="CODE_LIST">ICD</Reference>
                         <Value type="EXAMPLE">0088</Value>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                     <Value type="EXAMPLE">7300010000001</Value>
                 </Element>
             </Element>
@@ -217,21 +215,21 @@
             <Term>cac:ParentDocumentReference</Term>
             <Name>Parent document reference</Name>
             <Description>Reference to the procurement procedure that this response refers to.</Description>
+            <DataType>cac:DocumentReferenceType</DataType>
             <Element>
                 <Term>cbc:ID</Term>
                 <Name>Document identifier</Name>
                 <Description>An identifier that is specified by the buyer and used as a reference number for all
                     documents in the procurement process. It is also known as procurement project identifier,
                     procurement reference number or contract folder identifier.</Description>
+                <DataType>cbc:IDType</DataType>
                 <Attribute>
                     <Term>schemeName</Term>
                     <Name>Scheme name</Name>
                     <Description>Has to be ContractFolderID.</Description>
                     <Value type="FIXED">ContractFolderID</Value>
                 </Attribute>
-                <DataType>cbc:IDType</DataType>
             </Element>
-            <DataType>cac:DocumentReferenceType</DataType>
         </Element>
         <Element cardinality="1..n">
             <Term>cac:AdditionalDocumentReference</Term>
@@ -240,18 +238,19 @@
                 ContractFolderID, LotGroup or Lot. To reference several answers, the additional document can be
                 repeated.
             </Description>
+            <DataType>cbc:DocumentReference</DataType>
             <Element>
                 <Term>cbc:ID</Term>
                 <Name>Document identifier</Name>
                 <Description>Identifier to the ContractFolderID and/or the lots to which the tender answer applies.
                     XPath expressions are used to locate the answer within the document.
                 </Description>
+                <DataType>Identifier</DataType>
                 <Attribute>
                     <Term>schemeName</Term>
                     <Name>Scheme name</Name>
                     <Description>Valid values are ContractFolderID, LotGroup or Lot.</Description>
                 </Attribute>
-                <DataType>Identifier</DataType>
             </Element>
             <Element cardinality="0..n">
                 <Term>cbc:XPath</Term>
@@ -260,7 +259,6 @@
                 <DataType>cbc:XPathType</DataType>
                 <Reference type="RULE">PEPPOL-T010-R027</Reference>
             </Element>
-            <DataType>cbc:DocumentReference</DataType>
         </Element>
         <Element cardinality="1..n">
             <Term>cac:Attachment</Term>
@@ -268,12 +266,14 @@
             <Description>An attached tendering request or files which must be referenced by an
                 cac:AdditionalDocumentReference
             </Description>
+            <DataType>cac:AttachmentType</DataType>
             <Element>
                 <Term>cac:ExternalReference</Term>
                 <Name>External reference</Name>
                 <Description>An external reference to place your questions or add an attachment to express questions in
                     more detail. There must be only one kind of reference a file or questions.
                 </Description>
+                <DataType>cac:ExternalReferenceType</DataType>
                 <Reference type="RULE">PEPPOL-T010-R028</Reference>
                 <Element cardinality="0..1">
                     <Term>cbc:MimeCode</Term>
@@ -295,9 +295,7 @@
                     <Description>The tendering request about the procurement procedure.</Description>
                     <DataType>cbc:DescriptionType</DataType>
                 </Element>
-                <DataType>cac:ExternalReferenceType</DataType>
             </Element>
-            <DataType>cac:AttachmentType</DataType>
         </Element>
     </Document>
 </Structure>

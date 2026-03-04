@@ -31,9 +31,7 @@
             </Description>
             <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T024-R002</Reference>
-            <Value type="FIXED">
-                urn:fdc:peppol.eu:prac:trns:t024:1.0
-            </Value>
+            <Value type="FIXED">urn:fdc:peppol.eu:prac:trns:t024:1.0</Value>
         </Element>
 
         <Element>
@@ -52,6 +50,7 @@
             <Name>Invitation to tender identifier</Name>
             <Description>Identifies the invitation to tender as issued by the contracting body. Must be expressed as a UUID
             </Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T024-R006</Reference>
             <Attribute>
                 <Term>schemeURI</Term>
@@ -60,7 +59,6 @@
                 <Reference type="RULE">PEPPOL-T024-R005</Reference>
                 <Value type="FIXED">urn:uuid</Value>
             </Attribute>
-            <DataType>Identifier</DataType>
         </Element>
 
         <Element>
@@ -128,6 +126,7 @@
                 <Name>Document type code</Name>
                 <Description>A code specifying the type of the document, valid codes are PROVIDED or REQUIRED
                 </Description>
+                <DataType>Code</DataType>
                 <Reference type="RULE">PEPPOL-T024-R019</Reference>
                 <Reference type="CODE_LIST">docType</Reference>
                 <Attribute>
@@ -137,13 +136,13 @@
                     <Reference type="RULE">PEPPOL-T024-R018</Reference>
                     <Value type="FIXED">urn:eu:esens:cenbii:documentType</Value>
                 </Attribute>
-                <DataType>Code</DataType>
             </Element>
 
             <Element cardinality="0..1">
                 <Term>cbc:LocaleCode</Term>
                 <Name>Provided document language</Name>
                 <Description>Language of a document that is provided as part of an invitation to tender.</Description>
+                <DataType>Code</DataType>
                 <Reference type="RULE">PEPPOL-T024-R016</Reference>
                 <Attribute>
                     <Term>listID</Term>
@@ -152,7 +151,6 @@
                     <Reference type="RULE">PEPPOL-T024-R015</Reference>
                     <Value type="FIXED">ISO639-1</Value>
                 </Attribute>
-                <DataType>Code</DataType>
             </Element>
 
             <Element cardinality="0..1">
@@ -169,6 +167,7 @@
                 <Description>Indicates that the provided document in the invitation to tender has to be returned as part of
                     the tender.
                 </Description>
+                <DataType>Indicator</DataType>
                 <Reference type="RULE">PEPPOL-T024-R022</Reference>
                 <Reference type="RULE">PEPPOL-T024-R023</Reference>
                 <Reference type="CODE_LIST">docStatus</Reference>
@@ -179,7 +178,6 @@
                     <Reference type="RULE">PEPPOL-T024-R021</Reference>
                     <Value type="FIXED">urn:eu:esens:cenbii:documentStatusType</Value>
                 </Attribute>
-                <DataType>Indicator</DataType>
             </Element>
 
             <Element cardinality="0..1">
@@ -246,6 +244,7 @@
                     <Term>cbc:EndpointID</Term>
                     <Name>Contracting body electronic address identifier</Name>
                     <Description>Electronic address of the contracting body.</Description>
+                    <DataType>Identifier</DataType>
                     <Reference type="RULE">PEPPOL-T024-R034</Reference>
                     <Attribute>
                         <Term>schemeID</Term>
@@ -255,7 +254,6 @@
                         <Reference type="CODE_LIST">eas</Reference>
                         <Value type="EXAMPLE">9930</Value>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                     <Value type="EXAMPLE">DE122268496</Value>
                 </Element>
 
@@ -270,6 +268,7 @@
                         <Description>The national identifier of a contracting body as it is legally registered (e.g. VAT
                             identification, such as KBO)
                         </Description>
+                        <DataType>Identifier</DataType>
                         <Attribute>
                             <Term>schemeID</Term>
                             <Name>Scheme identifier</Name>
@@ -278,7 +277,6 @@
                             <Reference type="CODE_LIST">ICD</Reference>
                             <Value type="EXAMPLE">0204</Value>
                         </Attribute>
-                        <DataType>Identifier</DataType>
                         <Value type="EXAMPLE">991-1234512345-06</Value>
                     </Element>
                 </Element>
@@ -311,6 +309,7 @@
                                 <Description>The country where the party is registered. The country should always be
                                     given by using ISO code 3166 alpha 2
                                 </Description>
+                                <DataType>Code</DataType>
                                 <Reference type="RULE">CL-T83-R005</Reference>
                                 <Reference type="CODE_LIST">ISO3166</Reference>
                                 <Attribute>
@@ -318,7 +317,6 @@
                                     <Name>List identifier</Name>
                                     <Value type="FIXED">ISO3166</Value>
                                 </Attribute>
-                                <DataType>Code</DataType>
                             </Element>
                         </Element>
                     </Element>
@@ -336,6 +334,7 @@
                 <Term>cbc:EndpointID</Term>
                 <Name>Economic operator electronic address identifier</Name>
                 <Description>Electronic address of the economic operator.</Description>
+                <DataType>Identifier</DataType>
 				<Reference type="RULE">PEPPOL-T024-R534</Reference>
                 <Attribute>
                     <Term>schemeID</Term>
@@ -343,12 +342,12 @@
 					<Reference type="RULE">PEPPOL-T024-R012</Reference>
 					<Reference type="RULE">PEPPOL-T024-R013</Reference>
                 </Attribute>
-                <DataType>Identifier</DataType>
             </Element>
             <Element cardinality="1..1">
                 <Term>cbc:IndustryClassificationCode</Term>
                 <Name>Economic operator role</Name>
                 <Description>The role of the economic operator when bidding from a consortium (main contractor, subcontractor , additional).</Description>
+                <DataType>Identifier</DataType>
                 <Reference type="CODE_LIST">tendererRole</Reference>
                 <Attribute>
                     <Term>listID</Term>
@@ -357,7 +356,6 @@
                     <Reference type="RULE">PEPPOL-T024-S360</Reference>
                     <Value type="FIXED">tendererRole</Value>
                 </Attribute>
-                <DataType>Identifier</DataType>
             </Element>
             <Element>
                 <Term>cac:PartyIdentification</Term>
@@ -369,6 +367,7 @@
                     <Description>An identifier that identifies the economic operator, such as a legal registration
                         identifier.
                     </Description>
+                    <DataType>Identifier</DataType>
                     <Attribute>
                         <Term>schemeID</Term>
                         <Name>Scheme identifier for party identifier</Name>
@@ -377,7 +376,6 @@
                         <Reference type="CODE_LIST">ICD</Reference>
                         <Value type="EXAMPLE">0088</Value>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                     <Value type="EXAMPLE">7300010000001</Value>
                 </Element>
             </Element>
@@ -435,13 +433,13 @@
                         <Term>cbc:IdentificationCode</Term>
                         <Name>Country code</Name>
                         <Description>A code that identifies the country.</Description>
+                        <DataType>Code</DataType>
                         <Reference type="RULE">CL-T83-R005</Reference>
                         <Reference type="CODE_LIST">ISO3166</Reference>
                         <Attribute>
                             <Term>listID</Term>
                             <Name>List identifier for country code</Name>
                         </Attribute>
-                        <DataType>Code</DataType>
                     </Element>
                 </Element>
             </Element>
@@ -467,13 +465,13 @@
                             <Term>cbc:IdentificationCode</Term>
                             <Name>Economic operator registration country code</Name>
                             <Description>The registration country code of the economic operator.</Description>
+                            <DataType>Code</DataType>
                             <Reference type="RULE">CL-T83-R005</Reference>
                             <Reference type="CODE_LIST">ISO3166</Reference>
                             <Attribute>
                                 <Term>listID</Term>
                                 <Name>List identifier for country code</Name>
                             </Attribute>
-                            <DataType>Code</DataType>
                         </Element>
                     </Element>
                 </Element>
@@ -577,6 +575,7 @@
                     <Description>Identifies a previously issued invitation to tender when updated by the contracting body,
                         expressed as a UUID
                     </Description>
+                    <DataType>Identifier</DataType>
 					<Reference type="RULE">PEPPOL-T024-R027</Reference>
                     <Attribute>
                         <Term>schemeURI</Term>
@@ -585,7 +584,6 @@
 						<Reference type="RULE">PEPPOL-T024-R026</Reference>
                         <Value type="FIXED">urn:uuid</Value>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                 </Element>
             </Element>
 
@@ -600,6 +598,7 @@
                         shall be submitted. This endpoint ID MUST be used only when different
                         from the Contracting Authority Endpoint ID.
                     </Description>
+                    <DataType>Identifier</DataType>
                     <Attribute>
                         <Term>schemeID</Term>
                         <Name>Scheme identifier</Name>
@@ -608,7 +607,6 @@
                         <Reference type="CODE_LIST">eas</Reference>
                         <Value type="EXAMPLE">9946</Value>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                     <Value type="EXAMPLE">500820007</Value>
                 </Element>
             </Element>
@@ -625,6 +623,7 @@
                 <Description>A code specifying the type of this tendering process. The coded version of the description
                     of procedure. (E.g.) Open procedure, negotiated etc.
                 </Description>
+                <DataType>Code</DataType>
                 <Reference type="CODE_LIST">procedureType</Reference>
                 <Reference type="RULE">CL-T83-R001</Reference>
                 <Attribute>
@@ -632,7 +631,6 @@
                     <Name>List identifier</Name>
                     <Value type="FIXED">PR_PROC</Value>
                 </Attribute>
-				<DataType>Code</DataType>
             </Element>
 
             <Element cardinality="0..1">
@@ -643,6 +641,7 @@
                     indicates whether the new contract will be based on an already established framework agreement or
                     dynamic purchasing system or not.
                 </Description>
+                <DataType>Code</DataType>
                 <Reference type="RULE">PEPPOL-T024-R039</Reference>
                 <Reference type="CODE_LIST">contractType</Reference>
                 <Attribute>
@@ -650,7 +649,6 @@
                     <Name>List identifier</Name>
                     <Value type="FIXED">CONTRACT_TYPE</Value>
                 </Attribute>
-				<DataType>Code</DataType>
             </Element>
 
             <Element cardinality="0..1">
@@ -659,13 +657,13 @@
                 <Description>Indicator whether postal submission of the tender is merely a backup for the electronic
                     submission
                 </Description>
+                <DataType>Indicator</DataType>
                 <Reference type="CODE_LIST">submissionMethod</Reference>
                 <Attribute>
                     <Term>listID</Term>
                     <Name>List identifier</Name>
                     <Value type="FIXED">BII_SUBMISSION</Value>
                 </Attribute>
-				<DataType>Indicator</DataType>
             </Element>
 
             <Element>
@@ -742,6 +740,7 @@
                 <Term>cbc:ProcurementTypeCode</Term>
                 <Name>Procurement project type</Name>
                 <Description>Type of contract (Works, Supplies or Services).</Description>
+                <DataType>Code</DataType>
                 <Reference type="CODE_LIST">procurementType</Reference>
                 <Reference type="RULE">CL-T83-R002</Reference>
                 <Attribute>
@@ -749,7 +748,6 @@
                     <Name>List identifier</Name>
                     <Value type="FIXED">PROJECT_TYPE</Value>
                 </Attribute>
-                <DataType>Code</DataType>
             </Element>
 
             <Element>
@@ -761,12 +759,12 @@
                     <Name>CPV-Code</Name>
                     <Description>Classification code of goods, works and services commonly used in procurement.
                     </Description>
+                    <DataType>Code</DataType>
                     <Attribute>
                         <Term>listID</Term>
                         <Name>List identifier</Name>
                         <Value type="FIXED">CPV</Value>
                     </Attribute>
-					<DataType>Code</DataType>
                 </Element>
             </Element>
 
@@ -780,12 +778,12 @@
                     <Description>A secondary classification code of goods, works and services to help contracting bodies describe the subject matter of
                         contracts comprehensively.
                     </Description>
+                    <DataType>Code</DataType>
                     <Attribute>
                         <Term>listID</Term>
                         <Name>List identifier</Name>
                         <Value type="FIXED">CPV</Value>
                     </Attribute>
-					<DataType>Code</DataType>
                 </Element>
             </Element>
 
@@ -797,12 +795,12 @@
                     <Term>cbc:ID</Term>
                     <Name>Procurement project location NUTS code</Name>
                     <Description>The identification with the NUTS code of the project location.</Description>
+                    <DataType>Code</DataType>
                     <Attribute>
                         <Term>schemeID</Term>
                         <Name>Scheme identifier</Name>
                         <Value type="FIXED">NUTS</Value>
                     </Attribute>
-					<DataType>Code</DataType>
                 </Element>
             </Element>
         </Element>

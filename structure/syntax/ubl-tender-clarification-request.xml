@@ -47,9 +47,7 @@
             <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T009-R012</Reference>
             <Reference type="RULE">PEPPOL-T009-S009</Reference>
-            <Value type="FIXED">
-                urn:fdc:peppol.eu:prac:trns:t009:1.1
-            </Value>
+            <Value type="FIXED">urn:fdc:peppol.eu:prac:trns:t009:1.1</Value>
         </Element>
         <Element>
             <Term>cbc:ProfileID</Term>
@@ -68,6 +66,7 @@
             <Description>Identifies the tender clarification request as issued by the contracting body. Must be
                 expressed as a UUID
             </Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T009-R014</Reference>
             <Reference type="RULE">PEPPOL-T009-R015</Reference>
             <Reference type="RULE">PEPPOL-T009-S011</Reference>
@@ -77,7 +76,6 @@
                 <Reference type="RULE">PEPPOL-T009-R016</Reference>
                 <Value type="FIXED">urn:uuid</Value>
             </Attribute>
-            <DataType>Identifier</DataType>
         </Element>
         <Element>
             <Term>cbc:IssueDate</Term>
@@ -109,6 +107,7 @@
                 <Term>cbc:EndpointID</Term>
                 <Name>Contracting body electronic address identifier</Name>
                 <Description>Electronic address of the contracting body.</Description>
+                <DataType>Identifier</DataType>
                 <Reference type="RULE">PEPPOL-T009-R021</Reference>
                 <Reference type="RULE">PEPPOL-T009-S015</Reference>
                 <Attribute>
@@ -118,7 +117,6 @@
                     <Reference type="CODE_LIST">eas</Reference>
                     <Value type="EXAMPLE">9930</Value>
                 </Attribute>
-                <DataType>Identifier</DataType>
                 <Value type="EXAMPLE">DE122268496</Value>
             </Element>
             <Element>
@@ -130,6 +128,7 @@
                     <Description>The national identifier of a contracting body as it is legally registered (e.g. VAT
                         identification, such as KBO)
                     </Description>
+                    <DataType>Identifier</DataType>
                     <Reference type="RULE">PEPPOL-T009-R023</Reference>
                     <Reference type="RULE">PEPPOL-T009-S016</Reference>
                     <Attribute>
@@ -139,7 +138,6 @@
                         <Reference type="CODE_LIST">ICD</Reference>
                         <Value type="EXAMPLE">0204</Value>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                     <Value type="EXAMPLE">991-1234512345-06</Value>
                 </Element>
             </Element>
@@ -166,6 +164,7 @@
                 <Term>cbc:EndpointID</Term>
                 <Name>The economic operator electronic address identifier</Name>
                 <Description>Electronic address of the economic operator.</Description>
+                <DataType>Identifier</DataType>
                 <Reference type="RULE">PEPPOL-T009-R026</Reference>
                 <Reference type="RULE">PEPPOL-T009-S020</Reference>
                 <Attribute>
@@ -175,7 +174,6 @@
                     <Reference type="CODE_LIST">eas</Reference>
                     <Value type="EXAMPLE">9946</Value>
                 </Attribute>
-                <DataType>Identifier</DataType>
                 <Value type="EXAMPLE">500820007</Value>
             </Element>
             <Element>
@@ -187,6 +185,7 @@
                     <Description>An identifier that identifies the economic operator, such as a legal registration
                         identifier. Can be the registration number in the professional registry.
                     </Description>
+                    <DataType>Identifier</DataType>
                     <Reference type="RULE">PEPPOL-T009-R028</Reference>
                     <Reference type="RULE">PEPPOL-T009-S021</Reference>
                     <Attribute>
@@ -196,7 +195,6 @@
                         <Reference type="CODE_LIST">ICD</Reference>
                         <Value type="EXAMPLE">0088</Value>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                     <Value type="EXAMPLE">7300010000001</Value>
                 </Element>
             </Element>
@@ -218,6 +216,7 @@
                 questions for the tender. The ContractFolderID must be at least provided. Additional references may
                 be included to list the questions for the tender that is reponding to the procedure, LotGroups or Lots.
             </Description>
+            <DataType>cbc:DocumentReference</DataType>
             <Element>
                 <Term>cbc:ID</Term>
                 <Name>Document identifier</Name>
@@ -227,12 +226,12 @@
                     to which the tender clarification request applies. XPath expressions can than be used to locate
                     the questions.
                 </Description>
+                <DataType>Identifier</DataType>
                 <Attribute>
                     <Term>schemeName</Term>
                     <Name>Scheme name</Name>
                     <Description>Valid values are ContractFolderID, LotGroup or Lot.</Description>
                 </Attribute>
-                <DataType>Identifier</DataType>
             </Element>
             <Element cardinality="0..n">
                 <Term>cbc:XPath</Term>
@@ -243,19 +242,20 @@
                 <DataType>cbc:XPathType</DataType>
                 <Reference type="RULE">PEPPOL-T009-R030</Reference>
             </Element>
-            <DataType>cbc:DocumentReference</DataType>
         </Element>
         <Element cardinality="1..n">
             <Term>cac:Attachment</Term>
             <Name>Attachment</Name>
             <Description>Attached questions or files which must be referenced by an cac:AdditionalDocumentReference
             </Description>
+            <DataType>cac:AttachmentType</DataType>
             <Element>
                 <Term>cac:ExternalReference</Term>
                 <Name>ExternalReference</Name>
                 <Description>An external reference to place your questions or add an attachment to express questions in
                     more detail. There must be only one kind of reference a file or questions.
                 </Description>
+                <DataType>cac:ExternalReferenceType</DataType>
                 <Reference type="RULE">PEPPOL-T009-R031</Reference>
                 <Reference type="RULE">PEPPOL-T009-R032</Reference>
                 <Element cardinality="0..1">
@@ -278,9 +278,7 @@
                     <Description>The Questions about the tender.</Description>
                     <DataType>cbc:DescriptionType</DataType>
                 </Element>
-                <DataType>cac:ExternalReferenceType</DataType>
             </Element>
-            <DataType>cac:AttachmentType</DataType>
         </Element>
     </Document>
 </Structure>
