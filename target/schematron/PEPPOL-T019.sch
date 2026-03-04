@@ -777,7 +777,7 @@
             <value-of select="$syntaxError"/>Country Identification Code SHOULD NOT contain any attributes but listID</assert>
         <assert id="PEPPOL-T019-R066"
                  flag="fatal"
-                 test="normalize-space(./@listID)='ISO3166-1:Alpha2'">listID for IdentificationCode MUST be 'ISO3166-1:Alpha2'.</assert>
+                 test="normalize-space(./@listID)='ISO3166'">listID for IdentificationCode MUST be 'ISO3166'.</assert>
       </rule>
     
       <rule context="cac:PartyLegalEntity/cbc:CompanyLegalForm">

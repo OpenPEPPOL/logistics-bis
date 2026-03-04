@@ -566,7 +566,7 @@
         <assert id="PEPPOL-T005-R035" flag="fatal" test="./@listID">[PEPPOL-T005-R035] Country IdentificationCode MUST have a list Identifier.</assert>
         <assert id="PEPPOL-T005-R036"
                  flag="fatal"
-                 test="normalize-space(./@listID)='ISO3166-1:Alpha2'">[PEPPOL-T005-R036] listID for Country IdentificationCode MUST be 'ISO3166-1:Alpha2'.</assert>
+                 test="normalize-space(./@listID)='ISO3166'">[PEPPOL-T005-R036] listID for Country IdentificationCode MUST be 'ISO3166'.</assert>
       </rule>
     
       <rule context="ubl:Tender/cac:TendererParty/cac:PartyLegalEntity">
