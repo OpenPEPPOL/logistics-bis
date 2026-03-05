@@ -40,6 +40,7 @@
 			<Term>cbc:ID</Term>
 			<Name>Tender identifier</Name>
 			<Description>Identifier of the tender document, MUST be expressed in a UUID syntax (RFC 4122)</Description>
+			<DataType>Identifier</DataType>
 			<Reference type="RULE">PEPPOL-T005-R006</Reference>
 			<Attribute>
 				<Term>schemeURI</Term>
@@ -48,7 +49,6 @@
 				<Reference type="RULE">PEPPOL-T005-R005</Reference>
 				<Value type="FIXED">urn:uuid</Value>
 			</Attribute>
-			<DataType>Identifier</DataType>
 		</Element>
 		<Element>
 			<Term>cbc:ContractFolderID</Term>
@@ -85,6 +85,7 @@
 				<Term>cbc:DocumentTypeCode</Term>
 				<Name>Document type code</Name>
 				<Description>A code specifying the type of the document allowing to distinguish between different document types. Allowed values are 310 (Offer/quotation) for Tender, 311 (Request for quote) for Call for tender reference and 916 (Related document) for ESPD response</Description>
+				<DataType>Code</DataType>
 				<Reference type="RULE">CL-T90-R003</Reference>
 				<Attribute>
 					<Term>listID</Term>
@@ -92,12 +93,12 @@
 					<Reference type="CODE_LIST">UNCL1001</Reference>
 					<Value type="FIXED">UNCL1001</Value>
 				</Attribute>
-				<DataType>Code</DataType>
 			</Element>
 			<Element cardinality="0..1">
 				<Term>cbc:LocaleCode</Term>
 				<Name>Tender language</Name>
 				<Description>The language used to write the tender documents.</Description>
+				<DataType>Code</DataType>
 				<Reference type="RULE">PEPPOL-T005-R016</Reference>
 				<Attribute>
 					<Term>listID</Term>
@@ -105,7 +106,6 @@
 					<Reference type="RULE">PEPPOL-T005-R015</Reference>
 					<Value type="FIXED">ISO639-1</Value>
 				</Attribute>
-				<DataType>Code</DataType>
 			</Element>
 			<Element cardinality="0..1">
 				<Term>cbc:VersionID</Term>
@@ -172,6 +172,7 @@
 				<Term>cbc:EndpointID</Term>
 				<Name>Economic operator electronic address identifier</Name>
 				<Description>Electronic address of the economic operator.</Description>
+				<DataType>Identifier</DataType>
 				<Reference type="RULE">PEPPOL-T005-R020</Reference>
 				<Attribute>
 					<Term>schemeID</Term>
@@ -181,7 +182,6 @@
 					<Reference type="CODE_LIST">eas</Reference>
 					<Value type="EXAMPLE">9946</Value>
 				</Attribute>
-				<DataType>Identifier</DataType>
 				<Value type="EXAMPLE">500820007</Value>
 			</Element>
 			<Element>
@@ -192,6 +192,7 @@
 					<Term>cbc:ID</Term>
 					<Name>Economic operator identifier</Name>
 					<Description>An identifier that identifies the economic operator, such as a legal registration identifier.</Description>
+					<DataType>Identifier</DataType>
 					<Attribute>
 						<Term>schemeID</Term>
 						<Name>Scheme identifier for party identifier</Name>
@@ -200,7 +201,6 @@
 						<Reference type="CODE_LIST">ICD</Reference>
 						<Value type="EXAMPLE">0088</Value>
 					</Attribute>
-					<DataType>Identifier</DataType>
 					<Value type="EXAMPLE">7300010000001</Value>
 				</Element>
 			</Element>
@@ -254,13 +254,13 @@
 						<Term>cbc:IdentificationCode</Term>
 						<Name>Country code</Name>
 						<Description>A code that identifies the country.</Description>
+						<DataType>Code</DataType>
 						<Reference type="RULE">CL-T90-R001</Reference>
 						<Reference type="CODE_LIST">ISO3166</Reference>
 						<Attribute>
 							<Term>listID</Term>
 							<Name>List identifier for country code</Name>
 						</Attribute>
-						<DataType>Code</DataType>
 					</Element>
 				</Element>
 			</Element>
@@ -286,13 +286,13 @@
 							<Term>cbc:IdentificationCode</Term>
 							<Name>Economic operator registration country code</Name>
 							<Description>The registration country code of the economic operator.</Description>
+							<DataType>Code</DataType>
 							<Reference type="RULE">CL-T90-R001</Reference>
 							<Reference type="CODE_LIST">ISO3166</Reference>
 							<Attribute>
 								<Term>listID</Term>
 								<Name>List identifier for country code</Name>
 							</Attribute>
-							<DataType>Code</DataType>
 						</Element>
 					</Element>
 				</Element>
@@ -339,6 +339,7 @@
 					<Term>cbc:EndpointID</Term>
 					<Name>Contracting body electronic address identifier</Name>
 					<Description>Electronic address of the contracting body</Description>
+					<DataType>Identifier</DataType>
 					<Reference type="RULE">PEPPOL-T005-R019</Reference>
 					<Attribute>
 						<Term>schemeID</Term>
@@ -348,7 +349,6 @@
 						<Reference type="CODE_LIST">eas</Reference>
 						<Value type="EXAMPLE">9930</Value>
 					</Attribute>
-					<DataType>Identifier</DataType>
 					<Value type="EXAMPLE">DE122268496</Value>
 				</Element>
 				<Element>
@@ -359,6 +359,7 @@
 						<Term>cbc:ID</Term>
 						<Name>Contracting body identifier</Name>
 						<Description>The national identifier of a contracting body as it is legally registered (e.g. VAT identification, such as KBO)</Description>
+						<DataType>Identifier</DataType>
 						<Attribute>
 							<Term>schemeID</Term>
 							<Name>Scheme identifier for party identifier</Name>
@@ -367,7 +368,6 @@
 							<Reference type="CODE_LIST">ICD</Reference>
 							<Value type="EXAMPLE">0204</Value>
 						</Attribute>
-						<DataType>Identifier</DataType>
 						<Value type="EXAMPLE">991-1234512345-06</Value>
 					</Element>
 				</Element>

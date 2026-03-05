@@ -46,6 +46,7 @@
             <Description>An identifier that is suitable for identifying or referencing a document, MUST be expressed in
                 a UUID syntax (RFC 4122).
             </Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T021-R005</Reference>
             <Reference type="RULE">PEPPOL-T021-R008</Reference>
             <Reference type="BUSINESS_TERM">tir106-001</Reference>
@@ -56,7 +57,6 @@
                 <Reference type="RULE">PEPPOL-T021-R007</Reference>
                 <Value type="FIXED">urn:uuid</Value>
             </Attribute>
-            <DataType>Identifier</DataType>
         </Element>
         <Element>
             <Term>cbc:ContractFolderID</Term>
@@ -99,6 +99,7 @@
                     <Term>cbc:EndpointID</Term>
                     <Name>Economic operator electronic address identifier</Name>
                     <Description>Electronic address of the economic operator.</Description>
+                    <DataType>Identifier</DataType>
 					<Reference type="RULE">PEPPOL-T021-R014</Reference>
 					<Reference type="RULE">PEPPOL-T021-R025</Reference>
                     <Reference type="BUSINESS_TERM">tir106-030</Reference>
@@ -109,12 +110,12 @@
                         <Reference type="CODE_LIST">eas</Reference>
                         <Value type="EXAMPLE">9946</Value>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                     <Value type="EXAMPLE">500820007</Value>
                 </Element>
                 <Element cardinality="0..1">
                     <Term>cbc:IndustryClassificationCode</Term>
                     <Name>Economic operator type code</Name>
+                    <DataType>Code</DataType>
 					<Reference type="RULE">PEPPOL-T021-R026</Reference>
                     <Reference type="BUSINESS_TERM">tir106-028</Reference>
                     <Attribute>
@@ -125,7 +126,6 @@
                         <Reference type="CODE_LIST">tendererRole</Reference>
                         <Value type="FIXED">TendererRole</Value>
                     </Attribute>
-					<DataType>Code</DataType>
                 </Element>
                 <Element>
                     <Term>cac:PartyIdentification</Term>
@@ -137,6 +137,7 @@
                         <Description>An identifier that identifies the economic operator, such as a legal registration
                             identifier. Can be the registration number in the professional registry.
                         </Description>
+                        <DataType>Identifier</DataType>
 						<Reference type="RULE">PEPPOL-T021-R016</Reference>
                         <Reference type="BUSINESS_TERM">tir106-012</Reference>
                         <Attribute>
@@ -146,7 +147,6 @@
                             <Reference type="CODE_LIST">ICD</Reference>
                             <Value type="EXAMPLE">0088</Value>
                         </Attribute>
-                        <DataType>Identifier</DataType>
                         <Value type="EXAMPLE">7300010000001</Value>
                     </Element>
                 </Element>
@@ -215,6 +215,7 @@
                                 with the ISO 3166-1 Maintenance agency, "Codes for the representation of names of
                                 countries and their subdivisions". It is recommended to use the alpha-2 representation.
                             </Description>
+                            <DataType>Code</DataType>
 							<Reference type="RULE">PEPPOL-T021-R018</Reference>
                             <Reference type="BUSINESS_TERM">tir106-020</Reference>
                             <Reference type="CODE_LIST">ISO3166</Reference>
@@ -225,7 +226,6 @@
 								<Reference type="RULE">PEPPOL-T021-R020</Reference>
                                 <Value type="FIXED">ISO3166</Value>
                             </Attribute>
-							<DataType>Code</DataType>
                         </Element>
                     </Element>
                 </Element>
@@ -244,6 +244,7 @@
                                 <Description>The registration country code of the economic operator. The country should
                                     always be given by using ISO code 3166 alpha 2
                                 </Description>
+                                <DataType>Code</DataType>
 								<Reference type="RULE">PEPPOL-T021-R018</Reference>
                                 <Reference type="BUSINESS_TERM">tir106-014</Reference>
                                 <Reference type="CODE_LIST">ISO3166</Reference>
@@ -254,7 +255,6 @@
 									<Reference type="RULE">PEPPOL-T021-R020</Reference>
                                     <Value type="FIXED">ISO3166</Value>
                                 </Attribute>
-								<DataType>Code</DataType>
                             </Element>
                         </Element>
                     </Element>
@@ -308,6 +308,7 @@
                     <Term>cbc:EndpointID</Term>
                     <Name>Contracting body electronic address identifier</Name>
                     <Description>Electronic address of the contracting body.</Description>
+                    <DataType>Identifier</DataType>
 					<Reference type="RULE">PEPPOL-T021-R013</Reference>
 					<Reference type="RULE">PEPPOL-T021-R025</Reference>
                     <Attribute>
@@ -317,7 +318,6 @@
                         <Reference type="CODE_LIST">eas</Reference>
                         <Value type="EXAMPLE">9930</Value>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                     <Value type="EXAMPLE">DE122268496</Value>
                 </Element>
                 <Element>
@@ -330,6 +330,7 @@
                         <Description>The national identifier of a contracting body as it is legally registered (e.g. VAT
                             identification, such as KBO)
                         </Description>
+                        <DataType>Identifier</DataType>
 						<Reference type="RULE">PEPPOL-T021-R016</Reference>
                         <Reference type="BUSINESS_TERM">tir106-009</Reference>
                         <Attribute>
@@ -339,7 +340,6 @@
                             <Reference type="CODE_LIST">ICD</Reference>
                             <Value type="EXAMPLE">0204</Value>
                         </Attribute>
-                        <DataType>Identifier</DataType>
                         <Value type="EXAMPLE">991-1234512345-06</Value>
                     </Element>
                 </Element>
