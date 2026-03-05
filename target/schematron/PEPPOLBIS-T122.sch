@@ -551,6 +551,11 @@
                  test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:logistics:trns:weight_statement:1')"
                  flag="fatal">Specification identifier SHALL start with the value 'urn:fdc:peppol.eu:logistics:trns:weight_statement:1'.</assert>
 	     </rule>
+	     <rule context="cbc:ProfileID">
+		       <assert id="PEPPOL-T122-R002"
+                 test="some $p in tokenize('urn:fdc:peppol.eu:logistics:bis:weight_statement:1', '\s') satisfies $p = normalize-space(.)"
+                 flag="fatal">ProfileID SHALL have the value 'urn:fdc:peppol.eu:logistics:bis:weight_statement:1'.</assert>
+	     </rule>
 	
 	     <rule context="cac:GoodsItem">
 		       <assert id="PEPPOL-T122-R003"
