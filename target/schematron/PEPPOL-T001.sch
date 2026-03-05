@@ -245,11 +245,9 @@
                  id="PEPPOL-T001-B00201">Element 'cbc:UBLVersionID' MUST contain value '2.2'.</assert>
       </rule>
       <rule context="/ubl:ExpressionOfInterestRequest/cbc:CustomizationID">
-         <assert test="normalize-space(text()) = '&#xA;                urn:fdc:peppol.eu:prac:trns:t001:1.2&#xA;            '"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t001:1.2'"
                  flag="fatal"
-                 id="PEPPOL-T001-B00301">Element 'cbc:CustomizationID' MUST contain value '
-                urn:fdc:peppol.eu:prac:trns:t001:1.2
-            '.</assert>
+                 id="PEPPOL-T001-B00301">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t001:1.2'.</assert>
       </rule>
       <rule context="/ubl:ExpressionOfInterestRequest/cbc:ProfileID">
          <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p001:1.2'"
@@ -687,7 +685,7 @@
             Country/IdentificationCode MUST have a list identifier attribute.</assert>
         <assert id="PEPPOL-T001-R020"
                  flag="fatal"
-                 test="normalize-space(./@listID) = 'ISO3166-1:Alpha2'">[PEPPOL-T001-R020] List
+                 test="normalize-space(./@listID) = 'ISO3166'">[PEPPOL-T001-R020] List
             identifier for country code must be "ISO3166-1:Alpha2".</assert>
         <report id="PEPPOL-T001-S335"
                  flag="warning"

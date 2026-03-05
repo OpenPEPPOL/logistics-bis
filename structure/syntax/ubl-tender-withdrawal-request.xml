@@ -39,9 +39,7 @@
             <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T013-R002</Reference>
             <Reference type="RULE">PEPPOL-T013-S303</Reference>
-            <Value type="FIXED">
-                urn:fdc:peppol.eu:prac:trns:t013:1.1
-            </Value>
+            <Value type="FIXED">urn:fdc:peppol.eu:prac:trns:t013:1.1</Value>
         </Element>
         <Element>
             <Term>cbc:ProfileID</Term>
@@ -61,6 +59,7 @@
                 UUIDIdentifies the Tender withdrawal as issued by the economic operator.
                 Must be expressed as a UUID.
             </Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T013-S306</Reference>
             <Attribute>
                 <Term>schemeURI</Term>
@@ -70,7 +69,6 @@
                 <Reference type="RULE">PEPPOL-T013-R006</Reference>
                 <Value type="FIXED">urn:uuid</Value>
             </Attribute>
-            <DataType>Identifier</DataType>
         </Element>
         <Element>
             <Term>cbc:ContractFolderID</Term>
@@ -109,12 +107,14 @@
             <Term>cac:TenderDocumentReference</Term>
             <Name>Received document reference</Name>
             <Description>A reference to a received Tender.</Description>
+            <DataType>Document Reference</DataType>
             <Reference type="RULE">PEPPOL-T013-S315</Reference>
             <Element>
                 <Term>cbc:ID</Term>
                 <Name>Document identifier</Name>
                 <Description>Identifier of the tender document. Used to refer to the tender document to be withdrawn.
                 </Description>
+                <DataType>Identifier</DataType>
                 <Reference type="RULE">PEPPOL-T013-R013</Reference>
                 <Reference type="RULE">PEPPOL-T013-R016</Reference>
                 <Attribute>
@@ -124,13 +124,13 @@
                     <Reference type="RULE">PEPPOL-T013-R015</Reference>
                     <Value type="FIXED">urn:uuid</Value>
                 </Attribute>
-                <DataType>Identifier</DataType>
             </Element>
             <Element>
                 <Term>cac:Attachment</Term>
                 <Name>Attachment</Name>
                 <Description>The referenced document as an attachment to the document from which it is referenced.
                 </Description>
+                <DataType>Attachment</DataType>
                 <Reference type="RULE">PEPPOL-T013-S316</Reference>
                 <Element>
                     <Term>cac:ExternalReference</Term>
@@ -138,6 +138,7 @@
                     <Description>A reference to an attached document that is external to the document(s) being
                         exchanged.
                     </Description>
+                    <DataType>External Reference</DataType>
                     <Reference type="RULE">PEPPOL-T013-S317</Reference>
                     <Element>
                         <Term>cbc:DocumentHash</Term>
@@ -160,23 +161,21 @@
                         <Reference type="RULE">PEPPOL-T013-S319</Reference>
                         <Value type="FIXED">http://www.w3.org/2001/04/xmlenc#sha256</Value>
                     </Element>
-                    <DataType>External Reference</DataType>
                 </Element>
-                <DataType>Attachment</DataType>
             </Element>
-            <DataType>Document Reference</DataType>
         </Element>
         <Element>
             <Term>cac:TenderNotificationDocumentReference</Term>
             <Name>Tender notification document reference</Name>
             <Description>A reference to the tender reception notification message.</Description>
-
+            <DataType>Document Reference</DataType>
             <Element>
                 <Term>cbc:ID</Term>
                 <Name>Tender reception notification identifier</Name>
                 <Description>Identifier of the tender reception notification message. Must be expressed in a UUID syntax
                     (RFC 4122).
                 </Description>
+                <DataType>Identifier</DataType>
                 <Reference type="RULE">PEPPOL-T013-R020</Reference>
                 <Attribute>
                     <Term>schemeURI</Term>
@@ -186,9 +185,7 @@
                     <Reference type="RULE">PEPPOL-T013-R025</Reference>
                     <Reference type="RULE">PEPPOL-T013-S320</Reference>
                 </Attribute>
-                <DataType>Identifier</DataType>
             </Element>
-            <DataType>Document Reference</DataType>
         </Element>
         <Element>
             <Term>cac:ContractingParty</Term>
@@ -197,16 +194,19 @@
                 works using a tendering procedure as described in the applicable directive (Directives 2014/24/EU,
                 2014/25/EU).
             </Description>
+            <DataType>Contracting Party</DataType>
             <Element>
                 <Term>cac:Party</Term>
                 <Name>Party information</Name>
                 <Description>Information about the contracting party itself.</Description>
+                <DataType>Party</DataType>
                 <Reference type="RULE">PEPPOL-T013-R021</Reference>
                 <Reference type="RULE">PEPPOL-T013-S323</Reference>
                 <Element cardinality="0..1">
                     <Term>cbc:EndpointID</Term>
                     <Name>Contracting body electronic address identifier</Name>
                     <Description>Electronic address of the contracting body.</Description>
+                    <DataType>Identifier</DataType>
                     <Reference type="RULE">PEPPOL-T013-R024</Reference>
                     <Reference type="RULE">PEPPOL-T013-R010</Reference>
                     <Reference type="RULE">PEPPOL-T013-S321</Reference>
@@ -220,13 +220,13 @@
                         <Reference type="CODE_LIST">eas</Reference>
                         <Value type="EXAMPLE">9930</Value>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                     <Value type="EXAMPLE">DE122268496</Value>
                 </Element>
                 <Element>
                     <Term>cac:PartyIdentification</Term>
                     <Name>Party identification</Name>
                     <Description>An identifier for this party.</Description>
+                    <DataType>Party Identification</DataType>
                     <Reference type="RULE">PEPPOL-T013-S324</Reference>
                     <Reference type="RULE">PEPPOL-T013-S326</Reference>
                     <Element cardinality="0..1">
@@ -235,6 +235,7 @@
                         <Description>The national identifier of a contracting body as it is legally registered (e.g. VAT
                             identification, such as KBO)
                         </Description>
+                        <DataType>Identifier</DataType>
                         <Reference type="RULE">PEPPOL-T013-R009</Reference>
                         <Reference type="RULE">PEPPOL-T013-S325</Reference>
                         <Attribute usage="OPTIONAL">
@@ -244,15 +245,14 @@
                             <Reference type="CODE_LIST">ICD</Reference>
                             <Value type="EXAMPLE">0204</Value>
                         </Attribute>
-                        <DataType>Identifier</DataType>
                         <Value type="EXAMPLE">991-1234512345-06</Value>
                     </Element>
-                    <DataType>Party Identification</DataType>
                 </Element>
                 <Element cardinality="0..1">
                     <Term>cac:PartyName</Term>
                     <Name>Party name</Name>
                     <Description>A name for this party.</Description>
+                    <DataType>PartyName</DataType>
                     <Element cardinality="0..1">
                         <Term>cbc:Name</Term>
                         <Name>Contracting body name</Name>
@@ -260,11 +260,8 @@
                         <DataType>Name</DataType>
                         <Reference type="RULE">PEPPOL-T013-S327</Reference>
                     </Element>
-                    <DataType>PartyName</DataType>
                 </Element>
-                <DataType>Party</DataType>
             </Element>
-            <DataType>Contracting Party</DataType>
         </Element>
         <Element>
             <Term>cac:TendererParty</Term>
@@ -273,6 +270,7 @@
                 including any temporary association of undertakings, which offers the execution of works and/or a work,
                 the supply of products or the provision of services on the market.
             </Description>
+            <DataType>Contracting Party</DataType>
             <Reference type="RULE">PEPPOL-T013-S323</Reference>
             <Reference type="RULE">PEPPOL-T013-R024</Reference>
             <Reference type="RULE">PEPPOL-T013-R010</Reference>
@@ -280,6 +278,7 @@
                 <Term>cbc:EndpointID</Term>
                 <Name>Economic operator electronic address identifier</Name>
                 <Description>Electronic address identifier of the tenderer party.</Description>
+                <DataType>Identifier</DataType>
                 <Reference type="RULE">PEPPOL-T013-S321</Reference>
                 <Reference type="RULE">PEPPOL-T013-R011</Reference>
                 <Attribute>
@@ -289,13 +288,13 @@
                     <Reference type="CODE_LIST">eas</Reference>
                     <Value type="EXAMPLE">9946</Value>
                 </Attribute>
-                <DataType>Identifier</DataType>
                 <Value type="EXAMPLE">500820007</Value>
             </Element>
             <Element>
                 <Term>cac:PartyIdentification</Term>
                 <Name>Party identification</Name>
                 <Description>An identifier for this party.</Description>
+                <DataType>Party Identification</DataType>
                 <Reference type="RULE">PEPPOL-T013-S324</Reference>
                 <Reference type="RULE">PEPPOL-T013-S326</Reference>
                 <Element>
@@ -304,6 +303,7 @@
                     <Description>The national identifier of a contracting body as it is legally registered (e.g. VAT
                         identification, such as KBO)
                     </Description>
+                    <DataType>Identifier</DataType>
                     <Reference type="RULE">PEPPOL-T013-R009</Reference>
                     <Reference type="RULE">PEPPOL-T013-S325</Reference>
                     <Attribute>
@@ -313,15 +313,14 @@
                         <Reference type="CODE_LIST">ICD</Reference>
                         <Value type="EXAMPLE">0088</Value>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                     <Value type="EXAMPLE">7300010000001</Value>
                 </Element>
-                <DataType>Party Identification</DataType>
             </Element>
             <Element>
                 <Term>cac:PartyName</Term>
                 <Name>Party name</Name>
                 <Description>A name for this party.</Description>
+                <DataType>PartyName</DataType>
                 <Reference type="RULE">PEPPOL-T013-S327</Reference>
                 <Element>
                     <Term>cbc:Name</Term>
@@ -329,7 +328,6 @@
                     <Description>The name of the contracting body as it is registered.</Description>
                     <DataType>Name</DataType>
                 </Element>
-                <DataType>PartyName</DataType>
             </Element>
             <Element cardinality="0..1">
                 <Term>cac:PostalAddress</Term>
@@ -337,6 +335,7 @@
                 <Description>Additional to the Party Identification the Party Name has to be given. It is put into the
                     Name tag of the PartyName.
                 </Description>
+                <DataType>Address</DataType>
                 <Reference type="RULE">PEPPOL-T013-S328</Reference>
                 <Element cardinality="0..1">
                     <Term>cbc:StreetName</Term>
@@ -378,6 +377,7 @@
                     <Term>cac:Country</Term>
                     <Name>Country</Name>
                     <Description>The country in which this address is situated.</Description>
+                    <DataType>Country</DataType>
                     <Element cardinality="0..1">
                         <Term>cbc:IdentificationCode</Term>
                         <Name>Country code</Name>
@@ -391,14 +391,13 @@
                         <Reference type="RULE">PEPPOL-T013-S329</Reference>
                         <Reference type="CODE_LIST">ISO3166</Reference>
                     </Element>
-                    <DataType>Country</DataType>
                 </Element>
-                <DataType>Address</DataType>
             </Element>
             <Element cardinality="0..1">
                 <Term>cac:Contact</Term>
                 <Name>Contacting detaily</Name>
                 <Description>Used to provide contacting information for a party in general or a person.</Description>
+                <DataType>Contact</DataType>
                 <Reference type="RULE">PEPPOL-T013-S330</Reference>
                 <Element>
                     <Term>cbc:Name</Term>
@@ -425,9 +424,7 @@
                     <Description>An e-mail address for the contact point.</Description>
                     <DataType>Text</DataType>
                 </Element>
-                <DataType>Contact</DataType>
             </Element>
-            <DataType>Contracting Party</DataType>
         </Element>
 
     </Document>

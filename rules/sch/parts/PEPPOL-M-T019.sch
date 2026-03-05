@@ -178,7 +178,7 @@
     
     <rule context="cac:Country/cbc:IdentificationCode">
         <assert id="PEPPOL-T019-R065" flag="warning" test="./@*[not(name()='listID')]"><value-of select="$syntaxError"/>Country Identification Code SHOULD NOT contain any attributes but listID</assert>
-        <assert id="PEPPOL-T019-R066" flag="fatal" test="normalize-space(./@listID)='ISO3166-1:Alpha2'">listID for IdentificationCode MUST be 'ISO3166-1:Alpha2'.</assert>
+        <assert id="PEPPOL-T019-R066" flag="fatal" test="normalize-space(./@listID)='ISO3166'">listID for IdentificationCode MUST be 'ISO3166'.</assert>
     </rule>
     
     <rule context="cac:PartyLegalEntity/cbc:CompanyLegalForm">

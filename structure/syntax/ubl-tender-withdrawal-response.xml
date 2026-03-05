@@ -40,9 +40,7 @@
             <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T014-R002</Reference>
             <Reference type="RULE">PEPPOL-T014-S303</Reference>
-            <Value type="FIXED">
-                urn:fdc:peppol.eu:prac:trns:t014:1.1
-            </Value>
+            <Value type="FIXED">urn:fdc:peppol.eu:prac:trns:t014:1.1</Value>
         </Element>
         <Element>
             <Term>cbc:ProfileID</Term>
@@ -61,6 +59,7 @@
             <Description>Identifies the Tender Withdrawal Reception Notification as issued by the economic operator.
                 Must be expressed as a UUID.
             </Description>
+            <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T014-S306</Reference>
             <Attribute>
                 <Term>schemeURI</Term>
@@ -70,7 +69,6 @@
                 <Reference type="RULE">PEPPOL-T014-R006</Reference>
                 <Value type="FIXED">urn:uuid</Value>
             </Attribute>
-            <DataType>Identifier</DataType>
         </Element>
         <Element>
             <Term>cbc:ContractFolderID</Term>
@@ -120,11 +118,13 @@
                 economic operator. The contracting authority should refer to the tender by using the document hash and
                 the hash algorithm method used.
             </Description>
+            <DataType>Document Reference</DataType>
             <Reference type="RULE">PEPPOL-T014-S314</Reference>
             <Element>
                 <Term>cbc:ID</Term>
                 <Name>Document identifier</Name>
                 <Description>Identifier of a document</Description>
+                <DataType>Identifier</DataType>
                 <Reference type="RULE">PEPPOL-T014-R013</Reference>
                 <Reference type="RULE">PEPPOL-T014-R016</Reference>
                 <Attribute>
@@ -134,12 +134,12 @@
                     <Reference type="RULE">PEPPOL-T014-R015</Reference>
                     <Value type="FIXED">urn:uuid</Value>
                 </Attribute>
-                <DataType>Identifier</DataType>
             </Element>
             <Element>
                 <Term>cbc:DocumentTypeCode</Term>
                 <Name>Document type code</Name>
                 <Description>Document Type Code is coded according to code list 1001 issued by UN/CEFACT. Must be 13 to reference the REM evidence and 310 to reference the Tender.</Description>
+                <DataType>Code</DataType>
                 <Reference type="RULE">PEPPOL-T014-R017</Reference>
                 <Attribute>
                     <Term>listID</Term>
@@ -148,18 +148,19 @@
                     <Reference type="CODE_LIST">UNCL1001</Reference>
                     <Value type="FIXED">UNCL1001</Value>
                 </Attribute>
-                <DataType>Code</DataType>
                 <Value type="FIXED">13 or 310</Value>
             </Element>
             <Element>
                 <Term>cac:Attachment</Term>
                 <Name>Attachment</Name>
                 <Description>Container for document digest</Description>
+                <DataType>Attachment</DataType>
                 <Reference type="RULE">PEPPOL-T014-S316</Reference>
                 <Element>
                     <Term>cac:ExternalReference</Term>
                     <Name>External reference</Name>
                     <Description>Container for document digest</Description>
+                    <DataType>External Reference</DataType>
                     <Reference type="RULE">PEPPOL-T014-S317</Reference>
                     <Element cardinality="0..1">
                         <Term>cbc:DocumentHash</Term>
@@ -182,20 +183,20 @@
                         <Reference type="RULE">PEPPOL-T014-S319</Reference>
                         <Value type="FIXED">http://www.w3.org/2001/04/xmlenc#sha256</Value>
                     </Element>
-                    <DataType>External Reference</DataType>
                 </Element>
-                <DataType>Attachment</DataType>
             </Element>
             <Element cardinality="0..1">
                 <Term>cac:IssuerParty</Term>
                 <Name>Issuing system identification</Name>
                 <Description>Identification of the system that issues the document.
                 </Description>
+                <DataType>Party</DataType>
                 <Reference type="RULE">PEPPOL-T014-S320</Reference>
                 <Element>
                     <Term>cbc:EndpointID</Term>
                     <Name>Issuer Party electronic address identifier</Name>
                     <Description>Electronic address of the issuer party.</Description>
+                    <DataType>Identifier</DataType>
                     <Reference type="RULE">PEPPOL-T014-S321</Reference>
                     <Reference type="RULE">PEPPOL-T014-R011</Reference>
                     <Attribute>
@@ -203,11 +204,8 @@
                         <Name>Scheme identifier</Name>
                         <Reference type="RULE">PEPPOL-T014-R010</Reference>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                 </Element>
-                <DataType>Party</DataType>
             </Element>
-            <DataType>Document Reference</DataType>
         </Element>
         <Element>
             <Term>cac:SenderParty</Term>
@@ -215,12 +213,14 @@
             <Description>The contracting body is the contracting authority or contracting entity who is buying supplies,
                 services or tendering works.
             </Description>
+            <DataType>Contracting Party</DataType>
             <Reference type="RULE">PEPPOL-T014-R020</Reference>
             <Reference type="RULE">PEPPOL-T014-S323</Reference>
             <Element cardinality="0..1">
                 <Term>cbc:EndpointID</Term>
                 <Name>Contracting body electronic address identifier</Name>
                 <Description>Electronic address oof the contracting body.</Description>
+                <DataType>Identifier</DataType>
                 <Reference type="RULE">PEPPOL-T014-S321</Reference>
                 <Reference type="RULE">PEPPOL-T014-R011</Reference>
                 <Attribute usage="OPTIONAL">
@@ -230,13 +230,13 @@
                     <Reference type="CODE_LIST">eas</Reference>
                     <Value type="EXAMPLE">9930</Value>
                 </Attribute>
-                <DataType>Identifier</DataType>
                 <Value type="EXAMPLE">DE122268496</Value>
             </Element>
             <Element cardinality="0..1">
                 <Term>cac:PartyIdentification</Term>
                 <Name>Party identification</Name>
                 <Description>An identifier for this party.</Description>
+                <DataType>Party Identification</DataType>
                 <Reference type="RULE">PEPPOL-T014-S324</Reference>
                 <Reference type="RULE">PEPPOL-T014-S326</Reference>
                 <Element cardinality="0..1">
@@ -245,6 +245,7 @@
                     <Description>The national identifier of a contracting body as it is legally registered (e.g. VAT
                         identification, such as KBO)
                     </Description>
+                    <DataType>Identifier</DataType>
                     <Reference type="RULE">PEPPOL-T014-R009</Reference>
                     <Reference type="RULE">PEPPOL-T014-S325</Reference>
                     <Attribute usage="OPTIONAL">
@@ -254,15 +255,14 @@
                         <Reference type="CODE_LIST">ICD</Reference>
                         <Value type="EXAMPLE">0204</Value>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                     <Value type="EXAMPLE">991-1234512345-06</Value>
                 </Element>
-                <DataType>Party Identification</DataType>
             </Element>
             <Element cardinality="0..1">
                 <Term>cac:PartyName</Term>
                 <Name>Party name</Name>
                 <Description>A name for this party.</Description>
+                <DataType>PartyName</DataType>
                 <Reference type="RULE">PEPPOL-T014-S327</Reference>
                 <Element cardinality="0..1">
                     <Term>cbc:Name</Term>
@@ -270,9 +270,7 @@
                     <Description>The name of the contracting body as it is registered.</Description>
                     <DataType>Name</DataType>
                 </Element>
-                <DataType>PartyName</DataType>
             </Element>
-            <DataType>Contracting Party</DataType>
         </Element>
         <Element>
             <Term>cac:ReceiverParty</Term>
@@ -281,12 +279,14 @@
                 including any temporary association of undertakings, which offers the execution of works and/or a work,
                 the supply of products or the provision of services on the market.
             </Description>
+            <DataType>Contracting Party</DataType>
             <Reference type="RULE">PEPPOL-T014-R021</Reference>
             <Reference type="RULE">PEPPOL-T014-S323</Reference>
             <Element cardinality="0..1">
                 <Term>cbc:EndpointID</Term>
                 <Name>Economic operator electronic address identifier</Name>
                 <Description>Electronic address of the economic operator.</Description>
+                <DataType>Identifier</DataType>
                 <Reference type="RULE">PEPPOL-T014-S321</Reference>
                 <Reference type="RULE">PEPPOL-T014-R011</Reference>
                 <Attribute>
@@ -296,13 +296,13 @@
                     <Reference type="CODE_LIST">eas</Reference>
                     <Value type="EXAMPLE">9946</Value>
                 </Attribute>
-                <DataType>Identifier</DataType>
                 <Value type="EXAMPLE">500820007</Value>
             </Element>
             <Element>
                 <Term>cac:PartyIdentification</Term>
                 <Name>Party identifier</Name>
                 <Description>An identifier for this party.</Description>
+                <DataType>Party Identification</DataType>
                 <Reference type="RULE">PEPPOL-T014-S324</Reference>
                 <Reference type="RULE">PEPPOL-T014-S326</Reference>
                 <Element>
@@ -311,6 +311,7 @@
                     <Description>The national identifier of a contracting body as it is legally registered (e.g. VAT
                         identification, such as KBO)
                     </Description>
+                    <DataType>Identifier</DataType>
                     <Reference type="RULE">PEPPOL-T014-R009</Reference>
                     <Reference type="RULE">PEPPOL-T014-S325</Reference>
                     <Attribute>
@@ -320,15 +321,14 @@
                         <Reference type="CODE_LIST">ICD</Reference>
                         <Value type="EXAMPLE">0088</Value>
                     </Attribute>
-                    <DataType>Identifier</DataType>
                     <Value type="EXAMPLE">7300010000001</Value>
                 </Element>
-                <DataType>Party Identification</DataType>
             </Element>
             <Element cardinality="0..1">
                 <Term>cac:PartyName</Term>
                 <Name>Party name</Name>
                 <Description>A name for this party.</Description>
+                <DataType>PartyName</DataType>
                 <Reference type="RULE">PEPPOL-T014-S327</Reference>
                 <Element>
                     <Term>cbc:Name</Term>
@@ -336,9 +336,7 @@
                     <Description>The name of the contracting body as it is registered.</Description>
                     <DataType>Name</DataType>
                 </Element>
-                <DataType>PartyName</DataType>
             </Element>
-            <DataType>Contracting Party</DataType>
         </Element>
 
     </Document>

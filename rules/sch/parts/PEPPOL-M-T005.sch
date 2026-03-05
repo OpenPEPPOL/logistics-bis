@@ -46,7 +46,7 @@
     
     <rule context="ubl:Tender/cac:DocumentReference/cbc:DocumentTypeCode">
         <assert id="PEPPOL-T005-R019" flag="fatal" test="./@listID">[PEPPOL-T005-R019] DocumentTypeCode MUST have a list Identifier.</assert>
-        <assert id="PEPPOL-T005-R020" flag="fatal" test="normalize-space(./@listID)='urn:eu:esens:cenbii:documentType'">[PEPPOL-T005-R020] listID for DocumentTypeCode MUST be 'urn:eu:esens:cenbii:documentType'.</assert>
+        <assert id="PEPPOL-T005-R020" flag="fatal" test="normalize-space(./@listID)='UNCL1001'">[PEPPOL-T005-R020] listID for DocumentTypeCode MUST be 'UNCL1001'.</assert>
     </rule>
     
     <rule context="ubl:Tender/cac:DocumentReference/cbc:LocaleCode">
@@ -86,7 +86,7 @@
     
     <rule context="ubl:Tender/cac:TendererParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
         <assert id="PEPPOL-T005-R035" flag="fatal" test="./@listID">[PEPPOL-T005-R035] Country IdentificationCode MUST have a list Identifier.</assert>
-        <assert id="PEPPOL-T005-R036" flag="fatal" test="normalize-space(./@listID)='ISO3166-1:Alpha2'">[PEPPOL-T005-R036] listID for Country IdentificationCode MUST be 'ISO3166-1:Alpha2'.</assert>
+        <assert id="PEPPOL-T005-R036" flag="fatal" test="normalize-space(./@listID)='ISO3166'">[PEPPOL-T005-R036] listID for Country IdentificationCode MUST be 'ISO3166'.</assert>
     </rule>
     
     <rule context="ubl:Tender/cac:TendererParty/cac:PartyLegalEntity">
