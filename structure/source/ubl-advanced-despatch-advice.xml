@@ -2054,13 +2054,18 @@
 				</cbc:ID>
 				<cbc:Name>Rigidity</cbc:Name>
 				<cbc:NameCode listID="IPNC"> EPDNumber 
+					<?Cardinality 0..1?>
 					<?listID-usage Mandatory?>
 					<?listID-Name Name code list id.?>
 					<?listID-Description An identifier for the code list used for the Name code, this is bilaterally agreed?>
 				</cbc:NameCode>
 				<cbc:Value>NEPD-1717-700-SE</cbc:Value>
-				<cbc:ValueQuantity unitCode="EA">15.00</cbc:ValueQuantity>
-				<cbc:ValueQualifier>descr</cbc:ValueQualifier>
+				<cbc:ValueQuantity unitCode="EA">15.00
+					<?Cardinality 0..1?>
+				</cbc:ValueQuantity>
+				<cbc:ValueQualifier>descr
+					<?Cardinality 0..1?>
+				</cbc:ValueQualifier>
 			</cac:AdditionalItemProperty>
 				<cac:LotIdentification>
 					<cbc:LotNumberID>546378239
