@@ -1,6 +1,29 @@
 #!/bin/sh
 
 PROJECT=$(dirname $(readlink -f "$0"))
+UBL_SYNTAX_FILE=${UBL_SYNTAX_FILE:-structure/syntax/ubl-pre-award-catalogue.xml}
+
+if [ -z "$UBL_OUTPUT_FILE" ]; then
+  UBL_TERM=$(sed -n 's:.*<Term>\([^<]*\)</Term>.*:\1:p' "$PROJECT/$UBL_SYNTAX_FILE" | head -n 1)
+  UBL_TERM_LOCAL=${UBL_TERM#*:}
+  UBL_IDENTIFIER=$(sed -n 's:.*<Property key="sch:identifier">\([^<]*\)</Property>.*:\1:p' "$PROJECT/$UBL_SYNTAX_FILE" | head -n 1)
+  UBL_TRANSACTION=${UBL_IDENTIFIER%%-*}
+
+  if [ -z "$UBL_TERM_LOCAL" ]; then
+    echo "Unable to derive UBL term from $UBL_SYNTAX_FILE"
+    exit 1
+  fi
+
+  if [ -z "$UBL_TRANSACTION" ]; then
+    UBL_TRANSACTION=generated
+  fi
+
+  UBL_OUTPUT_FILE=rules/examples/$UBL_TRANSACTION/${UBL_TERM_LOCAL}_full.xml
+fi
+
+mkdir -p "$PROJECT/$(dirname "$UBL_OUTPUT_FILE")"
+
+echo "Generating UBL example: input=$UBL_SYNTAX_FILE output=$UBL_OUTPUT_FILE"
 
 # Delete target folder if found
 if [ -e $PROJECT/target ]; then
@@ -26,12 +49,12 @@ for sch in $PROJECT/rules/sch/*.sch; do
     docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/schematron:/target klakegg/schematron prepare /src/rules/sch/$(basename $sch) /target/$(basename $sch)
 done
 
-# Generate full UBL example for T036
+# Generate full UBL example
 docker run --rm -i -v $PROJECT:/src --entrypoint java klakegg/saxon:9.8.0-7 \
   -cp /saxon.jar net.sf.saxon.Transform \
-  -s:/src/structure/syntax/ubl-pre-award-catalogue.xml \
+  -s:/src/$UBL_SYNTAX_FILE \
   -xsl:/src/tools/create-ubl-example-from-syntax.xsl \
-  -o:/src/rules/examples/T036/Catalogue_full.xml
+  -o:/src/$UBL_OUTPUT_FILE
 
 # Removing old zip files and creating new ones
 docker run --rm -i \

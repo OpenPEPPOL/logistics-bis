@@ -11,14 +11,13 @@
 
 	<xsl:template match="/">
 		<xsl:variable name="structure" select="/s:Structure"/>
+		<xsl:variable name="rootTerm" select="normalize-space($structure/s:Document/s:Term)"/>
+		<xsl:variable name="rootPrefix" select="f:term-prefix($rootTerm)"/>
 		<xsl:if test="not($structure)">
 			<xsl:message terminate="yes">Expected Structure-1 XML as input.</xsl:message>
 		</xsl:if>
-		<xsl:if test="$structure/s:Property[@key = 'sch:prefix'] != 'PEPPOL-T036'">
-			<xsl:message terminate="yes">This transform is currently limited to PEPPOL-T036 input.</xsl:message>
-		</xsl:if>
-		<xsl:if test="normalize-space($structure/s:Term) != 'Catalogue'">
-			<xsl:message terminate="yes">This transform expects Structure/Term='Catalogue'.</xsl:message>
+		<xsl:if test="$rootPrefix != 'ubl'">
+			<xsl:message terminate="yes">This transform only supports UBL syntax files (Document/Term must use prefix 'ubl').</xsl:message>
 		</xsl:if>
 
 		<xsl:apply-templates select="$structure/s:Document" mode="emit-root"/>
@@ -31,7 +30,7 @@
 		<xsl:variable name="uri" select="f:namespace-uri-from-prefix($prefix, ../s:Namespace)"/>
 
 		<xsl:if test="$prefix = '' or $local = '' or $uri = ''">
-			<xsl:message terminate="yes">Unable to resolve root element term or namespace for T036.</xsl:message>
+			<xsl:message terminate="yes">Unable to resolve root element term or namespace.</xsl:message>
 		</xsl:if>
 
 		<xsl:element name="{$prefix}:{$local}" namespace="{$uri}">
@@ -49,26 +48,29 @@
 		<xsl:variable name="prefix" select="f:term-prefix($term)"/>
 		<xsl:variable name="local" select="f:term-local($term)"/>
 		<xsl:variable name="uri" select="f:namespace-uri-from-prefix($prefix, /s:Structure/s:Namespace)"/>
+		<xsl:variable name="occurs" select="normalize-space((@cardinality, '1..1')[1])"/>
 
 		<xsl:if test="contains($term, '@')">
-			<xsl:message terminate="yes">Attribute-filtered term syntax is not supported in this T036-only transform.</xsl:message>
+			<xsl:message terminate="yes">Attribute-filtered term syntax is not supported in this UBL transform.</xsl:message>
 		</xsl:if>
 		<xsl:if test="$prefix = '' or $local = '' or $uri = ''">
 			<xsl:message terminate="yes">Unable to resolve element term or namespace: <xsl:value-of select="$term"/></xsl:message>
 		</xsl:if>
 
-		<xsl:element name="{$prefix}:{$local}" namespace="{$uri}">
-			<xsl:apply-templates select="s:Attribute" mode="emit-attribute"/>
+		<xsl:if test="not(starts-with($occurs, '0..')) or s:Value[@type = 'FIXED' or @type = 'EXAMPLE'] or s:Element">
+			<xsl:element name="{$prefix}:{$local}" namespace="{$uri}">
+				<xsl:apply-templates select="s:Attribute" mode="emit-attribute"/>
 
-			<xsl:choose>
-				<xsl:when test="s:Element">
-					<xsl:apply-templates select="s:Element" mode="emit-element"/>
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:value-of select="f:element-value(.)"/>
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:element>
+				<xsl:choose>
+					<xsl:when test="s:Element">
+						<xsl:apply-templates select="s:Element" mode="emit-element"/>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="f:element-value(.)"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:element>
+		</xsl:if>
 	</xsl:template>
 
 	<xsl:template match="s:Attribute" mode="emit-attribute">
