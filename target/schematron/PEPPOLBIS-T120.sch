@@ -1739,10 +1739,7 @@
       <rule context="/ubl:DespatchAdvice/cac:DespatchLine/cac:Item/cac:ItemInstance/cbc:SerialID"/>
       <rule context="/ubl:DespatchAdvice/cac:DespatchLine/cac:Item/cac:ItemInstance/cac:AdditionalItemProperty">
          <assert test="cbc:Name" flag="fatal" id="PEPPOL-T120-B52401">Element 'cbc:Name' MUST be provided.</assert>
-         <assert test="cbc:NameCode" flag="fatal" id="PEPPOL-T120-B52402">Element 'cbc:NameCode' MUST be provided.</assert>
-         <assert test="cbc:Value" flag="fatal" id="PEPPOL-T120-B52403">Element 'cbc:Value' MUST be provided.</assert>
-         <assert test="cbc:ValueQuantity" flag="fatal" id="PEPPOL-T120-B52404">Element 'cbc:ValueQuantity' MUST be provided.</assert>
-         <assert test="cbc:ValueQualifier" flag="fatal" id="PEPPOL-T120-B52405">Element 'cbc:ValueQualifier' MUST be provided.</assert>
+         <assert test="cbc:Value" flag="fatal" id="PEPPOL-T120-B52402">Element 'cbc:Value' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:DespatchAdvice/cac:DespatchLine/cac:Item/cac:ItemInstance/cac:AdditionalItemProperty/cbc:ID"/>
       <rule context="/ubl:DespatchAdvice/cac:DespatchLine/cac:Item/cac:ItemInstance/cac:AdditionalItemProperty/cbc:Name"/>
@@ -1755,7 +1752,7 @@
       </rule>
       <rule context="/ubl:DespatchAdvice/cac:DespatchLine/cac:Item/cac:ItemInstance/cac:AdditionalItemProperty/cbc:ValueQualifier"/>
       <rule context="/ubl:DespatchAdvice/cac:DespatchLine/cac:Item/cac:ItemInstance/cac:AdditionalItemProperty/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T120-B52406">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T120-B52403">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:DespatchAdvice/cac:DespatchLine/cac:Item/cac:ItemInstance/cac:LotIdentification"/>
       <rule context="/ubl:DespatchAdvice/cac:DespatchLine/cac:Item/cac:ItemInstance/cac:LotIdentification/cbc:LotNumberID"/>
