@@ -26,6 +26,13 @@ for sch in $PROJECT/rules/sch/*.sch; do
     docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/schematron:/target klakegg/schematron prepare /src/rules/sch/$(basename $sch) /target/$(basename $sch)
 done
 
+# Generate full UBL example for T036
+docker run --rm -i -v $PROJECT:/src --entrypoint java klakegg/saxon:9.8.0-7 \
+  -cp /saxon.jar net.sf.saxon.Transform \
+  -s:/src/structure/syntax/ubl-pre-award-catalogue.xml \
+  -xsl:/src/tools/create-ubl-example-from-syntax.xsl \
+  -o:/src/rules/examples/T036/Catalogue_full.xml
+
 # Removing old zip files and creating new ones
 docker run --rm -i \
   -v $PROJECT/target/site/files:/files \
