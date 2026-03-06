@@ -3350,6 +3350,13 @@
                <Name>Item instance information</Name>
                <Description>Adding information on individual instances of the item.</Description>
                <Element cardinality="0..1">
+                  <Term>cbc:ProductTraceID</Term>
+                  <Name>Product traceable identifier.</Name>
+                  <Description>An identifier used for tracing this item instance, such as the EPC number used in RFID.</Description>
+                  <Reference type="BUSINESS_TERM">tir16-p057</Reference>
+                  <Value type="EXAMPLE">(01)47964367965424(11)173434(17)226565(10)A379B3(21)1237</Value>
+               </Element>
+               <Element cardinality="0..1">
                   <Term>cbc:ManufactureDate</Term>
                   <Name>Item manufactured date</Name>
                   <Description>The manufacturing date of all items listed in this despatch line.</Description>
