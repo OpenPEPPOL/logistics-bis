@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ubl:Catalogue xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2"
+<Catalogue xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2"
                xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
    <cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t036:1</cbc:CustomizationID>
@@ -85,6 +85,7 @@
          <cac:Country>
             <cbc:IdentificationCode listID="ISO3166">NO</cbc:IdentificationCode>
          </cac:Country>
+         </cac:PostalAddress>
          <cac:PartyTaxScheme>
             <cbc:CompanyID>Example</cbc:CompanyID>
             <cac:TaxScheme>
@@ -107,7 +108,7 @@
             <cbc:Telefax>22332244</cbc:Telefax>
             <cbc:ElectronicMail>jjensen@customer.no</cbc:ElectronicMail>
          </cac:Contact>
-      </cac:PostalAddress>
+      
    </cac:ReceiverParty>
    <cac:SellerSupplierParty>
       <cac:Party>
@@ -317,7 +318,7 @@
             <cbc:HazardClassID>Example</cbc:HazardClassID>
          </cac:HazardousItem>
          <cac:ClassifiedTaxCategory>
-            <cbc:ID listID="UNCL5305">S</cbc:ID>
+            <cbc:ID>S</cbc:ID>
             <cbc:Percent>25</cbc:Percent>
             <cac:TaxScheme>
                <cbc:ID>VAT</cbc:ID>
@@ -328,8 +329,8 @@
             <cbc:Name>Color</cbc:Name>
             <cbc:NameCode listID="UNCL7081">35</cbc:NameCode>
             <cbc:Value>Red</cbc:Value>
-            <cbc:ValueQuantity unitCode="C62">EA</cbc:ValueQuantity>
-            <cbc:ValueQualifier>EA</cbc:ValueQualifier>
+            <cbc:ValueQuantity unitCode="C62">14</cbc:ValueQuantity>
+            <cbc:ValueQualifier>Color</cbc:ValueQualifier>
             <cbc:ImportanceCode>O</cbc:ImportanceCode>
             <cac:ItemPropertyRange>
                <cbc:MinimumValue>5</cbc:MinimumValue>
@@ -369,13 +370,13 @@
          </cac:Certificate>
          <cac:Dimension>
             <cbc:AttributeID>GW</cbc:AttributeID>
-            <cbc:Measure unitCode="KGM" unitCodeListID="UNECERec20">1250</cbc:Measure>
-            <cbc:MinimumMeasure unitCode="CEL" unitCodeListID="UNECERec20">4</cbc:MinimumMeasure>
-            <cbc:MaximumMeasure unitCode="CEL" unitCodeListID="UNECERec20">10</cbc:MaximumMeasure>
+            <cbc:Measure unitCode="KGM">1250</cbc:Measure>
+            <cbc:MinimumMeasure unitCode="CEL">4</cbc:MinimumMeasure>
+            <cbc:MaximumMeasure unitCode="CEL">10</cbc:MaximumMeasure>
          </cac:Dimension>
       </cac:Item>
       <cac:CallForTendersLineReference>
          <cbc:LineID>Example</cbc:LineID>
       </cac:CallForTendersLineReference>
    </cac:CatalogueLine>
-</ubl:Catalogue>
+</Catalogue>

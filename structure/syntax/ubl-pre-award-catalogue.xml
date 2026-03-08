@@ -83,7 +83,8 @@
             <Description>The validity period must include both start date and end date, and the start date must be
                 earlier than the end date
             </Description>
-            <!--Property key="doc">../../guides/profiles/p035/descriptions/validity-period.adoc</Property-->
+            <!--Property
+            key="doc">../../guides/profiles/p035/descriptions/validity-period.adoc</Property-->
 
             <Element>
                 <Term>cbc:StartDate</Term>
@@ -104,7 +105,8 @@
             <Term>cac:ReferencedContract</Term>
             <Name>Contract reference</Name>
             <Description>A reference to a received CatalogueRequest or a Contract.</Description>
-            <!--Property key="doc">procurement-ref.adoc</Property-->
+            <!--Property
+            key="doc">procurement-ref.adoc</Property-->
 
             <Element>
                 <Term>cbc:ID</Term>
@@ -155,7 +157,8 @@
             <Term>cac:ProviderParty</Term>
             <Name>Provider party</Name>
             <Description>The party that sends the catalogue.</Description>
-            <!--Property key="doc">"procurement-ref.adoc"</Property-->
+            <!--Property
+            key="doc">"procurement-ref.adoc"</Property-->
 
             <Element>
                 <Term>cbc:EndpointID</Term>
@@ -402,7 +405,8 @@
             <Term>cac:ReceiverParty</Term>
             <Name>Receiver party</Name>
             <Description>The party to which the catalogue is sent.</Description>
-            <!--Property key="doc">structure/docs/receiver.adoc</Property-->
+            <!--Property
+            key="doc">structure/docs/receiver.adoc</Property-->
 
             <Element>
                 <Term>cbc:EndpointID</Term>
@@ -610,41 +614,42 @@
                         </Element>
                     </Element>
                 </Element>
+            </Element>
+
+            <Element cardinality="0..1">
+                <Term>cac:Contact</Term>
+                <Name>Catalogue provider contact</Name>
 
                 <Element cardinality="0..1">
-                    <Term>cac:Contact</Term>
-                    <Name>Catalogue provider contact</Name>
-
-                    <Element cardinality="0..1">
-                        <Term>cbc:Name</Term>
-                        <Name>Contact point</Name>
-                        <Description>The name of the contact point.</Description>
-                        <Value type="EXAMPLE">Jens Jensen</Value>
-                    </Element>
-
-                    <Element cardinality="0..1">
-                        <Term>cbc:Telephone</Term>
-                        <Name>Contact telephone number</Name>
-                        <Description>A phone number for the contact point.</Description>
-                        <Value type="EXAMPLE">22332233</Value>
-                    </Element>
-
-                    <Element cardinality="0..1">
-                        <Term>cbc:Telefax</Term>
-                        <Name>Contact fax number</Name>
-                        <Description>A fax number for the contact point.</Description>
-                        <Value type="EXAMPLE">22332244</Value>
-                    </Element>
-
-                    <Element>
-                        <Term>cbc:ElectronicMail</Term>
-                        <Name>Contact email address</Name>
-                        <Description>An e-mail address for the contact point.</Description>
-                        <Value type="EXAMPLE">jjensen@customer.no</Value>
-                    </Element>
+                    <Term>cbc:Name</Term>
+                    <Name>Contact point</Name>
+                    <Description>The name of the contact point.</Description>
+                    <Value type="EXAMPLE">Jens Jensen</Value>
                 </Element>
 
+                <Element cardinality="0..1">
+                    <Term>cbc:Telephone</Term>
+                    <Name>Contact telephone number</Name>
+                    <Description>A phone number for the contact point.</Description>
+                    <Value type="EXAMPLE">22332233</Value>
+                </Element>
+
+                <Element cardinality="0..1">
+                    <Term>cbc:Telefax</Term>
+                    <Name>Contact fax number</Name>
+                    <Description>A fax number for the contact point.</Description>
+                    <Value type="EXAMPLE">22332244</Value>
+                </Element>
+
+                <Element>
+                    <Term>cbc:ElectronicMail</Term>
+                    <Name>Contact email address</Name>
+                    <Description>An e-mail address for the contact point.</Description>
+                    <Value type="EXAMPLE">jjensen@customer.no</Value>
+                </Element>
             </Element>
+
+
         </Element>
 
         <Element cardinality="0..1">
@@ -1155,7 +1160,8 @@
             <Name>Pre award catalogue line</Name>
             <Description>Detailed information of an item, price and its composition in a pre-award catalogue.
             </Description>
-            <!--Property key="doc">structure/docs/line.adoc</Property-->
+            <!--Property
+            key="doc">structure/docs/line.adoc</Property-->
 
             <Element>
                 <Term>cbc:ID</Term>
@@ -1325,7 +1331,8 @@
                 <Description>Used for comparing prices for different articles with various quantities. E.g. Price of
                     each liter.
                 </Description>
-                <!--Property key="doc">structure/docs/item-comparison.adoc</Property-->
+                <!--Property
+                key="doc">structure/docs/item-comparison.adoc</Property-->
 
                 <Element cardinality="0..1">
                     <Term>cbc:PriceAmount</Term>
@@ -1376,7 +1383,8 @@
                 <Description>Component related items are products that are connected in a product line or a logistics
                     structure, e.g. consumer units and trading units of the same article.
                 </Description>
-                <!--Property key="doc">structure/docs/component-related.adoc</Property-->
+                <!--Property
+                key="doc">structure/docs/component-related.adoc</Property-->
 
                 <Element cardinality="0..1">
                     <Term>cbc:ID</Term>
@@ -1414,7 +1422,8 @@
                 <Description>Required related items are products that are bundled and ordered/invoiced together, e.g.
                     bottles and desposits.
                 </Description>
-                <!--Property key="doc">structure/docs/required-related.adoc</Property-->
+                <!--Property
+                key="doc">structure/docs/required-related.adoc</Property-->
 
                 <Element cardinality="0..1">
                     <Term>cbc:ID</Term>
@@ -1452,7 +1461,8 @@
                 <Description>Complementary related item is used for items that might be sold together with a product,
                     e.g. disk station to a laptop.
                 </Description>
-                <!--Property key="doc">structure/docs/complementary-related.adoc</Property-->
+                <!--Property
+                key="doc">structure/docs/complementary-related.adoc</Property-->
 
                 <Element cardinality="0..1">
                     <Term>cbc:ID</Term>
@@ -1660,7 +1670,8 @@
                     <Description>Used to give the item net price as well as conditional price related to a specific
                         location or a quanity, as well as campaing prices.
                     </Description>
-                    <!--Property key="doc">structure/docs/price.adoc</Property-->
+                    <!--Property
+                    key="doc">structure/docs/price.adoc</Property-->
 
                     <Element>
                         <Term>cbc:PriceAmount</Term>
@@ -1835,7 +1846,8 @@
             <Element>
                 <Term>cac:Item</Term>
                 <Name>Pre award catalogue item details</Name>
-                <!--Property key="doc">structure/docs/item.adoc</Property-->
+                <!--Property
+                key="doc">structure/docs/item.adoc</Property-->
 
                 <Element cardinality="0..1">
                     <Term>cbc:Description</Term>
@@ -1981,7 +1993,8 @@
                         additional descriptions of a product. It is strongly recommended to use external references in
                         the form of URI’s for attachments.
                     </Description>
-                    <!--Property key="doc">structure/docs/attachments.adoc</Property-->
+                    <!--Property
+                    key="doc">structure/docs/attachments.adoc</Property-->
 
                     <Element>
                         <Term>cbc:ID</Term>
@@ -2193,19 +2206,21 @@
                     <Term>cac:ClassifiedTaxCategory</Term>
                     <Name>Classified tax category</Name>
                     <Description>VAT information</Description>
-                    <!--Property key="doc">structure/docs/vat.adoc</Property-->
+                    <!--Property
+                    key="doc">structure/docs/vat.adoc</Property-->
 
                     <Element cardinality="0..1">
                         <Term>cbc:ID</Term>
                         <Name>Item VAT category code</Name>
                         <Description>The VAT category for the item</Description>
                         <Reference type="CODE_LIST">UNCL5305</Reference>
-
-                        <Attribute usage="Optional">
+                        
+                        <!-- Attribute not allowed according to UBL-->
+                        <!--Attribute usage="Optional">
                             <Term>listID</Term>
                             <Name>Code list identifier</Name>
                             <Value type="FIXED">UNCL5305</Value>
-                        </Attribute>
+                        </Attribute -->
 
                         <Value type="EXAMPLE">S</Value>
                     </Element>
@@ -2240,7 +2255,8 @@
                         the defined elements in PreAward Catalogue. Additional properties consist of the Name of the
                         property and the actual Value.
                     </Description>
-                    <!--Property key="doc">structure/docs/additional.adoc</Property-->
+                    <!--Property
+                    key="doc">structure/docs/additional.adoc</Property-->
 
 
                     <Element cardinality="0..1">
@@ -2319,7 +2335,7 @@
                             <Reference type="CODE_LIST">UNECERec20</Reference>
                             <Value type="EXAMPLE">C62</Value>
                         </Attribute>
-                        <Value type="EXAMPLE">EA</Value>
+                        <Value type="EXAMPLE">10</Value>
 
                     </Element>
 
@@ -2327,7 +2343,7 @@
                         <Term>cbc:ValueQualifier</Term>
                         <Name>Property classification</Name>
                         <Description>Standardized and predefined classification of items properties.</Description>
-                        <Value type="EXAMPLE">EA</Value>
+                        <Value type="EXAMPLE">Color</Value>
                     </Element>
 
                     <Element cardinality="0..1">
@@ -2532,13 +2548,6 @@
                             <Value type="EXAMPLE">KGM</Value>
                         </Attribute>
 
-                        <Attribute>
-                            <Term>unitCodeListID</Term>
-                            <Name>Quantity Unit. Code List Identifier</Name>
-                            <Description>The list identifier for the unit of the quantity</Description>
-                            <Value type="FIXED">UNECERec20</Value>
-                        </Attribute>
-
                         <Value type="EXAMPLE">1250</Value>
 
                     </Element>
@@ -2554,13 +2563,6 @@
                             <Value type="EXAMPLE">CEL</Value>
                         </Attribute>
 
-                        <Attribute>
-                            <Term>unitCodeListID</Term>
-                            <Name>Quantity Unit. Code List Identifier</Name>
-                            <Description>The list identifier for the unit of the quantity</Description>
-                            <Value type="FIXED">UNECERec20</Value>
-                        </Attribute>
-
                         <Value type="EXAMPLE">4</Value>
                     </Element>
 
@@ -2573,13 +2575,6 @@
                             <Name>Quantity unit code</Name>
                             <Reference type="CODE_LIST">UNECERec20</Reference>
                             <Value type="EXAMPLE">CEL</Value>
-                        </Attribute>
-
-                        <Attribute>
-                            <Term>unitCodeListID</Term>
-                            <Name>Quantity Unit. Code List Identifier</Name>
-                            <Description>The list identifier for the unit of the quantity</Description>
-                            <Value type="FIXED">UNECERec20</Value>
                         </Attribute>
 
                         <Value type="EXAMPLE">10</Value>
