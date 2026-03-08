@@ -534,87 +534,88 @@
                         <Value type="EXAMPLE">NO</Value>
                     </Element>
                 </Element>
+            </Element>
 
-                <Element cardinality="0..1">
-                    <Term>cac:PartyTaxScheme</Term>
-                    <Name>VAT Identity</Name>
-                    <Description>A tax scheme applying to this party.</Description>
-                    <Element>
-                        <Term>cbc:CompanyID</Term>
-                        <Name>Company ID</Name>
-                        <Description>An identifier for the party assigned for tax purposes by the taxation authority.
+            <Element cardinality="0..1">
+                <Term>cac:PartyTaxScheme</Term>
+                <Name>VAT Identity</Name>
+                <Description>A tax scheme applying to this party.</Description>
+                <Element>
+                    <Term>cbc:CompanyID</Term>
+                    <Name>Company ID</Name>
+                    <Description>An identifier for the party assigned for tax purposes by the taxation authority.
                         </Description>
-                    </Element>
+                </Element>
+                <Element>
+                    <Term>cac:TaxScheme</Term>
+                    <Name>Tax Scheme</Name>
+                    <Description>The taxation scheme applicable to the party.</Description>
                     <Element>
-                        <Term>cac:TaxScheme</Term>
-                        <Name>Tax Scheme</Name>
-                        <Description>The taxation scheme applicable to the party.</Description>
-                        <Element>
-                            <Term>cbc:ID</Term>
-                            <Name>ID</Name>
-                            <Description>An identifier for this taxation scheme.</Description>
-                        </Element>
+                        <Term>cbc:ID</Term>
+                        <Name>ID</Name>
+                        <Description>An identifier for this taxation scheme.</Description>
                     </Element>
+                </Element>
+            </Element>
+
+            <Element>
+                <Term>cac:PartyLegalEntity</Term>
+                <Name>Party Legal Entity</Name>
+                <Description>A description of this party as a legal entity.</Description>
+
+                <Element>
+                    <Term>cbc:RegistrationName</Term>
+                    <Name>Registration Name</Name>
+                    <Description>The name of the party as registered with the relevant legal authority.
+                        </Description>
                 </Element>
 
                 <Element>
-                    <Term>cac:PartyLegalEntity</Term>
-                    <Name>Party Legal Entity</Name>
-                    <Description>A description of this party as a legal entity.</Description>
-
-                    <Element>
-                        <Term>cbc:RegistrationName</Term>
-                        <Name>Registration Name</Name>
-                        <Description>The name of the party as registered with the relevant legal authority.
+                    <Term>cbc:CompanyID</Term>
+                    <Name>Company ID</Name>
+                    <Description>An identifier for the party as registered within a company registration scheme.
                         </Description>
+                    <Attribute>
+                        <Term>schemeID</Term>
+                        <Description>The identification of the identification scheme.</Description>
+                    </Attribute>
+                </Element>
+
+                <Element>
+                    <Term>cac:RegistrationAddress</Term>
+                    <Name>Registration Address</Name>
+                    <Description>The registered address of the party within a corporate registration scheme.
+                        </Description>
+
+                    <Element cardinality="0..1">
+                        <Term>cbc:CityName</Term>
+                        <Name>City</Name>
+                        <Description>The common name of a city where the address is located.</Description>
+                        <Value type="EXAMPLE">Bergen</Value>
                     </Element>
 
                     <Element>
-                        <Term>cbc:CompanyID</Term>
-                        <Name>Company ID</Name>
-                        <Description>An identifier for the party as registered within a company registration scheme.
-                        </Description>
-                        <Attribute>
-                            <Term>schemeID</Term>
-                            <Description>The identification of the identification scheme.</Description>
-                        </Attribute>
-                    </Element>
-
-                    <Element>
-                        <Term>cac:RegistrationAddress</Term>
-                        <Name>Registration Address</Name>
-                        <Description>The registered address of the party within a corporate registration scheme.
-                        </Description>
-
-                        <Element cardinality="0..1">
-                            <Term>cbc:CityName</Term>
-                            <Name>City</Name>
-                            <Description>The common name of a city where the address is located.</Description>
-                            <Value type="EXAMPLE">Bergen</Value>
-                        </Element>
+                        <Term>cac:Country</Term>
+                        <Name>Country</Name>
 
                         <Element>
-                            <Term>cac:Country</Term>
-                            <Name>Country</Name>
+                            <Term>cbc:IdentificationCode</Term>
+                            <Name>Country code</Name>
+                            <Description>A code that identifies the country.</Description>
+                            <Reference type="CODE_LIST">ISO3166</Reference>
 
-                            <Element>
-                                <Term>cbc:IdentificationCode</Term>
-                                <Name>Country code</Name>
-                                <Description>A code that identifies the country.</Description>
-                                <Reference type="CODE_LIST">ISO3166</Reference>
+                            <Attribute>
+                                <Term>listID</Term>
+                                <Description>The identification of a list of codes.</Description>
+                                <Value type="FIXED">ISO3166</Value>
+                            </Attribute>
 
-                                <Attribute>
-                                    <Term>listID</Term>
-                                    <Description>The identification of a list of codes.</Description>
-                                    <Value type="FIXED">ISO3166</Value>
-                                </Attribute>
-
-                                <Value type="EXAMPLE">NO</Value>
-                            </Element>
+                            <Value type="EXAMPLE">NO</Value>
                         </Element>
                     </Element>
                 </Element>
             </Element>
+
 
             <Element cardinality="0..1">
                 <Term>cac:Contact</Term>
@@ -2214,9 +2215,10 @@
                         <Name>Item VAT category code</Name>
                         <Description>The VAT category for the item</Description>
                         <Reference type="CODE_LIST">UNCL5305</Reference>
-                        
+
                         <!-- Attribute not allowed according to UBL-->
-                        <!--Attribute usage="Optional">
+                        <!--Attribute
+                        usage="Optional">
                             <Term>listID</Term>
                             <Name>Code list identifier</Name>
                             <Value type="FIXED">UNCL5305</Value>
