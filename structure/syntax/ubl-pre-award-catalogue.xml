@@ -20,7 +20,7 @@
             <Description>An identification of the specification containing the total set of rules regarding semantic
                 content, cardinalities and business rules to which the data contained in the instance document conforms.
             </Description>
-            <Value type="EXAMPLE">urn:fdc:peppol.eu:prac:trns:t036:1</Value>
+            <Value type="FIXED">urn:fdc:peppol.eu:prac:trns:t036:1</Value>
         </Element>
 
         <Element>
@@ -29,7 +29,7 @@
             <Description>Identifies the business process context in which the transaction appears. It enables the buyer
                 to process the document in an appropriate way.
             </Description>
-            <Value type="EXAMPLE">urn:fdc:peppol.eu:prac:bis:p035</Value>
+            <Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p035</Value>
         </Element>
 
         <Element>
@@ -166,10 +166,10 @@
                     <Term>schemeID</Term>
                     <Description>The identification of the identification scheme.</Description>
                     <Reference type="CODE_LIST">ICD</Reference>
-                    <Value type="EXAMPLE">SE:VATNO</Value>
+                    <Value type="EXAMPLE">0007</Value>
                 </Attribute>
 
-                <Value type="EXAMPLE">SE5679083242</Value>
+                <Value type="EXAMPLE">5679083245</Value>
             </Element>
 
             <Element cardinality="0..1">
@@ -189,9 +189,9 @@
                         </Description>
                         <Reference type="CODE_LIST">ICD</Reference>
                         <Reference type="CODE_LIST">ICD_UNKNOWN</Reference>
-                        <Value type="EXAMPLE">SE:VATNO</Value>
+                        <Value type="EXAMPLE">0007</Value>
                     </Attribute>
-                    <Value type="EXAMPLE">SE5679083242</Value>
+                    <Value type="EXAMPLE">5679083245</Value>
                 </Element>
             </Element>
 
@@ -413,7 +413,7 @@
                     <Term>schemeID</Term>
                     <Description>The identification of the identification scheme.</Description>
                     <Reference type="CODE_LIST">ICD</Reference>
-                    <Value type="EXAMPLE">NO:ORGNR</Value>
+                    <Value type="EXAMPLE">0192</Value>
                 </Attribute>
 
                 <Value type="EXAMPLE">987654321</Value>
@@ -436,7 +436,7 @@
                         </Description>
                         <Reference type="CODE_LIST">ICD</Reference>
                         <Reference type="CODE_LIST">ICD_UNKNOWN</Reference>
-                        <Value type="EXAMPLE">NO:ORGNR</Value>
+                        <Value type="EXAMPLE">0192</Value>
                     </Attribute>
 
                     <Value type="EXAMPLE">987654321</Value>
@@ -672,9 +672,9 @@
                             </Description>
                             <Reference type="CODE_LIST">ICD</Reference>
                             <Reference type="CODE_LIST">ICD_UNKNOWN</Reference>
-                            <Value type="EXAMPLE">SE:VATNO</Value>
+                            <Value type="EXAMPLE">9997</Value>
                         </Attribute>
-                        <Value type="EXAMPLE">SE5679083242</Value>
+                        <Value type="EXAMPLE">5679083245</Value>
                     </Element>
                 </Element>
 
@@ -911,9 +911,9 @@
                             </Description>
                             <Reference type="CODE_LIST">ICD</Reference>
                             <Reference type="CODE_LIST">ICD_UNKNOWN</Reference>
-                            <Value type="EXAMPLE">SE:VATNO</Value>
+                            <Value type="EXAMPLE">0007</Value>
                         </Attribute>
-                        <Value type="EXAMPLE">SE5679083242</Value>
+                        <Value type="EXAMPLE">5679083245</Value>
                     </Element>
                 </Element>
 
@@ -2101,7 +2101,7 @@
                             (CPV), e-Commerce (UNSPSC) etc.
                         </Description>
 
-                        <Attribute usage="Optional">
+                        <Attribute usage="Mandatory">
                             <Term>listID</Term>
                             <Name>Code list identifier</Name>
                             <Reference type="CODE_LIST">UNCL7143</Reference>
@@ -2325,16 +2325,14 @@
 
                     <Element cardinality="0..1">
                         <Term>cbc:ValueQualifier</Term>
-                        <Name>Item property unit of measure</Name>
-                        <Description>The unit of measure in which the property value is
-                            stated, if relevant. May not be relevant when properties are descriptive.
-                        </Description>
+                        <Name>Property classification</Name>
+                        <Description>Standardized and predefined classification of items properties.</Description>
                         <Value type="EXAMPLE">EA</Value>
                     </Element>
 
                     <Element cardinality="0..1">
                         <Term>cbc:ImportanceCode</Term>
-                        <Name>Item property unit of measure</Name>
+                        <Name>Item property importance code</Name>
                         <Description>Relevance of the item property in the corresponding pre-award catalogue.
                         </Description>
                         <Value type="EXAMPLE">O</Value>

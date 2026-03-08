@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ubl:CallForTenders xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:CallForTenders-2"
+                    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+   <cbc:UBLVersionID>2.2</cbc:UBLVersionID>
+   <cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t004:1.2</cbc:CustomizationID>
+   <cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p002:1.2</cbc:ProfileID>
+   <cbc:ID schemeURI="urn:uuid">ID-001</cbc:ID>
+   <cbc:ContractFolderID>ID-001</cbc:ContractFolderID>
+   <cbc:IssueDate>2026-03-06</cbc:IssueDate>
+   <cbc:IssueTime>10:00:00</cbc:IssueTime>
+   <cbc:VersionID>ID-001</cbc:VersionID>
+   <cac:AdditionalDocumentReference>
+      <cbc:ID>ID-001</cbc:ID>
+      <cac:Attachment>
+         <cac:ExternalReference/>
+      </cac:Attachment>
+   </cac:AdditionalDocumentReference>
+   <cac:ContractingParty>
+      <cac:Party>
+         <cbc:EndpointID schemeID="9930">DE122268496</cbc:EndpointID>
+         <cac:PartyIdentification>
+            <cbc:ID schemeID="0204">991-1234512345-06</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:PartyName>
+            <cbc:Name>Example</cbc:Name>
+         </cac:PartyName>
+         <cac:PartyLegalEntity>
+            <cac:RegistrationAddress>
+               <cac:Country>
+                  <cbc:IdentificationCode listID="ISO3166">311</cbc:IdentificationCode>
+               </cac:Country>
+            </cac:RegistrationAddress>
+         </cac:PartyLegalEntity>
+      </cac:Party>
+   </cac:ContractingParty>
+   <cac:ReceiverParty>
+      <cbc:EndpointID schemeID="sample">ID-001</cbc:EndpointID>
+      <cac:PartyIdentification>
+         <cbc:ID schemeID="0088">7300010000001</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+         <cbc:Name>Example</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+         <cac:Country>
+            <cbc:IdentificationCode listID="sample">311</cbc:IdentificationCode>
+         </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyLegalEntity>
+         <cac:RegistrationAddress>
+            <cac:Country>
+               <cbc:IdentificationCode listID="sample">311</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:RegistrationAddress>
+      </cac:PartyLegalEntity>
+      <cac:Contact/>
+   </cac:ReceiverParty>
+   <cac:TenderingTerms>
+      <cbc:VariantConstraintIndicator>true</cbc:VariantConstraintIndicator>
+      <cac:ProcurementLegislationDocumentReference>
+         <cbc:ID>ID-001</cbc:ID>
+         <cbc:DocumentDescription>Example</cbc:DocumentDescription>
+      </cac:ProcurementLegislationDocumentReference>
+      <cac:CallForTendersDocumentReference>
+         <cbc:ID schemeURI="urn:uuid">ID-001</cbc:ID>
+      </cac:CallForTendersDocumentReference>
+      <cac:TenderRecipientParty>
+         <cbc:EndpointID schemeID="9946">500820007</cbc:EndpointID>
+      </cac:TenderRecipientParty>
+   </cac:TenderingTerms>
+   <cac:TenderingProcess>
+      <cbc:ProcedureCode listID="PR_PROC">311</cbc:ProcedureCode>
+      <cac:TenderSubmissionDeadlinePeriod>
+         <cbc:EndDate>2026-03-06</cbc:EndDate>
+      </cac:TenderSubmissionDeadlinePeriod>
+      <cac:ParticipationRequestReceptionPeriod>
+         <cbc:EndDate>2026-03-06</cbc:EndDate>
+      </cac:ParticipationRequestReceptionPeriod>
+   </cac:TenderingProcess>
+   <cac:ProcurementProject>
+      <cbc:Name>Example</cbc:Name>
+      <cbc:Description>Example</cbc:Description>
+      <cbc:ProcurementTypeCode listID="PROJECT_TYPE">311</cbc:ProcurementTypeCode>
+      <cac:MainCommodityClassification>
+         <cbc:ItemClassificationCode listID="CPV">311</cbc:ItemClassificationCode>
+      </cac:MainCommodityClassification>
+      <cac:AdditionalCommodityClassification>
+         <cbc:ItemClassificationCode listID="CPV">311</cbc:ItemClassificationCode>
+      </cac:AdditionalCommodityClassification>
+      <cac:RealizedLocation>
+         <cbc:ID schemeID="NUTS">311</cbc:ID>
+      </cac:RealizedLocation>
+   </cac:ProcurementProject>
+   <cac:ProcurementProjectLot>
+      <cbc:ID>ID-001</cbc:ID>
+      <cac:ProcurementProject>
+         <cbc:Name>Example</cbc:Name>
+      </cac:ProcurementProject>
+   </cac:ProcurementProjectLot>
+</ubl:CallForTenders>

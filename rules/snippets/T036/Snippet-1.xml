@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Catalogue xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
-	xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2">
-	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+<Catalogue
+	xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2"
+	xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
 	<cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t036:1</cbc:CustomizationID>
 	<cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p035</cbc:ProfileID>
 
@@ -25,29 +25,30 @@
 
 	<!-- tag::procurement[] -->
 	<cac:ReferencedContract>
-		<cbc:ID>12345</cbc:ID>	<!--1-->
+		<cbc:ID>12345</cbc:ID>  <!--1-->
 		<cbc:ContractTypeCode listID="UNCL1001">311</cbc:ContractTypeCode> <!--2-->
 		<cac:ContractDocumentReference>
 			<cbc:ID>CRT1387</cbc:ID> <!--3-->
 		</cac:ContractDocumentReference>
 	</cac:ReferencedContract>
 	<!-- end::procurement[] -->
-	
+
 	<!-- tag::project[] -->
 	<cac:ReferencedContract>
-		<cbc:ID>12345</cbc:ID>	<!--1-->
-		<cbc:ContractTypeCode listID="UNCL1001">315</cbc:ContractTypeCode>	<!--2-->
+		<cbc:ID>12345</cbc:ID>  <!--1-->
+		<cbc:ContractTypeCode listID="UNCL1001">315</cbc:ContractTypeCode>  <!--2-->
 		<cac:ContractDocumentReference>
-			<cbc:ID>PR-1234</cbc:ID>	<!--3-->
+			<cbc:ID>PR-1234</cbc:ID>    <!--3-->
 		</cac:ContractDocumentReference>
 	</cac:ReferencedContract>
 	<!-- end::project[] -->
 
 	<!-- tag::provider[] -->
 	<cac:ProviderParty>
-		<cbc:EndpointID schemeID="0088">8075367945271</cbc:EndpointID>
+		<!-- GLN as Peppol endpoint (0088) -->
+		<cbc:EndpointID schemeID="0088">8075367945273</cbc:EndpointID>
 		<cac:PartyIdentification>
-			<cbc:ID schemeID="0088">8075367945271</cbc:ID>
+			<cbc:ID schemeID="0088">8075367945273</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
 			<cbc:Name>ABC Supplier Ltd.</cbc:Name>
@@ -65,8 +66,10 @@
 
 	<!-- tag::receiver[] -->
 	<cac:ReceiverParty>
+		<!-- GLN as Peppol endpoint (0088) -->
 		<cbc:EndpointID schemeID="0088">5790000435968</cbc:EndpointID>
 		<cac:PartyIdentification>
+			<!-- ZZZ = mutually agreed identifier -->
 			<cbc:ID schemeID="ZZZ">14920263491</cbc:ID>
 		</cac:PartyIdentification>
 		<cac:PartyName>
@@ -87,6 +90,7 @@
 	<cac:SellerSupplierParty>
 		<cac:Party>
 			<cac:PartyIdentification>
+				<!-- GLN for Swedish supplier (0088) -->
 				<cbc:ID schemeID="0088">7300010000001</cbc:ID>
 			</cac:PartyIdentification>
 			<cac:PartyName>
@@ -126,23 +130,23 @@
 				</cac:Country>
 			</cac:PostalAddress>
 		</cac:Party>
-		</cac:ContractorCustomerParty>
-		<!-- end::address-h[] -->
+	</cac:ContractorCustomerParty>
+	<!-- end::address-h[] -->
 
 	<!-- tag::terms[] -->
 	<cac:TradingTerms>
 		<cbc:Information>EXW#Ex Works</cbc:Information>
 		<cbc:Reference>INCOTerms</cbc:Reference>
 	</cac:TradingTerms>
-		<!-- end::terms[] -->
+	<!-- end::terms[] -->
 
 	<!-- tag::lot-ref[] -->
 	<cac:CatalogueLine>
 		<cbc:ID>2</cbc:ID>
 		<cbc:ContractSubdivision>32</cbc:ContractSubdivision>
-	<!-- end::lot-ref[] -->
-		
-	<!-- tag::quantity-2[] -->
+		<!-- end::lot-ref[] -->
+
+		<!-- tag::quantity-2[] -->
 		<cbc:OrderableIndicator>true</cbc:OrderableIndicator>
 		<cbc:OrderableUnit>CS</cbc:OrderableUnit>
 		<cbc:ContentUnitQuantity unitCode="EA" unitCodeListID="UNECERec20">2500</cbc:ContentUnitQuantity>
@@ -185,7 +189,6 @@
 		<!-- end::complementary-related[] -->
 
 		<!-- tag::req_item[] -->
-		
 		<cac:RequiredItemLocationQuantity>
 
 			<!-- tag::address-l[] -->
@@ -214,12 +217,8 @@
 			<cac:Price>
 				<cbc:PriceAmount currencyID="NOK">75.00</cbc:PriceAmount>
 				<cac:ValidityPeriod>
-					<cbc:StartDate>2026-04-01</cbc:StartDate>
-					<cbc:EndDate>2026-04-30</cbc:EndDate>
-				</cac:ValidityPeriod>
-				<cac:ValidityPeriod>
 					<cbc:StartDate>2026-08-01</cbc:StartDate>
-					<cbc:EndDate>2026-08-31</cbc:EndDate>
+					<cbc:EndDate>2026-12-31</cbc:EndDate>
 				</cac:ValidityPeriod>
 			</cac:Price>
 			<!-- end::period-p[] -->
@@ -234,23 +233,23 @@
 			<cbc:Name>Milk standard 3%</cbc:Name>
 			<cbc:Keyword>Milk</cbc:Keyword>
 			<cbc:BrandName>Branded Milk</cbc:BrandName>
-			
+
 			<cac:SellersItemIdentification>
 				<cbc:ID>89388789930</cbc:ID>
 			</cac:SellersItemIdentification>
-			
+
 			<cac:StandardItemIdentification>
 				<cbc:ID schemeID="GTIN">99023409093843</cbc:ID>
 			</cac:StandardItemIdentification>
-			
+
 			<!-- tag::attachment-1[] -->
 			<cac:ItemSpecificationDocumentReference>
 				<cbc:ID>2384-34232-342-34-2333</cbc:ID>
 				<cbc:DocumentType>Product sheet</cbc:DocumentType>
 				<cbc:DocumentDescription>Sheet providing specification of products.</cbc:DocumentDescription>
 				<cac:Attachment>
-					<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" fileName="sheet_123"
-						>ZGVmYXVsdA==</cbc:EmbeddedDocumentBinaryObject>
+					<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf"
+						fileName="sheet_123">ZGVmYXVsdA==</cbc:EmbeddedDocumentBinaryObject>
 				</cac:Attachment>
 			</cac:ItemSpecificationDocumentReference>
 			<!-- end::attachment-1[] -->
@@ -271,7 +270,7 @@
 			<cac:OriginCountry>
 				<cbc:IdentificationCode listID="ISO3166">FR</cbc:IdentificationCode>
 			</cac:OriginCountry>
-			
+
 			<cac:CommodityClassification>
 				<cbc:ItemClassificationCode listID="CPV">783xxxxxxxx</cbc:ItemClassificationCode>
 			</cac:CommodityClassification>
@@ -293,12 +292,12 @@
 				</cac:TaxScheme>
 			</cac:ClassifiedTaxCategory>
 			<!-- end::vat[] -->
-			
+
 			<cac:AdditionalItemProperty>
 				<cbc:Name>Fat % for milk</cbc:Name>
 				<cbc:Value>3%</cbc:Value>
 			</cac:AdditionalItemProperty>
-			
+
 			<!-- tag::item-property[] -->
 			<cac:AdditionalItemProperty>
 				<cbc:ID>1</cbc:ID>
@@ -323,18 +322,19 @@
 			</cac:AdditionalItemProperty>
 
 			<cac:AdditionalItemProperty>
-				   <cbc:Name>Thermal transmittance</cbc:Name>
-				   <cbc:NameCode listID="EN14351-1">ThermalTransmittance</cbc:NameCode>
-				   <cbc:Value>NA</cbc:Value>
+				<cbc:Name>Thermal transmittance</cbc:Name>
+				<cbc:NameCode listID="EN14351-1">ThermalTransmittance</cbc:NameCode>
+				<cbc:Value>NA</cbc:Value>
 				<cbc:ValueQuantity unitCode="D55">1.1</cbc:ValueQuantity>
 			</cac:AdditionalItemProperty>
 
 			<cac:AdditionalItemProperty>
-				<cbc:ID schemeID="ISO22057" schemeVersionID="2022" schemeDataURI="https://define.cobuilder.no/77e416eb-a363-4258-a04e- 
-			 			171d843a6460/2022/">77e416eb-a363-4258-a04e-171d843a6460</cbc:ID>
-				   <cbc:Name>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</cbc:Name>
-				   <cbc:Value>NA</cbc:Value>
-				   <cbc:ValueQuantity unitCode="MTR">4.30</cbc:ValueQuantity>
+				<cbc:ID schemeID="ISO22057" schemeVersionID="2022"
+					schemeDataURI="https://somedatadictionary.org/77e416eb-a363-4258-a04e-171d843a6460/2022/">
+					77e416eb-a363-4258-a04e-171d843a6460</cbc:ID>
+				<cbc:Name>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</cbc:Name>
+				<cbc:Value>NA</cbc:Value>
+				<cbc:ValueQuantity unitCode="MTR">4.30</cbc:ValueQuantity>
 			</cac:AdditionalItemProperty>
 			<!-- end::item-property[] -->
 
@@ -365,7 +365,7 @@
 		<cbc:MinimumOrderQuantity unitCode="LTR" unitCodeListID="UNECERec20">100</cbc:MinimumOrderQuantity>
 		<cbc:MaximumOrderQuantity unitCode="LTR" unitCodeListID="UNECERec20">1000</cbc:MaximumOrderQuantity>
 		<cbc:PackLevelCode listID="GS17009:PEPPOL">TU</cbc:PackLevelCode>
-	<!-- end::quantity-4[] -->
+		<!-- end::quantity-4[] -->
 
 		<cac:LineValidityPeriod>
 			<cbc:StartDate>2026-08-01</cbc:StartDate>
@@ -420,8 +420,8 @@
 			<cac:Price>
 				<cbc:PriceAmount currencyID="NOK">75.00</cbc:PriceAmount>
 				<cac:ValidityPeriod>
-					<cbc:StartDate>2026-04-01</cbc:StartDate>
-					<cbc:EndDate>2026-04-30</cbc:EndDate>
+					<cbc:StartDate>2026-08-01</cbc:StartDate>
+					<cbc:EndDate>2026-12-31</cbc:EndDate>
 				</cac:ValidityPeriod>
 			</cac:Price>
 			<!-- end::item-price[] -->
@@ -433,10 +433,10 @@
 			<!-- tag::allowance[] -->
 			<cac:Price>
 				<cbc:PriceAmount currencyID="NOK">90.00</cbc:PriceAmount>
-				
 				<cac:AllowanceCharge>
 					<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
-					<cbc:AllowanceChargeReason>10% Allowance for multi-order as per contractual framework agreement</cbc:AllowanceChargeReason>
+					<cbc:AllowanceChargeReason>10% Allowance for multi-order as per contractual
+						framework agreement</cbc:AllowanceChargeReason>
 					<cbc:Amount currencyID="NOK">10</cbc:Amount>
 				</cac:AllowanceCharge>
 			</cac:Price>
@@ -460,8 +460,7 @@
 			<cac:ItemSpecificationDocumentReference>
 				<cbc:ID>2384-34232-342-34-2333</cbc:ID>
 				<cac:Attachment>
-					<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf"
-						>ZGVmYXVsdA==</cbc:EmbeddedDocumentBinaryObject>
+					<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf">ZGVmYXVsdA==</cbc:EmbeddedDocumentBinaryObject>
 				</cac:Attachment>
 			</cac:ItemSpecificationDocumentReference>
 			<cac:OriginCountry>
@@ -490,7 +489,8 @@
 			<cac:Certificate>
 				<cbc:ID>c82d5afb-1040-c878-4575-401308559654</cbc:ID>
 				<cbc:CertificateTypeCode>Enrollment in a register of commercial partnerships</cbc:CertificateTypeCode>
-				<cbc:CertificateType>Occupation and legal form specific certificate for certain reglemented professions.</cbc:CertificateType>
+				<cbc:CertificateType>Occupation and legal form specific certificate for certain
+					reglemented professions.</cbc:CertificateType>
 				<cbc:Remarks>Certificate</cbc:Remarks>
 				<cac:IssuerParty>
 					<cac:PartyName>
@@ -501,11 +501,10 @@
 
 			<cac:Certificate>
 				<cbc:ID>428e17c6-fc16-89c1-d2c2-38b94c4dd486</cbc:ID>
-				<cbc:CertificateTypeCode>Certificate by independent bodies about quality assurance standards or systems</cbc:CertificateTypeCode>
-				<cbc:CertificateType>
-					It is not possible to generally tell if the needed certificate is free of charge or not or to specify the
-					possible price.
-				</cbc:CertificateType>
+				<cbc:CertificateTypeCode>Certificate by independent bodies about quality assurance
+					standards or systems</cbc:CertificateTypeCode>
+				<cbc:CertificateType> It is not possible to generally tell if the needed certificate
+					is free of charge or not or to specify the possible price. </cbc:CertificateType>
 				<cbc:Remarks>Certificate</cbc:Remarks>
 				<cac:IssuerParty>
 					<cac:PartyName>
@@ -514,7 +513,7 @@
 				</cac:IssuerParty>
 			</cac:Certificate>
 			<!-- end::cert-2[] -->
-			
+
 			<!-- tag::cert[] -->
 			<cac:Certificate>
 				<cbc:ID>NEO</cbc:ID>
@@ -536,7 +535,7 @@
 			<cbc:LineID>1</cbc:LineID>
 		</cac:CallForTendersLineReference>
 	</cac:CatalogueLine>
-	
+
 	<!-- tag::catch[] -->
 	<cac:CatalogueLine>
 		<cbc:ID>8</cbc:ID>
@@ -592,12 +591,8 @@
 			<cac:Price>
 				<cbc:PriceAmount currencyID="NOK">75.00</cbc:PriceAmount>
 				<cac:ValidityPeriod>
-					<cbc:StartDate>2026-04-01</cbc:StartDate>
-					<cbc:EndDate>2026-04-30</cbc:EndDate>
-				</cac:ValidityPeriod>
-				<cac:ValidityPeriod>
 					<cbc:StartDate>2026-08-01</cbc:StartDate>
-					<cbc:EndDate>2026-08-31</cbc:EndDate>
+					<cbc:EndDate>2026-12-31</cbc:EndDate>
 				</cac:ValidityPeriod>
 			</cac:Price>
 		</cac:RequiredItemLocationQuantity>
@@ -623,8 +618,7 @@
 			<cac:ItemSpecificationDocumentReference>
 				<cbc:ID>2384-34232-342-34-2333</cbc:ID>
 				<cac:Attachment>
-					<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf"
-						>ZGVmYXVsdA==</cbc:EmbeddedDocumentBinaryObject>
+					<cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf">ZGVmYXVsdA==</cbc:EmbeddedDocumentBinaryObject>
 				</cac:Attachment>
 			</cac:ItemSpecificationDocumentReference>
 			<cac:OriginCountry>

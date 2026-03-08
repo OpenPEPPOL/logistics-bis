@@ -96,10 +96,10 @@
                     <Term>schemeID</Term>
                     <Description>The identification of the identification scheme.</Description>
                     <Reference type="CODE_LIST">ICD</Reference>
-                    <Value type="EXAMPLE">SE:VATNO</Value>
+                    <Value type="EXAMPLE">0007</Value>
                 </Attribute>
 
-                <Value type="EXAMPLE">SE5679083242</Value>
+                <Value type="EXAMPLE">5679083245</Value>
             </Element>
 
             <Element cardinality="0..1">
@@ -119,9 +119,9 @@
                         </Description>
                         <Reference type="CODE_LIST">ICD</Reference>
                         <Reference type="CODE_LIST">ICD_UNKNOWN</Reference>
-                        <Value type="EXAMPLE">SE:VATNO</Value>
+                        <Value type="EXAMPLE">0007</Value>
                     </Attribute>
-                    <Value type="EXAMPLE">SE5679083242</Value>
+                    <Value type="EXAMPLE">5679083245</Value>
                 </Element>
             </Element>
 
@@ -344,10 +344,10 @@
                     <Term>schemeID</Term>
                     <Description>The identification of the identification scheme.</Description>
                     <Reference type="CODE_LIST">ICD</Reference>
-                    <Value type="EXAMPLE">NO:ORGNR</Value>
+                    <Value type="EXAMPLE">0192</Value>
                 </Attribute>
 
-                <Value type="EXAMPLE">987654321</Value>
+                <Value type="EXAMPLE">912345678</Value>
             </Element>
 
             <Element cardinality="0..1">
@@ -367,10 +367,10 @@
                         </Description>
                         <Reference type="CODE_LIST">ICD</Reference>
                         <Reference type="CODE_LIST">ICD_UNKNOWN</Reference>
-                        <Value type="EXAMPLE">NO:ORGNR</Value>
+                        <Value type="EXAMPLE">0192</Value>
                     </Attribute>
 
-                    <Value type="EXAMPLE">987654321</Value>
+                    <Value type="EXAMPLE">912345678</Value>
 
                 </Element>
             </Element>
@@ -603,9 +603,9 @@
                             </Description>
                             <Reference type="CODE_LIST">ICD</Reference>
                             <Reference type="CODE_LIST">ICD_UNKNOWN</Reference>
-                            <Value type="EXAMPLE">SE:VATNO</Value>
+                            <Value type="EXAMPLE">0007</Value>
                         </Attribute>
-                        <Value type="EXAMPLE">SE5679083242</Value>
+                        <Value type="EXAMPLE">5679083245</Value>
                     </Element>
                 </Element>
 
@@ -842,9 +842,9 @@
                             </Description>
                             <Reference type="CODE_LIST">ICD</Reference>
                             <Reference type="CODE_LIST">ICD_UNKNOWN</Reference>
-                            <Value type="EXAMPLE">SE:VATNO</Value>
+                            <Value type="EXAMPLE">0007</Value>
                         </Attribute>
-                        <Value type="EXAMPLE">SE5679083242</Value>
+                        <Value type="EXAMPLE">5679083245</Value>
                     </Element>
                 </Element>
 
@@ -1459,7 +1459,7 @@
                     </Element>
                 </Element>
 
-                <Element>
+                <!--Element cardinality="0..n">
                     <Term>cbc:ItemClassificationCode</Term>
                     <Name>Item classification code</Name>
                     <Description>A code for classifying the item by its type or nature. Classification codes are used to
@@ -1488,7 +1488,7 @@
                     </Attribute>
 
                     <Value type="EXAMPLE">53131502</Value>
-                </Element>
+                </Element-->
 
                 <Element cardinality="0..n">
                     <Term>cac:ItemSpecificationDocumentReference</Term>
@@ -1616,7 +1616,7 @@
                             (CPV), e-Commerce (UNSPSC) etc.
                         </Description>
 
-                        <Attribute usage="Optional">
+                        <Attribute usage="Mandatory">
                             <Term>listID</Term>
                             <Name>Code list identifier</Name>
                             <Reference type="CODE_LIST">UNCL7143</Reference>
@@ -1626,13 +1626,13 @@
                         <Attribute usage="Optional">
                             <Term>listVersionID</Term>
                             <Name>Code list version identifier</Name>
-                            <Value type="FIXED">v 3.2</Value>
+                            <Value type="EXAMPLE">v 3.2</Value>
                         </Attribute>
 
                         <Attribute usage="Optional">
                             <Term>name</Term>
                             <Name>Name</Name>
-                            <Value type="FIXED">AnyName</Value>
+                            <Value type="EXAMPLE">SBMI</Value>
                         </Attribute>
 
                         <Value type="EXAMPLE">53131502</Value>
@@ -1696,8 +1696,8 @@
 
                     <Element cardinality="0..1">
                         <Term>cbc:ID</Term>
-                        <Name>Item property identifier</Name>
-                        <Description>A property identifier for the property of the item request.</Description>
+                        <Name>ID</Name>
+                        <Description>ID of the property if assigned by an Agency</Description>
                         <Attribute usage="Optional">
                             <Term>schemeDataURI</Term>
                             <Name>Scheme data URI</Name>
@@ -1707,14 +1707,14 @@
                         <Attribute usage="Optional">
                             <Term>schemeID</Term>
                             <Name>Scheme identifier</Name>
-                            <Description>Identifier of the property scheme.</Description>
+                            <Description>Scheme identifier</Description>
                             <Value type="EXAMPLE">ISO-23386</Value>
                         </Attribute>
 
                         <Attribute usage="Optional">
                             <Term>schemeVersionID</Term>
-                            <Name>Scheme version</Name>
-                            <Description>Version of the property scheme.</Description>
+                            <Name>Scheme version identifier</Name>
+                            <Description>Scheme version identifier</Description>
                             <Value type="EXAMPLE">1.0</Value>
                         </Attribute>
                         <Value type="EXAMPLE">PROP-34</Value>
@@ -1724,7 +1724,7 @@
                     <Element>
                         <Term>cbc:Name</Term>
                         <Name>Item property name</Name>
-                        <Description>The name of the requested property.The name must be sufficiently descriptive to
+                        <Description>The name of the property.The name must be sufficiently descriptive to
                             define the value. The definition may be supplemented with the property unit of measure when
                             relevant.
                         </Description>
@@ -1734,13 +1734,14 @@
 
                     <Element cardinality="0..1">
                         <Term>cbc:NameCode</Term>
-                        <Name>Item property classification code</Name>
-                        <Description>Code for the requested item property according to a property code system
-                        </Description>
+                        <Name>Item property code</Name>
+                        <Description>Code for the item property according to a property code system.</Description>
 
                         <Attribute usage="Optional">
                             <Term>listID</Term>
-                            <Name>Code list identifier</Name>
+                            <Name>Name code list id</Name>
+                            <Description>An identifier for the code list used for the Name code, this is bilaterally
+                                agreed</Description>
                             <Value type="EXAMPLE">UNCL7081</Value>
                         </Attribute>
 
@@ -1750,14 +1751,15 @@
                     <Element>
                         <Term>cbc:Value</Term>
                         <Name>Item property value</Name>
-                        <Description>The value of the requested item property</Description>
+                        <Description>The value of the item property.</Description>
                         <Value type="EXAMPLE">Red</Value>
                     </Element>
 
                     <Element cardinality="0..1">
                         <Term>cbc:ValueQuantity</Term>
                         <Name>Item property unit of measure</Name>
-                        <Description>The quantity of the requested item property.
+                        <Description>The unit of measure in which the property value is stated, if relevant. May not be
+                            relevant when properties are descriptive.
                         </Description>
                         <Attribute>
                             <Term>unitCode</Term>
@@ -1778,18 +1780,15 @@
 
                     <Element cardinality="0..1">
                         <Term>cbc:ValueQualifier</Term>
-                        <Name>Item property unit of measure</Name>
-                        <Description>The unit of measure in which the requested property value is stated, if relevant.
-                            May not be relevant when properties are descriptive.
-                        </Description>
+                        <Name>Property classification</Name>
+                        <Description>Standardized and predefined classification of items properties.</Description>
                         <Value type="EXAMPLE">EA</Value>
                     </Element>
 
                     <Element cardinality="0..1">
                         <Term>cbc:ImportanceCode</Term>
-                        <Name>Item property unit of measure</Name>
-                        <Description>Relevance of the requested property in the corresponding pre-award catalogue
-                            request.
+                        <Name>Item property importance code</Name>
+                        <Description>Relevance of the item property in the corresponding pre-award catalogue.
                         </Description>
                         <Value type="EXAMPLE">O</Value>
                     </Element>
@@ -1797,7 +1796,7 @@
                     <Element cardinality="0..1">
                         <Term>cac:ItemPropertyRange</Term>
                         <Name>Item property range</Name>
-                        <Description>Applicable range for the values of the requested property.
+                        <Description>Applicable range for the values of the item property.
                         </Description>
 
                         <Element cardinality="0..1">
