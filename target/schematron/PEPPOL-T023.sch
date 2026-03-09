@@ -330,14 +330,8 @@
       </rule>
       <rule context="/ubl:TendererQualificationResponse/cac:QualificationResolution">
          <assert test="cbc:AdmissionCode" flag="fatal" id="PEPPOL-T023-B02901">Element 'cbc:AdmissionCode' MUST be provided.</assert>
-         <assert test="cbc:Resolution" flag="fatal" id="PEPPOL-T023-B02902">Element 'cbc:Resolution' MUST be provided.</assert>
-         <assert test="cbc:ResolutionDate" flag="fatal" id="PEPPOL-T023-B02903">Element 'cbc:ResolutionDate' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:TendererQualificationResponse/cac:QualificationResolution/cbc:AdmissionCode">
-         <assert test="normalize-space(text()) = 'false'"
-                 flag="fatal"
-                 id="PEPPOL-T023-B03001">Element 'cbc:AdmissionCode' MUST contain value 'false'.</assert>
-      </rule>
+      <rule context="/ubl:TendererQualificationResponse/cac:QualificationResolution/cbc:AdmissionCode"/>
       <rule context="/ubl:TendererQualificationResponse/cac:QualificationResolution/cbc:Resolution"/>
       <rule context="/ubl:TendererQualificationResponse/cac:QualificationResolution/cbc:ResolutionDate"/>
       <rule context="/ubl:TendererQualificationResponse/cac:QualificationResolution/cbc:ResolutionTime"/>
@@ -347,7 +341,7 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T023-B03401">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TendererQualificationResponse/cac:QualificationResolution/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T023-B02904">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T023-B02902">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TendererQualificationResponse/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T023-B00113">Document MUST NOT contain elements not part of the data model.</assert>
@@ -479,7 +473,8 @@
                  test="normalize-space(./@schemeURI)='urn:uuid'">schemeURI for Response Document Reference Identifier MUST be 'urn:uuid'.</assert>
         <assert id="PEPPOL-T023-R037"
                  flag="warning"
-                 test="count(./@*) = 1 and ./@schemeURI"><value-of select="$syntaxError"/>A Response Document Reference Identifier SHOULD NOT have any attributes but schemeURI</assert>
+                 test="count(./@*) = 1 and ./@schemeURI">
+            <value-of select="$syntaxError"/>A Response Document Reference Identifier SHOULD NOT have any attributes but schemeURI</assert>
         <assert id="PEPPOL-T023-R038"
                  flag="fatal"
                  test="matches(normalize-space(.),'^[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}$')">A Response Document Reference Identifier MUST be expressed in a UUID syntax (RFC 4122)</assert>
