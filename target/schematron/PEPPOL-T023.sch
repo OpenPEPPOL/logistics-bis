@@ -479,7 +479,7 @@
                  test="normalize-space(./@schemeURI)='urn:uuid'">schemeURI for Response Document Reference Identifier MUST be 'urn:uuid'.</assert>
         <assert id="PEPPOL-T023-R037"
                  flag="warning"
-                 test="count(./@*) = 1 and ./@schemeURI">A Response Document Reference Identifier SHOULD NOT have any attributes but schemeURI</assert>
+                 test="count(./@*) = 1 and ./@schemeURI"><value-of select="$syntaxError"/>A Response Document Reference Identifier SHOULD NOT have any attributes but schemeURI</assert>
         <assert id="PEPPOL-T023-R038"
                  flag="fatal"
                  test="matches(normalize-space(.),'^[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}$')">A Response Document Reference Identifier MUST be expressed in a UUID syntax (RFC 4122)</assert>
@@ -487,11 +487,9 @@
       <rule context="ubl:TendererQualificationResponse/cac:QualificationResolution">
         <assert id="PEPPOL-T023-R039" flag="fatal" test="cbc:AdmissionCode">Element 'cbc:AdmissionCode' MUST be provided.</assert>
         <assert id="PEPPOL-T023-R040" flag="fatal" test="cbc:ResolutionDate">Element 'cbc:ResolutionDate' MUST be provided.</assert>
-      </rule>
-      <rule context="ubl:TendererQualificationResponse/cac:QualificationResolution/cbc:Resolution">
         <assert id="PEPPOL-T023-R042"
                  flag="fatal"
-                 test="(../cbc:AdmissionCode = 'false' and not(cbc:Resolution))">Qualification Resolution Element with cbc:AdmissionCode 'false'  has to have at least one Resolution element.</assert>
+                 test="cbc:AdmissionCode != 'false' or cbc:Resolution">Qualification Resolution Element with cbc:AdmissionCode 'false'  has to have at least one Resolution element.</assert>
       </rule>
       <rule context="ubl:TendererQualificationResponse/cac:QualificationResolution/cac:ProcurementProjectLot">
         <assert id="PEPPOL-T023-R044"

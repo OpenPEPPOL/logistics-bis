@@ -228,15 +228,15 @@
 				<Term>cbc:AdmissionCode</Term>
 				<Name>Admission code</Name>
 				<Description>The admission code describes the qualification result. </Description>
-				<Value type="FIXED">false</Value>
+				<Value type="EXAMPLE">false</Value>
 			</Element>
-			<Element>
+			<Element cardinality="0..1">
 				<Term>cbc:Resolution</Term>
 				<Name>Reason for rejection</Name>
 				<Description>A literal description of the reason why the qualification has been rejected. In case a qualification rejection resolution is related to more than one lot, a reason for rejection should be given for each lot.</Description>
 				<Reference type="RULE">PEPPOL-T023-R042</Reference>
 			</Element>
-			<Element>
+			<Element cardinality="0..1">
 				<Term>cbc:ResolutionDate</Term>
 				<Name>Resolution date</Name>
 				<Description>The date at which the qualification resolution had been made.</Description>
@@ -248,7 +248,7 @@
 				<Name>Resolution time</Name>
 				<Description>If necessary, the time at which the qualification resolution has been made. </Description>
 				<DataType>Time</DataType>
-				<Value type="EXAMPLE">10:00:00z</Value>
+				<Value type="EXAMPLE">10:00:00+00:00</Value>
 			</Element>
 			<Element cardinality="0..1">
 				<Term>cac:ProcurementProjectLot</Term>
