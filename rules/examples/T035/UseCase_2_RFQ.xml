@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ubl:CatalogueRequest
-        xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:CatalogueRequest-2"
+<CatalogueRequest
+        xmlns="urn:oasis:names:specification:ubl:schema:xsd:CatalogueRequest-2"
         xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
         xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
         xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
@@ -35,9 +35,9 @@
 		</cac:PostalAddress>
 		<cac:PartyTaxScheme>
 			<cbc:CompanyID>SE123456789001</cbc:CompanyID>
-			<cac:Taxsceme>
+			<cac:TaxScheme>
 				<cbc:ID>VAT</cbc:ID>
-			</cac:Taxsceme>
+			</cac:TaxScheme>
 		</cac:PartyTaxScheme>
 		<cac:PartyLegalEntity>
 			<cbc:RegistrationName>Trävaruleveranser AB</cbc:RegistrationName>
@@ -146,15 +146,15 @@
 			</cac:CommodityClassification>
 
 			<cac:AdditionalItemProperty>
-				<cbc:ID schemeID="__________" schemeVersionID="________" schemeDataURI="__________">__________________________________</cbc:ID>
-				<cbc:Name>______________</cbc:Name>
-				<cbc:NameCode listID="___________">_____</cbc:NameCode>
-				<cbc:Value>_________</cbc:Value>
-				<cbc:ValueQuantity unitCode="___">___________________</cbc:ValueQuantity>
-				<cbc:ValueQualifier>_______________</cbc:ValueQualifier>
+				<cbc:ID schemeID="ISO22057" schemeVersionID="2022" schemeDataURI="https://define.cobuilder.no/77e416eb-a363-4258-a04e-171d843a6460/2022/">77e416eb-a363-4258-a04e-171d843a6460</cbc:ID>
+				<cbc:Name>Red</cbc:Name>
+				<cbc:NameCode listID="NSC">S1580-R</cbc:NameCode>
+				<cbc:Value>10 EA</cbc:Value>
+				<cbc:ValueQuantity unitCode="EA">10</cbc:ValueQuantity>
+				<cbc:ValueQualifier>10</cbc:ValueQualifier>
 				<cac:ItemPropertyRange>
-					<cbc:MinimumValue>______________</cbc:MinimumValue>
-					<cbc:MaximumValue>______________</cbc:MaximumValue>
+					<cbc:MinimumValue>5</cbc:MinimumValue>
+					<cbc:MaximumValue>15</cbc:MaximumValue>
 				</cac:ItemPropertyRange>
 			</cac:AdditionalItemProperty>
 
@@ -192,4 +192,4 @@
 			</cac:AdditionalItemProperty>
 		</cac:Item>
 	</cac:CatalogueRequestLine>
-</ubl:CatalogueRequest>
+</CatalogueRequest>
