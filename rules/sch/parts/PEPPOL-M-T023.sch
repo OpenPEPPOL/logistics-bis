@@ -40,8 +40,7 @@
     </rule>
     
     <rule context="ubl:TendererQualificationResponse/cbc:ContractFolderID">
-        <assert id="PEPPOL-T023-R023" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>ContractFolderID SHOULD NOT contain any attributes.</assert>
-        <assert id="PEPPOL-T023-R024" flag="fatal" test="matches(normalize-space(.),'^[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}$')">The ContractFolderID MUST be expressed in a UUID syntax (RFC 4122).</assert>
+         <assert id="PEPPOL-T023-R024" flag="fatal" test="matches(normalize-space(.),'^[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}$')">The ContractFolderID MUST be expressed in a UUID syntax (RFC 4122).</assert>
     </rule>
     <rule context="ubl:TendererQualificationResponse/cbc:IssueTime">
         <assert id="PEPPOL-T023-R025" flag="fatal" test="matches(normalize-space(.),'^(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]|(24:00:00))(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?$')">IssueTime MUST have a granularity of seconds</assert>
