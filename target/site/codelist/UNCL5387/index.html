@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Peppol Pre-Award - April 2026 Release | Rules</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" href="../../css/bootstrap.css"/>
+    <link rel="stylesheet" href="../../css/structure.css"/>
+    
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="../../">Peppol Pre-Award - April 2026 Release</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Syntax <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        
+                            <li><a href="../../syntax/ExpressionOfInterestRequest/tree/">Peppol Expression Of Interest Request Transaction 1.2 (T001).</a></li>
+                        
+                            <li><a href="../../syntax/ExpressionOfInterestResponse/tree/">Peppol Expression Of Interest Response Transaction 1.2 (T002).</a></li>
+                        
+                            <li><a href="../../syntax/TenderStatusRequest/tree/">Peppol Tender Status Request Transaction 1.2 (T003).</a></li>
+                        
+                            <li><a href="../../syntax/CallForTenders/tree/">Peppol Call for Tenders Transaction 1.2 (T004).</a></li>
+                        
+                            <li><a href="../../syntax/Tender/tree/">Peppol Tender Transaction 1.2 (T005).</a></li>
+                        
+                            <li><a href="../../syntax/TenderReceipt/tree/">Peppol Tender Receipt Transaction 1.2 (T006).</a></li>
+                        
+                            <li><a href="../../syntax/TenderingQuestions/tree/">Peppol Tendering Questions Transaction 1.1 (T007).</a></li>
+                        
+                            <li><a href="../../syntax/TenderingAnswers/tree/">Peppol Tendering Answers Transaction 1.1 (T008).</a></li>
+                        
+                            <li><a href="../../syntax/TenderClarificationRequest/tree/">Peppol Tender Clarification Request Transaction 1.1 (T009).</a></li>
+                        
+                            <li><a href="../../syntax/TenderClarification/tree/">Peppol Tender Clarification Transaction 1.1 (T010).</a></li>
+                        
+                            <li><a href="../../syntax/SearchNoticeRequest/tree/">Peppol Search Notice Request Transaction 1.2 (T011).</a></li>
+                        
+                            <li><a href="../../syntax/SearchNoticeResponse/tree/">Peppol Search Notice Response Transaction 1.2 (T012).</a></li>
+                        
+                            <li><a href="../../syntax/TenderWithdrawalRequest/tree/">Peppol Tender Withdrawal Transaction 1.1 (T013).</a></li>
+                        
+                            <li><a href="../../syntax/TenderWithdrawalResponse/tree/">Peppol Tender Withdrawal Notification Transaction 1.2 (T014).</a></li>
+                        
+                            <li><a href="../../syntax/PublishNotice/tree/">Peppol Publish Notice Transaction 1.2 (T015).</a></li>
+                        
+                            <li><a href="../../syntax/NoticePublicationResponse/tree/">Peppol Notice Publication Response Transaction 1.2 (T016).</a></li>
+                        
+                            <li><a href="../../syntax/AwardedNotification/tree/">Peppol Awarding Notification Transaction 1.1 (T017).</a></li>
+                        
+                            <li><a href="../../syntax/TenderingMessageResponse/tree/">Peppol Tendering Message Response Transaction 1.1 (T018).</a></li>
+                        
+                            <li><a href="../../syntax/Qualification/tree/">Peppol Qualification Transaction 1.1 (T019).</a></li>
+                        
+                            <li><a href="../../syntax/QualificationReceipt/tree/">Peppol Qualification Reception Confirmation Transaction 1.1 (T020).</a></li>
+                        
+                            <li><a href="../../syntax/UnsubscribeFromProcedureRequest/tree/">Peppol Unsubscribe From Procedure Request Transaction 1.2 (T021).</a></li>
+                        
+                            <li><a href="../../syntax/UnsubscribeFromProcedureResponse/tree/">Peppol Unsubscribe From Procedure Response Transaction 1.2 (T022).</a></li>
+                        
+                            <li><a href="../../syntax/QualificationResponse/tree/">Peppol Qualification Response Transaction 1.0 (T023).</a></li>
+                        
+                            <li><a href="../../syntax/InvitationToTender/tree/">Peppol Invitation to Tender Transaction 1.0 (T024).</a></li>
+                        
+                            <li><a href="../../syntax/CatalogueRequest/tree/">Peppol Pre-Award Catalogue Request Transaction 1.1 (T035).</a></li>
+                        
+                            <li><a href="../../syntax/Catalogue/tree/">Peppol Pre-Award Catalogue Transaction 1.1 (T036).</a></li>
+                        
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Rules <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        
+                            <li><a href="../../rules/T001/">PEPPOL T001 rules - Subscribe to Procedure 1.2</a></li>
+                        
+                            <li><a href="../../rules/T002/">PEPPOL T002 rules - Subscribe to Procedure Confirmation 1.2</a></li>
+                        
+                            <li><a href="../../rules/T021/">PEPPOL T021 rules - Unsubscribe from Procedure 1.2</a></li>
+                        
+                            <li><a href="../../rules/T022/">PEPPOL T022 rules - Unsubscribe from Procedure Confirmation 1.2</a></li>
+                        
+                            <li><a href="../../rules/T003/">PEPPOL T003 rules - Tender Status Inquiry 1.2</a></li>
+                        
+                            <li><a href="../../rules/T004/">PEPPOL T004 rules - Call for Tenders 1.2</a></li>
+                        
+                            <li><a href="../../rules/T005/">PEPPOL T005 rules - Tender 1.2</a></li>
+                        
+                            <li><a href="../../rules/T006/">PEPPOL T006 rules - Tender Reception Notification 1.2</a></li>
+                        
+                            <li><a href="../../rules/T007/">PEPPOL T007 rules - Tendering Questions 1.1</a></li>
+                        
+                            <li><a href="../../rules/T008/">PEPPOL T008 rules - Tendering Answers 1.1</a></li>
+                        
+                            <li><a href="../../rules/T009/">PEPPOL T009 rules - Tender Clarification Request 1.1</a></li>
+                        
+                            <li><a href="../../rules/T010/">PEPPOL T010 rules - Tender Clarification 1.1</a></li>
+                        
+                            <li><a href="../../rules/T011/">PEPPOL T011 rules - Search Notice Request 1.2</a></li>
+                        
+                            <li><a href="../../rules/T012/">PEPPOL T012 rules - Search Notice Response 1.2</a></li>
+                        
+                            <li><a href="../../rules/T013/">PEPPOL T013 rules - Tender Withdrawal 1.1</a></li>
+                        
+                            <li><a href="../../rules/T014/">PEPPOL T014 rules - Tender Withdrawal Notification 1.2</a></li>
+                        
+                            <li><a href="../../rules/T015/">PEPPOL T015 rules - Publish Notice 1.2</a></li>
+                        
+                            <li><a href="../../rules/T016/">PEPPOL T016 rules - Notice Publication Response 1.2</a></li>
+                        
+                            <li><a href="../../rules/T017/">PEPPOL T017 rules - Awarding Notification 1.1</a></li>
+                        
+                            <li><a href="../../rules/T018/">PEPPOL T018 rules - Tendering Message Response 1.1</a></li>
+                        
+                            <li><a href="../../rules/T019/">PEPPOL T019 rules - Qualification 1.1</a></li>
+                        
+                            <li><a href="../../rules/T020/">PEPPOL T020 rules - Qualification Reception Confirmation 1.1</a></li>
+                        
+                            <li><a href="../../rules/T023/">PEPPOL T023 rules - Qualification Response 1.0</a></li>
+                        
+                            <li><a href="../../rules/T024/">PEPPOL T024 rules - Invitation to Tender 1.0</a></li>
+                        
+                            <li><a href="../../rules/T035/">PEPPOL T035 rules - Pre-Award Catalogue Request 1.0</a></li>
+                        
+                            <li><a href="../../rules/T036/">PEPPOL T036 rules - Pre-Award Catalogue 1.0</a></li>
+                        
+                            <li><a href="../../rules/T001-basic/">Basic rules for Peppol Expression Of Interest Request Transaction 1.2 (T001).</a></li>
+                        
+                            <li><a href="../../rules/T002-basic/">Basic rules for Peppol Expression Of Interest Response Transaction 1.2 (T002).</a></li>
+                        
+                            <li><a href="../../rules/T003-basic/">Basic rules for Peppol Tender Status Request Transaction 1.2 (T003).</a></li>
+                        
+                            <li><a href="../../rules/T004-basic/">Basic rules for Peppol Call for Tenders Transaction 1.2 (T004).</a></li>
+                        
+                            <li><a href="../../rules/T005-basic/">Basic rules for Peppol Tender Transaction 1.2 (T005).</a></li>
+                        
+                            <li><a href="../../rules/T006-basic/">Basic rules for Peppol Tender Receipt Transaction 1.2 (T006).</a></li>
+                        
+                            <li><a href="../../rules/T007-basic/">Basic rules for Peppol Tendering Questions Transaction 1.1 (T007).</a></li>
+                        
+                            <li><a href="../../rules/T008-basic/">Basic rules for Peppol Tendering Answers Transaction 1.1 (T008).</a></li>
+                        
+                            <li><a href="../../rules/T009-basic/">Basic rules for Peppol Tender Clarification Request Transaction 1.1 (T009).</a></li>
+                        
+                            <li><a href="../../rules/T010-basic/">Basic rules for Peppol Tender Clarification Transaction 1.1 (T010).</a></li>
+                        
+                            <li><a href="../../rules/T011-basic/">Basic rules for Peppol Search Notice Request Transaction 1.2 (T011).</a></li>
+                        
+                            <li><a href="../../rules/T012-basic/">Basic rules for Peppol Search Notice Response Transaction 1.2 (T012).</a></li>
+                        
+                            <li><a href="../../rules/T013-basic/">Basic rules for Peppol Tender Withdrawal Transaction 1.1 (T013).</a></li>
+                        
+                            <li><a href="../../rules/T014-basic/">Basic rules for Peppol Tender Withdrawal Notification Transaction 1.2 (T014).</a></li>
+                        
+                            <li><a href="../../rules/T015-basic/">Basic rules for Peppol Publish Notice Transaction 1.2 (T015).</a></li>
+                        
+                            <li><a href="../../rules/T016-basic/">Basic rules for Peppol Notice Publication Response Transaction 1.2 (T016).</a></li>
+                        
+                            <li><a href="../../rules/T017-basic/">Basic rules for Peppol Awarding Notification Transaction 1.1 (T017).</a></li>
+                        
+                            <li><a href="../../rules/T018-basic/">Basic rules for Peppol Tendering Message Response Transaction 1.1 (T018).</a></li>
+                        
+                            <li><a href="../../rules/T019-basic/">Basic rules for Peppol Qualification Transaction 1.1 (T019).</a></li>
+                        
+                            <li><a href="../../rules/T020-basic/">Basic rules for Peppol Qualification Reception Confirmation Transaction 1.1 (T020).</a></li>
+                        
+                            <li><a href="../../rules/T021-basic/">Basic rules for Peppol Unsubscribe From Procedure Request Transaction 1.2 (T021).</a></li>
+                        
+                            <li><a href="../../rules/T022-basic/">Basic rules for Peppol Unsubscribe From Procedure Response Transaction 1.2 (T022).</a></li>
+                        
+                            <li><a href="../../rules/T023-basic/">Basic rules for Peppol Qualification Response Transaction 1.0 (T023).</a></li>
+                        
+                            <li><a href="../../rules/T024-basic/">Basic rules for Peppol Invitation to Tender Transaction 1.0 (T024).</a></li>
+                        
+                            <li><a href="../../rules/T035-basic/">Basic rules for Peppol Pre-Award Catalogue Request Transaction 1.1 (T035).</a></li>
+                        
+                            <li><a href="../../rules/T036-basic/">Basic rules for Peppol Pre-Award Catalogue Transaction 1.1 (T036).</a></li>
+                        
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Code lists <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        
+                            <li><a href="../../codelist/addCond/">additionalConditionsCode</a></li>
+                        
+                            <li><a href="../../codelist/awardCode/">awardCode</a></li>
+                        
+                            <li><a href="../../codelist/contractType/">contractTypeCode</a></li>
+                        
+                            <li><a href="../../codelist/docStatus/">documentStatusCode</a></li>
+                        
+                            <li><a href="../../codelist/docType/">documentTypeCode</a></li>
+                        
+                            <li><a href="../../codelist/eas/">Electronic Address Scheme (EAS)</a></li>
+                        
+                            <li><a href="../../codelist/GS17009/">Packaging level code (GS1 7009)</a></li>
+                        
+                            <li><a href="../../codelist/ICD/">ISO 6523 ICD list</a></li>
+                        
+                            <li><a href="../../codelist/ICD_UNKNOWN/">ISO 6523 International Code Designator (ICD) Unknown</a></li>
+                        
+                            <li><a href="../../codelist/ISO3166/">ISO 3166-1:Alpha2 Country codes</a></li>
+                        
+                            <li><a href="../../codelist/ISO4217/">ISO 4217 Currency codes</a></li>
+                        
+                            <li><a href="../../codelist/legalBasis/">legalBasisCode</a></li>
+                        
+                            <li><a href="../../codelist/messageResponse/">MessageResponseCode</a></li>
+                        
+                            <li><a href="../../codelist/MimeCode/">Mime code (IANA Subset)</a></li>
+                        
+                            <li><a href="../../codelist/noticeResponse/">NoticeResponseCode</a></li>
+                        
+                            <li><a href="../../codelist/procedureType/">procedureTypeCode</a></li>
+                        
+                            <li><a href="../../codelist/procurementType/">procurementTypeCode</a></li>
+                        
+                            <li><a href="../../codelist/publicationCondition/">publicationConditionCode</a></li>
+                        
+                            <li><a href="../../codelist/StatusReason/">Status reason code (OpenPeppol)</a></li>
+                        
+                            <li><a href="../../codelist/submissionMethod/">SubmissionMethodCode</a></li>
+                        
+                            <li><a href="../../codelist/tendererRole/">Economic Operator Role Codes</a></li>
+                        
+                            <li><a href="../../codelist/ublDocumentSchema/">UBLDocumentSchema</a></li>
+                        
+                            <li><a href="../../codelist/UNCL1001/">Document name code, full list (UNCL1001)</a></li>
+                        
+                            <li><a href="../../codelist/UNCL5305/">Duty or tax or fee category code (Subset of UNCL5305)</a></li>
+                        
+                            <li><a href="../../codelist/UNCL5387/">Price type codes (UNCL5387)</a></li>
+                        
+                            <li><a href="../../codelist/UNCL8273/">Dangerous goods regulations code (UNCL8273)</a></li>
+                        
+                            <li><a href="../../codelist/UNECERec20/">Recommendation 20, including Recommendation 21 codes - prefixed with X (UN/ECE)</a></li>
+                        
+                            <li><a href="../../codelist/TransactionCondition/">Transaction condition code (OpenPeppol)</a></li>
+                        
+                            <li><a href="../../codelist/UNCL6313/">Measured attribute code (UNCL6313)</a></li>
+                        
+                            <li><a href="../../codelist/UNCL7143/">Item type identification code (UNCL7143)</a></li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="main" class="container">
+
+    <ol class="breadcrumb">
+        <li><a href="../../">Home</a></li>
+        <li><a href="../../codelist/">Code lists</a></li>
+        <li class="active">Price type codes (UNCL5387)</li>
+    </ol>
+
+    <div class="page-header">
+        <h1>Price type codes (UNCL5387)</h1>
+    </div>
+
+    
+
+    <dl class="dl-horizontal">
+        <dt>Identifier</dt>
+        <dd>UNCL5387</dd>
+
+        
+
+        <dt>Agency</dt>
+        <dd>UN/CEFACT</dd>
+
+        <dt>Version</dt>
+        <dd>D.16B</dd>
+
+        
+
+        
+            <dt>Usage</dt>
+            <dd>
+                <div style="margin-bottom: 5pt;">
+                    
+    
+    
+    
+    
+    
+    /
+    
+    <a href="../../syntax/CatalogueRequest/">ubl:CatalogueRequest</a>
+
+    /
+    
+    <a href="../../syntax/CatalogueRequest/cac-CatalogueRequestLine/">cac:CatalogueRequestLine</a>
+
+    /
+    
+    <a href="../../syntax/CatalogueRequest/cac-CatalogueRequestLine/cac-RequiredItemLocationQuantity/">cac:RequiredItemLocationQuantity</a>
+
+    /
+    
+    <a href="../../syntax/CatalogueRequest/cac-CatalogueRequestLine/cac-RequiredItemLocationQuantity/cac-Price/">cac:Price</a>
+
+    /
+    
+    <a href="../../syntax/CatalogueRequest/cac-CatalogueRequestLine/cac-RequiredItemLocationQuantity/cac-Price/cbc-PriceTypeCode/">cbc:PriceTypeCode</a>
+
+                </div>
+                <div style="margin-bottom: 5pt;">
+                    
+    
+    
+    
+    
+    
+    /
+    
+    <a href="../../syntax/Catalogue/">ubl:Catalogue</a>
+
+    /
+    
+    <a href="../../syntax/Catalogue/cac-CatalogueLine/">cac:CatalogueLine</a>
+
+    /
+    
+    <a href="../../syntax/Catalogue/cac-CatalogueLine/cac-RequiredItemLocationQuantity/">cac:RequiredItemLocationQuantity</a>
+
+    /
+    
+    <a href="../../syntax/Catalogue/cac-CatalogueLine/cac-RequiredItemLocationQuantity/cac-Price/">cac:Price</a>
+
+    /
+    
+    <a href="../../syntax/Catalogue/cac-CatalogueLine/cac-RequiredItemLocationQuantity/cac-Price/cbc-PriceTypeCode/">cbc:PriceTypeCode</a>
+
+                </div>
+            </dd>
+        
+
+        
+            <dt>Codes</dt>
+            <dd>
+                <div id="AAA" style="margin-bottom: 5pt;">
+                    <code>AAA</code><br/>
+                    <strong>Reference price</strong>
+                    <br/><p>Code identifying a reference price.</p>
+                </div>
+                <div id="AAB" style="margin-bottom: 5pt;">
+                    <code>AAB</code><br/>
+                    <strong>Price includes tax</strong>
+                    <br/><p>Code specifying that the price is inclusive of tax.</p>
+                </div>
+                <div id="AAC" style="margin-bottom: 5pt;">
+                    <code>AAC</code><br/>
+                    <strong>Buyer suggested retail price</strong>
+                    <br/><p>The suggested retail price as suggested or determined by the party purchasing
+            the goods.</p>
+                </div>
+                <div id="AAD" style="margin-bottom: 5pt;">
+                    <code>AAD</code><br/>
+                    <strong>Ocean charges rate</strong>
+                    <br/><p>The charges imposed by the ocean transportation industry above and beyond the
+            basic freight.</p>
+                </div>
+                <div id="AAE" style="margin-bottom: 5pt;">
+                    <code>AAE</code><br/>
+                    <strong>Not subject to fluctuation</strong>
+                    <br/><p>Not subject to escalation or adjustment.</p>
+                </div>
+                <div id="AAF" style="margin-bottom: 5pt;">
+                    <code>AAF</code><br/>
+                    <strong>Subject to escalation</strong>
+                    <br/><p>Subject to increase or development by successive stages.</p>
+                </div>
+                <div id="AAG" style="margin-bottom: 5pt;">
+                    <code>AAG</code><br/>
+                    <strong>Subject to price adjustment</strong>
+                    <br/><p>Code specifying that the price is subject to adjustment.</p>
+                </div>
+                <div id="AAH" style="margin-bottom: 5pt;">
+                    <code>AAH</code><br/>
+                    <strong>Subject to escalation and price adjustment</strong>
+                    <br/><p>Subject to increase or development by successive stages and price
+            adjustment.</p>
+                </div>
+                <div id="AAI" style="margin-bottom: 5pt;">
+                    <code>AAI</code><br/>
+                    <strong>Fluctuation conditions not specified</strong>
+                    <br/><p>Code specifying that the fluctuation conditions are not
+            identified.</p>
+                </div>
+                <div id="AAJ" style="margin-bottom: 5pt;">
+                    <code>AAJ</code><br/>
+                    <strong>All in price</strong>
+                    <br/><p>Firm price for specified work.</p>
+                </div>
+                <div id="AAK" style="margin-bottom: 5pt;">
+                    <code>AAK</code><br/>
+                    <strong>New price</strong>
+                    <br/><p>A price valid from an effective date/time/period.</p>
+                </div>
+                <div id="AAL" style="margin-bottom: 5pt;">
+                    <code>AAL</code><br/>
+                    <strong>Old price</strong>
+                    <br/><p>A price valid prior to an effective date/time/period of a new
+            price.</p>
+                </div>
+                <div id="AAM" style="margin-bottom: 5pt;">
+                    <code>AAM</code><br/>
+                    <strong>Per week</strong>
+                    <br/><p>To indicate that the given price applies per week.</p>
+                </div>
+                <div id="AAN" style="margin-bottom: 5pt;">
+                    <code>AAN</code><br/>
+                    <strong>Price on application</strong>
+                    <br/><p>Price can be obtained on request from seller.</p>
+                </div>
+                <div id="AAO" style="margin-bottom: 5pt;">
+                    <code>AAO</code><br/>
+                    <strong>Unpacked price</strong>
+                    <br/><p>The price given is the price of the item without packaging.</p>
+                </div>
+                <div id="AAP" style="margin-bottom: 5pt;">
+                    <code>AAP</code><br/>
+                    <strong>Trade price</strong>
+                    <br/><p>Discount price available to all customers except the retail
+            customer.</p>
+                </div>
+                <div id="AAQ" style="margin-bottom: 5pt;">
+                    <code>AAQ</code><br/>
+                    <strong>Firm price</strong>
+                    <br/><p>Price which will remain unchanged for a given time period.</p>
+                </div>
+                <div id="AAR" style="margin-bottom: 5pt;">
+                    <code>AAR</code><br/>
+                    <strong>Material share of item price</strong>
+                    <br/><p>The per unit cost of referenced material based on a given quotation for that
+            material.</p>
+                </div>
+                <div id="AAS" style="margin-bottom: 5pt;">
+                    <code>AAS</code><br/>
+                    <strong>Labour share of item price</strong>
+                    <br/><p>The labour component of the per-unit item price.</p>
+                </div>
+                <div id="AAT" style="margin-bottom: 5pt;">
+                    <code>AAT</code><br/>
+                    <strong>Transport share of item price</strong>
+                    <br/><p>The transport component of the per-unit item price.</p>
+                </div>
+                <div id="AAU" style="margin-bottom: 5pt;">
+                    <code>AAU</code><br/>
+                    <strong>Packing share of item price</strong>
+                    <br/><p>The packing component of the per-unit item price.</p>
+                </div>
+                <div id="AAV" style="margin-bottom: 5pt;">
+                    <code>AAV</code><br/>
+                    <strong>Tooling share of item price</strong>
+                    <br/><p>The tooling component of the per-unit item price.</p>
+                </div>
+                <div id="AAW" style="margin-bottom: 5pt;">
+                    <code>AAW</code><br/>
+                    <strong>Temporary vehicle charge</strong>
+                    <br/><p>The component of a price charged for providing a temporary
+            vehicle.</p>
+                </div>
+                <div id="AAX" style="margin-bottom: 5pt;">
+                    <code>AAX</code><br/>
+                    <strong>Price component due to interest</strong>
+                    <br/><p>This is the component of the price which is charged due to
+            interest.</p>
+                </div>
+                <div id="AAY" style="margin-bottom: 5pt;">
+                    <code>AAY</code><br/>
+                    <strong>Price component due to management services</strong>
+                    <br/><p>This is the component of the price which is charged due to management services
+            rendered.</p>
+                </div>
+                <div id="AAZ" style="margin-bottom: 5pt;">
+                    <code>AAZ</code><br/>
+                    <strong>Price component due to maintenance</strong>
+                    <br/><p>This is the component of the price which is charged due to
+            maintenance.</p>
+                </div>
+                <div id="ABA" style="margin-bottom: 5pt;">
+                    <code>ABA</code><br/>
+                    <strong>Individual buyer price</strong>
+                    <br/><p>A price which is available to an individual buyer as opposed to an
+            institutional buyer.</p>
+                </div>
+                <div id="ABB" style="margin-bottom: 5pt;">
+                    <code>ABB</code><br/>
+                    <strong>Group buying price</strong>
+                    <br/><p>A price which is available to a buying group.</p>
+                </div>
+                <div id="ABC" style="margin-bottom: 5pt;">
+                    <code>ABC</code><br/>
+                    <strong>Group member buying price</strong>
+                    <br/><p>A special price given to a member of a buying group.</p>
+                </div>
+                <div id="ABD" style="margin-bottom: 5pt;">
+                    <code>ABD</code><br/>
+                    <strong>Pre-payment price</strong>
+                    <br/><p>A special price if pre-payment is made for the article ordered.</p>
+                </div>
+                <div id="ABE" style="margin-bottom: 5pt;">
+                    <code>ABE</code><br/>
+                    <strong>Retail price - excluding taxes</strong>
+                    <br/><p>Retail price not including any applicable taxes.</p>
+                </div>
+                <div id="ABF" style="margin-bottom: 5pt;">
+                    <code>ABF</code><br/>
+                    <strong>Suggested retail price - excluding taxes</strong>
+                    <br/><p>Suggested retail price not including any applicable taxes.</p>
+                </div>
+                <div id="ABG" style="margin-bottom: 5pt;">
+                    <code>ABG</code><br/>
+                    <strong>Agreed minimum price</strong>
+                    <br/><p>The minimum price agreed between trading partners.</p>
+                </div>
+                <div id="ABH" style="margin-bottom: 5pt;">
+                    <code>ABH</code><br/>
+                    <strong>Statutory minimum retail price</strong>
+                    <br/><p>The legal minimum retail price.</p>
+                </div>
+                <div id="ABI" style="margin-bottom: 5pt;">
+                    <code>ABI</code><br/>
+                    <strong>Cost reimbursement price</strong>
+                    <br/><p>A code to indicate that the price represents the reimbursement of the actual
+            costs incurred.</p>
+                </div>
+                <div id="ABJ" style="margin-bottom: 5pt;">
+                    <code>ABJ</code><br/>
+                    <strong>Market price</strong>
+                    <br/><p>A code to indicate that the given price is applicable under normal competitive
+            conditions.</p>
+                </div>
+                <div id="ABK" style="margin-bottom: 5pt;">
+                    <code>ABK</code><br/>
+                    <strong>Open tender price</strong>
+                    <br/><p>A code to indicate that the price mentioned has been submitted in the context
+            of an open tender.</p>
+                </div>
+                <div id="ABL" style="margin-bottom: 5pt;">
+                    <code>ABL</code><br/>
+                    <strong>Base price</strong>
+                    <br/><p>The base price of a product or service.</p>
+                </div>
+                <div id="ABM" style="margin-bottom: 5pt;">
+                    <code>ABM</code><br/>
+                    <strong>Base price difference</strong>
+                    <br/><p>The difference in price against a base price.</p>
+                </div>
+                <div id="ABN" style="margin-bottom: 5pt;">
+                    <code>ABN</code><br/>
+                    <strong>Adjustable price prior to acceptance</strong>
+                    <br/><p>A price which can be adjusted due to economic conditions between the date of
+            offer and the date of acceptance.</p>
+                </div>
+                <div id="ABO" style="margin-bottom: 5pt;">
+                    <code>ABO</code><br/>
+                    <strong>Revisable price after acceptance</strong>
+                    <br/><p>A price which can be revised due to economic conditions between the date of
+            acceptance of the order and the date of delivery.</p>
+                </div>
+                <div id="ABP" style="margin-bottom: 5pt;">
+                    <code>ABP</code><br/>
+                    <strong>Provisional ceiling price</strong>
+                    <br/><p>A provisional price which cannot be exceeded.</p>
+                </div>
+                <div id="ABQ" style="margin-bottom: 5pt;">
+                    <code>ABQ</code><br/>
+                    <strong>Adjustable provisional ceiling price</strong>
+                    <br/><p>A provisional price which cannot be exceeded but which can be adjusted due to
+            economic conditions between the date of offer and the date of acceptance.</p>
+                </div>
+                <div id="ABR" style="margin-bottom: 5pt;">
+                    <code>ABR</code><br/>
+                    <strong>Revisable provisional ceiling price</strong>
+                    <br/><p>A provisional price which cannot be exceeded but is revisable due to economic
+            conditions between the date of acceptance of the order through to the date of
+            delivery.</p>
+                </div>
+                <div id="ABS" style="margin-bottom: 5pt;">
+                    <code>ABS</code><br/>
+                    <strong>Revisable provisional price</strong>
+                    <br/><p>A provisional price which is revisable due to economic conditions between the
+            date of acceptance of the order and the date of delivery.</p>
+                </div>
+                <div id="ABT" style="margin-bottom: 5pt;">
+                    <code>ABT</code><br/>
+                    <strong>Adjustable provisional price</strong>
+                    <br/><p>A provisional price which is adjustable due to economic conditions between the
+            date of offer and the date of acceptance.</p>
+                </div>
+                <div id="ABU" style="margin-bottom: 5pt;">
+                    <code>ABU</code><br/>
+                    <strong>Area price</strong>
+                    <br/><p>Price connected to a geographical area.</p>
+                </div>
+                <div id="ABV" style="margin-bottom: 5pt;">
+                    <code>ABV</code><br/>
+                    <strong>Area system price</strong>
+                    <br/><p>A basis price applied to a geographic area.</p>
+                </div>
+                <div id="ABW" style="margin-bottom: 5pt;">
+                    <code>ABW</code><br/>
+                    <strong>Special balance regulation price</strong>
+                    <br/><p>The price applicable to the power generated as a result of a special balance
+            regulation.</p>
+                </div>
+                <div id="ABX" style="margin-bottom: 5pt;">
+                    <code>ABX</code><br/>
+                    <strong>Balance regulation price</strong>
+                    <br/><p>The price applicable to the power generated as a result of a balance
+            regulation.</p>
+                </div>
+                <div id="ABY" style="margin-bottom: 5pt;">
+                    <code>ABY</code><br/>
+                    <strong>Upward balance regulation price</strong>
+                    <br/><p>The price applicable to the power generated as a result of an upward balance
+            regulation.</p>
+                </div>
+                <div id="ABZ" style="margin-bottom: 5pt;">
+                    <code>ABZ</code><br/>
+                    <strong>Downward balance regulation price</strong>
+                    <br/><p>The price applicable to the power generated as a result of a downward balance
+            regulation.</p>
+                </div>
+                <div id="ACA" style="margin-bottom: 5pt;">
+                    <code>ACA</code><br/>
+                    <strong>Agreed minimum retail price</strong>
+                    <br/><p>The agreed minimum retail price for an article.</p>
+                </div>
+                <div id="ACB" style="margin-bottom: 5pt;">
+                    <code>ACB</code><br/>
+                    <strong>Marked retail price</strong>
+                    <br/><p>The retail price of a product which has been marked on the products
+            packaging.</p>
+                </div>
+                <div id="AI" style="margin-bottom: 5pt;">
+                    <code>AI</code><br/>
+                    <strong>Active ingredient</strong>
+                    <br/><p>Code specifying that price is based on the active ingredient.</p>
+                </div>
+                <div id="ALT" style="margin-bottom: 5pt;">
+                    <code>ALT</code><br/>
+                    <strong>Alternate price</strong>
+                    <br/><p>A substitute cost.</p>
+                </div>
+                <div id="AP" style="margin-bottom: 5pt;">
+                    <code>AP</code><br/>
+                    <strong>Advice price</strong>
+                    <br/><p>Code specifying an advice price.</p>
+                </div>
+                <div id="BR" style="margin-bottom: 5pt;">
+                    <code>BR</code><br/>
+                    <strong>Broker price</strong>
+                    <br/><p>Code specifying a broker price.</p>
+                </div>
+                <div id="CAT" style="margin-bottom: 5pt;">
+                    <code>CAT</code><br/>
+                    <strong>Catalogue price</strong>
+                    <br/><p>Price per unit of quantity of a product as specified in a
+            catalogue.</p>
+                </div>
+                <div id="CDV" style="margin-bottom: 5pt;">
+                    <code>CDV</code><br/>
+                    <strong>Current domestic value</strong>
+                    <br/><p>The present worth of a thing which comes from ones homeland, in terms of money
+            or goods.</p>
+                </div>
+                <div id="CON" style="margin-bottom: 5pt;">
+                    <code>CON</code><br/>
+                    <strong>Contract price</strong>
+                    <br/><p>Price per unit of quantity of a product/service as agreed in a contract
+            between parties.</p>
+                </div>
+                <div id="CP" style="margin-bottom: 5pt;">
+                    <code>CP</code><br/>
+                    <strong>Current price</strong>
+                    <br/><p>Price at time of transaction, but subject to future change.</p>
+                </div>
+                <div id="CU" style="margin-bottom: 5pt;">
+                    <code>CU</code><br/>
+                    <strong>Consumer unit</strong>
+                    <br/><p>Code specifying that the price is based on consumer unit.</p>
+                </div>
+                <div id="CUP" style="margin-bottom: 5pt;">
+                    <code>CUP</code><br/>
+                    <strong>Confirmed unit price</strong>
+                    <br/><p>The value of a single item that proves to be correct.</p>
+                </div>
+                <div id="CUS" style="margin-bottom: 5pt;">
+                    <code>CUS</code><br/>
+                    <strong>Declared customs unit value</strong>
+                    <br/><p>A clearly known duty on a single item which is imposed by law.</p>
+                </div>
+                <div id="DAP" style="margin-bottom: 5pt;">
+                    <code>DAP</code><br/>
+                    <strong>Dealer adjusted price</strong>
+                    <br/><p>The necessary or desirable changes that the sales agency makes with respect to
+            the value of the product.</p>
+                </div>
+                <div id="DIS" style="margin-bottom: 5pt;">
+                    <code>DIS</code><br/>
+                    <strong>Distributor price</strong>
+                    <br/><p>The cost associated with the agency that markets goods.</p>
+                </div>
+                <div id="DPR" style="margin-bottom: 5pt;">
+                    <code>DPR</code><br/>
+                    <strong>Discount price</strong>
+                    <br/><p>A reduction from the usual list value.</p>
+                </div>
+                <div id="DR" style="margin-bottom: 5pt;">
+                    <code>DR</code><br/>
+                    <strong>Dealer price</strong>
+                    <br/><p>Code specifying a dealer price.</p>
+                </div>
+                <div id="DSC" style="margin-bottom: 5pt;">
+                    <code>DSC</code><br/>
+                    <strong>Discount amount allowed</strong>
+                    <br/><p>A certain price up to which one is able to make reductions from the usual list
+            value.</p>
+                </div>
+                <div id="CSC" style="margin-bottom: 5pt;">
+                    <code>CSC</code><br/>
+                    <strong>price</strong>
+                    <br/><p>Price registered at European Commission Steel and Carbon office (DG
+            III).</p>
+                </div>
+                <div id="ES" style="margin-bottom: 5pt;">
+                    <code>ES</code><br/>
+                    <strong>Estimated price</strong>
+                    <br/><p>Code specifying an estimated price.</p>
+                </div>
+                <div id="EUP" style="margin-bottom: 5pt;">
+                    <code>EUP</code><br/>
+                    <strong>Expected unit price</strong>
+                    <br/><p>The anticipated value of a single item.</p>
+                </div>
+                <div id="FCR" style="margin-bottom: 5pt;">
+                    <code>FCR</code><br/>
+                    <strong>Freight/charge rate</strong>
+                    <br/><p>The price that is either a freight rate or a rate on which freight charges are
+            calculated.</p>
+                </div>
+                <div id="GRP" style="margin-bottom: 5pt;">
+                    <code>GRP</code><br/>
+                    <strong>Gross unit price</strong>
+                    <br/><p>Unit price to which allowances and charges apply.</p>
+                </div>
+                <div id="INV" style="margin-bottom: 5pt;">
+                    <code>INV</code><br/>
+                    <strong>Invoice price</strong>
+                    <br/><p>Price per unit of quantity of a product as specified on an
+            invoice.</p>
+                </div>
+                <div id="LBL" style="margin-bottom: 5pt;">
+                    <code>LBL</code><br/>
+                    <strong>Labelling price</strong>
+                    <br/><p>Retail price of the buyer that should be printed by the producer on the
+            articles label. The labelling price is not necessary the effective retail
+            price.</p>
+                </div>
+                <div id="MAX" style="margin-bottom: 5pt;">
+                    <code>MAX</code><br/>
+                    <strong>Maximum order quantity price</strong>
+                    <br/><p>The greatest amount of goods or services which one can buy to receive a
+            certain value.</p>
+                </div>
+                <div id="MIN" style="margin-bottom: 5pt;">
+                    <code>MIN</code><br/>
+                    <strong>Minimum order quantity price</strong>
+                    <br/><p>The least amount of goods or services that one can buy to receive a certain
+            value.</p>
+                </div>
+                <div id="MNR" style="margin-bottom: 5pt;">
+                    <code>MNR</code><br/>
+                    <strong>Minimum release quantity price</strong>
+                    <br/><p>The least amount of an order one can place in order to receive a certain
+            value.</p>
+                </div>
+                <div id="MSR" style="margin-bottom: 5pt;">
+                    <code>MSR</code><br/>
+                    <strong>Manufacturers suggested retail</strong>
+                    <br/><p>Price that reflects &quot;Sales to other manufacturers&quot; or &quot;Sales for
+            resale&quot;.</p>
+                </div>
+                <div id="MXR" style="margin-bottom: 5pt;">
+                    <code>MXR</code><br/>
+                    <strong>Maximum release quantity price</strong>
+                    <br/><p>The greatest amount of an order that one can place in order to receive a
+            certain value.</p>
+                </div>
+                <div id="NE" style="margin-bottom: 5pt;">
+                    <code>NE</code><br/>
+                    <strong>Not-to-exceed price</strong>
+                    <br/><p>Code specifying a price that cannot be increased.</p>
+                </div>
+                <div id="NQT" style="margin-bottom: 5pt;">
+                    <code>NQT</code><br/>
+                    <strong>No quote</strong>
+                    <br/><p>No price available.</p>
+                </div>
+                <div id="NTP" style="margin-bottom: 5pt;">
+                    <code>NTP</code><br/>
+                    <strong>Net unit price</strong>
+                    <br/><p>Unit price to which no allowances and charges apply.</p>
+                </div>
+                <div id="NW" style="margin-bottom: 5pt;">
+                    <code>NW</code><br/>
+                    <strong>Net weight</strong>
+                    <br/><p>Code specifying a net weight price.</p>
+                </div>
+                <div id="OFR" style="margin-bottom: 5pt;">
+                    <code>OFR</code><br/>
+                    <strong>Ocean freight rate</strong>
+                    <br/><p>The price per pricing unit of ocean transportation services for moving cargo
+            from one location to another.</p>
+                </div>
+                <div id="PAQ" style="margin-bottom: 5pt;">
+                    <code>PAQ</code><br/>
+                    <strong>Price break quantity(s)</strong>
+                    <br/><p>Numerical amounts of goods or services which are associated with different
+            sums of money. As the amount goes up, the price per individual item
+            decreases.</p>
+                </div>
+                <div id="PBQ" style="margin-bottom: 5pt;">
+                    <code>PBQ</code><br/>
+                    <strong>Unit price beginning quantity</strong>
+                    <br/><p>The starting amount at which you can place a value on a single
+            item.</p>
+                </div>
+                <div id="PPD" style="margin-bottom: 5pt;">
+                    <code>PPD</code><br/>
+                    <strong>Prepaid freight charges</strong>
+                    <br/><p>The cost of shipping is paid before the goods are shipped.</p>
+                </div>
+                <div id="PPR" style="margin-bottom: 5pt;">
+                    <code>PPR</code><br/>
+                    <strong>Provisional price</strong>
+                    <br/><p>Price per unit of quantity of a product as provisionally agreed.</p>
+                </div>
+                <div id="PRO" style="margin-bottom: 5pt;">
+                    <code>PRO</code><br/>
+                    <strong>Producers price</strong>
+                    <br/><p>The value that the maker of a good places on an item.</p>
+                </div>
+                <div id="PRP" style="margin-bottom: 5pt;">
+                    <code>PRP</code><br/>
+                    <strong>Promotional price</strong>
+                    <br/><p>The value that is placed on an item that is being developed. The idea is to
+            sell this product for less than one normally would, and make up for it by selling a
+            larger quantity.</p>
+                </div>
+                <div id="PW" style="margin-bottom: 5pt;">
+                    <code>PW</code><br/>
+                    <strong>Gross weight</strong>
+                    <br/><p>Code specifying a gross weight price.</p>
+                </div>
+                <div id="QTE" style="margin-bottom: 5pt;">
+                    <code>QTE</code><br/>
+                    <strong>Quote price</strong>
+                    <br/><p>Price per unit of quantity of a product as specified in a quote.</p>
+                </div>
+                <div id="RES" style="margin-bottom: 5pt;">
+                    <code>RES</code><br/>
+                    <strong>Resale price</strong>
+                    <br/><p>Price per unit of quantity of a product to be used for resale.</p>
+                </div>
+                <div id="RTP" style="margin-bottom: 5pt;">
+                    <code>RTP</code><br/>
+                    <strong>Retail price</strong>
+                    <br/><p>Price per unit of quantity of a product to be used for retail.</p>
+                </div>
+                <div id="SHD" style="margin-bottom: 5pt;">
+                    <code>SHD</code><br/>
+                    <strong>Ship and debit</strong>
+                    <br/><p>To transport goods and be owed money by the customer for the services
+            performed.</p>
+                </div>
+                <div id="SRP" style="margin-bottom: 5pt;">
+                    <code>SRP</code><br/>
+                    <strong>Suggested retail price</strong>
+                    <br/><p>Price per unit of quantity of a product suggested for retail.</p>
+                </div>
+                <div id="SW" style="margin-bottom: 5pt;">
+                    <code>SW</code><br/>
+                    <strong>Gross weight without wooden pallets</strong>
+                    <br/><p>Used in steel industry.</p>
+                </div>
+                <div id="TB" style="margin-bottom: 5pt;">
+                    <code>TB</code><br/>
+                    <strong>To be negotiated</strong>
+                    <br/><p>Code specifying that the price has to be negotiated.</p>
+                </div>
+                <div id="TRF" style="margin-bottom: 5pt;">
+                    <code>TRF</code><br/>
+                    <strong>Transfer</strong>
+                    <br/><p>To carry or remove from one place, situation, or person to
+            another.</p>
+                </div>
+                <div id="TU" style="margin-bottom: 5pt;">
+                    <code>TU</code><br/>
+                    <strong>Traded unit</strong>
+                    <br/><p>Code specifying a traded unit price.</p>
+                </div>
+                <div id="TW" style="margin-bottom: 5pt;">
+                    <code>TW</code><br/>
+                    <strong>Theoretical weight</strong>
+                    <br/><p>Code specifying a price based on a theoretical weight.</p>
+                </div>
+                <div id="WH" style="margin-bottom: 5pt;">
+                    <code>WH</code><br/>
+                    <strong>Wholesale price</strong>
+                    <br/><p>Code specifying a wholesale price.</p>
+                </div>
+            </dd>
+        
+    </dl>
+
+</div>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/bootstrap.js"></script>
+
+
+</body>
+</html>
