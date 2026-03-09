@@ -270,11 +270,11 @@
          <assert test="cac:MainQualifyingParty" flag="fatal" id="PEPPOL-T019-B01101">Element 'cac:MainQualifyingParty' MUST be provided.</assert>
          <assert test="cac:ContractingParty" flag="fatal" id="PEPPOL-T019-B01102">Element 'cac:ContractingParty' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:ProcurementProjectLot">
+      <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:InterestedProcurementProjectLot">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T019-B01201">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:ProcurementProjectLot/cbc:ID"/>
-      <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:ProcurementProjectLot/*">
+      <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:InterestedProcurementProjectLot/cbc:ID"/>
+      <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:InterestedProcurementProjectLot/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T019-B01202">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty">
