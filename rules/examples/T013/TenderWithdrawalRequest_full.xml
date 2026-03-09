@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ubl:TenderWithdrawal xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TenderWithdrawal-2"
+<TenderWithdrawal xmlns="urn:oasis:names:specification:ubl:schema:xsd:TenderWithdrawal-2"
                       xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                       xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
    <cbc:UBLVersionID>2.2</cbc:UBLVersionID>
@@ -28,7 +28,9 @@
          <cac:PartyIdentification>
             <cbc:ID schemeID="0204">991-1234512345-06</cbc:ID>
          </cac:PartyIdentification>
-         <cac:PartyName/>
+         <cac:PartyName>
+            <cbc:Name>Contracting Body Inc</cbc:Name>
+         </cac:PartyName>
       </cac:Party>
    </cac:ContractingParty>
    <cac:TendererParty>
@@ -46,4 +48,4 @@
          <cbc:Name>Example</cbc:Name>
       </cac:Contact>
    </cac:TendererParty>
-</ubl:TenderWithdrawal>
+</TenderWithdrawal>

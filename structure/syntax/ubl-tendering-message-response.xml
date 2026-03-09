@@ -241,51 +241,51 @@
                         <Value type="EXAMPLE">/TenderWithdrawal/cbc:CustomizationID</Value>
                     </Element>
                 </Element>
-            </Element>
-            <Element>
-                <Term>cac:Response</Term>
-                <Name>Line response information</Name>
-                <Reference type="RULE">PEPPOL-T018-R040</Reference>
-                <Reference type="RULE">PEPPOL-T018-R041</Reference>
-                <Reference type="RULE">PEPPOL-T018-R042</Reference>
-                <Element cardinality="0..1">
-                    <Term>cbc:ResponseCode</Term>
-                    <Name>Line response code</Name>
-                    <Description>A code stating whether the referenced line was accepted or rejected.</Description>
-                    <DataType>Code</DataType>
-                    <Reference type="RULE">PEPPOL-T018-R043</Reference>
-                    <Reference type="CODE_LIST">messageResponse</Reference>
-                    <Value type="EXAMPLE">RE</Value>
-                </Element>
                 <Element>
-                    <Term>cbc:Description</Term>
-                    <Name>Issue description</Name>
-                    <Description>The description of the issue identified in the transaction document. If applicable
+                    <Term>cac:Response</Term>
+                    <Name>Line response information</Name>
+                    <Reference type="RULE">PEPPOL-T018-R040</Reference>
+                    <Reference type="RULE">PEPPOL-T018-R041</Reference>
+                    <Reference type="RULE">PEPPOL-T018-R042</Reference>
+                    <Element cardinality="0..1">
+                        <Term>cbc:ResponseCode</Term>
+                        <Name>Line response code</Name>
+                        <Description>A code stating whether the referenced line was accepted or rejected.</Description>
+                        <DataType>Code</DataType>
+                        <Reference type="RULE">PEPPOL-T018-R043</Reference>
+                        <Reference type="CODE_LIST">messageResponse</Reference>
+                        <Value type="EXAMPLE">RE</Value>
+                    </Element>
+                    <Element>
+                        <Term>cbc:Description</Term>
+                        <Name>Issue description</Name>
+                        <Description>The description of the issue identified in the transaction document. If applicable
                         this should be the error message from the schematron or syntax validation. If not the
                         description of the used status reason code should be used.
                     </Description>
-                    <DataType>Text</DataType>
-                    <Value type="EXAMPLE">Error associated with a syntax violation that indicates a problem that leads
+                        <DataType>Text</DataType>
+                        <Value type="EXAMPLE">Error associated with a syntax violation that indicates a problem that leads
                         to the
                         rejection of the referenced message.
                     </Value>
-                </Element>
-                <Element>
-                    <Term>cac:Status</Term>
-                    <Name>Status details</Name>
-                    <Reference type="RULE">PEPPOL-T018-R044</Reference>
-                    <Reference type="RULE">PEPPOL-T018-R046</Reference>
+                    </Element>
                     <Element>
-                        <Term>cbc:StatusReasonCode</Term>
-                        <Name>Issue type code</Name>
-                        <Description>A codified version of the issue description that describes
+                        <Term>cac:Status</Term>
+                        <Name>Status details</Name>
+                        <Reference type="RULE">PEPPOL-T018-R044</Reference>
+                        <Reference type="RULE">PEPPOL-T018-R046</Reference>
+                        <Element>
+                            <Term>cbc:StatusReasonCode</Term>
+                            <Name>Issue type code</Name>
+                            <Description>A codified version of the issue description that describes
                             the nature of the issue e.g. Syntax violation, Business rule
                             violation, etc.
                         </Description>
-                        <DataType>Code</DataType>
-                        <Reference type="RULE">PEPPOL-T018-R045</Reference>
-                        <Reference type="CODE_LIST">StatusReason</Reference>
-                        <Value type="EXAMPLE">BV</Value>
+                            <DataType>Code</DataType>
+                            <Reference type="RULE">PEPPOL-T018-R045</Reference>
+                            <Reference type="CODE_LIST">StatusReason</Reference>
+                            <Value type="EXAMPLE">BV</Value>
+                        </Element>
                     </Element>
                 </Element>
             </Element>

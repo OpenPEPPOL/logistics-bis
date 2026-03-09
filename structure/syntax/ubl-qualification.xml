@@ -94,7 +94,7 @@
 			<Name>A class to describe the Economic Operator or Group of Economic Operators that want to qualify for the Call for Tender.</Name>
 			<Reference type="RULE">PEPPOL-T019-R010</Reference>
 			<Element cardinality="0..n">
-				<Term>cac:ProcurementProjectLot</Term>
+				<Term>cac:InterestedProcurementProjectLot</Term>
 				<Name>Interested procurement project lot</Name>
 				<Reference type="RULE">PEPPOL-T019-R052</Reference>
 				<Element>
@@ -103,6 +103,7 @@
 					<Description>An identifier of the lots for which the Economic Operator want to qualify.</Description>
 					<DataType>identifier</DataType>
 					<Reference type="RULE">PEPPOL-T019-R053</Reference>
+					<Value type="EXAMPLE">ID-001</Value>
 				</Element>
 			</Element>
 			<Element>
@@ -414,7 +415,7 @@
 					</Element>
 				</Element>
 			</Element>
-			<Element>
+			<!-- Element>
 				<Term>cac:ContractingParty</Term>
 				<Name>Contracting body</Name>
 				<Description>The contracting authority or contracting entity who is buying supplies, services or public works using a tendering procedure as described in the applicable directive (Directives 2014/24/EU, 2014/25/EU).</Description>
@@ -471,7 +472,7 @@
 						</Element>
 					</Element>
 				</Element>
-			</Element>
+			</ Element -->
 		</Element>
 		<Element cardinality="1..n">
 			<Term>cac:AdditionalDocumentReference</Term>
