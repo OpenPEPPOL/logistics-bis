@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ubl:CatalogueRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:CatalogueRequest-2"
-                      xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-                      xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<CatalogueRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:CatalogueRequest-2"
+   xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+   xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
    <cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t035:1</cbc:CustomizationID>
    <cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p035</cbc:ProfileID>
    <cbc:ID>123</cbc:ID>
@@ -11,6 +11,51 @@
       <cbc:StartDate>2017-06-01</cbc:StartDate>
       <cbc:EndDate>2017-06-30</cbc:EndDate>
    </cac:ValidityPeriod>
+   <cac:ReceiverParty>
+      <cbc:EndpointID schemeID="0192">912345678</cbc:EndpointID>
+      <cac:PartyIdentification>
+         <cbc:ID schemeID="0192">912345678</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+         <cbc:Name>Cataloge receiver name</cbc:Name>
+      </cac:PartyName>
+      <cac:PostalAddress>
+         <cbc:StreetName>Storgata 32</cbc:StreetName>
+         <cbc:AdditionalStreetName>Postbox 43</cbc:AdditionalStreetName>
+         <cbc:CityName>Bergen</cbc:CityName>
+         <cbc:PostalZone>5510</cbc:PostalZone>
+         <cbc:CountrySubentity>Hordaland</cbc:CountrySubentity>
+         <cac:AddressLine>
+            <cbc:Line>Example</cbc:Line>
+         </cac:AddressLine>
+         <cac:Country>
+            <cbc:IdentificationCode listID="ISO3166">NO</cbc:IdentificationCode>
+         </cac:Country>
+      </cac:PostalAddress>
+      <cac:PartyTaxScheme>
+         <cbc:CompanyID>Example</cbc:CompanyID>
+         <cac:TaxScheme>
+            <cbc:ID>Example</cbc:ID>
+         </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+         <cbc:RegistrationName>Example</cbc:RegistrationName>
+         <cbc:CompanyID schemeID="sample">Example</cbc:CompanyID>
+         <cac:RegistrationAddress>
+            <cbc:CityName>Bergen</cbc:CityName>
+            <cac:Country>
+               <cbc:IdentificationCode listID="ISO3166">NO</cbc:IdentificationCode>
+            </cac:Country>
+         </cac:RegistrationAddress>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+         <cbc:Name>Jens Jensen</cbc:Name>
+         <cbc:Telephone>22332233</cbc:Telephone>
+         <cbc:Telefax>22332244</cbc:Telefax>
+         <cbc:ElectronicMail>jjensen@customer.no</cbc:ElectronicMail>
+      </cac:Contact>
+
+   </cac:ReceiverParty>
    <cac:ProviderParty>
       <cbc:EndpointID schemeID="0007">5679083245</cbc:EndpointID>
       <cac:PartyIdentification>
@@ -54,50 +99,6 @@
          <cbc:ElectronicMail>jjensen@customer.no</cbc:ElectronicMail>
       </cac:Contact>
    </cac:ProviderParty>
-   <cac:ReceiverParty>
-      <cbc:EndpointID schemeID="0192">912345678</cbc:EndpointID>
-      <cac:PartyIdentification>
-         <cbc:ID schemeID="0192">912345678</cbc:ID>
-      </cac:PartyIdentification>
-      <cac:PartyName>
-         <cbc:Name>Cataloge receiver name</cbc:Name>
-      </cac:PartyName>
-      <cac:PostalAddress>
-         <cbc:StreetName>Storgata 32</cbc:StreetName>
-         <cbc:AdditionalStreetName>Postbox 43</cbc:AdditionalStreetName>
-         <cbc:CityName>Bergen</cbc:CityName>
-         <cbc:PostalZone>5510</cbc:PostalZone>
-         <cbc:CountrySubentity>Hordaland</cbc:CountrySubentity>
-         <cac:AddressLine>
-            <cbc:Line>Example</cbc:Line>
-         </cac:AddressLine>
-         <cac:Country>
-            <cbc:IdentificationCode listID="ISO3166">NO</cbc:IdentificationCode>
-         </cac:Country>
-         <cac:PartyTaxScheme>
-            <cbc:CompanyID>Example</cbc:CompanyID>
-            <cac:TaxScheme>
-               <cbc:ID>Example</cbc:ID>
-            </cac:TaxScheme>
-         </cac:PartyTaxScheme>
-         <cac:PartyLegalEntity>
-            <cbc:RegistrationName>Example</cbc:RegistrationName>
-            <cbc:CompanyID schemeID="sample">Example</cbc:CompanyID>
-            <cac:RegistrationAddress>
-               <cbc:CityName>Bergen</cbc:CityName>
-               <cac:Country>
-                  <cbc:IdentificationCode listID="ISO3166">NO</cbc:IdentificationCode>
-               </cac:Country>
-            </cac:RegistrationAddress>
-         </cac:PartyLegalEntity>
-         <cac:Contact>
-            <cbc:Name>Jens Jensen</cbc:Name>
-            <cbc:Telephone>22332233</cbc:Telephone>
-            <cbc:Telefax>22332244</cbc:Telefax>
-            <cbc:ElectronicMail>jjensen@customer.no</cbc:ElectronicMail>
-         </cac:Contact>
-      </cac:PostalAddress>
-   </cac:ReceiverParty>
    <cac:SellerSupplierParty>
       <cac:Party>
          <cac:PartyIdentification>
@@ -254,7 +255,9 @@
             <cbc:DocumentType>Product specification</cbc:DocumentType>
             <cbc:DocumentDescription>Report providing specification of products.</cbc:DocumentDescription>
             <cac:Attachment>
-               <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="specification.pdf">UEVQUE9MIEJJUyBQcmUgYXdhcmQgQ2F0YWxvZ3VlIGV4YW1wbGUgYXR0YWNoZW1lbnQ=</cbc:EmbeddedDocumentBinaryObject>
+               <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf"
+                  filename="specification.pdf">
+                  UEVQUE9MIEJJUyBQcmUgYXdhcmQgQ2F0YWxvZ3VlIGV4YW1wbGUgYXR0YWNoZW1lbnQ=</cbc:EmbeddedDocumentBinaryObject>
                <cac:ExternalReference>
                   <cbc:URI>https://test-vefa.difi.no/peppolbis/pracc/catalogue</cbc:URI>
                </cac:ExternalReference>
@@ -267,7 +270,7 @@
             <cbc:ItemClassificationCode listID="STI" listVersionID="v 3.2" name="SBMI">53131502</cbc:ItemClassificationCode>
          </cac:CommodityClassification>
          <cac:ClassifiedTaxCategory>
-            <cbc:ID listID="UNCL5305">S</cbc:ID>
+            <cbc:ID>S</cbc:ID>
             <cbc:Percent>25</cbc:Percent>
             <cac:TaxScheme>
                <cbc:ID>VAT</cbc:ID>
@@ -278,7 +281,7 @@
             <cbc:Name>Color</cbc:Name>
             <cbc:NameCode listID="UNCL7081">35</cbc:NameCode>
             <cbc:Value>Red</cbc:Value>
-            <cbc:ValueQuantity unitCode="C62">EA</cbc:ValueQuantity>
+            <cbc:ValueQuantity unitCode="C62">10</cbc:ValueQuantity>
             <cbc:ValueQualifier>EA</cbc:ValueQualifier>
             <cbc:ImportanceCode>O</cbc:ImportanceCode>
             <cac:ItemPropertyRange>
@@ -301,4 +304,4 @@
          </cac:Certificate>
       </cac:Item>
    </cac:CatalogueRequestLine>
-</ubl:CatalogueRequest>
+</CatalogueRequest>
