@@ -484,7 +484,7 @@
         <assert id="PEPPOL-T023-R040" flag="fatal" test="cbc:ResolutionDate">Element 'cbc:ResolutionDate' MUST be provided.</assert>
         <assert id="PEPPOL-T023-R042"
                  flag="fatal"
-                 test="cbc:AdmissionCode != 'false' or cbc:Resolution">Qualification Resolution Element with cbc:AdmissionCode 'false'  has to have at least one Resolution element.</assert>
+                 test="not(cbc:AdmissionCode = 'false') or cbc:Resolution">Qualification Resolution Element with cbc:AdmissionCode 'false'  has to have at least one Resolution element.</assert>
       </rule>
       <rule context="ubl:TendererQualificationResponse/cac:QualificationResolution/cac:ProcurementProjectLot">
         <assert id="PEPPOL-T023-R044"
