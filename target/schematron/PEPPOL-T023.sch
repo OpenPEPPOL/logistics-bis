@@ -251,9 +251,9 @@
                  id="PEPPOL-T023-B00301">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t023:1.0'.</assert>
       </rule>
       <rule context="/ubl:TendererQualificationResponse/cbc:ProfileID">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p012:1.0'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p012:1.1'"
                  flag="fatal"
-                 id="PEPPOL-T023-B00401">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p012:1.0'.</assert>
+                 id="PEPPOL-T023-B00401">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p012:1.1'.</assert>
       </rule>
       <rule context="/ubl:TendererQualificationResponse/cbc:ID">
          <assert test="not(@schemeURI) or @schemeURI = 'urn:uuid'"
