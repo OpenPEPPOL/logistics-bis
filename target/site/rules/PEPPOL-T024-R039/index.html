@@ -289,13 +289,13 @@
 
     <dl class="dl-horizontal">
         <dt>Message</dt>
-        <dd><p class="lead">[PEPPOL-T024-R039] A Call For Tender is only allowed to use une of the following ContractSystemCodes: &#39;Public Contract&#39;, &#39;Establishment of a Framework agreement&#39; or &#39;Setting up a Dynamic Purchasing System&#39;.</p></dd>
+        <dd><p class="lead">[PEPPOL-T024-R039] A Call For Tender is only allowed to use one of the following ContractSystemCodes: &#39;Public Contract&#39;, &#39;Establishment of a Framework agreement&#39; or &#39;Setting up a Dynamic Purchasing System&#39;.</p></dd>
 
         <dt>Context</dt>
         <dd><code>ubl:CallForTenders/cac:TenderingProcess/cbc:ContractingSystemCode</code></dd>
 
         <dt>Test</dt>
-        <dd><code>not (cbc:ContractingSystemCode in (&#39;1&#39;, &#39;2&#39;, &#39;3&#39;))</code></dd>
+        <dd><code>normalize-space(.) = (&#39;1&#39;, &#39;2&#39;, &#39;3&#39;)</code></dd>
 
         
 
