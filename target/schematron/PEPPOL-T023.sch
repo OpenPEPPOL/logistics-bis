@@ -245,7 +245,7 @@
         <assert id="PEPPOL-T023-R013"
                  flag="fatal"
                  test="normalize-space(.) = '2.2'">UBLVersionID value MUST be '2.2'.</assert>
-        <assert id="PEPPOL-T023-R014" flag="warning" test="./@*">
+      <assert id="PEPPOL-T023-R014" flag="warning" test="not(./@*)">
             <value-of select="$syntaxError"/>UBLVersionID SHOULD NOT contain any attributes.</assert>
       </rule>
     
@@ -302,17 +302,7 @@
                  flag="fatal"
                  test="(./cac:PartyIdentification) and (./cbc:EndpointID)">A Qualification Response MUST identify the Economic Operator as ReceiverParty by its party and endpoint identifiers.</assert>
       </rule>
-    
-      <rule context="cac:PartyIdentification/cbc:ID">
-        <assert id="PEPPOL-T023-R028" flag="fatal" test="./@schemeID">A Party Identifier MUST have a scheme identifier attribute.</assert>
-        <assert id="PEPPOL-T023-R029"
-                 flag="fatal"
-                 test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3])))$')">A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
-        <assert id="PEPPOL-T023-R030"
-                 flag="warning"
-                 test="./@*[not(name()='schemeID')]">
-            <value-of select="$syntaxError"/>PartyIdentifier SHOULD NOT have any further attributes but schemeID</assert>
-      </rule>
+
     
       <rule context="cbc:Name">
         <assert id="PEPPOL-T023-R031" flag="warning" test="./@*">
