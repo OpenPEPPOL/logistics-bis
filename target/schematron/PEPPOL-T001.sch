@@ -237,7 +237,10 @@
                  flag="fatal"
                  id="PEPPOL-T001-B00108">Element 'cac:EconomicOperatorParty' MUST be provided.</assert>
          <assert test="cac:ContractingParty" flag="fatal" id="PEPPOL-T001-B00109">Element 'cac:ContractingParty' MUST be provided.</assert>
-         <assert test="not(@*:schemaLocation)" flag="fatal" id="PEPPOL-T001-B00110">Document MUST not contain schema location.</assert>
+         <assert test="cac:ProcurementProjectLotReference"
+                 flag="fatal"
+                 id="PEPPOL-T001-B00110">Element 'cac:ProcurementProjectLotReference' MUST be provided.</assert>
+         <assert test="not(@*:schemaLocation)" flag="fatal" id="PEPPOL-T001-B00111">Document MUST not contain schema location.</assert>
       </rule>
       <rule context="/ubl:ExpressionOfInterestRequest/cbc:UBLVersionID">
          <assert test="normalize-space(text()) = '2.2'"
@@ -398,7 +401,7 @@
       <rule context="/ubl:ExpressionOfInterestRequest/cac:ProcurementProjectLotReference"/>
       <rule context="/ubl:ExpressionOfInterestRequest/cac:ProcurementProjectLotReference/cbc:ID"/>
       <rule context="/ubl:ExpressionOfInterestRequest/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T001-B00111">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T001-B00112">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
    </pattern>
     <pattern>
