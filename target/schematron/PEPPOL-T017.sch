@@ -226,7 +226,7 @@
       <let name="clawardCode" value="tokenize('unaward award', '\s')"/>
       <let name="clISO3166"
            value="tokenize('AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW 1A XI', '\s')"/>
-      <rule context="/ubl:AwardingNotification">
+      <rule context="/ubl:AwardedNotification">
          <assert test="cbc:UBLVersionID" flag="fatal" id="PEPPOL-T017-B00101">Element 'cbc:UBLVersionID' MUST be provided.</assert>
          <assert test="cbc:CustomizationID" flag="fatal" id="PEPPOL-T017-B00102">Element 'cbc:CustomizationID' MUST be provided.</assert>
          <assert test="cbc:ProfileID" flag="fatal" id="PEPPOL-T017-B00103">Element 'cbc:ProfileID' MUST be provided.</assert>
@@ -241,83 +241,81 @@
          <assert test="cac:TenderResult" flag="fatal" id="PEPPOL-T017-B00110">Element 'cac:TenderResult' MUST be provided.</assert>
          <assert test="not(@*:schemaLocation)" flag="fatal" id="PEPPOL-T017-B00111">Document MUST not contain schema location.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cbc:UBLVersionID">
+      <rule context="/ubl:AwardedNotification/cbc:UBLVersionID">
          <assert test="normalize-space(text()) = '2.2'"
                  flag="fatal"
                  id="PEPPOL-T017-B00201">Element 'cbc:UBLVersionID' MUST contain value '2.2'.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cbc:CustomizationID">
+      <rule context="/ubl:AwardedNotification/cbc:CustomizationID">
          <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t017:1.1'"
                  flag="fatal"
                  id="PEPPOL-T017-B00301">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t017:1.1'.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cbc:ProfileID">
+      <rule context="/ubl:AwardedNotification/cbc:ProfileID">
          <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p009:1.1'"
                  flag="fatal"
                  id="PEPPOL-T017-B00401">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p009:1.1'.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cbc:ID">
+      <rule context="/ubl:AwardedNotification/cbc:ID">
          <assert test="not(@schemeURI) or @schemeURI = 'urn:uuid'"
                  flag="fatal"
                  id="PEPPOL-T017-B00501">Attribute 'schemeURI' MUST contain value 'urn:uuid'</assert>
          <assert test="@schemeURI" flag="fatal" id="PEPPOL-T017-B00502">Attribute 'schemeURI' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cbc:ContractFolderID"/>
-      <rule context="/ubl:AwardingNotification/cbc:IssueDate"/>
-      <rule context="/ubl:AwardingNotification/cbc:IssueTime"/>
-      <rule context="/ubl:AwardingNotification/cbc:Note"/>
-      <rule context="/ubl:AwardingNotification/cac:SenderParty">
+      <rule context="/ubl:AwardedNotification/cbc:ContractFolderID"/>
+      <rule context="/ubl:AwardedNotification/cbc:IssueDate"/>
+      <rule context="/ubl:AwardedNotification/cbc:IssueTime"/>
+      <rule context="/ubl:AwardedNotification/cbc:Note"/>
+      <rule context="/ubl:AwardedNotification/cac:SenderParty">
          <assert test="cac:PartyIdentification" flag="fatal" id="PEPPOL-T017-B01101">Element 'cac:PartyIdentification' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:SenderParty/cbc:EndpointID">
+      <rule context="/ubl:AwardedNotification/cac:SenderParty/cbc:EndpointID">
          <assert test="not(@schemeID) or (some $code in $cleas satisfies $code = @schemeID)"
                  flag="fatal"
                  id="PEPPOL-T017-B01201">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:SenderParty/cac:PartyIdentification"/>
-      <rule context="/ubl:AwardingNotification/cac:SenderParty/cac:PartyIdentification/cbc:ID">
+      <rule context="/ubl:AwardedNotification/cac:SenderParty/cac:PartyIdentification"/>
+      <rule context="/ubl:AwardedNotification/cac:SenderParty/cac:PartyIdentification/cbc:ID">
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
                  id="PEPPOL-T017-B01501">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:SenderParty/cac:PartyName">
-         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T017-B01701">Element 'cbc:Name' MUST be provided.</assert>
-      </rule>
-      <rule context="/ubl:AwardingNotification/cac:SenderParty/cac:PartyName/cbc:Name"/>
-      <rule context="/ubl:AwardingNotification/cac:SenderParty/*">
+      <rule context="/ubl:AwardedNotification/cac:SenderParty/cac:PartyName"/>
+      <rule context="/ubl:AwardedNotification/cac:SenderParty/cac:PartyName/cbc:Name"/>
+      <rule context="/ubl:AwardedNotification/cac:SenderParty/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T017-B01102">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:ReceiverParty">
+      <rule context="/ubl:AwardedNotification/cac:ReceiverParty">
          <assert test="cac:PartyIdentification" flag="fatal" id="PEPPOL-T017-B01901">Element 'cac:PartyIdentification' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:ReceiverParty/cbc:EndpointID">
+      <rule context="/ubl:AwardedNotification/cac:ReceiverParty/cbc:EndpointID">
          <assert test="@schemeID" flag="fatal" id="PEPPOL-T017-B02001">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $cleas satisfies $code = @schemeID)"
                  flag="fatal"
                  id="PEPPOL-T017-B02002">Value MUST be part of code list 'Electronic Address Scheme (EAS)'.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:ReceiverParty/cac:PartyIdentification">
+      <rule context="/ubl:AwardedNotification/cac:ReceiverParty/cac:PartyIdentification">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T017-B02201">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:ReceiverParty/cac:PartyIdentification/cbc:ID">
+      <rule context="/ubl:AwardedNotification/cac:ReceiverParty/cac:PartyIdentification/cbc:ID">
          <assert test="@schemeID" flag="fatal" id="PEPPOL-T017-B02301">Attribute 'schemeID' MUST be present.</assert>
          <assert test="not(@schemeID) or (some $code in $clICD satisfies $code = @schemeID)"
                  flag="fatal"
                  id="PEPPOL-T017-B02302">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:ReceiverParty/cac:PartyName">
+      <rule context="/ubl:AwardedNotification/cac:ReceiverParty/cac:PartyName">
          <assert test="cbc:Name" flag="fatal" id="PEPPOL-T017-B02501">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:ReceiverParty/cac:PartyName/cbc:Name"/>
-      <rule context="/ubl:AwardingNotification/cac:ReceiverParty/*">
+      <rule context="/ubl:AwardedNotification/cac:ReceiverParty/cac:PartyName/cbc:Name"/>
+      <rule context="/ubl:AwardedNotification/cac:ReceiverParty/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T017-B01902">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:MinutesDocumentReference">
+      <rule context="/ubl:AwardedNotification/cac:MinutesDocumentReference">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T017-B02701">Element 'cbc:ID' MUST be provided.</assert>
          <assert test="cbc:DocumentStatusCode" flag="fatal" id="PEPPOL-T017-B02702">Element 'cbc:DocumentStatusCode' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:MinutesDocumentReference/cbc:ID"/>
-      <rule context="/ubl:AwardingNotification/cac:MinutesDocumentReference/cbc:DocumentStatusCode">
+      <rule context="/ubl:AwardedNotification/cac:MinutesDocumentReference/cbc:ID"/>
+      <rule context="/ubl:AwardedNotification/cac:MinutesDocumentReference/cbc:DocumentStatusCode">
          <assert test="(some $code in $clawardCode satisfies $code = normalize-space(text()))"
                  flag="fatal"
                  id="PEPPOL-T017-B02901">Value MUST be part of code list 'awardCode'.</assert>
@@ -326,75 +324,75 @@
                  id="PEPPOL-T017-B02902">Attribute 'listID' MUST contain value 'awardCode'</assert>
          <assert test="@listID" flag="fatal" id="PEPPOL-T017-B02903">Attribute 'listID' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:MinutesDocumentReference/*">
+      <rule context="/ubl:AwardedNotification/cac:MinutesDocumentReference/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T017-B02703">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult">
          <assert test="cbc:TenderResultCode" flag="fatal" id="PEPPOL-T017-B03101">Element 'cbc:TenderResultCode' MUST be provided.</assert>
          <assert test="cbc:AwardDate" flag="fatal" id="PEPPOL-T017-B03102">Element 'cbc:AwardDate' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cbc:TenderResultCode">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cbc:TenderResultCode">
          <assert test="not(@listID) or @listID = 'http://publications.europa.eu/resource/authority/winner-selection-status'"
                  flag="fatal"
                  id="PEPPOL-T017-B03201">Attribute 'listID' MUST contain value 'http://publications.europa.eu/resource/authority/winner-selection-status'</assert>
          <assert test="@listID" flag="fatal" id="PEPPOL-T017-B03202">Attribute 'listID' MUST be present.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cbc:AwardDate"/>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cbc:AwardTime"/>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cbc:StartDate"/>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:Contract"/>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cbc:AwardDate"/>
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cbc:AwardTime"/>
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cbc:StartDate"/>
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:Contract"/>
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T017-B03801">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/cbc:ID"/>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/cac:Attachment">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/cbc:ID"/>
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/cac:Attachment">
          <assert test="cac:ExternalReference" flag="fatal" id="PEPPOL-T017-B04001">Element 'cac:ExternalReference' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/cac:Attachment/cac:ExternalReference">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/cac:Attachment/cac:ExternalReference">
          <assert test="cbc:URI" flag="fatal" id="PEPPOL-T017-B04101">Element 'cbc:URI' MUST be provided.</assert>
          <assert test="cbc:MimeCode" flag="fatal" id="PEPPOL-T017-B04102">Element 'cbc:MimeCode' MUST be provided.</assert>
          <assert test="cbc:FileName" flag="fatal" id="PEPPOL-T017-B04103">Element 'cbc:FileName' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI"/>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/cac:Attachment/cac:ExternalReference/cbc:MimeCode"/>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/cac:Attachment/cac:ExternalReference/cbc:FileName"/>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/cac:Attachment/cac:ExternalReference/*">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI"/>
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/cac:Attachment/cac:ExternalReference/cbc:MimeCode"/>
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/cac:Attachment/cac:ExternalReference/cbc:FileName"/>
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/cac:Attachment/cac:ExternalReference/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T017-B04104">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/cac:Attachment/*">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/cac:Attachment/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T017-B04002">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/*">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:Contract/cac:ContractDocumentReference/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T017-B03802">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:Contract/*">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:Contract/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T017-B03701">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:AwardedTenderedProject"/>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:AwardedTenderedProject/cac:ProcurementProjectLot">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:AwardedTenderedProject"/>
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:AwardedTenderedProject/cac:ProcurementProjectLot">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T017-B04601">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:AwardedTenderedProject/cac:ProcurementProjectLot/cbc:ID"/>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:AwardedTenderedProject/cac:ProcurementProjectLot/*">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:AwardedTenderedProject/cac:ProcurementProjectLot/cbc:ID"/>
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:AwardedTenderedProject/cac:ProcurementProjectLot/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T017-B04602">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:AwardedTenderedProject/*">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:AwardedTenderedProject/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T017-B04501">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:WinningParty">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:WinningParty">
          <assert test="cbc:Rank" flag="fatal" id="PEPPOL-T017-B04801">Element 'cbc:Rank' MUST be provided.</assert>
          <assert test="cac:Party" flag="fatal" id="PEPPOL-T017-B04802">Element 'cac:Party' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:WinningParty/cbc:Rank"/>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:WinningParty/cac:Party"/>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyName">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:WinningParty/cbc:Rank"/>
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:WinningParty/cac:Party"/>
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyName">
          <assert test="cbc:Name" flag="fatal" id="PEPPOL-T017-B05101">Element 'cbc:Name' MUST be provided.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyName/cbc:Name"/>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyLegalEntity"/>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress"/>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country"/>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyName/cbc:Name"/>
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyLegalEntity"/>
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress"/>
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country"/>
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode">
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
                  id="PEPPOL-T017-B05601">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
@@ -402,22 +400,22 @@
                  flag="fatal"
                  id="PEPPOL-T017-B05602">Attribute 'listID' MUST contain value 'ISO3166'</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T017-B05501">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/*">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T017-B05401">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyLegalEntity/*">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:WinningParty/cac:Party/cac:PartyLegalEntity/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T017-B05301">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/cac:WinningParty/cac:Party/*">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/cac:WinningParty/cac:Party/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T017-B05001">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:TenderResult/*">
+      <rule context="/ubl:AwardedNotification/cac:TenderResult/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T017-B03103">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/*">
+      <rule context="/ubl:AwardedNotification/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T017-B00112">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
    </pattern>
