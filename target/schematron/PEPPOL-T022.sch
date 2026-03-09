@@ -332,7 +332,9 @@
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ContractingParty/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T022-B02002">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ProcurementProjectLotReference"/>
+      <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ProcurementProjectLotReference">
+         <assert test="cbc:ID" flag="fatal" id="PEPPOL-T022-B02901">Element 'cbc:ID' MUST be provided.</assert>
+      </rule>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/cac:ProcurementProjectLotReference/cbc:ID"/>
       <rule context="/ubl:UnsubscribeFromProcedureResponse/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T022-B00111">Document MUST NOT contain elements not part of the data model.</assert>

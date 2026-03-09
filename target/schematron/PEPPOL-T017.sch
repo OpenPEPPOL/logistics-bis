@@ -280,7 +280,9 @@
                  flag="fatal"
                  id="PEPPOL-T017-B01501">Value MUST be part of code list 'ISO 6523 ICD list'.</assert>
       </rule>
-      <rule context="/ubl:AwardingNotification/cac:SenderParty/cac:PartyName"/>
+      <rule context="/ubl:AwardingNotification/cac:SenderParty/cac:PartyName">
+         <assert test="cbc:Name" flag="fatal" id="PEPPOL-T017-B01701">Element 'cbc:Name' MUST be provided.</assert>
+      </rule>
       <rule context="/ubl:AwardingNotification/cac:SenderParty/cac:PartyName/cbc:Name"/>
       <rule context="/ubl:AwardingNotification/cac:SenderParty/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T017-B01102">Document MUST NOT contain elements not part of the data model.</assert>

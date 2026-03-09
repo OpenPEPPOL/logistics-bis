@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TendererQualification xmlns="urn:oasis:names:specification:ubl:schema:xsd:TendererQualification-2"
+<ubl:TendererQualification xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:TendererQualification-2"
                            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
    <cbc:UBLVersionID>2.2</cbc:UBLVersionID>
@@ -10,7 +10,9 @@
    <cbc:IssueDate>2026-03-06</cbc:IssueDate>
    <cbc:IssueTime>10:00:00</cbc:IssueTime>
    <cac:TendererPartyQualification>
-      <cac:InterestedProcurementProjectLot><cbc:ID>ID-001</cbc:ID></cac:InterestedProcurementProjectLot>
+      <cac:InterestedProcurementProjectLot>
+         <cbc:ID>ID-001</cbc:ID>
+      </cac:InterestedProcurementProjectLot>
       <cac:MainQualifyingParty>
          <cac:Party>
             <cbc:EndpointID schemeID="9930">DE122268496</cbc:EndpointID>
@@ -18,7 +20,7 @@
                <cbc:ID schemeID="0204">991-1234512345-06</cbc:ID>
             </cac:PartyIdentification>
             <cac:PartyName>
-               <cbc:Name>Main name</cbc:Name>
+               <cbc:Name>Example</cbc:Name>
             </cac:PartyName>
             <cac:PostalAddress>
                <cac:Country>
@@ -36,7 +38,7 @@
                <cbc:ID schemeID="0204">991-1234512345-06</cbc:ID>
             </cac:PartyIdentification>
             <cac:PartyName>
-               <cbc:Name>Additional name</cbc:Name>
+               <cbc:Name>Example</cbc:Name>
             </cac:PartyName>
             <cac:PostalAddress>
                <cac:Country>
@@ -62,4 +64,4 @@
          </cac:ExternalReference>
       </cac:Attachment>
    </cac:AdditionalDocumentReference>
-</TendererQualification>
+</ubl:TendererQualification>
