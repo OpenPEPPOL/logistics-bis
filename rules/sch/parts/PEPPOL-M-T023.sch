@@ -74,7 +74,7 @@
         <assert id="PEPPOL-T023-R035" flag="fatal" test="./@schemeURI">A Response Document Reference Identifier MUST have a schemeURI attribute.</assert>
         <assert id="PEPPOL-T023-R036" flag="fatal" test="normalize-space(./@schemeURI)='urn:uuid'">schemeURI for Response Document Reference Identifier MUST be 'urn:uuid'.</assert>
         <assert id="PEPPOL-T023-R037" flag="warning" test="./@*[not(name()='schemeURI')]"><value-of select="$syntaxError"/>A Response Document Reference Identifier SHOULD NOT have any attributes but schemeURI</assert>
-    
+        <assert id="PEPPOL-T023-R038" flag="fatal" test="matches(normalize-space(.),'^[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}$')">A Response Document Reference Identifier MUST be expressed in a UUID syntax (RFC 4122)</assert>
     </rule>
     <rule context="ubl:TendererQualificationResponse/cac:QualificationResolution">
         <assert id="PEPPOL-T023-R039" flag="fatal" test="cbc:AdmissionCode">Element 'cbc:AdmissionCode' MUST be provided.</assert>
