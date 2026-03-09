@@ -1349,7 +1349,7 @@
 
       <rule context="cbc:ProfileID">
         <assert id="PEPPOL-T036-R017"
-                 test="some $p in tokenize('urn:fdc:peppol.eu:prac:bis:p035', '\s') satisfies $p = normalize-space(.)"
+                 test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:bis:p035')"
                  flag="fatal">An catalogue transaction SHALL use profile catalogue.</assert>
       </rule>
 
