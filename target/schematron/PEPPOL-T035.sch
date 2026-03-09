@@ -372,15 +372,13 @@
       <rule context="/ubl:CatalogueRequest/cac:ReceiverParty/cac:PartyLegalEntity/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T035-B03304">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:CatalogueRequest/cac:ReceiverParty/cac:Contact">
-         <assert test="cbc:ElectronicMail" flag="fatal" id="PEPPOL-T035-B04201">Element 'cbc:ElectronicMail' MUST be provided.</assert>
-      </rule>
+      <rule context="/ubl:CatalogueRequest/cac:ReceiverParty/cac:Contact"/>
       <rule context="/ubl:CatalogueRequest/cac:ReceiverParty/cac:Contact/cbc:Name"/>
       <rule context="/ubl:CatalogueRequest/cac:ReceiverParty/cac:Contact/cbc:Telephone"/>
       <rule context="/ubl:CatalogueRequest/cac:ReceiverParty/cac:Contact/cbc:Telefax"/>
       <rule context="/ubl:CatalogueRequest/cac:ReceiverParty/cac:Contact/cbc:ElectronicMail"/>
       <rule context="/ubl:CatalogueRequest/cac:ReceiverParty/cac:Contact/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T035-B04202">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T035-B04201">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:CatalogueRequest/cac:ReceiverParty/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T035-B01003">Document MUST NOT contain elements not part of the data model.</assert>
@@ -484,15 +482,13 @@
       <rule context="/ubl:CatalogueRequest/cac:ProviderParty/cac:PartyLegalEntity/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T035-B07003">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:CatalogueRequest/cac:ProviderParty/cac:Contact">
-         <assert test="cbc:ElectronicMail" flag="fatal" id="PEPPOL-T035-B07901">Element 'cbc:ElectronicMail' MUST be provided.</assert>
-      </rule>
+      <rule context="/ubl:CatalogueRequest/cac:ProviderParty/cac:Contact"/>
       <rule context="/ubl:CatalogueRequest/cac:ProviderParty/cac:Contact/cbc:Name"/>
       <rule context="/ubl:CatalogueRequest/cac:ProviderParty/cac:Contact/cbc:Telephone"/>
       <rule context="/ubl:CatalogueRequest/cac:ProviderParty/cac:Contact/cbc:Telefax"/>
       <rule context="/ubl:CatalogueRequest/cac:ProviderParty/cac:Contact/cbc:ElectronicMail"/>
       <rule context="/ubl:CatalogueRequest/cac:ProviderParty/cac:Contact/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T035-B07902">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T035-B07901">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:CatalogueRequest/cac:ProviderParty/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T035-B04703">Document MUST NOT contain elements not part of the data model.</assert>
@@ -502,7 +498,6 @@
       </rule>
       <rule context="/ubl:CatalogueRequest/cac:SellerSupplierParty/cac:Party">
          <assert test="cac:PostalAddress" flag="fatal" id="PEPPOL-T035-B08501">Element 'cac:PostalAddress' MUST be provided.</assert>
-         <assert test="cac:PartyLegalEntity" flag="fatal" id="PEPPOL-T035-B08502">Element 'cac:PartyLegalEntity' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:CatalogueRequest/cac:SellerSupplierParty/cac:Party/cac:PartyIdentification">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T035-B08601">Element 'cbc:ID' MUST be provided.</assert>
@@ -594,18 +589,16 @@
       <rule context="/ubl:CatalogueRequest/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T035-B10604">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:CatalogueRequest/cac:SellerSupplierParty/cac:Party/cac:Contact">
-         <assert test="cbc:ElectronicMail" flag="fatal" id="PEPPOL-T035-B11501">Element 'cbc:ElectronicMail' MUST be provided.</assert>
-      </rule>
+      <rule context="/ubl:CatalogueRequest/cac:SellerSupplierParty/cac:Party/cac:Contact"/>
       <rule context="/ubl:CatalogueRequest/cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:Name"/>
       <rule context="/ubl:CatalogueRequest/cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:Telephone"/>
       <rule context="/ubl:CatalogueRequest/cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:Telefax"/>
       <rule context="/ubl:CatalogueRequest/cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:ElectronicMail"/>
       <rule context="/ubl:CatalogueRequest/cac:SellerSupplierParty/cac:Party/cac:Contact/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T035-B11502">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T035-B11501">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:CatalogueRequest/cac:SellerSupplierParty/cac:Party/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T035-B08503">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T035-B08502">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:CatalogueRequest/cac:SellerSupplierParty/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T035-B08402">Document MUST NOT contain elements not part of the data model.</assert>
@@ -615,7 +608,6 @@
       </rule>
       <rule context="/ubl:CatalogueRequest/cac:ContractorCustomerParty/cac:Party">
          <assert test="cac:PostalAddress" flag="fatal" id="PEPPOL-T035-B12101">Element 'cac:PostalAddress' MUST be provided.</assert>
-         <assert test="cac:PartyLegalEntity" flag="fatal" id="PEPPOL-T035-B12102">Element 'cac:PartyLegalEntity' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:CatalogueRequest/cac:ContractorCustomerParty/cac:Party/cac:PartyIdentification">
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T035-B12201">Element 'cbc:ID' MUST be provided.</assert>
@@ -707,18 +699,16 @@
       <rule context="/ubl:CatalogueRequest/cac:ContractorCustomerParty/cac:Party/cac:PartyLegalEntity/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T035-B14204">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/ubl:CatalogueRequest/cac:ContractorCustomerParty/cac:Party/cac:Contact">
-         <assert test="cbc:ElectronicMail" flag="fatal" id="PEPPOL-T035-B15101">Element 'cbc:ElectronicMail' MUST be provided.</assert>
-      </rule>
+      <rule context="/ubl:CatalogueRequest/cac:ContractorCustomerParty/cac:Party/cac:Contact"/>
       <rule context="/ubl:CatalogueRequest/cac:ContractorCustomerParty/cac:Party/cac:Contact/cbc:Name"/>
       <rule context="/ubl:CatalogueRequest/cac:ContractorCustomerParty/cac:Party/cac:Contact/cbc:Telephone"/>
       <rule context="/ubl:CatalogueRequest/cac:ContractorCustomerParty/cac:Party/cac:Contact/cbc:Telefax"/>
       <rule context="/ubl:CatalogueRequest/cac:ContractorCustomerParty/cac:Party/cac:Contact/cbc:ElectronicMail"/>
       <rule context="/ubl:CatalogueRequest/cac:ContractorCustomerParty/cac:Party/cac:Contact/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T035-B15102">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T035-B15101">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:CatalogueRequest/cac:ContractorCustomerParty/cac:Party/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T035-B12103">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T035-B12102">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:CatalogueRequest/cac:ContractorCustomerParty/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T035-B12002">Document MUST NOT contain elements not part of the data model.</assert>
