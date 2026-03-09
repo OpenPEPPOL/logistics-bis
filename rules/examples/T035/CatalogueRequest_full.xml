@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CatalogueRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:CatalogueRequest-2"
-   xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-   xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+<ubl:CatalogueRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:CatalogueRequest-2"
+                      xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                      xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
    <cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t035:1</cbc:CustomizationID>
    <cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p035</cbc:ProfileID>
    <cbc:ID>123</cbc:ID>
@@ -54,7 +54,6 @@
          <cbc:Telefax>22332244</cbc:Telefax>
          <cbc:ElectronicMail>jjensen@customer.no</cbc:ElectronicMail>
       </cac:Contact>
-
    </cac:ReceiverParty>
    <cac:ProviderParty>
       <cbc:EndpointID schemeID="0007">5679083245</cbc:EndpointID>
@@ -255,9 +254,7 @@
             <cbc:DocumentType>Product specification</cbc:DocumentType>
             <cbc:DocumentDescription>Report providing specification of products.</cbc:DocumentDescription>
             <cac:Attachment>
-               <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf"
-                  filename="specification.pdf">
-                  UEVQUE9MIEJJUyBQcmUgYXdhcmQgQ2F0YWxvZ3VlIGV4YW1wbGUgYXR0YWNoZW1lbnQ=</cbc:EmbeddedDocumentBinaryObject>
+               <cbc:EmbeddedDocumentBinaryObject mimeCode="application/pdf" filename="specification.pdf">UEVQUE9MIEJJUyBQcmUgYXdhcmQgQ2F0YWxvZ3VlIGV4YW1wbGUgYXR0YWNoZW1lbnQ=</cbc:EmbeddedDocumentBinaryObject>
                <cac:ExternalReference>
                   <cbc:URI>https://test-vefa.difi.no/peppolbis/pracc/catalogue</cbc:URI>
                </cac:ExternalReference>
@@ -281,8 +278,8 @@
             <cbc:Name>Color</cbc:Name>
             <cbc:NameCode listID="UNCL7081">35</cbc:NameCode>
             <cbc:Value>Red</cbc:Value>
-            <cbc:ValueQuantity unitCode="C62">10</cbc:ValueQuantity>
-            <cbc:ValueQualifier>EA</cbc:ValueQualifier>
+            <cbc:ValueQuantity unitCode="C62">EA</cbc:ValueQuantity>
+            <cbc:ValueQualifier>10</cbc:ValueQualifier>
             <cbc:ImportanceCode>O</cbc:ImportanceCode>
             <cac:ItemPropertyRange>
                <cbc:MinimumValue>5</cbc:MinimumValue>
@@ -304,4 +301,4 @@
          </cac:Certificate>
       </cac:Item>
    </cac:CatalogueRequestLine>
-</CatalogueRequest>
+</ubl:CatalogueRequest>
