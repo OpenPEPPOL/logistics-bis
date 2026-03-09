@@ -414,9 +414,7 @@
       </rule>
     
       <rule context="ubl:TendererQualificationResponse/cbc:ContractFolderID">
-        <assert id="PEPPOL-T023-R023" flag="warning" test="not(./@*)">
-            <value-of select="$syntaxError"/>ContractFolderID SHOULD NOT contain any attributes.</assert>
-        <assert id="PEPPOL-T023-R024"
+         <assert id="PEPPOL-T023-R024"
                  flag="fatal"
                  test="matches(normalize-space(.),'^[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}$')">The ContractFolderID MUST be expressed in a UUID syntax (RFC 4122).</assert>
       </rule>
