@@ -64,6 +64,7 @@
 				<Name>Scheme identifier</Name>
 				<Value type="FIXED">urn:uuid</Value>
 			</Attribute>
+			<Value type="EXAMPLE">123e4567-e89b-12d3-a456-426614174001</Value>
 		</Element>
 		<Element>
 			<Term>cbc:ContractFolderID</Term>
@@ -216,6 +217,7 @@
 					<Name>Scheme identifier</Name>
 					<Value type="FIXED">urn:uuid</Value>
 				</Attribute>
+				<Value type="EXAMPLE">123e4567-e89b-12d3-a456-426614174001</Value>
 			</Element>
 		</Element>
 		<Element cardinality="1..n">
@@ -234,7 +236,9 @@
 				<Term>cbc:Resolution</Term>
 				<Name>Reason for rejection</Name>
 				<Description>A literal description of the reason why the qualification has been rejected. In case a qualification rejection resolution is related to more than one lot, a reason for rejection should be given for each lot.</Description>
+				<DataType>Text</DataType>
 				<Reference type="RULE">PEPPOL-T023-R042</Reference>
+				<Value type="EXAMPLE">Limited turnover</Value>
 			</Element>
 			<Element cardinality="0..1">
 				<Term>cbc:ResolutionDate</Term>
