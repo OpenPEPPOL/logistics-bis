@@ -68,6 +68,7 @@
 			<Description>The time when the tender is issued by the economic operator. The issue time must have granularity of seconds, and include time zone information</Description>
 			<DataType>Time</DataType>
 			<Reference type="RULE">PEPPOL-T005-R007</Reference>
+			<Value type="EXAMPLE">09:00:00+01:00</Value>
 		</Element>
 		<Element cardinality="1..n">
 			<Term>cac:DocumentReference</Term>
@@ -131,6 +132,7 @@
 						<Name>Provided document url</Name>
 						<Description>URL where a document that is provided as can be downloaded. Typically used by the Call for Tenders document reference.</Description>
 						<DataType>Identifier</DataType>
+							<Value type="EXAMPLE">http://www.example.se</Value>
 					</Element>
 					
 					<Element>
@@ -257,9 +259,11 @@
 						<DataType>Code</DataType>
 						<Reference type="RULE">CL-T90-R001</Reference>
 						<Reference type="CODE_LIST">ISO3166</Reference>
+						<Value type="EXAMPLE">SE</Value>
 						<Attribute>
 							<Term>listID</Term>
 							<Name>List identifier for country code</Name>
+							<Value type="EXAMPLE">ISO3166</Value>
 						</Attribute>
 					</Element>
 				</Element>
@@ -289,9 +293,11 @@
 							<DataType>Code</DataType>
 							<Reference type="RULE">CL-T90-R001</Reference>
 							<Reference type="CODE_LIST">ISO3166</Reference>
+							<Value type="EXAMPLE">SE</Value>
 							<Attribute>
 								<Term>listID</Term>
 								<Name>List identifier for country code</Name>
+								<Value type="EXAMPLE">ISO3166</Value>
 							</Attribute>
 						</Element>
 					</Element>
@@ -306,12 +312,14 @@
 					<Name>Contact point</Name>
 					<Description>The name of the contact point.</Description>
 					<DataType>Text</DataType>
+					<Value type="EXAMPLE">John Doe</Value>
 				</Element>
 				<Element cardinality="0..1">
 					<Term>cbc:Telephone</Term>
 					<Name>Contact telephone number</Name>
 					<Description>A phone number for the contact point.</Description>
 					<DataType>Text</DataType>
+					<Value type="EXAMPLE">555-678956</Value>
 				</Element>
 				<Element cardinality="0..1">
 					<Term>cbc:Telefax</Term>
@@ -324,6 +332,7 @@
 					<Name>Contact email address</Name>
 					<Description>An e-mail address for the contact point.</Description>
 					<DataType>Text</DataType>
+					<Value type="EXAMPLE">mail@mail.com</Value>
 				</Element>
 			</Element>
 		</Element>
