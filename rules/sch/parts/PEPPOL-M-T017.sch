@@ -25,12 +25,12 @@
     </rule>
     
     <rule context="/ubl:AwardedNotification/cbc:CustomizationID">
-        <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t017:1.1'"
-                flag="fatal" id="PEPPOL-T017-R017">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t017:1.1'.</assert>
+        <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t017:1'"
+                flag="fatal" id="PEPPOL-T017-R017">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t017:1'.</assert>
     </rule>
     
     <rule context="/ubl:AwardedNotification/cbc:ProfileID">
-        <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p009:1.1'" flag="fatal" id="PEPPOL-T017-R018">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p009:1.1'.</assert>
+        <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p009'" flag="fatal" id="PEPPOL-T017-R018">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p009'.</assert>
     </rule>
     
     <rule context="/ubl:AwardedNotification/cbc:ID">
@@ -226,4 +226,3 @@
         </rule>
     
 </pattern>
-

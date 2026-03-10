@@ -264,9 +264,9 @@
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B00603">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:Slot@name=SpecificationIdentification/rim:SlotValue/rim:Value">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t015:1.2'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t015:1'"
                  flag="fatal"
-                 id="PEPPOL-T015-B00801">Element 'rim:Value' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t015:1.2'.</assert>
+                 id="PEPPOL-T015-B00801">Element 'rim:Value' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t015:1'.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:Slot@name=SpecificationIdentification/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T015-B00404">Document MUST NOT contain elements not part of the data model.</assert>
@@ -286,9 +286,9 @@
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B01103">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:Slot@name=BusinessProcessTypeIdentifier/rim:SlotValue/rim:Value">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p008:1.2'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p008'"
                  flag="fatal"
-                 id="PEPPOL-T015-B01301">Element 'rim:Value' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p008:1.2'.</assert>
+                 id="PEPPOL-T015-B01301">Element 'rim:Value' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p008'.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:Slot@name=BusinessProcessTypeIdentifier/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T015-B00904">Document MUST NOT contain elements not part of the data model.</assert>
@@ -619,13 +619,13 @@
         <rule context="lcm:SubmitObjectsRequest/rim:Slot[@name='SpecificationIdentification']">
             <assert id="PEPPOL-T015-R009"
                  flag="fatal"
-                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[normalize-space() = 'urn:fdc:peppol.eu:prac:trns:t015:1.2']">SpecificationIdentification value MUST be 'urn:fdc:peppol.eu:prac:trns:t015:1.2'.</assert>
+                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[normalize-space() = 'urn:fdc:peppol.eu:prac:trns:t015:1']">SpecificationIdentification value MUST be 'urn:fdc:peppol.eu:prac:trns:t015:1'.</assert>
         </rule>
 
         <rule context="lcm:SubmitObjectsRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']">
             <assert id="PEPPOL-T015-R010"
                  flag="fatal"
-                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[normalize-space() = 'urn:fdc:peppol.eu:prac:bis:p008:1.2']">BusinessProcessTypeIdentifier value MUST be 'urn:fdc:peppol.eu:prac:bis:p008:1.2'.</assert>
+                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[normalize-space() = 'urn:fdc:peppol.eu:prac:bis:p008']">BusinessProcessTypeIdentifier value MUST be 'urn:fdc:peppol.eu:prac:bis:p008'.</assert>
         </rule>
 
         <rule context="lcm:SubmitObjectsRequest/rim:Slot[@name='SenderElectronicAddress'] | lcm:SubmitObjectsRequest/rim:Slot[@name='ReceiverElectronicAddress']">

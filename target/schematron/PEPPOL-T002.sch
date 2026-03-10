@@ -242,9 +242,9 @@
                  id="PEPPOL-T002-B00201">Element 'cbc:UBLVersionID' MUST contain value '2.2'.</assert>
       </rule>
       <rule context="/ubl:ExpressionOfInterestResponse/cbc:CustomizationID">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t002:1.2'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t002:1'"
                  flag="fatal"
-                 id="PEPPOL-T002-B00301">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t002:1.2'.</assert>
+                 id="PEPPOL-T002-B00301">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t002:1'.</assert>
       </rule>
       <rule context="/ubl:ExpressionOfInterestResponse/cbc:ProfileID">
          <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p001'"
@@ -405,7 +405,7 @@
         <rule context="ubl:ExpressionOfInterestResponse/cbc:CustomizationID">
             <assert id="PEPPOL-T002-R002"
                  flag="fatal"
-                 test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t002:1.2'">[PEPPOL-T002-R002] CustomizationID value MUST be 'urn:fdc:peppol.eu:prac:trns:t002:1.2'</assert>
+                 test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t002:1'">[PEPPOL-T002-R002] CustomizationID value MUST be 'urn:fdc:peppol.eu:prac:trns:t002:1'</assert>
             <report id="PEPPOL-T002-S303" flag="warning" test="./@*">
             <value-of select="$syntaxError"/>[PEPPOL-T002-S303] CustomizationID SHOULD NOT have any attributes.</report>
         </rule>

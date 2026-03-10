@@ -29,7 +29,7 @@
     </rule>
     
     <rule context="ubl:UnsubscribeFromProcedureResponse/cbc:CustomizationID">
-        <assert id="PEPPOL-T022-R002" flag="fatal" test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t022:1.2'">[PEPPOL-T022-R002] CustomizationID value MUST be 'urn:fdc:peppol.eu:prac:trns:t022:1.2'</assert>
+        <assert id="PEPPOL-T022-R002" flag="fatal" test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t022:1'">[PEPPOL-T022-R002] CustomizationID value MUST be 'urn:fdc:peppol.eu:prac:trns:t022:1'</assert>
         <report id="PEPPOL-T022-S303" flag="warning" test="./@*"><value-of select="$syntaxError"/>[PEPPOL-T022-S303] CustomizationID SHOULD NOT have any attributes.</report>
     </rule>
     

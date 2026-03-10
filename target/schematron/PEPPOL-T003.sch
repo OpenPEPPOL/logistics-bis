@@ -244,14 +244,14 @@
                  id="PEPPOL-T003-B00201">Element 'cbc:UBLVersionID' MUST contain value '2.2'.</assert>
       </rule>
       <rule context="/ubl:TenderStatusRequest/cbc:CustomizationID">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t003:1.2'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t003:1'"
                  flag="fatal"
-                 id="PEPPOL-T003-B00301">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t003:1.2'.</assert>
+                 id="PEPPOL-T003-B00301">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t003:1'.</assert>
       </rule>
       <rule context="/ubl:TenderStatusRequest/cbc:ProfileID">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p002:1.2'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p002'"
                  flag="fatal"
-                 id="PEPPOL-T003-B00401">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p002:1.2'.</assert>
+                 id="PEPPOL-T003-B00401">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p002'.</assert>
       </rule>
       <rule context="/ubl:TenderStatusRequest/cbc:ID">
          <assert test="not(@schemeURI) or @schemeURI = 'urn:uuid'"
@@ -396,7 +396,7 @@
      <rule context="ubl:TenderStatusRequest/cbc:CustomizationID">
          <assert id="PEPPOL-T003-R010"
                  flag="fatal"
-                 test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t003:1.2'">[PEPPOL-T003-R010] CustomizationID value MUST be 'urn:fdc:peppol.eu:prac:trns:t003:1.2'</assert>
+                 test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t003:1'">[PEPPOL-T003-R010] CustomizationID value MUST be 'urn:fdc:peppol.eu:prac:trns:t003:1'</assert>
         <report id="PEPPOL-T003-S303" flag="warning" test="./@*">
             <value-of select="$syntaxError"/>[PEPPOL-T003-S303] CustomizationID SHOULD NOT have any attributes.</report>
       </rule>
@@ -404,7 +404,7 @@
       <rule context="ubl:TenderStatusRequest/cbc:ProfileID">
         <assert id="PEPPOL-T003-R011"
                  flag="fatal"
-                 test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p002:1.2'">[PEPPOL-T003-R011] ProfileID value MUST be 'urn:fdc:peppol.eu:prac:bis:p002:1.2'</assert>
+                 test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p002'">[PEPPOL-T003-R011] ProfileID value MUST be 'urn:fdc:peppol.eu:prac:bis:p002'</assert>
         <report id="PEPPOL-T003-S304" flag="warning" test="./@*">
             <value-of select="$syntaxError"/>[PEPPOL-T003-S304] ProfileID SHOULD NOT have any attributes.</report>
       </rule>

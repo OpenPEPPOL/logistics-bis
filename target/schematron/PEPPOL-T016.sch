@@ -242,9 +242,9 @@
       </rule>
       <rule context="/ubl:ApplicationResponse/cbc:CustomizationID"/>
       <rule context="/ubl:ApplicationResponse/cbc:ProfileID">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p008:1.2'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p008'"
                  flag="fatal"
-                 id="PEPPOL-T016-B00401">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p008:1.2'.</assert>
+                 id="PEPPOL-T016-B00401">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p008'.</assert>
       </rule>
       <rule context="/ubl:ApplicationResponse/cbc:ID"/>
       <rule context="/ubl:ApplicationResponse/cbc:IssueDate"/>
@@ -393,15 +393,15 @@
       </rule>
     
       <rule context="/ubl:ApplicationResponse/cbc:CustomizationID">
-        <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t016:1.2'"
+        <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t016:1'"
                  flag="fatal"
-                 id="PEPPOL-T016-R011">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t016:1.2'.</assert>
+                 id="PEPPOL-T016-R011">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t016:1'.</assert>
       </rule>
     
       <rule context="/ubl:ApplicationResponse/cbc:ProfileID">
-        <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p008:1.2'"
+        <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p008'"
                  flag="fatal"
-                 id="PEPPOL-T016-R012">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p008:1.2'.</assert>
+                 id="PEPPOL-T016-R012">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p008'.</assert>
       </rule>
     
       <rule context="/ubl:ApplicationResponse/cbc:ID"/>

@@ -44,9 +44,9 @@
 
         <rule context="ubl:TenderWithdrawal/cbc:CustomizationID">
             <assert id="PEPPOL-T013-R002" flag="fatal"
-                    test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t013:1.1'">
+                    test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t013:1'">
                 [PEPPOL-T013-R002] CustomizationID value MUST be
-                'urn:fdc:peppol.eu:prac:trns:t013:1.1'
+                'urn:fdc:peppol.eu:prac:trns:t013:1'
             </assert>
             <assert id="PEPPOL-T013-S303" flag="warning" test="not(./@*)">[PEPPOL-T013-S303]
                 CustomizationID SHOULD NOT contain any attributes.
@@ -55,8 +55,8 @@
 
         <rule context="ubl:TenderWithdrawal/cbc:ProfileID">
             <assert id="PEPPOL-T013-R003" flag="fatal"
-                    test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p007:1.1'">[PEPPOL-T013-R003] ProfileID
-                value MUST be 'urn:fdc:peppol.eu:prac:bis:p007:1.1'
+                    test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p007'">[PEPPOL-T013-R003] ProfileID
+                value MUST be 'urn:fdc:peppol.eu:prac:bis:p007'
             </assert>
             <assert id="PEPPOL-T013-S304" flag="warning" test="not(./@*)">[PEPPOL-T013-S304]
                 ProfileID SHOULD NOT contain any attributes.

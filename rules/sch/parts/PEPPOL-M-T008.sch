@@ -25,7 +25,7 @@
     </rule>
 
     <rule context="ubl:EnquiryResponse/cbc:CustomizationID">
-        <assert id="PEPPOL-T008-R009" flag="fatal" test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t008:1.1'">CustomizationID value MUST be 'urn:fdc:peppol.eu:prac:trns:t008:1.1'</assert>
+        <assert id="PEPPOL-T008-R009" flag="fatal" test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t008:1'">CustomizationID value MUST be 'urn:fdc:peppol.eu:prac:trns:t008:1'</assert>
         <assert id="PEPPOL-T008-S009" flag="warning" test="not(./@*)"><value-of select="$syntaxError" />CustomizationID SHOULD NOT have any attributes.</assert>
     </rule>
 

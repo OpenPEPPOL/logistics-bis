@@ -248,9 +248,9 @@
                  id="PEPPOL-T009-B00301">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t009:1.1'.</assert>
       </rule>
       <rule context="/ubl:Enquiry/cbc:ProfileID">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p005:1.1'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p005'"
                  flag="fatal"
-                 id="PEPPOL-T009-B00401">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p005:1.1'.</assert>
+                 id="PEPPOL-T009-B00401">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p005'.</assert>
       </rule>
       <rule context="/ubl:Enquiry/cbc:ID">
          <assert test="not(@schemeURI) or @schemeURI = 'urn:uuid'"
@@ -400,7 +400,7 @@
       <rule context="ubl:Enquiry/cbc:ProfileID">
         <assert id="PEPPOL-T009-R013"
                  flag="fatal"
-                 test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p005:1.1'">ProfileID value MUST be 'urn:fdc:peppol.eu:prac:bis:p005:1.1'</assert>
+                 test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p005'">ProfileID value MUST be 'urn:fdc:peppol.eu:prac:bis:p005'</assert>
         <assert id="PEPPOL-T009-S010" flag="warning" test="not(./@*)">
             <value-of select="$syntaxError"/>ProfileID SHOULD NOT have any attributes.</assert>
       </rule>

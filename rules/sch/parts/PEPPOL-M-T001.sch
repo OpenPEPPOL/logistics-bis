@@ -60,9 +60,9 @@
     </rule>
     <rule context="ubl:ExpressionOfInterestRequest/cbc:CustomizationID">
         <assert id="PEPPOL-T001-R002" flag="fatal"
-            test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t001:1.2'"
+            test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t001:1'"
             >[PEPPOL-T001-R002] CustomizationID value MUST be
-            'urn:fdc:peppol.eu:prac:trns:t001:1.2'</assert>
+            'urn:fdc:peppol.eu:prac:trns:t001:1'</assert>
         <report id="PEPPOL-T001-S303" flag="warning" test="./@*"><value-of select="$syntaxError"
                 />[PEPPOL-T001-S303] CustomizationID SHOULD NOT contain any attributes.</report>
     </rule>
