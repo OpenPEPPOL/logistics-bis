@@ -65,6 +65,7 @@
 			<Reference type="RULE">PEPPOL-T019-R006</Reference>
 			<Reference type="RULE">PEPPOL-T019-R023</Reference>
 			<Reference type="RULE">PEPPOL-T019-R024</Reference>
+			<Value type="EXAMPLE">765a9937-16d5-4513-92b4-cc9800925951</Value>
 		</Element>
 		<Element>
 			<Term>cbc:IssueDate</Term>
@@ -72,6 +73,7 @@
 			<Description>The date when the qualification is issued by the economic operator.</Description>
 			<DataType>Date</DataType>
 			<Reference type="RULE">PEPPOL-T019-R007</Reference>
+			<Value type="EXAMPLE">2020-05-10</Value>
 		</Element>
 		<Element>
 			<Term>cbc:IssueTime</Term>
@@ -80,6 +82,7 @@
 			<DataType>Time</DataType>
 			<Reference type="RULE">PEPPOL-T019-R008</Reference>
 			<Reference type="RULE">PEPPOL-T019-R025</Reference>
+			<Value type="EXAMPLE">14:34:27+01:00</Value>
 		</Element>
 		<Element cardinality="0..1">
 			<Term>cbc:VersionID</Term>
@@ -88,6 +91,7 @@
 			<DataType>Time</DataType>
 			<Reference type="RULE">PEPPOL-T019-R009</Reference>
 			<Reference type="RULE">PEPPOL-T019-R026</Reference>
+			<Value type="EXAMPLE">1</Value>
 		</Element>
 		<Element>
 			<Term>cac:TendererPartyQualification</Term>
@@ -157,6 +161,7 @@
 							<Description>The name of the economic operator.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R058</Reference>
+							<Value type="EXAMPLE">Dutch Tulips Ltd</Value>
 						</Element>
 					</Element>
 					<Element cardinality="0..1">
@@ -168,12 +173,14 @@
 							<Description>The main address line in an address.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R060</Reference>
+							<Value type="EXAMPLE">Amsterdam Street Name 1</Value>
 						</Element>
 						<Element cardinality="0..1">
 							<Term>cbc:AdditionalStreetName</Term>
 							<Name>Address line 2</Name>
 							<Description>An additional address line in an address that can be used to give further details supplementing the main line.</Description>
 							<DataType>Text</DataType>
+							<Value type="EXAMPLE">Building A</Value>
 						</Element>
 						<Element cardinality="0..1">
 							<Term>cbc:CityName</Term>
@@ -181,6 +188,7 @@
 							<Description>The common name of a city where the address is located.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R061</Reference>
+							<Value type="EXAMPLE">Amsterdam</Value>
 						</Element>
 						<Element cardinality="0..1">
 							<Term>cbc:PostalZone</Term>
@@ -188,6 +196,7 @@
 							<Description>The identifier for an addressable group of properties according to the relevant postal service, such as a ZIP code or Post Code.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R062</Reference>
+							<Value type="EXAMPLE">1092</Value>
 						</Element>
 						<Element cardinality="0..1">
 							<Term>cbc:CountrySubentity</Term>
@@ -195,6 +204,7 @@
 							<Description>The subdivision of a country such as region, county, state, province etc.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R063</Reference>
+							<Value type="EXAMPLE">North Holland</Value>
 						</Element>
 						<Element cardinality="0..1">
 							<Term>cac:Country</Term>
@@ -211,7 +221,9 @@
 								<Attribute>
 									<Term>listID</Term>
 									<Name>List identifier for country code</Name>
+									<Value type="FIXED">ISO3166</Value>
 								</Attribute>
+								<Value type="EXAMPLE">NL</Value>
 							</Element>
 						</Element>
 					</Element>
@@ -224,6 +236,7 @@
 							<Description>A textual description of the legal form of the economic operator.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R067</Reference>
+							<Value type="EXAMPLE">LegalForm</Value>
 						</Element>
 					</Element>
 					<Element cardinality="0..1">
@@ -236,6 +249,7 @@
 							<Description>The name of the contact point.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R058</Reference>
+							<Value type="EXAMPLE">ContactName</Value>
 						</Element>
 						<Element cardinality="0..1">
 							<Term>cbc:Telephone</Term>
@@ -243,6 +257,7 @@
 							<Description>A phone number for the contact point.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R069</Reference>
+							<Value type="EXAMPLE">Phone</Value>
 						</Element>
 						<Element cardinality="0..1">
 							<Term>cbc:Telefax</Term>
@@ -250,6 +265,7 @@
 							<Description>A fax number for the contact point.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R070</Reference>
+							<Value type="EXAMPLE">Fax</Value>
 						</Element>
 						<Element cardinality="0..1">
 							<Term>cbc:ElectronicMail</Term>
@@ -257,6 +273,7 @@
 							<Description>An e-mail address for the contact point.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R071</Reference>
+							<Value type="EXAMPLE">email@example.com</Value>
 						</Element>
 					</Element>
 				</Element>
@@ -311,6 +328,7 @@
 							<Description>The name of the economic operator.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R058</Reference>
+							<Value type="EXAMPLE">Dutch Plants Ltd</Value>
 						</Element>
 					</Element>
 					<Element cardinality="0..1">
@@ -322,12 +340,14 @@
 							<Description>The main address line in an address.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R060</Reference>
+							<Value type="EXAMPLE">The Hague Street Name 1</Value>
 						</Element>
 						<Element cardinality="0..1">
 							<Term>cbc:AdditionalStreetName</Term>
 							<Name>Address line 2</Name>
 							<Description>An additional address line in an address that can be used to give further details supplementing the main line.</Description>
 							<DataType>Text</DataType>
+							<Value type="EXAMPLE">Building B</Value>
 						</Element>
 						<Element cardinality="0..1">
 							<Term>cbc:CityName</Term>
@@ -335,6 +355,7 @@
 							<Description>The common name of a city where the address is located.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R061</Reference>
+							<Value type="EXAMPLE">The Hague</Value>
 						</Element>
 						<Element cardinality="0..1">
 							<Term>cbc:PostalZone</Term>
@@ -342,6 +363,7 @@
 							<Description>The identifier for an addressable group of properties according to the relevant postal service, such as a ZIP code or Post Code.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R062</Reference>
+							<Value type="EXAMPLE">2563</Value>
 						</Element>
 						<Element cardinality="0..1">
 							<Term>cbc:CountrySubentity</Term>
@@ -349,6 +371,7 @@
 							<Description>The subdivision of a country such as region, county, state, province etc.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R063</Reference>
+							<Value type="EXAMPLE">South Holland</Value>
 						</Element>
 						<Element cardinality="0..1">
 							<Term>cac:Country</Term>
@@ -365,7 +388,9 @@
 								<Attribute>
 									<Term>listID</Term>
 									<Name>List identifier for country code</Name>
+									<Value type="FIXED">ISO3166</Value>
 								</Attribute>
+								<Value type="EXAMPLE">NL</Value>
 							</Element>
 						</Element>
 					</Element>
@@ -378,6 +403,7 @@
 							<Description>A textual description of the legal form of the economic operator.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R067</Reference>
+							<Value type="EXAMPLE">LegalForm</Value>
 						</Element>
 					</Element>
 					<Element cardinality="0..1">
@@ -390,6 +416,7 @@
 							<Description>The name of the contact point.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R058</Reference>
+							<Value type="EXAMPLE">ContactName</Value>
 						</Element>
 						<Element cardinality="0..1">
 							<Term>cbc:Telephone</Term>
@@ -397,6 +424,7 @@
 							<Description>A phone number for the contact point.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R069</Reference>
+							<Value type="EXAMPLE">Phone</Value>
 						</Element>
 						<Element cardinality="0..1">
 							<Term>cbc:Telefax</Term>
@@ -404,6 +432,7 @@
 							<Description>A fax number for the contact point.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R070</Reference>
+							<Value type="EXAMPLE">Fax</Value>
 						</Element>
 						<Element cardinality="0..1">
 							<Term>cbc:ElectronicMail</Term>
@@ -411,6 +440,7 @@
 							<Description>An e-mail address for the contact point.</Description>
 							<DataType>Text</DataType>
 							<Reference type="RULE">PEPPOL-T019-R071</Reference>
+							<Value type="EXAMPLE">email@example.com</Value>
 						</Element>
 					</Element>
 				</Element>
@@ -486,6 +516,7 @@
 				<Description>The identifier of a qualification document provided by the economic operator. Is also used to provide a reference to the call for tender as issued by the contracting body to create links between the call for tender and the qualification documents. The value must be a UUID</Description>
 				<DataType>Identifier</DataType>
 				<Reference type="RULE">PEPPOL-T019-R028</Reference>
+				<Value type="EXAMPLE">94f467cc-dc7c-464e-aea8-82522855979f</Value>
 			</Element>
 			<Element>
 				<Term>cbc:DocumentTypeCode</Term>
@@ -500,6 +531,7 @@
 					<Reference type="CODE_LIST">UNCL1001</Reference>
 					<Value type="FIXED">UNCL1001</Value>
 				</Attribute>
+				<Value type="EXAMPLE">916</Value>
 			</Element>
 			<Element>
 				<Term>cbc:XPath</Term>
@@ -507,6 +539,7 @@
 				<Description>XPath reference to the party to whom this qualification document belongs.</Description>
 				<DataType>Text</DataType>
 				<Reference type="RULE">PEPPOL-T019-R031</Reference>
+				<Value type="EXAMPLE">/TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cac:Party[1]</Value>
 			</Element>
 			<Element cardinality="0..1">
 				<Term>cbc:LocaleCode</Term>
@@ -521,6 +554,7 @@
 					<Name>List identifier for tender language</Name>
 					<Value type="FIXED">ISO639-1</Value>
 				</Attribute>
+				<Value type="EXAMPLE">NL</Value>
 			</Element>
 			<Element cardinality="0..1">
 				<Term>cbc:VersionID</Term>
@@ -528,6 +562,7 @@
 				<Description>Identifies the version of the call for tenders.</Description>
 				<DataType>Identifier</DataType>
 				<Reference type="RULE">PEPPOL-T019-R035</Reference>
+				<Value type="EXAMPLE">1</Value>
 			</Element>
 			<Element>
 				<Term>cbc:DocumentDescription</Term>
@@ -535,6 +570,7 @@
 				<Description>Textual description of the document. Might include information about the lots or type of qualification criteria to which the document replies.</Description>
 				<DataType>Text</DataType>
 				<Reference type="RULE">PEPPOL-T019-R036</Reference>
+				<Value type="EXAMPLE">A qualification document of Dutch Tulips Ltd</Value>
 			</Element>
 			<Element cardinality="0..1">
 				<Term>cac:Attachment</Term>
@@ -550,6 +586,7 @@
 						<DataType>Identifier</DataType>
 						<Reference type="RULE">PEPPOL-T019-R038</Reference>
 						<Reference type="RULE">PEPPOL-T019-R039</Reference>
+						<Value type="EXAMPLE">243A177F-E4E9-4FC8-B97E-BB1A950DD8F8</Value>
 					</Element>
 					<Element>
 						<Term>cbc:DocumentHash</Term>
@@ -558,6 +595,7 @@
 						<DataType>Text</DataType>
 						<Reference type="RULE">PEPPOL-T019-R040</Reference>
 						<Reference type="RULE">PEPPOL-T019-R041</Reference>
+						<Value type="EXAMPLE">72182B98A9DAB9A553CCF161EA049D41337E51DFDF74DDC8AB7B68E7CFFB7D1B</Value>
 					</Element>
 					<Element>
 						<Term>cbc:HashAlgorithmMethod</Term>
@@ -574,6 +612,7 @@
 						<Description>Mime code of the attached document (IANA)</Description>
 						<DataType>Code</DataType>
 						<Reference type="RULE">PEPPOL-T019-R044</Reference>
+						<Value type="EXAMPLE">application/xml</Value>
 					</Element>
 					<Element>
 						<Term>cbc:FileName</Term>
@@ -581,6 +620,7 @@
 						<Description>The file name of the document. Encrypted qualification documents MUST use the file extension .p7m and use the encryption certificate provided in the call for tender.</Description>
 						<DataType>Text</DataType>
 						<Reference type="RULE">PEPPOL-T019-R045</Reference>
+						<Value type="EXAMPLE">QualificationDutchTulips.pdf.p7m</Value>
 					</Element>
 					<Element>
 						<Term>cbc:Description</Term>
@@ -588,6 +628,7 @@
 						<Description>The file size of the document.</Description>
 						<DataType>Text</DataType>
 						<Reference type="RULE">PEPPOL-T019-R046</Reference>
+						<Value type="EXAMPLE">size</Value>
 					</Element>
 				</Element>
 			</Element>
