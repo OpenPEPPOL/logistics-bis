@@ -151,11 +151,6 @@
         <assert id="PEPPOL-T019-R058" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>Name SHOULD NOT contain any attributes.</assert>
     </rule>
     
-    <rule context="ubl:TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cac:PostalAddress
-        | ubl:TendererQualification/cac:TendererPartyQualification/cac:AdditionalQualifyingParty/cac:Party/cac:PostalAddress">
-        <assert id="PEPPOL-T019-R059" flag="warning" test="count(./*)-count(./cbc:StreetName)-count(./cbc:CityName)-count(./cbc:PostalZone)-count(./cbc:CountrySubentity)-count(./cac:Country)=0"><value-of select="$syntaxError"/>PostalAddress SHOULD NOT contain any elements but StreetName, CityName, PostalZone, CountrySubentity, Country</assert>
-    </rule>
-    
     <rule context="cbc:StreetName">
         <assert id="PEPPOL-T019-R060" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>StreetName SHOULD NOT contain any attributes</assert>
     </rule>
