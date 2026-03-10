@@ -273,13 +273,10 @@
       </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cbc:ID"/>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cbc:DocumentTypeCode">
-         <assert test="normalize-space(text()) = '13 or 310'"
-                 flag="fatal"
-                 id="PEPPOL-T006-B01401">Element 'cbc:DocumentTypeCode' MUST contain value '13 or 310'.</assert>
          <assert test="not(@listID) or @listID = 'UNCL1001'"
                  flag="fatal"
-                 id="PEPPOL-T006-B01402">Attribute 'listID' MUST contain value 'UNCL1001'</assert>
-         <assert test="@listID" flag="fatal" id="PEPPOL-T006-B01403">Attribute 'listID' MUST be present.</assert>
+                 id="PEPPOL-T006-B01401">Attribute 'listID' MUST contain value 'UNCL1001'</assert>
+         <assert test="@listID" flag="fatal" id="PEPPOL-T006-B01402">Attribute 'listID' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment">
          <assert test="cac:ExternalReference" flag="fatal" id="PEPPOL-T006-B01601">Element 'cac:ExternalReference' MUST be provided.</assert>
