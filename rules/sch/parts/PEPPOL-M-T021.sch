@@ -69,9 +69,9 @@
     </rule>
     <rule context="ubl:UnsubscribeFromProcedureRequest/cbc:ProfileID">
         <assert id="PEPPOL-T021-R004" flag="fatal"
-            test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p001:1.2'"
+            test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p001'"
             >[PEPPOL-T021-R004] ProfileID value MUST be
-            'urn:fdc:peppol.eu:prac:bis:p001:1.2'</assert>
+            'urn:fdc:peppol.eu:prac:bis:p001'</assert>
         <report id="PEPPOL-T021-S304" flag="warning" test="./@*"><value-of select="$syntaxError"
                 />[PEPPOL-T021-S304] ProfileID SHOULD NOT contain any attributes.</report>
     </rule>
