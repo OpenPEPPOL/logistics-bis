@@ -93,7 +93,7 @@
         <assert id="PEPPOL-T005-R037" flag="fatal" test="exists(cac:RegistrationAddress/cac:Country/cbc:IdentificationCode)">[PEPPOL-T005-R037] A Tenderer Party Legal Entity MUST have a country.</assert>
     </rule>
     
-    <rule context="ubl:Tender/cac:ContractingParty">
+    <rule context="ubl:Tender/cac:ContractingParty/cac:Party">
         <assert id="PEPPOL-T005-R038" flag="fatal" test="exists(cac:PartyIdentification)">[PEPPOL-T005-R038] A Contracting Party MUST have a party identification.</assert>
         <assert id="PEPPOL-T005-R039" flag="fatal" test="exists(cbc:EndpointID)">[PEPPOL-T005-R039] A Contracting Party MUST have an endpoint identifier.</assert>
     </rule>
