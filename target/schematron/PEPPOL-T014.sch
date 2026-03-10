@@ -278,13 +278,10 @@
          <assert test="@schemeURI" flag="fatal" id="PEPPOL-T014-B01302">Attribute 'schemeURI' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cbc:DocumentTypeCode">
-         <assert test="normalize-space(text()) = '13 or 310'"
-                 flag="fatal"
-                 id="PEPPOL-T014-B01501">Element 'cbc:DocumentTypeCode' MUST contain value '13 or 310'.</assert>
          <assert test="not(@listID) or @listID = 'UNCL1001'"
                  flag="fatal"
-                 id="PEPPOL-T014-B01502">Attribute 'listID' MUST contain value 'UNCL1001'</assert>
-         <assert test="@listID" flag="fatal" id="PEPPOL-T014-B01503">Attribute 'listID' MUST be present.</assert>
+                 id="PEPPOL-T014-B01501">Attribute 'listID' MUST contain value 'UNCL1001'</assert>
+         <assert test="@listID" flag="fatal" id="PEPPOL-T014-B01502">Attribute 'listID' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment">
          <assert test="cac:ExternalReference" flag="fatal" id="PEPPOL-T014-B01701">Element 'cac:ExternalReference' MUST be provided.</assert>
