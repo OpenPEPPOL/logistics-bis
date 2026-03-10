@@ -244,14 +244,14 @@
                  id="PEPPOL-T021-B00201">Element 'cbc:UBLVersionID' MUST contain value '2.2'.</assert>
       </rule>
       <rule context="/ubl:UnsubscribeFromProcedureRequest/cbc:CustomizationID">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t021:1.2'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t021:1'"
                  flag="fatal"
-                 id="PEPPOL-T021-B00301">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t021:1.2'.</assert>
+                 id="PEPPOL-T021-B00301">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t021:1'.</assert>
       </rule>
       <rule context="/ubl:UnsubscribeFromProcedureRequest/cbc:ProfileID">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p001:1.2'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p001'"
                  flag="fatal"
-                 id="PEPPOL-T021-B00401">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p001:1.2'.</assert>
+                 id="PEPPOL-T021-B00401">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p001'.</assert>
       </rule>
       <rule context="/ubl:UnsubscribeFromProcedureRequest/cbc:ID">
          <assert test="not(@schemeURI) or @schemeURI = 'urn:uuid'"
@@ -467,16 +467,16 @@
       <rule context="ubl:UnsubscribeFromProcedureRequest/cbc:CustomizationID">
         <assert id="PEPPOL-T021-R002"
                  flag="fatal"
-                 test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t021:1.2'">[PEPPOL-T021-R002] CustomizationID value MUST be
-            'urn:fdc:peppol.eu:prac:trns:t021:1.2'</assert>
+                 test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t021:1'">[PEPPOL-T021-R002] CustomizationID value MUST be
+            'urn:fdc:peppol.eu:prac:trns:t021:1'</assert>
         <report id="PEPPOL-T021-S303" flag="warning" test="./@*">
             <value-of select="$syntaxError"/>[PEPPOL-T021-S303] CustomizationID SHOULD NOT contain any attributes.</report>
       </rule>
       <rule context="ubl:UnsubscribeFromProcedureRequest/cbc:ProfileID">
         <assert id="PEPPOL-T021-R004"
                  flag="fatal"
-                 test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p001:1.2'">[PEPPOL-T021-R004] ProfileID value MUST be
-            'urn:fdc:peppol.eu:prac:bis:p001:1.2'</assert>
+                 test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p001'">[PEPPOL-T021-R004] ProfileID value MUST be
+            'urn:fdc:peppol.eu:prac:bis:p001'</assert>
         <report id="PEPPOL-T021-S304" flag="warning" test="./@*">
             <value-of select="$syntaxError"/>[PEPPOL-T021-S304] ProfileID SHOULD NOT contain any attributes.</report>
       </rule>

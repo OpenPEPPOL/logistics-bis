@@ -246,14 +246,14 @@
                  id="PEPPOL-T023-B00201">Element 'cbc:UBLVersionID' MUST contain value '2.2'.</assert>
       </rule>
       <rule context="/ubl:TendererQualificationResponse/cbc:CustomizationID">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t023:1.0'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t023:1'"
                  flag="fatal"
-                 id="PEPPOL-T023-B00301">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t023:1.0'.</assert>
+                 id="PEPPOL-T023-B00301">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t023:1'.</assert>
       </rule>
       <rule context="/ubl:TendererQualificationResponse/cbc:ProfileID">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p012:1.1'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p012'"
                  flag="fatal"
-                 id="PEPPOL-T023-B00401">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p012:1.1'.</assert>
+                 id="PEPPOL-T023-B00401">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p012'.</assert>
       </rule>
       <rule context="/ubl:TendererQualificationResponse/cbc:ID">
          <assert test="not(@schemeURI) or @schemeURI = 'urn:uuid'"
@@ -394,7 +394,7 @@
       <rule context="ubl:TendererQualificationResponse/cbc:ProfileID">
         <assert id="PEPPOL-T023-R017"
                  flag="fatal"
-                 test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:bis:p012:1')">ProfileID value MUST start with 'urn:fdc:peppol.eu:prac:bis:p012:1'</assert>
+                 test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:bis:p012')">ProfileID value MUST start with 'urn:fdc:peppol.eu:prac:bis:p012'</assert>
         <assert id="PEPPOL-T023-R018" flag="warning" test="not(./@*)">
             <value-of select="$syntaxError"/>ProfileID SHOULD NOT contain any attributes.</assert>
       </rule>
