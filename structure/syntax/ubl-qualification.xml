@@ -5,9 +5,9 @@
 	<Property key="sch:prefix">PEPPOL-T019</Property>
 	<Property key="sch:identifier">T019-basic</Property>
 	<Namespace prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:TendererQualification-2</Namespace>
-    <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
-    <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
-	
+	<Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
+	<Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
+
 	<Document>
 		<Term>ubl:TendererQualification</Term>
 		<Name>Qualification, root element</Name>
@@ -445,62 +445,63 @@
 					</Element>
 				</Element>
 			</Element>
+
+		</Element>
+		<Element>
+			<Term>cac:ContractingParty</Term>
+			<Name>Contracting body</Name>
+			<Description>The contracting authority or contracting entity who is buying supplies, services or public works using a tendering procedure as described in the applicable directive (Directives 2014/24/EU, 2014/25/EU).</Description>
+			<Reference type="RULE">PEPPOL-T019-R011</Reference>
+			<Reference type="RULE">PEPPOL-T019-R048</Reference>
 			<Element>
-				<Term>cac:ContractingParty</Term>
-				<Name>Contracting body</Name>
-				<Description>The contracting authority or contracting entity who is buying supplies, services or public works using a tendering procedure as described in the applicable directive (Directives 2014/24/EU, 2014/25/EU).</Description>
-				<Reference type="RULE">PEPPOL-T019-R011</Reference>
-				<Reference type="RULE">PEPPOL-T019-R048</Reference>
+				<Term>cac:Party</Term>
+				<Name>Party information</Name>
 				<Element>
-					<Term>cac:Party</Term>
-					<Name>Party information</Name>
+					<Term>cbc:EndpointID</Term>
+					<Name>Contracting body electronic address identifier</Name>
+					<Description>Electronic address of the contracting body</Description>
+					<DataType>Identifier</DataType>
+					<Reference type="RULE">PEPPOL-T019-R049</Reference>
+					<Reference type="RULE">PEPPOL-T019-R050</Reference>
+					<Reference type="RULE">PEPPOL-T019-R051</Reference>
+					<Attribute>
+						<Term>schemeID</Term>
+						<Name>Scheme identifier for electronic address identifier</Name>
+						<Reference type="CODE_LIST">eas</Reference>
+						<Value type="EXAMPLE">9930</Value>
+					</Attribute>
+					<Value type="EXAMPLE">DE122268496</Value>
+				</Element>
+				<Element>
+					<Term>cac:PartyIdentification</Term>
+					<Name>Party identification</Name>
 					<Element>
-						<Term>cbc:EndpointID</Term>
-						<Name>Contracting body electronic address identifier</Name>
-						<Description>Electronic address of the contracting body</Description>
+						<Term>cbc:ID</Term>
+						<Name>Contracting body identifier</Name>
+						<Description>The national identifier of a contracting body as it is legally registered (e.g. VAT identification, such as KBO)</Description>
 						<DataType>Identifier</DataType>
-						<Reference type="RULE">PEPPOL-T019-R049</Reference>
-						<Reference type="RULE">PEPPOL-T019-R050</Reference>
-						<Reference type="RULE">PEPPOL-T019-R051</Reference>
+						<Reference type="RULE">PEPPOL-T019-R054</Reference>
+						<Reference type="RULE">PEPPOL-T019-R055</Reference>
+						<Reference type="RULE">PEPPOL-T019-R056</Reference>
 						<Attribute>
 							<Term>schemeID</Term>
-							<Name>Scheme identifier for electronic address identifier</Name>
-							<Reference type="CODE_LIST">eas</Reference>
-							<Value type="EXAMPLE">9930</Value>
+							<Name>Scheme identifier for party identifier</Name>
+							<Reference type="CODE_LIST">ICD</Reference>
+							<Value type="EXAMPLE">0204</Value>
 						</Attribute>
-						<Value type="EXAMPLE">DE122268496</Value>
+						<Value type="EXAMPLE">991-1234512345-06</Value>
 					</Element>
+				</Element>
+				<Element cardinality="0..1">
+					<Term>cac:PartyName</Term>
+					<Name>Party name</Name>
 					<Element>
-						<Term>cac:PartyIdentification</Term>
-						<Name>Party identification</Name>
-						<Element>
-							<Term>cbc:ID</Term>
-							<Name>Contracting body identifier</Name>
-							<Description>The national identifier of a contracting body as it is legally registered (e.g. VAT identification, such as KBO)</Description>
-							<DataType>Identifier</DataType>
-							<Reference type="RULE">PEPPOL-T019-R054</Reference>
-							<Reference type="RULE">PEPPOL-T019-R055</Reference>
-							<Reference type="RULE">PEPPOL-T019-R056</Reference>
-							<Attribute>
-								<Term>schemeID</Term>
-								<Name>Scheme identifier for party identifier</Name>
-								<Reference type="CODE_LIST">ICD</Reference>
-								<Value type="EXAMPLE">0204</Value>
-							</Attribute>
-							<Value type="EXAMPLE">991-1234512345-06</Value>
-						</Element>
-					</Element>
-					<Element cardinality="0..1">
-						<Term>cac:PartyName</Term>
-						<Name>Party name</Name>
-						<Element>
-							<Term>cbc:Name</Term>
-							<Name>Contracting body name</Name>
-							<Description>The name of the contracting body as it is registered.</Description>
-							<DataType>Text</DataType>
-							<Reference type="RULE">PEPPOL-T019-R058</Reference>
-							<Value type="EXAMPLE">Contracting Party Inc</Value>
-						</Element>
+						<Term>cbc:Name</Term>
+						<Name>Contracting body name</Name>
+						<Description>The name of the contracting body as it is registered.</Description>
+						<DataType>Text</DataType>
+						<Reference type="RULE">PEPPOL-T019-R058</Reference>
+						<Value type="EXAMPLE">Contracting Party Inc</Value>
 					</Element>
 				</Element>
 			</Element>
