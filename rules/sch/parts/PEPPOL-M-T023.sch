@@ -28,7 +28,7 @@
     </rule>
     
     <rule context="ubl:TendererQualificationResponse/cbc:ProfileID">
-        <assert id="PEPPOL-T023-R017" flag="fatal" test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:bis:p012:1')">ProfileID value MUST start with 'urn:fdc:peppol.eu:prac:bis:p012:1'</assert>
+        <assert id="PEPPOL-T023-R017" flag="fatal" test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:bis:p012')">ProfileID value MUST start with 'urn:fdc:peppol.eu:prac:bis:p012'</assert>
         <assert id="PEPPOL-T023-R018" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>ProfileID SHOULD NOT contain any attributes.</assert>
     </rule>
     

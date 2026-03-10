@@ -32,7 +32,7 @@
         </rule>
 
         <rule context="ubl:Enquiry/cbc:ProfileID">
-            <assert id="PEPPOL-T007-R012" flag="fatal" test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p004:1.1'">ProfileID value MUST be 'urn:fdc:peppol.eu:prac:bis:p004:1.1'</assert>
+            <assert id="PEPPOL-T007-R012" flag="fatal" test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p004'">ProfileID value MUST be 'urn:fdc:peppol.eu:prac:bis:p004'</assert>
             <assert id="PEPPOL-T007-S010" flag="warning" test="not(./@*)"><value-of select="$syntaxError" />ProfileID SHOULD NOT have any attributes.</assert>
         </rule>
 
