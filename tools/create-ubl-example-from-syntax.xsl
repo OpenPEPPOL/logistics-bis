@@ -106,9 +106,11 @@
 		<xsl:variable name="fixed" select="normalize-space(($element/s:Value[@type = 'FIXED'][1], '')[1])"/>
 		<xsl:variable name="example" select="normalize-space(($element/s:Value[@type = 'EXAMPLE'][1], '')[1])"/>
 		<xsl:variable name="dataType" select="normalize-space(($element/s:DataType[1], '')[1])"/>
+		<xsl:variable name="schemeUriFixed" select="normalize-space(($element/s:Attribute[normalize-space(s:Term) = 'schemeURI']/s:Value[@type = 'FIXED'][1], '')[1])"/>
 		<xsl:sequence select="
 			if ($fixed != '') then $fixed
 			else if ($example != '') then $example
+			else if (contains(lower-case($dataType), 'identifier') and $schemeUriFixed = 'urn:uuid') then '123e4567-e89b-12d3-a456-426614174000'
 			else f:default-value-for-datatype($dataType)
 		"/>
 	</xsl:function>

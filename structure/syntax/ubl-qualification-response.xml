@@ -48,7 +48,7 @@
 			<DataType>Identifier</DataType>
 			<Reference type="RULE">PEPPOL-T023-R017</Reference>
 			<Reference type="RULE">PEPPOL-T023-R018</Reference>
-			<Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p012:1.0</Value>
+			<Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p012:1.1</Value>
 		</Element>
 		<Element>
 			<Term>cbc:ID</Term>
@@ -64,20 +64,27 @@
 				<Name>Scheme identifier</Name>
 				<Value type="FIXED">urn:uuid</Value>
 			</Attribute>
+			<Value type="EXAMPLE">123e4567-e89b-12d3-a456-426614174001</Value>
 		</Element>
 		<Element>
 			<Term>cbc:ContractFolderID</Term>
 			<Name>Reference number</Name>
 			<Description>An identifier that is specified by the buyer and used as a reference number for all documents in the procurement process. It is also known as procurement project identifier, procurement reference number or contract folder identifier.</Description>
 			<DataType>Identifier</DataType>
-			<Reference type="RULE">PEPPOL-T023-R023</Reference>
 			<Reference type="RULE">PEPPOL-T023-R024</Reference>
+			<Attribute>
+				<Term>schemeURI</Term>
+				<Name>Scheme identifier</Name>
+				<Value type="FIXED">urn:uuid</Value>
+			</Attribute>
+			<Value type="EXAMPLE">765a9937-16d5-4513-92b4-cc9800925951</Value>
 		</Element>
 		<Element>
 			<Term>cbc:IssueDate</Term>
 			<Name>Qualification issue date</Name>
 			<Description>The date when the qualification is issued by the economic operator.</Description>
 			<DataType>Date</DataType>
+			<Value type="EXAMPLE">2026-03-06</Value>
 		</Element>
 		<Element>
 			<Term>cbc:IssueTime</Term>
@@ -85,6 +92,7 @@
 			<Description>The time when the qualification is issued by the economic operator. The issue time must have granularity of seconds, and include time zone information</Description>
 			<DataType>Time</DataType>
 			<Reference type="RULE">PEPPOL-T023-R025</Reference>
+			<Value type="EXAMPLE">10:00:00+00:00</Value>
 		</Element>
 		<Element>
 			<Term>cac:SenderParty</Term>
@@ -216,6 +224,7 @@
 					<Name>Scheme identifier</Name>
 					<Value type="FIXED">urn:uuid</Value>
 				</Attribute>
+				<Value type="EXAMPLE">123e4567-e89b-12d3-a456-426614174001</Value>
 			</Element>
 		</Element>
 		<Element cardinality="1..n">
@@ -228,24 +237,29 @@
 				<Term>cbc:AdmissionCode</Term>
 				<Name>Admission code</Name>
 				<Description>The admission code describes the qualification result. </Description>
-				<Value type="FIXED">false</Value>
+				<Value type="EXAMPLE">false</Value>
 			</Element>
-			<Element>
+			<Element cardinality="0..1">
 				<Term>cbc:Resolution</Term>
 				<Name>Reason for rejection</Name>
 				<Description>A literal description of the reason why the qualification has been rejected. In case a qualification rejection resolution is related to more than one lot, a reason for rejection should be given for each lot.</Description>
+				<DataType>Text</DataType>
 				<Reference type="RULE">PEPPOL-T023-R042</Reference>
+				<Value type="EXAMPLE">Limited turnover</Value>
 			</Element>
-			<Element>
+			<Element cardinality="0..1">
 				<Term>cbc:ResolutionDate</Term>
 				<Name>Resolution date</Name>
 				<Description>The date at which the qualification resolution had been made.</Description>
-				<Value type="EXAMPLE">2026-05-05</Value>
+				<DataType>Date</DataType>
+				<Value type="EXAMPLE">2026-03-06</Value>
 			</Element>
 			<Element cardinality="0..1">
 				<Term>cbc:ResolutionTime</Term>
 				<Name>Resolution time</Name>
 				<Description>If necessary, the time at which the qualification resolution has been made. </Description>
+				<DataType>Time</DataType>
+				<Value type="EXAMPLE">10:00:00+00:00</Value>
 			</Element>
 			<Element cardinality="0..1">
 				<Term>cac:ProcurementProjectLot</Term>
@@ -256,7 +270,7 @@
 					<Description>An identifier for the lot that is concerned by the rejection.</Description>
 					<DataType>Identifier</DataType>
 					<Reference type="RULE">PEPPOL-T023-R044</Reference>
-					<Value type="EXAMPLE">123456</Value>
+					<Value type="EXAMPLE">765a9937-16d5-4513-92b4-cc9800925951</Value>
 				</Element>
 			</Element>
 		</Element>

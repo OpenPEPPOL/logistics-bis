@@ -19,29 +19,28 @@
     
     <rule context="ubl:TendererQualificationResponse/cbc:UBLVersionID">
         <assert id="PEPPOL-T023-R013" flag="fatal" test="normalize-space(.) = '2.2'">UBLVersionID value MUST be '2.2'.</assert>
-        <assert id="PEPPOL-T023-R014" flag="warning" test="./@*"><value-of select="$syntaxError"/>UBLVersionID SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T023-R014" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>UBLVersionID SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualificationResponse/cbc:CustomizationID">
-        <assert id="PEPPOL-T023-R015" flag="fatal" test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t023:1.0'">CustomizationID value MUST be 'urn:fdc:peppol.eu:prac:trns:t023:1.0'</assert>
-        <assert id="PEPPOL-T023-R016" flag="warning" test="./@*"><value-of select="$syntaxError"/>CustomizationID SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T023-R015" flag="fatal" test="starts-with(normalize-space(.),  'urn:fdc:peppol.eu:prac:trns:t023:1')">CustomizationID value MUST start with 'urn:fdc:peppol.eu:prac:trns:t023:1'</assert>
+        <assert id="PEPPOL-T023-R016" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>CustomizationID SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualificationResponse/cbc:ProfileID">
-        <assert id="PEPPOL-T023-R017" flag="fatal" test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p012:1.0'">ProfileID value MUST be 'urn:fdc:peppol.eu:prac:bis:p012:1.0'</assert>
-        <assert id="PEPPOL-T023-R018" flag="warning" test="./@*"><value-of select="$syntaxError"/>ProfileID SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T023-R017" flag="fatal" test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:bis:p012:1')">ProfileID value MUST start with 'urn:fdc:peppol.eu:prac:bis:p012:1'</assert>
+        <assert id="PEPPOL-T023-R018" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>ProfileID SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualificationResponse/cbc:ID">
         <assert id="PEPPOL-T023-R019" flag="fatal" test="./@schemeURI">A Qualification Response Identifier MUST have a schemeURI attribute.</assert>
         <assert id="PEPPOL-T023-R020" flag="fatal" test="normalize-space(./@schemeURI)='urn:uuid'">schemeURI for Qualification Response Identifier MUST be 'urn:uuid'.</assert>
-        <assert id="PEPPOL-T023-R021" flag="warning" test="./@*[not(name()='schemeURI')]"><value-of select="$syntaxError"/>A Qualification Response Identifier SHOULD NOT have any attributes but schemeURI</assert>
+        <assert id="PEPPOL-T023-R021" flag="warning" test="count(./@*) = 1 and ./@schemeURI"><value-of select="$syntaxError"/>A Qualification Response Identifier SHOULD NOT have any attributes but schemeURI</assert>
         <assert id="PEPPOL-T023-R022" flag="fatal" test="matches(normalize-space(.),'^[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}$')">A Qualification Response Identifier MUST be expressed in a UUID syntax (RFC 4122)</assert>
     </rule>
     
     <rule context="ubl:TendererQualificationResponse/cbc:ContractFolderID">
-        <assert id="PEPPOL-T023-R023" flag="warning" test="./@*"><value-of select="$syntaxError"/>ContractFolderID SHOULD NOT contain any attributes.</assert>
-        <assert id="PEPPOL-T023-R024" flag="fatal" test="matches(normalize-space(.),'^[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}$')">The ContractFolderID MUST be expressed in a UUID syntax (RFC 4122).</assert>
+         <assert id="PEPPOL-T023-R024" flag="fatal" test="matches(normalize-space(.),'^[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}$')">The ContractFolderID MUST be expressed in a UUID syntax (RFC 4122).</assert>
     </rule>
     <rule context="ubl:TendererQualificationResponse/cbc:IssueTime">
         <assert id="PEPPOL-T023-R025" flag="fatal" test="matches(normalize-space(.),'^(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]|(24:00:00))(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?$')">IssueTime MUST have a granularity of seconds</assert>
@@ -57,11 +56,11 @@
     <rule context="cac:PartyIdentification/cbc:ID">
         <assert id="PEPPOL-T023-R028" flag="fatal" test="./@schemeID">A Party Identifier MUST have a scheme identifier attribute.</assert>
         <assert id="PEPPOL-T023-R029" flag="fatal" test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3])))$')">A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
-        <assert id="PEPPOL-T023-R030" flag="warning" test="./@*[not(name()='schemeID')]"><value-of select="$syntaxError"/>PartyIdentifier SHOULD NOT have any further attributes but schemeID</assert>
+        <assert id="PEPPOL-T023-R030" flag="warning" test="count(./@*) = 1 and ./@schemeID"><value-of select="$syntaxError"/>PartyIdentifier SHOULD NOT have any further attributes but schemeID</assert>
     </rule>
     
     <rule context="cbc:Name">
-        <assert id="PEPPOL-T023-R031" flag="warning" test="./@*"><value-of select="$syntaxError"/>Name SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T023-R031" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>Name SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualificationResponse/cac:SenderParty | ubl:TendererQualificationResponse/cac:ReceiverParty">
@@ -73,15 +72,13 @@
     <rule context="ubl:TendererQualificationResponse/cac:ResolutionDocumentReference/cbc:ID">
         <assert id="PEPPOL-T023-R035" flag="fatal" test="./@schemeURI">A Response Document Reference Identifier MUST have a schemeURI attribute.</assert>
         <assert id="PEPPOL-T023-R036" flag="fatal" test="normalize-space(./@schemeURI)='urn:uuid'">schemeURI for Response Document Reference Identifier MUST be 'urn:uuid'.</assert>
-        <assert id="PEPPOL-T023-R037" flag="warning" test="./@*[not(name()='schemeURI')]"><value-of select="$syntaxError"/>A Response Document Reference Identifier SHOULD NOT have any attributes but schemeURI</assert>
+        <assert id="PEPPOL-T023-R037" flag="warning" test="count(./@*) = 1 and ./@schemeURI"><value-of select="$syntaxError"/>A Response Document Reference Identifier SHOULD NOT have any attributes but schemeURI</assert>
         <assert id="PEPPOL-T023-R038" flag="fatal" test="matches(normalize-space(.),'^[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}$')">A Response Document Reference Identifier MUST be expressed in a UUID syntax (RFC 4122)</assert>
     </rule>
     <rule context="ubl:TendererQualificationResponse/cac:QualificationResolution">
         <assert id="PEPPOL-T023-R039" flag="fatal" test="cbc:AdmissionCode">Element 'cbc:AdmissionCode' MUST be provided.</assert>
         <assert id="PEPPOL-T023-R040" flag="fatal" test="cbc:ResolutionDate">Element 'cbc:ResolutionDate' MUST be provided.</assert>
-    </rule>
-    <rule context="ubl:TendererQualificationResponse/cac:QualificationResolution/cbc:Resolution">
-        <assert id="PEPPOL-T023-R042" flag="fatal" test="(../cbc:AdmissionCode = 'false' and not(cbc:Resolution))">Qualification Resolution Element with cbc:AdmissionCode 'false'  has to have at least one Resolution element.</assert>
+        <assert id="PEPPOL-T023-R042" flag="fatal" test="not(cbc:AdmissionCode = 'false') or cbc:Resolution">Qualification Resolution Element with cbc:AdmissionCode 'false'  has to have at least one Resolution element.</assert>
     </rule>
     <rule context="ubl:TendererQualificationResponse/cac:QualificationResolution/cac:ProcurementProjectLot">
         <assert id="PEPPOL-T023-R044" flag="warning" test="(not(cac:ProcurementProjectLot))">If a Qualification Response Resolution has to be expressed for more than one lot in a procurement, the appropriate lot identifier SHOULD be named.</assert>
