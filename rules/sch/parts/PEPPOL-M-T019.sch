@@ -20,17 +20,17 @@
     
     <rule context="ubl:TendererQualification/cbc:UBLVersionID">
         <assert id="PEPPOL-T019-R013" flag="fatal" test="normalize-space(.) = '2.2'">UBLVersionID value MUST be '2.2'.</assert>
-        <assert id="PEPPOL-T019-R014" flag="warning" test="./@*"><value-of select="$syntaxError"/>UBLVersionID SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T019-R014" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>UBLVersionID SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cbc:CustomizationID">
         <assert id="PEPPOL-T019-R015" flag="fatal" test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t019:1.1'">CustomizationID value MUST be 'urn:fdc:peppol.eu:prac:trns:t019:1.1'</assert>
-        <assert id="PEPPOL-T019-R016" flag="warning" test="./@*"><value-of select="$syntaxError"/>CustomizationID SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T019-R016" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>CustomizationID SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cbc:ProfileID">
         <assert id="PEPPOL-T019-R017" flag="fatal" test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p011:1.1'">ProfileID value MUST be 'urn:fdc:peppol.eu:prac:bis:p011:1.1'</assert>
-        <assert id="PEPPOL-T019-R018" flag="warning" test="./@*"><value-of select="$syntaxError"/>ProfileID SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T019-R018" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>ProfileID SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cbc:ID">
@@ -41,7 +41,7 @@
     </rule>
     
     <rule context="ubl:TendererQualification/cbc:ContractFolderID">
-        <assert id="PEPPOL-T019-R023" flag="warning" test="./@*"><value-of select="$syntaxError"/>ContractFolderID SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T019-R023" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>ContractFolderID SHOULD NOT contain any attributes.</assert>
         <assert id="PEPPOL-T019-R024" flag="fatal" test="matches(normalize-space(.),'^[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}$')">The ContractFolderID MUST be expressed in a UUID syntax (RFC 4122).</assert>
     </rule>
     
