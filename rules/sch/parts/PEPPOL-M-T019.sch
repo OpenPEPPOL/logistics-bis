@@ -36,7 +36,7 @@
     <rule context="ubl:TendererQualification/cbc:ID">
         <assert id="PEPPOL-T019-R019" flag="fatal" test="./@schemeURI">A Submit Tender Identifier MUST have a schemeURI attribute.</assert>
         <assert id="PEPPOL-T019-R020" flag="fatal" test="normalize-space(./@schemeURI)='urn:uuid'">schemeURI for Submit Tender Identifier MUST be 'urn:uuid'.</assert>
-        <assert id="PEPPOL-T019-R021" flag="warning" test="./@*[not(name()='schemeURI')]"><value-of select="$syntaxError"/>A Submit Tender Identifier SHOULD NOT have any attributes but schemeURI</assert>
+        <assert id="PEPPOL-T019-R021" flag="warning" test="not(./@*[not(name()='schemeURI')])"><value-of select="$syntaxError"/>A Submit Tender Identifier SHOULD NOT have any attributes but schemeURI</assert>
         <assert id="PEPPOL-T019-R022" flag="fatal" test="matches(normalize-space(.),'^[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}$')">A Submit Tender Identifier MUST be expressed in a UUID syntax (RFC 4122)</assert>
     </rule>
     
@@ -63,7 +63,7 @@
     
     <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cbc:DocumentTypeCode">
         <assert id="PEPPOL-T019-R029" flag="fatal" test="normalize-space(./@listID)='UNCL1001'">listID for DocumentTypeCode MUST be 'UNCL1001'.</assert>
-        <assert id="PEPPOL-T019-R030" flag="warning" test="./@*[not(name()='listID')]"><value-of select="$syntaxError"/>DocumentTypeCode SHOULD NOT have any attributes but listID</assert>
+        <assert id="PEPPOL-T019-R030" flag="warning" test="not(./@*[not(name()='listID')])"><value-of select="$syntaxError"/>DocumentTypeCode SHOULD NOT have any attributes but listID</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cbc:XPath">
@@ -73,7 +73,7 @@
     <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cbc:LocaleCode">
         <assert id="PEPPOL-T019-R032" flag="fatal" test="normalize-space(./@listID)='ISO639-1'">listID for LocaleCode MUST be 'ISO639-1'.</assert>
         <assert id="PEPPOL-T019-R033" flag="fatal" test="matches(normalize-space(.),'^(aa|AA|ab|AB|ae|AE|af|AF|ak|AK|am|AM|an|AN|ar|AR|as|AS|av|AV|ay|AY|az|AZ|ba|BA|be|BE|bg|BG|bh|BH|bi|BI|bm|BM|bn|BN|bo|BO|br|BR|bs|BS|ca|CA|ce|CE|ch|CH|co|CO|cr|CR|cs|CS|cu|CU|cv|CV|cy|CY|da|DA|de|DE|dv|DV|dz|DZ|ee|EE|el|EL|en|EN|eo|EO|es|ES|et|ET|eu|EU|fa|FA|ff|FF|fi|FI|fj|FJ|fo|FO|fr|FR|fy|FY|ga|GA|gd|GD|gl|GL|gn|GN|gu|GU|gv|GV|ha|HA|he|HE|hi|HI|ho|HO|hr|HR|ht|HT|hu|HU|hy|HY|hz|HZ|ia|IA|id|ID|ie|IE|ig|IG|ii|II|ik|IK|io|IO|is|IS|it|IT|iu|IU|ja|JA|jv|JV|ka|KA|kg|KG|ki|KI|kj|KJ|kk|KK|kl|KL|km|KM|kn|KN|ko|KO|kr|KR|ks|KS|ku|KU|kv|KV|kw|KW|ky|KY|la|LA|lb|LB|lg|LG|li|LI|ln|LN|lo|LO|lt|LT|lu|LU|lv|LV|mg|MG|mh|MH|mi|MI|mk|MK|ml|ML|mn|MN|mo|MO|mr|MR|ms|MS|mt|MT|my|MY|na|NA|nb|NB|nd|ND|ne|NE|ng|NG|nl|NL|nn|NN|no|NO|nr|NR|nv|NV|ny|NY|oc|OC|oj|OJ|om|OM|or|OR|os|OS|pa|PA|pi|PI|pl|PL|ps|PS|pt|PT|qu|QU|rm|RM|rn|RN|ro|RO|ru|RU|rw|RW|sa|SA|sc|SC|sd|SD|se|SE|sg|SG|si|SI|sk|SK|sl|SL|sm|SM|sn|SN|so|SO|sq|SQ|sr|SR|ss|SS|st|ST|su|SU|sv|SV|sw|SW|ta|TA|te|TE|tg|TG|th|TH|ti|TI|tk|TK|tl|TL|tn|TN|to|TO|tr|TR|ts|TS|tt|TT|tw|TW|ty|TY|ug|UG|uk|UK|ur|UR|uz|UZ|ve|VE|vi|VI|vo|VO|wa|WA|wo|WO|xh|XH|yi|YI|yo|YO|za|ZA|zh|ZH|zu|ZU)$')">LocalCode MUST be a valid Language Code.</assert>
-        <assert id="PEPPOL-T019-R034" flag="warning" test="./@*[not(name()='listID')]"><value-of select="$syntaxError"/>LocaleCode SHOULD NOT have any attributes but listID.</assert>
+        <assert id="PEPPOL-T019-R034" flag="warning" test="not(./@*[not(name()='listID')])"><value-of select="$syntaxError"/>LocaleCode SHOULD NOT have any attributes but listID.</assert>
     </rule>
     
     <rule context="ubl:TenderTendererQualification/cac:AdditionalDocumentReference/cbc:VersionID">
@@ -140,7 +140,7 @@
     <rule context="cac:PartyIdentification/cbc:ID">
         <assert id="PEPPOL-T019-R054" flag="fatal" test="./@schemeID">A Party Identifier MUST have a scheme identifier attribute.</assert>
         <assert id="PEPPOL-T019-R055" flag="fatal" test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3])))$')">A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
-        <assert id="PEPPOL-T019-R056" flag="warning" test="./@*[not(name()='schemeID')]"><value-of select="$syntaxError"/>cac:PartyIdentification/cbc:ID SHOULD NOT have any further attributes but schemeID</assert>
+        <assert id="PEPPOL-T019-R056" flag="warning" test="not(./@*[not(name()='schemeID')])"><value-of select="$syntaxError"/>cac:PartyIdentification/cbc:ID SHOULD NOT have any further attributes but schemeID</assert>
     </rule>
     
     <rule context="cac:Party/cbc:EndpointID">
@@ -177,7 +177,7 @@
     </rule>
     
     <rule context="cac:Country/cbc:IdentificationCode">
-        <assert id="PEPPOL-T019-R065" flag="warning" test="./@*[not(name()='listID')]"><value-of select="$syntaxError"/>Country Identification Code SHOULD NOT contain any attributes but listID</assert>
+        <assert id="PEPPOL-T019-R065" flag="warning" test="not(./@*[not(name()='listID')])"><value-of select="$syntaxError"/>Country Identification Code SHOULD NOT contain any attributes but listID</assert>
         <assert id="PEPPOL-T019-R066" flag="fatal" test="normalize-space(./@listID)='ISO3166'">listID for IdentificationCode MUST be 'ISO3166'.</assert>
     </rule>
     
