@@ -659,7 +659,7 @@
             <value-of select="$syntaxError"/>ContractingParty Party SHOULD NOT contain any elements but EndpointID, PartyIdentification, PartyName</assert>
         <assert id="PEPPOL-T019-R050"
                  flag="warning"
-                 test="count(./cac:PartyName) &gt; 1">
+                 test="count(./cac:PartyName) &lt;= 1">
             <value-of select="$syntaxError"/>ContractingParty/Party/PartyName SHOULD NOT be used more than once.</assert>
         <assert id="PEPPOL-T019-R051"
                  flag="fatal"
