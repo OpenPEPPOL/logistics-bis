@@ -38,6 +38,11 @@
 		<cac:PartyLegalEntity>
 			<cbc:RegistrationName>DK Company Name</cbc:RegistrationName>
 			<cbc:CompanyID schemeID="0088">5790000435968</cbc:CompanyID>
+			<cac:RegistrationAddress>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166">SE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:RegistrationAddress>
 		</cac:PartyLegalEntity>
 		<!-- end::partyID[] -->
 	</cac:ReceiverParty>
@@ -57,12 +62,17 @@
 			<cbc:PostalZone>56070</cbc:PostalZone>
 			<cbc:CountrySubentity>Rheinland-Pfalz</cbc:CountrySubentity>
 			<cac:Country>
-				<cbc:IdentificationCode>DE</cbc:IdentificationCode>
+				<cbc:IdentificationCode listID="ISO3166">DE</cbc:IdentificationCode>
 			</cac:Country>
 		</cac:PostalAddress>
 		<cac:PartyLegalEntity>
 			<cbc:RegistrationName>UKL Contracting Authority</cbc:RegistrationName>
 			<cbc:CompanyID schemeID="0204">9930:12332123</cbc:CompanyID>
+			<cac:RegistrationAddress>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166">SE</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:RegistrationAddress>
 		</cac:PartyLegalEntity>
 		<cac:Contact>
 			<cbc:Name>John Doe</cbc:Name>
@@ -158,7 +168,7 @@
 			<cbc:MaximumQuantity unitCode="C62">100</cbc:MaximumQuantity>
 
 			<!-- tag::order-interval[] -->
-			<cbc:TradingRestrictions>Quarter-yearly as per contractual agreement</cbc:TradingRestrictions>
+			<!-- cbc:TradingRestrictions>Quarter-yearly as per contractual agreement</cbc:TradingRestrictions -->
 			<!-- end::order-interval[] -->
 
 			<!-- tag::delivery-location[] -->
@@ -198,7 +208,7 @@
 
 			<cac:Price>
 				<cbc:PriceAmount currencyID="EUR">200</cbc:PriceAmount>
-				<cbc:PriceTypeCode listID="UNCL5305">NE</cbc:PriceTypeCode>
+				<cbc:PriceTypeCode listID="UNCL5387">NE</cbc:PriceTypeCode>
 			</cac:Price>
 		</cac:RequiredItemLocationQuantity>
 
