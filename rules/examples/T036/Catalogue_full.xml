@@ -15,7 +15,7 @@
       <cbc:EndDate>2017-06-30</cbc:EndDate>
    </cac:ValidityPeriod>
    <cac:ReferencedContract>
-      <cbc:ID>Example</cbc:ID>
+      <cbc:ID>12345</cbc:ID>
       <cbc:IssueDate>2017-01-01</cbc:IssueDate>
       <cbc:ContractTypeCode listID="UNCL1001">311</cbc:ContractTypeCode>
       <cac:ContractDocumentReference>
@@ -44,13 +44,14 @@
          </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
-         <cbc:CompanyID>Example</cbc:CompanyID>
+         <cbc:CompanyID>SE567908324501</cbc:CompanyID>
          <cac:TaxScheme>
-            <cbc:ID>Example</cbc:ID>
+            <cbc:ID>VAT</cbc:ID>
          </cac:TaxScheme>
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
-         <cbc:RegistrationName>Example</cbc:RegistrationName>
+         <cbc:RegistrationName>Official name</cbc:RegistrationName>
+         <cbc:CompanyID schemeID="0007">5679083245</cbc:CompanyID>
          <cac:RegistrationAddress>
             <cbc:CityName>Bergen</cbc:CityName>
             <cac:Country>
@@ -66,9 +67,9 @@
       </cac:Contact>
    </cac:ProviderParty>
    <cac:ReceiverParty>
-      <cbc:EndpointID schemeID="0192">987654321</cbc:EndpointID>
+      <cbc:EndpointID schemeID="0088">7300010000001</cbc:EndpointID>
       <cac:PartyIdentification>
-         <cbc:ID schemeID="0192">987654321</cbc:ID>
+         <cbc:ID schemeID="0088">7300010000001</cbc:ID>
       </cac:PartyIdentification>
       <cac:PartyName>
          <cbc:Name>Cataloge receiver name</cbc:Name>
@@ -87,14 +88,14 @@
          </cac:Country>
       </cac:PostalAddress>
       <cac:PartyTaxScheme>
-         <cbc:CompanyID>Example</cbc:CompanyID>
+         <cbc:CompanyID>SE556123456701</cbc:CompanyID>
          <cac:TaxScheme>
-            <cbc:ID>Example</cbc:ID>
+            <cbc:ID>VAT</cbc:ID>
          </cac:TaxScheme>
       </cac:PartyTaxScheme>
       <cac:PartyLegalEntity>
-         <cbc:RegistrationName>Example</cbc:RegistrationName>
-         <cbc:CompanyID schemeID="sample">Example</cbc:CompanyID>
+         <cbc:RegistrationName>Official name</cbc:RegistrationName>
+         <cbc:CompanyID schemeID="0088">7300010000001</cbc:CompanyID>
          <cac:RegistrationAddress>
             <cbc:CityName>Bergen</cbc:CityName>
             <cac:Country>
@@ -112,7 +113,7 @@
    <cac:SellerSupplierParty>
       <cac:Party>
          <cac:PartyIdentification>
-            <cbc:ID schemeID="9997">5679083245</cbc:ID>
+            <cbc:ID schemeID="ZZZ">5679083245</cbc:ID>
          </cac:PartyIdentification>
          <cac:PartyName>
             <cbc:Name>Provider name</cbc:Name>
@@ -131,14 +132,14 @@
             </cac:Country>
          </cac:PostalAddress>
          <cac:PartyTaxScheme>
-            <cbc:CompanyID>Example</cbc:CompanyID>
+            <cbc:CompanyID>SE556123456701</cbc:CompanyID>
             <cac:TaxScheme>
-               <cbc:ID>Example</cbc:ID>
+               <cbc:ID>VAT</cbc:ID>
             </cac:TaxScheme>
          </cac:PartyTaxScheme>
          <cac:PartyLegalEntity>
-            <cbc:RegistrationName>Example</cbc:RegistrationName>
-            <cbc:CompanyID schemeID="sample">Example</cbc:CompanyID>
+            <cbc:RegistrationName>Official name</cbc:RegistrationName>
+            <cbc:CompanyID schemeID="0088">7300010000001</cbc:CompanyID>
             <cac:RegistrationAddress>
                <cbc:CityName>Bergen</cbc:CityName>
                <cac:Country>
@@ -157,7 +158,7 @@
    <cac:ContractorCustomerParty>
       <cac:Party>
          <cac:PartyIdentification>
-            <cbc:ID schemeID="0007">5679083245</cbc:ID>
+            <cbc:ID schemeID="ZZZ">5679083245</cbc:ID>
          </cac:PartyIdentification>
          <cac:PartyName>
             <cbc:Name>Provider name</cbc:Name>
@@ -176,14 +177,14 @@
             </cac:Country>
          </cac:PostalAddress>
          <cac:PartyTaxScheme>
-            <cbc:CompanyID>Example</cbc:CompanyID>
+            <cbc:CompanyID>SE556123456701</cbc:CompanyID>
             <cac:TaxScheme>
-               <cbc:ID>Example</cbc:ID>
+               <cbc:ID>VAT</cbc:ID>
             </cac:TaxScheme>
          </cac:PartyTaxScheme>
          <cac:PartyLegalEntity>
-            <cbc:RegistrationName>Example</cbc:RegistrationName>
-            <cbc:CompanyID schemeID="sample">Example</cbc:CompanyID>
+            <cbc:RegistrationName>Official name</cbc:RegistrationName>
+            <cbc:CompanyID schemeID="0088">7300010000001</cbc:CompanyID>
             <cac:RegistrationAddress>
                <cbc:CityName>Bergen</cbc:CityName>
                <cac:Country>
@@ -209,8 +210,10 @@
       <cbc:Note>Include calibration service.</cbc:Note>
       <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
       <cbc:OrderableUnit>MLT</cbc:OrderableUnit>
+      <cbc:ContentUnitQuantity unitCode="MLT" unitCodeListID="UNECERec20">130</cbc:ContentUnitQuantity>
       <cbc:OrderQuantityIncrementNumeric>5</cbc:OrderQuantityIncrementNumeric>
       <cbc:MaximumOrderQuantity unitCode="EA" unitCodeListID="UNECERec20">1000</cbc:MaximumOrderQuantity>
+      <cbc:WarrantyInformation>Text</cbc:WarrantyInformation>
       <cbc:PackLevelCode listID="GS17009:PEPPOL">TU</cbc:PackLevelCode>
       <cac:LineValidityPeriod>
          <cbc:StartDate>2017-06-01</cbc:StartDate>
@@ -275,6 +278,7 @@
       <cac:Item>
          <cbc:Description>This is a rather long item description, often very detailed</cbc:Description>
          <cbc:PackQuantity unitCode="EA" unitCodeListID="UNECERec20">12</cbc:PackQuantity>
+         <cbc:PackSizeNumeric>25</cbc:PackSizeNumeric>
          <cbc:Name>Item name</cbc:Name>
          <cbc:Keyword>Toothpaste</cbc:Keyword>
          <cbc:BrandName>Solidox</cbc:BrandName>
@@ -285,7 +289,7 @@
             <cbc:ID>A2</cbc:ID>
          </cac:SellersItemIdentification>
          <cac:ManufacturersItemIdentification>
-            <cbc:ID schemeID="sample">B32</cbc:ID>
+            <cbc:ID schemeID="ZZZ">B32</cbc:ID>
          </cac:ManufacturersItemIdentification>
          <cac:StandardItemIdentification>
             <cbc:ID schemeID="GTIN">984719043710294792</cbc:ID>
@@ -311,10 +315,12 @@
          </cac:CommodityClassification>
          <cac:TransactionConditions>
             <cbc:ActionCode>SER</cbc:ActionCode>
+            <cbc:Description>Text</cbc:Description>
          </cac:TransactionConditions>
          <cac:HazardousItem>
+            <cbc:ID>Identity</cbc:ID>
             <cbc:UNDGCode listID="UNCL8273">0131</cbc:UNDGCode>
-            <cbc:HazardClassID>Example</cbc:HazardClassID>
+            <cbc:HazardClassID>123</cbc:HazardClassID>
          </cac:HazardousItem>
          <cac:ClassifiedTaxCategory>
             <cbc:ID>S</cbc:ID>
@@ -340,7 +346,7 @@
          </cac:AdditionalItemProperty>
          <cac:ManufacturerParty>
             <cac:PartyName>
-               <cbc:Name>Example</cbc:Name>
+               <cbc:Name>Manufacturer name</cbc:Name>
             </cac:PartyName>
          </cac:ManufacturerParty>
          <cac:ItemInstance>
@@ -357,9 +363,10 @@
             </cac:LotIdentification>
          </cac:ItemInstance>
          <cac:Certificate>
-            <cbc:ID>Example</cbc:ID>
+            <cbc:ID>121234345656</cbc:ID>
             <cbc:CertificateTypeCode>NEO</cbc:CertificateTypeCode>
             <cbc:CertificateType>Nordic Ecolabel</cbc:CertificateType>
+            <cbc:Remarks>Text</cbc:Remarks>
             <cac:IssuerParty>
                <cac:PartyName>
                   <cbc:Name>Svanemerket</cbc:Name>
@@ -377,7 +384,7 @@
          </cac:Dimension>
       </cac:Item>
       <cac:CallForTendersLineReference>
-         <cbc:LineID>Example</cbc:LineID>
+         <cbc:LineID>3</cbc:LineID>
       </cac:CallForTendersLineReference>
    </cac:CatalogueLine>
 </ubl:Catalogue>
