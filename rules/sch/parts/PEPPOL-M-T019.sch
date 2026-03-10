@@ -125,7 +125,7 @@
     
     <rule context="ubl:TendererQualification/cac:ContractingParty/cac:Party">
         <assert id="PEPPOL-T019-R049" flag="warning" test="count(./*)-count(./cac:PartyIdentification)-count(./cbc:EndpointID)-count(./cac:PartyName)= 0"><value-of select="$syntaxError"/>ContractingParty Party SHOULD NOT contain any elements but EndpointID, PartyIdentification, PartyName</assert>
-        <assert id="PEPPOL-T019-R050" flag="warning" test="count(./cac:PartyName) &gt; 1"><value-of select="$syntaxError"/>ContractingParty/Party/PartyName SHOULD NOT be used more than once.</assert>
+        <assert id="PEPPOL-T019-R050" flag="warning" test="count(./cac:PartyName) &lt;= 1"><value-of select="$syntaxError"/>ContractingParty/Party/PartyName SHOULD NOT be used more than once.</assert>
         <assert id="PEPPOL-T019-R051" flag="fatal" test="(./cac:PartyIdentification) and (./cbc:EndpointID)">The Contracting Authority MUST be identified by its party and endpoint identifiers.</assert>
     </rule>
     
@@ -149,11 +149,6 @@
     
     <rule context="cbc:Name">
         <assert id="PEPPOL-T019-R058" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>Name SHOULD NOT contain any attributes.</assert>
-    </rule>
-    
-    <rule context="ubl:TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cac:PostalAddress
-        | ubl:TendererQualification/cac:TendererPartyQualification/cac:AdditionalQualifyingParty/cac:Party/cac:PostalAddress">
-        <assert id="PEPPOL-T019-R059" flag="warning" test="count(./*)-count(./cbc:StreetName)-count(./cbc:CityName)-count(./cbc:PostalZone)-count(./cbc:CountrySubentity)-count(./cac:Country)=0"><value-of select="$syntaxError"/>PostalAddress SHOULD NOT contain any elements but StreetName, CityName, PostalZone, CountrySubentity, Country</assert>
     </rule>
     
     <rule context="cbc:StreetName">
