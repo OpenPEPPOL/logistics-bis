@@ -1129,7 +1129,7 @@
             <value-of select="$syntaxError"/>[PEPPOL-T024-S371] ProcedureCode SHOULD NOT have any attributes but listID.</report>
         <assert id="PEPPOL-T024-R037"
                  flag="fatal"
-                 test="(cbc:ProcedureCode = '1' and not(exists(cac:ParticipationRequestReceptionPeriod))) or (cbc:ProcedureCode!='1')">[PEPPOL-T024-R037] Participation Request Reception Period MUST not be given for proceduretypes without participation contest.</assert>
+                 test="(normalize-space(.) = '1' and not(exists(../cac:ParticipationRequestReceptionPeriod))) or (normalize-space(.) != '1')">[PEPPOL-T024-R037] Participation Request Reception Period MUST not be given for proceduretypes without participation contest.</assert>
       </rule>
     
       <rule context="ubl:CallForTenders/cac:TenderingProcess/cbc:ContractingSystemCode">
