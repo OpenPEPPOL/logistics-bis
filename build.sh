@@ -17,14 +17,6 @@ docker run --rm -i \
     -v $PROJECT/target:/target \
     difi/vefa-structure:0.6.1
 
-# Testing validation rules 
-#docker run --rm -i -v $PROJECT:/src anskaffelser/validator:2.1.0 build -x -t -n eu.peppol.poacc.upgrade.v3 -a rules -target target/validator-test /src
-docker run --rm -i -v $PROJECT:/src phelger/vefa-validator:2.3.1 build -x -t -n eu.peppol.poacc.upgrade.v3 -a rules -target target/validator-test /src
-
-# Schematron
-for sch in $PROJECT/rules/sch/*.sch; do
-    docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/schematron:/target klakegg/schematron prepare /src/rules/sch/$(basename $sch) /target/$(basename $sch)
-done
 
 # Generate full UBL examples
 echo "Generating UBL example: Expression Of Interest Request (T001)"
@@ -95,6 +87,16 @@ docker run --rm -i -v $PROJECT:/src --entrypoint java klakegg/saxon:9.8.0-7 -cp 
 
 echo "Generating UBL example: Catalogue (T036)"
 docker run --rm -i -v $PROJECT:/src --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/syntax/ubl-pre-award-catalogue.xml -xsl:/src/tools/create-ubl-example-from-syntax.xsl -o:/src/rules/examples/T036/Catalogue_full.xml
+
+
+# Testing validation rules 
+#docker run --rm -i -v $PROJECT:/src anskaffelser/validator:2.1.0 build -x -t -n eu.peppol.poacc.upgrade.v3 -a rules -target target/validator-test /src
+docker run --rm -i -v $PROJECT:/src phelger/vefa-validator:2.3.1 build -x -t -n eu.peppol.poacc.upgrade.v3 -a rules -target target/validator-test /src
+
+# Schematron
+for sch in $PROJECT/rules/sch/*.sch; do
+    docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/schematron:/target klakegg/schematron prepare /src/rules/sch/$(basename $sch) /target/$(basename $sch)
+done
 
 # Removing old zip files and creating new ones
 docker run --rm -i \
