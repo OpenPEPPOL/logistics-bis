@@ -315,7 +315,10 @@
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
                  id="PEPPOL-T019-B03001">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
-         <assert test="@listID" flag="fatal" id="PEPPOL-T019-B03002">Attribute 'listID' MUST be present.</assert>
+         <assert test="not(@listID) or @listID = 'ISO3166'"
+                 flag="fatal"
+                 id="PEPPOL-T019-B03002">Attribute 'listID' MUST contain value 'ISO3166'</assert>
+         <assert test="@listID" flag="fatal" id="PEPPOL-T019-B03003">Attribute 'listID' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cac:Party/cac:PostalAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T019-B02902">Document MUST NOT contain elements not part of the data model.</assert>
@@ -381,7 +384,10 @@
          <assert test="(some $code in $clISO3166 satisfies $code = normalize-space(text()))"
                  flag="fatal"
                  id="PEPPOL-T019-B05501">Value MUST be part of code list 'ISO 3166-1:Alpha2 Country codes'.</assert>
-         <assert test="@listID" flag="fatal" id="PEPPOL-T019-B05502">Attribute 'listID' MUST be present.</assert>
+         <assert test="not(@listID) or @listID = 'ISO3166'"
+                 flag="fatal"
+                 id="PEPPOL-T019-B05502">Attribute 'listID' MUST contain value 'ISO3166'</assert>
+         <assert test="@listID" flag="fatal" id="PEPPOL-T019-B05503">Attribute 'listID' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TendererQualification/cac:TendererPartyQualification/cac:AdditionalQualifyingParty/cac:Party/cac:PostalAddress/cac:Country/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T019-B05402">Document MUST NOT contain elements not part of the data model.</assert>
