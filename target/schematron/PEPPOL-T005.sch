@@ -523,10 +523,10 @@
       <rule context="ubl:Tender/cac:DocumentReference/cac:Attachment">
         <assert id="PEPPOL-T005-R023"
                  flag="fatal"
-                 test="exists(cac:ExternalReferencecbc:DocumentHash)">[PEPPOL-T005-R023] An Attachment MUST have a document hash</assert>
+                 test="exists(cac:ExternalReference/cbc:DocumentHash)">[PEPPOL-T005-R023] An Attachment MUST have a document hash</assert>
         <assert id="PEPPOL-T005-R024"
                  flag="fatal"
-                 test="exists(cac:ExternalReferencec/cbc:HashAlgorithmMethod)">[PEPPOL-T005-R024] An Attachment MUST have a hash algorithm method</assert>
+                 test="exists(cacExternalReferencec/cbc:HashAlgorithmMethod)">[PEPPOL-T005-R024] An Attachment MUST have a hash algorithm method</assert>
         <assert id="PEPPOL-T005-R025"
                  flag="fatal"
                  test="normalize-space(cac:ExternalReferencec/cbc:HashAlgorithmMethod) = 'http://www.w3.org/2001/04/xmlenc#sha256'">[PEPPOL-T005-R025] Hash Algorithm MUST be SHA-256 (http://www.w3.org/2001/04/xmlenc#sha256)</assert>
