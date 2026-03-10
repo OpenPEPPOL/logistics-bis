@@ -50,11 +50,11 @@
     </rule>
     
     <rule context="ubl:TendererQualification/cbc:VersionID">
-        <assert id="PEPPOL-T019-R026" flag="warning" test="./@*"><value-of select="$syntaxError"/>VersionID SHOULD NOT have any attributes.</assert>
+        <assert id="PEPPOL-T019-R026" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>VersionID SHOULD NOT have any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference">
-        <assert id="PEPPOL-T019-R027" flag="warning" test="count(./cbc:DocumentDescription) &gt; 1"><value-of select="$syntaxError"/>DocumentDescription SHOULD NOT be used more than once.</assert>
+        <assert id="PEPPOL-T019-R027" flag="warning" test="not(count(./cbc:DocumentDescription) &gt; 1)"><value-of select="$syntaxError"/>DocumentDescription SHOULD NOT be used more than once.</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cbc:ID">
@@ -67,7 +67,7 @@
     </rule>
     
     <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cbc:XPath">
-        <assert id="PEPPOL-T019-R031" flag="warning" test="./@*"><value-of select="$syntaxError"/>XPath SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T019-R031" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>XPath SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cbc:LocaleCode">
@@ -77,11 +77,11 @@
     </rule>
     
     <rule context="ubl:TenderTendererQualification/cac:AdditionalDocumentReference/cbc:VersionID">
-        <assert id="PEPPOL-T019-R035" flag="warning" test="./@*"><value-of select="$syntaxError"/>VersionID SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T019-R035" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>VersionID SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cbc:DocumentDescription">
-        <assert id="PEPPOL-T019-R036" flag="warning" test="./@*"><value-of select="$syntaxError"/>DocumentDescription SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T019-R036" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>DocumentDescription SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cac:Attachment">
@@ -90,29 +90,29 @@
     
     <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:URI">
         <assert id="PEPPOL-T019-R038" flag="fatal" test="matches(normalize-space(.),'^[a-fA-F0-9]{8}(\-[a-fA-F0-9]{4}){3}\-[a-fA-F0-9]{12}$')">URI for a Qualification Reference external reference attachment MUST be expressed in a UUID syntax (RFC 4122)</assert>
-        <assert id="PEPPOL-T019-R039" flag="warning" test="./@*"><value-of select="$syntaxError"/>URI SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T019-R039" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>URI SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:DocumentHash">
         <assert id="PEPPOL-T019-R040" flag="fatal" test="matches(normalize-space(.),'^[a-fA-F0-9]{64}$')">DocumentHash MUST resemble a SHA-256 hash value (32 byte HexString)</assert>
-        <assert id="PEPPOL-T019-R041" flag="warning" test="./@*"><value-of select="$syntaxError"/>DocumentHash SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T019-R041" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>DocumentHash SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:HashAlgorithmMethod">
         <assert id="PEPPOL-T019-R042" flag="fatal" test="normalize-space(.)='http://www.w3.org/2001/04/xmlenc#sha256'">HashAlgorithmMethod MUST be 'http://www.w3.org/2001/04/xmlenc#sha256'</assert>
-        <assert id="PEPPOL-T019-R043" flag="warning" test="./@*"><value-of select="$syntaxError"/>HashAlgorithmMethod SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T019-R043" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>HashAlgorithmMethod SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:MimeCode">
-        <assert id="PEPPOL-T019-R044" flag="warning" test="./@*"><value-of select="$syntaxError"/>MimeCode SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T019-R044" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>MimeCode SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:FileName">
-        <assert id="PEPPOL-T019-R045" flag="warning" test="./@*"><value-of select="$syntaxError"/>FileNAme SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T019-R045" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>FileNAme SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cac:AdditionalDocumentReference/cac:Attachment/cac:ExternalReference/cbc:Description">
-        <assert id="PEPPOL-T019-R046" flag="warning" test="./@*"><value-of select="$syntaxError"/>Description SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T019-R046" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>Description SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cac:Party">
@@ -134,7 +134,7 @@
     </rule>
     
     <rule context="ubl:TendererQualification/cac:TendererPartyQualification/cac:ProcurementProjectLot/cbc:ID">
-        <assert id="PEPPOL-T019-R053" flag="warning" test="./@*"><value-of select="$syntaxError"/>Procurement Project Lot Identifier SHOULD NOT contain any attributes</assert>
+        <assert id="PEPPOL-T019-R053" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>Procurement Project Lot Identifier SHOULD NOT contain any attributes</assert>
     </rule>
     
     <rule context="cac:PartyIdentification/cbc:ID">
@@ -148,7 +148,7 @@
     </rule>
     
     <rule context="cbc:Name">
-        <assert id="PEPPOL-T019-R058" flag="warning" test="./@*"><value-of select="$syntaxError"/>Name SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T019-R058" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>Name SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cac:TendererPartyQualification/cac:MainQualifyingParty/cac:PostalAddress
@@ -157,19 +157,19 @@
     </rule>
     
     <rule context="cbc:StreetName">
-        <assert id="PEPPOL-T019-R060" flag="warning" test="./@*"><value-of select="$syntaxError"/>StreetName SHOULD NOT contain any attributes</assert>
+        <assert id="PEPPOL-T019-R060" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>StreetName SHOULD NOT contain any attributes</assert>
     </rule>
     
     <rule context="cbc:CityName">
-        <assert id="PEPPOL-T019-R061" flag="warning" test="./@*"><value-of select="$syntaxError"/>CityName SHOULD NOT contain any attributes</assert>
+        <assert id="PEPPOL-T019-R061" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>CityName SHOULD NOT contain any attributes</assert>
     </rule>
     
     <rule context="cbc:PostalZone">
-        <assert id="PEPPOL-T019-R062" flag="warning" test="./@*"><value-of select="$syntaxError"/>PostalZone SHOULD NOT contain any attributes</assert>
+        <assert id="PEPPOL-T019-R062" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>PostalZone SHOULD NOT contain any attributes</assert>
     </rule>
     
     <rule context="cbc:CountrySubentity">
-        <assert id="PEPPOL-T019-R063" flag="warning" test="./@*"><value-of select="$syntaxError"/>CountrySubentity SHOULD NOT contain any attributes</assert>
+        <assert id="PEPPOL-T019-R063" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>CountrySubentity SHOULD NOT contain any attributes</assert>
     </rule>
     
     <rule context="cac:Country">
@@ -182,7 +182,7 @@
     </rule>
     
     <rule context="cac:PartyLegalEntity/cbc:CompanyLegalForm">
-        <assert id="PEPPOL-T019-R067" flag="warning" test="./@*"><value-of select="$syntaxError"/>CompanyLegalForm SHOULD NOT contain any attributes</assert>
+        <assert id="PEPPOL-T019-R067" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>CompanyLegalForm SHOULD NOT contain any attributes</assert>
     </rule>
     
     <rule context="cac:Contact">
@@ -190,15 +190,15 @@
     </rule>
     
     <rule context="cbc:Telephone">
-        <assert id="PEPPOL-T019-R069" flag="warning" test="./@*"><value-of select="$syntaxError"/>Telephone SHOULD NOT contain any attributes</assert>
+        <assert id="PEPPOL-T019-R069" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>Telephone SHOULD NOT contain any attributes</assert>
     </rule>
     
     <rule context="cbc:Telefax">
-        <assert id="PEPPOL-T019-R070" flag="warning" test="./@*"><value-of select="$syntaxError"/>Telefax SHOULD NOT contain any attributes</assert>
+        <assert id="PEPPOL-T019-R070" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>Telefax SHOULD NOT contain any attributes</assert>
     </rule>
     
     <rule context="cbc:ElectronicMail">
-        <assert id="PEPPOL-T019-R071" flag="warning" test="./@*"><value-of select="$syntaxError"/>ElectronicMail SHOULD NOT contain any attributes</assert>
+        <assert id="PEPPOL-T019-R071" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>ElectronicMail SHOULD NOT contain any attributes</assert>
     </rule>
 	<rule context="*">
             <assert id="PEPPOL-T019-R001" flag="fatal" test="not(normalize-space(.) = '' and not(*))">A Qualification document MUST NOT contain empty elements.
