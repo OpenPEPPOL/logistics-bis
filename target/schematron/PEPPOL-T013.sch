@@ -306,7 +306,10 @@
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T013-B01801">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TenderWithdrawal/cac:TenderNotificationDocumentReference/cbc:ID">
-         <assert test="@schemeURI" flag="fatal" id="PEPPOL-T013-B01901">Attribute 'schemeURI' MUST be present.</assert>
+         <assert test="not(@schemeURI) or @schemeURI = 'urn:uuid'"
+                 flag="fatal"
+                 id="PEPPOL-T013-B01901">Attribute 'schemeURI' MUST contain value 'urn:uuid'</assert>
+         <assert test="@schemeURI" flag="fatal" id="PEPPOL-T013-B01902">Attribute 'schemeURI' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TenderWithdrawal/cac:TenderNotificationDocumentReference/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T013-B01802">Document MUST NOT contain elements not part of the data model.</assert>
@@ -661,7 +664,7 @@
             </assert>
             <assert id="PEPPOL-T013-R009"
                  flag="fatal"
-                 test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\\d)|(1\\d{2})|(20\\d)|(21[0-3])))$')">
+                 test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3])))$')">
                 [PEPPOL-T013-R009] A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described
                 in the "PEPPOL Policy for using Identifiers".
             </assert>
