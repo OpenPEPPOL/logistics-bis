@@ -8,26 +8,26 @@
     Based on diagram: "Manufacturing BOM - Supplier responded with recipe articles on whole package"
 -->
 <Catalogue xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2"
-           xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
-           xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-    
-    <cbc:CustomizationID>urn:fdc:peppol.eu:poacc:trns:catalogue:3</cbc:CustomizationID>
-    <cbc:ProfileID>urn:fdc:peppol.eu:poacc:bis:catalogue_only:3</cbc:ProfileID>
-    
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+
+    <cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t036:1</cbc:CustomizationID>
+    <cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p035</cbc:ProfileID>
+
     <cbc:ID>MBOM-DUMB-001</cbc:ID>
     <cbc:ActionCode>Add</cbc:ActionCode>
     <cbc:Name>Manufacturing BOM - Dumma Recept (Ingen Spårbarhet)</cbc:Name>
     <cbc:IssueDate>2026-02-06</cbc:IssueDate>
-    
+
     <cac:ValidityPeriod>
         <cbc:StartDate>2026-02-06</cbc:StartDate>
         <cbc:EndDate>2026-08-06</cbc:EndDate>
     </cac:ValidityPeriod>
-    
+
     <cac:ReferencedContract>
         <cbc:ID>CONTRACT-934567923</cbc:ID>
     </cac:ReferencedContract>
-    
+
     <cac:ProviderParty>
         <cbc:EndpointID schemeID="0007">5560999202</cbc:EndpointID>
         <cac:PartyIdentification>
@@ -37,7 +37,7 @@
             <cbc:RegistrationName>Väggentreprenören AB</cbc:RegistrationName>
         </cac:PartyLegalEntity>
     </cac:ProviderParty>
-    
+
     <cac:ReceiverParty>
         <cbc:EndpointID schemeID="0007">5560813031</cbc:EndpointID>
         <cac:PartyIdentification>
@@ -47,7 +47,7 @@
             <cbc:RegistrationName>ÖBO</cbc:RegistrationName>
         </cac:PartyLegalEntity>
     </cac:ReceiverParty>
-    
+
     <!-- BIM Object (keeps CDEGuid) -->
     <cac:CatalogueLine>
         <cbc:ID>1</cbc:ID>
@@ -55,32 +55,32 @@
         <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
         <cbc:OrderableUnit>MTR</cbc:OrderableUnit>
         <cbc:ContentUnitQuantity unitCode="MTR">16.06</cbc:ContentUnitQuantity>
-        
+
         <cac:Item>
             <cbc:Description>Huvudobjekt från BIM-modell. Recept-artiklar utan koppling.</cbc:Description>
             <cbc:Name>YV01 350 - Yttre bärande yttervägg</cbc:Name>
-            
+
             <cac:SellersItemIdentification>
                 <cbc:ID>3pLKJPvHT21uNqX1l9FcUN</cbc:ID>
             </cac:SellersItemIdentification>
-            
+
             <cac:AdditionalItemProperty>
                 <cbc:Name>AuthoringToolId</cbc:Name>
                 <cbc:Value>1192287</cbc:Value>
             </cac:AdditionalItemProperty>
-            
+
             <cac:AdditionalItemProperty>
                 <cbc:Name>CDEGuid</cbc:Name>
                 <cbc:Value>3pLKJPvHT21uNqX1l9FcUN</cbc:Value>
             </cac:AdditionalItemProperty>
-            
+
             <cac:AdditionalItemProperty>
                 <cbc:Name>ItemType</cbc:Name>
                 <cbc:Value>BIMObject</cbc:Value>
             </cac:AdditionalItemProperty>
         </cac:Item>
     </cac:CatalogueLine>
-    
+
     <!-- Package Article 1: NO CDEGuid - no traceability -->
     <cac:CatalogueLine>
         <cbc:ID>2</cbc:ID>
@@ -88,34 +88,34 @@
         <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
         <cbc:OrderableUnit>MTK</cbc:OrderableUnit>
         <cbc:ContentUnitQuantity unitCode="MTK">90.31</cbc:ContentUnitQuantity>
-        
+
         <cac:Item>
             <cbc:Description>Tegelfasad för hela paketet. INGEN koppling till BIM.</cbc:Description>
             <cbc:Name>Tegelfasad 110mm (paket)</cbc:Name>
-            
+
             <cac:SellersItemIdentification>
                 <cbc:ID>VE-TEGEL-PKG</cbc:ID>
             </cac:SellersItemIdentification>
-            
+
             <cac:AdditionalItemProperty>
                 <cbc:Name>AuthoringToolId</cbc:Name>
                 <cbc:Value>VE-PKG-001</cbc:Value>
             </cac:AdditionalItemProperty>
-            
+
             <!-- NO CDEGuid - this is the key difference -->
-            
+
             <cac:AdditionalItemProperty>
                 <cbc:Name>ItemType</cbc:Name>
                 <cbc:Value>PackageArticle</cbc:Value>
             </cac:AdditionalItemProperty>
-            
+
             <cac:AdditionalItemProperty>
                 <cbc:Name>Traceability</cbc:Name>
                 <cbc:Value>None</cbc:Value>
             </cac:AdditionalItemProperty>
         </cac:Item>
     </cac:CatalogueLine>
-    
+
     <!-- Package Article 2: NO CDEGuid -->
     <cac:CatalogueLine>
         <cbc:ID>3</cbc:ID>
@@ -123,30 +123,30 @@
         <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
         <cbc:OrderableUnit>MTK</cbc:OrderableUnit>
         <cbc:ContentUnitQuantity unitCode="MTK">90.31</cbc:ContentUnitQuantity>
-        
+
         <cac:Item>
             <cbc:Description>Träregelstomme för hela paketet. INGEN koppling till BIM.</cbc:Description>
             <cbc:Name>Regelstomme C24 195mm + mineralull (paket)</cbc:Name>
-            
+
             <cac:SellersItemIdentification>
                 <cbc:ID>VE-REGEL-PKG</cbc:ID>
             </cac:SellersItemIdentification>
-            
+
             <cac:AdditionalItemProperty>
                 <cbc:Name>AuthoringToolId</cbc:Name>
                 <cbc:Value>VE-PKG-002</cbc:Value>
             </cac:AdditionalItemProperty>
-            
+
             <cac:AdditionalItemProperty>
                 <cbc:Name>ItemType</cbc:Name>
                 <cbc:Value>PackageArticle</cbc:Value>
             </cac:AdditionalItemProperty>
-            
+
             <cac:AdditionalItemProperty>
                 <cbc:Name>Traceability</cbc:Name>
                 <cbc:Value>None</cbc:Value>
             </cac:AdditionalItemProperty>
         </cac:Item>
     </cac:CatalogueLine>
-    
+
 </Catalogue>

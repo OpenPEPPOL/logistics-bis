@@ -17,9 +17,9 @@
 <Catalogue xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2"
            xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
            xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
-    
-    <cbc:CustomizationID>urn:fdc:peppol.eu:poacc:trns:catalogue:3</cbc:CustomizationID>
-    <cbc:ProfileID>urn:fdc:peppol.eu:poacc:bis:catalogue_only:3</cbc:ProfileID>
+
+    <cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t036:1</cbc:CustomizationID>
+    <cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p035</cbc:ProfileID>
     
     <cbc:ID>UC3-RESP-DUMB-001</cbc:ID>
     <cbc:ActionCode>Add</cbc:ActionCode>
@@ -58,7 +58,7 @@
             <cbc:RegistrationName>ÖBO</cbc:RegistrationName>
         </cac:PartyLegalEntity>
     </cac:ReceiverParty>
-    
+
     <!-- ================================================================ -->
     <!-- LINE 1: MAIN WALL from BIM Model (keeps CDEGuid)                -->
     <!-- ================================================================ -->
@@ -110,7 +110,7 @@
             </cac:AdditionalItemProperty>
         </cac:Item>
     </cac:CatalogueLine>
-    
+
     <!-- ================================================================ -->
     <!-- LINE 2: RECIPE ARTICLE - Tegelfasad (AGGREGATED)                -->
     <!-- NO CDEGuid matching BIM object - JUST seller's own ID           -->
@@ -134,18 +134,18 @@
         <cac:Item>
             <cbc:Description>Tegelfasad murning 110mm. Aggregerad recept-artikel - INGEN koppling till enskilda väggar i BIM-modellen.</cbc:Description>
             <cbc:Name>Tegelfasad 110mm (paket-artikel)</cbc:Name>
-            
+
             <!-- Seller's own ID - NOT matching any BIM CDEGuid -->
             <cac:SellersItemIdentification>
                 <cbc:ID>VE-TEGEL-110-PKG</cbc:ID>
             </cac:SellersItemIdentification>
-            
+
             <!-- Seller's AuthoringToolId only -->
             <cac:AdditionalItemProperty>
                 <cbc:Name>AuthoringToolId</cbc:Name>
                 <cbc:Value>VE-PKG-001</cbc:Value>
             </cac:AdditionalItemProperty>
-            
+
             <!-- NOTE: NO CDEGuid - this is the key difference from Smart Recipe -->
             
             <cac:AdditionalItemProperty>
@@ -159,7 +159,7 @@
             </cac:AdditionalItemProperty>
         </cac:Item>
     </cac:CatalogueLine>
-    
+
     <!-- ================================================================ -->
     <!-- LINE 3: RECIPE ARTICLE - Regelstomme (AGGREGATED)               -->
     <!-- NO CDEGuid - no traceability to BIM                             -->
@@ -203,7 +203,7 @@
             </cac:AdditionalItemProperty>
         </cac:Item>
     </cac:CatalogueLine>
-    
+
     <!-- ================================================================ -->
     <!-- LINE 4: RECIPE ARTICLE - Gips (AGGREGATED)                      -->
     <!-- NO CDEGuid - no traceability to BIM                             -->
