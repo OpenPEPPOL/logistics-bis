@@ -136,7 +136,9 @@
                         <Name>Scheme identifier</Name>
                         <Reference type="RULE">PEPPOL-T010-R021</Reference>
                         <Reference type="CODE_LIST">ICD</Reference>
+						<Value type="EXAMPLE">0088</Value>
                     </Attribute>
+						<Value type="EXAMPLE">7300010000001</Value>
                 </Element>
             </Element>
             <Element cardinality="0..1">
@@ -251,7 +253,9 @@
                     <Term>schemeName</Term>
                     <Name>Scheme name</Name>
                     <Description>Valid values are ContractFolderID, LotGroup or Lot.</Description>
+					<Value type="FIXED">ContractFolderID</Value>
                 </Attribute>
+				
             </Element>
             <Element cardinality="0..n">
                 <Term>cbc:XPath</Term>
@@ -259,6 +263,7 @@
                 <Description>An xpath expression to reference an cac:Attachment where questions can be asked or refer a file within the ASiC-e.</Description>
                 <DataType>cbc:XPathType</DataType>
                 <Reference type="RULE">PEPPOL-T010-R027</Reference>
+					<Value type="EXAMPLE">/EnquiryResponse/cac:Attachment[1]</Value>
             </Element>
         </Element>
         <Element cardinality="1..n">
@@ -295,6 +300,7 @@
                     <Name>Tendering request</Name>
                     <Description>The tendering request about the procurement procedure.</Description>
                     <DataType>cbc:DescriptionType</DataType>
+					<Value type="EXAMPLE">Place your first tender clarification here.</Value>
                 </Element>
             </Element>
         </Element>
