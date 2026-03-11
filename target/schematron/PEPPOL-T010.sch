@@ -332,7 +332,10 @@
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T010-B02801">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:EnquiryResponse/cac:AdditionalDocumentReference/cbc:ID">
-         <assert test="@schemeName" flag="fatal" id="PEPPOL-T010-B02901">Attribute 'schemeName' MUST be present.</assert>
+         <assert test="not(@schemeName) or @schemeName = 'ContractFolderID'"
+                 flag="fatal"
+                 id="PEPPOL-T010-B02901">Attribute 'schemeName' MUST contain value 'ContractFolderID'</assert>
+         <assert test="@schemeName" flag="fatal" id="PEPPOL-T010-B02902">Attribute 'schemeName' MUST be present.</assert>
       </rule>
       <rule context="/ubl:EnquiryResponse/cac:AdditionalDocumentReference/cbc:XPath"/>
       <rule context="/ubl:EnquiryResponse/cac:AdditionalDocumentReference/*">
