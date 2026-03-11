@@ -562,7 +562,7 @@
             <assert id="PEPPOL-T006-R008" flag="fatal" test="./@schemeID">[PEPPOL-T006-R008] A Party Identifier MUST have a scheme identifier attribute.</assert>
             <assert id="PEPPOL-T006-R009"
                  flag="fatal"
-                 test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\\d)|(1\\d{2})|(20\\d)|(21[0-3])))$')">[PEPPOL-T006-R009] A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
+                 test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3])))$')">[PEPPOL-T006-R009] A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
             <report id="PEPPOL-T006-S325"
                  flag="warning"
                  test="./@*[not(name()='schemeID')]">
