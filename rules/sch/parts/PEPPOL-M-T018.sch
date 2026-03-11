@@ -107,7 +107,7 @@
     </rule>
     
     <rule context="/ubl:ApplicationResponse/cac:DocumentResponse/cac:DocumentReference/cbc:DocumentTypeCode">
-        <assert id="PEPPOL-T018-R034" flag="fatal" test="matches(normalize-space(.),'urn:fdc:peppol\.eu:prac:trns:t0[0,1][0-9]:1\.1')">Value MUST be a valid transactionID.</assert>
+        <assert id="PEPPOL-T018-R034" flag="fatal" test="matches(normalize-space(.),'urn:fdc:peppol.eu:prac:trns:t018:1')">Value MUST be a valid transactionID.</assert>
     </rule>
     
     <rule context="/ubl:ApplicationResponse/cac:DocumentResponse/cac:DocumentReference/cbc:ID"/>
