@@ -306,13 +306,10 @@
          <assert test="cbc:ID" flag="fatal" id="PEPPOL-T013-B01801">Element 'cbc:ID' MUST be provided.</assert>
       </rule>
       <rule context="/ubl:TenderWithdrawal/cac:TenderNotificationDocumentReference/cbc:ID">
-         <assert test="normalize-space(text()) = '123e4567-e89b-12d3-a456-426614174000'"
-                 flag="fatal"
-                 id="PEPPOL-T013-B01901">Element 'cbc:ID' MUST contain value '123e4567-e89b-12d3-a456-426614174000'.</assert>
          <assert test="not(@schemeURI) or @schemeURI = 'urn:uuid'"
                  flag="fatal"
-                 id="PEPPOL-T013-B01902">Attribute 'schemeURI' MUST contain value 'urn:uuid'</assert>
-         <assert test="@schemeURI" flag="fatal" id="PEPPOL-T013-B01903">Attribute 'schemeURI' MUST be present.</assert>
+                 id="PEPPOL-T013-B01901">Attribute 'schemeURI' MUST contain value 'urn:uuid'</assert>
+         <assert test="@schemeURI" flag="fatal" id="PEPPOL-T013-B01902">Attribute 'schemeURI' MUST be present.</assert>
       </rule>
       <rule context="/ubl:TenderWithdrawal/cac:TenderNotificationDocumentReference/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T013-B01802">Document MUST NOT contain elements not part of the data model.</assert>
