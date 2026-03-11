@@ -222,7 +222,7 @@
                 a scheme identifier attribute.
             </assert>
             <assert id="PEPPOL-T013-R009" flag="fatal"
-                    test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\\d)|(1\\d{2})|(20\\d)|(21[0-3])))$')">
+                    test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3])))$')">
                 [PEPPOL-T013-R009] A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described
                 in the "PEPPOL Policy for using Identifiers".
             </assert>
