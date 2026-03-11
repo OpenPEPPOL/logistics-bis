@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Use Case 3: Buyer Unique Wall with Quantity
+    
+    Scenario: Buyer sends catalogue with a unique wall instance from the BIM model.
+              The wall has IFCGuid/CDEGuid for 1:1 traceability back to the model.
+              Seller can respond with either "smart" or "dumb" recipes.
+    
+    Wall instance from IFC model: A-40-V-000_BIM2BOM.ifc
+    IFC GlobalId: 3pLKJPvHT21uNqX1l9FcUN (YV01 350)
+    AuthoringToolId (Revit Element ID): 1192287
+-->
+<Catalogue xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2"
+           xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+           xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+    
+    <cbc:CustomizationID>urn:fdc:peppol.eu:poacc:trns:catalogue:3</cbc:CustomizationID>
+    <cbc:ProfileID>urn:fdc:peppol.eu:poacc:bis:catalogue_only:3</cbc:ProfileID>
+    
+    <cbc:ID>UC3-REQ-001</cbc:ID>
+    <cbc:ActionCode>Add</cbc:ActionCode>
+    <cbc:Name>Offertförfrågan Unik Vägg med BIM-spårbarhet</cbc:Name>
+    <cbc:IssueDate>2026-02-04</cbc:IssueDate>
+    
+    <cac:ValidityPeriod>
+        <cbc:StartDate>2026-02-04</cbc:StartDate>
+        <cbc:EndDate>2026-03-04</cbc:EndDate>
+    </cac:ValidityPeriod>
+    
+    <cac:ReferencedContract>
+        <cbc:ID>CONTRACT-934567923</cbc:ID>
+    </cac:ReferencedContract>
+    
+    <cac:ProviderParty>
+        <cbc:EndpointID schemeID="0007">5560813031</cbc:EndpointID>
+        <cac:PartyIdentification>
+            <cbc:ID schemeID="0007">5560813031</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyLegalEntity>
+            <cbc:RegistrationName>ÖBO</cbc:RegistrationName>
+        </cac:PartyLegalEntity>
+    </cac:ProviderParty>
+    
+    <cac:ReceiverParty>
+        <cbc:EndpointID schemeID="0007">5560999202</cbc:EndpointID>
+        <cac:PartyIdentification>
+            <cbc:ID schemeID="0007">5560999202</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyLegalEntity>
+            <cbc:RegistrationName>Väggentreprenören AB</cbc:RegistrationName>
+        </cac:PartyLegalEntity>
+    </cac:ReceiverParty>
+    
+    <!-- Unique Wall: YV01 350 - Instance with IFCGuid for traceability -->
+    <cac:CatalogueLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:ActionCode>Add</cbc:ActionCode>
+        <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+        <cbc:OrderableUnit>MTR</cbc:OrderableUnit>
+        <cbc:ContentUnitQuantity unitCode="MTR">16.06</cbc:ContentUnitQuantity>
+        
+        <cac:Item>
+            <cbc:Description>Yttre bärande yttervägg, 350 mm. Unik vägginstans från BIM-modell med full spårbarhet.</cbc:Description>
+            <cbc:Name>YV01 350 - Yttre bärande yttervägg (Plan 010)</cbc:Name>
+            
+            <!-- IFC GlobalId used as SellersItemIdentification for BIM traceability -->
+            <cac:SellersItemIdentification>
+                <cbc:ID>3pLKJPvHT21uNqX1l9FcUN</cbc:ID>
+            </cac:SellersItemIdentification>
+            
+            <cac:ManufacturersItemIdentification>
+                <cbc:ID>YVxx</cbc:ID>
+            </cac:ManufacturersItemIdentification>
+            
+            <cac:ItemSpecificationDocumentReference>
+                <cbc:ID>IFC-MODEL-REF</cbc:ID>
+                <cbc:DocumentDescription>IFC model file - Originating BIM model</cbc:DocumentDescription>
+                <cac:Attachment>
+                    <cac:ExternalReference>
+                        <cbc:URI>https://cde.example.com/models/A-40-V-000_BIM2BOM.ifc</cbc:URI>
+                    </cac:ExternalReference>
+                </cac:Attachment>
+            </cac:ItemSpecificationDocumentReference>
+            
+            <!-- AuthoringToolId (Revit Element ID) -->
+            <cac:AdditionalItemProperty>
+                <cbc:Name>AuthoringToolId</cbc:Name>
+                <cbc:Value>1192287</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <!-- CDEGuid (same as IFC GlobalId) -->
+            <cac:AdditionalItemProperty>
+                <cbc:Name>CDEGuid</cbc:Name>
+                <cbc:Value>3pLKJPvHT21uNqX1l9FcUN</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>TypeID</cbc:Name>
+                <cbc:Value>YVxx</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>thickness</cbc:Name>
+                <cbc:Value>350 mm</cbc:Value>
+                <cbc:ValueQuantity unitCode="MMT">350</cbc:ValueQuantity>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>height</cbc:Name>
+                <cbc:Value>5628 mm</cbc:Value>
+                <cbc:ValueQuantity unitCode="MMT">5628</cbc:ValueQuantity>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>length</cbc:Name>
+                <cbc:Value>16060 mm</cbc:Value>
+                <cbc:ValueQuantity unitCode="MMT">16060</cbc:ValueQuantity>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>net area</cbc:Name>
+                <cbc:Value>79.81 m2</cbc:Value>
+                <cbc:ValueQuantity unitCode="MTK">79.81</cbc:ValueQuantity>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>is load bearing</cbc:Name>
+                <cbc:Value>Yes</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>is external</cbc:Name>
+                <cbc:Value>Yes</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>floor</cbc:Name>
+                <cbc:Value>010</cbc:Value>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+    </cac:CatalogueLine>
+    
+</Catalogue>

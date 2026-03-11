@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Use Case 3: Seller DUMB Recipe Response
+    
+    DUMB RECIPE APPROACH:
+    ====================
+    - Recipe articles do NOT maintain 1:1 traceability to BIM objects
+    - Recipe articles have their own IDs, NOT matching the parent wall's CDEGuid
+    - Articles are aggregated - no individual connection back to BIM model
+    - Simpler but LOSES correlation to specific BIM model objects
+    
+    Note from diagram: "Notera här har vi ingen koppling tillbaka på dom unika dörrarna"
+    (Note: here we have NO connection back to the unique doors/walls)
+    
+    Response to: UC3_Buyer_UniqueWalls_Request.xml
+-->
+<Catalogue xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2"
+           xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+           xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+    
+    <cbc:CustomizationID>urn:fdc:peppol.eu:poacc:trns:catalogue:3</cbc:CustomizationID>
+    <cbc:ProfileID>urn:fdc:peppol.eu:poacc:bis:catalogue_only:3</cbc:ProfileID>
+    
+    <cbc:ID>UC3-RESP-DUMB-001</cbc:ID>
+    <cbc:ActionCode>Add</cbc:ActionCode>
+    <cbc:Name>Offert Dumma Recept - INGEN BIM-spårbarhet</cbc:Name>
+    <cbc:IssueDate>2026-02-05</cbc:IssueDate>
+    
+    <cac:ValidityPeriod>
+        <cbc:StartDate>2026-02-05</cbc:StartDate>
+        <cbc:EndDate>2026-05-05</cbc:EndDate>
+    </cac:ValidityPeriod>
+    
+    <cac:ReferencedContract>
+        <cbc:ID>CONTRACT-934567923</cbc:ID>
+    </cac:ReferencedContract>
+    
+    <cac:SourceCatalogueReference>
+        <cbc:ID>UC3-REQ-001</cbc:ID>
+    </cac:SourceCatalogueReference>
+    
+    <cac:ProviderParty>
+        <cbc:EndpointID schemeID="0007">5560999202</cbc:EndpointID>
+        <cac:PartyIdentification>
+            <cbc:ID schemeID="0007">5560999202</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyLegalEntity>
+            <cbc:RegistrationName>Väggentreprenören AB</cbc:RegistrationName>
+        </cac:PartyLegalEntity>
+    </cac:ProviderParty>
+    
+    <cac:ReceiverParty>
+        <cbc:EndpointID schemeID="0007">5560813031</cbc:EndpointID>
+        <cac:PartyIdentification>
+            <cbc:ID schemeID="0007">5560813031</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyLegalEntity>
+            <cbc:RegistrationName>ÖBO</cbc:RegistrationName>
+        </cac:PartyLegalEntity>
+    </cac:ReceiverParty>
+    
+    <!-- ================================================================ -->
+    <!-- LINE 1: MAIN WALL from BIM Model (keeps CDEGuid)                -->
+    <!-- ================================================================ -->
+    <cac:CatalogueLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:ActionCode>Add</cbc:ActionCode>
+        <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+        <cbc:OrderableUnit>MTR</cbc:OrderableUnit>
+        <cbc:ContentUnitQuantity unitCode="MTR">16.06</cbc:ContentUnitQuantity>
+        
+        <cac:RequiredItemLocationQuantity>
+            <cbc:MinimumQuantity unitCode="MTR">16.06</cbc:MinimumQuantity>
+            <cac:Price>
+                <cbc:PriceAmount currencyID="SEK">4850.00</cbc:PriceAmount>
+                <cbc:BaseQuantity unitCode="MTR">1</cbc:BaseQuantity>
+            </cac:Price>
+        </cac:RequiredItemLocationQuantity>
+        
+        <cac:Item>
+            <cbc:Description>Yttre bärande yttervägg, 350 mm. Recept-artiklar utan 1:1 koppling till BIM-objekt.</cbc:Description>
+            <cbc:Name>YV01 350 - Yttre bärande yttervägg (Plan 010)</cbc:Name>
+            
+            <cac:SellersItemIdentification>
+                <cbc:ID>3pLKJPvHT21uNqX1l9FcUN</cbc:ID>
+            </cac:SellersItemIdentification>
+            
+            <cac:ManufacturersItemIdentification>
+                <cbc:ID>YVxx</cbc:ID>
+            </cac:ManufacturersItemIdentification>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>AuthoringToolId</cbc:Name>
+                <cbc:Value>1192287</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>CDEGuid</cbc:Name>
+                <cbc:Value>3pLKJPvHT21uNqX1l9FcUN</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>ItemType</cbc:Name>
+                <cbc:Value>BIMObject</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>RecipeType</cbc:Name>
+                <cbc:Value>Dumb</cbc:Value>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+    </cac:CatalogueLine>
+    
+    <!-- ================================================================ -->
+    <!-- LINE 2: RECIPE ARTICLE - Tegelfasad (AGGREGATED)                -->
+    <!-- NO CDEGuid matching BIM object - JUST seller's own ID           -->
+    <!-- "Notera här har vi ingen koppling tillbaka"                     -->
+    <!-- ================================================================ -->
+    <cac:CatalogueLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:ActionCode>Add</cbc:ActionCode>
+        <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+        <cbc:OrderableUnit>MTK</cbc:OrderableUnit>
+        <cbc:ContentUnitQuantity unitCode="MTK">90.31</cbc:ContentUnitQuantity>
+        
+        <cac:RequiredItemLocationQuantity>
+            <cbc:MinimumQuantity unitCode="MTK">90.31</cbc:MinimumQuantity>
+            <cac:Price>
+                <cbc:PriceAmount currencyID="SEK">850.00</cbc:PriceAmount>
+                <cbc:BaseQuantity unitCode="MTK">1</cbc:BaseQuantity>
+            </cac:Price>
+        </cac:RequiredItemLocationQuantity>
+        
+        <cac:Item>
+            <cbc:Description>Tegelfasad murning 110mm. Aggregerad recept-artikel - INGEN koppling till enskilda väggar i BIM-modellen.</cbc:Description>
+            <cbc:Name>Tegelfasad 110mm (paket-artikel)</cbc:Name>
+            
+            <!-- Seller's own ID - NOT matching any BIM CDEGuid -->
+            <cac:SellersItemIdentification>
+                <cbc:ID>VE-TEGEL-110-PKG</cbc:ID>
+            </cac:SellersItemIdentification>
+            
+            <!-- Seller's AuthoringToolId only -->
+            <cac:AdditionalItemProperty>
+                <cbc:Name>AuthoringToolId</cbc:Name>
+                <cbc:Value>VE-PKG-001</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <!-- NOTE: NO CDEGuid - this is the key difference from Smart Recipe -->
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>ItemType</cbc:Name>
+                <cbc:Value>PackageArticle</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>Traceability</cbc:Name>
+                <cbc:Value>None - Package level only</cbc:Value>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+    </cac:CatalogueLine>
+    
+    <!-- ================================================================ -->
+    <!-- LINE 3: RECIPE ARTICLE - Regelstomme (AGGREGATED)               -->
+    <!-- NO CDEGuid - no traceability to BIM                             -->
+    <!-- ================================================================ -->
+    <cac:CatalogueLine>
+        <cbc:ID>3</cbc:ID>
+        <cbc:ActionCode>Add</cbc:ActionCode>
+        <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+        <cbc:OrderableUnit>MTK</cbc:OrderableUnit>
+        <cbc:ContentUnitQuantity unitCode="MTK">90.31</cbc:ContentUnitQuantity>
+        
+        <cac:RequiredItemLocationQuantity>
+            <cbc:MinimumQuantity unitCode="MTK">90.31</cbc:MinimumQuantity>
+            <cac:Price>
+                <cbc:PriceAmount currencyID="SEK">650.00</cbc:PriceAmount>
+                <cbc:BaseQuantity unitCode="MTK">1</cbc:BaseQuantity>
+            </cac:Price>
+        </cac:RequiredItemLocationQuantity>
+        
+        <cac:Item>
+            <cbc:Description>Träregelstomme C24 195mm med mineralullsisolering. Aggregerad artikel - ingen BIM-koppling.</cbc:Description>
+            <cbc:Name>Regelstomme C24 195mm + mineralull (paket-artikel)</cbc:Name>
+            
+            <cac:SellersItemIdentification>
+                <cbc:ID>VE-REGEL-195-PKG</cbc:ID>
+            </cac:SellersItemIdentification>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>AuthoringToolId</cbc:Name>
+                <cbc:Value>VE-PKG-002</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>ItemType</cbc:Name>
+                <cbc:Value>PackageArticle</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>Traceability</cbc:Name>
+                <cbc:Value>None - Package level only</cbc:Value>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+    </cac:CatalogueLine>
+    
+    <!-- ================================================================ -->
+    <!-- LINE 4: RECIPE ARTICLE - Gips (AGGREGATED)                      -->
+    <!-- NO CDEGuid - no traceability to BIM                             -->
+    <!-- ================================================================ -->
+    <cac:CatalogueLine>
+        <cbc:ID>4</cbc:ID>
+        <cbc:ActionCode>Add</cbc:ActionCode>
+        <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+        <cbc:OrderableUnit>MTK</cbc:OrderableUnit>
+        <cbc:ContentUnitQuantity unitCode="MTK">90.31</cbc:ContentUnitQuantity>
+        
+        <cac:RequiredItemLocationQuantity>
+            <cbc:MinimumQuantity unitCode="MTK">90.31</cbc:MinimumQuantity>
+            <cac:Price>
+                <cbc:PriceAmount currencyID="SEK">95.00</cbc:PriceAmount>
+                <cbc:BaseQuantity unitCode="MTK">1</cbc:BaseQuantity>
+            </cac:Price>
+        </cac:RequiredItemLocationQuantity>
+        
+        <cac:Item>
+            <cbc:Description>Gipsskiva 13mm. Aggregerad artikel - ingen BIM-koppling.</cbc:Description>
+            <cbc:Name>Gips 13mm (paket-artikel)</cbc:Name>
+            
+            <cac:SellersItemIdentification>
+                <cbc:ID>VE-GIPS-13-PKG</cbc:ID>
+            </cac:SellersItemIdentification>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>AuthoringToolId</cbc:Name>
+                <cbc:Value>VE-PKG-003</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>ItemType</cbc:Name>
+                <cbc:Value>PackageArticle</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>Traceability</cbc:Name>
+                <cbc:Value>None - Package level only</cbc:Value>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+    </cac:CatalogueLine>
+    
+</Catalogue>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Use Case 3: Seller SMART Recipe Response
+    
+    SMART RECIPE APPROACH:
+    =====================
+    - Recipe articles maintain 1:1 traceability to BIM objects
+    - Each recipe article has the SAME CDEGuid as the parent wall
+    - Recipe articles have DIFFERENT AuthoringToolId (seller's own ID)
+    - This enables the buying system to create hierarchy and trace back to BIM model
+    
+    Parent Wall CDEGuid: 3pLKJPvHT21uNqX1l9FcUN (from BIM model)
+    Parent AuthoringToolId: 1192287 (Revit Element ID)
+    
+    Recipe articles all share CDEGuid but have seller's AuthoringToolId:
+    - VE-2001: Tegelfasad
+    - VE-2002: Regelstomme  
+    - VE-2003: Gips
+    
+    Response to: UC3_Buyer_UniqueWalls_Request.xml
+-->
+<Catalogue xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2"
+           xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+           xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+    
+    <cbc:CustomizationID>urn:fdc:peppol.eu:poacc:trns:catalogue:3</cbc:CustomizationID>
+    <cbc:ProfileID>urn:fdc:peppol.eu:poacc:bis:catalogue_only:3</cbc:ProfileID>
+    
+    <cbc:ID>UC3-RESP-SMART-001</cbc:ID>
+    <cbc:ActionCode>Add</cbc:ActionCode>
+    <cbc:Name>Offert Smart Recept - 1:1 Spårbarhet till BIM</cbc:Name>
+    <cbc:IssueDate>2026-02-05</cbc:IssueDate>
+    
+    <cac:ValidityPeriod>
+        <cbc:StartDate>2026-02-05</cbc:StartDate>
+        <cbc:EndDate>2026-05-05</cbc:EndDate>
+    </cac:ValidityPeriod>
+    
+    <cac:ReferencedContract>
+        <cbc:ID>CONTRACT-934567923</cbc:ID>
+    </cac:ReferencedContract>
+    
+    <cac:SourceCatalogueReference>
+        <cbc:ID>UC3-REQ-001</cbc:ID>
+    </cac:SourceCatalogueReference>
+    
+    <cac:ProviderParty>
+        <cbc:EndpointID schemeID="0007">5560999202</cbc:EndpointID>
+        <cac:PartyIdentification>
+            <cbc:ID schemeID="0007">5560999202</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyLegalEntity>
+            <cbc:RegistrationName>Väggentreprenören AB</cbc:RegistrationName>
+        </cac:PartyLegalEntity>
+    </cac:ProviderParty>
+    
+    <cac:ReceiverParty>
+        <cbc:EndpointID schemeID="0007">5560813031</cbc:EndpointID>
+        <cac:PartyIdentification>
+            <cbc:ID schemeID="0007">5560813031</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyLegalEntity>
+            <cbc:RegistrationName>ÖBO</cbc:RegistrationName>
+        </cac:PartyLegalEntity>
+    </cac:ReceiverParty>
+    
+    <!-- ================================================================ -->
+    <!-- LINE 1: MAIN WALL from BIM Model                                -->
+    <!-- CDEGuid: 3pLKJPvHT21uNqX1l9FcUN                                 -->
+    <!-- AuthoringToolId: 1192287 (original from BIM)                    -->
+    <!-- ================================================================ -->
+    <cac:CatalogueLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:ActionCode>Add</cbc:ActionCode>
+        <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+        <cbc:OrderableUnit>MTR</cbc:OrderableUnit>
+        <cbc:ContentUnitQuantity unitCode="MTR">16.06</cbc:ContentUnitQuantity>
+        
+        <cac:RequiredItemLocationQuantity>
+            <cbc:MinimumQuantity unitCode="MTR">16.06</cbc:MinimumQuantity>
+            <cac:Price>
+                <cbc:PriceAmount currencyID="SEK">4850.00</cbc:PriceAmount>
+                <cbc:BaseQuantity unitCode="MTR">1</cbc:BaseQuantity>
+            </cac:Price>
+        </cac:RequiredItemLocationQuantity>
+        
+        <cac:Item>
+            <cbc:Description>Yttre bärande yttervägg, 350 mm. Huvudobjekt från BIM-modell. Se recept-artiklar (rad 2-4) med samma CDEGuid för 1:1 spårbarhet.</cbc:Description>
+            <cbc:Name>YV01 350 - Yttre bärande yttervägg (Plan 010)</cbc:Name>
+            
+            <cac:SellersItemIdentification>
+                <cbc:ID>3pLKJPvHT21uNqX1l9FcUN</cbc:ID>
+            </cac:SellersItemIdentification>
+            
+            <cac:ManufacturersItemIdentification>
+                <cbc:ID>YVxx</cbc:ID>
+            </cac:ManufacturersItemIdentification>
+            
+            <!-- Original BIM AuthoringToolId -->
+            <cac:AdditionalItemProperty>
+                <cbc:Name>AuthoringToolId</cbc:Name>
+                <cbc:Value>1192287</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>CDEGuid</cbc:Name>
+                <cbc:Value>3pLKJPvHT21uNqX1l9FcUN</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>ItemType</cbc:Name>
+                <cbc:Value>BIMObject</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>RecipeType</cbc:Name>
+                <cbc:Value>Smart</cbc:Value>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+    </cac:CatalogueLine>
+    
+    <!-- ================================================================ -->
+    <!-- LINE 2: RECIPE ARTICLE - Tegelfasad                             -->
+    <!-- SAME CDEGuid: 3pLKJPvHT21uNqX1l9FcUN (enables hierarchy)        -->
+    <!-- DIFFERENT AuthoringToolId: VE-2001 (seller's ID)                -->
+    <!-- ================================================================ -->
+    <cac:CatalogueLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:ActionCode>Add</cbc:ActionCode>
+        <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+        <cbc:OrderableUnit>MTK</cbc:OrderableUnit>
+        <cbc:ContentUnitQuantity unitCode="MTK">90.31</cbc:ContentUnitQuantity>
+        
+        <cac:RequiredItemLocationQuantity>
+            <cbc:MinimumQuantity unitCode="MTK">90.31</cbc:MinimumQuantity>
+            <cac:Price>
+                <cbc:PriceAmount currencyID="SEK">850.00</cbc:PriceAmount>
+                <cbc:BaseQuantity unitCode="MTK">1</cbc:BaseQuantity>
+            </cac:Price>
+        </cac:RequiredItemLocationQuantity>
+        
+        <cac:Item>
+            <cbc:Description>Tegelfasad murning 110mm. Smart recept-artikel med 1:1 spårbarhet till BIM-objekt via delad CDEGuid.</cbc:Description>
+            <cbc:Name>Tegelfasad 110mm (för vägg 1192287)</cbc:Name>
+            
+            <!-- SAME CDEGuid as parent wall - THIS ENABLES 1:1 TRACEABILITY -->
+            <cac:SellersItemIdentification>
+                <cbc:ID>3pLKJPvHT21uNqX1l9FcUN</cbc:ID>
+            </cac:SellersItemIdentification>
+            
+            <!-- Seller's own AuthoringToolId - DIFFERENT from BIM -->
+            <cac:AdditionalItemProperty>
+                <cbc:Name>AuthoringToolId</cbc:Name>
+                <cbc:Value>VE-2001</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <!-- SAME CDEGuid as parent - key for smart recipe -->
+            <cac:AdditionalItemProperty>
+                <cbc:Name>CDEGuid</cbc:Name>
+                <cbc:Value>3pLKJPvHT21uNqX1l9FcUN</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>ItemType</cbc:Name>
+                <cbc:Value>RecipeArticle</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>ParentAuthoringToolId</cbc:Name>
+                <cbc:Value>1192287</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>thickness</cbc:Name>
+                <cbc:Value>110 mm</cbc:Value>
+                <cbc:ValueQuantity unitCode="MMT">110</cbc:ValueQuantity>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+    </cac:CatalogueLine>
+    
+    <!-- ================================================================ -->
+    <!-- LINE 3: RECIPE ARTICLE - Regelstomme + mineralull               -->
+    <!-- SAME CDEGuid: 3pLKJPvHT21uNqX1l9FcUN                            -->
+    <!-- DIFFERENT AuthoringToolId: VE-2002                              -->
+    <!-- ================================================================ -->
+    <cac:CatalogueLine>
+        <cbc:ID>3</cbc:ID>
+        <cbc:ActionCode>Add</cbc:ActionCode>
+        <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+        <cbc:OrderableUnit>MTK</cbc:OrderableUnit>
+        <cbc:ContentUnitQuantity unitCode="MTK">90.31</cbc:ContentUnitQuantity>
+        
+        <cac:RequiredItemLocationQuantity>
+            <cbc:MinimumQuantity unitCode="MTK">90.31</cbc:MinimumQuantity>
+            <cac:Price>
+                <cbc:PriceAmount currencyID="SEK">650.00</cbc:PriceAmount>
+                <cbc:BaseQuantity unitCode="MTK">1</cbc:BaseQuantity>
+            </cac:Price>
+        </cac:RequiredItemLocationQuantity>
+        
+        <cac:Item>
+            <cbc:Description>Träregelstomme C24 195mm med mineralullsisolering. Smart recept-artikel med 1:1 spårbarhet.</cbc:Description>
+            <cbc:Name>Regelstomme C24 195mm + mineralull (för vägg 1192287)</cbc:Name>
+            
+            <cac:SellersItemIdentification>
+                <cbc:ID>3pLKJPvHT21uNqX1l9FcUN</cbc:ID>
+            </cac:SellersItemIdentification>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>AuthoringToolId</cbc:Name>
+                <cbc:Value>VE-2002</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>CDEGuid</cbc:Name>
+                <cbc:Value>3pLKJPvHT21uNqX1l9FcUN</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>ItemType</cbc:Name>
+                <cbc:Value>RecipeArticle</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>ParentAuthoringToolId</cbc:Name>
+                <cbc:Value>1192287</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>thickness</cbc:Name>
+                <cbc:Value>195 mm</cbc:Value>
+                <cbc:ValueQuantity unitCode="MMT">195</cbc:ValueQuantity>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+    </cac:CatalogueLine>
+    
+    <!-- ================================================================ -->
+    <!-- LINE 4: RECIPE ARTICLE - Gips                                   -->
+    <!-- SAME CDEGuid: 3pLKJPvHT21uNqX1l9FcUN                            -->
+    <!-- DIFFERENT AuthoringToolId: VE-2003                              -->
+    <!-- ================================================================ -->
+    <cac:CatalogueLine>
+        <cbc:ID>4</cbc:ID>
+        <cbc:ActionCode>Add</cbc:ActionCode>
+        <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+        <cbc:OrderableUnit>MTK</cbc:OrderableUnit>
+        <cbc:ContentUnitQuantity unitCode="MTK">90.31</cbc:ContentUnitQuantity>
+        
+        <cac:RequiredItemLocationQuantity>
+            <cbc:MinimumQuantity unitCode="MTK">90.31</cbc:MinimumQuantity>
+            <cac:Price>
+                <cbc:PriceAmount currencyID="SEK">95.00</cbc:PriceAmount>
+                <cbc:BaseQuantity unitCode="MTK">1</cbc:BaseQuantity>
+            </cac:Price>
+        </cac:RequiredItemLocationQuantity>
+        
+        <cac:Item>
+            <cbc:Description>Gipsskiva 13mm invändig. Smart recept-artikel med 1:1 spårbarhet.</cbc:Description>
+            <cbc:Name>Gips 13mm (för vägg 1192287)</cbc:Name>
+            
+            <cac:SellersItemIdentification>
+                <cbc:ID>3pLKJPvHT21uNqX1l9FcUN</cbc:ID>
+            </cac:SellersItemIdentification>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>AuthoringToolId</cbc:Name>
+                <cbc:Value>VE-2003</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>CDEGuid</cbc:Name>
+                <cbc:Value>3pLKJPvHT21uNqX1l9FcUN</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>ItemType</cbc:Name>
+                <cbc:Value>RecipeArticle</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>ParentAuthoringToolId</cbc:Name>
+                <cbc:Value>1192287</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>thickness</cbc:Name>
+                <cbc:Value>13 mm</cbc:Value>
+                <cbc:ValueQuantity unitCode="MMT">13</cbc:ValueQuantity>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+    </cac:CatalogueLine>
+    
+</Catalogue>

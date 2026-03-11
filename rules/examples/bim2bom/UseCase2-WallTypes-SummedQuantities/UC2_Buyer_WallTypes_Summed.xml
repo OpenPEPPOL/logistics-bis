@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Use Case 2: Buyer Wall Type with Summed Quantity
+    
+    Scenario: Buyer sends wall type with aggregated quantity from BIM model.
+              This is the "dumb" approach - quantity is summed, no individual traceability.
+-->
+<Catalogue xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2"
+           xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+           xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+    
+    <cbc:CustomizationID>urn:fdc:peppol.eu:poacc:trns:catalogue:3</cbc:CustomizationID>
+    <cbc:ProfileID>urn:fdc:peppol.eu:poacc:bis:catalogue_only:3</cbc:ProfileID>
+    
+    <cbc:ID>UC2-REQ-001</cbc:ID>
+    <cbc:ActionCode>Add</cbc:ActionCode>
+    <cbc:Name>Offertförfrågan Väggtyp med Summerad Mängd</cbc:Name>
+    <cbc:IssueDate>2026-02-04</cbc:IssueDate>
+    
+    <cac:ValidityPeriod>
+        <cbc:StartDate>2026-02-04</cbc:StartDate>
+        <cbc:EndDate>2026-03-04</cbc:EndDate>
+    </cac:ValidityPeriod>
+    
+    <cac:ReferencedContract>
+        <cbc:ID>CONTRACT-934567923</cbc:ID>
+    </cac:ReferencedContract>
+    
+    <cac:ProviderParty>
+        <cbc:EndpointID schemeID="0007">5560813031</cbc:EndpointID>
+        <cac:PartyIdentification>
+            <cbc:ID schemeID="0007">5560813031</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyLegalEntity>
+            <cbc:RegistrationName>ÖBO</cbc:RegistrationName>
+        </cac:PartyLegalEntity>
+    </cac:ProviderParty>
+    
+    <cac:ReceiverParty>
+        <cbc:EndpointID schemeID="0007">5560999202</cbc:EndpointID>
+        <cac:PartyIdentification>
+            <cbc:ID schemeID="0007">5560999202</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyLegalEntity>
+            <cbc:RegistrationName>Väggentreprenören AB</cbc:RegistrationName>
+        </cac:PartyLegalEntity>
+    </cac:ReceiverParty>
+    
+    <!-- Wall Type with summed quantity from BIM model -->
+    <cac:CatalogueLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:ActionCode>Add</cbc:ActionCode>
+        <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+        <cbc:OrderableUnit>MTR</cbc:OrderableUnit>
+        <cbc:ContentUnitQuantity unitCode="MTR">16.06</cbc:ContentUnitQuantity>
+        
+        <cac:RequiredItemLocationQuantity>
+            <cbc:MinimumQuantity unitCode="MTR">16.06</cbc:MinimumQuantity>
+            <cac:Price>
+                <cbc:PriceAmount currencyID="SEK">0.00</cbc:PriceAmount>
+                <cbc:BaseQuantity unitCode="MTR">1</cbc:BaseQuantity>
+            </cac:Price>
+        </cac:RequiredItemLocationQuantity>
+        
+        <cac:Item>
+            <cbc:Description>Yttre bärande yttervägg, 350 mm. Summerad längd från BIM-modell: 16.06 m</cbc:Description>
+            <cbc:Name>YV01 350 - Yttre bärande yttervägg</cbc:Name>
+            
+            <cac:SellersItemIdentification>
+                <cbc:ID>YV01-350</cbc:ID>
+            </cac:SellersItemIdentification>
+            
+            <cac:ManufacturersItemIdentification>
+                <cbc:ID>YVxx</cbc:ID>
+            </cac:ManufacturersItemIdentification>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>thickness</cbc:Name>
+                <cbc:Value>350 mm</cbc:Value>
+                <cbc:ValueQuantity unitCode="MMT">350</cbc:ValueQuantity>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>net area</cbc:Name>
+                <cbc:Value>79.81 m2</cbc:Value>
+                <cbc:ValueQuantity unitCode="MTK">79.81</cbc:ValueQuantity>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+    </cac:CatalogueLine>
+    
+</Catalogue>

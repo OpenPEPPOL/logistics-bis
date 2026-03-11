@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Use Case 1: Seller Price Specification Response
+    
+    Scenario: Seller responds with price per running meter (löpmeterpris).
+    Response to: UC1_Buyer_WallTypes_Request.xml
+-->
+<Catalogue xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2"
+           xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+           xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+    
+    <cbc:CustomizationID>urn:fdc:peppol.eu:poacc:trns:catalogue:3</cbc:CustomizationID>
+    <cbc:ProfileID>urn:fdc:peppol.eu:poacc:bis:catalogue_only:3</cbc:ProfileID>
+    
+    <cbc:ID>UC1-RESP-001</cbc:ID>
+    <cbc:ActionCode>Add</cbc:ActionCode>
+    <cbc:Name>Offert Väggtyp YV01 - Löpmeterpris</cbc:Name>
+    <cbc:IssueDate>2026-02-05</cbc:IssueDate>
+    
+    <cac:ValidityPeriod>
+        <cbc:StartDate>2026-02-05</cbc:StartDate>
+        <cbc:EndDate>2026-05-05</cbc:EndDate>
+    </cac:ValidityPeriod>
+    
+    <cac:ReferencedContract>
+        <cbc:ID>CONTRACT-934567923</cbc:ID>
+    </cac:ReferencedContract>
+    
+    <cac:SourceCatalogueReference>
+        <cbc:ID>UC1-REQ-001</cbc:ID>
+    </cac:SourceCatalogueReference>
+    
+    <cac:ProviderParty>
+        <cbc:EndpointID schemeID="0007">5560999202</cbc:EndpointID>
+        <cac:PartyIdentification>
+            <cbc:ID schemeID="0007">5560999202</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyLegalEntity>
+            <cbc:RegistrationName>Väggentreprenören AB</cbc:RegistrationName>
+        </cac:PartyLegalEntity>
+    </cac:ProviderParty>
+    
+    <cac:ReceiverParty>
+        <cbc:EndpointID schemeID="0007">5560813031</cbc:EndpointID>
+        <cac:PartyIdentification>
+            <cbc:ID schemeID="0007">5560813031</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyLegalEntity>
+            <cbc:RegistrationName>ÖBO</cbc:RegistrationName>
+        </cac:PartyLegalEntity>
+    </cac:ReceiverParty>
+    
+    <!-- Wall Type: YV01 350 with price -->
+    <cac:CatalogueLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:ActionCode>Add</cbc:ActionCode>
+        <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+        <cbc:OrderableUnit>MTR</cbc:OrderableUnit>
+        
+        <cac:RequiredItemLocationQuantity>
+            <cbc:MinimumQuantity unitCode="MTR">1</cbc:MinimumQuantity>
+            <cac:Price>
+                <cbc:PriceAmount currencyID="SEK">4850.00</cbc:PriceAmount>
+                <cbc:BaseQuantity unitCode="MTR">1</cbc:BaseQuantity>
+            </cac:Price>
+        </cac:RequiredItemLocationQuantity>
+        
+        <cac:Item>
+            <cbc:Description>Yttre bärande yttervägg, 350 mm. Pris per löpmeter inkl. material och arbete.</cbc:Description>
+            <cbc:Name>YV01 350 - Yttre bärande yttervägg</cbc:Name>
+            
+            <cac:SellersItemIdentification>
+                <cbc:ID>VE-YV01-350</cbc:ID>
+            </cac:SellersItemIdentification>
+            
+            <cac:ManufacturersItemIdentification>
+                <cbc:ID>YVxx</cbc:ID>
+            </cac:ManufacturersItemIdentification>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>thickness</cbc:Name>
+                <cbc:Value>350 mm</cbc:Value>
+                <cbc:ValueQuantity unitCode="MMT">350</cbc:ValueQuantity>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>LeadTime</cbc:Name>
+                <cbc:Value>14 dagar</cbc:Value>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+    </cac:CatalogueLine>
+    
+</Catalogue>

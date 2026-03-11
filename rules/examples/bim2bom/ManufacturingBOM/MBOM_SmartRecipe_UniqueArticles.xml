@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Manufacturing BOM: Smart Recipe with Unique Articles
+    
+    Shows how Manufacturing BOM maintains 1:1 traceability.
+    All recipe articles share the same CDEGuid as the parent BIM object,
+    enabling the receiving system to build a hierarchy.
+    
+    Based on diagram: "Manufacturing BOM - Supplier responded with UNIQUE recipe articles"
+-->
+<Catalogue xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2"
+           xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+           xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2">
+    
+    <cbc:CustomizationID>urn:fdc:peppol.eu:poacc:trns:catalogue:3</cbc:CustomizationID>
+    <cbc:ProfileID>urn:fdc:peppol.eu:poacc:bis:catalogue_only:3</cbc:ProfileID>
+    
+    <cbc:ID>MBOM-SMART-001</cbc:ID>
+    <cbc:ActionCode>Add</cbc:ActionCode>
+    <cbc:Name>Manufacturing BOM - Smart Recept (1:1 Spårbarhet)</cbc:Name>
+    <cbc:IssueDate>2026-02-06</cbc:IssueDate>
+    
+    <cac:ValidityPeriod>
+        <cbc:StartDate>2026-02-06</cbc:StartDate>
+        <cbc:EndDate>2026-08-06</cbc:EndDate>
+    </cac:ValidityPeriod>
+    
+    <cac:ReferencedContract>
+        <cbc:ID>CONTRACT-934567923</cbc:ID>
+    </cac:ReferencedContract>
+    
+    <cac:ProviderParty>
+        <cbc:EndpointID schemeID="0007">5560999202</cbc:EndpointID>
+        <cac:PartyIdentification>
+            <cbc:ID schemeID="0007">5560999202</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyLegalEntity>
+            <cbc:RegistrationName>Väggentreprenören AB</cbc:RegistrationName>
+        </cac:PartyLegalEntity>
+    </cac:ProviderParty>
+    
+    <cac:ReceiverParty>
+        <cbc:EndpointID schemeID="0007">5560813031</cbc:EndpointID>
+        <cac:PartyIdentification>
+            <cbc:ID schemeID="0007">5560813031</cbc:ID>
+        </cac:PartyIdentification>
+        <cac:PartyLegalEntity>
+            <cbc:RegistrationName>ÖBO</cbc:RegistrationName>
+        </cac:PartyLegalEntity>
+    </cac:ReceiverParty>
+    
+    <!-- Parent BIM Object -->
+    <cac:CatalogueLine>
+        <cbc:ID>1</cbc:ID>
+        <cbc:ActionCode>Add</cbc:ActionCode>
+        <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+        <cbc:OrderableUnit>MTR</cbc:OrderableUnit>
+        <cbc:ContentUnitQuantity unitCode="MTR">16.06</cbc:ContentUnitQuantity>
+        
+        <cac:Item>
+            <cbc:Description>Huvudobjekt från BIM-modell med underliggande tillverkningsartiklar.</cbc:Description>
+            <cbc:Name>YV01 350 - Yttre bärande yttervägg</cbc:Name>
+            
+            <cac:SellersItemIdentification>
+                <cbc:ID>3pLKJPvHT21uNqX1l9FcUN</cbc:ID>
+            </cac:SellersItemIdentification>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>AuthoringToolId</cbc:Name>
+                <cbc:Value>1192287</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>CDEGuid</cbc:Name>
+                <cbc:Value>3pLKJPvHT21uNqX1l9FcUN</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>ItemType</cbc:Name>
+                <cbc:Value>BIMObject</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>SourceSystem</cbc:Name>
+                <cbc:Value>BIM Modellen</cbc:Value>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+    </cac:CatalogueLine>
+    
+    <!-- Manufacturing Article 1: Same CDEGuid, different AuthoringToolId -->
+    <cac:CatalogueLine>
+        <cbc:ID>2</cbc:ID>
+        <cbc:ActionCode>Add</cbc:ActionCode>
+        <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+        <cbc:OrderableUnit>MTK</cbc:OrderableUnit>
+        <cbc:ContentUnitQuantity unitCode="MTK">90.31</cbc:ContentUnitQuantity>
+        
+        <cac:Item>
+            <cbc:Description>Tegelfasad murning. Tillverkningsartikel med 1:1 spårbarhet via delad CDEGuid.</cbc:Description>
+            <cbc:Name>Tegelfasad 110mm</cbc:Name>
+            
+            <cac:SellersItemIdentification>
+                <cbc:ID>3pLKJPvHT21uNqX1l9FcUN</cbc:ID>
+            </cac:SellersItemIdentification>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>AuthoringToolId</cbc:Name>
+                <cbc:Value>VE-MFG-001</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>CDEGuid</cbc:Name>
+                <cbc:Value>3pLKJPvHT21uNqX1l9FcUN</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>ItemType</cbc:Name>
+                <cbc:Value>ManufacturingArticle</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>SourceSystem</cbc:Name>
+                <cbc:Value>Selling System</cbc:Value>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+    </cac:CatalogueLine>
+    
+    <!-- Manufacturing Article 2 -->
+    <cac:CatalogueLine>
+        <cbc:ID>3</cbc:ID>
+        <cbc:ActionCode>Add</cbc:ActionCode>
+        <cbc:OrderableIndicator>true</cbc:OrderableIndicator>
+        <cbc:OrderableUnit>MTK</cbc:OrderableUnit>
+        <cbc:ContentUnitQuantity unitCode="MTK">90.31</cbc:ContentUnitQuantity>
+        
+        <cac:Item>
+            <cbc:Description>Träregelstomme med isolering. Tillverkningsartikel med 1:1 spårbarhet.</cbc:Description>
+            <cbc:Name>Regelstomme C24 195mm + mineralull</cbc:Name>
+            
+            <cac:SellersItemIdentification>
+                <cbc:ID>3pLKJPvHT21uNqX1l9FcUN</cbc:ID>
+            </cac:SellersItemIdentification>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>AuthoringToolId</cbc:Name>
+                <cbc:Value>VE-MFG-002</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>CDEGuid</cbc:Name>
+                <cbc:Value>3pLKJPvHT21uNqX1l9FcUN</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>ItemType</cbc:Name>
+                <cbc:Value>ManufacturingArticle</cbc:Value>
+            </cac:AdditionalItemProperty>
+            
+            <cac:AdditionalItemProperty>
+                <cbc:Name>SourceSystem</cbc:Name>
+                <cbc:Value>Selling System</cbc:Value>
+            </cac:AdditionalItemProperty>
+        </cac:Item>
+    </cac:CatalogueLine>
+    
+</Catalogue>
