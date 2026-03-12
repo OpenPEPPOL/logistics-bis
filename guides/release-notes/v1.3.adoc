@@ -19,23 +19,25 @@ This is the second release update of the Peppol Logistics standard. This time on
 ** A new section to explain the use of DespatchAdviceTypeCode is inserted between 6.1 and 6.2 resulting in a re-sequencing of the sections. The new section becomes 6.2 and the sections after that will be increased by 0.1.
 ** An explanation of how to specify a vehicle's maximum load capacity is added in section 6.6.2.
 ** In section 7.5 an example of using the Waste Declaration Number is added.
+** A new section - 7.8 - is added to explain how the new Product Trace ID should be used.
 
 == New Transactions
 * No transactions are added in this release.
 
 == Updated Transactions
 * Advanced Despatch Advice (T120)
-** Uppdated description of Despatch Supplier Party
-** Added AdditionalItemProperty to ItemInstance
+** Uppdated description of Despatch Supplier Party Name
+** Added cac:AdditionalItemProperty to cac:ItemInstance
+** Added cbc:ProductTraceID with attribute @schemeID and a link to codelist ProductTraceIDschemeID to cac:ItemInstance
 * Weight Statement (T122)
-** LoC Rule Peppol-T122-R002 added for ProfileID 
+** LoC Rule Peppol-T122-R002 added for cbc:ProfileID 
 
 == Updated Codelists
 * DocumentStatusCode updated with new value "55 - Notification only" to be used when changes are sent after invoicing and the changes have no impact on the invoice.
 * DespatchAdviceTypeCode updated with new values 101, 102, 112, 203,204, 205, 206, 207, 208, 209, 210, 211, 303, 304, 305, 308, 309, 310, 311.
 
 == New Codelists
-* No new codelists are added in this release.
+* Codelist ProductTraceIDschemeIDCode is added.
 
 == Updated Rules
 * No LoC rules are changed in this version.
