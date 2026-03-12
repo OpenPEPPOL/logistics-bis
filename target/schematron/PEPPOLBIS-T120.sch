@@ -235,6 +235,7 @@
            value="tokenize('AAF AAA AAB AAW AAX ABT ACV HT LN WD TC AAO ABJ T', '\s')"/>
       <let name="clHandlingCode"
            value="tokenize('Z50 Z51 Z52 Z53 Z54 Z55 Z56 Z57 Z58 Z59 Z60 Z61 Z62 Z63 Z64 Z65 ZZ', '\s')"/>
+      <let name="clProductTraceIDschemeIDCode" value="tokenize('UDI', '\s')"/>
       <let name="clUNCL8053"
            value="tokenize('AA AB AD AE AG AH AI AJ AK AL AM AN AO AP AQ AT BL BPN BPO BPP BPQ BPR BPS BPT BPU BPV BPW BPX BPY BPZ BR BX CH CN DPA DPB EFP EYP FPN FPR IL LAR LU MPA PA PBP PFP PL PPA PST RF RG RGF RO RR SPP STR SW TE TP TS TSU UL', '\s')"/>
       <let name="clShipmentIDType" value="tokenize('GSIN', '\s')"/>
@@ -1732,7 +1733,11 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T120-B50001">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/ubl:DespatchAdvice/cac:DespatchLine/cac:Item/cac:ItemInstance"/>
-      <rule context="/ubl:DespatchAdvice/cac:DespatchLine/cac:Item/cac:ItemInstance/cbc:ProductTraceID"/>
+      <rule context="/ubl:DespatchAdvice/cac:DespatchLine/cac:Item/cac:ItemInstance/cbc:ProductTraceID">
+         <assert test="not(@schemeID) or (some $code in $clProductTraceIDschemeIDCode satisfies $code = @schemeID)"
+                 flag="fatal"
+                 id="PEPPOL-T120-B51901">Value MUST be part of code list 'ProductTraceIDschemeID'.</assert>
+      </rule>
       <rule context="/ubl:DespatchAdvice/cac:DespatchLine/cac:Item/cac:ItemInstance/cbc:ManufactureDate"/>
       <rule context="/ubl:DespatchAdvice/cac:DespatchLine/cac:Item/cac:ItemInstance/cbc:ManufactureTime"/>
       <rule context="/ubl:DespatchAdvice/cac:DespatchLine/cac:Item/cac:ItemInstance/cbc:BestBeforeDate"/>
