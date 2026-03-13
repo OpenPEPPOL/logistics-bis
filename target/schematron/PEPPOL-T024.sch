@@ -848,62 +848,7 @@
             <value-of select="$syntaxError"/>[PEPPOL-T024-S396] FileName SHOULD NOT have any attributes.</report>
       </rule>
     
-      <rule context="ubl:CallForTenders/cac:ContractingParty">
-        <assert id="PEPPOL-T024-S333"
-                 flag="warning"
-                 test="count(./*)-count(./cac:Party)=0">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S333] ContractingParty SHOULD NOT contain any elements but cac:Party.</assert>
-      </rule>
-    
-      <rule context="ubl:CallForTenders/cac:ContractingParty/cac:Party">
-        <assert id="PEPPOL-T024-S334"
-                 flag="warning"
-                 test="count(./*)-count(./cac:PartyIdentification)-count(./cbc:EndpointID)-count(./cac:PartyName)-count(./cac:PartyLegalEntity)= 0">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S334] A ContractingParty/cac:Party SHOULD NOT contain any elements but EndpointID, PartyIdentification, PartyName, PartyLegalEntity</assert>
-        <assert id="PEPPOL-T024-S336"
-                 flag="warning"
-                 test="count(./cac:PartyIdentification) = 1">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S336] PartyIdentification SHOULD be used exactly once.</assert>
-        <report id="PEPPOL-T024-S338"
-                 flag="warning"
-                 test="count(./cac:PartyName) &gt; 1">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S338] PartyName SHOULD NOT be used more than once.</report>
-        <report id="PEPPOL-T024-S340"
-                 flag="warning"
-                 test="count(./cac:PartyLegalEntity) &gt; 1">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S340] PartyLegalEntity SHOULD NOT be used more than once.</report>
-        <assert id="PEPPOL-T024-R034"
-                 flag="fatal"
-                 test="(./cac:PartyIdentification) and (./cbc:EndpointID)">[PEPPOL-T024-R034] A Call for Tenders MUST identify the Contracting Body by its party and endpoint identifiers.</assert>
-      </rule>
-    
-      <rule context="ubl:CallForTenders/cac:ReceiverParty">
-        <assert id="PEPPOL-T024-S500"
-                 flag="warning"
-                 test="count(./*)-count(./cac:PartyIdentification)-count(./cbc:EndpointID)-count(./cac:PartyName)-count(./cac:PartyLegalEntity)= 0">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S334] A cac:ReceivingParty SHOULD NOT contain any elements but EndpointID, PartyIdentification, PartyName, PartyLegalEntity</assert>
-        <assert id="PEPPOL-T024-S501"
-                 flag="warning"
-                 test="count(./cac:PartyIdentification) = 1">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-500] PartyIdentification SHOULD be used exactly once.</assert>
-        <report id="PEPPOL-T024-S502"
-                 flag="warning"
-                 test="count(./cac:PartyName) &gt; 1">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S501] PartyName SHOULD NOT be used more than once.</report>
-        <report id="PEPPOL-T024-S503"
-                 flag="warning"
-                 test="count(./cac:PartyLegalEntity) &gt; 1">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S502] PartyLegalEntity SHOULD NOT be used more than once.</report>
-        <assert id="PEPPOL-T024-R534"
-                 flag="fatal"
-                 test="(./cac:PartyIdentification) and (./cbc:EndpointID)">[PEPPOL-T024-R534] A Call for Tenders MUST identify the Economic Operator / Receiving Party by its party and endpoint identifiers.</assert>
-      </rule>
-    
       <rule context="cbc:EndpointID">
-        <assert id="PEPPOL-T024-R012" flag="fatal" test="./@schemeID">[PEPPOL-T024-R012] An Endpoint Identifier MUST have a scheme identifier attribute.</assert>
-        <assert id="PEPPOL-T024-R013"
-                 flag="fatal"
-                 test="matches(normalize-space(./@schemeID),'^(0002|0007|0009|0037|0060|0088|0096|0097|0106|0130|0135|0142|0151|0183|0184|0190|0191|0192|0193|0195|0196|0198|0199|0200|0201|0202|0204|0208|0209|0210|0211|0212|0213|9901|9906|9907|9910|9913|9914|9915|9918|9919|9920|9922|9923|9924|9925|9926|9927|9928|9929|9930|9931|9932|9933|9934|9935|9936|9937|9938|9939|9940|9941|9942|9943|9944|9945|9946|9947|9948|9949|9950|9951|9952|9953|9955|9957)')">[PEPPOL-T024-R013] An Endpoint Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
         <report id="PEPPOL-T024-S335"
                  flag="warning"
                  test="./@*[not(name()='schemeID')]">
