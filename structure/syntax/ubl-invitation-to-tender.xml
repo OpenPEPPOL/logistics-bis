@@ -59,6 +59,7 @@
                 <Reference type="RULE">PEPPOL-T024-R005</Reference>
                 <Value type="FIXED">urn:uuid</Value>
             </Attribute>
+            <Value type="EXAMPLE">be8943ce-9d65-4eed-93c5-fa4748148c8f</Value>
         </Element>
 
         <Element>
@@ -69,6 +70,7 @@
                 number or contract folder identifier.
             </Description>
             <DataType>Identifier</DataType>
+            <Value type="EXAMPLE">3dab5e45-2bb3-4dbf-bc1f-0b812d8b9a58</Value>
         </Element>
 
         <Element>
@@ -76,6 +78,7 @@
             <Name>Invitation to tender issue date</Name>
             <Description>The date on which the invitation to tender is issued.</Description>
             <DataType>Date</DataType>
+            <Value type="EXAMPLE">2016-10-20</Value>
         </Element>
 
         <Element cardinality="1..1">
@@ -88,6 +91,7 @@
             <Reference type="RULE">PEPPOL-T024-R007</Reference>
             <Reference type="RULE">PEPPOL-T024-R008</Reference>
             <Reference type="RULE">PEPPOL-T024-R009</Reference>
+            <Value type="EXAMPLE">13:32:12+02:00</Value>
         </Element>
 
         <Element>
@@ -96,6 +100,7 @@
             <Description>Identifies the version of the invitation to tender.</Description>
             <DataType>Identifier</DataType>
             <Reference type="RULE">PEPPOL-T024-R038</Reference>
+            <Value type="EXAMPLE">1</Value>
         </Element>
 
         <Element cardinality="0..n">
@@ -112,6 +117,7 @@
                 <Description>Identification of the document reference</Description>
                 <DataType>Identifier</DataType>
                 <Reference type="RULE">PEPPOL-T024-R024</Reference>
+                <Value type="EXAMPLE">TenderEncryptionCertificate</Value>
             </Element>
 
             <Element cardinality="0..1">
@@ -119,6 +125,7 @@
                 <Name>Document issue date</Name>
                 <Description>Date when the referred document was issued.</Description>
                 <DataType>Date</DataType>
+                <Value type="EXAMPLE">2016-06-27</Value>
             </Element>
 
             <Element cardinality="0..1">
@@ -136,6 +143,7 @@
                     <Reference type="RULE">PEPPOL-T024-R018</Reference>
                     <Value type="FIXED">urn:eu:esens:cenbii:documentType</Value>
                 </Attribute>
+                <Value type="EXAMPLE">PRO</Value>
             </Element>
 
             <Element cardinality="0..1">
@@ -178,6 +186,7 @@
                     <Reference type="RULE">PEPPOL-T024-R021</Reference>
                     <Value type="FIXED">urn:eu:esens:cenbii:documentStatusType</Value>
                 </Attribute>
+                <Value type="EXAMPLE">NR</Value>
             </Element>
 
             <Element cardinality="0..1">
@@ -208,6 +217,7 @@
                         </Description>
                         <DataType>Identifier</DataType>
                         <Reference type="RULE">PEPPOL-T024-R035</Reference>
+                        <Value type="EXAMPLE">cid:tenderenckey.cer</Value>
                     </Element>
 
                     <Element cardinality="0..1">
@@ -215,6 +225,7 @@
                         <Name>Document mime type code</Name>
                         <Description>A code specifying the type of the document. The mime type of the file that and allows finding the correct application to open the document at the download sink. MUST be 'application/pkix-cert' for the encryption certificate. </Description>
                         <DataType>Code</DataType>
+                        <Value type="EXAMPLE">application/pkix-cert</Value>
                     </Element>
 
                     <Element cardinality="0..1">
@@ -224,6 +235,7 @@
                         </Description>
                         <DataType>Text</DataType>
                         <Reference type="RULE">PEPPOL-T024-R035</Reference>
+                        <Value type="EXAMPLE">TenderInviatation.html</Value>
                     </Element>
 
                 </Element>
@@ -289,6 +301,7 @@
                         <Name>Contracting body name</Name>
                         <Description>The name of the contracting body as it is registered.</Description>
                         <DataType>Text</DataType>
+                        <Value type="EXAMPLE">Beschaffungsamt des Bundesministerium des Innern (BeschA)</Value>
                     </Element>
                 </Element>
 
@@ -317,6 +330,7 @@
                                     <Name>List identifier</Name>
                                     <Value type="FIXED">ISO3166</Value>
                                 </Attribute>
+                                <Value type="EXAMPLE">DE</Value>
                             </Element>
                         </Element>
                     </Element>
@@ -341,7 +355,9 @@
                     <Name>Scheme identifier for electronic address identifier</Name>
 					<Reference type="RULE">PEPPOL-T024-R012</Reference>
 					<Reference type="RULE">PEPPOL-T024-R013</Reference>
+                    <Value type="EXAMPLE">9946</Value>
                 </Attribute>
+                <Value type="EXAMPLE">500820007</Value>
             </Element>
             <Element cardinality="1..1">
                 <Term>cbc:IndustryClassificationCode</Term>
@@ -356,6 +372,7 @@
                     <Reference type="RULE">PEPPOL-T024-S360</Reference>
                     <Value type="FIXED">tendererRole</Value>
                 </Attribute>
+                <Value type="EXAMPLE">MT</Value>
             </Element>
             <Element>
                 <Term>cac:PartyIdentification</Term>
@@ -387,6 +404,7 @@
                     <Name>Economic operator name</Name>
                     <Description>The name of the economic operator.</Description>
                     <DataType>Text</DataType>
+                    <Value type="EXAMPLE">Dutch Flower Shop</Value>
                 </Element>
             </Element>
             <Element cardinality="0..1">
@@ -397,6 +415,7 @@
                     <Name>Address line 1</Name>
                     <Description>The main address line in an address.</Description>
                     <DataType>Text</DataType>
+                    <Value type="EXAMPLE">PO Box 20061</Value>
                 </Element>
                 <Element cardinality="0..1">
                     <Term>cbc:AdditionalStreetName</Term>
@@ -405,12 +424,14 @@
                         supplementing the main line.
                     </Description>
                     <DataType>Text</DataType>
+                    <Value type="EXAMPLE">Tulip Street 33</Value>
                 </Element>
                 <Element cardinality="0..1">
                     <Term>cbc:CityName</Term>
                     <Name>City</Name>
                     <Description>The common name of a city where the address is located.</Description>
                     <DataType>Text</DataType>
+                    <Value type="EXAMPLE">The Hague</Value>
                 </Element>
                 <Element cardinality="0..1">
                     <Term>cbc:PostalZone</Term>
@@ -419,12 +440,14 @@
                         service, such as a ZIP code or Post Code.
                     </Description>
                     <DataType>Text</DataType>
+                    <Value type="EXAMPLE">2500 EB</Value>
                 </Element>
                 <Element cardinality="0..1">
                     <Term>cbc:CountrySubentity</Term>
                     <Name>Country subdivision</Name>
                     <Description>The subdivision of a country such as region, county, state, province etc.</Description>
                     <DataType>Text</DataType>
+                    <Value type="EXAMPLE">Province of South Holland</Value>
                 </Element>
                 <Element cardinality="0..1">
                     <Term>cac:Country</Term>
@@ -439,7 +462,9 @@
                         <Attribute>
                             <Term>listID</Term>
                             <Name>List identifier for country code</Name>
+                            <Value type="EXAMPLE">ISO3166</Value>
                         </Attribute>
+                        <Value type="EXAMPLE">NL</Value>
                     </Element>
                 </Element>
             </Element>
@@ -471,7 +496,9 @@
                             <Attribute>
                                 <Term>listID</Term>
                                 <Name>List identifier for country code</Name>
+                                <Value type="EXAMPLE">ISO3166</Value>
                             </Attribute>
+                            <Value type="EXAMPLE">NL</Value>
                         </Element>
                     </Element>
                 </Element>
@@ -526,6 +553,7 @@
                 <Description>Indicates if variants are accepted in the tender. Use true when variants are allowed.
                 </Description>
                 <DataType>Indicator</DataType>
+                <Value type="EXAMPLE">false</Value>
             </Element>
 
             <Element cardinality="0..1">
@@ -544,6 +572,7 @@
 				<DataType>Text</DataType>
                 <Reference type="RULE">PEPPOL-T024-R033</Reference>
                 <Reference type="CODE_LIST">addCond</Reference>
+                <Value type="EXAMPLE">WOS</Value>
             </Element>
 
             <Element cardinality="0..1">
@@ -631,6 +660,7 @@
                     <Name>List identifier</Name>
                     <Value type="FIXED">PR_PROC</Value>
                 </Attribute>
+                <Value type="EXAMPLE">2</Value>
             </Element>
 
             <Element cardinality="0..1">
@@ -649,6 +679,7 @@
                     <Name>List identifier</Name>
                     <Value type="FIXED">CONTRACT_TYPE</Value>
                 </Attribute>
+                <Value type="EXAMPLE">2</Value>
             </Element>
 
             <Element cardinality="0..1">
@@ -664,6 +695,7 @@
                     <Name>List identifier</Name>
                     <Value type="FIXED">BII_SUBMISSION</Value>
                 </Attribute>
+                <Value type="EXAMPLE">ELECTRONIC</Value>
             </Element>
 
             <Element>
@@ -678,6 +710,7 @@
                         competitive dialogues, innovation partnerships)
                     </Description>
 					<DataType>Date</DataType>
+                    <Value type="EXAMPLE">2016-10-20</Value>
                 </Element>
 
                 <Element cardinality="0..1">
@@ -689,6 +722,7 @@
                     </Description>
 					<DataType>Date</DataType>
                     <Reference type="RULE">PEPPOL-T024-R028</Reference>
+                    <Value type="EXAMPLE">13:32:11.891+02:00</Value>
                 </Element>
             </Element>
 
@@ -727,6 +761,7 @@
                 <Name>Procurement project name</Name>
                 <Description>Title attributed to the contract by the contracting body.</Description>
                 <DataType>Text</DataType>
+                <Value type="EXAMPLE">Laptops</Value>
             </Element>
 
             <Element>
@@ -734,6 +769,7 @@
                 <Name>Procurement project description</Name>
                 <Description>A textual description of this Procurement project.</Description>
                 <DataType>Text</DataType>
+                <Value type="EXAMPLE">Laptops</Value>
             </Element>
 
             <Element>
@@ -748,6 +784,7 @@
                     <Name>List identifier</Name>
                     <Value type="FIXED">PROJECT_TYPE</Value>
                 </Attribute>
+                <Value type="EXAMPLE">2</Value>
             </Element>
 
             <Element>
@@ -765,6 +802,7 @@
                         <Name>List identifier</Name>
                         <Value type="FIXED">CPV</Value>
                     </Attribute>
+                    <Value type="EXAMPLE">30100000</Value>
                 </Element>
             </Element>
 
@@ -784,6 +822,7 @@
                         <Name>List identifier</Name>
                         <Value type="FIXED">CPV</Value>
                     </Attribute>
+                    <Value type="EXAMPLE">30120000</Value>
                 </Element>
             </Element>
 
@@ -801,6 +840,7 @@
                         <Name>Scheme identifier</Name>
                         <Value type="FIXED">NUTS</Value>
                     </Attribute>
+                    <Value type="EXAMPLE">DE148</Value>
                 </Element>
             </Element>
         </Element>
