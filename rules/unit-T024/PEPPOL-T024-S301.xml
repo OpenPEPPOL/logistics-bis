@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t024-base-1.0">
+	<assert>
+		<description>UBLExtensions SHOULD NOT be used.</description>
+		<scope>PEPPOL-T024-S301</scope>
+	</assert>
+	<test>
+		<assert>
+			<success>PEPPOL-T024-S301</success>
+		</assert>
+		<CallForTenders xmlns="urn:oasis:names:specification:ubl:schema:xsd:CallForTenders-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+			<cbc:UBLVersionID>2.2</cbc:UBLVersionID>
+		</CallForTenders>
+	</test>
+	<test>
+		<assert>
+			<error>PEPPOL-T024-S301</error>
+		</assert>
+		<CallForTenders xmlns="urn:oasis:names:specification:ubl:schema:xsd:CallForTenders-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2">
+			<ext:UBLExtensions>
+				<ext:UBLExtension>
+					<ext:ExtensionContent/>
+				</ext:UBLExtension>
+			</ext:UBLExtensions>
+			<cbc:UBLVersionID>2.2</cbc:UBLVersionID>
+		</CallForTenders>
+	</test>
+</testSet>
