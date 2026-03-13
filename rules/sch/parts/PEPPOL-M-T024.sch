@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron">
     
-    <let name="syntaxError" value="string('[PEPPOL-T024-S003] A Call For Tenders document SHOULD only contain elements and attributes described in the syntax mapping. - ')"/>
+    <let name="syntaxError" value="string('A Call For Tenders document SHOULD only contain elements and attributes described in the syntax mapping. - ')"/>
     <rule context="ubl:CallForTenders">
         <report id="PEPPOL-T024-S301" flag="warning" test="(ext:UBLExtensions)"><value-of select="$syntaxError"/>[PEPPOL-T024-S301] UBLExtensions SHOULD NOT be used.</report>
         <report id="PEPPOL-T024-S305" flag="warning" test="(cbc:ProfileExecutionID)"><value-of select="$syntaxError"/>[PEPPOL-T024-S305] ProfileExecutionID SHOULD NOT be used.</report>
