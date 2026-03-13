@@ -651,7 +651,17 @@
    </pattern>
     <pattern>
 
-    
+      <let name="syntaxError"
+           value="string('[PEPPOL-T024-S003] A Call For Tenders document SHOULD only contain elements and attributes described in the syntax mapping. - ')"/> 
+
+      <rule context="ubl:CallForTenders">
+        <assert id="PEPPOL-T024-R024"
+                 flag="fatal"
+                 test="count(distinct-values(cac:AdditionalDocumentReference/cbc:ID)) = count(cac:AdditionalDocumentReference/cbc:ID)">[PEPPOL-T024-R024] Additional Document Reference Identifiers MUST be unique.</assert>
+        <assert id="PEPPOL-T024-R029"
+                 flag="fatal"
+                 test="count(distinct-values(cac:ProcurementProjectLot/cbc:ID)) = count(cac:ProcurementProjectLot/cbc:ID)">[PEPPOL-T024-R029] Lot identifiers MUST be unique.</assert>
+      </rule>
       <rule context="ubl:CallForTenders/cbc:UBLVersionID">
         
         <assert id="PEPPOL-T024-R040"
