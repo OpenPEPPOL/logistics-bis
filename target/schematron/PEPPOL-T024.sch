@@ -927,7 +927,7 @@
       </rule>
     
       <rule context="cbc:IndustryClassificationCode">
-        <assert id="PEPPOL-T024-R041" flags="fatal" test="./@listID">[PEPPOL-T024-R041] The Codelist used to define the receiver's economic operator role in this tender MUST be named by using the attribute listID and the ID has to be /"tendererRole/".</assert>
+        <assert id="PEPPOL-T024-R041" flag="fatal" test="./@listID">[PEPPOL-T024-R041] The Codelist used to define the receiver's economic operator role in this tender MUST be named by using the attribute listID and the ID has to be /"tendererRole/".</assert>
         <assert id="PEPPOL-T024-S360"
                  flag="warning"
                  test="not(./@*[not(name()='listID')])">
@@ -1016,8 +1016,8 @@
         <assert id="PEPPOL-T024-R033"
                  flag="fatal"
                  test="matches(normalize-space(.),'^(WOS|WAS|WQS)$')">[PEPPOL-T024-R033] AdditionalConditions value MUST be one of 'WOS', 'WAS, 'WQS'.</assert>
-        <assert id="PEPPOL-T024-S360" flag="warning" test="not(./@*)">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S360] AdditionalConditions SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T024-S398" flag="warning" test="not(./@*)">
+            <value-of select="$syntaxError"/>[PEPPOL-T024-S398] AdditionalConditions SHOULD NOT contain any attributes.</assert>
       </rule>
     
       <rule context="ubl:CallForTenders/cac:TenderingTerms/cac:ProcurementLegislationDocumentReference">
@@ -1086,9 +1086,9 @@
                  flag="warning"
                  test="./@*[not(name()='listID')]">
             <value-of select="$syntaxError"/>[PEPPOL-T024-S371] ProcedureCode SHOULD NOT have any attributes but listID.</report>
-        <assert id="PEPPOL-T024-R037"
+        <assert id="PEPPOL-T024-R054"
                  flag="fatal"
-                 test="(normalize-space(.) = '1' and not(exists(../cac:ParticipationRequestReceptionPeriod))) or (normalize-space(.) != '1')">[PEPPOL-T024-R037] Participation Request Reception Period MUST not be given for proceduretypes without participation contest.</assert>
+                 test="(normalize-space(.) = '1' and not(exists(../cac:ParticipationRequestReceptionPeriod))) or (normalize-space(.) != '1')">[PEPPOL-T024-R054] Participation Request Reception Period MUST not be given for proceduretypes without participation contest.</assert>
       </rule>
     
       <rule context="ubl:CallForTenders/cac:TenderingProcess/cbc:ContractingSystemCode">

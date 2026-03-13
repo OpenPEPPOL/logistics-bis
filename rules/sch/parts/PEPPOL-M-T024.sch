@@ -154,7 +154,7 @@
     </rule>
     
     <rule context="cbc:IndustryClassificationCode">
-        <assert id="PEPPOL-T024-R041" flags="fatal" test="./@listID">[PEPPOL-T024-R041] The Codelist used to define the receiver's economic operator role in this tender MUST be named by using the attribute listID and the ID has to be /"tendererRole/".</assert>
+        <assert id="PEPPOL-T024-R041" flag="fatal" test="./@listID">[PEPPOL-T024-R041] The Codelist used to define the receiver's economic operator role in this tender MUST be named by using the attribute listID and the ID has to be /"tendererRole/".</assert>
         <assert id="PEPPOL-T024-S360" flag="warning" test="not(./@*[not(name()='listID')])"><value-of select="$syntaxError"/>[PEPPOL-T024-S360] cbc:IndustryClassificationCode SHOULD NOT have any further attributes but listID</assert>
     </rule>
     
@@ -201,7 +201,7 @@
     
     <rule context="ubl:CallForTenders/cac:TenderingTerms/cbc:AdditionalConditions">
         <assert id="PEPPOL-T024-R033" flag="fatal" test="matches(normalize-space(.),'^(WOS|WAS|WQS)$')">[PEPPOL-T024-R033] AdditionalConditions value MUST be one of 'WOS', 'WAS, 'WQS'.</assert>
-        <assert id="PEPPOL-T024-S360" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>[PEPPOL-T024-S360] AdditionalConditions SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T024-S398" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>[PEPPOL-T024-S398] AdditionalConditions SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:CallForTenders/cac:TenderingTerms/cac:ProcurementLegislationDocumentReference">
