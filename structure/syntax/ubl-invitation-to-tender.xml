@@ -18,7 +18,6 @@
             <Term>cbc:UBLVersionID</Term>
             <Name>UBL version identifier</Name>
             <Description>Requires UBL version 2.2</Description>
-            <Reference type="RULE">PEPPOL-T024-R001</Reference>
             <Reference type="RULE">PEPPOL-T024-R040</Reference>
             <Value type="FIXED">2.2</Value>
         </Element>
@@ -88,7 +87,6 @@
                 and include time zone information
             </Description>
             <DataType>Time</DataType>
-            <Reference type="RULE">PEPPOL-T024-R007</Reference>
             <Reference type="RULE">PEPPOL-T024-R008</Reference>
             <Reference type="RULE">PEPPOL-T024-R009</Reference>
             <Value type="EXAMPLE">13:32:12+02:00</Value>
@@ -99,7 +97,6 @@
             <Name>Invitation to tender version</Name>
             <Description>Identifies the version of the invitation to tender.</Description>
             <DataType>Identifier</DataType>
-            <Reference type="RULE">PEPPOL-T024-R038</Reference>
             <Value type="EXAMPLE">1</Value>
         </Element>
 
@@ -584,6 +581,7 @@
                     <Name>Procurement legislation information document reference identifier</Name>
                     <Description>An identifier for the document reference</Description>
                     <DataType>Identifier</DataType>
+                    <Value type="EXAMPLE">ID-001</Value>
                 </Element>
 
                 <Element>
@@ -591,6 +589,7 @@
                     <Name>Legal references</Name>
                     <Description>Textual description of references to specific legislation</Description>
                     <DataType>Text</DataType>
+                    <Value type="EXAMPLE">Example</Value>
                 </Element>
             </Element>
 
@@ -613,6 +612,7 @@
 						<Reference type="RULE">PEPPOL-T024-R026</Reference>
                         <Value type="FIXED">urn:uuid</Value>
                     </Attribute>
+                    <Value type="EXAMPLE">123e4567-e89b-12d3-a456-426614174000</Value>
                 </Element>
             </Element>
 
@@ -738,6 +738,7 @@
                         and before which requests to participate must be received.
                     </Description>
 					<DataType>Date</DataType>
+                    <Value type="EXAMPLE">2026-03-06</Value>
                 </Element>
                 <Element cardinality="0..1">
                     <Term>cbc:EndTime</Term>
@@ -855,6 +856,7 @@
                 <Description>An identifier for the lot.</Description>
 				<DataType>Identifier</DataType>
                 <Reference type="RULE">PEPPOL-T024-R029</Reference>
+                <Value type="EXAMPLE">ID-001</Value>
             </Element>
 
             <Element cardinality="0..1">
@@ -866,6 +868,7 @@
                     <Name>Lot name</Name>
                     <Description>The title of the lot</Description>
                     <DataType>Text</DataType>
+                    <Value type="EXAMPLE">Example</Value>
                 </Element>
             </Element>
         </Element>
