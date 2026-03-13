@@ -650,58 +650,7 @@
       </rule>
    </pattern>
     <pattern>
-    
-      <let name="syntaxError"
-           value="string('A Call For Tenders document SHOULD only contain elements and attributes described in the syntax mapping. - ')"/>
-      <rule context="ubl:CallForTenders">
-        <report id="PEPPOL-T024-S301" flag="warning" test="(ext:UBLExtensions)">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S301] UBLExtensions SHOULD NOT be used.</report>
-        <report id="PEPPOL-T024-S305"
-                 flag="warning"
-                 test="(cbc:ProfileExecutionID)">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S305] ProfileExecutionID SHOULD NOT be used.</report>
-        <report id="PEPPOL-T024-S307" flag="warning" test="(cbc:CopyIndicator)">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S307] CopyIndicator SHOULD NOT be used.</report>
-        <report id="PEPPOL-T024-S308" flag="warning" test="(cbc:UUID)">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S308] UUID SHOULD NOT be used.</report>
-        <assert id="PEPPOL-T024-R001" flag="fatal" test="exists(cbc:UBLVersionID)">[PEPPOL-T024-R001] A Call For Tenders MUST have a syntax identifier.</assert>
-        <report id="PEPPOL-T024-S310" flag="warning" test="(cbc:ApprovalDate)">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S310] ApprovalDate SHOULD NOT be used.</report>
-        <assert id="PEPPOL-T024-R007" flag="fatal" test="(cbc:IssueTime)">[PEPPOL-T024-R007] A Call For Tenders MUST have an issue time.</assert>
-        <assert id="PEPPOL-T024-R024"
-                 flag="fatal"
-                 test="count(distinct-values(cac:AdditionalDocumentReference/cbc:ID)) = count(cac:AdditionalDocumentReference/cbc:ID)">[PEPPOL-T024-R024] Additional Document Reference Identifiers MUST be unique.</assert>
-        <assert id="PEPPOL-T024-R029"
-                 flag="fatal"
-                 test="count(distinct-values(cac:ProcurementProjectLot/cbc:ID)) = count(cac:ProcurementProjectLot/cbc:ID)">[PEPPOL-T024-R029] Lot identifiers MUST be unique.</assert>
-        <report id="PEPPOL-T024-S311" flag="warning" test="(cbc:Note)">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S311] Note SHOULD NOT be used.</report>
-        <assert id="PEPPOL-T024-R038" flag="fatal" test="(cbc:VersionID)">[PEPPOL-T024-R038] A Call For Tenders MUST have a version identifier</assert>
-        <report id="PEPPOL-T024-S313" flag="warning" test="(cbc:PreviousVersionID)">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S313] PreviousVersionID SHOULD NOT be used.</report>
-        <report id="PEPPOL-T024-S314"
-                 flag="warning"
-                 test="(cac:LegalDocumentReference)">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S314] LegalDocumentReference SHOULD NOT be used.</report>
-        <report id="PEPPOL-T024-S315"
-                 flag="warning"
-                 test="(cac:TechnicalDocumentReference)">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S315] TechnicalDocumentReference SHOULD NOT be used.</report>
-        <report id="PEPPOL-T024-S331" flag="warning" test="(cac:Signature)">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S331] Signature SHOULD NOT be used.</report>
-        <report id="PEPPOL-T024-S332"
-                 flag="warning"
-                 test="count(cac:ContractingParty) &gt; 1">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S332] ContractingParty SHOULD NOT be used more than once.</report>
-        <report id="PEPPOL-T024-S345"
-                 flag="warning"
-                 test="(cac:OriginatorCustomerParty)">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S345] OriginatorCustomerParty SHOULD NOT be used.</report>
-        <assert id="PEPPOL-T024-S347" flag="warning" test="(cac:TenderingTerms)">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S347] TenderingTerms SHOULD be used.</assert>
-        <assert id="PEPPOL-T024-S368" flag="warning" test="(cac:TenderingProcess)">
-            <value-of select="$syntaxError"/>[PEPPOL-T024-S368] TenderingProcess SHOULD be used.</assert>
-      </rule>
+
     
       <rule context="ubl:CallForTenders/cbc:UBLVersionID">
         
