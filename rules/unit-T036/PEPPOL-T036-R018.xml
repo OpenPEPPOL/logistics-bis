@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t036-base-1.0">
+	<assert>
+		<description>Verify that the cbc:CustomizationID is correct</description>
+		<scope>PEPPOL-T036-R018</scope>
+	</assert>
+	
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T036-R018</success>
+		</assert>
+		<Catalogue xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+				xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2">
+			<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+			<cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t036:1</cbc:CustomizationID>
+			<cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p035</cbc:ProfileID>
+		</Catalogue>
+	</test>
+
+	<test>
+		<assert id="2">
+			<error>PEPPOL-T036-R018</error>
+		</assert>
+		<Catalogue xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+				xmlns="urn:oasis:names:specification:ubl:schema:xsd:Catalogue-2">
+			<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+			<cbc:CustomizationID>urn:fdc:peppol.eu:prac:trnsx:t036:1</cbc:CustomizationID>
+			<cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p035</cbc:ProfileID>
+		</Catalogue>
+	</test>
+
+</testSet>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t021-base-1.3">
+	<assert>
+		<description>Verify that the cbc:CustomizationID is correct</description>
+		<scope>PEPPOL-T021-R002</scope>
+	</assert>
+	
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T021-R002</success>
+		</assert>
+		<UnsubscribeFromProcedureRequest
+				xmlns="urn:oasis:names:specification:ubl:schema:xsd:UnsubscribeFromProcedureRequest-2"
+				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+				xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+			<cbc:UBLVersionID>2.2</cbc:UBLVersionID>
+			<cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t021:1</cbc:CustomizationID>
+			<cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p001</cbc:ProfileID>
+		</UnsubscribeFromProcedureRequest>
+	</test>
+
+	<test>
+		<assert id="2">
+			<error>PEPPOL-T021-R002</error>
+		</assert>
+		<UnsubscribeFromProcedureRequest
+				xmlns="urn:oasis:names:specification:ubl:schema:xsd:UnsubscribeFromProcedureRequest-2"
+				xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+				xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+			<cbc:UBLVersionID>2.2</cbc:UBLVersionID>
+			<cbc:CustomizationID>urn:fdc:peppol.eu:prac:trnsx:t021:1</cbc:CustomizationID>
+			<cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p001</cbc:ProfileID>
+		</UnsubscribeFromProcedureRequest>
+	</test>
+
+</testSet>
