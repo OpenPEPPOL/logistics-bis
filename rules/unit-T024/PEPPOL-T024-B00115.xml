@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t024-base-1.0">
+	<assert>
+		<description>Document MUST NOT contain elements not part of the data model.</description>
+		<scope>PEPPOL-T024-B00115</scope>
+	</assert>
+	<test>
+		<assert>
+			<success>PEPPOL-T024-B00115</success>
+		</assert>
+		<CallForTenders xmlns="urn:oasis:names:specification:ubl:schema:xsd:CallForTenders-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+			<cbc:UBLVersionID>2.2</cbc:UBLVersionID>
+		</CallForTenders>
+	</test>
+	<test>
+		<assert>
+			<error>PEPPOL-T024-B00115</error>
+		</assert>
+		<CallForTenders xmlns="urn:oasis:names:specification:ubl:schema:xsd:CallForTenders-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2">
+			<cbc:UBLVersionID>2.2</cbc:UBLVersionID>
+			<cbc:UnknownElement>Not in the data model</cbc:UnknownElement>
+		</CallForTenders>
+	</test>
+</testSet>
