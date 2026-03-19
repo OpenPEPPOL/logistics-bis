@@ -1,29 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron">
-    
-    <let name="syntaxError" value="string('[PEPPOL-T024-S003] A Call For Tenders document SHOULD only contain elements and attributes described in the syntax mapping. - ')"/>
+
+<let name="syntaxError" value="string('[PEPPOL-T024-S003] A Call For Tenders document SHOULD only contain elements and attributes described in the syntax mapping. - ')"/> 
+
     <rule context="ubl:CallForTenders">
-        <report id="PEPPOL-T024-S301" flag="warning" test="(ext:UBLExtensions)"><value-of select="$syntaxError"/>[PEPPOL-T024-S301] UBLExtensions SHOULD NOT be used.</report>
-        <report id="PEPPOL-T024-S305" flag="warning" test="(cbc:ProfileExecutionID)"><value-of select="$syntaxError"/>[PEPPOL-T024-S305] ProfileExecutionID SHOULD NOT be used.</report>
-        <report id="PEPPOL-T024-S307" flag="warning" test="(cbc:CopyIndicator)"><value-of select="$syntaxError"/>[PEPPOL-T024-S307] CopyIndicator SHOULD NOT be used.</report>
-        <report id="PEPPOL-T024-S308" flag="warning" test="(cbc:UUID)"><value-of select="$syntaxError"/>[PEPPOL-T024-S308] UUID SHOULD NOT be used.</report>
-        <assert id="PEPPOL-T024-R001" flag="fatal" test="exists(cbc:UBLVersionID)">[PEPPOL-T024-R001] A Call For Tenders MUST have a syntax identifier.</assert>
-        <report id="PEPPOL-T024-S310" flag="warning" test="(cbc:ApprovalDate)"><value-of select="$syntaxError"/>[PEPPOL-T024-S310] ApprovalDate SHOULD NOT be used.</report>
-        <assert id="PEPPOL-T024-R007" flag="fatal" test="(cbc:IssueTime)">[PEPPOL-T024-R007] A Call For Tenders MUST have an issue time.</assert>
         <assert id="PEPPOL-T024-R024" flag="fatal" test="count(distinct-values(cac:AdditionalDocumentReference/cbc:ID)) = count(cac:AdditionalDocumentReference/cbc:ID)">[PEPPOL-T024-R024] Additional Document Reference Identifiers MUST be unique.</assert>
         <assert id="PEPPOL-T024-R029" flag="fatal" test="count(distinct-values(cac:ProcurementProjectLot/cbc:ID)) = count(cac:ProcurementProjectLot/cbc:ID)">[PEPPOL-T024-R029] Lot identifiers MUST be unique.</assert>
-        <report id="PEPPOL-T024-S311" flag="warning" test="(cbc:Note)"><value-of select="$syntaxError"/>[PEPPOL-T024-S311] Note SHOULD NOT be used.</report>
-        <assert id="PEPPOL-T024-R038" flag="fatal" test="(cbc:VersionID)">[PEPPOL-T024-R038] A Call For Tenders MUST have a version identifier</assert>
-        <report id="PEPPOL-T024-S313" flag="warning" test="(cbc:PreviousVersionID)"><value-of select="$syntaxError"/>[PEPPOL-T024-S313] PreviousVersionID SHOULD NOT be used.</report>
-        <report id="PEPPOL-T024-S314" flag="warning" test="(cac:LegalDocumentReference)"><value-of select="$syntaxError"/>[PEPPOL-T024-S314] LegalDocumentReference SHOULD NOT be used.</report>
-        <report id="PEPPOL-T024-S315" flag="warning" test="(cac:TechnicalDocumentReference)"><value-of select="$syntaxError"/>[PEPPOL-T024-S315] TechnicalDocumentReference SHOULD NOT be used.</report>
-        <report id="PEPPOL-T024-S331" flag="warning" test="(cac:Signature)"><value-of select="$syntaxError"/>[PEPPOL-T024-S331] Signature SHOULD NOT be used.</report>
-        <report id="PEPPOL-T024-S332" flag="warning" test="count(cac:ContractingParty) &gt; 1"><value-of select="$syntaxError"/>[PEPPOL-T024-S332] ContractingParty SHOULD NOT be used more than once.</report>
-        <report id="PEPPOL-T024-S345" flag="warning" test="(cac:OriginatorCustomerParty)"><value-of select="$syntaxError"/>[PEPPOL-T024-S345] OriginatorCustomerParty SHOULD NOT be used.</report>
-        <assert id="PEPPOL-T024-S347" flag="warning" test="(cac:TenderingTerms)"><value-of select="$syntaxError"/>[PEPPOL-T024-S347] TenderingTerms SHOULD be used.</assert>
-        <assert id="PEPPOL-T024-S368" flag="warning" test="(cac:TenderingProcess)"><value-of select="$syntaxError"/>[PEPPOL-T024-S368] TenderingProcess SHOULD be used.</assert>
     </rule>
-    
     <rule context="ubl:CallForTenders/cbc:UBLVersionID">
         
         <assert id="PEPPOL-T024-R040" flag="fatal" test="normalize-space(.) = '2.2'">[PEPPOL-T024-R040] UBLVersionID value MUST be '2.2'</assert>
@@ -134,29 +117,7 @@
         <report id="PEPPOL-T024-S396" flag="warning" test="./@*"><value-of select="$syntaxError"/>[PEPPOL-T024-S396] FileName SHOULD NOT have any attributes.</report>
     </rule>
     
-    <rule context="ubl:CallForTenders/cac:ContractingParty">
-        <assert id="PEPPOL-T024-S333" flag="warning" test="count(./*)-count(./cac:Party)=0"><value-of select="$syntaxError"/>[PEPPOL-T024-S333] ContractingParty SHOULD NOT contain any elements but cac:Party.</assert>
-    </rule>
-    
-    <rule context="ubl:CallForTenders/cac:ContractingParty/cac:Party">
-        <assert id="PEPPOL-T024-S334" flag="warning" test="count(./*)-count(./cac:PartyIdentification)-count(./cbc:EndpointID)-count(./cac:PartyName)-count(./cac:PartyLegalEntity)= 0"><value-of select="$syntaxError"/>[PEPPOL-T024-S334] A ContractingParty/cac:Party SHOULD NOT contain any elements but EndpointID, PartyIdentification, PartyName, PartyLegalEntity</assert>
-        <assert id="PEPPOL-T024-S336" flag="warning" test="count(./cac:PartyIdentification) = 1"><value-of select="$syntaxError"/>[PEPPOL-T024-S336] PartyIdentification SHOULD be used exactly once.</assert>
-        <report id="PEPPOL-T024-S338" flag="warning" test="count(./cac:PartyName) &gt; 1"><value-of select="$syntaxError"/>[PEPPOL-T024-S338] PartyName SHOULD NOT be used more than once.</report>
-        <report id="PEPPOL-T024-S340" flag="warning" test="count(./cac:PartyLegalEntity) &gt; 1"><value-of select="$syntaxError"/>[PEPPOL-T024-S340] PartyLegalEntity SHOULD NOT be used more than once.</report>
-        <assert id="PEPPOL-T024-R034" flag="fatal" test="(./cac:PartyIdentification) and (./cbc:EndpointID)">[PEPPOL-T024-R034] A Call for Tenders MUST identify the Contracting Body by its party and endpoint identifiers.</assert>
-    </rule>
-    
-    <rule context="ubl:CallForTenders/cac:ReceiverParty">
-        <assert id="PEPPOL-T024-S500" flag="warning" test="count(./*)-count(./cac:PartyIdentification)-count(./cbc:EndpointID)-count(./cac:PartyName)-count(./cac:PartyLegalEntity)= 0"><value-of select="$syntaxError"/>[PEPPOL-T024-S334] A cac:ReceivingParty SHOULD NOT contain any elements but EndpointID, PartyIdentification, PartyName, PartyLegalEntity</assert>
-        <assert id="PEPPOL-T024-S501" flag="warning" test="count(./cac:PartyIdentification) = 1"><value-of select="$syntaxError"/>[PEPPOL-T024-500] PartyIdentification SHOULD be used exactly once.</assert>
-        <report id="PEPPOL-T024-S502" flag="warning" test="count(./cac:PartyName) &gt; 1"><value-of select="$syntaxError"/>[PEPPOL-T024-S501] PartyName SHOULD NOT be used more than once.</report>
-        <report id="PEPPOL-T024-S503" flag="warning" test="count(./cac:PartyLegalEntity) &gt; 1"><value-of select="$syntaxError"/>[PEPPOL-T024-S502] PartyLegalEntity SHOULD NOT be used more than once.</report>
-        <assert id="PEPPOL-T024-R534" flag="fatal" test="(./cac:PartyIdentification) and (./cbc:EndpointID)">[PEPPOL-T024-R534] A Call for Tenders MUST identify the Economic Operator / Receiving Party by its party and endpoint identifiers.</assert>
-    </rule>
-    
     <rule context="cbc:EndpointID">
-        <assert id="PEPPOL-T024-R012" flag="fatal" test="./@schemeID">[PEPPOL-T024-R012] An Endpoint Identifier MUST have a scheme identifier attribute.</assert>
-        <assert id="PEPPOL-T024-R013" flag="fatal" test="matches(normalize-space(./@schemeID),'^(0002|0007|0009|0037|0060|0088|0096|0097|0106|0130|0135|0142|0151|0183|0184|0190|0191|0192|0193|0195|0196|0198|0199|0200|0201|0202|0204|0208|0209|0210|0211|0212|0213|9901|9906|9907|9910|9913|9914|9915|9918|9919|9920|9922|9923|9924|9925|9926|9927|9928|9929|9930|9931|9932|9933|9934|9935|9936|9937|9938|9939|9940|9941|9942|9943|9944|9945|9946|9947|9948|9949|9950|9951|9952|9953|9955|9957)')">[PEPPOL-T024-R013] An Endpoint Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
         <report id="PEPPOL-T024-S335" flag="warning" test="./@*[not(name()='schemeID')]"><value-of select="$syntaxError"/>[PEPPOL-T024-S335] EndpointID SHOULD NOT have any further attributes but schemeID</report>
     </rule>
     
@@ -171,7 +132,7 @@
     </rule>
     
     <rule context="cbc:IndustryClassificationCode">
-        <assert id="PEPPOL-T024-R041" flags="fatal" test="./@listID">[PEPPOL-T024-R041] The Codelist used to define the receiver's economic operator role in this tender MUST be named by using the attribute listID and the ID has to be /"tendererRole/".</assert>
+        <assert id="PEPPOL-T024-R041" flag="fatal" test="./@listID">[PEPPOL-T024-R041] The Codelist used to define the receiver's economic operator role in this tender MUST be named by using the attribute listID and the ID has to be /"tendererRole/".</assert>
         <assert id="PEPPOL-T024-S360" flag="warning" test="not(./@*[not(name()='listID')])"><value-of select="$syntaxError"/>[PEPPOL-T024-S360] cbc:IndustryClassificationCode SHOULD NOT have any further attributes but listID</assert>
     </rule>
     
@@ -218,7 +179,7 @@
     
     <rule context="ubl:CallForTenders/cac:TenderingTerms/cbc:AdditionalConditions">
         <assert id="PEPPOL-T024-R033" flag="fatal" test="matches(normalize-space(.),'^(WOS|WAS|WQS)$')">[PEPPOL-T024-R033] AdditionalConditions value MUST be one of 'WOS', 'WAS, 'WQS'.</assert>
-        <assert id="PEPPOL-T024-S360" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>[PEPPOL-T024-S360] AdditionalConditions SHOULD NOT contain any attributes.</assert>
+        <assert id="PEPPOL-T024-S398" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>[PEPPOL-T024-S398] AdditionalConditions SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:CallForTenders/cac:TenderingTerms/cac:ProcurementLegislationDocumentReference">
