@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T001-base-1.0">
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t002-base-1.0">
 	<assert>
 		<description>Verify that the cbc:CustomizationID is correct</description>
-		<scope>PEPPOL-T001-R002</scope>
+		<scope>PEPPOL-T002-R002</scope>
 	</assert>
+	
 	<test id="1">
 		<assert>
-			<success>PEPPOL-T001-R002</success>
+			<success>PEPPOL-T002-R002</success>
 		</assert>
-		<ubl:ExpressionOfInterestRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
-			xmlns="urn:oasis:names:specification:ubl:schema:xsd:ExpressionOfInterestRequest-2"
+		<ExpressionOfInterestResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:ExpressionOfInterestResponse-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 			<cbc:UBLVersionID>2.2</cbc:UBLVersionID>
-			<cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t001:1</cbc:CustomizationID>
+			<cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t002:1</cbc:CustomizationID>
 			<cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p001</cbc:ProfileID>
-		</ubl:ExpressionOfInterestRequest>
-	</test>
+		</ExpressionOfInterestResponse>
+	
+</test>
 
 	<test>
 		<assert id="2">
-			<error>PEPPOL-T001-R002</error>
+			<error>PEPPOL-T002-R002</error>
 		</assert>
-		<ubl:ExpressionOfInterestRequest xmlns:ubl="urn:oasis:names:specification:ubl:schema:xsd:Waybill-2"
-			xmlns="urn:oasis:names:specification:ubl:schema:xsd:ExpressionOfInterestRequest-2"
+		<ExpressionOfInterestResponse xmlns="urn:oasis:names:specification:ubl:schema:xsd:ExpressionOfInterestResponse-2"
 			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
 			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
 			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 			<cbc:UBLVersionID>2.2</cbc:UBLVersionID>
-			<cbc:CustomizationID>urn:fdc:peppol.eu:prac:trnsx:t001:1</cbc:CustomizationID>
+			<cbc:CustomizationID>urn:fdc:peppol.eu:prac:trnsx:t002:1</cbc:CustomizationID>
 			<cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p001</cbc:ProfileID>
-		</ubl:ExpressionOfInterestRequest>
+		</ExpressionOfInterestResponse>
 	</test>
 
 </testSet>

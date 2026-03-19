@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-T003-base-1.0">
+	<assert>
+		<description>Verify that the cbc:CustomizationID is correct</description>
+		<scope>PEPPOL-T003-R010</scope>
+	</assert>
+	
+	<test id="1">
+		<assert>
+			<success>PEPPOL-T003-R010</success>
+		</assert>
+		<TenderStatusRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:TenderStatusRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<cbc:UBLVersionID>2.2</cbc:UBLVersionID>
+			<cbc:CustomizationID>urn:fdc:peppol.eu:prac:trns:t003:1</cbc:CustomizationID>
+			<cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p002</cbc:ProfileID>
+			</TenderStatusRequest>
+	</test>
+
+	<test>
+		<assert id="2">
+			<error>PEPPOL-T003-R010</error>
+		</assert>
+		<TenderStatusRequest xmlns="urn:oasis:names:specification:ubl:schema:xsd:TenderStatusRequest-2"
+			xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+			xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+			<cbc:UBLVersionID>2.2</cbc:UBLVersionID>
+			<cbc:CustomizationID>urn:fdc:peppol.eu:prac:trnsx:t003:1</cbc:CustomizationID>
+			<cbc:ProfileID>urn:fdc:peppol.eu:prac:bis:p002</cbc:ProfileID>
+		</TenderStatusRequest>
+	</test>
+
+</testSet>
