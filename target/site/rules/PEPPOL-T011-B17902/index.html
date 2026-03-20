@@ -293,13 +293,13 @@
 
     <dl class="dl-horizontal">
         <dt>Message</dt>
-        <dd><p class="lead">Element &#39;rim:SlotValue&#39; MUST be provided.</p></dd>
+        <dd><p class="lead">Attribute &#39;name&#39; MUST contain value &#39;ProcedureLegalBasis&#39;</p></dd>
 
         <dt>Context</dt>
         <dd><code>/query:QueryRequest/query:Query/rim:Slot[@name=&#39;ProcedureLegalBasis&#39;]</code></dd>
 
         <dt>Test</dt>
-        <dd><code>rim:SlotValue</code></dd>
+        <dd><code>not(@name) or @name = &#39;ProcedureLegalBasis&#39;</code></dd>
 
         
 
@@ -307,7 +307,8 @@
             <dt>Usage</dt>
             <dd>
                 <div style="margin-bottom: 5pt;">
-                    <a href="syntax/SearchNoticeRequest/query-Query/rim-Slot[@name=&#39;ProcedureLegalBasis&#39;]/">
+                    <a href="syntax/SearchNoticeRequest/query-Query/rim-Slot[@name=&#39;ProcedureLegalBasis&#39;]/name/">
+    
     
     
     
@@ -322,6 +323,10 @@
     /
     
     <a href="../../syntax/SearchNoticeRequest/query-Query/rim-Slot[@name=&#39;ProcedureLegalBasis&#39;]/">rim:Slot[@name=&#39;ProcedureLegalBasis&#39;]</a>
+
+    /
+    <a href="../../syntax/SearchNoticeRequest/query-Query/rim-Slot[@name=&#39;ProcedureLegalBasis&#39;]/name/">@name</a>
+    
 </a>
                 </div>
             </dd>

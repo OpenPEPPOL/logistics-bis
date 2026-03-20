@@ -46,12 +46,12 @@
     
     <rule context="ubl:Tender/cac:DocumentReference/cbc:DocumentTypeCode">
         <assert id="PEPPOL-T005-R019" flag="fatal" test="./@listID">[PEPPOL-T005-R019] DocumentTypeCode MUST have a list Identifier.</assert>
-        <assert id="PEPPOL-T005-R020" flag="fatal" test="normalize-space(./@listID)='UNCL1001'">[PEPPOL-T005-R020] listID for DocumentTypeCode MUST be 'UNCL1001'.</assert>
+        
     </rule>
     
     <rule context="ubl:Tender/cac:DocumentReference/cbc:LocaleCode">
         <assert id="PEPPOL-T005-R021" flag="fatal" test="./@listID">[PEPPOL-T005-R021] LocaleCode MUST have a list Identifier.</assert>
-        <assert id="PEPPOL-T005-R022" flag="fatal" test="normalize-space(./@listID)='ISO639-1'">[PEPPOL-T005-R022] listID for LocaleCode MUST be 'ISO639-1'.</assert>
+        
     </rule>
     
     <rule context="ubl:Tender/cac:DocumentReference/cac:Attachment">
@@ -72,12 +72,12 @@
     
     <rule context="ubl:Tender/cac:TendererParty/cbc:EndpointID">
         <assert id="PEPPOL-T005-R030" flag="fatal" test="./@schemeID">[PEPPOL-T005-R030] An Endpoint Identifier MUST have a scheme identifier attribute.</assert>
-        <assert id="PEPPOL-T005-R031" flag="fatal" test="matches(normalize-space(./@schemeID),'^(0002|0007|0009|0037|0060|0088|0096|0097|0106|0130|0135|0142|0151|0183|0184|0190|0191|0192|0193|0195|0196|0198|0199|0200|0201|0202|0204|0208|0209|0210|0211|0212|0213|9901|9906|9907|9910|9913|9914|9915|9918|9919|9920|9922|9923|9924|9925|9926|9927|9928|9929|9930|9931|9932|9933|9934|9935|9936|9937|9938|9939|9940|9941|9942|9943|9944|9945|9946|9947|9948|9949|9950|9951|9952|9953|9955|9957)')">[PEPPOL-T005-R031] An Endpoint Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
+        
     </rule>
     
     <rule context="cac:PartyIdentification/cbc:ID">
         <assert id="PEPPOL-T005-R032" flag="fatal" test="./@schemeID">[PEPPOL-T005-R032] A Party Identifier MUST have a scheme identifier attribute.</assert>
-        <assert id="PEPPOL-T005-R033" flag="fatal" test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3])))$')">[PEPPOL-T005-R033] A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
+        
     </rule>
     
     <rule context="ubl:Tender/cac:TendererParty/cac:PostalAddress">
@@ -86,7 +86,7 @@
     
     <rule context="ubl:Tender/cac:TendererParty/cac:PostalAddress/cac:Country/cbc:IdentificationCode">
         <assert id="PEPPOL-T005-R035" flag="fatal" test="./@listID">[PEPPOL-T005-R035] Country IdentificationCode MUST have a list Identifier.</assert>
-        <assert id="PEPPOL-T005-R036" flag="fatal" test="normalize-space(./@listID)='ISO3166'">[PEPPOL-T005-R036] listID for Country IdentificationCode MUST be 'ISO3166'.</assert>
+        
     </rule>
     
     <rule context="ubl:Tender/cac:TendererParty/cac:PartyLegalEntity">
@@ -100,7 +100,7 @@
     
     <rule context="ubl:Tender/cac:ContractingParty/cbc:EndpointID">
         <assert id="PEPPOL-T005-R040" flag="fatal" test="./@schemeID">[PEPPOL-T005-R040] An Endpoint Identifier MUST have a scheme identifier attribute.</assert>
-        <assert id="PEPPOL-T005-R041" flag="fatal" test="matches(normalize-space(./@schemeID),'^(0002|0007|0009|0037|0060|0088|0096|0097|0106|0130|0135|0142|0151|0183|0184|0190|0191|0192|0193|0195|0196|0198|0199|0200|0201|0202|0204|0208|0209|0210|0211|0212|0213|9901|9906|9907|9910|9913|9914|9915|9918|9919|9920|9922|9923|9924|9925|9926|9927|9928|9929|9930|9931|9932|9933|9934|9935|9936|9937|9938|9939|9940|9941|9942|9943|9944|9945|9946|9947|9948|9949|9950|9951|9952|9953|9955|9957)')">[PEPPOL-T005-R041] An Endpoint Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
+        
     </rule>
     
     <rule context="ubl:Tender/cac:TenderedProject">

@@ -293,21 +293,14 @@
 
     <dl class="dl-horizontal">
         <dt>Message</dt>
-        <dd><p class="lead">Value MUST be part of code list &#39;legalBasisCode&#39;.</p></dd>
+        <dd><p class="lead">Element &#39;rim:SlotValue&#39; MUST be provided.</p></dd>
 
         <dt>Context</dt>
         <dd><code>/query:QueryRequest/query:Query/rim:Slot[@name=&#39;ProcedureLegalBasis&#39;]</code></dd>
 
         <dt>Test</dt>
-        <dd><code>(some $code in $cllegalBasis satisfies $code = normalize-space(text()))</code></dd>
+        <dd><code>rim:SlotValue</code></dd>
 
-        
-            <dt>Code lists</dt>
-            <dd>
-                
-                    <a href="../../codelist/legalBasis/">legalBasisCode</a>
-                
-            </dd>
         
 
         

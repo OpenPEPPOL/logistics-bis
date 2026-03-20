@@ -293,13 +293,13 @@
 
     <dl class="dl-horizontal">
         <dt>Message</dt>
-        <dd><p class="lead">Attribute &#39;name&#39; MUST be present.</p></dd>
+        <dd><p class="lead">Attribute &#39;type&#39; MUST contain value &#39;http://publications.europa.eu/resource/authority/legal-basis&#39;</p></dd>
 
         <dt>Context</dt>
         <dd><code>/query:QueryRequest/query:Query/rim:Slot[@name=&#39;ProcedureLegalBasis&#39;]</code></dd>
 
         <dt>Test</dt>
-        <dd><code>@name</code></dd>
+        <dd><code>not(@type) or @type = &#39;http://publications.europa.eu/resource/authority/legal-basis&#39;</code></dd>
 
         
 
@@ -307,7 +307,8 @@
             <dt>Usage</dt>
             <dd>
                 <div style="margin-bottom: 5pt;">
-                    <a href="syntax/SearchNoticeRequest/query-Query/rim-Slot[@name=&#39;ProcedureLegalBasis&#39;]/">
+                    <a href="syntax/SearchNoticeRequest/query-Query/rim-Slot[@name=&#39;ProcedureLegalBasis&#39;]/type/">
+    
     
     
     
@@ -322,6 +323,10 @@
     /
     
     <a href="../../syntax/SearchNoticeRequest/query-Query/rim-Slot[@name=&#39;ProcedureLegalBasis&#39;]/">rim:Slot[@name=&#39;ProcedureLegalBasis&#39;]</a>
+
+    /
+    <a href="../../syntax/SearchNoticeRequest/query-Query/rim-Slot[@name=&#39;ProcedureLegalBasis&#39;]/type/">@type</a>
+    
 </a>
                 </div>
             </dd>

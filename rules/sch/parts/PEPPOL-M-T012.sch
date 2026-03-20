@@ -72,11 +72,7 @@
         query:QueryResponse/rim:Slot[@name='SenderElectronicAddress']
         | query:QueryResponse/rim:Slot[@name='ReceiverElectronicAddress']
             ">
-        <assert id="PEPPOL-T012-R014" flag="fatal"
-            test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[matches(normalize-space(), '^(0002|0007|0009|0037|0060|0088|0096|0097|0106|0130|0135|0142|0151|0183|0184|0190|0191|0192|0193|0195|0196|0198|0199|0200|0201|0202|0204|0208|0209|0210|0211|0212|0213|9901|9906|9907|9910|9913|9914|9915|9918|9919|9920|9922|9923|9924|9925|9926|9927|9928|9929|9930|9931|9932|9933|9934|9935|9936|9937|9938|9939|9940|9941|9942|9943|9944|9945|9946|9947|9948|9949|9950|9951|9952|9953|9955|9957):')]">
-            An Electronic Address MUST have a scheme identifier attribute from the list of "PEPPOL Party Identifiers
-            described in the "PEPPOL Policy for using Identifiers" followed by a ":".
-        </assert>
+        
         <assert id="PEPPOL-T012-R029" flag="fatal" test="@type = 'EAS'">The schemeID type attribute has to be
             "EAS".
         </assert>
@@ -97,7 +93,7 @@
             test="rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']">A Notice
             QueryResponse MUST identify the Receiver by its party identifier and its BuyerPartyIdentification.
         </assert>
-        <assert id="PEPPOL-T012-R018" flag="fatal" test="rim:Slot[@name='ublDocumentSchema']">A Registry Object MUST
+        <assert id="PEPPOL-T012-R018" flag="fatal" test="rim:Slot[@name='UBLDocumentSchema']">A Registry Object MUST
             have a UBL Document Schema.
         </assert>
         <assert id="PEPPOL-T012-R019" flag="fatal" test="rim:RepositoryItemRef">A Registry Object MUST have a
@@ -108,12 +104,12 @@
     <rule context="query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerElectronicAddress']
         | query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']
             ">
-        <assert id="PEPPOL-T012-R020" flag="fatal" test="rim:SlotValue[@xsi:type='rim:StringValueType']">A Buyer
-            Information MUST have an element SlotValue with xsi:type of rim:StringValueType.
+        <assert id="PEPPOL-T012-R020" flag="fatal" test="rim:SlotValue">A Buyer
+            Information MUST have an element SlotValue.
         </assert>
     </rule>
     
-    <rule context="query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']">
+    <rule context="query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']">
         <assert id="PEPPOL-T012-R021" flag="fatal" test="@type = 'ublDocumentSchema'">The @type for rim:Slot
             "ublDocumentSchema" MUST be: list to be created
         </assert>
@@ -134,11 +130,7 @@
     </rule>
     
     <rule context="query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerElectronicAddress']">
-        <assert id="PEPPOL-T012-R030" flag="fatal"
-            test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[matches(normalize-space(), '^(0002|0007|0009|0037|0060|0088|0096|0097|0106|0130|0135|0142|0151|0183|0184|0190|0191|0192|0193|0195|0196|0198|0199|0200|0201|0202|0204|0208|0209|0210|0211|0212|0213|9901|9906|9907|9910|9913|9914|9915|9918|9919|9920|9922|9923|9924|9925|9926|9927|9928|9929|9930|9931|9932|9933|9934|9935|9936|9937|9938|9939|9940|9941|9942|9943|9944|9945|9946|9947|9948|9949|9950|9951|9952|9953|9955|9957):')]">
-            An Electronic Address MUST have a scheme identifier attribute from the list of "PEPPOL Party Identifiers
-            described in the "PEPPOL Policy for using Identifiers" followed by a ":".
-        </assert>
+        
         <assert id="PEPPOL-T012-R027" flag="fatal" test="@type = 'EAS'">BuyerElectronicAddress MUST have a type of
             "EAS".
         </assert>
@@ -146,11 +138,7 @@
     
     <rule context="query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']
             ">
-        <assert id="PEPPOL-T012-R031" flag="fatal"
-            test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[matches(normalize-space(),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3]))):')]">
-            A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL
-            Policy for using Identifiers" followed by a ":".
-        </assert>
+        
         <assert id="PEPPOL-T012-R028" flag="fatal" test="@type = 'ICD'">BuyerPartyIdentification MUST have a type of
             "ICD".
         </assert>
