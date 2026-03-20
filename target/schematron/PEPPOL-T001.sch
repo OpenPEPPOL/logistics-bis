@@ -517,16 +517,9 @@
                  test="matches(normalize-space(.), '^(([01][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]|(24:00:00))(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00))?$')">[PEPPOL-T001-R030] IssueTime MUST have a granularity of seconds</assert>
       </rule>
       <rule context="ubl:ExpressionOfInterestRequest/cbc:PreferredLanguageLocaleCode">
-        <assert id="PEPPOL-T001-R021"
-                 flag="fatal"
-                 test="matches(normalize-space(.), '^(aa|AA|ab|AB|ae|AE|af|AF|ak|AK|am|AM|an|AN|ar|AR|as|AS|av|AV|ay|AY|az|AZ|ba|BA|be|BE|bg|BG|bh|BH|bi|BI|bm|BM|bn|BN|bo|BO|br|BR|bs|BS|ca|CA|ce|CE|ch|CH|co|CO|cr|CR|cs|CS|cu|CU|cv|CV|cy|CY|da|DA|de|DE|dv|DV|dz|DZ|ee|EE|el|EL|en|EN|eo|EO|es|ES|et|ET|eu|EU|fa|FA|ff|FF|fi|FI|fj|FJ|fo|FO|fr|FR|fy|FY|ga|GA|gd|GD|gl|GL|gn|GN|gu|GU|gv|GV|ha|HA|he|HE|hi|HI|ho|HO|hr|HR|ht|HT|hu|HU|hy|HY|hz|HZ|ia|IA|id|ID|ie|IE|ig|IG|ii|II|ik|IK|io|IO|is|IS|it|IT|iu|IU|ja|JA|jv|JV|ka|KA|kg|KG|ki|KI|kj|KJ|kk|KK|kl|KL|km|KM|kn|KN|ko|KO|kr|KR|ks|KS|ku|KU|kv|KV|kw|KW|ky|KY|la|LA|lb|LB|lg|LG|li|LI|ln|LN|lo|LO|lt|LT|lu|LU|lv|LV|mg|MG|mh|MH|mi|MI|mk|MK|ml|ML|mn|MN|mo|MO|mr|MR|ms|MS|mt|MT|my|MY|na|NA|nb|NB|nd|ND|ne|NE|ng|NG|nl|NL|nn|NN|no|NO|nr|NR|nv|NV|ny|NY|oc|OC|oj|OJ|om|OM|or|OR|os|OS|pa|PA|pi|PI|pl|PL|ps|PS|pt|PT|qu|QU|rm|RM|rn|RN|ro|RO|ru|RU|rw|RW|sa|SA|sc|SC|sd|SD|se|SE|sg|SG|si|SI|sk|SK|sl|SL|sm|SM|sn|SN|so|SO|sq|SQ|sr|SR|ss|SS|st|ST|su|SU|sv|SV|sw|SW|ta|TA|te|TE|tg|TG|th|TH|ti|TI|tk|TK|tl|TL|tn|TN|to|TO|tr|TR|ts|TS|tt|TT|tw|TW|ty|TY|ug|UG|uk|UK|ur|UR|uz|UZ|ve|VE|vi|VI|vo|VO|wa|WA|wo|WO|xh|XH|yi|YI|yo|YO|za|ZA|zh|ZH|zu|ZU)$')">[PEPPOL-T001-R021] PreferredLanguageLocalCode MUST be a valid Language
-            Code.</assert>
-        <assert id="PEPPOL-T001-R022" flag="fatal" test="./@listID">[PEPPOL-T001-R022]
-            PreferredLanguageLocalCode MUST have a list identifier attribute.</assert>
-        <assert id="PEPPOL-T001-R023"
-                 flag="fatal"
-                 test="normalize-space(./@listID) = 'ISO639-1'">[PEPPOL-T001-R023] listID for PreferredLanguageLocaleCode MUST be
-            'ISO639-1'.</assert>
+        
+        
+        
         <report id="PEPPOL-T001-S311"
                  flag="warning"
                  test="./@*[not(name() = 'listID')]">
@@ -606,10 +599,7 @@
                  test="./@*[not(name() = 'schemeID')]">
             <value-of select="$syntaxError"/>[PEPPOL-T001-S319] EndpointID SHOULD NOT
             contain any attributes but schemeID</report>
-        <assert id="PEPPOL-T001-R025"
-                 flag="fatal"
-                 test="matches(normalize-space(./@schemeID),'^(0002|0007|0009|0037|0060|0088|0096|0097|0106|0130|0135|0142|0151|0183|0184|0190|0191|0192|0193|0195|0196|0198|0199|0200|0201|0202|0204|0208|0209|0210|0211|0212|0213|9901|9906|9907|9910|9913|9914|9915|9918|9919|9920|9922|9923|9924|9925|9926|9927|9928|9929|9930|9931|9932|9933|9934|9935|9936|9937|9938|9939|9940|9941|9942|9943|9944|9945|9946|9947|9948|9949|9950|9951|9952|9953|9955|9957)')">[PEPPOL-T001-R025] An Endpoint Identifier Scheme MUST be from the list of PEPPOL
-            Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
+        
       </rule>
       <rule context="cac:Party/cbc:IndustryClassificationCode">
         <assert id="PEPPOL-T001-R026"
@@ -617,12 +607,8 @@
                  test="matches(normalize-space(.), '^(MT|SC|CL|CM|JV|SME|OTH)$')">[PEPPOL-T001-R026]
             IndustryClassification must describe the Tenderer Role using a valid code from the
             according Codelist.</assert>
-        <assert id="PEPPOL-T001-R027" flag="fatal" test="./@listID">[PEPPOL-T001-R027]
-            IndustryClassificationCode MUST have a list identifier attribute.</assert>
-        <assert id="PEPPOL-T001-R028"
-                 flag="fatal"
-                 test="normalize-space(./@listID) = 'TendererRole'">[PEPPOL-T001-R028] listID for
-            IndustryClassificationCode MUST be 'TendererRole'.</assert>
+        
+        
         <report id="PEPPOL-T001-S322"
                  flag="warning"
                  test="./@*[not(name() = 'listID')]">
@@ -638,10 +624,7 @@
             <value-of select="$syntaxError"/>[PEPPOL-T001-S327]
             cac:PartyIdentification/cbc:ID SHOULD NOT contain any attributes but
             schemeID</report>
-        <assert id="PEPPOL-T001-R016"
-                 flag="fatal"
-                 test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3])))$')">[PEPPOL-T001-R016] A Party Identifier Scheme MUST be from the list of PEPPOL Party
-            Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
+        
       </rule>
       <rule context="cac:PostalAddress">
         <assert id="PEPPOL-T001-S328"
@@ -680,16 +663,9 @@
             elements but IdentificationCode.</assert>
       </rule>
       <rule context="cac:Country/cbc:IdentificationCode">
-        <assert id="PEPPOL-T001-R018"
-                 flag="fatal"
-                 test="matches(normalize-space(.), '^(AD|AE|AF|AG|AI|AL|AM|AN|AO|AQ|AR|AS|AT|AU|AW|AX|AZ|BA|BB|BD|BE|BF|BG|BH|BI|BL|BJ|BM|BN|BO|BR|BS|BT|BV|BW|BY|BZ|CA|CC|CD|CF|CG|CH|CI|CK|CL|CM|CN|CO|CR|CU|CV|CX|CY|CZ|DE|DJ|DK|DM|DO|DZ|EC|EE|EG|EH|ER|ES|ET|FI|FJ|FK|FM|FO|FR|GA|GB|GD|GE|GF|GG|GH|GI|GL|GM|GN|GP|GQ|GR|GS|GT|GU|GW|GY|HK|HM|HN|HR|HT|HU|ID|IE|IL|IM|IN|IO|IQ|IR|IS|IT|JE|JM|JO|JP|KE|KG|KH|KI|KM|KN|KP|KR|KW|KY|KZ|LA|LB|LC|LI|LK|LR|LS|LT|LU|LV|LY|MA|MC|MD|ME|MF|MG|MH|MK|ML|MM|MN|MO|MP|MQ|MR|MS|MT|MU|MV|MW|MX|MY|MZ|NA|NC|NE|NF|NG|NI|NL|NO|NP|NR|NU|NZ|OM|PA|PE|PF|PG|PH|PK|PL|PM|PN|PR|PS|PT|PW|PY|QA|RO|RS|RU|RW|SA|SB|SC|SD|SE|SG|SH|SI|SJ|SK|SL|SM|SN|SO|SR|ST|SV|SY|SZ|TC|TD|TF|TG|TH|TJ|TK|TL|TM|TN|TO|TR|TT|TV|TW|TZ|UA|UG|UM|US|UY|UZ|VA|VC|VE|VG|VI|VN|VU|WF|WS|YE|YT|ZA|ZM|ZW)$')">[PEPPOL-T001-R018] A Country Identification Code must be a correct value of the
-            ISO3166-1:Alpha2 Codelist of Countries.</assert>
-        <assert id="PEPPOL-T001-R019" flag="fatal" test="./@listID">[PEPPOL-T001-R019]
-            Country/IdentificationCode MUST have a list identifier attribute.</assert>
-        <assert id="PEPPOL-T001-R020"
-                 flag="fatal"
-                 test="normalize-space(./@listID) = 'ISO3166'">[PEPPOL-T001-R020] List
-            identifier for country code must be "ISO3166-1:Alpha2".</assert>
+        
+        
+        
         <report id="PEPPOL-T001-S335"
                  flag="warning"
                  test="./@*[not(name() = 'listID')]">

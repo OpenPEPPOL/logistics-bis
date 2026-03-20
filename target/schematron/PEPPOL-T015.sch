@@ -44,7 +44,7 @@
             <assert id="PEPPOL-T015-R007" flag="fatal" test="rim:RegistryObjectList">A Publish Notice MUST have a RegistryObjectList.</assert>
         </rule>
 
-        <rule context="           lcm:SubmitObjectsRequest/rim:Slot[@name='SpecificationIdentification']         | lcm:SubmitObjectsRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']         | lcm:SubmitObjectsRequest/rim:Slot[@name='SenderElectronicAddress']         | lcm:SubmitObjectsRequest/rim:Slot[@name='ReceiverElectronicAddress']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='AdditionalDocumentInformation']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='eFormsVersion']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerElectronicAddress']         ">
+        <rule context="           lcm:SubmitObjectsRequest/rim:Slot[@name='SpecificationIdentification']         | lcm:SubmitObjectsRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']         | lcm:SubmitObjectsRequest/rim:Slot[@name='SenderElectronicAddress']         | lcm:SubmitObjectsRequest/rim:Slot[@name='ReceiverElectronicAddress']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='AdditionalDocumentInformation']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='eFormsVersion']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerElectronicAddress']         ">
             <assert id="PEPPOL-T015-R008"
                  flag="fatal"
                  test="rim:SlotValue[@xsi:type='rim:StringValueType']">This SlotValue MUST have a xsi:type rim:StringValueType.</assert>
@@ -63,10 +63,8 @@
         </rule>
 
         <rule context="lcm:SubmitObjectsRequest/rim:Slot[@name='SenderElectronicAddress'] | lcm:SubmitObjectsRequest/rim:Slot[@name='ReceiverElectronicAddress']">
-            <assert id="PEPPOL-T015-R011"
-                 flag="fatal"
-                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[matches(normalize-space(), '^(0002|0007|0009|0037|0060|0088|0096|0097|0106|0130|0135|0142|0151|0183|0184|0190|0191|0192|0193|0195|0196|0198|0199|0200|0201|0202|0204|0208|0209|0210|0211|0212|0213|9901|9906|9907|9910|9913|9914|9915|9918|9919|9920|9922|9923|9924|9925|9926|9927|9928|9929|9930|9931|9932|9933|9934|9935|9936|9937|9938|9939|9940|9941|9942|9943|9944|9945|9946|9947|9948|9949|9950|9951|9952|9953|9955|9957):')]">An Electronic Address MUST have a scheme identifier attribute from the list of "PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers" followed by a ":".</assert>
-            <assert id="PEPPOL-T015-R026" flag="fatal" test="@type = 'EAS'">The schemeID type attribute has to be "EAS".</assert>
+            
+            <assert id="PEPPOL-T015-R026" flag="fatal" test="@type = 'eas'">The schemeID type attribute has to be "eas".</assert>
         </rule>
 
         <rule context="lcm:SubmitObjectsRequest/rim:Slot[@name='PublicationRequested']">
@@ -94,22 +92,18 @@
         </rule>
 
         <rule context="lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']">
-            <assert id="PEPPOL-T015-R042"
-                 flag="fatal"
-                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[matches(normalize-space(),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3]))):')]">A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers" followed by a ":".</assert>
+            
             <assert id="PEPPOL-T015-R017" flag="fatal" test="@type = 'ICD'">The schemeID type attribute has to be "ICD".</assert>
         </rule>
 
         <rule context="lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerElectronicAddress']">
-            <assert id="PEPPOL-T015-R041"
-                 flag="fatal"
-                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[matches(normalize-space(), '^(0002|0007|0009|0037|0060|0088|0096|0097|0106|0130|0135|0142|0151|0183|0184|0190|0191|0192|0193|0195|0196|0198|0199|0200|0201|0202|0204|0208|0209|0210|0211|0212|0213|9901|9906|9907|9910|9913|9914|9915|9918|9919|9920|9922|9923|9924|9925|9926|9927|9928|9929|9930|9931|9932|9933|9934|9935|9936|9937|9938|9939|9940|9941|9942|9943|9944|9945|9946|9947|9948|9949|9950|9951|9952|9953|9955|9957):')]">An Electronic Address MUST have a scheme identifier attribute from the list of "PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers" followed by a ":".</assert>
-            <assert id="PEPPOL-T015-R014" flag="fatal" test="@type = 'EAS'">The schemeID type attribute has to be "EAS".</assert>
+            
+            <assert id="PEPPOL-T015-R014" flag="fatal" test="@type = 'eas'">The schemeID type attribute has to be "eas".</assert>
         </rule>
 
         <rule context="lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']">
             <assert id="PEPPOL-T015-R018" flag="fatal" test="count(rim:Slot) &gt; 0">At least one element for Buyer Information MUST be given.</assert>
-            <assert id="PEPPOL-T015-R019" flag="fatal" test="count(rim:Slot) &lt; 4">There MUST NOT be more than 3 elements for Buyer Information.</assert>
+            <assert id="PEPPOL-T015-R019" flag="fatal" test="count(rim:Slot) &lt; 5">There MUST NOT be more than 4 elements for Buyer Information.</assert>
             <assert id="PEPPOL-T015-R023"
                  flag="fatal"
                  test="count(rim:Slot[@name='BuyerPartyIdentification']) &lt; 2">The rim:Slot name "BuyerPartyIdentification" can only be used once.</assert>
@@ -121,7 +115,7 @@
         <rule context="lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot">
             <assert id="PEPPOL-T015-R025"
                  flag="fatal"
-                 test="@name = 'BuyerPartyIdentification' or @name = 'BuyerElectronicAddress'">The name of the slots under Buyer Information MUST be either "BuyerPartyIdentification" or "BuyerElectronicAddress".</assert>
+                 test="@name = 'BuyerPartyIdentification' or @name = 'BuyerElectronicAddress' or @name = 'AdditionalDocumentReference'">The name of the slots under Buyer Information MUST be either "BuyerPartyIdentification", "BuyerElectronicAddress" or "AdditionalDocumentReference".</assert>
         </rule>
 
         <rule context="             lcm:SubmitObjectsRequest/rim:Slot[@name='IssueDateTime']/rim:SlotValue">
