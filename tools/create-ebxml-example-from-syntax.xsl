@@ -169,10 +169,13 @@
 
 	<xsl:function name="f:slot-name" as="xs:string">
 		<xsl:param name="element" as="element(s:Element)"/>
-		<xsl:sequence select="normalize-space((
-			$element/ancestor::s:Element[starts-with(normalize-space(s:Term), 'rim:Slot')][1]/s:Attribute[normalize-space(s:Term) = 'name']/s:Value[@type = 'FIXED'][1],
+		<xsl:variable name="slot" select="$element/ancestor::s:Element[f:base-term(normalize-space(s:Term)) = 'rim:Slot'][1]"/>
+		<xsl:variable name="fromNameAttribute" select="normalize-space((
+			$slot/s:Attribute[normalize-space(s:Term) = 'name']/s:Value[@type = 'FIXED'][1],
 			''
 		)[1])"/>
+		<xsl:variable name="fromTermPredicate" select="if ($slot and $fromNameAttribute = '' and f:predicate-attribute-name(normalize-space($slot/s:Term)) = 'name') then f:predicate-attribute-value(normalize-space($slot/s:Term)) else ''"/>
+		<xsl:sequence select="if ($fromNameAttribute != '') then $fromNameAttribute else $fromTermPredicate"/>
 	</xsl:function>
 
 	<xsl:function name="f:attribute-value" as="xs:string">
