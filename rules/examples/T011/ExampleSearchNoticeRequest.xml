@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <query:QueryRequest
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
-        xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
-        startIndex="0"
-        maxResults="-1"
-        id="5700fad9-8e19-4411-b2f2-313559c8f6ed">
-    <!-- tag::specification-identification[] -->
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+    xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
+    startIndex="0"
+    maxResults="-1"
+    id="5700fad9-8e19-4411-b2f2-313559c8f6ed"> > <!-- tag::specification-identification[] -->
     <rim:Slot name="SpecificationIdentification"> <!--.-->
         <rim:SlotValue xsi:type="rim:StringValueType">
             <rim:Value>urn:fdc:peppol.eu:prac:trns:t011:1</rim:Value> <!--.-->
@@ -14,36 +13,41 @@
     </rim:Slot>
     <!-- end::specification-identification[] -->
     <!-- tag::business-process-type-identifier[] -->
-    <rim:Slot name="BusinessProcessTypeIdentifier"> <!--.-->
+    <rim:Slot
+        name="BusinessProcessTypeIdentifier"> <!--.-->
         <rim:SlotValue xsi:type="rim:StringValueType">
             <rim:Value>urn:fdc:peppol.eu:prac:bis:p006</rim:Value> <!--.-->
         </rim:SlotValue>
     </rim:Slot>
     <!-- end::business-process-type-identifier[] -->
     <!-- tag::issue-date-time[] -->
-    <rim:Slot name="IssueDateTime"> <!--.-->
+    <rim:Slot
+        name="IssueDateTime"> <!--.-->
         <rim:SlotValue xsi:type="rim:DateTimeValueType"> <!--.-->
             <rim:Value>2021-02-05T09:28:00Z</rim:Value>
         </rim:SlotValue>
     </rim:Slot>
     <!-- end::issue-date-time[] -->
     <!-- tag::sender-electronic-address[] -->
-    <rim:Slot name="SenderElectronicAddress" type="eas"> <!--.-->
+    <rim:Slot
+        name="SenderElectronicAddress" type="EAS"> <!--.-->
         <rim:SlotValue xsi:type="rim:StringValueType">
-            <rim:Value>9946</rim:Value> <!--.-->
+            <rim:Value>9946:500820007</rim:Value> <!--.-->
         </rim:SlotValue>
     </rim:Slot>
     <!-- end::sender-electronic-address[] -->
     <!-- tag::receiver-electronic-address[] -->
-    <rim:Slot name="ReceiverElectronicAddress" type="eas"> <!--.-->
+    <rim:Slot
+        name="ReceiverElectronicAddress" type="EAS"> <!--.-->
         <rim:SlotValue xsi:type="rim:StringValueType">
-            <rim:Value>9930</rim:Value> <!--.-->
+            <rim:Value>9930:DE122268496</rim:Value> <!--.-->
         </rim:SlotValue>
     </rim:Slot>
     <!-- end::receiver-electronic-address[] -->
 
     <!-- tag::response-option[] -->
-    <query:ResponseOption returnType="LeafClassWithRepositoryItem"/> <!--.-->
+    <query:ResponseOption
+        returnType="LeafClassWithRepositoryItem" /> <!--.-->
     <!-- end::response-option[] -->
 
     <!-- tag::queryDefinition[] -->
@@ -66,7 +70,8 @@
         </rim:Slot>
         <!-- end::form-type[] -->
         <!-- tag::notice-type[] -->
-        <rim:Slot name="NoticeType" type="http://publications.europa.eu/resource/authority/notice-type"> <!--.-->
+        <rim:Slot name="NoticeType"
+            type="http://publications.europa.eu/resource/authority/notice-type"> <!--.-->
             <rim:SlotValue xsi:type="rim:CollectionValueType">
                 <rim:Element xsi:type="rim:StringValueType">
                     <rim:Value>cn-social</rim:Value> <!--.-->
@@ -75,7 +80,8 @@
         </rim:Slot>
         <!-- end::notice-type[] -->
         <!-- tag::classification[] -->
-        <rim:Slot name="Classification" type="http://publications.europa.eu/resource/authority/cpv/cpv"> <!--.-->
+        <rim:Slot name="Classification"
+            type="http://publications.europa.eu/resource/authority/cpv/cpv"> <!--.-->
             <rim:SlotValue xsi:type="rim:CollectionValueType">
                 <rim:Element xsi:type="rim:StringValueType">
                     <rim:Value>03111400-6</rim:Value>
@@ -85,7 +91,8 @@
                 </rim:Element>
             </rim:SlotValue>
         </rim:Slot>
-        <rim:Slot name="Classification" type="http://publications.europa.eu/resource/authority/cpv/cpvsuppl"> <!--.-->
+        <rim:Slot name="Classification"
+            type="http://publications.europa.eu/resource/authority/cpv/cpvsuppl"> <!--.-->
             <rim:SlotValue xsi:type="rim:CollectionValueType">
                 <rim:Element xsi:type="rim:StringValueType">
                     <rim:Value>AA08</rim:Value>
@@ -98,7 +105,7 @@
         <!-- end::classification[] -->
         <!-- tag::contract-nature[] -->
         <rim:Slot name="ContractNature"
-                  type="http://publications.europa.eu/resource/authority/contract-nature"> <!--.-->
+            type="http://publications.europa.eu/resource/authority/contract-nature"> <!--.-->
             <rim:SlotValue xsi:type="rim:CollectionValueType"> <!--.-->
                 <rim:Element xsi:type="rim:StringValueType"> <!--.-->
                     <rim:Value>supplies</rim:Value> <!--.-->
@@ -110,7 +117,8 @@
         </rim:Slot>
         <!-- end::contract-nature[] -->
         <!-- tag::place-of-performance[] -->
-        <rim:Slot name="PlaceOfPerformance" type="http://publications.europa.eu/resource/authority/nuts"> <!--.-->
+        <rim:Slot name="PlaceOfPerformance"
+            type="http://publications.europa.eu/resource/authority/nuts"> <!--.-->
             <rim:SlotValue xsi:type="rim:CollectionValueType">
                 <rim:Element xsi:type="rim:StringValueType">
                     <rim:Value>IE063</rim:Value> <!--.-->
@@ -130,7 +138,8 @@
                     <rim:Value>100000</rim:Value>
                 </rim:SlotValue>
             </rim:Slot>
-            <rim:Slot name="Currency" type="http://publications.europa.eu/resource/authority/currency"> <!--.-->
+            <rim:Slot name="Currency"
+                type="http://publications.europa.eu/resource/authority/currency"> <!--.-->
                 <rim:SlotValue xsi:type="rim:CollectionValueType">
                     <rim:Element xsi:type="rim:StringValueType">
                         <rim:Value>EUR</rim:Value>
@@ -141,7 +150,7 @@
         <!-- end::estimatedValue[] -->
         <!-- tag::procedure-type[] -->
         <rim:Slot name="ProcedureType"
-                  type="http://publications.europa.eu/resource/authority/procurement-procedure-type">
+            type="http://publications.europa.eu/resource/authority/procurement-procedure-type">
             <rim:SlotValue xsi:type="rim:CollectionValueType">
                 <rim:Element xsi:type="rim:StringValueType">
                     <rim:Value>neg-wo-call</rim:Value> <!--.-->
@@ -151,7 +160,7 @@
         <!-- end::procedure-type[] -->
         <!-- tag::submission-language[] -->
         <rim:Slot name="SubmissionLanguage"
-                  type="http://publications.europa.eu/resource/authority/language">
+            type="http://publications.europa.eu/resource/authority/language">
             <rim:SlotValue xsi:type="rim:CollectionValueType">
                 <rim:Element xsi:type="rim:StringValueType">
                     <rim:Value>ENG</rim:Value> <!--.-->
@@ -234,7 +243,8 @@
         </rim:Slot>
         <!-- end::procedure-identifier[] -->
         <!-- tag::procedure-legal-basis[] -->
-        <rim:Slot name="ProcedureLegalBasis" type="http://publications.europa.eu/resource/authority/legal-basis"> <!-- optional -->
+        <rim:Slot name="ProcedureLegalBasis"
+            type="http://publications.europa.eu/resource/authority/legal-basis"> <!-- optional -->
             <rim:SlotValue xsi:type="rim:CollectionValueType">
                 <rim:Element xsi:type="rim:StringValueType">
                     <rim:Value>32014L0023</rim:Value> <!--.-->
@@ -244,7 +254,7 @@
         <!-- end::procedure-legal-basis[] -->
         <!-- tag::reserved-participation[] -->
         <rim:Slot name="ReservedParticipation"
-                  type="http://publications.europa.eu/resource/authority/reserved-procurement">
+            type="http://publications.europa.eu/resource/authority/reserved-procurement">
             <rim:SlotValue xsi:type="rim:CollectionValueType">
                 <rim:Element xsi:type="rim:StringValueType">
                     <rim:Value>res-ws</rim:Value> <!--.-->
@@ -271,12 +281,12 @@
         <!-- end::winner-economic-operator-name[] -->
         <!-- tag::award-criterion-type[] -->
         <rim:Slot name="AwardCriterionType"
-                  type="http://publications.europa.eu/resource/authority/award-criterion-type">
+            type="http://publications.europa.eu/resource/authority/award-criterion-type">
             <rim:SlotValue xsi:type="rim:CollectionValueType">
-                <rim:Element xsi:type="rim:StringValueType" type="xsi:StringValueType">
+                <rim:Element xsi:type="rim:StringValueType">
                     <rim:Value>quality</rim:Value> <!--.-->
                 </rim:Element>
-                <rim:Element xsi:type="rim:StringValueType" type="xsi:StringValueType">
+                <rim:Element xsi:type="rim:StringValueType">
                     <rim:Value>price</rim:Value>
                 </rim:Element>
             </rim:SlotValue>
@@ -305,7 +315,7 @@
                 </rim:SlotValue>
             </rim:Slot>
             <rim:Slot name="OrganizationCountrySubdivision"
-                      type="http://publications.europa.eu/resource/authority/nuts"> <!--.-->
+                type="http://publications.europa.eu/resource/authority/nuts"> <!--.-->
                 <rim:SlotValue xsi:type="rim:CollectionValueType">
                     <rim:Element xsi:type="rim:StringValueType">
                         <rim:Value>IE063</rim:Value>
@@ -318,7 +328,8 @@
                     </rim:Element>
                 </rim:SlotValue>
             </rim:Slot>
-            <rim:Slot name="CountryCode" type="http://publications.europa.eu/resource/authority/country"> <!--.-->
+            <rim:Slot name="CountryCode"
+                type="http://publications.europa.eu/resource/authority/country"> <!--.-->
                 <rim:SlotValue xsi:type="rim:CollectionValueType">
                     <rim:Element xsi:type="rim:StringValueType">
                         <rim:Value>DNK</rim:Value>
@@ -329,7 +340,7 @@
                 </rim:SlotValue>
             </rim:Slot>
             <rim:Slot name="LegalType"
-                      type="http://publications.europa.eu/resource/authority/buyer-legal-type"> <!--.-->
+                type="http://publications.europa.eu/resource/authority/buyer-legal-type"> <!--.-->
                 <rim:SlotValue xsi:type="rim:CollectionValueType">
                     <rim:Element xsi:type="rim:StringValueType">
                         <rim:Value>org-sub</rim:Value>
@@ -339,8 +350,8 @@
                     </rim:Element>
                 </rim:SlotValue>
             </rim:Slot>
-            <rim:Slot name="MainActivity" MainActivity="MainActivity"
-                      type="http://publications.europa.eu/resource/authority/main-activity"> <!--.-->
+            <rim:Slot name="MainActivity"
+                type="http://publications.europa.eu/resource/authority/main-activity"> <!--.-->
                 <rim:SlotValue xsi:type="rim:CollectionValueType">
                     <rim:Element xsi:type="rim:StringValueType">
                         <rim:Value>defence</rim:Value>
@@ -359,14 +370,15 @@
                 </rim:SlotValue>
             </rim:Slot>
             <rim:Slot name="OrganizationCountrySubdivision"
-                      type="http://publications.europa.eu/resource/authority/nuts">
+                type="http://publications.europa.eu/resource/authority/nuts">
                 <rim:SlotValue xsi:type="rim:CollectionValueType">
                     <rim:Element xsi:type="rim:StringValueType">
                         <rim:Value>DEG0L</rim:Value>
                     </rim:Element>
                 </rim:SlotValue>
             </rim:Slot>
-            <rim:Slot name="CountryCode" type="http://publications.europa.eu/resource/authority/country">
+            <rim:Slot name="CountryCode"
+                type="http://publications.europa.eu/resource/authority/country">
                 <rim:SlotValue xsi:type="rim:CollectionValueType">
                     <rim:Element xsi:type="rim:StringValueType">
                         <rim:Value>FRA</rim:Value>
@@ -374,7 +386,7 @@
                 </rim:SlotValue>
             </rim:Slot>
             <rim:Slot name="LegalType"
-                      type="http://publications.europa.eu/resource/authority/buyer-legal-type">
+                type="http://publications.europa.eu/resource/authority/buyer-legal-type">
                 <rim:SlotValue xsi:type="rim:CollectionValueType">
                     <rim:Element xsi:type="rim:StringValueType">
                         <rim:Value>org-sub</rim:Value>
@@ -384,8 +396,8 @@
                     </rim:Element>
                 </rim:SlotValue>
             </rim:Slot>
-            <rim:Slot name="MainActivity" MainActivity="MainActivity"
-                      type="http://publications.europa.eu/resource/authority/main-activity">
+            <rim:Slot name="MainActivity"
+                type="http://publications.europa.eu/resource/authority/main-activity">
                 <rim:SlotValue xsi:type="rim:CollectionValueType">
                     <rim:Element xsi:type="rim:StringValueType">
                         <rim:Value>water</rim:Value>
