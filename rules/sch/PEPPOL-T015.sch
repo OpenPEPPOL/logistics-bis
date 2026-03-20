@@ -13,7 +13,6 @@
     <ns uri="utils" prefix="u"/>
 
     <!-- Rules -->
-    <include href="parts/common/empty-elements.sch"/>
     <include href="parts/PEPPOL-M-T015.sch"/>
 
 </schema>
