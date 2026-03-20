@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<query:QueryResponse xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
+                     xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                     totalResultCount="sample"
+                     startIndex="0"
+                     requestId="00000030-0030-4000-8000-000000000030">
+   <rim:Slot name="SpecificationIdentification">
+      <rim:SlotValue xsi:type="rim:StringValueType">
+         <rim:Value>urn:fdc:peppol.eu:prac:trns:t012:1</rim:Value>
+      </rim:SlotValue>
+   </rim:Slot>
+   <rim:Slot name="BusinessProcessTypeIdentifier">
+      <rim:SlotValue xsi:type="rim:StringValueType">
+         <rim:Value>urn:fdc:peppol.eu:prac:bis:p006</rim:Value>
+      </rim:SlotValue>
+   </rim:Slot>
+   <rim:Slot name="IssueDateTime">
+      <rim:SlotValue xsi:type="rim:DateTimeValueType">
+         <rim:Value>2026-03-06T10:00:00Z</rim:Value>
+      </rim:SlotValue>
+   </rim:Slot>
+   <rim:Slot name="SenderElectronicAddress" type="eas">
+      <rim:SlotValue xsi:type="rim:StringValueType">
+         <rim:Value>9930</rim:Value>
+      </rim:SlotValue>
+   </rim:Slot>
+   <rim:Slot name="ReceiverElectronicAddress" type="eas">
+      <rim:SlotValue xsi:type="rim:StringValueType">
+         <rim:Value>9946</rim:Value>
+      </rim:SlotValue>
+   </rim:Slot>
+   <rim:RegistryObjectList>
+      <rim:RegistryObject lid="00000143-0143-4000-8000-000000000143"
+                          id="00000148-0148-4000-8000-000000000148"
+                          xsi:type="rim:ExtrinsicObjectType">
+         <rim:Slot name="BuyerInformation">
+            <rim:Slot name="BuyerPartyIdentification" type="ICD">
+               <rim:SlotValue xsi:type="rim:CollectionValueType">
+                  <rim:Element xsi:type="rim:StringValueType">
+                     <rim:Value>0204</rim:Value>
+                  </rim:Element>
+               </rim:SlotValue>
+            </rim:Slot>
+            <rim:Slot name="BuyerElectronicAddress" type="eas">
+               <rim:SlotValue xsi:type="rim:StringValueType">
+                  <rim:Value>9930</rim:Value>
+               </rim:SlotValue>
+            </rim:Slot>
+         </rim:Slot>
+         <rim:Slot name="UBLDocumentSchema" type="ublDocumentSchema">
+            <rim:SlotValue xsi:type="rim:StringValueType">
+               <rim:Value>Example</rim:Value>
+            </rim:SlotValue>
+         </rim:Slot>
+         <rim:Slot name="eFormsVersion">
+            <rim:SlotValue xsi:type="rim:StringValueType">
+               <rim:Value>Example</rim:Value>
+            </rim:SlotValue>
+         </rim:Slot>
+         <rim:RepositoryItemRef xlink="./00000148-0148-4000-8000-000000000148.eform.xml"
+                                xlink:href="./00000148-0148-4000-8000-000000000148.eform.xml"/>
+      </rim:RegistryObject>
+   </rim:RegistryObjectList>
+</query:QueryResponse>
