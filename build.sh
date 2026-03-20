@@ -98,6 +98,14 @@ for sch in $PROJECT/rules/sch/*.sch; do
     docker run --rm -i -v $PROJECT:/src -v $PROJECT/target/schematron:/target klakegg/schematron prepare /src/rules/sch/$(basename $sch) /target/$(basename $sch)
 done
 
+# Remove selected generated schematron files not intended for distribution
+docker run --rm -i -v $PROJECT:/src alpine:3.6 rm -f \
+  /src/target/generated/T011-basic.sch \
+  /src/target/generated/T012-basic.sch \
+  /src/target/generated/T015-basic.sch
+
+
+
 # Removing old zip files and creating new ones
 docker run --rm -i \
   -v $PROJECT/target/site/files:/files \
