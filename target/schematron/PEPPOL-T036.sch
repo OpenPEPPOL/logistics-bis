@@ -1400,7 +1400,7 @@
         <assert id="PEPPOL-T036-R007"
                  test="($CatalogueLineValidityStart &gt;= $CatalogueValidityStart) and ($CatalogueLineValidityStart &lt;= $CatalogueValidityEnd)              and ($CatalogueLineValidityEnd &lt;= $CatalogueValidityEnd) and ($CatalogueLineValidityEnd &gt;= $CatalogueValidityStart)"
                  flag="fatal">Catalogue line validity period SHALL be within the range of the whole catalogue validity period</assert>
-        <assert id="PEPPOL-T036-R013"
+        <assert id="PEPPOL-T036-R019"
                  test="($CatalogueLineValidityStart &lt;= $CatalogueLineValidityEnd)"
                  flag="fatal">A line validity period end date SHALL be later or equal to the line validity period start date
         </assert>
