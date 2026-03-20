@@ -216,7 +216,7 @@
     
     <rule context="ubl:CallForTenders/cac:TenderingProcess/cbc:ProcedureCode">
         <report id="PEPPOL-T004-S371" flag="warning" test="./@*[not(name()='listID')]"><value-of select="$syntaxError"/>[PEPPOL-T004-S371] ProcedureCode SHOULD NOT have any attributes but listID.</report>
-        <assert id="PEPPOL-T004-R037" flag="fatal" test="(cbc:ProcedureCode = '1' and not(exists(cac:ParticipationRequestReceptionPeriod))) or (cbc:ProcedureCode!='1')">[PEPPOL-T004-R037] Participation Request Reception Period MUST not be given for proceduretypes without participation contest.</assert>
+        <assert id="PEPPOL-T004-R040" flag="fatal" test="(cbc:ProcedureCode = '1' and not(exists(cac:ParticipationRequestReceptionPeriod))) or (cbc:ProcedureCode!='1')">[PEPPOL-T004-R040] Participation Request Reception Period MUST not be given for proceduretypes without participation contest.</assert>
     </rule>
     
     <rule context="ubl:CallForTenders/cac:TenderingProcess/cbc:ContractingSystemCode">
