@@ -5,7 +5,7 @@
     xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
     startIndex="0"
     maxResults="-1"
-    id="5700fad9-8e19-4411-b2f2-313559c8f6ed"> > <!-- tag::specification-identification[] -->
+    id="5700fad9-8e19-4411-b2f2-313559c8f6ed"> <!-- tag::specification-identification[] -->
     <rim:Slot name="SpecificationIdentification"> <!--.-->
         <rim:SlotValue xsi:type="rim:StringValueType">
             <rim:Value>urn:fdc:peppol.eu:prac:trns:t011:1</rim:Value> <!--.-->
@@ -30,17 +30,17 @@
     <!-- end::issue-date-time[] -->
     <!-- tag::sender-electronic-address[] -->
     <rim:Slot
-        name="SenderElectronicAddress" type="EAS"> <!--.-->
+        name="SenderElectronicAddress" type="eas"> <!--.-->
         <rim:SlotValue xsi:type="rim:StringValueType">
-            <rim:Value>9946:500820007</rim:Value> <!--.-->
+            <rim:Value>9930</rim:Value> <!--.-->
         </rim:SlotValue>
     </rim:Slot>
     <!-- end::sender-electronic-address[] -->
     <!-- tag::receiver-electronic-address[] -->
     <rim:Slot
-        name="ReceiverElectronicAddress" type="EAS"> <!--.-->
+        name="ReceiverElectronicAddress" type="eas"> <!--.-->
         <rim:SlotValue xsi:type="rim:StringValueType">
-            <rim:Value>9930:DE122268496</rim:Value> <!--.-->
+            <rim:Value>9946</rim:Value> <!--.-->
         </rim:SlotValue>
     </rim:Slot>
     <!-- end::receiver-electronic-address[] -->
@@ -283,10 +283,10 @@
         <rim:Slot name="AwardCriterionType"
             type="http://publications.europa.eu/resource/authority/award-criterion-type">
             <rim:SlotValue xsi:type="rim:CollectionValueType">
-                <rim:Element xsi:type="rim:StringValueType">
+                <rim:Element xsi:type="rim:StringValueType" type="xsi:StringValueType">
                     <rim:Value>quality</rim:Value> <!--.-->
                 </rim:Element>
-                <rim:Element xsi:type="rim:StringValueType">
+                <rim:Element xsi:type="rim:StringValueType" type="xsi:StringValueType">
                     <rim:Value>price</rim:Value>
                 </rim:Element>
             </rim:SlotValue>
@@ -350,7 +350,7 @@
                     </rim:Element>
                 </rim:SlotValue>
             </rim:Slot>
-            <rim:Slot name="MainActivity"
+            <rim:Slot name="MainActivity" MainActivity="MainActivity"
                 type="http://publications.europa.eu/resource/authority/main-activity"> <!--.-->
                 <rim:SlotValue xsi:type="rim:CollectionValueType">
                     <rim:Element xsi:type="rim:StringValueType">
@@ -396,7 +396,7 @@
                     </rim:Element>
                 </rim:SlotValue>
             </rim:Slot>
-            <rim:Slot name="MainActivity"
+            <rim:Slot name="MainActivity" MainActivity="MainActivity"
                 type="http://publications.europa.eu/resource/authority/main-activity">
                 <rim:SlotValue xsi:type="rim:CollectionValueType">
                     <rim:Element xsi:type="rim:StringValueType">

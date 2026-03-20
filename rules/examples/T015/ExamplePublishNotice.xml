@@ -30,16 +30,16 @@
     </rim:Slot>
     <!-- end::issue-date-time[] -->
     <!-- tag::sender-electronic-address[] -->
-    <rim:Slot name="SenderElectronicAddress" type="EAS"> <!--.-->
+    <rim:Slot name="SenderElectronicAddress" type="eas"> <!--.-->
         <rim:SlotValue xsi:type="rim:StringValueType"> <!--.-->
-            <rim:Value>9930:DE122268496</rim:Value> <!--.-->
+            <rim:Value>9930</rim:Value> <!--.-->
         </rim:SlotValue>
     </rim:Slot>
     <!-- end::sender-electronic-address[] -->
     <!-- tag::receiver-electronic-address[] -->
-    <rim:Slot name="ReceiverElectronicAddress" type="EAS"> <!--.-->
+    <rim:Slot name="ReceiverElectronicAddress" type="eas"> <!--.-->
         <rim:SlotValue xsi:type="rim:StringValueType"> <!--.-->
-            <rim:Value>9946:500820007</rim:Value> <!--.-->
+            <rim:Value>9946</rim:Value> <!--.-->
         </rim:SlotValue>
     </rim:Slot>
     <!-- end::receiver-electronic-address[] -->
@@ -47,6 +47,11 @@
     <rim:Slot name="PublicationRequested"> <!--.-->
         <rim:SlotValue xsi:type="rim:BooleanValueType"> <!--.-->
             <rim:Value>true</rim:Value>
+        </rim:SlotValue>
+    </rim:Slot>
+    <rim:Slot name="NoticePublicationDatePreferred">
+        <rim:SlotValue xsi:type="rim:DateTimeValueType">
+            <rim:Value>2020-02-14T19:20:30+01:00</rim:Value>
         </rim:SlotValue>
     </rim:Slot>
     <!-- end::publication-requested[] -->
@@ -77,6 +82,11 @@
                 </rim:SlotValue>
             </rim:Slot>
             <!-- end::notice-version[] -->
+            <rim:Slot name="CustomizationID">
+                <rim:SlotValue xsi:type="rim:StringValueType">
+                    <rim:Value>urn:fdc:peppol.eu:prac:trns:t015:1</rim:Value>
+                </rim:SlotValue>
+            </rim:Slot>
             <!-- tag::eforms-version[] -->
             <rim:Slot name="eFormsVersion"> <!--.-->
                 <rim:SlotValue xsi:type="rim:StringValueType"> <!--.-->
@@ -88,33 +98,35 @@
             <rim:Slot name="BuyerInformation">
                 <!-- tag::buyer-party-identification[] -->
                 <rim:Slot name="BuyerPartyIdentification" type="ICD"> <!--.-->
-                    <rim:SlotValue xsi:type="rim:StringValueType"> <!--.-->
-                        <rim:Value>0204:991-1234512345-06</rim:Value>
+                    <rim:SlotValue xsi:type="rim:CollectionValueType"> <!--.-->
+                        <rim:Element xsi:type="rim:StringValueType">
+                            <rim:Value>0204</rim:Value>
+                        </rim:Element>
                     </rim:SlotValue>
                 </rim:Slot>
                 <!-- end::buyer-party-identification[] -->
                 <!-- tag::buyer-electronic-address[] -->
-                <rim:Slot name="BuyerElectronicAddress" type="EAS"> <!--.-->
+                <rim:Slot name="BuyerElectronicAddress" type="eas"> <!--.-->
                     <rim:SlotValue xsi:type="rim:StringValueType"> <!--.-->
-                        <rim:Value>9946:500820007</rim:Value> <!--.-->
+                        <rim:Value>9946</rim:Value> <!--.-->
                     </rim:SlotValue>
                 </rim:Slot>
                 <!-- end::buyer-electronic-address[] -->
+                <!-- tag::additional-document-reference[] -->
+                <rim:Slot name="AdditionalDocumentReference" type="SomeStatistics"> <!--.-->
+                    <rim:SlotValue xsi:type="rim:StringValueType">
+                        <rim:Value>./12f5017b-e5fa-404b-bfa1-849c721b2c83.eform.xml</rim:Value> <!--.-->
+                    </rim:SlotValue>
+                </rim:Slot>
+                <rim:Slot name="AdditionalDocumentReference" type="EvenMoreStats"> <!--.-->
+                    <rim:SlotValue xsi:type="rim:StringValueType">
+                        <rim:Value>./d2c79a1a-af4c-409f-b4c5-f2460e32cfb8.eform.xml</rim:Value>
+                    </rim:SlotValue>
+                </rim:Slot>
+                <!-- end::additional-document-reference[] -->
             </rim:Slot>
             <!-- end::information-about-buyer[] -->
-            <!-- tag::additional-document-reference[] -->
-            <rim:Slot name="AdditionalDocumentReference" type="SomeStatistics"> <!--.-->
-                <rim:SlotValue xsi:type="rim:StringValueType">
-                    <rim:Value>./12f5017b-e5fa-404b-bfa1-849c721b2c83.eform.xml</rim:Value> <!--.-->
-                </rim:SlotValue>
-            </rim:Slot>
-            <rim:Slot name="AdditionalDocumentReference" type="EvenMoreStats"> <!--.-->
-                <rim:SlotValue xsi:type="rim:StringValueType">
-                    <rim:Value>./d2c79a1a-af4c-409f-b4c5-f2460e32cfb8.eform.xml</rim:Value>
-                </rim:SlotValue>
-            </rim:Slot>
-            <!-- end::additional-document-reference[] -->
-            <rim:RepositoryItemRef xlink:href="./53EB9F20-EE12-474F-9424-78FC604E8FAE.eform.xml" /> <!--.-->
+            <rim:RepositoryItemRef xlink="./53EB9F20-EE12-474F-9424-78FC604E8FAE.eform.xml" xlink:href="./53EB9F20-EE12-474F-9424-78FC604E8FAE.eform.xml" /> <!--.-->
         </rim:RegistryObject>
     </rim:RegistryObjectList>
     <!-- end::registry-object-list[] -->

@@ -62,6 +62,9 @@
 		<xsl:if test="not(starts-with($occurs, '0..')) or s:Value[@type = 'FIXED' or @type = 'EXAMPLE'] or s:Element">
 			<xsl:element name="{$prefix}:{$local}" namespace="{$uri}">
 				<xsl:apply-templates select="s:Attribute" mode="emit-attribute"/>
+				<xsl:if test="$local = 'Element' and empty(s:Attribute[normalize-space(s:Term) = 'xsi:type']) and parent::s:Element[normalize-space(s:Term) = 'rim:SlotValue'][s:Attribute[normalize-space(s:Term) = 'xsi:type']/s:Value[normalize-space(.) = 'rim:CollectionValueType']]">
+					<xsl:attribute name="xsi:type" namespace="http://www.w3.org/2001/XMLSchema-instance" select="'rim:StringValueType'"/>
+				</xsl:if>
 				<xsl:if test="$predicateAttributeName != '' and empty(s:Attribute[normalize-space(s:Term) = $predicateAttributeName])">
 					<xsl:attribute name="{$predicateAttributeName}" select="$predicateAttributeValue"/>
 				</xsl:if>
@@ -147,6 +150,7 @@
 		<xsl:variable name="fixed" select="normalize-space(($element/s:Value[@type = 'FIXED'][1], '')[1])"/>
 		<xsl:variable name="example" select="normalize-space(($element/s:Value[@type = 'EXAMPLE'][1], '')[1])"/>
 		<xsl:variable name="default" select="normalize-space(($element/s:Value[@type = 'DEFAULT'][1], '')[1])"/>
+		<xsl:variable name="slotName" select="f:slot-name($element)"/>
 		<xsl:variable name="dataType" select="normalize-space((
 			$element/s:DataType[1],
 			$element/parent::s:Element[normalize-space(s:Term) = 'rim:SlotValue']/s:Attribute[normalize-space(s:Term) = 'xsi:type']/s:Value[1],
@@ -154,10 +158,21 @@
 		)[1])"/>
 		<xsl:sequence select="
 			if ($fixed != '') then $fixed
+			else if ($slotName = 'eFormsVersion') then 'eforms-sdk-1.2'
+			else if ($slotName = 'UBLDocumentSchema') then 'CN'
+			else if ($slotName = 'ProcedureLegalBasis') then '32014L0023'
 			else if ($example != '') then f:normalize-example($example, $element)
 			else if ($default != '') then $default
 			else f:default-value-for-datatype($dataType)
 		"/>
+	</xsl:function>
+
+	<xsl:function name="f:slot-name" as="xs:string">
+		<xsl:param name="element" as="element(s:Element)"/>
+		<xsl:sequence select="normalize-space((
+			$element/ancestor::s:Element[starts-with(normalize-space(s:Term), 'rim:Slot')][1]/s:Attribute[normalize-space(s:Term) = 'name']/s:Value[@type = 'FIXED'][1],
+			''
+		)[1])"/>
 	</xsl:function>
 
 	<xsl:function name="f:attribute-value" as="xs:string">
