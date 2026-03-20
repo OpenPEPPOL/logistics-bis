@@ -25,7 +25,7 @@
     <xi:include href="parts/function/checkSEOrgnr.xml"/>
 
     <include href="parts/common/empty-elements.sch"/>
-    <include href="parts/common/rules.sch"/>
+
     <include href="../../target/generated/T011-basic.sch"/>
     <include href="parts/PEPPOL-M-T011.sch"/>
 </schema>

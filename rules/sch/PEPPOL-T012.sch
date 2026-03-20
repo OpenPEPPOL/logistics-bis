@@ -29,7 +29,6 @@
 
     <!-- Rules -->
     <include href="parts/common/empty-elements.sch"/>
-    <include href="parts/common/rules.sch"/>
     <include href="../../target/generated/T012-basic.sch"/>
     <include href="parts/PEPPOL-M-T012.sch"/>
 </schema>
