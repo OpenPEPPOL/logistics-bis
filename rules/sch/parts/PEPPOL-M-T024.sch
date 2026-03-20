@@ -6,6 +6,7 @@
     <rule context="ubl:CallForTenders">
         <assert id="PEPPOL-T024-R024" flag="fatal" test="count(distinct-values(cac:AdditionalDocumentReference/cbc:ID)) = count(cac:AdditionalDocumentReference/cbc:ID)">[PEPPOL-T024-R024] Additional Document Reference Identifiers MUST be unique.</assert>
         <assert id="PEPPOL-T024-R029" flag="fatal" test="count(distinct-values(cac:ProcurementProjectLot/cbc:ID)) = count(cac:ProcurementProjectLot/cbc:ID)">[PEPPOL-T024-R029] Lot identifiers MUST be unique.</assert>
+        <assert id="PEPPOL-T024-S301" flag="warning" test="not(ext:UBLExtensions)"> [PEPPOL-T024-S301] UBLExtensions SHOULD NOT be used.</assert>
     </rule>
     <rule context="ubl:CallForTenders/cbc:UBLVersionID">
         
