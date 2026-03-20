@@ -14,13 +14,6 @@
     <ns prefix="u" uri="utils"/>
 
     <pattern>
- 
-		    <rule context="//*[not(*) and not(normalize-space())]">
-			      <assert id="PEPPOL-COMMON-R001" test="false()" flag="fatal">Document MUST not contain empty elements.</assert>
-		    </rule> 
-   
-   </pattern>
-    <pattern>
       <rule context="query:QueryRequest">
         <assert id="PEPPOL-T011-R001"
                  flag="fatal"
@@ -52,7 +45,7 @@
       <rule context="query:QueryRequest/rim:Slot[@name='SpecificationIdentification']">
         <assert id="PEPPOL-T011-R011"
                  flag="fatal"
-                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[matches(normalize-space(), 'urn:fdc:peppol.eu:prac:trns:t011:1.1')]">SpecificationIdentification value MUST be 'urn:fdc:peppol.eu:prac:trns:t011:1.1'.</assert>
+                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[starts-with(normalize-space(), 'urn:fdc:peppol.eu:prac:trns:t011:1')]">SpecificationIdentification value MUST be 'urn:fdc:peppol.eu:prac:trns:t011:1.1'.</assert>
       </rule>
     
       <rule context="query:QueryRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']">

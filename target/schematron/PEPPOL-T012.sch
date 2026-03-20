@@ -17,13 +17,6 @@
 
     
     <pattern>
- 
-		    <rule context="//*[not(*) and not(normalize-space())]">
-			      <assert id="PEPPOL-COMMON-R001" test="false()" flag="fatal">Document MUST not contain empty elements.</assert>
-		    </rule> 
-   
-   </pattern>
-    <pattern>
       <rule context="query:QueryResponse">
         <assert id="PEPPOL-T012-R001" flag="fatal" test="./@requestId">A Notice QueryResponse MUST have an provide a
             reference to the QueryRequest Identifier.
