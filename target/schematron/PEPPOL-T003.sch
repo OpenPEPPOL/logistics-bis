@@ -339,12 +339,6 @@
       </rule>
    </pattern>
     <pattern>
-    
-      <rule context="*">
-        <report id="PEPPOL-T003-S002"
-                 flag="fatal"
-                 test="normalize-space(.) = '' and not(*)">[PEPPOL-T003-S002] A Tender Status Inquiry document MUST NOT contain empty elements.</report>
-      </rule>
         
       <let name="syntaxError"
            value="string('[PEPPOL-T003-S003] A Tender Status Inquiry document SHOULD only contain elements and attributes described in the syntax mapping. - ')"/>
@@ -464,7 +458,7 @@
         <assert id="PEPPOL-T003-R009" flag="warning" test="(./cac:PartyName)">[PEPPOL-T003-R009] A Tender Status Inquiry MUST include the name of the Economic Operator.</assert>
       </rule>
     
-      <rule context="cac:Party">
+      <rule context="ubl:TenderStatusRequest//cac:Party">
         <assert id="PEPPOL-T003-S315"
                  flag="warning"
                  test="count(./*)-count(./cac:PartyIdentification)-count(./cbc:EndpointID)-count(./cac:PartyName)= 0">
@@ -479,7 +473,7 @@
             <value-of select="$syntaxError"/>[PEPPOL-T003-S319] PartyName SHOULD NOT be used more than once</report>
       </rule>    
     
-      <rule context="cac:Party/cbc:EndpointID">
+      <rule context="ubl:TenderStatusRequest//cac:Party/cbc:EndpointID">
         <assert id="PEPPOL-T003-R020" flag="fatal" test="./@schemeID">[PEPPOL-T003-R020] An Endpoint Identifier MUST have a scheme identifier attribute.</assert>
         <assert id="PEPPOL-T003-R021"
                  flag="fatal"
@@ -490,11 +484,11 @@
             <value-of select="$syntaxError"/>[PEPPOL-T003-S316] EndpointID SHOULD NOT have any attributes but schemeID</report>
       </rule>
     
-      <rule context="cac:PartyIdentification/cbc:ID">
+      <rule context="ubl:TenderStatusRequest//cac:PartyIdentification/cbc:ID">
         <assert id="PEPPOL-T003-R018" flag="fatal" test="./@schemeID">[PEPPOL-T003-R018] A Party Identifier MUST have a scheme identifier attribute.</assert>
         <assert id="PEPPOL-T003-R019"
                  flag="fatal"
-                 test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\\d)|(1\\d{2})|(20\\d)|(21[0-3])))$')">[PEPPOL-T003-R019] A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
+                 test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3])))$')">[PEPPOL-T003-R019] A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
         <report id="PEPPOL-T003-S318"
                  flag="warning"
                  test="./@*[not(name()='schemeID')]">
@@ -513,9 +507,15 @@
             <value-of select="$syntaxError"/>[PEPPOL-T003-S323] cac:ProcurementProjectLot/cbc:ID SHOULD NOT have any attributes</report>
       </rule>
     
-      <rule context="cbc:Name">
+      <rule context="ubl:TenderStatusRequest//cbc:Name">
         <report id="PEPPOL-T003-S320" flag="warning" test="./@*">
             <value-of select="$syntaxError"/>[PEPPOL-T003-S320] cbc:Name SHOULD NOT have any attributes</report>
+      </rule>
+
+      <rule context="ubl:TenderStatusRequest//*[not(*)]">
+        <report id="PEPPOL-T003-S002"
+                 flag="fatal"
+                 test="normalize-space(.) = '' and not(*)">[PEPPOL-T003-S002] A Tender Status Inquiry document MUST NOT contain empty elements.</report>
       </rule>
 
    </pattern>
