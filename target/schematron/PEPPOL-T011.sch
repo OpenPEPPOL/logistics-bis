@@ -862,135 +862,147 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B12404">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']">
-         <assert test="rim:Slot" flag="fatal" id="PEPPOL-T011-B12901">Element 'rim:Slot' MUST be provided.</assert>
-         <assert test="rim:Slot" flag="fatal" id="PEPPOL-T011-B12902">Element 'rim:Slot' MUST be provided.</assert>
+         <assert test="rim:Slot[@name='StartDate']"
+                 flag="fatal"
+                 id="PEPPOL-T011-B12901">Element 'rim:Slot[@name='StartDate']' MUST be provided.</assert>
+         <assert test="rim:Slot[@name='EndDate']"
+                 flag="fatal"
+                 id="PEPPOL-T011-B12902">Element 'rim:Slot[@name='EndDate']' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'DeadlineReceiptTenders'"
                  flag="fatal"
                  id="PEPPOL-T011-B12903">Attribute 'name' MUST contain value 'DeadlineReceiptTenders'</assert>
          <assert test="@name" flag="fatal" id="PEPPOL-T011-B12904">Attribute 'name' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot[@name='StartDate']">
          <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T011-B13101">Element 'rim:SlotValue' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'StartDate'"
                  flag="fatal"
                  id="PEPPOL-T011-B13102">Attribute 'name' MUST contain value 'StartDate'</assert>
          <assert test="@name" flag="fatal" id="PEPPOL-T011-B13103">Attribute 'name' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot/rim:SlotValue">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot[@name='StartDate']/rim:SlotValue">
          <assert test="rim:Value" flag="fatal" id="PEPPOL-T011-B13301">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:DateTimeValueType'"
                  flag="fatal"
                  id="PEPPOL-T011-B13302">Attribute 'xsi:type' MUST contain value 'rim:DateTimeValueType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B13303">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot/rim:SlotValue/rim:Value"/>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot/*">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot[@name='StartDate']/rim:SlotValue/rim:Value"/>
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot[@name='StartDate']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B13104">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot[@name='EndDate']">
          <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T011-B13601">Element 'rim:SlotValue' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'EndDate'"
                  flag="fatal"
                  id="PEPPOL-T011-B13602">Attribute 'name' MUST contain value 'EndDate'</assert>
          <assert test="@name" flag="fatal" id="PEPPOL-T011-B13603">Attribute 'name' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot/rim:SlotValue">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot[@name='EndDate']/rim:SlotValue">
          <assert test="rim:Value" flag="fatal" id="PEPPOL-T011-B13801">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:DateTimeValueType'"
                  flag="fatal"
                  id="PEPPOL-T011-B13802">Attribute 'xsi:type' MUST contain value 'rim:DateTimeValueType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B13803">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot/rim:SlotValue/rim:Value"/>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot/*">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot[@name='EndDate']/rim:SlotValue/rim:Value"/>
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot[@name='EndDate']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B13604">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']">
-         <assert test="rim:Slot" flag="fatal" id="PEPPOL-T011-B14101">Element 'rim:Slot' MUST be provided.</assert>
-         <assert test="rim:Slot" flag="fatal" id="PEPPOL-T011-B14102">Element 'rim:Slot' MUST be provided.</assert>
+         <assert test="rim:Slot[@name='StartDate']"
+                 flag="fatal"
+                 id="PEPPOL-T011-B14101">Element 'rim:Slot[@name='StartDate']' MUST be provided.</assert>
+         <assert test="rim:Slot[@name='EndDate']"
+                 flag="fatal"
+                 id="PEPPOL-T011-B14102">Element 'rim:Slot[@name='EndDate']' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'AdditionalInformationDeadline'"
                  flag="fatal"
                  id="PEPPOL-T011-B14103">Attribute 'name' MUST contain value 'AdditionalInformationDeadline'</assert>
          <assert test="@name" flag="fatal" id="PEPPOL-T011-B14104">Attribute 'name' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot[@name='StartDate']">
          <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T011-B14301">Element 'rim:SlotValue' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'StartDate'"
                  flag="fatal"
                  id="PEPPOL-T011-B14302">Attribute 'name' MUST contain value 'StartDate'</assert>
          <assert test="@name" flag="fatal" id="PEPPOL-T011-B14303">Attribute 'name' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot/rim:SlotValue">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot[@name='StartDate']/rim:SlotValue">
          <assert test="rim:Value" flag="fatal" id="PEPPOL-T011-B14501">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:DateTimeValueType'"
                  flag="fatal"
                  id="PEPPOL-T011-B14502">Attribute 'xsi:type' MUST contain value 'rim:DateTimeValueType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B14503">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot/rim:SlotValue/rim:Value"/>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot/*">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot[@name='StartDate']/rim:SlotValue/rim:Value"/>
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot[@name='StartDate']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B14304">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot[@name='EndDate']">
          <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T011-B14801">Element 'rim:SlotValue' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'EndDate'"
                  flag="fatal"
                  id="PEPPOL-T011-B14802">Attribute 'name' MUST contain value 'EndDate'</assert>
          <assert test="@name" flag="fatal" id="PEPPOL-T011-B14803">Attribute 'name' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot/rim:SlotValue">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot[@name='EndDate']/rim:SlotValue">
          <assert test="rim:Value" flag="fatal" id="PEPPOL-T011-B15001">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:DateTimeValueType'"
                  flag="fatal"
                  id="PEPPOL-T011-B15002">Attribute 'xsi:type' MUST contain value 'rim:DateTimeValueType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B15003">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot/rim:SlotValue/rim:Value"/>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot/*">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot[@name='EndDate']/rim:SlotValue/rim:Value"/>
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot[@name='EndDate']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B14804">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']">
-         <assert test="rim:Slot" flag="fatal" id="PEPPOL-T011-B15301">Element 'rim:Slot' MUST be provided.</assert>
-         <assert test="rim:Slot" flag="fatal" id="PEPPOL-T011-B15302">Element 'rim:Slot' MUST be provided.</assert>
+         <assert test="rim:Slot[@name='StartDate']"
+                 flag="fatal"
+                 id="PEPPOL-T011-B15301">Element 'rim:Slot[@name='StartDate']' MUST be provided.</assert>
+         <assert test="rim:Slot[@name='EndDate']"
+                 flag="fatal"
+                 id="PEPPOL-T011-B15302">Element 'rim:Slot[@name='EndDate']' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'DeadlineReceiptRequests'"
                  flag="fatal"
                  id="PEPPOL-T011-B15303">Attribute 'name' MUST contain value 'DeadlineReceiptRequests'</assert>
          <assert test="@name" flag="fatal" id="PEPPOL-T011-B15304">Attribute 'name' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot[@name='StartDate']">
          <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T011-B15501">Element 'rim:SlotValue' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'StartDate'"
                  flag="fatal"
                  id="PEPPOL-T011-B15502">Attribute 'name' MUST contain value 'StartDate'</assert>
          <assert test="@name" flag="fatal" id="PEPPOL-T011-B15503">Attribute 'name' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot/rim:SlotValue">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot[@name='StartDate']/rim:SlotValue">
          <assert test="rim:Value" flag="fatal" id="PEPPOL-T011-B15701">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:DateTimeValueType'"
                  flag="fatal"
                  id="PEPPOL-T011-B15702">Attribute 'xsi:type' MUST contain value 'rim:DateTimeValueType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B15703">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot/rim:SlotValue/rim:Value"/>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot/*">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot[@name='StartDate']/rim:SlotValue/rim:Value"/>
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot[@name='StartDate']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B15504">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot[@name='EndDate']">
          <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T011-B16001">Element 'rim:SlotValue' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'EndDate'"
                  flag="fatal"
                  id="PEPPOL-T011-B16002">Attribute 'name' MUST contain value 'EndDate'</assert>
          <assert test="@name" flag="fatal" id="PEPPOL-T011-B16003">Attribute 'name' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot/rim:SlotValue">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot[@name='EndDate']/rim:SlotValue">
          <assert test="rim:Value" flag="fatal" id="PEPPOL-T011-B16201">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:DateTimeValueType'"
                  flag="fatal"
                  id="PEPPOL-T011-B16202">Attribute 'xsi:type' MUST contain value 'rim:DateTimeValueType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B16203">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot/rim:SlotValue/rim:Value"/>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot/*">
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot[@name='EndDate']/rim:SlotValue/rim:Value"/>
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot[@name='EndDate']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B16004">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='NoticeIdentifier']">
