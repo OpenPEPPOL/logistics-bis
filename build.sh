@@ -104,8 +104,6 @@ docker run --rm -i -v $PROJECT:/src alpine:3.6 rm -f \
   /src/target/generated/T012-basic.sch \
   /src/target/generated/T015-basic.sch
 
-
-
 # Removing old zip files and creating new ones
 docker run --rm -i \
   -v $PROJECT/target/site/files:/files \
