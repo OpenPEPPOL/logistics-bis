@@ -14,7 +14,6 @@
     <ns uri="utils" prefix="u"/>
 
     <!-- Rules -->
-    <include href="../../target/generated/T012-basic.sch"/>
     <include href="parts/PEPPOL-M-T012.sch"/>
 </schema>
 

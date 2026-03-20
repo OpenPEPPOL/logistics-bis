@@ -1,42 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testSet xmlns="http://difi.no/xsd/vefa/validator/1.0" configuration="peppolbis-t015-base-1.3">
 	<assert>
-		<description>Verify that SpecificationIdentification is correct</description>
-		<scope>PEPPOL-T015-R009</scope>
+		<description>Verify that id is a valid UUID</description>
+		<scope>PEPPOL-T015-R001</scope>
 	</assert>
 
 	<test id="1">
 		<assert>
-			<success>PEPPOL-T015-R009</success>
+			<success>PEPPOL-T015-R001</success>
 		</assert>
-		<lcm:SubmitObjectsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-									xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
-									xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"
-									id="4e3517fd-724d-44fc-b90b-5743c33ff68e"
-									mode="CreateOrVersion">
-			<rim:Slot name="SpecificationIdentification">
-				<rim:SlotValue xsi:type="rim:StringValueType">
-					<rim:Value>urn:fdc:peppol.eu:prac:trns:t015:1</rim:Value>
-				</rim:SlotValue>
-			</rim:Slot>
-		</lcm:SubmitObjectsRequest>
+		<lcm:SubmitObjectsRequest xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"
+									id="4e3517fd-724d-44fc-b90b-5743c33ff68e"/>
 	</test>
 
 	<test>
 		<assert id="2">
-			<error>PEPPOL-T015-R009</error>
+			<error>PEPPOL-T015-R001</error>
 		</assert>
-		<lcm:SubmitObjectsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-									xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
-									xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"
-									id="4e3517fd-724d-44fc-b90b-5743c33ff68e"
-									mode="CreateOrVersion">
-			<rim:Slot name="SpecificationIdentification">
-				<rim:SlotValue xsi:type="rim:StringValueType">
-					<rim:Value>urn:fdc:peppol.eu:prac:trnsx:t015:1</rim:Value>
-				</rim:SlotValue>
-			</rim:Slot>
-		</lcm:SubmitObjectsRequest>
+		<lcm:SubmitObjectsRequest xmlns:lcm="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:4.0"
+									id="not-a-uuid"/>
 	</test>
 
 </testSet>

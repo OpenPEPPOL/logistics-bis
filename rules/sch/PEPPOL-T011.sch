@@ -11,6 +11,5 @@
     <ns prefix="xs" uri="http://www.w3.org/2001/XMLSchema" />
     <ns prefix="u" uri="utils" />
 
-    <include href="../../target/generated/T011-basic.sch"/>
     <include href="parts/PEPPOL-M-T011.sch"/>
 </schema>
