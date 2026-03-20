@@ -51,14 +51,12 @@
       <rule context="query:QueryRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']">
         <assert id="PEPPOL-T011-R012"
                  flag="fatal"
-                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[normalize-space() = 'urn:fdc:peppol.eu:prac:bis:p006']">BusinessProcessTypeIdentifier value MUST be 'urn:fdc:peppol.eu:prac:bis:p006'.</assert>
+                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[normalize-space() = 'urn:fdc:peppol.eu:prac:bis:p006:1.2']">BusinessProcessTypeIdentifier value MUST be 'urn:fdc:peppol.eu:prac:bis:p006:1.2'.</assert>
       </rule>
     
       <rule context="query:QueryRequest/rim:Slot[@name='SenderElectronicAddress'] | query:QueryRequest/rim:Slot[@name='ReceiverElectronicAddress']">
-        <assert id="PEPPOL-T011-R013"
-                 flag="fatal"
-                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[matches(normalize-space(), '^(0002|0007|0009|0037|0060|0088|0096|0097|0106|0130|0135|0142|0151|0183|0184|0190|0191|0192|0193|0195|0196|0198|0199|0200|0201|0202|0204|0208|0209|0210|0211|0212|0213|9901|9906|9907|9910|9913|9914|9915|9918|9919|9920|9922|9923|9924|9925|9926|9927|9928|9929|9930|9931|9932|9933|9934|9935|9936|9937|9938|9939|9940|9941|9942|9943|9944|9945|9946|9947|9948|9949|9950|9951|9952|9953|9955|9957):')]">An Electronic Address MUST have a scheme identifier attribute from the list of "PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers" followed by a ":".</assert>
-        <assert id="PEPPOL-T011-R081" flag="fatal" test="@type = 'EAS'">The schemeID type attribute has to be "EAS".</assert>
+        
+        <assert id="PEPPOL-T011-R081" flag="fatal" test="@type = 'eas'">The schemeID type attribute has to be "eas".</assert>
       </rule>
     
       <rule context="         query:QueryRequest/rim:Slot[@name='SpecificationIdentification']         | query:QueryRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']         | query:QueryRequest/rim:Slot[@name='SenderElectronicAddress']         | query:QueryRequest/rim:Slot[@name='ReceiverElectronicAddress']         | query:QueryRequest/query:Query/rim:Slot[@name='Keywords']         | query:QueryRequest/query:Query/rim:Slot[@name='WinnerEconomicOperatorName']         | query:QueryRequest/query:Query/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='Name']         | query:QueryRequest/query:Query/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='OrganisationNumber']         | query:QueryRequest/query:Query/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='City']         | query:QueryRequest/query:Query/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='PostCode']             ">
@@ -410,9 +408,9 @@
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B01203">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']/rim:SlotValue/rim:Value">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p006:1.2'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p006'"
                  flag="fatal"
-                 id="PEPPOL-T011-B01401">Element 'rim:Value' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p006:1.2'.</assert>
+                 id="PEPPOL-T011-B01401">Element 'rim:Value' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p006'.</assert>
       </rule>
       <rule context="/query:QueryRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B01004">Document MUST NOT contain elements not part of the data model.</assert>
@@ -757,10 +755,9 @@
                  flag="fatal"
                  id="PEPPOL-T011-B10102">Attribute 'name' MUST contain value 'ProcedureType'</assert>
          <assert test="@name" flag="fatal" id="PEPPOL-T011-B10103">Attribute 'name' MUST be present.</assert>
-         <assert test="not(@type) or @type = 'http://publications.europa.eu/resource/authority/procurement-procedure-type&#xA;                    '"
+         <assert test="not(@type) or @type = 'http://publications.europa.eu/resource/authority/procurement-procedure-type'"
                  flag="fatal"
-                 id="PEPPOL-T011-B10104">Attribute 'type' MUST contain value 'http://publications.europa.eu/resource/authority/procurement-procedure-type
-                    '</assert>
+                 id="PEPPOL-T011-B10104">Attribute 'type' MUST contain value 'http://publications.europa.eu/resource/authority/procurement-procedure-type'</assert>
          <assert test="@type" flag="fatal" id="PEPPOL-T011-B10105">Attribute 'type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='ProcedureType']/rim:SlotValue">
@@ -864,9 +861,6 @@
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='PublicationDate']/rim:Slot[@name='EndDate']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B12404">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='PublicationDate']/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T011-B11705">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']">
          <assert test="rim:Slot" flag="fatal" id="PEPPOL-T011-B12901">Element 'rim:Slot' MUST be provided.</assert>
          <assert test="rim:Slot" flag="fatal" id="PEPPOL-T011-B12902">Element 'rim:Slot' MUST be provided.</assert>
@@ -910,9 +904,6 @@
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot/rim:SlotValue/rim:Value"/>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/rim:Slot/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B13604">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptTenders']/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T011-B12905">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']">
          <assert test="rim:Slot" flag="fatal" id="PEPPOL-T011-B14101">Element 'rim:Slot' MUST be provided.</assert>
@@ -958,9 +949,6 @@
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/rim:Slot/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B14804">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AdditionalInformationDeadline']/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T011-B14105">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']">
          <assert test="rim:Slot" flag="fatal" id="PEPPOL-T011-B15301">Element 'rim:Slot' MUST be provided.</assert>
          <assert test="rim:Slot" flag="fatal" id="PEPPOL-T011-B15302">Element 'rim:Slot' MUST be provided.</assert>
@@ -1004,9 +992,6 @@
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot/rim:SlotValue/rim:Value"/>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/rim:Slot/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B16004">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='DeadlineReceiptRequests']/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T011-B15305">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='NoticeIdentifier']">
          <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T011-B16501">Element 'rim:SlotValue' MUST be provided.</assert>
@@ -1065,18 +1050,15 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B17204">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='ProcedureLegalBasis']">
-         <assert test="(some $code in $cllegalBasis satisfies $code = normalize-space(text()))"
-                 flag="fatal"
-                 id="PEPPOL-T011-B17901">Value MUST be part of code list 'legalBasisCode'.</assert>
-         <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T011-B17902">Element 'rim:SlotValue' MUST be provided.</assert>
+         <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T011-B17901">Element 'rim:SlotValue' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'ProcedureLegalBasis'"
                  flag="fatal"
-                 id="PEPPOL-T011-B17903">Attribute 'name' MUST contain value 'ProcedureLegalBasis'</assert>
-         <assert test="@name" flag="fatal" id="PEPPOL-T011-B17904">Attribute 'name' MUST be present.</assert>
+                 id="PEPPOL-T011-B17902">Attribute 'name' MUST contain value 'ProcedureLegalBasis'</assert>
+         <assert test="@name" flag="fatal" id="PEPPOL-T011-B17903">Attribute 'name' MUST be present.</assert>
          <assert test="not(@type) or @type = 'http://publications.europa.eu/resource/authority/legal-basis'"
                  flag="fatal"
-                 id="PEPPOL-T011-B17905">Attribute 'type' MUST contain value 'http://publications.europa.eu/resource/authority/legal-basis'</assert>
-         <assert test="@type" flag="fatal" id="PEPPOL-T011-B17906">Attribute 'type' MUST be present.</assert>
+                 id="PEPPOL-T011-B17904">Attribute 'type' MUST contain value 'http://publications.europa.eu/resource/authority/legal-basis'</assert>
+         <assert test="@type" flag="fatal" id="PEPPOL-T011-B17905">Attribute 'type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='ProcedureLegalBasis']/rim:SlotValue">
          <assert test="rim:Element" flag="fatal" id="PEPPOL-T011-B18201">Element 'rim:Element' MUST be provided.</assert>
@@ -1092,12 +1074,16 @@
                  id="PEPPOL-T011-B18402">Attribute 'xsi:type' MUST contain value 'rim:StringValueType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B18403">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='ProcedureLegalBasis']/rim:SlotValue/rim:Element/rim:Value"/>
+      <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='ProcedureLegalBasis']/rim:SlotValue/rim:Element/rim:Value">
+         <assert test="(some $code in $cllegalBasis satisfies $code = normalize-space(text()))"
+                 flag="fatal"
+                 id="PEPPOL-T011-B18601">Value MUST be part of code list 'legalBasisCode'.</assert>
+      </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='ProcedureLegalBasis']/rim:SlotValue/rim:Element/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B18404">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='ProcedureLegalBasis']/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T011-B17907">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T011-B17906">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='ReservedParticipation']">
          <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T011-B18701">Element 'rim:SlotValue' MUST be provided.</assert>

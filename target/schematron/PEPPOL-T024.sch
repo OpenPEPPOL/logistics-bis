@@ -225,6 +225,7 @@
       <let name="cldocType" value="tokenize('PRO REQ 916', '\s')"/>
       <let name="clprocedureType"
            value="tokenize('1 2 3 C 4 6 T V 8 9 Z A', '\s')"/>
+      <let name="cltendererRole" value="tokenize('MT SC CL CM JV SME OTH', '\s')"/>
       <let name="cldocStatus" value="tokenize('NR RWOS RWAS RWQS', '\s')"/>
       <let name="clsubmissionMethod"
            value="tokenize('POSTAL ELECTRONIC ANY', '\s')"/>
@@ -232,7 +233,6 @@
       <let name="claddCond" value="tokenize('WOS WAS WQS', '\s')"/>
       <let name="clISO3166"
            value="tokenize('AD AE AF AG AI AL AM AO AQ AR AS AT AU AW AX AZ BA BB BD BE BF BG BH BI BJ BL BM BN BO BQ BR BS BT BV BW BY BZ CA CC CD CF CG CH CI CK CL CM CN CO CR CU CV CW CX CY CZ DE DJ DK DM DO DZ EC EE EG EH ER ES ET FI FJ FK FM FO FR GA GB GD GE GF GG GH GI GL GM GN GP GQ GR GS GT GU GW GY HK HM HN HR HT HU ID IE IL IM IN IO IQ IR IS IT JE JM JO JP KE KG KH KI KM KN KP KR KW KY KZ LA LB LC LI LK LR LS LT LU LV LY MA MC MD ME MF MG MH MK ML MM MN MO MP MQ MR MS MT MU MV MW MX MY MZ NA NC NE NF NG NI NL NO NP NR NU NZ OM PA PE PF PG PH PK PL PM PN PR PS PT PW PY QA RE RO RS RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW 1A XI', '\s')"/>
-      <let name="cltendererRole" value="tokenize('MT SC CL CM JV SME OTH', '\s')"/>
       <let name="clICD"
            value="tokenize('0002 0003 0004 0005 0006 0007 0008 0009 0010 0011 0012 0013 0014 0015 0016 0017 0018 0019 0020 0021 0022 0023 0024 0025 0026 0027 0028 0029 0030 0031 0032 0033 0034 0035 0036 0037 0038 0039 0040 0041 0042 0043 0044 0045 0046 0047 0048 0049 0050 0051 0052 0053 0054 0055 0056 0057 0058 0059 0060 0061 0062 0063 0064 0065 0066 0067 0068 0069 0070 0071 0072 0073 0074 0075 0076 0077 0078 0079 0080 0081 0082 0083 0084 0085 0086 0087 0088 0089 0090 0091 0093 0094 0095 0096 0097 0098 0099 0100 0101 0102 0104 0105 0106 0107 0108 0109 0110 0111 0112 0113 0114 0115 0116 0117 0118 0119 0120 0121 0122 0123 0124 0125 0126 0127 0128 0129 0130 0131 0132 0133 0134 0135 0136 0137 0138 0139 0140 0141 0142 0143 0144 0145 0146 0147 0148 0149 0150 0151 0152 0153 0154 0155 0156 0157 0158 0159 0160 0161 0162 0163 0164 0165 0166 0167 0168 0169 0170 0171 0172 0173 0174 0175 0176 0177 0178 0179 0180 0183 0184 0185 0186 0187 0188 0189 0190 0191 0192 0193 0194 0195 0196 0197 0198 0199 0200 0201 0202 0203 0204 0205 0206 0207 0208 0209 0210 0211 0212 0213 0214 0215 0216 0217 0218 0219 0220 0221 0222 0223 0224 0225 0226 0227 0228 0229 0230 0231 0232 0233 0234 0235 0236 0237 0238 0239 0240 0241 0242 0243 0244', '\s')"/>
       <rule context="/ubl:CallForTenders">
@@ -767,9 +767,7 @@
     
       <rule context="ubl:CallForTenders/cac:AdditionalDocumentReference/cbc:DocumentTypeCode">
         <assert id="PEPPOL-T024-R017" flag="fatal" test="./@listID">[PEPPOL-T024-R017] DocumentTypeCode MUST have a list Identifier.</assert>
-        <assert id="PEPPOL-T024-R018"
-                 flag="fatal"
-                 test="normalize-space(./@listID)='urn:eu:esens:cenbii:documentType'">[PEPPOL-T024-R018] listID for DocumentTypeCode MUST be 'urn:eu:esens:cenbii:documentType'.</assert>
+        
         <assert id="PEPPOL-T024-R019"
                  flag="fatal"
                  test="matches(normalize-space(.),'^(PRO|REQ|916)$')">[PEPPOL-T024-R019] DocumentTypeCode MUST be one of 'PRO' or 'REQ' or '916'.</assert>
@@ -781,9 +779,7 @@
     
       <rule context="ubl:CallForTenders/cac:AdditionalDocumentReference/cbc:LocaleCode">
         <assert id="PEPPOL-T024-R014" flag="fatal" test="./@listID">[PEPPOL-T024-R014] LocaleCode MUST have a list Identifier.</assert>
-        <assert id="PEPPOL-T024-R015"
-                 flag="fatal"
-                 test="normalize-space(./@listID)='ISO639-1'">[PEPPOL-T024-R015] listID for LocaleCode MUST be 'ISO639-1'.</assert>
+        
         <assert id="PEPPOL-T024-R016"
                  flag="fatal"
                  test="matches(normalize-space(.),'^(aa|AA|ab|AB|ae|AE|af|AF|ak|AK|am|AM|an|AN|ar|AR|as|AS|av|AV|ay|AY|az|AZ|ba|BA|be|BE|bg|BG|bh|BH|bi|BI|bm|BM|bn|BN|bo|BO|br|BR|bs|BS|ca|CA|ce|CE|ch|CH|co|CO|cr|CR|cs|CS|cu|CU|cv|CV|cy|CY|da|DA|de|DE|dv|DV|dz|DZ|ee|EE|el|EL|en|EN|eo|EO|es|ES|et|ET|eu|EU|fa|FA|ff|FF|fi|FI|fj|FJ|fo|FO|fr|FR|fy|FY|ga|GA|gd|GD|gl|GL|gn|GN|gu|GU|gv|GV|ha|HA|he|HE|hi|HI|ho|HO|hr|HR|ht|HT|hu|HU|hy|HY|hz|HZ|ia|IA|id|ID|ie|IE|ig|IG|ii|II|ik|IK|io|IO|is|IS|it|IT|iu|IU|ja|JA|jv|JV|ka|KA|kg|KG|ki|KI|kj|KJ|kk|KK|kl|KL|km|KM|kn|KN|ko|KO|kr|KR|ks|KS|ku|KU|kv|KV|kw|KW|ky|KY|la|LA|lb|LB|lg|LG|li|LI|ln|LN|lo|LO|lt|LT|lu|LU|lv|LV|mg|MG|mh|MH|mi|MI|mk|MK|ml|ML|mn|MN|mo|MO|mr|MR|ms|MS|mt|MT|my|MY|na|NA|nb|NB|nd|ND|ne|NE|ng|NG|nl|NL|nn|NN|no|NO|nr|NR|nv|NV|ny|NY|oc|OC|oj|OJ|om|OM|or|OR|os|OS|pa|PA|pi|PI|pl|PL|ps|PS|pt|PT|qu|QU|rm|RM|rn|RN|ro|RO|ru|RU|rw|RW|sa|SA|sc|SC|sd|SD|se|SE|sg|SG|si|SI|sk|SK|sl|SL|sm|SM|sn|SN|so|SO|sq|SQ|sr|SR|ss|SS|st|ST|su|SU|sv|SV|sw|SW|ta|TA|te|TE|tg|TG|th|TH|ti|TI|tk|TK|tl|TL|tn|TN|to|TO|tr|TR|ts|TS|tt|TT|tw|TW|ty|TY|ug|UG|uk|UK|ur|UR|uz|UZ|ve|VE|vi|VI|vo|VO|wa|WA|wo|WO|xh|XH|yi|YI|yo|YO|za|ZA|zh|ZH|zu|ZU)$')">[PEPPOL-T024-R016] LocalCode MUST be a valid Language Code.</assert>
@@ -800,9 +796,7 @@
     
       <rule context="ubl:CallForTenders/cac:AdditionalDocumentReference/cbc:DocumentStatusCode">
         <assert id="PEPPOL-T024-R020" flag="fatal" test="./@listID">[PEPPOL-T024-R020] DocumentStatusCode MUST have a list Identifier.</assert>
-        <assert id="PEPPOL-T024-R021"
-                 flag="fatal"
-                 test="normalize-space(./@listID)='urn:eu:esens:cenbii:documentStatusType'">[PEPPOL-T024-R021] listID for DocumentStatusCode MUST be 'urn:eu:esens:cenbii:documentStatusType'.</assert>
+        
         <assert id="PEPPOL-T024-R022"
                  flag="fatal"
                  test="matches(normalize-space(.),'^(NR|RWOS|RWAS|RWQS)$')">[PEPPOL-T024-R022] DocumentStatusCode MUST be one of NR,RWOS, RWAS ,RWQS</assert>
@@ -858,9 +852,7 @@
     
       <rule context="cac:PartyIdentification/cbc:ID">
         <assert id="PEPPOL-T024-R010" flag="fatal" test="./@schemeID">[PEPPOL-T024-R010] A Party Identifier MUST have a scheme identifier attribute.</assert>
-        <assert id="PEPPOL-T024-R011"
-                 flag="fatal"
-                 test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3])))$')">[PEPPOL-T024-R011] A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
+        
         <report id="PEPPOL-T024-S337"
                  flag="warning"
                  test="./@*[not(name()='schemeID')]">
