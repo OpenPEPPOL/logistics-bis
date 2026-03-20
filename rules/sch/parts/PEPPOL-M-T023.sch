@@ -23,8 +23,8 @@
     </rule>
     
     <rule context="ubl:TendererQualificationResponse/cbc:CustomizationID">
-        <assert id="PEPPOL-T023-R015" flag="fatal" test="starts-with(normalize-space(.),  'urn:fdc:peppol.eu:prac:trns:t023:1')">CustomizationID value MUST start with 'urn:fdc:peppol.eu:prac:trns:t023:1'</assert>
-        <assert id="PEPPOL-T023-R016" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>CustomizationID SHOULD NOT contain any attributes.</assert>
+		<assert id="PEPPOL-T023-R015" flag="fatal" test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t023:1'">[PEPPOL-T023-R015] CustomizationID value MUST be 'urn:fdc:peppol.eu:prac:trns:t023:1'</assert>
+		<assert id="PEPPOL-T023-R016" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>CustomizationID SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualificationResponse/cbc:ProfileID">
