@@ -1,8 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron">
-        <rule context="*">
-            <report id="PEPPOL-T002-S002" flag="fatal" test="normalize-space(.) = '' and not(*)" >[PEPPOL-T002-S002] An Expression of Interest Confirmation document MUST NOT contain empty elements.</report>
-        </rule>
 
         <let name="syntaxError" value="string('[PEPPOL-T002-S003] An Expression of Interest Confirmation SHOULD only contain elements and attributes described in the syntax mapping. - ')"/>
         <rule context="ubl:ExpressionOfInterestResponse">
@@ -117,5 +114,9 @@
 
         <rule context="cac:ProcurementProjectLotReference/cbc:ID">
             <report id="PEPPOL-T002-S330" flag="warning" test="./@*"><value-of select="$syntaxError"/>[PEPPOL-T002-S330] cac:ProcurementProjectLotReference/cbc:ID SHOULD NOT have any further attributes</report>
+        </rule>
+
+        <rule context="ubl:ExpressionOfInterestResponse//*[not(*)]">
+            <report id="PEPPOL-T002-S002" flag="fatal" test="normalize-space(.) = '' and not(*)" >[PEPPOL-T002-S002] An Expression of Interest Confirmation document MUST NOT contain empty elements.</report>
         </rule>
     </pattern>
