@@ -46,7 +46,7 @@
             <Value type="FIXED">CreateOrVersion</Value>
         </Attribute>
         <Element>
-            <Term>rim:Slot@name=SpecificationIdentification</Term>
+            <Term>rim:Slot[@name='SpecificationIdentification']</Term>
             <Name>Specification identification</Name>
             <Description>Specifies the unique identifier for an the Request to publish a notice.
             </Description>
@@ -70,7 +70,7 @@
             </Element>
         </Element>
         <Element>
-            <Term>rim:Slot@name=BusinessProcessTypeIdentifier</Term>
+            <Term>rim:Slot[@name='BusinessProcessTypeIdentifier']</Term>
             <Name>Business process type identifier</Name>
             <Description>Identifies the business process context in which the transaction appears. It enables the
                 receiver to process the document in an appropriate way.
@@ -96,7 +96,7 @@
             </Element>
         </Element>
         <Element>
-            <Term>rim:Slot@name=IssueDateTime</Term>
+            <Term>rim:Slot[@name='IssueDateTime']</Term>
             <Name>Issue date time</Name>
             <Description>The issue date and time when the Publish Notice is issued. The issue date time must have
                 granularity of seconds, and include time zone information.
@@ -122,7 +122,7 @@
             </Element>
         </Element>
         <Element>
-            <Term>rim:Slot@name=SenderElectronicAddress</Term>
+            <Term>rim:Slot[@name='SenderElectronicAddress']</Term>
             <Name>Contracting body electronic address identifier</Name>
             <Description>The electronic address of the contracting body.</Description>
             <Attribute>
@@ -152,7 +152,7 @@
             </Element>
         </Element>
         <Element>
-            <Term>rim:Slot@name=ReceiverElectronicAddress</Term>
+            <Term>rim:Slot[@name='ReceiverElectronicAddress']</Term>
             <Name>Economic operator electronic address</Name>
             <Description>The electronic address of the economic operator.</Description>
             <Attribute>
@@ -182,7 +182,7 @@
             </Element>
         </Element>
         <Element>
-            <Term>rim:Slot@name=PublicationRequested</Term>
+            <Term>rim:Slot[@name='PublicationRequested']</Term>
             <Name>Publication requested</Name>
             <Description>This indicator shows if the attached notice needs to be published or if it only needs to be
                 validated by the publication body. The check by the publication body can help the contracting party to
@@ -207,7 +207,7 @@
             </Element>
         </Element>
         <Element>
-            <Term>rim:Slot@name=NoticePublicationDatePreferred</Term>
+            <Term>rim:Slot[@name='NoticePublicationDatePreferred']</Term>
             <Name>Issue date time</Name>
             <Description>The "Notice Publication Date Preferred" is the date on which the buyer wishes the notice to be
                 published. It can be used to help the buyer respect the requirements that exist
@@ -271,7 +271,7 @@
                     <Value type="FIXED">rim:ExtrinsicObjectType</Value>
                 </Attribute>
                 <Element>
-                    <Term>rim:Slot@name=UBLDocumentSchema</Term>
+                    <Term>rim:Slot[@name='UBLDocumentSchema']</Term>
                     <Name>UBL document schema</Name>
                     <Description>Used to identify the UBL document type of the referenced notice which are associated to
                         the corresponding UBL namespaces.
@@ -281,7 +281,7 @@
                         <Value type="FIXED">UBLDocumentSchema</Value>
                     </Attribute>
                     <Attribute>
-                        <Term>List Identifier</Term>
+                        <Term>type</Term>
                         <Description>UBL Document Schema</Description>
                         <Reference type="RULE">PEPPOL-T015-R016</Reference>
                         <Value type="FIXED">ublDocumentSchema</Value>
@@ -302,7 +302,7 @@
                     </Element>
                 </Element>
                 <Element>
-                    <Term>rim:Slot@name=NoticeVersion</Term>
+                    <Term>rim:Slot[@name='NoticeVersion']</Term>
                     <Name>Notice version</Name>
                     <Description>Version of the notice (BT-757) which shall be published. 01 for initial version. Any
                         new version should have a higher version number than any previous one. Use consecutive numbers
@@ -331,7 +331,7 @@
                     </Element>
                 </Element>
                 <Element>
-                    <Term>rim:Slot@name=CustomizationID</Term>
+                    <Term>rim:Slot[@name='CustomizationID']</Term>
                     <Name>eForms version</Name>
                     <Description>This element identifies the customization used for the notice. Identification is based
                         on the complete set (schemas+rules) limited to the major and minor version numbers.
@@ -357,7 +357,7 @@
                     </Element>
                 </Element>
                 <Element>
-                    <Term>rim:Slot@name=BuyerInformation</Term>
+                    <Term>rim:Slot[@name='BuyerInformation']</Term>
                     <Name>Buyer information</Name>
                     <Description>The information about the buyer (BG-3) includes different types of identification
                         elements to disclose a way to identify the buyer and its location without immediately opening
@@ -372,7 +372,7 @@
                         <Value type="FIXED">BuyerInformation</Value>
                     </Attribute>
                     <Element cardinality="0..1">
-                        <Term>rim:Slot@name=BuyerPartyIdentification</Term>
+                        <Term>rim:Slot[@name='BuyerPartyIdentification']</Term>
                         <Name>Buyer party identification</Name>
                         <Description>An identification for the buyer party according to ISO 6523 ICD list.</Description>
                         <Reference type="RULE">PEPPOL-T015-R023</Reference>
@@ -404,14 +404,13 @@
                                     <Description>Scheme identifier:Party Identification for the buyer.</Description>
                                     <DataType>rim:StringValueType</DataType>
                                     <Reference type="CODE_LIST">ICD</Reference>
-                                    <Reference type="RULE">PEPPOL-T015-R042</Reference>
                                     <Value type="EXAMPLE">0204:991-1234512345-06</Value>
                                 </Element>
                             </Element>
                         </Element>
                     </Element>
                     <Element cardinality="0..1">
-                        <Term>rim:Slot@name=BuyerElectronicAddress</Term>
+                        <Term>rim:Slot[@name='BuyerElectronicAddress']</Term>
                         <Name>Buyer electronic address</Name>
                         <Description>The electronic address of the buyer.</Description>
                         <Reference type="RULE">PEPPOL-T015-R024</Reference>
@@ -437,14 +436,13 @@
                                 <Description>Scheme identifier:Identification for the buyer</Description>
                                 <DataType>rim:StringValueType</DataType>
                                 <Reference type="RULE">PEPPOL-T015-R014</Reference>
-                                <Reference type="RULE">PEPPOL-T015-R041</Reference>
                                 <Reference type="CODE_LIST">eas</Reference>
                                 <Value type="EXAMPLE">9930:DE122268496</Value>
                             </Element>
                         </Element>
                     </Element>
                     <Element cardinality="0..n">
-                        <Term>rim:Slot@name=AdditionalDocumentReference</Term>
+                        <Term>rim:Slot[@name='AdditionalDocumentReference']</Term>
                         <Name>Additional document reference</Name>
                         <Description>The Additional Document Reference specifies a reference to an additional file that
                             is included to the local ASiC-E container (Associated Signature Container Extended)

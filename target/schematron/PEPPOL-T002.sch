@@ -345,11 +345,6 @@
       </rule>
    </pattern> 
     <pattern>
-        <rule context="*">
-            <report id="PEPPOL-T002-S002"
-                 flag="fatal"
-                 test="normalize-space(.) = '' and not(*)">[PEPPOL-T002-S002] An Expression of Interest Confirmation document MUST NOT contain empty elements.</report>
-        </rule>
 
         <let name="syntaxError"
            value="string('[PEPPOL-T002-S003] An Expression of Interest Confirmation SHOULD only contain elements and attributes described in the syntax mapping. - ')"/>
@@ -450,10 +445,8 @@
             <assert id="PEPPOL-T002-R018"
                  flag="fatal"
                  test="matches(normalize-space(.),'^(aa|AA|ab|AB|ae|AE|af|AF|ak|AK|am|AM|an|AN|ar|AR|as|AS|av|AV|ay|AY|az|AZ|ba|BA|be|BE|bg|BG|bh|BH|bi|BI|bm|BM|bn|BN|bo|BO|br|BR|bs|BS|ca|CA|ce|CE|ch|CH|co|CO|cr|CR|cs|CS|cu|CU|cv|CV|cy|CY|da|DA|de|DE|dv|DV|dz|DZ|ee|EE|el|EL|en|EN|eo|EO|es|ES|et|ET|eu|EU|fa|FA|ff|FF|fi|FI|fj|FJ|fo|FO|fr|FR|fy|FY|ga|GA|gd|GD|gl|GL|gn|GN|gu|GU|gv|GV|ha|HA|he|HE|hi|HI|ho|HO|hr|HR|ht|HT|hu|HU|hy|HY|hz|HZ|ia|IA|id|ID|ie|IE|ig|IG|ii|II|ik|IK|io|IO|is|IS|it|IT|iu|IU|ja|JA|jv|JV|ka|KA|kg|KG|ki|KI|kj|KJ|kk|KK|kl|KL|km|KM|kn|KN|ko|KO|kr|KR|ks|KS|ku|KU|kv|KV|kw|KW|ky|KY|la|LA|lb|LB|lg|LG|li|LI|ln|LN|lo|LO|lt|LT|lu|LU|lv|LV|mg|MG|mh|MH|mi|MI|mk|MK|ml|ML|mn|MN|mo|MO|mr|MR|ms|MS|mt|MT|my|MY|na|NA|nb|NB|nd|ND|ne|NE|ng|NG|nl|NL|nn|NN|no|NO|nr|NR|nv|NV|ny|NY|oc|OC|oj|OJ|om|OM|or|OR|os|OS|pa|PA|pi|PI|pl|PL|ps|PS|pt|PT|qu|QU|rm|RM|rn|RN|ro|RO|ru|RU|rw|RW|sa|SA|sc|SC|sd|SD|se|SE|sg|SG|si|SI|sk|SK|sl|SL|sm|SM|sn|SN|so|SO|sq|SQ|sr|SR|ss|SS|st|ST|su|SU|sv|SV|sw|SW|ta|TA|te|TE|tg|TG|th|TH|ti|TI|tk|TK|tl|TL|tn|TN|to|TO|tr|TR|ts|TS|tt|TT|tw|TW|ty|TY|ug|UG|uk|UK|ur|UR|uz|UZ|ve|VE|vi|VI|vo|VO|wa|WA|wo|WO|xh|XH|yi|YI|yo|YO|za|ZA|zh|ZH|zu|ZU)$')">[PEPPOL-T002-R018] TenderLanguageLocalCode MUST be a valid Language Code.</assert>
-            <assert id="PEPPOL-T002-R019" flag="fatal" test="./@listID">[PEPPOL-T002-R019] TenderLanguageLocalCode MUST have a list identifier attribute.</assert>
-            <assert id="PEPPOL-T002-R020"
-                 flag="fatal"
-                 test="normalize-space(./@listID)='ISO639-1'">[PEPPOL-T002-R020] listID for TenderLanguageLocaleCode MUST be 'ISO639-1'.</assert>
+            
+            
             <report id="PEPPOL-T002-S311"
                  flag="warning"
                  test="./@*[not(name()='listID')]">
@@ -531,9 +524,7 @@
         
         <rule context="cac:Party/cbc:EndpointID">
             <assert id="PEPPOL-T002-R021" flag="fatal" test="./@schemeID">[PEPPOL-T002-R021] An Endpoint Identifier MUST have a scheme identifier attribute.</assert>
-            <assert id="PEPPOL-T002-R022"
-                 flag="fatal"
-                 test="matches(normalize-space(./@schemeID),'^(0002|0007|0009|0037|0060|0088|0096|0097|0106|0130|0135|0142|0151|0183|0184|0190|0191|0192|0193|0195|0196|0198|0199|0200|0201|0202|0204|0208|0209|0210|0211|0212|0213|9901|9906|9907|9910|9913|9914|9915|9918|9919|9920|9922|9923|9924|9925|9926|9927|9928|9929|9930|9931|9932|9933|9934|9935|9936|9937|9938|9939|9940|9941|9942|9943|9944|9945|9946|9947|9948|9949|9950|9951|9952|9953|9955|9957)')">[PEPPOL-T002-R022] An Endpoint Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
+            
             <report id="PEPPOL-T002-S328"
                  flag="warning"
                  test="./@*[not(name()='schemeID')]">
@@ -542,9 +533,7 @@
         
         <rule context="cac:PartyIdentification/cbc:ID">
             <assert id="PEPPOL-T002-R016" flag="fatal" test="./@schemeID">[PEPPOL-T002-R016] A Party Identifier MUST have a scheme identifier attribute.</assert>
-            <assert id="PEPPOL-T002-R017"
-                 flag="fatal"
-                 test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3])))$')">[PEPPOL-T002-R017] A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
+            
             <report id="PEPPOL-T002-S332"
                  flag="warning"
                  test="./@*[not(name()='schemeID')]">
@@ -559,6 +548,12 @@
         <rule context="cac:ProcurementProjectLotReference/cbc:ID">
             <report id="PEPPOL-T002-S330" flag="warning" test="./@*">
             <value-of select="$syntaxError"/>[PEPPOL-T002-S330] cac:ProcurementProjectLotReference/cbc:ID SHOULD NOT have any further attributes</report>
+        </rule>
+
+        <rule context="ubl:ExpressionOfInterestResponse//*[not(*)]">
+            <report id="PEPPOL-T002-S002"
+                 flag="fatal"
+                 test="normalize-space(.) = '' and not(*)">[PEPPOL-T002-S002] An Expression of Interest Confirmation document MUST NOT contain empty elements.</report>
         </rule>
     </pattern>
 

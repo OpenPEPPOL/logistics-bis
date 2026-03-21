@@ -13,7 +13,7 @@
     </rule>
     
     <rule context="query:QueryRequest/rim:Slot[@name='SpecificationIdentification']">
-        <assert id="PEPPOL-T011-R011" flag="fatal" test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[starts-with(normalize-space(), 'urn:fdc:peppol.eu:prac:trns:t011:1')]">SpecificationIdentification value MUST be 'urn:fdc:peppol.eu:prac:trns:t011:1.1'.</assert>
+        <assert id="PEPPOL-T011-R011" flag="fatal" test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[starts-with(normalize-space(), 'urn:fdc:peppol.eu:prac:trns:t011:1')]">SpecificationIdentification value MUST be 'urn:fdc:peppol.eu:prac:trns:t011:1'.</assert>
     </rule>
     
     <rule context="query:QueryRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']">
@@ -21,8 +21,8 @@
     </rule>
     
     <rule context="query:QueryRequest/rim:Slot[@name='SenderElectronicAddress'] | query:QueryRequest/rim:Slot[@name='ReceiverElectronicAddress']">
-        <assert id="PEPPOL-T011-R013" flag="fatal" test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[matches(normalize-space(), '^(0002|0007|0009|0037|0060|0088|0096|0097|0106|0130|0135|0142|0151|0183|0184|0190|0191|0192|0193|0195|0196|0198|0199|0200|0201|0202|0204|0208|0209|0210|0211|0212|0213|9901|9906|9907|9910|9913|9914|9915|9918|9919|9920|9922|9923|9924|9925|9926|9927|9928|9929|9930|9931|9932|9933|9934|9935|9936|9937|9938|9939|9940|9941|9942|9943|9944|9945|9946|9947|9948|9949|9950|9951|9952|9953|9955|9957):')]">An Electronic Address MUST have a scheme identifier attribute from the list of "PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers" followed by a ":".</assert>
-        <assert id="PEPPOL-T011-R081" flag="fatal" test="@type = 'EAS'">The schemeID type attribute has to be "EAS".</assert>
+        
+        <assert id="PEPPOL-T011-R081" flag="fatal" test="@type = 'eas'">The schemeID type attribute has to be "eas".</assert>
     </rule>
     
     <rule context="

@@ -49,11 +49,20 @@ docker run --rm -i -v $PROJECT:/src --entrypoint java klakegg/saxon:9.8.0-7 -cp 
 echo "Generating UBL example: Tender Clarification (T010)"
 docker run --rm -i -v $PROJECT:/src --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/syntax/ubl-tender-clarification.xml -xsl:/src/tools/create-ubl-example-from-syntax.xsl -o:/src/rules/examples/T010/TenderClarification_full.xml
 
+echo "Generating ebXML example: Search Notice Request (T011)"
+docker run --rm -i -v $PROJECT:/src --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/syntax/ebxml-search-notice-request.xml -xsl:/src/tools/create-ebxml-example-from-syntax.xsl -o:/src/rules/examples/T011/ExampleSearchNoticeRequest_full.xml
+
+echo "Generating ebXML example: Search Notice Response (T012)"
+docker run --rm -i -v $PROJECT:/src --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/syntax/ebxml-search-notice-response.xml -xsl:/src/tools/create-ebxml-example-from-syntax.xsl -o:/src/rules/examples/T012/ExampleSearchNoticeResponse_full.xml
+
 echo "Generating UBL example: Tender Withdrawal Request (T013)"
 docker run --rm -i -v $PROJECT:/src --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/syntax/ubl-tender-withdrawal-request.xml -xsl:/src/tools/create-ubl-example-from-syntax.xsl -o:/src/rules/examples/T013/TenderWithdrawalRequest_full.xml
 
 echo "Generating UBL example: Tender Withdrawal Response (T014)"
 docker run --rm -i -v $PROJECT:/src --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/syntax/ubl-tender-withdrawal-response.xml -xsl:/src/tools/create-ubl-example-from-syntax.xsl -o:/src/rules/examples/T014/TenderWithdrawalResponse_full.xml
+
+echo "Generating ebXML example: Publish Notice (T015)"
+docker run --rm -i -v $PROJECT:/src --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/syntax/ebxml-publish-notice.xml -xsl:/src/tools/create-ebxml-example-from-syntax.xsl -o:/src/rules/examples/T015/ExamplePublishNotice_full.xml
 
 echo "Generating UBL example: Notice Publication Response (T016)"
 docker run --rm -i -v $PROJECT:/src --entrypoint java klakegg/saxon:9.8.0-7 -cp /saxon.jar net.sf.saxon.Transform -s:/src/structure/syntax/ubl-publish-notice-response.xml -xsl:/src/tools/create-ubl-example-from-syntax.xsl -o:/src/rules/examples/T016/NoticePublicationResponse_full.xml

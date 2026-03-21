@@ -14,5 +14,5 @@
 
     <!-- Rules -->
     <include href="parts/PEPPOL-M-T015.sch"/>
-
+    <include href="../../target/generated/T015-basic.sch"/>
 </schema>

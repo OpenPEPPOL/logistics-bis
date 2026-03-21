@@ -437,9 +437,7 @@
     
       <rule context="cac:PartyIdentification/cbc:ID">
         <assert id="PEPPOL-T023-R028" flag="fatal" test="./@schemeID">A Party Identifier MUST have a scheme identifier attribute.</assert>
-        <assert id="PEPPOL-T023-R029"
-                 flag="fatal"
-                 test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3])))$')">A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
+        
         <assert id="PEPPOL-T023-R030"
                  flag="warning"
                  test="count(./@*) = 1 and ./@schemeID">

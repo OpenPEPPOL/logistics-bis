@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <query:QueryResponse
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
-        xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        totalResultCount="-1"
-        requestId="48ac7379-731d-40be-bc48-599934182d45"
-        startIndex="0"
-        status=""
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:rim="urn:oasis:names:tc:ebxml-regrep:xsd:rim:4.0"
+    xmlns:query="urn:oasis:names:tc:ebxml-regrep:xsd:query:4.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    totalResultCount="-1"
+    requestId="48ac7379-731d-40be-bc48-599934182d45"
+    startIndex="0"
 >
     <!-- tag::specification-identification[] -->
     <rim:Slot name="SpecificationIdentification"> <!--.-->
@@ -19,7 +18,7 @@
     <!-- tag::business-process-type-identifier[] -->
     <rim:Slot name="BusinessProcessTypeIdentifier"> <!--.-->
         <rim:SlotValue xsi:type="rim:StringValueType">
-            <rim:Value>urn:fdc:peppol.eu:prac:bis:p006:1.2</rim:Value> <!--.-->
+            <rim:Value>urn:fdc:peppol.eu:prac:bis:p006</rim:Value> <!--.-->
         </rim:SlotValue>
     </rim:Slot>
     <!-- end::business-process-type-identifier[] -->
@@ -31,39 +30,41 @@
     </rim:Slot>
     <!-- end::issue-date-time[] -->
     <!-- tag::sender-electronic-address[] -->
-    <rim:Slot name="SenderElectronicAddress" type="EAS"> <!--.-->
+    <rim:Slot name="SenderElectronicAddress" type="eas"> <!--.-->
         <rim:SlotValue xsi:type="rim:StringValueType">
-            <rim:Value>9930:DE122268496</rim:Value> <!--.-->
+            <rim:Value>9930</rim:Value> <!--.-->
         </rim:SlotValue>
     </rim:Slot>
     <!-- end::sender-electronic-address[] -->
     <!-- tag::receiver-electronic-address[] -->
-    <rim:Slot name="ReceiverElectronicAddress" type="EAS"> <!--.-->
+    <rim:Slot name="ReceiverElectronicAddress" type="eas"> <!--.-->
         <rim:SlotValue xsi:type="rim:StringValueType">
-            <rim:Value>9946:500820007</rim:Value> <!--.-->
+            <rim:Value>9946</rim:Value> <!--.-->
         </rim:SlotValue>
     </rim:Slot>
     <!-- end::receiver-electronic-address[] -->
     <!-- tag::registry-object-list[] -->
     <rim:RegistryObjectList> <!--.-->
         <rim:RegistryObject
-                lid="2C621D47-112D-42D4-B6F8-57392464C3E7"
-                id="53EB9F20-EE12-474F-9424-78FC604E8FAE"
-                xsi:type="rim:ExtrinsicObjectType"> <!--.-->
+            lid="2C621D47-112D-42D4-B6F8-57392464C3E7"
+            id="53EB9F20-EE12-474F-9424-78FC604E8FAE"
+            xsi:type="rim:ExtrinsicObjectType"> <!--.-->
             <rim:Slot name="BuyerInformation">
                 <rim:Slot name="BuyerPartyIdentification" type="ICD">
-                    <rim:SlotValue xsi:type="rim:StringValueType">  <!--.-->
-                        <rim:Value>0204:991-1234512345-06</rim:Value>
+                    <rim:SlotValue xsi:type="rim:CollectionValueType">  <!--.-->
+                        <rim:Element xsi:type="rim:StringValueType">
+                            <rim:Value>0204</rim:Value>
+                        </rim:Element>
                     </rim:SlotValue>
                 </rim:Slot>
-                <rim:Slot name="BuyerElectronicAddress" type="EAS"> <!--.-->
+                <rim:Slot name="BuyerElectronicAddress" type="eas"> <!--.-->
                     <rim:SlotValue xsi:type="rim:StringValueType">
-                        <rim:Value>9930:DE122268496</rim:Value>
+                        <rim:Value>9930</rim:Value>
                     </rim:SlotValue>
                 </rim:Slot>
             </rim:Slot>
             <!-- tag::UBLDocumentSchema[] -->
-            <rim:Slot name="ublDocumentSchema" type="ublDocumentSchema"> <!--.-->
+            <rim:Slot name="UBLDocumentSchema" type="ublDocumentSchema"> <!--.-->
                 <rim:SlotValue xsi:type="rim:StringValueType">
                     <rim:Value>CN</rim:Value>
                 </rim:SlotValue>
@@ -74,7 +75,7 @@
                     <rim:Value>eforms-sdk-1.2</rim:Value>
                 </rim:SlotValue>
             </rim:Slot>
-            <rim:RepositoryItemRef xlink:href="./53EB9F20-EE12-474F-9424-78FC604E8FAE.eform.xml"/> <!--.-->
+            <rim:RepositoryItemRef xlink="./53EB9F20-EE12-474F-9424-78FC604E8FAE.eform.xml" xlink:href="./53EB9F20-EE12-474F-9424-78FC604E8FAE.eform.xml" /> <!--.-->
         </rim:RegistryObject>
     </rim:RegistryObjectList>
     <!-- end::registry-object-list[] -->

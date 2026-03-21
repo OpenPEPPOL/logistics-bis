@@ -53,7 +53,7 @@
             </Description>
         </Attribute>
         <Element>
-            <Term>rim:Slot@name=SpecificationIdentification</Term>
+            <Term>rim:Slot[@name='SpecificationIdentification']</Term>
             <Name>Specification identification</Name>
             <Attribute>
                 <Term>name</Term>
@@ -74,7 +74,7 @@
             </Element>
         </Element>
         <Element>
-            <Term>rim:Slot@name=BusinessProcessTypeIdentifier</Term>
+            <Term>rim:Slot[@name='BusinessProcessTypeIdentifier']</Term>
             <Name>Business process type identifier</Name>
             <Attribute>
                 <Term>name</Term>
@@ -90,12 +90,12 @@
                 <Element>
                     <Term>rim:Value</Term>
                     <Reference type="RULE">PEPPOL-T012-R011</Reference>
-                    <Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p006:1.2</Value>
+                    <Value type="FIXED">urn:fdc:peppol.eu:prac:bis:p006</Value>
                 </Element>
             </Element>
         </Element>
         <Element>
-            <Term>rim:Slot@name=IssueDateTime</Term>
+            <Term>rim:Slot[@name='IssueDateTime']</Term>
             <Name>Issue date time</Name>
             <Description>The issue date and time when the Serch Notice request is issued. The issue date time must have
                 granularity of seconds, and include time zone information.
@@ -120,7 +120,7 @@
             </Element>
         </Element>
         <Element>
-            <Term>rim:Slot@name=SenderElectronicAddress</Term>
+            <Term>rim:Slot[@name='SenderElectronicAddress']</Term>
             <Name>Contracting body electronic address</Name>
             <Description>The electronic address of the contracting body.</Description>
             <Attribute>
@@ -144,14 +144,13 @@
                     <Name>Contracting body electronic address identifier</Name>
                     <Description>Scheme identifier:Identification for the contracting body</Description>
                     <DataType>rim:StringValueType</DataType>
-                    <Reference type="RULE">PEPPOL-T012-R014</Reference>
                     <Reference type="CODE_LIST">eas</Reference>
                     <Value type="EXAMPLE">9930:DE122268496</Value>
                 </Element>
             </Element>
         </Element>
         <Element>
-            <Term>rim:Slot@name=ReceiverElectronicAddress</Term>
+            <Term>rim:Slot[@name='ReceiverElectronicAddress']</Term>
             <Name>Economic operator electronic address</Name>
             <Description>The electronic address of the economic operator.</Description>
             <Attribute>
@@ -176,7 +175,6 @@
                     <Name>Economic operator electronic address identifier</Name>
                     <Description>Scheme identifier:Identification  for the economic operator</Description>
                     <DataType>rim:StringValueType</DataType>
-                    <Reference type="RULE">PEPPOL-T012-R014</Reference>
                     <Reference type="CODE_LIST">eas</Reference>
                     <Value type="EXAMPLE">9946:500820007</Value>
                 </Element>
@@ -222,10 +220,10 @@
                     <Value type="FIXED">rim:ExtrinsicObjectType</Value>
                 </Attribute>
                 <Element>
-                    <Term>rim:Slot@name=BuyerInformation</Term>
+                    <Term>rim:Slot[@name='BuyerInformation']</Term>
                     <Name>Buyer information</Name>
                     <Element cardinality="0..1">
-                        <Term>rim:Slot@name=BuyerPartyIdentification</Term>
+                        <Term>rim:Slot[@name='BuyerPartyIdentification']</Term>
                         <Name>Buyer party identification</Name>
                         <Description>An identification for the buyer party according to ISO 6523 ICD list.</Description>
                         <Reference type="RULE">PEPPOL-T012-R026</Reference>
@@ -259,14 +257,13 @@
                                     <DataType>rim:StringValueType</DataType>
                                     <Reference type="CODE_LIST">ICD</Reference>
                                     <Reference type="RULE">PEPPOL-T012-R028</Reference>
-                                    <Reference type="RULE">PEPPOL-T012-R031</Reference>
                                     <Value type="EXAMPLE">0204:991-1234512345-06</Value>
                                 </Element>
                             </Element>
                         </Element>
                     </Element>
                     <Element cardinality="0..1">
-                        <Term>rim:Slot@name=BuyerElectronicAddress</Term>
+                        <Term>rim:Slot[@name='BuyerElectronicAddress']</Term>
                         <Name>Buyer electronic address identifier</Name>
                         <Description>The electronic address of the eTendering system which is used by the buyer, contracting authority or contracting entity who is buying
                             supplies, services or public works using a tendering procedure as described in the applicable
@@ -296,7 +293,6 @@
                                 <Description>Scheme identifier:Identification for the buyer</Description>
                                 <DataType>rim:StringValueType</DataType>
                                 <Reference type="RULE">PEPPOL-T012-R027</Reference>
-                                <Reference type="RULE">PEPPOL-T012-R030</Reference>
                                 <Reference type="CODE_LIST">eas</Reference>
                                 <Value type="EXAMPLE">9930:DE89769595</Value>
                             </Element>
@@ -304,7 +300,7 @@
                     </Element>
                 </Element>
                 <Element>
-                    <Term>rim:Slot@name=UBLDocumentSchema</Term>
+                    <Term>rim:Slot[@name='UBLDocumentSchema']</Term>
                     <Name>UBL document schema</Name>
                     <Description>Used to identify the UBL document type of the referenced notice which are associated to
                         the corresponding UBL namespaces.
@@ -333,7 +329,7 @@
                     </Element>
                 </Element>
                 <Element>
-                    <Term>rim:Slot@name=eFormsVersion</Term>
+                    <Term>rim:Slot[@name='eFormsVersion']</Term>
                     <Name>eForms version</Name>
                     <Description>Used to identify the version of the eForms specification used for the document.
                     </Description>

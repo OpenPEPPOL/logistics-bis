@@ -510,11 +510,7 @@
                  flag="fatal"
                  test="(normalize-space(.)='13') or (normalize-space(.)='310')">[PEPPOL-T014-R014] The document type code for the document reference (the received tender) MUST be '310' or '13' if you refer to a REM evidence.
         </assert>
-        <assert id="PEPPOL-T014-R023"
-                 flag="fatal"
-                 test="normalize-space(./@listID)='UNCL1001'">[PEPPOL-T014-R023]
-            listID for Document Type Code MUST be 'UNCL1001'.
-        </assert>
+        
       </rule>
     
       <rule context="ubl:TenderReceipt/cac:TenderDocumentReference/cac:Attachment">
@@ -566,12 +562,7 @@
         <assert id="PEPPOL-T014-R010" flag="fatal" test="./@schemeID">[PEPPOL-T014-R010] An Endpoint Identifier MUST
             have a scheme identifier attribute.
         </assert>
-        <assert id="PEPPOL-T014-R011"
-                 flag="fatal"
-                 test="matches(normalize-space(./@schemeID),'^(0002|0007|0009|0037|0060|0088|0096|0097|0106|0130|0135|0142|0151|0183|0184|0190|0191|0192|0193|0195|0196|0198|0199|0200|0201|0202|0204|0208|0209|0210|0211|0212|0213|9901|9906|9907|9910|9913|9914|9915|9918|9919|9920|9922|9923|9924|9925|9926|9927|9928|9929|9930|9931|9932|9933|9934|9935|9936|9937|9938|9939|9940|9941|9942|9943|9944|9945|9946|9947|9948|9949|9950|9951|9952|9953|9955|9957)')">
-            [PEPPOL-T014-R011] An Endpoint Identifier Scheme MUST be from the list of PEPPOL Party Identifiers
-            described in the "PEPPOL Policy for using Identifiers".
-        </assert>
+        
         <assert id="PEPPOL-T014-S321" flag="warning" test="./@*[name()='schemeID']">[PEPPOL-T014-S321] EndpointID SHOULD NOT have any attributes but schemeID
         </assert>
       </rule>
@@ -616,12 +607,7 @@
         <assert id="PEPPOL-T014-R008" flag="fatal" test="./@schemeID">[PEPPOL-T014-R008] A Party Identifier MUST have
             a scheme identifier attribute.
         </assert>
-        <assert id="PEPPOL-T014-R009"
-                 flag="fatal"
-                 test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3])))$')">
-            [PEPPOL-T014-R009] A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described
-            in the "PEPPOL Policy for using Identifiers".
-        </assert>
+        
         <assert id="PEPPOL-T014-S325" flag="warning" test="./@*[name()='schemeID']">[PEPPOL-T014-S325] PartyIdentifier SHOULD NOT have any further attributes but
             schemeID
         </assert>
