@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
     <Term>PublishNotice</Term>
     <Name>Peppol Publish Notice (T015)</Name>
@@ -132,7 +132,7 @@
             <Attribute>
                 <Term>type</Term>
                 <Reference type="RULE">PEPPOL-T015-R026</Reference>
-                <Value type="FIXED">eas</Value>
+                <Value type="FIXED">EAS</Value>
             </Attribute>
             <Element>
                 <Term>rim:SlotValue</Term>
@@ -146,8 +146,9 @@
                     <Term>rim:Value</Term>
                     <Name>Contracting body electronic address identifier</Name>
                     <Description>Scheme identifier:Identification for the contracting body</Description>
-                    <Reference type="CODE_LIST">eas</Reference>
-                    <Value type="EXAMPLE">9930:DE122268496</Value>
+					<!-- Reference type="CODE_LIST">eas</Reference -->
+					<Reference type="RULE">PEPPOL-T015-R011</Reference>
+					<Value type="EXAMPLE">9930:DE122268496</Value>
                 </Element>
             </Element>
         </Element>
@@ -162,7 +163,7 @@
             <Attribute>
                 <Term>type</Term>
                 <Reference type="RULE">PEPPOL-T015-R026</Reference>
-                <Value type="FIXED">eas</Value>
+                <Value type="FIXED">EAS</Value>
             </Attribute>
             <Element>
                 <Term>rim:SlotValue</Term>
@@ -176,8 +177,9 @@
                     <Term>rim:Value</Term>
                     <Name>Economic operator electronic address identifier</Name>
                     <Description>Scheme identifier:Identification for the economic operator</Description>
-                    <Reference type="CODE_LIST">eas</Reference>
-                    <Value type="EXAMPLE">9946:500820007</Value>
+                    <!-- Reference type="CODE_LIST">eas</Reference -->
+					<Reference type="RULE">PEPPOL-T015-R011</Reference>
+					<Value type="EXAMPLE">9946:500820007</Value>
                 </Element>
             </Element>
         </Element>
@@ -403,8 +405,9 @@
                                     <Term>rim:Value</Term>
                                     <Description>Scheme identifier:Party Identification for the buyer.</Description>
                                     <DataType>rim:StringValueType</DataType>
-                                    <Reference type="CODE_LIST">ICD</Reference>
-                                    <Value type="EXAMPLE">0204:991-1234512345-06</Value>
+									<!-- Reference type="CODE_LIST">ICD</Reference -->
+									<Reference type="RULE">PEPPOL-T015-R042</Reference>
+									<Value type="EXAMPLE">0204:991-1234512345-06</Value>
                                 </Element>
                             </Element>
                         </Element>
@@ -420,7 +423,7 @@
                         </Attribute>
                         <Attribute>
                             <Term>type</Term>
-                            <Value type="FIXED">eas</Value>
+                            <Value type="FIXED">EAS</Value>
                         </Attribute>
                         <Element>
                             <Term>rim:SlotValue</Term>
@@ -436,8 +439,9 @@
                                 <Description>Scheme identifier:Identification for the buyer</Description>
                                 <DataType>rim:StringValueType</DataType>
                                 <Reference type="RULE">PEPPOL-T015-R014</Reference>
-                                <Reference type="CODE_LIST">eas</Reference>
-                                <Value type="EXAMPLE">9930:DE122268496</Value>
+								<!-- Reference type="CODE_LIST">eas</Reference -->
+								<Reference type="RULE">PEPPOL-T015-R041</Reference>
+								<Value type="EXAMPLE">9930:DE122268496</Value>
                             </Element>
                         </Element>
                     </Element>
