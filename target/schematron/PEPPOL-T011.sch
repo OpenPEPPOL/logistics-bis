@@ -45,13 +45,13 @@
       <rule context="query:QueryRequest/rim:Slot[@name='SpecificationIdentification']">
         <assert id="PEPPOL-T011-R011"
                  flag="fatal"
-                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[starts-with(normalize-space(), 'urn:fdc:peppol.eu:prac:trns:t011:1')]">SpecificationIdentification value MUST be 'urn:fdc:peppol.eu:prac:trns:t011:1'.</assert>
+                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[starts-with(normalize-space(), 'urn:fdc:peppol.eu:prac:trns:t011:1:3')]">SpecificationIdentification value MUST be 'urn:fdc:peppol.eu:prac:trns:t011:1:3'.</assert>
       </rule>
     
       <rule context="query:QueryRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']">
         <assert id="PEPPOL-T011-R012"
                  flag="fatal"
-                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[normalize-space() = 'urn:fdc:peppol.eu:prac:bis:p006']">BusinessProcessTypeIdentifier value MUST be 'urn:fdc:peppol.eu:prac:bis:p006'.</assert>
+                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[normalize-space() = 'urn:fdc:peppol.eu:prac:bis:p006:1:3']">BusinessProcessTypeIdentifier value MUST be 'urn:fdc:peppol.eu:prac:bis:p006:1:3'.</assert>
       </rule>
     
       <rule context="query:QueryRequest/rim:Slot[@name='SenderElectronicAddress'] | query:QueryRequest/rim:Slot[@name='ReceiverElectronicAddress']">
@@ -386,9 +386,9 @@
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B00703">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryRequest/rim:Slot[@name='SpecificationIdentification']/rim:SlotValue/rim:Value">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t011:1'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t011:1:3'"
                  flag="fatal"
-                 id="PEPPOL-T011-B00901">Element 'rim:Value' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t011:1'.</assert>
+                 id="PEPPOL-T011-B00901">Element 'rim:Value' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t011:1:3'.</assert>
       </rule>
       <rule context="/query:QueryRequest/rim:Slot[@name='SpecificationIdentification']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B00504">Document MUST NOT contain elements not part of the data model.</assert>
@@ -408,9 +408,9 @@
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B01203">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']/rim:SlotValue/rim:Value">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p006'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p006:1:3'"
                  flag="fatal"
-                 id="PEPPOL-T011-B01401">Element 'rim:Value' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p006'.</assert>
+                 id="PEPPOL-T011-B01401">Element 'rim:Value' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p006:1:3'.</assert>
       </rule>
       <rule context="/query:QueryRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B01004">Document MUST NOT contain elements not part of the data model.</assert>
