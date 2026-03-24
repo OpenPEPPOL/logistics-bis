@@ -94,9 +94,9 @@
         </rule>
 
         <rule context="lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']">
-			      <assert id="PEPPOL-T015-R042"
+            <assert id="PEPPOL-T015-R042"
                  flag="fatal"
-                 test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[matches(normalize-space(),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3]))):')]">A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers" followed by a ":".</assert>
+                 test="(rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value | rim:SlotValue[@xsi:type='rim:CollectionValueType']/rim:Element/rim:Value)[matches(normalize-space(.),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3]))):')]">A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers" followed by a ":".</assert>
 			      <assert id="PEPPOL-T015-R017" flag="fatal" test="@type = 'ICD'">The schemeID type attribute has to be "ICD".</assert>
         </rule>
 
