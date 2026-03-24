@@ -60,17 +60,17 @@
     </rule>
     <rule context="ubl:ExpressionOfInterestRequest/cbc:CustomizationID">
         <assert id="PEPPOL-T001-R002" flag="fatal"
-            test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t001:1'"
+            test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t001:1:3'"
             >[PEPPOL-T001-R002] CustomizationID value MUST be
-            'urn:fdc:peppol.eu:prac:trns:t001:1'</assert>
+            'urn:fdc:peppol.eu:prac:trns:t001:1:3'</assert>
         <report id="PEPPOL-T001-S303" flag="warning" test="./@*"><value-of select="$syntaxError"
                 />[PEPPOL-T001-S303] CustomizationID SHOULD NOT contain any attributes.</report>
     </rule>
     <rule context="ubl:ExpressionOfInterestRequest/cbc:ProfileID">
         <assert id="PEPPOL-T001-R004" flag="fatal"
-            test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p001'"
+            test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p001:1:3'"
             >[PEPPOL-T001-R004] ProfileID value MUST be
-            'urn:fdc:peppol.eu:prac:bis:p001'</assert>
+            'urn:fdc:peppol.eu:prac:bis:p001:1:3'</assert>
         <report id="PEPPOL-T001-S304" flag="warning" test="./@*"><value-of select="$syntaxError"
                 />[PEPPOL-T001-S304] ProfileID SHOULD NOT contain any attributes.</report>
     </rule>
