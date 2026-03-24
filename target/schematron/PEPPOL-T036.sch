@@ -257,14 +257,14 @@
          <assert test="not(@*:schemaLocation)" flag="fatal" id="PEPPOL-T036-B00110">Document MUST not contain schema location.</assert>
       </rule>
       <rule context="/ubl:Catalogue/cbc:CustomizationID">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t036:1'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t036:1:0'"
                  flag="fatal"
-                 id="PEPPOL-T036-B00201">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t036:1'.</assert>
+                 id="PEPPOL-T036-B00201">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t036:1:0'.</assert>
       </rule>
       <rule context="/ubl:Catalogue/cbc:ProfileID">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p035'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p035:1:0'"
                  flag="fatal"
-                 id="PEPPOL-T036-B00301">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p035'.</assert>
+                 id="PEPPOL-T036-B00301">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p035:1:0'.</assert>
       </rule>
       <rule context="/ubl:Catalogue/cbc:ID"/>
       <rule context="/ubl:Catalogue/cbc:Name"/>
@@ -1349,14 +1349,14 @@
 
       <rule context="cbc:ProfileID">
         <assert id="PEPPOL-T036-R017"
-                 test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:bis:p035')"
+                 test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:bis:p035:1:0')"
                  flag="fatal">An catalogue transaction SHALL use profile catalogue.</assert>
       </rule>
 
 	     <rule context="cbc:CustomizationID">
 			      <assert id="PEPPOL-T036-R018"
-                 test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:trns:t036:1')"
-                 flag="fatal">Customization identifier SHALL start with the value 'urn:fdc:peppol.eu:prac:trns:t036:1'.</assert>
+                 test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:trns:t036:1:0')"
+                 flag="fatal">Customization identifier SHALL start with the value 'urn:fdc:peppol.eu:prac:trns:t036:1:0'.</assert>
 	     </rule>    
     
       <rule context="/ubl:Catalogue/cac:ValidityPeriod">
