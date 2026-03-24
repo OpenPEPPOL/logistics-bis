@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron">
     
     <let name="syntaxError"
@@ -24,12 +24,12 @@
     </rule>
     
     <rule context="ubl:TendererQualification/cbc:CustomizationID">
-        <assert id="PEPPOL-T019-R015" flag="fatal" test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t019:1'">CustomizationID value MUST be 'urn:fdc:peppol.eu:prac:trns:t019:1'</assert>
+        <assert id="PEPPOL-T019-R015" flag="fatal" test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:trns:t019:1:2'">CustomizationID value MUST be 'urn:fdc:peppol.eu:prac:trns:t019:1:2'</assert>
         <assert id="PEPPOL-T019-R016" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>CustomizationID SHOULD NOT contain any attributes.</assert>
     </rule>
     
     <rule context="ubl:TendererQualification/cbc:ProfileID">
-        <assert id="PEPPOL-T019-R017" flag="fatal" test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p011'">ProfileID value MUST be 'urn:fdc:peppol.eu:prac:bis:p011'</assert>
+        <assert id="PEPPOL-T019-R017" flag="fatal" test="normalize-space(.) = 'urn:fdc:peppol.eu:prac:bis:p011:1:2'">ProfileID value MUST be 'urn:fdc:peppol.eu:prac:bis:p011:1:2'</assert>
         <assert id="PEPPOL-T019-R018" flag="warning" test="not(./@*)"><value-of select="$syntaxError"/>ProfileID SHOULD NOT contain any attributes.</assert>
     </rule>
     

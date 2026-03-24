@@ -1,18 +1,18 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <pattern xmlns="http://purl.oclc.org/dsdl/schematron">
         <let name="CatalogueValidityStart" value="if(exists(/ubl:Catalogue/cac:ValidityPeriod/cbc:StartDate)) then number(translate(/ubl:Catalogue/cac:ValidityPeriod/cbc:StartDate,'-','')) else 0"/>
         <let name="CatalogueValidityEnd" value="if(exists(/ubl:Catalogue/cac:ValidityPeriod/cbc:EndDate)) then number(translate(/ubl:Catalogue/cac:ValidityPeriod/cbc:EndDate,'-','')) else 99999999"/>
 
     <rule context="cbc:ProfileID">
         <assert id="PEPPOL-T036-R017"
-            test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:bis:p035')"
+            test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:bis:p035:1:0')"
             flag="fatal">An catalogue transaction SHALL use profile catalogue.</assert>
     </rule>
 
 	<rule context="cbc:CustomizationID">
 			<assert id="PEPPOL-T036-R018" 
-					test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:trns:t036:1')"
-					flag="fatal">Customization identifier SHALL start with the value 'urn:fdc:peppol.eu:prac:trns:t036:1'.</assert>
+					test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:trns:t036:1:0')"
+					flag="fatal">Customization identifier SHALL start with the value 'urn:fdc:peppol.eu:prac:trns:t036:1:0'.</assert>
 	</rule>    
     
     <rule context="/ubl:Catalogue/cac:ValidityPeriod">
