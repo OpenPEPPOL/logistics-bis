@@ -150,7 +150,7 @@
     <rule context="query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']
             ">
 		<assert id="PEPPOL-T012-R031" flag="fatal"
-	        test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[matches(normalize-space(),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3]))):')]">
+            test="(rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value | rim:SlotValue[@xsi:type='rim:CollectionValueType']/rim:Element/rim:Value)[matches(normalize-space(.),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3]))):')]">
 			A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL
 			Policy for using Identifiers" followed by a ":".
 		</assert>
