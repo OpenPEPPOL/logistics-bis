@@ -89,7 +89,7 @@
     
     <rule context="cbc:EndpointID">
         <assert id="PEPPOL-T020-R010" flag="fatal" test="./@schemeID">An Endpoint Identifier MUST have a scheme identifier attribute.</assert>
-        <assert id="PEPPOL-T020-R011" flag="fatal" test="matches(normalize-space(./@schemeID),'^(0002|0007|0009|0037|0060|0088|0096|0097|0106|0130|0135|0142|0151|0183|0184|0190|0191|0192|0193|0195|0196|0198|0199|0200|0201|0202|0204|0208|0209|0210|0211|0212|0213|9901|9906|9907|9910|9913|9914|9915|9918|9919|9920|9922|9923|9924|9925|9926|9927|9928|9929|9930|9931|9932|9933|9934|9935|9936|9937|9938|9939|9940|9941|9942|9943|9944|9945|9946|9947|9948|9949|9950|9951|9952|9953|9955|9957)')">An Endpoint Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
+        
         <report id="PEPPOL-T020-S321" flag="warning" test="./@*[not(name()='schemeID')]"><value-of select="$syntaxError"/>EndpointID SHOULD NOT have any attributes but schemeID</report>
     </rule>
     
@@ -110,7 +110,7 @@
     
     <rule context="cac:PartyIdentification/cbc:ID">
         <assert id="PEPPOL-T020-R008" flag="fatal" test="./@schemeID">A Party Identifier MUST have a scheme identifier attribute.</assert>
-        <assert id="PEPPOL-T020-R009" flag="fatal" test="matches(normalize-space(./@schemeID),'^(0((00[3-9])|(0[1-9]\d)|(1\d{2})|(20\d)|(21[0-3])))$')">A Party Identifier Scheme MUST be from the list of PEPPOL Party Identifiers described in the "PEPPOL Policy for using Identifiers".</assert>
+        
         <report id="PEPPOL-T020-S325" flag="warning" test="./@*[not(name()='schemeID')]"><value-of select="$syntaxError"/>PartyIdentifier SHOULD NOT have any further attributes but schemeID</report>
     </rule>
     

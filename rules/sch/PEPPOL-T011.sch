@@ -12,4 +12,5 @@
     <ns prefix="u" uri="utils" />
 
     <include href="parts/PEPPOL-M-T011.sch"/>
+    <include href="../../target/generated/T011-basic.sch"/>
 </schema>
