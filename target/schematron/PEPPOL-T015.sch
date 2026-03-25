@@ -211,9 +211,9 @@
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B00603">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:Slot[@name='SpecificationIdentification']/rim:SlotValue/rim:Value">
-         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t015:1:3'"
+         <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t015:1.3'"
                  flag="fatal"
-                 id="PEPPOL-T015-B00801">Element 'rim:Value' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t015:1:3'.</assert>
+                 id="PEPPOL-T015-B00801">Element 'rim:Value' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t015:1.3'.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:Slot[@name='SpecificationIdentification']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T015-B00404">Document MUST NOT contain elements not part of the data model.</assert>
