@@ -1163,10 +1163,10 @@
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B20602">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AwardCriterionType']/rim:SlotValue/rim:Element">
-         <assert test="not(@type) or @type = 'rim:StringValueType'"
+         <assert test="not(@xsi:type) or @xsi:type = 'rim:StringValueType'"
                  flag="fatal"
-                 id="PEPPOL-T011-B20801">Attribute 'type' MUST contain value 'rim:StringValueType'</assert>
-         <assert test="@type" flag="fatal" id="PEPPOL-T011-B20802">Attribute 'type' MUST be present.</assert>
+                 id="PEPPOL-T011-B20801">Attribute 'xsi:type' MUST contain value 'rim:StringValueType'</assert>
+         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B20802">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AwardCriterionType']/rim:SlotValue/rim:Element/rim:Value"/>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AwardCriterionType']/rim:SlotValue/rim:Element/*">
