@@ -1357,11 +1357,10 @@
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='MainActivity']">
          <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T011-B25701">Element 'rim:SlotValue' MUST be provided.</assert>
-         <assert test="@MainActivity" flag="fatal" id="PEPPOL-T011-B25702">Attribute 'MainActivity' MUST be present.</assert>
          <assert test="not(@type) or @type = 'http://publications.europa.eu/resource/authority/main-activity'"
                  flag="fatal"
-                 id="PEPPOL-T011-B25703">Attribute 'type' MUST contain value 'http://publications.europa.eu/resource/authority/main-activity'</assert>
-         <assert test="@type" flag="fatal" id="PEPPOL-T011-B25704">Attribute 'type' MUST be present.</assert>
+                 id="PEPPOL-T011-B25702">Attribute 'type' MUST contain value 'http://publications.europa.eu/resource/authority/main-activity'</assert>
+         <assert test="@type" flag="fatal" id="PEPPOL-T011-B25703">Attribute 'type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='MainActivity']/rim:SlotValue">
          <assert test="rim:Element" flag="fatal" id="PEPPOL-T011-B26001">Element 'rim:Element' MUST be provided.</assert>
@@ -1382,7 +1381,7 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B26204">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='MainActivity']/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T011-B25705">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T011-B25704">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='BuyerInformation']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B21103">Document MUST NOT contain elements not part of the data model.</assert>
