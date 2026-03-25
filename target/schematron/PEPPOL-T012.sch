@@ -370,8 +370,7 @@
          <assert test="@type" flag="fatal" id="PEPPOL-T012-B03805">Attribute 'type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']/rim:SlotValue">
-         <assert test="rim:Element" flag="fatal" id="PEPPOL-T012-B04101">Element 'rim:Element' MUST be provided.</assert>
-         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T012-B04102">Attribute 'xsi:type' MUST be present.</assert>
+         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T012-B04101">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']/rim:SlotValue/rim:Element">
          <assert test="rim:Value" flag="fatal" id="PEPPOL-T012-B04301">Element 'rim:Value' MUST be provided.</assert>
