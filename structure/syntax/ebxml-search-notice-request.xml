@@ -1074,22 +1074,22 @@
                 <Attribute>
                     <Term>type</Term>
                     <Reference type="RULE">PEPPOL-T011-R061</Reference>
-                    <Value type="FIXED">http://publications.europa.eu/resource/authority/award-criterion-type</Value>
+                    <Value type="EXAMPLE">http://publications.europa.eu/resource/authority/award-criterion-type</Value>
                 </Attribute>
-                <Element>
+                <Element cardinality="0..1">
                     <Term>rim:SlotValue</Term>
                     <Attribute>
                         <Term>xsi:type</Term>
                         <Reference type="RULE">PEPPOL-T011-R034</Reference>
                         <Value type="FIXED">rim:CollectionValueType</Value>
                     </Attribute>
-                    <Element>
+                    <Element cardinality="0..1">
                         <Term>rim:Element</Term>
                         <Attribute>
-                            <Term>type</Term>
-                            <Value type="FIXED">xsi:StringValueType</Value>
+                            <Term>xsi:type</Term>
+                            <Value type="FIXED">rim:StringValueType</Value>
                         </Attribute>
-                        <Element>
+                        <Element cardinality="0..1">
                             <Term>rim:Value</Term>
                             <Name>Award criterion type code</Name>
                             <DataType>rim:StringValueType</DataType>
@@ -1327,9 +1327,9 @@
                         to main activity codes.
                     </Description>
                     <Reference type="BUSINESS_TERM">eForms BT-610</Reference>
-                    <Attribute>
+                    <Attribute usage="OPTIONAL">
                         <Term>MainActivity</Term>
-                        <Value type="FIXED">MainActivity</Value>
+                        <Value type="EXAMPLE">MainActivity</Value>
                     </Attribute>
                     <Attribute>
                         <Term>type</Term>

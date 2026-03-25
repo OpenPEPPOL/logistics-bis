@@ -99,7 +99,7 @@
             test="rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']">A Notice
             QueryResponse MUST identify the Receiver by its party identifier and its BuyerPartyIdentification.
         </assert>
-        <assert id="PEPPOL-T012-R018" flag="fatal" test="rim:Slot[@name='UBLDocumentSchema']">A Registry Object MUST
+        <assert id="PEPPOL-T012-R018" flag="fatal" test="rim:Slot[@name='ublDocumentSchema']">A Registry Object MUST
             have a UBL Document Schema.
         </assert>
         <assert id="PEPPOL-T012-R019" flag="fatal" test="rim:RepositoryItemRef">A Registry Object MUST have a
@@ -115,7 +115,7 @@
         </assert>
     </rule>
     
-    <rule context="query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']">
+    <rule context="query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']">
         <assert id="PEPPOL-T012-R021" flag="fatal" test="@type = 'ublDocumentSchema'">The @type for rim:Slot
             "ublDocumentSchema" MUST be: list to be created
         </assert>

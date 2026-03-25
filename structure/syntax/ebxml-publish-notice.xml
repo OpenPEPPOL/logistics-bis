@@ -209,34 +209,6 @@
             </Element>
         </Element>
         <Element>
-            <Term>rim:Slot[@name='NoticePublicationDatePreferred']</Term>
-            <Name>Issue date time</Name>
-            <Description>The "Notice Publication Date Preferred" is the date on which the buyer wishes the notice to be
-                published. It can be used to help the buyer respect the requirements that exist
-                between publications at national and European levels.
-            </Description>
-            <Reference type="BUSINESS_TERM">BT-738</Reference>
-            <Attribute>
-                <Term>name</Term>
-                <Value type="FIXED">NoticePublicationDatePreferred</Value>
-            </Attribute>
-            <Element>
-                <Term>rim:SlotValue</Term>
-                <Description>An abstract class that defines a container for a string value.</Description>
-                <Attribute>
-                    <Term>xsi:type</Term>
-                    <Reference type="RULE">PEPPOL-T015-R033</Reference>
-                    <Reference type="RULE">PEPPOL-T015-R034</Reference>
-                    <Value type="FIXED">rim:DateTimeValueType</Value>
-                </Attribute>
-                <Element>
-                    <Term>rim:Value</Term>
-                    <Description>The value of the Slot instance.</Description>
-                    <DataType>rim:DateTimeValueType</DataType>
-                </Element>
-            </Element>
-        </Element>
-        <Element>
             <Term>rim:RegistryObjectList</Term>
             <Name>Registry object list</Name>
             <Description>The Registry Object List contains the information to be published. It describes the notice
@@ -272,15 +244,17 @@
                     <Term>xsi:type</Term>
                     <Value type="FIXED">rim:ExtrinsicObjectType</Value>
                 </Attribute>
+				  
+
                 <Element>
-                    <Term>rim:Slot[@name='UBLDocumentSchema']</Term>
+                    <Term>rim:Slot[@name='ublDocumentSchema']</Term>
                     <Name>UBL document schema</Name>
                     <Description>Used to identify the UBL document type of the referenced notice which are associated to
                         the corresponding UBL namespaces.
                     </Description>
                     <Attribute>
                         <Term>name</Term>
-                        <Value type="FIXED">UBLDocumentSchema</Value>
+                        <Value type="FIXED">ublDocumentSchema</Value>
                     </Attribute>
                     <Attribute>
                         <Term>type</Term>
@@ -303,6 +277,34 @@
                         </Element>
                     </Element>
                 </Element>
+				 <Element>
+				 <Term>rim:Slot[@name='NoticePublicationDatePreferred']</Term>
+            <Name>Issue date time</Name>
+            <Description>The "Notice Publication Date Preferred" is the date on which the buyer wishes the notice to be
+                published. It can be used to help the buyer respect the requirements that exist
+                between publications at national and European levels.
+            </Description>
+            <Reference type="BUSINESS_TERM">BT-738</Reference>
+            <Attribute>
+                <Term>name</Term>
+                <Value type="FIXED">NoticePublicationDatePreferred</Value>
+            </Attribute>
+            <Element>
+                <Term>rim:SlotValue</Term>
+                <Description>An abstract class that defines a container for a string value.</Description>
+                <Attribute>
+                    <Term>xsi:type</Term>
+                    <Reference type="RULE">PEPPOL-T015-R033</Reference>
+                    <Reference type="RULE">PEPPOL-T015-R034</Reference>
+                    <Value type="FIXED">rim:DateTimeValueType</Value>
+                </Attribute>
+                <Element>
+                    <Term>rim:Value</Term>
+                    <Description>The value of the Slot instance.</Description>
+                    <DataType>rim:DateTimeValueType</DataType>
+                </Element>
+            </Element>
+        </Element>
                 <Element>
                     <Term>rim:Slot[@name='NoticeVersion']</Term>
                     <Name>Notice version</Name>
@@ -333,7 +335,7 @@
                     </Element>
                 </Element>
                 <Element>
-                    <Term>rim:Slot[@name='CustomizationID']</Term>
+                    <Term>rim:Slot[@name='eFormsVersion']</Term>
                     <Name>eForms version</Name>
                     <Description>This element identifies the customization used for the notice. Identification is based
                         on the complete set (schemas+rules) limited to the major and minor version numbers.
@@ -341,7 +343,7 @@
                     <Reference type="RULE">PEPPOL-T015-R008</Reference>
                     <Attribute>
                         <Term>name</Term>
-                        <Value type="FIXED">CustomizationID</Value>
+                        <Value type="FIXED">eFormsVersion</Value>
                     </Attribute>
                     <Element>
                         <Term>rim:SlotValue</Term>
@@ -392,15 +394,8 @@
                             <Attribute>
                                 <Term>xsi:type</Term>
                                 <Reference type="RULE">PEPPOL-T015-R009</Reference>
-                                <Value type="FIXED">rim:CollectionValueType</Value>
+                                <Value type="FIXED">rim:StringValueType</Value>
                             </Attribute>
-                            <Element>
-                                <Term>rim:Element</Term>
-                                <Attribute>
-                                    <Term>xsi:type</Term>
-                                    <Reference type="RULE">PEPPOL-T015-R008</Reference>
-                                    <Value type="FIXED">rim:StringValueType</Value>
-                                </Attribute>
                                 <Element>
                                     <Term>rim:Value</Term>
                                     <Description>Scheme identifier:Party Identification for the buyer.</Description>
@@ -409,7 +404,6 @@
 									<Reference type="RULE">PEPPOL-T015-R042</Reference>
 									<Value type="EXAMPLE">0204:991-1234512345-06</Value>
                                 </Element>
-                            </Element>
                         </Element>
                     </Element>
                     <Element cardinality="0..1">
@@ -479,7 +473,7 @@
                         to the local ASiC-E container (Associated Signature Container Extended) repository.
                     </Description>
                     <Attribute>
-                        <Term>xlink</Term>
+                        <Term>xlink:href</Term>
                         <Name>Local identifier</Name>
                         <Description>This element uses xlink:href to specify local XML notice of the ASiC-E container as
                             repository item.

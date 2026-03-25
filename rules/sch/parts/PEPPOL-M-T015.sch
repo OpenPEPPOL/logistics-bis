@@ -17,7 +17,7 @@
         | lcm:SubmitObjectsRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']
         | lcm:SubmitObjectsRequest/rim:Slot[@name='SenderElectronicAddress']
         | lcm:SubmitObjectsRequest/rim:Slot[@name='ReceiverElectronicAddress']
-        | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']
+        | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']
         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='AdditionalDocumentInformation']
         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='eFormsVersion']
         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerElectronicAddress']
@@ -42,8 +42,8 @@
             <assert id="PEPPOL-T015-R021" flag="fatal" test="rim:SlotValue[@xsi:type='rim:BooleanValueType']">PublicationRequested MUST have an element SlotValue with xsi:type of rim:BooleanValueType.</assert>
         </rule>
 
-        <rule context="lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']">
-            <assert id="PEPPOL-T015-R016" flag="fatal" test="@type = 'ublDocumentSchema'">The UBLDocumentSchema MUST have a type of the value of "http://docs.peppol.eu/document-type-code".</assert>
+        <rule context="lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']">
+            <assert id="PEPPOL-T015-R016" flag="fatal" test="@type = 'ublDocumentSchema'">The ublDocumentSchema MUST have a type of the value of "http://docs.peppol.eu/document-type-code".</assert>
         </rule>
 
        <rule context="lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='NoticeVersion']/rim:SlotValue/rim:Value">

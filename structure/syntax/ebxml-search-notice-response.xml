@@ -244,9 +244,9 @@
                             <Description>An abstract class that defines a container for a string value.</Description>
                             <Attribute>
                                 <Term>xsi:type</Term>
-                                <Value type="FIXED">rim:CollectionValueType</Value>
+                                <Value type="EXAMPLE">rim:CollectionValueType</Value>
                             </Attribute>
-                            <Element>
+                            <Element cardinality="0..1">
                                 <Term>rim:Element</Term>
                                 <Reference type="RULE">PEPPOL-T012-R020</Reference>
                                 <Attribute>
@@ -304,14 +304,14 @@
                     </Element>
                 </Element>
                 <Element>
-                    <Term>rim:Slot[@name='UBLDocumentSchema']</Term>
+                    <Term>rim:Slot[@name='ublDocumentSchema']</Term>
                     <Name>UBL document schema</Name>
                     <Description>Used to identify the UBL document type of the referenced notice which are associated to
                         the corresponding UBL namespaces.
                     </Description>
                     <Attribute>
                         <Term>name</Term>
-                        <Value type="FIXED">UBLDocumentSchema</Value>
+                        <Value type="FIXED">ublDocumentSchema</Value>
                     </Attribute>
                     <Attribute>
                         <Term>type</Term>
@@ -362,7 +362,7 @@
                     </Description>
                     <Reference type="RULE">PEPPOL-T012-R022</Reference>
                     <Attribute>
-                        <Term>xlink</Term>
+                        <Term>xlink:href</Term>
                         <Name>List identifier</Name>
                         <Description>This element uses xlink:href to specify local XML notices of the ASiC-E container
                             as repository items.

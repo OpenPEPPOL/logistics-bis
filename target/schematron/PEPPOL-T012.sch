@@ -133,7 +133,7 @@
         </assert>
         <assert id="PEPPOL-T012-R018"
                  flag="fatal"
-                 test="rim:Slot[@name='UBLDocumentSchema']">A Registry Object MUST
+                 test="rim:Slot[@name='ublDocumentSchema']">A Registry Object MUST
             have a UBL Document Schema.
         </assert>
         <assert id="PEPPOL-T012-R019" flag="fatal" test="rim:RepositoryItemRef">A Registry Object MUST have a
@@ -147,7 +147,7 @@
         </assert>
       </rule>
     
-      <rule context="query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']">
+      <rule context="query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']">
         <assert id="PEPPOL-T012-R021"
                  flag="fatal"
                  test="@type = 'ublDocumentSchema'">The @type for rim:Slot
@@ -343,9 +343,9 @@
          <assert test="rim:Slot[@name='BuyerInformation']"
                  flag="fatal"
                  id="PEPPOL-T012-B03301">Element 'rim:Slot[@name='BuyerInformation']' MUST be provided.</assert>
-         <assert test="rim:Slot[@name='UBLDocumentSchema']"
+         <assert test="rim:Slot[@name='ublDocumentSchema']"
                  flag="fatal"
-                 id="PEPPOL-T012-B03302">Element 'rim:Slot[@name='UBLDocumentSchema']' MUST be provided.</assert>
+                 id="PEPPOL-T012-B03302">Element 'rim:Slot[@name='ublDocumentSchema']' MUST be provided.</assert>
          <assert test="rim:Slot[@name='eFormsVersion']"
                  flag="fatal"
                  id="PEPPOL-T012-B03303">Element 'rim:Slot[@name='eFormsVersion']' MUST be provided.</assert>
@@ -370,11 +370,7 @@
          <assert test="@type" flag="fatal" id="PEPPOL-T012-B03805">Attribute 'type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']/rim:SlotValue">
-         <assert test="rim:Element" flag="fatal" id="PEPPOL-T012-B04101">Element 'rim:Element' MUST be provided.</assert>
-         <assert test="not(@xsi:type) or @xsi:type = 'rim:CollectionValueType'"
-                 flag="fatal"
-                 id="PEPPOL-T012-B04102">Attribute 'xsi:type' MUST contain value 'rim:CollectionValueType'</assert>
-         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T012-B04103">Attribute 'xsi:type' MUST be present.</assert>
+         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T012-B04101">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']/rim:SlotValue/rim:Element">
          <assert test="rim:Value" flag="fatal" id="PEPPOL-T012-B04301">Element 'rim:Value' MUST be provided.</assert>
@@ -412,26 +408,26 @@
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerElectronicAddress']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B04606">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']">
+      <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']">
          <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T012-B05201">Element 'rim:SlotValue' MUST be provided.</assert>
-         <assert test="not(@name) or @name = 'UBLDocumentSchema'"
+         <assert test="not(@name) or @name = 'ublDocumentSchema'"
                  flag="fatal"
-                 id="PEPPOL-T012-B05202">Attribute 'name' MUST contain value 'UBLDocumentSchema'</assert>
+                 id="PEPPOL-T012-B05202">Attribute 'name' MUST contain value 'ublDocumentSchema'</assert>
          <assert test="@name" flag="fatal" id="PEPPOL-T012-B05203">Attribute 'name' MUST be present.</assert>
          <assert test="not(@type) or @type = 'ublDocumentSchema'"
                  flag="fatal"
                  id="PEPPOL-T012-B05204">Attribute 'type' MUST contain value 'ublDocumentSchema'</assert>
          <assert test="@type" flag="fatal" id="PEPPOL-T012-B05205">Attribute 'type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']/rim:SlotValue">
+      <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']/rim:SlotValue">
          <assert test="rim:Value" flag="fatal" id="PEPPOL-T012-B05501">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:StringValueType'"
                  flag="fatal"
                  id="PEPPOL-T012-B05502">Attribute 'xsi:type' MUST contain value 'rim:StringValueType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T012-B05503">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']/rim:SlotValue/rim:Value"/>
-      <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']/*">
+      <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']/rim:SlotValue/rim:Value"/>
+      <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B05206">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='eFormsVersion']">
@@ -453,7 +449,7 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B05804">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:RepositoryItemRef">
-         <assert test="@xlink" flag="fatal" id="PEPPOL-T012-B06301">Attribute 'xlink' MUST be present.</assert>
+         <assert test="@xlink:href" flag="fatal" id="PEPPOL-T012-B06301">Attribute 'xlink:href' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B03309">Document MUST NOT contain elements not part of the data model.</assert>

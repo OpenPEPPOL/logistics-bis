@@ -44,7 +44,7 @@
             <assert id="PEPPOL-T015-R007" flag="fatal" test="rim:RegistryObjectList">A Publish Notice MUST have a RegistryObjectList.</assert>
         </rule>
 
-        <rule context="           lcm:SubmitObjectsRequest/rim:Slot[@name='SpecificationIdentification']         | lcm:SubmitObjectsRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']         | lcm:SubmitObjectsRequest/rim:Slot[@name='SenderElectronicAddress']         | lcm:SubmitObjectsRequest/rim:Slot[@name='ReceiverElectronicAddress']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='AdditionalDocumentInformation']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='eFormsVersion']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerElectronicAddress']         ">
+        <rule context="           lcm:SubmitObjectsRequest/rim:Slot[@name='SpecificationIdentification']         | lcm:SubmitObjectsRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']         | lcm:SubmitObjectsRequest/rim:Slot[@name='SenderElectronicAddress']         | lcm:SubmitObjectsRequest/rim:Slot[@name='ReceiverElectronicAddress']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='AdditionalDocumentInformation']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='eFormsVersion']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerElectronicAddress']         ">
             <assert id="PEPPOL-T015-R008"
                  flag="fatal"
                  test="rim:SlotValue[@xsi:type='rim:StringValueType']">This SlotValue MUST have a xsi:type rim:StringValueType.</assert>
@@ -75,10 +75,10 @@
                  test="rim:SlotValue[@xsi:type='rim:BooleanValueType']">PublicationRequested MUST have an element SlotValue with xsi:type of rim:BooleanValueType.</assert>
         </rule>
 
-        <rule context="lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']">
+        <rule context="lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']">
             <assert id="PEPPOL-T015-R016"
                  flag="fatal"
-                 test="@type = 'ublDocumentSchema'">The UBLDocumentSchema MUST have a type of the value of "http://docs.peppol.eu/document-type-code".</assert>
+                 test="@type = 'ublDocumentSchema'">The ublDocumentSchema MUST have a type of the value of "http://docs.peppol.eu/document-type-code".</assert>
         </rule>
 
        <rule context="lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='NoticeVersion']/rim:SlotValue/rim:Value">
@@ -188,16 +188,13 @@
          <assert test="rim:Slot[@name='PublicationRequested']"
                  flag="fatal"
                  id="PEPPOL-T015-B00106">Element 'rim:Slot[@name='PublicationRequested']' MUST be provided.</assert>
-         <assert test="rim:Slot[@name='NoticePublicationDatePreferred']"
-                 flag="fatal"
-                 id="PEPPOL-T015-B00107">Element 'rim:Slot[@name='NoticePublicationDatePreferred']' MUST be provided.</assert>
-         <assert test="rim:RegistryObjectList" flag="fatal" id="PEPPOL-T015-B00108">Element 'rim:RegistryObjectList' MUST be provided.</assert>
-         <assert test="not(@*:schemaLocation)" flag="fatal" id="PEPPOL-T015-B00109">Document MUST not contain schema location.</assert>
-         <assert test="@id" flag="fatal" id="PEPPOL-T015-B00110">Attribute 'id' MUST be present.</assert>
+         <assert test="rim:RegistryObjectList" flag="fatal" id="PEPPOL-T015-B00107">Element 'rim:RegistryObjectList' MUST be provided.</assert>
+         <assert test="not(@*:schemaLocation)" flag="fatal" id="PEPPOL-T015-B00108">Document MUST not contain schema location.</assert>
+         <assert test="@id" flag="fatal" id="PEPPOL-T015-B00109">Attribute 'id' MUST be present.</assert>
          <assert test="not(@mode) or @mode = 'CreateOrVersion'"
                  flag="fatal"
-                 id="PEPPOL-T015-B00111">Attribute 'mode' MUST contain value 'CreateOrVersion'</assert>
-         <assert test="@mode" flag="fatal" id="PEPPOL-T015-B00112">Attribute 'mode' MUST be present.</assert>
+                 id="PEPPOL-T015-B00110">Attribute 'mode' MUST contain value 'CreateOrVersion'</assert>
+         <assert test="@mode" flag="fatal" id="PEPPOL-T015-B00111">Attribute 'mode' MUST be present.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:Slot[@name='SpecificationIdentification']">
          <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T015-B00401">Element 'rim:SlotValue' MUST be provided.</assert>
@@ -323,69 +320,72 @@
       <rule context="/lcm:SubmitObjectsRequest/rim:Slot[@name='PublicationRequested']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T015-B03104">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/lcm:SubmitObjectsRequest/rim:Slot[@name='NoticePublicationDatePreferred']">
-         <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T015-B03601">Element 'rim:SlotValue' MUST be provided.</assert>
-         <assert test="not(@name) or @name = 'NoticePublicationDatePreferred'"
-                 flag="fatal"
-                 id="PEPPOL-T015-B03602">Attribute 'name' MUST contain value 'NoticePublicationDatePreferred'</assert>
-         <assert test="@name" flag="fatal" id="PEPPOL-T015-B03603">Attribute 'name' MUST be present.</assert>
-      </rule>
-      <rule context="/lcm:SubmitObjectsRequest/rim:Slot[@name='NoticePublicationDatePreferred']/rim:SlotValue">
-         <assert test="rim:Value" flag="fatal" id="PEPPOL-T015-B03801">Element 'rim:Value' MUST be provided.</assert>
-         <assert test="not(@xsi:type) or @xsi:type = 'rim:DateTimeValueType'"
-                 flag="fatal"
-                 id="PEPPOL-T015-B03802">Attribute 'xsi:type' MUST contain value 'rim:DateTimeValueType'</assert>
-         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B03803">Attribute 'xsi:type' MUST be present.</assert>
-      </rule>
-      <rule context="/lcm:SubmitObjectsRequest/rim:Slot[@name='NoticePublicationDatePreferred']/rim:SlotValue/rim:Value"/>
-      <rule context="/lcm:SubmitObjectsRequest/rim:Slot[@name='NoticePublicationDatePreferred']/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T015-B03604">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList">
-         <assert test="rim:RegistryObject" flag="fatal" id="PEPPOL-T015-B04101">Element 'rim:RegistryObject' MUST be provided.</assert>
+         <assert test="rim:RegistryObject" flag="fatal" id="PEPPOL-T015-B03601">Element 'rim:RegistryObject' MUST be provided.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject">
-         <assert test="rim:Slot[@name='UBLDocumentSchema']"
+         <assert test="rim:Slot[@name='ublDocumentSchema']"
                  flag="fatal"
-                 id="PEPPOL-T015-B04201">Element 'rim:Slot[@name='UBLDocumentSchema']' MUST be provided.</assert>
+                 id="PEPPOL-T015-B03701">Element 'rim:Slot[@name='ublDocumentSchema']' MUST be provided.</assert>
+         <assert test="rim:Slot[@name='NoticePublicationDatePreferred']"
+                 flag="fatal"
+                 id="PEPPOL-T015-B03702">Element 'rim:Slot[@name='NoticePublicationDatePreferred']' MUST be provided.</assert>
          <assert test="rim:Slot[@name='NoticeVersion']"
                  flag="fatal"
-                 id="PEPPOL-T015-B04202">Element 'rim:Slot[@name='NoticeVersion']' MUST be provided.</assert>
-         <assert test="rim:Slot[@name='CustomizationID']"
+                 id="PEPPOL-T015-B03703">Element 'rim:Slot[@name='NoticeVersion']' MUST be provided.</assert>
+         <assert test="rim:Slot[@name='eFormsVersion']"
                  flag="fatal"
-                 id="PEPPOL-T015-B04203">Element 'rim:Slot[@name='CustomizationID']' MUST be provided.</assert>
+                 id="PEPPOL-T015-B03704">Element 'rim:Slot[@name='eFormsVersion']' MUST be provided.</assert>
          <assert test="rim:Slot[@name='BuyerInformation']"
                  flag="fatal"
-                 id="PEPPOL-T015-B04204">Element 'rim:Slot[@name='BuyerInformation']' MUST be provided.</assert>
-         <assert test="rim:RepositoryItemRef" flag="fatal" id="PEPPOL-T015-B04205">Element 'rim:RepositoryItemRef' MUST be provided.</assert>
-         <assert test="@lid" flag="fatal" id="PEPPOL-T015-B04206">Attribute 'lid' MUST be present.</assert>
-         <assert test="@id" flag="fatal" id="PEPPOL-T015-B04207">Attribute 'id' MUST be present.</assert>
+                 id="PEPPOL-T015-B03705">Element 'rim:Slot[@name='BuyerInformation']' MUST be provided.</assert>
+         <assert test="rim:RepositoryItemRef" flag="fatal" id="PEPPOL-T015-B03706">Element 'rim:RepositoryItemRef' MUST be provided.</assert>
+         <assert test="@lid" flag="fatal" id="PEPPOL-T015-B03707">Attribute 'lid' MUST be present.</assert>
+         <assert test="@id" flag="fatal" id="PEPPOL-T015-B03708">Attribute 'id' MUST be present.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:ExtrinsicObjectType'"
                  flag="fatal"
-                 id="PEPPOL-T015-B04208">Attribute 'xsi:type' MUST contain value 'rim:ExtrinsicObjectType'</assert>
-         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B04209">Attribute 'xsi:type' MUST be present.</assert>
+                 id="PEPPOL-T015-B03709">Attribute 'xsi:type' MUST contain value 'rim:ExtrinsicObjectType'</assert>
+         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B03710">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']">
-         <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T015-B04601">Element 'rim:SlotValue' MUST be provided.</assert>
-         <assert test="not(@name) or @name = 'UBLDocumentSchema'"
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']">
+         <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T015-B04101">Element 'rim:SlotValue' MUST be provided.</assert>
+         <assert test="not(@name) or @name = 'ublDocumentSchema'"
                  flag="fatal"
-                 id="PEPPOL-T015-B04602">Attribute 'name' MUST contain value 'UBLDocumentSchema'</assert>
-         <assert test="@name" flag="fatal" id="PEPPOL-T015-B04603">Attribute 'name' MUST be present.</assert>
+                 id="PEPPOL-T015-B04102">Attribute 'name' MUST contain value 'ublDocumentSchema'</assert>
+         <assert test="@name" flag="fatal" id="PEPPOL-T015-B04103">Attribute 'name' MUST be present.</assert>
          <assert test="not(@type) or @type = 'ublDocumentSchema'"
                  flag="fatal"
-                 id="PEPPOL-T015-B04604">Attribute 'type' MUST contain value 'ublDocumentSchema'</assert>
-         <assert test="@type" flag="fatal" id="PEPPOL-T015-B04605">Attribute 'type' MUST be present.</assert>
+                 id="PEPPOL-T015-B04104">Attribute 'type' MUST contain value 'ublDocumentSchema'</assert>
+         <assert test="@type" flag="fatal" id="PEPPOL-T015-B04105">Attribute 'type' MUST be present.</assert>
       </rule>
-      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']/rim:SlotValue">
-         <assert test="rim:Value" flag="fatal" id="PEPPOL-T015-B04901">Element 'rim:Value' MUST be provided.</assert>
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']/rim:SlotValue">
+         <assert test="rim:Value" flag="fatal" id="PEPPOL-T015-B04401">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:StringValueType'"
                  flag="fatal"
-                 id="PEPPOL-T015-B04902">Attribute 'xsi:type' MUST contain value 'rim:StringValueType'</assert>
+                 id="PEPPOL-T015-B04402">Attribute 'xsi:type' MUST contain value 'rim:StringValueType'</assert>
+         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B04403">Attribute 'xsi:type' MUST be present.</assert>
+      </rule>
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']/rim:SlotValue/rim:Value"/>
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T015-B04106">Document MUST NOT contain elements not part of the data model.</assert>
+      </rule>
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='NoticePublicationDatePreferred']">
+         <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T015-B04701">Element 'rim:SlotValue' MUST be provided.</assert>
+         <assert test="not(@name) or @name = 'NoticePublicationDatePreferred'"
+                 flag="fatal"
+                 id="PEPPOL-T015-B04702">Attribute 'name' MUST contain value 'NoticePublicationDatePreferred'</assert>
+         <assert test="@name" flag="fatal" id="PEPPOL-T015-B04703">Attribute 'name' MUST be present.</assert>
+      </rule>
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='NoticePublicationDatePreferred']/rim:SlotValue">
+         <assert test="rim:Value" flag="fatal" id="PEPPOL-T015-B04901">Element 'rim:Value' MUST be provided.</assert>
+         <assert test="not(@xsi:type) or @xsi:type = 'rim:DateTimeValueType'"
+                 flag="fatal"
+                 id="PEPPOL-T015-B04902">Attribute 'xsi:type' MUST contain value 'rim:DateTimeValueType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B04903">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']/rim:SlotValue/rim:Value"/>
-      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T015-B04606">Document MUST NOT contain elements not part of the data model.</assert>
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='NoticePublicationDatePreferred']/rim:SlotValue/rim:Value"/>
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='NoticePublicationDatePreferred']/*">
+         <assert test="false()" flag="fatal" id="PEPPOL-T015-B04704">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='NoticeVersion']">
          <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T015-B05201">Element 'rim:SlotValue' MUST be provided.</assert>
@@ -405,22 +405,22 @@
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='NoticeVersion']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T015-B05204">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
-      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='CustomizationID']">
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='eFormsVersion']">
          <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T015-B05701">Element 'rim:SlotValue' MUST be provided.</assert>
-         <assert test="not(@name) or @name = 'CustomizationID'"
+         <assert test="not(@name) or @name = 'eFormsVersion'"
                  flag="fatal"
-                 id="PEPPOL-T015-B05702">Attribute 'name' MUST contain value 'CustomizationID'</assert>
+                 id="PEPPOL-T015-B05702">Attribute 'name' MUST contain value 'eFormsVersion'</assert>
          <assert test="@name" flag="fatal" id="PEPPOL-T015-B05703">Attribute 'name' MUST be present.</assert>
       </rule>
-      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='CustomizationID']/rim:SlotValue">
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='eFormsVersion']/rim:SlotValue">
          <assert test="rim:Value" flag="fatal" id="PEPPOL-T015-B05901">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:StringValueType'"
                  flag="fatal"
                  id="PEPPOL-T015-B05902">Attribute 'xsi:type' MUST contain value 'rim:StringValueType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B05903">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='CustomizationID']/rim:SlotValue/rim:Value"/>
-      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='CustomizationID']/*">
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='eFormsVersion']/rim:SlotValue/rim:Value"/>
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='eFormsVersion']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T015-B05704">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']">
@@ -441,77 +441,67 @@
          <assert test="@type" flag="fatal" id="PEPPOL-T015-B06405">Attribute 'type' MUST be present.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']/rim:SlotValue">
-         <assert test="rim:Element" flag="fatal" id="PEPPOL-T015-B06701">Element 'rim:Element' MUST be provided.</assert>
-         <assert test="not(@xsi:type) or @xsi:type = 'rim:CollectionValueType'"
-                 flag="fatal"
-                 id="PEPPOL-T015-B06702">Attribute 'xsi:type' MUST contain value 'rim:CollectionValueType'</assert>
-         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B06703">Attribute 'xsi:type' MUST be present.</assert>
-      </rule>
-      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']/rim:SlotValue/rim:Element">
-         <assert test="rim:Value" flag="fatal" id="PEPPOL-T015-B06901">Element 'rim:Value' MUST be provided.</assert>
+         <assert test="rim:Value" flag="fatal" id="PEPPOL-T015-B06701">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:StringValueType'"
                  flag="fatal"
-                 id="PEPPOL-T015-B06902">Attribute 'xsi:type' MUST contain value 'rim:StringValueType'</assert>
-         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B06903">Attribute 'xsi:type' MUST be present.</assert>
+                 id="PEPPOL-T015-B06702">Attribute 'xsi:type' MUST contain value 'rim:StringValueType'</assert>
+         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B06703">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']/rim:SlotValue/rim:Element/rim:Value"/>
-      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']/rim:SlotValue/rim:Element/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T015-B06904">Document MUST NOT contain elements not part of the data model.</assert>
-      </rule>
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']/rim:SlotValue/rim:Value"/>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerPartyIdentification']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T015-B06406">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerElectronicAddress']">
-         <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T015-B07201">Element 'rim:SlotValue' MUST be provided.</assert>
+         <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T015-B07001">Element 'rim:SlotValue' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'BuyerElectronicAddress'"
                  flag="fatal"
-                 id="PEPPOL-T015-B07202">Attribute 'name' MUST contain value 'BuyerElectronicAddress'</assert>
-         <assert test="@name" flag="fatal" id="PEPPOL-T015-B07203">Attribute 'name' MUST be present.</assert>
+                 id="PEPPOL-T015-B07002">Attribute 'name' MUST contain value 'BuyerElectronicAddress'</assert>
+         <assert test="@name" flag="fatal" id="PEPPOL-T015-B07003">Attribute 'name' MUST be present.</assert>
          <assert test="not(@type) or @type = 'EAS'"
                  flag="fatal"
-                 id="PEPPOL-T015-B07204">Attribute 'type' MUST contain value 'EAS'</assert>
-         <assert test="@type" flag="fatal" id="PEPPOL-T015-B07205">Attribute 'type' MUST be present.</assert>
+                 id="PEPPOL-T015-B07004">Attribute 'type' MUST contain value 'EAS'</assert>
+         <assert test="@type" flag="fatal" id="PEPPOL-T015-B07005">Attribute 'type' MUST be present.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerElectronicAddress']/rim:SlotValue">
-         <assert test="rim:Value" flag="fatal" id="PEPPOL-T015-B07501">Element 'rim:Value' MUST be provided.</assert>
+         <assert test="rim:Value" flag="fatal" id="PEPPOL-T015-B07301">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:StringValueType'"
                  flag="fatal"
-                 id="PEPPOL-T015-B07502">Attribute 'xsi:type' MUST contain value 'rim:StringValueType'</assert>
-         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B07503">Attribute 'xsi:type' MUST be present.</assert>
+                 id="PEPPOL-T015-B07302">Attribute 'xsi:type' MUST contain value 'rim:StringValueType'</assert>
+         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B07303">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerElectronicAddress']/rim:SlotValue/rim:Value"/>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerElectronicAddress']/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T015-B07206">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T015-B07006">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='AdditionalDocumentReference']">
-         <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T015-B07801">Element 'rim:SlotValue' MUST be provided.</assert>
+         <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T015-B07601">Element 'rim:SlotValue' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'AdditionalDocumentReference'"
                  flag="fatal"
-                 id="PEPPOL-T015-B07802">Attribute 'name' MUST contain value 'AdditionalDocumentReference'</assert>
-         <assert test="@name" flag="fatal" id="PEPPOL-T015-B07803">Attribute 'name' MUST be present.</assert>
+                 id="PEPPOL-T015-B07602">Attribute 'name' MUST contain value 'AdditionalDocumentReference'</assert>
+         <assert test="@name" flag="fatal" id="PEPPOL-T015-B07603">Attribute 'name' MUST be present.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='AdditionalDocumentReference']/rim:SlotValue">
-         <assert test="rim:Value" flag="fatal" id="PEPPOL-T015-B08001">Element 'rim:Value' MUST be provided.</assert>
+         <assert test="rim:Value" flag="fatal" id="PEPPOL-T015-B07801">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:StringValueType'"
                  flag="fatal"
-                 id="PEPPOL-T015-B08002">Attribute 'xsi:type' MUST contain value 'rim:StringValueType'</assert>
-         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B08003">Attribute 'xsi:type' MUST be present.</assert>
+                 id="PEPPOL-T015-B07802">Attribute 'xsi:type' MUST contain value 'rim:StringValueType'</assert>
+         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B07803">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='AdditionalDocumentReference']/rim:SlotValue/rim:Value"/>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='AdditionalDocumentReference']/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T015-B07804">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T015-B07604">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T015-B06203">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:RepositoryItemRef">
-         <assert test="@xlink" flag="fatal" id="PEPPOL-T015-B08301">Attribute 'xlink' MUST be present.</assert>
+         <assert test="@xlink:href" flag="fatal" id="PEPPOL-T015-B08101">Attribute 'xlink:href' MUST be present.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T015-B04210">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T015-B03711">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T015-B00113">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T015-B00112">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
    </pattern>
 </schema>
