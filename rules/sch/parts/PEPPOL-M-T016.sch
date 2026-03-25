@@ -132,10 +132,6 @@
         <assert id="PEPPOL-T016-R038" flag="fatal" test="count(distinct-values(cac:DocumentReference/cbc:UUID)) = count(cac:DocumentReference/cbc:UUID)">Element 'cbc:UUID' MUST be unique.</assert>
     </rule>
     
-    <rule context="/ubl:ApplicationResponse/cac:DocumentResponse/cac:DocumentReference/cbc:DocumentTypeCode">
-        <assert id="PEPPOL-T016-R039" flag="fatal" test="matches(normalize-space(.),'^(CN|CAN|PIN)$')">Value MUST be part of code list 'ublDocumentSchema'.</assert>
-    </rule>
-    
     <rule context="/ubl:ApplicationResponse/cac:DocumentResponse/cac:DocumentReference/cbc:VersionID">
         <assert id="PEPPOL-T016-R040" flag="fatal"  test="matches(normalize-space(.),'^[0-9]{1,2}$')">Value MUST be consecutive numbers made of 2 digits.</assert>
     </rule>
