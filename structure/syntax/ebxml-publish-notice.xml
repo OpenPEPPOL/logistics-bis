@@ -360,6 +360,32 @@
                         </Element>
                     </Element>
                 </Element>
+                <Element cardinality="0..n">
+                    <Term>rim:Slot[@name='AdditionalDocumentReference']</Term>
+                    <Name>Additional document reference</Name>
+                    <Description>The Additional Document Reference specifies a reference to an additional file that
+                        is included to the local ASiC-E container (Associated Signature Container Extended)
+                        repository.
+                    </Description>
+                    <Attribute>
+                        <Term>name</Term>
+                        <Value type="FIXED">AdditionalDocumentReference</Value>
+                    </Attribute>
+                    <Element>
+                        <Term>rim:SlotValue</Term>
+                        <Description>An abstract class that defines a container for a string value.</Description>
+                        <Attribute>
+                            <Term>xsi:type</Term>
+                            <Reference type="RULE">PEPPOL-T015-R008</Reference>
+                            <Value type="FIXED">rim:StringValueType</Value>
+                        </Attribute>
+                        <Element>
+                            <Term>rim:Value</Term>
+                            <Description>The value of the Slot instance.</Description>
+                            <DataType>rim:StringValueType</DataType>
+                        </Element>
+                    </Element>
+                </Element>
                 <Element>
                     <Term>rim:Slot[@name='BuyerInformation']</Term>
                     <Name>Buyer information</Name>
