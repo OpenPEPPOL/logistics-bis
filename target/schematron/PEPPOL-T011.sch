@@ -1150,36 +1150,30 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T011-B19902">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AwardCriterionType']">
-         <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T011-B20301">Element 'rim:SlotValue' MUST be provided.</assert>
          <assert test="not(@name) or @name = 'AwardCriterionType'"
                  flag="fatal"
-                 id="PEPPOL-T011-B20302">Attribute 'name' MUST contain value 'AwardCriterionType'</assert>
-         <assert test="@name" flag="fatal" id="PEPPOL-T011-B20303">Attribute 'name' MUST be present.</assert>
-         <assert test="not(@type) or @type = 'http://publications.europa.eu/resource/authority/award-criterion-type'"
-                 flag="fatal"
-                 id="PEPPOL-T011-B20304">Attribute 'type' MUST contain value 'http://publications.europa.eu/resource/authority/award-criterion-type'</assert>
-         <assert test="@type" flag="fatal" id="PEPPOL-T011-B20305">Attribute 'type' MUST be present.</assert>
+                 id="PEPPOL-T011-B20301">Attribute 'name' MUST contain value 'AwardCriterionType'</assert>
+         <assert test="@name" flag="fatal" id="PEPPOL-T011-B20302">Attribute 'name' MUST be present.</assert>
+         <assert test="@type" flag="fatal" id="PEPPOL-T011-B20303">Attribute 'type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AwardCriterionType']/rim:SlotValue">
-         <assert test="rim:Element" flag="fatal" id="PEPPOL-T011-B20601">Element 'rim:Element' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:CollectionValueType'"
                  flag="fatal"
-                 id="PEPPOL-T011-B20602">Attribute 'xsi:type' MUST contain value 'rim:CollectionValueType'</assert>
-         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B20603">Attribute 'xsi:type' MUST be present.</assert>
+                 id="PEPPOL-T011-B20601">Attribute 'xsi:type' MUST contain value 'rim:CollectionValueType'</assert>
+         <assert test="@xsi:type" flag="fatal" id="PEPPOL-T011-B20602">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AwardCriterionType']/rim:SlotValue/rim:Element">
-         <assert test="rim:Value" flag="fatal" id="PEPPOL-T011-B20801">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@type) or @type = 'rim:StringValueType'"
                  flag="fatal"
-                 id="PEPPOL-T011-B20802">Attribute 'type' MUST contain value 'rim:StringValueType'</assert>
-         <assert test="@type" flag="fatal" id="PEPPOL-T011-B20803">Attribute 'type' MUST be present.</assert>
+                 id="PEPPOL-T011-B20801">Attribute 'type' MUST contain value 'rim:StringValueType'</assert>
+         <assert test="@type" flag="fatal" id="PEPPOL-T011-B20802">Attribute 'type' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AwardCriterionType']/rim:SlotValue/rim:Element/rim:Value"/>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AwardCriterionType']/rim:SlotValue/rim:Element/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T011-B20804">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T011-B20803">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='AwardCriterionType']/*">
-         <assert test="false()" flag="fatal" id="PEPPOL-T011-B20306">Document MUST NOT contain elements not part of the data model.</assert>
+         <assert test="false()" flag="fatal" id="PEPPOL-T011-B20304">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryRequest/query:Query/rim:Slot[@name='BuyerInformation']">
          <assert test="not(@name) or @name = 'BuyerInformation'"
