@@ -526,14 +526,7 @@
                  flag="fatal"
                  test="matches(normalize-space(.),'^[0-9]{1,2}$')">Value MUST be consecutive numbers made of 2 digits.</assert>
       </rule>
-    
-      <rule context="/ubl:ApplicationResponse/cac:DocumentResponse/cac:DocumentReference/cbc:ID"/>
-      <rule context="/ubl:ApplicationResponse/cac:DocumentResponse/cac:DocumentReference/cbc:UUID"/>
-      <rule context="/ubl:ApplicationResponse/cac:DocumentResponse/cac:DocumentReference/*">
-        <assert test="false()" flag="fatal" id="PEPPOL-T016-R041">Document MUST NOT contain elements not part of the
-            data model.
-        </assert>
-      </rule>
+
     
       <rule context="/ubl:ApplicationResponse/cac:DocumentResponse/cac:LineResponse">
         <assert test="cac:LineReference" flag="fatal" id="PEPPOL-T016-R042">Element 'cac:LineReference' MUST be
