@@ -159,7 +159,7 @@
 		<xsl:sequence select="
 			if ($fixed != '') then $fixed
 			else if ($slotName = 'eFormsVersion') then 'eforms-sdk-1.2'
-			else if ($slotName = 'UBLDocumentSchema') then 'CN'
+			else if ($slotName = 'ublDocumentSchema') then 'CN'
 			else if ($slotName = 'ProcedureLegalBasis') then '32014L0023'
 			else if ($example != '') then f:normalize-example($example, $element)
 			else if ($default != '') then $default
