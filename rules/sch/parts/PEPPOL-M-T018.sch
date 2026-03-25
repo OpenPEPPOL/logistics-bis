@@ -33,13 +33,13 @@
     </rule>
     
     <rule context="/ubl:ApplicationResponse/cbc:CustomizationID">
-        <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t018:1:2'"
-                flag="fatal" id="PEPPOL-T018-R013">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t018:1:2'.</assert>
+        <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t018:1.2'"
+                flag="fatal" id="PEPPOL-T018-R013">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t018:1.2'.</assert>
     </rule>
     
     <rule context="/ubl:ApplicationResponse/cbc:ProfileID">
-        <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p010:1:2'"
-                flag="fatal" id="PEPPOL-T018-R014">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p010:1:2'.</assert>
+        <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p010:1.2'"
+                flag="fatal" id="PEPPOL-T018-R014">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p010:1.2'.</assert>
     </rule>
     
     <rule context="/ubl:ApplicationResponse/cbc:ID"/>
