@@ -50,8 +50,8 @@
     
     <rule context="query:QueryResponse/rim:Slot[@name='BusinessProcessTypeIdentifier']">
         <assert id="PEPPOL-T012-R011" flag="fatal"
-            test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[normalize-space() = 'urn:fdc:peppol.eu:prac:bis:p006:1:3']">
-            BusinessProcessTypeIdentifier value MUST be 'urn:fdc:peppol.eu:prac:bis:p006:1:3'.
+            test="rim:SlotValue[@xsi:type='rim:StringValueType']/rim:Value/text()[normalize-space() = 'urn:fdc:peppol.eu:prac:bis:p006:1.3']">
+            BusinessProcessTypeIdentifier value MUST be 'urn:fdc:peppol.eu:prac:bis:p006:1.3'.
         </assert>
     </rule>
     

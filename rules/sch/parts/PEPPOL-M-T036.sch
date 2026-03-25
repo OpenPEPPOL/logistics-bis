@@ -5,14 +5,14 @@
 
     <rule context="cbc:ProfileID">
         <assert id="PEPPOL-T036-R017"
-            test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:bis:p035:1:0')"
+            test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:bis:p035:1.0')"
             flag="fatal">An catalogue transaction SHALL use profile catalogue.</assert>
     </rule>
 
 	<rule context="cbc:CustomizationID">
 			<assert id="PEPPOL-T036-R018" 
-					test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:trns:t036:1:0')"
-					flag="fatal">Customization identifier SHALL start with the value 'urn:fdc:peppol.eu:prac:trns:t036:1:0'.</assert>
+					test="starts-with(normalize-space(.), 'urn:fdc:peppol.eu:prac:trns:t036:1.0')"
+					flag="fatal">Customization identifier SHALL start with the value 'urn:fdc:peppol.eu:prac:trns:t036:1.0'.</assert>
 	</rule>    
     
     <rule context="/ubl:Catalogue/cac:ValidityPeriod">
