@@ -44,7 +44,7 @@
             <assert id="PEPPOL-T015-R007" flag="fatal" test="rim:RegistryObjectList">A Publish Notice MUST have a RegistryObjectList.</assert>
         </rule>
 
-        <rule context="           lcm:SubmitObjectsRequest/rim:Slot[@name='SpecificationIdentification']         | lcm:SubmitObjectsRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']         | lcm:SubmitObjectsRequest/rim:Slot[@name='SenderElectronicAddress']         | lcm:SubmitObjectsRequest/rim:Slot[@name='ReceiverElectronicAddress']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='AdditionalDocumentInformation']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='eFormsVersion']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerElectronicAddress']         ">
+        <rule context="           lcm:SubmitObjectsRequest/rim:Slot[@name='SpecificationIdentification']         | lcm:SubmitObjectsRequest/rim:Slot[@name='BusinessProcessTypeIdentifier']         | lcm:SubmitObjectsRequest/rim:Slot[@name='SenderElectronicAddress']         | lcm:SubmitObjectsRequest/rim:Slot[@name='ReceiverElectronicAddress']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='AdditionalDocumentInformation']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='eFormsVersion']         | lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='BuyerInformation']/rim:Slot[@name='BuyerElectronicAddress']         ">
             <assert id="PEPPOL-T015-R008"
                  flag="fatal"
                  test="rim:SlotValue[@xsi:type='rim:StringValueType']">This SlotValue MUST have a xsi:type rim:StringValueType.</assert>
@@ -75,10 +75,10 @@
                  test="rim:SlotValue[@xsi:type='rim:BooleanValueType']">PublicationRequested MUST have an element SlotValue with xsi:type of rim:BooleanValueType.</assert>
         </rule>
 
-        <rule context="lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']">
+        <rule context="lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']">
             <assert id="PEPPOL-T015-R016"
                  flag="fatal"
-                 test="@type = 'ublDocumentSchema'">The UBLDocumentSchema MUST have a type of the value of "http://docs.peppol.eu/document-type-code".</assert>
+                 test="@type = 'ublDocumentSchema'">The ublDocumentSchema MUST have a type of the value of "http://docs.peppol.eu/document-type-code".</assert>
         </rule>
 
        <rule context="lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='NoticeVersion']/rim:SlotValue/rim:Value">
@@ -345,9 +345,9 @@
          <assert test="rim:RegistryObject" flag="fatal" id="PEPPOL-T015-B04101">Element 'rim:RegistryObject' MUST be provided.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject">
-         <assert test="rim:Slot[@name='UBLDocumentSchema']"
+         <assert test="rim:Slot[@name='ublDocumentSchema']"
                  flag="fatal"
-                 id="PEPPOL-T015-B04201">Element 'rim:Slot[@name='UBLDocumentSchema']' MUST be provided.</assert>
+                 id="PEPPOL-T015-B04201">Element 'rim:Slot[@name='ublDocumentSchema']' MUST be provided.</assert>
          <assert test="rim:Slot[@name='NoticeVersion']"
                  flag="fatal"
                  id="PEPPOL-T015-B04202">Element 'rim:Slot[@name='NoticeVersion']' MUST be provided.</assert>
@@ -365,26 +365,26 @@
                  id="PEPPOL-T015-B04208">Attribute 'xsi:type' MUST contain value 'rim:ExtrinsicObjectType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B04209">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']">
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']">
          <assert test="rim:SlotValue" flag="fatal" id="PEPPOL-T015-B04601">Element 'rim:SlotValue' MUST be provided.</assert>
-         <assert test="not(@name) or @name = 'UBLDocumentSchema'"
+         <assert test="not(@name) or @name = 'ublDocumentSchema'"
                  flag="fatal"
-                 id="PEPPOL-T015-B04602">Attribute 'name' MUST contain value 'UBLDocumentSchema'</assert>
+                 id="PEPPOL-T015-B04602">Attribute 'name' MUST contain value 'ublDocumentSchema'</assert>
          <assert test="@name" flag="fatal" id="PEPPOL-T015-B04603">Attribute 'name' MUST be present.</assert>
          <assert test="not(@type) or @type = 'ublDocumentSchema'"
                  flag="fatal"
                  id="PEPPOL-T015-B04604">Attribute 'type' MUST contain value 'ublDocumentSchema'</assert>
          <assert test="@type" flag="fatal" id="PEPPOL-T015-B04605">Attribute 'type' MUST be present.</assert>
       </rule>
-      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']/rim:SlotValue">
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']/rim:SlotValue">
          <assert test="rim:Value" flag="fatal" id="PEPPOL-T015-B04901">Element 'rim:Value' MUST be provided.</assert>
          <assert test="not(@xsi:type) or @xsi:type = 'rim:StringValueType'"
                  flag="fatal"
                  id="PEPPOL-T015-B04902">Attribute 'xsi:type' MUST contain value 'rim:StringValueType'</assert>
          <assert test="@xsi:type" flag="fatal" id="PEPPOL-T015-B04903">Attribute 'xsi:type' MUST be present.</assert>
       </rule>
-      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']/rim:SlotValue/rim:Value"/>
-      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='UBLDocumentSchema']/*">
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']/rim:SlotValue/rim:Value"/>
+      <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='ublDocumentSchema']/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T015-B04606">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:Slot[@name='NoticeVersion']">
