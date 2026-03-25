@@ -453,7 +453,7 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B05804">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/rim:RepositoryItemRef">
-         <assert test="@xlink" flag="fatal" id="PEPPOL-T012-B06301">Attribute 'xlink' MUST be present.</assert>
+         <assert test="@xlink:href" flag="fatal" id="PEPPOL-T012-B06301">Attribute 'xlink:href' MUST be present.</assert>
       </rule>
       <rule context="/query:QueryResponse/rim:RegistryObjectList/rim:RegistryObject/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T012-B03309">Document MUST NOT contain elements not part of the data model.</assert>
