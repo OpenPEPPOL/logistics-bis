@@ -27,13 +27,13 @@
     </rule>
     
     <rule context="/ubl:ApplicationResponse/cbc:CustomizationID">
-        <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t016:1:3'"
-                flag="fatal" id="PEPPOL-T016-R011">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t016:1:3'.</assert>
+        <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:trns:t016:1.3'"
+                flag="fatal" id="PEPPOL-T016-R011">Element 'cbc:CustomizationID' MUST contain value 'urn:fdc:peppol.eu:prac:trns:t016:1.3'.</assert>
     </rule>
     
     <rule context="/ubl:ApplicationResponse/cbc:ProfileID">
-        <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p008:1:3'"
-                flag="fatal" id="PEPPOL-T016-R012">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p008:1:3'.</assert>
+        <assert test="normalize-space(text()) = 'urn:fdc:peppol.eu:prac:bis:p008:1.3'"
+                flag="fatal" id="PEPPOL-T016-R012">Element 'cbc:ProfileID' MUST contain value 'urn:fdc:peppol.eu:prac:bis:p008:1.3'.</assert>
     </rule>
     
     <rule context="/ubl:ApplicationResponse/cbc:ID"/>
