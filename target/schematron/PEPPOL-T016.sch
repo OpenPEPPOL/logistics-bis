@@ -523,7 +523,7 @@
       <rule context="/ubl:ApplicationResponse/cac:DocumentResponse/cac:DocumentReference/cbc:DocumentTypeCode">
         <assert id="PEPPOL-T016-R039"
                  flag="fatal"
-                 test="matches(normalize-space(.),'^(CN|CAN|PIN)$')">Value MUST be part of code list 'UBLDocumentSchema'.</assert>
+                 test="matches(normalize-space(.),'^(CN|CAN|PIN)$')">Value MUST be part of code list 'ublDocumentSchema'.</assert>
       </rule>
     
       <rule context="/ubl:ApplicationResponse/cac:DocumentResponse/cac:DocumentReference/cbc:VersionID">

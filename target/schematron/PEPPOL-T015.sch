@@ -505,7 +505,7 @@
          <assert test="false()" flag="fatal" id="PEPPOL-T015-B06203">Document MUST NOT contain elements not part of the data model.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/rim:RepositoryItemRef">
-         <assert test="@xlink" flag="fatal" id="PEPPOL-T015-B08301">Attribute 'xlink' MUST be present.</assert>
+         <assert test="@xlink:href" flag="fatal" id="PEPPOL-T015-B08301">Attribute 'xlink:href' MUST be present.</assert>
       </rule>
       <rule context="/lcm:SubmitObjectsRequest/rim:RegistryObjectList/rim:RegistryObject/*">
          <assert test="false()" flag="fatal" id="PEPPOL-T015-B04210">Document MUST NOT contain elements not part of the data model.</assert>
