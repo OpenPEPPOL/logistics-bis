@@ -1,0 +1,1513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+   <Term>CommonTransportationReport</Term>
+   <Property key="sch:prefix">PEPPOL-T127</Property>
+   <Property key="sch:identifier">T127-basic</Property>
+   <Namespace prefix="ubl">urn:oasis:names:specification:ubl:schema:xsd:CommonTransportationReport-2</Namespace>
+   <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
+   <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
+   <Document>
+      <Term>ubl:CommonTransportationReport</Term>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           DOCUMENT HEADER
+           ═══════════════════════════════════════════════════════════ -->
+
+      <Element cardinality="0..1">
+         <Term>cbc:UBLVersionID</Term>
+         <Name>UBL version identifier</Name>
+         <Description>Identifies the earliest version of the UBL 2 schema for this document type that
+            defines all of the elements that might be encountered in the current instance.
+            Must be "2.4" for documents conforming to this specification.</Description>
+         <DataType>Identifier</DataType>
+         <Value type="FIXED">2.4</Value>
+      </Element>
+
+      <Element>
+         <Term>cbc:CustomizationID</Term>
+         <Name>Specification identification</Name>
+         <Description>Identifies the specification of content and rules that apply to the transaction.
+            The value must be the CustomizationID registered for this transaction in the Peppol BIS.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir127-001</Reference>
+         <Reference type="RULE">PEPPOL-T127-R001</Reference>
+         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:common-transportation-report:1</Value>
+      </Element>
+
+      <Element>
+         <Term>cbc:ProfileID</Term>
+         <Name>Business process type identifier</Name>
+         <Description>Identifies the BIS profile or business process context in which the transaction appears.
+            Used to route the document to the correct processing pipeline.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir127-002</Reference>
+         <Reference type="RULE">PEPPOL-T127-R002</Reference>
+         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:efti-ctr:1</Value>
+      </Element>
+
+      <Element>
+         <Term>cbc:ID</Term>
+         <Name>Document identifier</Name>
+         <Description>A transaction instance must contain an identifier. The identifier enables
+            positive referencing of the document instance for various purposes including
+            referencing between transactions that are part of the same process.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir127-003</Reference>
+         <Value type="EXAMPLE">CTR-2024-DK-0001</Value>
+      </Element>
+
+      <Element>
+         <Term>cbc:IssueDate</Term>
+         <Name>Report issue date</Name>
+         <Description>The date when this Common Transportation Report is issued. Format = "YYYY-MM-DD".</Description>
+         <DataType>Date</DataType>
+         <Reference type="BUSINESS_TERM">tir127-004</Reference>
+         <Value type="EXAMPLE">2024-06-01</Value>
+      </Element>
+
+      <Element cardinality="0..1">
+         <Term>cbc:UUID</Term>
+         <Name>Document UUID</Name>
+         <Description>A universally unique identifier for an instance of this document.</Description>
+         <DataType>Identifier</DataType>
+         <Value type="EXAMPLE">550e8400-e29b-41d4-a716-446655440000</Value>
+      </Element>
+
+      <Element cardinality="0..1">
+         <Term>cbc:IssueTime</Term>
+         <Name>Report issue time</Name>
+         <Description>The time when this Common Transportation Report is issued. Format = "hh:mm:ss+hh:mm".</Description>
+         <DataType>Time</DataType>
+         <Reference type="BUSINESS_TERM">tir127-005</Reference>
+         <Value type="EXAMPLE">09:00:00+02:00</Value>
+      </Element>
+
+      <Element cardinality="0..1">
+         <Term>cbc:DocumentStatusCode</Term>
+         <Name>Document status code</Name>
+         <Description>A code signifying the status of this Common Transportation Report with respect to
+            its original state. For example: ORIGINAL, REVISED, CANCELLED.</Description>
+         <DataType>Code</DataType>
+         <Reference type="CODE_LIST">DocumentStatusCode</Reference>
+         <Value type="EXAMPLE">ORIGINAL</Value>
+      </Element>
+
+      <Element cardinality="0..1">
+         <Term>cbc:ReportTypeCode</Term>
+         <Name>Report type code</Name>
+         <Description>A code specifying the type of this Common Transportation Report, such as an eFTI consignment
+            identifier report or a full common transport data set. Use values from the CTRTypeCode code list.</Description>
+         <DataType>Code</DataType>
+         <Reference type="BUSINESS_TERM">tir127-006</Reference>
+         <Reference type="CODE_LIST">CTRTypeCode</Reference>
+         <Value type="EXAMPLE">EFTI-IDENTIFIER</Value>
+      </Element>
+
+      <Element cardinality="0..n">
+         <Term>cbc:ReportType</Term>
+         <Name>Report type description</Name>
+         <Description>Free-form text supplementing cbc:ReportTypeCode, providing a human-readable
+            description of the type of report when the code is not sufficient.</Description>
+         <DataType>Text</DataType>
+         <Value type="EXAMPLE">eFTI Consignment Identifier Report — road transport</Value>
+      </Element>
+
+      <Element cardinality="0..n">
+         <Term>cbc:Description</Term>
+         <Name>Description</Name>
+         <Description>Free-form text providing a human-readable description of this Common Transportation Report,
+            conveying information not contained explicitly in other structures.
+            Multiple occurrences may be used for multilingual descriptions.</Description>
+         <DataType>Text</DataType>
+         <Reference type="BUSINESS_TERM">tir127-007</Reference>
+         <Value type="EXAMPLE">eFTI Common Transportation Report for road consignment DK-2024-12345</Value>
+      </Element>
+
+      <Element cardinality="0..n">
+         <Term>cbc:Note</Term>
+         <Name>Note</Name>
+         <Description>Free-form text with supplementary information relevant to this report,
+            such as exceptional circumstances or manual overrides.</Description>
+         <DataType>Text</DataType>
+         <Value type="EXAMPLE">Consignment transferred from carrier A to carrier B at border crossing Vaalimaa</Value>
+      </Element>
+
+      <Element cardinality="0..1">
+         <Term>cbc:VersionID</Term>
+         <Name>Report version identifier</Name>
+         <Description>An identifier for the version of this Common Transportation Report. Incremented each time
+            the report is updated or corrected.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir127-008</Reference>
+         <Value type="EXAMPLE">1</Value>
+      </Element>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           PARTIES
+           ═══════════════════════════════════════════════════════════ -->
+
+      <Element cardinality="1..1">
+         <Term>cac:ReporterParty</Term>
+         <Name>Reporter party</Name>
+         <Description>The party responsible for compiling and submitting this Common Transportation Report.
+            In the eFTI context this is the certified eFTI platform acting on behalf of the economic operator.</Description>
+         <Element cardinality="1..1">
+            <Term>cbc:EndpointID</Term>
+            <Name>Endpoint ID</Name>
+            <Description>Electronic address of the Reporter Party used for routing in the Peppol network.</Description>
+            <Attribute usage="Mandatory">
+               <Term>schemeID</Term>
+               <Reference type="CODE_LIST">eas</Reference>
+               <Value type="EXAMPLE">0096</Value>
+            </Attribute>
+            <Value type="EXAMPLE">DK12345678</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PartyIdentification</Term>
+            <Name>Reporter party identification</Name>
+            <Description>An identifier for the Reporter party.</Description>
+            <Element cardinality="1..1">
+               <Term>cbc:ID</Term>
+               <Name>ID</Name>
+               <Description>The identifier of the Reporter party. Use ICD schemeID to qualify the type.</Description>
+               <Reference type="RULE">PEPPOL-T127-R031</Reference>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0096</Value>
+               </Attribute>
+               <Value type="EXAMPLE">DK12345678</Value>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PartyName</Term>
+            <Name>Party name</Name>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Name>Reporter party name</Name>
+               <Description>The name of the Reporter party (the eFTI platform operator).</Description>
+               <Reference type="RULE">PEPPOL-T127-R031</Reference>
+               <Value type="EXAMPLE">Semantic ApS</Value>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PostalAddress</Term>
+            <Name>Postal address</Name>
+            <Description>The postal address of the Reporter party.</Description>
+            <Element cardinality="0..1">
+               <Term>cbc:StreetName</Term>
+               <Name>Address line 1</Name>
+               <Description>Street name and number of the Reporter party address.</Description>
+               <Value type="EXAMPLE">Bredgade 25H</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:CityName</Term>
+               <Name>City</Name>
+               <Value type="EXAMPLE">Copenhagen</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:PostalZone</Term>
+               <Name>Post code</Name>
+               <Value type="EXAMPLE">1260</Value>
+            </Element>
+            <Element cardinality="1..1">
+               <Term>cac:Country</Term>
+               <Name>Country</Name>
+               <Element cardinality="1..1">
+                  <Term>cbc:IdentificationCode</Term>
+                  <Name>Country code</Name>
+                  <Description>ISO 3166-1 alpha-2 country code.</Description>
+                  <Reference type="CODE_LIST">ISO3166</Reference>
+                  <Value type="EXAMPLE">DK</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element cardinality="1..1">
+            <Term>cac:PartyLegalEntity</Term>
+            <Name>Party legal entity</Name>
+            <Element cardinality="1..1">
+               <Term>cbc:RegistrationName</Term>
+               <Name>Reporter party legal name</Name>
+               <Description>The official registered name of the Reporter party.</Description>
+               <Value type="EXAMPLE">Semantic ApS</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:CompanyID</Term>
+               <Name>Company registration identifier</Name>
+               <Description>The legal registration identifier of the Reporter party.</Description>
+               <Attribute>
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0096</Value>
+               </Attribute>
+               <Value type="EXAMPLE">DK12345678</Value>
+            </Element>
+         </Element>
+      </Element>
+
+      <Element cardinality="1..1">
+         <Term>cac:AuthorityParty</Term>
+         <Name>Authority party</Name>
+         <Description>The national authority or eFTI Gate that is the recipient of this report and
+            is responsible for verifying eFTI data. In the eFTI context this is typically the
+            national competent authority or the Gate acting on its behalf.</Description>
+         <Element cardinality="1..1">
+            <Term>cbc:EndpointID</Term>
+            <Name>Endpoint ID</Name>
+            <Description>Electronic address of the Authority Party used for routing in the Peppol network.</Description>
+            <Attribute usage="Mandatory">
+               <Term>schemeID</Term>
+               <Reference type="CODE_LIST">eas</Reference>
+               <Value type="EXAMPLE">0212</Value>
+            </Attribute>
+            <Value type="EXAMPLE">0108023-3</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PartyIdentification</Term>
+            <Name>Authority party identification</Name>
+            <Element cardinality="1..1">
+               <Term>cbc:ID</Term>
+               <Name>ID</Name>
+               <Description>Identifier of the national authority or Gate.</Description>
+               <Reference type="RULE">PEPPOL-T127-R032</Reference>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0212</Value>
+               </Attribute>
+               <Value type="EXAMPLE">0108023-3</Value>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PartyName</Term>
+            <Name>Party name</Name>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Name>Authority party name</Name>
+               <Description>The name of the national authority or Gate.</Description>
+               <Reference type="RULE">PEPPOL-T127-R032</Reference>
+               <Value type="EXAMPLE">Traficom / Fintraffic Gate</Value>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PostalAddress</Term>
+            <Name>Postal address</Name>
+            <Element cardinality="1..1">
+               <Term>cac:Country</Term>
+               <Name>Country</Name>
+               <Element cardinality="1..1">
+                  <Term>cbc:IdentificationCode</Term>
+                  <Name>Country code</Name>
+                  <Reference type="CODE_LIST">ISO3166</Reference>
+                  <Value type="EXAMPLE">FI</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+
+      <Element cardinality="1..1">
+         <Term>cac:SenderParty</Term>
+         <Name>Sender party</Name>
+         <Description>The party sending this Common Transportation Report in the Peppol network.
+            Typically the eFTI platform. Must have a valid Peppol endpoint registration.</Description>
+         <Element cardinality="1..1">
+            <Term>cbc:EndpointID</Term>
+            <Name>Endpoint ID</Name>
+            <Description>Electronic address of the Sender Party used for routing in the Peppol network.</Description>
+            <Attribute usage="Mandatory">
+               <Term>schemeID</Term>
+               <Reference type="CODE_LIST">eas</Reference>
+               <Value type="EXAMPLE">0096</Value>
+            </Attribute>
+            <Value type="EXAMPLE">DK12345678</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PartyIdentification</Term>
+            <Name>Sender party identification</Name>
+            <Element cardinality="1..1">
+               <Term>cbc:ID</Term>
+               <Reference type="RULE">PEPPOL-T127-R033</Reference>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0096</Value>
+               </Attribute>
+               <Value type="EXAMPLE">DK12345678</Value>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PartyName</Term>
+            <Name>Party name</Name>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Name>Sender party name</Name>
+               <Reference type="RULE">PEPPOL-T127-R033</Reference>
+               <Value type="EXAMPLE">Semantic ApS</Value>
+            </Element>
+         </Element>
+      </Element>
+
+      <Element cardinality="1..1">
+         <Term>cac:ReceiverParty</Term>
+         <Name>Receiver party</Name>
+         <Description>The party receiving this Common Transportation Report in the Peppol network.
+            Typically the national Gate or competent authority.</Description>
+         <Element cardinality="1..1">
+            <Term>cbc:EndpointID</Term>
+            <Name>Endpoint ID</Name>
+            <Description>Electronic address of the Receiver Party used for routing in the Peppol network.</Description>
+            <Attribute usage="Mandatory">
+               <Term>schemeID</Term>
+               <Reference type="CODE_LIST">eas</Reference>
+               <Value type="EXAMPLE">0212</Value>
+            </Attribute>
+            <Value type="EXAMPLE">0108023-3</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PartyIdentification</Term>
+            <Name>Receiver party identification</Name>
+            <Element cardinality="1..1">
+               <Term>cbc:ID</Term>
+               <Reference type="RULE">PEPPOL-T127-R034</Reference>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0212</Value>
+               </Attribute>
+               <Value type="EXAMPLE">0108023-3</Value>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PartyName</Term>
+            <Name>Party name</Name>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Name>Receiver party name</Name>
+               <Reference type="RULE">PEPPOL-T127-R034</Reference>
+               <Value type="EXAMPLE">Traficom / Fintraffic Gate</Value>
+            </Element>
+         </Element>
+      </Element>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           REPORTING LOCATION
+           ═══════════════════════════════════════════════════════════ -->
+
+      <Element cardinality="0..1">
+         <Term>cac:ReportingLocation</Term>
+         <Name>Reporting location</Name>
+         <Description>The location where this Common Transportation Report is generated or made available,
+            such as the eFTI platform's registered place of business or a border crossing point
+            where the inspection is taking place.</Description>
+         <Element cardinality="0..1">
+            <Term>cbc:ID</Term>
+            <Name>Location identifier</Name>
+            <Description>An identifier for the reporting location, e.g. UN/LOCODE.</Description>
+            <Attribute usage="Optional">
+               <Term>schemeID</Term>
+               <Value type="EXAMPLE">UNLOCODE</Value>
+            </Attribute>
+            <Value type="EXAMPLE">DKCPH</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:Name</Term>
+            <Name>Location name</Name>
+            <Description>The name of the location where this report is generated.</Description>
+            <Value type="EXAMPLE">Copenhagen</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:Address</Term>
+            <Name>Address of the reporting location</Name>
+            <Element cardinality="0..1">
+               <Term>cbc:CityName</Term>
+               <Name>City</Name>
+               <Value type="EXAMPLE">Copenhagen</Value>
+            </Element>
+            <Element cardinality="1..1">
+               <Term>cac:Country</Term>
+               <Name>Country</Name>
+               <Element cardinality="1..1">
+                  <Term>cbc:IdentificationCode</Term>
+                  <Name>Country code</Name>
+                  <Reference type="CODE_LIST">ISO3166</Reference>
+                  <Value type="EXAMPLE">DK</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           SHIPMENT
+           Wraps the full eFTI consignment data set. Corresponds to the
+           UN/CEFACT SupplyChainConsignment as specified in the eFTI
+           Regulation (EU) 2020/1056 Annex.
+           ═══════════════════════════════════════════════════════════ -->
+
+      <Element cardinality="1..1">
+         <Term>cac:Shipment</Term>
+         <Name>Shipment</Name>
+         <Description>An identifiable collection of one or more consignments being transported as a unit.
+            Contains the full eFTI Common Transport Data Set mapped to UBL structures.</Description>
+
+         <Element>
+            <Term>cbc:ID</Term>
+            <Name>Shipment identifier</Name>
+            <Description>Identifies the shipment. If the ID is in the GSIN format this should be indicated
+               in the attribute @schemeID. The Global Shipment Identification Number (GSIN) is a GS1 key
+               used to identify a shipment assigned by the seller of goods.</Description>
+            <Reference type="BUSINESS_TERM">tir127-038</Reference>
+            <Attribute usage="Optional">
+               <Term>schemeID</Term>
+               <Reference type="CODE_LIST">ShipmentIDType</Reference>
+               <Value type="EXAMPLE">GSIN</Value>
+            </Attribute>
+            <Value type="EXAMPLE">73500538500000019</Value>
+         </Element>
+
+         <Element cardinality="0..1">
+            <Term>cbc:Information</Term>
+            <Name>Shipment description</Name>
+            <Description>Free-form text pertinent to this shipment, conveying information not contained
+               explicitly in other structures.</Description>
+            <Reference type="BUSINESS_TERM">tir127-039</Reference>
+            <Value type="EXAMPLE">Road consignment from Copenhagen to Helsinki</Value>
+         </Element>
+
+         <!-- ─────────────────────────────────────────────────────────
+              CONSIGNMENT — eFTI SupplyChainConsignment
+              ───────────────────────────────────────────────────────── -->
+
+         <Element cardinality="1..1">
+            <Term>cac:Consignment</Term>
+            <Name>Consignment</Name>
+            <Description>An identifiable collection of goods items sent from one party (the consignor)
+               to another party (the consignee) via one or more modes of transport.
+               Corresponds to the eFTI SupplyChainConsignment data set as defined in
+               Regulation (EU) 2020/1056, and the UN/CEFACT CCTS SupplyChainConsignment
+               aggregate business information entity.</Description>
+
+            <Element cardinality="1..1">
+               <Term>cbc:ID</Term>
+               <Name>Consignment identifier (GINC)</Name>
+               <Description>The unique identifier of this consignment. If the ID is in the GINC format
+                  (Global Identification Number for Consignment) this should be indicated in @schemeID.
+                  Corresponds to eFTI field: SupplyChainConsignment.id (UN01004165).</Description>
+               <Reference type="BUSINESS_TERM">tir127-040</Reference>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">ConsignmentIDType</Reference>
+                  <Value type="EXAMPLE">GINC</Value>
+               </Attribute>
+               <Value type="EXAMPLE">735005233GS1TRANSPORT000001</Value>
+            </Element>
+
+            <Element cardinality="0..1">
+               <Term>cbc:ConsignorAssignedID</Term>
+               <Name>Consignor assigned consignment identifier</Name>
+               <Description>A consignment identifier assigned by the consignor.
+                  Corresponds to eFTI field: SupplyChainConsignment.consignorAssignedId.</Description>
+               <Value type="EXAMPLE">CONS-2024-001</Value>
+            </Element>
+
+            <Element cardinality="0..1">
+               <Term>cbc:ConsigneeAssignedID</Term>
+               <Name>Consignee assigned consignment identifier</Name>
+               <Description>A consignment identifier assigned by the consignee.</Description>
+               <Value type="EXAMPLE">REC-2024-001</Value>
+            </Element>
+
+            <Element cardinality="0..1">
+               <Term>cbc:GrossWeightMeasure</Term>
+               <Name>Consignment gross weight</Name>
+               <Description>The total gross weight of all goods items in this consignment including
+                  packaging but excluding the tare weight of transport equipment.
+                  Corresponds to eFTI field: SupplyChainConsignment.grossWeight.
+                  Mandatory if gross volume or loading length is not specified.</Description>
+               <Reference type="RULE">PEPPOL-T127-R005</Reference>
+               <Reference type="RULE">PEPPOL-T127-R008</Reference>
+               <Attribute>
+                  <Term>unitCode</Term>
+                  <Reference type="CODE_LIST">UNECERec20</Reference>
+                  <Value type="EXAMPLE">KGM</Value>
+               </Attribute>
+               <Value type="EXAMPLE">1030</Value>
+            </Element>
+
+            <Element cardinality="0..1">
+               <Term>cbc:GrossVolumeMeasure</Term>
+               <Name>Consignment gross volume</Name>
+               <Description>The total gross volume of this consignment.
+                  Mandatory if gross weight or loading length is not specified.</Description>
+               <Reference type="RULE">PEPPOL-T127-R006</Reference>
+               <Reference type="RULE">PEPPOL-T127-R008</Reference>
+               <Attribute>
+                  <Term>unitCode</Term>
+                  <Reference type="CODE_LIST">UNECERec20</Reference>
+                  <Value type="EXAMPLE">MTQ</Value>
+               </Attribute>
+               <Value type="EXAMPLE">20</Value>
+            </Element>
+
+            <Element cardinality="0..1">
+               <Term>cbc:LoadingLengthMeasure</Term>
+               <Name>Loading length measure</Name>
+               <Description>The total length in a means of transport needed to accommodate all consignments.
+                  Mandatory if gross weight or gross volume is not specified.</Description>
+               <Reference type="RULE">PEPPOL-T127-R008</Reference>
+               <Attribute>
+                  <Term>unitCode</Term>
+                  <Reference type="CODE_LIST">UNECERec20</Reference>
+                  <Value type="EXAMPLE">MTR</Value>
+               </Attribute>
+               <Value type="EXAMPLE">2.4</Value>
+            </Element>
+
+            <Element cardinality="0..1">
+               <Term>cbc:HazardousRiskIndicator</Term>
+               <Name>Dangerous goods indicator</Name>
+               <Description>An indication that the goods in this consignment are subject to an international
+                  regulation concerning the carriage of dangerous goods (true) or not (false).
+                  Corresponds to eFTI field: LogisticsTransportMovement.dangerousGoodsIndicator.</Description>
+               <Value type="EXAMPLE">false</Value>
+            </Element>
+
+            <Element cardinality="0..1">
+               <Term>cbc:TotalTransportHandlingUnitQuantity</Term>
+               <Name>Total number of transport handling units</Name>
+               <Description>The total number of transport handling units (packages, pallets, etc.)
+                  in this consignment.</Description>
+               <Reference type="RULE">PEPPOL-T127-R003</Reference>
+               <Attribute>
+                  <Term>unitCode</Term>
+                  <Value type="EXAMPLE">EA</Value>
+               </Attribute>
+               <Value type="EXAMPLE">4</Value>
+            </Element>
+
+            <!-- Consignor party -->
+            <Element cardinality="0..1">
+               <Term>cac:ConsignorParty</Term>
+               <Name>Consignor party</Name>
+               <Description>The party that makes the goods available for transport — the sender.
+                  Corresponds to eFTI field: SupplyChainConsignment.consignor (UN01004174).</Description>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyIdentification</Term>
+                  <Name>Consignor party identification</Name>
+                  <Element cardinality="1..1">
+                     <Term>cbc:ID</Term>
+                     <Name>ID</Name>
+                     <Attribute usage="Optional">
+                        <Term>schemeID</Term>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0088</Value>
+                     </Attribute>
+                     <Value type="EXAMPLE">5790000436427</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyName</Term>
+                  <Name>Party name</Name>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Name>Consignor party name</Name>
+                     <Value type="EXAMPLE">Novo Nordisk Pharmatech A/S</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:PostalAddress</Term>
+                  <Name>Postal address</Name>
+                  <Description>The postal address of the consignor.
+                     Corresponds to eFTI field: TradeParty.postalAddress / TradeAddress.</Description>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StreetName</Term>
+                     <Name>Address line 1</Name>
+                     <Value type="EXAMPLE">Holmens Kanal 20</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:AdditionalStreetName</Term>
+                     <Name>Address line 2</Name>
+                     <Value type="EXAMPLE">Building B</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CityName</Term>
+                     <Name>City</Name>
+                     <Value type="EXAMPLE">Copenhagen</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:PostalZone</Term>
+                     <Name>Post code</Name>
+                     <Value type="EXAMPLE">1060</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CountrySubentity</Term>
+                     <Name>Country subdivision</Name>
+                     <Value type="EXAMPLE">Hovedstaden</Value>
+                  </Element>
+                  <Element cardinality="1..1">
+                     <Term>cac:Country</Term>
+                     <Name>Country</Name>
+                     <Element cardinality="1..1">
+                        <Term>cbc:IdentificationCode</Term>
+                        <Name>Country code</Name>
+                        <Reference type="CODE_LIST">ISO3166</Reference>
+                        <Value type="EXAMPLE">DK</Value>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyLegalEntity</Term>
+                  <Name>Party legal entity</Name>
+                  <Element cardinality="1..1">
+                     <Term>cbc:RegistrationName</Term>
+                     <Name>Consignor legal name</Name>
+                     <Value type="EXAMPLE">Novo Nordisk Pharmatech A/S</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CompanyID</Term>
+                     <Name>Consignor company ID</Name>
+                     <Attribute>
+                        <Term>schemeID</Term>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0096</Value>
+                     </Attribute>
+                     <Value type="EXAMPLE">DK13246149</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:Contact</Term>
+                  <Name>Contact</Name>
+                  <Element cardinality="0..1">
+                     <Term>cbc:Name</Term>
+                     <Name>Contact name</Name>
+                     <Value type="EXAMPLE">Mr. Jensen</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:Telephone</Term>
+                     <Name>Contact telephone</Name>
+                     <Value type="EXAMPLE">+45 12 34 56 78</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:ElectronicMail</Term>
+                     <Name>Contact email</Name>
+                     <Value type="EXAMPLE">logistics@company.dk</Value>
+                  </Element>
+               </Element>
+            </Element>
+
+            <!-- Consignee party -->
+            <Element cardinality="0..1">
+               <Term>cac:ConsigneeParty</Term>
+               <Name>Consignee party</Name>
+               <Description>The party that receives the goods — the receiver.
+                  Corresponds to eFTI field: SupplyChainConsignment.consignee (UN01004180).</Description>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyIdentification</Term>
+                  <Name>Consignee party identification</Name>
+                  <Element cardinality="1..1">
+                     <Term>cbc:ID</Term>
+                     <Attribute usage="Optional">
+                        <Term>schemeID</Term>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0212</Value>
+                     </Attribute>
+                     <Value type="EXAMPLE">0108023-3</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyName</Term>
+                  <Name>Party name</Name>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Name>Consignee party name</Name>
+                     <Value type="EXAMPLE">HUS Hospital</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:PostalAddress</Term>
+                  <Name>Postal address</Name>
+                  <Element cardinality="0..1">
+                     <Term>cbc:StreetName</Term>
+                     <Name>Address line 1</Name>
+                     <Value type="EXAMPLE">Topeliuksenkatu 5</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CityName</Term>
+                     <Name>City</Name>
+                     <Value type="EXAMPLE">Helsinki</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:PostalZone</Term>
+                     <Name>Post code</Name>
+                     <Value type="EXAMPLE">00260</Value>
+                  </Element>
+                  <Element cardinality="1..1">
+                     <Term>cac:Country</Term>
+                     <Name>Country</Name>
+                     <Element cardinality="1..1">
+                        <Term>cbc:IdentificationCode</Term>
+                        <Name>Country code</Name>
+                        <Reference type="CODE_LIST">ISO3166</Reference>
+                        <Value type="EXAMPLE">FI</Value>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyLegalEntity</Term>
+                  <Name>Party legal entity</Name>
+                  <Element cardinality="1..1">
+                     <Term>cbc:RegistrationName</Term>
+                     <Name>Consignee legal name</Name>
+                     <Value type="EXAMPLE">HUS Hospital District</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CompanyID</Term>
+                     <Name>Consignee company ID</Name>
+                     <Attribute>
+                        <Term>schemeID</Term>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0212</Value>
+                     </Attribute>
+                     <Value type="EXAMPLE">1567535-0</Value>
+                  </Element>
+               </Element>
+            </Element>
+
+            <!-- Carrier party -->
+            <Element cardinality="0..1">
+               <Term>cac:CarrierParty</Term>
+               <Name>Carrier party</Name>
+               <Description>The party undertaking or arranging the transport of the goods between
+                  named points.
+                  Corresponds to eFTI field: SupplyChainConsignment.carrier (UN01004171).</Description>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyIdentification</Term>
+                  <Name>Carrier party identification</Name>
+                  <Element cardinality="1..1">
+                     <Term>cbc:ID</Term>
+                     <Attribute usage="Optional">
+                        <Term>schemeID</Term>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0088</Value>
+                     </Attribute>
+                     <Value type="EXAMPLE">7300010000001</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyName</Term>
+                  <Name>Party name</Name>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Name>Carrier party name</Name>
+                     <Value type="EXAMPLE">Leman International A/S</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:PostalAddress</Term>
+                  <Name>Postal address</Name>
+                  <Element cardinality="1..1">
+                     <Term>cac:Country</Term>
+                     <Name>Country</Name>
+                     <Element cardinality="1..1">
+                        <Term>cbc:IdentificationCode</Term>
+                        <Name>Country code</Name>
+                        <Reference type="CODE_LIST">ISO3166</Reference>
+                        <Value type="EXAMPLE">DK</Value>
+                     </Element>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyLegalEntity</Term>
+                  <Name>Party legal entity</Name>
+                  <Element cardinality="1..1">
+                     <Term>cbc:RegistrationName</Term>
+                     <Name>Carrier legal name</Name>
+                     <Value type="EXAMPLE">Leman International A/S</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CompanyID</Term>
+                     <Name>Carrier company ID</Name>
+                     <Attribute>
+                        <Term>schemeID</Term>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0096</Value>
+                     </Attribute>
+                     <Value type="EXAMPLE">DK10000001</Value>
+                  </Element>
+               </Element>
+            </Element>
+
+            <!-- Freight forwarder -->
+            <Element cardinality="0..1">
+               <Term>cac:FreightForwarderParty</Term>
+               <Name>Freight forwarder party</Name>
+               <Description>The party responsible for the international transport of goods, often known
+                  as the freight forwarder or integrator.
+                  Corresponds to eFTI field: SupplyChainConsignment.freightForwarder (UN01004188).</Description>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyIdentification</Term>
+                  <Name>Freight forwarder party identification</Name>
+                  <Element cardinality="1..1">
+                     <Term>cbc:ID</Term>
+                     <Attribute usage="Optional">
+                        <Term>schemeID</Term>
+                        <Reference type="CODE_LIST">ICD</Reference>
+                        <Value type="EXAMPLE">0088</Value>
+                     </Attribute>
+                     <Value type="EXAMPLE">7300010000002</Value>
+                  </Element>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:PartyName</Term>
+                  <Name>Party name</Name>
+                  <Element>
+                     <Term>cbc:Name</Term>
+                     <Name>Freight forwarder name</Name>
+                     <Value type="EXAMPLE">DSV Road A/S</Value>
+                  </Element>
+               </Element>
+            </Element>
+
+            <!-- Countries -->
+            <Element cardinality="0..1">
+               <Term>cac:OriginalDepartureCountry</Term>
+               <Name>Original departure country</Name>
+               <Description>The country from which the goods were originally exported without any
+                  commercial transaction taking place in intermediate countries.
+                  Corresponds to eFTI field: SupplyChainConsignment.exportCountry.</Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:IdentificationCode</Term>
+                  <Name>Country code</Name>
+                  <Reference type="CODE_LIST">ISO3166</Reference>
+                  <Value type="EXAMPLE">DK</Value>
+               </Element>
+            </Element>
+
+            <Element cardinality="0..1">
+               <Term>cac:FinalDestinationCountry</Term>
+               <Name>Final destination country</Name>
+               <Description>The country in which the goods are to be delivered to the final consignee or buyer.
+                  Corresponds to eFTI field: SupplyChainConsignment.importCountry.</Description>
+               <Element cardinality="1..1">
+                  <Term>cbc:IdentificationCode</Term>
+                  <Name>Country code</Name>
+                  <Reference type="CODE_LIST">ISO3166</Reference>
+                  <Value type="EXAMPLE">FI</Value>
+               </Element>
+            </Element>
+
+            <!-- Transport handling units and equipment -->
+            <Element cardinality="0..n">
+               <Term>cac:TransportHandlingUnit</Term>
+               <Name>Transport handling unit</Name>
+               <Description>The outermost units that the carrier handles — pallets, containers, etc.
+                  Corresponds to eFTI field: SupplyChainConsignment.usedTransportEquipment
+                  (LogisticsTransportEquipment, UN01003798).</Description>
+
+               <Element cardinality="1..1">
+                  <Term>cbc:ID</Term>
+                  <Name>Transport handling unit identifier</Name>
+                  <Description>The Serial Shipping Container Code (SSCC) or similar identifier for
+                     this transport handling unit.
+                     Corresponds to eFTI field: LogisticsTransportEquipment.id (eFTI374).</Description>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Reference type="CODE_LIST">TransportHandlingUnitIDType</Reference>
+                     <Value type="EXAMPLE">SSCC</Value>
+                  </Attribute>
+                  <Value type="EXAMPLE">173500538500000061</Value>
+               </Element>
+
+               <Element cardinality="1..1">
+                  <Term>cbc:TransportHandlingUnitTypeCode</Term>
+                  <Name>Transport handling unit type code</Name>
+                  <Description>The type of transport handling unit. Use UN/ECE Recommendation 21.</Description>
+                  <Reference type="CODE_LIST">UNECERec21</Reference>
+                  <Value type="EXAMPLE">PK</Value>
+               </Element>
+
+               <Element cardinality="0..1">
+                  <Term>cbc:HazardousRiskIndicator</Term>
+                  <Name>Hazardous risk indicator</Name>
+                  <Description>An indicator that this transport handling unit contains dangerous goods (true) or not (false).</Description>
+                  <Value type="EXAMPLE">false</Value>
+               </Element>
+
+               <!-- Transport equipment (containers, trailers, etc.) -->
+               <Element cardinality="0..n">
+                  <Term>cac:TransportEquipment</Term>
+                  <Name>Transport equipment</Name>
+                  <Description>Transport equipment associated with this handling unit, such as a container
+                     or trailer. Corresponds to eFTI field: LogisticsTransportEquipment (ASBIE1086).</Description>
+
+                  <Element cardinality="1..1">
+                     <Term>cbc:ID</Term>
+                     <Name>Transport equipment identifier</Name>
+                     <Description>The identifier of the transport equipment, e.g. a container number.
+                        Corresponds to eFTI field: LogisticsTransportEquipment.id (eFTI374).</Description>
+                     <Value type="EXAMPLE">MSCU1234567</Value>
+                  </Element>
+
+                  <Element cardinality="0..1">
+                     <Term>cbc:TransportEquipmentTypeCode</Term>
+                     <Name>Transport equipment type code</Name>
+                     <Description>The type of transport equipment.
+                        Corresponds to eFTI field: LogisticsTransportEquipment.categoryCode (eFTI378).</Description>
+                     <Reference type="CODE_LIST">UNCL8053</Reference>
+                     <Value type="EXAMPLE">CN</Value>
+                  </Element>
+
+                  <Element cardinality="0..1">
+                     <Term>cbc:SequenceNumberID</Term>
+                     <Name>Sequence number</Name>
+                     <Description>A sequence number differentiating this piece of transport equipment from others.
+                        Corresponds to eFTI field: LogisticsTransportEquipment.sequenceNumber (eFTI987).</Description>
+                     <Value type="EXAMPLE">1</Value>
+                  </Element>
+
+                  <Element cardinality="0..1">
+                     <Term>cac:ProviderParty</Term>
+                     <Name>Registration country</Name>
+                     <Description>The country of registration of this transport equipment.
+                        Corresponds to eFTI field: LogisticsTransportEquipment.registrationCountry (ASBIE1097).
+                        NOTE: Use cac:ProviderParty/cac:PostalAddress/cac:Country as the UBL carrier for
+                        registration country, or add a custom cac:RegistrationCountry extension.</Description>
+                     <Element cardinality="1..1">
+                        <Term>cac:PostalAddress</Term>
+                        <Name>Address</Name>
+                        <Element cardinality="1..1">
+                           <Term>cac:Country</Term>
+                           <Name>Registration country</Name>
+                           <Element cardinality="1..1">
+                              <Term>cbc:IdentificationCode</Term>
+                              <Name>Country code</Name>
+                              <Description>ISO 3166-1 alpha-2 country code of the country where this
+                                 transport equipment is registered.</Description>
+                              <Reference type="CODE_LIST">ISO3166</Reference>
+                              <Value type="EXAMPLE">DK</Value>
+                           </Element>
+                        </Element>
+                     </Element>
+                  </Element>
+               </Element>
+
+               <!-- Goods items -->
+               <Element cardinality="0..n">
+                  <Term>cac:GoodsItem</Term>
+                  <Name>Goods item</Name>
+                  <Description>A goods item contained in this transport handling unit.
+                     Corresponds to eFTI field: SupplyChainConsignmentItem.</Description>
+
+                  <Element cardinality="0..1">
+                     <Term>cbc:Description</Term>
+                     <Name>Goods description</Name>
+                     <Description>A textual description of this goods item.</Description>
+                     <Value type="EXAMPLE">Pharmaceutical products — temperature controlled</Value>
+                  </Element>
+
+                  <Element cardinality="0..1">
+                     <Term>cbc:HazardousRiskIndicator</Term>
+                     <Name>Hazardous risk indicator</Name>
+                     <Description>Indicates whether this goods item is subject to dangerous goods regulation.</Description>
+                     <Value type="EXAMPLE">false</Value>
+                  </Element>
+
+                  <Element cardinality="0..1">
+                     <Term>cbc:GrossWeightMeasure</Term>
+                     <Name>Gross weight</Name>
+                     <Description>The gross weight of this goods item.</Description>
+                     <Attribute>
+                        <Term>unitCode</Term>
+                        <Reference type="CODE_LIST">UNECERec20</Reference>
+                        <Value type="EXAMPLE">KGM</Value>
+                     </Attribute>
+                     <Value type="EXAMPLE">250</Value>
+                  </Element>
+
+                  <Element cardinality="0..1">
+                     <Term>cac:Item</Term>
+                     <Name>Item</Name>
+                     <Description>Structured description of the goods being transported.</Description>
+                     <Element cardinality="0..1">
+                        <Term>cbc:Name</Term>
+                        <Name>Item name</Name>
+                        <Value type="EXAMPLE">Insulin</Value>
+                     </Element>
+                     <Element cardinality="0..n">
+                        <Term>cac:CommodityClassification</Term>
+                        <Name>Commodity classification</Name>
+                        <Description>Classification of the goods, e.g. by HS code or UNCL7143.</Description>
+                        <Element cardinality="1..1">
+                           <Term>cbc:ItemClassificationCode</Term>
+                           <Name>Item classification code</Name>
+                           <Attribute usage="Mandatory">
+                              <Term>listID</Term>
+                              <Reference type="CODE_LIST">UNCL7143</Reference>
+                              <Value type="EXAMPLE">HS</Value>
+                           </Attribute>
+                           <Value type="EXAMPLE">3004</Value>
+                        </Element>
+                     </Element>
+                  </Element>
+               </Element>
+            </Element>
+
+            <!-- Associated documents (CMR, etc.) -->
+            <Element cardinality="0..n">
+               <Term>cac:ExtraAllowanceCharge</Term>
+               <Name>Associated document reference</Name>
+               <Description>Reference to documents associated with this consignment, such as a CMR note,
+                  TIR carnet, or dangerous goods declaration.
+                  Corresponds to eFTI field: SupplyChainConsignment.associatedDocument (ASBIE1057).
+                  NOTE: In UBL 2.4, use cac:ExtraAllowanceCharge is a placeholder — the implementation
+                  should use cac:DocumentReference at the root document level.</Description>
+            </Element>
+
+         </Element>
+         <!-- end Consignment -->
+
+         <!-- ─────────────────────────────────────────────────────────
+              SHIPMENT STAGE — eFTI LogisticsTransportMovement
+              One stage per transport leg (main carriage).
+              Corresponds to eFTI field: SupplyChainConsignment.mainCarriageTransportMovement
+              ───────────────────────────────────────────────────────── -->
+
+         <Element cardinality="1..n">
+            <Term>cac:ShipmentStage</Term>
+            <Name>Shipment stage (transport leg)</Name>
+            <Description>A stage of the transport movement, representing one leg of the journey.
+               Corresponds to eFTI field: SupplyChainConsignment.mainCarriageTransportMovement
+               (LogisticsTransportMovement, ASBIE1098).
+               Multiple stages are used when the consignment is carried via several modes of transport.</Description>
+
+            <Element cardinality="1..1">
+               <Term>cbc:TransportModeCode</Term>
+               <Name>Transport mode code</Name>
+               <Description>A code signifying the mode of transport used for this shipment stage.
+                  Use UN/ECE Recommendation 19 (UNECE TransportModeCode).
+                  Corresponds to eFTI field: LogisticsTransportMovement.modeCode (eFTI581).
+                  1 = Maritime, 2 = Rail, 3 = Road, 4 = Air, 7 = Fixed transport installations,
+                  8 = Inland waterway.</Description>
+               <Reference type="BUSINESS_TERM">tir127-056</Reference>
+               <Reference type="RULE">PEPPOL-T127-R050</Reference>
+               <Reference type="CODE_LIST">UNECERec19</Reference>
+               <Value type="EXAMPLE">3</Value>
+            </Element>
+
+            <Element cardinality="0..1">
+               <Term>cac:TransportMeans</Term>
+               <Name>Transport means</Name>
+               <Description>The physical means of transport used in this shipment stage.
+                  Corresponds to eFTI field: LogisticsTransportMovement.usedTransportMeans
+                  (LogisticsTransportMeans, ASBIE1107).
+                  Use the appropriate sub-element for the transport mode.</Description>
+               <Reference type="RULE">PEPPOL-T127-R051</Reference>
+
+               <Element cardinality="0..1">
+                  <Term>cac:RoadTransport</Term>
+                  <Name>Road transport</Name>
+                  <Description>A road vehicle transporting the goods. Use only when TransportModeCode = 3 (Road).
+                     Corresponds to eFTI field: LogisticsTransportMeans (road mode).</Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:LicensePlateID</Term>
+                     <Name>License plate identifier</Name>
+                     <Description>The licence plate(s) identifying the road vehicle. If more than one,
+                        separate by semicolon. Corresponds to eFTI field: LogisticsTransportMeans.id (eFTI618).
+                        Registration country is specified in cac:RegistrationNation.</Description>
+                     <Value type="EXAMPLE">AB12345</Value>
+                  </Element>
+               </Element>
+
+               <Element cardinality="0..1">
+                  <Term>cac:AirTransport</Term>
+                  <Name>Air transport</Name>
+                  <Description>An aircraft used for this shipment stage. Use only when TransportModeCode = 4 (Air).</Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:AircraftID</Term>
+                     <Name>Aircraft identifier</Name>
+                     <Description>The registration number of the aircraft.
+                        Corresponds to eFTI field: LogisticsTransportMeans.id (eFTI618).</Description>
+                     <Value type="EXAMPLE">OH-LBP</Value>
+                  </Element>
+               </Element>
+
+               <Element cardinality="0..1">
+                  <Term>cac:RailTransport</Term>
+                  <Name>Rail transport</Name>
+                  <Description>Rail equipment used for this shipment stage. Use only when TransportModeCode = 2 (Rail).</Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:TrainID</Term>
+                     <Name>Train identifier</Name>
+                     <Description>The identifier of the train.
+                        Corresponds to eFTI field: LogisticsTransportMeans.id (eFTI618).</Description>
+                     <Value type="EXAMPLE">IC 12014</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:RailCarID</Term>
+                     <Name>Rail car identifier</Name>
+                     <Description>Identifier of the specific rail car on the train.</Description>
+                     <Value type="EXAMPLE">50 63 20-33 801-5</Value>
+                  </Element>
+               </Element>
+
+               <Element cardinality="0..1">
+                  <Term>cac:MaritimeTransport</Term>
+                  <Name>Maritime transport</Name>
+                  <Description>A vessel used for this shipment stage. Use only when TransportModeCode = 1 (Maritime).</Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:VesselID</Term>
+                     <Name>Vessel identifier</Name>
+                     <Description>The IMO number or other registered identifier of the vessel.
+                        Corresponds to eFTI field: LogisticsTransportMeans.id (eFTI618).</Description>
+                     <Value type="EXAMPLE">IMO9312571</Value>
+                  </Element>
+                  <Element cardinality="0..1">
+                     <Term>cbc:VesselName</Term>
+                     <Name>Vessel name</Name>
+                     <Description>The name of the vessel.</Description>
+                     <Value type="EXAMPLE">Finnstar</Value>
+                  </Element>
+               </Element>
+
+               <!-- Transport means registration country -->
+               <Element cardinality="0..1">
+                  <Term>cac:RegistrationNationality</Term>
+                  <Name>Transport means registration nationality</Name>
+                  <Description>The country of registration of the transport means used in this stage.
+                     Corresponds to eFTI field: LogisticsTransportMeans.registrationCountry
+                     (ASBIE1108 / TradeCountry).</Description>
+                  <Element cardinality="1..1">
+                     <Term>cbc:RegistrationNationalityID</Term>
+                     <Name>Registration country code</Name>
+                     <Description>ISO 3166-1 alpha-2 country code of the country where the transport means
+                        is registered.</Description>
+                     <Reference type="CODE_LIST">ISO3166</Reference>
+                     <Value type="EXAMPLE">DK</Value>
+                  </Element>
+               </Element>
+            </Element>
+            <!-- end TransportMeans -->
+
+            <!-- Loading location -->
+            <Element cardinality="0..1">
+               <Term>cac:LoadingPortLocation</Term>
+               <Name>Loading location</Name>
+               <Description>The location where the goods are loaded onto the transport means for this leg.
+                  Corresponds to eFTI field: LogisticsTransportMovement.departureEvent/occurrenceLocation.</Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:ID</Term>
+                  <Name>Location identifier</Name>
+                  <Description>An identifier for the loading location, e.g. a UN/LOCODE.</Description>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Value type="EXAMPLE">UNLOCODE</Value>
+                  </Attribute>
+                  <Value type="EXAMPLE">DKCPH</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:Name</Term>
+                  <Name>Location name</Name>
+                  <Value type="EXAMPLE">Port of Copenhagen</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:Address</Term>
+                  <Name>Loading location address</Name>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CityName</Term>
+                     <Name>City</Name>
+                     <Value type="EXAMPLE">Copenhagen</Value>
+                  </Element>
+                  <Element cardinality="1..1">
+                     <Term>cac:Country</Term>
+                     <Name>Country</Name>
+                     <Element cardinality="1..1">
+                        <Term>cbc:IdentificationCode</Term>
+                        <Name>Country code</Name>
+                        <Reference type="CODE_LIST">ISO3166</Reference>
+                        <Value type="EXAMPLE">DK</Value>
+                     </Element>
+                  </Element>
+               </Element>
+            </Element>
+
+            <!-- Unloading location -->
+            <Element cardinality="0..1">
+               <Term>cac:UnloadingPortLocation</Term>
+               <Name>Unloading location</Name>
+               <Description>The location where the goods are unloaded from the transport means for this leg.
+                  Corresponds to eFTI field: LogisticsTransportMovement.arrivalEvent/occurrenceLocation.</Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:ID</Term>
+                  <Name>Location identifier</Name>
+                  <Attribute usage="Optional">
+                     <Term>schemeID</Term>
+                     <Value type="EXAMPLE">UNLOCODE</Value>
+                  </Attribute>
+                  <Value type="EXAMPLE">FIHEL</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cbc:Name</Term>
+                  <Name>Location name</Name>
+                  <Value type="EXAMPLE">Port of Helsinki</Value>
+               </Element>
+               <Element cardinality="0..1">
+                  <Term>cac:Address</Term>
+                  <Name>Unloading location address</Name>
+                  <Element cardinality="0..1">
+                     <Term>cbc:CityName</Term>
+                     <Name>City</Name>
+                     <Value type="EXAMPLE">Helsinki</Value>
+                  </Element>
+                  <Element cardinality="1..1">
+                     <Term>cac:Country</Term>
+                     <Name>Country</Name>
+                     <Element cardinality="1..1">
+                        <Term>cbc:IdentificationCode</Term>
+                        <Name>Country code</Name>
+                        <Reference type="CODE_LIST">ISO3166</Reference>
+                        <Value type="EXAMPLE">FI</Value>
+                     </Element>
+                  </Element>
+               </Element>
+            </Element>
+
+            <!-- Estimated departure and arrival -->
+            <Element cardinality="0..1">
+               <Term>cac:TransportSchedule</Term>
+               <Name>Transport schedule</Name>
+               <Description>Planned departure and arrival times for this transport leg.
+                  Corresponds to eFTI fields: LogisticsTransportMovement.departureEvent
+                  and LogisticsTransportMovement.arrivalEvent.</Description>
+               <Element cardinality="0..1">
+                  <Term>cbc:ReferenceDatetime</Term>
+                  <Name>Estimated departure date/time</Name>
+                  <Description>The planned or estimated departure date and time for this leg.
+                     Corresponds to eFTI field: TransportEvent.occurrenceDateTime (departureEvent).</Description>
+                  <Value type="EXAMPLE">2024-06-15T08:00:00+02:00</Value>
+               </Element>
+            </Element>
+
+         </Element>
+         <!-- end ShipmentStage -->
+
+         <!-- Document references at Shipment level -->
+         <Element cardinality="0..n">
+            <Term>cac:ExportExitDetailsLocation</Term>
+            <Name>Border crossing information</Name>
+            <Description>Information about border crossings for this shipment.
+               Corresponds to eFTI field: SupplyChainConsignment.transitCustomsOfficeLocation.</Description>
+            <Element cardinality="0..1">
+               <Term>cbc:ID</Term>
+               <Name>Border crossing location identifier</Name>
+               <Value type="EXAMPLE">FI001</Value>
+            </Element>
+            <Element cardinality="0..1">
+               <Term>cbc:Name</Term>
+               <Name>Border crossing location name</Name>
+               <Value type="EXAMPLE">Vaalimaa</Value>
+            </Element>
+         </Element>
+
+      </Element>
+      <!-- end Shipment -->
+
+      <!-- ═══════════════════════════════════════════════════════════
+           TRANSPORT MEANS AT ROOT LEVEL
+           In UBL 2.4 TransportMeans may appear both at root level and
+           inside ShipmentStage. At root level it represents the primary
+           means of transport for the entire report — useful for roadside
+           inspection scenarios where the inspected vehicle is the subject
+           of the report independently of any specific shipment leg.
+           Corresponds to eFTI field: LogisticsTransportMeans.
+           ═══════════════════════════════════════════════════════════ -->
+
+      <Element cardinality="0..n">
+         <Term>cac:TransportMeans</Term>
+         <Name>Transport means</Name>
+         <Description>The physical means of transport that is the primary subject of this report.
+            Use this element when the report concerns a specific vehicle, vessel or aircraft
+            independently of the shipment stage structure — e.g. for roadside inspection.
+            Corresponds to eFTI field: LogisticsTransportMeans (ASBIE1107).</Description>
+         <Element cardinality="0..1">
+            <Term>cbc:JourneyID</Term>
+            <Name>Journey identifier</Name>
+            <Description>An identifier for the journey made by this means of transport.</Description>
+            <Value type="EXAMPLE">DK-FI-2024-001</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:TransportMeansTypeCode</Term>
+            <Name>Transport means type code</Name>
+            <Description>A code signifying the type of this transport means.</Description>
+            <Value type="EXAMPLE">TRK</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:RoadTransport</Term>
+            <Name>Road transport</Name>
+            <Description>A road vehicle. Corresponds to eFTI field: LogisticsTransportMeans (road).</Description>
+            <Element cardinality="1..1">
+               <Term>cbc:LicensePlateID</Term>
+               <Name>License plate identifier</Name>
+               <Description>The licence plate of the road vehicle.
+                  Corresponds to eFTI field: LogisticsTransportMeans.id (eFTI618).</Description>
+               <Value type="EXAMPLE">AB12345</Value>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:AirTransport</Term>
+            <Name>Air transport</Name>
+            <Element cardinality="1..1">
+               <Term>cbc:AircraftID</Term>
+               <Name>Aircraft identifier</Name>
+               <Value type="EXAMPLE">OH-LBP</Value>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:RailTransport</Term>
+            <Name>Rail transport</Name>
+            <Element cardinality="1..1">
+               <Term>cbc:TrainID</Term>
+               <Name>Train identifier</Name>
+               <Value type="EXAMPLE">IC 12014</Value>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:MaritimeTransport</Term>
+            <Name>Maritime transport</Name>
+            <Element cardinality="1..1">
+               <Term>cbc:VesselID</Term>
+               <Name>Vessel identifier</Name>
+               <Value type="EXAMPLE">IMO9312571</Value>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:OwnerParty</Term>
+            <Name>Owner party</Name>
+            <Description>The party owning this means of transport.
+               Corresponds to eFTI field: LogisticsTransportMeans.ownerParty.</Description>
+            <Element cardinality="0..1">
+               <Term>cac:PartyName</Term>
+               <Name>Party name</Name>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Name>Owner name</Name>
+                  <Value type="EXAMPLE">Leman International A/S</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:MeasurementDimension</Term>
+            <Name>Measurement dimension</Name>
+            <Description>A measurement of this transport means, e.g. length or capacity.</Description>
+            <Element cardinality="1..1">
+               <Term>cbc:AttributeID</Term>
+               <Name>Attribute identifier</Name>
+               <Value type="EXAMPLE">LN</Value>
+            </Element>
+            <Element cardinality="1..1">
+               <Term>cbc:Measure</Term>
+               <Name>Measure</Name>
+               <Attribute>
+                  <Term>unitCode</Term>
+                  <Reference type="CODE_LIST">UNECERec20</Reference>
+                  <Value type="EXAMPLE">MTR</Value>
+               </Attribute>
+               <Value type="EXAMPLE">12</Value>
+            </Element>
+         </Element>
+      </Element>
+
+      <!-- Document references -->
+      <Element cardinality="0..n">
+         <Term>cac:DocumentReference</Term>
+         <Name>Additional document reference</Name>
+         <Description>Reference to documents relevant for this Common Transportation Report, such as
+            a CMR note, TIR carnet, customs declaration, or the eFTI UIL (Unique Identifier Link).
+            Corresponds to eFTI field: SupplyChainConsignment.associatedDocument (ReferencedDocument).</Description>
+         <Element cardinality="1..1">
+            <Term>cbc:ID</Term>
+            <Name>Document identifier</Name>
+            <Description>The reference number or identifier of the associated document.</Description>
+            <Value type="EXAMPLE">CMR-2024-DK-001</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:DocumentTypeCode</Term>
+            <Name>Document type code</Name>
+            <Description>The type of document expressed as a code. Use UNCL1001.</Description>
+            <Reference type="CODE_LIST">UNCL1001</Reference>
+            <Value type="EXAMPLE">720</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:DocumentType</Term>
+            <Name>Document type</Name>
+            <Description>The type of document in free text when the code is not sufficient.</Description>
+            <Value type="EXAMPLE">CMR Consignment Note</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:UUID</Term>
+            <Name>eFTI UIL</Name>
+            <Description>The Unique Identifier Link (UIL) assigned by the eFTI Gate when a consignment
+               is registered. Use DocumentTypeCode = "eFTI-UIL" and provide the UUID here.
+               Required after successful Gate registration.</Description>
+            <Value type="EXAMPLE">550e8400-e29b-41d4-a716-446655440000</Value>
+         </Element>
+      </Element>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           SIGNATURE
+           ═══════════════════════════════════════════════════════════ -->
+
+      <Element cardinality="0..n">
+         <Term>cac:Signature</Term>
+         <Name>Signature</Name>
+         <Description>A signature applied to this Common Transportation Report by the Reporter Party
+            or another authorised signatory, confirming the authenticity of the data.
+            Corresponds to eFTI field: TradeParty.confirmedDocumentAuthentication.</Description>
+         <Element cardinality="1..1">
+            <Term>cbc:ID</Term>
+            <Name>Signature identifier</Name>
+            <Description>The identifier of this signature.</Description>
+            <Value type="EXAMPLE">SIG-2024-001</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:ValidationDate</Term>
+            <Name>Validation date</Name>
+            <Description>The date upon which this signature was verified. Format = "YYYY-MM-DD".</Description>
+            <Value type="EXAMPLE">2024-06-01</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:ValidationTime</Term>
+            <Name>Validation time</Name>
+            <Description>The time at which this signature was verified. Format = "hh:mm:ss+hh:mm".</Description>
+            <Value type="EXAMPLE">14:32:00+03:00</Value>
+         </Element>
+         <Element cardinality="1..1">
+            <Term>cac:SignatoryParty</Term>
+            <Name>Signatory party</Name>
+            <Description>The party applying this signature.</Description>
+            <Element cardinality="0..1">
+               <Term>cac:PartyName</Term>
+               <Name>Party name</Name>
+               <Element>
+                  <Term>cbc:Name</Term>
+                  <Name>Signatory name</Name>
+                  <Value type="EXAMPLE">Semantic ApS</Value>
+               </Element>
+            </Element>
+         </Element>
+         <Element cardinality="1..1">
+            <Term>cac:DigitalSignatureAttachment</Term>
+            <Name>Digital signature attachment</Name>
+            <Description>The actual digital signature, embedded or referenced as an attachment.</Description>
+            <Element cardinality="0..1">
+               <Term>cac:ExternalReference</Term>
+               <Name>External reference</Name>
+               <Element>
+                  <Term>cbc:URI</Term>
+                  <Name>Signature URI</Name>
+                  <Value type="EXAMPLE">https://efti-platform.semantic.biz/signatures/SIG-2024-001</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+
+   </Document>
+</Structure>

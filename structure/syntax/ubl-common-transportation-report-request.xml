@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Structure xmlns="urn:fdc:difi.no:2017:vefa:structure-1">
+   <Term>CommonTransportationReportRequest</Term>
+   <Property key="sch:prefix">PEPPOL-T128</Property>
+   <Property key="sch:identifier">T128-basic</Property>
+   <Namespace prefix="ubl">urn:fdc:peppol.eu:logistics:xsd:CommonTransportationReportRequest-1</Namespace>
+   <Namespace prefix="cac">urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2</Namespace>
+   <Namespace prefix="cbc">urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2</Namespace>
+   <Document>
+      <Term>ubl:CommonTransportationReportRequest</Term>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           DOCUMENT HEADER
+           The CommonTransportationReportRequest is sent by an eFTI Gate
+           or national authority to request the full eFTI Common Transport
+           Data Set for a specific consignment from the eFTI Platform.
+           The platform responds with a CommonTransportationReport (T127).
+           ═══════════════════════════════════════════════════════════ -->
+
+      <Element>
+         <Term>cbc:CustomizationID</Term>
+         <Name>Specification identification</Name>
+         <Description>Identifies the specification of content and rules that apply to this transaction.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir128-001</Reference>
+         <Reference type="RULE">PEPPOL-T128-R001</Reference>
+         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:trns:common-transportation-report-request:1</Value>
+      </Element>
+
+      <Element>
+         <Term>cbc:ProfileID</Term>
+         <Name>Business process type identifier</Name>
+         <Description>Identifies the BIS profile or business process context in which this transaction appears.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir128-002</Reference>
+         <Reference type="RULE">PEPPOL-T128-R002</Reference>
+         <Value type="EXAMPLE">urn:fdc:peppol.eu:logistics:bis:efti-ctr:1</Value>
+      </Element>
+
+      <Element>
+         <Term>cbc:ID</Term>
+         <Name>Document identifier</Name>
+         <Description>A unique identifier for this request instance.</Description>
+         <DataType>Identifier</DataType>
+         <Reference type="BUSINESS_TERM">tir128-003</Reference>
+         <Value type="EXAMPLE">REQ-2024-FI-0001</Value>
+      </Element>
+
+      <Element>
+         <Term>cbc:IssueDate</Term>
+         <Name>Request issue date</Name>
+         <Description>The date when this request is issued. Format = "YYYY-MM-DD".</Description>
+         <DataType>Date</DataType>
+         <Reference type="BUSINESS_TERM">tir128-004</Reference>
+         <Value type="EXAMPLE">2024-06-01</Value>
+      </Element>
+
+      <Element cardinality="0..1">
+         <Term>cbc:IssueTime</Term>
+         <Name>Request issue time</Name>
+         <Description>The time when this request is issued. Format = "hh:mm:ss+hh:mm".</Description>
+         <DataType>Time</DataType>
+         <Reference type="BUSINESS_TERM">tir128-005</Reference>
+         <Value type="EXAMPLE">14:32:00+03:00</Value>
+      </Element>
+
+      <Element cardinality="0..1">
+         <Term>cbc:Note</Term>
+         <Name>Request description</Name>
+         <Description>Free-form text providing additional information about this request, such as
+            the reason for the inspection or query.</Description>
+         <DataType>Text</DataType>
+         <Reference type="BUSINESS_TERM">tir128-006</Reference>
+         <Value type="EXAMPLE">Roadside inspection — requesting full eFTI data set for consignment</Value>
+      </Element>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           PARTIES
+           ═══════════════════════════════════════════════════════════ -->
+
+      <Element cardinality="1..1">
+         <Term>cac:SenderParty</Term>
+         <Name>Sender party</Name>
+         <Description>The party sending this request — typically the national Gate or authority
+            that is querying the eFTI Platform for consignment data.</Description>
+         <Element cardinality="1..1">
+            <Term>cbc:EndpointID</Term>
+            <Name>Endpoint ID</Name>
+            <Description>Electronic address of the Sender Party used for routing in the Peppol network.</Description>
+            <Attribute usage="Mandatory">
+               <Term>schemeID</Term>
+               <Reference type="CODE_LIST">eas</Reference>
+               <Value type="EXAMPLE">0212</Value>
+            </Attribute>
+            <Value type="EXAMPLE">0108023-3</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PartyIdentification</Term>
+            <Name>Sender party identification</Name>
+            <Element cardinality="1..1">
+               <Term>cbc:ID</Term>
+               <Reference type="RULE">PEPPOL-T128-R031</Reference>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0212</Value>
+               </Attribute>
+               <Value type="EXAMPLE">0108023-3</Value>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PartyName</Term>
+            <Name>Party name</Name>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Name>Sender party name</Name>
+               <Reference type="RULE">PEPPOL-T128-R031</Reference>
+               <Value type="EXAMPLE">Traficom / Fintraffic Gate</Value>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PostalAddress</Term>
+            <Name>Postal address</Name>
+            <Element cardinality="1..1">
+               <Term>cac:Country</Term>
+               <Name>Country</Name>
+               <Element cardinality="1..1">
+                  <Term>cbc:IdentificationCode</Term>
+                  <Name>Country code</Name>
+                  <Reference type="CODE_LIST">ISO3166</Reference>
+                  <Value type="EXAMPLE">FI</Value>
+               </Element>
+            </Element>
+         </Element>
+      </Element>
+
+      <Element cardinality="1..1">
+         <Term>cac:ReceiverParty</Term>
+         <Name>Receiver party</Name>
+         <Description>The party receiving this request — the certified eFTI Platform that holds
+            the consignment data and will respond with a CommonTransportationReport (T127).</Description>
+         <Element cardinality="1..1">
+            <Term>cbc:EndpointID</Term>
+            <Name>Endpoint ID</Name>
+            <Description>Electronic address of the Receiver Party (eFTI Platform) in the Peppol network.</Description>
+            <Attribute usage="Mandatory">
+               <Term>schemeID</Term>
+               <Reference type="CODE_LIST">eas</Reference>
+               <Value type="EXAMPLE">0096</Value>
+            </Attribute>
+            <Value type="EXAMPLE">DK12345678</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PartyIdentification</Term>
+            <Name>Receiver party identification</Name>
+            <Element cardinality="1..1">
+               <Term>cbc:ID</Term>
+               <Reference type="RULE">PEPPOL-T128-R032</Reference>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">ICD</Reference>
+                  <Value type="EXAMPLE">0096</Value>
+               </Attribute>
+               <Value type="EXAMPLE">DK12345678</Value>
+            </Element>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cac:PartyName</Term>
+            <Name>Party name</Name>
+            <Element>
+               <Term>cbc:Name</Term>
+               <Name>Receiver party name</Name>
+               <Reference type="RULE">PEPPOL-T128-R032</Reference>
+               <Value type="EXAMPLE">Semantic eFTI Platform</Value>
+            </Element>
+         </Element>
+      </Element>
+
+      <!-- ═══════════════════════════════════════════════════════════
+           CONSIGNMENT IDENTIFICATION
+           Identifies which consignment data is being requested.
+           The requesting party provides one or more identifiers —
+           the platform uses them to look up the consignment.
+           ═══════════════════════════════════════════════════════════ -->
+
+      <Element cardinality="1..1">
+         <Term>cac:Shipment</Term>
+         <Name>Shipment identification</Name>
+         <Description>Contains the identifiers needed to look up the consignment in the eFTI Platform.
+            At least one identifier must be provided — preferably the UIL (Unique Identifier Link)
+            assigned by the Gate, or the GINC (consignment identifier).</Description>
+
+         <Element>
+            <Term>cbc:ID</Term>
+            <Name>Shipment identifier</Name>
+            <Description>The shipment identifier used to look up the consignment.
+               Provide the GSIN if available.</Description>
+            <Reference type="BUSINESS_TERM">tir128-038</Reference>
+            <Attribute usage="Optional">
+               <Term>schemeID</Term>
+               <Reference type="CODE_LIST">ShipmentIDType</Reference>
+               <Value type="EXAMPLE">GSIN</Value>
+            </Attribute>
+            <Value type="EXAMPLE">73500538500000019</Value>
+         </Element>
+
+         <Element cardinality="1..1">
+            <Term>cac:Consignment</Term>
+            <Name>Consignment identification</Name>
+            <Description>The identification of the consignment being requested.</Description>
+
+            <Element cardinality="1..1">
+               <Term>cbc:ID</Term>
+               <Name>Consignment identifier (GINC)</Name>
+               <Description>The GINC or other unique identifier of the consignment to be retrieved.
+                  Corresponds to the consignment ID registered in the eFTI Platform.
+                  Either this element OR the UIL in cac:DocumentReference must be provided.</Description>
+               <Reference type="BUSINESS_TERM">tir128-040</Reference>
+               <Reference type="RULE">PEPPOL-T128-R010</Reference>
+               <Attribute usage="Optional">
+                  <Term>schemeID</Term>
+                  <Reference type="CODE_LIST">ConsignmentIDType</Reference>
+                  <Value type="EXAMPLE">GINC</Value>
+               </Attribute>
+               <Value type="EXAMPLE">735005233GS1TRANSPORT000001</Value>
+            </Element>
+
+         </Element>
+         <!-- end Consignment -->
+
+         <!-- Transport context for verification — minimal, for roadside inspection -->
+         <Element cardinality="0..1">
+            <Term>cac:ShipmentStage</Term>
+            <Name>Current transport stage context</Name>
+            <Description>Optional context about the transport stage at the time of the request,
+               e.g. for roadside inspection. Provides the inspecting authority context about
+               the vehicle/transport means being inspected.</Description>
+
+            <Element cardinality="1..1">
+               <Term>cbc:TransportModeCode</Term>
+               <Name>Transport mode code</Name>
+               <Description>The mode of transport at the point of inspection.
+                  Used to correlate with the correct transport leg.</Description>
+               <Reference type="CODE_LIST">UNECERec19</Reference>
+               <Value type="EXAMPLE">3</Value>
+            </Element>
+
+            <Element cardinality="0..1">
+               <Term>cac:TransportMeans</Term>
+               <Name>Transport means being inspected</Name>
+               <Description>The vehicle, vessel or aircraft being inspected.
+                  Helps the platform identify the correct transport movement.</Description>
+
+               <Element cardinality="0..1">
+                  <Term>cac:RoadTransport</Term>
+                  <Name>Road transport</Name>
+                  <Element cardinality="1..1">
+                     <Term>cbc:LicensePlateID</Term>
+                     <Name>License plate identifier</Name>
+                     <Description>The licence plate of the vehicle being inspected.</Description>
+                     <Value type="EXAMPLE">AB12345</Value>
+                  </Element>
+               </Element>
+
+               <Element cardinality="0..1">
+                  <Term>cac:MaritimeTransport</Term>
+                  <Name>Maritime transport</Name>
+                  <Element cardinality="1..1">
+                     <Term>cbc:VesselID</Term>
+                     <Name>Vessel identifier</Name>
+                     <Value type="EXAMPLE">IMO9312571</Value>
+                  </Element>
+               </Element>
+
+            </Element>
+         </Element>
+         <!-- end ShipmentStage -->
+
+      </Element>
+      <!-- end Shipment -->
+
+      <!-- UIL reference — preferred lookup key when available -->
+      <Element cardinality="0..n">
+         <Term>cac:DocumentReference</Term>
+         <Name>eFTI UIL or associated document reference</Name>
+         <Description>A reference to the eFTI UIL (Unique Identifier Link) or another document
+            identifier that can be used to look up the consignment.
+            The UIL is the preferred lookup key when available, as it uniquely identifies
+            a consignment in the eFTI network.</Description>
+         <Element cardinality="1..1">
+            <Term>cbc:ID</Term>
+            <Name>Document identifier</Name>
+            <Description>The eFTI UIL (UUID) or other document reference number.</Description>
+            <Value type="EXAMPLE">550e8400-e29b-41d4-a716-446655440000</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:DocumentTypeCode</Term>
+            <Name>Document type code</Name>
+            <Description>Use "eFTI-UIL" to indicate a Unique Identifier Link, or a UNCL1001 code
+               for other document types.</Description>
+            <Value type="EXAMPLE">eFTI-UIL</Value>
+         </Element>
+         <Element cardinality="0..1">
+            <Term>cbc:DocumentType</Term>
+            <Name>Document type</Name>
+            <Description>Free text description of the document type if the code is not sufficient.</Description>
+            <Value type="EXAMPLE">eFTI Unique Identifier Link</Value>
+         </Element>
+      </Element>
+
+   </Document>
+</Structure>
